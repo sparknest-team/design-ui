@@ -4,6 +4,9 @@
   "description": "Shared SVG-to-Vue icon source generator for Cedar and Maple",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "sync:workspace-icons": "node scripts/sync-workspace-icons.mjs"
+  },
   "exports": {
     ".": "./src/index.mjs"
   },

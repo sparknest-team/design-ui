@@ -13,7 +13,7 @@ async function svgFiles(root) {
 }
 
 function componentSource({ classPrefix, runtimeName, svg }) {
-  return `<template>\n  ${svg}\n</template>\n\n<script setup lang="ts">\nimport { computed, type CSSProperties } from 'vue'\n\ndefineOptions({ name: '${runtimeName}' })\n\nconst props = defineProps<{ size?: string | number; color?: string; rotate?: number; spin?: boolean; title?: string }>()\nconst emit = defineEmits<{ click: [event: MouseEvent] }>()\nconst style = computed<CSSProperties>(() => ({\n  width: '1em',\n  height: '1em',\n  flexShrink: 0,\n  color: props.color,\n  fontSize: typeof props.size === 'number' ? \`\${props.size}px\` : props.size,\n  transform: props.rotate ? \`rotate(\${props.rotate}deg)\` : undefined,\n}))\n</script>\n`
+  return `<template>\n  ${svg}\n</template>\n\n<script setup lang="ts">\nimport { computed, type CSSProperties } from 'vue'\n\ndefineOptions({ name: '${runtimeName}' })\n\nconst props = withDefaults(defineProps<{\n  size?: string | number\n  color?: string\n  rotate?: number\n  spin?: boolean\n  title?: string\n  strokeWidth?: number\n  strokeLinecap?: 'butt' | 'round' | 'square'\n  strokeLinejoin?: 'bevel' | 'inherit' | 'miter' | 'round'\n}>(), {\n  strokeWidth: 4,\n  strokeLinecap: 'butt',\n  strokeLinejoin: 'miter',\n})\nconst emit = defineEmits<{ click: [event: MouseEvent] }>()\nconst numericSizeRE = /^-?(?:\\d+|\\d*\\.\\d+)$/\nconst style = computed<CSSProperties>(() => ({\n  width: '1em',\n  height: '1em',\n  flexShrink: 0,\n  color: props.color,\n  fontSize: typeof props.size === 'number' || numericSizeRE.test(props.size?.trim() ?? '') ? \`\${props.size}px\` : props.size,\n  transform: props.rotate ? \`rotate(\${props.rotate}deg)\` : undefined,\n}))\n</script>\n`
 }
 
 function componentIndex({ componentName, fileName }) {
@@ -34,23 +34,34 @@ export async function generateVueIcons({
 
   for (const path of await svgFiles(svgRoot)) {
     const source = await readFile(path, 'utf8')
-    const rootUsesNoFill = /<svg\b[^>]*\bfill=["']none["']/i.test(source)
     const rawName = basename(path, '.svg')
+    const preserveColor = rawName.endsWith('-color')
+    const normalizedSource = source.replace(/<svg\b[^>]*>/i, (root) => {
+      const withoutStrokeDefaults = root.replace(
+        /\s+stroke-(?:width|linecap|linejoin)=(?:"[^"]*"|'[^']*')/gi,
+        '',
+      )
+      return preserveColor
+        ? withoutStrokeDefaults
+        : withoutStrokeDefaults.replace(/\s+fill=(?:"[^"]*"|'[^']*')/gi, '')
+    })
+    const rootUsesNoFill = /<svg\b[^>]*\bfill=["']none["']/i.test(source)
     const fileName = `icon-${rawName}`
     const componentName = `${exportPrefix}${pascalCase(rawName)}`
     const runtimeName = `${runtimePrefix}${componentName}`
     if (names.has(componentName)) throw new Error(`Duplicate icon ${componentName}: ${names.get(componentName)} and ${path}`)
     names.set(componentName, path)
-    const result = optimize(source, {
+    const result = optimize(normalizedSource, {
       path,
       plugins: [
         { name: 'preset-default', params: { overrides: { removeViewBox: false } } },
         'removeDimensions',
-        { name: 'removeAttrs', params: { attrs: ['class', 'style', 'fill'] } },
+        { name: 'removeAttrs', params: { attrs: preserveColor ? ['class', 'style'] : ['class', 'style', 'stroke-width', 'stroke-linecap', 'stroke-linejoin'] } },
         { name: 'addAttributesToSVGElement', params: { attributes: [
           { ':class': `['${classPrefix}', { '${classPrefix}--spin': props.spin }]` },
-          { ':style': 'style' }, { fill: rootUsesNoFill ? 'none' : 'currentColor' }, { ':aria-hidden': '!props.title' },
-          { role: 'img' }, { '@click': `emit('click', $event)` },
+          { ':style': 'style' }, ...(preserveColor ? [] : [{ fill: rootUsesNoFill ? 'none' : 'currentColor' }]), { ':aria-hidden': '!props.title' },
+          { ':stroke-width': 'props.strokeWidth' }, { ':stroke-linecap': 'props.strokeLinecap' },
+          { ':stroke-linejoin': 'props.strokeLinejoin' }, { role: 'img' }, { '@click': `emit('click', $event)` },
         ] } },
       ],
     })
