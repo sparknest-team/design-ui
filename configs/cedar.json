@@ -1,0 +1,22 @@
+{
+  "name": "cedar",
+  "repositoryRoot": "../../cedar-design-web",
+  "componentRoot": "packages/cedar-ui/src",
+  "componentPrefix": "C",
+  "classPrefix": "c",
+  "tokenPrefix": "--c-",
+  "docs": "README.md",
+  "testGlobs": ["__tests__/*.test.*", "__tests__/*.spec.*"],
+  "styleGlobs": ["style/*.less"],
+  "ignoreComponents": [
+    "_components",
+    "_hooks",
+    "_utils",
+    "context",
+    "icon",
+    "locale",
+    "themes",
+    "utils"
+  ],
+  "subcomponents": ["field-decorator", "hover", "hover-overlay", "ripple"]
+}

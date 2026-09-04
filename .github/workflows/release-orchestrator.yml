@@ -1,0 +1,28 @@
+name: Joint release orchestration
+
+on:
+  workflow_dispatch:
+    inputs:
+      cedar:
+        description: Dispatch Cedar release
+        type: boolean
+        default: true
+      maple:
+        description: Dispatch Maple release
+        type: boolean
+        default: true
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch Cedar
+        if: inputs.cedar
+        env:
+          GH_TOKEN: ${{ secrets.DESIGN_SYSTEM_RELEASE_TOKEN }}
+        run: gh api repos/loca-spirit/cedar-design-web/dispatches -f event_type=design-system-release
+      - name: Dispatch Maple
+        if: inputs.maple
+        env:
+          GH_TOKEN: ${{ secrets.DESIGN_SYSTEM_RELEASE_TOKEN }}
+        run: gh api repos/loca-spirit/maple-design-mobile/dispatches -f event_type=design-system-release
