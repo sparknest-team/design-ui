@@ -1,5 +1,5 @@
 {
-  "name": "@loca/design-ui",
+  "name": "@ui-foundation/design-system",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,10 +7,18 @@
     "design-system-check": "./bin/spec-check.mjs"
   },
   "scripts": {
+    "check:api": "node bin/api-exports-audit.mjs ../cedar-design-web/packages/cedar-ui/src --check && node bin/api-exports-audit.mjs ../maple-design-mobile/packages/maple-ui/src --check",
+    "check:copies": "node bin/copied-components-check.mjs",
+    "check:demos": "node bin/same-source-demos-check.mjs",
     "check:cedar": "node bin/spec-check.mjs --config configs/cedar.json",
     "check:maple": "node bin/spec-check.mjs --config configs/maple.json",
-    "check:tokens": "node bin/token-diff.mjs && node bin/token-diff.mjs --component badge --strict",
-    "check": "pnpm check:cedar && pnpm check:maple && pnpm check:tokens"
+    "check:tokens": "node bin/token-diff.mjs && node bin/token-diff.mjs --component button --strict && node bin/token-diff.mjs --component alert --strict && node bin/token-diff.mjs --component tag --strict && node bin/token-diff.mjs --component badge --strict && node bin/token-diff.mjs --component input --strict && pnpm check:theme-contract",
+    "check:theme-contract": "pnpm --dir packages/theme-contract check",
+    "check": "pnpm check:cedar && pnpm check:maple && pnpm check:tokens && pnpm check:theme-contract && pnpm check:copies && pnpm check:demos && pnpm check:grid-exports && pnpm check:foundations",
+    "check:grid-exports": "node bin/grid-exports-check.mjs",
+    "check:foundations": "node bin/copied-foundations-check.mjs && node bin/trigger-references-check.mjs",
+    "check:foundation-runtime": "node bin/trigger-runtime-check.mjs",
+    "test:build-entries": "node --test packages/ui-build/test/module-entries.test.mjs"
   },
   "engines": {
     "node": ">=20"

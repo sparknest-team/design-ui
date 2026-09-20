@@ -1,0 +1,62 @@
+{
+  "environment": "Node/jsdom; 40 warmups; 9 alternating rounds × 100 mount/unmount cycles; mixed variants, icons and loading; ripple disabled in both",
+  "samplesMs": {
+    "cedar": [
+      44.23124999999982,
+      39.138082999999824,
+      46.665125000000444,
+      36.4760839999999,
+      34.052834000000075,
+      29.797083999999813,
+      32.4087499999996,
+      33.84633399999984,
+      31.52808400000049
+    ],
+    "maple": [
+      42.00433299999986,
+      44.56720800000039,
+      42.84954199999993,
+      34.24370799999997,
+      32.777124999999614,
+      30.951749999999265,
+      32.04074999999921,
+      35.63416699999925,
+      28.719457999999577
+    ]
+  },
+  "medianMs": {
+    "cedar": 34.052834000000075,
+    "maple": 34.24370799999997
+  },
+  "defaultElementCount": {
+    "cedar": 6,
+    "maple": 3
+  },
+  "date": "2026-09-08",
+  "winner": "maple",
+  "selection": "Both feature-complete candidates pass 25/25 tests. Median difference is 0.56%, treated as a tie; Maple uses 3 instead of 6 default DOM elements and reuses HoverOverlay.",
+  "baselineAgainstTargetContract": {
+    "cedar": {
+      "passed": 12,
+      "failed": 13
+    },
+    "maple": {
+      "passed": 13,
+      "failed": 12
+    }
+  },
+  "featureComplete": {
+    "cedar": {
+      "passed": 25,
+      "failed": 0
+    },
+    "maple": {
+      "passed": 25,
+      "failed": 0
+    }
+  },
+  "candidateSha256": {
+    "cedar": "1d57da5a9a4520f5dd2f68237f9449de5c39022509fd27a3e703c0ab804f2ca1",
+    "maple": "9bdddc93a6b0ebe79c2757aa0c8e52841a73e101fe131cf6fcacb44a40202676"
+  }
+}

@@ -6,6 +6,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import less from 'less'
 import { build } from 'vite'
+import { collectModuleEntries } from './module-entries.mjs'
 
 export function defineConfig(config) {
   return config
@@ -158,11 +159,30 @@ async function renderAggregatedLibraryCss(sourceRoot) {
   }
 
   const lines = []
+  const seen = new Set()
+  const collect = async (path) => {
+    if (seen.has(path) || !existsSync(path)) return
+    seen.add(path)
+    if (path.endsWith('.less')) {
+      lines.push(`@import "./${relative(sourceRoot, path).replaceAll('\\', '/')}";`)
+      return
+    }
+    const source = await readFile(path, 'utf8')
+    for (const match of source.matchAll(/import\s+['"]([^'"]+)['"]/g)) {
+      if (!match[1].startsWith('.')) continue
+      const target = resolve(dirname(path), match[1])
+      await collect(target.endsWith('.less') || target.endsWith('.ts') ? target : resolve(target, 'index.ts'))
+    }
+  }
   if (existsSync(foundationPath)) {
-    lines.push(`@import "./${foundation}";`)
+    await collect(foundationPath)
+  }
+  // Match on-demand dependency order in the full-library entry as well.
+  for (const entry of sourceFiles.filter(path => /\/style\/index\.ts$/.test(path.replaceAll('\\', '/'))).sort()) {
+    await collect(entry)
   }
   for (const rel of styleLess) {
-    lines.push(`@import "./${rel}";`)
+    await collect(resolve(sourceRoot, rel))
   }
 
   const { css } = await less.render(lines.join('\n'), {
@@ -215,9 +235,18 @@ async function compileStyles(config) {
   await Promise.all(styleEntries.map(async (entry) => {
     const styleDir = dirname(entry)
     const targetDir = relative(sourceRoot, styleDir)
-    const hasLess = files.has(resolve(styleDir, 'index.less')) || existsSync(resolve(styleDir, 'index.less'))
-    const esCode = hasLess ? "import './index.css'\n" : 'export {}\n'
-    const cjsCode = hasLess ? "require('./index.css')\n" : "'use strict'\n"
+    // Keep the source side-effect graph: shared CSS must remain separate modules.
+    const source = await readFile(entry, 'utf8')
+    const imports = [...new Set([...source.matchAll(/import\s+['"]([^'"]+)['"]/g)]
+      .map((match) => match[1].replace(/\.less$/, '.css')))]
+    const resolveImport = (specifier, extension) => {
+      if (specifier.startsWith('.') && existsSync(resolve(styleDir, specifier, 'index.ts'))) {
+        return `${specifier}/index.${extension}`
+      }
+      return specifier.replace(/\.ts$/, `.${extension}`)
+    }
+    const esCode = imports.length ? imports.map((s) => `import '${resolveImport(s, 'mjs')}'\n`).join('') : 'export {}\n'
+    const cjsCode = imports.length ? imports.map((s) => `require('${resolveImport(s, 'js')}')\n`).join('') : "'use strict'\n"
     await Promise.all([
       mkdir(resolve(root, 'es', targetDir), { recursive: true }),
       mkdir(resolve(root, 'lib', targetDir), { recursive: true }),
@@ -267,7 +296,7 @@ async function buildModules(config, format, outDir, extension) {
       minify: false,
       outDir,
       rollupOptions: {
-        input: resolve(root, config.entry),
+        input: await collectModuleEntries(root, config.sourceDir, config.entry),
         external: externalMatcher(config.external),
         preserveEntrySignatures: 'strict',
         output: {

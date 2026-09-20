@@ -30,15 +30,18 @@ function walk(path) {
   });
 }
 
-function collect(side) {
+function collect(side, component) {
   const tokens = new Map();
-  for (const path of walk(side.root)) {
+  const scanRoot = component ? join(side.root, component) : side.root;
+  const namespace = component === "field-decorator" ? "field" : component;
+  for (const path of walk(scanRoot)) {
     const source = readFileSync(path, "utf8");
     for (const match of source.matchAll(
       /^\s*(--[a-z][a-z0-9-]*)\s*:\s*([^;]+);/gm,
     )) {
       if (!match[1].startsWith(side.prefix)) continue;
       const logicalName = match[1].slice(side.prefix.length);
+      if (component && !logicalName.startsWith(`${namespace}-`)) continue;
       tokens.set(logicalName, {
         value: match[2].trim(),
         path: relative(side.root, path),
@@ -48,10 +51,11 @@ function collect(side) {
   return tokens;
 }
 
-const [cedar, maple] = sides.map(collect);
 const componentIndex = process.argv.indexOf("--component");
 const component = componentIndex >= 0 ? process.argv[componentIndex + 1] : undefined;
-const inScope = (token) => !component || token.startsWith(`${component}-`);
+const [cedar, maple] = sides.map((side) => collect(side, component));
+const namespace = component === "field-decorator" ? "field" : component;
+const inScope = (token) => !component || token.startsWith(`${namespace}-`);
 const cedarOnly = [...cedar.keys()]
   .filter((token) => inScope(token) && !maple.has(token))
   .sort();

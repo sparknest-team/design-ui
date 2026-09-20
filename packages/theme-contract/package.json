@@ -1,0 +1,24 @@
+{
+  "name": "@ui-foundation/theme-contract",
+  "version": "0.1.0",
+  "description": "Shared Cedar and Maple theme token contract",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./checker": "./src/checker.mjs",
+    "./contract": "./contracts/theme-contract.json",
+    "./legacy-denylist": "./contracts/legacy-denylist.json"
+  },
+  "bin": {
+    "ui-theme-contract": "./bin/theme-contract.mjs"
+  },
+  "scripts": {
+    "check": "node bin/theme-contract.mjs check",
+    "sync": "node bin/theme-contract.mjs sync"
+  },
+  "files": ["bin", "contracts", "schema", "src", "README.md"],
+  "engines": {
+    "node": ">=20"
+  }
+}

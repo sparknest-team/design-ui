@@ -1,0 +1,76 @@
+{
+  "date": "2026-09-09",
+  "scope": "Cedar NavMenu options-only breaking reconstruction; reference local Naive UI 2.44.1 menu design",
+  "api": {
+    "structure": "options/children only",
+    "selection": "modelValue/defaultValue",
+    "expansion": "expandedKeys/defaultExpandedKeys",
+    "modes": [
+      "vertical",
+      "horizontal"
+    ],
+    "content": [
+      "VNode",
+      "render function",
+      "label/icon/extra scoped slots"
+    ],
+    "removed": [
+      "NavMenuItem",
+      "NavMenuSubMenu",
+      "NavMenuItemGroup",
+      "legacy selectedKeys/openKeys aliases",
+      "pop/popButton modes"
+    ]
+  },
+  "unit": {
+    "full": {
+      "passed": 706,
+      "files": 146
+    },
+    "final_nav_menu": {
+      "passed": 19,
+      "files": 1
+    },
+    "note": "Final NavMenu suite follows the group-parent keyboard fix; these counts overlap and must not be added."
+  },
+  "browser": {
+    "passed": 7,
+    "total": 7,
+    "scenarios": [
+      "vertical keyboard",
+      "horizontal popup",
+      "overflow resize",
+      "overflow selection",
+      "resize focus",
+      "controlled rejection",
+      "collapsed labels"
+    ]
+  },
+  "resolver": {
+    "passed": 20
+  },
+  "validation": {
+    "ui_build_and_declarations": "passed",
+    "vue_tsc": "passed",
+    "public_type_contracts": "passed",
+    "es_cjs_ssr": "passed",
+    "legacy_consumers": "no old production imports/exports/template usages remain",
+    "foundation_pairs": 76,
+    "trigger_consumers": 23,
+    "inventory_groups": 16
+  },
+  "architecture": "Private recursive renderer and indexed option tree; local Trigger/Tooltip/useElementResize; no Naive UI or TreeMate runtime dependency",
+  "independentItem": {
+    "unitTests": 715,
+    "navMenuTests": 27,
+    "resolverTests": 20,
+    "browserTests": 10,
+    "build": "passed",
+    "publicTypes": "passed",
+    "ssr": [
+      "es",
+      "lib"
+    ],
+    "triggerConsumers": 24
+  }
+}

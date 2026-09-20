@@ -1,6 +1,6 @@
 # Cedar / Maple 统一构建方案
 
-统一采用 Maple 的“CLI + 项目配置文件”使用形态。把与品牌无关的构建内核放到 `design-ui` 的 `@loca/ui-build`；保留 `@maplejs/maple-cli` 作为 Maple 的产品层，并新增很薄的 `@cedarjs/cli` 产品层。Cedar 与 Maple 源码、图标和文档配置仍在各自仓库。
+统一采用 Maple 的“CLI + 项目配置文件”使用形态。把与品牌无关的构建内核放到 `design-ui` 的 `@ui-foundation/ui-build`；保留 `@maplejs/maple-cli` 作为 Maple 的产品层，并新增很薄的 `@cedarjs/cli` 产品层。Cedar 与 Maple 源码、图标和文档配置仍在各自仓库。
 
 ## Maple CLI 保留边界
 
@@ -13,7 +13,7 @@
 - Maple release/changelog/checklist 命令入口及 Maple 包清单、scope、registry 配置。
 - `client` 中依赖 Maple `StyleProvider`、Themes 和站点 config 的运行时代码。
 
-下沉到 `@loca/ui-build`：
+下沉到 `@ui-foundation/ui-build`：
 
 - compile modules/bundle/style/types/metadata。
 - Vite/Rollup/Vitest 的基础配置。

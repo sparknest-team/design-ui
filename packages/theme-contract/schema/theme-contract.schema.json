@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UI Foundation theme contract",
+  "type": "object",
+  "required": ["version", "prefixes", "rules", "components", "tokens", "platformExtensions"],
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "prefixes": {
+      "type": "object",
+      "required": ["cedar", "maple"],
+      "properties": {
+        "cedar": { "const": "c" },
+        "maple": { "const": "mp" }
+      },
+      "additionalProperties": false
+    },
+    "rules": { "type": "object" },
+    "components": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+      "uniqueItems": true
+    },
+    "tokens": {
+      "type": "object",
+      "required": ["system", "components"],
+      "properties": {
+        "system": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "components": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": { "type": "string" },
+            "uniqueItems": true
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "platformExtensions": {
+      "type": "object",
+      "required": ["cedar", "maple"],
+      "properties": {
+        "cedar": { "$ref": "#/$defs/componentNames" },
+        "maple": { "$ref": "#/$defs/componentNames" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "componentNames": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+      "uniqueItems": true
+    }
+  }
+}

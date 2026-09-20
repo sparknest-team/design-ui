@@ -8,6 +8,8 @@ importers:
 
   .: {}
 
+  packages/theme-contract: {}
+
   packages/ui-build:
     dependencies:
       '@vitejs/plugin-vue':
@@ -31,6 +33,12 @@ importers:
       vue-tsc:
         specifier: '>=2'
         version: 3.3.9(typescript@7.0.2)
+
+  packages/ui-doc-preview:
+    dependencies:
+      vue:
+        specifier: '>=3.2'
+        version: 3.5.41(typescript@7.0.2)
 
   packages/ui-icons:
     dependencies:

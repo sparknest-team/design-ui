@@ -1,0 +1,125 @@
+{
+  "scope": "Production Vue/TSX direct Trigger tags and MenuView Trigger descriptors; relative import graph is recorded separately in inventory.json. MenuView dynamic rendering is checked by copied-foundations and browser tests; other dynamic consumers are not inferred.",
+  "consumers": [
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/auto-complete/auto-complete.tsx",
+      "line": 238,
+      "tag": "Trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/cascader/Cascader.vue",
+      "line": 2,
+      "tag": "trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/color-picker/color-picker.tsx",
+      "line": 144,
+      "tag": "Trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/date/picker/DateRangePicker.vue",
+      "line": 2,
+      "tag": "Trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/date/picker/Picker.vue",
+      "line": 2,
+      "tag": "Trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/dropdown-menu/DropdownMenu.vue",
+      "line": 54,
+      "tag": "Trigger via MenuView"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/dropdown-menu/DropdownMenuBranch.vue",
+      "line": 53,
+      "tag": "Trigger via MenuView"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/mention/mention.tsx",
+      "line": 302,
+      "tag": "Trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/mention/mention.tsx",
+      "line": 321,
+      "tag": "Trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/nav-menu/item.tsx",
+      "line": 94,
+      "tag": "Trigger via h()"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/nav-menu/node.tsx",
+      "line": 80,
+      "tag": "Trigger via h()"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/popconfirm/Popconfirm.vue",
+      "line": 2,
+      "tag": "trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/popover/Popover.vue",
+      "line": 2,
+      "tag": "Trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/select/select.tsx",
+      "line": 591,
+      "tag": "Trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/table/table-th.tsx",
+      "line": 187,
+      "tag": "Trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/time/picker/TimePicker.vue",
+      "line": 2,
+      "tag": "Trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/tooltip/Tooltip.vue",
+      "line": 2,
+      "tag": "Trigger"
+    },
+    {
+      "path": "cedar-design-web/packages/cedar-ui/src/tree-select/TreeSelect.vue",
+      "line": 2,
+      "tag": "Trigger"
+    },
+    {
+      "path": "maple-design-mobile/packages/maple-ui/src/cascader/Cascader.vue",
+      "line": 9,
+      "tag": "mp-trigger"
+    },
+    {
+      "path": "maple-design-mobile/packages/maple-ui/src/dropdown-menu/DropdownMenu.vue",
+      "line": 99,
+      "tag": "Trigger via MenuView"
+    },
+    {
+      "path": "maple-design-mobile/packages/maple-ui/src/dropdown-menu/DropdownMenuBranch.vue",
+      "line": 79,
+      "tag": "Trigger via MenuView"
+    },
+    {
+      "path": "maple-design-mobile/packages/maple-ui/src/popover/Popover.vue",
+      "line": 2,
+      "tag": "Trigger"
+    },
+    {
+      "path": "maple-design-mobile/packages/maple-ui/src/select/Select.vue",
+      "line": 9,
+      "tag": "mp-trigger"
+    },
+    {
+      "path": "maple-design-mobile/packages/maple-ui/src/tooltip/Tooltip.vue",
+      "line": 2,
+      "tag": "Trigger"
+    }
+  ]
+}

@@ -23,3 +23,10 @@ pnpm check:maple
 - [Cedar 覆盖规则](platforms/cedar.md)
 - [Maple 覆盖规则](platforms/maple.md)
 - [发布架构](release/README.md)
+- [未同源组件实施路线（2026-09-20）](audits/same-source-roadmap-2026-09-20.md)
+
+## 基础层分阶段重构
+
+[Cedar / Maple 基础层重构计划](refactors/foundation-alignment/plan.md) · [进度与验证](refactors/foundation-alignment/progress.md) · [首批迁移说明](refactors/foundation-alignment/migration.md)
+
+`node bin/foundation-inventory.mjs` 更新基础文件摘要与静态直接引用清单，`--check` 检查漂移；`pnpm check:foundations` 检查两库独立基础源码一致性。

@@ -1,0 +1,84 @@
+{
+  "date": "2026-09-08",
+  "scope": "Current workspace foundation migration; independent runtime copies and documented platform adapters",
+  "unit": {
+    "cedar": {
+      "passed": 683,
+      "files": 145
+    },
+    "maple": {
+      "passed": 1420,
+      "files": 154
+    },
+    "final_delta_cedar": {
+      "passed": 64,
+      "files": 12
+    },
+    "final_delta_maple": {
+      "passed": 103,
+      "files": 15
+    },
+    "note": "Delta suites overlap full suites; counts must not be added."
+  },
+  "browser": {
+    "trigger": 54,
+    "menu": 10,
+    "bubbles": 14,
+    "modal": 12,
+    "viewport": 4,
+    "total_passed": 94
+  },
+  "gates": {
+    "foundation_pairs": 63,
+    "trigger_consumers": 23,
+    "inventory_groups": 16,
+    "component_copies": "passed",
+    "module_reexports": "passed"
+  },
+  "build": {
+    "use_packages": "passed",
+    "ui_packages": "passed",
+    "vue_tsc": "passed",
+    "public_type_contracts": "passed",
+    "esm_cjs_import_and_ssr": "passed"
+  },
+  "limitations": "Browser touch/visualViewport scenarios use synthetic events; not a physical mobile device certification. Platform engines and complex panels are adapters, not identical SFCs.",
+  "menu_full_source": {
+    "scope": "Menu root/option/group/submenu/panel SFCs, props/types/context/level/options/render/selection/keyboard; native presentation/default/Trigger adapters only",
+    "unit": {
+      "cedar_full": {
+        "passed": 690,
+        "files": 146
+      },
+      "maple_full": {
+        "passed": 1426,
+        "files": 155
+      },
+      "final_cedar_callers": {
+        "passed": 62,
+        "files": 12
+      },
+      "final_maple_callers": {
+        "passed": 121,
+        "files": 11
+      },
+      "note": "Caller suites overlap full suites. Maple caller rerun follows final cache-default/import changes; Cedar full suite rerun includes final changes."
+    },
+    "menu_browser": {
+      "passed": 14,
+      "total": 14
+    },
+    "foundation_pairs": 76,
+    "trigger_consumers": 23,
+    "inventory_groups": 16,
+    "ui_builds": "passed",
+    "public_types": "passed",
+    "esm_cjs_ssr": "passed",
+    "compatibility": "Independent runtime copies. Cedar cache/closeOnClickReference/click-submenu defaults and Maple cache/closeOnClickReference/hover-submenu defaults retained. Native popup SSR rendering policy retained.",
+    "bubbles_browser": {
+      "passed": 14,
+      "total": 14,
+      "includes": "original direct More SVG Tooltip"
+    }
+  }
+}
