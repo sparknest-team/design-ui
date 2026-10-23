@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-16",
+  "batch": "Cedar Scheduler current-time business-clock lifecycle",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/use-now.ts",
+    "cleanAtStart": true,
+    "beforeSha256": "d35710f71ca04da5b7b7209ef24bd99d0ab3b9a45e2d3d4ef0ab0714fe442a63",
+    "sha256": "00518559d26485f60d086f1fef7ae1441f3b3acf207be5db5ce458452ddcd4a9",
+    "classification": "business-clock",
+    "originalLine": 21,
+    "line": 34,
+    "cadenceMs": 30000
+  },
+  "parallelBoundary": "Resource-core/index/resource-dimensions and existing tests/README changes preserved. Unchanged use-now had no overlap. Previous family-wide Scheduler hold was too broad; remaining consumers need file/dependency review rather than blanket blocking.",
+  "tests": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__tests__/now-lifecycle.test.tsx",
+    "sha256": "ff698fa25edaf302df94d11ac1c97e01d8381b30d209edead5a844387a1e5d90",
+    "baseline": { "total": 7, "failed": 6, "passedControl": 1, "exitCode": 1 },
+    "baselineFailures": ["deactivation retained background interval", "inactive enabled changes restarted interval", "disposed old interval wrote state", "old interval restored disabled indicator", "old interval crossed activation", "old visibility binding replaced fresh clock"],
+    "baselineControl": "current thirty-second cadence",
+    "addedCases": ["reentrant disposal during visibility refresh", "original listener removal and fresh activation identity", "hidden-page old callback ignored"],
+    "targetedFinal": 10,
+    "initialRepairedRun": "7 lifecycle plus4 existing indicator/SSR:11 passed exit0 before supplemental cases",
+    "fullFinal": { "passed": 309, "files": 55, "exitCode": 0, "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/scheduler" },
+    "meaning": "Actual Vue/KeepAlive with controlled Date/interval/visibility callbacks in JSDOM. Repeated current interval ticks remain valid; old generation/binding delivery is rejected. Not six independent defects or native OS/SDK/cross-document acceptance.",
+    "cleanup": "Unmount owned wrappers, stop external watch probes, clear timers, restore spies and real clocks"
+  },
+  "repair": ["mounted/active/disposed guards", "interval generation invalidated before cancellation/replacement", "fresh visibility binding identity with original document cleanup", "activation refreshes current wall time without replaying missed ticks", "reentry checks after reactive write and eligibility reads"],
+  "verification": {
+    "cedarConfiguredTypes": "passed exit0",
+    "cedarAffectedLint": "passed exit0",
+    "sharedTests": "28 passed/1 failed: saved classification hash drift in parallel Ripple/VirtualList; not a passing chain despite later catalog command exit0",
+    "isolatedSchedulerClassification": "passed, business-clock1",
+    "mapleRootLint": "passed exit0",
+    "catalog": "3 generated pages match",
+    "allThreeDiffChecks": "passed",
+    "newRealBrowserOrOSCases": 0,
+    "cssAndMapleTypes": "not rerun; no CSS/Maple runtime change"
+  },
+  "progress": {
+    "classifiedFamilies": 28,
+    "totalFamilies": 33,
+    "classifiedPercent": 84.8,
+    "remainingFamilies": 5,
+    "remainingPercent": 15.2,
+    "classifiedFiles": 64,
+    "classifiedHints": 150,
+    "totalHints": 179,
+    "classifiedHintPercent": 83.8,
+    "pendingHints": 29,
+    "pendingHintPercent": 16.2,
+    "denominatorChange": 0,
+    "remaining": { "Date": 3, "Form": 4, "Scheduler": 10, "Time": 3, "Picker": 9 },
+    "meaning": "registered responsibility classification only, not current global hash-gate validity, whole-library/all-lifecycle/browser coverage; four previously registered source files require re-review"
+  },
+  "newClassificationGateBlockers": [
+    { "repo": "cedar-design-web", "file": "ripple/index.ts", "currentSha256": "ca5b40a73fc89eeb68e61df879e54180040e09bc4b7483541361617bcfa658a3" },
+    { "repo": "maple-design-mobile", "file": "ripple/index.ts", "currentSha256": "9462a7b264949cdf11baa565fbd813833bab69c85f2c6d7f043d2ac078927f0e" },
+    { "repo": "cedar-design-web", "file": "_components/virtual-list-v2/VirtualList.vue", "currentSha256": "09dd92432cfcfcdc66684e440c23bde0c115b09c7299801ff0e85620f33d5bff" },
+    { "repo": "maple-design-mobile", "file": "_components/virtual-list-v2/VirtualList.vue", "currentSha256": "bf650a0ba75fbf3c7ab38b3679b956cfad45fe53c159e5d8de863359597ec23a" }
+  ],
+  "preserved": ["Date/Form/linked Time/Picker parallel work", "Scheduler parallel resource core", "26 unrelated inventory drifts", "144native200%/Safari/Firefox blocked groups", "Map active SDK acceptance", "Button on-dark2.305:1 design exception"],
+  "next": "Check clean SchedulerDependencies measurement/RAF cancellation and original callback identity, preserving actual overlapping files. No new chats/subagents/commits/push/releases or browser/permission changes."
+}

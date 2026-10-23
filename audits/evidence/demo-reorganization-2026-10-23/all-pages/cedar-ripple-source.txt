@@ -1,0 +1,42 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import { Ripple } from "@cedarjs/ui";
+import "@cedarjs/ui/ripple/style";
+
+const vRipple = Ripple;
+const disabled = ref(false);
+</script>
+
+<template>
+  <c-space>
+    <c-button :ripple="false" v-ripple="{ disabled }" class="ripple-demo"
+      >Ripple</c-button
+    >
+    <c-button
+      :ripple="false"
+      v-ripple="{ disabled }"
+      class="ripple-demo ripple-demo--long"
+      >600ms 扩散／800ms 消退</c-button
+    >
+    <c-button @click="disabled = !disabled">{{
+      disabled ? "启用水波" : "禁用水波"
+    }}</c-button>
+  </c-space>
+</template>
+
+<style scoped>
+.ripple-demo--long {
+  --c-ripple-expand-duration: 600ms;
+  --c-ripple-fade-duration: 800ms;
+}
+.ripple-demo {
+  position: relative;
+  overflow: hidden;
+  padding: 8px 20px;
+  border: 1px solid var(--c-sys-color-border-default);
+  border-radius: var(--c-sys-radius-sm);
+  color: var(--c-sys-color-action-primary);
+  background: var(--c-sys-color-surface-overlay);
+  cursor: pointer;
+}
+</style>

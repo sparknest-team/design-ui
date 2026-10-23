@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-14",
+  "scope": "Icon name-transition lifecycle plus List delegated-scroll classification; independent Cedar/Maple source copies",
+  "newAcceptedBrowserCases": 0,
+  "newOsCases": 0,
+  "blockedNativeCases": 144,
+  "input": "Vitest/JSDOM fake timers, explicitly delivered stale callbacks, mocked owner-document MQL and iframe; not native browser/OS proof",
+  "icon": {
+    "sources": [
+      { "repo": "cedar-design-web", "file": "icon/Icon.vue", "beforeSha256": "ebd24e8d1baff80209f27327e75cd895ca95c563f1aea3a797db23d7926630bb", "afterSha256": "7d208d71657569c07de3fea87fb0d1ad14669d1ee3c13f5dfdc75e4d9ed49210", "testFile": "icon/__tests__/lifecycle.test.tsx", "fullTestsPassed": 20 },
+      { "repo": "maple-design-mobile", "file": "icon/Icon.vue", "beforeSha256": "f031bab8484f0670578beaffd39963ea08e4ef7b31c80ba9fb744ff9fc8bfb08", "afterSha256": "a2ee3b479e0ee6aa4bff1f4126703cea3d2b0010bb1105f14455a718a8d87003", "testFile": "icon/__tests__/lifecycle.spec.js", "fullTestsPassed": 21 }
+    ],
+    "perPlatformBaseline": { "tests": 9, "failed": 6, "controlsPassed": 3 },
+    "perPlatformFinal": { "tests": 9, "passed": 9 },
+    "cases": [
+      { "name": "superseded name callback", "baseline": "failed", "after": "passed" },
+      { "name": "consumed callback clears later animation", "baseline": "failed", "after": "passed" },
+      { "name": "inactive pending/new names and activation latest value", "baseline": "failed", "after": "passed" },
+      { "name": "inactive media cleanup and detached callback delivery", "baseline": "failed", "after": "passed" },
+      { "name": "transition change to zero while pending", "baseline": "failed", "after": "passed" },
+      { "name": "actual iframe owner preference", "baseline": "failed", "after": "passed" },
+      { "name": "normal caller120ms deadline,119ms remains old name", "baseline": "passed", "after": "passed" },
+      { "name": "live reduced preference skips current delay", "baseline": "passed", "after": "passed" },
+      { "name": "unmount releases current timer/media listener", "baseline": "passed", "after": "passed" }
+    ],
+    "fix": "Normalize public transition once for CSS/JS. Duration changes cancel/commit current name. Timer generations reject stale/consumed callbacks. Suspend timers/media listeners on deactivation; inactive names commit without animation and activation does not replay. Observe actual span owner preference and invalidate detached binding callbacks.",
+    "unchanged": ["public API and default0", "explicit named registry and slot precedence", "spin class", "CSS variables and theme values"],
+    "probeCorrection": "Cedar's existing reduced-motion test only patched runner window; actual document.defaultView differs. Both legacy probes now patch actual owner. Post-repair failures were probe mismatch, not extra product defects.",
+    "notCertified": ["actual OS preference settings/change", "real browser frames", "same DOM node adoption without reactivation", "custom animationClass implementation", "all Icon consumers"]
+  },
+  "list": {
+    "sources": [
+      { "repo": "cedar-design-web", "file": "list/list.vue", "sha256": "4273de2c0a69401a97cb5bd43108c01a2204485bdbb96b46e519650f94d4eb03", "existingTestsPassed": 26 },
+      { "repo": "maple-design-mobile", "file": "list/List.vue", "sha256": "84f7afdd0a646560c888ed1bc60d14a6a7aaa9e4428c7f7b50b3851a37a77039", "existingTestsPassed": 19 }
+    ],
+    "classification": "One method declaration and one delegation to internal VirtualList scrollTo per platform, not local animation or native DOM scrolling. No List source/API changes; downstream RAF/preference/retained commands remain independent candidates."
+  },
+  "classification": { "newFiles": 4, "newHints": 8, "reviewedFiles": 28, "classifiedHints": 58, "unclassifiedHints": 123, "inventoryFiles": 192, "cssHints": 392, "runtimeHints": 181, "newResponsibilities": ["visual-completion", "delegated-scroll"] },
+  "validation": {
+    "cedarConfiguredTypecheck": "passed: pnpm typecheck uses tsconfig.declaration.json",
+    "mapleTypecheck": "passed",
+    "cedarAffectedLint": "passed",
+    "mapleFullLint": "passed",
+    "mapleDemoSfcChecked": 1008, "mapleDemoSfcFailures": 0,
+    "classificationInventoryMessageTests": 24,
+    "compiledMotionChain": "passed independently; not browser/OS acceptance",
+    "tokenCatalogTests": 3, "tokenCatalogPages": 3,
+    "savedBrowserEvidenceTests": 202, "savedBrowserEvidenceScope": "existing evidence consistency only, zero new browser acceptance",
+    "affectedTrackedWhitespace": "passed",
+    "globalMotionInventoryCheck": "blocked by preserved parallel CSS line drift, not refreshed",
+    "diagnosticNote": "First Cedar typecheck used broad tsconfig.json, reporting ambiguous root; rootDir retry also included unrelated demos/tests/tooling diagnostics. No config/source workaround applied; repository's configured declaration typecheck passed."
+  },
+  "parallelInventoryDrift": [
+    { "repo": "maple-design-mobile", "file": "date-range/style/date-range-picker.less", "savedCssLines": [50, 90], "observedCssLines": [61, 105] },
+    { "repo": "maple-design-mobile", "file": "time-range/style/time-range-picker.less", "savedCssLines": [37], "observedCssLines": [42] }
+  ],
+  "cleanup": "All mounted test owners disposed, fake timers restored, iframe nodes removed, owner MQL descriptors restored. No browser/tab/server started. No automation resumed, no commits/push/releases; Form/date/palette work preserved.",
+  "next": "Audit delegated VirtualList RAF and retained commands; native Icon/OS proof remains separate. Reconcile preserved date/time inventory only after parallel work stabilizes."
+}

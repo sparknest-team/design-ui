@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-22",
+  "browser": "IAB Chromium, real Cedar Form demo",
+  "verified": [
+    "dblclick ignores single click; focused field reveals edit icon and localized double-click hint; edit icon directly opens native Select",
+    "Select Escape closes native menu first, second Escape cancels outer editor",
+    "Select keyboard Enter selects without committing; next Enter saves",
+    "Cascader internal branch navigation does not save; ArrowRight and Enter select draft; Escape cancels outer draft after menu closes",
+    "Date Enter on calendar cell changes draft without publishing; Escape from native calendar cell closes only calendar and restores input focus",
+    "DateRange internal first-endpoint click keeps outer editor and model unchanged; first Escape closes calendar; second cancels",
+    "Time Enter selects hour into draft without publishing; next Enter saves after native panel closes",
+    "TimeRange Escape from hour option closes panel only; next Escape cancels outer editing",
+    "multiple Select retains newly selected tablet across first Escape; subsequent Enter commits all selected values"
+  ],
+  "checks": {
+    "cedar_regression": "407 tests in 36 files passed",
+    "native_panel_regressions": "11 tests passed",
+    "typecheck": "passed",
+    "affected_eslint": "passed",
+    "same_source": "selection-presentations 43, selection-field 23, input 18 source pairs passed",
+    "demo_sfc": "passed"
+  },
+  "evidence": [
+    "cedar-hover-edit.png"
+  ]
+}

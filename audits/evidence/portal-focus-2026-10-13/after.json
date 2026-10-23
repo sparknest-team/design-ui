@@ -1,0 +1,273 @@
+{
+  "date": "2026-10-13",
+  "browser": "Codex In-app Browser (Chromium)",
+  "theme": "default/dark",
+  "content": "long",
+  "settleMs": 400,
+  "nativeZoomVerified": false,
+  "scope": "Same-document relocation focus follow-up; not the 48-case cross-browser matrix",
+  "cases": [
+    {
+      "platform": "Cedar Drawer",
+      "step": 0,
+      "mode": "host",
+      "activeElement": "DIV",
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "color": "rgba(255, 255, 255, 0.9)",
+      "focusInside": true,
+      "owner": "c-host",
+      "rect": {
+        "height": 640,
+        "left": 0,
+        "top": 0,
+        "width": 305
+      },
+      "rootOverflow": "",
+      "viewport": {
+        "height": 640,
+        "width": 320
+      },
+      "screenshot": "cedar-after-0-host.jpg"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "step": 1,
+      "mode": "inline",
+      "activeElement": "DIV",
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "color": "rgba(255, 255, 255, 0.9)",
+      "focusInside": true,
+      "owner": "c-caller",
+      "rect": {
+        "height": 640,
+        "left": 0,
+        "top": 0,
+        "width": 320
+      },
+      "rootOverflow": "",
+      "viewport": {
+        "height": 640,
+        "width": 320
+      },
+      "screenshot": "cedar-after-1-inline.jpg"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "step": 2,
+      "mode": "body",
+      "activeElement": "DIV",
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "color": "rgb(0, 0, 0)",
+      "focusInside": true,
+      "owner": null,
+      "rect": {
+        "height": 640,
+        "left": 0,
+        "top": 0,
+        "width": 320
+      },
+      "rootOverflow": "",
+      "viewport": {
+        "height": 640,
+        "width": 320
+      },
+      "screenshot": "cedar-after-2-body.jpg"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "step": 3,
+      "mode": "host",
+      "activeElement": "DIV",
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "color": "rgba(255, 255, 255, 0.9)",
+      "focusInside": true,
+      "owner": "c-host",
+      "rect": {
+        "height": 640,
+        "left": 0,
+        "top": 0,
+        "width": 305
+      },
+      "rootOverflow": "",
+      "viewport": {
+        "height": 640,
+        "width": 320
+      },
+      "screenshot": "cedar-after-3-host.jpg"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "step": 4,
+      "mode": "body",
+      "activeElement": "DIV",
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "color": "rgb(0, 0, 0)",
+      "focusInside": true,
+      "owner": null,
+      "rect": {
+        "height": 640,
+        "left": 0,
+        "top": 0,
+        "width": 320
+      },
+      "rootOverflow": "",
+      "viewport": {
+        "height": 640,
+        "width": 320
+      },
+      "screenshot": "cedar-after-4-body.jpg"
+    },
+    {
+      "platform": "Maple Popup",
+      "step": 0,
+      "mode": "host",
+      "activeElement": "DIV",
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "color": "rgb(248, 249, 252)",
+      "focusInside": true,
+      "owner": "mp-host",
+      "rect": {
+        "height": 538,
+        "left": 0,
+        "top": 51,
+        "width": 305
+      },
+      "rootOverflow": "",
+      "viewport": {
+        "height": 640,
+        "width": 320
+      },
+      "screenshot": "maple-after-0-host.jpg"
+    },
+    {
+      "platform": "Maple Popup",
+      "step": 1,
+      "mode": "inline",
+      "activeElement": "DIV",
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "color": "rgb(24, 34, 48)",
+      "focusInside": true,
+      "owner": "mp-caller",
+      "rect": {
+        "height": 378,
+        "left": 0,
+        "top": 131,
+        "width": 320
+      },
+      "rootOverflow": "",
+      "viewport": {
+        "height": 640,
+        "width": 320
+      },
+      "screenshot": "maple-after-1-inline.jpg"
+    },
+    {
+      "platform": "Maple Popup",
+      "step": 2,
+      "mode": "body",
+      "activeElement": "DIV",
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "color": "rgba(255, 255, 255, 0.9)",
+      "focusInside": true,
+      "owner": null,
+      "rect": {
+        "height": 343.09375,
+        "left": 0,
+        "top": 148.453125,
+        "width": 320
+      },
+      "rootOverflow": "",
+      "viewport": {
+        "height": 640,
+        "width": 320
+      },
+      "screenshot": "maple-after-2-body.jpg"
+    },
+    {
+      "platform": "Maple Popup",
+      "step": 3,
+      "mode": "host",
+      "activeElement": "DIV",
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "color": "rgb(248, 249, 252)",
+      "focusInside": true,
+      "owner": "mp-host",
+      "rect": {
+        "height": 538,
+        "left": 0,
+        "top": 51,
+        "width": 305
+      },
+      "rootOverflow": "",
+      "viewport": {
+        "height": 640,
+        "width": 320
+      },
+      "screenshot": "maple-after-3-host.jpg"
+    },
+    {
+      "platform": "Maple Popup",
+      "step": 4,
+      "mode": "body",
+      "activeElement": "DIV",
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "color": "rgba(255, 255, 255, 0.9)",
+      "focusInside": true,
+      "owner": null,
+      "rect": {
+        "height": 343.09375,
+        "left": 0,
+        "top": 148.453125,
+        "width": 320
+      },
+      "rootOverflow": "",
+      "viewport": {
+        "height": 640,
+        "width": 320
+      },
+      "screenshot": "maple-after-4-body.jpg"
+    }
+  ],
+  "keyboard": [
+    {
+      "platform": "Cedar Drawer",
+      "forward": {
+        "inside": true,
+        "label": "Close drawer"
+      },
+      "backward": {
+        "inside": true,
+        "text": "Cedar close themed modal"
+      },
+      "close": {
+        "bodyOverflow": "",
+        "restored": true
+      }
+    },
+    {
+      "platform": "Maple Popup",
+      "forward": {
+        "inside": true,
+        "label": "Maple portal mode inside"
+      },
+      "backward": {
+        "inside": true,
+        "text": "Maple close themed modal"
+      },
+      "close": {
+        "bodyOverflow": "",
+        "restored": true
+      }
+    }
+  ]
+}

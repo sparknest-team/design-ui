@@ -1,0 +1,18 @@
+{
+  "date":"2026-10-13",
+  "platform":"Cedar only",
+  "serviceBefore":{"tests":3,"failed":3,"passed":0},
+  "afterIdSetFixOnly":{"tests":3,"failed":1,"passed":2,"remainingFailure":"new same-ID item inherits old component timer and closes early"},
+  "afterCompleteFix":{"service":6,"componentLifecycle":9,"existingAccessibleClose":1,"componentSSR":1,"passed":17},
+  "repair":"clear releases IDs; new item gets an internal WeakMap-based key, while updates retain the same item identity",
+  "silentClearPreserved":true,
+  "reducedBefore":"Isolated compiled CSS failed c-notification transition=opacity transition, expected none",
+  "cssAfter":{"normalConsumers":20,"pairedOverrides":20,"reducedSelectors":44,"newPublicTokens":0,"normalDefaultsChanged":false},
+  "realBrowserPassesAdded":0,
+  "realOSPassesAdded":0,
+  "evidenceType":"jsdom service/component, fake timers, Node component SSR and actual Less compilation",
+  "inventory":{"files":192,"cssCandidates":389,"runtimeCandidates":179},
+  "verification":{"cedarTypecheck":"passed","affectedLint":"passed","specCheck":"95 components, zero errors/warnings","motionAggregate":"passed","tokenReference":"3 tests/3 generated pages passed"},
+  "sourceHashes":{"index.ts":"5339a975ed3e0cbc703b3a22487d80bae58a0b5bf0721f0b2bfbba6453e700e7","notification-list.tsx":"38a5f60df08f68eb672bd3f0da6bb0df1e7860e9fee4668fdf473ee1945aecd9","style/index.less":"f9d93cb6219523e55162ac77e360feb80097c3cf7c72a23729d92986addc8dff"},
+  "pending":["Notification native browser lifecycle and real OS preference","Message timer audit","144 native zoom/Safari/Firefox groups"]
+}

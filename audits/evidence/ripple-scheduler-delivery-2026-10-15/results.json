@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-15",
+  "batch": "Independent Ripple unified scheduler cancelled/consumed deliveries and reentrant disposal",
+  "sources": [
+    {
+      "repo": "cedar-design-web",
+      "file": "ripple/index.ts",
+      "cleanAtStart": true,
+      "beforeSha256": "5181e7ffe54f9983cd0bfa48102abb9296f6997ccf2cde4b5cf93c00efa4a5c6",
+      "afterSha256": "430c9db61a9bb918c525ccb29b2c0fa108e186fcb89ec726d9f564709b927740"
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "ripple/index.ts",
+      "cleanAtStart": true,
+      "beforeSha256": "fba121a7a94f3fb7142dc4b7346a6f55ae5045a9eba25790d2ccea37efbf42be",
+      "afterSha256": "a30f2e88ddece37c91a2fd55cf99fdae7c8b94e1575e651121e5f8f916679346"
+    }
+  ],
+  "baseline": {
+    "perPlatform": { "tests": 8, "failed": 6, "passedControls": 2 },
+    "sequence": "Initial7case baseline5fail/2controls, then add style-disposal case and rerun unchanged sources:8cases6fail/2controls on both platforms.",
+    "failures": [
+      "cancelled creation executes while disabled",
+      "cancelled creation on reused/re-enabled state clears new tasker and creates wave",
+      "creation callback duplicate creates two waves",
+      "activation callback duplicate reads styles twice",
+      "geometry getter disposal leaves wave on detached host",
+      "initial wave style lookup disposal misses unregistered newly appended wave"
+    ],
+    "controls": ["ordinary current creation/activation", "ordinary unmount rejects old pending creation"]
+  },
+  "repair": {
+    "dispatch": "original state identity plus pending Set.delete eligibility; consumed/cancelled delivery returns before task body",
+    "cleanup": "disabled/unmount clear membership, preventing stale creation/fade from reused state; original public command/timing policies unchanged",
+    "reentry": "creation checks current instance after geometry/host styling; wave registered before style lookup and identity rechecked; activation style read rechecked before subsequent writes",
+    "category": "task-dispatch: shared timer entry owns eligibility, while callers separately own creation30ms, activation20ms,250ms policy floors and computed visual completion",
+    "unchanged": "CSS Token/API/defaults, original window timer owner, document-listener ownership, no claimed KeepAlive deactivation or adoption fix"
+  },
+  "final": {
+    "perPlatformTargeted": 11,
+    "cedarTotal": 28,
+    "cedarFiles": 4,
+    "mapleTotal": 33,
+    "mapleFiles": 3,
+    "result": "all passed exit0; Cedar CHOKIDAR_USEPOLLING=true; Maple final full rerun after formatting",
+    "additionalCases": ["cancelled fade after re-enable", "fade duplicate schedules removal once", "activation style disposal does not write opacity after cleanup"],
+    "probeBoundary": "Baseline8 cases manually captured30/20ms timer deliveries with ordinary performance clock. Final extension adds controlled performance.now and captures250ms for fade. Added extension passes are not mixed into original before-repair failure count.",
+    "lintCorrection": "Initial Maple root lint failed22 test-format rules, not product behavior. Scoped eslint--fix formatting, final full Maple lint and full33 tests pass; no rules disabled."
+  },
+  "verification": {
+    "configuredTypes": "Cedar and Maple passed",
+    "affectedCedarLint": "passed, final test additions included",
+    "mapleRootLint": "passed after formatting",
+    "bothCheckRipple": "passed independent directive/visual-rule parity and actual basic Less compilation; not full motion-theme matrix",
+    "classification": "138classified/44pending; task-dispatch2",
+    "sharedTests": "29 passed, including new category acceptance without granting native acceptance",
+    "catalog": "3 generated pages match",
+    "layer": "actual directive/VTU with controlled timer callback delivery, simulated performance in extension and JSDOM geometry/style/focus; not native browser/OS",
+    "newRealBrowserOrOSCases": 0,
+    "historicalIab": "six2026-10-13 groups preserved separately, not rerun or counted again"
+  },
+  "progress": {
+    "families": 33,
+    "closedBefore": 21,
+    "closed": 22,
+    "closedPercent": 66.7,
+    "remaining": 11,
+    "remainingPercent": 33.3,
+    "classifiedFiles": 57,
+    "classifiedHints": 138,
+    "totalHints": 182,
+    "classifiedHintPercent": 75.8,
+    "pendingHints": 44,
+    "pendingHintPercent": 24.2,
+    "denominatorChange": 0,
+    "remainingFamilies": ["Date", "Form", "Map", "Scheduler", "Time", "Tree", "Counter", "LoadingBar", "Picker", "PullRefresh", "SwipeCell"],
+    "meaning": "candidate-family classification, not all lifecycle/whole-library/native acceptance"
+  },
+  "inventory": "two hints remain line65, no inventory refresh;193files/392CSS/182runtime unchanged. Other26 unrelated parallel CSS/date drifts preserved; no global motion-themes success claim.",
+  "preserved": ["Form/date/linked Time", "other parallel styles and Picker", "144 native200%/Safari/Firefox blocked cases", "Button white on-dark2.305:1 design exception"],
+  "pending": ["Maple LoadingBar unified scheduler cancelled/consumed delivery", "Ripple KeepAlive deactivation", "same-node cross-document adoption", "native touch/OS/reduced-motion switch", "arbitrary mid-flight style changes"],
+  "constraints": "Independent source copies maintained; no new tasks/subagents/automation changes/browser/services/commits/push/releases."
+}

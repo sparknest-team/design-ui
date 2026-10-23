@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-22",
+  "page": "Cedar Form / field-components.vue (local browser preview)",
+  "components": [
+    "AutoComplete",
+    "TreeSelect",
+    "PeopleSelect"
+  ],
+  "browser": {
+    "remote_candidates": "After replacement Enter selects latest candidates; failed validation keeps draft without writing model",
+    "lazy_tree": "New children immediately keyboard-accessible during expansion animation; Beijing rejected draft preserved",
+    "pending_confirmation": "AutoComplete, PeopleSelect and TreeSelect lock editing; reset closes editor and native panel, aborts commit",
+    "reset_search_and_load": "Late search/lazy-load responses cannot reopen panel or overwrite reset model"
+  },
+  "automated": {
+    "tests": "387 passed in 33 files, including 9 async ownership regressions",
+    "typecheck": "passed",
+    "targeted_eslint": "passed",
+    "same_source": [
+      "auto-complete passed",
+      "selection-presentations 43 source pairs passed",
+      "selection-field 23 source pairs passed"
+    ],
+    "demo_sfc": "1414 checked; 0 failures"
+  },
+  "screenshots": [
+    "people-rejected-draft.png",
+    "lazy-tree-rejected-draft.png"
+  ]
+}

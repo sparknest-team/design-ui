@@ -1,0 +1,494 @@
+{
+  "date": "2026-10-13",
+  "scope": "real IAB components/native timers/RAF/public callbacks and DOM; default/light parent document only",
+  "input": "native fixture-entry clicks; scripted pointerdown/pointercancel; public Countdown methods",
+  "newAcceptedCases": 4,
+  "newOsCases": 0,
+  "blockedNativeCases": 144,
+  "fixture": {
+    "file": "refactors/token-validation/browser/business-lifecycle-main.js",
+    "sha256": "d81ffb9bae94377c6ba346e2c73fd267c1facb335a17e42b47bc960b2dd7e0e8",
+    "frozen": true
+  },
+  "probeCorrection": "Initial KeepAlive directly cached Clock while parent skipped inactive vnode; new time was delivered only on activation. This was fixture coverage failure, not a new product defect. Stable cached containers keep render effects alive; frozen server restarted/tab reloaded/all4 rerun. Preliminary2 passes are not counted again.",
+  "data": "Samples/event excerpts rounded to0.1ms from relative performance.now; countdown eventSummary retains first/last/count, not full frame trace.",
+  "cases": [
+    {
+      "name": "Cedar",
+      "kind": "number",
+      "passed": true,
+      "finalNodes": 0,
+      "samples": [
+        {
+          "phase": "mounted",
+          "time": 3.8,
+          "nodes": 1,
+          "value": 0,
+          "updates": 0,
+          "ends": 0
+        },
+        {
+          "phase": "immediate-step",
+          "time": 5.5,
+          "nodes": 1,
+          "value": 1,
+          "updates": 1,
+          "ends": 0
+        },
+        {
+          "phase": "before-first-repeat",
+          "time": 707,
+          "nodes": 1,
+          "value": 1,
+          "updates": 1,
+          "ends": 0
+        },
+        {
+          "phase": "first-repeat",
+          "time": 889.6,
+          "nodes": 1,
+          "value": 2,
+          "updates": 2,
+          "ends": 0
+        },
+        {
+          "phase": "second-repeat",
+          "time": 1050.3,
+          "nodes": 1,
+          "value": 3,
+          "updates": 3,
+          "ends": 0
+        },
+        {
+          "phase": "cancelled",
+          "time": 1050.5,
+          "nodes": 1,
+          "value": 3,
+          "updates": 3,
+          "ends": 0
+        },
+        {
+          "phase": "after-cancel",
+          "time": 1271,
+          "nodes": 1,
+          "value": 3,
+          "updates": 3,
+          "ends": 0
+        },
+        {
+          "phase": "replacement-hold",
+          "time": 1272.6,
+          "nodes": 1,
+          "value": 4,
+          "updates": 4,
+          "ends": 0
+        },
+        {
+          "phase": "unmounted-pending",
+          "time": 1376.5,
+          "nodes": 0,
+          "value": 4,
+          "updates": 4,
+          "ends": 0
+        },
+        {
+          "phase": "after-unmounted-deadline",
+          "time": 2228.8,
+          "nodes": 0,
+          "value": 4,
+          "updates": 4,
+          "ends": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "update:modelValue",
+          "time": 4.7,
+          "value": 1
+        },
+        {
+          "event": "update:modelValue",
+          "time": 807.8,
+          "value": 2
+        },
+        {
+          "event": "update:modelValue",
+          "time": 960.6,
+          "value": 3
+        },
+        {
+          "event": "update:modelValue",
+          "time": 1271.3,
+          "value": 4
+        }
+      ]
+    },
+    {
+      "name": "Maple",
+      "kind": "number",
+      "passed": true,
+      "finalNodes": 0,
+      "samples": [
+        {
+          "phase": "mounted",
+          "time": 2.2,
+          "nodes": 1,
+          "value": 0,
+          "updates": 0,
+          "ends": 0
+        },
+        {
+          "phase": "immediate-step",
+          "time": 3.1,
+          "nodes": 1,
+          "value": 1,
+          "updates": 1,
+          "ends": 0
+        },
+        {
+          "phase": "before-first-repeat",
+          "time": 704.5,
+          "nodes": 1,
+          "value": 1,
+          "updates": 1,
+          "ends": 0
+        },
+        {
+          "phase": "first-repeat",
+          "time": 887.3,
+          "nodes": 1,
+          "value": 2,
+          "updates": 2,
+          "ends": 0
+        },
+        {
+          "phase": "second-repeat",
+          "time": 1049.9,
+          "nodes": 1,
+          "value": 3,
+          "updates": 3,
+          "ends": 0
+        },
+        {
+          "phase": "cancelled",
+          "time": 1050,
+          "nodes": 1,
+          "value": 3,
+          "updates": 3,
+          "ends": 0
+        },
+        {
+          "phase": "after-cancel",
+          "time": 1272.9,
+          "nodes": 1,
+          "value": 3,
+          "updates": 3,
+          "ends": 0
+        },
+        {
+          "phase": "replacement-hold",
+          "time": 1275.3,
+          "nodes": 1,
+          "value": 4,
+          "updates": 4,
+          "ends": 0
+        },
+        {
+          "phase": "unmounted-pending",
+          "time": 1381.2,
+          "nodes": 0,
+          "value": 4,
+          "updates": 4,
+          "ends": 0
+        },
+        {
+          "phase": "after-unmounted-deadline",
+          "time": 2233.4,
+          "nodes": 0,
+          "value": 4,
+          "updates": 4,
+          "ends": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "update:modelValue",
+          "time": 2.7,
+          "value": 1
+        },
+        {
+          "event": "update:modelValue",
+          "time": 805,
+          "value": 2
+        },
+        {
+          "event": "update:modelValue",
+          "time": 958.1,
+          "value": 3
+        },
+        {
+          "event": "update:modelValue",
+          "time": 1273.4,
+          "value": 4
+        }
+      ]
+    },
+    {
+      "name": "Cedar",
+      "kind": "countdown",
+      "passed": true,
+      "finalNodes": 0,
+      "samples": [
+        {
+          "phase": "mounted",
+          "time": 1.1,
+          "nodes": 1,
+          "changes": 2,
+          "remaining": 1600,
+          "ends": 0
+        },
+        {
+          "phase": "running",
+          "time": 183.2,
+          "nodes": 1,
+          "changes": 13,
+          "remaining": 1429,
+          "ends": 0
+        },
+        {
+          "phase": "paused",
+          "time": 183.3,
+          "nodes": 1,
+          "changes": 13,
+          "remaining": 1429,
+          "ends": 0
+        },
+        {
+          "phase": "paused-stable",
+          "time": 405.4,
+          "nodes": 1,
+          "changes": 13,
+          "remaining": 1429,
+          "ends": 0
+        },
+        {
+          "phase": "resumed",
+          "time": 588.5,
+          "nodes": 1,
+          "changes": 25,
+          "remaining": 1246,
+          "ends": 0
+        },
+        {
+          "phase": "deactivated",
+          "time": 588.8,
+          "nodes": 0,
+          "changes": 25,
+          "remaining": 1246,
+          "ends": 0
+        },
+        {
+          "phase": "inactive-stable",
+          "time": 791.1,
+          "nodes": 0,
+          "changes": 25,
+          "remaining": 1246,
+          "ends": 0
+        },
+        {
+          "phase": "inactive-reset",
+          "time": 792,
+          "nodes": 0,
+          "changes": 26,
+          "remaining": 900,
+          "ends": 0
+        },
+        {
+          "phase": "inactive-reset-stable",
+          "time": 974.6,
+          "nodes": 0,
+          "changes": 26,
+          "remaining": 900,
+          "ends": 0
+        },
+        {
+          "phase": "reactivated",
+          "time": 1176,
+          "nodes": 1,
+          "changes": 40,
+          "remaining": 703,
+          "ends": 0
+        },
+        {
+          "phase": "unmounted",
+          "time": 1177.2,
+          "nodes": 0,
+          "changes": 40,
+          "remaining": 703,
+          "ends": 0
+        },
+        {
+          "phase": "after-unmount",
+          "time": 1397.8,
+          "nodes": 0,
+          "changes": 40,
+          "remaining": 703,
+          "ends": 0
+        }
+      ],
+      "eventSummary": {
+        "count": 40,
+        "first": {
+          "event": "change",
+          "time": 1,
+          "value": 1600
+        },
+        "last": {
+          "event": "change",
+          "time": 1171.8,
+          "value": 703
+        }
+      }
+    },
+    {
+      "name": "Maple",
+      "kind": "countdown",
+      "passed": true,
+      "finalNodes": 0,
+      "samples": [
+        {
+          "phase": "mounted",
+          "time": 2,
+          "nodes": 1,
+          "changes": 2,
+          "remaining": 1599,
+          "ends": 0
+        },
+        {
+          "phase": "running",
+          "time": 184.4,
+          "nodes": 1,
+          "changes": 13,
+          "remaining": 1431,
+          "ends": 0
+        },
+        {
+          "phase": "paused",
+          "time": 184.4,
+          "nodes": 1,
+          "changes": 13,
+          "remaining": 1431,
+          "ends": 0
+        },
+        {
+          "phase": "paused-stable",
+          "time": 406.8,
+          "nodes": 1,
+          "changes": 13,
+          "remaining": 1431,
+          "ends": 0
+        },
+        {
+          "phase": "resumed",
+          "time": 587,
+          "nodes": 1,
+          "changes": 26,
+          "remaining": 1238,
+          "ends": 0
+        },
+        {
+          "phase": "deactivated",
+          "time": 587.6,
+          "nodes": 0,
+          "changes": 26,
+          "remaining": 1238,
+          "ends": 0
+        },
+        {
+          "phase": "inactive-stable",
+          "time": 788.3,
+          "nodes": 0,
+          "changes": 26,
+          "remaining": 1238,
+          "ends": 0
+        },
+        {
+          "phase": "inactive-reset",
+          "time": 788.8,
+          "nodes": 0,
+          "changes": 27,
+          "remaining": 900,
+          "ends": 0
+        },
+        {
+          "phase": "inactive-reset-stable",
+          "time": 970.2,
+          "nodes": 0,
+          "changes": 27,
+          "remaining": 900,
+          "ends": 0
+        },
+        {
+          "phase": "reactivated",
+          "time": 1175.5,
+          "nodes": 1,
+          "changes": 41,
+          "remaining": 700,
+          "ends": 0
+        },
+        {
+          "phase": "unmounted",
+          "time": 1176.9,
+          "nodes": 0,
+          "changes": 41,
+          "remaining": 700,
+          "ends": 0
+        },
+        {
+          "phase": "after-unmount",
+          "time": 1397.8,
+          "nodes": 0,
+          "changes": 41,
+          "remaining": 700,
+          "ends": 0
+        }
+      ],
+      "eventSummary": {
+        "count": 41,
+        "first": {
+          "event": "change",
+          "time": 1.8,
+          "value": 1600
+        },
+        "last": {
+          "event": "change",
+          "time": 1170.7,
+          "value": 700
+        }
+      }
+    }
+  ],
+  "consoleWarningsErrors": [],
+  "screenshot": {
+    "file": "native.jpg",
+    "bytes": 58457,
+    "sha256": "6045c2a64a9c11934669017915412c826b34d4bfd32d368503f850bcb62ef157",
+    "viewed": true
+  },
+  "validation": {
+    "gate": "19 new positive/negative checks; full browser-evidence167 tests and saved-data checks passed",
+    "catalog": "3 tests /3 generated pages passed",
+    "syntax": "fixture and both new gate scripts node --check passed",
+    "whitespace": "affected tracked shared/menu/component docs and package script git diff --check passed"
+  },
+  "cleanup": "own IAB tab8 closed; final frozen server stopped(exit130), initial corrected-fixture server also stopped; no viewport/system preference changes, no commit/push/release",
+  "productChanges": 0,
+  "notCertified": [
+    "trusted native long press",
+    "dequeued callback races",
+    "iframe/cross-window",
+    "other themes or viewport/zoom",
+    "OS reduced-motion",
+    "native200%/Safari/Firefox"
+  ]
+}

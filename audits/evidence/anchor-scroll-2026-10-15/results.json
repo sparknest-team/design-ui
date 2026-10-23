@@ -1,0 +1,501 @@
+{
+  "date": "2026-10-15",
+  "scope": "controlled-cedar-anchor-scroll-measurement-notification-and-link-registration",
+  "sources": [
+    {
+      "repo": "cedar-design-web",
+      "file": "anchor/Anchor.vue",
+      "cleanAtStart": true,
+      "beforeSha256": "37669eae6fea4f7b60631ce00f80b9c12d874fd5902d1c96272480f5ef98fdc3",
+      "afterSha256": "35a6a9ddf45f91e2b11bd83add6905f1f16ce2039fdf373f5eaa15abb8366d14",
+      "scannerHints": {
+        "before": [
+          80,
+          219
+        ],
+        "after": [
+          124,
+          184,
+          207
+        ]
+      }
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "anchor/utils.ts",
+      "cleanAtStart": true,
+      "beforeSha256": "25cd19494c8e496cc0a74c6582447c1a504182a366ab8005d32d629bcc26e39f",
+      "afterSha256": "7830664cc8e5b8d00bef25ca71facc6a02af90cfa1c70e304f7d4bbc9f207234",
+      "scannerHints": {
+        "before": [],
+        "after": [
+          16,
+          27
+        ]
+      }
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "anchor/AnchorLink.vue",
+      "cleanAtStart": true,
+      "beforeSha256": "e5a42b04326fd5a0dc691745b33c3f5698ee050ab3f77d90301f5a615ec2955d",
+      "afterSha256": "4a80f667b23611407890e34043b1abab70e97f0839faf28008194b439a40137c",
+      "scannerHints": {
+        "before": [],
+        "after": []
+      }
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "anchor/context.ts",
+      "cleanAtStart": true,
+      "beforeSha256": "928b4d2d881e8aa73c52e0e6fe3fd924e78f0ee295a5361c456dcb9d02e5da29",
+      "afterSha256": "40b1bc96b28cc2ed4e06563a921970d8c6d98b11dfa3dd55ea01345cbd76cd6d",
+      "scannerHints": {
+        "before": [],
+        "after": []
+      }
+    }
+  ],
+  "baseline": {
+    "total": 24,
+    "failed": 21,
+    "controls": 3,
+    "consumer": {
+      "tests": 15,
+      "failed": 13,
+      "controls": 2
+    },
+    "slide": {
+      "tests": 7,
+      "failed": 6,
+      "controls": 1
+    },
+    "linkRegistration": {
+      "tests": 2,
+      "failed": 2,
+      "controls": 0
+    },
+    "controlsDescription": "Current click/change, geometry-getter disposal notification boundary and300ms/quartOut progression passed before repair; not new defects.",
+    "probes": "Original global-RAF path was controlled during valid baseline. New owner-window paths initially bypassed test-global spies; bind document.defaultView spies as well, then rerun. Do not interpret missing old callbacks in that intermediate probe as product failure.",
+    "intermediateRepair": "An over-broad cancellation initially swallowed a same-hash pending change; reproduced in one added test, then separate scroll cancellation from valid change invalidation and rerun."
+  },
+  "cases": [
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "current link click selects and notifies after render",
+      "baseline": "control-passed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "replacement click cancels the previous tween",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "deactivation cancels tween and pending measurement frame",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "unmount cancels tween",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "retained inactive click is inert without preventing navigation",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "old change cannot notify while inactive",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "old change cannot cross activation",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "replacement change supersedes prior notification",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "change callback consumes once",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "same-hash replacement preserves the current pending change once",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "deactivation removes the original scroll listener",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "deactivation physically cancels its pending frame",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "old measurement cannot select after activation",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "old tween finish cannot unlock a newer scroll",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "container change removes listener and cancels previous tween",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "geometry getter disposal prevents starting a tween",
+      "baseline": "control-passed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "measurement getter reentry supersedes the old measurement",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-lifecycle.test.tsx",
+      "name": "old registration cleanup cannot erase a replacement node",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "slide-lifecycle.test.tsx",
+      "name": "slide preserves300ms and quartOut progression",
+      "baseline": "control-passed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "slide-lifecycle.test.tsx",
+      "name": "slide returns cancellation and cancels its pending frame",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "slide-lifecycle.test.tsx",
+      "name": "cancelled raw frame cannot write or schedule another frame",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "slide-lifecycle.test.tsx",
+      "name": "a consumed raw frame cannot fork the animation",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "slide-lifecycle.test.tsx",
+      "name": "cancellation does not jump to target or report completion",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "slide-lifecycle.test.tsx",
+      "name": "current owner reduced preference skips interpolation",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "slide-lifecycle.test.tsx",
+      "name": "scroll setter reentrant cancellation cannot enqueue more work",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "slide-lifecycle.test.tsx",
+      "name": "caller lifetime invalidation rejects a queued interpolation",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "slide-lifecycle.test.tsx",
+      "name": "current preference change finishes on the next frame without more interpolation",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "link-registration.test.tsx",
+      "name": "link disposal unregisters its measured DOM node",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "link-registration.test.tsx",
+      "name": "href replacement releases the old registration and registers the current node",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "file": "scroll-integration.test.tsx",
+      "name": "actual Anchor/Link/slide composition settles immediate reduced scroll then resumes measurement",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    }
+  ],
+  "responsibilities": {
+    "visualScroll": "Private300ms/quartOut policy retained. Replace uncancellable b-tween wrapper with owned original-window RAF and internal cancellation/caller-availability predicate; consume each frame once and recheck after scrolling.",
+    "reducedMotion": "Check current target-owner preference on initial entry/every frame. Immediate target when reduced; enabling during animation finishes next frame. Controlled preference mock, not OS setting.",
+    "measurement": "Owner-window RAF coalesces original container listener; binding/frame/operation generations reject old, duplicate and geometry-reentrant work.",
+    "notification": "Post-render nextTick change is state sequencing, not CSS duration; invalidate/consume delivery, preserving current same-hash pending notification.",
+    "cleanup": "Replace click/deactivate/dispose/container-or-boundary change cancels frame/task and removes original listeners. Cancel stops without jump/finish; activation binds/measures, no old animation resume.",
+    "registration": "AnchorLink watch cleanup removes original href/node on replacement/disposal. Parent identity check protects newer same-hash node. Unregistering current link invalidates work and remeasures.",
+    "unchanged": "Public Props/Events, CSS variables/colors and default scroll duration/easing unchanged. Shared throttleByRaf, other b-tween consumers and package dependency untouched. Maple has no Anchor runtime."
+  },
+  "verification": {
+    "anchorTests": 31,
+    "consumerTests": 18,
+    "slideTests": 9,
+    "registrationTests": 2,
+    "actualCompositionTests": 1,
+    "existingContractTests": 1,
+    "withAffixBackTopTests": 64,
+    "files": 11,
+    "processExit": 0,
+    "cedarConfiguredTypecheck": "passed tsconfig.declaration.json",
+    "cedarAffectedLint": "passed source/context/tests/demo",
+    "mapleRootLint": "passed",
+    "demoScriptTemplateCompiled": 1,
+    "classificationInventoryMessageCatalogTests": 28,
+    "tokenCatalogPages": 3,
+    "newNativeBrowserCases": 0,
+    "newOSCases": 0,
+    "compositionBoundary": "Actual Anchor/AnchorLink/private slide under JSDOM. Mock compute-scroll geometry, owner RAF and reduced media; test immediate scroll releases consumer gating and subsequent viewport measurement still selects. Not real native layout/OS/paint."
+  },
+  "coverage": {
+    "scope": "Runtime candidate classification; merge same-name public top-level source directories, exclude underscore infrastructure and utils. Not all-library acceptance or count of defects.",
+    "before": {
+      "families": 33,
+      "closed": 17,
+      "pending": 16,
+      "classifiedHints": 127,
+      "totalHints": 179,
+      "pendingHints": 52,
+      "classifiedFiles": 49
+    },
+    "after": {
+      "families": 33,
+      "closed": 18,
+      "pending": 15,
+      "closedPercent": 54.5,
+      "pendingPercent": 45.5,
+      "classifiedHints": 132,
+      "totalHints": 182,
+      "classifiedHintsPercent": 72.5,
+      "pendingHints": 50,
+      "pendingHintsPercent": 27.5,
+      "classifiedFiles": 51
+    },
+    "denominatorChange": "Close the two original pending Anchor hints; new owned measurement RAF and slide RAF/preference expose3 new implementation hints, all classified. Do not claim5 old hints were closed or new code is extra defects.",
+    "pendingFamilies": [
+      "date",
+      "form",
+      "map",
+      "message",
+      "nav-menu",
+      "notification",
+      "ripple",
+      "scheduler",
+      "time",
+      "tree",
+      "counter",
+      "loading-bar",
+      "picker",
+      "pull-refresh",
+      "swipe-cell"
+    ],
+    "partiallyClassified": [
+      "nav-menu"
+    ],
+    "perFamily": {
+      "anchor": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "back-top": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "card": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "carousel": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "countdown": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "date": {
+        "files": 3,
+        "pendingFiles": 3
+      },
+      "field-decorator": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "form": {
+        "files": 2,
+        "pendingFiles": 2
+      },
+      "icon": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "image": {
+        "files": 4,
+        "pendingFiles": 0
+      },
+      "infinite-scroll": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "input-number": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "layout": {
+        "files": 1,
+        "pendingFiles": 0
+      },
+      "list": {
+        "files": 4,
+        "pendingFiles": 0
+      },
+      "map": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "mention": {
+        "files": 1,
+        "pendingFiles": 0
+      },
+      "message": {
+        "files": 2,
+        "pendingFiles": 2
+      },
+      "nav-menu": {
+        "files": 2,
+        "pendingFiles": 1
+      },
+      "notification": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "ripple": {
+        "files": 2,
+        "pendingFiles": 2
+      },
+      "scheduler": {
+        "files": 6,
+        "pendingFiles": 6
+      },
+      "scrollbar": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "select": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "time": {
+        "files": 2,
+        "pendingFiles": 2
+      },
+      "tree": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "trigger": {
+        "files": 4,
+        "pendingFiles": 0
+      },
+      "typography": {
+        "files": 1,
+        "pendingFiles": 0
+      },
+      "counter": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "index-bar": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "loading-bar": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "picker": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "pull-refresh": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "swipe-cell": {
+        "files": 1,
+        "pendingFiles": 1
+      }
+    },
+    "savedInventory": {
+      "files": 193,
+      "css": 392,
+      "runtime": 182
+    },
+    "liveInventory": {
+      "cedar": {
+        "files": 103,
+        "css": 202,
+        "runtime": 98
+      },
+      "maple": {
+        "files": 92,
+        "css": 214,
+        "runtime": 84
+      }
+    },
+    "unrefreshedOtherCssDateDriftFiles": 26,
+    "refreshScope": "Only reviewed Anchor runtime rows/new private helper candidate and hashes. Other26 CSS/date drifts preserved.",
+    "standingReportingRule": "Every batch reports closed/total, pending family count/percent and hint counts with denominator changes; distinguish classification from browser/OS acceptance."
+  },
+  "boundaries": [
+    "Controlled RAF/clock/geometry and current preference mocks do not certify actual fonts/layout/scroll painting or OS setting.",
+    "No trusted mouse/keyboard, cross-document adoption or native browser acceptance added. Old nextTick is logically invalidated, not physically removed.",
+    "The internal slide cancel handle is not a new public component API. The package b-tween remains for other consumers.",
+    "Form/date/linkedTime/parallel styles and144 native200%/Safari/Firefox environment blocks preserved; no unchanged environment probes repeated.",
+    "No browser/server/automation/subagent/commit/push/release started."
+  ]
+}

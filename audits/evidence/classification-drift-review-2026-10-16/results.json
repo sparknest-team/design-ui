@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-16",
+  "startedUtc": "03:52:13",
+  "scope": "Read-only parallel-drift review and bounded Scheduler test-mode diagnostic; no product repair or classification refresh",
+  "registeredHashScan": {
+    "files": 69,
+    "stale": [
+      { "repo": "cedar-design-web", "file": "ripple/index.ts", "current": "ca5b40a73fc89eeb68e61df879e54180040e09bc4b7483541361617bcfa658a3" },
+      { "repo": "maple-design-mobile", "file": "ripple/index.ts", "current": "9462a7b264949cdf11baa565fbd813833bab69c85f2c6d7f043d2ac078927f0e" },
+      { "repo": "cedar-design-web", "file": "_components/virtual-list-v2/VirtualList.vue", "current": "09dd92432cfcfcdc66684e440c23bde0c115b09c7299801ff0e85620f33d5bff" },
+      { "repo": "maple-design-mobile", "file": "_components/virtual-list-v2/VirtualList.vue", "current": "bf650a0ba75fbf3c7ab38b3679b956cfad45fe53c159e5d8de863359597ec23a" }
+    ],
+    "changedSincePriorBatch": false,
+    "classificationUpdated": false
+  },
+  "readOnlyReview": {
+    "diffBase": "Git HEAD, not a recovered byte-for-byte audited snapshot",
+    "rippleScope": "Mouse input,800ms touch compatibility suppression,document mouseup and view blur listeners coexist with prior timer ownership repair",
+    "virtualListScope": "Rendered-row bounds,commandedScroll correction,reactive sizeMap and row index attributes coexist with prior scroll-request lifecycle guards",
+    "parallelTests": "Two platforms each have three mouse and two measurement test definitions; read only, not run or newly certified here",
+    "testHashes": {
+      "cedarMouse": "6252e74e1820af1390fa66f8407964d00f6c5b74f5899d378d2f360af81d7a72",
+      "mapleMouse": "4fcc54102ce4a406e7d0523cd31dffa48701e9502ea63c31a8837206ec8c78d4",
+      "cedarMeasurement": "77bf7f936ab5b71e5ec962e6d37066f9eadabe881b81daff4f67354f6041f9d9",
+      "mapleMeasurement": "6195468138d317f1ee8e8759fa4f4b1f87ce3a475917510311ff6bf309c3cc13"
+    },
+    "acceptance": "Pending review/revalidation of current parallel behavior; source reading is not proof of defects or passing lifecycle/native acceptance"
+  },
+  "schedulerDiagnostic": {
+    "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/scheduler/__tests__/event-drag-lifecycle.test.tsx src/scheduler/__tests__/workbench-model.test.tsx --threads false",
+    "passed": 23,
+    "files": 2,
+    "exitCode": 0,
+    "durationSeconds": 2.86,
+    "actualOrder": ["workbench-model9", "event-drag-lifecycle14"],
+    "closeWarning": false,
+    "observedFailureConsumptionPoint": "scheduler/__demos__/workbench-model.ts:506 prepare Promise uses setTimeout; cause of prior nonfunction timer remains undetermined",
+    "hashes": {
+      "eventDragTest": "500374c7072201a0dd733129fdf8765acb303e62cbb257c78fcd013eb48286b0",
+      "workbenchTest": "f4ceee0bbab2c8772da7c8fcfac8cd794189217198557277e1291e37d95b61e1",
+      "workbenchModel": "83403b77a44ecdcb5c705b992836e95af8c365333be363a7ceb5016cf085c31d"
+    },
+    "limitations": ["Does not test workbench after event-drag cleanup", "Does not rule out ordering pollution or load", "Does not supersede previous normal370/371 timeout or serial365/371 failures", "No timeout increase,full-suite repetition or test/product mutation"]
+  },
+  "registration": {
+    "closedFamilies": 29, "totalFamilies": 33, "closedPercent": 87.9,
+    "remainingFamilies": 4, "remainingPercent": 12.1,
+    "remainingByFamily": { "Date": 3, "Form": 4, "Time": 3, "Picker": 9 },
+    "sourceFiles": 69, "classifiedHints": 159, "totalHints": 178,
+    "classifiedPercent": 89.3, "remainingHints": 19, "remainingHintsPercent": 10.7, "denominatorChange": 0,
+    "meaning": "Runtime-candidate classification only, not whole-library/full-suite/native/current-hash acceptance"
+  },
+  "newNativeBrowserOrOsCases": 0,
+  "preserved": ["Four parallel source hashes", "Date/Form/Time/Picker development", "26 CSS/date inventory drifts", "Map formal SDK contract", "144 native environment groups", "Button white2.305:1 design exception,not AA"],
+  "documentationOnly": "No API/Token/default/component-protocol changes; no new release Changeset/OpenSpec/demo required"
+}

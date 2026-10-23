@@ -1,0 +1,487 @@
+{
+  "date": "2026-10-13",
+  "browser": "Codex IAB",
+  "theme": "default/light",
+  "accepted": 8,
+  "osPreferencePassesAdded": 0,
+  "toleranceMs": 2,
+  "scope": "Native fixture buttons invoke actual independent service/CSS. Canonical DOM phase and public callback excerpts; not a raw duplicate-class mutation dump or browser-frame certification.",
+  "consoleErrorsWarnings": [],
+  "screenshot": {
+    "file": "native.jpg",
+    "sha256": "61e57728de17d0a57b4e47725df0cf4d86621c80740a0d18b4e44474abea9ed2"
+  },
+  "cases": [
+    {
+      "id": "cedar-default",
+      "platform": "cedar",
+      "mode": "default",
+      "duration": "0.1s",
+      "easing": "cubic-bezier(0, 0, 1, 1)",
+      "delay": "0s",
+      "properties": "opacity",
+      "entries": [
+        {
+          "identity": 1,
+          "created": 8701,
+          "leave": 9504,
+          "leaveTo": 9506.6,
+          "removed": 9611
+        }
+      ],
+      "commands": [
+        [
+          "add-first",
+          8695.7,
+          1200
+        ],
+        [
+          "close-first",
+          9498
+        ]
+      ],
+      "callbacks": [
+        [
+          "open",
+          8701
+        ],
+        [
+          "opened",
+          8826.6
+        ],
+        [
+          "close",
+          9500.8
+        ],
+        [
+          "closed",
+          9610.2
+        ]
+      ],
+      "finishedAt": 10699.2,
+      "complete": true,
+      "finalNodes": 0
+    },
+    {
+      "id": "cedar-long",
+      "platform": "cedar",
+      "mode": "long",
+      "duration": "0.6s",
+      "easing": "linear",
+      "delay": "0s",
+      "properties": "opacity",
+      "entries": [
+        {
+          "identity": 2,
+          "created": 26390.1,
+          "leave": 27193.1,
+          "leaveTo": 27200.7,
+          "removed": 27804.5
+        }
+      ],
+      "commands": [
+        [
+          "add-first",
+          26387.6,
+          1200
+        ],
+        [
+          "close-first",
+          27189
+        ]
+      ],
+      "callbacks": [
+        [
+          "open",
+          26389.9
+        ],
+        [
+          "opened",
+          27011.5
+        ],
+        [
+          "close",
+          27190.1
+        ],
+        [
+          "closed",
+          27804.3
+        ]
+      ],
+      "finishedAt": 28389.7,
+      "complete": true,
+      "finalNodes": 0
+    },
+    {
+      "id": "cedar-zero",
+      "platform": "cedar",
+      "mode": "zero",
+      "duration": "0s",
+      "easing": "cubic-bezier(0, 0, 1, 1)",
+      "delay": "0s",
+      "properties": "opacity",
+      "entries": [
+        {
+          "identity": 3,
+          "created": 38910.3,
+          "leave": 39719.6,
+          "leaveTo": null,
+          "removed": 39724.2
+        }
+      ],
+      "commands": [
+        [
+          "add-first",
+          38908.4,
+          1200
+        ],
+        [
+          "close-first",
+          39711.8
+        ]
+      ],
+      "callbacks": [
+        [
+          "open",
+          38910.2
+        ],
+        [
+          "opened",
+          38932
+        ],
+        [
+          "close",
+          39714.2
+        ],
+        [
+          "closed",
+          39724.1
+        ]
+      ],
+      "finishedAt": 40909.9,
+      "complete": true,
+      "finalNodes": 0
+    },
+    {
+      "id": "cedar-reopen",
+      "platform": "cedar",
+      "mode": "reopen",
+      "duration": "0.6s",
+      "easing": "linear",
+      "delay": "0s",
+      "properties": "opacity",
+      "entries": [
+        {
+          "identity": 4,
+          "created": 50481.4,
+          "leave": 51291.6,
+          "leaveTo": 51300.3,
+          "removed": 51387.5
+        },
+        {
+          "identity": 5,
+          "created": 51387.5,
+          "leave": 52590.9,
+          "leaveTo": 52608.2,
+          "removed": 53212.9
+        }
+      ],
+      "commands": [
+        [
+          "add-first",
+          50479.9,
+          1200
+        ],
+        [
+          "close-first",
+          51282.8
+        ],
+        [
+          "add-replacement",
+          51385.1,
+          1200
+        ]
+      ],
+      "callbacks": [
+        [
+          "open",
+          50481.3
+        ],
+        [
+          "opened",
+          51105.1
+        ],
+        [
+          "close",
+          51285.4
+        ],
+        [
+          "open",
+          51386.8
+        ],
+        [
+          "opened",
+          52020.9
+        ],
+        [
+          "close",
+          52590
+        ],
+        [
+          "closed",
+          53212.5
+        ]
+      ],
+      "finishedAt": 54082.3,
+      "complete": true,
+      "finalNodes": 0,
+      "sameRootNodeAfterReopen": false
+    },
+    {
+      "id": "maple-default",
+      "platform": "maple",
+      "mode": "default",
+      "duration": "0.15s, 0.15s",
+      "easing": "cubic-bezier(0.25, 0.8, 0.5, 1), cubic-bezier(0.25, 0.8, 0.5, 1)",
+      "delay": "0s, 0s",
+      "properties": "opacity, transform",
+      "entries": [
+        {
+          "identity": 6,
+          "created": 66848.2,
+          "leave": 67660.8,
+          "leaveTo": 67676.3,
+          "removed": 67830.1
+        }
+      ],
+      "commands": [
+        [
+          "add-first",
+          66843.5,
+          1200
+        ],
+        [
+          "close-first",
+          67646.5
+        ]
+      ],
+      "callbacks": [
+        [
+          "open",
+          66848.1
+        ],
+        [
+          "opened",
+          67026
+        ],
+        [
+          "close",
+          67651.6
+        ],
+        [
+          "closed",
+          67829.8
+        ]
+      ],
+      "finishedAt": 68846.6,
+      "complete": true,
+      "finalNodes": 0
+    },
+    {
+      "id": "maple-long",
+      "platform": "maple",
+      "mode": "long",
+      "duration": "0.6s, 0.6s",
+      "easing": "linear, linear",
+      "delay": "0s, 0s",
+      "properties": "opacity, transform",
+      "entries": [
+        {
+          "identity": 7,
+          "created": 88080.3,
+          "leave": 88891.5,
+          "leaveTo": 88907.9,
+          "removed": 89512.7
+        }
+      ],
+      "commands": [
+        [
+          "add-first",
+          88076,
+          1200
+        ],
+        [
+          "close-first",
+          88879
+        ]
+      ],
+      "callbacks": [
+        [
+          "open",
+          88080.2
+        ],
+        [
+          "opened",
+          88700.1
+        ],
+        [
+          "close",
+          88882
+        ],
+        [
+          "closed",
+          89512.3
+        ]
+      ],
+      "finishedAt": 90079.5,
+      "complete": true,
+      "finalNodes": 0
+    },
+    {
+      "id": "maple-zero",
+      "platform": "maple",
+      "mode": "zero",
+      "duration": "0s, 0s",
+      "easing": "cubic-bezier(0.25, 0.8, 0.5, 1), cubic-bezier(0.25, 0.8, 0.5, 1)",
+      "delay": "0s, 0s",
+      "properties": "opacity, transform",
+      "entries": [
+        {
+          "identity": 8,
+          "created": 106542.5,
+          "leave": 107359.4,
+          "leaveTo": null,
+          "removed": 107377.4
+        }
+      ],
+      "commands": [
+        [
+          "add-first",
+          106539.9,
+          1200
+        ],
+        [
+          "close-first",
+          107342.6
+        ]
+      ],
+      "callbacks": [
+        [
+          "open",
+          106542.4
+        ],
+        [
+          "opened",
+          106566.5
+        ],
+        [
+          "close",
+          107348.6
+        ],
+        [
+          "closed",
+          107377.2
+        ]
+      ],
+      "finishedAt": 108541.6,
+      "complete": true,
+      "finalNodes": 0
+    },
+    {
+      "id": "maple-reopen",
+      "platform": "maple",
+      "mode": "reopen",
+      "duration": "0.6s, 0.6s",
+      "easing": "linear, linear",
+      "delay": "0s, 0s",
+      "properties": "opacity, transform",
+      "entries": [
+        {
+          "identity": 9,
+          "created": 126856.1,
+          "leave": 127669.7,
+          "leaveTo": 127688.9,
+          "removed": 127759.5
+        },
+        {
+          "identity": 10,
+          "created": 127759.5,
+          "leave": 128961.1,
+          "leaveTo": 128976.4,
+          "removed": 129589
+        }
+      ],
+      "commands": [
+        [
+          "add-first",
+          126850.8,
+          1200
+        ],
+        [
+          "close-first",
+          127654.8
+        ],
+        [
+          "add-replacement",
+          127757,
+          1200
+        ]
+      ],
+      "callbacks": [
+        [
+          "open",
+          126855.9
+        ],
+        [
+          "opened",
+          127478.6
+        ],
+        [
+          "close",
+          127658.5
+        ],
+        [
+          "open",
+          127759
+        ],
+        [
+          "opened",
+          128405.3
+        ],
+        [
+          "close",
+          128960.6
+        ],
+        [
+          "closed",
+          129588.8
+        ]
+      ],
+      "finishedAt": 130454.5,
+      "complete": true,
+      "finalNodes": 0,
+      "sameRootNodeAfterReopen": false
+    }
+  ],
+  "nativeLeavingEnds": [
+    {
+      "id": "maple-reopen",
+      "identity": 10,
+      "property": "opacity",
+      "at": 129576.1,
+      "elapsedSeconds": 0.6
+    },
+    {
+      "id": "maple-reopen",
+      "identity": 10,
+      "property": "transform",
+      "at": 129584,
+      "elapsedSeconds": 0.6
+    }
+  ],
+  "boundaries": [
+    "Other groups prove real DOM completion chain; no claim that all exits produced captured native end events.",
+    "Old root removal during reopen is cancellation, not completed 600ms leave.",
+    "Only default/light top service scope; no native zoom, Safari, Firefox, real OS reduced-motion, hover or KeepAlive browser acceptance."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-13",
+  "scope": "First manually reviewed runtime responsibility slice; source classification only",
+  "classification": "../../runtime-motion-classification.json",
+  "filesReviewed": 14,
+  "hintsClassified": 18,
+  "categories": { "declaration-only": 6, "measurement-scheduling": 6, "interaction-delay": 4, "native-scroll": 2 },
+  "unclassifiedHints": 159,
+  "unclassifiedMeaning": "Not entered in this ledger, including previously audited components; not remaining defects or acceptance groups",
+  "inventory": { "files": 191, "cssHints": 392, "runtimeHints": 177 },
+  "validation": {
+    "classificationTests": 9,
+    "motionSourceAndContractTestsIncludingClassification": 17,
+    "motionCompilerChain": "passed, existing primitive/modal/LoadingBar/Notification/Message gates",
+    "tokenCatalogTests": 3,
+    "tokenCatalogGeneratedPages": 3,
+    "scriptsSyntax": "passed",
+    "affectedTrackedWhitespace": "passed"
+  },
+  "productChanges": 0,
+  "newBrowserPasses": 0,
+  "newOSPasses": 0,
+  "blockedNativeGroups": 144,
+  "pending": [
+    "Trigger RAF owner-window cancellation and dequeued callback ownership: source candidate, not reproduced failure",
+    "Trigger delayed commit ownership: source candidate, not reproduced failure",
+    "Caller-controlled native smooth scrolling and preference behavior",
+    "Other runtime hint responsibilities and their existing evidence mapping"
+  ]
+}

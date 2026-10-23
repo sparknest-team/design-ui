@@ -57,12 +57,12 @@ for (const [repo, library, prefix] of [
   assert(!button.includes(`.${prefix}-loading`), `${library}: Button embeds Loading`)
   assert(!button.includes(`.${prefix}-ripple`), `${library}: Button embeds Ripple`)
   console.log(`${library}: ${entries.length} style entries, ${css.size} unique Less modules compiled; no cycles, missing imports or embedded foundation${built ? '; ESM/CJS dependencies verified' : ''}`)
-  for (const name of ['button', 'message', 'menu', 'split-button']) {
+  for (const name of ['button', 'message', 'menu', 'split-button', 'radio']) {
     const output = css.get(resolve(src, name, 'style/index.less'))
     if (output !== undefined) console.log(`  ${name}: ${Buffer.byteLength(output)} bytes (own CSS)`)
   }
   if (built) {
-    const names = ['button', 'message', 'menu', 'split-button']
+    const names = ['button', 'message', 'menu', 'split-button', 'radio', 'input', 'verification-code', 'search', 'carousel', 'upload']
     for (const [dir, ext] of [['src', 'ts'], ['es', 'mjs']]) {
       const result = await build({
         configFile: false, root, logLevel: 'silent',
@@ -81,6 +81,12 @@ for (const [repo, library, prefix] of [
       const foundation = css.get(resolve(src, 'style/index.less'))
       assert.equal(output.split(marker).length, foundation.split(marker).length, `${library}/${dir}: duplicated foundation`)
       assert.equal((output.match(new RegExp('^\\.' + prefix + '-loading \\{', 'gm')) ?? []).length, 1, `${library}/${dir}: duplicated Loading`)
+      for (const name of ['input', 'verification-code', 'search', 'carousel', 'upload']) {
+        const own = css.get(resolve(src, name, 'style/index.less'))
+        const token = own.match(new RegExp(`--${prefix}-${name}-[\\w-]+:`))?.[0]
+        assert(token, `${library}/${name}: missing public token declaration`)
+        assert.equal(output.split(token).length, own.split(token).length, `${library}/${dir}: duplicated ${name} styles`)
+      }
       console.log(`  ${dir} consumer: ${Buffer.byteLength(output)} bytes, foundation and Loading included once`)
     }
   }

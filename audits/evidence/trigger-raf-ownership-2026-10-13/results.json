@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-13",
+  "scope": "Independent Trigger positioning RAF; simulated iframe windows and captured callbacks, not browser/OS acceptance",
+  "fixtureCorrection": "Initial static refs did not trigger binding watcher; changed to closed-to-open lifecycle. Initial four missing-callback failures per platform are fixture failures, not product evidence.",
+  "beforeCorrectedFixture": { "cedarFailed": 3, "cedarPassed": 1, "mapleFailed": 3, "maplePassed": 1 },
+  "productFailures": ["iframe element RAF canceled on host window", "iframe window RAF scheduled on host window", "canceled dequeued frame consumes replacement scroll work"],
+  "after": { "cedarFullTriggerPassed": 57, "mapleFullTriggerPassed": 70, "newTestsPerPlatform": 4, "formattedCedarRafRerunPassed": 4, "formattedMapleRafRerunPassed": 4 },
+  "sourceSha256": {
+    "cedarPositioner": "79b54d1090f1b6046e7c0a621e39023efb78a6b2fb85d58836ed75d01c267fbc",
+    "maplePositioner": "17097942fa3bae13520d2f6a235f86e9843cc88a6515ae9064ef0ce5c8a66df5"
+  },
+  "validation": { "bothTypes": "passed", "cedarAffectedLint": "passed", "motionSourceClassificationContractTests": 17, "motionCompilerChain": "passed", "catalogTests": 3, "catalogPages": 3, "trackedWhitespace": "passed", "mapleFirstLint": "one test for-of curly violation; corrected, not a product failure" },
+  "mapleFinalLint": "passed after test curly correction",
+  "mapleFinalRafRerunPassed": 4,
+  "newPublicTokensOrAPI": 0,
+  "newRealBrowserPasses": 0,
+  "newRealOSPasses": 0,
+  "blockedNativeGroups": 144,
+  "pending": ["popup-window replacement old listener cleanup candidate", "real browser/OS cross-document acceptance"]
+}

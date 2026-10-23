@@ -1,0 +1,358 @@
+{
+  "version": 1,
+  "date": "2026-10-16",
+  "startedAtUtc": "2026-10-16T13:17:13Z",
+  "completedAtUtc": "2026-10-16T13:26:36Z",
+  "scope": "User-authorized Select three inventory/hash entries and Select/Maple DropdownMenu/FloatingPanel 21 catalog rows. Preserve parallel business; no broader runtime/API takeover.",
+  "status": "authorized-scope-closed",
+  "automation": {
+    "id": "cedar-maple-14-00-2",
+    "status": "PAUSED",
+    "savedStatusVerified": true,
+    "modified": false
+  },
+  "progress": {
+    "authorizedInventoryRows": 3,
+    "closedInventoryRows": 3,
+    "remainingInventoryRows": 0,
+    "catalogChangedRows": 21,
+    "uniqueCatalogTokens": 11,
+    "generatedPages": 3,
+    "remainingCatalogDrift": 0,
+    "runtimeFamilies": {
+      "classified": 33,
+      "total": 33,
+      "classifiedPercent": 100,
+      "remaining": 0,
+      "remainingPercent": 0
+    },
+    "classifiedSourceFiles": 78,
+    "classifiedHints": 182,
+    "totalHints": 182,
+    "pendingHints": 0,
+    "denominatorChange": 0,
+    "meaning": "Responsibility classification and current source identity, not whole-library business, native browser, OS or visual acceptance."
+  },
+  "inventory": {
+    "files": 196,
+    "cssHints": 416,
+    "runtimeHints": 182,
+    "checkExitCode": 0,
+    "updated": [
+      {
+        "repo": "cedar-design-web",
+        "file": "select/hooks/use-select.ts",
+        "oldRuntime": [
+          124,
+          144,
+          146,
+          174,
+          214,
+          227
+        ],
+        "runtime": [
+          139,
+          166,
+          168,
+          204,
+          246,
+          259
+        ]
+      },
+      {
+        "repo": "cedar-design-web",
+        "file": "select/style/index.less",
+        "oldCss": [
+          88,
+          147
+        ],
+        "css": [
+          88,
+          145
+        ]
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "select/style/index.less",
+        "oldCss": [
+          88,
+          147
+        ],
+        "css": [
+          88,
+          145
+        ]
+      }
+    ]
+  },
+  "sourceReview": {
+    "productionSourceWrites": 0,
+    "styleWrites": 0,
+    "tokenDefaultWrites": 0,
+    "publicApiWrites": 0,
+    "cedarSelect": {
+      "priorRegisteredAndHeadHash": "4e46a2eb3554133e94fc50c4fe29c86274c29eb3400bc2c091cd9bf84a9c236b",
+      "currentHash": "65113c567fd1441974d4d30593deb305e60101bb5f5bedb074d57ab8aeef4972",
+      "proof": "HEAD matches prior registered hash; reviewed diff expands existing guards/lifecycle/watch formatting only. Current independent Cedar file exactly matches already registered Maple hook bytes. Fresh six-call classification and14lifecycle regressions revalidated.",
+      "categories": {
+        "delegated-scroll": 1,
+        "native-scroll": 2,
+        "state-settlement": 1,
+        "interaction-dispatch": 2
+      },
+      "classRowsChanged": 1
+    },
+    "consumers": [
+      "Cedar/Maple SelectMenu -> Optgroup flat li heading siblings;actual .select-dropdown ancestor scopes heading selectors;first heading margin-top0;popup vertical padding and horizontal option-padding alias",
+      "Maple DropdownMenu -> options/render/appearance:adjacent actual group li,title line-height plus padding,selected/active/disabled classes on option li;no legacy cover assigned;Ripple retained,Hover not imported",
+      "Maple FloatingPanel -> actual popup host -> panel background-color and inherited bottom pseudo-element background/box-shadow;surface-overlay default"
+    ],
+    "floatingPanelBoundary": "Existing Teleport does not forward a style attribute automatically to its panel root. Initial new fixture assumed this and failed;corrected to actual popup-container ancestor override and documented. No forwarding API or production fix invented. JSDOM proves host placement,not computed custom property inheritance or native painting.",
+    "sourceSnapshot": {
+      "cedar-design-web/packages/cedar-ui/src/select/Optgroup.vue": "2b42339b0fc23ff1ba81eb4481d8d2a701d13e773db2ffc85daccffefc1c0644",
+      "cedar-design-web/packages/cedar-ui/src/select/Option.vue": "26b9a8d4dbdc8c7fc49091a2637bfcceae5dccd90455ad4e70a056d6fb09be12",
+      "cedar-design-web/packages/cedar-ui/src/select/SelectDropdown.vue": "19b3541989f60c2bf1da480b5fcc9c274fa55f4546260ee34919713ca1524fbe",
+      "cedar-design-web/packages/cedar-ui/src/select/SelectMenu.tsx": "e5101cbefd94564928305498116a51683bfeec36eb79e94a34e2e7dda9ad7ffa",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/allow-create.vue": "b245ef30086160d74a6606785c17aa74fbfff7b92d196777ee12bff90a604aa4",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/async-devices.vue": "1f775f35e67eb318e4341d5c2370102f2e578bff96f0727047ea2a4f6c44e24b",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/basic.vue": "498818a2bf56a2efee871db08ce783d225c1362b0cbee10b85141d3c6bd4c52f",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/custom-field-name.vue": "fa9da1695df90fd670e113c02e2c72d6c91bc0eea510524230f74ce93e7348bf",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/custom-footer.vue": "6567b812e118fbaa9837d5ed1b4e400ae827dc862707f68a3eb37b261bf04076",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/custom-header.vue": "d63be0d00623367a6eed2c48136acae19048f8516f3029e42f4175b1acf7953d",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/custom-label.vue": "65cc88a3fd9abfa3855abe5e6b968ad2ebc8273f0f93cd7b53740f8e661d5715",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/dropdown-scroll.vue": "bfcc3f857119bbf51789ab11fd9d9103f5f69dcb69413cab41eb5baf94b2e2da",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/fallback-option.vue": "dd637732d332640eaf792fc95f216b00f6e4e54d12686b3884e26c45cafaa868",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/filterable.vue": "9d8f375e9268fc14346e6f61dba08c0a12e6cc3e5b9646ca990f35887918e91e",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/group-spacing.vue": "78c90117f96ea58429ee7f85b40c32c90087e290136ee5e08719ef17b1e563fa",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/linkage.vue": "1bf495dd8e23c34e8ff4b1df325737ed8576273d1f9d746b282a1470da1ed32c",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/loading.vue": "0a61f488b23d009e77dcdd516c44ce490d39596b34abaa326b2ee1bfe8e40ded",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/multiple.vue": "380e2a91a77218a153f651ebeab77bce7e7f3f8e074c9f94ea85a9a2ccefa023",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/optgroup.vue": "ad457fb4bb45d7d752ad8e97a2466d4217abcc4261db8f013d325adba753a190",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/same-label.vue": "98883cfd043e692169ce1465d987d68e01c1cbeefbe4974ef204cc85b010aed9",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/scheduler-lifecycle.vue": "3a44e8eb66dfa4339b8f4c6af39c7f95f074392cafe44776d1676abc6bafc7f5",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/search.vue": "cf48ca417473b5c4f0c9bc66b9c9e65e99feb73864b6595062c48ddc3a1b19b0",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/size.vue": "c4b2f1c0eae01d29a455334f2afaf7f7b597ba5250e7fabe0e4b1a9daff3f76b",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/tag-props.vue": "1bc202c93d46756f3348cc217063529790fd9213dce00ae349bde7be8fab916b",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/variant.vue": "7a21aa903478fa6e8de923e1a9cf3e09c7b8cb7355dae22a62f4b8460bebdaab",
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/virtual-list.vue": "d499bd275aa702585c425586db1ae08835f205cfcfe018863af47fc0f61d0c1b",
+      "cedar-design-web/packages/cedar-ui/src/select/context.ts": "a8cf83be8ee36e9b725a158d36d53a52cfe1dbe1a6059e8b3568c6908de309d7",
+      "cedar-design-web/packages/cedar-ui/src/select/emits.ts": "7674dceab3cbdcd97f37993c1d58964e4f58ebd40ed820a0694b60cb87f3a4db",
+      "cedar-design-web/packages/cedar-ui/src/select/hooks/use-options.ts": "df248bc443fb3ef2c635b499b708c718cb85969e6658a70b3390035cf3b1b8c3",
+      "cedar-design-web/packages/cedar-ui/src/select/hooks/use-select.ts": "65113c567fd1441974d4d30593deb305e60101bb5f5bedb074d57ab8aeef4972",
+      "cedar-design-web/packages/cedar-ui/src/select/index.ts": "143cd07f56cdc6dbea9f71d543b109ae29570ffaae2a7a12f2ecda19f352beff",
+      "cedar-design-web/packages/cedar-ui/src/select/presentations/index.ts": "983348aa92da3951d0e33a331fded939f4092b89e857853a8b1e215b4de993f6",
+      "cedar-design-web/packages/cedar-ui/src/select/props.ts": "362cf7c7923493436356392e76cd838900f06b57a304e0792500801047277a78",
+      "cedar-design-web/packages/cedar-ui/src/select/select.tsx": "2ab09cf685ff619b516da07b6e627c8f1f3d15e81391a456803bdf2d639e23aa",
+      "cedar-design-web/packages/cedar-ui/src/select/style/css.ts": "3fc0cb83626b669cd483cb617171d9c61d746ca4bdc4ffe4c025e93bd88b5175",
+      "cedar-design-web/packages/cedar-ui/src/select/style/index.less": "411274deb293ead20c04404c24bcca03f204bda22520d177bb856cec3b8c1beb",
+      "cedar-design-web/packages/cedar-ui/src/select/style/index.ts": "a584d825645774ac416e761fa6047c12e6ba70a6e5ea3c322fa075edf3f981af",
+      "cedar-design-web/packages/cedar-ui/src/select/style/token.less": "ec75661d9733c5db9ba01cbd0cc4a488e327548ff5a1f404cd037ca4b2ee94ff",
+      "cedar-design-web/packages/cedar-ui/src/select/types.ts": "8d558c405f6e0491df683279bf3233113a2c242d874a6de4a9446c75ed6d6665",
+      "cedar-design-web/packages/cedar-ui/src/select/use-select-controller.ts": "ec0d39d6ce37780a5f0079051997d1eac783703f7aa24960e0c5cb82002d7835",
+      "cedar-design-web/packages/cedar-ui/src/select/utils.ts": "5d0814bad7b8ee33c846605e859a8d048df1b07409cfa2d65f6d47e740e5d8fd",
+      "maple-design-mobile/packages/maple-ui/src/select/Optgroup.vue": "15fb25624c3c10e20bcd8ce15ccbcc60919dcb12b9ec746795b17d7c156cfd3f",
+      "maple-design-mobile/packages/maple-ui/src/select/Option.vue": "2f5d41a26d512b618f3259eda79b956e02c0fc5aedbd9eab67081bbf7aba45b2",
+      "maple-design-mobile/packages/maple-ui/src/select/SelectDropdown.vue": "6b08e8ee5132d69d55f38190aa89f4eda067d6f2bdfaa3cccd7c5dfeff572c75",
+      "maple-design-mobile/packages/maple-ui/src/select/SelectMenu.tsx": "613e6357478d2684497fbd006f70aa81bdfdf6308c88f354ec97a2561ecee9f5",
+      "maple-design-mobile/packages/maple-ui/src/select/context.ts": "a8cf83be8ee36e9b725a158d36d53a52cfe1dbe1a6059e8b3568c6908de309d7",
+      "maple-design-mobile/packages/maple-ui/src/select/emits.ts": "7674dceab3cbdcd97f37993c1d58964e4f58ebd40ed820a0694b60cb87f3a4db",
+      "maple-design-mobile/packages/maple-ui/src/select/hooks/use-options.ts": "df248bc443fb3ef2c635b499b708c718cb85969e6658a70b3390035cf3b1b8c3",
+      "maple-design-mobile/packages/maple-ui/src/select/hooks/use-select.ts": "65113c567fd1441974d4d30593deb305e60101bb5f5bedb074d57ab8aeef4972",
+      "maple-design-mobile/packages/maple-ui/src/select/index.ts": "362468b5d895d3293cb80a51e8eb7ebef613abc3f0c452fcbb2a417000198b56",
+      "maple-design-mobile/packages/maple-ui/src/select/presentations/ListPresentation.vue": "5d080d844ad36ce5873f3c26daaeb0d6d2d933403231c93cfe4c89488745a88d",
+      "maple-design-mobile/packages/maple-ui/src/select/presentations/PickerPresentation.vue": "6b30767ee2fd14b3ced31985bec7b6177dc090d0d41bf8592227478dea4d13e2",
+      "maple-design-mobile/packages/maple-ui/src/select/presentations/index.ts": "5bf9993d15e497cbbd30e1a73d59a1324dd9d3c820dc1df1e8741f1682bbc1ee",
+      "maple-design-mobile/packages/maple-ui/src/select/props.ts": "5bca4180074399def6e21e0bd80e1727fe3661a9bb17d07c05837e967ca57b65",
+      "maple-design-mobile/packages/maple-ui/src/select/select.tsx": "709f4754811a1ea44cfeffd8483e5af3a9087e7af7d605f028a4f1d3a436b438",
+      "maple-design-mobile/packages/maple-ui/src/select/style/index.less": "a15542d34e7c1fe80bb754b0e9027bdfe205977c72a745705b0b5a8e704c3fd8",
+      "maple-design-mobile/packages/maple-ui/src/select/style/index.ts": "8895b381920bef0091fa60fc5e588a30f73e60a2fd61a9444acd4cfd25cbc025",
+      "maple-design-mobile/packages/maple-ui/src/select/style/token.less": "2a2ad9c8fefe560460836c7f3fc62a28db2ddfeca8089d3cf21c65fd04243403",
+      "maple-design-mobile/packages/maple-ui/src/select/types.ts": "8d558c405f6e0491df683279bf3233113a2c242d874a6de4a9446c75ed6d6665",
+      "maple-design-mobile/packages/maple-ui/src/select/use-select-controller.ts": "ec0d39d6ce37780a5f0079051997d1eac783703f7aa24960e0c5cb82002d7835",
+      "maple-design-mobile/packages/maple-ui/src/select/utils.ts": "a0b26c12215a7e78a2b467ea5c37381a5ae63fa1b0bb73a7dcd279253be73ba9",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/DropdownMenu.vue": "6da20aa1328596d17f9ce2145ded6b147a2ce167ab3432bbde978eca6cf52bca",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/DropdownMenuBranch.vue": "a360d2f2a7d2507ddd757e705f762aa7d7d84564607889302ce94b8a902cb500",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/DropdownMenuPanel.vue": "03a7c37e90422cd064715efaa1affb07ecdc54a88faf9e1f9632e7b66e710237",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/MenuOption.vue": "2455ff6a2deed7b11072911a152ade90652c580cd07e76bc5c0ea1251e36b940",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/appearance.ts": "0a404642f0932dee9a02ae015d9783227335ec6d38bed5153b7ef2a9c3ea7f64",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/branch-props.ts": "f0d6ac376ac964301f5fd4d9f15a85d336f6a1ebeffe3e5ddb3fcb9b23e1c0f5",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/context.ts": "0aa193347abe47485b165dd4f21fa050b8771b7dd574986951fb347b6f3812d1",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/index.ts": "a71f6aa637f3c9d8d02bd6ea11adf6f03e6645fd65b9d907d5ee3510ba8b9e74",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/keyboard.ts": "28bb5536e2b345dd1beb439646436968f8c1876ea62cfd74c2fe364d2c8f0813",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/level.ts": "9a60301e8459ae804598804932ccece54cdd81917653caeaf85012cd675bd265",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/option-props.ts": "25e5a4b2ade2eebef1586b09b5cbf6ca146d5d9abe64c014c122168faa110aa9",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/options.ts": "2445a01e15ba921162495129f3ef1289259815c0b5f364cb8897cc3f85deb24b",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/props.ts": "349a57d39e809c3a99346b4f36d9f72e67f775245926634b490d82f2a0a67106",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/render.ts": "bf7ad92a5bfcbbdf2832e2da7ff733dede6ba3aaed21813ac7bd2a2bb6ee0708",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/selection.ts": "cd79fd7c561a23d00566436da8c4d28cd206fb8a198d485c69bbadb60cfc5a44",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/style/dropdown-menu-group.less": "2b315eb675036b78e751a1cedebea8795021cafaa5b11600b18e0ae32bb1440c",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/style/dropdown-menu-option.less": "370e36355a57d256b0ee9ba3180e80eef74e6ac56977bb6f9216d696079561c9",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/style/dropdown-menu.less": "4b035439ae85c887170ded1cf8a311a54fee654e07fcc2a6263946b5d81d59a6",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/style/index.less": "cf50c6133bf6966e50f69acce11f7d6b324888cf4bef56c92eb19454dc1948de",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/style/index.ts": "06c91496c863530cf0e9c3e2f57c2d45e08e517a1894dcb4649ed2cc407436c8",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/style/token.less": "5697851c849bd3e964ed2d2e24c998b760e6e2c226cc9eb7937ecb69eb5dcbc6",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/trigger-options.ts": "ecef205b720d4b68baa6f7840ff01590190cdeb12566368337ec3059bda40158",
+      "maple-design-mobile/packages/maple-ui/src/dropdown-menu/types.ts": "a98e81113ccb6fd1ae56d1b3fab342e7b0b8a9ebd45b374d49f9f84c6f612979",
+      "maple-design-mobile/packages/maple-ui/src/floating-panel/FloatingPanel.vue": "8c8f8af05dc3ea74a90efb814c4e6f9d79ceb6128073e2304568a4f4805a83df",
+      "maple-design-mobile/packages/maple-ui/src/floating-panel/index.ts": "9ece6b2b3e00123042cbf6796565df7a79f3c94765d5a6f6adee32a1702a0497",
+      "maple-design-mobile/packages/maple-ui/src/floating-panel/props.ts": "a734bef900fca3bfb0d320c4cea5a0f5e86500ceaf60e707ccba8e25d5b48f4f",
+      "maple-design-mobile/packages/maple-ui/src/floating-panel/style/floating-panel.less": "d3b1ff9d38d3292d91c77ee748727c1784953e6a1b2209286d11237ba996a637",
+      "maple-design-mobile/packages/maple-ui/src/floating-panel/style/index.less": "adb9e09354403b998e45292728fd895639a2f668b7e17c54974300820edd7592",
+      "maple-design-mobile/packages/maple-ui/src/floating-panel/style/index.ts": "3d2e1b3c436cb10476b7b4c8a28c2a41694e89591081baf34b1c1420bd5c776b",
+      "maple-design-mobile/packages/maple-ui/src/floating-panel/style/token.less": "337762a920831998bad17c8a48f143576c91562726af97d6315ecae845bb7eb7"
+    },
+    "finalSnapshot": {
+      "files": 91,
+      "changes": []
+    }
+  },
+  "catalog": {
+    "pages": [
+      "cedar-design-web/packages/cedar-ui/docs/guide/design-token-reference.md",
+      "maple-design-mobile/packages/maple-ui/docs/designTokenReference.zh-CN.md",
+      "maple-design-mobile/packages/maple-ui/docs/designTokenReference.en-US.md"
+    ],
+    "tokens": [
+      "--c-select-popup-group-title-padding-horizontal",
+      "--mp-select-popup-group-title-padding-horizontal",
+      "--mp-dropdown-menu-background-color",
+      "--mp-dropdown-menu-group-title-height",
+      "--mp-dropdown-menu-group-title-padding",
+      "--mp-dropdown-menu-option-bg-hover",
+      "--mp-dropdown-menu-option-bg-selected-hover",
+      "--mp-dropdown-menu-option-selected-background",
+      "--mp-dropdown-menu-option-selected-text-color",
+      "--mp-dropdown-menu-option-text-color",
+      "--mp-floating-panel-background"
+    ],
+    "appliedOnlyAuthorizedRows": true,
+    "globalCheckExitCode": 0,
+    "boundary": "Property lists reflect transitive compiled reachability,not arbitrary local alias recomputation or every rendered/native state."
+  },
+  "validation": [
+    {
+      "stage": "initial shared baseline",
+      "command": "node --test bin/reviewed-inventory-drift.test.mjs bin/select-catalog-closure.test.mjs",
+      "tests": 52,
+      "passed": 39,
+      "failed": 13,
+      "exitCode": 1,
+      "durationSeconds": 4.663,
+      "detail": "3inventory rows,1classification hash,7catalog sections fail as expected;2new Select compile probes omitted actual dropdown ancestor (fixture error)."
+    },
+    {
+      "stage": "corrected consumer baseline before refresh",
+      "tests": 12,
+      "passed": 4,
+      "failed": 8,
+      "detail": "Actual compiled4consumer groups pass;classification1andcatalog7still fail. Output was limited through sed,so shell0isnot claimed as a test pass."
+    },
+    {
+      "stage": "after scoped inventory/hash/catalog refresh",
+      "command": "node --test bin/select-catalog-closure.test.mjs bin/reviewed-inventory-drift.test.mjs",
+      "tests": 52,
+      "passed": 52,
+      "exitCode": 0,
+      "durationSeconds": 5.741
+    },
+    {
+      "stage": "Cedar affected runtime/rendered consumers",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/select/__tests__/group-consumers.test.tsx src/select/__tests__/scheduler-lifecycle.test.ts src/select/__tests__/contract.spec.ts",
+      "tests": 41,
+      "files": 3,
+      "passed": 41,
+      "newCases": 1,
+      "exitCode": 0,
+      "durationSeconds": 31.96
+    },
+    {
+      "stage": "Maple initial rendered fixture",
+      "tests": 49,
+      "files": 6,
+      "passed": 48,
+      "failed": 1,
+      "exitCode": 1,
+      "durationSeconds": 26.86,
+      "detail": "Only new FloatingPanel style-forwarding assumption failed with Vue extraneous-attribute warning;no product source change."
+    },
+    {
+      "stage": "Maple final affected runtime/rendered consumers after fixture boundary correction/owned formatting",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js src/select/__tests__/catalog-consumers.spec.js src/select/__tests__/scheduler-lifecycle.spec.js src/select/__tests__/presentation.spec.ts src/dropdown-menu/__tests__/adapter-contract.spec.js src/dropdown-menu/__tests__/selection-contract.spec.js src/floating-panel/__tests__/index.spec.js",
+      "tests": 49,
+      "files": 6,
+      "passed": 49,
+      "newCases": 3,
+      "exitCode": 0,
+      "durationSeconds": 26.78
+    },
+    {
+      "stage": "full motion chain",
+      "command": "pnpm check:motion-themes",
+      "sharedTests": 88,
+      "passed": 88,
+      "exitCode": 0,
+      "subsequentChecks": [
+        "inventory196files",
+        "classification182/0",
+        "motion96theme/preference,88primitive overrides,176modal consumers,96paired overrides",
+        "LoadingBar8cases/4overrides",
+        "Notification20consumers/44reduced selectors",
+        "Message28consumers/68reduced cases",
+        "PreviewTrack32cases/16paired/32consumers"
+      ],
+      "layer": "Node/actual Less compilers,not native"
+    },
+    {
+      "stage": "full catalog gate",
+      "command": "pnpm check:token-reference",
+      "tests": 29,
+      "passed": 29,
+      "generatedPagesMatched": 3,
+      "exitCode": 0
+    },
+    {
+      "stage": "full token consumer scan",
+      "command": "node bin/token-inventory.mjs --check-consumers --summary",
+      "files": 170,
+      "declarations": 4552,
+      "candidates": 70,
+      "crossComponentCss": 40,
+      "literalRuntime": 10,
+      "dynamicRuntime": 20,
+      "needsManualReview": 0,
+      "errors": 0,
+      "exitCode": 0
+    },
+    {
+      "stage": "lint",
+      "cedarOwnedFixtureExitCode": 0,
+      "mapleRootReadOnlyLintExitCode": 0,
+      "detail": "Formatted only new owned Maple fixture with scoped eslint --fix;production files unchanged. No type/build rerun needed for audit/docs/test-only changes."
+    }
+  ],
+  "finalChecks": {
+    "threeRepositoryDiffChecksExitCode": 0,
+    "productionHashesUnchanged": 91,
+    "verificationProcessesFinished": true,
+    "nativeNewCases": 0
+  },
+  "preserved": {
+    "mapSdk": "Formal disposal/listener/async identity contract;needs actual SDK contract/provider evidence,not another mock",
+    "nativeEnvironmentGroups": 144,
+    "nativeRequirement": "Real Chrome native200%/Safari/Firefox environments;no unchanged retries,software installs,permission changes,zoom emulation/rawCDP/AppleScript substitutions",
+    "button": "White on-dark2.305:1non-AA design exception;other thresholds unchanged",
+    "parallelBusiness": true,
+    "sourceIndependence": true,
+    "newChatsSubagentsCommitsPushPublish": false
+  },
+  "documentation": [
+    "Shared progress/standard",
+    "Cedar menu guide and Select README",
+    "Maple Chinese/English menu guides and Select/DropdownMenu/FloatingPanel docs",
+    "Three generated catalogs",
+    "Existing OpenSpec tasks and existing consumer changesets"
+  ],
+  "skill": "Vue best practices:review original scheduling ownership and lifecycle cleanup;new mounted fixtures unmount in finally and remove popup hosts. No skill-driven production fix."
+}

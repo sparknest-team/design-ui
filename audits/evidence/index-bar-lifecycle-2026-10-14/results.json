@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-14",
+  "scope": "Maple IndexBar consumer lifecycle, default/light, parent-document element scroller",
+  "input": "native fixture-entry clicks; public commands and scroll events are fixture-scripted; native RAF and clock unchanged",
+  "newAcceptedCases": 4,
+  "newOsCases": 0,
+  "blockedNativeCases": 144,
+  "fixture": { "file": "refactors/token-validation/browser/index-bar-lifecycle-main.js", "sha256": "efc13f299411c3e3ab58c59458d767d25916d00d10622f6daeeaf52d044d2476", "frozen": true },
+  "sources": [
+    { "file": "index-bar/IndexBar.vue", "sha256": "8d90bd116da95f332b9ca9712299efcc2b00120980ff0e9fb8c42e9229213dee" },
+    { "file": "index-bar/scroll-task.ts", "sha256": "40de7d98ced6bf3c8775470ae67f71b3f15ccc03e798a043d8ff972671e15390" }
+  ],
+  "controlledRegression": {
+    "baselineSourceSha256": "edf19204dfdaa01ea720a0ef3c410eebd6d21ca32082060c24825fe515560a5b",
+    "baselineConsumerTests": 10, "baselineFailed": 7, "baselineControlsPassed": 3,
+    "finalConsumerTests": 11, "privateTaskTests": 4, "existingTests": 9, "finalPassed": 24,
+    "probeCorrections": ["Initial real IndexAnchor/Transition offsets were not modeled; use deterministic registered providers and scroll-relative bar rect. Initial ten failures are not product evidence.", "Reduced-motion fixture descriptor is read-only; change via configurable descriptor, not assignment."],
+    "nativeDiscoveredRegression": "Active restoration ran before nextTick child registration after KeepAlive activation. Add cancellable entry frame and regression; it was not part of the original ten-test baseline."
+  },
+  "fixtureCorrections": ["Read actual first/last group offsets instead of fixed 0/480; real anchors are1/481 because of layout. Rerun all four after frozen service restart/reload. Preliminary passes not counted again."],
+  "data": "Relative performance.now rounded0.1ms, actual DOM positions and write counts; phase summaries, not full frame/pixel traces.",
+  "cases": [
+    { "kind": "replacement", "passed": true, "finalNodes": 0, "samples": [
+      { "phase": "ready", "time": 136.3, "writes": 0, "changes": [], "active": "", "top": 0, "nodes": 1 },
+      { "phase": "latest-settled", "time": 258.3, "writes": 1, "changes": ["C"], "active": "C", "top": 481, "nodes": 1 },
+      { "phase": "final-unmounted", "time": 258.9, "writes": 1, "changes": ["C"], "active": "", "top": 0, "nodes": 0 }
+    ], "events": [{ "event": "change", "value": "C", "time": 136.7 }] },
+    { "kind": "settlement", "passed": true, "finalNodes": 0, "samples": [
+      { "phase": "ready", "time": 133.7, "writes": 0, "changes": [], "active": "", "top": 0, "nodes": 1 },
+      { "phase": "first-settlement-frame", "time": 134.9, "writes": 2, "changes": ["A", "B"], "active": "B", "top": 482, "nodes": 1 },
+      { "phase": "settlement-complete", "time": 154.8, "writes": 2, "changes": ["A", "B", "C"], "active": "C", "top": 482, "nodes": 1 },
+      { "phase": "final-unmounted", "time": 155.3, "writes": 2, "changes": ["A", "B", "C"], "active": "", "top": 0, "nodes": 0 }
+    ], "events": [{ "event": "change", "value": "A", "time": 134 }, { "event": "change", "value": "B", "time": 134.4 }, { "event": "change", "value": "C", "time": 154.4 }] },
+    { "kind": "unmount", "passed": true, "finalNodes": 0, "samples": [
+      { "phase": "ready", "time": 133.9, "writes": 0, "changes": [], "active": "", "top": 0, "nodes": 1 },
+      { "phase": "interpolating", "time": 255.4, "writes": 7, "changes": ["C"], "active": "C", "top": 10.5, "nodes": 1 },
+      { "phase": "cancelled", "time": 256.1, "writes": 7, "changes": ["C"], "active": "", "top": 0, "nodes": 0 },
+      { "phase": "retained-inert", "time": 957.4, "writes": 7, "changes": ["C"], "active": "", "top": 0, "nodes": 0 },
+      { "phase": "final-unmounted", "time": 957.6, "writes": 7, "changes": ["C"], "active": "", "top": 0, "nodes": 0 }
+    ], "events": [{ "event": "change", "value": "C", "time": 134.1 }] },
+    { "kind": "keepalive", "passed": true, "finalNodes": 0, "samples": [
+      { "phase": "ready", "time": 137.9, "writes": 0, "changes": [], "active": "", "top": 0, "nodes": 1 },
+      { "phase": "interpolating", "time": 258.7, "writes": 7, "changes": ["C"], "active": "C", "top": 14, "nodes": 1 },
+      { "phase": "cancelled", "time": 259.2, "writes": 7, "changes": ["C"], "active": "", "top": 0, "nodes": 0 },
+      { "phase": "retained-inert", "time": 479.7, "writes": 7, "changes": ["C"], "active": "", "top": 0, "nodes": 0 },
+      { "phase": "reactivated-settled", "time": 1181.9, "writes": 44, "changes": ["C"], "active": "C", "top": 481, "nodes": 1 },
+      { "phase": "listener-restored", "time": 1182.5, "writes": 44, "changes": ["C", "A"], "active": "A", "top": 2, "nodes": 1 },
+      { "phase": "final-unmounted", "time": 1183.6, "writes": 44, "changes": ["C", "A"], "active": "", "top": 0, "nodes": 0 }
+    ], "events": [{ "event": "change", "value": "C", "time": 138.1 }, { "event": "change", "value": "A", "time": 1182.1 }] }
+  ],
+  "consoleWarningsErrors": [],
+  "screenshot": { "file": "native.jpg", "bytes": 44880, "sha256": "486f06dc0014c48379e4966079ae17ff08066fa5cbf32b2fae162ff62a5bb9ac", "viewed": true },
+  "notCertified": ["OS reduced-motion setting/change", "native touch/wheel/user interruption", "cross-document component/adoption", "other themes/engines", "all consumers/Form", "full-frame pixel trace"],
+  "validation": { "indexBarTestsPassed": 24, "typecheck": "passed", "lint": "passed", "demoSfcChecked": 1007, "demoSfcFailures": 0, "newEvidenceGateTests": 17, "browserEvidenceTestsPassed": 202, "motionClassificationTestsPassed": 22, "tokenCatalogTestsPassed": 3, "tokenCatalogPages": 3, "affectedWhitespace": "passed", "fixtureSyntax": "passed" },
+  "cleanup": "Fixture restores its scrollTo descriptor and unmounts each case; native jobs/pagehide cleaned. Agent tab and localhost service closed after evidence capture."
+}

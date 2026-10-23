@@ -21,7 +21,11 @@ if (command === 'sync') {
   console.log(`Theme contract synchronized: ${contract.tokens.system.length} system tokens, ${contract.components.length} components.`)
 } else if (command === 'check') {
   const result = checkThemeContract(sources)
-  console.log(`Theme contract passed: ${result.systemCount} system tokens, ${result.componentCount} components.`)
+  console.log(
+    `Theme contract passed: ${result.systemCount} system tokens, ` +
+      `${result.systemValueCount} governed system values, ${result.componentValueCount} governed component values, ` +
+      `${result.platformSystemValueCount} platform system values, ${result.platformComponentValueCount} platform component values, and ${result.componentCount} components.`,
+  )
 } else {
   throw new Error(`Unknown command: ${command}`)
 }

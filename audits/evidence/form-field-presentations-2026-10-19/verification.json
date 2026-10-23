@@ -1,0 +1,118 @@
+{
+  "date": "2026-10-19",
+  "scope": {
+    "sharedFields": [
+      "Textarea",
+      "InputNumber",
+      "Switch",
+      "Checkbox",
+      "CheckboxGroup",
+      "RadioGroup",
+      "Slider",
+      "Rate",
+      "Date",
+      "DateRange",
+      "Time",
+      "TimeRange",
+      "Cascader",
+      "AutoComplete",
+      "VerificationCode",
+      "Upload"
+    ],
+    "cedarAdditionalBrowserFields": [
+      "TreeSelect",
+      "Mention",
+      "PeopleSelect",
+      "Color",
+      "InputTag",
+      "Transfer"
+    ]
+  },
+  "changes": [
+    "Both Form field-components demos use AutoComplete.options instead of unsupported data.",
+    "Both adapter suites cover selecting a real AutoComplete candidate and committing its complete value.",
+    "Both adapter suites verify read refreshes on external model updates, including Upload filenames and option labels.",
+    "Corrected the inline AutoComplete test fixture to use options."
+  ],
+  "browser": {
+    "cedarPopover": {
+      "fieldsOpened": 22,
+      "viewport": [
+        1141,
+        754
+      ],
+      "result": "All 22 fields contained in viewport, one cancel and one confirm, no horizontal body overflow.",
+      "typicalPanelWidth": 280,
+      "timeRangeWidth": 330,
+      "dateWidth": 280,
+      "dateRangeWidth": 418
+    },
+    "cedarDialog": {
+      "fieldsOpened": 22,
+      "viewport": [
+        1141,
+        754
+      ],
+      "panelWidth": 520,
+      "bodyClientAndScrollWidth": 504,
+      "result": "Every field contained in Dialog; one cancel and one confirm."
+    },
+    "mapleDesktopDialog": {
+      "viewport": [
+        1141,
+        754
+      ],
+      "panelWidth": 280,
+      "bodyClientAndScrollWidth": 264,
+      "result": "Text, numeric, boolean, groups, slider/rate, time/range, cascader, autocomplete, code and upload contained in Dialog."
+    },
+    "mapleMobileIframe": {
+      "viewport": [
+        375,
+        640
+      ],
+      "popupFieldsOpened": 16,
+      "dialogFieldsOpened": 16,
+      "popupWidth": 375,
+      "popupBodyClientAndScrollWidth": 359,
+      "dialogWidth": 280,
+      "dialogBodyClientAndScrollWidth": 264,
+      "result": "All 16 shared fields fit horizontally; exactly one confirmation and cancellation toolbar."
+    },
+    "nativeEditing": {
+      "bothPlatforms": [
+        "Textarea",
+        "InputNumber",
+        "Switch",
+        "Checkbox",
+        "CheckboxGroup",
+        "RadioGroup",
+        "AutoComplete"
+      ],
+      "result": "Draft leaves parent unchanged; cancel retains previous model; confirm writes selected/edited value; read reflects confirmed values.",
+      "cedarOutsideClick": "Text draft discarded when clicking outside popover.",
+      "mobileTimeRange": "09:30/18:00 retained on cancel; confirming hour 10 writes 10:30/18:00.",
+      "mobileCascader": "Selecting Hangzhou keeps Shanghai before confirmation; confirmation writes hangzhou; read displays 华东 / 杭州."
+    },
+    "autocompleteTiming": "An immediate automated pointer click during menu entrance initially missed the option. Stable-menu pointer selection and keyboard selection both work; no runtime defect established.",
+    "boundaries": "Local demos and Chrome desktop/narrow viewport verification. No real upload or remote PeopleSelect request was submitted; physical mobile keyboard and OS picker behavior are outside this audit."
+  },
+  "checks": {
+    "cedarAdapterTests": "42 passed",
+    "mapleAdapterTests": "36 passed",
+    "cedarPresentationAndRangeSession": "17 passed",
+    "maplePresentationAndRangeSession": "16 passed",
+    "selectionPresentationParity": "36 source pairs and four Less outputs passed",
+    "demoSyntax": "1055 SFCs; 0 failures",
+    "cedarAffectedLint": "passed",
+    "mapleRootLint": "passed",
+    "diffWhitespace": "both repositories passed"
+  },
+  "screenshots": [
+    "cedar-read.jpg",
+    "maple-read.jpg",
+    "cedar-autocomplete-popover.jpg",
+    "maple-mobile-time-dialog.jpg",
+    "maple-mobile-cascader-popup.jpg"
+  ]
+}

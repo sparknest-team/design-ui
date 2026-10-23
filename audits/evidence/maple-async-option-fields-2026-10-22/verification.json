@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-22",
+  "demo": "Maple Form / example/demos/field-components.vue",
+  "browser": "http://127.0.0.1:9994",
+  "verified": {
+    "Select": [
+      "Immediate input event starts remote search and retires old options",
+      "Slower c response does not replace newer zhou response",
+      "Enter selects latest Zhou; validation failure retains draft and committed person=lin",
+      "Corrected Chen saves successfully",
+      "Popup confirmation disables input and close button; reset aborts and restores lin",
+      "Confirmed true out-of-order search c (850 ms) → zhou (450 ms): late c does not overwrite Zhou; keyboard confirm commits zhou"
+    ],
+    "Cascader": [
+      "Popup forwards update:inputValue to remote search handler",
+      "Enter selects loaded Beijing; rejected draft stays open with committed tree=shanghai",
+      "Slower 北 response does not replace newer hangzhou response; Enter saves hangzhou",
+      "Confirmation disables editing and close; reset aborts and restores shanghai",
+      "Confirmed true out-of-order search 北 (850 ms) → hangzhou (450 ms): late 北 does not overwrite Hangzhou; keyboard confirm commits hangzhou"
+    ],
+    "AutoComplete": [
+      "New remote candidates usable with Enter",
+      "Rejected 运营 draft stays open with committed keyword=研发",
+      "Confirmation disables input and close; reset aborts and restores 研发"
+    ],
+    "Reset": [
+      "All three fields close on reset during search",
+      "Late responses do not reopen a popup or overwrite reset values"
+    ]
+  },
+  "checks": {
+    "maple_regression": "223 passed / 18 files, including 9 async popup keyboard tests",
+    "cedar_shared_regression": "68 passed / 5 files",
+    "maple_typecheck": "passed",
+    "cedar_typecheck": "passed",
+    "same_source": "selection-presentations, auto-complete, selection-field passed",
+    "demo_sfc": "1414 checked, 0 failures",
+    "lint": "Full Maple repository lint:check passed; targeted files passed"
+  },
+  "screenshots": [
+    "select-rejected-draft.png",
+    "cascader-rejected-draft.png",
+    "autocomplete-rejected-draft.png"
+  ]
+}

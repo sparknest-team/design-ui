@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-21",
+  "api": {
+    "cedar": [
+      "inline",
+      "click",
+      "dblclick"
+    ],
+    "maple": [
+      "inline",
+      "popup"
+    ],
+    "readPretty": "independent optional boolean; field > FormItem > Form; explicit false overrides"
+  },
+  "checks": {
+    "cedarRelatedTests": 348,
+    "cedarFinalSurfaceRegression": 110,
+    "mapleRelatedTests": 291,
+    "types": "both passed",
+    "lint": "Maple full repository and Cedar affected files passed",
+    "sameSource": [
+      "input",
+      "selection-field",
+      "selection-presentations",
+      "auto-complete",
+      "date-family",
+      "form-kernel"
+    ],
+    "demoSFCs": 1407
+  },
+  "browser": [
+    "Cedar single click does not activate dblclick mode",
+    "Cedar single-line original Input opens in place, expands within viewport and confirms once",
+    "Cedar Select and PeopleSelect native menus select into drafts and confirm",
+    "Cedar candidate validation preserves draft; reset closes; readPretty removes entry",
+    "Cedar datetime native panel has white background and horizontal layout; one outer confirmation",
+    "Maple 375px popup has left default title, close and bottom confirmation; scrollWidth equals viewport",
+    "Maple selected-items removal confirms; reset closes Input popup"
+  ],
+  "images": [
+    "cedar-input-final.jpg",
+    "maple-input-final-375.jpg",
+    "cedar-validation.jpg",
+    "cedar-date-time.jpg",
+    "maple-popup-375.jpg"
+  ],
+  "integrationFix": "Exposed existing Tabs navs-review demo in both language documents to pass full demo visibility checks"
+}

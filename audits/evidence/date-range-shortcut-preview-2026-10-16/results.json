@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-16",
+  "startedUtc": "07:51:54",
+  "scope": "Clean Cedar range shortcut-preview100ms and owned private header continuation;not parallel panel/header/calendar presentation takeover",
+  "baseline": {
+    "rootSha256": "0a7c6dc19cbece33890cbba83db48e62303e9e378f950921e6eea197d71cdb33",
+    "helperSha256": "4340d0707bdc9396e63540f13802b4bb9a04129097d2d0c67a3b5d7e6d23e328",
+    "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/date/picker/__tests__/range-shortcut-preview.test.ts",
+    "cases": 13,
+    "failed": 10,
+    "passed": 3,
+    "exitCode": 1,
+    "seconds": 4.59,
+    "controls": [
+      "Noncommitting100ms cleanup",
+      "Ordinary unmount cancellation already works",
+      "Preview header settles during100ms leave grace"
+    ],
+    "failures": [
+      "Cancelled/consumed old clears erase newer range",
+      "Disabled/readonly/previewShortcut/open/model changes retain task",
+      "Deactivation/retained hover and cross-activation clear",
+      "Queued cleanup header reset notifies after suspension"
+    ],
+    "meaning": "Overlapping cases,not ten independent defects"
+  },
+  "candidateHistory": {
+    "firstRepair": {
+      "passed": 13,
+      "files": 1,
+      "exitCode": 0,
+      "seconds": 27.35,
+      "shutdownWarning": "close timed out after1000ms;not a clean shutdown"
+    },
+    "supplementedIntermediate": {
+      "passed": 174,
+      "files": 32,
+      "exitCode": 0,
+      "seconds": 82.32,
+      "targeted": 20,
+      "meaning": "Before fresh-cell gap and final mutation-boundary repair;not final-source acceptance"
+    },
+    "additionalCandidateReproduction": {
+      "rootSha256": "6999ffbe502f7f25c12aca7316e288ee2ded4aaf579f5e98116aa89245996c4d",
+      "selectedCases": 1,
+      "failed": 1,
+      "skipped": 20,
+      "exitCode": 1,
+      "seconds": 4.19,
+      "issue": "Fresh cell selection leaves old shortcut cleanup pending;separate candidate failure,not extra original13-case baseline"
+    }
+  },
+  "repair": {
+    "root": "date/picker/DateRangePicker.vue",
+    "rootSha256": "0e22365510feb85a4612d7ccb73097ef359ece0f975ca1df3f4beb55ffb43c41",
+    "helper": "date/picker/hooks/use-range-header-value.ts",
+    "helperSha256": "d0ca93224271b70da9322f6a814f2b378eb250c89c2b76ea4ecdaacd5461677f",
+    "test": "date/picker/__tests__/range-shortcut-preview.test.ts",
+    "testSha256": "a72b03c7d6c2ab11d50fb0f7c0e727ec811099a9dee7c73cad3aabac3d1febb8",
+    "mechanism": "Every preview setter retires old timer/header ownership;timer and preview versions remain separate so leave grace preserves valid header settlement. Current lifecycle/config/model eligibility and one-shot delivery guard timer. Recheck after preview/input setter reentry;optional private original-request predicate guards range-header nextTick and consumption. Fresh activation does not resume old tasks.",
+    "unchanged": "100ms interaction grace/global timer/public selection-confirmation API/CSS Tokens;business grace not skipped for reduce",
+    "boundaries": [
+      "Other default range-header callers and all select/confirm/input reentry protocols are not certified",
+      "Native hover/OS/adoption/Maple year-panel/parallel integration remain separate"
+    ]
+  },
+  "verification": {
+    "finalAffected": {
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/date/picker/__tests__ src/date/__tests__ src/date-range/__tests__",
+      "passed": 175,
+      "files": 32,
+      "exitCode": 0,
+      "seconds": 183.14,
+      "targetedIncluded": 21,
+      "shutdownWarning": "close timed out after1000ms;assertions pass and exit0,but not a clean runner shutdown. Do not mechanically rerun only to remove warning.",
+      "newTestsAuthored": 21,
+      "other154": "Existing/current single-preview/date/range regressions,not newly authored or additional defects"
+    },
+    "types": "Final pnpm typecheck passed exit0;configured declarations exclude tests",
+    "lint": "Initial and final scoped --no-ignore checks passed exit0;no mechanical source rewrite",
+    "shared": "29 tests passed exit0;classification CLI164classified/14pending passed exit0",
+    "mapleRootLint": "Read-only pnpm lint:check passed exit0",
+    "finalHashRead": "Root/helper/test match recorded frozen hashes;Maple YearPickerPanel remains9a51ffd5def625f2ab1e35d2e139d79135f9e6ae3d81139686ecc2d0e0ffdcfe",
+    "threeRepoDiffChecks": "passed exit0",
+    "catalog": "Previous actual five Cedar FilterForm/Form hunks remain;not rerun or regenerated.26other inventory drifts preserved.",
+    "lessBuildsNative": "No standalone Less/build/native run;new native/browser/OS cases0",
+    "fixture": "Actual range Picker/KeepAlive with stub parallel RangePickerPanel;controlled100ms global timer and actual helper nextTick,original descriptors restored. Private TS hook uses .test.ts transform path;effective header baseline proves delivery control."
+  },
+  "registration": {
+    "closedFamilies": 30,
+    "totalFamilies": 33,
+    "closedPercent": 90.9,
+    "remainingFamilies": 3,
+    "remainingPercent": 9.1,
+    "remainingByFamily": {
+      "Date": 1,
+      "Form": 4,
+      "Picker": 9
+    },
+    "sourceFiles": 73,
+    "classifiedHints": 164,
+    "totalHints": 178,
+    "classifiedPercent": 92.1,
+    "remainingHints": 14,
+    "remainingHintsPercent": 7.9,
+    "denominatorChange": 0,
+    "category": "interaction-delay total18",
+    "inventory": "Only range Picker605→639;supporting helper has no runtime hint and is not counted as an additional registered file",
+    "meaning": "Date remains partial pending Maple year panel;classification not whole component/library/native acceptance"
+  },
+  "preserved": "Parallel presentation panels/header/calendar/Form/Picker/linkedTime;26unrelated drifts;Cedar FilterForm/Form catalog five hunks;Map formal SDK;144native Chrome200%/Safari/Firefox groups;Button white2.305:1 non-AA exception",
+  "documentation": "Shared standard,Cedar guide,Maple bilingual guides,CedarDateRangePicker/MapleDateRange docs,existing patch changesets/OpenSpec follow-up synchronized",
+  "constraints": "No chats/subagents/commits/push/publish/software/permission/automation changes;Vue skill applied to lifetime/private resource/descriptor cleanup",
+  "diagnosticNote": "One row-count read used a wrong relative parent path and exitedENOENT;no source mutation;subsequent source/report reads use absolute paths."
+}

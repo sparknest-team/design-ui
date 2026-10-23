@@ -1,0 +1,44 @@
+node:internal/modules/run_main:122
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: card: Cedar scenario order
++ actual - expected
+
+  [
++   'scheduler-lifecycle',
+    'api-review',
+    'basic',
+    'no-padding',
+    'hoverable',
+    'variant',
+
+    at file:///Users/shuaimeng/github_web/design-ui/bin/same-source-demos-check.mjs:101:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'scheduler-lifecycle',
+    'api-review',
+    'basic',
+    'no-padding',
+    'hoverable',
+    'variant',
+    'image',
+    'size',
+    'tooltip',
+    'slots',
+    'ripple',
+    'floating'
+  ],
+  expected: [
+    'api-review', 'basic',
+    'no-padding', 'hoverable',
+    'variant',    'image',
+    'size',       'tooltip',
+    'slots',      'ripple',
+    'floating'
+  ],
+  operator: 'deepStrictEqual'
+}
+
+Node.js v23.2.0

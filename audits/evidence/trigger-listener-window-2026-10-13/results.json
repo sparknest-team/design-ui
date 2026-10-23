@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-13",
+  "scope": "Original scroll listener binding-window ownership; independent implementations, simulated DOM only",
+  "probeCorrections": ["Window spy portability replaced by owned iframe forwarding probes", "Clear initialization remove calls before mutation assertions; otherwise early cleanup falsely satisfies later removal", "Original remove-handler identity is the scoped acceptance; native event/frame acceptance not claimed"],
+  "beforeFinalProbe": { "cedarNewFailed": 3, "cedarExistingRafPassed": 4, "mapleNewFailed": 3, "mapleExistingRafPassed": 4 },
+  "regressions": ["popup ref replacement to another document", "popup ref cleared", "unmount after ref clear before watcher flush"],
+  "after": { "cedarFullTriggerPassed": 60, "mapleFullTriggerPassed": 73, "rafAndListenerTestsEach": 7 },
+  "sourceSha256": {
+    "cedarPositioner": "dc7f3a1da8cbe1bdbe321f2281817365750c8403fb295d2e24404b4c0589e913",
+    "maplePositioner": "bc278af088fec4e79ca6652fb8b665acb3dd1aef09867dccde7e7bfbdfd59c97"
+  },
+  "validation": { "cedarTypes": "passed", "mapleTypes": "passed", "cedarAffectedLint": "passed", "mapleFullLint": "passed" },
+  "unchanged": ["public API", "CSS tokens", "delay defaults", "visual transition defaults", "candidate counts 191 files / 392 CSS / 177 runtime"],
+  "finalStaticChecks": { "motionSourceClassificationContractTests": 17, "motionCompilerChain": "passed", "tokenCatalogTests": 3, "tokenCatalogPages": 3, "classificationSourceHashes": "passed", "affectedTrackedWhitespace": "passed" },
+  "newRealBrowserPasses": 0,
+  "newRealOSPasses": 0,
+  "blockedNativeGroups": 144,
+  "pending": ["same DOM node adoption across documents without ref replacement", "real browser/OS visual evidence", "other runtime candidates, including resize scheduling callback ownership"]
+}

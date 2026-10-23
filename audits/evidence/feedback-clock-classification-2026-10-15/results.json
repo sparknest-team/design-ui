@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-15",
+  "batch": "Message/Notification business-clock classification reconciliation",
+  "scope": "classification-only; no product source repair, API or CSS Token changes",
+  "sources": [
+    {
+      "repo": "cedar-design-web",
+      "file": "message/use-message-timer.ts",
+      "sha256": "c98122de716b691beacb5cda769ed4292a83f3a833ed57626fd200ab6527532b",
+      "line": 44,
+      "category": "business-clock",
+      "priorEvidence": "message-timer-boundary-2026-10-13/results.json",
+      "hashMatchesPriorEvidence": true,
+      "cleanAtStart": true
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "message/use-message-timer.ts",
+      "sha256": "532e457c12f2a6c4cef2ca9f0b00295a7195723ca5441d9b3d7eb79aa23e949f",
+      "line": 37,
+      "category": "business-clock",
+      "priorEvidence": "message-timer-boundary-2026-10-13/results.json",
+      "hashMatchesPriorEvidence": true,
+      "cleanAtStart": true
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "notification/Notification.vue",
+      "sha256": "810b2dc6d16449833ee5940c50d0c8ccb26d4fd5fe218ae976d88dd884a61e34",
+      "line": 103,
+      "category": "business-clock",
+      "priorEvidence": "notification-runtime-2026-10-13/results.json",
+      "hashMatchesPriorEvidence": true,
+      "cleanAtStart": true
+    }
+  ],
+  "responsibility": {
+    "display": "finite positive duration schedules business display deadline; zero persistent, not CSS motion timing",
+    "lifecycle": "existing generation/active/open or closed ownership, cancellation, hover remaining time and full-duration reactivation re-reviewed; no new lifecycle repair",
+    "service": "existing actual Transition completion cleanup is separate; no fixed leave timer reintroduced",
+    "platform": "independent Message sources; Notification Cedar-only, no invented Maple counterpart"
+  },
+  "verification": {
+    "cedarMessage": 31,
+    "cedarNotification": 17,
+    "cedarTotal": 48,
+    "cedarFiles": 11,
+    "mapleMessage": 39,
+    "mapleFiles": 8,
+    "componentResult": "all passed exit0; Cedar CHOKIDAR_USEPOLLING=true",
+    "mapleRootLint": "passed",
+    "sharedTests": "28 passed",
+    "classification": "136 classified/46 pending; business-clock4→7",
+    "catalog": "3 generated pages match",
+    "typesAndCompiledMotion": "not rerun this batch; product source/types/styles unchanged",
+    "layer": "existing component/service/SSR controlled test suites with JSDOM and simulated timers; no new browser or OS work",
+    "newRealBrowserOrOSCases": 0,
+    "historicalIab": "Message8 and Notification6 remain their own prior records, not counted again"
+  },
+  "progress": {
+    "familyRule": "public top-level runtime candidate directories merged across platforms, excluding underscore internals/utils/style; classification closure is not whole-library or browser acceptance",
+    "families": 33,
+    "closedBefore": 19,
+    "closed": 21,
+    "closedPercent": 63.6,
+    "remaining": 12,
+    "remainingPercent": 36.4,
+    "classifiedFiles": 55,
+    "classifiedHints": 136,
+    "totalHints": 182,
+    "classifiedHintPercent": 74.7,
+    "pendingHints": 46,
+    "pendingHintPercent": 25.3,
+    "denominatorChange": 0,
+    "remainingFamilies": ["Date", "Form", "Map", "Ripple", "Scheduler", "Time", "Tree", "Counter", "LoadingBar", "Picker", "PullRefresh", "SwipeCell"]
+  },
+  "pendingBoundaries": [
+    "Ripple unified scheduler: cancelled callback delivered after state reuse and duplicate consumption need valid probes, source-level candidate only",
+    "LoadingBar unified scheduler: generation ownership and duplicate callback consumption need valid probes, source-level candidate only",
+    "Message service nextTick update identity is a separate consumer, not automatically accepted by timer-file classification",
+    "cross-document adoption and real OS behavior"
+  ],
+  "inventory": "no snapshot refresh;193files/392CSS/182runtime preserved. Three current source lines match saved candidates. Other26 parallel CSS/date drifts retained; no global motion-themes success claim.",
+  "preserved": ["Form/date/linked Time", "parallel styles and Picker", "144 native200%/Safari/Firefox blocked cases", "Button white on-dark2.305:1 design exception"],
+  "constraints": "No new tasks/subagents/automation changes, browser/services, commits/push/releases. Vue cleanup skill used to review existing lifetime ownership; no fabricated product fix."
+}

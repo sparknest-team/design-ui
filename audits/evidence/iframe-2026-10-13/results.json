@@ -1,0 +1,1828 @@
+{
+  "date": "2026-10-13",
+  "browser": "Codex In-app Browser (Chromium)",
+  "status": "passed",
+  "acceptedCases": 8,
+  "scope": "real same-origin iframe; top default/light and frame maple/dark; host boundaries positioned and bounded",
+  "nativeZoomVerified": false,
+  "before": [
+    {
+      "platform": "Cedar",
+      "restored": false,
+      "parentActive": "IFRAME",
+      "screenshot": "cedar-before-close.jpg"
+    },
+    {
+      "platform": "Maple",
+      "restored": false,
+      "parentActive": "IFRAME",
+      "screenshot": "maple-before-close.jpg"
+    }
+  ],
+  "baseline": {
+    "top": {
+      "active": "BUTTON",
+      "activeText": "Connect real iframe",
+      "bodyOverflow": "",
+      "hostOverflow": "",
+      "scrollY": 0,
+      "styles": 12,
+      "theme": null
+    },
+    "frame": {
+      "active": "BODY",
+      "activeText": "Iframe untouched neighbor独立 iframe 样式／maple darkCedar move to topCedar move to f",
+      "bodyOverflow": "",
+      "hostOverflow": "",
+      "scrollY": 0,
+      "styles": 12,
+      "theme": "dark"
+    }
+  },
+  "cases": [
+    {
+      "platform": "Cedar",
+      "scenario": "frame-open-close",
+      "initial": "frame",
+      "steps": [
+        {
+          "target": "frame",
+          "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(42, 42, 43)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+          "focusInside": true,
+          "foreground": "rgba(255, 255, 255, 0.9)",
+          "opacity": "1",
+          "owner": "frame",
+          "rect": {
+            "bottom": 466.09375,
+            "height": 444,
+            "left": 268,
+            "right": 628,
+            "top": 22.09375,
+            "width": 360
+          },
+          "viewport": {
+            "height": 476,
+            "width": 628
+          },
+          "documents": {
+            "top": {
+              "active": "IFRAME",
+              "activeText": "",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "DIV",
+              "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        }
+      ],
+      "forward": {
+        "target": "frame",
+        "activeText": "",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 466.09375,
+          "height": 444,
+          "left": 268,
+          "right": 628,
+          "top": 22.09375,
+          "width": 360
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BUTTON",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "backward": {
+        "target": "frame",
+        "activeText": "Cedar close iframe modal",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 466.09375,
+          "height": 444,
+          "left": 268,
+          "right": 628,
+          "top": 22.09375,
+          "width": 360
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BUTTON",
+            "activeText": "Cedar close iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "screenshot": "cedar-frame-open-close.jpg",
+      "closed": {
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Cedar open iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple darkCedar move to topCedar move to f",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        },
+        "restored": true,
+        "state": {
+          "ready": true,
+          "platform": "Cedar",
+          "target": "frame",
+          "open": false,
+          "escapeCount": 1,
+          "closeCount": 1
+        }
+      }
+    },
+    {
+      "platform": "Cedar",
+      "scenario": "top-to-frame",
+      "initial": "top",
+      "steps": [
+        {
+          "target": "top",
+          "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(255, 255, 255)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe.html",
+          "focusInside": true,
+          "foreground": "rgb(29, 33, 41)",
+          "opacity": "1",
+          "owner": "top",
+          "rect": {
+            "bottom": 598.703125,
+            "height": 476,
+            "left": 270,
+            "right": 630,
+            "top": 122.703125,
+            "width": 360
+          },
+          "viewport": {
+            "height": 720,
+            "width": 1280
+          },
+          "documents": {
+            "top": {
+              "active": "DIV",
+              "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "BODY",
+              "activeText": "Iframe untouched neighbor独立 iframe 样式／maple dark\n\n",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        },
+        {
+          "target": "frame",
+          "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(42, 42, 43)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+          "focusInside": true,
+          "foreground": "rgba(255, 255, 255, 0.9)",
+          "opacity": "1",
+          "owner": "frame",
+          "rect": {
+            "bottom": 466.09375,
+            "height": 444,
+            "left": 268,
+            "right": 628,
+            "top": 22.09375,
+            "width": 360
+          },
+          "viewport": {
+            "height": 476,
+            "width": 628
+          },
+          "documents": {
+            "top": {
+              "active": "IFRAME",
+              "activeText": "",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "DIV",
+              "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        }
+      ],
+      "forward": {
+        "target": "frame",
+        "activeText": "",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 466.09375,
+          "height": 444,
+          "left": 268,
+          "right": 628,
+          "top": 22.09375,
+          "width": 360
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BUTTON",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "backward": {
+        "target": "frame",
+        "activeText": "Cedar close iframe modal",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 466.09375,
+          "height": 444,
+          "left": 268,
+          "right": 628,
+          "top": 22.09375,
+          "width": 360
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BUTTON",
+            "activeText": "Cedar close iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "screenshot": "cedar-top-to-frame.jpg",
+      "closed": {
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Cedar open iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple darkCedar move to topCedar move to f",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        },
+        "restored": true,
+        "state": {
+          "ready": true,
+          "platform": "Cedar",
+          "target": "frame",
+          "open": false,
+          "escapeCount": 2,
+          "closeCount": 2
+        }
+      }
+    },
+    {
+      "platform": "Cedar",
+      "scenario": "frame-to-top",
+      "initial": "frame",
+      "steps": [
+        {
+          "target": "frame",
+          "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(42, 42, 43)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+          "focusInside": true,
+          "foreground": "rgba(255, 255, 255, 0.9)",
+          "opacity": "1",
+          "owner": "frame",
+          "rect": {
+            "bottom": 466.09375,
+            "height": 444,
+            "left": 268,
+            "right": 628,
+            "top": 22.09375,
+            "width": 360
+          },
+          "viewport": {
+            "height": 476,
+            "width": 628
+          },
+          "documents": {
+            "top": {
+              "active": "IFRAME",
+              "activeText": "",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "DIV",
+              "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        },
+        {
+          "target": "top",
+          "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(255, 255, 255)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe.html",
+          "focusInside": true,
+          "foreground": "rgb(29, 33, 41)",
+          "opacity": "1",
+          "owner": "top",
+          "rect": {
+            "bottom": 598.703125,
+            "height": 476,
+            "left": 270,
+            "right": 630,
+            "top": 122.703125,
+            "width": 360
+          },
+          "viewport": {
+            "height": 720,
+            "width": 1280
+          },
+          "documents": {
+            "top": {
+              "active": "DIV",
+              "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "BODY",
+              "activeText": "Iframe untouched neighbor独立 iframe 样式／maple dark\n\n",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        }
+      ],
+      "forward": {
+        "target": "top",
+        "activeText": "",
+        "background": "rgb(255, 255, 255)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe.html",
+        "focusInside": true,
+        "foreground": "rgb(29, 33, 41)",
+        "opacity": "1",
+        "owner": "top",
+        "rect": {
+          "bottom": 598.703125,
+          "height": 476,
+          "left": 270,
+          "right": 630,
+          "top": 122.703125,
+          "width": 360
+        },
+        "viewport": {
+          "height": 720,
+          "width": 1280
+        },
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple dark\n\n",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "backward": {
+        "target": "top",
+        "activeText": "Cedar close iframe modal",
+        "background": "rgb(255, 255, 255)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe.html",
+        "focusInside": true,
+        "foreground": "rgb(29, 33, 41)",
+        "opacity": "1",
+        "owner": "top",
+        "rect": {
+          "bottom": 598.703125,
+          "height": 476,
+          "left": 270,
+          "right": 630,
+          "top": 122.703125,
+          "width": 360
+        },
+        "viewport": {
+          "height": 720,
+          "width": 1280
+        },
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Cedar close iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple dark\n\n",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "screenshot": "cedar-frame-to-top.jpg",
+      "closed": {
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Cedar open iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple dark\n\n",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        },
+        "restored": true,
+        "state": {
+          "ready": true,
+          "platform": "Cedar",
+          "target": "top",
+          "open": false,
+          "escapeCount": 3,
+          "closeCount": 3
+        }
+      }
+    },
+    {
+      "platform": "Cedar",
+      "scenario": "reopen-after-move",
+      "initial": "top",
+      "steps": [
+        {
+          "target": "top",
+          "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(255, 255, 255)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe.html",
+          "focusInside": true,
+          "foreground": "rgb(29, 33, 41)",
+          "opacity": "1",
+          "owner": "top",
+          "rect": {
+            "bottom": 598.703125,
+            "height": 476,
+            "left": 270,
+            "right": 630,
+            "top": 122.703125,
+            "width": 360
+          },
+          "viewport": {
+            "height": 720,
+            "width": 1280
+          },
+          "documents": {
+            "top": {
+              "active": "DIV",
+              "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "BODY",
+              "activeText": "Iframe untouched neighbor独立 iframe 样式／maple dark\n\n",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        },
+        {
+          "target": "frame",
+          "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(42, 42, 43)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+          "focusInside": true,
+          "foreground": "rgba(255, 255, 255, 0.9)",
+          "opacity": "1",
+          "owner": "frame",
+          "rect": {
+            "bottom": 466.09375,
+            "height": 444,
+            "left": 268,
+            "right": 628,
+            "top": 22.09375,
+            "width": 360
+          },
+          "viewport": {
+            "height": 476,
+            "width": 628
+          },
+          "documents": {
+            "top": {
+              "active": "IFRAME",
+              "activeText": "",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "DIV",
+              "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        }
+      ],
+      "forward": {
+        "target": "frame",
+        "activeText": "",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 466.09375,
+          "height": 444,
+          "left": 268,
+          "right": 628,
+          "top": 22.09375,
+          "width": 360
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BUTTON",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "backward": {
+        "target": "frame",
+        "activeText": "Cedar close iframe modal",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 466.09375,
+          "height": 444,
+          "left": 268,
+          "right": 628,
+          "top": 22.09375,
+          "width": 360
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BUTTON",
+            "activeText": "Cedar close iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "screenshot": "cedar-reopen-after-move.jpg",
+      "closed": {
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Cedar open iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple darkCedar move to topCedar move to f",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        },
+        "restored": true,
+        "state": {
+          "ready": true,
+          "platform": "Cedar",
+          "target": "frame",
+          "open": false,
+          "escapeCount": 4,
+          "closeCount": 4
+        }
+      },
+      "reopened": {
+        "target": "frame",
+        "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 466.09375,
+          "height": 444,
+          "left": 268,
+          "right": 628,
+          "top": 22.09375,
+          "width": 360
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "DIV",
+            "activeText": "Cedar move to topCedar move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "reclosed": {
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Cedar open iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple darkCedar move to topCedar move to f",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        },
+        "restored": true,
+        "state": {
+          "ready": true,
+          "platform": "Cedar",
+          "target": "frame",
+          "open": false,
+          "escapeCount": 4,
+          "closeCount": 5
+        }
+      }
+    },
+    {
+      "platform": "Maple",
+      "scenario": "frame-open-close",
+      "initial": "frame",
+      "steps": [
+        {
+          "target": "frame",
+          "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(42, 42, 43)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+          "focusInside": true,
+          "foreground": "rgba(255, 255, 255, 0.9)",
+          "opacity": "1",
+          "owner": "frame",
+          "rect": {
+            "bottom": 374.09375,
+            "height": 272.1875,
+            "left": 0,
+            "right": 628,
+            "top": 101.90625,
+            "width": 628
+          },
+          "viewport": {
+            "height": 476,
+            "width": 628
+          },
+          "documents": {
+            "top": {
+              "active": "IFRAME",
+              "activeText": "",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "DIV",
+              "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        }
+      ],
+      "forward": {
+        "target": "frame",
+        "activeText": "Maple move to top",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 374.09375,
+          "height": 272.1875,
+          "left": 0,
+          "right": 628,
+          "top": 101.90625,
+          "width": 628
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BUTTON",
+            "activeText": "Maple move to top",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "backward": {
+        "target": "frame",
+        "activeText": "Maple close iframe modal",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 374.09375,
+          "height": 272.1875,
+          "left": 0,
+          "right": 628,
+          "top": 101.90625,
+          "width": 628
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BUTTON",
+            "activeText": "Maple close iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "screenshot": "maple-frame-open-close.jpg",
+      "closed": {
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Maple open iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple darkMaple move to topMaple move to f",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        },
+        "restored": true,
+        "state": {
+          "ready": true,
+          "platform": "Maple",
+          "target": "frame",
+          "open": false,
+          "escapeCount": 5,
+          "closeCount": 6
+        }
+      }
+    },
+    {
+      "platform": "Maple",
+      "scenario": "top-to-frame",
+      "initial": "top",
+      "steps": [
+        {
+          "target": "top",
+          "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(255, 255, 255)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe.html",
+          "focusInside": true,
+          "foreground": "rgb(29, 33, 41)",
+          "opacity": "1",
+          "owner": "top",
+          "rect": {
+            "bottom": 446.09375,
+            "height": 172.1875,
+            "left": 0,
+            "right": 1280,
+            "top": 273.90625,
+            "width": 1280
+          },
+          "viewport": {
+            "height": 720,
+            "width": 1280
+          },
+          "documents": {
+            "top": {
+              "active": "DIV",
+              "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "BODY",
+              "activeText": "Iframe untouched neighbor独立 iframe 样式／maple dark\n\n",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        },
+        {
+          "target": "frame",
+          "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(42, 42, 43)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+          "focusInside": true,
+          "foreground": "rgba(255, 255, 255, 0.9)",
+          "opacity": "1",
+          "owner": "frame",
+          "rect": {
+            "bottom": 374.09375,
+            "height": 272.1875,
+            "left": 0,
+            "right": 628,
+            "top": 101.90625,
+            "width": 628
+          },
+          "viewport": {
+            "height": 476,
+            "width": 628
+          },
+          "documents": {
+            "top": {
+              "active": "IFRAME",
+              "activeText": "",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "DIV",
+              "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        }
+      ],
+      "forward": {
+        "target": "frame",
+        "activeText": "Maple move to top",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 374.09375,
+          "height": 272.1875,
+          "left": 0,
+          "right": 628,
+          "top": 101.90625,
+          "width": 628
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BUTTON",
+            "activeText": "Maple move to top",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "backward": {
+        "target": "frame",
+        "activeText": "Maple close iframe modal",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 374.09375,
+          "height": 272.1875,
+          "left": 0,
+          "right": 628,
+          "top": 101.90625,
+          "width": 628
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BUTTON",
+            "activeText": "Maple close iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "screenshot": "maple-top-to-frame.jpg",
+      "closed": {
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Maple open iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple darkMaple move to topMaple move to f",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        },
+        "restored": true,
+        "state": {
+          "ready": true,
+          "platform": "Maple",
+          "target": "frame",
+          "open": false,
+          "escapeCount": 6,
+          "closeCount": 7
+        }
+      }
+    },
+    {
+      "platform": "Maple",
+      "scenario": "frame-to-top",
+      "initial": "frame",
+      "steps": [
+        {
+          "target": "frame",
+          "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(42, 42, 43)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+          "focusInside": true,
+          "foreground": "rgba(255, 255, 255, 0.9)",
+          "opacity": "1",
+          "owner": "frame",
+          "rect": {
+            "bottom": 374.09375,
+            "height": 272.1875,
+            "left": 0,
+            "right": 628,
+            "top": 101.90625,
+            "width": 628
+          },
+          "viewport": {
+            "height": 476,
+            "width": 628
+          },
+          "documents": {
+            "top": {
+              "active": "IFRAME",
+              "activeText": "",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "DIV",
+              "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        },
+        {
+          "target": "top",
+          "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(255, 255, 255)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe.html",
+          "focusInside": true,
+          "foreground": "rgb(29, 33, 41)",
+          "opacity": "1",
+          "owner": "top",
+          "rect": {
+            "bottom": 446.09375,
+            "height": 172.1875,
+            "left": 0,
+            "right": 1280,
+            "top": 273.90625,
+            "width": 1280
+          },
+          "viewport": {
+            "height": 720,
+            "width": 1280
+          },
+          "documents": {
+            "top": {
+              "active": "DIV",
+              "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "BODY",
+              "activeText": "Iframe untouched neighbor独立 iframe 样式／maple dark\n\n",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        }
+      ],
+      "forward": {
+        "target": "top",
+        "activeText": "Maple move to top",
+        "background": "rgb(255, 255, 255)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe.html",
+        "focusInside": true,
+        "foreground": "rgb(29, 33, 41)",
+        "opacity": "1",
+        "owner": "top",
+        "rect": {
+          "bottom": 446.09375,
+          "height": 172.1875,
+          "left": 0,
+          "right": 1280,
+          "top": 273.90625,
+          "width": 1280
+        },
+        "viewport": {
+          "height": 720,
+          "width": 1280
+        },
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Maple move to top",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple dark\n\n",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "backward": {
+        "target": "top",
+        "activeText": "Maple close iframe modal",
+        "background": "rgb(255, 255, 255)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe.html",
+        "focusInside": true,
+        "foreground": "rgb(29, 33, 41)",
+        "opacity": "1",
+        "owner": "top",
+        "rect": {
+          "bottom": 446.09375,
+          "height": 172.1875,
+          "left": 0,
+          "right": 1280,
+          "top": 273.90625,
+          "width": 1280
+        },
+        "viewport": {
+          "height": 720,
+          "width": 1280
+        },
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Maple close iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple dark\n\n",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "screenshot": "maple-frame-to-top.jpg",
+      "closed": {
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Maple open iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple dark\n\n",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        },
+        "restored": true,
+        "state": {
+          "ready": true,
+          "platform": "Maple",
+          "target": "top",
+          "open": false,
+          "escapeCount": 7,
+          "closeCount": 8
+        }
+      }
+    },
+    {
+      "platform": "Maple",
+      "scenario": "reopen-after-move",
+      "initial": "top",
+      "steps": [
+        {
+          "target": "top",
+          "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(255, 255, 255)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe.html",
+          "focusInside": true,
+          "foreground": "rgb(29, 33, 41)",
+          "opacity": "1",
+          "owner": "top",
+          "rect": {
+            "bottom": 446.09375,
+            "height": 172.1875,
+            "left": 0,
+            "right": 1280,
+            "top": 273.90625,
+            "width": 1280
+          },
+          "viewport": {
+            "height": 720,
+            "width": 1280
+          },
+          "documents": {
+            "top": {
+              "active": "DIV",
+              "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "BODY",
+              "activeText": "Iframe untouched neighbor独立 iframe 样式／maple dark\n\n",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        },
+        {
+          "target": "frame",
+          "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+          "background": "rgb(42, 42, 43)",
+          "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+          "focusInside": true,
+          "foreground": "rgba(255, 255, 255, 0.9)",
+          "opacity": "1",
+          "owner": "frame",
+          "rect": {
+            "bottom": 374.09375,
+            "height": 272.1875,
+            "left": 0,
+            "right": 628,
+            "top": 101.90625,
+            "width": 628
+          },
+          "viewport": {
+            "height": 476,
+            "width": 628
+          },
+          "documents": {
+            "top": {
+              "active": "IFRAME",
+              "activeText": "",
+              "bodyOverflow": "",
+              "hostOverflow": "",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": null
+            },
+            "frame": {
+              "active": "DIV",
+              "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+              "bodyOverflow": "",
+              "hostOverflow": "hidden",
+              "scrollY": 0,
+              "styles": 12,
+              "theme": "dark"
+            }
+          }
+        }
+      ],
+      "forward": {
+        "target": "frame",
+        "activeText": "Maple move to top",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 374.09375,
+          "height": 272.1875,
+          "left": 0,
+          "right": 628,
+          "top": 101.90625,
+          "width": 628
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BUTTON",
+            "activeText": "Maple move to top",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "backward": {
+        "target": "frame",
+        "activeText": "Maple close iframe modal",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 374.09375,
+          "height": 272.1875,
+          "left": 0,
+          "right": 628,
+          "top": 101.90625,
+          "width": 628
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BUTTON",
+            "activeText": "Maple close iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "screenshot": "maple-reopen-after-move.jpg",
+      "closed": {
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Maple open iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple darkMaple move to topMaple move to f",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        },
+        "restored": true,
+        "state": {
+          "ready": true,
+          "platform": "Maple",
+          "target": "frame",
+          "open": false,
+          "escapeCount": 8,
+          "closeCount": 9
+        }
+      },
+      "reopened": {
+        "target": "frame",
+        "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+        "background": "rgb(42, 42, 43)",
+        "documentUrl": "http://127.0.0.1:5198/design-ui/refactors/token-validation/browser/iframe-target.html",
+        "focusInside": true,
+        "foreground": "rgba(255, 255, 255, 0.9)",
+        "opacity": "1",
+        "owner": "frame",
+        "rect": {
+          "bottom": 374.09375,
+          "height": 272.1875,
+          "left": 0,
+          "right": 628,
+          "top": 101.90625,
+          "width": 628
+        },
+        "viewport": {
+          "height": 476,
+          "width": 628
+        },
+        "documents": {
+          "top": {
+            "active": "IFRAME",
+            "activeText": "",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "DIV",
+            "activeText": "Maple move to topMaple move to frame跨文档 / English / العربية / 日本語；LongIdentifier",
+            "bodyOverflow": "",
+            "hostOverflow": "hidden",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        }
+      },
+      "reclosed": {
+        "documents": {
+          "top": {
+            "active": "BUTTON",
+            "activeText": "Maple open iframe modal",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": null
+          },
+          "frame": {
+            "active": "BODY",
+            "activeText": "Iframe untouched neighbor独立 iframe 样式／maple darkMaple move to topMaple move to f",
+            "bodyOverflow": "",
+            "hostOverflow": "",
+            "scrollY": 0,
+            "styles": 12,
+            "theme": "dark"
+          }
+        },
+        "restored": true,
+        "state": {
+          "ready": true,
+          "platform": "Maple",
+          "target": "frame",
+          "open": false,
+          "escapeCount": 8,
+          "closeCount": 10
+        }
+      }
+    }
+  ],
+  "ownership": [
+    {
+      "platform": "Cedar",
+      "otherDocState": {
+        "ready": true,
+        "platform": "Cedar",
+        "target": "frame",
+        "open": true,
+        "escapeCount": 8,
+        "closeCount": 10
+      },
+      "closedState": {
+        "ready": true,
+        "platform": "Cedar",
+        "target": "frame",
+        "open": false,
+        "escapeCount": 9,
+        "closeCount": 11
+      },
+      "restored": true,
+      "inactiveState": {
+        "ready": true,
+        "platform": "Cedar",
+        "target": "frame",
+        "open": false,
+        "escapeCount": 9,
+        "closeCount": 11
+      }
+    },
+    {
+      "platform": "Maple",
+      "otherDocState": {
+        "ready": true,
+        "platform": "Maple",
+        "target": "frame",
+        "open": true,
+        "escapeCount": 9,
+        "closeCount": 11
+      },
+      "closedState": {
+        "ready": true,
+        "platform": "Maple",
+        "target": "frame",
+        "open": false,
+        "escapeCount": 10,
+        "closeCount": 12
+      },
+      "restored": true,
+      "inactiveState": {
+        "ready": true,
+        "platform": "Maple",
+        "target": "frame",
+        "open": false,
+        "escapeCount": 10,
+        "closeCount": 12
+      }
+    }
+  ],
+  "excluded": [
+    "native 200%",
+    "Safari/Firefox",
+    "cross-origin iframe",
+    "detached host/frame removal",
+    "physical devices",
+    "OS reduced-motion/screen reader"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-16",
+  "startedUtc": "08:09:29",
+  "scope": "Unchanged clean Maple YearPickerPanel synchronous native-scroll classification;not parallel presentation takeover",
+  "source": {
+    "file": "maple-design-mobile/packages/maple-ui/src/date/picker-panels/YearPickerPanel.vue",
+    "sha256": "9a51ffd5def625f2ab1e35d2e139d79135f9e6ae3d81139686ecc2d0e0ffdcfe",
+    "beforeAfter": "Unchanged;tracked path clean before and after",
+    "hint": { "line": 236, "category": "native-scroll", "snippet": "      activeEl?.scrollIntoView({" },
+    "support": "onSmartMounted source7e64006c44531503657433bc1dac28f9fea739c8c3d93740db11d3a205bc3409 and actual resolved maple-use/lib/index.js lines36-50 agree:sync mounted hook,bookkeeping-only nextTick,suppress first activation,invoke on fresh activation",
+    "mechanism": "Query current panel synchronously,primary Button before outline;no marker no call. No local delayed scroll/RAF/timer/listener/interpolation owner needing cancellation. Preserve block:center/browser policy.",
+    "defect": "No product defect reproduced;classification rationale and positive lifecycle controls,not an invented failing baseline or product repair",
+    "unchanged": "Product source,public API,CSS Tokens,default policy,shared onSmartMounted helper"
+  },
+  "tests": {
+    "file": "maple-design-mobile/packages/maple-ui/src/date/__tests__/year-panel-scroll.spec.js",
+    "sha256": "23b5427edfbc3850fed1eba2ab9ad5b1f5ef1a6097111174de66e644701100d9",
+    "cases": [
+      "Actual selected Button has priority over current-year outline and block:center",
+      "Outline fallback without primary marker",
+      "No marker means no native call",
+      "Empty preview list and no deferred scroll",
+      "Mount bookkeeping tick does not replay scroll",
+      "Immediate unmount has no later replay",
+      "KeepAlive initial call once,inactive no scroll,current selected node on fresh activation,disposed no replay"
+    ],
+    "fixture": "Actual YearPanel and Button with actual resolved onSmartMounted;Affix/dirty parallel PanelHeader stubbed. HTMLElement native-method probe descriptor restored in finally,owners unmounted. No fake timer/native geometry claim.",
+    "targeted": { "passed": 7, "files": 1, "exitCode": 0, "seconds": 90.47 },
+    "affected": {
+      "command": "pnpm --dir packages/maple-ui exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js src/date/__tests__ src/date-range/__tests__",
+      "passed": 202,
+      "files": 36,
+      "exitCode": 0,
+      "seconds": 107.67,
+      "newTestsAuthored": 7,
+      "other195": "Existing/current parallel Date/DateRange regression tests,not new defects or newly authored work",
+      "formatNote": "Cleanup-only explicit braces added after test collection to satisfy curly lint;same operations/order/no assertion or product change"
+    }
+  },
+  "verification": {
+    "scopedLint": "Initial three curly errors in new fixture,explicit braces repair,final scoped no-fix eslint passed exit0",
+    "rootLint": "Initial root check collected the pre-brace fixture and failed with same three curly errors exit1;final read-only pnpm lint:check passed exit0 after repair. Not a product failure.",
+    "shared": "29tests passed exit0;classification CLI165classified/13pending passed exit0",
+    "typesLessBuild": "No product/type/style change;not rerun",
+    "diffChecks": "All three repositories passed exit0;final product/test hashes match recorded values;JSON valid and changeset/guide frontmatter preserved",
+    "nativeBrowserOs": "0 new cases;JSDOM method probes are not native layout/smooth scrolling/reduce/OS/adoption acceptance",
+    "previousCedarWarning": "Previous175passing assertions had close timed out after1000ms;retained,not mechanically rerun"
+  },
+  "registration": {
+    "closedFamilies": 31,
+    "totalFamilies": 33,
+    "closedPercent": 93.9,
+    "remainingFamilies": 2,
+    "remainingPercent": 6.1,
+    "remainingByFamily": { "Form": 4, "Picker": 9 },
+    "sourceFiles": 74,
+    "classifiedHints": 165,
+    "totalHints": 178,
+    "classifiedPercent": 92.7,
+    "remainingHints": 13,
+    "remainingHintsPercent": 7.3,
+    "denominatorChange": 0,
+    "nativeScrollCategory": 25,
+    "inventory": "Year-panel existing line236 unchanged;no full inventory refresh;26 unrelated drifts preserved",
+    "meaning": "Date runtime-candidate classification closes;not whole Date/Time stability or every retained command/native acceptance. Raw first-directory grouping includes three shared utility groups,not extra component families."
+  },
+  "parallel": {
+    "cedarFormSha256": "2818329db7df220218776071a71fec3f816a34788a4a3717eb3c542fb2b216f1",
+    "mapleFormSha256": "94c525acf1885ff8f358350673e47a3e5d9759b285d875380521247855ae9c4d",
+    "maplePickerSha256": "64f0ef40cdd0ef774bd2a87d616703eb614ecbdde474590dd0113e4b1b1a2b02",
+    "status": "Hashes match prior snapshots,but both Form roots and MaplePicker plus tests/docs remain overlapping dirty;Date/Time presentation edits also retained. Quiet timestamps are not handoff/stability.",
+    "needed": "Owner/user confirms exact source+test files ready-for-audit/frozen,or explicit file-specific takeover;no blanket takeover inferred"
+  },
+  "blockers": {
+    "catalog": "Previous read-only Cedar FilterForm declaration/Form consumer five hunks;wait stable parallel token/source ownership then manually review generation,no automatic overwrite. Maple two pages previously match,not rechecked here.",
+    "map": "Formal SDK provider/unsubscribe/dispose/asynchronous identity contract still required;fallback classification is not SDK acceptance",
+    "browser": "144groups require responsive supported Chrome native200% UI,Safari supported control and actual Firefox installation/control;no unchanged blocked retries/software installation/permission changes",
+    "button": "White on bright primary2.305:1 preserved accepted non-AA design exception,not a new permission request"
+  },
+  "documentation": "Shared standard/progress,Cedar guide,Maple bilingual guides,Date component docs,existing changesets/OpenSpec task synchronized;no demo change without product behavior/API change",
+  "constraints": "Vue skill used for original-resource/lifecycle review and finally descriptor restoration. No chats/subagents/commits/push/publish/software/permission/automation changes."
+}

@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-16",
+  "batch": "Scheduler owned test-fixture global timer restoration",
+  "scope": "Test cleanup repair only; no Scheduler runtime/API/CSS Token change and no takeover of parallel product files",
+  "installedRunner": {
+    "version": "Vitest0.22.1",
+    "readSource": ["vitest/dist/spy.mjs mockRestore", "vitest/dist/chunk-runtime-hooks.5d7073db.mjs FakeTimers.useRealTimers/uninstall"],
+    "mechanism": "mockRestore resets spy implementation but does not restore the global property; fake-clock uninstall checks hadOwnProperty on the current function and can delete a spy-wrapped global timer",
+    "evidenceLevel": "Installed local source plus isolated execution, not a claim about other runner versions"
+  },
+  "baseline": {
+    "tests": 1, "failed": 1, "exitCode": 1,
+    "expected": "Original real setTimeout property descriptor",
+    "actual": "undefined after original clearAllTimers/restoreAllMocks/useRealTimers cleanup",
+    "fixtureSafety": "Probe finally restores its original descriptors even on failed assertion",
+    "productDefects": 0
+  },
+  "repair": {
+    "helper": "cedar-design-web/packages/cedar-ui/src/scheduler/__tests__/timer-globals.ts",
+    "behavior": "Capture four global timer descriptors before fake-clock installation; restore in finally after original timer/mock cleanup, including when owner cleanup throws",
+    "ownedFixtures": ["event-drag-lifecycle.test.tsx", "event-managed-lifecycle.test.tsx", "time-grid-range-lifecycle.test.tsx", "now-lifecycle.test.tsx"],
+    "notChanged": ["Product timers/gesture thresholds", "Parallel source files", "Runner/dependencies/configuration", "5000ms test threshold", "Runtime classification/inventory"]
+  },
+  "validation": {
+    "cleanupRegression": { "passed": 3, "cases": ["all fake timers", "timeout-only clock", "interval-only clock"] },
+    "affectedSerial": { "passed": 63, "files": 6, "exitCode": 0, "seconds": 2.93, "workbenchRanAfterDrag": true },
+    "fullSerial": { "passed": 401, "files": 63, "failed": 0, "exitCode": 0, "seconds": 58.87, "closeWarning": false },
+    "fullDefaultThreads": { "passed": 401, "files": 63, "failed": 0, "exitCode": 0, "seconds": 65.43, "closeWarning": false },
+    "affectedEslint": "passed exit0,explicit --no-ignore,scoped mechanical fixes only",
+    "mapleRootLint": "passed exit0",
+    "evidenceIntegrity": "Six final fixture hashes matched;registered69files/159hints and four preserved parallel source-hash drifts reconciled",
+    "typesLessBuilds": "not rerun; test/docs-only change,configured declaration types exclude these tests",
+    "sharedGate": "not rerun mechanically; four unchanged source-hash blockers still preserved",
+    "nativeBrowserOrOsCases": 0
+  },
+  "hashes": {
+    "timer-globals.ts": "29eb8e76b2f425e8746f115d69bbc127ce3ed9ec671b0d8ed649a5afdeaeb698",
+    "timer-restoration.test.tsx": "3c254a78778020df6524d015c01018f3fcee3369d6a4443b00155a339ddb0b27",
+    "event-drag-lifecycle.test.tsx": "eaa40e775718ae5741f3ff0b4f0a7f06440ae501c30a4ee4a0576bd281dd49eb",
+    "event-managed-lifecycle.test.tsx": "df99ebd0fb86e7539febc433ec99431875b4e63747850fdc9a9c1aa400a00603",
+    "time-grid-range-lifecycle.test.tsx": "df1944e3ca872e3553b3bc20cf723e8e9861a038370a978f98a66e3167d64abf",
+    "now-lifecycle.test.tsx": "caec867722bab1c3dd4f983c0f9fb62c2da568d4fbf49a6abe67164cd21338e3"
+  },
+  "history": {
+    "preservedFailures": "Original normal370/371 timeout and serial365/371 failures remain immutable historical results",
+    "newSerialInterpretation": "After verified fixture repair,both current serial and default-thread modes pass401/401 across63files,not802 distinct tests; no current full-suite revalidation failure,not five product repairs or proof that load alone caused the former timeout",
+    "testCountChange": "371 to401 includes native13,TimeGrid14 and cleanup3 added since the old full-suite snapshot; not30 additional defects or runtime hints",
+    "priorPairDiagnostic": "23 passed but workbench ran first; new63-test serial run actually exercises workbench after drag"
+  },
+  "registration": {
+    "closedFamilies": 29, "totalFamilies": 33, "closedPercent": 87.9,
+    "remainingFamilies": 4, "remainingPercent": 12.1, "remainingNames": ["Date", "Form", "Time", "Picker"],
+    "sourceFiles": 69, "classifiedHints": 159, "totalHints": 178, "classifiedPercent": 89.3,
+    "remainingHints": 19, "remainingHintsPercent": 10.7, "denominatorChange": 0,
+    "meaning": "Runtime-candidate source classification only,not whole-library/current-hash/native acceptance"
+  },
+  "preservedBlockers": ["Four classified Ripple/VirtualList parallel hashes", "26 unrelated CSS/date inventory drifts", "Date/Form/Time/Picker parallel development", "Map formal SDK contract", "144 native Chrome200%/Safari/Firefox groups", "Button white2.305:1 design exception,not AA"],
+  "documentation": "Shared standard,Cedar guide,Maple bilingual guides,Scheduler README,changesets and existing TimeGrid OpenSpec follow-up synchronized"
+}

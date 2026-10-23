@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-16",
+  "startedUtc": "07:40:00",
+  "scope": "Clean Cedar single date/picker/Picker.vue shortcut-preview timer only;parallel panel/header/calendar/Form/Picker preserved",
+  "baseline": {
+    "sourceSha256": "f649d8a1298585587e13b873469d9e58d1f12f8b31649039c7b12634f5c5edaa",
+    "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/date/picker/__tests__/shortcut-preview-lifecycle.test.tsx",
+    "cases": 11,
+    "failed": 9,
+    "passed": 2,
+    "exitCode": 1,
+    "seconds": 6.51,
+    "failures": [
+      "Cancelled and consumed callbacks erase newer preview",
+      "Disabled/readonly/previewShortcut/open/modelValue changes retain timer",
+      "Deactivation retains timer/commands",
+      "Old callback crosses reactivation"
+    ],
+    "controls": [
+      "Current100ms clear does not commit model",
+      "Ordinary unmount already cancels timer"
+    ],
+    "interpretation": "Overlapping assertions,not nine independent defects. No claim ordinary unmount cancellation was missing."
+  },
+  "repair": {
+    "file": "cedar-design-web/packages/cedar-ui/src/date/picker/Picker.vue",
+    "sha256": "8fe8c874bf85b5cf70bf93877e0c06e95ce80770921150ce32e58eb11424527d",
+    "test": "src/date/picker/__tests__/shortcut-preview-lifecycle.test.tsx",
+    "testSha256": "9d8b2cd1ec8c834d688e85fd5594db42389804020fadb163468a282b6e368f78",
+    "mechanism": "Private generation,one-shot timer consumption and current mounted/active/disposed/visible/disabled/readonly/previewShortcut eligibility. Sync visibility/config/model invalidation cancels original timer and clears preview;deactivation/disposal reset without commit. Fresh activation accepts new hover only. Preview setter reentry rechecks generation before input clearing.",
+    "unchanged": "100ms interaction grace/global timer ownership/public selection-confirmation API/CSS Tokens;reduce does not skip business grace",
+    "notCertified": [
+      "Range-preview timer and Maple year-panel native scroll",
+      "Every other retained select/confirm/input command",
+      "Native hover/OS preferences",
+      "Same-node document adoption",
+      "Complete parallel Date/Form/Picker integration"
+    ]
+  },
+  "verification": {
+    "focused": {
+      "passed": 16,
+      "files": 1,
+      "exitCode": 0,
+      "seconds": 11.25,
+      "additionalAfterBaseline": 5,
+      "meaning": "Actual first repair run collected final16 cases because supplementation was saved before collection;do not report a separate11-pass intermediate run"
+    },
+    "affected": {
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/date/picker/__tests__ src/date/__tests__ src/date-range/__tests__",
+      "passed": 154,
+      "files": 31,
+      "exitCode": 0,
+      "seconds": 93.81,
+      "targetedIncluded": 16,
+      "meaning": "Other138 cases are existing/current parallel regressions,not newly authored by this batch"
+    },
+    "types": "pnpm typecheck passed exit0;configured declaration types exclude tests",
+    "affectedLint": "Two scoped no-fix --no-ignore eslint checks passed exit0,including final16-case source",
+    "mapleRootLint": "pnpm lint:check passed exit0;read-only eslint . --max-warnings0",
+    "shared": {
+      "passed": 29,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "classification": {
+      "classified": 163,
+      "pending": 15,
+      "exitCode": 0
+    },
+    "catalog": "Not mechanically rerun;previous actual check failed on five Cedar FilterForm/Form hunks while Maple two pages matched. No related declarations regenerated or changed by this batch.",
+    "lessBuildsNative": "No standalone Less/build/native browser/OS run;new native cases0",
+    "fixture": "Real single Picker/KeepAlive with stub PickerPanel;only100ms global timers controlled,other timer calls forwarded. Original global descriptors restored;wrapper disposed before restoration. No fake-clock use.",
+    "threeRepoDiffChecks": "passed exit0",
+    "jsonChecks": "Classification/inventory/evidence JSON parsed successfully",
+    "trackedCaseVerification": "Git tracks packages/cedar-ui/src/date/picker/picker.vue while filesystem/scanner exposes Picker.vue. Final git show HEAD at exact tracked lowercase path hashes to the original f649d8a baseline;actual diff is only this batch36insertions/7deletions. No pre-existing source edits were taken over;do not infer cleanliness from uppercase git pathspec alone.",
+    "diagnosticCommandCorrection": "Extra numstat at workspace parent failed exit129 not-a-repository;corrected at Cedar root/exact lowercase path. A combined evidence/progress patch then failed context verification atomically;reapplied exact hunks. Neither is a product/test failure."
+  },
+  "registration": {
+    "closedFamilies": 30,
+    "totalFamilies": 33,
+    "closedPercent": 90.9,
+    "remainingFamilies": 3,
+    "remainingPercent": 9.1,
+    "remainingByFamily": {
+      "Date": 2,
+      "Form": 4,
+      "Picker": 9
+    },
+    "sourceFiles": 72,
+    "classifiedHints": 163,
+    "totalHints": 178,
+    "classifiedPercent": 91.6,
+    "remainingHints": 15,
+    "remainingHintsPercent": 8.4,
+    "denominatorChange": 0,
+    "category": "interaction-delay total17",
+    "inventory": "Only reviewed single Picker427→453;26unrelated drifts preserved",
+    "meaning": "Date still partial;classification not whole-library/native acceptance"
+  },
+  "preservedSnapshots": {
+    "cedarRangePicker": "0a7c6dc19cbece33890cbba83db48e62303e9e378f950921e6eea197d71cdb33",
+    "mapleYearPanel": "9a51ffd5def625f2ab1e35d2e139d79135f9e6ae3d81139686ecc2d0e0ffdcfe",
+    "meaning": "Both same clean snapshots as request review;not integration handoff/freeze proof"
+  },
+  "blockers": [
+    "Parallel Date/Form/Picker/Time-panel changes need concrete owner handoff/frozen source-test boundary or explicit file-specific takeover permission",
+    "Cedar FilterForm/Form generated catalog five hunks await owner/manual review;26other inventory drifts not auto-refreshed",
+    "Map formal SDK provider/unsubscribe/dispose/async-identity contract",
+    "144native Chrome200%/Safari/Firefox groups unchanged,no repeated blocked entrances/install/permission changes",
+    "Button white2.305:1 remains accepted non-AA design exception"
+  ],
+  "documentation": "Shared standard,Cedar guide,Maple bilingual guides,CedarDatePicker/MapleDate docs,patch changesets and scoped OpenSpec synchronized",
+  "constraints": "No new chat/subagent/commit/push/publish/software/permissions/automation changes. Vue skill applied to suspension/disposal/private resource and descriptor cleanup."
+}

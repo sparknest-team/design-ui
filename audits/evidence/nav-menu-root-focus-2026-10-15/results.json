@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-15",
+  "batch": "NavMenu root external-focus takeover, phase five",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/nav-menu/menu.tsx",
+    "cleanAtStart": false,
+    "priorChanges": "Preserved phases one/two; current menu/node/item hashes matched recorded previous phases before editing. No new overlapping NavMenu implementation observed.",
+    "beforeSha256": "22c68dd74dc681d5d2357d2464f293dc3a0f7c978b64088967b1151966565c51",
+    "afterSha256": "925c9f7c26f36f5d539597895ad1abc06fe3bc2932912760f1d88b114d155cdf"
+  },
+  "baseline": {
+    "newTests": 3,
+    "failed": 2,
+    "passedControls": 1,
+    "rootTotal": 16,
+    "rootPassed": 14,
+    "failures": [
+      "queued selection return steals focus from a connected external control",
+      "queued fold return steals external focus after original row removal"
+    ],
+    "control": "normal fold restores focus to overflow when nobody else has taken focus"
+  },
+  "repair": {
+    "ownership": "capture original root/document/active element; before automatic settlement require original root and unclaimed current focus (origin/body/disconnected/null); fold target query followed by generation/availability/focus recheck",
+    "unchanged": "explicit context.focus, original lifecycle invalidation, normal selection/fold restoration, public API and CSS Token defaults",
+    "cancellation": "logical nextTick invalidation only, no reversal of performed focus",
+    "maple": "no corresponding NavMenu runtime; documentation only"
+  },
+  "verification": {
+    "rootCases": 16,
+    "navMenuTotal": 86,
+    "files": 6,
+    "result": "passed exit0, CHOKIDAR_USEPOLLING=true",
+    "configuredCedarTypes": "passed",
+    "affectedCedarLint": "passed",
+    "mapleRootLint": "passed",
+    "sharedTests": "28 passed",
+    "catalog": "3 generated pages match",
+    "layer": "Actual NavMenu root/KeepAlive, stub NavNode and ResizeObserver, controlled Vue nextTick and JSDOM focus/geometry; not native browser/keyboard/layout/cross-document acceptance.",
+    "newRealBrowserOrOSCases": 0
+  },
+  "progress": {
+    "families": 33,
+    "closed": 18,
+    "closedPercent": 54.5,
+    "remaining": 15,
+    "remainingPercent": 45.5,
+    "classifiedFiles": 51,
+    "classifiedHints": 132,
+    "totalHints": 182,
+    "classifiedHintPercent": 72.5,
+    "pendingHints": 50,
+    "pendingHintPercent": 27.5,
+    "denominatorChange": 0,
+    "navMenu": "partial; retained commands and registration identity pending"
+  },
+  "inventory": "Only reviewed menu hint line129→133; unchanged counts. No classification refresh, no unrelated26 CSS/date snapshot refresh, no global motion-themes success claim.",
+  "preserved": ["Form/date/linked Time", "parallel styles", "144 native200%/Safari/Firefox blocked groups", "Button on-dark2.305:1 design exception"],
+  "next": "Review root retained commands and registration identity before closing NavMenu family. No new tasks/subagents/commits/push/releases or automation changes."
+}

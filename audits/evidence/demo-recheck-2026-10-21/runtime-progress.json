@@ -1,0 +1,240 @@
+[
+  {
+    "platform": "maple",
+    "component": "picker",
+    "file": "../../../../maple-design-mobile/packages/maple-ui/src/picker/example/demos/api-review-service.vue",
+    "status": "passed",
+    "fields": [
+      {
+        "name": "model-value",
+        "control": "json",
+        "initial": "[]",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "columns",
+        "control": "json",
+        "initial": "[]",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "title",
+        "control": "string",
+        "initial": "",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "field-names",
+        "control": "json",
+        "initial": "{}",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "toolbar",
+        "control": "boolean",
+        "initial": true,
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "disabled",
+        "control": "boolean",
+        "initial": false,
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "selected-values",
+        "control": "json",
+        "initial": "[]",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "cascade",
+        "control": "boolean",
+        "initial": false,
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "option-height",
+        "control": "scalar",
+        "initial": "44",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "option-count",
+        "control": "scalar",
+        "initial": "6",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "confirm-button-text",
+        "control": "string",
+        "initial": "",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "cancel-button-text",
+        "control": "string",
+        "initial": "",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "confirm-button-text-color",
+        "control": "string",
+        "initial": "#5268cc",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "cancel-button-text-color",
+        "control": "string",
+        "initial": "#5268cc",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "esc-to-close",
+        "control": "boolean",
+        "initial": true,
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "columns-count",
+        "control": "scalar",
+        "initial": "",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "dynamic",
+        "control": "boolean",
+        "initial": false,
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "safe-area",
+        "control": "boolean",
+        "initial": false,
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "overlay-closable",
+        "control": "boolean",
+        "initial": true,
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "on-click-overlay",
+        "control": "callback",
+        "initial": "",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "on-open",
+        "control": "callback",
+        "initial": "",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "on-opened",
+        "control": "callback",
+        "initial": "",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "on-close",
+        "control": "callback",
+        "initial": "",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "on-closed",
+        "control": "callback",
+        "initial": "() => void",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "on-change",
+        "control": "callback",
+        "initial": "() => void",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "on-confirm",
+        "control": "callback",
+        "initial": "() => void",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "on-cancel",
+        "control": "callback",
+        "initial": "() => void",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "on-key-escape",
+        "control": "callback",
+        "initial": "",
+        "controllerRendered": true,
+        "available": true
+      }
+    ],
+    "combination": [
+      "disabled",
+      "columns"
+    ],
+    "warnings": [],
+    "targets": 0,
+    "methods": [
+      "close"
+    ],
+    "exposedProperties": [],
+    "methodArguments": {
+      "close": [
+        {
+          "label": "案例默认参数 / Fixture defaults",
+          "args": []
+        }
+      ]
+    },
+    "slots": [],
+    "callbackControls": [
+      "on-click-overlay",
+      "on-open",
+      "on-opened",
+      "on-close",
+      "on-closed",
+      "on-change",
+      "on-confirm",
+      "on-cancel",
+      "on-key-escape"
+    ],
+    "serviceTriggered": true,
+    "handleMethods": [
+      "close"
+    ]
+  }
+]

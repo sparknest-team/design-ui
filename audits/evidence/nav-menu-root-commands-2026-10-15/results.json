@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-15",
+  "batch": "NavMenu retained root commands and registration, phase six",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/nav-menu/menu.tsx",
+    "cleanAtStart": false,
+    "priorChanges": "Phase-five hash matched; all prior NavMenu work retained. No new overlapping NavMenu source observed. Other Maple Picker/Form/date changes preserved.",
+    "beforeSha256": "925c9f7c26f36f5d539597895ad1abc06fe3bc2932912760f1d88b114d155cdf",
+    "afterSha256": "0ee646dcb929fe14b98d2be2037ca115b83186fb76a818534e0bc42845ce691b"
+  },
+  "baseline": {
+    "tests": 12,
+    "failed": 10,
+    "passedControls": 2,
+    "probeCorrection": "Initial six inactive cases queried findComponent after removal and failed before product assertion; retain wrapper before suspension, then rerun. Valid initial10 cases:8fail/2controls. Add two reentrant-disposal cases and rerun unchanged source:12cases/10fail/2controls. Do not count invalid probes or combined command cases as independent product defects.",
+    "failureCases": [
+      "inactive retained showOption",
+      "inactive retained setCollapsed",
+      "inactive retained setActiveItem",
+      "inactive retained select",
+      "inactive retained expand",
+      "inactive retained activateItem",
+      "disposed retained state-command sequence",
+      "old node unregister deletes replacement element",
+      "closer disposal still invokes later closer and continues selection",
+      "closer disposal still commits expansion"
+    ],
+    "controls": ["current node unregister", "normal active public commands and reactivation"]
+  },
+  "repair": {
+    "entry": "availability guards for public/internal interaction commands and keyboard, preserving internal deactivation close cleanup",
+    "closers": "snapshot and activation generation; nested activation replaces outer iteration, new registrations not consumed, disposed/unregistered later callbacks skipped",
+    "selection": "availability and focus-request recheck after activation and each emitted notification; reentrant new selection suppresses old subsequent select",
+    "registration": "original NavMenuNode owns same-key element unregister; disposal clears element/owner/Item closer/name maps and rejects new registration",
+    "unchanged": "public signatures, CSS Token and visual defaults, independent runtime copies, explicit active commands"
+  },
+  "final": {
+    "targeted": 17,
+    "navMenuTotal": 103,
+    "files": 7,
+    "result": "passed exit0, CHOKIDAR_USEPOLLING=true",
+    "additionalCases": ["inactive keyboard does not inspect/prevent event", "newly registered closer excluded from old snapshot", "nested activation consumes later closer once", "reentrant update selection owns subsequent select", "disposed late registration inert"]
+  },
+  "verification": {
+    "configuredCedarTypes": "passed",
+    "affectedCedarLint": "passed; final added cases rechecked",
+    "mapleRootLint": "passed",
+    "classification": "133 classified /49 pending; menu declaration-only +1",
+    "sharedTests": "28 passed",
+    "catalog": "3 generated pages match",
+    "layer": "Actual NavMenu root/KeepAlive, stub NavNode/ResizeObserver and controlled JSDOM state/focus/notification probes. Full existing actual Node/Item/Trigger regressions included; not native browser/keyboard/layout/cross-document/OS acceptance.",
+    "newRealBrowserOrOSCases": 0
+  },
+  "progress": {
+    "familyRule": "Merge same public top-level runtime candidate directory across platforms; exclude underscore internals, utils and style. Closed means all its runtime candidate files classified, not full native acceptance.",
+    "families": 33,
+    "closedBefore": 18,
+    "closed": 19,
+    "closedPercent": 57.6,
+    "remaining": 14,
+    "remainingPercent": 42.4,
+    "classifiedFiles": 52,
+    "classifiedHints": 133,
+    "totalHints": 182,
+    "classifiedHintPercent": 73.1,
+    "pendingHints": 49,
+    "pendingHintPercent": 26.9,
+    "denominatorChange": 0,
+    "remainingFamilies": ["Date", "Form", "Map", "Message", "Notification", "Ripple", "Scheduler", "Time", "Tree", "Counter", "LoadingBar", "Picker", "PullRefresh", "SwipeCell"]
+  },
+  "inventory": "Only menu line133→147 and reviewed classification hash added. Scanner hit is function declaration; optional underlying scrollIntoView separately behavior-tested. Saved193files/392CSS/182runtime unchanged. No26 unrelated CSS/date refresh or global motion-themes success claim.",
+  "preserved": ["Form/date/linked Time", "other parallel styles and Picker changes", "144 native200%/Safari/Firefox blocked groups", "Button on-dark2.305:1 design exception"],
+  "next": "Review non-overlapping remaining consumer or reconcile previously audited feedback family classifications against current source. No new tasks/subagents/commits/push/releases or automation changes."
+}

@@ -1,0 +1,26 @@
+{
+  "tests": {
+    "cedar": 72,
+    "maple": 87
+  },
+  "sharedSourcePairs": 40,
+  "lessOutputs": 6,
+  "typecheck": {
+    "cedar": "passed",
+    "maple": "passed"
+  },
+  "lint": {
+    "cedarAffected": "passed",
+    "mapleRoot": "passed"
+  },
+  "demoSfc": {
+    "checked": 1153,
+    "failures": 0
+  },
+  "browser": [
+    "Maple dialog selected detail: per-item removal, clear, cancel restore and confirmation",
+    "Maple popup Cascader selected paths: per-item removal and clear confirmation",
+    "Cedar Select dialog/popover/inline: removable tags, clear and list options without checkboxes",
+    "Cedar Cascader popover: removable selected paths and confirm draft"
+  ]
+}

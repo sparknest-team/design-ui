@@ -1,0 +1,940 @@
+{
+  "date": "2026-10-15",
+  "scope": "three-independent-scrollbar-consumers-controlled-lifecycle-native-call-spies",
+  "sources": [
+    {
+      "repo": "cedar-design-web",
+      "file": "scrollbar/Scrollbar.vue",
+      "beforeSha256": "ac7e4687bd113aabdb10b51702fe8989183f8c8501658286df26ec1161f0d27d",
+      "afterSha256": "489fffcbee4564045b98ab9970be5e57da0f10edad8423738d997389df215f09"
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "scrollbar/src/Scrollbar.vue",
+      "beforeSha256": "783798aff136c06871830be8d9078f64bf8aa08afda0e8d560a1adfd55ceffc3",
+      "afterSha256": "2ec91f7b53ebd9e5e9d06fb2806ecde216177811eb75f66799106b2d72d1c69b"
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "_components/selection-scrollbar/Scrollbar.vue",
+      "beforeSha256": "173b40a50c183660f564202a901eb026e5a85ad948be33462159d87d727cc08b",
+      "afterSha256": "e9ab220f1afddfc8ba68094706b8ddeb43e2f504100126ba2520d19e474754b9"
+    }
+  ],
+  "baseline": {
+    "perCopy": 13,
+    "failedPerCopy": 11,
+    "controlsPerCopy": 2,
+    "totalCases": 39,
+    "totalFailed": 33,
+    "totalControls": 6,
+    "controls": [
+      "current native commands preserve overloads",
+      "disposal clears refs and makes retained native commands inert"
+    ],
+    "notes": "Actual three parent consumers; ResizeObserver and Thumb are stubs. Zero-viewport baseline fails visible-axis state; its finite-metric subassertion need not fail (old metrics may be finite but negative). No invalid baseline runner/fixture correction."
+  },
+  "cases": [
+    {
+      "id": 1,
+      "name": "current native commands preserve overloads",
+      "baseline": "passed-control",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 2,
+      "name": "numeric zero origin is a valid native command",
+      "baseline": "failed",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 3,
+      "name": "inactive retained public commands cannot scroll",
+      "baseline": "failed",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 4,
+      "name": "inactive retained thumb commands cannot scroll",
+      "baseline": "failed",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 5,
+      "name": "inactive measurement cannot update saved geometry",
+      "baseline": "failed",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 6,
+      "name": "previous binding measurement is inert after activation",
+      "baseline": "failed",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 7,
+      "name": "previous binding scroll event cannot notify after activation",
+      "baseline": "failed",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 8,
+      "name": "disabled axis rejects a retained thumb command",
+      "baseline": "failed",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 9,
+      "name": "zero viewport does not produce non-finite thumb metrics",
+      "baseline": "failed",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 10,
+      "name": "measurement resets a thumb when scrolling returns to zero",
+      "baseline": "failed",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 11,
+      "name": "geometry reentrant disposal cannot commit new measurement",
+      "baseline": "failed",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 12,
+      "name": "new reentrant measurement owns geometry",
+      "baseline": "failed",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 13,
+      "name": "disposal clears refs and makes retained native commands inert",
+      "baseline": "passed-control",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 14,
+      "name": "previous binding thumb is inert but fresh activation command works",
+      "baseline": "not-run-on-original",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 15,
+      "name": "native options are forwarded without synthetic animation",
+      "baseline": "not-run-on-original",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    },
+    {
+      "id": 16,
+      "name": "horizontal measurement uses its own axis ratio",
+      "baseline": "not-run-on-original",
+      "cedarPublic": "passed-controlled",
+      "cedarLegacyDirectory": "passed-controlled",
+      "mapleSelection": "passed-controlled"
+    }
+  ],
+  "fixes": [
+    "Availability guards synchronous public native methods, thumb commands, measurements and notifications.",
+    "Binding epochs reject retained event/resize/thumb deliveries after deactivation/reactivation; fresh activation remeasures.",
+    "Operation/node/lifecycle checks after getters/reactive commits/thumb callbacks prevent reentrant disposal/new measurement overwrite.",
+    "Move implementation of existing methods into setup closure to share ownership; public signatures retained.",
+    "Numeric zero origin accepted; thumb zero reset; horizontal ratio uses horizontalData, not original verticalData.",
+    "Zero/invalid viewport yields finite nonnegative metrics and no bar on the zero-sized axis; existing20px minimum thumb and15px track retained."
+  ],
+  "semantics": {
+    "newRaf": 0,
+    "newTimers": 0,
+    "newCssTokens": 0,
+    "publicApiChanged": false,
+    "nativeOptions": "Forward existing object options without JS interpolation; method typing retained.",
+    "disableAxis": "Suppress bar/thumb input, not public/content native scrolling.",
+    "cancel": "Logical invalidation cannot undo already-performed native scroll or certify native smooth cancellation."
+  },
+  "validation": {
+    "scopedEachCopy": 16,
+    "cedarScoped": 32,
+    "mapleScoped": 16,
+    "withConsumers": {
+      "cedar": 126,
+      "maple": 112,
+      "cedarIncludes": "Scrollbar public+legacy contract, Select/AutoComplete/Mention",
+      "mapleIncludes": "selection-scrollbar, Select/AutoComplete"
+    },
+    "configuredTypes": "passed both",
+    "lint": "Cedar affected and Maple full root",
+    "demoSfc": {
+      "maple": 1030,
+      "failures": 0
+    },
+    "inventoryClassificationMessageTests": 25,
+    "catalog": {
+      "tests": 3,
+      "pages": 3
+    },
+    "savedBrowserEvidenceTests": 202,
+    "newRealBrowserCases": 0,
+    "blockedNativeCases": 144
+  },
+  "classification": {
+    "files": 47,
+    "hints": 125,
+    "pendingHints": 54,
+    "nativeScroll": 24,
+    "declarationOnly": 14,
+    "perCopy": {
+      "hints": 7,
+      "nativeCalls": 6,
+      "declaration": 1
+    },
+    "notes": "Geometry semantics are documented without inventing extra scanned hints; pending hints are not known defects."
+  },
+  "inventory": {
+    "observedAt": "2026-10-15",
+    "saved": [
+      {
+        "repo": "cedar-design-web",
+        "files": 102,
+        "cssDeclarationCandidates": 202,
+        "runtimeCallCandidates": 95
+      },
+      {
+        "repo": "maple-design-mobile",
+        "files": 90,
+        "cssDeclarationCandidates": 190,
+        "runtimeCallCandidates": 84
+      }
+    ],
+    "live": [
+      {
+        "repo": "cedar-design-web",
+        "files": 102,
+        "cssDeclarationCandidates": 202,
+        "runtimeCallCandidates": 95
+      },
+      {
+        "repo": "maple-design-mobile",
+        "files": 92,
+        "cssDeclarationCandidates": 214,
+        "runtimeCallCandidates": 84
+      }
+    ],
+    "drifts": [
+      {
+        "repo": "maple-design-mobile",
+        "file": "action-sheet/style/action-sheet.less",
+        "before": {
+          "file": "action-sheet/style/action-sheet.less",
+          "css": [
+            5
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "action-sheet/style/action-sheet.less",
+          "css": [
+            4
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "carousel/style/index.less",
+        "before": {
+          "file": "carousel/style/index.less",
+          "css": [
+            16,
+            22
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        "after": {
+          "file": "carousel/style/index.less",
+          "css": [
+            15,
+            32,
+            42,
+            170
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "cell/style/cell.less",
+        "before": {
+          "file": "cell/style/cell.less",
+          "css": [
+            26
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "cell/style/cell.less",
+          "css": [
+            25
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "checkbox/style/index.less",
+        "before": {
+          "file": "checkbox/style/index.less",
+          "css": [
+            30,
+            48
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        "after": {
+          "file": "checkbox/style/index.less",
+          "css": [
+            30,
+            48,
+            103
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "counter/style/counter.less",
+        "before": {
+          "file": "counter/style/counter.less",
+          "css": [
+            14
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "counter/style/counter.less",
+          "css": [
+            13
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "date-range/style/date-range-picker.less",
+        "before": {
+          "file": "date-range/style/date-range-picker.less",
+          "css": [
+            50,
+            90
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "date-range/style/date-range-picker.less",
+          "css": [
+            60,
+            104
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "date/style/date-picker.less",
+        "before": {
+          "file": "date/style/date-picker.less",
+          "css": [
+            48,
+            69,
+            246,
+            252,
+            272,
+            292,
+            298,
+            368
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "date/style/date-picker.less",
+          "css": [
+            47,
+            68,
+            245,
+            251,
+            271,
+            291,
+            297,
+            367
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "fab/style/fab.less",
+        "before": {
+          "file": "fab/style/fab.less",
+          "css": [
+            4,
+            8,
+            174
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "fab/style/fab.less",
+          "css": [
+            3,
+            7,
+            173
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "form-details/style/form-details.less",
+        "before": {
+          "file": "form-details/style/form-details.less",
+          "css": [
+            16,
+            26
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "form-details/style/form-details.less",
+          "css": [
+            15,
+            25
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "loading/style/loading.less",
+        "before": {
+          "file": "loading/style/loading.less",
+          "css": [
+            58,
+            119,
+            148,
+            215,
+            219,
+            224,
+            228,
+            232,
+            236,
+            306,
+            310,
+            315,
+            319,
+            323,
+            396,
+            400,
+            404,
+            408,
+            412,
+            416,
+            420,
+            424,
+            428,
+            505,
+            509,
+            513,
+            517,
+            555,
+            556
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        "after": {
+          "file": "loading/style/loading.less",
+          "css": [
+            57,
+            118,
+            147,
+            214,
+            218,
+            223,
+            227,
+            231,
+            235,
+            305,
+            309,
+            314,
+            318,
+            322,
+            395,
+            399,
+            403,
+            407,
+            411,
+            415,
+            419,
+            423,
+            427,
+            504,
+            508,
+            512,
+            516,
+            554,
+            555
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "notice-bar/style/notice-bar.less",
+        "before": {
+          "file": "notice-bar/style/notice-bar.less",
+          "css": [
+            64,
+            65,
+            66
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "notice-bar/style/notice-bar.less",
+          "css": [
+            63,
+            64,
+            65
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "picker/Picker.vue",
+        "before": {
+          "file": "picker/Picker.vue",
+          "css": [],
+          "runtime": [
+            214,
+            291,
+            333,
+            417,
+            432,
+            461,
+            507,
+            558,
+            564
+          ],
+          "hasLocalReducedQuery": true
+        },
+        "after": {
+          "file": "picker/Picker.vue",
+          "css": [],
+          "runtime": [
+            214,
+            302,
+            344,
+            428,
+            443,
+            475,
+            532,
+            586,
+            592
+          ],
+          "hasLocalReducedQuery": true
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "picker/style/picker.less",
+        "before": {
+          "file": "picker/style/picker.less",
+          "css": [
+            6,
+            61,
+            72,
+            105
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        "after": {
+          "file": "picker/style/picker.less",
+          "css": [
+            5,
+            60,
+            71,
+            104
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "progress-group/style/index.less",
+        "after": {
+          "file": "progress-group/style/index.less",
+          "css": [
+            45,
+            55,
+            81,
+            161,
+            167,
+            236,
+            242,
+            246
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "progress/style/index.less",
+        "before": {
+          "file": "progress/style/index.less",
+          "css": [
+            18
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        "after": {
+          "file": "progress/style/index.less",
+          "css": [
+            35,
+            47,
+            84,
+            94,
+            102,
+            105,
+            142,
+            149
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "pull-refresh/style/pull-refresh.less",
+        "before": {
+          "file": "pull-refresh/style/pull-refresh.less",
+          "css": [
+            31
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "pull-refresh/style/pull-refresh.less",
+          "css": [
+            30
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "radio/style/index.less",
+        "before": {
+          "file": "radio/style/index.less",
+          "css": [
+            47
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        "after": {
+          "file": "radio/style/index.less",
+          "css": [
+            49,
+            100
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "rate/style/rate.less",
+        "before": {
+          "file": "rate/style/rate.less",
+          "css": [
+            19
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        "after": {
+          "file": "rate/style/rate.less",
+          "css": [
+            19,
+            30,
+            61,
+            62
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "result/style/result.less",
+        "before": {
+          "file": "result/style/result.less",
+          "css": [
+            78,
+            120
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        "after": {
+          "file": "result/style/result.less",
+          "css": [
+            77,
+            119
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "slider/style/index.less",
+        "after": {
+          "file": "slider/style/index.less",
+          "css": [
+            52,
+            172
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "swipe-cell/style/swipe-cell.less",
+        "before": {
+          "file": "swipe-cell/style/swipe-cell.less",
+          "css": [
+            12
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "swipe-cell/style/swipe-cell.less",
+          "css": [
+            11
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "tab-bar/style/tab-bar-item.less",
+        "before": {
+          "file": "tab-bar/style/tab-bar-item.less",
+          "css": [
+            21,
+            32,
+            60,
+            96
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "tab-bar/style/tab-bar-item.less",
+          "css": [
+            20,
+            31,
+            59,
+            95
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "tab-bar/style/tab-bar.less",
+        "before": {
+          "file": "tab-bar/style/tab-bar.less",
+          "css": [
+            8,
+            41
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "tab-bar/style/tab-bar.less",
+          "css": [
+            7,
+            40
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "table/style/table.less",
+        "before": {
+          "file": "table/style/table.less",
+          "css": [
+            50
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "table/style/table.less",
+          "css": [
+            49
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "time-range/style/time-range-picker.less",
+        "before": {
+          "file": "time-range/style/time-range-picker.less",
+          "css": [
+            37
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "time-range/style/time-range-picker.less",
+          "css": [
+            41
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "time/style/time-picker.less",
+        "before": {
+          "file": "time/style/time-picker.less",
+          "css": [
+            32,
+            56,
+            112,
+            207
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "time/style/time-picker.less",
+          "css": [
+            31,
+            55,
+            111,
+            206
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      }
+    ]
+  },
+  "limits": [
+    "Stubbed observer/thumb and controlled DOM getters/native call spies are not actual observer or Thumb-drag lifecycle proof.",
+    "Native smooth animation, paint, OS and cross-document ownership remain independently unverified.",
+    "No rollback/cancel promise for native scrolling already handed to browser.",
+    "202 saved browser tests validate prior evidence only; no new browser run."
+  ],
+  "probeNotes": [
+    "Maple test loop braces, nested if braces and dynamic describe title lint corrected; rules not disabled; full lint rerun.",
+    "Cedar public/legacy sources kept independent; legacy directory not deleted or made a cross-repo import.",
+    "Only three source inventory rows refreshed; no unreviewed CSS/date snapshot rewrite."
+  ],
+  "preserved": [
+    "Form parallel implementation",
+    "Date inventory drift",
+    "Other26 parallel CSS candidate row/declaration changes observed",
+    "144 environment-blocked native zoom/Safari/Firefox cases"
+  ],
+  "documents": [
+    "design-ui/standards/design-tokens.md",
+    "cedar-design-web/packages/cedar-ui/docs/guide/design-tokens.md",
+    "maple-design-mobile/packages/maple-ui/docs/designTokens.zh-CN.md",
+    "maple-design-mobile/packages/maple-ui/docs/designTokens.en-US.md",
+    "cedar-design-web/packages/cedar-ui/src/scrollbar/README.md",
+    "maple-design-mobile/packages/maple-ui/src/select/docs/zh-CN.md",
+    "maple-design-mobile/packages/maple-ui/src/select/docs/en-US.md"
+  ],
+  "operations": {
+    "browsers": 0,
+    "servicesStarted": 0,
+    "automationChanges": 0,
+    "subagentsCreated": 0,
+    "commits": 0,
+    "pushes": 0,
+    "releases": 0
+  }
+}

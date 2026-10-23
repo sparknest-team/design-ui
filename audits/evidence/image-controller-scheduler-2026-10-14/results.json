@@ -1,0 +1,214 @@
+{
+  "date": "2026-10-14",
+  "scope": "Independent ImagePreview controller and input-mode helper lifecycle; controlled clocks/events/MQL, not native browser acceptance",
+  "platforms": [
+    {
+      "repo": "cedar-design-web",
+      "sources": [
+        {
+          "file": "packages/cedar-ui/src/image/composables/usePreviewController.ts",
+          "beforeSha256": "b2652e3de82ca81700b16860b4a1a045f47ef6b88f7d81bbd047c37a4cbcdbf1",
+          "afterSha256": "8b6c5f390886d37970d730c2782f0252a5779e8b700f18d21398508248bd1e27"
+        },
+        {
+          "file": "packages/cedar-ui/src/image/composables/useInteraction.ts",
+          "beforeSha256": "bf32419e7152673c4621dcd87de6bea3ffc112ba4498d70a716c5362725081fc",
+          "afterSha256": "86980033c0acc9808839dbc040fd252e63cbbfa0e27daa56ed5a9246f35c8d1a"
+        }
+      ],
+      "baseline": {
+        "scoped": 17,
+        "failed": 15,
+        "passed": 2
+      },
+      "final": {
+        "scoped": 17,
+        "full": 35,
+        "passed": 35
+      }
+    },
+    {
+      "repo": "maple-design-mobile",
+      "sources": [
+        {
+          "file": "packages/maple-ui/src/image/composables/usePreviewController.ts",
+          "beforeSha256": "b2652e3de82ca81700b16860b4a1a045f47ef6b88f7d81bbd047c37a4cbcdbf1",
+          "afterSha256": "09bf89128f115265ec531bead58d70360286b598cc5c9e98a9b7eda9265dee17"
+        },
+        {
+          "file": "packages/maple-ui/src/image/composables/useInteraction.ts",
+          "beforeSha256": "bf32419e7152673c4621dcd87de6bea3ffc112ba4498d70a716c5362725081fc",
+          "afterSha256": "26dc4dc32f71d976bbc847ca0f3e534dbed62ee586a27f2b03322bb20e4d96e2"
+        }
+      ],
+      "baseline": {
+        "scoped": 17,
+        "failed": 15,
+        "passed": 2
+      },
+      "final": {
+        "scoped": 17,
+        "full": 87,
+        "passed": 87
+      }
+    }
+  ],
+  "cases": [
+    {
+      "name": "current long press fires at500ms not499ms",
+      "before": "passed-control",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "pointer up invalidates dequeued long press",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "movement invalidates dequeued long press",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "close invalidates pending long press",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "source replacement invalidates long press",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "deactivation invalidates pending long press",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "unmount invalidates dequeued long press",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "inactive keyboard listener does not navigate",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "inactive retained pointer entry does not schedule",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "old tap expiry cannot clear the newer timer handle",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "consumed long press callback cannot replay",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "deactivation releases pointer capture and moving state",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "activation starts fresh interaction without reviving old timer",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "normal double tap zooms within320ms and clears tap work",
+      "before": "passed-control",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "inactive coarse-pointer observation detaches and rejects old delivery",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "activation rebinds preference and detached delivery cannot change it",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "disposed preference callback cannot change detection",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    }
+  ],
+  "fix": {
+    "timers": "Separate long-press/tap generations verify availability/open/request/source/pointer before consuming delivery. Release/move/close/src/deactivation/disposal cancel pending work; old tap cannot clear a new timer handle. Private tapCloseTimer renamed tapTimer because expiry only clears recognition.",
+    "inputs": "Guard retained inactive/disposed entries; source and accepted close synchronously cancel gesture. Deactivation/disposal detach keyboard, release retained pointer capture and clear moving. Activation accepts fresh gestures without timer replay.",
+    "mode": "Coarse-pointer MQL binding generation rejects detached callbacks; deactivation/disposal remove listener, activation rereads current query. No additional live subscription on mounted+activated.",
+    "preserved": "500ms long press,320ms tap expiry,8px movement,48px swipe,24px tap proximity,public zoom/drag/API/CSS semantics; document/window ownership unchanged."
+  },
+  "validation": {
+    "types": "Both configured declaration typechecks passed",
+    "lint": "Both affected sources/tests/demos and Maple full root lint passed",
+    "mapleDemoSFC": {
+      "checked": 1021,
+      "failed": 0
+    },
+    "classification": {
+      "files": 38,
+      "hints": 86,
+      "unclassified": 93,
+      "tests": 25,
+      "interactionDelay": 8
+    },
+    "inventory": {
+      "files": 192,
+      "css": 392,
+      "runtime": 179,
+      "updatedRows": 2,
+      "helperRows": "useInteraction has no current scanner runtime hint; source hashes audited separately, not counted as candidate files.",
+      "globalGate": "Still blocked only by preserved Maple date-range/time-range CSS line drift",
+      "remainingDrift": [
+        "date-range CSS [50,90] -> [61,105]",
+        "time-range CSS [37] -> [42]"
+      ]
+    },
+    "compiledMotion": "Independent motion compilation chain passed; no native motion claim",
+    "tokenReference": "3 tests/3 generated pages match",
+    "savedBrowserEvidence": "202 tests and all saved evidence consistency checks pass; no new browser run"
+  },
+  "fixture": "Actual private composables mounted inside Vue KeepAlive; fake timers/Date, synthetic pointer-shaped objects, capture spies and controlled MQL listeners. Restore global descriptors/devtools hook, unmount wrappers, remove nodes and restore real clocks. This does not represent physical touch or real preference changes.",
+  "limitations": {
+    "newRealBrowserCases": 0,
+    "newOSCases": 0,
+    "environmentBlockedCases": 144,
+    "notCertified": [
+      "native touch/gesture deadlines",
+      "real MQL/browser/OS delivery",
+      "actual cross-document owner/listener behavior",
+      "PreviewGroup track recenter timers/RAF"
+    ],
+    "preserved": [
+      "dirty preview API/styles/docs and existing lifecycle tests",
+      "Form parallel work",
+      "date CSS snapshots",
+      "other chats and paused automation"
+    ]
+  }
+}

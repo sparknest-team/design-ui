@@ -1,0 +1,291 @@
+{
+  "version": 1,
+  "date": "2026-10-16",
+  "scope": "Explicit bounded takeover of remaining6inventory rows and related styles/Tokens;Cedar DateRangePicker hash revalidation",
+  "status": "authorized-six-closed-new-parallel-drift-retained",
+  "automation": {
+    "id": "cedar-maple-14-00-2",
+    "status": "PAUSED",
+    "savedStatusChecked": true,
+    "modified": false
+  },
+  "progress": {
+    "authorizedRows": 6,
+    "closedRows": 6,
+    "closedPercent": 100,
+    "remainingAuthorizedRows": 0,
+    "remainingAuthorizedPercent": 0,
+    "originalTwoBatchRows": 31,
+    "originalRowsReviewed": 31,
+    "newOutOfScopeInventoryRows": 3,
+    "meaning": "New Select changes are separate from the original6/31cohort,notunfixed old defects."
+  },
+  "sourceReview": {
+    "productionSourceWrites": 0,
+    "styleWrites": 0,
+    "tokenDefaultWrites": 0,
+    "businessApiWrites": 0,
+    "dateRange": {
+      "priorHash": "0e22365510feb85a4612d7ccb73097ef359ece0f975ca1df3f4beb55ffb43c41",
+      "currentHash": "2a47d80d17f7408f613c75085c44d53bcaabb14ef34a11f3df6ea0ea57b01a79",
+      "proof": "In-memory reversal of only parallel onTimePickerSelect confirmation branch recovers exact prior complete hash;no recovered source written.",
+      "timerLineBefore": 639,
+      "timerLineAfter": 644,
+      "delayMs": 100,
+      "category": "interaction-delay",
+      "changedRegistrationRows": 1,
+      "businessPreserved": true
+    },
+    "styleRoutes": [
+      "Carousel track transform/fade opacity/card transform+opacity and reduce rules;preserved literal grid-area1/1 parallel repair",
+      "DateRange/TimeRange scoped picker/date/time-body background aliases and actual presentation descendants",
+      "Date/Time real compiled transition declarations;legacy selectors do not prove all presentations render them"
+    ],
+    "maskBoundary": "Catalog background-image is transitive symbolic reachability,not local computed recoloring. Root-declared Picker mask aliases need not recompute from local background overrides;direct --mp-picker-mask-background-image override remains supported. No default mask policy repair invented."
+  },
+  "classification": {
+    "registeredFamilies": 33,
+    "totalFamilies": 33,
+    "registeredPercent": 100,
+    "historicallyUnclassifiedFamilies": 0,
+    "registeredSourceFiles": 78,
+    "classifiedHints": 182,
+    "totalHints": 182,
+    "pendingClassificationHints": 0,
+    "denominatorChange": 0,
+    "verifiedDateRangeCurrentHash": true,
+    "globalCliExitCode": 1,
+    "newStaleSources": [
+      {
+        "repo": "cedar-design-web",
+        "file": "select/hooks/use-select.ts",
+        "expected": "4e46a2eb3554133e94fc50c4fe29c86274c29eb3400bc2c091cd9bf84a9c236b",
+        "actual": "65113c567fd1441974d4d30593deb305e60101bb5f5bedb074d57ab8aeef4972"
+      }
+    ],
+    "boundary": "DateRange now passes independently;global classification still fails on unrelated Cedar Select,not whole-library/native acceptance."
+  },
+  "inventory": {
+    "files": 196,
+    "cssHints": 416,
+    "runtimeHints": 182,
+    "authorizedRefreshed": 6,
+    "unrelatedRemaining": [
+      {
+        "repo": "cedar-design-web",
+        "file": "select/hooks/use-select.ts",
+        "after": {
+          "file": "select/hooks/use-select.ts",
+          "css": [],
+          "runtime": [
+            139,
+            166,
+            168,
+            204,
+            246,
+            259
+          ],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "cedar-design-web",
+        "file": "select/style/index.less",
+        "after": {
+          "file": "select/style/index.less",
+          "css": [
+            88,
+            145
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "select/style/index.less",
+        "after": {
+          "file": "select/style/index.less",
+          "css": [
+            88,
+            145
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        }
+      }
+    ],
+    "globalCheckExitCode": 1,
+    "fullMotionThemesPassing": false
+  },
+  "catalog": {
+    "authorizedRowsApplied": 4,
+    "appliedPages": [
+      "maple-design-mobile/packages/maple-ui/docs/designTokenReference.zh-CN.md",
+      "maple-design-mobile/packages/maple-ui/docs/designTokenReference.en-US.md"
+    ],
+    "cedarPageAuthorizedChangeNeeded": false,
+    "retainedRows": 21,
+    "retainedTokens": [
+      "--c-select-popup-group-title-padding-horizontal",
+      "--mp-dropdown-menu-background-color",
+      "--mp-dropdown-menu-group-title-height",
+      "--mp-dropdown-menu-group-title-padding",
+      "--mp-dropdown-menu-option-bg-hover",
+      "--mp-dropdown-menu-option-bg-selected-hover",
+      "--mp-dropdown-menu-option-selected-background",
+      "--mp-dropdown-menu-option-selected-text-color",
+      "--mp-dropdown-menu-option-text-color",
+      "--mp-floating-panel-background",
+      "--mp-select-popup-group-title-padding-horizontal"
+    ],
+    "globalCheckExitCode": 1,
+    "reason": "Unrelated Select/Maple DropdownMenu/FloatingPanel parallel source changes;unapplied generated hunks remain across3pages."
+  },
+  "validation": [
+    {
+      "command": "node --test bin/reviewed-inventory-drift.test.mjs bin/remaining-style-consumers.test.mjs",
+      "stage": "initial six-row baseline before four catalog assertions were added",
+      "tests": 42,
+      "passed": 36,
+      "failed": 6,
+      "exitCode": 1,
+      "failure": "Only original6stale inventory rows;5newactual compiled consumer groups pass."
+    },
+    {
+      "command": "node --test bin/remaining-style-consumers.test.mjs",
+      "stage": "authorized catalog baseline",
+      "tests": 9,
+      "passed": 5,
+      "failed": 4,
+      "exitCode": 1,
+      "durationSeconds": 5.606,
+      "result": "Four stale range sections,notfour product defects."
+    },
+    {
+      "command": "pnpm check:reviewed-motion-inventory",
+      "stage": "final localized gate",
+      "tests": 51,
+      "passed": 51,
+      "exitCode": 0,
+      "durationSeconds": 6.889
+    },
+    {
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/date/picker/__tests__/range-time-preview-ownership.test.tsx src/date/picker/__tests__/range-shortcut-preview.test.ts src/date/__tests__/range-time-draft.test.tsx",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "tests": 25,
+      "files": 3,
+      "passed": 25,
+      "exitCode": 0,
+      "durationSeconds": 19.24,
+      "newCases": 2,
+      "initialFixtureResult": "First new run24/25;global getTimerCount=0 assertion incorrectly included unrelated timer. Corrected to original preview-handle clearTimeout assertion;both explicit/automatic confirmation policies then pass,with no source fix."
+    },
+    {
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js src/carousel/__tests__/inventory-consumers.spec.js src/carousel/__tests__/fade-style.spec.js src/date-range/__tests__/picker/index.spec.js src/time-range/__tests__/picker/index.spec.js src/date/__tests__/time-display-contract.test.ts src/time/__tests__/time-panel.test.ts",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "tests": 32,
+      "files": 5,
+      "passed": 32,
+      "exitCode": 0,
+      "durationSeconds": 23.06,
+      "newCases": 8,
+      "note": "The time-display-contract filter matched no test file;only actual5files/32tests counted."
+    },
+    {
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js src/carousel/__tests__/inventory-consumers.spec.js",
+      "stage": "after owned curly formatting correction",
+      "tests": 8,
+      "passed": 8,
+      "exitCode": 0,
+      "durationSeconds": 43.71
+    },
+    {
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js src/carousel/__tests__/inventory-consumers.spec.js",
+      "stage": "after parallel RangeContent mobile-context import changed",
+      "tests": 8,
+      "passed": 8,
+      "exitCode": 0,
+      "durationSeconds": 65.3
+    },
+    {
+      "command": "pnpm exec eslint --no-ignore src/date/picker/__tests__/range-time-preview-ownership.test.tsx --max-warnings 0",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm lint:check",
+      "cwd": "maple-design-mobile",
+      "stage": "first run",
+      "exitCode": 1,
+      "result": "One curly error in owned new inventory-consumers.spec.js;fixed only that fixture."
+    },
+    {
+      "command": "pnpm lint:check",
+      "cwd": "maple-design-mobile",
+      "stage": "second run",
+      "exitCode": 1,
+      "result": "New parallel DatePanelContent.vue:23 import formatting;notmodified by this task. Working-tree import later visibly formatted;onebounded retry started."
+    }
+  ],
+  "finalChecks": {
+    "mapleRootLintCheckExitCode": 0,
+    "cedarOwnedFixtureLintExitCode": 0,
+    "threeRepositoryDiffChecksExitCode": 0,
+    "evidenceJsonParseExitCode": 0,
+    "allVerificationProcessesFinished": true,
+    "nativeNewCases": 0,
+    "sourceSnapshotUnchangedCount": 16,
+    "parallelBusinessImportChanges": 1,
+    "currentParallelImportConsumerCasesRevalidated": 8,
+    "note": "Final root lint was retried once only after the observed external import-format change;it passes. Earlier owned-curly/external-import failures remain recorded. No external business file was formatted by this task."
+  },
+  "initialSourceSnapshot": {
+    "cedar-design-web/packages/cedar-ui/src/date/picker/DateRangePicker.vue": "2a47d80d17f7408f613c75085c44d53bcaabb14ef34a11f3df6ea0ea57b01a79",
+    "cedar-design-web/packages/cedar-ui/src/date/picker/hooks/use-range-header-value.ts": "d0ca93224271b70da9322f6a814f2b378eb250c89c2b76ea4ecdaacd5461677f",
+    "maple-design-mobile/packages/maple-ui/src/carousel/style/index.less": "232697ffb339e5622dcb2505613ebad142cf78697741492c0319620f19f5373b",
+    "maple-design-mobile/packages/maple-ui/src/carousel/style/token.less": "02559021ba5cb8ad317be1d1f584da306e61066f63c122045ae89fb20d2cc50a",
+    "maple-design-mobile/packages/maple-ui/src/carousel/Carousel.vue": "c13cd96b9948b1302b7324c7a47b7a0d0b636bbe4dd2495b42c7b17133a1f21b",
+    "maple-design-mobile/packages/maple-ui/src/date-range/style/date-range-picker.less": "1da3c8efc75d81292db6e9a650e93998692e64ee279760a725f995ba8ef6be9c",
+    "maple-design-mobile/packages/maple-ui/src/date-range/style/token.less": "507f9be06fd1cfbc6e5da9044f932d9202d20a42580932000b3d7555d7fbd6ac",
+    "maple-design-mobile/packages/maple-ui/src/date-range/DateRangePicker.vue": "9307bfef620c3aee162765dc68cbccfcb429059964c7f2b8d6ea7cb45a574eca",
+    "maple-design-mobile/packages/maple-ui/src/date-range/presentation/RangeContent.vue": "e53052931dc8640efe85b8726439c6b5e5c514672274e7e2e5c0ca82461df45f",
+    "maple-design-mobile/packages/maple-ui/src/date/style/date-picker.less": "a57229f57ae36b128d71fbe3b1d24f25a315eea75bd2f98f27319380306bcb04",
+    "maple-design-mobile/packages/maple-ui/src/date/DatePanel.vue": "aefd78763262af4bb4e8354f8fdb3ffc17172f2b59f29ff18c62d0e151dbfea8",
+    "maple-design-mobile/packages/maple-ui/src/time-range/style/time-range-picker.less": "5fde641bbd968ede183e6078984a30bc439facfbc78098c3cd113f6dd5966e02",
+    "maple-design-mobile/packages/maple-ui/src/time-range/style/token.less": "307c1bb1b0fc9262af3a478b667d0b2c1b03ae2eda36a6a06a1016b46210787c",
+    "maple-design-mobile/packages/maple-ui/src/time-range/TimeRangePicker.vue": "d42de409386ed1c369b4d9c46451b1c61011c2cc8e745fd2b924b1e4ff6570c4",
+    "maple-design-mobile/packages/maple-ui/src/time-range/presentation/TimePanelContent.vue": "fa3c883fd7cba18695fabd68d3096cc1ff31d800771c66948609441c6153854f",
+    "maple-design-mobile/packages/maple-ui/src/time/style/time-picker.less": "8a6e53ab43536121be871457856a1e0d4c41147edbd811c6e802bf35146320e2",
+    "maple-design-mobile/packages/maple-ui/src/time/TimePicker.vue": "c222cb71510e73a450fb61b3a5215afa91f2fcc8ede6eacc625fd1f00c10b95b"
+  },
+  "parallelSourceDelta": [
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date-range/presentation/RangeContent.vue",
+      "before": "e53052931dc8640efe85b8726439c6b5e5c514672274e7e2e5c0ca82461df45f",
+      "after": "836bce00c27733c647fd2038a4918fbc3690b0349f8dea727db8f22a5c24b4f2"
+    }
+  ],
+  "finalIntegrationBoundary": "16/17frozen related production hashes unchanged;RangeContent's import changed independently to mobile-range-field-context. Template/classes untouched,8current consumer tests rerun successfully. No claim that parallel business integration was fully frozen/certified.",
+  "preserved": {
+    "mapSdk": "Formal disposal/listener/async identity contract",
+    "nativeEnvironmentGroups": 144,
+    "nativeNewCases": 0,
+    "button": "White on-dark2.305:1non-AA design exception",
+    "sourceIndependence": true,
+    "newComponentApi": false,
+    "newTaskSubagentCommitPushPublish": false
+  },
+  "documentation": [
+    "Shared ledger/standard and Cedar/Maple Chinese-English menu guides",
+    "Cedar DatePicker and five Maple related Chinese-English component docs",
+    "Existing Date shortcut/OpenSpec/token-consumer tasks and existing changesets",
+    "Only4authorized generated rows"
+  ],
+  "diagnostics": [
+    "Inventory guard detected8instead of6differences before write;changed strategy to explicit6row allowlist,preserving Select.",
+    "Initial classification patch generator serialized unrelated legacy JSON formatting and output was incomplete;apply_patch verification rejected it without changes. Replaced with exact target hash/rationale/call-site hunks only.",
+    "Initial17source hash guard stopped on parallel RangeContent import change before global checks;recorded delta and revalidated current8DOMcases instead of overwriting business code."
+  ],
+  "layers": "Independent actual Less compilers;controlled timers/JSDOM/DOM shapes,notreal native painting,OS,hover,zoom or complete reduced-motion acceptance."
+}

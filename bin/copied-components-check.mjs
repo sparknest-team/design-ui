@@ -15,6 +15,11 @@ const cedar = resolve(workspace, 'cedar-design-web/packages/cedar-ui/src')
 const maple = resolve(workspace, 'maple-design-mobile/packages/maple-ui/src')
 const componentFilter = process.argv[2]
 const pairs = [
+  ['infinite-scroll/infinite-scroll.vue', 'infinite-scroll/InfiniteScroll.vue'],
+  ['textarea/utils.ts', 'textarea/utils.ts'],
+  ['input/use-input-value.ts', 'input/use-input-value.ts'],
+  ['infinite-scroll/props.ts', 'infinite-scroll/props.ts'],
+  ['infinite-scroll/style/implementation.less', 'infinite-scroll/style/implementation.less'],
   ['style-provider/StyleProvider.vue', 'style-provider/StyleProvider.vue'],
   ['style-provider/props.ts', 'style-provider/props.ts'],
   ['split-button/SplitButton.vue', 'split-button/SplitButton.vue'],
@@ -176,6 +181,10 @@ const pairs = [
   ['trigger/style/index.less', 'trigger/style/index.less'],
   ['trigger/style/token.less', 'trigger/style/token.less'],
   ['trigger/__tests__/position.spec.js', 'trigger/__tests__/position.spec.js'],
+  ['_utils/popup-layer.ts', 'utils/popup-layer.ts'],
+  ['overlay/overlay.vue', 'overlay/Overlay.vue'],
+  ['overlay/props.ts', 'overlay/props.ts'],
+  ['overlay/style/index.less', 'overlay/style/index.less'],
   ['tooltip/Tooltip.vue', 'tooltip/Tooltip.vue'],
   ['tooltip/props.ts', 'tooltip/props.ts'],
   ['tooltip/platform.ts', 'tooltip/platform.ts'],
@@ -184,6 +193,12 @@ const pairs = [
   ['popover/props.ts', 'popover/props.ts'],
   ['popover/platform.ts', 'popover/platform.ts'],
   ['popover/style/implementation.less', 'popover/style/implementation.less'],
+  ['watermark/watermark.tsx', 'watermark/watermark.tsx'],
+  ['watermark/props.ts', 'watermark/props.ts'],
+  ['watermark/types.ts', 'watermark/types.ts'],
+  ['watermark/renderer.ts', 'watermark/renderer.ts'],
+  ['watermark/style/index.less', 'watermark/style/index.less'],
+  ['watermark/__tests__/watermark.test.ts', 'watermark/__tests__/watermark.test.ts'],
   ['badge/badge.vue', 'badge/Badge.vue'],
   ['badge/props.ts', 'badge/props.ts'],
   ['badge/style/index.less', 'badge/style/badge.less'],
@@ -226,7 +241,12 @@ const normalize = (source) => source
   .replaceAll('../_utils/maple/elements', '../utils/elements')
   .replaceAll('../_utils/size-length', '../utils/size-length')
   .replaceAll('../_utils/popup-container', '../utils/popup-container')
+  .replaceAll('../_utils/popup-layer', '../utils/popup-layer')
+  .replaceAll('../_utils/popup-transition', '../utils/popup-transition')
+  .replaceAll('../_utils/text-input-value', '../utils/text-input-value')
+  .replaceAll('../_utils/scroll-lock', '../utils/scroll-lock')
   .replaceAll('../_utils/global-config', '../utils/components')
+  .replaceAll('../_utils/components', '../utils/components')
   .replaceAll('../_utils/cedar/components', '../utils/components')
   .replaceAll('../_utils/constant', '../utils/constants')
   .replaceAll('./avatar.vue', './Avatar.vue')
@@ -249,6 +269,7 @@ const normalize = (source) => source
   .replaceAll('c-icon-spin', 'mp-icon-spin')
   .replaceAll('c-tag', 'mp-tag')
   .replaceAll('cedar-theme', 'maple-theme')
+  .replaceAll('cedar-style-vars', 'maple-style-vars')
   .replaceAll('c-switch', 'mp-switch')
   .replaceAll('c-button', 'mp-button')
   .replaceAll('c-row', 'mp-row')
@@ -257,6 +278,7 @@ const normalize = (source) => source
   .replaceAll('--c-', '--mp-')
   .replaceAll('.c-', '.mp-')
   .replaceAll("'c-", "'mp-")
+  .replaceAll('"c-', '"mp-')
   .replaceAll('import("vue")', "import('vue')")
   .replace(/\n[ \t]*\n/g, '\n')
   .trim()
@@ -269,11 +291,52 @@ for (const [cedarPath, maplePath] of pairs) {
   // Older SFC pairs still have repository-formatter-only drift. Tooltip and
   // Popover were normalized during this migration, so their complete bodies
   // are strict gates instead of relying only on paired behavior tests.
-  if (cedarPath.endsWith('.vue') && !['tooltip/Tooltip.vue', 'popover/Popover.vue'].includes(cedarPath)) continue
-  const [left, right] = await Promise.all([
+  if (
+    cedarPath.endsWith('.vue') &&
+    ![
+      'infinite-scroll/infinite-scroll.vue',
+      'overlay/overlay.vue',
+      'tooltip/Tooltip.vue',
+      'popover/Popover.vue',
+    ].includes(cedarPath)
+  ) continue
+  let [left, right] = await Promise.all([
     readFile(resolve(cedar, cedarPath), 'utf8'),
     readFile(resolve(maple, maplePath), 'utf8'),
   ])
+  if (cedarPath === 'badge/style/token.less') {
+    // Cedar declares its dark override in Less; Maple supplies the same value
+    // through ThemeProvider. Verify that adapter before comparing base tokens.
+    const dark = await readFile(resolve(maple, 'themes/dark/badge.ts'), 'utf8')
+    assert.match(dark, /'--mp-badge-status-tertiary-text-color':\s*'var\(--mp-sys-color-content-on-bright\)'/)
+    const override = /:root\[cedar-theme="dark"\]\s*\{\s*--c-badge-status-tertiary-text-color:\s*var\(--c-sys-color-content-on-bright\);\s*\}/
+    assert.match(left, override)
+    left = left.replace(override, '')
+  }
+  if (cedarPath === 'button/style/token.less') {
+    const contract = JSON.parse(await readFile(resolve(workspace, 'design-ui/packages/theme-contract/contracts/theme-contract.json'), 'utf8'))
+    const normalizeButtonDensity = async (text, root, prefix, platform) => {
+      const field = await readFile(resolve(root, 'field-decorator/style/token.less'), 'utf8')
+      const system = await readFile(resolve(root, 'style/theme/system.less'), 'utf8')
+      for (const size of ['xs', 'sm', 'md', 'lg', 'xl']) {
+        const heightPattern = new RegExp(`(--${prefix}-button-${size}-height:)\\s*([^;]+);`)
+        const fieldHeight = field.match(new RegExp(`--${prefix}-field-size-${size}-height:\\s*([^;]+);`))[1]
+        const expectedHeight = contract.platformComponentTokenValues[platform].button[`${size}-height`]
+        assert.equal(text.match(heightPattern)[2].trim(), expectedHeight, `${platform} Button ${size} registered height`)
+        assert.equal(expectedHeight, fieldHeight.trim(), `${platform} Button/Input ${size} height alignment`)
+        const fontPattern = new RegExp(`(@button-font-size-${size}:)\\s*([^;]+);`)
+        const role = text.match(fontPattern)[2].trim()
+        const font = system.match(new RegExp(`--${prefix}-${role}:\\s*([^;]+);`))[1]
+        const fieldFont = field.match(new RegExp(`--${prefix}-field-size-${size}-font-size:\\s*([^;]+);`))[1]
+        assert.equal(font.trim(), fieldFont.trim(), `${platform} Button/Input ${size} typography alignment`)
+        text = text.replace(heightPattern, `$1 PLATFORM_HEIGHT_${size};`)
+        text = text.replace(fontPattern, `$1 PLATFORM_FONT_${size};`)
+      }
+      return text
+    }
+    left = await normalizeButtonDensity(left, cedar, 'c', 'cedar')
+    right = await normalizeButtonDensity(right, maple, 'mp', 'maple')
+  }
   const normalizePair = (source) => {
     let value = normalize(source).replace(/import\s*\{([^}]+)\}\s*from/g, (_match, names) => {
       const sorted = names.split(',').map((name) => name.trim()).filter(Boolean).sort().join(', ')

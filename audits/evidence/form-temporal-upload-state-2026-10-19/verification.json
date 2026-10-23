@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-19",
+  "runtimeFix": [
+    "Maple TimeRange and Time disabled prop defaults changed to undefined to inherit Form/FormItem restrictions"
+  ],
+  "automated": {
+    "transactionCasesPerPlatform": 90,
+    "coverage": [
+      "Date",
+      "DateRange",
+      "Time",
+      "TimeRange",
+      "Upload"
+    ],
+    "states": [
+      "async pending blocks changes and repeated confirmation/cancel",
+      "validation failure retains candidate, parent unchanged, correction retries",
+      "save rejection retains candidate",
+      "field/full/native reset during validation/save closes and aborts; late results ignored",
+      "disabled/readonly/read aborts; reopen restores committed model"
+    ],
+    "cedarRelated": {
+      "tests": 386,
+      "files": 54
+    },
+    "mapleRelated": {
+      "tests": 454,
+      "files": 58
+    },
+    "mapleAdditionalTime": {
+      "tests": 288,
+      "files": 42
+    },
+    "checks": [
+      "both typecheck",
+      "Maple root lint and final affected lint",
+      "Cedar affected lint",
+      "date-family parity",
+      "time-rules parity",
+      "selection-presentations parity",
+      "both git diff --check"
+    ]
+  },
+  "browser": {
+    "cedar": [
+      "dialog Date/DateRange/TimeRange/Upload: validation errors retain local candidate; save failures leave parent unchanged",
+      "popover Date/DateRange/TimeRange/Upload: pending reset closes and cancels; Upload reopen restores 3 original records",
+      "DateRange shows October and November, one confirmation toolbar"
+    ],
+    "maple": [
+      "dialog Date/DateRange/TimeRange/Upload: native controls tested for validation failure/pending states",
+      "dialog Date/DateRange/TimeRange/Upload: pending reset closes and cancels",
+      "Upload pending disables native file input and remove buttons",
+      "popup TimeRange pending -> Form.disabled closes, aborts and preserves original model"
+    ]
+  },
+  "uploadBoundary": "Only local preloaded records and removal were exercised; remote transfer side effects are not rolled back by a list draft cancellation.",
+  "rangeScreenshotCorrection": "See ../date-range-highlight-2026-10-19/verification.json. The old screenshot selects September 28 to October 26 due to an adjacent-month browser selector; it does not verify an October 26–28 visual range."
+}

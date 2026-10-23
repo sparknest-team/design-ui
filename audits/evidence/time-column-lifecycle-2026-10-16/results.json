@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-16",
+  "startedUtc": "07:28:20",
+  "scope": "Previously clean Cedar TimeColumn consumer;no takeover of parallel Time panels/Date/Form/Maple Picker. Close Time source-candidate classification,not all component/native acceptance.",
+  "baseline": {
+    "file": "src/time/picker/TimeColumn.vue",
+    "sha256": "2d11fee6834a442d38f33eac38810066797cbdb2910b53e0d0733593b4730d57",
+    "testCommand": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/time/picker/__tests__/column-lifecycle.test.tsx",
+    "cases": 11,
+    "failed": 9,
+    "passed": 2,
+    "exitCode": 1,
+    "seconds": 4.28,
+    "failures": [
+      "Hide/deactivation/unmount leave private animation active;retained frame writes50",
+      "Old visibility callback replaces newer value scroll",
+      "Replayed visibility callback writes again",
+      "Inactive/removed/now-disabled retained item emits",
+      "Geometry disposal still starts a scroll write"
+    ],
+    "controls": [
+      "Normal100ms linear midpoint/endpoint/current select",
+      "Vue already rejects disposed-component emit"
+    ],
+    "interpretation": "Overlapping assertions,not nine independent defects;disposed emit is not a new product repair"
+  },
+  "repair": {
+    "file": "src/time/picker/TimeColumn.vue",
+    "sha256": "66f5407016ed16e900684c8c10970d9745bd69f75346a809469d602e8e347d96",
+    "testSha256": "a626c433ab19fa2e912d538a5b981e247a4e7b9acd409ac1090af017e4f1b748",
+    "helperUnchangedSha256": "deb755dde332ea635db5aba06a0c2a5a37eea8a37425da7667147f360c485e80",
+    "mechanism": "Component mounted/active/disposed gates plus synchronous generation invalidation on current value/visible/list changes cancel the private disposer. Post-render visibility continuation consumes once;offsetTop read rechecks original root/value/element. Activation aligns current value without replaying interpolation. Retained selection checks current visible/available item membership and disabled state;ref cleanup protects a different same-value item registration.",
+    "policy": "Positive value-scroll100ms linear and0ms visibility alignment remain;no public API/CSS Token change. Cancel preserves current offset;Vue queue logically invalidated,not physically removed.",
+    "notCertified": [
+      "Arbitrary reordered reference callbacks for the same item identity",
+      "Native keyboard/wheel/trusted input or scrolling/paint",
+      "Same-node document adoption",
+      "OS reduced-motion",
+      "Parallel Maple Time panels/wheels and Date/Form/Picker integration"
+    ]
+  },
+  "verification": {
+    "firstRepair": {
+      "passed": 25,
+      "files": 2,
+      "exitCode": 0,
+      "seconds": 5.12,
+      "breakdown": "11 component+14 helper"
+    },
+    "final": {
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/time/picker/__tests__ src/time/__tests__",
+      "passed": 149,
+      "files": 30,
+      "exitCode": 0,
+      "seconds": 73.95,
+      "componentTargeted": 16,
+      "helperTargeted": 14,
+      "additionalConsumerCases": 5,
+      "parallelCases": "Two step-demo cases appeared in parallel;149 versus previous131 is16 new consumer+2parallel,not18 authored cases/defects"
+    },
+    "types": "pnpm typecheck passed exit0;configured declaration types exclude tests",
+    "lint": "Scoped --no-ignore eslint --fix on TimeColumn and new test passed exit0;final source/test hashes unchanged after tested run",
+    "mapleRootLint": "Not rerun this batch;Maple changes are Markdown only.Previous batch root lint passed,not a new current-snapshot claim",
+    "shared": {
+      "passed": 29,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "classificationCli": {
+      "classified": 162,
+      "pending": 16,
+      "exitCode": 0
+    },
+    "catalog": "Not mechanically rerun;previous batch actual check failed on five Cedar FilterForm/Form hunks;Maple pages matched.Parallel declaration source not taken over or regenerated.",
+    "lessBuildsSchedulerNative": "No standalone Less/build/Scheduler/native rerun;new native/browser/OS cases0",
+    "threeRepoDiffChecks": "passed exit0",
+    "finalMetadata": "Rationale follow-up reconciled with consumer registration;current classification CLI and evidence JSON checked separately"
+  },
+  "registration": {
+    "closedFamilies": 30,
+    "totalFamilies": 33,
+    "closedPercent": 90.9,
+    "remainingFamilies": 3,
+    "remainingPercent": 9.1,
+    "remainingByFamily": {
+      "Date": 3,
+      "Form": 4,
+      "Picker": 9
+    },
+    "sourceFiles": 71,
+    "classifiedHints": 162,
+    "totalHints": 178,
+    "classifiedPercent": 91,
+    "remainingHints": 16,
+    "remainingHintsPercent": 9,
+    "denominatorChange": 0,
+    "category": "One visual-scroll consumer;visual-scroll total23",
+    "inventory": "Only reviewed TimeColumn76→89;26unrelated drifts untouched",
+    "meaning": "Time scanned runtime-candidate files are classified;not confirmation that parallel whole-family implementation is stable"
+  },
+  "preservedSnapshots": {
+    "cedarForm": "2818329db7df220218776071a71fec3f816a34788a4a3717eb3c542fb2b216f1",
+    "mapleForm": "94c525acf1885ff8f358350673e47a3e5d9759b285d875380521247855ae9c4d",
+    "maplePicker": "64f0ef40cdd0ef774bd2a87d616703eb614ecbdde474590dd0113e4b1b1a2b02",
+    "meaning": "Same as request review;untouched by this batch.Not a freeze/handoff declaration."
+  },
+  "blockers": [
+    "Parallel Date/Form/Picker and Time-panel integration require concrete owner handoff/frozen source-test boundaries or explicit file-specific takeover authorization",
+    "Cedar FilterForm/Form declarations/catalog5hunks await manual owner review;do not auto-refresh26unrelated drifts",
+    "Map formal provider/SDK unsubscribe-dispose-async identity contract missing",
+    "144native Chrome200%/Safari/Firefox groups unchanged;no repeated blocked entrances/install/permission changes",
+    "Button white on-dark2.305:1 preserved non-AA design exception"
+  ],
+  "documentation": "Shared standard,Cedar guide,Maple bilingual guides,CedarTimePicker/MapleTime docs,existing patch changesets and existing scoped OpenSpec synchronized",
+  "constraints": "No chat/subagent/commit/push/publish/software/permissions/automation changes. Vue cleanup skill informs lifecycle/private task/ref/test descriptor cleanup."
+}

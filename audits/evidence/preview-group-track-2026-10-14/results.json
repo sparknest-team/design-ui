@@ -1,0 +1,279 @@
+{
+  "date": "2026-10-14",
+  "scope": "controlled-component-lifecycle-and-compiled-token-consumption",
+  "sources": [
+    {
+      "repo": "cedar-design-web",
+      "file": "image/PreviewGroup.vue",
+      "beforeSha256": "e12494061367ebbc0a43b077ec3af0827971d3e7aaef31f7e5a141bff8547547",
+      "afterSha256": "897b0a4342ce9006c95e219dabb79f24fc6c6a92cedd4b753e5d7708072f2bf3"
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "image/ImagePreviewGroup.vue",
+      "beforeSha256": "e00033abb2a45439898c72905df23bc66f2d896d4fab66753aa15f820c764cc6",
+      "afterSha256": "b4f3d4eb58b1c45b4e3b857a51052c53821d80e496a6f0b002dfb18811de5c4b"
+    }
+  ],
+  "baseline": {
+    "casesPerCopy": 21,
+    "failedPerCopy": 17,
+    "controlsPerCopy": 4,
+    "notes": "Valid baseline after correcting track index parse. Existing normal double-frame release, disposed open emission suppression, own transform completion and bubbled-event rejection are controls, not repaired defects."
+  },
+  "cases": [
+    {
+      "id": 1,
+      "name": "current instant mode releases on the second frame",
+      "baseline": "passed-control",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 2,
+      "name": "unmount before nextTick cannot request a frame",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 3,
+      "name": "deactivation before nextTick cannot request a frame",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 4,
+      "name": "superseded nextTick can request only the current first frame",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 5,
+      "name": "dequeued first frame cannot schedule paint after disposal",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 6,
+      "name": "old second frame cannot release a newer instant phase",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 7,
+      "name": "consumed first frame cannot fork second-frame work",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 8,
+      "name": "consumed second frame cannot revive after another phase",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 9,
+      "name": "inactive retained navigation does not emit change",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 10,
+      "name": "disposed retained open does not emit change",
+      "baseline": "passed-control",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 11,
+      "name": "deactivation cancels pending recenter timeout",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 12,
+      "name": "close cancels pending recenter timeout",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 13,
+      "name": "old timeout cannot recenter a new activation navigation",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 14,
+      "name": "long transform duration and delay cannot be capped at400ms",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 15,
+      "name": "known zero transition settles without400ms delay",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 16,
+      "name": "own transform completion cancels the fallback",
+      "baseline": "passed-control",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 17,
+      "name": "bubbled transition from another node is ignored",
+      "baseline": "passed-control",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 18,
+      "name": "loop change resets canonical coordinates",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 19,
+      "name": "same-length image replacement invalidates edge coordinates",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 20,
+      "name": "reentrant change disposal cannot schedule a recenter task",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 21,
+      "name": "foreign track uses and cancels its owner RAF",
+      "baseline": "failed",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 22,
+      "name": "in-place image edits invalidate pending edge work",
+      "baseline": "not-run-on-original",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 23,
+      "name": "transform property lists and negative delay determine the deadline",
+      "baseline": "not-run-on-original",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 24,
+      "name": "unavailable computed style keeps the400ms safety fallback",
+      "baseline": "not-run-on-original",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 25,
+      "name": "transition event created before newer navigation is ignored",
+      "baseline": "not-run-on-original",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 26,
+      "name": "reentrant newer navigation owns the current instant phase",
+      "baseline": "not-run-on-original",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    },
+    {
+      "id": 27,
+      "name": "recenter render callback cannot fork duplicate timers",
+      "baseline": "not-run-on-original",
+      "cedar": "passed-controlled",
+      "maple": "passed-controlled"
+    }
+  ],
+  "validation": {
+    "imageTests": {
+      "cedar": 62,
+      "maple": 114,
+      "scopedEach": 27
+    },
+    "compiledTrack": {
+      "cases": 32,
+      "pairedOverrides": 16,
+      "instantMovingConsumers": 32
+    },
+    "classification": {
+      "files": 40,
+      "hints": 92,
+      "unclassifiedHints": 87
+    },
+    "inventory": {
+      "files": 192,
+      "cssHints": 392,
+      "runtimeHints": 179
+    },
+    "newRealBrowserCases": 0,
+    "blockedNativeCases": 144
+  },
+  "changes": [
+    "Generation, lifecycle, ref and owner-window checks; frame/render deliveries consume once.",
+    "Close/content/loop/new command/deactivation/disposal invalidate pending work; activation canonicalizes without replay.",
+    "Computed transform/all duration and delay govern recenter deadline;400ms only unresolved-style fallback.",
+    "Maple track280ms/custom curve replaced with existing system slow240ms/standard easing, no public API or new token.",
+    "Post content watch avoids registered-child watchEffect recursive dependency contamination.",
+    "Reentrant navigation owns new phase; older outer command cannot reschedule it."
+  ],
+  "probeCorrections": [
+    "Initial invalid index regex and -0 assertion corrected before/following valid baseline, not additional product defects.",
+    "Maple prefer-const and reentrant-test curly fixture lint corrected; root lint rerun after correction.",
+    "Initial compiled gate omitted pointer condition, then incorrectly assumed dark/image.ts; corrected to explicit pointer mode and existing imagePreview theme without loosening helper.",
+    "Implementation deep sync watch regressed registered-child mode; full regression identified recursion and post settlement repaired it.",
+    "Reentrant absolute navigation legitimately needs one recenter timer; replaced incorrect zero-timer assertion with one render job/one timer/final canonical coordinate.",
+    "One Maple test command was run from repository root instead of package; rerun with package/config."
+  ],
+  "limits": [
+    "Mock preview child, controlled nextTick/RAF/fake timers and simulated iframe owner are not real browser/OS/touch/paint certification.",
+    "Same-node adoption across documents and unstamped/legacy transition events remain independently unverified.",
+    "Form parallel work, Maple date CSS inventory drift and144 native environment blockers untouched.",
+    "Saved browser202 checks verify existing evidence only; no new run."
+  ],
+  "documents": [
+    "design-ui/standards/design-tokens.md",
+    "cedar-design-web/packages/cedar-ui/docs/guide/design-tokens.md",
+    "maple-design-mobile/packages/maple-ui/docs/designTokens.zh-CN.md",
+    "maple-design-mobile/packages/maple-ui/docs/designTokens.en-US.md"
+  ],
+  "checks": {
+    "types": "Both configured declaration/type checks",
+    "lint": "Cedar scoped and Maple root full lint",
+    "demoSfc": {
+      "maple": 1023,
+      "failures": 0
+    },
+    "inventoryClassificationMessageTests": 25,
+    "catalogTests": 3,
+    "savedBrowserEvidenceTests": 202,
+    "globalMotionGate": "Still blocked only by preserved Maple date-range/time-range line drift; snapshots not refreshed."
+  }
+}

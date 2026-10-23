@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-16",
+  "batch": "Cedar SchedulerEvent managed pointer phase one",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerEvent.vue",
+    "cleanAtStart": true,
+    "beforeSha256": "adecd3cb9aa46caa9eef5271dc70536f32c4086dc38eb69bc501c01808cda3bb",
+    "sha256": "2c9aa1ce0f5cdf473f2326871259d595f6dbd1ae4b636a4738061db8e069542f",
+    "originalHints": [209, 220, 313, 323],
+    "currentHints": [223, 236, 336, 346],
+    "fileRegistered": false,
+    "reason": "Managed branch repaired; independent drag/native drag still pending. Do not classify whole file prematurely."
+  },
+  "regression": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__tests__/event-managed-lifecycle.test.tsx",
+    "sha256": "69f720ca18ef0e178036fbf0dc49e4335c55690272279c79c6e6d0d690ac0708",
+    "validBaseline": { "total": 9, "failed": 8, "passedControls": 1, "exitCode": 1 },
+    "baselineFailures": ["released hold late delivery", "replayed hold", "deactivation", "disabled eligibility", "old finished suppresses newer click", "disposed finished schedules unlock", "Escape hold cancellation", "blur hold cancellation"],
+    "fixtureClarification": "Changed undefined emitted-event length assertion to empty-array fallback; reran unchanged product baseline with same eight failures/one control. Not an extra product failure.",
+    "firstRepair": { "targetedPassed": 9, "existingPointerTests": 15, "exitCode": 0 },
+    "supplementary": ["normal click settlement", "finished consumed once", "stale unlock cannot release newer suppression", "fresh activation hold"],
+    "finalTargeted": { "passed": 13, "failed": 0 },
+    "fullScheduler": { "passed": 357, "files": 59, "failed": 0, "exitCode": 0 }
+  },
+  "repair": ["waiting/start/finished consumption and managed-request generation", "current event/managed mode/eligibility plus lifecycle availability", "sync configuration invalidation", "Escape/blur and original waiting-listener cleanup", "old finish/unlock invalidation", "activation accepts fresh gestures only"],
+  "preservedPolicy": { "touchHoldMs": 350, "touchMoveCancellationPx": 8, "clickUnlockMs": 0, "windowOwnership": "original global document/window retained", "publicApiCssTokenDefaultsChanged": false },
+  "validation": {
+    "cedarConfiguredTypecheck": "passed exit0 after final source changes",
+    "affectedEslint": "passed exit0 with --no-ignore",
+    "mapleRootLint": "passed exit0",
+    "allThreeRepositoryDiffChecks": "passed exit0; evidence hashes and remaining sum matched",
+    "sharedTests": { "total": 29, "passed": 28, "failed": 1, "failure": "existing Ripple/VirtualList source-hash gate; no auto-refresh" },
+    "generatedTokenPages": { "matched": 3 },
+    "reviewedInventoryLines": "live collector matches223/236/336/346; total178 unchanged",
+    "lessAndMapleTypes": "not rerun; no CSS or Maple runtime change",
+    "newNativeBrowserOrOsCases": 0
+  },
+  "registration": {
+    "closedFamilies": 28, "totalFamilies": 33, "closedPercent": 84.8,
+    "remainingFamilies": 5, "remainingPercent": 15.2,
+    "sourceFiles": 67, "classifiedHints": 153, "totalHints": 178, "classifiedPercent": 86.0,
+    "remainingHints": 25, "remainingHintsPercent": 14.0, "denominatorChange": 0,
+    "remainingByFamily": { "Date": 3, "Form": 4, "Scheduler": 6, "Time": 3, "Picker": 9 },
+    "meaning": "Unchanged registrations; partial branch verification is not whole-file/family/native acceptance"
+  },
+  "remainingBoundaries": ["Standalone Event drag/native drag/retained events and geometry", "TimeGrid two runtime hints", "Trusted Pointer input/native click ordering/cross-document/reduced-motion OS", "Parallel resource core/Date/Form/Time/Picker preserved", "Four stale classified hashes and26 unrelated inventory drifts retained", "Map formal SDK and144 environment groups blocked", "Button white on-dark2.305:1 design exception, not AA"],
+  "documentation": "Shared standard, Cedar guide, Maple bilingual guides, Scheduler README, both changesets, Cedar OpenSpec and progress synchronized"
+}

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notification native service lifecycle acceptance</title>
+<style>
+body{margin:26px;font:16px system-ui}button{padding:10px;margin:6px}
+table{border-collapse:collapse;margin:12px 0}th,td{padding:8px;border:1px solid #bbb}
+output{display:block;white-space:pre-wrap;font:12px monospace}
+body[data-motion="long"]{--c-notification-transition-duration-leave:600ms;--c-notification-transition-timing-function-leave:linear}
+body[data-motion="zero"]{--c-notification-transition-duration:0ms;--c-notification-transition-duration-enter:0ms;--c-notification-transition-duration-leave:0ms}
+</style>
+<div id="app"></div><script type="module" src="./notification-motion-main.js"></script>
+</html>

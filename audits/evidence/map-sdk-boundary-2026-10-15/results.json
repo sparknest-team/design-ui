@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-15",
+  "batch": "Cedar Map SDK boundary and interaction-delay classification",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/map/map.tsx",
+    "sha256": "dc5de08224d414533cc8c415bd5f35d80f2283e4af53df850a7a9680ee354c76",
+    "cleanAtStart": true,
+    "changed": false
+  },
+  "classification": {
+    "hints": [
+      { "line": 276, "category": "interaction-delay", "delayMs": 300, "purpose": "model-center programmatic moveend suppression" },
+      { "line": 454, "category": "interaction-delay", "delayMs": 500, "purpose": "selected-place programmatic moveend suppression" }
+    ],
+    "meaning": "source responsibility only, not CSS completion or SDK lifecycle acceptance",
+    "sdkBoundary": "map-core runtime import commented for migration; MapService/SearchService/LngLat ambient declarations are not providers. Existing missing-dependency guard returns before SDK/model watcher/moveend listener/timer setup.",
+    "productRepair": false,
+    "validProductFailureBaseline": "none established; active SDK branch not exercised",
+    "maple": "no matching runtime; guide-only alignment"
+  },
+  "tests": {
+    "file": "cedar-design-web/packages/cedar-ui/src/map/__tests__/sdk-fallback.test.tsx",
+    "sha256": "4632d2fe53c07ee00901b61a01cc694d05ea1dcb1423ff247128fe323eb3f769",
+    "fallbackCases": 5,
+    "fixtureControls": 1,
+    "existingRenderContract": 1,
+    "total": 7,
+    "files": 2,
+    "result": "passed exit0; CHOKIDAR_USEPOLLING=true",
+    "cases": [
+      "MapService missing: fallback displayed, no dependency initialization or300/500ms calls",
+      "SearchService missing: same; earlier available dependency is only an uncalled spy",
+      "LngLat missing: same; available dependencies are uncalled spies, not an active SDK",
+      "model replacement and disposal in fallback: no cooldown calls or map events",
+      "KeepAlive fallback suspension/reactivation: no cooldown calls or map events to replay",
+      "fixture control: probe observes manually scheduled300/500ms calls and their completions"
+    ],
+    "probeCorrection": "Initial five fallback probes counted every fake timer including runner/dependency work and failed only that count. Narrowed to reviewed300/500ms calls and added positive probe control. No product repair, no claim of five product failures.",
+    "cleanup": "Unmount owned wrappers, clear fake timers, restore spies/real timers and original global property descriptors. Actual Map with stub Input and controlled missing dependencies; no map network/provider/native acceptance."
+  },
+  "verification": {
+    "cedarConfiguredTypes": "passed exit0",
+    "cedarAffectedLint": "passed scoped formatting exit0",
+    "mapleRootLint": "passed exit0",
+    "sharedTests": "29 passed exit0",
+    "classification": "149classified/30pending; interaction-delay13",
+    "catalog": "3 generated pages match",
+    "allThreeDiffChecks": "passed",
+    "cssAndMapleTypes": "not rerun, no CSS or Maple runtime changes",
+    "newRealBrowserOrOSCases": 0
+  },
+  "progress": {
+    "families": 33,
+    "closedBefore": 27,
+    "classified": 28,
+    "classifiedPercent": 84.8,
+    "remaining": 5,
+    "remainingPercent": 15.2,
+    "classifiedFiles": 63,
+    "classifiedHints": 149,
+    "totalHints": 179,
+    "classifiedHintPercent": 83.2,
+    "pendingHints": 30,
+    "pendingHintPercent": 16.8,
+    "denominatorChange": 0,
+    "remainingFamilies": { "Date": 3, "Form": 4, "Scheduler": 11, "Time": 3, "Picker": 9 },
+    "meaning": "runtime candidate classification, not whole-library/all-lifecycle/native coverage; classified Map still has active-SDK acceptance pending"
+  },
+  "inventory": "unchanged193files/392CSS/179runtime; Map original276/454 and product hash unchanged;26 unrelated parallel drifts not refreshed; no global motion-themes claim",
+  "preserved": ["Date/Form/linked Time", "Scheduler/Picker parallel changes", "other parallel styles", "144native200%/Safari/Firefox blocked cases", "Button on-dark2.305:1 design exception"],
+  "pending": ["formal SDK adapter and listener/disposal contract", "active-provider timer cancellation/consumption/replacement/reentry", "suspension/disposal and retained callbacks", "SDK initialization/search/geocode async ownership", "MapSelect address fallback and geolocation", "actual map motion/SDK/network/native browser/OS"],
+  "next": "Remaining five families are preserved parallel regions; do not take over or repeat unchanged checks. Await relevant state change or user direction for overlap/SDK scope, retaining other independently documented acceptance boundaries. No new chats/subagents/services/browser/automation changes/commits/push/releases."
+}

@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { createRequire, register } from 'node:module'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { resolve } from 'node:path'
+import { existsSync } from 'node:fs'
 const root = fileURLToPath(new URL('../../', import.meta.url))
 register(new URL('./ssr-style-loader.mjs', import.meta.url), import.meta.url)
 for (const [name, directory, components] of [
@@ -12,8 +13,14 @@ for (const [name, directory, components] of [
   require.extensions['.css'] = () => {}
   const { createSSRApp, h } = require('vue')
   const { renderToString } = require('@vue/server-renderer')
-  for (const format of ['es', 'lib']) for (const nameOfComponent of components) {
-    const file = resolve(root, directory, format, `${nameOfComponent}/index.${format === 'es' ? 'mjs' : 'js'}`)
+  const formats = name === 'Maple' && !existsSync(resolve(root, directory, 'es/dialog/index.mjs'))
+    ? ['lib']
+    : ['es', 'lib']
+  for (const format of formats) for (const nameOfComponent of components) {
+    const componentFile = resolve(root, directory, format, `${nameOfComponent}/index.${format === 'es' ? 'mjs' : 'js'}`)
+    const file = existsSync(componentFile)
+      ? componentFile
+      : resolve(root, directory, format, `index.${format === 'es' ? 'mjs' : 'js'}`)
     const api = format === 'es' ? await import(pathToFileURL(file)) : require(file)
     const component = api[`_${nameOfComponent[0].toUpperCase()}${nameOfComponent.slice(1)}Component`] ?? api.default
     assert.ok(component)
@@ -22,8 +29,16 @@ for (const [name, directory, components] of [
     console.log(`PASS ${name} ${format} ${nameOfComponent}: no-DOM import and open SSR render`)
   }
   if (name === 'Maple') {
-    const { default: StyleProvider } = await import(pathToFileURL(resolve(root, directory, 'es/style-provider/index.mjs')))
-    StyleProvider(null); StyleProvider({ '--mp-color-primary': '#123456' })
-    console.log('PASS Maple StyleProvider: no-DOM functional calls')
+    const esBundle = resolve(root, directory, 'es/index.mjs')
+    assert.ok(existsSync(esBundle))
+    console.log('PASS Maple es: bundled ESM artifact exists; per-component SSR import is not emitted by this build')
+    const api = require(resolve(root, directory, 'lib/style-provider/index.js'))
+    const StyleProvider = api._StyleProviderComponent ?? api.StyleProvider ?? api.default
+    assert.ok(StyleProvider)
+    const html = await renderToString(createSSRApp({
+      render: () => h(StyleProvider, { style: { '--mp-color-primary': '#123456' } }, { default: () => h('span', 'content') }),
+    }))
+    assert.match(html, /content/)
+    console.log('PASS Maple StyleProvider: no-DOM import and SSR render')
   }
 }

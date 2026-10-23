@@ -1,0 +1,250 @@
+{
+  "date": "2026-10-15",
+  "scope": "controlled-cedar-typography-copy-feedback-and-measurement-ownership",
+  "sources": [
+    {
+      "repo": "cedar-design-web",
+      "file": "typography/base.tsx",
+      "cleanAtStart": true,
+      "beforeSha256": "8e5547ecef514effb363a076932e5d8b23dfa490a2bb9dfe391b95deb8e77258",
+      "afterSha256": "ccbee824ef10c02bd0d54068a37cdba21d6bcad82be94a1e218cf29376ce75f3",
+      "beforeRuntimeLines": [
+        220
+      ],
+      "afterRuntimeLines": [
+        242
+      ],
+      "additionalUnscannedPaths": [
+        "aliased raf/caf ellipsis measurement",
+        "synchronous CSS ellipsis height comparison",
+        "ResizeObserver callback delivery"
+      ],
+      "maple": "Only Typography tools documentation, no corresponding runtime component; no mobile implementation introduced."
+    }
+  ],
+  "baseline": {
+    "tests": 14,
+    "failed": 11,
+    "controls": [
+      "current copy feedback uses the existing 3000ms delay",
+      "disabled ellipsis remains measurable",
+      "disposal during measure suppresses ellipsis notification"
+    ],
+    "invalidProbe": "Initial CResizeObserver/CTypographyOperations stub names and vnode listener access were incorrect. Corrected and reran 14 cases before production changes; first partial results excluded."
+  },
+  "cases": [
+    {
+      "name": "current copy feedback uses the existing 3000ms delay",
+      "baseline": "control-passed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "replacement copy cancels its previous timer",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "old copy completion cannot clear a newer feedback",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "deactivation cancels feedback and retained copy stays inert",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "disposed retained copy stays inert",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "reentrant copy listener disposal cannot schedule work",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "disabled copy does not write clipboard",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "disabled ellipsis remains measurable",
+      "baseline": "control-passed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "superseded measurement callback is inert",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "current frame is consumed once",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "deactivation cancels RAF and old callback after activation is inert",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "inactive retained resize cannot enqueue",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "ellipsis off cancels pending measurement",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "disposal during measure suppresses ellipsis notification",
+      "baseline": "control-passed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "copy delay change cancels pending feedback instead of replaying it",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "copyable off cancels pending feedback and retained copy",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "old observer binding cannot enqueue after activation",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "retained observer and queued frame are inert after disposal",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "expansion cancels pending measurement",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "reentrant copy event keeps only the newest feedback timer",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "reentrant measurement replacement cannot commit stale text",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "CSS ellipsis observer is inert while inactive and rebinds on activation",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    }
+  ],
+  "responsibilities": {
+    "copyDelay": "interaction-delay: public copy-delay default3000ms; not CSS visual completion",
+    "measurement": "RAF batching and synchronous CSS geometry, not a duration token",
+    "cancellation": "Replace copy feedback; cancel on copyable/disabled/copy-delay change, suspension/disposal. Measurement cancel on replacement/config/expansion/edit/suspension/disposal.",
+    "guards": "Timer/frame generation and one-time consumption; active/disposed checks; node and post-measure reentrancy; observer lifecycle epoch rebind on activation.",
+    "unchanged": "Public APIs, CSS variables/colors/default delay and existing global raf/caf ownership."
+  },
+  "verification": {
+    "cedarScopedTests": 22,
+    "cedarExistingTests": 3,
+    "cedarTotalAssertionsPassed": 25,
+    "cedarTypecheck": "passed-configured-tsconfig.declaration",
+    "cedarAffectedLint": "passed-final-source-test-and-demo",
+    "mapleRootLint": "passed",
+    "demoSfcScriptTemplateCompile": 1,
+    "classificationInventoryMessageCatalogTests": 28,
+    "tokenCatalogPages": 3,
+    "newRealBrowserCases": 0,
+    "newOSCases": 0,
+    "runnerNote": "One 25-test passing run had a Vitest0.22.1 fsevents native assertion at teardown/close timeout. Independent final run passed25 and exited0 without the teardown error; the configured typecheck/lint chain also exited0. Do not confuse assertions with process success.",
+    "repairNote": "Intermediate local ellipsis destructuring shadowed prop ref and caused TDZ; renamed measuredEllipsis and reran. Old binding invalidation also forces fresh handler render after activation."
+  },
+  "coverage": {
+    "scope": "Runtime source-candidate classification, NOT all-library acceptance or count of defects. Previously audited components can remain unclassified.",
+    "grouping": "Top-level public component directory; merge same names across platforms; exclude underscore-prefixed infrastructure and utils/.",
+    "totalFamilies": 33,
+    "before": {
+      "closed": 15,
+      "pending": 18,
+      "closedPercent": 45.5,
+      "pendingPercent": 54.5,
+      "classifiedHints": 125,
+      "totalHints": 179,
+      "classifiedPercent": 69.8
+    },
+    "after": {
+      "closed": 16,
+      "pending": 17,
+      "closedPercent": 48.5,
+      "pendingPercent": 51.5,
+      "classifiedFiles": 48,
+      "classifiedHints": 126,
+      "pendingHints": 53,
+      "totalHints": 179,
+      "classifiedPercent": 70.4,
+      "pendingHintsPercent": 29.6
+    },
+    "pendingFamilies": [
+      "anchor",
+      "date",
+      "form",
+      "map",
+      "mention",
+      "message",
+      "nav-menu",
+      "notification",
+      "ripple",
+      "scheduler",
+      "time",
+      "tree",
+      "counter",
+      "loading-bar",
+      "picker",
+      "pull-refresh",
+      "swipe-cell"
+    ],
+    "partiallyClassifiedFamilies": [
+      "nav-menu"
+    ],
+    "heldFamilies": [
+      "form",
+      "date"
+    ],
+    "linkedDateScopeHeld": [
+      "time"
+    ],
+    "savedInventory": {
+      "files": 192,
+      "css": 392,
+      "runtime": 179
+    },
+    "liveInventory": {
+      "cedar": {
+        "files": 102,
+        "css": 202,
+        "runtime": 95
+      },
+      "maple": {
+        "files": 92,
+        "css": 214,
+        "runtime": 84
+      }
+    },
+    "otherDriftFiles": 26,
+    "refreshScope": "Only reviewed Typography runtime line/hash; other date/parallel CSS drift preserved."
+  },
+  "boundaries": [
+    "Controlled Vue KeepAlive/JSDOM with clipboard, measure, raf/caf, Operations/ResizeObserver/Tooltip stubs; no native clipboard or layout proof.",
+    "Global RAF owner preserved; no cross-document/adoption certification.",
+    "Original RAF helper/observer implementation not recertified by this consumer test.",
+    "No new browser/server/automation/subagent/commit/push/release. Existing144 native200%/Safari/Firefox cases remain blocked.",
+    "Form/date inventory/other parallel styles preserved."
+  ]
+}

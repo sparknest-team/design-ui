@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-16",
+  "batch": "Cedar Scheduler timeline pointer frame and session lifecycle",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/use-timeline-pointer.ts",
+    "cleanAtStart": true,
+    "beforeSha256": "889aa1e1c35be2b9ecf3e32cd135d02a53a75e827c156fde87e9e08fee78951a",
+    "sha256": "31d9f74bf3ad0075d0f2fa17b83a5454d0a5b55ccd476f64bda158d448887fc4",
+    "originalHints": [75, 131],
+    "currentHints": [56],
+    "category": "visual-scroll"
+  },
+  "regression": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__tests__/timeline-pointer-lifecycle.test.tsx",
+    "sha256": "6cff02924404ee3d764115d67cb9b3078561e44ffac10035d37e04166ffbb57d",
+    "validBaseline": { "total": 8, "failed": 7, "passedControls": 1, "exitCode": 1 },
+    "failures": ["consumed frame replay scroll/fork", "cancelled frame cancels replacement", "deactivation leaves active frame", "inactive retained begin", "geometry cancellation still writes", "start cancellation still publishes ghost/move", "disposed retained begin"],
+    "firstRepair": { "targetedPassed": 8, "existingIntegrationPassed": 3, "exitCode": 0 },
+    "supplementary": ["fresh activation without old replay", "cancelled nextTick", "old move listener", "finished reentry retains replacement cleanup"],
+    "finalTargeted": { "passed": 12, "failed": 0 },
+    "fullScheduler": { "passed": 344, "files": 58, "failed": 0, "exitCode": 0 }
+  },
+  "repair": ["session generation and lifecycle availability", "consume frame identity before delivery", "stale listener and nextTick guards", "recheck after geometry/user callbacks/reactive ghost writes", "detach cleanup before reentrant finished callback", "activation accepts fresh gestures only"],
+  "validation": {
+    "cedarConfiguredTypecheck": "passed exit0",
+    "affectedEslint": "passed exit0 with --no-ignore; scoped mechanical formatting",
+    "mapleRootLint": "passed exit0",
+    "allThreeRepositoryDiffChecks": "passed exit0",
+    "sharedTests": { "total": 29, "passed": 28, "failed": 1, "failure": "existing global reviewed-source hash gate" },
+    "staleReviewedFiles": ["cedar-design-web/ripple/index.ts", "maple-design-mobile/ripple/index.ts", "cedar-design-web/_components/virtual-list-v2/VirtualList.vue", "maple-design-mobile/_components/virtual-list-v2/VirtualList.vue"],
+    "isolatedNewRow": "passed, one visual-scroll hint",
+    "generatedTokenPages": { "matched": 3 },
+    "lessAndMapleTypes": "not rerun; no CSS or Maple runtime changes",
+    "newNativeBrowserOrOsCases": 0
+  },
+  "registration": {
+    "closedFamilies": 28, "totalFamilies": 33, "closedPercent": 84.8,
+    "remainingFamilies": 5, "remainingPercent": 15.2,
+    "sourceFiles": 67, "classifiedHints": 153, "totalHints": 178, "classifiedPercent": 86.0,
+    "remainingHints": 25, "remainingHintsPercent": 14.0, "denominatorChange": -1,
+    "denominatorReason": "Two RAF call sites consolidated into one; not extra old defect or component acceptance",
+    "remainingByFamily": { "Date": 3, "Form": 4, "Scheduler": 6, "Time": 3, "Picker": 9 },
+    "meaning": "Classification registrations, not current global hash validity or library/native acceptance"
+  },
+  "preservedBoundaries": [
+    "Original global document/window/RAF ownership; owner iframe/adoption remains separate",
+    "Controlled JSDOM RAF/geometry/KeepAlive and synthetic MouseEvents are not trusted Pointer input/native OS acceptance",
+    "Native reduced-motion auto-scroll policy remains separate; no CSS duration introduced",
+    "Parallel resource-core/Date/Form/Time/Picker and 26 unrelated inventory drifts preserved",
+    "Four stale classification hashes not auto-refreshed",
+    "Map formal SDK and 144 native browser environment groups remain blocked",
+    "Button white on-dark 2.305:1 remains a design exception, not AA"
+  ],
+  "apiCssTokenOrDefaultPolicyChanges": false,
+  "documentation": "Shared standard, Cedar guide, Maple bilingual guides, Scheduler README, both changesets, Cedar OpenSpec and progress synchronized"
+}

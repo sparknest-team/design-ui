@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-22",
+  "findings": "No other excessive hardcoded demo z-index found after the Form toolbar fix. No additional component or demo implementation changes required.",
+  "scan": {
+    "cedar-design-web": {
+      "source_files": 1333,
+      "explicit_layers": [
+        {
+          "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-components.vue",
+          "line": 176,
+          "source": "<c-space wrap style=\"position: sticky; top: 0; z-index: 1; background: white; padding: 8px; box-sizing: border-box\">"
+        },
+        {
+          "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/api-review-c-scheduler-1.vue",
+          "line": 1198,
+          "source": "z-index: 5;"
+        },
+        {
+          "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/task-calendar-workbench.vue",
+          "line": 1117,
+          "source": "z-index: 5;"
+        },
+        {
+          "file": "cedar-design-web/packages/cedar-ui/src/watermark/__demos__/custom.vue",
+          "line": 39,
+          "source": "<c-form-item label=\"zIndex\">"
+        },
+        {
+          "file": "cedar-design-web/packages/cedar-ui/src/watermark/__demos__/custom.vue",
+          "line": 40,
+          "source": "<c-input-number v-model=\"form.zIndex\" mode=\"button\" />"
+        },
+        {
+          "file": "cedar-design-web/packages/cedar-ui/src/watermark/__demos__/custom.vue",
+          "line": 75,
+          "source": "style=\"position: relative; z-index: 7\""
+        },
+        {
+          "file": "cedar-design-web/packages/cedar-ui/src/watermark/__demos__/custom.vue",
+          "line": 90,
+          "source": "zIndex: 6,"
+        },
+        {
+          "file": "cedar-design-web/packages/cedar-ui/src/watermark/__demos__/fullscreen.vue",
+          "line": 8,
+          "source": "<c-watermark content=\"Cedar Design\" :fullscreen=\"fullscreen\" :z-index=\"99\">"
+        },
+        {
+          "file": "cedar-design-web/packages/cedar-ui/src/avatar/__demos__/group.vue",
+          "line": 29,
+          "source": "<span class=\"label\">z-index-ascend</span>"
+        },
+        {
+          "file": "cedar-design-web/packages/cedar-ui/src/avatar/__demos__/group.vue",
+          "line": 30,
+          "source": "<c-avatar-group z-index-ascend>"
+        },
+        {
+          "file": "cedar-design-web/packages/cedar-ui/src/affix/__demos__/controls.vue",
+          "line": 33,
+          "source": ":z-index=\"2\""
+        }
+      ]
+    },
+    "maple-design-mobile": {
+      "source_files": 1597,
+      "explicit_layers": [
+        {
+          "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-components.vue",
+          "line": 257,
+          "source": "style=\"position: sticky; top: 0; z-index: 1; background: white; padding: 8px; box-sizing: border-box\""
+        },
+        {
+          "file": "maple-design-mobile/packages/maple-ui/src/drag/example/demos/disabled.vue",
+          "line": 10,
+          "source": "z-index=\"80\""
+        },
+        {
+          "file": "maple-design-mobile/packages/maple-ui/src/watermark/example/demos/fullscreen.vue",
+          "line": 11,
+          "source": "<mp-watermark content=\"Maple UI\" :fullscreen=\"fullscreen\" :z-index=\"99\" :offset=\"[10, 10]\">"
+        },
+        {
+          "file": "maple-design-mobile/packages/maple-ui/src/avatar/example/demos/group.vue",
+          "line": 25,
+          "source": "<span class=\"label\">z-index-ascend</span>"
+        },
+        {
+          "file": "maple-design-mobile/packages/maple-ui/src/avatar/example/demos/group.vue",
+          "line": 26,
+          "source": "<mp-avatar-group z-index-ascend>"
+        },
+        {
+          "file": "maple-design-mobile/packages/maple-ui/src/affix/example/demos/controls.vue",
+          "line": 34,
+          "source": ":z-index=\"2\""
+        }
+      ]
+    }
+  },
+  "browser": {
+    "Cedar": [
+      "Existing fullscreen Watermark (99) and Affix (2) stay below Dialog mask",
+      "Select candidates above Dialog and hit-test clickable (2004)",
+      "Nested menu above parent menu and hit-test clickable (2006)",
+      "Inner Dialog mask blocks outer Dialog; inner Select remains clickable",
+      "Esc first dismisses Select; next Esc dismisses inner Dialog while outer stays open",
+      "Existing nested Drawer demo: child mask blocks parent, child can close independently"
+    ],
+    "Maple": [
+      "Existing fullscreen Watermark (99), Affix (2), and Drag (80) stay below Popup mask",
+      "Select candidates above Popup and hit-test clickable (2004)",
+      "Nested menu above parent menu and hit-test clickable (2006)",
+      "Inner Dialog mask blocks outer Popup; inner Select remains clickable",
+      "Esc first dismisses Select; next Esc dismisses inner Dialog while outer stays open"
+    ]
+  },
+  "tests": {
+    "Cedar": "27 passed / 3 files: z-index, portal-scope, modal-focus",
+    "Maple": "27 passed / 3 files: z-index, portal-scope, modal-focus"
+  },
+  "evidence": [
+    "cedar-dialog-submenu.png",
+    "cedar-nested-dropdown.png",
+    "cedar-nested-drawer.png",
+    "maple-nested-dropdown.png"
+  ]
+}

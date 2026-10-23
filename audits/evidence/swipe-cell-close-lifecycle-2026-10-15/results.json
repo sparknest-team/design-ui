@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-15",
+  "batch": "Maple SwipeCell close confirmation ownership, phase one",
+  "source": {
+    "file": "maple-design-mobile/packages/maple-ui/src/swipe-cell/SwipeCell.vue",
+    "cleanAtStart": true,
+    "beforeSha256": "2f2068cbffc46d59c7050401e4468fcfca74b350f2a9fb3a31d3511c0f976d83",
+    "afterSha256": "6e5c46901a3421f6c2c8ad596514ca780343d5f471af219fde133073ba75c764"
+  },
+  "baseline": {
+    "invalidInitialProbe": "12 TypeErrors: nested wrapper.vm did not expose open; corrected to actual component instance exposed methods before changing product source",
+    "tests": 12,
+    "failed": 10,
+    "passedControls": 2,
+    "failures": ["old confirm closes newly opened other side", "same-side reopen does not replace close", "older confirm crosses newer veto", "synchronous hook open reentry", "pending confirm changes detached state", "pending confirm crosses deactivate/reactivate", "inactive retained open", "inactive retained close invokes hook", "disposed retained open changes state", "replaced hook still commits"],
+    "controls": ["current confirmation closes once", "current false veto preserves open side"],
+    "meaning": "overlapping case coverage, not ten distinct defects"
+  },
+  "repair": {
+    "ownership": "close captures original command generation; new open/close/touchstart, name/beforeClose/disabled change and deactivation/disposal invalidate it",
+    "lifecycle": "availability guards retained open/close, activation accepts fresh commands only; open rechecks after width reads",
+    "unchanged": "public API, beforeClose false veto including disabled-triggered current close, explicit close rejection propagation, swipe threshold and CSS/default visual timing",
+    "tokenMeaning": "business confirmation Promise, not CSS duration or a new Token",
+    "notCertified": "measurement nextTick and geometry guards do not constitute complete measurement/drag audit"
+  },
+  "final": {
+    "targeted": 18,
+    "total": 27,
+    "files": 3,
+    "result": "passed exit0",
+    "additionalCases": ["fresh close after activation", "disposed retained close inert", "name replacement invalidates", "new touch invalidates", "disabled close honors current veto", "explicit rejected hook remains rejected without closing"],
+    "fixture": "Actual SwipeCell and KeepAlive, configured widths, retained exposed commands and setup-state transform observation, controlled Promises; unmount all owned wrappers and restore spies. Scoped ESLint formatting without disabled rules."
+  },
+  "verification": {
+    "mapleConfiguredTypes": "passed",
+    "mapleAffectedLint": "passed after scoped formatting",
+    "mapleRootLint": "passed",
+    "classification": "143 classified,39 pending, unchanged",
+    "sharedTests": "29 passed",
+    "catalog": "3 generated pages match",
+    "cedarRuntimeAndCss": "unchanged; no Cedar type or Less motion rerun claimed",
+    "newRealBrowserOrOSCases": 0
+  },
+  "progress": {
+    "families": 33,
+    "closed": 24,
+    "closedPercent": 72.7,
+    "remaining": 9,
+    "remainingPercent": 27.3,
+    "classifiedFiles": 59,
+    "classifiedHints": 143,
+    "totalHints": 182,
+    "classifiedHintPercent": 78.6,
+    "pendingHints": 39,
+    "pendingHintPercent": 21.4,
+    "denominatorChange": 0,
+    "remainingFamilies": ["Date", "Form", "Map", "Scheduler", "Time", "Tree", "Picker", "PullRefresh", "SwipeCell"],
+    "meaning": "classification only; SwipeCell remains unclassified until timer/drag phase two, not whole-library/native acceptance"
+  },
+  "inventory": "only reviewed SwipeCell runtime205→248;193files/392CSS/182runtime unchanged. Other26 parallel drifts untouched, no global motion-themes claim",
+  "preserved": ["Form/date/linked Time", "Picker/Scheduler and other parallel styles", "144 native200%/Safari/Firefox blocked cases", "Button on-dark2.305:1 design exception"],
+  "pending": ["0ms click unlock cancellation and stale/replayed delivery", "drag and touchcancel ownership", "stale listener binding delivery", "full measurement continuation audit", "event-triggered hook rejection policy remains existing behavior", "native touch/cross-document/OS"],
+  "next": "SwipeCell phase two, then non-overlapping PullRefresh. No tasks/subagents/browser/services/automation mutations/commits/push/releases."
+}

@@ -1,0 +1,555 @@
+{
+  "version": 1,
+  "date": "2026-10-19",
+  "completedAtUtc": "2026-10-19T11:05:41Z",
+  "completedAtShanghai": "2026-10-19 19:05:41",
+  "finalChecks": {
+    "motionInventoryCliExitCode": 0,
+    "classificationCliExitCode": 0,
+    "registeredFiles": 80,
+    "classifiedHints": 184,
+    "unclassifiedHints": 0,
+    "lateCedarSearchCurrentBytesRegressionPassed": 9,
+    "lateCedarSearchRegressionExitCode": 0,
+    "mapleOwnedReadOnlyLintExitCode": 0,
+    "threeRepositoryDiffChecksExitCode": 0,
+    "evidenceJsonValid": true,
+    "allValidationProcessesFinished": true,
+    "mapleLastRootLintExitCode": 1,
+    "retainedParallelRootLintDiagnostics": 8,
+    "retainedParallelRootLintFiles": 3,
+    "nativeNewCases": 0,
+    "automation": "PAUSED"
+  },
+  "lateFormattingRevalidation": {
+    "file": "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/use-field-search.ts",
+    "registeredBefore": "3110a0f167e18f41c506242e83ec90385d0fb85323a1a2edd7b1405a49ed4c2d",
+    "current": "6731260ee633e5f874e79d8adc0f5b10a40b1d5c7ca122078014038c9e204eea",
+    "proof": "Late Cedar formatting exactly matches the already registered and tested Maple search helper bytes;all hint lines/snippets unchanged. Scoped Cedar hash refreshed only after peer-byte proof. Final independent scan of all80registered hashes reports0stale.",
+    "meaning": "Late observed source-identity change is preserved explicitly,not hidden as an unchanged file or new product fix."
+  },
+  "startedAtUtc": "2026-10-19T10:42:58Z",
+  "scope": "Explicit bounded takeover of two-platform FieldPresentation/Form wiring and token-catalog scanner;preserve parallel business,Map SDK/144native blockers and paused automation",
+  "status": "authorized-runtime-inventory-catalog-closed-parallel-root-lint-blocker-retained",
+  "automation": {
+    "id": "cedar-maple-14-00-2",
+    "status": "PAUSED",
+    "savedStatusChecked": true,
+    "modified": false
+  },
+  "progress": {
+    "componentFamiliesClassified": 33,
+    "componentFamiliesTotal": 33,
+    "classifiedFamilyPercent": 100,
+    "remainingFamilies": 0,
+    "remainingFamilyPercent": 0,
+    "crossCuttingPrivateOwnership": "The two private search helpers support existing Select/Form consumers,not a new public component family",
+    "classifiedSources": 80,
+    "classifiedHints": 184,
+    "totalHints": 184,
+    "pendingHints": 0,
+    "classifiedHintPercent": 100,
+    "hintDenominatorBefore": 182,
+    "hintDenominatorChange": 2,
+    "meaning": "Current source responsibility classification,not complete business/lifecycle/native/browser/OS acceptance."
+  },
+  "baseline": {
+    "search": {
+      "perPlatform": {
+        "tests": 9,
+        "failed": 7,
+        "controlsPassed": 2
+      },
+      "cedarExitCode": 1,
+      "mapleExitCode": 1,
+      "cedarDurationSeconds": 19.95,
+      "mapleDurationSeconds": 5.98,
+      "failures": [
+        "Retained replaced callback still notifies",
+        "Consumed callback can repeat",
+        "Close/reopen revives old callback",
+        "Unmounted retained command schedules work",
+        "Inactive retained command schedules work",
+        "Unavailable editor schedules timer",
+        "Delay getter disposes owner yet leaves timer"
+      ],
+      "controlCases": [
+        "Current configured deadline",
+        "Dispatch reentry retains new timer cancellation"
+      ],
+      "boundary": "Controlled actual hook mounted under Vue KeepAlive with real fake-timer queue;dequeued callbacks explicitly retained,not browser event acceptance. Assertions overlap,not14independent defects."
+    },
+    "focus": {
+      "perPlatform": {
+        "tests": 6,
+        "failed": 4,
+        "controlsPassed": 2
+      },
+      "cedarExitCode": 1,
+      "mapleExitCode": 1,
+      "cedarDurationSeconds": 8.42,
+      "mapleDurationSeconds": 37,
+      "failures": [
+        "Duplicate restore",
+        "Reopen focus theft",
+        "Superseded close restore",
+        "Old restore across deactivation/reactivation"
+      ],
+      "controls": [
+        "Current render-settled restore",
+        "Unmount drops ref"
+      ],
+      "boundary": "Actual FieldPresentation lifecycle/watch,nextTick queue controlled;child focus refs stubbed,not native focus."
+    },
+    "catalog": {
+      "tests": 5,
+      "failed": 4,
+      "controlsPassed": 1,
+      "exitCode": 1,
+      "durationSeconds": 20.531,
+      "detail": "Legacy helper/layout baseline cannot recognize adjacent private entry or render real source;synthetic graph rejection/integration report exercised,not4product defects."
+    },
+    "afterEntrySupport": {
+      "tests": 5,
+      "passed": 4,
+      "failed": 1,
+      "exitCode": 1,
+      "durationSeconds": 27.552,
+      "diagnosis": "All4Cedar private tokens consumed;Maple min-width became needs-review. Actual Maple Less output is min-width:90vw,not min(var(...),90vw). Report172files/4560declarations/71candidates/1needsReview/0compileErrors."
+    }
+  },
+  "repairs": {
+    "search": "Five-state ownership:active/disposed/generation/current ticket/pending. Cancel only original ticket/handle;recheck after availability and delay reads;consume before notifying;no stale callback clears newer task. Activation permits new work only. Keep configured debounce semantics.",
+    "focus": "Current reference/presentation/open/blocking props,lifecycle and generation gate nextTick restore. Pending consumed once before focusing;deactivation/unmount invalidate. Cedar opened focus retains original timing and gains availability guard.",
+    "mapleLess": "Only mp private style.less min-width expression escaped as CSS literal,preventing Less min builtin from discarding var(). Same280px/90vw intended expression/default;no new API/token default.",
+    "scanner": "Resolve real legacy component entries and reachable adjacent _components/field-presentation style.ts->style.less->token.less through executable TypeScript static-import AST. No comment/type-only/orphan/out-of-root proof;cycle deduplication. No empty style/index.less or ignore lists. Record actual declaration path and internal visibility. Removed old raw-text import fallback;post-cleanup8tests+3page check+strict consumption scan pass.",
+    "form": "No Form.vue,FormItem/controller/submitEpoch/business fix. Reviewed actual provided context/registration/reset/blocked-submit and existing scroll resource paths;new actual Form-Select tests preserve scoped reset and submit behavior. Two Form hashes/call sites revalidated after current tests.",
+    "publicApiChanges": 0,
+    "tokenDefaultChanges": 0,
+    "independentSourcesPreserved": true
+  },
+  "productionWrites": [
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/use-field-search.ts",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/FieldPresentation.vue",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/use-field-search.ts",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/FieldPresentation.vue",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/style.less"
+  ],
+  "inventory": {
+    "files": 198,
+    "cssHints": 418,
+    "runtimeHints": 184,
+    "updatedReviewedFileKeys": 6,
+    "updated": [
+      [
+        "cedar-design-web",
+        "_components/field-presentation/use-field-search.ts"
+      ],
+      [
+        "maple-design-mobile",
+        "_components/field-presentation/use-field-search.ts"
+      ],
+      [
+        "cedar-design-web",
+        "form/Form.vue"
+      ],
+      [
+        "maple-design-mobile",
+        "form/Form.vue"
+      ],
+      [
+        "cedar-design-web",
+        "form/style/index.less"
+      ],
+      [
+        "cedar-design-web",
+        "date/picker/style/index.less"
+      ]
+    ],
+    "note": "New search files1runtime hint each;other4rows are reviewed current Form/related stylesheet positions. Date picker title/range navigation business/style untouched. Expanded source declaration lines are not defects."
+  },
+  "classification": {
+    "existingFormRowsRevalidated": 2,
+    "newPrivateSearchRows": 2,
+    "totalSources": 80,
+    "classifiedHints": 184,
+    "pendingHints": 0,
+    "interactionDelay": 20,
+    "cliExitCode": 0,
+    "registeredFormHashes": {
+      "cedar": "3e443d9dca49515a39fd781b9819df98be6705cff5f02666b00302ab2ca2b0d1",
+      "maple": "2519b17da237f51004acdfa4647f002d7b8cb1dbbe4360467994e9f44f86c4a7"
+    },
+    "note": "Cedar guarded native scroll call expanded from one line into multiline object;same guard/offset/pending consumption were reviewed and15scroll lifecycle regressions pass. Did not auto-refresh arbitrary changed snippets."
+  },
+  "catalog": {
+    "files": 172,
+    "declarations": 4560,
+    "candidates": 70,
+    "crossComponentCss": 40,
+    "literalRuntime": 10,
+    "dynamicRuntime": 20,
+    "needsManualReview": 0,
+    "errors": 0,
+    "pages": 3,
+    "addedSections": 3,
+    "addedTokenRows": 12,
+    "uniquePlatformTokenNames": 8,
+    "visibility": "Internal by validated private implementation ownership;names/defaults not renamed/promoted. Consumer lists are compiled reachability,not universal DOM/native acceptance.",
+    "otherGeneratedRowsModified": 0,
+    "checkExitCode": 0
+  },
+  "validation": [
+    {
+      "stage": "first search fix",
+      "cedarTests": 9,
+      "mapleTests": 9,
+      "passedAll": true,
+      "exitCode": 0
+    },
+    {
+      "stage": "first focus/form/scroll/select",
+      "cedarTests": 58,
+      "cedarFiles": 5,
+      "mapleTests": 42,
+      "mapleFiles": 4,
+      "passedAll": true,
+      "exitCode": 0,
+      "note": "Maple scroll-lifecycle.spec.js filter matched no file;not counted. Actual4scroll regression modules later included in complete Form run."
+    },
+    {
+      "stage": "new real Form-Select integration",
+      "testsPerPlatform": 3,
+      "cedarDurationSeconds": 8.53,
+      "mapleDurationSeconds": 22.2,
+      "passedAll": true,
+      "exitCode": 0,
+      "includes": [
+        "Matching reset retires retained search across reopen",
+        "Unrelated reset preserves current deadline/draft",
+        "Active editor preserves editing-submit failure"
+      ]
+    },
+    {
+      "stage": "complete affected Cedar",
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/form/__tests__ src/select/__tests__ src/_components/field-presentation/__tests__ src/input/__tests__/contract.spec.ts",
+      "tests": 186,
+      "files": 25,
+      "passed": 186,
+      "exitCode": 0,
+      "durationSeconds": 53.37,
+      "newCases": 18,
+      "note": "Input contract filter did not match an extra file;only actual25files counted."
+    },
+    {
+      "stage": "complete affected Maple",
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js src/form/__tests__ src/select/__tests__ src/_components/field-presentation/__tests__",
+      "tests": 240,
+      "files": 33,
+      "passed": 240,
+      "exitCode": 0,
+      "durationSeconds": 82.82,
+      "newCases": 18
+    },
+    {
+      "stage": "post-observed-parallel-consumer-change Cedar",
+      "tests": 80,
+      "files": 10,
+      "passed": 80,
+      "exitCode": 0,
+      "durationSeconds": 26.12
+    },
+    {
+      "stage": "post-observed-parallel-consumer-change Maple",
+      "tests": 89,
+      "files": 13,
+      "passed": 89,
+      "exitCode": 0,
+      "durationSeconds": 69.57
+    },
+    {
+      "stage": "configured types",
+      "cedarCommand": "pnpm typecheck",
+      "mapleCommand": "pnpm typecheck",
+      "cwd": "respective UI packages/tsconfig.declaration.json",
+      "firstBothExitCode": 0,
+      "afterObservedParallelChangeBothExitCode": 0
+    },
+    {
+      "stage": "scanner/cross-layout tests",
+      "command": "node --test bin/token-catalog.test.mjs bin/field-presentation-catalog.test.mjs",
+      "tests": 11,
+      "passed": 11,
+      "exitCode": 0,
+      "durationSeconds": 22.835
+    },
+    {
+      "stage": "initial global motion after catalog,registration not yet refreshed",
+      "tests": 88,
+      "passed": 87,
+      "failed": 1,
+      "exitCode": 1,
+      "durationSeconds": 23.841,
+      "note": "Only known stale Cedar Form hash;do not hide failed interim command."
+    },
+    {
+      "stage": "full motion chain after registration",
+      "command": "pnpm check:motion-themes",
+      "tests": 96,
+      "passed": 96,
+      "exitCode": 0,
+      "testDurationSeconds": 22.452,
+      "subsequentCompiledChecksPassed": true,
+      "inventoryCheckExitCode": 0,
+      "classificationCheckExitCode": 0
+    },
+    {
+      "stage": "full catalog gate",
+      "command": "pnpm check:token-reference",
+      "tests": 37,
+      "passed": 37,
+      "exitCode": 0,
+      "testDurationSeconds": 22.694,
+      "pagesMatched": 3
+    },
+    {
+      "stage": "after removing redundant raw-text import fallback",
+      "tests": 8,
+      "passed": 8,
+      "exitCode": 0,
+      "durationSeconds": 105.916,
+      "globalCatalogPagesMatched": 3,
+      "strictTokenConsumptionExitCode": 0,
+      "note": "Actual scanner cleanup is covered by AST positive/negative8tests and complete catalog/consumer scan;full96/37commands precede only this small scanner cleanup."
+    },
+    {
+      "stage": "lint",
+      "cedarOwnedReadOnlyExitCode": 0,
+      "mapleFirstRootReadOnlyExitCode": 0,
+      "maplePostParallelRootReadOnlyExitCode": 1,
+      "parallelErrors": 8,
+      "parallelFiles": [
+        "packages/maple-ui/src/_components/field-presentation/EditorPanel.vue",
+        "packages/maple-ui/src/form/example/demos/presentation-state.vue",
+        "packages/maple-ui/src/form/example/index.vue"
+      ],
+      "diagnostic": "One prefer-const in the owned new Maple test was fixed through mutable fixture state only. First root lint passed;last root lint reports8new parallel formatting/rule errors across3unowned files. These files were not formatted by this task. New root lint failure is retained;no global lint pass claim."
+    }
+  ],
+  "initialSourceSnapshot": {
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/EditorPanel.vue": "22fff82a8beef5efc9ea3ed3c94dff6cf4647a2ed22545993df6e8795d4341bc",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/FieldPresentation.vue": "7b802487acf3ddd086c76d2f914749c84e7ad8fb84d6923a4b1de74b15e30a4a",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/FieldReference.vue": "b32bc000654c22aaebd70a4d1786438bcde6a5e0741f040af5a1ff24c90c1ce5",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/context.ts": "4cf061cde0a3ac43821c6e03b71c18f4acd65dd7327946c52ed9e87563ab79f0",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/form-bridge.ts": "e6d8c705f0bcbcdfacb41bcfd75f1493e88c6e3ac677367d4daf8cc123cc04ce",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/form.less": "dae1adcb81f0a090f5f51b2a5373aef7a5c7a2e17006a1826d7a018a72836b66",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/option-labels.ts": "7917fdb376ca386a1d8678a42348a0f955b8dbbf052e76275409dbda32dd5736",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/props.ts": "a90138f5dfddcd0ea9b8ccbd71fcb9425fb7169a2eda1d50d284bc9d22465331",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/style.less": "0105adbbc11b7ca1bb8048681df0251ba1c290a98f623cadebafbcf93bc5868e",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/style.ts": "698fe14359a9945607b15ab644f0a8dbbca6a675804cc89d54fa439aa5d0aaea",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/texts.ts": "cc6e7915241eea7009a5236950344ed1307e1ac3c07d5a5e73217b571b2a6542",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/token.less": "5c06efcbf7635559a111357439f52d7cfc9275e7ebd8bfb4a95e9a4645899751",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/use-field-search.ts": "bb5b71ff307a2ddac2e4d2aa1143135dd6aaa6ea9c14a5744acbd4a2e84ce227",
+    "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/with-field-presentation.ts": "8b1da50266ad4eb34594fbf6c99be955d3bb05d5e581f5049994d1a8c033c5ad",
+    "cedar-design-web/packages/cedar-ui/src/form/Form.vue": "3e443d9dca49515a39fd781b9819df98be6705cff5f02666b00302ab2ca2b0d1",
+    "cedar-design-web/packages/cedar-ui/src/form/FormItem.vue": "3a5091a19dec688d7dde9d1c2bce31f1818261cfd42de24e60a99b8c0b148baf",
+    "cedar-design-web/packages/cedar-ui/src/form/FormItemLabel.vue": "6fca4de29088aa35e5193a52330305e110b7edd8a13d5576490e4676112ad1e1",
+    "cedar-design-web/packages/cedar-ui/src/form/FormItemMessage.vue": "603e35102a2aa128ef317272f7b79727bdce9f3246150ce93c971c5a74f3cb91",
+    "cedar-design-web/packages/cedar-ui/src/form/context.ts": "3d70543ea99faf750cf522bbd5adac4e2f0b4debe2b8450fd4be1de5ad135da1",
+    "cedar-design-web/packages/cedar-ui/src/form/form-controller.ts": "ac59f1e21c45ee5d8470a1473d5e61c14b26b72895157a5f554bee9938abb6fb",
+    "cedar-design-web/packages/cedar-ui/src/form/form-id.ts": "dd72b3906c2d2130eb17eef9563f395fedf282d77a37b50a130ab9b9d666ef17",
+    "cedar-design-web/packages/cedar-ui/src/form/index.ts": "e55bc767971955c9eaaf9b2178328d2001035e3bb34c2bfdf557fb041ad48e46",
+    "cedar-design-web/packages/cedar-ui/src/form/item-decoration.ts": "30ef9ef53e908980be6a248590b4796a5afea8bff5900bb828af4e387619798f",
+    "cedar-design-web/packages/cedar-ui/src/form/item-props.ts": "58292d2f133d5092bd5a4678e3a4f1a02a5ce75f239dfb33f3575e5c7874b89a",
+    "cedar-design-web/packages/cedar-ui/src/form/layout-props.ts": "4eda8ea81f51abc618540b2fa8c2c5ff0505401401c6fa55d821f24ba760d428",
+    "cedar-design-web/packages/cedar-ui/src/form/props.ts": "3a3160f20c1d4729931b06fc487b6d4b32791503aa837190106dde2e97fcf411",
+    "cedar-design-web/packages/cedar-ui/src/form/style/css.ts": "3fc0cb83626b669cd483cb617171d9c61d746ca4bdc4ffe4c025e93bd88b5175",
+    "cedar-design-web/packages/cedar-ui/src/form/style/index.less": "d6d63c3f4735e56bff72e350c77495ffe5e0b94aaabeb03c9d2e8228c3f11079",
+    "cedar-design-web/packages/cedar-ui/src/form/style/index.ts": "dfe723c282ef466e09487b0ff69a58c44449c4df87b6af23d57ee426f63d9865",
+    "cedar-design-web/packages/cedar-ui/src/form/style/status.less": "df41486ffa7788b1876da74854ddac798bb6a190a0ecafbdb47b4c3c58498ecb",
+    "cedar-design-web/packages/cedar-ui/src/form/style/token.less": "3743fc343765e7c6d9d91ef1d81fbd0917d77605debe3e231d77e738a6e588cb",
+    "cedar-design-web/packages/cedar-ui/src/form/types.ts": "9f956499b956675a47bcd52dd19cff37c96c3c43124ee2b22d05018c2b614289",
+    "cedar-design-web/packages/cedar-ui/src/form/use-form-item-layout.ts": "a7e1fe8761e2b8540e7703641dc5de501a49cd469de02c72ae0795bc791a2348",
+    "cedar-design-web/packages/cedar-ui/src/form/use-form-label-width.ts": "db652aaad137e8f67caa3266acecce2278a962d5fd0470386f7e91b4ce5f4972",
+    "cedar-design-web/packages/cedar-ui/src/form/utils.ts": "8b1c9ccefac30cdac2ff1930dad17bf909892d28e85389500f5df1bb1fc80b55",
+    "cedar-design-web/packages/cedar-ui/src/form/validate-trigger.ts": "43f60649e647a85f4418ec4fc74d569948c5a9894cd4e287f7e3ebfc5168db8e",
+    "cedar-design-web/packages/cedar-ui/src/select/Optgroup.vue": "2b42339b0fc23ff1ba81eb4481d8d2a701d13e773db2ffc85daccffefc1c0644",
+    "cedar-design-web/packages/cedar-ui/src/select/Option.vue": "26b9a8d4dbdc8c7fc49091a2637bfcceae5dccd90455ad4e70a056d6fb09be12",
+    "cedar-design-web/packages/cedar-ui/src/select/SelectDropdown.vue": "19b3541989f60c2bf1da480b5fcc9c274fa55f4546260ee34919713ca1524fbe",
+    "cedar-design-web/packages/cedar-ui/src/select/SelectMenu.tsx": "e5101cbefd94564928305498116a51683bfeec36eb79e94a34e2e7dda9ad7ffa",
+    "cedar-design-web/packages/cedar-ui/src/select/context.ts": "a8cf83be8ee36e9b725a158d36d53a52cfe1dbe1a6059e8b3568c6908de309d7",
+    "cedar-design-web/packages/cedar-ui/src/select/emits.ts": "7674dceab3cbdcd97f37993c1d58964e4f58ebd40ed820a0694b60cb87f3a4db",
+    "cedar-design-web/packages/cedar-ui/src/select/hooks/use-options.ts": "df248bc443fb3ef2c635b499b708c718cb85969e6658a70b3390035cf3b1b8c3",
+    "cedar-design-web/packages/cedar-ui/src/select/hooks/use-select.ts": "65113c567fd1441974d4d30593deb305e60101bb5f5bedb074d57ab8aeef4972",
+    "cedar-design-web/packages/cedar-ui/src/select/index.ts": "143cd07f56cdc6dbea9f71d543b109ae29570ffaae2a7a12f2ecda19f352beff",
+    "cedar-design-web/packages/cedar-ui/src/select/props.ts": "c2e7a6017df8b02205e1ced2eb19868233b6e8edaf268869b9c18d0fa35a74a1",
+    "cedar-design-web/packages/cedar-ui/src/select/select.tsx": "744fe02d681b25ecd7562ecc6b3699684353134f272b3b81803aa25c98b274ab",
+    "cedar-design-web/packages/cedar-ui/src/select/style/css.ts": "3fc0cb83626b669cd483cb617171d9c61d746ca4bdc4ffe4c025e93bd88b5175",
+    "cedar-design-web/packages/cedar-ui/src/select/style/index.less": "411274deb293ead20c04404c24bcca03f204bda22520d177bb856cec3b8c1beb",
+    "cedar-design-web/packages/cedar-ui/src/select/style/index.ts": "b1136472b900cbed38ff309e90c069de199c81d39a4b0c7c55713838573c94e3",
+    "cedar-design-web/packages/cedar-ui/src/select/style/token.less": "ec75661d9733c5db9ba01cbd0cc4a488e327548ff5a1f404cd037ca4b2ee94ff",
+    "cedar-design-web/packages/cedar-ui/src/select/types.ts": "8d558c405f6e0491df683279bf3233113a2c242d874a6de4a9446c75ed6d6665",
+    "cedar-design-web/packages/cedar-ui/src/select/use-select-controller.ts": "a97226c8469b11727d3a8a9fa582ea971c5316d782afe8afcd26f84958f6a025",
+    "cedar-design-web/packages/cedar-ui/src/select/utils.ts": "5d0814bad7b8ee33c846605e859a8d048df1b07409cfa2d65f6d47e740e5d8fd",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/EditorPanel.vue": "5873c54728b9e8db27fc4b824c5aa35b65aa568280158bce3d25bbc784197171",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/FieldPresentation.vue": "67bdee92f0797deff62f4f0ad54f8882b4e28bea30ce0927974c769c0bfb5524",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/FieldReference.vue": "e476342f18d90661c41f0f1ecb38f0539f935e5d805fae0afc8075a569701797",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/context.ts": "5e209827b3af323b6f3fb81277792442d69ff08ff2c74904de9118bdbb0f0cd4",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/form-bridge.ts": "bd7c833f9031bb17858f29c49d1f34ccb25e458fa743c2475dde4ad5221e0ea2",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/form.less": "a59e7be939204d7a89b90298518dad5b003cf75cf7397845e3637d6e2302afcb",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/option-labels.ts": "7917fdb376ca386a1d8678a42348a0f955b8dbbf052e76275409dbda32dd5736",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/props.ts": "ed71d0f9d391385ab03bebbfc2b266b089541f57acc4ac1cddb01302fe0c404a",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/style.less": "cbd775622596be8f006a54baa9754edd98f05117b380203656d61c68766c1f65",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/style.ts": "8a05f9a97ce2967d57cacf897969cf2352c25a57e4b525b2259307b482fbfcc4",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/texts.ts": "c5faf55ccdfb146442ba5acf7e0808faaa577c46e14e0109bc143fe65d437ae7",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/token.less": "db8c60760a53821578a37ec3428c100bbdc042f565a007f7e07d3c755c4c50a4",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/use-field-search.ts": "bb5b71ff307a2ddac2e4d2aa1143135dd6aaa6ea9c14a5744acbd4a2e84ce227",
+    "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/with-field-presentation.ts": "8b1da50266ad4eb34594fbf6c99be955d3bb05d5e581f5049994d1a8c033c5ad",
+    "maple-design-mobile/packages/maple-ui/src/form/Form.vue": "2519b17da237f51004acdfa4647f002d7b8cb1dbbe4360467994e9f44f86c4a7",
+    "maple-design-mobile/packages/maple-ui/src/form/FormItem.vue": "6c8952e080827e12f91ea89a792a80efc968d23ad8335341c3cef4f07130d942",
+    "maple-design-mobile/packages/maple-ui/src/form/FormItemLabel.vue": "30b002df671e1c6e46b346be8295831ddd489bd7059ab7a8d240c4b20036bfc4",
+    "maple-design-mobile/packages/maple-ui/src/form/form-controller.ts": "ac59f1e21c45ee5d8470a1473d5e61c14b26b72895157a5f554bee9938abb6fb",
+    "maple-design-mobile/packages/maple-ui/src/form/form-id.ts": "dd72b3906c2d2130eb17eef9563f395fedf282d77a37b50a130ab9b9d666ef17",
+    "maple-design-mobile/packages/maple-ui/src/form/index.ts": "421d07e3d18a92ec5b84226a663da268dc3d71a541864fee511882eed28b13a7",
+    "maple-design-mobile/packages/maple-ui/src/form/item-decoration.ts": "30ef9ef53e908980be6a248590b4796a5afea8bff5900bb828af4e387619798f",
+    "maple-design-mobile/packages/maple-ui/src/form/item-props.ts": "28714366e57bffe7a12adc3d668158b07b73889920f8d271b67a97d19aeb3b53",
+    "maple-design-mobile/packages/maple-ui/src/form/item-provide.ts": "5415305662e46d339f1dd1d9d9dfa2cb75b597eb29d2d44e22a1ac804adea388",
+    "maple-design-mobile/packages/maple-ui/src/form/layout-props.ts": "4eda8ea81f51abc618540b2fa8c2c5ff0505401401c6fa55d821f24ba760d428",
+    "maple-design-mobile/packages/maple-ui/src/form/props.ts": "2f634acf236d259ddefdc5238a4894ba915e807fc26049f227f481793f2cbde6",
+    "maple-design-mobile/packages/maple-ui/src/form/provide.ts": "844036e7512d117cf20f9a16f3af4e20db7a58e1b2699f2ebd089a857e5abfa3",
+    "maple-design-mobile/packages/maple-ui/src/form/scroll-completion.ts": "eae534571b3a01c614b2939c62f87b979b39317279f61d0311186aa1287e49e5",
+    "maple-design-mobile/packages/maple-ui/src/form/style/form-item.less": "5a6761abf2edcddf263b38650f7f26b24c79712fafbeb461a160ea05d81a4abc",
+    "maple-design-mobile/packages/maple-ui/src/form/style/form.less": "3a7c5abc541ced86b16b417487fe3cc5e9781865cd9747088364481a01c5a2f8",
+    "maple-design-mobile/packages/maple-ui/src/form/style/index.less": "944cc4068428387b6b083c290dd1dd53fbfdd8aff16c6809daaa8adbd540978f",
+    "maple-design-mobile/packages/maple-ui/src/form/style/index.ts": "6dff7ce4ecae30a09e0da9eee44c314e15868af4c75796fbcfd91f4570c31c53",
+    "maple-design-mobile/packages/maple-ui/src/form/style/token.less": "d1ded9e4b640aea545a67d6ef1b01d6d32f72e0c95d9a7062107e528149e88a3",
+    "maple-design-mobile/packages/maple-ui/src/form/use-form-item-layout.ts": "a7e1fe8761e2b8540e7703641dc5de501a49cd469de02c72ae0795bc791a2348",
+    "maple-design-mobile/packages/maple-ui/src/form/use-form-label-width.ts": "db652aaad137e8f67caa3266acecce2278a962d5fd0470386f7e91b4ce5f4972",
+    "maple-design-mobile/packages/maple-ui/src/form/utils.ts": "a724ff7343031cf2eeca3e48ae187634ca9382c0dde6f5d2199eb3d14651f26c",
+    "maple-design-mobile/packages/maple-ui/src/form/validate-trigger.ts": "43f60649e647a85f4418ec4fc74d569948c5a9894cd4e287f7e3ebfc5168db8e",
+    "maple-design-mobile/packages/maple-ui/src/select/Optgroup.vue": "15fb25624c3c10e20bcd8ce15ccbcc60919dcb12b9ec746795b17d7c156cfd3f",
+    "maple-design-mobile/packages/maple-ui/src/select/Option.vue": "78bd282ba862bf9a68e9b734343f30a56416bf239e2504465522d898323faa89",
+    "maple-design-mobile/packages/maple-ui/src/select/SelectDropdown.vue": "6b08e8ee5132d69d55f38190aa89f4eda067d6f2bdfaa3cccd7c5dfeff572c75",
+    "maple-design-mobile/packages/maple-ui/src/select/SelectMenu.tsx": "613e6357478d2684497fbd006f70aa81bdfdf6308c88f354ec97a2561ecee9f5",
+    "maple-design-mobile/packages/maple-ui/src/select/context.ts": "a8cf83be8ee36e9b725a158d36d53a52cfe1dbe1a6059e8b3568c6908de309d7",
+    "maple-design-mobile/packages/maple-ui/src/select/emits.ts": "7674dceab3cbdcd97f37993c1d58964e4f58ebd40ed820a0694b60cb87f3a4db",
+    "maple-design-mobile/packages/maple-ui/src/select/hooks/use-options.ts": "df248bc443fb3ef2c635b499b708c718cb85969e6658a70b3390035cf3b1b8c3",
+    "maple-design-mobile/packages/maple-ui/src/select/hooks/use-select.ts": "65113c567fd1441974d4d30593deb305e60101bb5f5bedb074d57ab8aeef4972",
+    "maple-design-mobile/packages/maple-ui/src/select/index.ts": "362468b5d895d3293cb80a51e8eb7ebef613abc3f0c452fcbb2a417000198b56",
+    "maple-design-mobile/packages/maple-ui/src/select/props.ts": "cfd425b47a04627a6fd97b19b3d8c908386098feddd208a5297f58f25fa3a2b5",
+    "maple-design-mobile/packages/maple-ui/src/select/select.tsx": "d0f98a089841df3050aa03c943a067654368a2bf6ae10a2555ba4e14ac773e88",
+    "maple-design-mobile/packages/maple-ui/src/select/style/index.less": "a15542d34e7c1fe80bb754b0e9027bdfe205977c72a745705b0b5a8e704c3fd8",
+    "maple-design-mobile/packages/maple-ui/src/select/style/index.ts": "fc2334845c7493207041bba50c7546fd57bccf2997f7d5e135c52bd6e10d4b8f",
+    "maple-design-mobile/packages/maple-ui/src/select/style/token.less": "2a2ad9c8fefe560460836c7f3fc62a28db2ddfeca8089d3cf21c65fd04243403",
+    "maple-design-mobile/packages/maple-ui/src/select/types.ts": "8d558c405f6e0491df683279bf3233113a2c242d874a6de4a9446c75ed6d6665",
+    "maple-design-mobile/packages/maple-ui/src/select/use-select-controller.ts": "a97226c8469b11727d3a8a9fa582ea971c5316d782afe8afcd26f84958f6a025",
+    "maple-design-mobile/packages/maple-ui/src/select/utils.ts": "a0b26c12215a7e78a2b467ea5c37381a5ae63fa1b0bb73a7dcd279253be73ba9"
+  },
+  "observedSourceDelta": [
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/EditorPanel.vue",
+      "before": "22fff82a8beef5efc9ea3ed3c94dff6cf4647a2ed22545993df6e8795d4341bc",
+      "after": "178db6153ba4231603e843d5b9ba7b430b2912edf1c411952826603286feaa3d"
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/FieldPresentation.vue",
+      "before": "7b802487acf3ddd086c76d2f914749c84e7ad8fb84d6923a4b1de74b15e30a4a",
+      "after": "e4d8ee0a73efe5e6ae95e67666b8f55442dca6f3ca40056ecad3b912db1de646"
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/_components/field-presentation/use-field-search.ts",
+      "before": "bb5b71ff307a2ddac2e4d2aa1143135dd6aaa6ea9c14a5744acbd4a2e84ce227",
+      "after": "3110a0f167e18f41c506242e83ec90385d0fb85323a1a2edd7b1405a49ed4c2d"
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/select/SelectMenu.tsx",
+      "before": "e5101cbefd94564928305498116a51683bfeec36eb79e94a34e2e7dda9ad7ffa",
+      "after": "65c57344e7682b9a2d1b3072063f0113397b4868ad1d0cfd370421202e05907c"
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/select/select.tsx",
+      "before": "744fe02d681b25ecd7562ecc6b3699684353134f272b3b81803aa25c98b274ab",
+      "after": "b891179219edc5f37a7edaa221838c606c8d2f742e64cf8b1deacf1f0f485a99"
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/select/use-select-controller.ts",
+      "before": "a97226c8469b11727d3a8a9fa582ea971c5316d782afe8afcd26f84958f6a025",
+      "after": "8e1b722639176be85d2c3abdb93b822495d890a9c874e8e3c44f4b0618ea853b"
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/EditorPanel.vue",
+      "before": "5873c54728b9e8db27fc4b824c5aa35b65aa568280158bce3d25bbc784197171",
+      "after": "82d3e996ef38a5a3dc69c4f9f2a9707adc6ad396f47f471254d3f900c142de3c"
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/FieldPresentation.vue",
+      "before": "67bdee92f0797deff62f4f0ad54f8882b4e28bea30ce0927974c769c0bfb5524",
+      "after": "b2ee491673501a91967684590c54f4719099e5bd1242d4c02efbe3ad3cad8dfb"
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/style.less",
+      "before": "cbd775622596be8f006a54baa9754edd98f05117b380203656d61c68766c1f65",
+      "after": "d10e8b52ede7190af4464860d91e78f70d44bde82c73306cf4e5874bed7892ab"
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/use-field-search.ts",
+      "before": "bb5b71ff307a2ddac2e4d2aa1143135dd6aaa6ea9c14a5744acbd4a2e84ce227",
+      "after": "6731260ee633e5f874e79d8adc0f5b10a40b1d5c7ca122078014038c9e204eea"
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/select/Option.vue",
+      "before": "78bd282ba862bf9a68e9b734343f30a56416bf239e2504465522d898323faa89",
+      "after": "2f5d41a26d512b618f3259eda79b956e02c0fc5aedbd9eab67081bbf7aba45b2"
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/select/SelectMenu.tsx",
+      "before": "613e6357478d2684497fbd006f70aa81bdfdf6308c88f354ec97a2561ecee9f5",
+      "after": "9d6e45614ea45770e36a24464dcac6a21433865c99b58617698cf0546c611229"
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/select/select.tsx",
+      "before": "d0f98a089841df3050aa03c943a067654368a2bf6ae10a2555ba4e14ac773e88",
+      "after": "f7f417a3655d1057c2d56750f36c21bc7e2cad87d873ad64554c11fa5734fa78"
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/select/use-select-controller.ts",
+      "before": "a97226c8469b11727d3a8a9fa582ea971c5316d782afe8afcd26f84958f6a025",
+      "after": "8e1b722639176be85d2c3abdb93b822495d890a9c874e8e3c44f4b0618ea853b"
+    }
+  ],
+  "parallelBoundary": {
+    "initialTrackedScopeFiles": 107,
+    "ownedChangedFiles": 5,
+    "parallelChangedFiles": 9,
+    "unchangedFiles": 93,
+    "externalChangesPreserved": [
+      "Cedar/Maple EditorPanel.vue",
+      "Cedar/Maple SelectMenu.tsx",
+      "Cedar/Maple select.tsx",
+      "Cedar/Maple use-select-controller.ts",
+      "Maple Option.vue"
+    ],
+    "note": "No external production file edited by this task. Current80/89targeted regressions and configured types rerun after observation. This does not freeze/certify all ongoing business work."
+  },
+  "docs": [
+    "Shared progress/standard and Cedar/Maple Chinese-English guides",
+    "Cedar Form/Select and Maple Chinese-English Form/Select docs",
+    "Three generated private token sections",
+    "Existing token-consumer OpenSpec tasks and new bounded patch changesets"
+  ],
+  "examples": "Existing field-components/read/search/async demo contracts retained and exercised;no new public API,placeholder component or invented mobile Map.",
+  "preserved": {
+    "mapSdk": "Formal adapter/listener/disposal/async identity and active-provider environment still required;see token-closure-recheck-2026-10-19.md",
+    "nativeEnvironmentGroups": 144,
+    "newNativeCases": 0,
+    "button": "White on-dark2.305:1non-AA design exception;other text thresholds unchanged",
+    "noNewChatsSubagentsCommitsPushPublish": true,
+    "automation": "PAUSED"
+  },
+  "skill": "Vue best practices:original-resource cancellation/KeepAlive/lifecycle/ticket ownership,pre-notification consumption,reentry checks;fixtures unmount owned wrappers and restore mocks/fake timers. Less/JSDOM/native/OS proof layers separated.",
+  "diagnostics": [
+    "Initial snapshot JavaScript typo failed before any write;corrected read-only command.",
+    "First focus patch used hunks out of source order and was rejected without writes;reordered explicit hunks.",
+    "First registration generation refused Cedar expanded scroll snippet;reviewed the unchanged preceding isCurrent guard/offset object before scoped revalidation,not a blanket hash update."
+  ]
+}

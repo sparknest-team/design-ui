@@ -1,0 +1,4988 @@
+{
+  "date": "2026-10-13",
+  "knownIssues": [
+    {
+      "id": "same-document-relocation-focus",
+      "failedSamples": 8,
+      "followup": "../portal-focus-2026-10-13/status.json"
+    }
+  ],
+  "imageFiles": {
+    "rawExtension": ".jpg",
+    "rawFormat": "JPEG",
+    "rawCount": 62,
+    "contactExtension": ".png",
+    "contactFormat": "PNG",
+    "contactCount": 4,
+    "correction": "Original browser bytes were JPEG despite .png names. Extensions corrected without transcoding; all 62 SHA-256 values unchanged."
+  },
+  "browser": "Codex In-app Browser (Chromium)",
+  "viewport": [
+    1280,
+    720
+  ],
+  "cases": [
+    {
+      "key": "c-default-light-body-normal",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/light",
+      "mode": "body",
+      "long": false,
+      "background": "rgb(255, 255, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 154.09375,
+        "height": 22.09375,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 132,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 132
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(29, 33, 41)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        672
+      ],
+      "panelScroll": [
+        360,
+        672
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#fff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "body",
+      "selectedTheme": "default/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(255, 255, 255)",
+      "expectedForeground": "rgb(29,33,41)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-default-light-body-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/light",
+      "mode": "body",
+      "long": true,
+      "background": "rgb(255, 255, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 484.09375,
+        "height": 22.09375,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(29, 33, 41)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        657
+      ],
+      "panelScroll": [
+        1457,
+        657
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#fff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "body",
+      "selectedTheme": "default/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(255, 255, 255)",
+      "expectedForeground": "rgb(29,33,41)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-default-light-host-normal",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/light",
+      "mode": "host",
+      "long": false,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 160,
+        "height": 28,
+        "left": 921,
+        "right": 1110.2734375,
+        "top": 132,
+        "width": 189.2734375,
+        "x": 921,
+        "y": 132
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "hidden",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-host",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        672
+      ],
+      "panelScroll": [
+        360,
+        672
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 905,
+        "right": 1265,
+        "top": 0,
+        "width": 360,
+        "x": 905,
+        "y": 0
+      },
+      "rootBackground": "#fff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "host",
+      "selectedTheme": "default/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-default-light-host-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/light",
+      "mode": "host",
+      "long": true,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 490,
+        "height": 28,
+        "left": 921,
+        "right": 1110.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 921,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "hidden",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-host",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        657
+      ],
+      "panelScroll": [
+        1457,
+        657
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 905,
+        "right": 1265,
+        "top": 0,
+        "width": 360,
+        "x": 905,
+        "y": 0
+      },
+      "rootBackground": "#fff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "host",
+      "selectedTheme": "default/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-default-light-inline-normal",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/light",
+      "mode": "inline",
+      "long": false,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 160,
+        "height": 28,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 132,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 132
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        672
+      ],
+      "panelScroll": [
+        360,
+        672
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#fff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-default-light-inline-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/light",
+      "mode": "inline",
+      "long": true,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 490,
+        "height": 28,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        657
+      ],
+      "panelScroll": [
+        1457,
+        657
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#fff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-default-light-body-normal",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/light",
+      "mode": "body",
+      "long": false,
+      "background": "rgb(255, 255, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 403.34375,
+        "height": 22.09375,
+        "left": 514.2890625,
+        "right": 703.9296875,
+        "top": 381.25,
+        "width": 189.640625,
+        "x": 514.2890625,
+        "y": 381.25
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(29, 33, 41)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        251,
+        87
+      ],
+      "panelScroll": [
+        251,
+        87
+      ],
+      "rect": {
+        "bottom": 403.34375,
+        "height": 86.6875,
+        "left": 514.2890625,
+        "right": 765.703125,
+        "top": 316.65625,
+        "width": 251.4140625,
+        "x": 514.2890625,
+        "y": 316.65625
+      },
+      "rootBackground": "#ffffff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "body",
+      "selectedTheme": "default/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(255, 255, 255)",
+      "expectedForeground": "rgb(29,33,41)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-default-light-body-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/light",
+      "mode": "body",
+      "long": true,
+      "background": "rgb(255, 255, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 516.546875,
+        "height": 22.09375,
+        "left": 0,
+        "right": 189.640625,
+        "top": 494.453125,
+        "width": 189.640625,
+        "x": 0,
+        "y": 494.453125
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(29, 33, 41)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        1280,
+        328
+      ],
+      "panelScroll": [
+        1441,
+        328
+      ],
+      "rect": {
+        "bottom": 531.546875,
+        "height": 343.09375,
+        "left": 0,
+        "right": 1280,
+        "top": 188.453125,
+        "width": 1280,
+        "x": 0,
+        "y": 188.453125
+      },
+      "rootBackground": "#ffffff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "body",
+      "selectedTheme": "default/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(255, 255, 255)",
+      "expectedForeground": "rgb(29,33,41)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-default-light-host-normal",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/light",
+      "mode": "host",
+      "long": false,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 405.5,
+        "height": 22.5,
+        "left": 506.7890625,
+        "right": 696.4296875,
+        "top": 383,
+        "width": 189.640625,
+        "x": 506.7890625,
+        "y": 383
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "",
+        "hidden"
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-host",
+      "pageOverflow": false,
+      "panelClient": [
+        251,
+        91
+      ],
+      "panelScroll": [
+        251,
+        91
+      ],
+      "rect": {
+        "bottom": 405.5,
+        "height": 91,
+        "left": 506.7890625,
+        "right": 758.203125,
+        "top": 314.5,
+        "width": 251.4140625,
+        "x": 506.7890625,
+        "y": 314.5
+      },
+      "rootBackground": "#ffffff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "host",
+      "selectedTheme": "default/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-default-light-host-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/light",
+      "mode": "host",
+      "long": true,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 534,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 511.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 511.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "",
+        "hidden"
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-host",
+      "pageOverflow": false,
+      "panelClient": [
+        1265,
+        363
+      ],
+      "panelScroll": [
+        1441,
+        363
+      ],
+      "rect": {
+        "bottom": 549,
+        "height": 378,
+        "left": 0,
+        "right": 1265,
+        "top": 171,
+        "width": 1265,
+        "x": 0,
+        "y": 171
+      },
+      "rootBackground": "#ffffff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "host",
+      "selectedTheme": "default/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-default-light-inline-normal",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/light",
+      "mode": "inline",
+      "long": false,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 405.5,
+        "height": 22.5,
+        "left": 514.2890625,
+        "right": 703.9296875,
+        "top": 383,
+        "width": 189.640625,
+        "x": 514.2890625,
+        "y": 383
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        251,
+        91
+      ],
+      "panelScroll": [
+        251,
+        91
+      ],
+      "rect": {
+        "bottom": 405.5,
+        "height": 91,
+        "left": 514.2890625,
+        "right": 765.703125,
+        "top": 314.5,
+        "width": 251.4140625,
+        "x": 514.2890625,
+        "y": 314.5
+      },
+      "rootBackground": "#ffffff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-default-light-inline-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/light",
+      "mode": "inline",
+      "long": true,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 534,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 511.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 511.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        1280,
+        363
+      ],
+      "panelScroll": [
+        1441,
+        363
+      ],
+      "rect": {
+        "bottom": 549,
+        "height": 378,
+        "left": 0,
+        "right": 1280,
+        "top": 171,
+        "width": 1280,
+        "x": 0,
+        "y": 171
+      },
+      "rootBackground": "#ffffff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-default-dark-body-normal",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/dark",
+      "mode": "body",
+      "long": false,
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 154.09375,
+        "height": 22.09375,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 132,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 132
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        672
+      ],
+      "panelScroll": [
+        360,
+        672
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(42, 42, 43)",
+      "expectedForeground": "rgba(255, 255, 255, 0.9)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-default-dark-body-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/dark",
+      "mode": "body",
+      "long": true,
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 484.09375,
+        "height": 22.09375,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        657
+      ],
+      "panelScroll": [
+        1457,
+        657
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(42, 42, 43)",
+      "expectedForeground": "rgba(255, 255, 255, 0.9)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-default-dark-host-normal",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/dark",
+      "mode": "host",
+      "long": false,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 160,
+        "height": 28,
+        "left": 921,
+        "right": 1110.2734375,
+        "top": 132,
+        "width": 189.2734375,
+        "x": 921,
+        "y": 132
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "hidden",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-host",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        672
+      ],
+      "panelScroll": [
+        360,
+        672
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 905,
+        "right": 1265,
+        "top": 0,
+        "width": 360,
+        "x": 905,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-default-dark-host-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/dark",
+      "mode": "host",
+      "long": true,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 490,
+        "height": 28,
+        "left": 921,
+        "right": 1110.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 921,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "hidden",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-host",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        657
+      ],
+      "panelScroll": [
+        1457,
+        657
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 905,
+        "right": 1265,
+        "top": 0,
+        "width": 360,
+        "x": 905,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-default-dark-inline-normal",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/dark",
+      "mode": "inline",
+      "long": false,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 160,
+        "height": 28,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 132,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 132
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        672
+      ],
+      "panelScroll": [
+        360,
+        672
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-default-dark-inline-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/dark",
+      "mode": "inline",
+      "long": true,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 490,
+        "height": 28,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        657
+      ],
+      "panelScroll": [
+        1457,
+        657
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-default-dark-body-normal",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/dark",
+      "mode": "body",
+      "long": false,
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 403.34375,
+        "height": 22.09375,
+        "left": 514.2890625,
+        "right": 703.9296875,
+        "top": 381.25,
+        "width": 189.640625,
+        "x": 514.2890625,
+        "y": 381.25
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        251,
+        87
+      ],
+      "panelScroll": [
+        251,
+        87
+      ],
+      "rect": {
+        "bottom": 403.34375,
+        "height": 86.6875,
+        "left": 514.2890625,
+        "right": 765.703125,
+        "top": 316.65625,
+        "width": 251.4140625,
+        "x": 514.2890625,
+        "y": 316.65625
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(42, 42, 43)",
+      "expectedForeground": "rgba(255, 255, 255, 0.9)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-default-dark-body-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/dark",
+      "mode": "body",
+      "long": true,
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 516.546875,
+        "height": 22.09375,
+        "left": 0,
+        "right": 189.640625,
+        "top": 494.453125,
+        "width": 189.640625,
+        "x": 0,
+        "y": 494.453125
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        1280,
+        328
+      ],
+      "panelScroll": [
+        1441,
+        328
+      ],
+      "rect": {
+        "bottom": 531.546875,
+        "height": 343.09375,
+        "left": 0,
+        "right": 1280,
+        "top": 188.453125,
+        "width": 1280,
+        "x": 0,
+        "y": 188.453125
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(42, 42, 43)",
+      "expectedForeground": "rgba(255, 255, 255, 0.9)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-default-dark-host-normal",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/dark",
+      "mode": "host",
+      "long": false,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 405.5,
+        "height": 22.5,
+        "left": 506.7890625,
+        "right": 696.4296875,
+        "top": 383,
+        "width": 189.640625,
+        "x": 506.7890625,
+        "y": 383
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "",
+        "hidden"
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-host",
+      "pageOverflow": false,
+      "panelClient": [
+        251,
+        91
+      ],
+      "panelScroll": [
+        251,
+        91
+      ],
+      "rect": {
+        "bottom": 405.5,
+        "height": 91,
+        "left": 506.7890625,
+        "right": 758.203125,
+        "top": 314.5,
+        "width": 251.4140625,
+        "x": 506.7890625,
+        "y": 314.5
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-default-dark-host-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/dark",
+      "mode": "host",
+      "long": true,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 534,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 511.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 511.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "",
+        "hidden"
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-host",
+      "pageOverflow": false,
+      "panelClient": [
+        1265,
+        363
+      ],
+      "panelScroll": [
+        1441,
+        363
+      ],
+      "rect": {
+        "bottom": 549,
+        "height": 378,
+        "left": 0,
+        "right": 1265,
+        "top": 171,
+        "width": 1265,
+        "x": 0,
+        "y": 171
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-default-dark-inline-normal",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/dark",
+      "mode": "inline",
+      "long": false,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 405.5,
+        "height": 22.5,
+        "left": 514.2890625,
+        "right": 703.9296875,
+        "top": 383,
+        "width": 189.640625,
+        "x": 514.2890625,
+        "y": 383
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        251,
+        91
+      ],
+      "panelScroll": [
+        251,
+        91
+      ],
+      "rect": {
+        "bottom": 405.5,
+        "height": 91,
+        "left": 514.2890625,
+        "right": 765.703125,
+        "top": 314.5,
+        "width": 251.4140625,
+        "x": 514.2890625,
+        "y": 314.5
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-default-dark-inline-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/dark",
+      "mode": "inline",
+      "long": true,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 534,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 511.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 511.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        1280,
+        363
+      ],
+      "panelScroll": [
+        1441,
+        363
+      ],
+      "rect": {
+        "bottom": 549,
+        "height": 378,
+        "left": 0,
+        "right": 1280,
+        "top": 171,
+        "width": 1280,
+        "x": 0,
+        "y": 171
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-maple-light-body-normal",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "maple/light",
+      "mode": "body",
+      "long": false,
+      "background": "rgb(255, 255, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 154.09375,
+        "height": 22.09375,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 132,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 132
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(29, 33, 41)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        672
+      ],
+      "panelScroll": [
+        360,
+        672
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#fff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "body",
+      "selectedTheme": "maple/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(255, 255, 255)",
+      "expectedForeground": "rgb(29,33,41)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-maple-light-body-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "maple/light",
+      "mode": "body",
+      "long": true,
+      "background": "rgb(255, 255, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 484.09375,
+        "height": 22.09375,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(29, 33, 41)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        657
+      ],
+      "panelScroll": [
+        1457,
+        657
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#fff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "body",
+      "selectedTheme": "maple/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(255, 255, 255)",
+      "expectedForeground": "rgb(29,33,41)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-maple-light-host-normal",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "maple/light",
+      "mode": "host",
+      "long": false,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 160,
+        "height": 28,
+        "left": 921,
+        "right": 1110.2734375,
+        "top": 132,
+        "width": 189.2734375,
+        "x": 921,
+        "y": 132
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "hidden",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-host",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        672
+      ],
+      "panelScroll": [
+        360,
+        672
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 905,
+        "right": 1265,
+        "top": 0,
+        "width": 360,
+        "x": 905,
+        "y": 0
+      },
+      "rootBackground": "#fff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "host",
+      "selectedTheme": "maple/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-maple-light-host-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "maple/light",
+      "mode": "host",
+      "long": true,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 490,
+        "height": 28,
+        "left": 921,
+        "right": 1110.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 921,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "hidden",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-host",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        657
+      ],
+      "panelScroll": [
+        1457,
+        657
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 905,
+        "right": 1265,
+        "top": 0,
+        "width": 360,
+        "x": 905,
+        "y": 0
+      },
+      "rootBackground": "#fff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "host",
+      "selectedTheme": "maple/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-maple-light-inline-normal",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "maple/light",
+      "mode": "inline",
+      "long": false,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 160,
+        "height": 28,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 132,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 132
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        672
+      ],
+      "panelScroll": [
+        360,
+        672
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#fff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "inline",
+      "selectedTheme": "maple/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-maple-light-inline-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "maple/light",
+      "mode": "inline",
+      "long": true,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 490,
+        "height": 28,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        657
+      ],
+      "panelScroll": [
+        1457,
+        657
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#fff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "inline",
+      "selectedTheme": "maple/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-maple-light-body-normal",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "maple/light",
+      "mode": "body",
+      "long": false,
+      "background": "rgb(255, 255, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 403.34375,
+        "height": 22.09375,
+        "left": 514.2890625,
+        "right": 703.9296875,
+        "top": 381.25,
+        "width": 189.640625,
+        "x": 514.2890625,
+        "y": 381.25
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(29, 33, 41)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        251,
+        87
+      ],
+      "panelScroll": [
+        251,
+        87
+      ],
+      "rect": {
+        "bottom": 403.34375,
+        "height": 86.6875,
+        "left": 514.2890625,
+        "right": 765.703125,
+        "top": 316.65625,
+        "width": 251.4140625,
+        "x": 514.2890625,
+        "y": 316.65625
+      },
+      "rootBackground": "#ffffff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "body",
+      "selectedTheme": "maple/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(255, 255, 255)",
+      "expectedForeground": "rgb(29,33,41)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-maple-light-body-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "maple/light",
+      "mode": "body",
+      "long": true,
+      "background": "rgb(255, 255, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 516.546875,
+        "height": 22.09375,
+        "left": 0,
+        "right": 189.640625,
+        "top": 494.453125,
+        "width": 189.640625,
+        "x": 0,
+        "y": 494.453125
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(29, 33, 41)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        1280,
+        328
+      ],
+      "panelScroll": [
+        1441,
+        328
+      ],
+      "rect": {
+        "bottom": 531.546875,
+        "height": 343.09375,
+        "left": 0,
+        "right": 1280,
+        "top": 188.453125,
+        "width": 1280,
+        "x": 0,
+        "y": 188.453125
+      },
+      "rootBackground": "#ffffff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "body",
+      "selectedTheme": "maple/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(255, 255, 255)",
+      "expectedForeground": "rgb(29,33,41)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-maple-light-host-normal",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "maple/light",
+      "mode": "host",
+      "long": false,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 405.5,
+        "height": 22.5,
+        "left": 506.7890625,
+        "right": 696.4296875,
+        "top": 383,
+        "width": 189.640625,
+        "x": 506.7890625,
+        "y": 383
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "",
+        "hidden"
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-host",
+      "pageOverflow": false,
+      "panelClient": [
+        251,
+        91
+      ],
+      "panelScroll": [
+        251,
+        91
+      ],
+      "rect": {
+        "bottom": 405.5,
+        "height": 91,
+        "left": 506.7890625,
+        "right": 758.203125,
+        "top": 314.5,
+        "width": 251.4140625,
+        "x": 506.7890625,
+        "y": 314.5
+      },
+      "rootBackground": "#ffffff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "host",
+      "selectedTheme": "maple/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-maple-light-host-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "maple/light",
+      "mode": "host",
+      "long": true,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 534,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 511.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 511.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "",
+        "hidden"
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-host",
+      "pageOverflow": false,
+      "panelClient": [
+        1265,
+        363
+      ],
+      "panelScroll": [
+        1441,
+        363
+      ],
+      "rect": {
+        "bottom": 549,
+        "height": 378,
+        "left": 0,
+        "right": 1265,
+        "top": 171,
+        "width": 1265,
+        "x": 0,
+        "y": 171
+      },
+      "rootBackground": "#ffffff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "host",
+      "selectedTheme": "maple/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-maple-light-inline-normal",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "maple/light",
+      "mode": "inline",
+      "long": false,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 405.5,
+        "height": 22.5,
+        "left": 514.2890625,
+        "right": 703.9296875,
+        "top": 383,
+        "width": 189.640625,
+        "x": 514.2890625,
+        "y": 383
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        251,
+        91
+      ],
+      "panelScroll": [
+        251,
+        91
+      ],
+      "rect": {
+        "bottom": 405.5,
+        "height": 91,
+        "left": 514.2890625,
+        "right": 765.703125,
+        "top": 314.5,
+        "width": 251.4140625,
+        "x": 514.2890625,
+        "y": 314.5
+      },
+      "rootBackground": "#ffffff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "inline",
+      "selectedTheme": "maple/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-maple-light-inline-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "maple/light",
+      "mode": "inline",
+      "long": true,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 534,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 511.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 511.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        1280,
+        363
+      ],
+      "panelScroll": [
+        1441,
+        363
+      ],
+      "rect": {
+        "bottom": 549,
+        "height": 378,
+        "left": 0,
+        "right": 1280,
+        "top": 171,
+        "width": 1280,
+        "x": 0,
+        "y": 171
+      },
+      "rootBackground": "#ffffff",
+      "rootForeground": "rgb(29,33,41)",
+      "selectedMode": "inline",
+      "selectedTheme": "maple/light",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-maple-dark-body-normal",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "maple/dark",
+      "mode": "body",
+      "long": false,
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 154.09375,
+        "height": 22.09375,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 132,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 132
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        672
+      ],
+      "panelScroll": [
+        360,
+        672
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "maple/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(42, 42, 43)",
+      "expectedForeground": "rgba(255, 255, 255, 0.9)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-maple-dark-body-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "maple/dark",
+      "mode": "body",
+      "long": true,
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 484.09375,
+        "height": 22.09375,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        657
+      ],
+      "panelScroll": [
+        1457,
+        657
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "maple/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(42, 42, 43)",
+      "expectedForeground": "rgba(255, 255, 255, 0.9)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-maple-dark-host-normal",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "maple/dark",
+      "mode": "host",
+      "long": false,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 160,
+        "height": 28,
+        "left": 921,
+        "right": 1110.2734375,
+        "top": 132,
+        "width": 189.2734375,
+        "x": 921,
+        "y": 132
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "hidden",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-host",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        672
+      ],
+      "panelScroll": [
+        360,
+        672
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 905,
+        "right": 1265,
+        "top": 0,
+        "width": 360,
+        "x": 905,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "maple/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-maple-dark-host-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "maple/dark",
+      "mode": "host",
+      "long": true,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 490,
+        "height": 28,
+        "left": 921,
+        "right": 1110.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 921,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "hidden",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-host",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        657
+      ],
+      "panelScroll": [
+        1457,
+        657
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 905,
+        "right": 1265,
+        "top": 0,
+        "width": 360,
+        "x": 905,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "maple/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-maple-dark-inline-normal",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "maple/dark",
+      "mode": "inline",
+      "long": false,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 160,
+        "height": 28,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 132,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 132
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        672
+      ],
+      "panelScroll": [
+        360,
+        672
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "maple/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "c-maple-dark-inline-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "maple/dark",
+      "mode": "inline",
+      "long": true,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 490,
+        "height": 28,
+        "left": 936,
+        "right": 1125.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 936,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        657
+      ],
+      "panelScroll": [
+        1457,
+        657
+      ],
+      "rect": {
+        "bottom": 720,
+        "height": 720,
+        "left": 920,
+        "right": 1280,
+        "top": 0,
+        "width": 360,
+        "x": 920,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "maple/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "c-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-maple-dark-body-normal",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "maple/dark",
+      "mode": "body",
+      "long": false,
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 403.34375,
+        "height": 22.09375,
+        "left": 514.2890625,
+        "right": 703.9296875,
+        "top": 381.25,
+        "width": 189.640625,
+        "x": 514.2890625,
+        "y": 381.25
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        251,
+        87
+      ],
+      "panelScroll": [
+        251,
+        87
+      ],
+      "rect": {
+        "bottom": 403.34375,
+        "height": 86.6875,
+        "left": 514.2890625,
+        "right": 765.703125,
+        "top": 316.65625,
+        "width": 251.4140625,
+        "x": 514.2890625,
+        "y": 316.65625
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "maple/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(42, 42, 43)",
+      "expectedForeground": "rgba(255, 255, 255, 0.9)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-maple-dark-body-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "maple/dark",
+      "mode": "body",
+      "long": true,
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 516.546875,
+        "height": 22.09375,
+        "left": 0,
+        "right": 189.640625,
+        "top": 494.453125,
+        "width": 189.640625,
+        "x": 0,
+        "y": 494.453125
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        1280,
+        328
+      ],
+      "panelScroll": [
+        1441,
+        328
+      ],
+      "rect": {
+        "bottom": 531.546875,
+        "height": 343.09375,
+        "left": 0,
+        "right": 1280,
+        "top": 188.453125,
+        "width": 1280,
+        "x": 0,
+        "y": 188.453125
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "maple/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(42, 42, 43)",
+      "expectedForeground": "rgba(255, 255, 255, 0.9)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-maple-dark-host-normal",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "maple/dark",
+      "mode": "host",
+      "long": false,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 405.5,
+        "height": 22.5,
+        "left": 506.7890625,
+        "right": 696.4296875,
+        "top": 383,
+        "width": 189.640625,
+        "x": 506.7890625,
+        "y": 383
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "",
+        "hidden"
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-host",
+      "pageOverflow": false,
+      "panelClient": [
+        251,
+        91
+      ],
+      "panelScroll": [
+        251,
+        91
+      ],
+      "rect": {
+        "bottom": 405.5,
+        "height": 91,
+        "left": 506.7890625,
+        "right": 758.203125,
+        "top": 314.5,
+        "width": 251.4140625,
+        "x": 506.7890625,
+        "y": 314.5
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "maple/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-maple-dark-host-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "maple/dark",
+      "mode": "host",
+      "long": true,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 534,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 511.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 511.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "",
+        "hidden"
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-host",
+      "pageOverflow": false,
+      "panelClient": [
+        1265,
+        363
+      ],
+      "panelScroll": [
+        1441,
+        363
+      ],
+      "rect": {
+        "bottom": 549,
+        "height": 378,
+        "left": 0,
+        "right": 1265,
+        "top": 171,
+        "width": 1265,
+        "x": 0,
+        "y": 171
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "maple/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-maple-dark-inline-normal",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "maple/dark",
+      "mode": "inline",
+      "long": false,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 405.5,
+        "height": 22.5,
+        "left": 514.2890625,
+        "right": 703.9296875,
+        "top": 383,
+        "width": 189.640625,
+        "x": 514.2890625,
+        "y": 383
+      },
+      "copyLength": 23,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        251,
+        91
+      ],
+      "panelScroll": [
+        251,
+        91
+      ],
+      "rect": {
+        "bottom": 405.5,
+        "height": 91,
+        "left": 514.2890625,
+        "right": 765.703125,
+        "top": 314.5,
+        "width": 251.4140625,
+        "x": 514.2890625,
+        "y": 314.5
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "maple/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    },
+    {
+      "key": "mp-maple-dark-inline-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "maple/dark",
+      "mode": "inline",
+      "long": true,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 534,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 511.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 511.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        1280,
+        363
+      ],
+      "panelScroll": [
+        1441,
+        363
+      ],
+      "rect": {
+        "bottom": 549,
+        "height": 378,
+        "left": 0,
+        "right": 1280,
+        "top": 171,
+        "width": 1280,
+        "x": 0,
+        "y": 171
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "maple/dark",
+      "viewport": [
+        1280,
+        720
+      ],
+      "expectedOwner": "mp-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": []
+    }
+  ],
+  "narrow": [
+    {
+      "key": "c-default-dark-body-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/dark",
+      "mode": "body",
+      "long": true,
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 660.09375,
+        "height": 22.09375,
+        "left": 16,
+        "right": 205.2734375,
+        "top": 638,
+        "width": 189.2734375,
+        "x": 16,
+        "y": 638
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        305,
+        577
+      ],
+      "panelScroll": [
+        1457,
+        624
+      ],
+      "rect": {
+        "bottom": 640,
+        "height": 640,
+        "left": 0,
+        "right": 320,
+        "top": 0,
+        "width": 320,
+        "x": 0,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(42, 42, 43)",
+      "expectedForeground": "rgba(255, 255, 255, 0.9)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": [],
+      "width": 320
+    },
+    {
+      "key": "c-default-dark-host-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/dark",
+      "mode": "host",
+      "long": true,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 666,
+        "height": 28,
+        "left": 16,
+        "right": 205.2734375,
+        "top": 638,
+        "width": 189.2734375,
+        "x": 16,
+        "y": 638
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "hidden",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-host",
+      "pageOverflow": false,
+      "panelClient": [
+        290,
+        577
+      ],
+      "panelScroll": [
+        1457,
+        630
+      ],
+      "rect": {
+        "bottom": 640,
+        "height": 640,
+        "left": 0,
+        "right": 305,
+        "top": 0,
+        "width": 305,
+        "x": 0,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ],
+      "expectedOwner": "c-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": [],
+      "width": 320
+    },
+    {
+      "key": "c-default-dark-inline-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/dark",
+      "mode": "inline",
+      "long": true,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 666,
+        "height": 28,
+        "left": 16,
+        "right": 205.2734375,
+        "top": 638,
+        "width": 189.2734375,
+        "x": 16,
+        "y": 638
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        305,
+        577
+      ],
+      "panelScroll": [
+        1457,
+        630
+      ],
+      "rect": {
+        "bottom": 640,
+        "height": 640,
+        "left": 0,
+        "right": 320,
+        "top": 0,
+        "width": 320,
+        "x": 0,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ],
+      "expectedOwner": "c-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": [],
+      "width": 320
+    },
+    {
+      "key": "mp-default-dark-body-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/dark",
+      "mode": "body",
+      "long": true,
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 476.546875,
+        "height": 22.09375,
+        "left": 0,
+        "right": 189.640625,
+        "top": 454.453125,
+        "width": 189.640625,
+        "x": 0,
+        "y": 454.453125
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        320,
+        328
+      ],
+      "panelScroll": [
+        1441,
+        328
+      ],
+      "rect": {
+        "bottom": 491.546875,
+        "height": 343.09375,
+        "left": 0,
+        "right": 320,
+        "top": 148.453125,
+        "width": 320,
+        "x": 0,
+        "y": 148.453125
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(42, 42, 43)",
+      "expectedForeground": "rgba(255, 255, 255, 0.9)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": [],
+      "width": 320
+    },
+    {
+      "key": "mp-default-dark-host-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/dark",
+      "mode": "host",
+      "long": true,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 574,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 551.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 551.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "",
+        "hidden"
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-host",
+      "pageOverflow": false,
+      "panelClient": [
+        305,
+        523
+      ],
+      "panelScroll": [
+        1441,
+        523
+      ],
+      "rect": {
+        "bottom": 589,
+        "height": 538,
+        "left": 0,
+        "right": 305,
+        "top": 51,
+        "width": 305,
+        "x": 0,
+        "y": 51
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ],
+      "expectedOwner": "mp-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": [],
+      "width": 320
+    },
+    {
+      "key": "mp-default-dark-inline-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/dark",
+      "mode": "inline",
+      "long": true,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 494,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 471.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 471.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        320,
+        363
+      ],
+      "panelScroll": [
+        1441,
+        363
+      ],
+      "rect": {
+        "bottom": 509,
+        "height": 378,
+        "left": 0,
+        "right": 320,
+        "top": 131,
+        "width": 320,
+        "x": 0,
+        "y": 131
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ],
+      "expectedOwner": "mp-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": [],
+      "width": 320
+    },
+    {
+      "key": "c-default-dark-body-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/dark",
+      "mode": "body",
+      "long": true,
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 484.09375,
+        "height": 22.09375,
+        "left": 46,
+        "right": 235.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 46,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        577
+      ],
+      "panelScroll": [
+        1457,
+        577
+      ],
+      "rect": {
+        "bottom": 640,
+        "height": 640,
+        "left": 30,
+        "right": 390,
+        "top": 0,
+        "width": 360,
+        "x": 30,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        390,
+        640
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(42, 42, 43)",
+      "expectedForeground": "rgba(255, 255, 255, 0.9)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": [],
+      "width": 390
+    },
+    {
+      "key": "c-default-dark-host-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/dark",
+      "mode": "host",
+      "long": true,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 490,
+        "height": 28,
+        "left": 31,
+        "right": 220.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 31,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "hidden",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-host",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        577
+      ],
+      "panelScroll": [
+        1457,
+        577
+      ],
+      "rect": {
+        "bottom": 640,
+        "height": 640,
+        "left": 15,
+        "right": 375,
+        "top": 0,
+        "width": 360,
+        "x": 15,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        390,
+        640
+      ],
+      "expectedOwner": "c-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": [],
+      "width": 390
+    },
+    {
+      "key": "c-default-dark-inline-long",
+      "name": "Cedar",
+      "prefix": "c",
+      "theme": "default/dark",
+      "mode": "inline",
+      "long": true,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 490,
+        "height": 28,
+        "left": 46,
+        "right": 235.2734375,
+        "top": 462,
+        "width": 189.2734375,
+        "x": 46,
+        "y": 462
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        360,
+        577
+      ],
+      "panelScroll": [
+        1457,
+        577
+      ],
+      "rect": {
+        "bottom": 640,
+        "height": 640,
+        "left": 30,
+        "right": 390,
+        "top": 0,
+        "width": 360,
+        "x": 30,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        390,
+        640
+      ],
+      "expectedOwner": "c-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Cedar open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": [],
+      "width": 390
+    },
+    {
+      "key": "mp-default-dark-body-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/dark",
+      "mode": "body",
+      "long": true,
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 476.546875,
+        "height": 22.09375,
+        "left": 0,
+        "right": 189.640625,
+        "top": 454.453125,
+        "width": 189.640625,
+        "x": 0,
+        "y": 454.453125
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        390,
+        328
+      ],
+      "panelScroll": [
+        1441,
+        328
+      ],
+      "rect": {
+        "bottom": 491.546875,
+        "height": 343.09375,
+        "left": 0,
+        "right": 390,
+        "top": 148.453125,
+        "width": 390,
+        "x": 0,
+        "y": 148.453125
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        390,
+        640
+      ],
+      "expectedOwner": "body",
+      "expectedBackground": "rgb(42, 42, 43)",
+      "expectedForeground": "rgba(255, 255, 255, 0.9)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": [],
+      "width": 390
+    },
+    {
+      "key": "mp-default-dark-host-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/dark",
+      "mode": "host",
+      "long": true,
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 494,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 471.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 471.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "",
+        "hidden"
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-host",
+      "pageOverflow": false,
+      "panelClient": [
+        375,
+        363
+      ],
+      "panelScroll": [
+        1441,
+        363
+      ],
+      "rect": {
+        "bottom": 509,
+        "height": 378,
+        "left": 0,
+        "right": 375,
+        "top": 131,
+        "width": 375,
+        "x": 0,
+        "y": 131
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        390,
+        640
+      ],
+      "expectedOwner": "mp-host",
+      "expectedBackground": "rgb(24, 34, 48)",
+      "expectedForeground": "rgb(248, 249, 252)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": [],
+      "width": 390
+    },
+    {
+      "key": "mp-default-dark-inline-long",
+      "name": "Maple",
+      "prefix": "mp",
+      "theme": "default/dark",
+      "mode": "inline",
+      "long": true,
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 494,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 471.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 471.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        390,
+        363
+      ],
+      "panelScroll": [
+        1441,
+        363
+      ],
+      "rect": {
+        "bottom": 509,
+        "height": 378,
+        "left": 0,
+        "right": 390,
+        "top": 131,
+        "width": 390,
+        "x": 0,
+        "y": 131
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        390,
+        640
+      ],
+      "expectedOwner": "mp-caller",
+      "expectedBackground": "rgb(238, 242, 255)",
+      "expectedForeground": "rgb(24, 34, 48)",
+      "closeState": {
+        "active": "Maple open themed modal",
+        "bodyOverflow": "",
+        "hosts": [
+          "",
+          ""
+        ]
+      },
+      "errors": [],
+      "width": 390
+    }
+  ],
+  "live": [
+    {
+      "name": "Cedar",
+      "mode": "host",
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 666,
+        "height": 28,
+        "left": 16,
+        "right": 205.2734375,
+        "top": 638,
+        "width": 189.2734375,
+        "x": 16,
+        "y": 638
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "hidden",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-host",
+      "pageOverflow": false,
+      "panelClient": [
+        290,
+        577
+      ],
+      "panelScroll": [
+        1457,
+        630
+      ],
+      "rect": {
+        "bottom": 640,
+        "height": 640,
+        "left": 0,
+        "right": 305,
+        "top": 0,
+        "width": 305,
+        "x": 0,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ]
+    },
+    {
+      "name": "Cedar",
+      "mode": "inline",
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 666,
+        "height": 28,
+        "left": 16,
+        "right": 205.2734375,
+        "top": 638,
+        "width": 189.2734375,
+        "x": 16,
+        "y": 638
+      },
+      "copyLength": 2048,
+      "focusInside": false,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        305,
+        577
+      ],
+      "panelScroll": [
+        1457,
+        630
+      ],
+      "rect": {
+        "bottom": 640,
+        "height": 640,
+        "left": 0,
+        "right": 320,
+        "top": 0,
+        "width": 320,
+        "x": 0,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ]
+    },
+    {
+      "name": "Cedar",
+      "mode": "body",
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 660.09375,
+        "height": 22.09375,
+        "left": 16,
+        "right": 205.2734375,
+        "top": 638,
+        "width": 189.2734375,
+        "x": 16,
+        "y": 638
+      },
+      "copyLength": 2048,
+      "focusInside": false,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        305,
+        577
+      ],
+      "panelScroll": [
+        1457,
+        624
+      ],
+      "rect": {
+        "bottom": 640,
+        "height": 640,
+        "left": 0,
+        "right": 320,
+        "top": 0,
+        "width": 320,
+        "x": 0,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ]
+    },
+    {
+      "name": "Cedar",
+      "mode": "host",
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 666,
+        "height": 28,
+        "left": 16,
+        "right": 205.2734375,
+        "top": 638,
+        "width": 189.2734375,
+        "x": 16,
+        "y": 638
+      },
+      "copyLength": 2048,
+      "focusInside": false,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "hidden",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "c-host",
+      "pageOverflow": false,
+      "panelClient": [
+        290,
+        577
+      ],
+      "panelScroll": [
+        1457,
+        630
+      ],
+      "rect": {
+        "bottom": 640,
+        "height": 640,
+        "left": 0,
+        "right": 305,
+        "top": 0,
+        "width": 305,
+        "x": 0,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ]
+    },
+    {
+      "name": "Cedar",
+      "mode": "body",
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 660.09375,
+        "height": 22.09375,
+        "left": 16,
+        "right": 205.2734375,
+        "top": 638,
+        "width": 189.2734375,
+        "x": 16,
+        "y": 638
+      },
+      "copyLength": 2048,
+      "focusInside": false,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        305,
+        577
+      ],
+      "panelScroll": [
+        1457,
+        624
+      ],
+      "rect": {
+        "bottom": 640,
+        "height": 640,
+        "left": 0,
+        "right": 320,
+        "top": 0,
+        "width": 320,
+        "x": 0,
+        "y": 0
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ]
+    },
+    {
+      "name": "Maple",
+      "mode": "host",
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 574,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 551.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 551.5
+      },
+      "copyLength": 2048,
+      "focusInside": true,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "",
+        "hidden"
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-host",
+      "pageOverflow": false,
+      "panelClient": [
+        305,
+        523
+      ],
+      "panelScroll": [
+        1441,
+        523
+      ],
+      "rect": {
+        "bottom": 589,
+        "height": 538,
+        "left": 0,
+        "right": 305,
+        "top": 51,
+        "width": 305,
+        "x": 0,
+        "y": 51
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ]
+    },
+    {
+      "name": "Maple",
+      "mode": "inline",
+      "background": "rgb(238, 242, 255)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 494,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 471.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 471.5
+      },
+      "copyLength": 2048,
+      "focusInside": false,
+      "foreground": "rgb(24, 34, 48)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-caller",
+      "pageOverflow": false,
+      "panelClient": [
+        320,
+        363
+      ],
+      "panelScroll": [
+        1441,
+        363
+      ],
+      "rect": {
+        "bottom": 509,
+        "height": 378,
+        "left": 0,
+        "right": 320,
+        "top": 131,
+        "width": 320,
+        "x": 0,
+        "y": 131
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "inline",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ]
+    },
+    {
+      "name": "Maple",
+      "mode": "body",
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 476.546875,
+        "height": 22.09375,
+        "left": 0,
+        "right": 189.640625,
+        "top": 454.453125,
+        "width": 189.640625,
+        "x": 0,
+        "y": 454.453125
+      },
+      "copyLength": 2048,
+      "focusInside": false,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        320,
+        328
+      ],
+      "panelScroll": [
+        1441,
+        328
+      ],
+      "rect": {
+        "bottom": 491.546875,
+        "height": 343.09375,
+        "left": 0,
+        "right": 320,
+        "top": 148.453125,
+        "width": 320,
+        "x": 0,
+        "y": 148.453125
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ]
+    },
+    {
+      "name": "Maple",
+      "mode": "host",
+      "background": "rgb(24, 34, 48)",
+      "bodyOverflow": "",
+      "closeRect": {
+        "bottom": 574,
+        "height": 22.5,
+        "left": 0,
+        "right": 189.640625,
+        "top": 551.5,
+        "width": 189.640625,
+        "x": 0,
+        "y": 551.5
+      },
+      "copyLength": 2048,
+      "focusInside": false,
+      "foreground": "rgb(248, 249, 252)",
+      "hostOverflows": [
+        "",
+        "hidden"
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "mp-host",
+      "pageOverflow": false,
+      "panelClient": [
+        305,
+        523
+      ],
+      "panelScroll": [
+        1441,
+        523
+      ],
+      "rect": {
+        "bottom": 589,
+        "height": 538,
+        "left": 0,
+        "right": 305,
+        "top": 51,
+        "width": 305,
+        "x": 0,
+        "y": 51
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "host",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ]
+    },
+    {
+      "name": "Maple",
+      "mode": "body",
+      "background": "rgb(42, 42, 43)",
+      "bodyOverflow": "hidden",
+      "closeRect": {
+        "bottom": 476.546875,
+        "height": 22.09375,
+        "left": 0,
+        "right": 189.640625,
+        "top": 454.453125,
+        "width": 189.640625,
+        "x": 0,
+        "y": 454.453125
+      },
+      "copyLength": 2048,
+      "focusInside": false,
+      "foreground": "rgba(255, 255, 255, 0.9)",
+      "hostOverflows": [
+        "",
+        ""
+      ],
+      "opacity": "1",
+      "overflow": [
+        "auto",
+        "auto"
+      ],
+      "owner": "body",
+      "pageOverflow": false,
+      "panelClient": [
+        320,
+        328
+      ],
+      "panelScroll": [
+        1441,
+        328
+      ],
+      "rect": {
+        "bottom": 491.546875,
+        "height": 343.09375,
+        "left": 0,
+        "right": 320,
+        "top": 148.453125,
+        "width": 320,
+        "x": 0,
+        "y": 148.453125
+      },
+      "rootBackground": "#2a2a2b",
+      "rootForeground": "rgba(255, 255, 255, 0.9)",
+      "selectedMode": "body",
+      "selectedTheme": "default/dark",
+      "viewport": [
+        320,
+        640
+      ]
+    }
+  ],
+  "neighbors": [
+  {
+    "name": "Cedar",
+    "before": {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.9)",
+      "vars": [
+        "#2a2a2b",
+        "#2a2a2b"
+      ]
+    },
+    "during": {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.9)",
+      "vars": [
+        "#2a2a2b",
+        "#2a2a2b"
+      ]
+    },
+    "after": {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.9)",
+      "vars": [
+        "#2a2a2b",
+        "#2a2a2b"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "name": "Maple",
+    "before": {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.9)",
+      "vars": [
+        "#2a2a2b",
+        "#2a2a2b"
+      ]
+    },
+    "during": {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.9)",
+      "vars": [
+        "#2a2a2b",
+        "#2a2a2b"
+      ]
+    },
+    "after": {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.9)",
+      "vars": [
+        "#2a2a2b",
+        "#2a2a2b"
+      ]
+    },
+    "pass": true
+  }
+],
+  "excluded": [
+    "200% native browser zoom",
+    "Safari/Firefox",
+    "physical iOS/Android",
+    "OS reduced-motion",
+    "screen readers",
+    "arbitrary business slot colors"
+  ]
+}

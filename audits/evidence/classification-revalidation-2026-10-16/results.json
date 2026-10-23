@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-16",
+  "startedUtc": "05:38:01",
+  "scope": "Manual source-responsibility revalidation of four parallel Ripple/VirtualList files; no product/test-source edits or new defect/repair",
+  "sourceSnapshots": [
+    { "repo": "cedar-design-web", "file": "ripple/index.ts", "previousRegistration": "430c9db61a9bb918c525ccb29b2c0fa108e186fcb89ec726d9f564709b927740", "beforeAndAfterTests": "ca5b40a73fc89eeb68e61df879e54180040e09bc4b7483541361617bcfa658a3", "hintBefore": 65, "hintNow": 66 },
+    { "repo": "maple-design-mobile", "file": "ripple/index.ts", "previousRegistration": "a30f2e88ddece37c91a2fd55cf99fdae7c8b94e1575e651121e5f8f916679346", "beforeAndAfterTests": "9462a7b264949cdf11baa565fbd813833bab69c85f2c6d7f043d2ac078927f0e", "hintBefore": 65, "hintNow": 66 },
+    { "repo": "cedar-design-web", "file": "_components/virtual-list-v2/VirtualList.vue", "previousRegistration": "1a4385765ad6066e52c52a265f6c1f5ba4a03bfe29d3b6452e6d1e3f4c9d5f7f", "beforeAndAfterTests": "09dd92432cfcfcdc66684e440c23bde0c115b09c7299801ff0e85620f33d5bff", "hintBefore": 192, "hintNow": 200 },
+    { "repo": "maple-design-mobile", "file": "_components/virtual-list-v2/VirtualList.vue", "previousRegistration": "49dfdc9962f2b4f9704a1875c1476fa87055329b36dd5a4209099500bab87fc7", "beforeAndAfterTests": "bf650a0ba75fbf3c7ab38b3679b956cfad45fe53c159e5d8de863359597ec23a", "hintBefore": 218, "hintNow": 232 }
+  ],
+  "supportingSourcesRead": {
+    "cedarUseSize": "e340383a16bd39ba2c165e95752c377d18f623cb23e4b5bd60a60d8de0a50bfb",
+    "cedarItem": "a545d2c91f001f9bc5f60bd7ec97257bdb0936a7f5c327ab5f6f951d0968d49e",
+    "mapleUseSize": "5494d0976734b4f4b07868bc6dac6af0b8b20cc1e732e0ae3696dd2da554f478",
+    "mapleItem": "20dcb0cc52f393d046b4b78b554c77648b14785db75a23043a8d019789d90b90",
+    "meaning": "Supporting post-run snapshots only,not four additional classified runtime files"
+  },
+  "review": {
+    "ripple": "Parallel mouse/compatibility gate and release/blur bindings coexist with prior pending-task/state guards.800ms is a Date.now comparison,not a new scheduled timer/CSS duration;task-dispatch classification unchanged",
+    "virtualList": "Measured row bounds,commandedScroll self-event alignment,reactive sizeMap and row-index attributes;queued correction remains nextTick state-settlement",
+    "ownership": "Parallel product changes preserved byte-for-byte;update only reviewed classification/rationale/four inventory lines and documentation",
+    "notCertified": ["Arbitrary destructive geometry reentry", "Every native self-scroll event ordering", "Trusted mouse/touch or native smooth scrolling", "KeepAlive directive deactivation", "Same-node document adoption", "OS reduced-motion", "Arbitrary intermediate CSS changes"]
+  },
+  "tests": {
+    "cedar": { "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/ripple src/_components/virtual-list-v2 src/list src/tree/__tests__/scroll-consumer.test.tsx", "passed": 83, "files": 11, "exitCode": 0, "seconds": 6.85, "breakdown": { "ripple": 31, "virtualListAndList": 45, "treeConsumer": 7 } },
+    "maple": { "command": "pnpm --dir packages/maple-ui exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js src/ripple src/_components/virtual-list-v2 src/list", "passed": 74, "files": 9, "exitCode": 0, "seconds": 20.98, "breakdown": { "ripple": 36, "virtualListAndList": 38 } },
+    "existingCoveragePerPlatform": { "rippleDispatch": 11, "rippleMotion": 12, "mouse": 3, "virtualLifecycle": 15, "measurement": 2 },
+    "newTestsWritten": 0,
+    "newProductDefectsOrRepairs": 0,
+    "interpretation": "Reexecuted current versions,not newly authored tests or native acceptance;parallel List demo cases are included without attribution as this batch's implementation"
+  },
+  "validation": {
+    "initialSharedSelection": "25 tests:24pass/1fail;Message contract file selection typo omitted four cases,and Ripple classification still quoted65 rather than actual66",
+    "secondSharedSelection": "29 tests:28pass/1fail before Ripple line metadata correction;not a product failure",
+    "finalSharedTests": { "passed": 29, "failed": 0, "exitCode": 0 },
+    "classificationCli": { "classifiedHints": 159, "unclassifiedHints": 19, "exitCode": 0 },
+    "generatedCatalog": { "matchingPages": 3, "exitCode": 0 },
+    "mapleRootLint": "passed exit0",
+    "typesLessBuildsAndSchedulerSuite": "not rerun;no product/API/Token changes in this batch",
+    "globalMotionThemes": "Not claimed;26 unrelated inventory drifts preserved",
+    "nativeBrowserOrOsCases": 0
+  },
+  "registration": {
+    "closedFamilies": 29, "totalFamilies": 33, "closedPercent": 87.9,
+    "remainingFamilies": 4, "remainingPercent": 12.1,
+    "remainingByFamily": { "Date": 3, "Form": 4, "Time": 3, "Picker": 9 },
+    "sourceFiles": 69, "classifiedHints": 159, "totalHints": 178, "classifiedPercent": 89.3,
+    "remainingHints": 19, "remainingHintsPercent": 10.7, "denominatorChange": 0,
+    "currentClassifiedHashGate": "All69 current registered sources pass;former four stale hashes manually revalidated,not four newly completed component families"
+  },
+  "preservedBlockers": ["Date/Form/Time/Picker parallel development", "26 unrelated CSS/date inventory drifts", "Map formal SDK contract", "144 native Chrome200%/Safari/Firefox groups", "Button white2.305:1 design exception,not AA"],
+  "documentation": "Shared standard,Cedar guide,Maple bilingual guides,List/Ripple component docs,patch changesets and existing OpenSpec follow-ups synchronized"
+}

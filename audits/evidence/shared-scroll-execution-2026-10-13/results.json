@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-13",
+  "scope": "controlled Date.now/RAF/iframe-owner/media-query simulations; helper execution only, not full consumer cancellation or native browser/OS",
+  "baseline": {
+    "cedar": {
+      "failed": 9,
+      "passed": 1
+    },
+    "maple": {
+      "failed": 9,
+      "passed": 1
+    }
+  },
+  "cases": [
+    "zero duration no queued interpolation",
+    "negative duration no queued interpolation",
+    "NaN duration no queued interpolation",
+    "Infinity duration no endless interpolation",
+    "iframe HTMLElement owner RAF",
+    "iframe Window owner RAF",
+    "consumed/completed callbacks reject replay",
+    "default300ms/caller easing/coordinates",
+    "initial owner reduced preference",
+    "dynamic owner preference completes next frame"
+  ],
+  "probeCorrection": "Cedar post-repair main-document tests initially patched runner global/window wrappers, not actual node.ownerDocument.defaultView. Bound probes to real document.defaultView; final10 pass. Runner mismatch/unhandled callback after failed probe cleanup is not an additional product failure.",
+  "sources": [
+    {
+      "repo": "cedar-design-web",
+      "file": "_utils/maple/elements.ts",
+      "sha256": "48739191fbaca3e326ec78340575a1418a437bab731c3123e3c12c9d6aebba01",
+      "rationale": "JS visual scroll: default300ms/caller easing preserved; zero/nonpositive/nonfinite duration targets immediately. Actual target owner Window owns RAF and current reduced-motion query; preference change finishes next frame. Per-frame generation rejects consumed/completed replay. Baseline9 failures/1 default control; final10 tests per copy, Maple IndexBar9 pass. No cancellation API or consumer-lifecycle/browser/OS certification; overlapping Form work and IndexBar async-state remain separate.",
+      "hints": [
+        {
+          "line": 210,
+          "category": "declaration-only",
+          "snippet": "export function scrollTo("
+        },
+        {
+          "line": 220,
+          "category": "visual-scroll",
+          "snippet": "    return view.matchMedia('(prefers-reduced-motion: reduce)').matches"
+        },
+        {
+          "line": 235,
+          "category": "visual-scroll",
+          "snippet": "      element.scrollTo(left, top)"
+        },
+        {
+          "line": 240,
+          "category": "visual-scroll",
+          "snippet": "      view!.requestAnimationFrame(() => frame(currentGeneration))"
+        },
+        {
+          "line": 254,
+          "category": "visual-scroll",
+          "snippet": "      element.scrollTo(nextLeft, nextTop)"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "utils/elements.ts",
+      "sha256": "cdb1c340e2d14ff713c430d7b93438fb351310daaff79b501afd367b7d998107",
+      "rationale": "JS visual scroll: default300ms/caller easing preserved; zero/nonpositive/nonfinite duration targets immediately. Actual target owner Window owns RAF and current reduced-motion query; preference change finishes next frame. Per-frame generation rejects consumed/completed replay. Baseline9 failures/1 default control; final10 tests per copy, Maple IndexBar9 pass. No cancellation API or consumer-lifecycle/browser/OS certification; overlapping Form work and IndexBar async-state remain separate.",
+      "hints": [
+        {
+          "line": 208,
+          "category": "declaration-only",
+          "snippet": "export function scrollTo("
+        },
+        {
+          "line": 218,
+          "category": "visual-scroll",
+          "snippet": "    return view.matchMedia('(prefers-reduced-motion: reduce)').matches"
+        },
+        {
+          "line": 233,
+          "category": "visual-scroll",
+          "snippet": "      element.scrollTo(left, top)"
+        },
+        {
+          "line": 238,
+          "category": "visual-scroll",
+          "snippet": "      view!.requestAnimationFrame(() => frame(currentGeneration))"
+        },
+        {
+          "line": 252,
+          "category": "visual-scroll",
+          "snippet": "      element.scrollTo(nextLeft, nextTop)"
+        }
+      ]
+    }
+  ],
+  "consumerScope": {
+    "maple": "IndexBar9 existing tests pass; public duration default0 unchanged; own entry frame/doubleRaf remain asynchronous. clickedName/retained commands/disposal still pending.",
+    "form": "Dirty overlapping Form/FormItem/controller/docs work preserved, not taken over or certified by helper tests.",
+    "cedar": "No named production helper call found; no bundle reachability claim."
+  },
+  "validation": {
+    "cedar": {
+      "helperTests": 10,
+      "typecheck": "passed",
+      "affectedLint": "passed"
+    },
+    "maple": {
+      "helperTests": 10,
+      "indexBarExistingTests": 9,
+      "typecheck": "passed",
+      "fullLint": "passed after own-test mechanical curly correction"
+    },
+    "motion": "21 source inventory/classification/Message contract tests and compiled chain passed:96/88/176/96;LoadingBar8/4;Notification20/44;Message28/68",
+    "catalog": "3 tests /3 generated pages passed",
+    "whitespace": "affected tracked helper/shared/menu/IndexBar documentation git diff --check passed",
+    "inventory": "191/392/177 unchanged;44 classified/133 unclassified; only reviewed helper lines/query-presence/hash updated"
+  },
+  "contract": {
+    "defaultDurationMs": 300,
+    "publicIndexBarDefaultMs": 0,
+    "nonpositiveNonfinite": "immediate target, no interpolation RAF",
+    "preference": "query actual owner initially and per frame; no listener resource",
+    "cancellationApiAdded": false,
+    "interCallSupersessionAdded": false,
+    "cssTokensAdded": 0
+  },
+  "newBrowserCases": 0,
+  "newOsCases": 0,
+  "blockedNativeCases": 144,
+  "pending": [
+    "Consumer unmount/deactivation cancellation and inter-call ownership are not repaired by single-run generation.",
+    "IndexBar clickedName/doubleRaf/retained commands; overlapping Form coordination.",
+    "Real scrolling/iframe/reduced OS preference evidence."
+  ],
+  "cleanup": "Descriptors/Date.now/ambient RAF restored; iframe/element probes removed. No browser/service started, no task/subagent/commit/push/release; date/palette/parallel Form changes preserved."
+}

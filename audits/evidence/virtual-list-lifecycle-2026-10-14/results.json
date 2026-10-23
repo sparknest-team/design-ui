@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-14",
+  "scope": "Controlled Vue nextTick/JSDOM lifecycle regression of independent VirtualList and real List consumers; not browser/OS acceptance",
+  "platforms": [
+    {
+      "repo": "cedar-design-web",
+      "source": "packages/cedar-ui/src/_components/virtual-list-v2/VirtualList.vue",
+      "beforeWorkingTreeSha256": "04db64dc3c9753e323c0b0308d0a7f5852f483d948e335188fe8a498fab7bc99",
+      "afterSha256": "1a4385765ad6066e52c52a265f6c1f5ba4a03bfe29d3b6452e6d1e3f4c9d5f7f",
+      "baseline": {
+        "tests": 14,
+        "failed": 10,
+        "passed": 4
+      },
+      "final": {
+        "scoped": 15,
+        "fullList": 41,
+        "passed": 41
+      }
+    },
+    {
+      "repo": "maple-design-mobile",
+      "source": "packages/maple-ui/src/_components/virtual-list-v2/VirtualList.vue",
+      "beforeWorkingTreeSha256": "8d2098810170f1211cab74ee60f5d1e7d4becc89b059c2d96267e36cf95652b3",
+      "afterSha256": "49dfdc9962f2b4f9704a1875c1476fa87055329b36dd5a4209099500bab87fc7",
+      "baseline": {
+        "tests": 14,
+        "failed": 10,
+        "passed": 4
+      },
+      "final": {
+        "scoped": 15,
+        "fullList": 34,
+        "passed": 34
+      }
+    }
+  ],
+  "cases": [
+    {
+      "name": "old scroll-event correction cannot overwrite a newer numeric command",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "newer native scroll invalidates the older queued position correction",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "consumed scroll correction cannot become a new command on replay",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "deactivation invalidates queued object correction",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "retained inactive commands do not write or schedule",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "retained inactive event handler does not notify or queue work",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "activation accepts new commands but does not revive old correction",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "disposed event handler does not create a fresh deferred task",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "data replacement invalidates pending index correction",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "normal alignment writes are synchronous plus current correction, with no RAF",
+      "before": "passed-control",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "post-render object correction is consumed once even if delivered twice",
+      "before": "added-after-baseline",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "object request supersession already rejects older apply",
+      "before": "passed-control",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "disposal clears refs and pending object apply remains inert",
+      "before": "passed-control",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "inactive List scrollIntoView cannot drive its retained child",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "active List delegation preserves key/bottom alignment",
+      "before": "passed-control",
+      "cedar": "passed",
+      "maple": "passed"
+    }
+  ],
+  "implementation": {
+    "scheduler": "Vue nextTick; no direct RAF in current source",
+    "cancellation": "Logical request-generation invalidation; Vue callbacks remain queued, completed synchronous writes are not rolled back",
+    "ownership": "mounted/active/disposed plus original element identity; data-key/virtual-mode changes invalidate; object correction consumed once",
+    "preserved": "Independent sources and pre-existing List key/range/align/threshold/measurement changes; no public API/CSS token change"
+  },
+  "validation": {
+    "types": "Both configured declaration typechecks passed",
+    "lint": "Cedar affected source/tests/demo and Maple full lint plus affected new tests/demos passed",
+    "sourceClassification": {
+      "files": 30,
+      "hints": 60,
+      "unclassified": 121,
+      "tests": 24
+    },
+    "inventory": {
+      "files": 192,
+      "css": 392,
+      "runtime": 181,
+      "reviewedRowsUpdated": 2,
+      "remainingDrift": [
+        "Maple date-range CSS [50,90] -> [61,105]",
+        "Maple time-range CSS [37] -> [42]"
+      ],
+      "globalGate": "Blocked by unreviewed parallel date CSS line drift; snapshots intentionally preserved"
+    },
+    "compiledMotion": "Independent chain passed; CSS compilation only",
+    "tokenReference": "3 tests/3 generated pages pass",
+    "savedBrowserEvidence": "202 tests and saved evidence consistency chain passed; no new browser execution"
+  },
+  "limitations": {
+    "newRealBrowserCases": 0,
+    "newOSCases": 0,
+    "nativeEnvironmentBlockedCases": 144,
+    "notCertified": [
+      "native gestures/RAF clocks",
+      "arbitrary row geometry",
+      "same-node document adoption",
+      "full-library lifecycle"
+    ],
+    "preservedWork": [
+      "Form",
+      "date development",
+      "other chats/automations"
+    ]
+  },
+  "intermediateFailures": [
+    {
+      "kind": "implementation regression",
+      "detail": "New helper initially named current shadowed a local numeric current inside apply, causing TDZ/type errors; renamed isCurrent, then reran all final tests/types. Not counted as baseline product failure."
+    },
+    {
+      "kind": "Cedar test runner shutdown diagnostic",
+      "detail": "Final41 tests pass and process exit0; old Vitest/fsevents emitted close timed out/napi assertion during shutdown. Not a product lifecycle pass/fail assertion."
+    }
+  ]
+}

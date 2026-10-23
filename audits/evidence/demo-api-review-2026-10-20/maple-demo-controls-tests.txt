@@ -1,0 +1,28 @@
+
+ RUN  v3.0.6 /Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui
+
+ ✓ src/form/__tests__/async-fields-demo.spec.js (10 tests) 526ms
+ ✓ src/upload/__tests__/read-demo.spec.js (6 tests) 186ms
+ ✓ src/date-range/__tests__/endpoint-lock-demo.spec.js (6 tests) 450ms
+ ✓ src/upload/__tests__/remove-demo.spec.js (5 tests) 157ms
+ ✓ src/form/__tests__/cross-field-demo.spec.js (2 tests) 160ms
+ ✓ src/upload/__tests__/metadata-demo.spec.js (2 tests) 139ms
+ ✓ src/carousel/__tests__/interactive-demo.spec.js (1 test) 89ms
+ ✓ src/upload/__tests__/validation-demo.spec.js (2 tests) 183ms
+ ✓ src/watermark/__tests__/image-failure-demo.spec.js (1 test) 59ms
+stderr | src/icon/__tests__/catalog-demo.spec.js > catalog normalizes search and keeps copy handlers after filtered nodes are recreated
+[Vue warn]: Failed setting prop "size" on <input>: value sm is invalid. DOMException {} 
+  at <MpInput modelValue="" onUpdate:modelValue=fn modelModifiers= { trim: true }  ... > 
+  at <IconList ref="VTU_COMPONENT" > 
+  at <VTUROOT>
+
+ ✓ src/icon/__tests__/catalog-demo.spec.js (1 test) 264ms
+ ✓ src/watermark/__tests__/contrast-demo.spec.js (1 test) 79ms
+ ✓ src/paper/__tests__/live-demo.spec.js (1 test) 47ms
+ ✓ src/upload/__tests__/state-demo.spec.js (1 test) 54ms
+
+ Test Files  13 passed (13)
+      Tests  39 passed (39)
+   Start at  18:13:01
+   Duration  37.17s (transform 3.57s, setup 75ms, collect 23.59s, tests 2.40s, environment 7.62s, prepare 826ms)
+

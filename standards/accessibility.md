@@ -7,6 +7,8 @@
 - 纯图标按钮必须有 accessible name；装饰图标使用 `aria-hidden="true"`。
 - `disabled` 阻止交互；`loading` 暴露 `aria-busy` 并防止重复提交。
 - 错误不得只靠颜色表达；动画尊重 `prefers-reduced-motion`。
+- 输入字段通过各变体已有的边框、底线或背景表达聚焦状态，不额外绘制外圈 outline；内部操作按钮保留自身键盘焦点指示。
+- Date/Time 的原生 combobox 在展开时通过稳定的 `aria-controls` 关联实际命名弹层；关闭后同步 `aria-expanded`，不保留指向已卸载弹层的关联。`aria-describedby` 等业务说明属性必须到达原生控件。
 - Dialog/Drawer 管理初始焦点、焦点循环、Esc 和关闭后的焦点恢复。
 - Tooltip/Popover 通过 `aria-describedby`/`aria-controls` 与触发器关联。
 - Tabs、Menu、Select、Checkbox、Radio、Switch 遵循对应 APG 键盘模型。

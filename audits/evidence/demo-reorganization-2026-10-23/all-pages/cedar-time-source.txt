@@ -1,0 +1,112 @@
+<script setup lang="ts">
+import { ref } from "vue";
+const sizes = ["xs", "sm", "md", "lg", "xl"] as const;
+const variants = ["outline", "filled", "standard"] as const;
+const size = ref<(typeof sizes)[number]>("md");
+const variant = ref<(typeof variants)[number]>("outline");
+const options = [
+  { value: "beijing", label: "Beijing" },
+  { value: "shanghai", label: "Shanghai" },
+];
+const cascaderOptions = [{ value: "china", label: "China", children: options }];
+</script>
+<template>
+  <section
+    aria-label="Form control size comparison"
+    class="control-size-comparison"
+  >
+    <c-space wrap :size="12">
+      <c-radio-group v-model="size" aria-label="Comparison size">
+        <c-radio v-for="item in sizes" :key="item" :value="item">{{
+          item
+        }}</c-radio>
+      </c-radio-group>
+      <c-radio-group v-model="variant" aria-label="Comparison variant">
+        <c-radio v-for="item in variants" :key="item" :value="item">{{
+          item
+        }}</c-radio>
+      </c-radio-group>
+    </c-space>
+    <div class="control-size-comparison__grid">
+      <div data-control="Input">
+        <p>Input</p>
+        <c-input :size="size" :variant="variant" placeholder="Input" />
+      </div>
+      <div data-control="Button">
+        <p>Button</p>
+        <c-button :size="size" variant="outline">Button</c-button>
+      </div>
+      <div data-control="Select">
+        <p>Select</p>
+        <c-select
+          :size="size"
+          :variant="variant"
+          :options="options"
+          placeholder="Select"
+        />
+      </div>
+      <div data-control="Date">
+        <p>Date</p>
+        <c-date :size="size" :variant="variant" placeholder="Date" />
+      </div>
+      <div data-control="Time">
+        <p>Time</p>
+        <c-time :size="size" :variant="variant" placeholder="Time" />
+      </div>
+      <div data-control="InputNumber">
+        <p>InputNumber</p>
+        <c-input-number :size="size" :variant="variant" placeholder="Number" />
+      </div>
+      <div data-control="AutoComplete">
+        <p>AutoComplete</p>
+        <c-auto-complete
+          :size="size"
+          :variant="variant"
+          :options="options"
+          placeholder="AutoComplete"
+        />
+      </div>
+      <div data-control="Cascader">
+        <p>Cascader</p>
+        <c-cascader
+          :size="size"
+          :variant="variant"
+          :options="cascaderOptions"
+          placeholder="Cascader"
+        />
+      </div>
+      <div data-control="DateRange">
+        <p>DateRange</p>
+        <c-date-range :size="size" :variant="variant" />
+      </div>
+      <div data-control="TimeRange">
+        <p>TimeRange</p>
+        <c-time-range :size="size" :variant="variant" />
+      </div>
+    </div>
+  </section>
+</template>
+<style scoped>
+.control-size-comparison {
+  display: grid;
+  gap: 24px;
+}
+.control-size-comparison__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: start;
+  gap: 24px 16px;
+}
+.control-size-comparison__grid > div {
+  min-width: 0;
+}
+.control-size-comparison__grid p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.control-size-comparison__grid :deep(.c-input-number),
+.control-size-comparison__grid :deep(.c-auto-complete) {
+  width: 100%;
+}
+</style>

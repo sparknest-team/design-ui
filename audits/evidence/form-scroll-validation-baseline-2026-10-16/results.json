@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-16",
+  "scope": "Human explicitly authorized only Maple Form.vue validation-start/clear/reset-to-automatic-scroll eligibility wiring; preserve results, callbacks, submitEpoch and submission semantics. No form-controller.ts, FormItem.vue, Cedar Form or Maple Picker takeover.",
+  "baseline": {
+    "formSha256": "324148a993fc20b39a085b97acd9e880db5e65ec96373a38379aa29bb096b46e",
+    "testSha256": "dbdc86d9cc40240698e744b545e0f8be7bb823fd6b71c5287165605a7504f606",
+    "cases": 10, "failed": 6, "passed": 4, "exitCode": 1, "seconds": 11.80,
+    "failures": ["Old validation result crosses suspension/activation", "Unregistered field with still-connected node", "Clearing errors leaves automatic wait", "Disabling automatic policy leaves automatic wait", "Replaced field target leaves old wait eligible", "Validation callback clears errors but old onInvalid still schedules"],
+    "controls": ["Current invalid result and Promise return", "Success without scrolling", "Manual command independent of automatic policy", "Fresh validation after activation"],
+    "meaning": "Overlapping controlled queue/eligibility cases, not six independent defects or native timer/input failures",
+    "lint": "Scoped test lint passed; pre-repair root lint passed and recorded unchanged source324148a9 and baseline test hash above"
+  },
+  "repair": {
+    "formSha256": "5b5e7629ec4d800ede526a274560e76e28b52bb00553bcf3f11c3e9dfbadd5bb",
+    "testSha256": "5650919d45fc2a6ac283a26dac1c980ea76a449453528df8912d4fa108098af9",
+    "mechanism": "Scroll-only validation context captures automatic eligibility version, request generation and policy. Start/clear/reset/set invalidate automatic work; manual commands remain independent. Callback order/results are unchanged; post-callback invalidation rejects only old scrolling. Original registered member/name/element is rechecked before waiting, geometry and frames. Lifecycle generation rejects old validation across activation.",
+    "preserved": "Parallel submitEpoch/submission logic, raw controller results/callback semantics, public API, CSS Tokens,300ms wait and300ms interpolation/reduced-motion behavior",
+    "untouchedSha256": {
+      "form-controller.ts": "ac59f1e21c45ee5d8470a1473d5e61c14b26b72895157a5f554bee9938abb6fb",
+      "FormItem.vue": "e226507686416d71fdbb7a45f878d85832f6055b219d31fe47f11be6895be47b",
+      "utils/elements.ts": "cdb1c340e2d14ff713c430d7b93438fb351310daaff79b501afd367b7d998107",
+      "Cedar form/form.vue": "2818329db7df220218776071a71fec3f816a34788a4a3717eb3c542fb2b216f1",
+      "Maple picker/Picker.vue": "64f0ef40cdd0ef774bd2a87d616703eb614ecbdde474590dd0113e4b1b1a2b02"
+    }
+  },
+  "verification": {
+    "firstRepair": {"passed": 31, "files": 3, "exitCode": 0, "seconds": 7.10},
+    "firstLint": "One prettier declaration-layout error; corrected manually. Concurrent types passed, but semicolon command exit0 did not mean lint passed.",
+    "supplements": "Nine cases:reset/set/new-validation retire automatic wait;clear/reset/set preserve manual wait;clear physically cancels original automatic RAF;callback-created manual replacement survives;field-name change rejects old wait.",
+    "fullForm": {"passed": 106, "files": 18, "exitCode": 0, "seconds": 60.18, "newTestsThisPhase": 19, "previousTests": 87, "command": "pnpm --dir packages/maple-ui exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js --maxWorkers 1 --minWorkers 1 --no-file-parallelism src/form/__tests__"},
+    "finalGates": "Root pnpm lint:check && configured Maple typecheck passed exit0;shared29tests passed exit0,8.51s;classification CLI165/16 passed. Final hashes/diff/JSON checks recorded below.",
+    "finalIntegrity": "All three repository git diff --check commands passed exit0. Evidence/inventory/classification JSON parsed;74rows/165classified hints/181inventory hints verified. Final product/test hashes match repair above;all verification processes completed.",
+    "native": "0new browser/OS cases; actual Form/provider/KeepAlive plus controlled Promise/timer/RAF/native method/geometry is JSDOM, not trusted input/layout/OS/adoption acceptance. No Less/build or unchanged browser retry.",
+    "cleanup": "Vue guidance informs owner lifecycle and original resources; probes unmount owners and restore exact global descriptors/mocks in finally.",
+    "history": "Preserve previous default RPC collection failures and intermediate offset-fixture failures; no threshold/config change or claim of proven only-load cause."
+  },
+  "registration": {
+    "closedFamilies": 31, "totalFamilies": 33, "closedPercent": 93.9, "remainingFamilies": ["Form", "Picker"], "remainingCount": 2, "remainingPercent": 6.1,
+    "registeredFiles": 74, "classifiedHints": 165, "totalHints": 181, "classifiedPercent": 91.2, "pendingHints": 16, "pendingPercent": 8.8, "pendingByFamily": {"Form": 7, "Picker": 9},
+    "denominatorChangeThisPhase": 0,
+    "inventory": "Only owned Maple Form line positions89/92/103/120/146→100/103/114/131/165 manually refreshed; counts unchanged. Form remains unregistered pending fixed completion policy/Cedar boundary. Other26drifts preserved. Prior178→181 was implementation growth,not old defects."
+  },
+  "remaining": "Maple Form fixed300ms completion wait versus FormDetails0.2s/reduce remains open. Cedar Form and Maple Picker require concrete source/test handoff or explicit limited takeover. Date/Time candidate classification does not certify their parallel panels or whole-component stability.",
+  "otherBlockers": "Five Cedar FilterForm/Form token-catalog hunks,Map formal SDK disposal/async identity contract,144native environment groups,26other inventory drifts,Button white2.305:1 non-AA exception remain; no global motion-themes success.",
+  "documentation": "Shared standard/progress,Cedar guide,Maple bilingual guides,Maple Form bilingual/Cedar boundary docs,existing changesets/OpenSpec synchronized. No new API/token/demo required for this internal eligibility correction.",
+  "constraints": "No new chats/subagents,commit,push,publish,software,permissions or automation changes."
+}

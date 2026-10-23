@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-14",
+  "scope": "Independent InfiniteScroll bottom-measurement and interaction-entry lifecycle; controlled Vue/JSDOM queues, not native browser acceptance",
+  "platforms": [
+    {
+      "repo": "cedar-design-web",
+      "source": "packages/cedar-ui/src/infinite-scroll/infinite-scroll.vue",
+      "beforeSha256": "7212b003c084a87478fd44c142340df163d2570d8c6627ab958b9fad578b67b2",
+      "afterSha256": "82e52ab85274307fede3f58c2d084be7efdf03d24e0f1a6c05a8eb9f01098c8f",
+      "baseline": {
+        "tests": 10,
+        "failed": 7,
+        "passed": 3
+      },
+      "final": {
+        "scoped": 10,
+        "full": 35,
+        "passed": 35
+      }
+    },
+    {
+      "repo": "maple-design-mobile",
+      "source": "packages/maple-ui/src/infinite-scroll/InfiniteScroll.vue",
+      "beforeSha256": "37c798d8afafb9c87066db7b3221115f43f471db67089451db11a9531954a1a2",
+      "afterSha256": "6f2de21878b29da83ca75d001ce3d85cec61cbf1d1a8de79dbc065413f539c04",
+      "baseline": {
+        "tests": 10,
+        "failed": 7,
+        "passed": 3
+      },
+      "final": {
+        "scoped": 10,
+        "full": 34,
+        "passed": 34
+      }
+    }
+  ],
+  "cases": [
+    {
+      "name": "coalesces active scroll events and current delivery loads once",
+      "before": "passed-control",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "unmount cancels pending frame and retained check stays inert",
+      "before": "passed-control",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "inactive retained command and pending delivery stay inert",
+      "before": "passed-control",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "canceled RAF cannot check a newly rebound target",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "old RAF cannot clear the newer pending scheduler handle",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "consumed callback cannot replay after a new status cycle",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "canceled RAF does not revive after KeepAlive reactivation",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "disconnected ResizeObserver cannot schedule after rebinding",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "disconnected MutationObserver cannot schedule after rebinding",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "canceled fallback timeout cannot check a rebound target",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    }
+  ],
+  "fix": {
+    "bindingOwnership": "Cleanup increments binding generation; ResizeObserver/content/visibility MutationObserver reject detached deliveries before scheduling. Initial ResizeObserver skip policy preserved.",
+    "taskOwnership": "Cancel increments check generation, calls cancelAnimationFrame/clearTimeout, clears handles. Delivery verifies generation/mounted/active and consumes generation before clearing handles/checking.",
+    "scheduleRole": "RAF or zero-delay timeout coalesces geometry checks (measurement-scheduling); not CSS interpolation/duration/reduced-motion bypass.",
+    "preserved": "immediate policy, check/retry and event order, status locking, target/threshold, independent source copies, caller-owned business requests"
+  },
+  "validation": {
+    "types": "Both configured declaration typechecks passed",
+    "lint": "Cedar affected files passed; Maple full root lint passed",
+    "mapleDocs": {
+      "checked": 1011,
+      "failed": 0
+    },
+    "classification": {
+      "files": 32,
+      "hints": 64,
+      "unclassified": 117,
+      "tests": 24
+    },
+    "inventory": {
+      "files": 192,
+      "css": 392,
+      "runtime": 181,
+      "updatedRows": 2,
+      "globalGate": "Still blocked only by unreviewed parallel Maple date-range/time-range CSS line drift"
+    },
+    "compiledMotion": "96 theme/preferences,88 primitive,176 modal,96 paired; LoadingBar8/4,Notification20/44,Message28/68; all passed compilation only",
+    "tokenReference": "3 tests and3 current generated pages matched",
+    "savedBrowserEvidence": "202 tests and saved evidence chain pass; consistency only"
+  },
+  "fixtureAdjustments": [
+    {
+      "issue": "Cedar old Vitest lacks vi.unstubAllGlobals",
+      "action": "Restore ResizeObserver/MutationObserver global property descriptors explicitly; corrected baseline then7 failures/3 controls. Initial teardown failure not counted as product defect."
+    },
+    {
+      "issue": "Cedar demo timer-total checks initially2 failures (extra pending timer)",
+      "action": "Vue runtime-core setDevtoolsHook schedules an unrelated3000ms devtools-injection fallback on renderer creation in this environment. Install an inert devtools hook only for these isolated tests and restore original descriptor; preserve exact timer-count assertions. Explicit loader stubs trial did not solve it and was removed. Final full35 pass."
+    },
+    {
+      "issue": "Validation invocation errors",
+      "action": "Maple lint:check belongs to repository root, not maple-ui package; reran root. Cedar eslint directory excludes did not select .tsx files; reran explicit affected file paths. No lint rules disabled."
+    }
+  ],
+  "limitations": {
+    "newRealBrowserCases": 0,
+    "newOSCases": 0,
+    "nativeEnvironmentBlockedCases": 144,
+    "notCertified": [
+      "real observer callback delivery timing",
+      "native RAF or timeout clock",
+      "cross-document targets and window ownership",
+      "all scheduling consumers"
+    ],
+    "preserved": [
+      "Form parallel changes",
+      "date CSS inventory drift",
+      "existing source/demo changes",
+      "other chats and paused automation"
+    ]
+  },
+  "documentation": [
+    "design-ui/standards/design-tokens.md",
+    "Cedar guide/design-tokens.md",
+    "Maple designTokens.zh-CN/en-US",
+    "InfiniteScroll component docs, lifecycle examples, patch changesets and Cedar OpenSpec"
+  ]
+}

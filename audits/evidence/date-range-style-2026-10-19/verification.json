@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-19",
+  "visualContract": {
+    "selected": "solid primary boundaries, light primary interior band",
+    "preview": "neutral light interior band, dashed boundary outlines; never commits",
+    "touch": "Maple touch pointerenter does not preview; click/touch selects normally",
+    "leave": "clears transient preview, preserves partial candidate and disabled confirmation"
+  },
+  "browser": {
+    "cedar": {
+      "previewDays": [
+        "26",
+        "27",
+        "28"
+      ],
+      "previewBoundaryBackground": "rgb(242, 243, 245)",
+      "previewBoundaryOutline": "dashed",
+      "previewLeaveCount": 0,
+      "committed": [
+        "2026-10-26",
+        "2026-10-28"
+      ]
+    },
+    "maple": {
+      "selectedBoundaryBackground": "rgb(0, 190, 190)",
+      "selectedInteriorButtonBackground": "rgba(0, 0, 0, 0)",
+      "selectedBand": "rgb(232, 255, 251)",
+      "previewBand": "rgb(242, 243, 245)",
+      "previewBoundaries": "dashed",
+      "previewLeaveCount": 0,
+      "committed": [
+        "2026-10-26",
+        "2026-10-28"
+      ],
+      "reopenedPreviewCount": 0
+    }
+  },
+  "checks": {
+    "cedarDateFamily": 193,
+    "mapleDateFamily": 218,
+    "mapleFinalHighlightAndCurrentDate": 22,
+    "typecheck": "both passed",
+    "lint": "Maple root and Cedar affected files passed",
+    "sameSource": "43 date family pairs and field/panel boundaries passed",
+    "whitespace": "both git diff --check passed"
+  },
+  "implementation": "No public API change. Maple day calendar internal pending flag and mouse pointer preview; Cedar local injected preview state distinguishes renderer classes. Calendar month/year controls preserve their current semantics."
+}

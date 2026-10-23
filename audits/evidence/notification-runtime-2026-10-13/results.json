@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-13",
+  "platform": "Cedar only; no Maple Notification counterpart",
+  "scope": "business display timer ownership and normal compiled CSS consumers",
+  "beforeRepair": {"tests": 7, "failed": 3, "passed": 4},
+  "harnessRepairs": "Initial hook returned a Vitest object; old Vitest lacked advanceTimersByTimeAsync. Those harness errors are not product-failure evidence. Final reproduction used synchronous fake-clock advance plus Vue nextTick.",
+  "reproduced": ["manual close followed by timed close", "repeated close/post-close updates restart timer", "KeepAlive inactive timer still closes"],
+  "afterRepair": {"lifecycle": 9, "existing": 1, "ssr": 1, "passed": 11},
+  "css": {"normalConsumers": 20, "pairedOverrides": 20, "publicTokensAdded": 0, "defaultsChanged": false},
+  "policy": "duration default 3000ms/0 persistent is business time; CSS enter/leave independently follow TransitionGroup. Close cancels pending timer and is once per mounted instance; inactive/disposed stale callbacks are generation-guarded. Reactivation starts the full configured duration.",
+  "sourceHashes": {
+    "Notification.vue": "810b2dc6d16449833ee5940c50d0c8ccb26d4fd5fe218ae976d88dd884a61e34",
+    "style/token.less": "1222253e5137a0a80d507337f244a8c1a6ea7031862c0c4fd38adc4ba9678146",
+    "style/index.less": "38ea8405e0a52ff19002f663b7c3625718810420aaba150de5532efed294b91f"
+  },
+  "realBrowserPassesAdded": 0,
+  "realOSPassesAdded": 0,
+  "verification": {"cedarTypecheck":"passed","affectedLint":"passed","specCheck":"95 components, zero errors/warnings"},
+  "teardownObservation": "One post-format run printed close timeout/fsevents assertion after 11 passes. A bounded isolated rerun completed cleanly with 11 passes and exit 0. The transient harness teardown issue is not product or native-browser evidence.",
+  "pending": ["Notification reduced-motion selector audit", "Notification native browser lifecycle", "Notification service clear/re-add ID ownership audit", "Message timer audit on both platforms", "144 native zoom/Safari/Firefox groups"]
+}

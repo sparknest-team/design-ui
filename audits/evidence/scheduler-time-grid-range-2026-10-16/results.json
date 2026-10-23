@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-16",
+  "batch": "Cedar SchedulerTimeGrid range session and runtime-candidate classification closure",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerTimeGrid.vue",
+    "cleanAtStart": true,
+    "beforeSha256": "048b59824e099bc9eefa656aa9aa1b9eba3071f6013ec74c19e0f1834e6d8497",
+    "sha256": "ca22990ffea78595b751d7c77464ff8b097a93917a93055bf06f09fead214610",
+    "originalHints": [506,527], "currentHints": [524,549],
+    "categories": { "state-settlement": 1, "interaction-delay": 1 },
+    "familyClassificationClosed": "Scheduler runtime candidates only; not whole-component/native/full-suite acceptance"
+  },
+  "regression": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__tests__/time-grid-range-lifecycle.test.tsx",
+    "sha256": "c7c65578ad6f846f7b0b1f8e0f7d2000d06f47ddc7fe5102b7ffbe6cb8af8fb7",
+    "validBaseline": { "total": 10, "failed": 8, "passedControls": 2, "exitCode": 1 },
+    "failures": ["old move/up after cancel", "old cancel clears replacement", "unrelated pointercancel", "inactive old submit", "step-change old range", "geometry disposal late binding", "stale click unlock", "cancelled hold arms old handlers"],
+    "firstRepair": { "passed": 25, "files": 3, "exitCode": 0, "warning": "close timed out after1000ms; not final clean run" },
+    "supplementary": ["current touch350ms", "fresh activation", "normal0ms click settlement", "target geometry cancellation"],
+    "finalTargeted": { "passed": 14, "failed": 0 },
+    "finalAffected": { "passed": 29, "files": 3, "failed": 0, "exitCode": 0, "closeWarning": false },
+    "fullSuite": "Not rerun mechanically; prior normal370/371 timeout and serial365/371 timer failures retained separately"
+  },
+  "repair": ["per-session live/version/original-root/columns/config ownership", "local original-listener/hold cleanup without cancelling replacement", "pointerId cancellation", "hit-test/geometry reentry checks", "sync step/snap/hour/eligibility invalidation", "suspension/disposal cancellation and fresh activation", "request-owned click unlock"],
+  "validation": {
+    "cedarConfiguredTypecheck": "passed exit0",
+    "affectedEslint": "passed exit0 with --no-ignore",
+    "mapleRootLint": "passed exit0",
+    "threeRepositoryDiffChecks": "passed exit0 for design-ui, cedar-design-web and maple-design-mobile",
+    "finalEvidenceIntegrity": "source/test SHA256 matched; JSON valid; remaining family hints sum to19",
+    "sharedTests": { "total": 29, "passed": 28, "failed": 1, "failure": "existing global Ripple/VirtualList source-hash gate" },
+    "isolatedTimeGridClassification": "passed two hints: state-settlement1/interaction-delay1",
+    "generatedTokenPages": { "matched": 3 },
+    "actualFamilyInventoryReconciliation": { "families": 33, "closed": 29, "remaining": ["date","form","time","picker"], "files": 69, "classifiedHints": 159 },
+    "newNativeBrowserOrOsCases": 0,
+    "lessAndMapleTypes": "not rerun; no CSS or Maple runtime change"
+  },
+  "registration": {
+    "closedFamilies": 29, "totalFamilies": 33, "closedPercent": 87.9,
+    "remainingFamilies": 4, "remainingPercent": 12.1,
+    "sourceFiles": 69, "classifiedHints": 159, "totalHints": 178, "classifiedPercent": 89.3,
+    "remainingHints": 19, "remainingHintsPercent": 10.7, "denominatorChange": 0,
+    "remainingByFamily": { "Date": 3, "Form": 4, "Time": 3, "Picker": 9 },
+    "meaning": "Runtime-candidate source classification, not all lifecycle/full-suite/global current-hash/native acceptance"
+  },
+  "policy": { "holdMs": 350, "touchCancelPx": 8, "startPx": 5, "clickUnlockMs": 0, "snapAndEndHourBoundary": "preserved", "globalDocumentWindow": "preserved", "publicApiCssTokenDefaultsChanged": false },
+  "preservedBoundaries": ["All-day/overlap/focus and non-range retained entries separately pending", "Trusted Pointer/native click/cross-document/OS not certified", "Prior full-suite timeout and serial timer failures unresolved", "Four stale classified Ripple/VirtualList hashes not auto-refreshed", "Date/Form/Time/Picker and26 unrelated inventory drifts preserved", "Map formal SDK and144 environment groups blocked", "Button white2.305:1 remains design exception, not AA"],
+  "documentation": "Shared standard/Cedar guide/Maple bilingual guides/Scheduler README/changesets/Cedar OpenSpec/progress synchronized"
+}

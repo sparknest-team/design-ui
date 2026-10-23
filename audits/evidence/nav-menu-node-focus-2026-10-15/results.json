@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-15",
+  "batch": "NavMenu node enter/Escape focus, phase three",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/nav-menu/node.tsx",
+    "cleanAtStart": true,
+    "beforeSha256": "8e9ea0acd49b316d74db653592546cec4f718e4d7262ca75757ab5e3409524bb",
+    "afterSha256": "a135bfc8fa98d6538ff5018e6d7012fa872b30c44471797ce6c18cca402367f3"
+  },
+  "baseline": {
+    "tests": 8,
+    "failed": 5,
+    "passedControls": 3,
+    "failures": [
+      "close/reopen revives old enter",
+      "old enter crosses suspension/reactivation",
+      "parallel enter focuses twice",
+      "Escape return-focus crosses suspension",
+      "retained inactive key handler expands and prevents default"
+    ],
+    "controls": [
+      "normal enter",
+      "disablement",
+      "unmount lost panel refs"
+    ]
+  },
+  "additionalBaseline": {
+    "tests": 2,
+    "failed": 2,
+    "source": "Intermediate lifecycle repair without ownsFocus checks; not the original baseline",
+    "cases": [
+      "external focus takeover before enter delivery",
+      "external focus takeover before Escape delivery"
+    ]
+  },
+  "final": {
+    "targeted": 12,
+    "navMenuTotal": 70,
+    "files": 5,
+    "result": "passed exit0, CHOKIDAR_USEPOLLING=true",
+    "additionalControls": [
+      "Escape callback consumed once",
+      "activation permits fresh enter"
+    ]
+  },
+  "verification": {
+    "layer": "Actual NavNode/KeepAlive, persistent-panel Trigger stub, controlled Vue nextTick and JSDOM focus probes. Existing actual NavMenu/Trigger/Item tests separately included; not native popup/layout/keyboard acceptance.",
+    "configuredCedarTypes": "passed",
+    "affectedCedarLint": "passed, final test changes rechecked",
+    "mapleRootLint": "passed exit0",
+    "classificationGate": "132 classified /50 pending, unchanged",
+    "sharedTests": "28 passed",
+    "catalog": "3 generated pages match",
+    "newRealBrowserOrOSCases": 0
+  },
+  "responsibilities": {
+    "node": "render state-settlement, not CSS completion; no duration Token/public API/hover-delay change",
+    "cancellation": "generation and active/disposed/config/reference ownership; close/replacement/suspension/disposal invalidate",
+    "focus": "current owner-document origin/body allowed; connected external control owns focus; no rollback of performed focus",
+    "activation": "new commands only; old continuations never replay"
+  },
+  "pending": [
+    "independent Item geometry/listeners/focus",
+    "root other retained commands and registration identity",
+    "root external-focus takeover",
+    "native keyboard/layout timing and cross-document adoption"
+  ],
+  "progress": {
+    "families": 33,
+    "closed": 18,
+    "closedPercent": 54.5,
+    "remaining": 15,
+    "remainingPercent": 45.5,
+    "classifiedFiles": 51,
+    "totalHints": 182,
+    "classifiedHints": 132,
+    "classifiedHintPercent": 72.5,
+    "pendingHints": 50,
+    "pendingHintPercent": 27.5,
+    "denominatorChange": 0,
+    "navMenu": "partial, not classified closed"
+  },
+  "inventory": "Node has no scanner hint before/after; hash-only evidence, no new classified file/hint or inventory refresh; menu stays129.26 unrelated CSS/date drift rows retained; no global motion-themes success claim.",
+  "preserved": [
+    "Form/date/linked Time",
+    "other parallel styles",
+    "144 native200% / Safari / Firefox blocked cases",
+    "Button on-dark white2.305:1 design exception"
+  ]
+}

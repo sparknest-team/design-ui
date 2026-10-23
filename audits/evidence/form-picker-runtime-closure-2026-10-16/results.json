@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-16",
+  "startedUtc": "09:37:06",
+  "authority": "Human authorizes Maple Form fixed completion-wait audit and limited Cedar Form/Maple Picker runtime scheduling/resource cleanup takeover, preserving parallel business modifications; reproduce before repair, regressions and docs required.",
+  "baselines": {
+    "cedarForm": {
+      "sourceSha256": "2818329db7df220218776071a71fec3f816a34788a4a3717eb3c542fb2b216f1",
+      "cases": 11, "failed": 7, "controls": 4, "exitCode": 1, "seconds": 3.92,
+      "failures": "Suspended manual command,disposed body fallback,cross-activation validation,unregistered connected field,callback-cleared errors,callback-created manual replacement overwritten,retained offset actions after disposal",
+      "controls": "Current invalid Promise/callback and helper dispatch,successful validation,manual command,fresh activation",
+      "additionalCandidateFailures": [
+        {"scope": "Offset action batch delivered twice on first candidate", "failed": 1, "notSelected": 11, "exitCode": 1, "seconds": 5.12},
+        {"scope": "Duplicate registration replaces original unregister on later candidate", "failed": 1, "notSelected": 14, "exitCode": 1, "seconds": 52.19}
+      ],
+      "fixtureDiagnostic": "First duplicate-registration probe left the unexpected field Promise unresolved and timed out at5000ms. Corrected probe explicitly settles any unexpected field request,then fails deterministically on nonempty errors. Do not count timeout as a separate defect or raise threshold."
+    },
+    "maplePicker": {
+      "sourceSha256": "64f0ef40cdd0ef774bd2a87d616703eb614ecbdde474590dd0113e4b1b1a2b02",
+      "cases": 7, "failed": 5, "controls": 2, "exitCode": 1, "seconds": 9.75,
+      "failures": "Suspended listener not detached,disposed old media callback mutates motion,opacity transition commits selection,replaced-column completion commits current selection,inactive retained click",
+      "controls": "Current transform completion,original listener released on ordinary disposal",
+      "fixtureDiagnostic": "First run attempted setProps on a nested wrapper;replace through a host reactive columns ref and rerun unchanged source for the effective baseline above. Do not count wrapper API misuse as product failure.",
+      "additionalCandidateFailure": {"scope": "change callback synchronously selects Home;old continuation writes old B and model watcher restores stale index", "failed": 1, "notSelected": 9, "exitCode": 1, "seconds": 76.82},
+      "additionalFixtureDiagnostic": "Original A-only expectation fails on stale B. A second candidate probe requires index0 and no update;it still fails on stale index1. After epoch repair,index0 and a legitimate A notification are observed. Final fixture correctly requires index0 plus exactly A,not no notification;the intermediate no-update assertion was a fixture error,not an additional product defect."
+    },
+    "mapleFormCompletion": {
+      "sourceSha256": "5b5e7629ec4d800ede526a274560e76e28b52bb00553bcf3f11c3e9dfbadd5bb",
+      "cases": 5, "failed": 4, "controls": 1, "exitCode": 1, "seconds": 2.22,
+      "failures": "Fixed300ms despite explicit0s,700ms+100ms CSS,negative CSS delay,and absent FormDetails motion",
+      "control": "300ms CSS still produces300ms waiting",
+      "level": "Actual Form/provider plus controlled DOM/CSS timing,not a native layout/animation clock"
+    }
+  },
+  "repairs": {
+    "cedarForm": "Mounted/active/disposed and scroll epoch guards;no body fallback. Validation context captured before raw validation and attached after existing callback,without changing results/callbacks/submitEpoch/submission. Current registered member/name/root/target eligibility,one-shot offset batch and per-action reentry checks;duplicate registration preserves original unregister identity. Preserve rendered order,offset and native smooth helper policy;already-issued browser-owned smooth scroll is not claimed cancellable.",
+    "maplePicker": "Original-query listener identity detached on suspension/disposal/hidden dynamic popup;fresh activation rebinds. Retire private touching/scrolling/duration/completion state without emitting old selection. Current column/element and own transform event completion ticket;ignore child/property mismatch and stale resources. Motion epoch rejects stale post-change model write after newer selection. Preserve parallel disabled/ARIA/API/business improvements,cascade/momentum/keyboard policies and200/1000ms CSS transitions/reduce behavior.",
+    "mapleFormCompletion": "Private helper waits for nextTick and,for positive current details transitions,Vue-compatible two-frame class settlement;then reads current property/duration/delay lists and schedules computed visual-completion fallback. none/zero/absent motion does not retain fixed300ms;negative delays/list repetition supported.300ms is only unreadable-style fallback,not a cap or token. One-shot render/timer guards,cancellation and existing request/lifetime eligibility. Private interpolation remains300ms linear with original reduced-motion behavior;no CSS/token/default API change."
+  },
+  "verification": {
+    "cedarFirstRepair": {"passed": 15, "files": 2, "exitCode": 0, "seconds": 63.66},
+    "cedarIntermediateFull": {"passed": 63, "files": 14, "exitCode": 0, "seconds": 13.24},
+    "cedarFinalFull": {"passed": 64, "files": 14, "exitCode": 0, "seconds": 64.89, "newTestsThisBatch": 15},
+    "cedarFinalTypesLint": "Affected --no-ignore no-fix lint and configured declaration typecheck pass exit0",
+    "pickerFirstRepair": {"passed": 27, "files": 4, "exitCode": 0, "seconds": 62.56},
+    "mapleIntermediateTargeted": {"passed": 58, "files": 5, "exitCode": 0, "seconds": 75.91, "meaning": "40previous Form cases migrated to computed300ms CSS/render settlement plus9completion cases and9Picker lifecycle cases;before later reentry correction"},
+    "mapleIntermediateAffected": {"passed": 531, "failed": 1, "files": 95, "exitCode": 1, "seconds": 307.58, "meaning": "Only the post-repair reentry fixture wrongly forbade a legitimate A notification;index0/current A already correct. Correct expected notification,not product semantics."},
+    "mapleIntermediateTypes": "Root no-fix lint passed;configured types found new helper NodeList iteration without DOM.Iterable. Use Array.from locally rather than changing TypeScript config;final gates rerun on frozen source.",
+    "mapleFinalAffected": {"passed": 532, "files": 95, "exitCode": 0, "seconds": 205.86, "command": "pnpm --dir packages/maple-ui exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js --maxWorkers 1 --minWorkers 1 --no-file-parallelism src/form/__tests__ src/picker/__tests__ src/time/__tests__ src/date/__tests__ src/date-range/__tests__", "form": {"passed": 115, "files": 19}, "picker": {"passed": 30, "files": 4}, "meaning": "One combined affected run,not532new authored tests. This batch adds15Cedar+9Maple completion+10Picker tests;40previous Form cases migrate fixtures to current CSS/render settlement without discarding their original responsibilities."},
+    "mapleFinalTypesLint": "Final root pnpm lint:check && configured Maple typecheck pass exit0 after local Array.from correction. Earlier new-file curly/format and import-order diagnostics are preserved;no config/rule/threshold change.",
+    "sharedFinal": {"passed": 29, "exitCode": 0, "seconds": 2.80, "classificationCli": "182classified/0pending pass;fixture still verifies pending classification is distinct from acceptance"},
+    "finalIntegrity": "All three repository git diff --check commands pass;source hashes match frozen tested/registered versions,78classification rows/182saved and live hints verified. Evidence/inventory/classification JSON parse. All validation processes finished.",
+    "less": "Actual unchanged Maple FormDetails Less compiled successfully using existing Cedar package Less runtime:root and message enter/leave active transition0.2s all var(--mp-cubic-bezier). Initial attempt from Maple workspace root could not resolve less;no install or product change. Compile is not native layout proof.",
+    "nativeCasesAdded": 0,
+    "fixtureCleanup": "Vue guidance informs original resources,KeepAlive and finally restoration. JSDOM/provider/Promise,controlled queues/media/CSS/RAF/DOM and helper-dispatch spies are separate from Less compilation and native/browser/OS acceptance.",
+    "history": "Previous Form default RPC collection failures,offset-fixture diagnostics and Cedar shutdown warning remain historical;not mechanically rerun or attributed solely to load."
+  },
+  "registration": {"closedFamilies": 33, "totalFamilies": 33, "closedPercent": 100, "remainingFamilies": 0, "remainingPercent": 0, "registeredFiles": 78, "classifiedHints": 182, "totalHints": 182, "pendingHints": 0, "pendingPercent": 0, "denominatorChange": 1, "meaning": "181→182 is net one implementation hint(private completion helper+2/old Form timer−1),not one extra old defect. Only four owned paths refreshed/registered;26other drifts preserved.33component groups exclude _components/_utils/utils. Source responsibility classification only,not whole-library/business/native acceptance."},
+  "finalHashes": {
+    "cedarForm": "80a8223689b7ccdc9ddf50351cea185cef54267aeca7858fe0d05a5d32334ec0",
+    "cedarScrollTest": "bedf40937cff3033a2b68893f1fd7eef843352a4bb0bed089d71602c216f97d3",
+    "mapleForm": "c25e4b65a2b1005149699bbd7fa039a2354a8f02c2f78e10cdf7199d797c4eb5",
+    "mapleCompletion": "eae534571b3a01c614b2939c62f87b979b39317279f61d0311186aa1287e49e5",
+    "maplePicker": "ab6df72d5c6169d8be2e8912abbcdc17a702e765f0be409d2eb72d38df22936f",
+    "mapleCompletionTest": "d9a17af90d60efa5deba113f0146bc510bc632c38260139cc18a2245c8eccdfa",
+    "maplePickerTest": "95484b29cbdc9e720802cac43402bb0f58e394671ce84d8f1a957479e3190d2d",
+    "untouchedControllersBoth": "ac59f1e21c45ee5d8470a1473d5e61c14b26b72895157a5f554bee9938abb6fb",
+    "untouchedMapleFormItem": "e226507686416d71fdbb7a45f878d85832f6055b219d31fe47f11be6895be47b",
+    "untouchedMaplePickerProps": "d74ef6941085a9a7949f12d47d7a1c4102dcc9b2b290a6027ee23a1e086adc57",
+    "unchangedFormDetailsLess": "69d274d1addd7f64286285d0f0ad78cfb869f5e3db6a433f1c977c15f080eebf"
+  },
+  "documentation": "Shared progress/design-tokens,Cedar menu guide,Maple bilingual guides,Form/Picker component docs,existing Form changesets/OpenSpec and narrow Picker runtime proposal/tasks synchronized. Existing parallel demos untouched with manual-verification notes;no new public API/Token/example needed for internal ownership fixes.",
+  "preservedBlockers": "Five Cedar FilterForm/Form token-catalog hunks require independent style/token review;Map formal SDK disposal/async identity contract;144native Chrome200%/Safari/Firefox environment groups;26unrelated inventory drifts;Button white on-dark2.305:1 non-AA design exception. No global motion-themes pass or whole-component/library/native certification.",
+  "uncertified": "Arbitrary same-element old transition events without reliable request identity/timestamps,dynamic stylesheet changes during an already running computed timeout,same-node adoption,cross-document/native smooth/layout/OS/touch/assistive technology. Candidate classification must not be described as whole-component acceptance or as a count of independent bugs.",
+  "constraints": "No new chat/subagent,commit,push,publish,software installation,permission or automation change;controllers/FormItem/parallel date and time presentation sources untouched."
+}

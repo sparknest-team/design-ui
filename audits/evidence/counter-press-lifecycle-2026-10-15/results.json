@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-15",
+  "batch": "Maple Counter independent increment/decrement hold lifetime",
+  "source": {
+    "file": "maple-design-mobile/packages/maple-ui/src/counter/Counter.vue",
+    "cleanAtStart": true,
+    "beforeSha256": "fca0ab5433cc42301f5e5e73d87d856c48e476df910502f1a0e0ede1ac0bd255",
+    "afterSha256": "1a23540c1f00b7849a30d2e48910556858e9c3a863e3c863fe3907272c9c3388"
+  },
+  "baseline": {
+    "perDirection": { "tests": 12, "failed": 10, "passedControls": 2 },
+    "total": { "tests": 24, "failed": 20, "passedControls": 4 },
+    "meaning": "same ten failure cases exercised on both directions, not twenty distinct product defects",
+    "failuresPerDirection": ["release still permits old delay", "delay duplicate forks repeat", "repeat duplicate steps twice", "new press does not replace old delay", "unmount old delay still schedules", "inactive retained press schedules", "suspension does not physically cancel", "old repeat crosses reactivation", "disabled press schedules", "release inside step still requeues"],
+    "controlsPerDirection": ["normal first step stays700ms", "lazyChange disables hold"]
+  },
+  "repair": {
+    "ownership": "per-direction generation/one-shot consumption; clear correct pending handles and reset slots, retain independent directions",
+    "lifecycle": "suspend/dispose invalidate/cancel both directions, active direct/press commands guarded, activation accepts fresh requests only",
+    "configuration": "watch hold eligibility: press/lazy, own and inherited disabled/readonly, controls/directional button/disable flags and directional numeric bound",
+    "reentry": "after step recheck generation/availability/eligibility before scheduling; direct step rechecks availability after increment/decrement notification",
+    "unchanged": "600ms wait+100ms repetition (first700ms), direct click timing, numeric formatting/precision/step and public beforeChange API; no CSS Token or shared Form changes"
+  },
+  "final": {
+    "targeted": 32,
+    "total": 55,
+    "files": 2,
+    "result": "passed exit0",
+    "additionalCasesPerDirection": ["bound blocks hold", "press=false invalidates pending repeat", "activation accepts fresh hold", "inactive retained direct step inert"],
+    "fixture": "Actual Counter/KeepAlive and controlled parent modelValue; stub buttons/icons, fake timers with captured600/100ms callbacks. Unmount all wrappers, clear timers, restore spies and real clock. Scoped ESLint formatting applied without disabling rules."
+  },
+  "verification": {
+    "mapleConfiguredTypes": "passed",
+    "mapleAffectedLint": "passed after scoped formatting",
+    "mapleRootLint": "passed",
+    "classification": "143classified/39pending, interaction-repeat4→8",
+    "sharedTests": "29 passed",
+    "catalog": "3 generated pages match",
+    "cedarRuntimeAndCss": "not changed; no Cedar type/compiled-motion rerun claimed",
+    "newRealBrowserOrOSCases": 0
+  },
+  "progress": {
+    "families": 33,
+    "closedBefore": 23,
+    "closed": 24,
+    "closedPercent": 72.7,
+    "remaining": 9,
+    "remainingPercent": 27.3,
+    "classifiedFiles": 59,
+    "classifiedHints": 143,
+    "totalHints": 182,
+    "classifiedHintPercent": 78.6,
+    "pendingHints": 39,
+    "pendingHintPercent": 21.4,
+    "denominatorChange": 0,
+    "remainingFamilies": ["Date", "Form", "Map", "Scheduler", "Time", "Tree", "Picker", "PullRefresh", "SwipeCell"],
+    "meaning": "candidate classification, not whole component library/all lifecycle/native acceptance"
+  },
+  "inventory": "only reviewed Counter runtime302/314/330/337→373/390/427/445 and hash. Four hints remain,193files/392CSS/182runtime unchanged. Other26 parallel CSS/date drifts untouched; no global motion-themes success claim.",
+  "preserved": ["Form/date/linked Time", "parallel styles/Picker/Scheduler", "144 native200%/Safari/Firefox blocked cases", "Button on-dark2.305:1 design exception"],
+  "pending": ["deferred beforeChange request replacement identity", "input parsing/other retained input consumers not accepted by hold classification", "native touch/click deduplication", "cross-document/OS behavior"],
+  "next": "Review non-overlapping PullRefresh or SwipeCell runtime candidates, preserve Form/date/Picker/Scheduler overlap. No new tasks/subagents/automation changes/browser/services/commits/push/releases."
+}

@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-19",
+  "fixes": [
+    "Default Cedar range viewport is consecutive, independent from selection endpoints.",
+    "Outer viewport arrows move both months; controlled viewports are not reset on reopen.",
+    "Incomplete range drafts disable confirmation; reverse ordering, endpoint locks and time exchange retained.",
+    "Maple private CalendarContent name prevents docs auto-import from substituting a public DatePicker and adding another selection/confirmation owner.",
+    "Maple pending title shows missing end as —."
+  ],
+  "tests": {
+    "cedarDateFamily": "227 passed / 38 files",
+    "cedarControlledViewportRetest": "25 passed / 3 files",
+    "cedarFormInheritance": "3 passed",
+    "mapleDateFamily": "243 passed / 40 files",
+    "mapleFinalRangeAdapter": "32 passed / 8 files",
+    "mapleLatestPickerUI": "25 passed / 3 files"
+  },
+  "checks": {
+    "cedarTypecheck": "passed",
+    "mapleTypecheck": "passed",
+    "mapleRootLint": "passed",
+    "dateSourceParity": "43 pairs passed",
+    "docsSyntax": "1055 demo SFCs passed",
+    "docPipeline": "15 passed, 1 failed: Upload/VerificationCode authored-demo counter expects tag-only count (24), mixed syntax renders 25. Outside the changed date range modules; left unchanged."
+  },
+  "browser": {
+    "cedar": "10/11 months initially, next moves both to 11/12. Oct25 -> next month -> Nov5 stays a draft until confirm; confirmed model [2026-10-25,2026-11-05].",
+    "maple": "First endpoint propagates to outer draft and disables confirm. October25 -> November5 keeps old model until confirm writes the same range as Cedar.",
+    "mobileIframe": "Popup first endpoint disables confirm; cancel retained [2026-10-19,2026-10-22].",
+    "cedarHeaders": "Both month headers have height 45px and title height 28px; hidden inner-arrow placeholders no longer squeeze or wrap the month title."
+  },
+  "screenshots": [
+    "cedar-consecutive-months.png",
+    "maple-incomplete-range.png",
+    "maple-cross-month-draft.png",
+    "maple-mobile-half-selected.png"
+  ],
+  "followUpUploadDocCounter": {
+    "date": "2026-10-19",
+    "cause": "Upload bilingual docs contain 24 HTML demos plus 1 fenced demo. The tag-only test counter incorrectly expected 24.",
+    "fix": "Count both live syntaxes using Markdown blocks, exclude fenced and inline code samples, and verify rendered cards and watched files.",
+    "checks": {
+      "docPipeline": "17 passed, 0 failed",
+      "docsSyntax": "1055 demo SFCs, 0 failures",
+      "mapleRootLint": "passed",
+      "diffWhitespace": "passed"
+    }
+  }
+}

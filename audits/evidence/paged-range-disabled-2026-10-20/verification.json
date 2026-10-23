@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-20",
+  "rule": "disabledDate restricts endpoints. Interior disabled dates/months/years may be spanned and remain gray; no interior interval scan or truncation introduced.",
+  "changes": [
+    "Maple disabled interior band now uses the same gray fill as Cedar for both selected and preview ranges.",
+    "Paging clears transient hover preview while preserving the clicked first endpoint.",
+    "Cedar forwards a complete renderer candidate when it equals the existing range, restoring confirmation after restarting the same range.",
+    "Cedar year page controls use period accessibility labels.",
+    "Form demo includes synthetic cross-year date/month ranges and a cross-century year range; docs clarify endpoint-only disabled rules."
+  ],
+  "browser": {
+    "bothPlatforms": {
+      "dateCommitted": [
+        "2026-12-30",
+        "2027-01-04"
+      ],
+      "disabledDate": "2027-01-01",
+      "monthCommitted": [
+        "2026-11",
+        "2027-03"
+      ],
+      "disabledMonth": "2026-12",
+      "yearCommitted": [
+        "2099",
+        "2103"
+      ],
+      "disabledYear": "2100",
+      "disabledInteriorBackground": "rgb(247, 248, 250)",
+      "ordinaryPreviewBackground": "rgb(242, 243, 245)",
+      "pageClearsPreview": true,
+      "partialConfirmationDisabled": true,
+      "reselectingSameRangeConfirmEnabled": true,
+      "sameYearCrossMonthCommitted": [
+        "2026-10-30",
+        "2026-11-04"
+      ],
+      "sameYearReversePagingSameRangeConfirmEnabled": true
+    }
+  },
+  "tests": {
+    "newPagedCasesPerPlatform": 8,
+    "coverage": [
+      "cross-month",
+      "cross-year date",
+      "cross-year month",
+      "cross-century year",
+      "forward/reverse",
+      "disabled endpoint rejected",
+      "disabled interior preserved",
+      "paging does not emit selection/commit",
+      "same-range complete confirmation"
+    ],
+    "cedarDateFamily": {
+      "files": 41,
+      "tests": 219
+    },
+    "mapleDateFamily": {
+      "files": 44,
+      "tests": 244
+    }
+  },
+  "checks": {
+    "dateFamilyRegressions": "both passed",
+    "typecheck": "both passed",
+    "cedarAffectedLint": "passed",
+    "mapleRootLint": "passed",
+    "sameSource": "43 pairs and field/panel presentation boundaries passed",
+    "whitespace": "both git diff --check passed"
+  },
+  "validationNotes": "Final regressions use isolated workers with concurrency limited to one; a diagnostic run without worker isolation shared the Vue SSR document cache and is not used as validation."
+}

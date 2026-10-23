@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-16",
+  "batch": "Cedar Scheduler virtual-row two-nextTick restoration lifecycle",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerTimelineRows.vue",
+    "cleanAtStart": true,
+    "beforeSha256": "5c3642f3c67b4f4dd38d46518b3d02a4ee5859a581b8492f2939cecdc3bc8357",
+    "sha256": "cc4d83fb32c426146f59bd82f122a0507840a5baf899e38629b9abeda1d60957",
+    "originalHint": 116,
+    "currentHint": 136,
+    "category": "state-settlement"
+  },
+  "regression": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__tests__/timeline-restore-lifecycle.test.tsx",
+    "sha256": "2285bb8f7380271b989f7144e138a3bec00500da4e2477ce5d1182b3bf8160bb",
+    "validBaseline": { "total": 7, "failed": 4, "controlsPassed": 3, "exitCode": 1, "unhandledErrors": 0 },
+    "baselineFailures": [
+      "deactivation inside first child scrollTo permits stale second-phase horizontal restoration",
+      "retained inactive scroll handler writes detached heading",
+      "old scroll handler crosses reactivation",
+      "second-phase row geometry disposes owner but viewport geometry is still read"
+    ],
+    "fixtureCorrectionsNotProductFailures": [
+      "stub both VirtualList and actual prefixed CVirtualList, assert controlled stub exists",
+      "replace synchronous owner disposal inside first-phase Vue render flush (Dep.nextDep errors) with second-phase async row geometry disposal"
+    ],
+    "finalTargeted": { "passed": 10, "failed": 0 },
+    "fullScheduler": { "passed": 332, "files": 57, "failed": 0, "exitCode": 0 },
+    "scope": "Actual Vue TimelineRows and KeepAlive, controlled VirtualList/geometry, JSDOM. Inactive parent prop updates are deferred until activation; not direct cached-child prop delivery or downstream VirtualList lifecycle acceptance."
+  },
+  "repair": [
+    "active/mounted/disposed and restore generation plus entries/options/layout identities",
+    "specific restored-list and viewport checks across both nextTicks and after geometry",
+    "fresh activation scroll callback identity and current-list event-source check",
+    "invalidate suspended restoration and fresh current-data rebuild on activation; no stale offset replay"
+  ],
+  "validation": {
+    "cedarConfiguredTypecheck": "passed exit0",
+    "affectedEslint": "passed exit0 with --no-ignore",
+    "mapleRootLint": "passed exit0",
+    "sharedTests": { "total": 29, "passed": 28, "failed": 1, "failure": "global reviewed-source hash gate; four parallel Ripple/VirtualList files remain stale" },
+    "isolatedReviewedRow": { "classifiedHints": 1, "category": "state-settlement", "passed": true },
+    "generatedTokenPages": { "matched": 3 },
+    "lessAndMapleTypes": "not rerun: no CSS or Maple runtime changes",
+    "newRealBrowserOrOsCases": 0
+  },
+  "registration": {
+    "closedFamilies": 28, "totalFamilies": 33, "closedPercent": 84.8,
+    "remainingFamilies": 5, "remainingPercent": 15.2,
+    "sourceFiles": 66, "classifiedHints": 152, "totalHints": 179, "classifiedPercent": 84.9,
+    "remainingHints": 27, "remainingHintsPercent": 15.1, "denominatorChange": 0,
+    "remainingByFamily": { "Date": 3, "Form": 4, "Scheduler": 8, "Time": 3, "Picker": 9 },
+    "meaning": "Registration only, not current global hash-gate validity, whole-library lifecycle or native acceptance. Scheduler remains partial."
+  },
+  "preservedBoundaries": [
+    "Four parallel classified Ripple/VirtualList source hashes require re-review, not auto-refresh",
+    "26 unrelated CSS/date inventory drifts preserved; only reviewed hint 116 to136 updated",
+    "Date/Form/Time/Picker and Scheduler resource-core parallel changes preserved",
+    "Map formal SDK contract and active-provider lifecycle remain blocked",
+    "144 native Chrome200%/Safari/Firefox environment groups remain blocked",
+    "Button white on-dark 2.305:1 is a design exception, not AA",
+    "Direct inactive cached-child props, native variable-size geometry and OS behavior remain separate"
+  ],
+  "publicApiCssTokenOrDefaultGeometryChanges": false,
+  "documentation": "Shared standard, Cedar guide, Maple bilingual guides, Scheduler README, both changesets, Cedar OpenSpec and progress synchronized"
+}

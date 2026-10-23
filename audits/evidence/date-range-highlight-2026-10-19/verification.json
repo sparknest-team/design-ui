@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-19",
+  "previousScreenshotCorrection": {
+    "file": "form-temporal-upload-state-2026-10-19/cedar-date-range-failure.jpg",
+    "cause": "The browser selector matched an adjacent September 28 instead of October 28. The actual range was September 28 to October 26. Highlighting October 1 through 26 was consistent with that range; this was not proof of selecting October 26 to 28.",
+    "regression": "Explicit adjacent-month selection now asserts September 28 to October 26; normal browser and test selectors use current-month cells."
+  },
+  "fixes": {
+    "cedar": "Remove mouseleave falsely emitting mouseenter; leaving the range calendars clears a pending hover preview and preserves its selected endpoint.",
+    "maple": "Shared day/month/year highlight calculation ignores missing/invalid endpoints rather than parsing undefined as today; reversed bounds normalized for drawing."
+  },
+  "checks": {
+    "cedarDateFamily": {
+      "files": 38,
+      "tests": 192
+    },
+    "cedarHighlightFinal": 6,
+    "mapleDateFamily": {
+      "files": 41,
+      "tests": 217
+    },
+    "typecheck": "both passed",
+    "lint": "Cedar affected files and Maple root lint passed",
+    "dateSameSource": "43 pairs and field/panel boundaries passed"
+  },
+  "browser": {
+    "cedar": {
+      "draftHighlightedDays": [
+        "26",
+        "27",
+        "28"
+      ],
+      "committed": [
+        "2026-10-26",
+        "2026-10-28"
+      ],
+      "reopenedHighlightedDays": [
+        "26",
+        "27",
+        "28"
+      ]
+    },
+    "maple": {
+      "firstEndpointHighlightedDays": [
+        "26"
+      ],
+      "draftHighlightedDays": [
+        "26",
+        "27",
+        "28"
+      ],
+      "committed": [
+        "2026-10-26",
+        "2026-10-28"
+      ]
+    }
+  },
+  "hoverVerification": "Component event tests cover Cedar hover and leave without publishing a selection; Maple keeps click/touch selection unchanged on mouseenter. Native browser validation covered actual date clicks and committed model values."
+}

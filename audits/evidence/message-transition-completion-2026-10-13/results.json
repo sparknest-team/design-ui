@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-13",
+  "scope": "Cedar and Maple Message transition/service completion ownership",
+  "verificationKind": "Simulated component completion protocol, real Vue in JSDOM, and source contract; not native browser/OS",
+  "reproduction": {
+    "serviceProtocolBefore": {
+      "cedar": { "failed": 1, "passed": 1 },
+      "maple": { "failed": 1, "passed": 1 }
+    },
+    "problem": "A held component completion was bypassed by the 200ms service fallback.",
+    "candidateRegression": "Removing the fallback initially leaked two creation-tick close/clear cases on both platforms; resolved with never-mounted direct cleanup. These failures arose during this candidate implementation, not the original baseline.",
+    "componentSourceFinding": "Both Transition templates forced duration=150 despite public CSS duration tokens."
+  },
+  "after": {
+    "cedarMessageTests": 31,
+    "mapleMessageTests": 39,
+    "newServiceTestsPerPlatform": 5,
+    "types": { "cedar": "passed", "maple": "passed" },
+    "cedarAffectedLint": "passed",
+    "mapleFullLint": "passed after SFC formatting",
+    "finalAffectedLint": "passed on both platforms",
+    "tokenReference": "passed: 3 tests and 3 generated pages",
+    "motionGate": "passed: 8 source/scanner tests, 190-file inventory and existing compiled motion chain"
+  },
+  "behavior": [
+    "Mounted service entries wait for actual component after-leave/closed; fixed 150ms Transition duration and 200ms disposal fallback removed.",
+    "Never-mounted close/clear directly cleans the entry and calls service onClosed without inventing component animation events.",
+    "Snapshot clear does not skip synchronously removed unmounted entries.",
+    "Completion while an item is reopened remains ignored; removed entries cannot complete twice.",
+    "Existing CSS token defaults and business display durations remain unchanged."
+  ],
+  "harnessCorrections": [
+    "Cedar existing VTU mounts used default Transition stubs, which never report CSS closed to subsequent service renders. Explicit real Transition and wrapper unmount restored complete regression; not a product defect.",
+    "Completion protocol uses a bounded doMock/dynamic import and explicit doUnmock/resetModules cleanup, not a persistent hoisted module mock.",
+    "A temporary read-only completion diagnostic passed and was removed; one new test string formatting error was corrected before final successful suites."
+  ],
+  "sourceSha256": {
+    "cedar-design-web/packages/cedar-ui/src/message/index.ts": "daa1552d88af74d1b3cfbeef14a52586bc9c0cbbf0d7cafacef97df8680aeb9b",
+    "cedar-design-web/packages/cedar-ui/src/message/Message.vue": "58cd8d61fe20dfe9480b28987074294d7ae659839443a4ff73a2db9f4aaa9ae8",
+    "maple-design-mobile/packages/maple-ui/src/message/index.ts": "90d7db41a9f90ed6d9d57c19d5e79bc7fee06bfc8cfab461a15c279efc8f05ff",
+    "maple-design-mobile/packages/maple-ui/src/message/Message.vue": "f3410e52aa76b9bdccf712753f5056adbca022d1231bb583b139971dda642de7"
+  },
+  "inventory": { "files": 190, "cssHints": 389, "runtimeHints": 177, "meaning": "candidates, not accepted cases or defects" },
+  "newNativeBrowserCases": 0,
+  "newRealOsCases": 0,
+  "unchangedBlockedNativeCases": 144,
+  "next": "Real IAB two-platform default/long/zero/reopen and lifecycle acceptance; actual CSS consumption checks. Custom nested animations remain caller-owned.",
+  "constraints": "No Token default/API change, commits, push, releases, new chats or subagents; unrelated date/naming work and Button white foreground exception preserved."
+}

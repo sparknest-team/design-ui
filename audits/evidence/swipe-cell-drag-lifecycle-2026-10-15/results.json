@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-15",
+  "batch": "Maple SwipeCell drag and zero-delay click unlock, phase two",
+  "source": {
+    "file": "maple-design-mobile/packages/maple-ui/src/swipe-cell/SwipeCell.vue",
+    "beforeSha256": "6e5c46901a3421f6c2c8ad596514ca780343d5f471af219fde133073ba75c764",
+    "afterSha256": "eb9b450d05f5012299f14d6ebcdd1e4da3d90c0b0c3ee66a5ee465f158cda4f6",
+    "ownership": "existing phase-one dirty changes belong to this chat and are preserved; start hash matches previous batch"
+  },
+  "baseline": {
+    "tests": 14,
+    "failed": 12,
+    "passedControls": 2,
+    "failures": ["new touch fails to cancel pending unlock", "cancelled unlock releases fresh drag", "consumed unlock releases later gesture", "deactivation fails to cancel timer", "unmount fails to cancel timer", "disabled fails to cancel timer", "touchcancel opens instead of restoring", "suspension resumes partial drag", "inactive retained click notifies", "old move binding crosses activation", "old outside binding closes current activation", "move without start changes offset"],
+    "controls": ["current unlock suppresses release-turn click then permits later click", "current outside interaction closes"],
+    "meaning": "overlapping cases, not twelve distinct product defects"
+  },
+  "repair": {
+    "unlock": "physical window timer cancellation plus independent generation and one-shot consumption; no stale clear of new handle",
+    "gesture": "hasTouch and generation, cancellation restores starting offset without opening; suspension/disposal/disabled clear gesture; activation accepts fresh input",
+    "bindings": "fresh callbacks under binding generation; remove original root/document touch listeners on node/lifecycle changes; old delivery inert",
+    "reentry": "recheck generation/availability after geometry/notifications; open-triggered fresh drag prevents old unlock, click-triggered open prevents old close continuation",
+    "transition": "reactive isDragging restores existing transition when clamped offset stays equal",
+    "unchanged": "30% threshold, public API/CSS variables/default visual timing and phase-one business-confirmation contract; no shared useTouch changes",
+    "tokenMeaning": "0ms unlock is event-turn state-settlement, not CSS visual duration"
+  },
+  "intermediateChecks": [
+    "first repaired14-case suite passed, full41 passed",
+    "adding seven cases produced47pass/1probe-failure: findLast selected VTU generic eventListener rather than component move; exclude generic wrapper for active-binding identity and physical removal assertions",
+    "timer ReturnType resolved to Node Timeout while browser window timer returns number; fixed explicit DOM number without config relaxation",
+    "first full root lint observed two pre-format test lines during scoped formatting; final independent full lint rerun passed"
+  ],
+  "final": {
+    "dragTargeted": 21,
+    "closeTargeted": 18,
+    "total": 48,
+    "files": 4,
+    "result": "passed exit0",
+    "additionalCases": ["fresh activation move works", "original root/document listener removal", "open callback begins new drag without old unlock", "click callback reopens another side", "old unlock across activation", "clamped offset restores transition", "touchcancel preserves previously opened side"],
+    "fixture": "Actual SwipeCell/KeepAlive and actual EventTarget listeners; synthetic touch events with touches coordinates, configured widths, fake timer capture/replay and setup-state transform observation. Unmount all owned apps, restore EventTarget/timer spies and real timers."
+  },
+  "verification": {
+    "mapleConfiguredTypes": "passed",
+    "mapleAffectedLint": "passed after scoped formatting",
+    "mapleRootLint": "passed final independent rerun",
+    "classification": "144classified/38pending, state-settlement15",
+    "sharedTests": "29 passed",
+    "catalog": "3 generated pages match",
+    "cedarRuntimeAndCss": "unchanged; no Cedar types or Less motion rerun claimed",
+    "newRealBrowserOrOSCases": 0
+  },
+  "progress": {
+    "families": 33,
+    "closedBefore": 24,
+    "closed": 25,
+    "closedPercent": 75.8,
+    "remaining": 8,
+    "remainingPercent": 24.2,
+    "classifiedFiles": 60,
+    "classifiedHints": 144,
+    "totalHints": 182,
+    "classifiedHintPercent": 79.1,
+    "pendingHints": 38,
+    "pendingHintPercent": 20.9,
+    "denominatorChange": 0,
+    "remainingFamilies": ["Date", "Form", "Map", "Scheduler", "Time", "Tree", "Picker", "PullRefresh"],
+    "meaning": "runtime candidate classification only, not whole-library/all-lifecycle/native acceptance"
+  },
+  "inventory": "only reviewed SwipeCell runtime248→351/hash;193files/392CSS/182runtime unchanged; other26 parallel drifts untouched, no global motion-themes claim",
+  "preserved": ["Form/date/linked Time", "Picker/Scheduler and other parallel styles", "144 native200%/Safari/Firefox blocked cases", "Button on-dark2.305:1 design exception"],
+  "pending": ["native touch and generated click ordering", "complete measurement continuation audit", "shared useTouch RAF lifecycle", "same-node document adoption", "event-triggered hook rejection policy", "real OS/cross-document behavior"],
+  "next": "non-overlapping PullRefresh audit; no new tasks/subagents/browser/services/automation changes/commits/push/releases"
+}

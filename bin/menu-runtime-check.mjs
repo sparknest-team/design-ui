@@ -20,10 +20,10 @@ for (const [name, directory, componentName] of [
     assert.equal(api.default.name, componentName)
     assert.equal(typeof api.default.install, 'function')
     assert.equal(api.default.Option, api.MenuOption)
-    assert.equal(api.default.Group, api.MenuGroup)
-    assert.equal(api.default.Submenu, api.MenuSubmenu)
-    for (const key of ['menuOptionProps', 'menuGroupProps', 'menuSubmenuProps']) assert.ok(api[key], key)
-    for (const key of ['modelValue', 'options', 'multiple', 'fieldNames', 'open', 'defaultOpen', 'hideOnSelect']) {
+    for (const key of ['Group', 'Submenu']) assert.equal(api.default[key], undefined)
+    for (const key of ['MenuGroup', 'MenuSubmenu', 'menuGroupProps', 'menuSubmenuProps']) assert.equal(api[key], undefined)
+    assert.ok(api.menuOptionProps)
+    for (const key of ['modelValue', 'options', 'fieldNames', 'open', 'defaultOpen', 'hideOnSelect', 'submenuTrigger', 'strategy', 'reference']) {
       assert.ok(key in api.menuProps, `${name} ${format}: missing ${key}`)
     }
     assert.equal(api.menuProps.modelValue.default, undefined)
@@ -32,19 +32,18 @@ for (const [name, directory, componentName] of [
     assert.equal(api.menuProps.hideOnSelect.default, true)
     assert.equal(api.menuProps.trigger.default, 'click')
     assert.equal(api.menuProps.unmountOnClose.default, name === 'Cedar')
-    for (const type of [Boolean, Object, Array]) assert.ok(api.menuProps.modelValue.type.includes(type))
+    for (const type of [String, Number, Boolean, Object]) assert.ok(api.menuProps.modelValue.type.includes(type))
+    assert.equal('multiple' in api.menuProps, false)
     const localRequire = createRequire(resolve(root, directory, 'package.json'))
     const { createSSRApp, h } = localRequire('vue')
     const { renderToString } = localRequire('@vue/server-renderer')
     const html = await renderToString(createSSRApp({ render: () => h(api.default, { open: true, popupContainer: false, options: [{ label: 'SSR leaf', value: 'leaf' }] }, {
-      default: () => h('button', 'Menu'), content: () => h(api.MenuSubmenu, { open: true }, { default: () => 'More', content: () => h(api.MenuOption, { label: 'SSR slot' }) }),
+      default: () => h('button', 'Menu'), content: () => h(api.MenuOption, { label: 'SSR slot' }),
     }) }))
     // Native Trigger may defer its popup until mounted; SSR must preserve the reference.
     assert.ok(html.includes('Menu'), `${name} ${format}: SSR reference missing`)
-    const groupHtml = await renderToString(createSSRApp({ render: () => h(api.MenuGroup, { title: 'Actions' }, () => [
-      h(api.MenuOption, { label: 'SSR leaf' }), h(api.MenuSubmenu, {}, { default: () => 'More' }),
-    ]) }))
-    assert.ok(groupHtml.includes('SSR leaf') && groupHtml.includes('More'), `${name} ${format}: SSR subcomponents missing`)
-    console.log(`PASS ${name} ${format}: no-DOM import with CSS loader, install, option/group/submenu aliases, public props and nested SSR`)
+    const optionHtml = await renderToString(createSSRApp({ render: () => h(api.MenuOption, { label: 'SSR leaf', uninjectContext: true }) }))
+    assert.ok(optionHtml.includes('SSR leaf'), `${name} ${format}: SSR option missing`)
+    console.log(`PASS ${name} ${format}: no-DOM import, install, final Menu/Option API and SSR`)
   }
 }

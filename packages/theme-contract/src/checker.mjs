@@ -3,6 +3,7 @@ import { readFileSync, readdirSync } from 'node:fs'
 import { extname, resolve } from 'node:path'
 import contract from '../contracts/theme-contract.json' with { type: 'json' }
 import legacyDenylist from '../contracts/legacy-denylist.json' with { type: 'json' }
+import { normalizeTokenValue } from './normalize-value.mjs'
 
 const sourceExtensions = new Set(['.less', '.css', '.scss', '.vue', '.ts', '.tsx', '.md'])
 const ignoredDirectories = new Set(['node_modules', 'dist', 'coverage'])
@@ -18,6 +19,11 @@ function walk(directory) {
 function definitions(source, prefix) {
   const pattern = new RegExp(`(--${prefix}-[a-z0-9-]+)\\s*:`, 'g')
   return new Set([...source.matchAll(pattern)].map((match) => match[1]))
+}
+
+function customPropertyValues(source, prefix) {
+  const pattern = new RegExp(`(--${prefix}-[a-z0-9-]+)\\s*:\\s*([^;]+);`, 'g')
+  return new Map([...source.matchAll(pattern)].map((match) => [match[1], match[2].replace(/\\s+/g, ' ').trim()]))
 }
 
 function systemReferences(source, prefix) {
@@ -103,6 +109,37 @@ function logicalSystemTokens(library) {
     .sort()
 }
 
+function logicalSystemTokenValues(library, expected = contract.systemTokenValues) {
+  const source = readFileSync(resolve(library.source, 'style/theme/system.less'), 'utf8')
+  const values = customPropertyValues(source, library.prefix)
+  return Object.fromEntries(
+    Object.keys(expected).map((token) => {
+      const name = `--${library.prefix}-sys-${token}`
+      assert.ok(values.has(name), `${library.name}: ${name} has no value`)
+      return [token, normalizeTokenValue(values.get(name), library.prefix)]
+    }),
+  )
+}
+
+function logicalComponentTokenValues(library, component, expected = contract.componentTokenValues[component]) {
+  const namespace = component === 'field-decorator' ? 'field' : component
+  // Govern the public :root defaults, not theme-specific overrides later in token.less.
+  const source = readFileSync(resolve(library.source, component, 'style/token.less'), 'utf8')
+  // Naming examples in comments may contain braces (e.g. {variant}); they are not CSS blocks.
+  // Preserve quoted strings so URLs and string-valued defaults are not treated as comments.
+  const uncommented = source.replace(/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\*[\s\S]*?\*\/|\/\/[^\n]*/g,
+    (match) => match.startsWith('//') || match.startsWith('/*') ? '' : match)
+  const defaults = [...uncommented.matchAll(/(?:^|\n)\s*:root\s*\{([^}]*)\}/g)].map((match) => match[1]).join('\n')
+  const values = customPropertyValues(defaults, library.prefix)
+  return Object.fromEntries(
+    Object.keys(expected).map((token) => {
+      const name = `--${library.prefix}-${namespace}-${token}`
+      assert.ok(values.has(name), `${library.name}: ${name} has no value`)
+      return [token, normalizeTokenValue(values.get(name), library.prefix)]
+    }),
+  )
+}
+
 function logicalComponentTokens(library, component) {
   const namespace = component === 'field-decorator' ? 'field' : component
   const tokenPrefix = `--${library.prefix}-${namespace}-`
@@ -145,6 +182,32 @@ export function checkThemeContract(options) {
     { name: 'Cedar', key: 'cedar', prefix: contract.prefixes.cedar, source: options.cedarSource },
     { name: 'Maple', key: 'maple', prefix: contract.prefixes.maple, source: options.mapleSource },
   ]) {
+    assert.deepEqual(
+      logicalSystemTokenValues(library),
+      contract.systemTokenValues,
+      `${library.name}: system token values differ from @ui-foundation/theme-contract`,
+    )
+    const platformSystem = contract.platformSystemTokenValues?.[library.key] ?? {}
+    for (const token of Object.keys(platformSystem)) assert.ok(!(token in contract.systemTokenValues), `${library.name}: duplicate system default ${token}`)
+    assert.deepEqual(logicalSystemTokenValues(library, platformSystem), platformSystem, `${library.name}: platform system defaults differ`)
+    assert.deepEqual([...Object.keys(contract.systemTokenValues), ...Object.keys(platformSystem)].sort(), actual.system, `${library.name}: every system default must be governed`)
+    for (const [component, expected] of Object.entries(contract.componentTokenValues)) {
+      assert.deepEqual(
+        logicalComponentTokenValues(library, component),
+        expected,
+        `${library.name} ${component}: component token values differ from @ui-foundation/theme-contract`,
+      )
+    }
+    for (const [component, expected] of Object.entries(contract.platformComponentTokenValues?.[library.key] ?? {})) {
+      for (const token of Object.keys(expected)) {
+        assert.ok(!(token in (contract.componentTokenValues[component] ?? {})), `${library.name} ${component}/${token}: duplicate shared and platform default`)
+      }
+      assert.deepEqual(
+        logicalComponentTokenValues(library, component, expected),
+        expected,
+        `${library.name} ${component}: registered platform defaults differ`,
+      )
+    }
     for (const component of contract.components) {
       const common = contract.tokens.components[component] ?? []
       const current = logicalComponentTokens(library, component)
@@ -177,5 +240,17 @@ export function checkThemeContract(options) {
   checkComponentDocs('Cedar', options.cedarSource, contract.prefixes.cedar)
   checkComponentDocs('Maple', options.mapleSource, contract.prefixes.maple)
 
-  return { systemCount: actual.system.length, componentCount: contract.components.length }
+  return {
+    systemCount: actual.system.length,
+    systemValueCount: Object.keys(contract.systemTokenValues).length,
+    platformSystemValueCount: Object.values(contract.platformSystemTokenValues ?? {}).reduce((count, values) => count + Object.keys(values).length, 0),
+    componentValueCount: Object.values(contract.componentTokenValues).reduce(
+      (count, values) => count + Object.keys(values).length,
+      0,
+    ),
+    componentCount: contract.components.length,
+    platformComponentValueCount: Object.values(contract.platformComponentTokenValues ?? {}).reduce(
+      (count, components) => count + Object.values(components).reduce((sum, values) => sum + Object.keys(values).length, 0), 0,
+    ),
+  }
 }

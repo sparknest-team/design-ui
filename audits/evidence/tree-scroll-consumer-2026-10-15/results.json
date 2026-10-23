@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-15",
+  "batch": "Cedar Tree scroll consumer classification without product repair",
+  "sources": [
+    { "file": "cedar-design-web/packages/cedar-ui/src/tree/Tree.vue", "sha256": "21cc8b62ac2ddae39817efb7a4576c495510d448e0d53b86bef6d7f807bb01ef", "cleanAtStart": true, "changed": false },
+    { "file": "cedar-design-web/packages/cedar-ui/src/_components/virtual-list-v2/VirtualList.vue", "sha256": "1a4385765ad6066e52c52a265f6c1f5ba4a03bfe29d3b6452e6d1e3f4c9d5f7f", "changed": false, "meaning": "matches previous lifecycle audit, already classified separately" }
+  ],
+  "classification": {
+    "line701": "declaration-only",
+    "line702": "delegated-scroll, unchanged options passed to actual child component",
+    "meaning": "no local RAF/timer/CSS duration; child availability/request guards own pending corrections",
+    "productRepair": false,
+    "failingBaseline": "none established; all seven integration cases pass on unchanged product sources",
+    "maple": "no corresponding Tree runtime, guide alignment only"
+  },
+  "tests": {
+    "file": "cedar-design-web/packages/cedar-ui/src/tree/__tests__/scroll-consumer.test.tsx",
+    "sha256": "2876ac85e56b7c3f5aad2c72a7191e03f7ac7e3b811c3a9655e378d283e00ad4",
+    "integration": 7,
+    "treeContract": 1,
+    "treeSelectExistingContract": 1,
+    "filteredTotal": 9,
+    "filteredFiles": 3,
+    "result": "passed exit0 with CHOKIDAR_USEPOLLING=true",
+    "cases": [
+      { "case": "index20/top", "scrollTop": 600 },
+      { "case": "key node-15/bottom", "scrollTop": 390 },
+      { "case": "index20 replaced by index3", "scrollTop": 90 },
+      { "case": "inactive retained parent command", "scrollTop": 37, "unchanged": true },
+      { "case": "reactivation accepts fresh index4 command", "scrollTop": 120 },
+      { "case": "unmount queued correction and retained command", "scrollTop": 37, "unchanged": true },
+      { "case": "nonvirtual", "result": "safe no-op" }
+    ],
+    "fixture": "Actual Tree and actual VirtualList with stub TreeNode,40 actual flattened data items, fixedSize30 and mocked90px clientHeight in JSDOM. Retain commands/wrappers before deactivation, dispose all owned apps. No timer/queue mocking and no native scrolling claims. Scoped lint formatting only."
+  },
+  "verification": {
+    "cedarConfiguredTypes": "passed",
+    "cedarAffectedLint": "passed scoped formatting",
+    "mapleRootLint": "passed exit0",
+    "sharedTests": "29 passed",
+    "classification": "147classified/32pending, declaration-only16/delegated-scroll5",
+    "catalog": "3 generated pages match",
+    "mapleTypesAndCss": "not rerun, guide-only change",
+    "compiledMotion": "not rerun, no CSS change",
+    "newRealBrowserOrOSCases": 0
+  },
+  "progress": {
+    "families": 33,
+    "closedBefore": 26,
+    "closed": 27,
+    "closedPercent": 81.8,
+    "remaining": 6,
+    "remainingPercent": 18.2,
+    "classifiedFiles": 62,
+    "classifiedHints": 147,
+    "totalHints": 179,
+    "classifiedHintPercent": 82.1,
+    "pendingHints": 32,
+    "pendingHintPercent": 17.9,
+    "denominatorChange": 0,
+    "remainingFamilies": ["Date", "Form", "Map", "Scheduler", "Time", "Picker"],
+    "meaning": "runtime candidate classification, not whole-library/all-lifecycle/native coverage"
+  },
+  "inventory": "unchanged193files/392CSS/179runtime; Tree original701/702 and product hashes unchanged, other26 unrelated parallel drifts preserved, no global motion-themes claim",
+  "preserved": ["Form/date/linked Time", "Picker/Scheduler and other parallel changes", "144 native200%/Safari/Firefox blocked cases", "Button on-dark2.305:1 design exception"],
+  "pending": ["other retained Tree mutation methods", "loadMore asynchronous ownership", "arbitrary dynamic row geometry", "native layout/scroll/smooth/real reduced-motion/cross-document/OS"],
+  "next": "Map non-overlapping runtime consumers; no tasks/subagents/browser/services/automation changes/commits/push/releases"
+}

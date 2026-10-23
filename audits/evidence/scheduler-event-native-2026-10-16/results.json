@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-16",
+  "batch": "Cedar SchedulerEvent protocol/retained entry phase three and source classification",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerEvent.vue",
+    "beforeSha256": "4701de155b616d7acad6f23e5b188ad767991be0c945a0c454f63d120d486c06",
+    "sha256": "f98dffe0bd0390cf5b2867deb4f9fc8f83b5d098c58b0c2a8405d6fdb8c92123",
+    "overlap": "Matches own phase-two evidence; parallel regions preserved",
+    "originalHints": [223,236,361,381],
+    "currentHints": [246,259,384,404],
+    "categories": { "state-settlement": 2, "interaction-delay": 2 },
+    "fileRegistered": true,
+    "familyClosed": false
+  },
+  "regression": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__tests__/event-native-lifecycle.test.tsx",
+    "sha256": "5b7dfb3822d63be08054c85c0f6942a977c2d5f6cf09cfffa48fbeeae906ccab",
+    "validBaseline": { "total": 10, "failed": 7, "passedControls": 3, "exitCode": 1 },
+    "failures": ["inactive dragstart transfer/notification", "duplicate dragend", "orphan dragend", "transfer callback readonly reentry", "retained resize after resizable removal", "retained milestone resize", "native deactivation cleanup"],
+    "controls": ["normal protocol", "readonly selection", "actual Button rejects inactive click"],
+    "firstRepair": { "passed": 49, "files": 4, "exitCode": 0, "warning": "close timed out after1000ms; not final clean run" },
+    "supplementary": ["old end callback/replacement", "activation fresh protocol", "start-edge direction"],
+    "candidateIntermediate": { "passed": 54, "failed": 1, "total": 55, "exitCode": 1, "failure": "template event wrapper reads newest ref when old wrapper is called" },
+    "candidateRepair": "Bind current handler with v-on object, keeping request-specific function identity rather than a dynamic template wrapper",
+    "finalAffected": { "passed": 55, "failed": 0, "files": 5, "exitCode": 0, "closeWarning": false },
+    "finalBreakdown": { "nativePhase": 13, "standalonePhase": 14, "managedPhase": 13, "existingPointer": 12, "existingTimelinePointer": 3 },
+    "fullSuite": "Not rerun mechanically. Prior phase-two370/371 normal-thread timeout and365/371 serial/timer failures retained; current55 pass is not a clean full-suite claim."
+  },
+  "repair": ["availability/eligibility guard before native transfer", "request-specific end callback consumed before notify", "config/lifecycle native cleanup", "transfer callback reentry checks", "shared current resizable/non-milestone eligibility", "preserve existing Button inactive click behavior without duplicate repair"],
+  "validation": {
+    "cedarConfiguredTypecheck": "passed exit0 after final template change",
+    "affectedEslint": "passed exit0 with --no-ignore",
+    "mapleRootLint": "passed exit0; parallel date-range file changed independently and prior three errors disappeared; not repaired by this batch",
+    "observedParallelDateTestSha256": "1107a33bf4145b209c0729962d1dafeb93d2e6c9fd532238893768f63fb883d9",
+    "sharedTests": { "total": 29, "passed": 28, "failed": 1, "failure": "existing global Ripple/VirtualList source-hash gate" },
+    "isolatedEventClassification": "passed four hints: state-settlement2/interaction-delay2",
+    "generatedTokenPages": { "matched": 3 },
+    "newNativeBrowserOrOsCases": 0,
+    "lessAndMapleTypes": "not rerun; no CSS or Maple runtime changes"
+  },
+  "registration": {
+    "closedFamilies": 28, "totalFamilies": 33, "closedPercent": 84.8,
+    "remainingFamilies": 5, "remainingPercent": 15.2,
+    "sourceFiles": 68, "classifiedHints": 157, "totalHints": 178, "classifiedPercent": 88.2,
+    "remainingHints": 21, "remainingHintsPercent": 11.8, "denominatorChange": 0,
+    "remainingByFamily": { "Date": 3, "Form": 4, "Scheduler": 2, "Time": 3, "Picker": 9 },
+    "meaning": "Source registration only, not current global hash/full-suite/library/native acceptance; Scheduler still partial"
+  },
+  "preservedBoundaries": ["Prior full-suite timeout and serial timer failures unresolved", "Four stale classified hashes not auto-refreshed", "26 unrelated CSS/date inventory drifts preserved", "Global document/window and original350ms/8px/5px/ghost/API/CSS defaults retained", "Synthetic drag/transfer probes are not trusted browser/OS drag, native timestamp or cross-document acceptance", "Map formal SDK and144 native environment groups blocked", "Button white2.305:1 design exception, not AA"],
+  "documentation": "Shared standard/Cedar guide/Maple bilingual guides/Scheduler README/changesets/Cedar OpenSpec/progress synchronized"
+}

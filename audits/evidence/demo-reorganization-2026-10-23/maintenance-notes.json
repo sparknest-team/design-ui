@@ -1,0 +1,483 @@
+[
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/date/README.md",
+    "paragraphs": [
+      "2026-10-20 限域复核：范围预览使用 fill-2 背景与 preview-outline 边界，提交范围仍用原选中规则；真实 Body 的禁用格清除可退休快捷预览 100ms 旧任务。仅补回归并同步库存／hash／生成目录，未改并行业务或 Token 默认值。编译／JSDOM 不是原生焦点、布局或对比度验收；精确变量见生成参考目录，证据见 design-ui/audits/evidence/date-drift-closure-2026-10-20/results.json。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/form/README.md",
+    "paragraphs": [
+      "2026-10-19 FieldPresentation 调度收口：保留 Form／FormItem 并行展示和提交逻辑；匹配字段 reset 关闭编辑器并退休搜索，无关 reset 不取消当前编辑，活动编辑器仍阻止提交。Select 的搜索票据和关闭焦点回调拒绝取消后晚交付、重复交付与跨停用重放；当前 reference 才能归还焦点。本批不改校验返回或 submitEpoch。新的私有展示变量由真实导入链进入目录，仅是内部实现，不承诺公开 API；受控回归不代替原生焦点／OS验收。",
+      "2026-10-16 FilterForm 目录联动：`--c-form-line-height` 与 `--c-form-vertical-label-margin-bottom` 通过 FilterForm 的 action-offset 别名传递至操作项 `padding-top`，这是跨组件终端消费，不是 Form 自身新增 padding 规则。生成目录仅同步已核实的 Form／FilterForm 两节；生产样式、Token 默认值和并行业务未改。共享目录 8 项与两组件 75 项／17 文件通过（Less／JSDOM，非原生布局验收）。FieldDecorator 范围外目录漂移仍保留。证据：design-ui/audits/evidence/filter-form-token-catalog-2026-10-16/results.json。",
+      "运行时限域接管（2026-10-16）：用户已授权本端滚动调度／资源清理，不再受早期交接边界阻塞。保留并行校验、submitEpoch、提交和布局业务；只接受当前挂载／激活实例、当前验证和注册字段，卸载后不回退查询 body，同字段重复注册保留原注销器。offset 批次按原请求／目标一次消费，每次写入前复核，通知重入不覆盖新命令。DOM 顺序、偏移与原生 smooth 策略保持，已交付浏览器的 smooth 滚动不宣称可取消。15 项本批专项纳入最终 64 项／14 文件，类型与受影响 lint 通过，非原生布局／OS验收。以下未授权描述为历史。证据：design-ui/audits/evidence/form-picker-runtime-closure-2026-10-16/results.json。",
+      "Maple阶段三获限域授权后仅修自动滚动资格，19项专项及完整106项18文件通过，根只读lint／类型／共享29项通过；保留控制器／提交语义。本端源码仍未接管或外推认证，需具体source＋test交接／冻结或限域授权；Maple固定完成等待仍待审。以下待授权描述保留为历史。证据：design-ui/audits/evidence/form-scroll-validation-baseline-2026-10-16/results.json。",
+      "Maple阶段三资格基线10项6失败／4对照，等待局部验证到自动滚动资格接线确认；本端未复现／未改源码，不能外推Cedar失败或通过。证据：design-ui/audits/evidence/form-scroll-validation-baseline-2026-10-16/results.json。",
+      "Maple阶段二仅在Form内部拥有可取消插值，21等待／插值专项通过；共享助手API与本端源码不改，不外推其他调用方或原生验收。固定完成等待及异步字段资格仍待审。证据：design-ui/audits/evidence/form-scroll-animation-lifecycle-2026-10-16/results.json。",
+      "Maple后续已获用户限域授权，仅修等待任务归属，10项专项通过；本端Form源码未接管。共享插值／固定完成等待及两端剩余资格继续独立待审，分类不变。证据：design-ui/audits/evidence/form-scroll-wait-task-2026-10-16/results.json。",
+      "审计边界（2026-10-16）：Maple独立滚动任务受控基线6项3通过／3失败，尚未修改并行源码；该结果不能外推为本端Form已失败或已收口。两端Form／MaplePicker仍保留并行交接边界，无API／Token变化。证据：design-ui/audits/evidence/form-scroll-ownership-baseline-2026-10-16/results.json。",
+      "补充状态命令协议：公开 `clearValidate()` 与 `setFields()` 同样使等待中的旧原生提交失效（含指定字段调用）。清空或显式错误不会被旧任务完成后的提交事件覆盖；后续新原生提交仍正常校验。下文早期说明中的未覆盖项现仅剩“仅编辑但未重新校验”的快照行为。Demo 的两个状态按钮可在等待中操作；旧任务保留供手动返回，不代表取消真实请求。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/image/README.md",
+    "paragraphs": [
+      "本批轨道调度已独立审查（前文“另待审”为历史）：关闭／换图／loop变化／停用／卸载取消旧任务，帧与渲染回调消费一次；激活只规范化当前轨道，保留命令不重放。双帧是状态结算，零时长也保留；循环仍使用三份图片。两端轨道消费系统 slow／standard（当前240ms），Maple不再固定280ms。重定位读取实际transform时长＋delay，400ms仅样式无法读取／解析时保底。专项各27、完整Image Cedar62／Maple114；受控队列和32组Less级联不是原生浏览器认证。",
+      "预览长按500ms、双击识别320ms属于交互策略，不是CSS时长／延迟关闭。抬手、移动、关闭、换src、停用和卸载使旧计时失效，消费后不重放；停用／卸载保留输入无效。停用解绑键盘／模式监听、释放capture并清moving，激活读当前模式并接受新手势。专项各17／完整Cedar35、Maple87通过，控制时钟／MQL／事件不等于原生触控／浏览器／OS认证；PreviewGroup轨道调度另待审，API／Token不变。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/ripple/README.md",
+    "paragraphs": [
+      "2026-10-16当前源码重验31项通过（含既有11调度／12动效及3鼠标），前后hash相同。鼠标按下、document释放、blur及触摸兼容去重只新增受控回归证据，不是本批产品修复或可信原生输入验收。800ms是Date.now比较门槛，不是新增timer／CSS duration；当前分类hash经人工审阅更新，原生／adopt／OS边界仍保留。",
+      "统一调度按待执行任务消费一次；取消后或已消费的旧回调不会创建／激活波纹，也不会清掉重新启用后的新请求。几何／样式读取中卸载会停止后续并清理已插入波纹。30ms创建、20ms激活和250ms最小展示／删除策略保持，不是新增CSS时长Token。2026-10-15新增11专项、完整28项通过，为受控timer／JSDOM证据；不认证KeepAlive停用、原生触摸、OS或跨文档adopt。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/select/README.md",
+    "paragraphs": [
+      "FieldPresentation 搜索按当前激活编辑器／请求一次消费：新搜索、关闭、read、禁用、停用与卸载退休旧任务；delay 读取导致的同步卸载不再留计时器。匹配字段的 Form reset 同样退休搜索，无关字段 reset 保留原任务。关闭后的焦点归还只作用于当前引用，不因旧 nextTick 回调在重开／重新激活后交付而夺回焦点。既有 search-delay、选择／草稿和提交业务不变；JSDOM 受控任务不是原生焦点验收。",
+      "分组标题由真实 SelectMenu 渲染为与选项平级的 li，不存在 select-group 外壳；首标题 margin-top 为 0，其余标题使用 group-title-padding-top。标题纵向 padding 使用 popup-padding-vertical，水平 group-title-padding-horizontal 默认跟随 option-padding-horizontal。目录已按实际编译消费同步；当前钩子格式变更经六处调用／hash 与生命周期回归重验，不改变选择业务。Less／JSDOM 不代替原生布局验收。",
+      "活动选项nextTick滚动只等渲染，不等CSS动画完成。关闭／重开、新导航、停用、卸载使旧任务失效；回调只消费一次，空列表也不重放。保留选择／键盘／滚动入口在停用／卸载后无效，激活允许新命令；晚登记下拉仍支持。虚拟回调后再核对状态才写DOM。两端专项各14、共享消费者Cedar93／Maple96回归通过，受控队列不算浏览器／OS或完整下游认证；API与CSS变量不变。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/tree/README.md",
+    "paragraphs": [
+      "scrollIntoView(options)向当前VirtualList转发原始key／index／align，非虚拟模式无操作；它不是本地RAF或CSS动效时长消费者，不新增duration变量。实际下游已有守卫负责停用／卸载及旧校正请求，重新激活可发新命令。真实Tree＋VirtualList的7项JSDOM组合验证已通过（stub树节点、固定行高和模拟视口），不等于原生布局／滚动／减少动效或其他Tree公开方法、loadMore异步的完整验收。本批无Tree／VirtualList产品源码变更。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/date/picker/README.md",
+    "paragraphs": [
+      "2026-10-16 范围联动重验：保留 DateRangePicker 时间选择／确认分支，100ms 快捷预览任务本身不变；仅更新已重验的分类 hash 与行号 639→644。新增 2 项时间选择后旧回调重复交付回归，纳入当前 25 项／3 文件，通过原句柄取消与通知次数核对，非原生 hover／布局／OS 验收。证据：design-ui/audits/evidence/remaining-six-inventory-closure-2026-10-16/results.json。",
+      "候选分类补录（2026-10-16）：Maple独立年面板原生对齐7项对照通过、源码未改；与此前Cedar两处快捷预览合并后，Date运行时候选分类收口。不是两端并行展示层稳定、所有保留命令或原生／OS验收；本端无额外产品修复、API／Token变化。证据：design-ui/audits/evidence/date-year-native-scroll-2026-10-16/results.json。",
+      "16专项与受影响日期154项31文件通过；实际组件／KeepAlive＋stub面板、受控timer不是原生hover／OS证据，也不认证范围预览或其他select／confirm／input命令。证据：design-ui/audits/evidence/date-shortcut-preview-2026-10-16/results.json。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/carousel/docs/zh-CN.md",
+    "paragraphs": [
+      "2026-10-16 限域样式／库存审查：三种 effect 的真实 track／item、duration／reduce 和 fade grid-area 已核对；保留已有并行修复，不新增动画策略。 本批 Maple 32 项／5 文件（8 项新增 DOM）、共享局部门禁 51 项通过；未修改生产样式／默认 Token，不是原生验收。准确 Token 名称／声明以生成参考目录为准。 Evidence: design-ui/audits/evidence/remaining-six-inventory-closure-2026-10-16/results.json。",
+      "循环切换的 nextTick 负责等渲染，结算计时属于 visual-completion，随后双帧属于 state-settlement。请求／轨道节点／窗口核对及每阶段消费位，避免旧计时清新偏移、重复首帧分叉、旧次帧释放新的 noMotion。取消物理计时与原窗口所持 RAF；即使已出队的回调再交付，也必须先核对权限。内容重排与配置后的渲染测量任务同样绑定代次，停用后不重放。自动播放和动效阶段分别管理，不把播放间隔套进系统 duration Token。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/date/docs/en-US.md",
+    "paragraphs": [
+      "Bounded review (2026-10-20): actual date entries consume day/month/year range, disabled-range, preview backgrounds and preview outline. Mouse/touch previews add no native alignment; synchronous mount/fresh-activation alignment is preserved. No production business/source/default changes; only regressions and inventory/hash/catalog reconciliation. Refer to generated references for exact names; JSDOM/Less are not native acceptance. Evidence: design-ui/audits/evidence/date-drift-closure-2026-10-20/results.json.",
+      "2026-10-16 scoped style/inventory review: Actual calendar/range style entries and transition declarations compile;legacy transition selectors do not imply every presentation matches. Parallel date business and default motion are preserved. Maple32tests/5files(8new DOM cases)and51scoped shared checks pass;no production style/token-default edits or native acceptance. Use the generated reference for exact token names/declarations. Evidence: design-ui/audits/evidence/remaining-six-inventory-closure-2026-10-16/results.json。",
+      "Audit boundary (2026-10-16): only Cedar single shortcut-preview100ms tasks are repaired;Maple date runtime/parallel presentation remain unchanged. Cedar16 targeted/154 affected date tests do not certify native year panels/wheels,OS preferences or the complete Date family. Range preview/year-panel responsibilities remain separate. Evidence:design-ui/audits/evidence/date-shortcut-preview-2026-10-16/results.json."
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/date/docs/zh-CN.md",
+    "paragraphs": [
+      "2026-10-20 限域复核：日／月／年范围背景、禁用背景、预览背景与预览边界 outline 经真实日期样式入口消费；年面板鼠标／触摸预览不新增原生滚动，挂载／新激活的同步对齐策略保留。本批未改并行业务／源码／默认值，仅补回归与库存／hash／目录。精确变量见三页生成参考；JSDOM／Less 不代表原生验收。证据：design-ui/audits/evidence/date-drift-closure-2026-10-20/results.json。",
+      "2026-10-16 限域样式／库存审查：实际日历／范围后代样式入口及过渡声明已编译核对；历史转换选择器不等于所有 presentation 都命中，保留并行日期业务和默认动效。 本批 Maple 32 项／5 文件（8 项新增 DOM）、共享局部门禁 51 项通过；未修改生产样式／默认 Token，不是原生验收。准确 Token 名称／声明以生成参考目录为准。 Evidence: design-ui/audits/evidence/remaining-six-inventory-closure-2026-10-16/results.json。",
+      "审计边界（2026-10-16）：本批只修复Cedar单值快捷预览100ms任务，Maple日期运行时及并行展示层未改。Cedar16专项与154项日期回归不认证本端原生年面板／滚轮、OS偏好或Date整族。范围预览／年面板职责仍待分别审查。证据：design-ui/audits/evidence/date-shortcut-preview-2026-10-16/results.json。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/date-range/docs/zh-CN.md",
+    "paragraphs": [
+      "审计边界（2026-10-16）：Cedar范围快捷预览100ms与所属表头续体21专项通过；本端运行时／并行展示层未改，不据此认证Maple原生日期／滚轮、OS或完整Date族。100ms为交互宽限，非CSS完成时长。证据：design-ui/audits/evidence/date-range-shortcut-preview-2026-10-16/results.json。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/floating-panel/docs/en-US.md",
+    "paragraphs": [
+      "--mp-floating-panel-background defaults to system surface-overlay and reaches both panel background-color and the bottom masking pseudo-element box-shadow. Apply local overrides on the actual popup-container host/ancestor: style attributes passed to this Teleport component are not automatically forwarded to the panel root. Compiled reachability and JSDOM host checks do not certify native painting/safe areas; attribute forwarding and anchor behavior are unchanged."
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/floating-panel/docs/zh-CN.md",
+    "paragraphs": [
+      "--mp-floating-panel-background 默认使用 system surface-overlay，同时消费于面板 background-color 和底部遮蔽伪元素 box-shadow。局部定制应设置在真实 popup-container 宿主／祖先；当前 Teleport 组件不会把传入的 style 自动转发到面板根节点。不要把声明可达或 JSDOM 宿主检查当作原生绘制／安全区域验收；本批不改变属性转发和锚点业务。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/form/docs/zh-CN.md",
+    "paragraphs": [
+      "本轮最终验证：Form115项／19文件纳入Maple受影响合并532项／95文件，全通过；根只读lint、类型与共享29项通过。运行时候选33/33族已分类，非整组件／原生验收；详细边界和历史诊断见下方最新证据。",
+      "完成等待更新（2026-10-16）：滚动在渲染后跟随当前 FormDetails 过渡，不再无条件等待 300ms。正时长先结算进入／离开的准备帧，再读取实际 transition-property、duration、delay；无过渡／零时长直接进入定位，负 delay 与列表对应生效，样式不可读才保留私有 300ms 保底。替换、停用、卸载取消所属准备帧／计时器，旧交付不再测量或滚动。插值本身仍为原 300ms 线性，CSS Token／校验／提交业务未改。现有基础和异步 Demo 保留并行修改；受控测试、Less 编译与原生验收分别记录。以下早期“固定等待待审”描述为历史，以最新证据为准：design-ui/audits/evidence/form-picker-runtime-closure-2026-10-16/results.json。",
+      "阶段三授权后：仅自动滚动资格接线加入验证／策略版本、原字段成员／名称／目标复核；新验证、清除、重置和设置字段退休自动任务，不误停显式手动滚动。保留校验返回／回调、submitEpoch及提交语义，控制器／FormItem未改。19项资格测试，完整Form106项18文件通过；根只读lint、类型与共享29项通过。固定300ms完成等待仍待审，非整族／原生验收。以下授权前基线及早期阶段待办为历史，以最新结果为准。证据：design-ui/audits/evidence/form-scroll-validation-baseline-2026-10-16/results.json。",
+      "阶段三待办：新增自动滚动资格基线10项6失败／4对照，复现旧验证跨激活、字段注销／目标替换、清除错误／关闭自动滚动及回调重入后仍调度。源码未改，不把前批87项通过当当前新增测试集全通过。修复需要确认Form内验证到自动滚动资格接线，保持校验结果／回调／submitEpoch和提交语义。证据：design-ui/audits/evidence/form-scroll-validation-baseline-2026-10-16/results.json。",
+      "阶段二：Form私有滚动现拥有原窗口RAF取消器，替换／停用／卸载退休已启动插值，拒绝旧帧并在读写重入后复核。21等待／插值专项通过；保留原300ms等待＋300ms线性、初始／动态reduce行为，共享助手API与并行提交逻辑不改。固定完成等待、异步验证与字段资格仍待审，非整族／原生验收。证据：design-ui/audits/evidence/form-scroll-animation-lifecycle-2026-10-16/results.json。",
+      "运行时审计待办（2026-10-16）：当前并行源码未接管。独立300ms滚动任务基线6项中3通过／3失败：取消／重复／跨激活的受控旧交付仍可调用滚动助手；正常派发、普通卸载取消和未知字段通过。不是原生timer重复证明或已修复结果，Form暂不分类收口。需确认仅滚动任务段的接管边界，保留现有提交改造。证据：design-ui/audits/evidence/form-scroll-ownership-baseline-2026-10-16/results.json。",
+      "后续授权修复：仅滚动等待段已加入代次／一次消费与挂载、停用、卸载资格检查，几何读取后复核；10项专项通过，保留现有提交改造、300ms与默认线性滚动。下游共享助手已启动插值的取消、固定等待与FormDetails完成时长／reduce关系、验证资格仍待审，不能视为整族收口。最终分层结果：design-ui/audits/evidence/form-scroll-wait-task-2026-10-16/results.json。",
+      "补充状态命令协议：公开 `clearValidate()` 与 `setFields()` 同样使等待中的旧原生提交失效（含指定字段调用）。清空或显式错误不会被旧任务完成后的提交事件覆盖；后续新原生提交仍正常校验。下文早期说明中的未覆盖项现仅剩“仅编辑但未重新校验”的快照行为。Demo 的两个状态按钮可在等待中操作；旧任务保留供手动返回，不代表取消真实请求。",
+      "2026-10-19 lint 补验：示例入口与定时器格式已整理，当前三文件专项／根 lint、配置类型、300 项相关回归及 SFC 编译通过。本轮未改业务源码，保留 1200ms、取消信号和一次结算；示例编译不代表原生浏览器验收，自动化保持暂停。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/image/docs/zh-CN.md",
+    "paragraphs": [
+      "本批轨道调度已独立审查（前文“另待审”为历史）：关闭／换图／loop变化／停用／卸载取消旧任务，帧与渲染回调消费一次；激活只规范化当前轨道，保留命令不重放。双帧是状态结算，零时长也保留；循环仍使用三份图片。两端轨道消费系统 slow／standard（当前240ms），Maple不再固定280ms。重定位读取实际transform时长＋delay，400ms仅样式无法读取／解析时保底。专项各27、完整Image Cedar62／Maple114；受控队列和32组Less级联不是原生浏览器认证。",
+      "预览长按500ms、双击识别320ms属于交互策略，不是CSS时长／延迟关闭。抬手、移动、关闭、换src、停用和卸载使旧计时失效，消费后不重放；停用／卸载保留输入无效。停用解绑键盘／模式监听、释放capture并清moving，激活读当前模式并接受新手势。专项各17／完整Cedar35、Maple87通过，控制时钟／MQL／事件不等于原生触控／浏览器／OS认证；PreviewGroup轨道调度另待审，API／Token不变。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/picker/docs/zh-CN.md",
+    "paragraphs": [
+      "本轮最终Picker30项／4文件通过，包含10项本批专项；受影响Maple合并532项／95文件、根只读lint、类型与共享29项通过。运行时候选已分类，不冒充原生触摸／OS或全组件验收。",
+      "运行时资源审计（2026-10-16）：限域接管调度和清理，保留并行 disabled／ARIA、字段映射、级联和选择 API。媒体监听绑定原 query／回调身份，停用、卸载及动态弹层隐藏时解绑并退休旧动效，重新激活建立新绑定。过渡完成只接受当前列／原 scroller 的自身 transform；旧列、子节点冒泡、其他属性和重复消费不提交选择。change 通知同步发起新选择时，旧续体不写回旧值。原 200／1000ms、键盘和 reduce 行为保留；原生触摸／任意同节点无身份旧 transition 独立待验。现有键盘／禁用示例保留并行修改。证据：design-ui/audits/evidence/form-picker-runtime-closure-2026-10-16/results.json。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/pull-refresh/docs/en-US.md",
+    "paragraphs": [
+      "Gesture follow-up: touchcancel only cancels and never starts refresh. Target replacement, disabled and suspension/disposal stop the gesture and detach original-node listeners; old move/end cannot affect a new activation. Recheck lifetime after geometry reads. Private per-element/class leases keep locks until the last holder releases, preserving pre-existing external classes; external mid-lease mutations or duplicate library copies are not coordinated. Final15 gesture plus17 timer cases/full37 pass in JSDOM, not trusted touch/real CSS/OS acceptance.",
+      "success-duration(default2000ms) is a success display deadline; animation-duration(default300ms) drives rebound/reset, while internal150ms icon-name waiting matches the icon transition parameter. These are distinct responsibilities, not one CSS motion Token. New requests, disabled, suspension or disposal cancel old timers; consumed/cancelled callbacks cannot overwrite new loading and cancelled icon Promises settle. Current controlled true acknowledgement preserves one refresh; activation settles the current model without replaying success display. Cleanup removes only locks added by this instance, preserving pre-existing external locks. The17 targeted/full22 JSDOM tests do not certify full gestures/touchcancel/multi-instance lock counting/stale listener/native browser behavior, which remain separate."
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/pull-refresh/docs/zh-CN.md",
+    "paragraphs": [
+      "手势阶段补验：touchcancel只取消，不触发refresh；target切换、禁用、停用／卸载停止当前手势，解绑原节点监听。旧move／end不能作用于新激活；几何读取中卸载后不继续操作。滚动锁按原元素／类名的私有租约计数，最后一个持有者才移除库新增class，外部预先存在的class保留；不宣称协调外部代码中途更改或重复库副本。当前15手势＋17计时专项、完整37项通过，均为JSDOM，不是可信触摸／真实CSS／OS验收。",
+      "success-duration默认2000ms是成功展示期限；animation-duration默认300ms用于回弹／复位，内部图标名称等待150ms与图标过渡参数相同，不能把三者合成一个CSS动效Token。新请求、禁用、停用或卸载取消旧计时，已取消／消费回调不覆盖新加载，取消图标等待会结束Promise。当前受控true回填仍保留一次refresh，激活按当前modelValue结算，不重播旧成功展示；清理只移除本实例新增的锁，不移除外部已有锁。本批17专项／完整22项为JSDOM证据；完整手势、touchcancel、滚动锁多实例计数、旧监听及真实浏览器仍待独立验收。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/ripple/docs/en-US.md",
+    "paragraphs": [
+      "Unified dispatch consumes pending work once. Cancelled/consumed callbacks cannot create/activate waves or clear a fresh request after re-enabling. Reentrant disposal during geometry/style reads stops further work and cleans appended waves. Creation30ms, activation20ms and250ms minimum display/removal policies remain unchanged, not new CSS duration Tokens. The2026-10-15 controlled11-case extension/full33 tests are timer/JSDOM evidence, not KeepAlive deactivation, native touch, OS or cross-document adoption acceptance."
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/ripple/docs/zh-CN.md",
+    "paragraphs": [
+      "2026-10-16当前源码重验36项通过（含既有11调度／12动效及3鼠标），前后hash相同。鼠标按下、document释放、blur及触摸兼容去重仅为受控回归证据，不是本批产品修复或可信原生输入验收。800ms是Date.now门槛，不是新增timer／CSS duration；人工更新分类hash，adopt／OS等独立边界保留。",
+      "统一调度按待执行任务消费一次；取消后或已消费的旧回调不会创建／激活波纹，也不会清掉重新启用后的新请求。几何／样式读取中卸载会停止后续并清理已插入波纹。30ms创建、20ms激活和250ms最小展示／删除策略保持，不是新增CSS时长Token。2026-10-15新增11专项、完整33项通过，为受控timer／JSDOM证据；不认证KeepAlive停用、原生触摸、OS或跨文档adopt。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/select/docs/en-US.md",
+    "paragraphs": [
+      "Menu group headings are flat li siblings of options. The first heading has no extra top margin; later headings use group-title-padding-top. Vertical padding consumes popup-padding-vertical and group-title-padding-horizontal defaults to option-padding-horizontal. Catalog and rendered-DOM regressions preserve parallel inline/popup behavior; compiled CSS/JSDOM are not native layout acceptance.",
+      "FieldPresentation searches are consumed once by the current active editor/request. Replacement,close,read,disabled,suspension and disposal retire old work. Matching Form reset retires searches;unrelated reset preserves them. Old render callbacks cannot reclaim focus after reopen/reactivation. Preserve search-delay,draft and submit behavior. The internal CSS min(var(...),90vw) expression is retained for the browser rather than folded by Less;this adds no public variable API or native-layout acceptance."
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/select/docs/zh-CN.md",
+    "paragraphs": [
+      "菜单分组标题是与选项平级的 li；首标题无额外上边距，其余使用 group-title-padding-top。标题纵向 padding 消费 popup-padding-vertical，水平 group-title-padding-horizontal 默认跟随 option-padding-horizontal。已同步实际编译目录并补平铺 DOM 回归，保留 menu／list／picker 的并行业务。编译与 JSDOM 不等于原生布局验收。",
+      "每次左键按下建立独立session：代次、track／thumb节点、不可变轴／起点及实际 thumb.ownerDocument.defaultView 共同拥有move/end。监听 mousemove、mouseup、contextmenu和blur只注册于原owner window；正常抬起、右键菜单取消、窗口失焦、几何／方向变化、停用和卸载都解除整组监听并清dragging／mouseOffset。修复原contextmenu未解绑、卸载／停用无清理及iframe误绑全局window。旧move不能推动新手势，旧end不能释放新手势；激活只允许新按下，不恢复旧drag。",
+      "生命周期 availability 控制保留 scrollTo／scrollTop／scrollLeft、thumb命令、scroll通知与resize测量。停用／卸载使操作和绑定代次失效；激活重读当前几何，只接受当前绑定事件。旧resize／scroll／thumb入口即使在重新激活后交付仍无效。几何读取、响应式提交和子thumb回调之后核对操作／原容器／生命周期，防止同步卸载或新测量重入后由外层旧任务覆盖结果。同步滚动一旦交给浏览器已经发生，逻辑失效不能撤销它；原生 smooth 插值及其取消不在本批证明范围。",
+      "活动选项nextTick滚动只等渲染，不等CSS动画完成。关闭／重开、新导航、停用、卸载使旧任务失效；回调只消费一次，空列表也不重放。保留选择／键盘／滚动入口在停用／卸载后无效，激活允许新命令；晚登记下拉仍支持。虚拟回调后再核对状态才写DOM。两端专项各14、共享消费者Cedar93／Maple96回归通过，受控队列不算浏览器／OS或完整下游认证；API与CSS变量不变。",
+      "FieldPresentation 搜索按当前激活编辑器／请求一次消费；替换、关闭、read、禁用、停用与卸载退休旧任务。匹配字段 Form reset 退休搜索，无关 reset 保留当前任务；关闭后的旧渲染回调不能在重开／激活后夺回焦点。既有 search-delay、草稿／提交业务不变。展示容器内部 min-width 的 CSS min(var(...), 90vw) 保留为浏览器表达式，避免 Less 丢失变量消费；不是新增公开变量 API 或原生布局验收。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/swipe-cell/docs/en-US.md",
+    "paragraphs": [
+      "Release suppresses click for the current event turn; its zero-delay unlock is internal sequencing, not a CSS motion Token. New touch/disabled/suspension/disposal cancel old unlocking; stale callbacks cannot release a new drag's lock. Touch cancellation or suspension restores the pre-gesture position without opening; activation does not resume old touches. Original node/document listeners are removed on suspension/disposal, and old bindings are inert. Reopening inside click notification is not closed by the old continuation. The30% threshold and existing CSS transition remain unchanged. Full48 JSDOM tests pass, without native touch/click-order/OS certification.",
+      "A close confirmation belongs to its original request. Reopening (even the same side), a fresh close/touch, name/before-close/disabled changes, suspension or disposal invalidate it. Retained inactive/disposed open/close are inert; activation accepts fresh commands only. Disabled-triggered close still honors a current false veto; explicit close propagates hook rejection. This business Promise is not a motion Token. The18 targeted/full27 tests use JSDOM; click unlocking and drag resources remain separately pending, without native touch/OS acceptance."
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/swipe-cell/docs/zh-CN.md",
+    "paragraphs": [
+      "拖动结束会抑制同一事件轮次的click，0ms解锁为内部顺序策略，不是CSS动效Token。新手势／禁用／停用／卸载取消旧解锁，旧回调不能放行新拖动。touchcancel或停用会恢复手势开始前的位置，不把取消算作打开；重新激活不续接旧手势。原节点／文档监听在停用和卸载时解绑，旧绑定无效。click通知中的重开不被旧后续关闭覆盖；30%阈值和既有CSS过渡保持。当前完整48项JSDOM测试通过，不等于原生触摸／合成click顺序／OS验收。",
+      "关闭确认只作用于原请求；重开（包括同侧）、再次关闭、新滑动、name／before-close／disabled 更新或停用／卸载后，旧确认不得收起当前面板。停用／卸载后的保留 open／close 无效，重新激活可发新命令，不恢复旧确认。disabled 触发关闭仍尊重当前 before-close 的 false，显式 close 的拒绝仍返回调用方。业务 Promise 不属于动效 Token；本轮18专项／完整27项为JSDOM验收，点击解锁与拖动资源仍待独立检查，未认证原生触摸或OS。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/time/docs/zh-CN.md",
+    "paragraphs": [
+      "2026-10-16 限域样式／库存审查：实际 clock／picker 后代样式入口及过渡声明已编译核对；保留并行时间业务和默认动效，不外推完整 reduced-motion 或原生帧验收。 本批 Maple 32 项／5 文件（8 项新增 DOM）、共享局部门禁 51 项通过；未修改生产样式／默认 Token，不是原生验收。准确 Token 名称／声明以生成参考目录为准。 Evidence: design-ui/audits/evidence/remaining-six-inventory-closure-2026-10-16/results.json。",
+      "阶段二（2026-10-16）：Cedar TimeColumn已完成受测取消／停用卸载／渲染续体接线，16组件专项通过；Time运行时候选归档不表示本页并行面板／原生滚轮稳定，Maple运行时未改。证据：design-ui/audits/evidence/time-column-lifecycle-2026-10-16/results.json。",
+      "审计边界（2026-10-16）：本批仅修复Cedar列表的私有滚动任务；Maple滚轮并行实现保持原样，不新增对应桌面内部组件。Cedar工具14专项通过不代表Maple原生滚轮、OS减弱动态或Time整族已验收；面板／边界示例尚需并行工作交接。证据：design-ui/audits/evidence/time-scroll-task-2026-10-16/results.json。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/time-range/docs/zh-CN.md",
+    "paragraphs": [
+      "2026-10-16 限域样式／库存审查：背景 Token 已有本地 picker／time body 别名，已核对 picker／clock 后代节点；mask 的 background-image 消费只作符号可达性，不宣称局部重算或像素验收。 本批 Maple 32 项／5 文件（8 项新增 DOM）、共享局部门禁 51 项通过；未修改生产样式／默认 Token，不是原生验收。准确 Token 名称／声明以生成参考目录为准。 Evidence: design-ui/audits/evidence/remaining-six-inventory-closure-2026-10-16/results.json。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/anchor/README.md",
+    "paragraphs": [
+      "本批是受控 Vue/JSDOM、RAF／时钟及实际组件接线测试，不等于真实字体布局、浏览器原生滚动绘制、OS 减少动效偏好或跨文档验收。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/back-top/README.md",
+    "paragraphs": [
+      "显示测量帧与duration／easing滚动动画分别管理归属；换目标、停用、卸载及已消费旧回调不能重放。easing后再核对请求；RAF申请／取消与时间原点使用目标所属窗口。保留命令在停用／卸载后无效，激活不恢复旧动画。两端专项各14／完整各30通过，受控队列／iframe不是原生浏览器／OS验收。默认200ms与API不变，不新增CSS变量。",
+      "BackTop 的 duration（200ms）与 easing（quartOut）是 JS requestAnimationFrame 滚动参数，不是 CSS 动效 Token；现有组件变量只负责几何、配色、焦点及层级。减少动效偏好读取滚动目标 ownerDocument 的窗口；动画途中开启时在下一帧立即回顶，保留横向滚动，不承诺同步 OS 事件回调。重复点击、目标切换、停用或卸载使旧帧失效，包括已经出队的回调。滚动可见性合帧不是视觉动画。此处以模拟 RAF／iframe 文档与 SSR 回归验证，不增加真实浏览器／OS 通过数。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/card/README.md",
+    "paragraphs": [
+      "渲染任务在源变化时同步递增请求代次；关闭、方向切为横向、新任务、停用或卸载后，旧 nextTick／计时器／双帧续体无权改变新阶段。渲染和计时交付消费一次，几何读取返回后再次核对节点／请求／生命周期，避免测量钩子同步卸载后继续排双帧。停用／卸载清理两计时并禁止保留 close／click 输入；激活依当前 floating／direction 发起新阶段，不重放旧任务，初始 KeepAlive 激活不重复等待。",
+      "500ms涟漪等待属于交互策略；floating-duration默认250ms供回落恢复与transition消费。DoubleRaf负责布局稳定，取消只拒绝旧续体写入，不撤销底层帧。公共API／CSS变量不变；完整Card Cedar21／Maple44及专项各15为受控测试，不是原生浏览器／OS认证。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/carousel/README.md",
+    "paragraphs": [
+      "循环切换的 nextTick 负责等渲染，结算计时属于 visual-completion，随后双帧属于 state-settlement。请求／轨道节点／窗口核对及每阶段消费位，避免旧计时清新偏移、重复首帧分叉、旧次帧释放新的 noMotion。取消物理计时与原窗口所持 RAF；即使已出队的回调再交付，也必须先核对权限。内容重排与配置后的渲染测量任务同样绑定代次，停用后不重放。自动播放和动效阶段分别管理，不把播放间隔套进系统 duration Token。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/countdown/README.md",
+    "paragraphs": [
+      "每帧在清空句柄、计算和通知前验证代次，并在 change 回调后再次核对；回调内 reset／pause／start 的新任务不能被旧帧覆盖，已消费帧不能再次更新或抢占后继帧。结束只通知一次，reset 允许新一轮结束。两端受控时钟／RAF各8项通过，其中6项基线失败；完整Countdown Cedar18／Maple20项通过。没有新增CSS变量／公开API，模拟RAF不等于真实浏览器／OS验收。",
+      "真实IAB default/light业务生命周期各端1组通过：实际递减、公开pause／start、KeepAlive停用回调稳定、停用时time重置到900ms不后台计时、激活恢复及卸载后回调稳定，最终节点0。稳定缓存容器保证inactive更新真实传入组件，不把父级延迟传值误记产品缺陷。非已出队竞态／跨窗口／OS证明。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/field-decorator/README.md",
+    "paragraphs": [
+      "2026-10-16 限域消费核验：field-border-width／focus-color／error-color 仍用于边框、提示或清除按钮 outline，不能当作无用 Token 删除；已同步三页生成目录。两端各新增 9 项真实 Input／Textarea／InputNumber DOM 回归，纳入 Cedar 106 项／13 文件、Maple 129 项／15 文件；共享目录 17 项及 384 项颜色／覆盖检查通过。finally 卸载保证夹具资源清理；不改并行业务／默认样式，不冒充原生焦点可辨识性验收。证据：design-ui/audits/evidence/field-focus-caret-catalog-2026-10-16/results.json。\n"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/filter-form/README.md",
+    "paragraphs": [
+      "目录两节已同步；新增 2 项 DOM 回归纳入 FilterForm／Form 75 项／17 文件，共享目录 8 项通过。仅属 Less／JSDOM 层，不替代原生布局／焦点验收；既有业务、示例和样式默认值保持。全量目录另受 FieldDecorator 并行漂移阻塞，见 design-ui/audits/evidence/filter-form-token-catalog-2026-10-16/results.json。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/icon/README.md",
+    "paragraphs": [
+      "transition默认0，是JS视觉替换参数，不是新增CSS Token；CSS和计时使用同一归一化时长，负值／非有限值按0。时长改变取消旧阶段并立即提交当前名称。替换／减少动效变化／停用／卸载使旧计时回调失效，已消费回调不能清掉新动画。KeepAlive停用不排动画、解绑偏好监听，激活显示最新名称、不重放旧动画；监听使用实际span所属窗口，旧监听不能影响新绑定。注册／slot优先／spin保留。两端9项模拟回归各6基线失败，完整Icon Cedar20／Maple21通过，不等于真实OS或浏览器验收。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/infinite-scroll/README.md",
+    "paragraphs": [
+      "触底检测的 RAF（零延迟定时器 fallback）只合并测量，不是 CSS 动效时长。替换绑定、停用和卸载使旧任务及观察器失效，已消费回调不重放、不清掉新句柄；保留 check／retry 在停用／卸载后无效，激活使用新绑定与新检查。业务请求由调用方负责取消。两端各10项受控专项通过，不等于原生浏览器／OS／跨文档验收。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/input-number/README.md",
+    "paragraphs": [
+      "长按每个计时回调在步进前校验并消费自身代次，取消、替换、释放、停用和卸载后的旧回调不修改值；步进内部重新开始长按，也不能被旧回调的返回值停止。停用期间不接受新的长按任务，重新激活后需要新的用户长按，不自动恢复旧手势。首次800ms、重复150ms是交互节奏，不是CSS动效时长，不新增动效Token。两端各8项受控计时／旧回调测试通过（其中7项先失败），完整InputNumber Cedar45／Maple48项通过；不等于真实浏览器或OS验收。",
+      "真实IAB default/light长按生命周期各端1组通过：首次／后续重复、取消后稳定、重新按下并在800ms前卸载、超过期限仍无更新，最终节点0。入口原生点击但内部pointerdown／pointercancel由夹具脚本发出，不等于原生触控／长按、已出队竞态或跨窗口／OS验收。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/list/README.md",
+    "paragraphs": [
+      "VirtualList 消费者生命周期已专项验证：新请求、数据变化、停用及卸载使旧 nextTick 补偿失效，保留命令在停用／卸载后无效，激活不重放旧补偿。补偿不是 RAF 插值，不新增 CSS Token／API；各端15项专项通过，完整 List Cedar41／Maple34通过，真实浏览器新增0。既有 key／index／align 及测量契约保持。下文分类说明保留先前时点。",
+      "`scrollIntoView` 仅在虚拟模式向内部 VirtualList 的 `scrollTo` 转发 options，不是直接调用 DOM `scrollIntoView`，也没有本地动效计时器。原生滚动、减少动效或保留命令的生命周期须以 VirtualList 消费者专项为准；方法名／调用提示不等于视觉验收。本轮源码分类不改 List API／实现。",
+      "2026-10-16当前源码重验：实际行几何／自身scroll命令校正及响应式padding版本的15生命周期＋2测量用例通过，List相关共45项，另Tree实际组合7项通过；前后源码hash相同，仅更新分类登记，未改产品实现。新测量用例不认证任意破坏性几何重入、原生smooth／可信输入或OS；旧数字保留为历史。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/mention/README.md",
+    "paragraphs": [
+      "textarea 的测量镜像在渲染后同步滚动偏移（包括回到 0）；这是状态同步，不是动画完成，不引入时长 Token。打开后文本／候选项变化会更新定位。关闭、禁用、切换输入模式、停用及卸载会失效旧任务；激活重新读取当前节点，不重放旧任务。nextTick 不能物理撤销，代次和节点归属只阻止旧续体写入，已执行的原生滚动不能回滚。",
+      "本批使用受控 Vue/JSDOM、nextTick 队列及输入／浮层／观察器替身，不能代替真实字体换行、输入法、原生滚动绘制或跨文档浏览器验收。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/message/README.md",
+    "paragraphs": [
+      "展示duration是业务期限，不是CSS进出场时长；0常驻，只有有限正值排自动关闭。hover保留剩余期限，KeepAlive重新激活重新开始完整配置期限；停用／卸载使旧计时失效。2026-10-15复核计时源码hash与既有审计一致，补录business-clock分类；两端现有相关回归通过不新增原生浏览器验收，也不自动认证服务nextTick更新身份或跨文档迁移。",
+      "真实IAB default/light/top服务的默认、600ms、零和离场重开四组已通过；重开可替换根DOM，不能依赖其节点身份。其他主题／位置、hover、KeepAlive和真实OS仍需独立验收。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/nav-menu/README.md",
+    "paragraphs": [
+      "根级响应式测量与selection返回焦点也按生命周期／配置代次失效，回调消费一次。停用的resize不读取几何，激活重新测量当前布局；几何getter中卸载不会继续访问旧节点。新的selection或显式context.focus替代旧返回焦点。滚动8专项与根级调度13专项均为JSDOM受控证据，不代表原生浏览器布局验收。",
+      "节点级enter／Escape同样取消旧焦点续体，停用／卸载入口无效，激活不重放旧请求；等待期间当前文档已有其他连接控件接管焦点时不抢回。节点12专项属于受控JSDOM证据，不代表原生键盘／布局验收。",
+      "独立Item在停用／卸载时释放原窗口resize／scroll监听，即使受控open拒绝关闭也不会后台测量；保留close／select／setOpen入口无效。激活重新绑定当前仍打开的面板，不恢复旧回调。测量读取后复核卸载，open／close焦点任务消费一次，外部控件接管焦点时不抢回。Item13专项为受控证据。",
+      "根级selection返回与响应式折叠归位也保留当前外部控件焦点；只有原焦点仍持有或节点移除后落到body等未接管状态才结算。显式context.focus仍是主动焦点命令。根级16专项为受控JSDOM证据，不代表原生浏览器／跨文档验收。",
+      "停用／卸载后保留的showOption、setCollapsed、setActiveItem及内部select／expand／activateItem无效，激活后可发新命令。互斥关闭按当前注册快照／代次执行，回调中卸载或启动新轮次会停止旧后续；selection重入不补发旧select。注销按原节点身份保护同key替换，卸载释放注册表。根命令17专项、NavMenu完整103项7文件通过，属于受控DOM／续体证据；候选分类收口不等于原生键盘、布局、跨文档或OS已验收。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/notification/README.md",
+    "paragraphs": [
+      "duration控制业务展示期限（默认3000ms、0常驻），不消费CSS进入／离场时长。只有有限正值调度；手动关闭、停用／卸载清理计时和旧代次，KeepAlive激活从完整期限重启。2026-10-15仅补录既有计时源码的business-clock分类，17项当前回归通过不增加原生浏览器／OS验收。Maple没有对应Notification，不制造移动副本。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/README.md",
+    "paragraphs": [
+      "验证边界（2026-10-16）：旧运行器timer spy卸载可删除全局计时器，已由独立失败回归定位，并修复本聊天四组计时测试的原始描述符恢复，不是Scheduler产品计时缺陷。3项夹具专项／63项受影响回归通过；完整套件结果另见design-ui/audits/evidence/scheduler-timer-fixture-2026-10-16/results.json，不以局部通过或夹具修复替代原生交互、全局分类hash验收。",
+      "最终完整Scheduler串行／默认线程均各401项63文件通过且exit0，不重复累加；此前整套失败保留为历史，不再列为当前复验阻塞。这不证明所有旧超时都由夹具或负载造成，也不替代原生交互验收。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/scrollbar/README.md",
+    "paragraphs": [
+      "每次左键按下建立独立session：代次、track／thumb节点、不可变轴／起点及实际 thumb.ownerDocument.defaultView 共同拥有move/end。监听 mousemove、mouseup、contextmenu和blur只注册于原owner window；正常抬起、右键菜单取消、窗口失焦、几何／方向变化、停用和卸载都解除整组监听并清dragging／mouseOffset。修复原contextmenu未解绑、卸载／停用无清理及iframe误绑全局window。旧move不能推动新手势，旧end不能释放新手势；激活只允许新按下，不恢复旧drag。",
+      "生命周期 availability 控制保留 scrollTo／scrollTop／scrollLeft、thumb命令、scroll通知与resize测量。停用／卸载使操作和绑定代次失效；激活重读当前几何，只接受当前绑定事件。旧resize／scroll／thumb入口即使在重新激活后交付仍无效。几何读取、响应式提交和子thumb回调之后核对操作／原容器／生命周期，防止同步卸载或新测量重入后由外层旧任务覆盖结果。同步滚动一旦交给浏览器已经发生，逻辑失效不能撤销它；原生 smooth 插值及其取消不在本批证明范围。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/trigger/README.md",
+    "paragraphs": [
+      "测量工具对observer绑定和RAF批次分别保存代次，换目标／停用后旧entries与已出队旧帧不会消费新的测量任务；正常几何测量不受CSS动效时长影响。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/typography/README.md",
+    "paragraphs": [
+      "本批为受控 Vue/JSDOM、模拟计时和 RAF 回归，不证明真实字体布局、剪贴板权限、原生帧或 OS 行为。Maple 只有 Typography 工具指南，无对应运行时组件；不为对齐新增组件或 CSS 变量。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/upload/README.md",
+    "paragraphs": [
+      "“暂停本地缩略图 Promise”使用公开create-thumbnail-url回调手动控制返回/拒绝；不是原生FileReader故障注入。等待中重置只使旧事务失效，保留Demo旧任务以便观察迟到结果；立即再加入文件应启动新任务，返回旧任务不入队，返回新任务才加入。拒绝返回read-error，之后重新加入可恢复；停用/卸载结清Demo等待。reset与KeepAlive停用会断开旧串行等待链，旧Promise不返回也不阻止新代次操作，但不会物理取消业务Promise；自定义URL仍由调用方管理。",
+      "开启“原生Blob/object-url”后，后续合法File通过浏览器URL.createObjectURL生成本地blob:地址，并显示在16px图片中；此开关优先于data-url，只影响后续新增项。Blob URLs统计当前blob项目，Decoded images累计两类图片的load事件，删除不递减、重置归零。组件拥有其生成URL并在删除/重置/卸载释放；浏览器Demo核对解码与列表清理，revokeObjectURL的精确调用由自动回归验证，不能仅凭图片移除宣称原生回收已实测。不代表自定义外部URL或读取中取消全部通过。",
+      "示例通过公开 `useUploader.addFiles` 加入合成图片，由 Upload 展示受控队列。先加入小图片，再分别替换为文本或大于 1 MiB 的图片，观察 `accept` / `max-file-size` 拒绝原因。重置后连续加入三张 768 KiB 图片，第三张会超出 2 MiB 合计限制；再次重置后加入四张小图片，第四张触发 `max-files`。删除已接受项后可释放名额。所有校验均发生在 `before-read` 返回替换文件之后，不发送请求。"
+    ]
+  },
+  {
+    "file": "cedar-design-web/packages/cedar-ui/src/time/picker/README.md",
+    "paragraphs": [
+      "阶段二已补齐TimeColumn消费接线：隐藏／停用／卸载及value／visible／list变化取消原任务；等待渲染的续体一次消费，测量后复核归属。保留点击要求当前可见、可用且原item仍有效，移除引用及时清理；激活对齐当前值而不重播动画。16组件专项及受影响149项30文件通过；只表示运行时候选分类收口，不认证并行面板、Maple滚轮、任意同item引用回调乱序或原生／OS。证据：design-ui/audits/evidence/time-column-lifecycle-2026-10-16/results.json。",
+      "阶段一的14项受控滚动测试与131项Time回归只认证工具，组件接线当时待审，现见上方阶段二；原生滚动／OS偏好仍独立待验。阶段一逐组证据：design-ui/audits/evidence/time-scroll-task-2026-10-16/results.json。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/field-decorator/README.md",
+    "paragraphs": [
+      "2026-10-16 限域消费核验：field-border-width／focus-color／error-color 仍用于边框、提示或清除按钮 outline，不能当作无用 Token 删除；已同步三页生成目录。两端各新增 9 项真实 Input／Textarea／InputNumber DOM 回归，纳入 Cedar 106 项／13 文件、Maple 129 项／15 文件；共享目录 17 项及 384 项颜色／覆盖检查通过。finally 卸载保证夹具资源清理；不改并行业务／默认样式，不冒充原生焦点可辨识性验收。证据：design-ui/audits/evidence/field-focus-caret-catalog-2026-10-16/results.json。\n"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/back-top/docs/zh-CN.md",
+    "paragraphs": [
+      "显示测量帧与duration／easing滚动动画分别管理归属；换目标、停用、卸载及已消费旧回调不能重放。easing后再核对请求；RAF申请／取消与时间原点使用目标所属窗口。保留命令在停用／卸载后无效，激活不恢复旧动画。两端专项各14／完整各30通过，受控队列／iframe不是原生浏览器／OS验收。默认200ms与API不变，不新增CSS变量。",
+      "BackTop 的 duration（200ms）与 easing（quartOut）是 JS requestAnimationFrame 滚动参数，不是 CSS 动效 Token；现有组件变量只负责几何、配色、焦点及层级。减少动效偏好读取滚动目标 ownerDocument 的窗口；动画途中开启时在下一帧立即回顶，保留横向滚动，不承诺同步 OS 事件回调。重复点击、目标切换、停用或卸载使旧帧失效，包括已经出队的回调。滚动可见性合帧不是视觉动画。此处以模拟 RAF／iframe 文档与 SSR 回归验证，不增加真实浏览器／OS 通过数。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/card/docs/en-US.md",
+    "paragraphs": [
+      "500ms ripple wait is interaction policy; floating-duration defaults to250ms for collapse and transition. DoubleRaf settles layout; cancellation rejects stale continuation writes, not underlying frames. Public API and CSS variables are unchanged. Full Card Cedar21/Maple44 and scoped15 each are controlled tests, not native browser/OS certification."
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/card/docs/zh-CN.md",
+    "paragraphs": [
+      "渲染任务在源变化时同步递增请求代次；关闭、方向切为横向、新任务、停用或卸载后，旧 nextTick／计时器／双帧续体无权改变新阶段。渲染和计时交付消费一次，几何读取返回后再次核对节点／请求／生命周期，避免测量钩子同步卸载后继续排双帧。停用／卸载清理两计时并禁止保留 close／click 输入；激活依当前 floating／direction 发起新阶段，不重放旧任务，初始 KeepAlive 激活不重复等待。",
+      "500ms涟漪等待属于交互策略；floating-duration默认250ms供回落恢复与transition消费。DoubleRaf负责布局稳定，取消只拒绝旧续体写入，不撤销底层帧。公共API／CSS变量不变；完整Card Cedar21／Maple44及专项各15为受控测试，不是原生浏览器／OS认证。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/carousel/docs/en-US.md",
+    "paragraphs": [
+      "2026-10-16 scoped style/inventory review: Real track/item targets for three effects, duration/reduce rules and fade grid-area are checked;preserve the parallel repair and timing policy. Maple32tests/5files(8new DOM cases)and51scoped shared checks pass;no production style/token-default edits or native acceptance. Use the generated reference for exact token names/declarations. Evidence: design-ui/audits/evidence/remaining-six-inventory-closure-2026-10-16/results.json。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/countdown/docs/zh-CN.md",
+    "paragraphs": [
+      "每帧在清空句柄、计算和通知前验证代次，并在 change 回调后再次核对；回调内 reset／pause／start 的新任务不能被旧帧覆盖，已消费帧不能再次更新或抢占后继帧。结束只通知一次，reset 允许新一轮结束。两端受控时钟／RAF各8项通过，其中6项基线失败；完整Countdown Cedar18／Maple20项通过。没有新增CSS变量／公开API，模拟RAF不等于真实浏览器／OS验收。",
+      "真实IAB default/light业务生命周期各端1组通过：实际递减、公开pause／start、KeepAlive停用回调稳定、停用时time重置到900ms不后台计时、激活恢复及卸载后回调稳定，最终节点0。稳定缓存容器保证inactive更新真实传入组件，不把父级延迟传值误记产品缺陷。非已出队竞态／跨窗口／OS证明。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/counter/docs/zh-CN.md",
+    "paragraphs": [
+      "长按保持600ms等待＋100ms重复，首次步进在700ms；不是CSS动效时长。两个方向分别取消／消费任务，同方向新按替代旧按；释放、停用、卸载和不可用配置使旧回调失效，激活不恢复旧手势。回调内释放不续排，停用保留press／直接步进无效。2026-10-15的32专项／完整55项为受控Counter／KeepAlive证据，不等于原生触摸或异步beforeChange请求身份验收；公开数值／格式和回调协议保持。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/date-range/docs/en-US.md",
+    "paragraphs": [
+      "2026-10-16 scoped style/inventory review: Existing range-background aliases reach picker/date/time-body descendants in picker/calendar. A root-derived mask is not guaranteed to recompute after a local background override;override --mp-picker-mask-background-image directly to customize it. Maple32tests/5files(8new DOM cases)and51scoped shared checks pass;no production style/token-default edits or native acceptance. Use the generated reference for exact token names/declarations. Evidence: design-ui/audits/evidence/remaining-six-inventory-closure-2026-10-16/results.json。",
+      "Audit boundary (2026-10-16):21 controlled Cedar range-shortcut/header-continuation cases pass;Maple runtime/parallel presentation is unchanged. This does not certify native dates/wheels,OS or complete Date-family integration. The100ms grace is interaction policy,not CSS completion. Evidence:design-ui/audits/evidence/date-range-shortcut-preview-2026-10-16/results.json."
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/field-decorator/docs/zh-CN.md",
+    "paragraphs": [
+      "2026-10-16 限域消费核验：field-border-width／focus-color／error-color 仍用于边框、提示或清除按钮 outline，不能当作无用 Token 删除；已同步三页生成目录。两端各新增 9 项真实 Input／Textarea／InputNumber DOM 回归，纳入 Cedar 106 项／13 文件、Maple 129 项／15 文件；共享目录 17 项及 384 项颜色／覆盖检查通过。finally 卸载保证夹具资源清理；不改并行业务／默认样式，不冒充原生焦点可辨识性验收。证据：design-ui/audits/evidence/field-focus-caret-catalog-2026-10-16/results.json。\n"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/form/docs/en-US.md",
+    "paragraphs": [
+      "Completion-wait update (2026-10-16):after rendering,follow current FormDetails transitions instead of unconditionally waiting300ms. Positive motion settles preparation frames then reads computed property/duration/delay lists;absent/zero motion proceeds immediately,negative delays apply,and only unreadable styles use the private300ms fallback. Replacement/suspension/disposal cancel owned preparation frames/timers and reject late delivery. Preserve300ms interpolation,CSS Tokens and validation/submission business logic. Existing demos and parallel changes are untouched;controlled tests,Less and native acceptance remain distinct. Earlier fixed-wait pending notes are historical. Evidence:design-ui/audits/evidence/form-picker-runtime-closure-2026-10-16/results.json.",
+      "Phase-three authorized repair:scroll-only validation/policy versions and original field membership/name/target checks retire stale automatic work on new validation/clear/reset/set without cancelling explicit manual scrolling. Preserve results/callbacks,submitEpoch/submission semantics;controller/FormItem unchanged. Nineteen eligibility tests;full Form106tests/18files,root read-only lint,types and shared29tests pass. Fixed300ms completion wait remains open;not full-family/native acceptance. Pending statements below describe historical pre-authorization/earlier phases,not the current repair status. Evidence:design-ui/audits/evidence/form-scroll-validation-baseline-2026-10-16/results.json.",
+      "Phase-three pending:10automatic-scroll eligibility baseline cases give6fail/4controls for stale validation across activation,unregistered/replaced targets,error clearing/automatic policy disable and callback reentry. Source unchanged;prior87passing tests do not certify this expanded suite. Need local validation-to-scroll wiring authorization,preserving results/callbacks/submitEpoch/submission semantics. Evidence:design-ui/audits/evidence/form-scroll-validation-baseline-2026-10-16/results.json.",
+      "Phase two:Form-private interpolation owns original-window RAF cancellation across replacement/suspension/disposal,one-shot stale-frame rejection and read/write reentry. Twenty-one wait/interpolation controls pass. Preserve300ms wait plus300ms linear motion,initial/dynamic reduce,shared helper API and parallel submission changes. Fixed completion waiting,async validation/current-field eligibility remain separate,not full-family/native acceptance. Evidence:design-ui/audits/evidence/form-scroll-animation-lifecycle-2026-10-16/results.json.",
+      "Authorized follow-up:only the scroll wait now has generation/one-shot/mount-activation-disposal guards and post-geometry rechecks. Ten targeted cases pass;preserve parallel submission changes,300ms and default linear scrolling. In-flight helper cancellation,fixed wait versus FormDetails completion/reduce,and validation eligibility remain separate;not full-family closure. Final verification:design-ui/audits/evidence/form-scroll-wait-task-2026-10-16/results.json.",
+      "Runtime audit pending (2026-10-16):parallel source is preserved. Six controlled300ms scroll-task baseline cases give three passes/three failures:cancelled/replayed/cross-activation deliveries can still dispatch to the helper;normal dispatch,ordinary unmount cancellation and unknown fields pass. This is not native timer replay proof or a completed fix. Form classification remains open pending authorization for the scroll-task section,preserving current submission changes. Evidence:design-ui/audits/evidence/form-scroll-ownership-baseline-2026-10-16/results.json."
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/icon/docs/zh-CN.md",
+    "paragraphs": [
+      "transition默认0，是JS视觉替换时长，不新增CSS Token。CSS与计时共享归一化值，负值／非有限值按0；时长改变取消旧阶段并提交当前名称。名称替换／减少动效／停用／卸载使旧任务失效，已消费回调不能清掉新动画。KeepAlive停用不排动画、解绑偏好监听；激活直接显示最新名称，不重放旧动画。偏好由实际span所属窗口读取，绑定代次隔离已解绑监听。具名注册／slot优先／spin不变。两端新模拟测试各9项（基线6失败／3对照），完整Icon Cedar20／Maple21通过；真实浏览器／OS仍独立待验。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/infinite-scroll/docs/zh-CN.md",
+    "paragraphs": [
+      "触底检测的 RAF（零延迟定时器 fallback）只合并测量，不是 CSS 动效时长。替换绑定、停用和卸载使旧任务及观察器失效，已消费回调不重放、不清掉新句柄；保留 check／retry 在停用／卸载后无效，激活使用新绑定与新检查。业务请求由调用方负责取消。两端各10项受控专项通过，不等于原生浏览器／OS／跨文档验收。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/input-number/docs/zh-CN.md",
+    "paragraphs": [
+      "长按每个计时回调在步进前校验并消费自身代次，取消、替换、释放、停用和卸载后的旧回调不修改值；步进内部重新开始长按，也不能被旧回调的返回值停止。停用期间不接受新的长按任务，重新激活后需要新的用户长按，不自动恢复旧手势。首次800ms、重复150ms是交互节奏，不是CSS动效时长，不新增动效Token。两端各8项受控计时／旧回调测试通过（其中7项先失败），完整InputNumber Cedar45／Maple48项通过；不等于真实浏览器或OS验收。",
+      "真实IAB default/light长按生命周期各端1组通过：首次／后续重复、取消后稳定、重新按下并在800ms前卸载、超过期限仍无更新，最终节点0。入口原生点击但内部pointerdown／pointercancel由夹具脚本发出，不等于原生触控／长按、已出队竞态或跨窗口／OS验收。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/list/docs/zh-CN.md",
+    "paragraphs": [
+      "VirtualList 消费者生命周期已专项验证：新请求、数据变化、停用及卸载使旧 nextTick 补偿失效，保留命令在停用／卸载后无效，激活不重放旧补偿。补偿不是 RAF 插值，不新增 CSS Token／API；各端15项专项通过，完整 List Cedar41／Maple34通过，真实浏览器新增0。既有 key／index／align 及测量契约保持。下文分类说明保留先前时点。",
+      "2026-10-16当前源码重验：实际行几何／自身scroll命令校正及响应式padding版本的15生命周期＋2测量用例通过，List相关共38项，前后hash相同；只更新分类登记，不接管并行实现。测量对照不认证任意破坏性几何重入、原生smooth／可信输入或OS；旧数字保留为历史。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/loading-bar/docs/zh-CN.md",
+    "paragraphs": [
+      "计时任务和宽度／透明度两段渲染续体按原代次消费一次，重启取消旧任务；重复progress不再多推进。计算样式读取中若重启，旧隐藏／卸载不借新代次排队。200ms显示／进度节奏、finishDelay、默认250ms过渡和300／250ms清理下限保持；nextTick仅逻辑失效，不物理删除队列。2026-10-15新增10专项、完整22项通过，为受控服务DOM／时钟证据，不新增原生浏览器或OS验收。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/picker/docs/en-US.md",
+    "paragraphs": [
+      "Runtime ownership audit (2026-10-16):limited scheduling/cleanup takeover preserves parallel disabled/ARIA,field mapping,cascade and selection APIs. Original-query/callback media bindings detach on suspension/disposal/hidden dynamic popup and rebind on activation. Only current-column/original-scroller own transform completion consumes a ticket;replaced columns,child bubbling,other properties and replay cannot submit it. A change callback starting newer selection retires the old post-notification model write. Preserve200/1000ms,keyboard/reduce behavior. Native touch/arbitrary same-element old events remain separately uncertified;parallel demos are untouched. Evidence:design-ui/audits/evidence/form-picker-runtime-closure-2026-10-16/results.json."
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/time/docs/en-US.md",
+    "paragraphs": [
+      "2026-10-16 scoped style/inventory review: Actual clock/picker style entries and transition declarations compile;parallel time logic/default motion remain unchanged. No complete reduced-motion or native-frame acceptance is inferred. Maple32tests/5files(8new DOM cases)and51scoped shared checks pass;no production style/token-default edits or native acceptance. Use the generated reference for exact token names/declarations. Evidence: design-ui/audits/evidence/remaining-six-inventory-closure-2026-10-16/results.json。",
+      "Phase two (2026-10-16): Cedar TimeColumn owns tested cancellation/suspension/disposal/render continuations;16 consumer cases pass. Time runtime-candidate registration does not establish stable parallel panels or native wheels here;Maple runtime is unchanged. Evidence:design-ui/audits/evidence/time-column-lifecycle-2026-10-16/results.json.",
+      "Audit boundary (2026-10-16): only Cedar's private list-scroll task is repaired; Maple wheel parallel implementation remains unchanged,with no new desktop-internal counterpart. Fourteen controlled Cedar helper cases do not certify Maple native wheels,OS reduced motion or the complete Time family. Panel/bounds-example changes still require parallel-work handoff. Evidence:design-ui/audits/evidence/time-scroll-task-2026-10-16/results.json."
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/time-range/docs/en-US.md",
+    "paragraphs": [
+      "2026-10-16 scoped style/inventory review: Existing background aliases reach picker/time-body descendants in picker. Mask background-image consumption is symbolic reachability,not local recomputation or pixel acceptance. Maple32tests/5files(8new DOM cases)and51scoped shared checks pass;no production style/token-default edits or native acceptance. Use the generated reference for exact token names/declarations. Evidence: design-ui/audits/evidence/remaining-six-inventory-closure-2026-10-16/results.json。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/trigger/docs/zh-CN.md",
+    "paragraphs": [
+      "测量工具对observer绑定和RAF批次分别保存代次，换目标／停用后旧entries与已出队旧帧不会消费新的测量任务；正常几何测量不受CSS动效时长影响。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/upload/docs/zh-CN.md",
+    "paragraphs": [
+      "“暂停本地缩略图 Promise”使用公开create-thumbnail-url回调手动控制返回/拒绝；不是原生FileReader故障注入。等待中重置只使旧事务失效，保留Demo旧任务以便观察迟到结果；立即再加入文件应启动新任务，返回旧任务不入队，返回新任务才加入。拒绝返回read-error，之后重新加入可恢复；停用/卸载结清Demo等待。reset与KeepAlive停用会断开旧串行等待链，旧Promise不返回也不阻止新代次操作，但不会物理取消业务Promise；自定义URL仍由调用方管理。",
+      "开启“原生Blob/object-url”后，后续合法File通过浏览器URL.createObjectURL生成本地blob:地址，并显示在16px图片中；此开关优先于data-url，只影响后续新增项。Blob URLs统计当前blob项目，Decoded images累计两类图片的load事件，删除不递减、重置归零。组件拥有其生成URL并在删除/重置/卸载释放；浏览器Demo核对解码与列表清理，revokeObjectURL的精确调用由自动回归验证，不能仅凭图片移除宣称原生回收已实测。不代表自定义外部URL或读取中取消全部通过。",
+      "示例通过公开 `useUploader.addFiles` 加入合成图片，由 Upload 展示受控队列。先加入小图片，再分别替换为文本或大于 1 MiB 的图片，观察 `accept` / `max-file-size` 拒绝原因。重置后连续加入三张 768 KiB 图片，第三张会超出 2 MiB 合计限制；再次重置后加入四张小图片，第四张触发 `max-files`。删除已接受项后可释放名额。所有校验均发生在 `before-read` 返回替换文件之后，不发送请求。"
+    ]
+  },
+  {
+    "file": "maple-design-mobile/packages/maple-ui/src/index-bar/docs/zh-CN.md",
+    "paragraphs": [
+      "共享工具补充8组真实IAB（两端各主文档默认／零时长与同源iframe元素／Window）通过，默认302.5–313.9ms、零时长无RAF、iframe宿主RAF0、位置稳定及目标清零。它验证工具执行，不认证IndexBar首帧／doubleRaf／clickedName／卸载取消，也不认证OS减少动效。"
+    ]
+  }
+]

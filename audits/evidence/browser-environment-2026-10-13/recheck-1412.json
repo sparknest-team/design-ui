@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-13T06:12:43Z",
+  "localTime": "2026-10-13 14:12 Asia/Shanghai",
+  "scope": "Supported Chrome native 200% zoom and Safari/Firefox entry recovery",
+  "newAcceptedCases": 0,
+  "historicalSnapshot": "status.json",
+  "observations": [
+    { "surface": "browser inventory", "available": ["Chrome extension", "Codex MCP Apps", "Codex In-app Browser"], "missing": ["Safari", "Firefox"] },
+    { "surface": "Chrome extension", "identity": "Chrome, extension, id 1, existing extension instance", "operation": "nameSession followed by tabs.list", "timeoutMs": 20000, "result": "Node execution timed out and kernel reset; cannot determine which operation completed. No tab creation, navigation or zoom was attempted." },
+    { "surface": "Safari native control", "result": "Not retried: previous direct supported control hung for a long time and returned timeoutReached; no new supported session was discovered." },
+    { "surface": "Firefox installation", "checked": ["/Applications/Firefox.app", "/Applications/Firefox Developer Edition.app", "/Users/shuaimeng/Applications/Firefox.app", "/Users/shuaimeng/Applications/Firefox Developer Edition.app"], "result": "All four paths absent; custom locations not ruled out." }
+  ],
+  "suites": [
+    { "id": "native-zoom-200", "status": "blocked", "remainingCases": 48, "recovery": "Restore the existing supported Chrome extension connection, then verify native browser UI zoom before running the matrix." },
+    { "id": "safari-100", "status": "blocked", "remainingCases": 48, "recovery": "Provide a responsive supported native Safari control surface or supported Safari browser session." },
+    { "id": "firefox-100", "status": "blocked", "remainingCases": 48, "recovery": "Identify an installed Firefox and a supported control surface; no installation or permission change performed." }
+  ],
+  "sideEffects": "No server started, no test tab created, no user tab claimed, no native zoom changed, no product source changed, no automation resumed.",
+  "next": "Resume only after the relevant supported connection changes; do not repeat hanging controls or count IAB narrow screenshots as native zoom/cross-browser proof."
+}

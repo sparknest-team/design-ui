@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-13",
+  "scope": "controlled timers / manually replayed dequeued callbacks / Vue lifecycle; no real browser or OS acceptance",
+  "baseline": {
+    "cedar": {
+      "failed": 7,
+      "passed": 1
+    },
+    "maple": {
+      "failed": 7,
+      "passed": 1
+    },
+    "probeCorrections": [
+      "Initial capture-all harness included unrelated Cedar timer; restrict capture to800/150 and forward other timers. Do not count initial asymmetric baseline as product evidence.",
+      "Reentrant test now requires second replacement tick; first tick alone incorrectly passed despite lost repeat ownership."
+    ]
+  },
+  "cases": [
+    {
+      "id": 1,
+      "name": "cancelled dequeued callback rejected before step",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 2,
+      "name": "old false callback cannot stop replacement",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 3,
+      "name": "disposal rejects old callback and retained start",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 4,
+      "name": "consumed callback cannot step twice",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 5,
+      "name": "reentrant replacement survives false return and continues",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 6,
+      "name": "KeepAlive rejects stale work/inactive start, permits fresh active hold",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 7,
+      "name": "owner-window pointercancel rejects old callback",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 8,
+      "name": "normal800ms/150ms cadence stops at false boundary",
+      "baseline": "passed on both",
+      "final": "passed on both"
+    }
+  ],
+  "implementation": "Per-scheduled-callback generation checked and consumed before step; after step reject reentrant ownership changes before stopping/rescheduling. Inactive/disposed owner rejects start; original owner release listeners cleaned. Reactivation requires a fresh hold, not automatic old gesture replay.",
+  "defaults": {
+    "initialDelayMs": 800,
+    "repeatDelayMs": 150,
+    "role": "interaction-repeat, not CSS motion",
+    "apiChanges": 0,
+    "tokenChanges": 0
+  },
+  "sources": [
+    {
+      "repo": "cedar-design-web",
+      "file": "input-number/use-step-repeat.ts",
+      "sha256": "2765549108dd40031e1b6168ab47a3d5072784cd13b74a65f342be0f84aec0ea",
+      "rationale": "800ms initial hold /150ms repetition are interaction cadence, not CSS motion. Per-timer generation is checked and consumed before step; reentrant step cannot stop a replacement. Deactivated/disposed owners reject retained start. Seven new ownership regressions fail before repair; eight tests pass afterward on each independent copy, full InputNumber Cedar45/Maple48. Simulated timers only; no native browser/OS acceptance.",
+      "hints": [
+        {
+          "line": 51,
+          "category": "interaction-repeat",
+          "snippet": "        timer = setTimeout(createRepeat(), 150);"
+        },
+        {
+          "line": 54,
+          "category": "interaction-repeat",
+          "snippet": "    timer = setTimeout(createRepeat(), 800);"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "input-number/use-step-repeat.ts",
+      "sha256": "0f7ad1b04183c8fa80c2851dd8858846f5ae51fed4b73270950923e4a0597120",
+      "rationale": "800ms initial hold /150ms repetition are interaction cadence, not CSS motion. Per-timer generation is checked and consumed before step; reentrant step cannot stop a replacement. Deactivated/disposed owners reject retained start. Seven new ownership regressions fail before repair; eight tests pass afterward on each independent copy, full InputNumber Cedar45/Maple48. Simulated timers only; no native browser/OS acceptance.",
+      "hints": [
+        {
+          "line": 54,
+          "category": "interaction-repeat",
+          "snippet": "        timer = setTimeout(createRepeat(), 150)"
+        },
+        {
+          "line": 57,
+          "category": "interaction-repeat",
+          "snippet": "    timer = setTimeout(createRepeat(), 800)"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "cedar": {
+      "fullInputNumberTests": 45,
+      "newOwnershipTests": 8,
+      "typecheck": "passed",
+      "affectedLint": "passed"
+    },
+    "maple": {
+      "fullInputNumberTests": 48,
+      "newOwnershipTests": 8,
+      "typecheck": "passed",
+      "fullLint": "passed after correcting one curly rule violation in new test; ownership8 rerun passed"
+    },
+    "motionGate": {
+      "tests": 21,
+      "status": "passed",
+      "inventory": "191 files /392 CSS /177 runtime hints",
+      "classification": "44 reviewed /133 unclassified hints; only reviewed InputNumber line/hash rows refreshed",
+      "compiled": "96 theme/preference,88 primitive overrides,176 modal consumers,96 paired;LoadingBar8/4,Notification20/44,Message28/68"
+    },
+    "tokenCatalog": "3 tests /3 generated pages passed",
+    "whitespace": "affected tracked files passed"
+  },
+  "newBrowserCases": 0,
+  "newOsCases": 0,
+  "blockedNativeCases": 144,
+  "pending": [
+    "Native pointer/mouse/touch gestures and iframe-window ownership are not certified by this harness.",
+    "Countdown business-clock audit next; shared scroll consumers remain separate."
+  ],
+  "cleanup": "Harness unmounts owners, restores timeout spies, clears fake timers and returns to real timers. No browser/service started; no commit/push/release or parallel date/palette changes."
+}

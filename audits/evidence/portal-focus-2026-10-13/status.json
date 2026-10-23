@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-13",
+  "issue": "same-document-relocation-focus",
+  "historicalEvidence": "../portal-2026-10-13/results.json",
+  "historicalFailedSamples": 8,
+  "before": [
+    { "platform": "Cedar Drawer", "from": "host", "to": "inline", "settleMs": 400, "focusInside": false, "activeElement": "BODY", "screenshot": "cedar-before.jpg" },
+    { "platform": "Maple Popup", "from": "host", "to": "inline", "settleMs": 400, "focusInside": false, "activeElement": "BODY", "screenshot": "maple-before.jpg" }
+  ],
+  "implementation": "Both modal-surface copies watch the resolved Teleport target and inline flag, then focus the active top modal after the DOM move without recapturing the original trigger.",
+  "regression": { "status": "passed", "tests": 92, "cedarPreFixFailures": 2, "scope": "portal-scope, modal-focus, layers, scroll-lock and Trigger container-contract" },
+  "nativeAfter": { "status": "passed", "acceptedCases": 10, "evidence": "after.json", "keyboardPlatforms": 2, "scope": "default/dark, long content, 320x640 CSS viewport; both platforms host/inline/body/host/body. Not native 200% or Safari/Firefox acceptance." },
+  "recoveryCorrection": "After runtime reset browser IDs changed: the stale id 2 referenced MCP Apps, not IAB. Fresh inventory identified IAB as id 3 with complete supported tab APIs. Rebinding restored the fixture; the earlier API-degradation diagnosis was incorrect. Historical Chrome/Safari timeouts remain unchanged.",
+  "resume": "Open the fixture through a supported browser entry, reload the repaired source, rerun ten host/inline/body target checks including actual activeElement after settlement, Tab/Shift+Tab, close and original trigger restoration. Preserve pre-fix evidence; record post-fix evidence separately."
+}

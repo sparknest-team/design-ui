@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-16",
+  "batch": "Cedar Scheduler dependency connector measurement lifecycle",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerDependencies.vue",
+    "cleanAtStart": true,
+    "beforeSha256": "c8dfde6b7fe0f5cadb2c4dedeb6f409c32ea130dfe2c5ae33127c0ad9ff860b2",
+    "sha256": "2298e36af6a1ec14e47699dae216c19cf79fcfa5743895db0a9686709c185b84",
+    "originalHint": 55,
+    "hint": 144,
+    "category": "measurement-scheduling"
+  },
+  "tests": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__tests__/dependency-lifecycle.test.tsx",
+    "sha256": "bedf9b96e4d0dbf4ac3ceff9d03af6947dfb5615fb92aec839bb3d9b73a445ec",
+    "baseline": { "total": 9, "failed": 8, "passedControl": 1, "exitCode": 1 },
+    "control": "normal connector geometry and scroll coalescing",
+    "baselineFailures": ["disposed old frame reads geometry", "inactive frame/observer remains", "consumed frame replays", "old frame reads replacement host", "old observer schedules new host", "old scroll crosses activation", "removed host retains paths", "iframe host uses wrong window"],
+    "probeCorrection": "Initial repaired candidate had seven fixture errors because only runner-global window RAF/ResizeObserver were intercepted. Mock actual document.defaultView resources too, restore both descriptors; nine cases then pass. Not seven product failures or a reason to return product to global RAF.",
+    "supplemental": ["disposal inside host geometry getter stops descendants", "inactive observer inert and new activation draws", "dependency replacement invalidates old geometry and clears absent edges"],
+    "targetedFinal": 12,
+    "fullFinal": { "passed": 322, "files": 56, "exitCode": 0, "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/scheduler" },
+    "countChange": "Previous309 to322 includes twelve own tests and one parallel capacity-demo test; not thirteen own tests",
+    "level": "Actual Vue/KeepAlive plus controlled RAF/ResizeObserver/geometry and JSDOM iframe; not native layout/OS or same-node adoption",
+    "cleanup": "Unmount owners, remove host/iframe nodes, restore mocks and both original ResizeObserver descriptors"
+  },
+  "repair": ["original host window RAF/cancel and ResizeObserver", "binding/frame/render generations", "consume frame before reading geometry", "geometry reentry/lifetime checks before commit", "host/data replacement invalidation", "original listener/observer cleanup on suspension/disposal", "clear missing-host paths and fresh activation binding"],
+  "verification": {
+    "cedarConfiguredTypes": "passed exit0",
+    "affectedLint": "passed explicit --no-ignore; initial default run ignored component and was not source acceptance",
+    "sharedTests": "28 passed/1 failed: four previous parallel Ripple/VirtualList hashes still stale",
+    "isolatedClassification": "passed:measurement-scheduling1",
+    "catalog": "3 generated pages match",
+    "allThreeDiffChecks": "passed",
+    "mapleRootLint": "passed exit0",
+    "cssAndMapleTypes": "not rerun; no CSS or Maple runtime change",
+    "newRealBrowserOrOSCases": 0
+  },
+  "progress": {
+    "registeredFamilies": 28,
+    "totalFamilies": 33,
+    "registeredFamilyPercent": 84.8,
+    "remainingFamilies": 5,
+    "remainingFamilyPercent": 15.2,
+    "registeredFiles": 65,
+    "registeredHints": 151,
+    "totalHints": 179,
+    "registeredHintPercent": 84.4,
+    "unclassifiedHints": 28,
+    "unclassifiedHintPercent": 15.6,
+    "denominatorChange": 0,
+    "remaining": { "Date": 3, "Form": 4, "Scheduler": 9, "Time": 3, "Picker": 9 },
+    "meaning": "registrations, not current global hash-gate validity or all-library/lifecycle/browser acceptance; four old files require re-review"
+  },
+  "preserved": ["parallel Scheduler resource-core/README/capacity-demo work", "Date/Form/linked Time/Picker changes", "four classified Ripple/VirtualList hash drifts", "26 unrelated inventory drifts", "Map SDK", "144native200%/Safari/Firefox blocked groups", "Button on-dark2.305:1 exception"],
+  "pending": ["remaining Scheduler measurement/pointer/interaction consumers", "native browser/OS/font geometry", "same-node document adoption", "arbitrary external geometry getters/observer-constructor reentry"],
+  "next": "Review clean SchedulerEvent interaction timers or TimeGrid/TimelineRows measurement, preserve actual overlapping files; no new chats/subagents/commits/push/releases/services or permission changes"
+}

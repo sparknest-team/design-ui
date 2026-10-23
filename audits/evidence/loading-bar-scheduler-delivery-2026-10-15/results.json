@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-15",
+  "batch": "Maple LoadingBar unified timer and render delivery ownership",
+  "source": {
+    "file": "maple-design-mobile/packages/maple-ui/src/loading-bar/index.ts",
+    "cleanAtStart": true,
+    "beforeSha256": "6666b9f822f291bf0fbd4ec53fcd53548c0969b301f95325e264b74e89843cbe",
+    "afterSha256": "66f1b943c77feab1b4aa191a6b9d12ed67b2bd47a16fadcc60b0168856fd3618"
+  },
+  "baseline": {
+    "tests": 7,
+    "failed": 5,
+    "passedControls": 2,
+    "failures": ["duplicate progress advances10% instead of5%", "duplicate width-render schedules two hides", "duplicate opacity-render schedules two cleanups", "width computed-style restart attaches old hide to new generation", "opacity computed-style restart attaches old cleanup to new generation"],
+    "controls": ["restart rejects old show callback", "normal completion unmounts service node"]
+  },
+  "repair": {
+    "timer": "check captured generation before deleting pending membership, then consume once before executing task",
+    "render": "one-shot afterRender with original generation; nextTick continuation invalidated logically, not physically removed",
+    "reentry": "schedule accepts explicit original generation; style lookup reentrant start/error cannot grant new generation to obsolete hide/cleanup",
+    "unchanged": "public API/CSS Token/default250ms visual transition,200ms show/progress cadence, finishDelay normalization,300ms error policy and300/250ms cleanup floors; original global window timer owner",
+    "platform": "Maple-only service, Cedar documentation/spec synchronization without fabricated runtime counterpart"
+  },
+  "final": {
+    "targeted": 10,
+    "total": 22,
+    "files": 4,
+    "result": "passed exit0",
+    "additionalControls": ["restart rejects old progress", "restart rejects pending width-render", "restart rejects pending opacity-render"],
+    "probeCleanup": "restore style/timer spies, finish current service, flush controlled render callbacks and bounded fake time, reset default options and restore real clock"
+  },
+  "verification": {
+    "mapleConfiguredTypes": "passed",
+    "mapleAffectedLint": "passed; scoped formatting then final root lint",
+    "mapleRootLint": "passed",
+    "classification": "139classified/43pending, task-dispatch3",
+    "sharedTests": "29 passed",
+    "catalog": "3 generated pages match",
+    "cedarTypesAndCompiledMotion": "not rerun: no Cedar runtime or style/API/default changes",
+    "layer": "Actual Maple service/node with captured timer callbacks, fake timers and controlled Vue nextTick; actual Vue rendering flushed separately. Computed-style restart is an injected reentrancy probe, not native browser behavior.",
+    "newRealBrowserOrOSCases": 0,
+    "historicalIab": "LoadingBar six2026-10-13 groups preserved separately, not rerun/counted again"
+  },
+  "progress": {
+    "families": 33,
+    "closedBefore": 22,
+    "closed": 23,
+    "closedPercent": 69.7,
+    "remaining": 10,
+    "remainingPercent": 30.3,
+    "classifiedFiles": 58,
+    "classifiedHints": 139,
+    "totalHints": 182,
+    "classifiedHintPercent": 76.4,
+    "pendingHints": 43,
+    "pendingHintPercent": 23.6,
+    "denominatorChange": 0,
+    "remainingFamilies": ["Date", "Form", "Map", "Scheduler", "Time", "Tree", "Counter", "Picker", "PullRefresh", "SwipeCell"],
+    "meaning": "candidate-family classification, not full lifecycle/whole-library/native acceptance"
+  },
+  "inventory": "only reviewed LoadingBar runtime line77→79, no extra hint;193files/392CSS/182runtime unchanged. Preserve26 unrelated CSS/date drifts; no global motion-themes success claim.",
+  "preserved": ["Form/date/linked Time", "other parallel styles/Picker/Scheduler changes", "144 native200%/Safari/Firefox blocked cases", "Button on-dark2.305:1 design exception"],
+  "pending": ["cleanup-hook reentrant start", "arbitrary mid-flight CSS changes", "real OS/native browser timing"],
+  "next": "Review a non-overlapping remaining consumer, e.g. Counter or PullRefresh, after checking current ownership. No new tasks/subagents/automation changes/browser/services/commits/push/releases."
+}

@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-15",
+  "batch": "Maple PullRefresh gestures, bindings and scroll-lock leases, phase two",
+  "source": {
+    "file": "maple-design-mobile/packages/maple-ui/src/pull-refresh/PullRefresh.vue",
+    "beforeSha256": "867b469494b417decddce1b4b6922655ba6524da57a87e3475f51e589512716b",
+    "afterSha256": "6b72737119db5a9ed672abd78e45a9f58446f2c70f25386be5e7b8684b641861",
+    "ownership": "phase-one dirty changes belong to this chat and were retained; initial hash matches previous batch",
+    "helper": {
+      "file": "maple-design-mobile/packages/maple-ui/src/pull-refresh/scroll-lock.ts",
+      "sha256": "f08f9e6b842c1530632b3731277ab5bb527e5d098a1186f72b0a5a6c46ae3ae6",
+      "meaning": "new private lease helper, no timer/scroll runtime scan hint; not an extra classified candidate file"
+    }
+  },
+  "baseline": {
+    "tests": 10,
+    "failed": 6,
+    "passedControls": 4,
+    "failures": ["touchcancel starts refresh", "releasing one instance removes another holder lock", "target replacement leaves old lock and gesture", "old move crosses activation", "old end ends new activation gesture", "geometry disposal still reads old event target"],
+    "controls": ["current drag lock and release", "move after release inert", "pre-existing external class preserved", "inactive retained start does not measure"],
+    "meaning": "controlled cases, not whole component-library/native coverage"
+  },
+  "repair": {
+    "gesture": "touching/generation and original root/control/scroller identities; cancel without refresh, stop on target/root/model/disabled/lifecycle replacement",
+    "bindings": "fresh per-root callbacks and binding epochs; remove original node listeners, old move/end cannot cross activation; synchronous root ref binding",
+    "measurement": "recheck availability and original identities after geometry/scroll/event-target reads to reject reentrant disposal",
+    "locks": "private original-element/class leases count same-module holders; same-instance acquire and release idempotent, last release removes only library-added class, external pre-existing class preserved; Window uses its document.body",
+    "unchanged": "public API/CSS Tokens/default durations/pull geometry and thresholds, phase-one timer/Promise/controlled acknowledgement contracts"
+  },
+  "intermediateChecks": [
+    "first repaired gesture10 and timer17 passed, but two existing immediate-interaction tests failed in full32 (30passed/2failed)",
+    "candidate post-watch cancelled the first immediately dispatched gesture; switched root binding to synchronous and full32 passed without changing old assertions",
+    "five further controls added; final full37 passed with exit0"
+  ],
+  "final": {
+    "gestureTargeted": 15,
+    "timerTargeted": 17,
+    "total": 37,
+    "files": 3,
+    "result": "passed exit0",
+    "additionalCases": ["fresh activation end listener works", "disabled holder releases only own lease", "external loading releases gesture lock", "end without start creates no work", "duplicate end cannot clear another lease"],
+    "fixture": "Actual PullRefresh/KeepAlive, two actual instances sharing real HTMLElement classList, native EventTarget add/remove under JSDOM, configured40px geometry and injected disposal getter, synthetic touch and fake timers; stub icons. Dispose owned apps/nodes, restore listeners/spies/real timers and fixture body class."
+  },
+  "verification": {
+    "mapleConfiguredTypes": "passed",
+    "mapleAffectedLint": "passed after scoped formatting",
+    "mapleRootLint": "passed",
+    "sharedTests": "29 passed",
+    "classification": "145classified/34pending, task-dispatch4",
+    "catalog": "3 generated pages match",
+    "cedarRuntimeAndCss": "unchanged; no Cedar types or Less motion rerun claimed",
+    "newRealBrowserOrOSCases": 0
+  },
+  "progress": {
+    "families": 33,
+    "closedBefore": 25,
+    "closed": 26,
+    "closedPercent": 78.8,
+    "remaining": 7,
+    "remainingPercent": 21.2,
+    "classifiedFiles": 61,
+    "classifiedHints": 145,
+    "totalHints": 179,
+    "classifiedHintPercent": 81.0,
+    "pendingHints": 34,
+    "pendingHintPercent": 19.0,
+    "denominatorChange": 0,
+    "remainingFamilies": ["Date", "Form", "Map", "Scheduler", "Time", "Tree", "Picker"],
+    "meaning": "runtime candidate classification only, not all-lifecycle/whole-library/native acceptance"
+  },
+  "inventory": "only reviewed PullRefresh runtime81→96/hash;193files/392CSS/179runtime unchanged. Private lease helper has no scan hint. Other26 parallel drifts untouched, no global motion-themes claim",
+  "preserved": ["Form/date/linked Time", "Picker/Scheduler and other parallel changes", "144 native200%/Safari/Firefox blocked cases", "Button on-dark2.305:1 design exception"],
+  "pending": ["initial true-model display", "dynamic duration and real CSS/reduced-motion consumption", "shared useTouch RAF", "default iframe scroller discovery/adoption and native OS", "external mid-lease class mutation and duplicate runtime modules", "trusted touch and generated click behavior"],
+  "next": "non-overlapping Tree/Map consumers after checking ownership; no tasks/subagents/browser/services/automation changes/commits/push/releases"
+}

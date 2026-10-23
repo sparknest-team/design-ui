@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "date": "2026-10-19",
+  "startedAtUtc": "2026-10-19T11:06:55Z",
+  "completedAtUtc": "2026-10-19T11:11:18Z",
+  "scope": "Bounded lint follow-up for Maple EditorPanel.vue, presentation-state.vue and Form example entry; preserve parallel business semantics.",
+  "status": "pre-existing-corrections-verified-no-source-edits",
+  "historicalBaseline": {
+    "evidence": "../field-presentation-form-closure-2026-10-19/results.json",
+    "rootLintExitCode": 1,
+    "diagnostics": 8,
+    "files": 3,
+    "preserved": true
+  },
+  "currentObservation": {
+    "diagnostics": 0,
+    "sourceEditsThisRun": 0,
+    "newTestsThisRun": 0,
+    "explanation": "At entry the three files already contained multiline EditorPanel attributes, a const timer container/braced conditionals and sorted Form demo import. Do not attribute these pre-existing corrections to this run or manufacture a redundant patch.",
+    "preserved": [
+      "EditorPanel pending/aria-busy/inert and cancellation behavior",
+      "Demo 1200ms, AbortSignal, original timer cancellation and once-only settlement",
+      "Form/Select controllers, submitEpoch and parallel business changes",
+      "Token defaults, inventory/classification records and three generated catalogs"
+    ]
+  },
+  "files": [
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/_components/field-presentation/EditorPanel.vue",
+      "sha256": "c1295c887e311f5ca8adf2611e9a625c87fb6cd452c90a4b399c7b076e352ba3"
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/presentation-state.vue",
+      "sha256": "32b6df3928d62d3cac6db35ad7039dd311545f0f19b78c6bbf5d44eebdb7aee3"
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/index.vue",
+      "sha256": "ff08413bf59321e4cf9308c7824ee7f6fdc149df3a5668ee778c077c1a45aea6"
+    }
+  ],
+  "authorizedFileHashesUnchangedDuringVerification": true,
+  "verification": [
+    {
+      "command": "pnpm exec eslint --no-ignore src/_components/field-presentation/EditorPanel.vue src/form/example/demos/presentation-state.vue src/form/example/index.vue --max-warnings 0",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm lint:check",
+      "cwd": "maple-design-mobile",
+      "exitCode": 0,
+      "readOnly": true
+    },
+    {
+      "command": "pnpm typecheck",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "exitCode": 0,
+      "config": "tsconfig.declaration.json",
+      "excludesExamples": true
+    },
+    {
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js src/form/__tests__ src/_components/field-presentation/__tests__ src/select/__tests__",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "exitCode": 0,
+      "passed": 300,
+      "files": 34,
+      "durationSeconds": 90.06,
+      "layer": "JSDOM/controlled tasks; existing tests, not 300 newly added cases",
+      "presentationStateCases": 60
+    },
+    {
+      "command": "parse + compileScript + compileTemplate via vue/compiler-sfc for all three authorized SFCs",
+      "exitCode": 0,
+      "files": 3,
+      "layer": "SFC compilation, not full example typecheck or native acceptance",
+      "initialResolverAttempt": "Direct @vue/compiler-sfc package import was unavailable from UI package (ERR_MODULE_NOT_FOUND); used existing vue/compiler-sfc entry without installation."
+    },
+    {
+      "command": "pnpm check:motion-themes",
+      "cwd": "design-ui",
+      "exitCode": 0,
+      "tests": 96,
+      "fullSubsequentCompiledChainPassed": true
+    },
+    {
+      "command": "pnpm check:token-reference",
+      "cwd": "design-ui",
+      "exitCode": 0,
+      "tests": 37,
+      "generatedPagesMatch": 3
+    },
+    {
+      "command": "node bin/token-inventory.mjs --check-consumers --summary",
+      "cwd": "design-ui",
+      "exitCode": 0,
+      "files": 172,
+      "declarations": 4560,
+      "candidates": 70,
+      "crossComponentCss": 40,
+      "literalRuntime": 10,
+      "dynamicRuntime": 20,
+      "needsManualReview": 0,
+      "errors": 0
+    },
+    {
+      "command": "Final independent SHA-256 comparison against all classification rows",
+      "exitCode": 0,
+      "registeredFiles": 80,
+      "stale": 0
+    },
+    {
+      "command": "git diff --check",
+      "repositories": [
+        "design-ui",
+        "cedar-design-web",
+        "maple-design-mobile"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "progress": {
+    "componentFamiliesTotal": 33,
+    "classified": 33,
+    "classifiedPercent": 100,
+    "remaining": 0,
+    "remainingPercent": 0,
+    "sourceInventoryFiles": 198,
+    "cssHints": 418,
+    "runtimeHints": 184,
+    "classifiedHints": 184,
+    "unclassifiedHints": 0,
+    "denominatorChangeThisRun": 0,
+    "meaning": "Classification only, not whole-library or native-browser acceptance."
+  },
+  "documentation": [
+    "design-ui/audits/token-closure-progress.md",
+    "design-ui/audits/token-closure-recheck-2026-10-19.md",
+    "design-ui/standards/design-tokens.md",
+    "cedar-design-web/packages/cedar-ui/docs/guide/design-tokens.md",
+    "maple-design-mobile/packages/maple-ui/docs/designTokens.zh-CN.md",
+    "maple-design-mobile/packages/maple-ui/docs/designTokens.en-US.md",
+    "maple-design-mobile/packages/maple-ui/src/form/docs/zh-CN.md",
+    "maple-design-mobile/packages/maple-ui/src/form/docs/en-US.md"
+  ],
+  "retainedBlockers": {
+    "mapSdk": "Approved SDK adapter/version, event/dispose/async cancellation contract, instance lifecycle handoff and configured runnable SDK environment are still required; fallback tests are not provider acceptance.",
+    "native": {
+      "total": 144,
+      "chromeNative200": 48,
+      "safari100": 48,
+      "firefox100": 48,
+      "requires": "Supported responsive real-browser control, actual installation/session and per-group evidence for frozen fixtures; no zoom/viewport/simulated engine substitution."
+    },
+    "conditionsDocument": "design-ui/audits/token-closure-recheck-2026-10-19.md",
+    "newNativeCases": 0,
+    "buttonPrimary": "White on-dark retained; bright default 2.305:1 design exception, not AA."
+  },
+  "automation": {
+    "id": "cedar-maple-14-00-2",
+    "status": "PAUSED",
+    "savedStatusChecked": true,
+    "modified": false
+  },
+  "allValidationProcessesFinished": true
+}

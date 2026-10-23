@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-19",
+  "policy": {
+    "inline": "原有交互，Select 即选即更新",
+    "overlay": "唯一外层草稿事务；日期时间纯面板隐藏工具栏",
+    "standalonePicker": "原有 API 和确认行为保留"
+  },
+  "checks": {
+    "cedarTypecheck": "passed",
+    "mapleTypecheck": "passed",
+    "mapleRootLint": "passed",
+    "mapleDemoSyntax": "1055 SFCs, 0 failures",
+    "cedarSpec": "95 components, 0 errors/warnings",
+    "mapleSpec": "89 components, 0 errors/warnings",
+    "sameSourcePairs": {
+      "formKernel": 12,
+      "selectionPresentations": 36,
+      "selectionField": 23,
+      "input": 18,
+      "dateFamily": 42,
+      "timeRules": 34,
+      "autoComplete": 7
+    }
+  },
+  "tests": {
+    "cedarAffectedRegression": "942 passed / 147 files",
+    "cedarLatestAdapters": "41 passed, 0 unhandled errors; additional 27 existing advanced-field tests also passed. Earlier PeopleSelect mock rejections were corrected.",
+    "mapleAffectedRegression": "1167 passed, 1 failed / 163 files. The failure was explicit inline nested controls under read Form, from the pre-fix adapter loaded by a running worker.",
+    "maplePostFixAdapters": "35 passed, including the formerly failing inheritance case."
+  },
+  "browser": {
+    "dateCommitBoth": "19 -> draft21 (model19) -> confirm21; draft23 -> cancel (model21)",
+    "mapleGroup": "Added ops remained a draft until confirmation.",
+    "mapleCascader": "Search 杭州 -> 华东 / 杭州; shanghai remained committed until confirm wrote hangzhou.",
+    "readBoth": "All demo fields displayed text without editor controls.",
+    "cedarRangeDialog": {
+      "clientWidth": 520,
+      "scrollWidth": 520,
+      "confirmButtons": 1,
+      "cancelButtons": 1
+    },
+    "mapleRangeDialog": {
+      "clientWidth": 280,
+      "scrollWidth": 280,
+      "calendarWidth": 264,
+      "calendarScrollWidth": 264
+    },
+    "mapleMobileIframeTimeRange": "Draft10:30 kept model [09:30,18:00]; confirm wrote [10:30,18:00]. One toolbar; clientWidth=scrollWidth=280."
+  },
+  "screenshots": [
+    "cedar-date-range-dialog.png",
+    "cedar-date-range.png",
+    "maple-date-range.png",
+    "maple-mobile-time-range.png"
+  ]
+}

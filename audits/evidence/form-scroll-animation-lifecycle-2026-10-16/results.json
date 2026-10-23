@@ -1,0 +1,53 @@
+{
+  "date":"2026-10-16",
+  "startedUtc":"09:07:43",
+  "scope":"Existing human authorization for Maple Form.vue scroll section only;no shared helper API/CedarForm/MaplePicker takeover",
+  "baseline":{
+    "formSha256":"5c3bf495299984dfa491400eaa7e28d4b0f9991f278f7186c9ec75edf6332fdc",
+    "actualSharedHelperSha256":"cdb1c340e2d14ff713c430d7b93438fb351310daaff79b501afd367b7d998107",
+    "command":"pnpm --dir packages/maple-ui exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js --maxWorkers 1 --minWorkers 1 --no-file-parallelism src/form/__tests__/scroll-animation-lifecycle.spec.js",
+    "cases":6,"failed":4,"passed":2,"exitCode":1,"seconds":3.05,
+    "failures":["New wait leaves old in-flight frame writing","Suspension leaves old frame writing","Activation revives old frame","Unmount leaves old frame writing"],
+    "controls":["Normal300ms linear interpolation after300ms wait","Actual helper already rejects duplicate frame delivery"],
+    "meaning":"Actual original shared-helper composition,not a mocked scroll dispatch;overlapping lifecycle cases,not four independent defects"
+  },
+  "repair":{
+    "formSha256":"324148a993fc20b39a085b97acd9e880db5e65ec96373a38379aa29bb096b46e",
+    "waitTestSha256":"d2b51a4dcf6af05edc016efd05dfbee02bb87c198de1cf97ab44920cfba9686a",
+    "animationTestSha256":"2215d533d1e18bb8f0a2a0f79c5ec77f9dddf555a2cb65a559702624c6c75605",
+    "source":"maple-design-mobile/packages/maple-ui/src/form/Form.vue",
+    "tests":["form/__tests__/scroll-task-ownership.spec.js","form/__tests__/scroll-animation-lifecycle.spec.js"],
+    "mechanism":"Private Form-owned original-window RAF cancellation,one-shot frame tickets,current request/lifetime/original field connection and rechecks after initial-position/media reads/native writes. Replacement/suspension/disposal physically cancel original pending RAF and reject late delivery. Cancel keeps current offset,does not rewind or cancel newer request.",
+    "preserved":"300ms wait/global timer plus300ms linear interpolation,initial reduced preference without RAF/dynamic preference next-frame completion,public API/CSS Tokens/parallel submitEpoch and submission code",
+    "sharedHelper":"Unchanged,clean git status and same hash as HEAD cdb1c340…;no new public cancellation API and no inherited acceptance for other consumers"
+  },
+  "verification":{
+    "firstRepair":{"passed":6,"files":1,"exitCode":0,"seconds":13.71},
+    "supplementary":"Five animation cases:initial reduce,dynamic reduce,native-write disposal,fresh activation,initial-position-read disposal. Physical cancellation assertions supplement earlier cases.",
+    "waitFixtureMigration":"Same10wait responsibilities now observe actual RAF/native window writes,not a mock of the removed shared-helper delegation. Descriptors/Date mocks restored in finally.",
+    "intermediateFixtureFailures":[
+      {"passed":15,"failed":1,"files":2,"exitCode":1,"seconds":2.75},
+      {"passed":86,"failed":1,"files":17,"exitCode":1,"seconds":73.63}
+    ],
+    "fixtureFailureMeaning":"Offset fixture lacked explicit initial Window scroll coordinates. Installed rattail getScrollTop/getScrollLeft read scrollTop/Left or scrollY/X and Math.max;declare initial zero coordinates and restore original descriptors. No product change/threshold change;not an extra product defect.",
+    "finalTargeted":{"passed":21,"files":2,"exitCode":0,"seconds":5.67},
+    "fullForm":{"passed":87,"files":17,"exitCode":0,"seconds":275.40,"mode":"single-worker/no-file-parallelism on final source and corrected fixture","newTestsAuthoredThisPhase":11,"other76":"Previous10wait tests migrated plus66existing/parallel regressions,not new defects or newly authored21cases"},
+    "lintTypes":"Root pnpm lint:check && configured Maple typecheck passed exit0;final scoped no-fix lint after fixture correction passed. Declarations exclude tests.",
+    "shared":"29tests passed exit0,30.18s;classification CLI165classified/16pending passed exit0",
+    "hashChecks":"Final Form/two test hashes match above;shared helper clean and equals HEAD",
+    "fixture":"Actual Form/provider-registered input and nested scroller,actual helper baseline,controlled timer/RAF/Date/media/native method and DOM rect probes. Original globals/owner resources restored in finally. Final private implementation does not mock helper delegation.",
+    "native":"0new browser/OS cases;controlled JSDOM is not trusted scroll/native layout/OS/adoption acceptance. No Less/build rerun.",
+    "historicalRunner":"Prior batch default60assertions/14files with two RPC collection failures/one unhandled error remains historical;prior single-worker76/16 pass does not prove only-load causation. This batch does not mechanically rerun default mode.",
+    "finalDiff":"Three repositories diff checks passed exit0;final source/two test hashes match frozen values;batch evidence JSON valid. All validation processes finished."
+  },
+  "registration":{
+    "closedFamilies":31,"totalFamilies":33,"closedPercent":93.9,"remainingFamilies":2,"remainingPercent":6.1,
+    "remaining":{"Form":7,"Picker":9},"registeredFiles":74,"classifiedHints":165,"totalHints":181,"classifiedPercent":91.2,"pendingHints":16,"pendingPercent":8.8,
+    "denominatorChange":3,"denominatorMeaning":"178→181 adds three implementation hints because Form now owns interpolation;not three additional old defects or lost classifications",
+    "inventory":"Only Maple Form runtime70/84→89/92/103/120/146,local-query=true and platform81→84 manually updated. No Form row registered;26other drifts preserved."
+  },
+  "stillOpen":"Fixed300ms completion wait versus actual FormDetails0.2s/reduce,async validation current eligibility and field membership/configuration;Form family remains partial. Same-node adoption/cross-document/native/OS acceptance remain separate.",
+  "preservedBlockers":"CedarForm/MaplePicker overlapping sources,five Cedar FilterForm/Form catalog hunks,Map formal SDK contract,144native environment groups,26unrelated drifts,Button white2.305:1 non-AA exception and historical Cedar shutdown warning",
+  "documentation":"Shared standard/progress,Cedar guide,Maple bilingual guides,Form bilingual/Cedar boundary docs,existing changesets/OpenSpec phase-two task synchronized;no demo/API/Token default change",
+  "constraints":"Vue guidance informed original-window cancellation,KeepAlive/reentry and finally cleanup. No chats/subagents/commits/push/publish/software/permission/automation changes."
+}

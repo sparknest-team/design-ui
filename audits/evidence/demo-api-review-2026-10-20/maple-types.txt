@@ -1,0 +1,13 @@
+
+> @1.0.3 typecheck /Users/shuaimeng/github_web/maple-design-mobile
+> pnpm --dir ./packages/maple-ui exec vue-tsc --noEmit -p tsconfig.json
+
+src/_components/selected-options/__tests__/manager.spec.ts(71,11): error TS2322: Type '"dialog" | "popup" | "popover"' is not assignable to type 'FieldPresentation | undefined'.
+  Type '"popover"' is not assignable to type 'FieldPresentation | undefined'.
+src/_components/selected-options/__tests__/manager.spec.ts(106,11): error TS2322: Type '"dialog" | "popup" | "popover"' is not assignable to type 'FieldPresentation | undefined'.
+src/_components/selected-options/__tests__/manager.spec.ts(114,11): error TS2322: Type '() => Promise<boolean>' is not assignable to type 'BeforeFieldCommit'.
+  Type 'Promise<boolean>' is not assignable to type 'false | void | Promise<false | void>'.
+    Type 'Promise<boolean>' is not assignable to type 'Promise<false | void>'.
+      Type 'boolean' is not assignable to type 'false | void'.
+src/_components/selected-options/__tests__/manager.spec.ts(146,11): error TS2322: Type '"dialog" | "popup" | "popover"' is not assignable to type 'FieldPresentation | undefined'.
+ ELIFECYCLE  Command failed with exit code 2.

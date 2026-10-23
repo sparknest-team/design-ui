@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-13",
+  "scope": "Cedar and Maple Message business display timer callback ownership",
+  "verificationKind": "simulated callbacks and timers; not native browser or OS",
+  "before": {
+    "cedar": { "failed": 5, "passed": 0 },
+    "maple": { "failed": 5, "passed": 0 },
+    "note": "Initial Cedar restart case failed at duplicate execution; Maple at obsolete callback execution. Pause, clear, unmount and pre-watcher closed state failed on both. The final harness filters 1000ms component tasks and always unmounts wrappers."
+  },
+  "after": {
+    "cedarMessageTests": 18,
+    "mapleMessageTests": 26,
+    "cedarFormattedTimerRerun": 9,
+    "mapleFormattedMessageRerun": 26,
+    "types": { "cedar": "passed", "maple": "passed" },
+    "cedarAffectedLint": "passed",
+    "mapleFullLint": "passed after correcting the new test formatting",
+    "tokenReference": { "tests": 3, "generatedPages": 3 },
+    "motionGate": "passed; 192 files, 389 CSS hints and 179 runtime hints unchanged",
+    "independentCopyGate": "passed"
+  },
+  "fix": [
+    "Clear increments private generation even if the callback has already left the timer queue.",
+    "Callback checks current generation and open before touching timer state or requesting close.",
+    "Valid callback consumes its generation once; obsolete callbacks cannot clear or close a replacement timer.",
+    "Existing persistent zero, hover remaining duration and resetOnUpdate behavior remain unchanged."
+  ],
+  "sourceSha256": {
+    "cedar-design-web/packages/cedar-ui/src/message/use-message-timer.ts": "b80b7db4a97395689b1201ac1d038027921877e759d1f91438d40a37b44ddb5a",
+    "maple-design-mobile/packages/maple-ui/src/message/use-message-timer.ts": "c75bfde451c441804c2034654a29b782b7743e5bd073d9b3a855c44fea73455b"
+  },
+  "runnerNotes": [
+    "One Cedar formatted rerun reported fsevents close-timeout diagnostics after 9 tests passed and exit 0; one bounded independent rerun passed 9 with clean exit 0.",
+    "Maple initial full lint failed only the new test formatting/curly rules; corrected with scoped formatting before full rerun."
+  ],
+  "newNativeBrowserCases": 0,
+  "newRealOsCases": 0,
+  "unchangedBlockedNativeCases": 144,
+  "followUp": [
+    "KeepAlive deactivation/reactivation ownership and display deadline policy",
+    "Hover at an exhausted deadline and non-finite duration boundary",
+    "Real IAB Message display/transition lifecycle evidence"
+  ],
+  "constraints": "No public API or Token change; independent runtime copies preserved, unrelated date/naming/palette changes not taken over; primary white Button exception retained."
+}

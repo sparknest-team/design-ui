@@ -1,0 +1,274 @@
+{
+  "date": "2026-10-13",
+  "scope": "source-responsibility classification only; not lifecycle or browser acceptance",
+  "batch": {
+    "reviewedFiles": 8,
+    "classifiedHints": 26
+  },
+  "current": {
+    "reviewedFiles": 22,
+    "classifiedHints": 44,
+    "unclassifiedHints": 133,
+    "categories": {
+      "interaction-delay": 4,
+      "measurement-scheduling": 6,
+      "declaration-only": 8,
+      "native-scroll": 2,
+      "test-support": 10,
+      "business-clock": 2,
+      "interaction-repeat": 4,
+      "visual-scroll": 8
+    },
+    "inventory": {
+      "files": 191,
+      "cssHints": 392,
+      "runtimeHints": 177
+    }
+  },
+  "reviewedSources": [
+    {
+      "repo": "cedar-design-web",
+      "file": "_utils/maple/test.ts",
+      "sha256": "bef133371f4f74bae46168bd4bce1f04caec429b4190e985f0210918a78e1e0d",
+      "rationale": "Test delay/flush helpers and mock RAF/scroll method definitions, not product motion timings. Source search excluding __tests__ found no imports of these helper paths in src; this is not a bundle reachability certification. Method declarations are scanner hints, not executed browser evidence. Test helper cleanup remains separate.",
+      "hints": [
+        {
+          "line": 7,
+          "category": "test-support",
+          "snippet": "    setTimeout(resolve, time)"
+        },
+        {
+          "line": 29,
+          "category": "test-support",
+          "snippet": "    requestAnimationFrame(fn: any) {"
+        },
+        {
+          "line": 30,
+          "category": "test-support",
+          "snippet": "      setTimeout(fn, 16)"
+        },
+        {
+          "line": 237,
+          "category": "test-support",
+          "snippet": "  Object.assign(window, { scrollTo() {} })"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "countdown/use-countdown.ts",
+      "sha256": "a5914ea8745e94cb83a92cef6d9f061136c772905eee364083407b4d98fa1b7c",
+      "rationale": "RAF refreshes remaining business time against a performance.now deadline; reduced visual motion must not shorten the countdown. Cancellation/reactivation and inactive time changes remain lifecycle candidates, not reproduced defects in this classification batch.",
+      "hints": [
+        {
+          "line": 90,
+          "category": "business-clock",
+          "snippet": "      handle = requestAnimationFrame(tick)"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "input-number/use-step-repeat.ts",
+      "sha256": "23d50063ce28c8e235e4134181a681b1cfc20285af4775f911de5d13ea2ba5e2",
+      "rationale": "800ms initial hold and 150ms repeated step are interaction cadence, not CSS animation duration. Source checks generation only after step(); cancelled/dequeued callback ownership requires a reproducing test before repair. No new runtime acceptance.",
+      "hints": [
+        {
+          "line": 44,
+          "category": "interaction-repeat",
+          "snippet": "        timer = setTimeout(repeat, 150);"
+        },
+        {
+          "line": 47,
+          "category": "interaction-repeat",
+          "snippet": "    timer = setTimeout(repeat, 800);"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "_utils/maple/elements.ts",
+      "sha256": "26395b125dad97d0820a2f1ca488e86d0dd537b2289e6581fc11ca358fc1c5a8",
+      "rationale": "Function declaration plus Date.now-based JS scroll interpolation, default300ms, with easing callback. No named production import of this helper found in src; do not infer bundle absence. Owner cancellation, zero duration and reduced-motion behavior need consumer-scoped audit, not a blind global CSS token conversion.",
+      "hints": [
+        {
+          "line": 210,
+          "category": "declaration-only",
+          "snippet": "export function scrollTo("
+        },
+        {
+          "line": 227,
+          "category": "visual-scroll",
+          "snippet": "        element.scrollTo(nextLeft, nextTop)"
+        },
+        {
+          "line": 228,
+          "category": "visual-scroll",
+          "snippet": "        requestAnimationFrame(frame)"
+        },
+        {
+          "line": 230,
+          "category": "visual-scroll",
+          "snippet": "        element.scrollTo(left, top)"
+        },
+        {
+          "line": 235,
+          "category": "visual-scroll",
+          "snippet": "    requestAnimationFrame(frame)"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "utils/test.ts",
+      "sha256": "30ebfa6dd76fe1924a0042ba7181c0ef81883c35762473488774f1f98baf1486",
+      "rationale": "Test delay/flush helpers and mock RAF/scroll method definitions, not product motion timings. Source search excluding __tests__ found no imports of these helper paths in src; this is not a bundle reachability certification. Method declarations are scanner hints, not executed browser evidence. Test helper cleanup remains separate.",
+      "hints": [
+        {
+          "line": 22,
+          "category": "test-support",
+          "snippet": "    setTimeout(resolve, time)"
+        },
+        {
+          "line": 27,
+          "category": "test-support",
+          "snippet": "    requestAnimationFrame(() => {"
+        },
+        {
+          "line": 28,
+          "category": "test-support",
+          "snippet": "      requestAnimationFrame(() => resolve())"
+        },
+        {
+          "line": 51,
+          "category": "test-support",
+          "snippet": "    requestAnimationFrame(fn: any) {"
+        },
+        {
+          "line": 52,
+          "category": "test-support",
+          "snippet": "      setTimeout(fn, 16)"
+        },
+        {
+          "line": 259,
+          "category": "test-support",
+          "snippet": "  Object.assign(window, { scrollTo() {} })"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "countdown/use-countdown.ts",
+      "sha256": "cc013d9ff25bc3c0b814988cbafb4ff3c002f6c482378657734fb151be927fcd",
+      "rationale": "RAF refreshes remaining business time against a performance.now deadline; reduced visual motion must not shorten the countdown. Cancellation/reactivation and inactive time changes remain lifecycle candidates, not reproduced defects in this classification batch.",
+      "hints": [
+        {
+          "line": 97,
+          "category": "business-clock",
+          "snippet": "      handle = requestAnimationFrame(tick)"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "input-number/use-step-repeat.ts",
+      "sha256": "50399556ad781ec7bd11bc71b1c1728e08f7f567af59630f2ed1fae4b26b72e0",
+      "rationale": "800ms initial hold and 150ms repeated step are interaction cadence, not CSS animation duration. Source checks generation only after step(); cancelled/dequeued callback ownership requires a reproducing test before repair. No new runtime acceptance.",
+      "hints": [
+        {
+          "line": 43,
+          "category": "interaction-repeat",
+          "snippet": "        timer = setTimeout(repeat, 150)"
+        },
+        {
+          "line": 46,
+          "category": "interaction-repeat",
+          "snippet": "    timer = setTimeout(repeat, 800)"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "utils/elements.ts",
+      "sha256": "4ecfc7fe62b4228d5305234173eac0b0b6a4ffd90f5eab298c921100f11291ea",
+      "rationale": "Function declaration plus Date.now-based JS scroll interpolation, default300ms, with easing callback. Actual named consumers include Form scroll-to-invalid (linear/default duration) and IndexBar anchorClick (easeInOutCubic/public duration). Owner cancellation, zero duration and reduced-motion behavior remain pending consumer-scoped audit; Picker local scrollTo is a different function.",
+      "hints": [
+        {
+          "line": 208,
+          "category": "declaration-only",
+          "snippet": "export function scrollTo("
+        },
+        {
+          "line": 225,
+          "category": "visual-scroll",
+          "snippet": "        element.scrollTo(nextLeft, nextTop)"
+        },
+        {
+          "line": 226,
+          "category": "visual-scroll",
+          "snippet": "        requestAnimationFrame(frame)"
+        },
+        {
+          "line": 228,
+          "category": "visual-scroll",
+          "snippet": "        element.scrollTo(left, top)"
+        },
+        {
+          "line": 233,
+          "category": "visual-scroll",
+          "snippet": "    requestAnimationFrame(frame)"
+        }
+      ]
+    }
+  ],
+  "consumerReview": {
+    "maple": [
+      {
+        "file": "packages/maple-ui/src/form/Form.vue",
+        "call": "scrollTo(scroller, { top, animation: linear })",
+        "role": "shared JS scroll, default duration; preceding300ms timeout is a separate policy"
+      },
+      {
+        "file": "packages/maple-ui/src/index-bar/IndexBar.vue",
+        "call": "await varScrollTo(scroller, {left, top, animation: easeInOutCubic, duration: toNumber(props.duration)})",
+        "role": "shared JS scroll with caller duration; later doubleRaf separate"
+      }
+    ],
+    "cedar": "No named production scrollTo call to _utils/maple/elements found in src; not a bundle graph proof.",
+    "testHelpers": "No test helper path imports found in src after excluding __tests__; mock method signatures count as raw hints, not native execution evidence."
+  },
+  "pending": [
+    {
+      "component": "InputNumber",
+      "status": "source candidate, not reproduced",
+      "observation": "Generation checked after step; cancellation/dequeued callback needs scoped regression."
+    },
+    {
+      "component": "Countdown",
+      "status": "source candidate, not reproduced",
+      "observation": "Pause/restart and inactive time updates need business-clock ownership tests; do not shorten business time for reduced motion."
+    },
+    {
+      "component": "shared scroll helper",
+      "status": "consumer-scoped audit pending",
+      "observation": "Cancellation, owner window, zero duration and reduced-motion preference need actual consumer tests; Picker local scrollTo is distinct."
+    }
+  ],
+  "validation": {
+    "sourceClassificationTests": 13,
+    "combinedInventoryMessageClassificationTests": 21,
+    "motionCompileChain": "passed:96 theme/preference;88 primitive overrides;176 modal consumers;96 paired;LoadingBar8/4;Notification20/44;Message28/68",
+    "tokenCatalog": "passed:3 tests and3 generated pages match current declarations",
+    "scriptSyntax": "passed:classification checker and test file node --check",
+    "whitespace": "passed:affected tracked shared and both menu documentation git diff --check"
+  },
+  "newAcceptance": {
+    "productFixes": 0,
+    "runtimeLifecycleTests": 0,
+    "browserCases": 0,
+    "osCases": 0
+  },
+  "blockedNativeCases": 144,
+  "buttonDecision": "Retain primary on-dark white text; historical default bright-primary2.305:1 design exception is not AA. Do not override parallel palette work.",
+  "cleanup": "No browser/service started in this batch; no commit, push, release, date development or other automation changes."
+}

@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-15",
+  "batch": "NavMenu.Item geometry/listener/focus lifetime, phase four",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/nav-menu/item.tsx",
+    "cleanAtStart": true,
+    "beforeSha256": "626ce62f8e4a052e781115b74a076abdcbd9b5aa91a9a8f8fbcfe10fcc103fea",
+    "afterSha256": "0c0363fb3173aa652721f3bd19826ace8881d81dd8daf3b688e77d2002eca794"
+  },
+  "baseline": {
+    "tests": 9,
+    "failed": 7,
+    "passedControls": 2,
+    "failures": [
+      "controlled-open rejection leaves listeners active during suspension",
+      "old resize crosses suspension/reactivation",
+      "geometry getter disposal still adds window listeners",
+      "inactive close/select sequence still notifies (combined case, not two independent defects)",
+      "queued panel focus crosses suspension/reactivation",
+      "close return-focus callback executes twice",
+      "panel focus steals current external focus"
+    ],
+    "controls": [
+      "normal current-reference resize updates top40px",
+      "ordinary unmount removes original listener"
+    ]
+  },
+  "probeAdjustment": "Intermediate79-case run:78pass/1failed close-focus control. Fixture recreated options on each parent render, triggering the product's intended configuration cancellation. Stabilize options; original before-repair implementation had no configuration watcher, so this does not revise its recorded7fail/2control baseline. Do not count this as a new product defect.",
+  "final": {
+    "targeted": 13,
+    "navMenuTotal": 83,
+    "files": 6,
+    "result": "passed exit0, CHOKIDAR_USEPOLLING=true",
+    "additionalControls": [
+      "activation creates a fresh measuring handler",
+      "panel-focus callback consumed once",
+      "inactive keyboard does not prevent default/notify",
+      "external focus takeover preserved before close return"
+    ],
+    "deactivation": "still emits existing close request even if controlled owner rejects; releases original resize/captured scroll"
+  },
+  "verification": {
+    "layer": "Actual NavMenu.Item/KeepAlive, stub Trigger/persistent content and ResizeObserver, controlled Vue nextTick, JSDOM geometry/focus and actual original-owner EventTarget probes. Existing actual Item/Trigger/NavMenu regressions separately included; not native browser/OS acceptance.",
+    "configuredCedarTypes": "passed",
+    "affectedCedarLint": "passed; final fixture changes rechecked",
+    "mapleRootLint": "passed exit0",
+    "classificationGate": "132 classified/50 pending, unchanged",
+    "sharedTests": "28 passed",
+    "catalog": "3 generated pages match",
+    "newRealBrowserOrOSCases": 0
+  },
+  "responsibilities": {
+    "bindings": "unique handler/generation per original window; normal close/reference updates unbind post-watch; suspension/disposal direct cleanup; activation fresh binding",
+    "measurement": "availability,open,operation and original reference rechecked after geometry/property reads, before state writes/listener registration",
+    "focus": "open/close task identity/generation/reference/config + current document focus; consume once, no rollback of performed focus",
+    "commands": "inactive/disposed close/select/setOpen/input handlers inert; controlled close request during deactivation preserved",
+    "tokens": "no new public API/CSS Token/layout default; shared ResizeObserver unchanged"
+  },
+  "pending": [
+    "root other retained commands",
+    "root registration identity",
+    "root external focus takeover",
+    "native keyboard/layout timing and cross-document adoption"
+  ],
+  "progress": {
+    "families": 33,
+    "closed": 18,
+    "closedPercent": 54.5,
+    "remaining": 15,
+    "remainingPercent": 45.5,
+    "classifiedFiles": 51,
+    "totalHints": 182,
+    "classifiedHints": 132,
+    "classifiedHintPercent": 72.5,
+    "pendingHints": 50,
+    "pendingHintPercent": 27.5,
+    "denominatorChange": 0,
+    "navMenu": "partial, not classified closed"
+  },
+  "inventory": "Item has no scanner hint before/after: hash-only evidence. No inventory/classification refresh or inflation. Menu remains129.26 unrelated CSS/date drifts preserved; no global motion-themes success claim.",
+  "preserved": [
+    "Form/date/linked Time",
+    "other parallel styles",
+    "144 native200% / Safari / Firefox blocked cases",
+    "Button white on-dark2.305:1 design exception"
+  ]
+}

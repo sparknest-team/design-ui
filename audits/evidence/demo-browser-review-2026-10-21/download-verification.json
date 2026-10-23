@@ -1,0 +1,18 @@
+{
+  "browser": "Chrome",
+  "action": "Normal click on component download links; no download event delivered by automation, actual files completed",
+  "checks": [
+    {
+      "file": "/Users/shuaimeng/Downloads/release-notes.txt",
+      "bytes": 100,
+      "sha256": "88cf1eaf6a821af072be0addf2720ed7ec90576d5d5cf889c188311b24357900",
+      "contentMatches": true
+    },
+    {
+      "file": "/Users/shuaimeng/Downloads/example-1.txt",
+      "bytes": 30,
+      "sha256": "bdd8840090493d5321fe85c9597272e8b47cbcd120e13d7558caf36b22f5e455",
+      "contentMatches": true
+    }
+  ]
+}

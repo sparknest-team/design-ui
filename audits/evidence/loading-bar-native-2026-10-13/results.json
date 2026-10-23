@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-13",
+  "browser": "Codex IAB",
+  "scope": "Maple LoadingBar real source/CSS with native clicks triggering fixture schedules",
+  "accepted": 6,
+  "osPreferencePassesAdded": 0,
+  "toleranceMs": 2,
+  "observation": "DOM MutationObserver + actual computed styles; repeated identical attribute snapshots omitted. Timing is observed, not frame-perfect.",
+  "cases": [
+    {"id":"default","timing":"default","start":7156.2,"created":7159.4,"shown":7360.7,"commands":[["start",7156.2],["finish",7508]],"completionTimes":[7508.6],"hiddenTimes":[7810.3],"removed":8061.9,"finalNodes":0,"duration":"0.25s, 0.25s, 0.25s","delay":"0s, 0s, 0s","easing":"ease, ease, ease"},
+    {"id":"long","timing":"long","start":17485.8,"created":17488.6,"shown":17690.8,"commands":[["start",17485.8],["finish",17840]],"completionTimes":[17841],"hiddenTimes":[18541.9],"removed":19344.8,"finalNodes":0,"duration":"0.6s, 0.6s, 0.6s","delay":"0.1s, 0.2s, 0s","easing":"linear, linear, linear"},
+    {"id":"zero","timing":"zero","start":35063.3,"created":35064.4,"shown":35266.5,"commands":[["start",35063.3],["finish",35415.7]],"completionTimes":[35419.9],"hiddenTimes":[35723.2],"removed":35974.8,"finalNodes":0,"duration":"0s, 0s, 0s","delay":"0s, 0s, 0s","easing":"ease, ease, ease"},
+    {"id":"repeated","timing":"default","start":53734,"created":53737.6,"shown":53936.8,"commands":[["start",53734],["finish",54087.2],["finish",54087.2],["finish",54289]],"completionTimes":[54088.1],"hiddenTimes":[54391.4],"removed":54642.7,"finalNodes":0,"duration":"0.25s, 0.25s, 0.25s","delay":"0s, 0s, 0s","easing":"ease, ease, ease"},
+    {"id":"restart","timing":"long","start":67141.1,"created":67142.6,"shown":67344.3,"commands":[["start",67141.1],["finish",67492.6],["start",67594.4],["finish",68093.8]],"completionTimes":[67493.2,68094.6],"restartReset":67595.1,"hiddenTimes":[68797.3],"removed":69600.2,"finalNodes":0,"duration":"0.6s, 0.6s, 0.6s","delay":"0.1s, 0.2s, 0s","easing":"linear, linear, linear"},
+    {"id":"error","timing":"default","start":80625.3,"created":80626.7,"shown":80829.5,"commands":[["error",80625.3]],"errorVisible":true,"completionTimes":[80928.8],"hiddenTimes":[81231.9],"removed":81484.2,"finalNodes":0,"duration":"0.25s, 0.25s, 0.25s","delay":"0s, 0s, 0s","easing":"ease, ease, ease"}
+  ],
+  "properties": "width, opacity, background-color",
+  "consoleErrorsWarnings": [],
+  "screenshot": {"file":"native.jpg","sha256":"92862fb3e300decc476a4dc3e2905c8a06eb37351de8700b8b652542fed65dbd"},
+  "excluded": ["real OS reduced-motion switch", "native 200% zoom", "Safari", "Firefox", "device touch", "arbitrary custom animations"],
+  "initialSetup": "Sandbox localhost listen EPERM; approved loopback service retry succeeded. Initial pre-service tab failed connection and was not accepted."
+}

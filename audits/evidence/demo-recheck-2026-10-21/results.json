@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-21",
+  "entries": 188,
+  "cases": 538,
+  "passed": 538,
+  "propertyControllers": 12140,
+  "serviceCalls": 11,
+  "apis": 5412,
+  "pendingApiDisplays": 0,
+  "coverage": {
+    "interactive": 4597,
+    "authored": 441,
+    "event-log": 335,
+    "contract-inspector": 39
+  },
+  "checks": {
+    "nativeDemoControls": "passed: 2720 SFCs, 1671 Markdown examples",
+    "generatorTests": "16 passed",
+    "panelTests": "17 passed",
+    "caseMatrix": "538/538 passed",
+    "functionServices": "11/11 triggered; returned handles closed where supported",
+    "cedarTypecheck": "passed",
+    "mapleTypecheck": "passed",
+    "sharedTypecheck": "passed",
+    "mapleLint": "passed",
+    "mapleDocs": "1403 SFCs, 0 failures"
+  },
+  "browser": {
+    "cedar": [
+      "useFormItem callbacks onChange/onInput/onFocus/onBlur",
+      "validate result and appended callback",
+      "FormItem label and alignment combination"
+    ],
+    "maple": [
+      "word-length + word-slice + max-length {length:2,errorOnly:false}",
+      "Unicode input 😀xY becomes 😀x, counter 2/2",
+      "clear-icon custom Button invokes clear and counter becomes 0/2"
+    ]
+  },
+  "limits": [
+    "JSDOM checks control rendering, binding, selected combinations, slot toggles and instance API availability; it does not exhaust every API value combination.",
+    "Full SDK maps, native layout, gestures, file pickers and fullscreen still need their supported browser/device environment."
+  ],
+  "runnerNotes": [
+    "Earlier memory-limited batches and the invalid Picker sample were corrected and rerun. Old service-check.log includes the superseded Picker failure; picker-correction.log is the final result.",
+    "Legacy Vitest occasionally prints fsevents teardown/close messages after passing tests; final verification and processes returned exit code 0."
+  ]
+}

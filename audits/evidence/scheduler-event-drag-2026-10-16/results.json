@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-16",
+  "batch": "Cedar SchedulerEvent standalone drag phase two",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerEvent.vue",
+    "beforeSha256": "2c9aa1ce0f5cdf473f2326871259d595f6dbd1ae4b636a4738061db8e069542f",
+    "sha256": "4701de155b616d7acad6f23e5b188ad767991be0c945a0c454f63d120d486c06",
+    "overlap": "Matches own phase-one evidence; unrelated resource-core/date/Form/Time/Picker preserved",
+    "originalHints": [223, 236, 336, 346],
+    "currentHints": [223, 236, 361, 381],
+    "fileRegistered": false,
+    "reason": "Native drag/retained click boundary remains before whole-file classification"
+  },
+  "regression": {
+    "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__tests__/event-drag-lifecycle.test.tsx",
+    "sha256": "500374c7072201a0dd733129fdf8765acb303e62cbb257c78fcd013eb48286b0",
+    "initialProbeRun": { "total": 10, "failed": 9, "passed": 1, "exitCode": 1 },
+    "validBaselineSubset": { "total": 9, "failed": 8, "passedControls": 1, "separatelyRerunOnOriginalSource": false },
+    "excludedProbe": "Parent disabled ref is delivered to child only after parent rendering; immediate synchronous stop cannot be required before that delivery. This is not a valid product failure. First repair had34 passes/one excluded probe failure across35tests; do not count that failure as a remaining defect.",
+    "validFailures": ["old move restarts cancelled gesture", "old release detaches replacement", "duplicate cancel notification", "unrelated pointercancel id", "cancelled hold arms old move", "event replacement stale drop", "old unlock releases new suppression", "old move crosses activation"],
+    "supplementary": ["synchronous current-event readonly mutation", "current350ms touch positive", "geometry disposal", "drop callback replacement", "fresh activation"],
+    "finalTargeted": { "passed": 14, "failed": 0 },
+    "firstFullScheduler": { "passed": 370, "failed": 1, "total": 371, "files": 60, "exitCode": 1, "failure": "Existing source-recycling timeline-pointer test hit unchanged5000ms timeout under concurrent run" },
+    "boundedFullRerun": { "mode": "supported --threads false; unchanged5000ms threshold/assertions", "passed": 365, "failed": 6, "total": 371, "files": 60, "exitCode": 1, "failures": "Same source-recycling timeout plus five workbench-model setTimeout-is-not-a-function failures in serial mode. Not a passing full run or five established product defects." },
+    "isolatedOriginalCase": { "passed": 1, "skippedOtherCases": 2, "testDurationMs": 2611, "thresholdMs": 5000, "exitCode": 0, "assertionsChanged": false, "meaning": "Single-case pass does not supersede either failed full run; cause of full-suite timeout remains unresolved" }
+  },
+  "repair": ["local live/session generation plus original event/root ownership", "cancelled/consumed/replaced listener and timer isolation", "pointercancel pointerId matching", "detach original listeners and own cleanup before notification", "geometry/style/reactive/notification reentry checks", "drop callback replacement remains owned by the new gesture"],
+  "validation": {
+    "cedarConfiguredTypecheck": "passed exit0",
+    "affectedEslint": "passed exit0 with --no-ignore",
+    "mapleRootLint": "failed exit1: parallel date-range/__tests__/endpoint-lock-demo.spec.js has3 prettier errors; not modified by this batch",
+    "sharedTests": { "total": 29, "passed": 28, "failed": 1, "failure": "existing global source-hash gate" },
+    "staleClassifiedFiles": ["cedar-design-web/ripple/index.ts", "maple-design-mobile/ripple/index.ts", "cedar-design-web/_components/virtual-list-v2/VirtualList.vue", "maple-design-mobile/_components/virtual-list-v2/VirtualList.vue"],
+    "generatedTokenPages": { "matched": 3 },
+    "liveReviewedInventory": "223/236/361/381 matched; runtime total178 unchanged",
+    "threeRepositoryDiffChecks": "passed exit0",
+    "newNativeBrowserOrOsCases": 0,
+    "lessAndMapleTypes": "not rerun; no CSS or Maple runtime changes"
+  },
+  "registration": {
+    "closedFamilies": 28, "totalFamilies": 33, "closedPercent": 84.8,
+    "remainingFamilies": 5, "remainingPercent": 15.2,
+    "sourceFiles": 67, "classifiedHints": 153, "totalHints": 178, "classifiedPercent": 86.0,
+    "remainingHints": 25, "remainingHintsPercent": 14.0, "denominatorChange": 0,
+    "remainingByFamily": { "Date": 3, "Form": 4, "Scheduler": 6, "Time": 3, "Picker": 9 },
+    "meaning": "No file/family prematurely registered; source responsibility registrations are not native acceptance"
+  },
+  "policy": { "touchHoldMs": 350, "touchCancelPx": 8, "startPx": 5, "ghostWidthPx": [160,240], "clickUnlockMs": 0, "publicApiCssTokensDefaultsChanged": false, "windowOwnership": "Original global document/window retained" },
+  "preservedBoundaries": ["Native drag/retained click requires separate phase", "Trusted input/native click ordering/cross-document/OS not certified", "Resource-core/Date/Form/Time/Picker and26 inventory drifts preserved", "Four stale classified hashes not refreshed", "Map SDK and144 environment groups blocked", "Button white2.305:1 remains design exception, not AA"],
+  "documentation": "Shared standard/Cedar guide/Maple bilingual guides/Scheduler README/changesets/Cedar OpenSpec/progress synchronized with full-suite and parallel-lint failures retained"
+}

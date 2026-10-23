@@ -1,0 +1,379 @@
+{
+  "date": "2026-10-13",
+  "scope": "Native 200% page zoom and Safari/Firefox portal visual acceptance",
+  "newAcceptedCases": 0,
+  "fixture": "refactors/token-validation/browser/index.html",
+  "service": {
+    "host": "127.0.0.1",
+    "port": 5198,
+    "watching": false,
+    "status": "stopped after environment checks"
+  },
+  "observations": [
+    {
+      "surface": "native computer control",
+      "operation": "getState",
+      "result": "timeout; runtime reset"
+    },
+    {
+      "surface": "Safari native control",
+      "operation": "getApp('Safari')",
+      "result": "timeoutReached; no usable UI state returned"
+    },
+    {
+      "surface": "Chrome extension",
+      "operation": "tabs.new / navigate / AX",
+      "result": "timeout; runtime reset; new-tab outcome not verified"
+    },
+    {
+      "surface": "Chrome extension",
+      "operation": "tabs.list",
+      "result": "timeout; runtime reset"
+    },
+    {
+      "surface": "browser inventory",
+      "available": [
+        "Chrome extension",
+        "Codex MCP Apps",
+        "Codex In-app Browser"
+      ],
+      "missing": [
+        "Safari",
+        "Firefox"
+      ]
+    },
+    {
+      "surface": "installed applications",
+      "Safari": "18.4",
+      "Chrome": "154.0.8037.98",
+      "Firefox": "Not found in /Applications or ~/Applications; standard and Developer Edition names checked"
+    }
+  ],
+  "suites": [
+    {
+      "id": "native-zoom-200",
+      "browser": "Chrome",
+      "zoomPercent": 200,
+      "status": "blocked",
+      "reason": "Chrome control timed out; IAB advertises viewport only, no native zoom controller. Native 200% was not set or verified."
+    },
+    {
+      "id": "safari-100",
+      "browser": "Safari",
+      "zoomPercent": 100,
+      "status": "blocked",
+      "reason": "Installed Safari 18.4 has no supported browser session; direct native app control timed out."
+    },
+    {
+      "id": "firefox-100",
+      "browser": "Firefox",
+      "zoomPercent": 100,
+      "status": "blocked",
+      "reason": "No supported Firefox session; no Firefox installation found in checked standard application locations."
+    }
+  ],
+  "casesPerSuite": 48,
+  "matrix": [
+    {
+      "platform": "Cedar Drawer",
+      "theme": "default/light",
+      "target": "body",
+      "content": "normal"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "default/light",
+      "target": "body",
+      "content": "long"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "default/light",
+      "target": "host",
+      "content": "normal"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "default/light",
+      "target": "host",
+      "content": "long"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "default/light",
+      "target": "inline",
+      "content": "normal"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "default/light",
+      "target": "inline",
+      "content": "long"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "default/dark",
+      "target": "body",
+      "content": "normal"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "default/dark",
+      "target": "body",
+      "content": "long"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "default/dark",
+      "target": "host",
+      "content": "normal"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "default/dark",
+      "target": "host",
+      "content": "long"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "default/dark",
+      "target": "inline",
+      "content": "normal"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "default/dark",
+      "target": "inline",
+      "content": "long"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "maple/light",
+      "target": "body",
+      "content": "normal"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "maple/light",
+      "target": "body",
+      "content": "long"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "maple/light",
+      "target": "host",
+      "content": "normal"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "maple/light",
+      "target": "host",
+      "content": "long"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "maple/light",
+      "target": "inline",
+      "content": "normal"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "maple/light",
+      "target": "inline",
+      "content": "long"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "maple/dark",
+      "target": "body",
+      "content": "normal"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "maple/dark",
+      "target": "body",
+      "content": "long"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "maple/dark",
+      "target": "host",
+      "content": "normal"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "maple/dark",
+      "target": "host",
+      "content": "long"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "maple/dark",
+      "target": "inline",
+      "content": "normal"
+    },
+    {
+      "platform": "Cedar Drawer",
+      "theme": "maple/dark",
+      "target": "inline",
+      "content": "long"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "default/light",
+      "target": "body",
+      "content": "normal"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "default/light",
+      "target": "body",
+      "content": "long"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "default/light",
+      "target": "host",
+      "content": "normal"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "default/light",
+      "target": "host",
+      "content": "long"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "default/light",
+      "target": "inline",
+      "content": "normal"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "default/light",
+      "target": "inline",
+      "content": "long"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "default/dark",
+      "target": "body",
+      "content": "normal"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "default/dark",
+      "target": "body",
+      "content": "long"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "default/dark",
+      "target": "host",
+      "content": "normal"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "default/dark",
+      "target": "host",
+      "content": "long"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "default/dark",
+      "target": "inline",
+      "content": "normal"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "default/dark",
+      "target": "inline",
+      "content": "long"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "maple/light",
+      "target": "body",
+      "content": "normal"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "maple/light",
+      "target": "body",
+      "content": "long"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "maple/light",
+      "target": "host",
+      "content": "normal"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "maple/light",
+      "target": "host",
+      "content": "long"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "maple/light",
+      "target": "inline",
+      "content": "normal"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "maple/light",
+      "target": "inline",
+      "content": "long"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "maple/dark",
+      "target": "body",
+      "content": "normal"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "maple/dark",
+      "target": "body",
+      "content": "long"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "maple/dark",
+      "target": "host",
+      "content": "normal"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "maple/dark",
+      "target": "host",
+      "content": "long"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "maple/dark",
+      "target": "inline",
+      "content": "normal"
+    },
+    {
+      "platform": "Maple Popup",
+      "theme": "maple/dark",
+      "target": "inline",
+      "content": "long"
+    }
+  ],
+  "prohibitedSubstitutes": [
+    "CSS zoom",
+    "CSS transform scale",
+    "viewport resizing as native zoom proof",
+    "Playwright WebKit as installed Safari proof",
+    "JSDOM or compiled Less as browser visual proof"
+  ],
+  "resumeOrder": [
+    "Restore supported Chrome/native control, verify actual browser zoom UI at 200%, then run 48 cases",
+    "Restore supported Safari control and run 48 cases",
+    "Provide installed Firefox and supported control, then run 48 cases"
+  ],
+  "previousEvidence": "audits/evidence/portal-2026-10-13/results.json"
+}

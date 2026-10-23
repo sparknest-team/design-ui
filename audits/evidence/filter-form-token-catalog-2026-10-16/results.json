@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-16",
+  "scope": "Cedar FilterForm/Form styles, tokens and generated catalog; preserve parallel business implementation",
+  "status": "authorized-sections-closed-global-catalog-blocked",
+  "classification": {
+    "families": {
+      "closed": 33,
+      "total": 33,
+      "remaining": 0,
+      "closedPercent": 100,
+      "remainingPercent": 0
+    },
+    "sources": 78,
+    "hints": {
+      "classified": 182,
+      "total": 182,
+      "pending": 0
+    },
+    "denominatorChange": 0,
+    "boundary": "Runtime source responsibility classification only, not full-library or native acceptance."
+  },
+  "findings": {
+    "historicalDifferenceCount": 5,
+    "currentAuthorizedGeneratedContextHunks": 2,
+    "componentSections": [
+      "filter-form",
+      "form"
+    ],
+    "filterFormTokens": 13,
+    "productionDefectReproduced": false,
+    "productionSourceOrStyleChanged": false,
+    "explanation": "Compiled Less, static Form style import and mounted DOM already consume these declarations. Only stale generated sections failed the baseline. Historical differences are not five bugs.",
+    "layout": "Action-offset aliases Form line-height/label margin into padding-top; stacked sets zero. Grid colGap is numeric. Root-declared alias dependencies are not guaranteed to recompute from local overrides."
+  },
+  "validation": [
+    {
+      "command": "node --test bin/filter-form-catalog.test.mjs",
+      "phase": "before scoped catalog synchronization",
+      "tests": 5,
+      "passed": 3,
+      "failed": 2,
+      "exitCode": 1,
+      "durationSeconds": 5.831,
+      "layer": "Node / real Less compilation",
+      "failure": "Only generated Cedar FilterForm and Form sections stale"
+    },
+    {
+      "command": "node --test bin/filter-form-catalog.test.mjs bin/token-catalog.test.mjs",
+      "tests": 8,
+      "passed": 8,
+      "failed": 0,
+      "exitCode": 0,
+      "durationSeconds": 11.879,
+      "layer": "Node / real Less compilation"
+    },
+    {
+      "command": "node bin/token-inventory.mjs --check-consumers --summary",
+      "exitCode": 0,
+      "layer": "compiled consumer inventory",
+      "summary": {
+        "files": 170,
+        "declarations": 4552,
+        "candidates": 70,
+        "crossComponentCss": 40,
+        "literalRuntime": 10,
+        "dynamicRuntime": 20,
+        "needsManualReview": 0,
+        "errors": 0
+      }
+    },
+    {
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/filter-form/__tests__ src/form/__tests__",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "tests": 75,
+      "files": 17,
+      "passed": 75,
+      "exitCode": 0,
+      "durationSeconds": 11.15,
+      "newDomTests": 2,
+      "layer": "JSDOM; no native layout/focus claim"
+    },
+    {
+      "command": "pnpm exec eslint --no-ignore src/filter-form/__tests__/token-dom.test.tsx --max-warnings 0",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm check:token-reference",
+      "cwd": "design-ui",
+      "tests": 8,
+      "passed": 8,
+      "failed": 0,
+      "testDurationSeconds": 4.887,
+      "exitCode": 1,
+      "result": "New regressions integrated; global check deliberately remains enabled and fails on separate FieldDecorator drift"
+    }
+  ],
+  "preservedBlockers": {
+    "fieldDecorator": {
+      "scope": "Outside authorized FilterForm/Form",
+      "pages": [
+        "cedar-design-web/packages/cedar-ui/docs/guide/design-token-reference.md",
+        "maple-design-mobile/packages/maple-ui/docs/designTokenReference.zh-CN.md",
+        "maple-design-mobile/packages/maple-ui/docs/designTokenReference.en-US.md"
+      ],
+      "changedRows": 9,
+      "contextHunks": 3,
+      "properties": [
+        "outline-offset",
+        "caret-color"
+      ],
+      "declarationValueChanges": false,
+      "applied": false,
+      "needed": "Separate scoped review authorization or owner handoff for actual focus/caret consumption; no inferred accessibility defect and no blind full regeneration."
+    },
+    "map": "Formal SDK provider disposal and async identity contract; not retried.",
+    "native": {
+      "groups": 144,
+      "needed": "Responsive real Chrome native 200% entry, supported Safari control, real Firefox installation/control environment. No installation or permission changes."
+    },
+    "otherInventoryDrifts": 26,
+    "button": "Preserve white on-dark 2.305:1 non-AA design exception."
+  },
+  "sourceHashesUnchanged": {
+    "filter-form/FilterForm.vue": "22c5ca3a34c4b6fa415d162d711faab7281895d3720dbdb7286b06deb44ffb10",
+    "filter-form/style/index.less": "aed6097c9756c45208a8d95851649ac511c0923232b5f4be6458aba2fa9f95a0",
+    "filter-form/style/token.less": "03d23208f6e05e504e3cbe5051797dda6f51e18906cec47e965926702ae0a30f",
+    "filter-form/style/index.ts": "389b8d7538c3a1d4735ffcc533cd6797cf1aae0fae7bd793ff5fa529fd7937dd",
+    "form/style/index.less": "6c1eaa50c7720fef1cd51ab02f100c2f28d79655a1b46db5b177bac9a708ff89",
+    "form/style/token.less": "3743fc343765e7c6d9d91ef1d81fbd0917d77605debe3e231d77e738a6e588cb"
+  },
+  "finalChecks": {
+    "mapleRootLintCheckExitCode": 0,
+    "threeRepositoryDiffChecksExitCode": 0,
+    "evidenceJsonParseExitCode": 0,
+    "frozenSourceHashesMatch": true,
+    "classificationRowsVerified": 78,
+    "classificationHintsVerified": 182,
+    "finalGeneratorPatchExitCode": 0,
+    "finalGeneratorRemainingScope": "Only FieldDecorator in three pages; no authorized FilterForm/Form hunks remain. Patch inspected, not applied.",
+    "allVerificationProcessesFinished": true
+  },
+  "nativeNewCases": 0,
+  "notes": [
+    "Only authorized generated hunks applied, no FieldDecorator rows or Maple reference pages regenerated.",
+    "No production style/API/business/default token change, no new mobile component.",
+    "No new typecheck/build/native claims; prior historical evidence remains historical.",
+    "Initial generator filtering expected 3 authorized context hunks but found 2 due to coalescing; stopped before write, then applied exact verified 2.",
+    "Parent github_web is not a Git repository; final diff checks target actual three repositories."
+  ]
+}

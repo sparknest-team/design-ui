@@ -15,8 +15,18 @@ async function walk(dir) {
       const source = await fs.readFile(full, 'utf8')
       for (const match of source.matchAll(/<(Trigger|trigger|MpTrigger|CTrigger|mp-trigger|c-trigger)(?=[\s>])([\s\S]*?)>/g)) {
         const relative = path.relative(root, full)
-        assert.match(match[2], /(?:^|\s):?trigger\s*=/, `${relative}: direct Trigger consumer must declare its interaction explicitly`)
-        if (relative.startsWith('maple-design-mobile/')) assert.match(match[2], /(?:^|\s):unmount-on-close\s*=/, `${relative}: Maple wrapper must declare its content cache policy`)
+        const wrapperBinding = /v-bind="triggerBindings"/.test(match[2]) &&
+          /const\s*\{\s*triggerRef,\s*triggerBindings\s*\}\s*=\s*controls/.test(source) &&
+          /const controls = useTriggerWrapper\(props, attrs,/.test(source)
+        if (wrapperBinding) {
+          const props = await fs.readFile(path.join(dir, 'props.ts'), 'utf8')
+          assert.match(props, /\btrigger:\s*\{/, `${relative}: wrapper must declare interaction defaults`)
+          assert.match(props, /\bunmountOnClose:\s*\{/, `${relative}: wrapper must declare cache defaults`)
+        }
+        if (!wrapperBinding) {
+          assert.match(match[2], /(?:^|\s):?trigger\s*=|v-bind\s*=\s*"\s*\{[^"]*\btrigger\s*:/, `${relative}: direct Trigger consumer must declare its interaction explicitly`)
+          if (relative.startsWith('maple-design-mobile/')) assert.match(match[2], /(?:^|\s)(?::unmount-on-close|unmountOnClose)\s*=|v-bind\s*=\s*"\s*\{[^"]*\bunmountOnClose\s*:/, `${relative}: Maple wrapper must declare its content cache policy`)
+        }
         const callbacks = [...match[2].matchAll(/(?:onOpen-change|onUpdate:open)=\{([^}]+)\}/g)].map(item => item[1].trim())
         assert.equal(new Set(callbacks).size, callbacks.length, `${relative}: duplicated state request callback`)
         entries.push({ path: relative, line: source.slice(0, match.index).split('\n').length, tag: match[1] })

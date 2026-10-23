@@ -1,0 +1,3003 @@
+{
+  "date": "2026-10-13",
+  "browser": "native IAB Chromium",
+  "scope": "Maple real Popup + actual Teleport host; no viewport or preference emulation",
+  "passed": 9,
+  "total": 9,
+  "notes": [
+    "0ms is explicit CSS override, not OS reduced-motion.",
+    "Stable root has no transition; active fade classes consume duration/easing.",
+    "Some closed observations retain hidden leave DOM briefly after probe unmount; final settled DOM is empty.",
+    "Initial mount opened notification retains existing mounted behavior; not a full appear timing guarantee."
+  ],
+  "groups": [
+    {
+      "case": "default",
+      "opened": {
+        "active": "Motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup",
+            "display": "flex",
+            "duration": "0s",
+            "easing": "ease"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.25s",
+            "easing": "ease"
+          },
+          {
+            "class": "mp-popup__content mp-popup--center mp-popup--content-background-color mp-elevation--3",
+            "display": "block",
+            "duration": "0.25s",
+            "easing": "ease"
+          }
+        ],
+        "state": {
+          "duration": "250ms",
+          "easing": "ease",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 87929.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 88472.5,
+              "name": "open"
+            },
+            {
+              "at": 89097.19999998808,
+              "name": "opened"
+            },
+            {
+              "at": 89575.5,
+              "name": "close"
+            },
+            {
+              "at": 90198.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 152363.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 152998.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 153652.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 153712.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 153829.29999995232,
+              "name": "opened"
+            },
+            {
+              "at": 154904.89999997616,
+              "name": "close"
+            },
+            {
+              "at": 155532.89999997616,
+              "name": "closed"
+            },
+            {
+              "at": 156806.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 156833.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 157270.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 157297.19999998808,
+              "name": "closed"
+            },
+            {
+              "at": 157741.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 158363.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 342243.1999999881,
+              "name": "open"
+            },
+            {
+              "at": 342258.2999999523,
+              "name": "opened"
+            },
+            {
+              "at": 343301,
+              "name": "close"
+            },
+            {
+              "at": 343929.2999999523,
+              "name": "closed"
+            },
+            {
+              "at": 481461.6999999881,
+              "name": "open"
+            },
+            {
+              "at": 481729.7999999523,
+              "name": "opened"
+            }
+          ],
+          "mounts": 11,
+          "open": true,
+          "placement": "center",
+          "unmounts": 10
+        }
+      },
+      "closed": {
+        "active": "Open motion popup",
+        "lock": "visible",
+        "panels": [],
+        "state": {
+          "duration": "250ms",
+          "easing": "ease",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 87929.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 88472.5,
+              "name": "open"
+            },
+            {
+              "at": 89097.19999998808,
+              "name": "opened"
+            },
+            {
+              "at": 89575.5,
+              "name": "close"
+            },
+            {
+              "at": 90198.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 152363.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 152998.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 153652.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 153712.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 153829.29999995232,
+              "name": "opened"
+            },
+            {
+              "at": 154904.89999997616,
+              "name": "close"
+            },
+            {
+              "at": 155532.89999997616,
+              "name": "closed"
+            },
+            {
+              "at": 156806.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 156833.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 157270.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 157297.19999998808,
+              "name": "closed"
+            },
+            {
+              "at": 157741.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 158363.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 342243.1999999881,
+              "name": "open"
+            },
+            {
+              "at": 342258.2999999523,
+              "name": "opened"
+            },
+            {
+              "at": 343301,
+              "name": "close"
+            },
+            {
+              "at": 343929.2999999523,
+              "name": "closed"
+            },
+            {
+              "at": 481461.6999999881,
+              "name": "open"
+            },
+            {
+              "at": 481729.7999999523,
+              "name": "opened"
+            },
+            {
+              "at": 482125.1999999881,
+              "name": "close"
+            },
+            {
+              "at": 482397.09999996424,
+              "name": "closed"
+            }
+          ],
+          "mounts": 11,
+          "open": false,
+          "placement": "center",
+          "unmounts": 11
+        }
+      }
+    },
+    {
+      "case": "center600",
+      "opened": {
+        "active": "Motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup",
+            "display": "flex",
+            "duration": "0s",
+            "easing": "ease"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--center mp-popup--content-background-color mp-elevation--3",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            }
+          ],
+          "mounts": 2,
+          "open": true,
+          "placement": "center",
+          "unmounts": 1
+        }
+      },
+      "leaving": {
+        "active": "Close motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup mp-fade-leave-active mp-fade-leave-to",
+            "display": "flex",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--center mp-popup--content-background-color mp-elevation--3 mp-pop-center-leave-active mp-pop-center-leave-to",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            }
+          ],
+          "mounts": 2,
+          "open": false,
+          "placement": "center",
+          "unmounts": 1
+        }
+      },
+      "closed": {
+        "active": "Open motion popup",
+        "draft": "preserved draft",
+        "lock": "visible",
+        "panels": [
+          {
+            "class": "mp--box mp-popup mp-fade-leave-active mp-fade-leave-to",
+            "display": "none",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--center mp-popup--content-background-color mp-elevation--3",
+            "display": "none",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            }
+          ],
+          "mounts": 2,
+          "open": false,
+          "placement": "center",
+          "unmounts": 2
+        }
+      }
+    },
+    {
+      "case": "top600",
+      "opened": {
+        "active": "Motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup",
+            "display": "flex",
+            "duration": "0s",
+            "easing": "ease"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--top mp-popup--content-background-color mp-elevation--3",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            }
+          ],
+          "mounts": 3,
+          "open": true,
+          "placement": "top",
+          "unmounts": 2
+        }
+      },
+      "leaving": {
+        "active": "Close motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup mp-fade-leave-active mp-fade-leave-to",
+            "display": "flex",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--top mp-popup--content-background-color mp-elevation--3 mp-pop-top-leave-active mp-pop-top-leave-to",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            }
+          ],
+          "mounts": 3,
+          "open": false,
+          "placement": "top",
+          "unmounts": 2
+        }
+      },
+      "closed": {
+        "active": "Open motion popup",
+        "lock": "visible",
+        "panels": [],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            }
+          ],
+          "mounts": 3,
+          "open": false,
+          "placement": "top",
+          "unmounts": 3
+        }
+      }
+    },
+    {
+      "case": "bottom600",
+      "opened": {
+        "active": "Motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup",
+            "display": "flex",
+            "duration": "0s",
+            "easing": "ease"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--bottom mp-popup--content-background-color mp-elevation--3",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            }
+          ],
+          "mounts": 4,
+          "open": true,
+          "placement": "bottom",
+          "unmounts": 3
+        }
+      },
+      "leaving": {
+        "active": "Close motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup mp-fade-leave-active mp-fade-leave-to",
+            "display": "flex",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--bottom mp-popup--content-background-color mp-elevation--3 mp-pop-bottom-leave-active mp-pop-bottom-leave-to",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            }
+          ],
+          "mounts": 4,
+          "open": false,
+          "placement": "bottom",
+          "unmounts": 3
+        }
+      },
+      "closed": {
+        "active": "Open motion popup",
+        "draft": "preserved draft",
+        "lock": "visible",
+        "panels": [
+          {
+            "class": "mp--box mp-popup mp-fade-leave-active mp-fade-leave-to",
+            "display": "none",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--bottom mp-popup--content-background-color mp-elevation--3",
+            "display": "none",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            }
+          ],
+          "mounts": 4,
+          "open": false,
+          "placement": "bottom",
+          "unmounts": 4
+        }
+      }
+    },
+    {
+      "case": "left600",
+      "opened": {
+        "active": "Motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup",
+            "display": "flex",
+            "duration": "0s",
+            "easing": "ease"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--left mp-popup--content-background-color mp-elevation--3",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            }
+          ],
+          "mounts": 5,
+          "open": true,
+          "placement": "left",
+          "unmounts": 4
+        }
+      },
+      "leaving": {
+        "active": "Close motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup mp-fade-leave-active mp-fade-leave-to",
+            "display": "flex",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--left mp-popup--content-background-color mp-elevation--3 mp-pop-left-leave-active mp-pop-left-leave-to",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            }
+          ],
+          "mounts": 5,
+          "open": false,
+          "placement": "left",
+          "unmounts": 4
+        }
+      },
+      "closed": {
+        "active": "Open motion popup",
+        "draft": "preserved draft",
+        "lock": "visible",
+        "panels": [
+          {
+            "class": "mp--box mp-popup mp-fade-leave-active mp-fade-leave-to",
+            "display": "none",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--left mp-popup--content-background-color mp-elevation--3",
+            "display": "none",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 87929.09999996424,
+              "name": "closed"
+            }
+          ],
+          "mounts": 5,
+          "open": false,
+          "placement": "left",
+          "unmounts": 5
+        }
+      }
+    },
+    {
+      "case": "right600",
+      "opened": {
+        "active": "Motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup",
+            "display": "flex",
+            "duration": "0s",
+            "easing": "ease"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--right mp-popup--content-background-color mp-elevation--3",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 87929.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 88472.5,
+              "name": "open"
+            },
+            {
+              "at": 89097.19999998808,
+              "name": "opened"
+            }
+          ],
+          "mounts": 6,
+          "open": true,
+          "placement": "right",
+          "unmounts": 5
+        }
+      },
+      "leaving": {
+        "active": "Close motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup mp-fade-leave-active mp-fade-leave-to",
+            "display": "flex",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--right mp-popup--content-background-color mp-elevation--3 mp-pop-right-leave-active mp-pop-right-leave-to",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 87929.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 88472.5,
+              "name": "open"
+            },
+            {
+              "at": 89097.19999998808,
+              "name": "opened"
+            },
+            {
+              "at": 89575.5,
+              "name": "close"
+            }
+          ],
+          "mounts": 6,
+          "open": false,
+          "placement": "right",
+          "unmounts": 5
+        }
+      },
+      "closed": {
+        "active": "Open motion popup",
+        "draft": "preserved draft",
+        "lock": "visible",
+        "panels": [
+          {
+            "class": "mp--box mp-popup mp-fade-leave-active mp-fade-leave-to",
+            "display": "none",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--right mp-popup--content-background-color mp-elevation--3",
+            "display": "none",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 87929.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 88472.5,
+              "name": "open"
+            },
+            {
+              "at": 89097.19999998808,
+              "name": "opened"
+            },
+            {
+              "at": 89575.5,
+              "name": "close"
+            },
+            {
+              "at": 90198.09999996424,
+              "name": "closed"
+            }
+          ],
+          "mounts": 6,
+          "open": false,
+          "placement": "right",
+          "unmounts": 6
+        }
+      }
+    },
+    {
+      "case": "rapid",
+      "before": {
+        "active": "Motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup",
+            "display": "flex",
+            "duration": "0s",
+            "easing": "ease"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--center mp-popup--content-background-color mp-elevation--3",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 87929.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 88472.5,
+              "name": "open"
+            },
+            {
+              "at": 89097.19999998808,
+              "name": "opened"
+            },
+            {
+              "at": 89575.5,
+              "name": "close"
+            },
+            {
+              "at": 90198.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 152363.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 152998.59999996424,
+              "name": "opened"
+            }
+          ],
+          "mounts": 7,
+          "open": true,
+          "placement": "center",
+          "unmounts": 6
+        }
+      },
+      "after": {
+        "active": "Rapid close reopen",
+        "draft": "rapid preserved",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup",
+            "display": "flex",
+            "duration": "0s",
+            "easing": "ease"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--center mp-popup--content-background-color mp-elevation--3",
+            "display": "block",
+            "duration": "0.6s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 87929.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 88472.5,
+              "name": "open"
+            },
+            {
+              "at": 89097.19999998808,
+              "name": "opened"
+            },
+            {
+              "at": 89575.5,
+              "name": "close"
+            },
+            {
+              "at": 90198.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 152363.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 152998.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 153652.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 153712.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 153829.29999995232,
+              "name": "opened"
+            }
+          ],
+          "mounts": 7,
+          "open": true,
+          "placement": "center",
+          "unmounts": 6
+        }
+      },
+      "closed": {
+        "active": "Open motion popup",
+        "lock": "visible",
+        "panels": [],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 87929.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 88472.5,
+              "name": "open"
+            },
+            {
+              "at": 89097.19999998808,
+              "name": "opened"
+            },
+            {
+              "at": 89575.5,
+              "name": "close"
+            },
+            {
+              "at": 90198.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 152363.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 152998.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 153652.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 153712.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 153829.29999995232,
+              "name": "opened"
+            },
+            {
+              "at": 154904.89999997616,
+              "name": "close"
+            },
+            {
+              "at": 155532.89999997616,
+              "name": "closed"
+            }
+          ],
+          "mounts": 7,
+          "open": false,
+          "placement": "center",
+          "unmounts": 7
+        }
+      }
+    },
+    {
+      "case": "zero",
+      "opened": {
+        "active": "Motion popup",
+        "draft": "preserved draft",
+        "lock": "hidden",
+        "panels": [
+          {
+            "class": "mp--box mp-popup",
+            "display": "flex",
+            "duration": "0s",
+            "easing": "ease"
+          },
+          {
+            "class": "mp-popup__overlay",
+            "display": "block",
+            "duration": "0s",
+            "easing": "linear"
+          },
+          {
+            "class": "mp-popup__content mp-popup--center mp-popup--content-background-color mp-elevation--3",
+            "display": "block",
+            "duration": "0s",
+            "easing": "linear"
+          }
+        ],
+        "state": {
+          "duration": "0ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 87929.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 88472.5,
+              "name": "open"
+            },
+            {
+              "at": 89097.19999998808,
+              "name": "opened"
+            },
+            {
+              "at": 89575.5,
+              "name": "close"
+            },
+            {
+              "at": 90198.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 152363.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 152998.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 153652.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 153712.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 153829.29999995232,
+              "name": "opened"
+            },
+            {
+              "at": 154904.89999997616,
+              "name": "close"
+            },
+            {
+              "at": 155532.89999997616,
+              "name": "closed"
+            },
+            {
+              "at": 156806.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 156833.79999995232,
+              "name": "opened"
+            }
+          ],
+          "mounts": 8,
+          "open": true,
+          "placement": "center",
+          "unmounts": 7
+        }
+      },
+      "closed": {
+        "active": "Open motion popup",
+        "lock": "visible",
+        "panels": [],
+        "state": {
+          "duration": "0ms",
+          "easing": "linear",
+          "enabled": true,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 87929.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 88472.5,
+              "name": "open"
+            },
+            {
+              "at": 89097.19999998808,
+              "name": "opened"
+            },
+            {
+              "at": 89575.5,
+              "name": "close"
+            },
+            {
+              "at": 90198.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 152363.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 152998.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 153652.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 153712.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 153829.29999995232,
+              "name": "opened"
+            },
+            {
+              "at": 154904.89999997616,
+              "name": "close"
+            },
+            {
+              "at": 155532.89999997616,
+              "name": "closed"
+            },
+            {
+              "at": 156806.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 156833.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 157270.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 157297.19999998808,
+              "name": "closed"
+            }
+          ],
+          "mounts": 8,
+          "open": false,
+          "placement": "center",
+          "unmounts": 8
+        }
+      }
+    },
+    {
+      "case": "dispose",
+      "closed": {
+        "active": "Open motion popup",
+        "lock": "visible",
+        "panels": [],
+        "state": {
+          "duration": "600ms",
+          "easing": "linear",
+          "enabled": false,
+          "events": [
+            {
+              "at": 18241.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 18510.89999997616,
+              "name": "opened"
+            },
+            {
+              "at": 53560.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 53838.29999995232,
+              "name": "closed"
+            },
+            {
+              "at": 54213,
+              "name": "open"
+            },
+            {
+              "at": 54837,
+              "name": "opened"
+            },
+            {
+              "at": 55246,
+              "name": "close"
+            },
+            {
+              "at": 55871.39999997616,
+              "name": "closed"
+            },
+            {
+              "at": 81562.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 82195.69999998808,
+              "name": "opened"
+            },
+            {
+              "at": 82626.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 83244.69999998808,
+              "name": "closed"
+            },
+            {
+              "at": 83987.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 84612.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 85058.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 85678.5,
+              "name": "closed"
+            },
+            {
+              "at": 86222.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 86846.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 87308.29999995232,
+              "name": "close"
+            },
+            {
+              "at": 87929.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 88472.5,
+              "name": "open"
+            },
+            {
+              "at": 89097.19999998808,
+              "name": "opened"
+            },
+            {
+              "at": 89575.5,
+              "name": "close"
+            },
+            {
+              "at": 90198.09999996424,
+              "name": "closed"
+            },
+            {
+              "at": 152363.19999998808,
+              "name": "open"
+            },
+            {
+              "at": 152998.59999996424,
+              "name": "opened"
+            },
+            {
+              "at": 153652.19999998808,
+              "name": "close"
+            },
+            {
+              "at": 153712.29999995232,
+              "name": "open"
+            },
+            {
+              "at": 153829.29999995232,
+              "name": "opened"
+            },
+            {
+              "at": 154904.89999997616,
+              "name": "close"
+            },
+            {
+              "at": 155532.89999997616,
+              "name": "closed"
+            },
+            {
+              "at": 156806.39999997616,
+              "name": "open"
+            },
+            {
+              "at": 156833.79999995232,
+              "name": "opened"
+            },
+            {
+              "at": 157270.69999998808,
+              "name": "close"
+            },
+            {
+              "at": 157297.19999998808,
+              "name": "closed"
+            },
+            {
+              "at": 157741.09999996424,
+              "name": "open"
+            },
+            {
+              "at": 158363.59999996424,
+              "name": "opened"
+            }
+          ],
+          "mounts": 9,
+          "open": false,
+          "placement": "center",
+          "unmounts": 9
+        }
+      }
+    }
+  ],
+  "settledFinal": {
+    "active": "Open motion popup",
+    "lock": "visible",
+    "panels": [],
+    "state": {
+      "duration": "600ms",
+      "easing": "linear",
+      "enabled": true,
+      "events": [
+        {
+          "at": 18241.39999997616,
+          "name": "open"
+        },
+        {
+          "at": 18510.89999997616,
+          "name": "opened"
+        },
+        {
+          "at": 53560.19999998808,
+          "name": "close"
+        },
+        {
+          "at": 53838.29999995232,
+          "name": "closed"
+        },
+        {
+          "at": 54213,
+          "name": "open"
+        },
+        {
+          "at": 54837,
+          "name": "opened"
+        },
+        {
+          "at": 55246,
+          "name": "close"
+        },
+        {
+          "at": 55871.39999997616,
+          "name": "closed"
+        },
+        {
+          "at": 81562.19999998808,
+          "name": "open"
+        },
+        {
+          "at": 82195.69999998808,
+          "name": "opened"
+        },
+        {
+          "at": 82626.69999998808,
+          "name": "close"
+        },
+        {
+          "at": 83244.69999998808,
+          "name": "closed"
+        },
+        {
+          "at": 83987.09999996424,
+          "name": "open"
+        },
+        {
+          "at": 84612.59999996424,
+          "name": "opened"
+        },
+        {
+          "at": 85058.29999995232,
+          "name": "close"
+        },
+        {
+          "at": 85678.5,
+          "name": "closed"
+        },
+        {
+          "at": 86222.29999995232,
+          "name": "open"
+        },
+        {
+          "at": 86846.79999995232,
+          "name": "opened"
+        },
+        {
+          "at": 87308.29999995232,
+          "name": "close"
+        },
+        {
+          "at": 87929.09999996424,
+          "name": "closed"
+        },
+        {
+          "at": 88472.5,
+          "name": "open"
+        },
+        {
+          "at": 89097.19999998808,
+          "name": "opened"
+        },
+        {
+          "at": 89575.5,
+          "name": "close"
+        },
+        {
+          "at": 90198.09999996424,
+          "name": "closed"
+        },
+        {
+          "at": 152363.19999998808,
+          "name": "open"
+        },
+        {
+          "at": 152998.59999996424,
+          "name": "opened"
+        },
+        {
+          "at": 153652.19999998808,
+          "name": "close"
+        },
+        {
+          "at": 153712.29999995232,
+          "name": "open"
+        },
+        {
+          "at": 153829.29999995232,
+          "name": "opened"
+        },
+        {
+          "at": 154904.89999997616,
+          "name": "close"
+        },
+        {
+          "at": 155532.89999997616,
+          "name": "closed"
+        },
+        {
+          "at": 156806.39999997616,
+          "name": "open"
+        },
+        {
+          "at": 156833.79999995232,
+          "name": "opened"
+        },
+        {
+          "at": 157270.69999998808,
+          "name": "close"
+        },
+        {
+          "at": 157297.19999998808,
+          "name": "closed"
+        },
+        {
+          "at": 157741.09999996424,
+          "name": "open"
+        },
+        {
+          "at": 158363.59999996424,
+          "name": "opened"
+        },
+        {
+          "at": 342243.1999999881,
+          "name": "open"
+        },
+        {
+          "at": 342258.2999999523,
+          "name": "opened"
+        },
+        {
+          "at": 343301,
+          "name": "close"
+        },
+        {
+          "at": 343929.2999999523,
+          "name": "closed"
+        }
+      ],
+      "mounts": 10,
+      "open": false,
+      "placement": "center",
+      "unmounts": 10
+    }
+  },
+  "screenshots": [
+    {
+      "file": "default.jpg",
+      "sha256": "6c4890182de356ed2de093a096dd586e8879365d9baba39a34b25b46aac7088a",
+      "bytes": 88890
+    },
+    {
+      "file": "center.jpg",
+      "sha256": "a03278f2b9e96b66c0c502c6401813a0fd0ea0f4547b43687f77e9536a348bcb",
+      "bytes": 84186
+    },
+    {
+      "file": "top.jpg",
+      "sha256": "2caba2415ee7ddb36022a2cff5f71af7a1321903916ea238670cc93c1d997b15",
+      "bytes": 30300
+    },
+    {
+      "file": "bottom.jpg",
+      "sha256": "1c9b5ef73cbcfe79dac5eaf45e557824ab5455df54fefdcdd82792c0a68f116d",
+      "bytes": 49281
+    },
+    {
+      "file": "left.jpg",
+      "sha256": "c05bc86962058e7bc78a07193fa769d0e3ec621c827fde9b850ab1c975b2359a",
+      "bytes": 34578
+    },
+    {
+      "file": "right.jpg",
+      "sha256": "b43a83e77b7643da07fac8f05101fedc2d88a061d474f71f94b002ae33a588e6",
+      "bytes": 48986
+    },
+    {
+      "file": "rapid.jpg",
+      "sha256": "3cf2d2982fa07a572233f21744e61e3e81796ccf72dd0e3d1a8321b8bb337990",
+      "bytes": 69163
+    }
+  ]
+}

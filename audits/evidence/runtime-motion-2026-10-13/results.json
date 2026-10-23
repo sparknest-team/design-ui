@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-13",
+  "scope": "Button stability, motion inventory and BackTop runtime; unit/compiler evidence only",
+  "realBrowserPassesAdded": 0,
+  "realOSPassesAdded": 0,
+  "button": {
+    "cedarTestsPassed": 37,
+    "mapleTestsPassed": 65,
+    "disabledOnlyCompiledCombinations": 4096,
+    "fullPaletteStatus": "failed",
+    "failure": "default/light primary/default solid text: 2.305 < 4.5",
+    "hashObservations": "Repeated start/intermediate/end observations unchanged; not a guarantee against future concurrent edits",
+    "cedarCssSha256": "37c6552822aeebf5448d248ea1474e276e6cc7d802733baa2a3cc583e6fa1e3f",
+    "mapleCssSha256": "24d07b0b97215a8e307676362c3df0fdef4689b5b69d7efb2e483715f0aa62af"
+  },
+  "backTop": {
+    "cedarPassed": 16,
+    "maplePassed": 16,
+    "newRegressionsPerPlatform": 3,
+    "beforeRepair": "3 failed / 10 passed in Cedar contract suite",
+    "regressions": ["dynamic preference at next frame", "dequeued callback after target replacement", "iframe ownerDocument preference"],
+    "evidenceType": "mocked RAF, jsdom iframe document and SSR",
+    "publicDefaultsUnchanged": {"durationMs": 200, "easing": "quartOut"},
+    "newCssTokens": 0
+  },
+  "inventory": {
+    "liveBaseline": "../../motion-source-inventory.json",
+    "historicalBaselinePreserved": "../motion-contrast-2026-10-13/source-inventory.json",
+    "files": 192,
+    "cssDeclarationCandidates": 387,
+    "runtimeCallCandidates": 186,
+    "scannerTestsPassed": 4,
+    "scope": "line-based candidates including setTimeout, not defects or acceptance"
+  },
+  "pending": ["Button normal primary contrast semantics", "Maple-only LoadingBar runtime audit", "144 native zoom/Safari/Firefox groups", "real OS preference changes and other source candidates"]
+}

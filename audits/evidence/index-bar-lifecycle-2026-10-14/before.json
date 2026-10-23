@@ -1,0 +1,31 @@
+{
+  "scope": "Historical failed observations; not accepted cases, exact pre-fix source hash/image not separately captured",
+  "newAcceptedCases": 0,
+  "observations": [
+    {
+      "kind": "settlement",
+      "classification": "fixture geometry error, not product defect",
+      "phase": "settlement-complete",
+      "time": 168.7, "top": 480, "writes": 2, "changes": ["A", "B"],
+      "actualAnchorTargets": [1, 241, 481],
+      "correction": "Use actual last group offset+2; fixed480 never reached C."
+    },
+    {
+      "kind": "keepalive",
+      "classification": "reproduced consumer activation-registration ordering defect",
+      "beforeCancellation": { "phase": "interpolating", "time": 256.6, "top": 15.5, "writes": 8, "changes": ["C"] },
+      "cancelled": { "time": 257.2, "top": 0, "writes": 8, "changes": ["C"] },
+      "reactivated": { "phase": "reactivated-settled", "time": 1178.8, "top": 0, "writes": 8, "changes": ["C"], "nodes": 1 },
+      "correction": "Own cancellable activation entry frame waits for nextTick child registration; add consumer regression11."
+    },
+    {
+      "kind": "keepalive",
+      "classification": "post-fix fixture first-anchor error, not another product defect",
+      "restored": { "time": 1181.2, "top": 481, "writes": 44, "changes": ["C"] },
+      "listenerProbe": { "time": 1181.5, "top": 0, "writes": 44, "changes": ["C"] },
+      "correction": "First actual anchor starts at1, not0; use actual first group offset+2."
+    }
+  ],
+  "finalEvidence": "results.json",
+  "note": "All four cases were rerun after each frozen restart/reload. Preliminary passes are not added to the final four-case count."
+}

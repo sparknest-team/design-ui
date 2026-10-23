@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-16",
+  "scope": "Human-authorized Maple Form pre-scroll wait section only;parallel submission changes preserved",
+  "authorization": "Human answered允许仅接管 Maple Form 滚动任务段;Cedar Form/Maple Picker/shared helper source not authorized for takeover",
+  "baseline": {
+    "sourceSha256": "94c525acf1885ff8f358350673e47a3e5d9759b285d875380521247855ae9c4d",
+    "initial": "six cases:three fail/three controls,exit1,6.98s;see form-scroll-ownership-baseline-2026-10-16",
+    "expandedOriginal": {"cases":7,"failed":4,"passed":3,"exitCode":1,"seconds":4.60},
+    "additionalFailure": "Geometry getter disposes owner but old wait still dispatches",
+    "controls": "Normal300ms helper dispatch,ordinary unmount cancellation,unknown field",
+    "meaning": "Overlapping controlled ownership probes,not four independent defects/native timer replay proof"
+  },
+  "repair": {
+    "source": "maple-design-mobile/packages/maple-ui/src/form/Form.vue",
+    "sourceSha256": "5c3bf495299984dfa491400eaa7e28d4b0f9991f278f7186c9ec75edf6332fdc",
+    "test": "maple-design-mobile/packages/maple-ui/src/form/__tests__/scroll-task-ownership.spec.js",
+    "testSha256": "932a140fb3a13d7f0f46f9cbb9bd01e3f8c1f151481ab2c3e6e0aa6ac2bfbb40",
+    "mechanism": "Generation/one-shot timeout consumption,mounted-active-disposed availability,cancel on suspension/disposal,post-geometry eligibility. Fresh activation permits new commands without replay;reentrant replacement survives old callback.",
+    "preserved": "Parallel submitEpoch and submission/controller changes,300ms/global timer,offset/default linear shared helper,public APIs/CSS Tokens",
+    "boundary": "Only wait before delegation is guarded;already-started shared scrollTo returns Promise without cancellation. No claim of in-flight RAF cancellation/final completion/reduce or full async validation/current-field protocols."
+  },
+  "verification": {
+    "firstRepair": {"passed":7,"files":1,"exitCode":0,"seconds":14.99},
+    "finalTargeted": "10cases pass again in final single-worker full run;three supplementary controls for inactive/fresh activation,geometry reentry replacement,offset/linear policy",
+    "fullForm": "Final bounded single-worker run passes76tests/16files exit0,792.07s,no unhandled error reported. Original default run exit1/RPC errors retained;not proof their cause was only load or permanently fixed.",
+    "singleWorker": {
+      "command":"pnpm --dir packages/maple-ui exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js --maxWorkers 1 --minWorkers 1 --no-file-parallelism src/form/__tests__",
+      "passed":76,"files":16,"exitCode":0,"seconds":792.07,
+      "newTestsAuthored":10,"other66":"Existing/parallel regressions,not new defects or authored work",
+      "formerlyUncollected":"index.spec.js12 and form-controller.spec.ts4 now pass;the16 additional collected assertions are not16new tests",
+      "boundary":"One bounded execution-mode recheck,no timeout threshold/runner/dependency configuration edit. Default-mode failure history remains."
+    },
+    "defaultRunFailure": {
+      "passedAssertions":60,"passedFiles":14,"failedCollectionFiles":2,"unhandledErrors":1,"exitCode":1,"seconds":295.53,
+      "files": {
+        "form-controller.spec.ts":"Vitest worker resolveId timeout on vitest.setup.js",
+        "index.spec.js":"Vitest worker fetch timeout on select/presentations/ListPresentation.vue"
+      },
+      "unhandled":"Vitest worker onQueued timeout;can affect confidence in otherwise passing tests",
+      "meaning":"No product assertion result from these two files;do not relabel as zod failure or prove cause is only load. Existing unrelated zod note is not this diagnostic."
+    },
+    "lintTypes": "Post-repair read-only Maple root lint completed without errors;configured pnpm --dir packages/maple-ui typecheck passed,combined command exit0. Configured declarations exclude tests. Pre-repair root lint passed separately.",
+    "classificationCli": "165classified/13pending exit0",
+    "sharedTests": "Full29 not rerun;no classification row/category changes",
+    "fixture": "Actual Form/provider-registered input with real scroller/geometry discovery and controlled300ms global callbacks;downstream scrollTo mocked. Original timer descriptors restored in finally;owners/container removed. Not actual interpolation/native/OS/adoption acceptance.",
+    "fixtureCorrection": "Supplementary offset case passes options through Host fixture at mount,instead of unsupported nested-wrapper setProps;assertion unchanged. Final affected run collected all10 and passed this file.",
+    "native": "0new browser/OS cases;no standalone Less/build run",
+    "diffHash": "Source/test hashes still match above after validation;all three final diff checks passed exit0;both batch evidence JSONs and updated inventory parse successfully. All batch validation processes completed."
+  },
+  "policyReview": "FormDetails CSS currently0.2s while original wait is fixed300ms. Not relabeled as business delay or silently changed;completion/reduce policy remains separate evidence work. Shared helper default duration300ms/linear ownership unchanged.",
+  "registration": {
+    "closedFamilies":31,"totalFamilies":33,"closedPercent":93.9,"remainingFamilies":2,"remainingPercent":6.1,
+    "remaining":{"Form":4,"Picker":9},"sourceFiles":74,"classifiedHints":165,"totalHints":178,"classifiedPercent":92.7,"pendingHints":13,"pendingPercent":7.3,"denominatorChange":0,
+    "inventory":"Only owned Maple Form runtime lines42/52→70/84 manually updated;two hints remain unclassified;26other drifts preserved"
+  },
+  "documentation": "Shared progress/standard,Cedar guide,Maple bilingual guides,Form bilingual/Cedar boundary docs,patch changeset and Maple private-ownership OpenSpec synchronized",
+  "preservedBlockers": "Cedar Form/Maple Picker parallel ownership,five Cedar FilterForm/Form catalog hunks,Map formal SDK,144native environment groups,26unrelated inventory drifts,Button white2.305:1 non-AA exception and prior Cedar close-timeout warning",
+  "constraints": "Vue guidance informed original timer/KeepAlive/finally cleanup. No chats/subagents/commits/push/publish/software/permission/automation changes;scope approval only,not system permission changes"
+}

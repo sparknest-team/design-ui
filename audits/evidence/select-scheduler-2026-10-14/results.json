@@ -1,0 +1,201 @@
+{
+  "date": "2026-10-14",
+  "scope": "Select shared-hook controlled render/interaction lifecycle regression with shared consumer suites; not native browser acceptance",
+  "platforms": [
+    {
+      "repo": "cedar-design-web",
+      "source": "packages/cedar-ui/src/select/hooks/use-select.ts",
+      "beforeWorkingTreeSha256": "7cba54df3d62b771d082a3f88b08d1a808ccc00625b134e300fc1a5faedf36d5",
+      "afterSha256": "4e46a2eb3554133e94fc50c4fe29c86274c29eb3400bc2c091cd9bf84a9c236b",
+      "baseline": {
+        "cases": 12,
+        "failed": 10,
+        "passed": 2
+      },
+      "final": {
+        "scoped": 14,
+        "broader": 93,
+        "passed": 93,
+        "consumers": [
+          "Select",
+          "AutoComplete",
+          "Mention"
+        ]
+      }
+    },
+    {
+      "repo": "maple-design-mobile",
+      "source": "packages/maple-ui/src/select/hooks/use-select.ts",
+      "beforeWorkingTreeSha256": "7cba54df3d62b771d082a3f88b08d1a808ccc00625b134e300fc1a5faedf36d5",
+      "afterSha256": "65113c567fd1441974d4d30593deb305e60101bb5f5bedb074d57ab8aeef4972",
+      "baseline": {
+        "cases": 12,
+        "failed": 10,
+        "passed": 2
+      },
+      "final": {
+        "scoped": 14,
+        "broader": 96,
+        "passed": 96,
+        "consumers": [
+          "Select",
+          "AutoComplete"
+        ]
+      }
+    }
+  ],
+  "cases": [
+    {
+      "name": "current open delivers once after render and preserves native/delegated route",
+      "before": "passed-control",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "close invalidates queued open scroll",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "old open cannot act after close and reopen",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "consumed open callback cannot replay",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "unmount invalidates queued scroll despite retained refs",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "deactivation invalidates queued scroll and retained commands",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "inactive keyboard handler does not select",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "disposed keyboard handler does not request close",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "active arrow navigation keeps synchronous scroll",
+      "before": "passed-control",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "arrow command supersedes queued open scroll",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "virtual scroll reentrant close prevents subsequent DOM write",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "activation allows fresh keyboard command without replaying old open",
+      "before": "reproduced-failure",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "late dropdown registration still receives current open scroll",
+      "before": "added-positive-control",
+      "cedar": "passed",
+      "maple": "passed"
+    },
+    {
+      "name": "empty open callback is consumed even before options arrive",
+      "before": "added-positive-control",
+      "cedar": "passed",
+      "maple": "passed"
+    }
+  ],
+  "fix": {
+    "openTask": "Synchronous open/close watcher invalidates request generations. Callback checks active/disposed/open, scheduled active key and any pre-existing dropdown/virtual refs; consumes even empty delivery. Initial missing refs may register later.",
+    "commands": "New scroll/setActiveKey invalidates older open work; retained inactive/disposed keyboard/selection/scroll entries are inert. Activation accepts fresh commands without replay.",
+    "reentrancy": "Virtual scroll callback is followed by lifecycle/open/request/dropdown/virtual-ref identity check before subsequent DOM write.",
+    "roles": "nextTick render settlement, synchronous local keyboard interaction-dispatch, virtual delegated-scroll, native DOM scrollTo. No CSS duration/token/cancel API addition."
+  },
+  "probeAdjustments": [
+    {
+      "issue": "Cedar TSX test versus.ts hook uses different Vitest0.22 transform contexts",
+      "action": "nextTick mock was not intercepted (11 invalid failures). Use new.test.ts matching direct.ts hook; valid baseline12 reproduced10 failures/2 controls. Original .tsx trial and initial definite-assignment syntax correction are fixture issues, not product defects."
+    },
+    {
+      "issue": "Cedar old runner shutdown diagnostics",
+      "action": "Broader93 passed, exit0; close timed out/fsevents assertion after test completion retained separately, not lifecycle assertion failure."
+    }
+  ],
+  "validation": {
+    "types": "Both configured declaration typechecks passed",
+    "lint": "Both affected sources/tests/demos passed; Maple root full lint passed in this round. No date source/demo file changed by this batch; previous23 date demo errors are historical parallel-work findings, not claimed as repaired here.",
+    "mapleDemoSFC": {
+      "checked": 1019,
+      "failed": 0
+    },
+    "classification": {
+      "files": 36,
+      "hints": 82,
+      "unclassified": 97,
+      "tests": 25,
+      "categories": {
+        "interactionDispatch": 4,
+        "stateSettlement": 5,
+        "delegatedScroll": 4,
+        "nativeScroll": 6
+      }
+    },
+    "inventory": {
+      "files": 192,
+      "css": 392,
+      "runtime": 179,
+      "updatedRows": 2,
+      "globalGate": "Still not passed: preserved unreviewed Maple date-range/time-range CSS line drift",
+      "remainingDrift": [
+        "date-range CSS [50,90] -> [61,105]",
+        "time-range CSS [37] -> [42]"
+      ]
+    },
+    "compiledMotion": "Independent full compilation chain passed; not browser acceptance",
+    "tokenReference": "3 tests and3 generated pages match",
+    "savedBrowserEvidence": "202 tests and all saved evidence checks pass; no new browser execution"
+  },
+  "limitations": {
+    "newRealBrowserCases": 0,
+    "newOSCases": 0,
+    "environmentBlockedCases": 144,
+    "notCertified": [
+      "full downstream VirtualList lifecycle by spies",
+      "native keyboard/gesture/browser timing",
+      "all shared consumers under every layout/document",
+      "real popup animation frames"
+    ],
+    "preserved": [
+      "dirty independent Select/controller/menu/styles/identity changes",
+      "Form parallel changes",
+      "date demo work and inventory snapshots",
+      "environment blockers",
+      "other chats/paused automation"
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-13",
+  "scope": "controlled performance.now / manually replayed RAF / Vue KeepAlive lifecycle; not real browser or OS acceptance",
+  "baseline": {
+    "cedar": {
+      "failed": 6,
+      "passed": 2
+    },
+    "maple": {
+      "failed": 6,
+      "passed": 2
+    },
+    "sources": [
+      {
+        "repo": "cedar-design-web",
+        "sha256": "a5914ea8745e94cb83a92cef6d9f061136c772905eee364083407b4d98fa1b7c"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "sha256": "cc013d9ff25bc3c0b814988cbafb4ff3c002f6c482378657734fb151be927fcd"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": 1,
+      "name": "pre-pause frame cannot consume restarted frame",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 2,
+      "name": "consumed frame cannot tick twice or replace successor",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 3,
+      "name": "inactive time reset updates data without RAF, resumes on activation",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 4,
+      "name": "inactive retained start ignored and explicit pause cancels resume",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 5,
+      "name": "disposed reset/start and old frames notify nothing",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 6,
+      "name": "reentrant change/reset owns new deadline without extra old RAF",
+      "baseline": "failed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 7,
+      "name": "normal deactivation freezes remaining business time, activation resumes",
+      "baseline": "passed on both",
+      "final": "passed on both"
+    },
+    {
+      "id": 8,
+      "name": "end once per run, reset allows one new end",
+      "baseline": "passed on both",
+      "final": "passed on both"
+    }
+  ],
+  "implementation": {
+    "frame": "Validate before handle mutation and notification; consume generation once; recheck after change to reject reentrant old continuation.",
+    "clock": "performance.now deadline. Pause/KeepAlive freeze remaining; inactive wall time does not consume duration.",
+    "inactive": "time/reset may update data and change but schedule no RAF; autoStart deferred to activation; explicit pause cancels resume. Inactive start ignored.",
+    "disposed": "start/reset reject after unmount; old RAF cannot notify.",
+    "tokens": "No CSS token or public API additions; reduced visual motion must not change business timing."
+  },
+  "sources": [
+    {
+      "repo": "cedar-design-web",
+      "file": "countdown/use-countdown.ts",
+      "sha256": "50963e071c977d142bf6f340f57c96d5e5609a1edd8b0934fb6a68c36cb3f4ca",
+      "rationale": "Business deadline clock, not CSS motion. Frame generation rejects stale/consumed/reentrant work; inactive reset updates data without RAF and defers auto-start until activation, explicit pause cancels resume. Disposed controls do not notify. Six baseline ownership failures and two controls; eight tests pass per independent source, full Countdown Cedar18/Maple20. Controlled clock/RAF only; no native browser/OS or owner-window certification.",
+      "hints": [
+        {
+          "line": 111,
+          "category": "business-clock",
+          "snippet": "      handle = requestAnimationFrame(() => tick(currentGeneration));"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "countdown/use-countdown.ts",
+      "sha256": "03a3ff1925672c8b5118f541edeb3fa50cb3ab64118165b86d90e36ea4f2e39f",
+      "rationale": "Business deadline clock, not CSS motion. Frame generation rejects stale/consumed/reentrant work; inactive reset updates data without RAF and defers auto-start until activation, explicit pause cancels resume. Disposed controls do not notify. Six baseline ownership failures and two controls; eight tests pass per independent source, full Countdown Cedar18/Maple20. Controlled clock/RAF only; no native browser/OS or owner-window certification.",
+      "hints": [
+        {
+          "line": 105,
+          "category": "business-clock",
+          "snippet": "      handle = requestAnimationFrame(() => tick(currentGeneration))"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "cedar": {
+      "fullCountdown": 18,
+      "newClockTests": 8,
+      "typecheck": "passed",
+      "affectedLint": "passed"
+    },
+    "maple": {
+      "fullCountdown": 20,
+      "newClockTests": 8,
+      "finalGuardBraceRerun": 8,
+      "typecheck": "passed",
+      "fullLint": "passed"
+    },
+    "motionGate": "21 scanner/classification/Message contract tests and compiled chain passed:96/88/176/96;LoadingBar8/4;Notification20/44;Message28/68",
+    "tokenCatalog": "3 tests /3 generated pages passed",
+    "inventory": "191 files /392 CSS /177 runtime;44 classified /133 unclassified, only reviewed Countdown line/hash rows refreshed",
+    "whitespace": "affected tracked files passed"
+  },
+  "newBrowserCases": 0,
+  "newOsCases": 0,
+  "blockedNativeCases": 144,
+  "pending": [
+    "Real browser / iframe-owner RAF / OS preferences remain separate.",
+    "Shared scroll cancellation/reduced-motion must be audited per actual consumer, not a blind global CSS token conversion."
+  ],
+  "cleanup": "Each test unmounts owner and restores RAF/cancel/performance spies. No browser/service started; no new task/subagent/commit/push/release; parallel date/palette changes preserved."
+}

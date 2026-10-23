@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-22",
+  "browser": "IAB Chromium, real Cedar Form field-components demo",
+  "verified": [
+    "outside click saves committed value and closes editor",
+    "switch saves previous draft and opens one editor without focus theft",
+    "Enter saves and Esc discards",
+    "dblclick mode ignores single click",
+    "multiline Enter inserts newline; Cmd+Enter saves",
+    "native Select popup selection changes draft only; subsequent Enter saves",
+    "failed candidate validation retains draft, dismisses popup and blocks handoff",
+    "corrected draft saves on outside click",
+    "async confirmation keeps one pending editor",
+    "reset closes editor and cancels pending handoff; another field can open immediately",
+    "late asynchronous result does not publish or reopen"
+  ],
+  "checks": {
+    "cedar_related_tests": 407,
+    "maple_related_tests": 290,
+    "maple_abort_regressions": 109,
+    "types": "Cedar and Maple passed",
+    "lint": "Cedar affected files and Maple full repository passed",
+    "same_source": "input, selection-field, selection-presentations, form-kernel passed",
+    "demo_sfc": "1407 checked, 0 failures"
+  },
+  "screenshots": [
+    "cedar-invalid-draft.png",
+    "cedar-anchored-editor.png"
+  ]
+}

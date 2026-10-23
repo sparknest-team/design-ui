@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "UI Foundation theme contract",
   "type": "object",
-  "required": ["version", "prefixes", "rules", "components", "tokens", "platformExtensions"],
+  "required": ["version", "prefixes", "rules", "systemTokenValues", "componentTokenValues", "components", "tokens", "platformExtensions"],
   "properties": {
     "version": { "type": "integer", "minimum": 1 },
     "prefixes": {
@@ -15,10 +15,40 @@
       "additionalProperties": false
     },
     "rules": { "type": "object" },
+    "systemTokenValues": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z][a-z0-9-]*$" },
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "componentTokenValues": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z][a-z0-9-]*$" },
+      "additionalProperties": {
+        "type": "object",
+        "propertyNames": { "pattern": "^[a-z][a-z0-9-]*$" },
+        "additionalProperties": { "type": "string", "minLength": 1 }
+      }
+    },
+    "platformSystemTokenValues": {
+      "type": "object",
+      "properties": {
+        "cedar": { "$ref": "#/$defs/tokenValues" },
+        "maple": { "$ref": "#/$defs/tokenValues" }
+      },
+      "additionalProperties": false
+    },
     "components": {
       "type": "array",
       "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
       "uniqueItems": true
+    },
+    "platformComponentTokenValues": {
+      "type": "object",
+      "properties": {
+        "cedar": { "$ref": "#/$defs/componentValues" },
+        "maple": { "$ref": "#/$defs/componentValues" }
+      },
+      "additionalProperties": false
     },
     "tokens": {
       "type": "object",
@@ -52,6 +82,20 @@
   },
   "additionalProperties": false,
   "$defs": {
+    "tokenValues": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z][a-z0-9-]*$" },
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "componentValues": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z][a-z0-9-]*$" },
+      "additionalProperties": {
+        "type": "object",
+        "propertyNames": { "pattern": "^[a-z][a-z0-9-]*$" },
+        "additionalProperties": { "type": "string", "minLength": 1 }
+      }
+    },
     "componentNames": {
       "type": "array",
       "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },

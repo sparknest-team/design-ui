@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-13",
+  "scope": "Isolated Message Less consumers and reduced-motion/static-placement policy",
+  "verificationKind": "Actual Less compilation, theme variables and selector cascade; not real browser/OS",
+  "before": {
+    "cedar": "Failed: c-message reduced transition remained all with normal duration/easing.",
+    "maple": "Failed: enter-active reduced transition retained normal opacity/transform duration/easing.",
+    "method": "Independent platform-only runs; no reliance on global reduced-motion rules."
+  },
+  "fix": [
+    "Cedar local reduce cancels root/enter/appear/leave transitions and decorative icon fades.",
+    "Maple local reduce cancels enter/leave transitions and starting/ending animated displacement.",
+    "Maple standalone top/center transforms remain translateX(-50%) and translate(-50%, -50%), not transform:none.",
+    "Preference-only important rules do not alter colors, Token defaults, business display deadlines or intrinsic child Icon spin ownership."
+  ],
+  "after": {
+    "normalConsumersAndPairedOverrides": 28,
+    "reducedSelectorAndLayoutCases": 68,
+    "themesPerPlatform": 4,
+    "motionGate": "passed; includes8 source/scanner tests, existing compiled primitives/modal/LoadingBar/Notification and new Message checker",
+    "tokenReference": { "tests": 3, "generatedPages": 3 },
+    "mapleFullLint": "passed",
+    "runtimeTestsAdded": 0,
+    "typesRerun": false,
+    "note": "Only Less/checker/docs changed; no Vue/TypeScript implementation change. Existing31/39 Message runtime suites and eight native default/light cases are historical separate evidence, not rerun here."
+  },
+  "sourceSha256": {
+    "cedar-design-web/packages/cedar-ui/src/message/style/index.less": "a1dd7e6e98479880311abd586abc095385a73b1af4eda925fd78c3cefb47284e",
+    "maple-design-mobile/packages/maple-ui/src/message/style/index.less": "d88cd099a01d177da8dee7756fed09015a038c794bde72fdfd5659edccc13f73"
+  },
+  "inventory": { "files": 191, "cssHints": 392, "runtimeHints": 177, "meaning": "candidates; new preference declarations are not extra accepted animations" },
+  "newNativeBrowserCases": 0,
+  "newRealOsCases": 0,
+  "unchangedBlockedNativeCases": 144,
+  "remaining": [
+    "Real OS preference changes and browser positioning/motion validation",
+    "Other Message theme/position, hover and KeepAlive native matrices",
+    "Continue classifying other component runtime candidates; hints are not defects"
+  ],
+  "constraints": "Independent sources retained, no new API or Token; no date/naming work takeover, no commits/push/release/new tasks/subagents; Button white contrast exception unchanged."
+}

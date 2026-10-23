@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-15",
+  "batch": "NavMenu native-scroll continuation, phase one",
+  "scope": "Cedar only; Maple has no NavMenu runtime. Focus, node enter/Escape, measurement and other retained commands remain pending.",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/nav-menu/menu.tsx",
+    "cleanAtStart": true,
+    "beforeSha256": "203cdc4939e367b607e42407b8e5e5a1b6d3bab457b507bb61fdf3d8d16234d9",
+    "afterSha256": "c16c6d50913eb8974eacdb48115498757b64c5051e762d684e9510c1a6cdf24d"
+  },
+  "baseline": {
+    "tests": 6,
+    "failed": 4,
+    "passedControls": 2,
+    "failures": [
+      "superseded request scrolls",
+      "disabled retained command scrolls",
+      "deactivated pending/retained command scrolls",
+      "old continuation survives suspension before activation"
+    ],
+    "controls": [
+      "normal nearest alignment",
+      "unmount clears registered elements"
+    ]
+  },
+  "final": {
+    "targeted": 8,
+    "navMenuTests": 45,
+    "files": 3,
+    "result": "passed",
+    "cases": [
+      "normal nearest alignment once",
+      "new command replaces pending",
+      "disabled retained command inert",
+      "pending disable invalidated, fresh re-enabled accepted",
+      "options replacement invalidates old render continuation",
+      "deactivation cancels pending and retained",
+      "activation accepts only new command",
+      "unmount queued and retained command inert"
+    ]
+  },
+  "verification": {
+    "layer": "JSDOM actual NavMenu/KeepAlive with native scrollIntoView method probes; no fake clock or browser animation proof",
+    "configuredCedarTypes": "passed",
+    "affectedCedarLint": "passed",
+    "mapleRootLint": "passed (exit 0)",
+    "classificationGate": "passed:132 classified,50 unclassified",
+    "sharedTests": "28 passed",
+    "catalog": "3 generated pages match",
+    "newRealBrowserOrOSCases": 0
+  },
+  "progress": {
+    "families": 33,
+    "closed": 18,
+    "closedPercent": 54.5,
+    "remaining": 15,
+    "remainingPercent": 45.5,
+    "classifiedFiles": 51,
+    "hints": 182,
+    "classifiedHints": 132,
+    "classifiedHintPercent": 72.5,
+    "pendingHints": 50,
+    "pendingHintPercent": 27.5,
+    "denominatorChange": 0,
+    "navMenu": "partial, not classified closed"
+  },
+  "preserved": [
+    "Form",
+    "date and linked Time",
+    "26 unrelated CSS/date inventory drifts",
+    "144 native 200% / Safari / Firefox environment-blocked cases",
+    "Button on-dark white foreground exception2.305:1"
+  ],
+  "inventory": "Only nav-menu/menu.tsx runtime line96→104; no wholesale refresh; no global motion-themes success claim.",
+  "semantics": "Logical invalidation only; Promise<void>, nearest alignment and normal path expansion retained. No duration Token/public API/native scroll rollback."
+}

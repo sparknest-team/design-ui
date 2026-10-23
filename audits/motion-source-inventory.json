@@ -1,0 +1,2009 @@
+{
+  "scope": "source candidates including timeout scheduling; line-based hints, not defects or proof of selector reachability, OS, browser or whole-library motion acceptance",
+  "platforms": [
+    {
+      "repo": "cedar-design-web",
+      "files": 104,
+      "cssDeclarationCandidates": 204,
+      "runtimeCallCandidates": 98,
+      "candidates": [
+        {
+          "file": "_components/field-presentation/use-field-search.ts",
+          "css": [],
+          "runtime": [
+            33
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "_components/selection-field/style/index.less",
+          "css": [
+            60
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "_components/virtual-list-v2/VirtualList.vue",
+          "css": [],
+          "runtime": [
+            200
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "_utils/debounce.ts",
+          "css": [],
+          "runtime": [
+            9
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "_utils/maple/elements.ts",
+          "css": [],
+          "runtime": [
+            210,
+            220,
+            235,
+            240,
+            254
+          ],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "_utils/maple/test.ts",
+          "css": [],
+          "runtime": [
+            7,
+            29,
+            30,
+            237
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "_utils/resize-observer.ts",
+          "css": [],
+          "runtime": [
+            46
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "alert/style/implementation.less",
+          "css": [
+            137
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "anchor/Anchor.vue",
+          "css": [],
+          "runtime": [
+            124,
+            184,
+            207
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "anchor/style/index.less",
+          "css": [
+            12,
+            32,
+            85
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "anchor/utils.ts",
+          "css": [],
+          "runtime": [
+            16,
+            27
+          ],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "avatar/style/index.less",
+          "css": [
+            35,
+            92,
+            106
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "back-top/use-back-top.ts",
+          "css": [],
+          "runtime": [
+            40,
+            116,
+            174
+          ],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "button/style/button.less",
+          "css": [
+            11,
+            248,
+            307,
+            312
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "calendar/style/index.less",
+          "css": [
+            41
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "card/Card.vue",
+          "css": [],
+          "runtime": [
+            204,
+            262
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "card/style/index.less",
+          "css": [
+            30,
+            33,
+            55,
+            70,
+            86,
+            106,
+            127,
+            138,
+            150,
+            185
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "carousel/carousel.vue",
+          "css": [],
+          "runtime": [
+            142,
+            498,
+            509,
+            514
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "carousel/style/index.less",
+          "css": [
+            16,
+            22
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "cascader/style/index.less",
+          "css": [
+            27,
+            202,
+            220
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "checkbox/style/index.less",
+          "css": [
+            30,
+            48
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "collapse/style/index.less",
+          "css": [
+            33,
+            102,
+            133
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "color-picker/style/index.less",
+          "css": [
+            199
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "countdown/use-countdown.ts",
+          "css": [],
+          "runtime": [
+            111
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "date/picker/DateRangePicker.vue",
+          "css": [],
+          "runtime": [
+            652
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "date/picker/Picker.vue",
+          "css": [],
+          "runtime": [
+            453
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "date/picker/style/index.less",
+          "css": [
+            95,
+            119,
+            191
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "dialog/style/index.less",
+          "css": [
+            6,
+            249,
+            265,
+            282,
+            294
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "drawer/style/index.less",
+          "css": [
+            107,
+            119,
+            134,
+            146,
+            161,
+            173,
+            193,
+            205,
+            220,
+            232,
+            242
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "field-decorator/style/field-decorator.less",
+          "css": [
+            20,
+            102,
+            129,
+            149,
+            196
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "field-decorator/use-field-geometry.ts",
+          "css": [],
+          "runtime": [
+            24
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "filter-form/style/index.less",
+          "css": [
+            16,
+            22
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "form/Form.vue",
+          "css": [],
+          "runtime": [
+            154,
+            168
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "form/style/index.less",
+          "css": [
+            239,
+            240,
+            281,
+            282
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "hover/style/index.less",
+          "css": [
+            13
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "icon/Icon.vue",
+          "css": [],
+          "runtime": [
+            71,
+            156
+          ],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "icon/style/implementation.less",
+          "css": [
+            26,
+            31
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "image/PreviewGroup.vue",
+          "css": [],
+          "runtime": [
+            277,
+            282,
+            356
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "image/composables/usePreviewController.ts",
+          "css": [],
+          "runtime": [
+            170,
+            242
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "image/style/core.less",
+          "css": [
+            12,
+            22
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "image/style/preview.less",
+          "css": [
+            64,
+            71,
+            78,
+            93
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "infinite-scroll/infinite-scroll.vue",
+          "css": [],
+          "runtime": [
+            239,
+            241
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "input-number/style/input-number.less",
+          "css": [
+            64
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "input-number/use-step-repeat.ts",
+          "css": [],
+          "runtime": [
+            51,
+            54
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "input-tag/style/input-tag.less",
+          "css": [
+            16,
+            32,
+            37
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "input/style/input.less",
+          "css": [
+            57,
+            95
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "layout/style/index.less",
+          "css": [
+            20,
+            69,
+            129
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "layout/use-scroll.ts",
+          "css": [],
+          "runtime": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "link/style/implementation.less",
+          "css": [
+            15,
+            25,
+            176
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "list/list.vue",
+          "css": [],
+          "runtime": [
+            29,
+            30
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "list/props.ts",
+          "css": [],
+          "runtime": [
+            15
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "loading/style/index.less",
+          "css": [
+            42,
+            98,
+            128,
+            167,
+            170,
+            173,
+            176,
+            179,
+            182,
+            208,
+            211,
+            214,
+            217,
+            220,
+            252,
+            254,
+            257,
+            260,
+            263,
+            266,
+            269,
+            272,
+            275,
+            304,
+            306,
+            309,
+            333,
+            334
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "map/map.tsx",
+          "css": [],
+          "runtime": [
+            276,
+            454
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "mention/mention.tsx",
+          "css": [],
+          "runtime": [
+            292
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "menu/style/index.less",
+          "css": [
+            61
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "message/style/index.less",
+          "css": [
+            47,
+            77,
+            128,
+            142,
+            147,
+            428,
+            431
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "message/use-message-timer.ts",
+          "css": [],
+          "runtime": [
+            44
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "nav-menu/menu.tsx",
+          "css": [],
+          "runtime": [
+            147
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "nav-menu/types.ts",
+          "css": [],
+          "runtime": [
+            25
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "notification/Notification.vue",
+          "css": [],
+          "runtime": [
+            103
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "notification/style/index.less",
+          "css": [
+            60,
+            209,
+            227,
+            243,
+            261,
+            273
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "overlay/style/index.less",
+          "css": [
+            23
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "paper/style/implementation.less",
+          "css": [
+            5
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "progress/style/index.less",
+          "css": [
+            18
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "radio/style/index.less",
+          "css": [
+            47
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "rate/style/rate.less",
+          "css": [
+            19
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "result/style/index.less",
+          "css": [
+            85,
+            130
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "ripple/index.ts",
+          "css": [],
+          "runtime": [
+            66
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "ripple/style/index.less",
+          "css": [
+            5,
+            20
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "scheduler/components/SchedulerDependencies.vue",
+          "css": [],
+          "runtime": [
+            144
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "scheduler/components/SchedulerEvent.vue",
+          "css": [],
+          "runtime": [
+            246,
+            259,
+            384,
+            404
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "scheduler/components/SchedulerTimeGrid.vue",
+          "css": [],
+          "runtime": [
+            524,
+            549
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "scheduler/components/SchedulerTimelineRows.vue",
+          "css": [],
+          "runtime": [
+            136
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "scheduler/style/index.less",
+          "css": [
+            340,
+            487
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "scheduler/use-now.ts",
+          "css": [],
+          "runtime": [
+            34
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "scheduler/use-timeline-pointer.ts",
+          "css": [],
+          "runtime": [
+            56
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "scrollbar/Scrollbar.vue",
+          "css": [],
+          "runtime": [
+            145,
+            154,
+            158,
+            162,
+            164,
+            168,
+            171
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "scrollbar/src/Scrollbar.vue",
+          "css": [],
+          "runtime": [
+            178,
+            187,
+            191,
+            195,
+            197,
+            201,
+            204
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "scrollbar/style/index.less",
+          "css": [
+            78
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "segmented/style/index.less",
+          "css": [
+            52
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "select/hooks/use-select.ts",
+          "css": [],
+          "runtime": [
+            139,
+            166,
+            168,
+            204,
+            246,
+            259
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "select/style/index.less",
+          "css": [
+            88,
+            145
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "skeleton/style/implementation.less",
+          "css": [
+            26,
+            41,
+            54,
+            64,
+            74,
+            83,
+            108
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "steps/style/index.less",
+          "css": [
+            13
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "style/animation/fade.less",
+          "css": [
+            13,
+            26,
+            42,
+            55
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "style/animation/slide.less",
+          "css": [
+            18,
+            38,
+            58,
+            71,
+            87,
+            100,
+            116,
+            129,
+            145,
+            158
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "style/animation/zoom.less",
+          "css": [
+            16,
+            34,
+            56,
+            74,
+            96,
+            114,
+            136,
+            155,
+            178,
+            197,
+            219,
+            238
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "style/icon.less",
+          "css": [
+            33,
+            39,
+            67
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "style/index.less",
+          "css": [
+            30,
+            31,
+            32
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "style/mixins/border.less",
+          "css": [
+            13
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "switch/style/index.less",
+          "css": [
+            38,
+            55
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "table/style/index.less",
+          "css": [
+            21,
+            325,
+            351,
+            457,
+            511,
+            545,
+            556,
+            630
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "tag/style/implementation.less",
+          "css": [
+            32
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "time/picker/TimeColumn.vue",
+          "css": [],
+          "runtime": [
+            89
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "time/picker/utils/index.ts",
+          "css": [],
+          "runtime": [
+            12,
+            42
+          ],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "tooltip/style/implementation.less",
+          "css": [
+            46,
+            53
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "transfer/style/index.less",
+          "css": [
+            360,
+            361
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "tree/Tree.vue",
+          "css": [],
+          "runtime": [
+            701,
+            702
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "tree/style/index.less",
+          "css": [
+            36,
+            137,
+            568
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "trigger/positioner.ts",
+          "css": [],
+          "runtime": [
+            83
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "trigger/state.ts",
+          "css": [],
+          "runtime": [
+            49
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "trigger/style/index.less",
+          "css": [
+            20
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "typography/base.tsx",
+          "css": [],
+          "runtime": [
+            242
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "typography/style/index.less",
+          "css": [
+            162,
+            181
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "files": 94,
+      "cssDeclarationCandidates": 214,
+      "runtimeCallCandidates": 86,
+      "candidates": [
+        {
+          "file": "_components/field-presentation/use-field-search.ts",
+          "css": [],
+          "runtime": [
+            33
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "_components/selection-field/style/index.less",
+          "css": [
+            68,
+            73,
+            86,
+            87
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "_components/selection-scrollbar/Scrollbar.vue",
+          "css": [],
+          "runtime": [
+            192,
+            201,
+            205,
+            211,
+            213,
+            219,
+            225
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "_components/selection-scrollbar/style/index.less",
+          "css": [
+            78
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "_components/virtual-list-v2/VirtualList.vue",
+          "css": [],
+          "runtime": [
+            232
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "_utils/debounce.ts",
+          "css": [],
+          "runtime": [
+            9
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "action-sheet/style/action-sheet.less",
+          "css": [
+            4
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "alert/style/implementation.less",
+          "css": [
+            166,
+            176
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "avatar/style/index.less",
+          "css": [
+            35,
+            92,
+            106,
+            163
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "back-top/use-back-top.ts",
+          "css": [],
+          "runtime": [
+            44,
+            134,
+            205
+          ],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "button/style/button.less",
+          "css": [
+            11,
+            248,
+            307,
+            311
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "card/Card.vue",
+          "css": [],
+          "runtime": [
+            208,
+            266
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "card/style/card.less",
+          "css": [
+            42,
+            45,
+            67,
+            82,
+            98,
+            118,
+            139,
+            150,
+            162,
+            203
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "carousel/Carousel.vue",
+          "css": [],
+          "runtime": [
+            142,
+            523,
+            536,
+            543
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "carousel/style/index.less",
+          "css": [
+            15,
+            32,
+            42,
+            170
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "cascader/style/index.less",
+          "css": [
+            27,
+            202,
+            220
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "cell/style/cell.less",
+          "css": [
+            25
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "checkbox/style/index.less",
+          "css": [
+            30,
+            48,
+            103
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "collapse/style/index.less",
+          "css": [
+            32,
+            101,
+            132,
+            140
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "countdown/use-countdown.ts",
+          "css": [],
+          "runtime": [
+            105
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "counter/Counter.vue",
+          "css": [],
+          "runtime": [
+            373,
+            390,
+            427,
+            445
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "counter/style/counter.less",
+          "css": [
+            13
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "date-range/style/date-range-picker.less",
+          "css": [
+            63,
+            107
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "date/picker-panels/YearPickerPanel.vue",
+          "css": [],
+          "runtime": [
+            262
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "date/style/date-picker.less",
+          "css": [
+            47,
+            68,
+            288,
+            294,
+            314,
+            334,
+            340,
+            410
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "dialog/style/dialog.less",
+          "css": [
+            7,
+            19
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "drag/style/drag.less",
+          "css": [
+            10
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "fab/style/fab.less",
+          "css": [
+            3,
+            7,
+            173
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "field-decorator/style/field-decorator.less",
+          "css": [
+            20,
+            102,
+            129,
+            149,
+            196
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "field-decorator/use-field-geometry.ts",
+          "css": [],
+          "runtime": [
+            24
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "form-details/style/form-details.less",
+          "css": [
+            15,
+            25
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "form/Form.vue",
+          "css": [],
+          "runtime": [
+            107,
+            110,
+            121,
+            138
+          ],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "form/scroll-completion.ts",
+          "css": [],
+          "runtime": [
+            76,
+            97
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "hover/style/hover-overlay.less",
+          "css": [
+            12,
+            27
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "icon/Icon.vue",
+          "css": [],
+          "runtime": [
+            57,
+            140
+          ],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "icon/style/implementation.less",
+          "css": [
+            26,
+            31,
+            44,
+            47
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "image/ImagePreviewGroup.vue",
+          "css": [],
+          "runtime": [
+            232,
+            239,
+            320
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "image/composables/usePreviewController.ts",
+          "css": [],
+          "runtime": [
+            192,
+            281
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "image/style/core.less",
+          "css": [
+            12,
+            23
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "image/style/image-preview.less",
+          "css": [
+            49,
+            56,
+            63,
+            70,
+            85
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "image/style/image.less",
+          "css": [
+            58
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "index-bar/IndexBar.vue",
+          "css": [],
+          "runtime": [
+            249
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "index-bar/scroll-task.ts",
+          "css": [],
+          "runtime": [
+            16,
+            37,
+            41,
+            49,
+            53
+          ],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "infinite-scroll/InfiniteScroll.vue",
+          "css": [],
+          "runtime": [
+            245,
+            247
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "input-number/style/input-number.less",
+          "css": [
+            90,
+            152
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "input-number/use-step-repeat.ts",
+          "css": [],
+          "runtime": [
+            54,
+            57
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "input/style/input.less",
+          "css": [
+            57,
+            95
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "link/style/implementation.less",
+          "css": [
+            15,
+            25,
+            186,
+            195,
+            198
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "list/List.vue",
+          "css": [],
+          "runtime": [
+            31,
+            33
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "list/props.ts",
+          "css": [],
+          "runtime": [
+            16
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "loading-bar/index.ts",
+          "css": [],
+          "runtime": [
+            79
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "loading-bar/style/loading-bar.less",
+          "css": [
+            5,
+            19
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "loading/style/loading.less",
+          "css": [
+            57,
+            118,
+            147,
+            214,
+            218,
+            223,
+            227,
+            231,
+            235,
+            305,
+            309,
+            314,
+            318,
+            322,
+            395,
+            399,
+            403,
+            407,
+            411,
+            415,
+            419,
+            423,
+            427,
+            504,
+            508,
+            512,
+            516,
+            554,
+            555
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "message/style/index.less",
+          "css": [
+            8
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "message/style/message.less",
+          "css": [
+            106
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "message/use-message-timer.ts",
+          "css": [],
+          "runtime": [
+            37
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "notice-bar/style/notice-bar.less",
+          "css": [
+            63,
+            64,
+            65
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "overlay/style/index.less",
+          "css": [
+            23,
+            35
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "paper/style/implementation.less",
+          "css": [
+            5,
+            24
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "picker/Picker.vue",
+          "css": [],
+          "runtime": [
+            237,
+            375,
+            417,
+            502,
+            529,
+            562,
+            624,
+            692,
+            698
+          ],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "picker/style/picker.less",
+          "css": [
+            5,
+            60,
+            71,
+            104
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "popover/style/implementation.less",
+          "css": [
+            44,
+            53
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "popup/style/popup.less",
+          "css": [
+            8,
+            17,
+            26,
+            35,
+            44,
+            53,
+            76,
+            81,
+            142,
+            155
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "progress-group/style/index.less",
+          "css": [
+            45,
+            55,
+            81,
+            161,
+            167,
+            236,
+            242,
+            246
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "progress/style/index.less",
+          "css": [
+            35,
+            47,
+            84,
+            94,
+            102,
+            105,
+            142,
+            149
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "pull-refresh/PullRefresh.vue",
+          "css": [],
+          "runtime": [
+            96
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "pull-refresh/style/pull-refresh.less",
+          "css": [
+            30
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "radio/style/index.less",
+          "css": [
+            49,
+            100
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "rate/style/rate.less",
+          "css": [
+            19,
+            30,
+            61,
+            62
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "result/style/result.less",
+          "css": [
+            77,
+            119
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "ripple/index.ts",
+          "css": [],
+          "runtime": [
+            66
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "ripple/style/ripple.less",
+          "css": [
+            5,
+            20
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "select/hooks/use-select.ts",
+          "css": [],
+          "runtime": [
+            139,
+            166,
+            168,
+            204,
+            246,
+            259
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "select/style/index.less",
+          "css": [
+            88,
+            145
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "skeleton/style/implementation.less",
+          "css": [
+            25,
+            40,
+            53,
+            63,
+            73,
+            82,
+            106,
+            109
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "slider/style/index.less",
+          "css": [
+            52,
+            172
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "steps/style/index.less",
+          "css": [
+            13,
+            35
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "swipe-cell/SwipeCell.vue",
+          "css": [],
+          "runtime": [
+            351
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "swipe-cell/style/swipe-cell.less",
+          "css": [
+            11
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "switch/style/switch.less",
+          "css": [
+            49,
+            68,
+            91,
+            99,
+            149,
+            170,
+            173
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "tab-bar/style/tab-bar-item.less",
+          "css": [
+            20,
+            31,
+            59,
+            95
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "tab-bar/style/tab-bar.less",
+          "css": [
+            7,
+            40
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "table/style/table.less",
+          "css": [
+            49
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "tabs/style/index.less",
+          "css": [
+            96,
+            264
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "tag/style/implementation.less",
+          "css": [
+            28,
+            203,
+            214
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "time-range/style/time-range-picker.less",
+          "css": [
+            43
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "time/style/time-picker.less",
+          "css": [
+            31,
+            55,
+            111,
+            206
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "tooltip/style/implementation.less",
+          "css": [
+            61,
+            70
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "trigger/positioner.ts",
+          "css": [],
+          "runtime": [
+            75
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "trigger/state.ts",
+          "css": [],
+          "runtime": [
+            47
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "trigger/style/index.less",
+          "css": [
+            19,
+            32
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "utils/elements.ts",
+          "css": [],
+          "runtime": [
+            208,
+            218,
+            233,
+            238,
+            252
+          ],
+          "hasLocalReducedQuery": true
+        },
+        {
+          "file": "utils/resize-observer.ts",
+          "css": [],
+          "runtime": [
+            30
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "utils/test.ts",
+          "css": [],
+          "runtime": [
+            22,
+            27,
+            28,
+            51,
+            52,
+            259
+          ],
+          "hasLocalReducedQuery": false
+        }
+      ]
+    }
+  ]
+}

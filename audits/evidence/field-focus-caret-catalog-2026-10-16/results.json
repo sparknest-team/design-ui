@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "date": "2026-10-16",
+  "scope": "Authorized Cedar/Maple FieldDecorator focus/caret consumer drift only; preserve parallel implementation",
+  "status": "authorized-scope-closed-automation-paused",
+  "automation": {
+    "id": "cedar-maple-14-00-2",
+    "status": "PAUSED",
+    "confirmedInSavedConfiguration": true,
+    "action": "Paused via app automation update; preserved other fields. No future recurring work. This explicit manual request completed separately."
+  },
+  "classification": {
+    "families": 33,
+    "totalFamilies": 33,
+    "classifiedPercent": 100,
+    "remainingFamilies": 0,
+    "remainingPercent": 0,
+    "sourceFiles": 78,
+    "classifiedHints": 182,
+    "totalHints": 182,
+    "pendingHints": 0,
+    "denominatorChange": 0,
+    "boundary": "Runtime responsibility classification only, not all business paths/native acceptance"
+  },
+  "findings": {
+    "productionDefectReproduced": false,
+    "productionSourceModified": false,
+    "tokenDefaultsModified": false,
+    "businessApiModified": false,
+    "catalogPages": 3,
+    "changedConsumerRows": 9,
+    "propertiesRemovedFromHistoricalPaths": [
+      "outline-offset",
+      "caret-color"
+    ],
+    "design": "Preserve existing no-extra-outer-outline design; variants retain focus feedback and button focus-visible; native carets use currentColor. Field border-width/focus-color/error-color remain live; do not remove declarations.",
+    "styleEntries": "Input imports FieldDecorator styles; Textarea/InputNumber reach them through Input. Initial probe incorrectly expected every entry to import directly.",
+    "nativeBoundary": "Error-state keyboard focus distinguishability/contrast/painting is not proved by Less/JSDOM. No new native acceptance."
+  },
+  "validation": [
+    {
+      "command": "node --test bin/field-focus-caret.test.mjs",
+      "stage": "initial probe",
+      "total": 9,
+      "passed": 4,
+      "failed": 5,
+      "exitCode": 1,
+      "result": "3 stale catalog failures plus 2 probe-only direct-import assumptions; not five product defects."
+    },
+    {
+      "command": "node --test --test-reporter=dot bin/field-focus-caret.test.mjs",
+      "stage": "effective pre-catalog baseline",
+      "total": 9,
+      "passed": 6,
+      "failed": 3,
+      "exitCode": 1,
+      "result": "Actual transitive import chain accepted, only 3 generated sections stale."
+    },
+    {
+      "command": "pnpm check:token-reference",
+      "total": 17,
+      "passed": 17,
+      "failed": 0,
+      "generatedPagesMatched": 3,
+      "exitCode": 0,
+      "testDurationSeconds": 9.211
+    },
+    {
+      "command": "node bin/field-focus-check.mjs",
+      "exitCode": 0,
+      "layer": "Actual independent Less compilers"
+    },
+    {
+      "command": "node bin/field-theme-check.mjs",
+      "checks": 384,
+      "exitCode": 0,
+      "layer": "Compiled CSS/JSDOM cascade; error/disabled colors and sentinel overrides including focus/hover overlap"
+    },
+    {
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run src/field-decorator/__tests__ src/input/__tests__ src/textarea/__tests__ src/input-number/__tests__",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "tests": 106,
+      "files": 13,
+      "passed": 106,
+      "exitCode": 0,
+      "durationSeconds": 49.22,
+      "newDomCases": 9
+    },
+    {
+      "command": "CHOKIDAR_USEPOLLING=true pnpm exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js src/field-decorator/__tests__ src/input/__tests__ src/textarea/__tests__ src/input-number/__tests__",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "tests": 129,
+      "files": 15,
+      "passed": 129,
+      "exitCode": 0,
+      "durationSeconds": 70.69,
+      "newDomCases": 9
+    },
+    {
+      "command": "pnpm exec eslint --no-ignore src/field-decorator/__tests__/focus-caret-consumers.test.tsx --max-warnings 0",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm lint:check",
+      "cwd": "maple-design-mobile",
+      "stage": "first run",
+      "exitCode": 1,
+      "result": "28 formatting/import-order diagnostics confined to new focus-caret-consumers.spec.ts; formatter applied only to that file. Final run recorded below."
+    },
+    {
+      "command": "node bin/token-inventory.mjs --check-consumers --summary",
+      "exitCode": 0,
+      "summary": {
+        "files": 170,
+        "declarations": 4552,
+        "candidates": 70,
+        "crossComponentCss": 40,
+        "literalRuntime": 10,
+        "dynamicRuntime": 20,
+        "needsManualReview": 0,
+        "errors": 0
+      }
+    }
+  ],
+  "finalChecks": {
+    "mapleRootLintCheckExitCode": 0,
+    "mapleOwnedFixturePrettierExitCode": 0,
+    "mapleFormattedFixtureRerun": { "tests": 9, "passed": 9, "exitCode": 0, "durationSeconds": 41.65 },
+    "cedarScopedLintExitCode": 0,
+    "threeRepositoryDiffChecksExitCode": 0,
+    "evidenceJsonParseExitCode": 0,
+    "frozenSourceHashesMatchCount": 12,
+    "allVerificationProcessesFinished": true
+  },
+  "sourceHashesUnchanged": {
+    "cedar-design-web/packages/cedar-ui/src/field-decorator/FieldDecorator.vue": "9e599e29671befd213fc559ee85fd9d7805adfa8d3c8d55361ae24b846f29d8c",
+    "cedar-design-web/packages/cedar-ui/src/field-decorator/style/field-decorator.less": "7092fad8640eb1245d8927b2e3864d2b9c8bae8f6281025cc3fbc0ce14f28353",
+    "cedar-design-web/packages/cedar-ui/src/field-decorator/style/token.less": "2b0f94d5b04a3703862206f3829f4d358fa76bc2e3cd7b89cad5b7b89dfa098a",
+    "cedar-design-web/packages/cedar-ui/src/input/style/input.less": "e70f51eadde64146141fb02f8befd2bd2fccf52cfbbb9570940bde1809199ba0",
+    "cedar-design-web/packages/cedar-ui/src/textarea/style/index.less": "233e456b5280cbb8d904e2aeba34493d97111049e8bc32462efd843306b6a70f",
+    "cedar-design-web/packages/cedar-ui/src/input-number/style/input-number.less": "20da9c5d63c1d575c36b88b03fb6cc9b5f07f04f14c77239c15ed7a26b700996",
+    "maple-design-mobile/packages/maple-ui/src/field-decorator/FieldDecorator.vue": "266574a614427e16d39167fd4acdac6db0ea91b216bfac44a9148b7b4b28ed75",
+    "maple-design-mobile/packages/maple-ui/src/field-decorator/style/field-decorator.less": "35929e109c551f6718ad788d984248a35dc53557ec7f25efdc44a5100672123c",
+    "maple-design-mobile/packages/maple-ui/src/field-decorator/style/token.less": "1d72fe3aa8745f06db226407ca13a180a6057324e152b67d062ea3910740f687",
+    "maple-design-mobile/packages/maple-ui/src/input/style/input.less": "d4deffb844958c42bc611ef93f9d842ccff6699b1f38eda60650400fc5ecc40a",
+    "maple-design-mobile/packages/maple-ui/src/textarea/style/index.less": "288adf426e133bce05672b21e4437cb777267ad6d16da12b3cab1c187d89b46f",
+    "maple-design-mobile/packages/maple-ui/src/input-number/style/input-number.less": "ffd97d8c02ab9d0fcd16b9ca88a926e37d233e153cb0241d69e9e0c65b278368"
+  },
+  "preservedBlockers": {
+    "mapSdk": "Need formal provider disposal and asynchronous identity contract, kept as requested.",
+    "nativeEnvironment": {
+      "groups": 144,
+      "needed": "Responsive actual Chrome native 200% entry, supported Safari control and real Firefox install/control path; no installation or permission changes."
+    },
+    "unrelatedInventoryDrifts": 26,
+    "button": "Preserve white on-dark 2.305:1 non-AA design exception."
+  },
+  "documentation": [
+    "Shared standard and progress ledger",
+    "Cedar menu guide and Maple Chinese/English menu guides",
+    "Three generated reference pages, actual generator patch only",
+    "Cedar FieldDecorator/Input and Maple FieldDecorator README/docs",
+    "Both scoped changesets and existing token-closure-fields-presets OpenSpec tasks"
+  ],
+  "notes": [
+    "Vue cleanup skill informed finally-unmount of new actual-control fixtures; no new globals or business lifecycle behavior.",
+    "Existing field-focus-check.mjs was parallel work, inspected/run but not rewritten.",
+    "No source repair invented from a catalog delta. No full motion-themes claim, no native retry, install or permission change.",
+    "No new API, no runtime inventory/classification refresh, no new task/subagent/commit/push/publish.",
+    "No production types/build rerun claimed; actual tests/lint/compiled CSS layers are separately recorded."
+  ]
+}

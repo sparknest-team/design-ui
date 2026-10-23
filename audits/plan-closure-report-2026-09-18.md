@@ -24,7 +24,7 @@
 ### 2. 主题与样式变量
 
 - Cedar 与 Maple 均保留两套品牌：Default 和 Maple；每套均包含 light / dark。
-- 站点顶部菜单可同时切换网站外壳与组件主题，旧 `md2` / `md3` 命名已移除。
+- 站点顶部菜单可同时切换网站外壳与组件主题，主题统一为 default / maple 品牌与 light / dark 模式。
 - Maple 文档站 Demo 卡片、页面背景及暗色外壳完成适配。
 - Maple Select 的 `scroller-*` / `option-*` 重构为统一的 `select-popup-*` 语义。
 - Maple Form 的 label、help、required、spacing 等变量统一为公共 `form-*` 语义。

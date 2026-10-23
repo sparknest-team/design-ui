@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-15",
+  "batch": "Maple PullRefresh timers and refresh continuation, phase one",
+  "source": {
+    "file": "maple-design-mobile/packages/maple-ui/src/pull-refresh/PullRefresh.vue",
+    "cleanAtStart": true,
+    "beforeSha256": "fe9787fea243d3abbb651d59517f22e912888621682bf9950877327e9d270cdf",
+    "afterSha256": "867b469494b417decddce1b4b6922655ba6524da57a87e3475f51e589512716b"
+  },
+  "baseline": {
+    "tests": 10,
+    "failed": 8,
+    "passedControls": 2,
+    "failures": ["old success schedules reset during new load", "success duplicate schedules two resets", "unmount fails to cancel success timer", "deactivation fails to cancel success timer", "disabled fails to cancel success timer", "old success crosses activation", "old animation reset replaces new loading", "disposed icon wait writes loading"],
+    "controls": ["2000ms success display followed by300ms reset", "normal released pull requests one refresh"],
+    "meaning": "overlapping cases, not eight distinct defects; post-unmount emitted events are not used alone to prove callback suppression"
+  },
+  "repair": {
+    "timerOwnership": "pending membership consumes once under original generation; cancel physically clears window timers and settles cancelled icon waits false",
+    "replacement": "model/gesture and disabled/suspension/disposal invalidate old stages; activation settles current model without replaying success clocks",
+    "refreshContinuation": "icon await and nextTick check original request; pendingRefresh distinguishes current controlled true acknowledgement from external replacement; no duplicate refresh",
+    "basicLockCleanup": "cleanup removes only a class this instance added on its original node, preserving pre-existing external locks; multi-instance reference counting remains phase two",
+    "unchanged": "successDuration2000ms business display, public animationDuration300ms rebound/reset, icon parameter/wait150ms, public signatures/CSS Tokens/default visual timing; no user request/network cancellation"
+  },
+  "intermediateChecks": [
+    "initial repaired10 targeted/full15 passed",
+    "six extra controls gave16 targeted/full21 passed",
+    "supplemental idle-disposal lock probe caught1 failure/16 passes in candidate cleanup, not original baseline; limited cleanup to locally added original-node lock",
+    "final full22 passed with long collection latency and clean exit0",
+    "root lint initially blocked by two import-order errors in untouched parallel untracked Image preview-rendering.spec.js; read-only follow-up observed corrected imports, one bounded rerun passed by UTC11:36:12 without editing Image"
+  ],
+  "final": {
+    "targeted": 17,
+    "total": 22,
+    "files": 2,
+    "result": "passed exit0",
+    "additionalCases": ["cancelled icon wait settles without old delivery", "controlled true acknowledgement keeps current refresh", "disposal inside model update suppresses deferred refresh", "inactive retained end inert", "disabled model completion schedules no success timer", "zero waits settle without fallback", "idle disposal preserves external lock"],
+    "fixture": "Actual PullRefresh/KeepAlive with stub icon components, synthetic DOM touch, configured control geometry40px, controlled parent model and fake window timers/replayed callbacks. Dispose all owned wrappers, restore spies/real clock and remove fixture body class."
+  },
+  "verification": {
+    "mapleConfiguredTypes": "passed",
+    "mapleAffectedLint": "passed after scoped formatting",
+    "mapleRootLint": "passed final bounded rerun by UTC2026-10-15 11:36:12; earlier parallel Image import-order failure preserved under intermediateChecks and not repaired by this batch",
+    "sharedTests": "29 passed",
+    "classification": "144classified/35pending, no new classified row",
+    "catalog": "3 generated pages match",
+    "cedarRuntimeAndCss": "unchanged; no Cedar types/Less rerun claimed",
+    "newRealBrowserOrOSCases": 0
+  },
+  "progress": {
+    "families": 33,
+    "closed": 25,
+    "closedPercent": 75.8,
+    "remaining": 8,
+    "remainingPercent": 24.2,
+    "classifiedFiles": 60,
+    "classifiedHints": 144,
+    "previousTotalHints": 182,
+    "totalHints": 179,
+    "classifiedHintPercent": 80.4,
+    "pendingHints": 35,
+    "pendingHintPercent": 19.6,
+    "denominatorChange": -3,
+    "denominatorReason": "four setTimeout call sites consolidated to one owned dispatch; not three extra accepted cases/components or defects removed",
+    "remainingFamilies": ["Date", "Form", "Map", "Scheduler", "Time", "Tree", "Picker", "PullRefresh"],
+    "meaning": "classification only, PullRefresh not yet archived; not whole-library/all-lifecycle/native acceptance"
+  },
+  "inventory": "only reviewed PullRefresh runtime65/84/163/177→81; Maple runtime84→81, total182→179,193files/392CSS unchanged;26 unrelated parallel drifts untouched, no global motion-themes claim",
+  "preserved": ["Form/date/linked Time", "Picker/Scheduler and parallel styles", "parallel Image preview-rendering.spec.js untouched; its transient lint errors resolved externally", "144 native200%/Safari/Firefox blocked cases", "Button on-dark2.305:1 design exception"],
+  "pending": ["full gesture and touchcancel cancellation", "multi-instance scroll-lock ownership/reference counting", "old listener and measurement continuation", "target changes and owner document", "initial true model display", "dynamic duration and actual CSS/reduced-motion consumption", "shared useTouch RAF", "native touch/OS/cross-document behavior"],
+  "next": "PullRefresh phase two; no new tasks/subagents/browser/services/automation mutations/commits/push/releases"
+}

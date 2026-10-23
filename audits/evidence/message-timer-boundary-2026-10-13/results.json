@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-13",
+  "scope": "Independent Cedar and Maple Message active-owner and display-deadline boundaries",
+  "verificationKind": "Vue component harnesses with simulated timers and Date clock, not native browser/OS",
+  "reproduction": {
+    "maple": { "failed": 6, "passed": 2 },
+    "cedar": {
+      "initialFailed": 6,
+      "initialPassed": 2,
+      "note": "Five failures directly concerned product behavior. Initial KeepAlive test also counted the old Vitest async test timeout, so its global timer-count failure is not product evidence. Inactive update scheduling independently reproduced KeepAlive ownership failure."
+    },
+    "failures": [
+      "Deactivated update/open can restart display scheduling",
+      "Retained exposed restart can schedule after unmount",
+      "An exhausted positive hover deadline becomes persistent on resume",
+      "NaN and positive Infinity enter setTimeout"
+    ],
+    "existingPasses": ["Explicit zero reset while paused", "Negative Infinity does not schedule"]
+  },
+  "after": {
+    "cedarMessageTests": 26,
+    "mapleMessageTests": 34,
+    "newBoundaryTestsPerPlatform": 8,
+    "types": { "cedar": "passed", "maple": "passed" },
+    "cedarAffectedLint": "passed",
+    "mapleFullLint": "passed",
+    "tokenReference": { "tests": 3, "generatedPages": 3 },
+    "motionGate": "passed: scanner4, 192-file inventory, 96 theme/preference cases, 88 duration overrides, 176 modal consumers, 96 paired overrides, LoadingBar8/4, Notification20/44; compiled only"
+  },
+  "behavior": [
+    "Mounted/activated starts once; deactivation and before-unmount cancel and invalidate the owner.",
+    "Inactive watcher/update and retained restart cannot schedule work.",
+    "KeepAlive activation restarts the full current configured duration, consistently with Notification.",
+    "Hover keeps remaining time; an exhausted positive deadline closes once on resume.",
+    "A paused explicit zero reset stays persistent; only finite positive durations schedule.",
+    "Business display durations remain independent from CSS transition tokens and defaults."
+  ],
+  "sourceSha256": {
+    "cedar-design-web/packages/cedar-ui/src/message/use-message-timer.ts": "c98122de716b691beacb5cda769ed4292a83f3a833ed57626fd200ab6527532b",
+    "maple-design-mobile/packages/maple-ui/src/message/use-message-timer.ts": "532e457c12f2a6c4cef2ca9f0b00295a7195723ca5441d9b3d7eb79aa23e949f"
+  },
+  "harnessCorrections": [
+    "Do not treat old Vitest async test timeout as a component timer.",
+    "Do not combine global timer spies with fake timers: old Vitest restoration contaminated following real-timer service tests. Removed the probe and verified public close/deadline behavior; complete suites then passed. This was not a Message service defect."
+  ],
+  "newNativeBrowserCases": 0,
+  "newRealOsCases": 0,
+  "unchangedBlockedNativeCases": 144,
+  "followUp": ["Real IAB Message lifecycle and CSS transition token consumption", "Message service close-completion ownership audit"],
+  "constraints": "No new public API/CSS token, aliases, tasks, subagents, commits, push or release. Date and naming work preserved. Primary white Button contrast exception unchanged."
+}

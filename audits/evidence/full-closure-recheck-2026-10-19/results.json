@@ -1,0 +1,365 @@
+{
+  "version": 1,
+  "date": "2026-10-19",
+  "completedAtUtc": "2026-10-19T10:20:01Z",
+  "completedAtShanghai": "2026-10-19 18:20:01",
+  "finalChecks": {
+    "threeRepositoryDiffChecksExitCode": 0,
+    "evidenceJsonValid": true,
+    "productionAggregateHashesUnchangedAcrossDocumentation": true,
+    "cedarProductionFiles": 1407,
+    "mapleProductionFiles": 1192,
+    "allValidationProcessesFinished": true,
+    "nativeNewAcceptedCases": 0
+  },
+  "startedAtUtc": "2026-10-19T10:15:16Z",
+  "scope": "Read-only full closure recheck and documentation;preserve parallel business,no automatic inventory/hash/catalog refresh",
+  "status": "recheck-complete-new-drift-and-catalog-entry-blocker-reported",
+  "automation": {
+    "id": "cedar-maple-14-00-2",
+    "status": "PAUSED",
+    "savedStatusChecked": true,
+    "modified": false
+  },
+  "totals": [
+    {
+      "repo": "cedar-design-web",
+      "files": 104,
+      "cssDeclarationCandidates": 204,
+      "runtimeCallCandidates": 98
+    },
+    {
+      "repo": "maple-design-mobile",
+      "files": 94,
+      "cssDeclarationCandidates": 214,
+      "runtimeCallCandidates": 86
+    }
+  ],
+  "inventoryDiffs": [
+    {
+      "repo": "cedar-design-web",
+      "after": {
+        "file": "_components/field-presentation/use-field-search.ts",
+        "css": [],
+        "runtime": [
+          14
+        ],
+        "hasLocalReducedQuery": false
+      }
+    },
+    {
+      "repo": "cedar-design-web",
+      "before": {
+        "file": "date/picker/style/index.less",
+        "css": [
+          94,
+          118,
+          190
+        ],
+        "runtime": [],
+        "hasLocalReducedQuery": false
+      },
+      "after": {
+        "file": "date/picker/style/index.less",
+        "css": [
+          95,
+          119,
+          191
+        ],
+        "runtime": [],
+        "hasLocalReducedQuery": false
+      }
+    },
+    {
+      "repo": "cedar-design-web",
+      "before": {
+        "file": "form/Form.vue",
+        "css": [],
+        "runtime": [
+          122,
+          134
+        ],
+        "hasLocalReducedQuery": false
+      },
+      "after": {
+        "file": "form/Form.vue",
+        "css": [],
+        "runtime": [
+          154,
+          168
+        ],
+        "hasLocalReducedQuery": false
+      }
+    },
+    {
+      "repo": "cedar-design-web",
+      "before": {
+        "file": "form/style/index.less",
+        "css": [
+          277,
+          279
+        ],
+        "runtime": [],
+        "hasLocalReducedQuery": true
+      },
+      "after": {
+        "file": "form/style/index.less",
+        "css": [
+          239,
+          240,
+          281,
+          282
+        ],
+        "runtime": [],
+        "hasLocalReducedQuery": true
+      }
+    },
+    {
+      "repo": "maple-design-mobile",
+      "after": {
+        "file": "_components/field-presentation/use-field-search.ts",
+        "css": [],
+        "runtime": [
+          14
+        ],
+        "hasLocalReducedQuery": false
+      }
+    },
+    {
+      "repo": "maple-design-mobile",
+      "before": {
+        "file": "form/Form.vue",
+        "css": [],
+        "runtime": [
+          102,
+          105,
+          116,
+          133
+        ],
+        "hasLocalReducedQuery": true
+      },
+      "after": {
+        "file": "form/Form.vue",
+        "css": [],
+        "runtime": [
+          107,
+          110,
+          121,
+          138
+        ],
+        "hasLocalReducedQuery": true
+      }
+    }
+  ],
+  "registeredSources": 78,
+  "registeredHints": 182,
+  "staleHashes": [
+    {
+      "repo": "cedar-design-web",
+      "file": "form/Form.vue",
+      "registered": "80a8223689b7ccdc9ddf50351cea185cef54267aeca7858fe0d05a5d32334ec0",
+      "current": "3e443d9dca49515a39fd781b9819df98be6705cff5f02666b00302ab2ca2b0d1"
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "form/Form.vue",
+      "registered": "c25e4b65a2b1005149699bbd7fa039a2354a8f02c2f78e10cdf7199d797c4eb5",
+      "current": "2519b17da237f51004acdfa4647f002d7b8cb1dbbe4360467994e9f44f86c4a7"
+    }
+  ],
+  "progress": {
+    "historicalRegisteredFamilies": 33,
+    "originalFamilyDenominator": 33,
+    "currentMatchingIdentityFamilies": 32,
+    "matchingOriginalPercent": 97,
+    "reReviewOriginalFamilies": [
+      "Form"
+    ],
+    "reReviewOriginalPercent": 3,
+    "newPrivateFamilyOwnership": "unassigned;do not invent a new family count",
+    "matchingRegisteredSources": 76,
+    "staleRegisteredSources": 2,
+    "liveHints": 184,
+    "previousRegisteredHints": 182,
+    "hintDenominatorChange": 2,
+    "matchingIdentityHints": 176,
+    "matchingHintPercent": 95.7,
+    "hintsNeedingReviewOrRevalidation": 8,
+    "reviewHintPercent": 4.3,
+    "reviewBreakdown": {
+      "staleFormHints": 6,
+      "newSearchHints": 2
+    },
+    "meaning": "Matching source identity is not lifecycle/business/visual/native acceptance;stale hashes are a subset of6inventory differences,not additive defects."
+  },
+  "tokenReport": {
+    "files": 172,
+    "processedDeclarations": 4552,
+    "processedCandidates": 70,
+    "crossComponentCss": 40,
+    "literalRuntime": 10,
+    "dynamicRuntime": 20,
+    "needsManualReviewAmongProcessed": 0,
+    "errors": 2,
+    "entryErrors": [],
+    "componentErrors": [
+      {
+        "platform": "c",
+        "component": "_components",
+        "error": "No sibling style/index.less"
+      },
+      {
+        "platform": "mp",
+        "component": "_components",
+        "error": "No sibling style/index.less"
+      }
+    ],
+    "diagnosis": "Two new src/_components/field-presentation/token.less files do not use legacy src/component/style/token.less layout. Real static style imports lead through style.ts to style.less/token.less;scanner misidentifies component/entry. Complete declaration/catalog counts remain unknown.",
+    "actualPrivateEntriesCompiled": [
+      {
+        "repo": "cedar-design-web",
+        "entry": "_components/field-presentation/style.less",
+        "cssBytes": 2300,
+        "declaredNames": 4,
+        "passed": true
+      },
+      {
+        "repo": "maple-design-mobile",
+        "entry": "_components/field-presentation/style.less",
+        "cssBytes": 1893,
+        "declaredNames": 4,
+        "passed": true
+      }
+    ],
+    "noPartialReportPublished": true,
+    "generatedPagesWritten": 0,
+    "currentCatalogDriftCount": null
+  },
+  "validations": [
+    {
+      "command": "pnpm check:motion-themes",
+      "exitCode": 1,
+      "tests": 79,
+      "passed": 76,
+      "failed": 3,
+      "detail": "Form hash mismatch;remaining-style and select-catalog modules abort because token scan returns1. Later chained inventory/classification/compiled gates not executed."
+    },
+    {
+      "command": "node bin/motion-source-inventory.mjs --check",
+      "exitCode": 1,
+      "detail": "6file-key differences independently enumerated;no refresh"
+    },
+    {
+      "command": "all registered hashes compared independently",
+      "registeredFiles": 78,
+      "matching": 76,
+      "stale": 2,
+      "scanExitCode": 0
+    },
+    {
+      "command": "pnpm check:token-reference",
+      "exitCode": 1,
+      "tests": 11,
+      "passed": 8,
+      "failed": 3,
+      "detail": "Three modules stop on incomplete token report;full3page check not executed. Not three additional component defects."
+    },
+    {
+      "command": "node bin/token-inventory.mjs --check-consumers --summary",
+      "exitCode": 1,
+      "errors": 2
+    },
+    {
+      "command": "compile two real private style.less entries with own platform Less",
+      "exitCode": 0,
+      "layer": "actual Less diagnostic,not global scanner success"
+    },
+    {
+      "command": "pnpm check:browser-evidence",
+      "exitCode": 0,
+      "tests": 202,
+      "passed": 202,
+      "subsequentIntegrityChainPassed": true,
+      "newNativeCases": 0,
+      "remainingNativeCases": 144,
+      "meaning": "Saved evidence/hash integrity only,not new browser run"
+    }
+  ],
+  "mapSdk": {
+    "runtime": "Cedar only;no Maple matching runtime",
+    "sourceStatus": "Runtime map-core import remains commented;ambient declarations are not providers. Missing dependency guard/fallback not an active SDK branch.",
+    "needs": [
+      "Versioned approved SDK adapter/package,driver/entry and maintainer/test handoff",
+      "Document actual listener off/unsubscribe identity,instance/search disposal,initialization/search/geocode cancellation and late/synchronous/error delivery contracts;do not guess methods from on:void",
+      "Freeze affected business scope and decide retained-instance vs release policy on KeepAlive;preserve model/address submit semantics",
+      "Configured development SDK/network environment,driver credentials/domain whitelist if needed,secure context/user-granted geolocation for real location;no secrets in chat/docs",
+      "Active-provider300/500ms cancellation/generation/once-consumption/reentry,old callback/init/search/geocode rejection,instance replacement,deactivation/unmount;MapSelect address and real location success/failure/refusal"
+    ]
+  },
+  "native": {
+    "blockedGroups": 144,
+    "perSuite": 48,
+    "matrix": "CedarDrawer/MaplePopup ×4brand/mode×3targets(body/host/inline)×2content lengths",
+    "suites": [
+      {
+        "name": "Chrome native page zoom200%",
+        "needs": "Responsive supported Chrome/native control and visible native100%→200%UI proof,then48cases"
+      },
+      {
+        "name": "Installed Safari100%",
+        "needs": "Responsive supported installed Safari session/native control,actual version/zoom/navigation settings,then48cases"
+      },
+      {
+        "name": "Installed Firefox100%",
+        "needs": "User-provided actual installation/version plus supported responsive control,then48cases;no installation by this task"
+      }
+    ],
+    "sharedNeeds": "Frozen fixture session/source snapshot,complete open/close/scroll/keyboard/mount migration/focus restore/lock cleanup/geometry/color/screenshot evidence and originalzoom/resource restoration",
+    "historicEnvironmentEvidenceDate": "2026-10-13",
+    "newEnvironmentProbe": false,
+    "newNativeCases": 0,
+    "prohibitedSubstitutes": [
+      "CSSzoom/transform",
+      "narrowviewport/DPR-only",
+      "pinch/text-onlyzoom",
+      "JSDOM/Less/IAB",
+      "simulatedWebKit",
+      "AppleScript/rawCDP"
+    ],
+    "installedVersionsNotRechecked": true
+  },
+  "sourceSnapshotBeforeDocumentation": {
+    "cedar": {
+      "files": 1407,
+      "sha256": "484345a70f44be10a08f1f0f520a4abec7ad78df976c81cc587a6ce503c2a1cb"
+    },
+    "maple": {
+      "files": 1192,
+      "sha256": "578e66db365a6e4c1c21ee12ce37e2005fe8321dd628a33dbfbefc692a36f706"
+    }
+  },
+  "writes": {
+    "productionSource": 0,
+    "tests": 0,
+    "styles": 0,
+    "tokenDefaults": 0,
+    "inventoryRegistration": 0,
+    "classificationRegistration": 0,
+    "generatedCatalogPages": 0,
+    "automation": 0,
+    "docsAndEvidenceOnly": true
+  },
+  "followupNeeds": "Handoff or scoped authorization for new two-platform FieldPresentation/Form links and scanner entry/visibility support;do not overwrite parallel business or refresh stale evidence blindly.",
+  "preserved": {
+    "button": "Whiteon-dark2.305:1non-AAexception,otherthresholdsunchanged",
+    "noNewChatSubagentCommitPushPublish": true
+  },
+  "documents": [
+    "audits/token-closure-recheck-2026-10-19.md",
+    "audits/token-closure-progress.md",
+    "standards/design-tokens.md",
+    "Cedar menu guide",
+    "Maple Chinese/English menu guides"
+  ],
+  "skill": "Vue lifecycle cleanup reference used only for proof-boundary review;no new cleanup implementation or simulated behavior acceptance."
+}

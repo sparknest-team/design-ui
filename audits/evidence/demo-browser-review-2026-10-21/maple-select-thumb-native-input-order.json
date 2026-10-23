@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-22",
+  "browser": "IAB",
+  "status": "not-proven",
+  "observations": {
+    "detail": "Native input operations are serialized. An 8000ms left hold showed dragging at702ms; subsequent right click completed8166ms, after left release8075ms. Address-focus operation also could not be independently delivered during held input. These observations do not prove contextmenu/blur cancellation during an active drag.",
+    "timing": {
+      "holdMs": 8000,
+      "observedDraggingAtMs": 702,
+      "leftReleasedAtMs": 8075,
+      "rightClickCompletedAtMs": 8166
+    }
+  }
+}

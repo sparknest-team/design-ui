@@ -1,0 +1,498 @@
+[
+  {
+    "component": "alert",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "status"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/alert/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/alert/example/demos/title.vue"
+    ]
+  },
+  {
+    "component": "auto-complete",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/auto-complete/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/auto-complete/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "auto-complete",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/auto-complete/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/auto-complete/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "badge",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "status",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/badge/__demos__/inline.vue",
+      "maple-design-mobile/packages/maple-ui/src/badge/example/demos/inline.vue"
+    ]
+  },
+  {
+    "component": "card",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/card/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/card/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "cascader",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/cascader/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/cascader/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "cascader",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/cascader/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/cascader/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "checkbox",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/checkbox/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/checkbox/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "date",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/date/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/date/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "date",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/date/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/date/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "date-range",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/date-range/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "date-range",
+    "name": "state-lab",
+    "dimensions": [
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/date-range/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "input",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/input/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/input/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "input",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/input/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/input/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "input-number",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/input-number/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/input-number/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "input-number",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/input-number/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/input-number/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "message",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "status"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/message/__demos__/component.vue",
+      "maple-design-mobile/packages/maple-ui/src/message/example/demos/component-call.vue"
+    ]
+  },
+  {
+    "component": "radio",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/radio/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/radio/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "rate",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/rate/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/rate/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "row",
+    "name": "layout-lab",
+    "dimensions": [
+      "align",
+      "justify"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/row/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/row/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "search",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/search/__demos__/loading.vue",
+      "maple-design-mobile/packages/maple-ui/src/search/example/demos/shape.vue"
+    ]
+  },
+  {
+    "component": "slider",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/slider/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/slider/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "space",
+    "name": "layout-lab",
+    "dimensions": [
+      "direction",
+      "align",
+      "justify"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/space/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/space/example/demos/wrap.vue"
+    ]
+  },
+  {
+    "component": "split-button",
+    "name": "appearance-lab",
+    "dimensions": [
+      "status",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/split-button/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/split-button/example/basic.vue"
+    ]
+  },
+  {
+    "component": "steps",
+    "name": "appearance-lab",
+    "dimensions": [
+      "status",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/steps/__demos__/description.vue",
+      "maple-design-mobile/packages/maple-ui/src/steps/example/demos/error-status.vue"
+    ]
+  },
+  {
+    "component": "switch",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/switch/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/switch/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "switch",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/switch/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/switch/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "tabs",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/tabs/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/tabs/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "tag",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "status",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/tag/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/tag/example/demos/theme-color-tag.vue"
+    ]
+  },
+  {
+    "component": "textarea",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/textarea/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/textarea/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "textarea",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/textarea/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/textarea/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "time",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/time/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/time/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "time-range",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "tooltip",
+    "name": "appearance-lab",
+    "dimensions": [
+      "status",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/tooltip/__demos__/color.vue",
+      "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/theme-color-tooltip.vue"
+    ]
+  },
+  {
+    "component": "verification-code",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/verification-code/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/verification-code/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "verification-code",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/verification-code/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/verification-code/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "upload",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/upload/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/upload/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "form",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/form/__demos__/presentation-status.vue",
+      "maple-design-mobile/packages/maple-ui/src/form/example/demos/help-extra.vue"
+    ]
+  },
+  {
+    "component": "select",
+    "name": "appearance-lab",
+    "dimensions": [
+      "variant",
+      "size"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/select/example/demos/basic.vue"
+    ]
+  },
+  {
+    "component": "select",
+    "name": "state-lab",
+    "dimensions": [
+      "disabled",
+      "readonly",
+      "error"
+    ],
+    "fixtures": [
+      "cedar-design-web/packages/cedar-ui/src/select/__demos__/basic.vue",
+      "maple-design-mobile/packages/maple-ui/src/select/example/demos/basic.vue"
+    ]
+  }
+]

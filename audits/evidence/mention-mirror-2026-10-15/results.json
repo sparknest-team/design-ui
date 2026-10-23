@@ -1,0 +1,497 @@
+{
+  "date": "2026-10-15",
+  "scope": "controlled-cedar-mention-textarea-mirror-consumer-lifecycle",
+  "sources": [
+    {
+      "repo": "cedar-design-web",
+      "file": "mention/mention.tsx",
+      "cleanAtStart": true,
+      "beforeSha256": "c033d26d1741846d11b4c3761c55eea152c6b225dbfea4b9281a0c6d2db9655c",
+      "afterSha256": "fadbf85ed79be4ac991d4128b2e33740d2b3c633f290d65f2869c00685d8562d",
+      "beforeRuntimeLines": [
+        267
+      ],
+      "afterRuntimeLines": [
+        292
+      ],
+      "category": "state-settlement",
+      "maple": "No corresponding Mention runtime source found; no mobile implementation introduced."
+    }
+  ],
+  "baseline": {
+    "tests": 13,
+    "failed": 10,
+    "controls": [
+      "current textarea relocation copies the scroll offset",
+      "unmount rejects a pending relocation",
+      "scroll getter disposal cannot commit native scroll"
+    ],
+    "probeCorrections": [
+      "Initial retained public-focus probe read the child wrapper rather than its exposed spy; corrected and reran baseline before production changes.",
+      "Old resize baseline spies CSSStyleDeclaration.getPropertyValue, not getComputedStyle, because old code cached the declaration.",
+      "Additional fresh-style probe initially spied global window; source now uses the actual textarea owner view. Corrected that post-repair probe and reran21 scoped and129 combined. Stub Trigger inheritAttrs=false avoids fragment attribute warnings; no warnings muted in product."
+    ]
+  },
+  "cases": [
+    {
+      "name": "current textarea relocation copies the scroll offset",
+      "baseline": "control-passed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "relocation callback consumes once",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "close cancels an old pending relocation",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "deactivation rejects old relocation",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "old callback cannot cross activation",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "unmount rejects a pending relocation",
+      "baseline": "control-passed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "disable cancels pending relocation",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "replacement text rejects old work even while still open",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "an open mirror follows subsequent text changes including zero origin",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "retained input while inactive does not reopen or notify",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "retained public focus and blur are inert while inactive",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "scroll getter disposal cannot commit native scroll",
+      "baseline": "control-passed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "old observer after activation cannot read style",
+      "baseline": "failed",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "empty options cancel pending relocation",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "input mode cancels a previous textarea task",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "clear supersedes the pending content task",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "activation schedules fresh relocation without reviving old work",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "inactive and disposed observer cannot read computed style",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "style read disposal prevents property enumeration and commit",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "fresh observer after activation reads current styles",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    },
+    {
+      "name": "disposed public focus and blur remain inert",
+      "baseline": "added-after-repair",
+      "final": "passed-controlled"
+    }
+  ],
+  "integration": {
+    "test": "actual Mention/Textarea/Select composition follows text and zero scroll origin",
+    "status": "passed-controlled",
+    "components": "Actual Mention, Textarea, useSelect, Trigger; no consumer module mocks in this separate test file.",
+    "instrumentation": "JSDOM native HTMLElement.scrollTo recorded via a restorable prototype descriptor; actual font layout/native painting/scroll behavior not certified.",
+    "offsets": [
+      [
+        0,
+        24
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "responsibilities": {
+    "renderWait": "nextTick sequencing, not CSS duration; cannot physically cancel a queued continuation.",
+    "ownership": "Synchronous generation invalidation, post-render input-instance/textarea/mirror capture, one-time consumption and post-scrollTop recheck.",
+    "cancellation": "Replacement text/options, close, disabled, mode change, deactivation/disposal invalidate old writes. Activation schedules current work rather than reviving old callbacks.",
+    "styles": "Current textarea.ownerDocument.defaultView.getComputedStyle each refresh, style-generation and node checks after declaration/property reads, resize lifecycle epoch.",
+    "commands": "Existing focus/blur returned from setup, public signatures preserved. Inactive/disposed entry points inert; disabled focus/input rejected, active blur allowed.",
+    "unchanged": "No CSS tokens/colors/defaults/public API added; no native smooth rollback."
+  },
+  "verification": {
+    "scopedTests": 21,
+    "actualCompositionTests": 1,
+    "existingMentionContracts": 2,
+    "totalMentionTests": 24,
+    "combinedCedarConsumers": 129,
+    "combinedFiles": 12,
+    "combinedProcessExit": 0,
+    "cedarConfiguredTypecheck": "passed tsconfig.declaration.json",
+    "cedarAffectedLint": "passed source/two tests/demo",
+    "mapleRootLint": "passed",
+    "demoSfcScriptTemplateCompiled": 1,
+    "classificationInventoryMessageCatalogTests": 28,
+    "tokenCatalogPages": 3,
+    "newRealBrowserCases": 0,
+    "newOSCases": 0
+  },
+  "coverage": {
+    "scope": "Runtime-source candidate classification, not all-library acceptance, untouched component count or defect count. Same-name platform directories are merged; underscore infrastructure and utils excluded.",
+    "before": {
+      "families": 33,
+      "closed": 16,
+      "pending": 17,
+      "closedPercent": 48.5,
+      "pendingPercent": 51.5,
+      "classifiedHints": 126,
+      "totalHints": 179
+    },
+    "after": {
+      "families": 33,
+      "closed": 17,
+      "pending": 16,
+      "closedPercent": 51.5,
+      "pendingPercent": 48.5,
+      "classifiedFiles": 49,
+      "classifiedHints": 127,
+      "pendingHints": 52,
+      "totalHints": 179,
+      "classifiedHintsPercent": 70.9,
+      "pendingHintsPercent": 29.1
+    },
+    "pendingFamilies": [
+      "anchor",
+      "date",
+      "form",
+      "map",
+      "message",
+      "nav-menu",
+      "notification",
+      "ripple",
+      "scheduler",
+      "time",
+      "tree",
+      "counter",
+      "loading-bar",
+      "picker",
+      "pull-refresh",
+      "swipe-cell"
+    ],
+    "partiallyClassified": [
+      "nav-menu"
+    ],
+    "perFamily": {
+      "anchor": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "back-top": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "card": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "carousel": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "countdown": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "date": {
+        "files": 3,
+        "pendingFiles": 3
+      },
+      "field-decorator": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "form": {
+        "files": 2,
+        "pendingFiles": 2
+      },
+      "icon": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "image": {
+        "files": 4,
+        "pendingFiles": 0
+      },
+      "infinite-scroll": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "input-number": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "layout": {
+        "files": 1,
+        "pendingFiles": 0
+      },
+      "list": {
+        "files": 4,
+        "pendingFiles": 0
+      },
+      "map": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "mention": {
+        "files": 1,
+        "pendingFiles": 0
+      },
+      "message": {
+        "files": 2,
+        "pendingFiles": 2
+      },
+      "nav-menu": {
+        "files": 2,
+        "pendingFiles": 1
+      },
+      "notification": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "ripple": {
+        "files": 2,
+        "pendingFiles": 2
+      },
+      "scheduler": {
+        "files": 6,
+        "pendingFiles": 6
+      },
+      "scrollbar": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "select": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "time": {
+        "files": 2,
+        "pendingFiles": 2
+      },
+      "tree": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "trigger": {
+        "files": 4,
+        "pendingFiles": 0
+      },
+      "typography": {
+        "files": 1,
+        "pendingFiles": 0
+      },
+      "counter": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "index-bar": {
+        "files": 2,
+        "pendingFiles": 0
+      },
+      "loading-bar": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "picker": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "pull-refresh": {
+        "files": 1,
+        "pendingFiles": 1
+      },
+      "swipe-cell": {
+        "files": 1,
+        "pendingFiles": 1
+      }
+    },
+    "standingReportingRule": "Every batch must report closed/total, remaining family count and percentage, plus classified/pending hints; distinguish classification from actual browser acceptance.",
+    "savedInventory": {
+      "files": 192,
+      "css": 392,
+      "runtime": 179
+    },
+    "liveInventory": [
+      {
+        "repo": "cedar-design-web",
+        "files": 102,
+        "cssDeclarationCandidates": 202,
+        "runtimeCallCandidates": 95
+      },
+      {
+        "repo": "maple-design-mobile",
+        "files": 92,
+        "cssDeclarationCandidates": 214,
+        "runtimeCallCandidates": 84
+      }
+    ],
+    "unrefreshedDrift": [
+      {
+        "repo": "maple-design-mobile",
+        "file": "action-sheet/style/action-sheet.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "carousel/style/index.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "cell/style/cell.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "checkbox/style/index.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "counter/style/counter.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "date-range/style/date-range-picker.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "date/style/date-picker.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "fab/style/fab.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "form-details/style/form-details.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "loading/style/loading.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "notice-bar/style/notice-bar.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "picker/Picker.vue"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "picker/style/picker.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "progress-group/style/index.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "progress/style/index.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "pull-refresh/style/pull-refresh.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "radio/style/index.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "rate/style/rate.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "result/style/result.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "slider/style/index.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "swipe-cell/style/swipe-cell.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "tab-bar/style/tab-bar-item.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "tab-bar/style/tab-bar.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "table/style/table.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "time-range/style/time-range-picker.less"
+      },
+      {
+        "repo": "maple-design-mobile",
+        "file": "time/style/time-picker.less"
+      }
+    ],
+    "refreshScope": "Only reviewed Mention runtime line and classification hash refreshed; other26 CSS/date source-row drifts preserved."
+  },
+  "boundaries": [
+    "nextTick mock queues and stubs isolate the consumer; physical cancellation is not claimed.",
+    "Actual-composition JSDOM test validates wiring, not trustworthy geometry, font wrapping, IME, native frames, scroll painting or OS.",
+    "Owner-view style path is guarded in source and controlled tests; cross-document/adoption/browser behavior remains separate.",
+    "Form/date/linkedTime/parallel styles and144 native200%/Safari/Firefox blocked cases preserved. No repeated environment probes.",
+    "No browser/server/automation/subagent/commit/push/release started."
+  ]
+}

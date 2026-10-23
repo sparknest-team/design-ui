@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-15",
+  "batch": "NavMenu root focus / measurement scheduling, phase two",
+  "source": {
+    "file": "cedar-design-web/packages/cedar-ui/src/nav-menu/menu.tsx",
+    "start": "Previous phase-one changes retained; no new overlapping source diff observed",
+    "beforeSha256": "c16c6d50913eb8974eacdb48115498757b64c5051e762d684e9510c1a6cdf24d",
+    "afterSha256": "22c68dd74dc681d5d2357d2464f293dc3a0f7c978b64088967b1151966565c51"
+  },
+  "baseline": {
+    "validTests": 8,
+    "failed": 6,
+    "passedControls": 2,
+    "invalidProbe": "Initial eight failures were caused by fixture selector c-nav-menu-measure instead of c-nav-menu__measure. Corrected selector before valid baseline; not product defects.",
+    "failures": [
+      "inactive retained resize reads geometry",
+      "queued config measurement crosses suspension/reactivation",
+      "clientWidth getter disposal causes stale measure access",
+      "inactive context focus calls detached node",
+      "selection return-focus crosses suspension",
+      "old selection focus not replaced by newer selection"
+    ],
+    "controls": [
+      "normal active resize folds overflow",
+      "unmount suppresses selection focus via cleared refs"
+    ]
+  },
+  "final": {
+    "targeted": 13,
+    "navMenuTotal": 58,
+    "files": 4,
+    "result": "passed",
+    "additionalCases": [
+      "reactivation fresh measurement",
+      "queued measurement one-shot consumption",
+      "selection focus one-shot consumption",
+      "explicit context.focus replaces pending selection focus",
+      "child rect disposal stops remaining measurement"
+    ],
+    "runner": "First58-case run assertions passed and exited0 with close timeout warning. One bounded CHOKIDAR_USEPOLLING=true rerun:58 pass,exit0,no close timeout."
+  },
+  "verification": {
+    "layer": "Controlled Vue nextTick callback delivery; actual NavMenu and KeepAlive with stub NavNode/useElementResize, JSDOM geometry/focus probes. Existing real NavNode/Item component tests run separately in same NavMenu suite.",
+    "configuredCedarTypes": "passed",
+    "affectedCedarLint": "passed, final test changes rechecked",
+    "mapleRootLint": "passed exit0",
+    "classificationGate": "passed132/182,50pending",
+    "sharedTests": "28 passed",
+    "catalog": "3 generated pages match",
+    "newRealBrowserOrOSCases": 0
+  },
+  "responsibilities": {
+    "afterRender": "configuration/lifecycle epoch, consume once; no physical nextTick cancellation",
+    "measurement": "availability + operation + original root/measure identity; recheck after clientWidth and child rect reads",
+    "focus": "root context focus unavailable guard; latest selection/explicit focus replaces pending selection return-focus",
+    "activation": "schedule current measurement/roving state, never replay old continuations",
+    "tokens": "no new CSS Token/default/API; no shared ResizeObserver implementation changes"
+  },
+  "pending": [
+    "node enter/Escape continuations",
+    "independent Item measurement/listeners/focus",
+    "other retained root/item commands",
+    "external user-focus takeover and actual native focus/layout timing"
+  ],
+  "progress": {
+    "families": 33,
+    "closed": 18,
+    "closedPercent": 54.5,
+    "remaining": 15,
+    "remainingPercent": 45.5,
+    "classifiedFiles": 51,
+    "totalHints": 182,
+    "classifiedHints": 132,
+    "classifiedHintPercent": 72.5,
+    "pendingHints": 50,
+    "pendingHintPercent": 27.5,
+    "denominatorChange": 0,
+    "navMenu": "partial; not yet classified closed"
+  },
+  "inventory": "Only nav-menu/menu.tsx line104→129 refreshed;182 runtime/392 CSS/193 files saved.26 unrelated parallel CSS/date drift rows preserved. No global motion-themes success claim.",
+  "preserved": [
+    "Form/date/linked Time",
+    "other parallel styles",
+    "144 Chrome native200%/Safari/Firefox environment-blocked cases",
+    "Button white on-dark2.305:1 design exception"
+  ]
+}

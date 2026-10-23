@@ -1,0 +1,1108 @@
+[
+  {
+    "platform": "maple",
+    "component": "form",
+    "file": "../../../../maple-design-mobile/packages/maple-ui/src/form/example/demos/api-review-main.vue",
+    "status": "passed",
+    "fields": [
+      {
+        "name": "id",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "model",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "auto-label-width",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "presentation",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "layout",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-align",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "wrapper-col-props",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "wrapper-col-style",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "size",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "scroll-to-error",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "scroll-to-error-offset-y",
+        "control": "scalar",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-props",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-style",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-flex",
+        "control": "scalar",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "rules",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "readonly",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      },
+      {
+        "name": "disabled",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      },
+      {
+        "name": "read-pretty",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      }
+    ],
+    "combination": [
+      "disabled",
+      "readonly"
+    ],
+    "warnings": [],
+    "targets": 1,
+    "methods": [
+      "validate",
+      "validateField",
+      "resetFields",
+      "clearValidate",
+      "setFields",
+      "scrollToField"
+    ],
+    "exposedProperties": [],
+    "methodArguments": {
+      "validate": [
+        {
+          "label": "校验并查看返回值 / Validate and inspect result",
+          "args": [],
+          "schemas": [
+            "ValidatedError"
+          ]
+        }
+      ],
+      "validateField": [
+        {
+          "label": "当前案例的首个字段 / First field",
+          "args": [
+            "name"
+          ],
+          "schemas": [
+            "ValidatedError"
+          ]
+        }
+      ],
+      "resetFields": [
+        {
+          "label": "无参数 / No arguments",
+          "args": []
+        }
+      ],
+      "clearValidate": [
+        {
+          "label": "无参数 / No arguments",
+          "args": []
+        }
+      ],
+      "setFields": [
+        {
+          "label": "设置字段值和错误状态 / Set value and error",
+          "args": [
+            {
+              "name": {
+                "value": "Review",
+                "status": "error",
+                "message": "审查错误 / Review error"
+              }
+            }
+          ],
+          "schemas": [
+            "FieldData"
+          ]
+        },
+        {
+          "label": "清除字段展示状态 / Clear state",
+          "args": [
+            {
+              "name": {
+                "status": "",
+                "message": ""
+              }
+            }
+          ],
+          "schemas": [
+            "FieldData"
+          ]
+        }
+      ],
+      "scrollToField": [
+        {
+          "label": "当前案例的首个字段 / First field",
+          "args": [
+            "name"
+          ],
+          "schemas": []
+        }
+      ]
+    },
+    "slots": [],
+    "callbackControls": []
+  },
+  {
+    "platform": "maple",
+    "component": "form",
+    "file": "../../../../maple-design-mobile/packages/maple-ui/src/form/example/demos/api-review-mp-form-1.vue",
+    "status": "passed",
+    "fields": [
+      {
+        "name": "id",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "model",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "auto-label-width",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "presentation",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "layout",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-align",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "wrapper-col-props",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "wrapper-col-style",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "size",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "scroll-to-error",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "scroll-to-error-offset-y",
+        "control": "scalar",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-props",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-style",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-flex",
+        "control": "scalar",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "rules",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "readonly",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      },
+      {
+        "name": "disabled",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      },
+      {
+        "name": "read-pretty",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      }
+    ],
+    "combination": [
+      "disabled",
+      "readonly"
+    ],
+    "warnings": [],
+    "targets": 1,
+    "methods": [
+      "validate",
+      "validateField",
+      "resetFields",
+      "clearValidate",
+      "setFields",
+      "scrollToField"
+    ],
+    "exposedProperties": [],
+    "methodArguments": {
+      "validate": [
+        {
+          "label": "校验并查看返回值 / Validate and inspect result",
+          "args": [],
+          "schemas": [
+            "ValidatedError"
+          ]
+        }
+      ],
+      "validateField": [
+        {
+          "label": "当前案例的首个字段 / First field",
+          "args": [
+            "name"
+          ],
+          "schemas": [
+            "ValidatedError"
+          ]
+        }
+      ],
+      "resetFields": [
+        {
+          "label": "无参数 / No arguments",
+          "args": []
+        }
+      ],
+      "clearValidate": [
+        {
+          "label": "无参数 / No arguments",
+          "args": []
+        }
+      ],
+      "setFields": [
+        {
+          "label": "设置字段值和错误状态 / Set value and error",
+          "args": [
+            {
+              "name": {
+                "value": "Review",
+                "status": "error",
+                "message": "审查错误 / Review error"
+              }
+            }
+          ],
+          "schemas": [
+            "FieldData"
+          ]
+        },
+        {
+          "label": "清除字段展示状态 / Clear state",
+          "args": [
+            {
+              "name": {
+                "status": "",
+                "message": ""
+              }
+            }
+          ],
+          "schemas": [
+            "FieldData"
+          ]
+        }
+      ],
+      "scrollToField": [
+        {
+          "label": "当前案例的首个字段 / First field",
+          "args": [
+            "name"
+          ],
+          "schemas": []
+        }
+      ]
+    },
+    "slots": [],
+    "callbackControls": []
+  },
+  {
+    "platform": "maple",
+    "component": "form",
+    "file": "../../../../maple-design-mobile/packages/maple-ui/src/form/example/demos/api-review-mp-form-2.vue",
+    "status": "passed",
+    "fields": [
+      {
+        "name": "id",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "model",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "auto-label-width",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "presentation",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "layout",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-align",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "wrapper-col-props",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "wrapper-col-style",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "size",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "scroll-to-error",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "scroll-to-error-offset-y",
+        "control": "scalar",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-props",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-style",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-flex",
+        "control": "scalar",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "rules",
+        "control": "scenario",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "readonly",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      },
+      {
+        "name": "disabled",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      },
+      {
+        "name": "read-pretty",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      }
+    ],
+    "combination": [
+      "disabled",
+      "readonly"
+    ],
+    "warnings": [],
+    "targets": 1,
+    "methods": [
+      "validate",
+      "validateField",
+      "resetFields",
+      "clearValidate",
+      "setFields",
+      "scrollToField"
+    ],
+    "exposedProperties": [],
+    "methodArguments": {
+      "validate": [
+        {
+          "label": "校验并查看返回值 / Validate and inspect result",
+          "args": [],
+          "schemas": [
+            "ValidatedError"
+          ]
+        }
+      ],
+      "validateField": [
+        {
+          "label": "当前案例的首个字段 / First field",
+          "args": [
+            "title"
+          ],
+          "schemas": [
+            "ValidatedError"
+          ]
+        }
+      ],
+      "resetFields": [
+        {
+          "label": "无参数 / No arguments",
+          "args": []
+        }
+      ],
+      "clearValidate": [
+        {
+          "label": "无参数 / No arguments",
+          "args": []
+        }
+      ],
+      "setFields": [
+        {
+          "label": "设置字段值和错误状态 / Set value and error",
+          "args": [
+            {
+              "title": {
+                "value": "Review",
+                "status": "error",
+                "message": "审查错误 / Review error"
+              }
+            }
+          ],
+          "schemas": [
+            "FieldData"
+          ]
+        },
+        {
+          "label": "清除字段展示状态 / Clear state",
+          "args": [
+            {
+              "title": {
+                "status": "",
+                "message": ""
+              }
+            }
+          ],
+          "schemas": [
+            "FieldData"
+          ]
+        }
+      ],
+      "scrollToField": [
+        {
+          "label": "当前案例的首个字段 / First field",
+          "args": [
+            "title"
+          ],
+          "schemas": []
+        }
+      ]
+    },
+    "slots": [],
+    "callbackControls": []
+  },
+  {
+    "platform": "maple",
+    "component": "form",
+    "file": "../../../../maple-design-mobile/packages/maple-ui/src/form/example/demos/api-review-mp-form-item-1.vue",
+    "status": "passed",
+    "fields": [
+      {
+        "name": "field",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "tooltip",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "show-colon",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "row-props",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "row-class",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "hide-label",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "feedback",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "hide-asterisk",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "asterisk-position",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "no-style",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-component",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-attrs",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "content-class",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "content-flex",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-props",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-style",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-flex",
+        "control": "scalar",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "help",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "extra",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "layout",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-align",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "wrapper-col-props",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "wrapper-col-style",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "size",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "required",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      },
+      {
+        "name": "disabled",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      },
+      {
+        "name": "readonly",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      },
+      {
+        "name": "validate-status",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "rules",
+        "control": "scenario",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "validate-trigger",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      }
+    ],
+    "combination": [
+      "disabled",
+      "readonly"
+    ],
+    "warnings": [],
+    "targets": 2,
+    "methods": [
+      "validate",
+      "clearValidate",
+      "resetField"
+    ],
+    "exposedProperties": [],
+    "methodArguments": {
+      "validate": [
+        {
+          "label": "校验并查看返回值 / Validate and inspect result",
+          "args": [],
+          "schemas": [
+            "ValidatedError"
+          ]
+        }
+      ],
+      "clearValidate": [
+        {
+          "label": "无参数 / No arguments",
+          "args": []
+        }
+      ],
+      "resetField": [
+        {
+          "label": "无参数 / No arguments",
+          "args": []
+        }
+      ]
+    },
+    "slots": [
+      "label",
+      "help",
+      "extra"
+    ],
+    "callbackControls": []
+  },
+  {
+    "platform": "maple",
+    "component": "form",
+    "file": "../../../../maple-design-mobile/packages/maple-ui/src/form/example/demos/api-review-mp-form-item-2.vue",
+    "status": "passed",
+    "fields": [
+      {
+        "name": "field",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "tooltip",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "show-colon",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "row-props",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "row-class",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "hide-label",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "feedback",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "hide-asterisk",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "asterisk-position",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "no-style",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-component",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-attrs",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "content-class",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "content-flex",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-props",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-style",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-col-flex",
+        "control": "scalar",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "help",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "extra",
+        "control": "string",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "layout",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "label-align",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "wrapper-col-props",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "wrapper-col-style",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "size",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "required",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": true
+      },
+      {
+        "name": "disabled",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      },
+      {
+        "name": "readonly",
+        "control": "boolean",
+        "controllerRendered": true,
+        "available": true,
+        "initial": false
+      },
+      {
+        "name": "validate-status",
+        "control": "enum",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "rules",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      },
+      {
+        "name": "validate-trigger",
+        "control": "json",
+        "controllerRendered": true,
+        "available": true
+      }
+    ],
+    "combination": [
+      "disabled",
+      "readonly"
+    ],
+    "warnings": [],
+    "targets": 2,
+    "methods": [
+      "validate",
+      "clearValidate",
+      "resetField"
+    ],
+    "exposedProperties": [],
+    "methodArguments": {
+      "validate": [
+        {
+          "label": "校验并查看返回值 / Validate and inspect result",
+          "args": [],
+          "schemas": [
+            "ValidatedError"
+          ]
+        }
+      ],
+      "clearValidate": [
+        {
+          "label": "无参数 / No arguments",
+          "args": []
+        }
+      ],
+      "resetField": [
+        {
+          "label": "无参数 / No arguments",
+          "args": []
+        }
+      ]
+    },
+    "slots": [
+      "label",
+      "help",
+      "extra"
+    ],
+    "callbackControls": []
+  }
+]

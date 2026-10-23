@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-20",
+  "scope": [
+    "month range",
+    "year range",
+    "shared day range presentation regression"
+  ],
+  "changes": {
+    "maple": "Day, month and year panels share useCalendarRangeStyle for boundaries, interior and mouse-only transient preview. Existing form state demo now includes month/year fields.",
+    "cedar": "Existing month/year range styles reuse day styles. Disabled/readonly hover guarded; entering a disabled cell clears any previous pending preview via a private range context."
+  },
+  "contract": {
+    "selected": "primary filled boundaries and light primary interior",
+    "preview": "neutral light band and dashed boundaries, no selection/commit event",
+    "leaveOrRestriction": "clear transient preview without publishing a candidate",
+    "reverse": "normalize candidates chronologically",
+    "touch": "does not trigger hover previews"
+  },
+  "browser": {
+    "bothMonthReverse": {
+      "clickOrder": [
+        "2026-08",
+        "2026-06"
+      ],
+      "preview": [
+        "六月",
+        "七月",
+        "八月"
+      ],
+      "committed": [
+        "2026-06",
+        "2026-08"
+      ]
+    },
+    "bothYearReverse": {
+      "clickOrder": [
+        "2028",
+        "2026"
+      ],
+      "preview": [
+        "2026",
+        "2027",
+        "2028"
+      ],
+      "committed": [
+        "2026",
+        "2028"
+      ],
+      "reopenedRange": [
+        "2026",
+        "2027",
+        "2028"
+      ]
+    },
+    "formRestrictions": "Both month/year editor triggers disabled under Form.disabled and Form.readonly on both platforms; restored after removing restriction."
+  },
+  "automated": {
+    "monthYearPerPlatform": 16,
+    "finalRangeSuitePerPlatform": 22,
+    "coverage": [
+      "forward and reverse",
+      "single cell both endpoints",
+      "disabled before editing",
+      "readonly before editing",
+      "disabled/readonly while preview pending",
+      "disabled endpoint rejection and clearing old preview"
+    ],
+    "cedarDateFamily": {
+      "files": 39,
+      "tests": 209
+    },
+    "mapleDateFamily": {
+      "files": 42,
+      "tests": 234
+    },
+    "checks": [
+      "both typecheck",
+      "Cedar affected lint",
+      "Maple root lint and affected lint",
+      "43-pair date same-source",
+      "both git diff --check"
+    ]
+  },
+  "limitations": "No public API change. Form demos use fixed synthetic values; no remote service involved."
+}

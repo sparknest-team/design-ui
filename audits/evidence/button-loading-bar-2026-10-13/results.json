@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-13",
+  "scope": "primary solid Button foreground and Maple-only LoadingBar runtime",
+  "realBrowserPassesAdded": 0,
+  "realOSPassesAdded": 0,
+  "verification": {
+    "mapleFullLint": "passed after repairing curly/formatting errors",
+    "mapleTypecheck": "passed",
+    "cedarTypecheck": "passed",
+    "bothComponentSpecs": "passed",
+    "themeContract": "passed",
+    "motionAggregate": "passed",
+    "tokenReference": "3 tests and 3 generated pages passed"
+  },
+  "button": {
+    "currentStatus": "user-approved design exception: preserve white on-dark foreground",
+    "decision": "User explicitly chose white text and a recorded contrast design exception",
+    "aaTextContrastClaim": false,
+    "currentPrimarySolidContrast": 2.305,
+    "intermediateResultsOnly": "6.277 minimum and icon-container 3.207 were measured before concurrent reversal; not current acceptance",
+    "paletteChanged": false,
+    "systemRoleValuesChanged": false,
+    "defaultPrimarySolidForeground": "content-on-dark (approved); measured on-bright alternative not adopted",
+    "mapleLightOverride": "content-on-dark",
+    "compiledPrimarySolidStates": 192,
+    "compiledForegroundPairs": 640,
+    "minimumContrastRounded": 6.277,
+    "textThreshold": 4.5,
+    "cedarTestsPassed": 37,
+    "mapleTestsPassed": 65,
+    "fullGate": "failed: default/light primary/default icon=true/page 3.207 < 4.5",
+    "customColors": "caller-controlled, not certified by default gate"
+  },
+  "loadingBar": {
+    "platform": "Maple only",
+    "testsPassed": 12,
+    "lifecycleTests": 8,
+    "originalTests": 3,
+    "ssrTests": 1,
+    "compiledThemePreferenceCases": 8,
+    "pairedMotionOverrides": 4,
+    "transitionDurationDefault": "250ms",
+    "transitionTimingDefault": "ease",
+    "hidePolicy": "max(300ms, computed width duration + delay) after DOM flush",
+    "unmountPolicy": "max(250ms, computed opacity duration + delay) after DOM flush",
+    "evidence": "fake timers, mocked computed style, actual service mounting, SSR and compiled Less; not native browser"
+  },
+  "inventory": {"files": 192, "cssCandidates": 388, "runtimeCandidates": 180},
+  "remaining": ["full Button variant text/icon classification and semantic foreground audit", "144 native browser groups", "real OS reduced-motion changes", "other runtime source candidates"]
+}

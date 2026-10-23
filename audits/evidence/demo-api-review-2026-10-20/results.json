@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-20",
+  "coverage": {
+    "cedar": 98,
+    "maple": 89,
+    "interactiveProps": 2329
+  },
+  "checks": [
+    {
+      "name": "generator tests",
+      "result": "passed",
+      "tests": 2
+    },
+    {
+      "name": "review SFC/config compilation",
+      "result": "passed",
+      "files": 187
+    },
+    {
+      "name": "shared panel interactions",
+      "result": "passed",
+      "tests": 5,
+      "components": "real Cedar and Maple controls"
+    },
+    {
+      "name": "Maple docs:check",
+      "result": "passed",
+      "files": 1153
+    },
+    {
+      "name": "shared preview package vue-tsc",
+      "result": "passed"
+    },
+    {
+      "name": "Maple lint:check",
+      "result": "failed outside the demo changes",
+      "errors": 55,
+      "warnings": 2,
+      "files": [
+        "/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/_components/selected-options/SelectedOptions.vue",
+        "/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/_components/selected-options/context.ts",
+        "/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/cascader/CascaderMenu.vue",
+        "/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/cascader/use-cascader-controller.ts",
+        "/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/select/Option.vue",
+        "/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/select/select.tsx",
+        "/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/select/use-select-controller.ts"
+      ]
+    },
+    {
+      "name": "Maple typecheck",
+      "result": "failed outside the demo changes",
+      "errors": 4,
+      "file": "packages/maple-ui/src/_components/selected-options/__tests__/manager.spec.ts"
+    },
+    {
+      "name": "paired same-source demo audit",
+      "result": "blocked by existing scenario inventory difference",
+      "firstFailure": "card: Cedar has scheduler-lifecycle before the shared scenario sequence; Maple and the paired inventory do not include it"
+    }
+  ],
+  "browserChecks": [
+    "Cedar Button: outline + loading renders both variant and loading classes; all eight targets disabled",
+    "Maple Button: outline + icon slot renders both; interactions recorded",
+    "Maple Button: loading + line + icon renders loading-line and disabled targets"
+  ],
+  "limits": [
+    "Scenario index is lexical navigation evidence, not manual acceptance",
+    "Theme, utility and global-configuration reference pages retain authored examples",
+    "Context-dependent slots, callbacks and complex payloads remain scenario-based"
+  ],
+  "componentControlCorrection": {
+    "authoredDemoScan": 2173,
+    "cedarDemoTests": {
+      "files": 32,
+      "tests": 61,
+      "result": "passed"
+    },
+    "mapleDemoTests": {
+      "files": 13,
+      "tests": 39,
+      "result": "passed"
+    },
+    "scopedMapleLint": "passed",
+    "sharedPanelTypes": "passed",
+    "nativeException": "FieldDecorator editing host only",
+    "screenshots": [
+      "cedar-component-controls.png",
+      "maple-component-controls.png"
+    ]
+  }
+}

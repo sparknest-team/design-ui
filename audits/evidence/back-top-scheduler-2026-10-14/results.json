@@ -1,0 +1,192 @@
+{
+  "date": "2026-10-14",
+  "scope": "Independent BackTop actual component controlled RAF/lifecycle regression; simulated iframe, not native browser/OS acceptance",
+  "platforms": [
+    {
+      "repo": "cedar-design-web",
+      "source": "packages/cedar-ui/src/back-top/use-back-top.ts",
+      "beforeWorkingTreeSha256": "652cbc8431220c4d80304aa23ddb0d35dac5adda63d63a27bbcc895f666cd29b",
+      "afterSha256": "ef6699a0e7acf9c7d48c1ee54f0538cd691117d1b4fbe66188a4a410ca94f8b2",
+      "initial": {
+        "cases": 14,
+        "failed": 10,
+        "passed": 4
+      },
+      "final": {
+        "scoped": 14,
+        "full": 30,
+        "passed": 30
+      }
+    },
+    {
+      "repo": "maple-design-mobile",
+      "source": "packages/maple-ui/src/back-top/use-back-top.ts",
+      "beforeWorkingTreeSha256": "652cbc8431220c4d80304aa23ddb0d35dac5adda63d63a27bbcc895f666cd29b",
+      "afterSha256": "88cac625efc490a073f5a29d193d667b6ff2cb1a487c0993839a247e587c6f38",
+      "initial": {
+        "cases": 14,
+        "failed": 10,
+        "passed": 4
+      },
+      "final": {
+        "scoped": 14,
+        "full": 30,
+        "passed": 30
+      }
+    }
+  ],
+  "cases": [
+    {
+      "name": "current measurement coalesces scroll and updates visibility",
+      "initial": "passed-control",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "old measurement cannot inspect the newly bound target",
+      "initial": "reproduced-failure",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "old measurement cannot clear a newer pending frame",
+      "initial": "reproduced-failure",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "consumed measurement cannot replay a later visibility update",
+      "initial": "failed-probe-boundary-needs-settlement",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "retained inactive scroll listener cannot schedule work",
+      "initial": "reproduced-failure",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "detached listener cannot revive after reactivation",
+      "initial": "reproduced-failure",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "consumed animation frame cannot fork or rewind the animation",
+      "initial": "reproduced-failure",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "completed animation cannot revive on duplicate delivery",
+      "initial": "reproduced-failure",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "unmount inside custom easing stops the same delivered frame",
+      "initial": "reproduced-failure",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "canceled animation cannot mutate a replacement target",
+      "initial": "passed-control",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "inactive and disposed commands and dequeued animation stay inert",
+      "initial": "passed-control",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "foreign target owns RAF and timestamp origin",
+      "initial": "reproduced-failure",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "foreign owner cancels animation and measurement on unmount",
+      "initial": "reproduced-failure",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    },
+    {
+      "name": "reduced motion writes immediately with no RAF and keeps x",
+      "initial": "passed-control",
+      "finalCedar": "passed",
+      "finalMaple": "passed"
+    }
+  ],
+  "fix": {
+    "measurement": "Coalesced owner-window RAF verifies scroll generation/target/active and consumes before updating; cleanup invalidates/cancels original owner handle.",
+    "listeners": "Per-binding closure rejects detached listener calls; deactivation/disposal invalidate bindings, activation binds fresh.",
+    "animation": "Command and per-frame generations reject superseded/consumed/dequeued deliveries; user easing is followed by ownership checks before write/reschedule.",
+    "owner": "target.ownerDocument.defaultView supplies requestAnimationFrame/cancelAnimationFrame/performance.now; controlled iframe clock10000 + timestamp10100 gives scrollTop360 from400 and preserves scrollLeft37; cancel checks both animation/measurement handles19/20.",
+    "motionRoles": "measurement-scheduling versus visual-scroll; public duration200ms/easing preserved, reduced entry jumps and valid-frame preference changes finish. No CSS token/cancel API."
+  },
+  "probeAdjustments": [
+    {
+      "issue": "Consumed measurement test changed scrollTop before initial mounted watcher settled",
+      "action": "Await Vue flush after first delivery, then change position and redeliver. Initial failure is recorded separately and not counted as an additional product defect; corrected final case passes. Nine other failure cases reproduced independently in each initial run."
+    },
+    {
+      "issue": "Cedar existing contract mocked global RAF/performance rather than actual document.defaultView",
+      "action": "Patch actual owner RAF/cancel and forward owner performance to controlled clock, restore descriptors. Five follow-up probe failures then full contract13 passes; do not count those as product defects."
+    },
+    {
+      "issue": "Foreign cancellation coverage strengthened after baseline",
+      "action": "Final case checks both animation and measurement owner handles, not only animation."
+    }
+  ],
+  "validation": {
+    "types": "Both configured declaration typechecks passed",
+    "lint": "Cedar and Maple affected source/tests/demo passed. Maple root full lint blocked by23 errors in parallel date/date-range demo formatting/curly rules; preserved without fixes.",
+    "mapleDocs": { "checked": 1017, "failed": 0 },
+    "classification": {
+      "files": 34,
+      "hints": 70,
+      "unclassified": 109,
+      "tests": 24,
+      "categories": {
+        "measurementScheduling": 12,
+        "visualScroll": 16
+      }
+    },
+    "inventory": {
+      "files": 192,
+      "css": 392,
+      "runtime": 179,
+      "rationale": "Two per-copy animation scheduling sites consolidated into one;4 to3 runtime hints each, no functionality removed.",
+      "remainingDrift": [
+        "Maple date-range CSS [50,90] -> [61,105]",
+        "Maple time-range CSS [37] -> [42]"
+      ],
+      "globalGate": "Not passed due to preserved unreviewed parallel date CSS drift"
+    },
+    "compiledMotion": "Independent complete motion compilation chain passed; not browser acceptance",
+    "tokenReference": "3 tests/3 generated pages match",
+    "savedBrowserEvidence": "202 tests and all saved evidence consistency checks passed; no new browser execution"
+  },
+  "limitations": {
+    "newRealBrowserCases": 0,
+    "newOSCases": 0,
+    "environmentBlockedCases": 144,
+    "notCertified": [
+      "actual cross-document/browser or native clock behavior",
+      "same-node document adoption without lifecycle transition",
+      "real OS preference",
+      "all-library motion acceptance"
+    ],
+    "preserved": [
+      "dirty independent BackTop source changes",
+      "Form parallel work",
+      "date inventory snapshots",
+      "environment blockers",
+      "other chats/paused automation"
+    ]
+  }
+}

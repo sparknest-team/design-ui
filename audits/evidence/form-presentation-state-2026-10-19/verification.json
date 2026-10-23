@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-19",
+  "fixes": [
+    "EditorPanel exposes aria-busy and makes its editor body inert during validation/save; Input, Select search/options and Cascader explicitly receive pending disabled state.",
+    "CascaderEditor reads current option props through computed refs, so changing pending/disabled/readonly updates its controller and search input.",
+    "Generic inline field controls retain exactly one owner of Form event notifications; nested controls and overlay drafts remain isolated. This fixes missing Textarea and InputNumber inline validation notifications.",
+    "New Form demos provide success, failure, reset, disabled and readonly save scenarios using a cancellable 1.2 second local timer. No remote service is used.",
+    "Unified design specification now states the pending editing/closing and reset behavior explicitly.",
+    "Corrected a Select test listener type in Maple presentation-search-ownership.spec.ts to accept the public value union."
+  ],
+  "checks": {
+    "newStateMatrix": "60 tests per platform passed; 120 total",
+    "cedarAffectedTests": "275 passed / 21 files",
+    "mapleAffectedTests": "286 passed / 24 files",
+    "typecheck": "both passed",
+    "lint": "Maple root lint and Cedar affected lint passed",
+    "selectionPresentationParity": "36 source pairs and four Less outputs passed",
+    "inputParity": "18 source pairs and both Less outputs passed",
+    "docsSyntax": "1056 SFCs, 0 failures",
+    "docPipeline": "17 passed",
+    "diffWhitespace": "both repositories passed"
+  },
+  "stateCoverage": [
+    "Input, Textarea, Select, Cascader in Cedar popover/dialog and Maple popup/dialog.",
+    "Pending blocks editing, cancel and duplicate confirmation; returning false preserves draft and permits successful retry.",
+    "Candidate validation failure leaves committed model unchanged and retains the editing session; correction can commit.",
+    "Reset an unrelated field leaves the editor active. Matching-field reset, whole-form reset and native reset close the editor and reject late validation/save completion.",
+    "disabled/readonly/read becoming effective aborts old save; restoring editability does not reopen the old draft.",
+    "Form disabled/readonly inheritance and explicit false field override preserve existing precedence."
+  ],
+  "browser": {
+    "cedar": "Required empty value retains dialog and error. Save pending marks input disabled, aria-busy and inert; simulated save error retains Cedar 草稿 while title model stays 原名称. Select popover pending disables search; effective Form.disabled closes it without committing. Reset while Textarea popover save is pending closes it and keeps original model.",
+    "maple": "Required empty value retains dialog and error. Save pending marks input disabled, aria-busy and inert; error retains 保留草稿 while title model stays 原名称. Whole-form reset during Textarea save closes dialog. Cascader search is disabled while pending; effective readonly closes dialog and retains shanghai.",
+    "connection": "Original Chrome tabs lost their debugger connection; completed final verification in fresh local tabs on the same browser."
+  },
+  "screenshots": [
+    "maple-validation-failure.jpg",
+    "maple-pending.jpg",
+    "maple-save-failure.jpg",
+    "cedar-save-failure.jpg",
+    "cedar-reset.jpg"
+  ]
+}

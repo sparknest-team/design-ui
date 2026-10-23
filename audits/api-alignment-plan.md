@@ -1,5 +1,7 @@
 # Cedar / Maple API 统一实施方案
 
+当前状态入口：[第五批验收及剩余 API 清单](./priority-batch-5-2026-10-09.md)。以下是 2026-09-07 的决策与历史落地记录，表中“保留差异”不代表现状；后续 Carousel、Upload、日期时间等已按各批审计覆盖更新。
+
 日期：2026-09-07。状态：已获用户批准，逐批实施中；完成情况以 Cedar openspec/changes/align-component-contracts/tasks.md 为准。
 
 本方案按用户本轮选择制定，作为后续逐批实现的验收目标。旧审计的数量仅表示主 Props 名集合差异，不表示完整组件契约差异；必须补充子组件、透传、事件、Slots、Expose 和实际行为验证。
@@ -155,7 +157,7 @@ Badge 原始复核：两端核心逻辑相近，但存在 TSX/SFC、RTL 和方�
 | 范围 | 当前事实 | 后续边界 |
 | --- | --- | --- |
 | Progress.percent | 后续确认：两端统一 0～100，number/string 数字输入 | 已实施并迁移示例，不再保留尺度差异 |
-| Switch.variant | 后续确认：circle/round/line/md3，默认 circle | 已独立复制相同实现，不再保留造型差异 |
+| Switch.variant | 后续确认：circle/round/line/tonal，默认 circle | 已独立复制相同实现，不再保留造型差异 |
 | Date | Cedar week/quarter 扩展；共同 date/month/year | 补齐移动端交互后才扩大公开联合 |
 | Date/Time 回调 | 日期值及格式签名仍有端差异 | 先设计模型/格式迁移，再统一 disabledDate/disabledTime 参数 |
 | Trigger | Cedar 触发数组/focus/延迟等；Maple Popper strategy/reference | 偏移主轴与屏幕轴不是同义 API，保留并解释 |

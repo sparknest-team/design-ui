@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-13",
+  "browser": "native IAB Chromium",
+  "passed": 6,
+  "total": 6,
+  "scope": "Native Enter (Cedar) / Space (Maple) on actual directives and CSS; observer timestamps are DOM observations, not precise frame certification.",
+  "excluded": [
+    "OS reduced-motion",
+    "real touch device",
+    "native 200%",
+    "Safari",
+    "Firefox",
+    "mid-flight arbitrary CSS changes",
+    "cross-document adoption rebinding"
+  ],
+  "groups": [
+    {
+      "platform": "cedar",
+      "timing": "default",
+      "duration": "0.2s, 0.14s",
+      "properties": "transform, opacity",
+      "created": 15171.099999964237,
+      "expanded": 15192.299999952316,
+      "faded": 15420.099999964237,
+      "removed": 15671.599999964237
+    },
+    {
+      "platform": "maple",
+      "timing": "default",
+      "duration": "0.2s, 0.14s",
+      "properties": "transform, opacity",
+      "created": 15960.099999964237,
+      "expanded": 15981.399999976158,
+      "faded": 16211.5,
+      "removed": 16463
+    },
+    {
+      "platform": "cedar",
+      "timing": "long",
+      "duration": "0.6s, 0.8s",
+      "properties": "transform, opacity",
+      "created": 16744.299999952316,
+      "expanded": 16764.899999976158,
+      "faded": 17366.5,
+      "removed": 18167.69999998808
+    },
+    {
+      "platform": "maple",
+      "timing": "long",
+      "duration": "0.6s, 0.8s",
+      "properties": "transform, opacity",
+      "created": 82037.39999997616,
+      "expanded": 82058.19999998808,
+      "faded": 82659.39999997616,
+      "removed": 83460.79999995232
+    },
+    {
+      "platform": "cedar",
+      "timing": "zero",
+      "duration": "0s, 0s",
+      "properties": "transform, opacity",
+      "created": 83873,
+      "expanded": 83894.09999996424,
+      "faded": 84124.69999998808,
+      "removed": 84376.19999998808
+    },
+    {
+      "platform": "maple",
+      "timing": "zero",
+      "duration": "0s, 0s",
+      "properties": "transform, opacity",
+      "created": 84640.09999996424,
+      "expanded": 84661.79999995232,
+      "faded": 84891.39999997616,
+      "removed": 85143
+    }
+  ],
+  "remainingNodes": 0,
+  "observationToleranceMs": 2,
+  "screenshot": {
+    "file": "native.jpg",
+    "bytes": 107783,
+    "sha256": "58cd8d14710852bea6e9238fcd5c3d49f9e4077250a8f3cf2674a12a5acd6698"
+  },
+  "notes": [
+    "The 2ms tolerance accounts for observer callback timing after creation/activation, not a shortened runtime policy. Exact floors are covered by fake-clock unit tests.",
+    "A diagnostic attempt to inspect non-DOM private timer state returned undefined in the read-only browser scope; it is not native timer-cleanup evidence. Timer ownership is verified in unit tests."
+  ]
+}

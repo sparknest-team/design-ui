@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-13",
+  "scope": "Independent Trigger interaction-delay ownership; simulated dequeued callback and KeepAlive tests",
+  "before": { "cedarNewFailed": 6, "mapleNewFailed": 6 },
+  "after": { "cedarFullTriggerPassed": 53, "mapleFullTriggerPassed": 66, "newPerPlatform": 6 },
+  "regressions": ["cancel", "replacement retains new task", "unmount", "retained request after unmount", "inactive owner and reactivation", "consumed callback after subsequent close"],
+  "implementation": "Cancel advances internal generation; commit checks generation and owner state then consumes generation; inactive/disposed owners reject retained requests. Existing deactivation close request retained; reactivation accepts only new work.",
+  "unchanged": ["controlled open", "interaction delay defaults", "CSS transition completion", "public API", "CSS token defaults"],
+  "sourceSha256": {
+    "cedarState": "fa0f458ae7afd203a2f0e585e2bcec4b4248034fe645055602256cfd3d94822b",
+    "mapleState": "22eb3a3e0623c5888412a487e5180bb797abc445e9c6e55903d97f23c60b36e0"
+  },
+  "types": { "cedar": "passed", "maple": "passed" },
+  "cedarAffectedLint": "passed",
+  "mapleLintFirst": "3 new curly violations, corrected; not product failures",
+  "finalStaticValidation": {
+    "mapleFullLint": "passed after curly correction",
+    "mapleFullTriggerRerun": 66,
+    "motionSourceAndContractTests": 17,
+    "motionCompilerChain": "passed",
+    "tokenCatalogTests": 3,
+    "tokenCatalogGeneratedPages": 3,
+    "sourceClassificationHashCheck": "passed after final source review",
+    "affectedTrackedWhitespace": "passed"
+  },
+  "newRealBrowserPasses": 0,
+  "newRealOSPasses": 0,
+  "blockedNativeGroups": 144,
+  "pending": ["Trigger RAF owner-window cancellation and dequeued callbacks", "Native browser/OS evidence"]
+}

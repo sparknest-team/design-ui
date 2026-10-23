@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-13",
+  "scope": "Independent ResizeObserver binding/RAF ownership, simulated DOM and callbacks",
+  "before": { "cedarResizeFailed": 3, "cedarResizePassed": 5, "mapleResizeFailed": 3, "mapleResizePassed": 5 },
+  "regressions": ["canceled dequeued frame consumes replacement entries", "disconnected observer injects stale entries", "pre-deactivation frame consumes post-reactivation batch"],
+  "after": { "cedarFullTriggerPassed": 63, "mapleFullTriggerPassed": 76, "resizePassedEach": 8, "newEach": 3, "cedarAvatarAdjacentPassed": 10, "mapleAvatarAdjacentPassed": 11 },
+  "implementation": "Separate binding/frame generations. Clear invalidates both; schedule rejects inactive or stale binding before merging entries; current RAF verifies and consumes its frame without invalidating current observer binding.",
+  "sourceSha256": {
+    "cedarResizeObserver": "9e96ba7fc4653892208aeecfdc3602255bbaf28e7dffa630492660f02de665d4",
+    "mapleResizeObserver": "099c4c80928bc58bdaee9325691d5ec282d84b0343e149635784d4bf0500a58b"
+  },
+  "validation": { "bothTypes": "passed", "cedarAffectedLint": "passed", "mapleFullLint": "passed", "motionSourceClassificationContracts": 17, "motionCompilerChain": "passed", "catalogTests": 3, "catalogPages": 3, "reviewedSourceHashes": "passed", "affectedTrackedWhitespace": "passed" },
+  "unchanged": ["public API", "CSS tokens/defaults", "normal geometry batching", "owner-window cancellation", "candidate count191 / CSS392 / runtime177"],
+  "newRealBrowserPasses": 0,
+  "newRealOSPasses": 0,
+  "blockedNativeGroups": 144,
+  "pending": ["real IAB Trigger lifecycle evidence", "other tool consumers not covered by Trigger/Avatar", "same-node document adoption without ref replacement", "target changes before watcher flush", "real OS preference and native external-browser groups"]
+}

@@ -1,0 +1,325 @@
+{
+  "date": "2026-10-13",
+  "browser": "Codex IAB",
+  "theme": "default/light",
+  "scope": "Real component/DOM/timers/ResizeObserver in IAB; scripted fixture interaction, no native hover, cross-window, frame-level or OS claim",
+  "input": "native fixture buttons; scripted mouseenter, not trusted hover",
+  "accepted": 4,
+  "validation": { "newEvidenceGateTests": 12, "browserEvidenceChain": "passed", "tokenCatalogTests": 3, "tokenCatalogGeneratedPages": 3, "scriptsSyntax": "passed", "affectedTrackedWhitespace": "passed" },
+  "cleanup": { "ownTab": "closed", "ownFrozenServer": "stopped", "viewportOrSystemPreferenceChanges": 0 },
+  "realOSPassesAdded": 0,
+  "consoleErrorsWarnings": [],
+  "times": "Canonical public phase excerpts, performance.now relative milliseconds rounded to 0.1ms; initial negative-only run replaced by final positive-control run",
+  "fixture": "refactors/token-validation/browser/trigger-lifecycle.html",
+  "screenshot": {
+    "file": "native.jpg",
+    "sha256": "a5e30962e87bf623d4b6134fa04f09b578b1101f28c4f5e473c4436f6c60db85"
+  },
+  "cases": [
+    {
+      "events": [
+        {
+          "event": "open",
+          "t": 860.8
+        },
+        {
+          "event": "update:open",
+          "t": 860.9,
+          "value": true
+        },
+        {
+          "event": "resize",
+          "t": 873.1
+        }
+      ],
+      "finalPanels": 0,
+      "kind": "delay-unmount",
+      "name": "Cedar",
+      "passed": true,
+      "samples": [
+        {
+          "panels": 0,
+          "phase": "pending",
+          "resizeEvents": 0,
+          "t": 1.4,
+          "updates": 0
+        },
+        {
+          "panels": 0,
+          "phase": "unmounted",
+          "resizeEvents": 0,
+          "t": 102.8,
+          "updates": 0
+        },
+        {
+          "panels": 0,
+          "phase": "after-deadline",
+          "resizeEvents": 0,
+          "t": 555.4,
+          "updates": 0
+        },
+        {
+          "panels": 1,
+          "phase": "positive-remount-open",
+          "resizeEvents": 1,
+          "t": 909.4,
+          "updates": 1
+        },
+        {
+          "panels": 0,
+          "phase": "final-unmount",
+          "resizeEvents": 1,
+          "t": 910.3,
+          "updates": 1
+        }
+      ]
+    },
+    {
+      "events": [
+        {
+          "event": "open",
+          "t": 858.1
+        },
+        {
+          "event": "update:open",
+          "t": 858.2,
+          "value": true
+        },
+        {
+          "event": "resize",
+          "t": 877.9
+        }
+      ],
+      "finalPanels": 0,
+      "kind": "delay-unmount",
+      "name": "Maple",
+      "passed": true,
+      "samples": [
+        {
+          "panels": 0,
+          "phase": "pending",
+          "resizeEvents": 0,
+          "t": 1.7,
+          "updates": 0
+        },
+        {
+          "panels": 0,
+          "phase": "unmounted",
+          "resizeEvents": 0,
+          "t": 102.4,
+          "updates": 0
+        },
+        {
+          "panels": 0,
+          "phase": "after-deadline",
+          "resizeEvents": 0,
+          "t": 554.8,
+          "updates": 0
+        },
+        {
+          "panels": 1,
+          "phase": "positive-remount-open",
+          "resizeEvents": 1,
+          "t": 908.6,
+          "updates": 1
+        },
+        {
+          "panels": 0,
+          "phase": "final-unmount",
+          "resizeEvents": 1,
+          "t": 909.9,
+          "updates": 1
+        }
+      ]
+    },
+    {
+      "events": [
+        {
+          "event": "open",
+          "t": 1
+        },
+        {
+          "event": "update:open",
+          "t": 1,
+          "value": true
+        },
+        {
+          "event": "resize",
+          "t": 32.4
+        },
+        {
+          "event": "resize",
+          "t": 365.9
+        },
+        {
+          "event": "close",
+          "t": 538
+        },
+        {
+          "event": "update:open",
+          "t": 538,
+          "value": false
+        },
+        {
+          "event": "open",
+          "t": 1076.7
+        },
+        {
+          "event": "update:open",
+          "t": 1076.7,
+          "value": true
+        },
+        {
+          "event": "resize",
+          "t": 1082.1
+        }
+      ],
+      "finalPanels": 0,
+      "kind": "keepalive-resize",
+      "name": "Cedar",
+      "passed": true,
+      "samples": [
+        {
+          "panels": 1,
+          "phase": "opened",
+          "resizeEvents": 1,
+          "t": 353.5,
+          "updates": 1
+        },
+        {
+          "panels": 1,
+          "phase": "resized-active",
+          "resizeEvents": 2,
+          "t": 536.9,
+          "updates": 1
+        },
+        {
+          "panels": 0,
+          "phase": "deactivated",
+          "resizeEvents": 2,
+          "t": 891.6,
+          "updates": 2
+        },
+        {
+          "panels": 0,
+          "phase": "changed-inactive",
+          "resizeEvents": 2,
+          "t": 1074.2,
+          "updates": 2
+        },
+        {
+          "panels": 1,
+          "phase": "reactivated-open",
+          "resizeEvents": 3,
+          "t": 1429.4,
+          "updates": 3
+        },
+        {
+          "panels": 0,
+          "phase": "final-unmount",
+          "resizeEvents": 3,
+          "t": 1782.8,
+          "updates": 3
+        }
+      ]
+    },
+    {
+      "events": [
+        {
+          "event": "open",
+          "t": 2.1
+        },
+        {
+          "event": "update:open",
+          "t": 2.1,
+          "value": true
+        },
+        {
+          "event": "resize",
+          "t": 17.5
+        },
+        {
+          "event": "resize",
+          "t": 366.4
+        },
+        {
+          "event": "close",
+          "t": 538.4
+        },
+        {
+          "event": "update:open",
+          "t": 538.4,
+          "value": false
+        },
+        {
+          "event": "open",
+          "t": 1076.5
+        },
+        {
+          "event": "update:open",
+          "t": 1076.5,
+          "value": true
+        },
+        {
+          "event": "resize",
+          "t": 1084.3
+        }
+      ],
+      "finalPanels": 0,
+      "kind": "keepalive-resize",
+      "name": "Maple",
+      "passed": true,
+      "samples": [
+        {
+          "panels": 1,
+          "phase": "opened",
+          "resizeEvents": 1,
+          "t": 355.1,
+          "updates": 1
+        },
+        {
+          "panels": 1,
+          "phase": "resized-active",
+          "resizeEvents": 2,
+          "t": 537.9,
+          "updates": 1
+        },
+        {
+          "panels": 0,
+          "phase": "deactivated",
+          "resizeEvents": 2,
+          "t": 891.5,
+          "updates": 2
+        },
+        {
+          "panels": 0,
+          "phase": "changed-inactive",
+          "resizeEvents": 2,
+          "t": 1074.6,
+          "updates": 2
+        },
+        {
+          "panels": 1,
+          "phase": "reactivated-open",
+          "resizeEvents": 3,
+          "t": 1429.4,
+          "updates": 3
+        },
+        {
+          "panels": 0,
+          "phase": "final-unmount",
+          "resizeEvents": 3,
+          "t": 1784.3,
+          "updates": 3
+        }
+      ]
+    }
+  ],
+  "blockedNativeGroups": 144,
+  "pending": [
+    "native-hover and actual dequeued race proof",
+    "real cross-window Trigger lifecycle",
+    "other themes/placements",
+    "144 native zoom/Safari/Firefox groups"
+  ]
+}

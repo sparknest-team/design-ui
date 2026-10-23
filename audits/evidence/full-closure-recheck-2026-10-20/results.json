@@ -1,0 +1,412 @@
+{
+  "version": 1,
+  "date": "2026-10-20",
+  "startedAtUtc": "2026-10-20T05:42:15Z",
+  "completedAtUtc": "2026-10-20T05:45:36Z",
+  "scope": "Read-only full inventory/classification hash/three generated catalog recheck, preserved parallel business, documentation-only reconciliation.",
+  "status": "new-parallel-date-drift-retained-handoff-required",
+  "previousEvidence": "../field-presentation-lint-closure-2026-10-19/results.json",
+  "sourceEdits": 0,
+  "inventoryEdits": 0,
+  "classificationHashEdits": 0,
+  "generatedPageEdits": 0,
+  "newTests": 0,
+  "newNativeAcceptance": 0,
+  "initialSnapshot": {
+    "repos": {
+      "cedar-design-web": {
+        "count": 1402,
+        "aggregate": "9b7f908327e759b49fb89643028fd6f2633bb5adad14f0d0d0e2a6ddafd1241a"
+      },
+      "maple-design-mobile": {
+        "count": 1193,
+        "aggregate": "ccdc4d172b35f8fc330a9254241fd57d657115d94f7b72f07fdf061afd3bdde9"
+      }
+    },
+    "registered": 80,
+    "stale": [
+      {
+        "repo": "maple-design-mobile",
+        "file": "date/picker-panels/YearPickerPanel.vue",
+        "registered": "9a51ffd5def625f2ab1e35d2e139d79135f9e6ae3d81139686ecc2d0e0ffdcfe",
+        "current": "d1d1e34c74c4018e5e101fb50b10d2c0687ac6380476f9fcdf285a9dc555dd9a"
+      },
+      {
+        "repo": "cedar-design-web",
+        "file": "date/picker/DateRangePicker.vue",
+        "registered": "2a47d80d17f7408f613c75085c44d53bcaabb14ef34a11f3df6ea0ea57b01a79",
+        "current": "950c9b525ffd60b765969b85c8965349541fafc148b395218e59212882cebd6e"
+      }
+    ],
+    "inventory": [
+      {
+        "repo": "cedar-design-web",
+        "files": 104,
+        "css": 204,
+        "runtime": 98
+      },
+      {
+        "repo": "maple-design-mobile",
+        "files": 94,
+        "css": 214,
+        "runtime": 86
+      }
+    ]
+  },
+  "finalSnapshot": {
+    "repos": {
+      "cedar-design-web": {
+        "count": 1402,
+        "aggregate": "b0b5623075ec7abce570e7892cc0b893f2505205ce77162866acc5668ac8e4f9"
+      },
+      "maple-design-mobile": {
+        "count": 1193,
+        "aggregate": "181294e64f515c02d07a56d97b4f5af74c83c6cfd946e60e2290b7105a9f64a4"
+      }
+    },
+    "registered": 80,
+    "stale": [
+      {
+        "repo": "maple-design-mobile",
+        "file": "date/picker-panels/YearPickerPanel.vue",
+        "registered": "9a51ffd5def625f2ab1e35d2e139d79135f9e6ae3d81139686ecc2d0e0ffdcfe",
+        "current": "96cf7dce99d7eab495509d4f1af01ab887c64b9e2282985992ade0f69f40b63d"
+      },
+      {
+        "repo": "cedar-design-web",
+        "file": "date/picker/DateRangePicker.vue",
+        "registered": "2a47d80d17f7408f613c75085c44d53bcaabb14ef34a11f3df6ea0ea57b01a79",
+        "current": "0c8239de2011564c7924e7f5ece8592341bd194c2a593924400115714c9dad89"
+      }
+    ],
+    "inventory": [
+      {
+        "repo": "cedar-design-web",
+        "files": 104,
+        "css": 204,
+        "runtime": 98
+      },
+      {
+        "repo": "maple-design-mobile",
+        "files": 94,
+        "css": 214,
+        "runtime": 86
+      }
+    ]
+  },
+  "snapshotMeaning": "Both production aggregates changed while checking. Late snapshot remained unchanged through documentation updates, not proof that parallel work is globally frozen. Snapshot counts exclude tests,demos,examples/docs and include Vue/TS/TSX/Less/CSS only.",
+  "inventory": {
+    "platforms": [
+      {
+        "repo": "cedar-design-web",
+        "files": 104,
+        "css": 204,
+        "runtime": 98
+      },
+      {
+        "repo": "maple-design-mobile",
+        "files": 94,
+        "css": 214,
+        "runtime": 86
+      }
+    ],
+    "diff": [
+      {
+        "repo": "cedar-design-web",
+        "before": {
+          "file": "date/picker/DateRangePicker.vue",
+          "css": [],
+          "runtime": [
+            644
+          ],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "date/picker/DateRangePicker.vue",
+          "css": [],
+          "runtime": [
+            652
+          ],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "before": {
+          "file": "date/picker-panels/YearPickerPanel.vue",
+          "css": [],
+          "runtime": [
+            236
+          ],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "date/picker-panels/YearPickerPanel.vue",
+          "css": [],
+          "runtime": [
+            262
+          ],
+          "hasLocalReducedQuery": false
+        }
+      },
+      {
+        "repo": "maple-design-mobile",
+        "before": {
+          "file": "date/style/date-picker.less",
+          "css": [
+            47,
+            68,
+            245,
+            251,
+            271,
+            291,
+            297,
+            367
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        },
+        "after": {
+          "file": "date/style/date-picker.less",
+          "css": [
+            47,
+            68,
+            288,
+            294,
+            314,
+            334,
+            340,
+            410
+          ],
+          "runtime": [],
+          "hasLocalReducedQuery": false
+        }
+      }
+    ],
+    "stale": [
+      {
+        "repo": "maple-design-mobile",
+        "file": "date/picker-panels/YearPickerPanel.vue",
+        "hints": 1
+      },
+      {
+        "repo": "cedar-design-web",
+        "file": "date/picker/DateRangePicker.vue",
+        "hints": 1
+      }
+    ],
+    "currentIdentityMatchedHints": 182
+  },
+  "catalog": {
+    "totals": {
+      "files": 172,
+      "declarations": 4565,
+      "candidates": 70,
+      "crossComponentCss": 40,
+      "literalRuntime": 10,
+      "dynamicRuntime": 20,
+      "needsManualReview": 0,
+      "errors": 0
+    },
+    "pages": [
+      {
+        "file": "cedar-design-web/packages/cedar-ui/docs/guide/design-token-reference.md",
+        "match": false,
+        "changes": [
+          "-| `--c-date-picker-cell-bg-hover-in-range` | 公开 | `var(--c-color-primary-light-1)` | 本组件 CSS<br>`background-color` |",
+          "+| `--c-date-picker-cell-bg-hover-in-range` | 公开 | `var(--c-color-fill-2)` | 本组件 CSS<br>`background-color` |",
+          "-| `--c-date-picker-cell-hover-range-boundary-bg` | 公开 | `var(--c-color-primary-light-2)` | 本组件 CSS<br>`background-color` |",
+          "+| `--c-date-picker-cell-hover-range-boundary-bg` | 公开 | `var(--c-color-fill-2)` | 本组件 CSS<br>`background-color` |",
+          "+| `--c-date-picker-preview-outline` | 公开 | `1px dashed var(--c-color-primary)` | 本组件 CSS<br>`outline` |"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/docs/designTokenReference.zh-CN.md",
+        "match": false,
+        "changes": [
+          "+| `--mp-date-picker-range-background` | 公开 | `var(--mp-color-primary-light-1)` | 本组件 CSS<br>`background` |",
+          "+| `--mp-date-picker-range-disabled-background` | 公开 | `var(--mp-color-fill-1)` | 本组件 CSS<br>`background` |",
+          "+| `--mp-date-picker-range-preview-background` | 公开 | `var(--mp-color-fill-2)` | 本组件 CSS<br>`background` |",
+          "+| `--mp-date-picker-range-preview-outline` | 公开 | `1px dashed var(--mp-color-primary)` | 本组件 CSS<br>`outline` |"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/docs/designTokenReference.en-US.md",
+        "match": false,
+        "changes": [
+          "+| `--mp-date-picker-range-background` | Public | `var(--mp-color-primary-light-1)` | Local CSS<br>`background` |",
+          "+| `--mp-date-picker-range-disabled-background` | Public | `var(--mp-color-fill-1)` | Local CSS<br>`background` |",
+          "+| `--mp-date-picker-range-preview-background` | Public | `var(--mp-color-fill-2)` | Local CSS<br>`background` |",
+          "+| `--mp-date-picker-range-preview-outline` | Public | `1px dashed var(--mp-color-primary)` | Local CSS<br>`outline` |"
+        ]
+      }
+    ]
+  },
+  "catalogMeaning": "Frozen complete compiled report compared independently against all three pages, not only the first failing CLI assertion. 11 logical changed rows:2 modified+9 added;5 unique new declarations. Changes are evidence,not applied patches or defect counts.",
+  "progress": {
+    "historicallyClassifiedFamilies": 33,
+    "totalFamilies": 33,
+    "currentIdentityMatchedFamilies": 32,
+    "currentIdentityMatchedPercent": 97,
+    "pendingRevalidationFamilies": [
+      "Date"
+    ],
+    "pendingFamilyCount": 1,
+    "pendingPercent": 3,
+    "registeredSourceFiles": 80,
+    "matchingSourceFiles": 78,
+    "staleSourceFiles": 2,
+    "runtimeDenominator": 184,
+    "identityMatchedHints": 182,
+    "identityMatchedPercent": 98.9,
+    "pendingRevalidationHints": 2,
+    "pendingHintPercent": 1.1,
+    "newUnclassifiedHintNames": 0,
+    "meaning": "Current-source identity pending is distinct from never-reviewed defects and from native acceptance. Old33/33 classification is historical."
+  },
+  "verification": [
+    {
+      "command": "pnpm check:motion-themes",
+      "exitCode": 1,
+      "firstStageTests": 96,
+      "pass": 92,
+      "fail": 4,
+      "subsequentSerialCompiledChainRun": false,
+      "failures": [
+        "Cedar DateRangePicker current hash/call-site revalidation",
+        "Cedar DateRangePicker saved candidate row",
+        "Maple date/style/date-picker.less saved candidate row",
+        "Current reviewed source identities"
+      ]
+    },
+    {
+      "command": "node bin/motion-source-inventory.mjs --check",
+      "exitCode": 1,
+      "driftRecords": 3
+    },
+    {
+      "command": "node bin/runtime-motion-classification.mjs",
+      "exitCode": 1,
+      "firstReported": "maple-design-mobile/date/picker-panels/YearPickerPanel.vue",
+      "independentAll80HashScanAlsoPerformed": true
+    },
+    {
+      "command": "pnpm check:token-reference",
+      "exitCode": 1,
+      "specializedTests": 37,
+      "pass": 37,
+      "fail": 0,
+      "generatedMatch": false,
+      "firstFailure": "Cedar generated reference",
+      "independentAllThreeComparison": "all3drift"
+    },
+    {
+      "command": "node bin/token-inventory.mjs --check-consumers --summary",
+      "exitCode": 0,
+      "files": 172,
+      "declarations": 4564,
+      "candidates": 70,
+      "needsManualReview": 0,
+      "errors": 0,
+      "note": "Earlier parallel snapshot;not merged with later frozen report."
+    },
+    {
+      "command": "node bin/token-inventory.mjs",
+      "exitCode": 0,
+      "files": 172,
+      "declarations": 4565,
+      "candidates": 70,
+      "needsManualReview": 0,
+      "errors": 0,
+      "note": "Complete report used for all-three-page comparison."
+    },
+    {
+      "command": "pnpm check:browser-evidence",
+      "exitCode": 0,
+      "tests": 202,
+      "allSubsequentIntegrityChecksPassed": true,
+      "newBrowserRun": false,
+      "newNativeAcceptance": 0
+    },
+    {
+      "command": "read saved automation status",
+      "status": "PAUSED",
+      "modified": false
+    }
+  ],
+  "notRun": [
+    "Full Vue business suite",
+    "New full component types",
+    "New repository root lint",
+    "Unchanged native-browser timeout entry points"
+  ],
+  "temporaryDiagnosticCorrections": "Read-only helper scripts needed syntax/path corrections before successful structured results;no dependency install or gate weakening.",
+  "handoffNeeded": {
+    "runtime": [
+      "cedar-design-web/packages/cedar-ui/src/date/picker/DateRangePicker.vue",
+      "maple-design-mobile/packages/maple-ui/src/date/picker-panels/YearPickerPanel.vue"
+    ],
+    "associatedScope": [
+      "date range-preview/highlight helpers and lifecycle ownership",
+      "Cedar date/picker/style/token.less and actual selector consumers",
+      "Maple date/style/date-picker.less and token.less"
+    ],
+    "requires": "Date owner provides a stable handoff snapshot or user authorizes bounded takeover preserving parallel business;review actual consumers/ownership,first reproduce any fault,regressions before refreshing hashes/inventory/catalog."
+  },
+  "retainedBlockers": {
+    "mapSdk": {
+      "platform": "Cedar only",
+      "confirmedSource": "map/map.tsx runtime map-core import remains commented",
+      "requires": [
+        "Approved adapter package/version/driver/maintainer and runnable entry",
+        "Explicit on/off/dispose/cancel/late delivery/reentry contracts",
+        "KeepAlive/instance replacement/model-address business handoff",
+        "Configured reachable SDK/tile/search/geocode environment;keys/domain allowlist outside chat;secure context and user-granted location for real geolocation",
+        "Controlled lifecycle regressions followed by actual SDK/MapSelect/location evidence"
+      ]
+    },
+    "native": {
+      "pending": 144,
+      "chromeNative200": 48,
+      "safariConfirmed100": 48,
+      "firefoxConfirmed100": 48,
+      "perSuite": "2platforms×4brand-mode×3mount-targets×2content-lengths",
+      "requires": [
+        "Responsive supported real Chrome control with visible native100→200zoom UI proof",
+        "Installed actual Safari/version and responsive supported100%session/control",
+        "Actual Firefox installation path/version and responsive supported100%control",
+        "Frozen fixture/source snapshot and per-case interaction/focus/scroll-lock/geometry/color/screenshot evidence;restore zoom and owned-resource cleanup"
+      ],
+      "historicalObservationDate": "2026-10-13",
+      "newEnvironmentProbe": false,
+      "forbiddenSubstitutes": [
+        "CSS zoom/transform",
+        "viewport/DPR alone",
+        "pinch/text zoom",
+        "JSDOM/Less/IAB/simulated WebKit",
+        "AppleScript/raw CDP workarounds",
+        "Unauthorized installs or permission changes"
+      ]
+    },
+    "buttonPrimary": "White on-dark retained,2.305:1 bright-default design exception is not AA;other text thresholds unchanged."
+  },
+  "automation": {
+    "id": "cedar-maple-14-00-2",
+    "savedStatus": "PAUSED",
+    "modified": false
+  },
+  "documents": [
+    "design-ui/audits/token-closure-recheck-2026-10-20.md",
+    "design-ui/audits/token-closure-progress.md",
+    "design-ui/standards/design-tokens.md",
+    "cedar-design-web/packages/cedar-ui/docs/guide/design-tokens.md",
+    "maple-design-mobile/packages/maple-ui/docs/designTokens.zh-CN.md",
+    "maple-design-mobile/packages/maple-ui/docs/designTokens.en-US.md"
+  ],
+  "finalChecks": {
+    "threeRepositoryDiffChecksExitCode": 0,
+    "evidenceJsonValid": true,
+    "noValidationFailureWasOverwritten": true
+  },
+  "allValidationProcessesFinished": true
+}

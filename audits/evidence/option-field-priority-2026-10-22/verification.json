@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-22",
+  "browser": "IAB Chromium, real Form field-components demo",
+  "verified": [
+    "AutoComplete dblclick activation and direct icon editing",
+    "AutoComplete group-title click stays inside editor without publishing",
+    "AutoComplete Enter chooses a candidate, next Enter commits",
+    "AutoComplete first Escape closes candidate menu, second cancels editing",
+    "TreeSelect ArrowDown/ArrowRight activate Hangzhou without publishing; two Enter presses choose then commit",
+    "TreeSelect Beijing pointer selection only changes draft and Escape cancels",
+    "TreeSelect search Ningbo activates direct matched leaf rather than retained ancestor; first Enter preserves old model, second commits Ningbo",
+    "PeopleSelect edit icon and native remote option list",
+    "PeopleSelect candidate click updates draft without publishing; Enter commits",
+    "PeopleSelect first Escape closes native menu, second cancels editing"
+  ],
+  "checks": {
+    "complete_related_suite": "406 tests passed",
+    "final_affected_regressions": "53 tests passed including 16 new option priority cases",
+    "types": "passed",
+    "eslint": "passed",
+    "same_source": "AutoComplete 7, selection presentations 43 and selection field 23 pairs passed"
+  },
+  "screenshots": [
+    "tree-keyboard-draft.png"
+  ]
+}

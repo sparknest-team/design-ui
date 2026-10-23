@@ -34,11 +34,14 @@ function documentedNames(block, section) {
 }
 function sourceApi(directory, component, filename) {
   const names = { Props: [], Events: [], Slots: [], Methods: [] }
-  const props = ts.createSourceFile('props.ts', fs.readFileSync(path.join(directory, 'props.ts'), 'utf8'), ts.ScriptTarget.Latest, true)
+  const propsFile = path.join(directory, 'props.ts')
+  const program = ts.createProgram([propsFile], { target: ts.ScriptTarget.ESNext, moduleResolution: ts.ModuleResolutionKind.NodeJs, skipLibCheck: true })
+  const checker = program.getTypeChecker()
+  const props = program.getSourceFile(propsFile)
   const visitProps = node => {
     if (ts.isVariableDeclaration(node) && node.name.getText(props) === `${component}Props`) {
       assert(ts.isObjectLiteralExpression(node.initializer), `${component}: unsupported props declaration`)
-      names.Props = node.initializer.properties.map(prop => kebab(prop.name.text))
+      names.Props = checker.getPropertiesOfType(checker.getTypeAtLocation(node.name)).map(prop => kebab(prop.name))
     }
     ts.forEachChild(node, visitProps)
   }
@@ -99,9 +102,17 @@ for (const [component, cases] of Object.entries(scenarios)) {
     assert.deepEqual(sorted(documentedNames(englishApi, section)), sorted(contract[section]), `${component}: English ${section} coverage`)
   }
   assert.deepEqual([...readme.matchAll(/<demo src="\.\/__demos__\/([^"/]+)\.vue"/g)].map(m => m[1]), cases.map(c => c.name), `${component}: Cedar scenario order`)
-  assert.deepEqual([...example.matchAll(/data-demo="([^"]+)"/g)].map(m => m[1]), cases.map(c => c.name), `${component}: Maple scenario order`)
-  assert.deepEqual(fs.readdirSync(path.join(cedar, '__demos__')).filter(f => f.endsWith('.vue')).sort(), cases.map(c => `${c.name}.vue`).sort(), `${component}: untracked Cedar demo`)
-  assert.deepEqual(fs.readdirSync(path.join(maple, 'example/demos')).filter(f => f.endsWith('.vue')).sort(), cases.map(c => `${c.name}.vue`).sort(), `${component}: untracked Maple demo`)
+  // Cross-component reference demos (e.g. FieldDecorator's control sizes) are
+  // checked by their owning component, not duplicated in this component's manifest.
+  const externalDemos = new Set([...fs.readFileSync(path.join(maple, 'docs/zh-CN.md'), 'utf8')
+    .matchAll(/```demo\s*\n([^\n]+\.vue)\s*\n```/g)]
+    .filter(m => !path.resolve(maple, 'docs', m[1].trim()).startsWith(path.join(maple, 'example/demos') + path.sep))
+    .map(m => path.basename(m[1].trim(), '.vue')))
+  assert.deepEqual([...example.matchAll(/data-demo="([^"]+)"/g)].map(m => m[1]).filter(name => !externalDemos.has(name)), cases.map(c => c.name), `${component}: Maple scenario order`)
+  // Generated review scenarios have their own manifest and compiler gate.
+  const authored = f => f.endsWith('.vue') && !f.startsWith('api-review-')
+  assert.deepEqual(fs.readdirSync(path.join(cedar, '__demos__')).filter(authored).sort(), cases.map(c => `${c.name}.vue`).sort(), `${component}: untracked Cedar demo`)
+  assert.deepEqual(fs.readdirSync(path.join(maple, 'example/demos')).filter(authored).sort(), cases.map(c => `${c.name}.vue`).sort(), `${component}: untracked Maple demo`)
   // Maple reserves vue fences for preview imports, not complete example SFCs.
   // Validate the document after the real site transform, not only its snippets.
   for (const lang of ['zh-CN', 'en-US']) {

@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-16",
+  "startedUtc": "08:39:31",
+  "scope": "Read-only Maple Form scroll ownership baseline on overlapping parallel source;no product repair authorized or applied",
+  "source": {
+    "file": "maple-design-mobile/packages/maple-ui/src/form/Form.vue",
+    "sha256": "94c525acf1885ff8f358350673e47a3e5d9759b285d875380521247855ae9c4d",
+    "status": "Unchanged before/after;dirty parallel submitEpoch implementation preserved",
+    "otherPreserved": "CedarForm2818329d… and MaplePicker64f0ef40… still match earlier snapshots;quiet hashes do not prove handoff/stability"
+  },
+  "baseline": {
+    "test": "maple-design-mobile/packages/maple-ui/src/form/__tests__/scroll-task-ownership.spec.js",
+    "finalTestSha256": "e2903b5e772ec0b151b1591cee88a189b1037e6f801e39cd45019d7a8a68f52f",
+    "command": "pnpm --dir packages/maple-ui exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js src/form/__tests__/scroll-task-ownership.spec.js",
+    "total": 6,
+    "passed": 3,
+    "failed": 3,
+    "exitCode": 1,
+    "seconds": 6.98,
+    "controls": ["Normal300ms helper dispatch", "Ordinary unmount cancellation", "Unknown field does not schedule"],
+    "failures": ["Cancelled older callback still dispatches after replacement", "Current callback dispatches twice when replayed", "Cancelled callback revives after KeepAlive reactivation"],
+    "meaning": "Three overlapping controlled ownership failures,not three independent defects or evidence that native timers actually replay",
+    "fixture": "Actual Form and provider-registered input field,actual getParentScroller/getTop;only downstream scrollTo mocked. Controlled300ms callbacks can be manually delivered after cancellation/consumption. All owners/container cleaned;original setTimeout/clearTimeout descriptors restored in finally. No fake clock/framework change.",
+    "formatOnly": "After baseline,two import-order lint errors corrected;no assertion/product/fixture behavior change. Baseline intentionally remains failing,not skipped or masked."
+  },
+  "verification": {
+    "lint": "Initial two import-order lint errors repaired;final pre-repair read-only root lint passed exit0",
+    "typesSharedLessNative": "No source/type/style/classification change;not rerun;new native/browser/OS cases0",
+    "fullFormSuite": "Not run;targeted baseline fails. Do not claim full Form passing.",
+    "hashAndDiff": "Baseline source/test hashes recorded;three repository diff checks passed exit0;JSON valid"
+  },
+  "progress": {
+    "closedFamilies": 31,
+    "totalFamilies": 33,
+    "closedPercent": 93.9,
+    "remainingFamilies": 2,
+    "remainingPercent": 6.1,
+    "remaining": {"Form": 4, "Picker": 9},
+    "registeredFiles": 74,
+    "classifiedHints": 165,
+    "totalHints": 178,
+    "classifiedPercent": 92.7,
+    "pendingHints": 13,
+    "pendingPercent": 7.3,
+    "denominatorChange": 0,
+    "newRegistration": "None;failed baseline does not close a family"
+  },
+  "nextAuthority": "Initially requested;human explicitly answered允许仅接管 Maple Form 滚动任务段. Subsequent authorized wait-task repair is separate evidence form-scroll-wait-task-2026-10-16;Cedar Form/Maple Picker remain outside scope",
+  "nextAudit": "Before repair,review300ms visual-completion policy and downstream scroll helper cancellation,retained availability,current field membership and reentry;do not silently classify fixed animation wait as business delay",
+  "preserved": "26unrelated inventory drifts,five Cedar FilterForm/Form catalog hunks,formal Map SDK contract,144native Chrome200%/Safari/Firefox environment groups,Button white2.305:1 non-AA exception;previous Cedar close-timeout warning",
+  "constraints": "No product/API/Token/source inventory/classification edits,chats/subagents/commits/push/publish/software/permission/automation changes"
+}
