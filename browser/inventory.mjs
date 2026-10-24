@@ -63,6 +63,32 @@ export function sourceFingerprint(root, library) {
   return hash.digest('hex')
 }
 
+// Component source alone cannot detect a changed compiler, preview runtime,
+// dependency link or site theme initializer during production acceptance.
+export function productionFingerprint(root, library) {
+  const hash = createHash('sha256').update(sourceFingerprint(root, library))
+  function walk(directory) {
+    if (!existsSync(directory)) return
+    for (const entry of readdirSync(directory, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+      const file = resolve(directory, entry.name)
+      if (entry.isDirectory()) {
+        if (!entry.name.startsWith('.') && !['__tests__', 'node_modules'].includes(entry.name)) walk(file)
+      } else if (/\.(?:[cm]?[jt]sx?|vue|less|scss|css|md|json)$/.test(file) && !/\.(?:test|spec)\./.test(file)) {
+        hash.update(relative(root, file)).update('\0').update(readFileSync(file)).update('\0')
+      }
+    }
+  }
+  for (const directory of library === 'cedar'
+    ? ['packages/cedar-ui/docs/.vuepress', 'packages/cedar-resolver/src']
+    : ['packages/maple-cli/src', 'packages/maple-resolver/src']) walk(resolve(root, directory))
+  walk(resolve(root, '../design-ui/packages/ui-doc-preview/src'))
+  for (const name of ['package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', `packages/${library}-ui/package.json`, `packages/${library}-ui/maple.config.js`, `packages/${library}-ui/maple.config.ts`, 'packages/maple-cli/package.json', '../design-ui/packages/ui-doc-preview/package.json']) {
+    const file = resolve(root, name)
+    if (existsSync(file)) hash.update(name).update('\0').update(readFileSync(file)).update('\0')
+  }
+  return hash.digest('hex')
+}
+
 export function demoIndex(page, requested) {
   if (!requested) return 0
   const found = page.demos.findIndex((demo) => demo.file.endsWith(`/${requested}`))

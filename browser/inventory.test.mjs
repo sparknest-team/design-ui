@@ -4,10 +4,37 @@ import { tmpdir } from 'node:os'
 import { fileURLToPath } from 'node:url'
 import { resolve } from 'node:path'
 import test from 'node:test'
-import { componentPages, demoIndex, mobileSection, guidePages, mapleGuides, sourceFingerprint } from './inventory.mjs'
+import { componentPages, demoIndex, mobileSection, guidePages, mapleGuides, sourceFingerprint, productionFingerprint } from './inventory.mjs'
 import { contractFor } from './contracts.mjs'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
+
+test('production acceptance detects compiler, theme client and lockfile edits, excluding generated caches and tests', () => {
+  const directory = mkdtempSync(resolve(tmpdir(), 'docs-production-inventory-'))
+  try {
+    mkdirSync(resolve(directory, 'packages/cedar-ui/src'), { recursive: true })
+    const docs = resolve(directory, 'packages/cedar-ui/docs/.vuepress')
+    mkdirSync(docs, { recursive: true })
+    writeFileSync(resolve(docs, 'client.ts'), 'export const theme = "light"')
+    const initial = productionFingerprint(directory, 'cedar')
+    writeFileSync(resolve(docs, 'client.ts'), 'export const theme = "dark"')
+    assert.notEqual(productionFingerprint(directory, 'cedar'), initial)
+    writeFileSync(resolve(docs, 'client.ts'), 'export const theme = "light"')
+    mkdirSync(resolve(docs, '.temp-build'))
+    writeFileSync(resolve(docs, '.temp-build/generated.ts'), 'export {}')
+    writeFileSync(resolve(docs, 'client.test.ts'), 'export {}')
+    assert.equal(productionFingerprint(directory, 'cedar'), initial)
+    writeFileSync(resolve(directory, 'pnpm-lock.yaml'), 'lockfileVersion: 9')
+    assert.notEqual(productionFingerprint(directory, 'cedar'), initial)
+    mkdirSync(resolve(directory, 'packages/maple-ui/src'), { recursive: true })
+    const cli = resolve(directory, 'packages/maple-cli/src/node')
+    mkdirSync(cli, { recursive: true })
+    writeFileSync(resolve(cli, 'build.ts'), 'export const version = 1')
+    const originalCompiler = productionFingerprint(directory, 'maple')
+    writeFileSync(resolve(cli, 'build.ts'), 'export const version = 2')
+    assert.notEqual(productionFingerprint(directory, 'maple'), originalCompiler)
+  } finally { rmSync(directory, { recursive: true, force: true }) }
+})
 
 test('acceptance fingerprint detects implementation/style edits but not unrelated test formatting', () => {
   const directory = mkdtempSync(resolve(tmpdir(), 'docs-browser-inventory-'))

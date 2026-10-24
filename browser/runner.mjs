@@ -6,7 +6,7 @@ import { createRequire } from 'node:module'
 import { tmpdir } from 'node:os'
 import { extname, resolve, sep } from 'node:path'
 import { after, before, describe, it } from 'node:test'
-import { componentPages, demoIndex, mobileSection, mobileComponent, guidePages, sourceFingerprint } from './inventory.mjs'
+import { componentPages, demoIndex, mobileSection, mobileComponent, guidePages, sourceFingerprint, productionFingerprint } from './inventory.mjs'
 import { contractFor } from './contracts.mjs'
 import { exercise } from './actions.mjs'
 
@@ -71,6 +71,7 @@ export function defineProductionComponentTests({ root, library }) {
   const pages = componentPages(root, library)
   const guides = guidePages(root, library)
   const inputs = sourceFingerprint(root, library)
+  const productionInputs = productionFingerprint(root, library)
   const { chromium, devices } = createRequire(resolve(root, 'package.json'))('playwright')
   // A new comprehensive suite gets its own budget; the original theme gates and
   // their timeouts are unchanged. Individual component cases stay bounded.
@@ -103,14 +104,17 @@ export function defineProductionComponentTests({ root, library }) {
         await mkdir(evidence, { recursive: true })
         const current = componentPages(root, library)
         const sourcesStable = sourceFingerprint(root, library) === inputs && JSON.stringify(current.map((item) => item.demos)) === JSON.stringify(pages.map((item) => item.demos))
+        const productionInputsStable = productionFingerprint(root, library) === productionInputs
         await writeFile(resolve(evidence, 'coverage.json'), JSON.stringify({
           library, components: pages.length, sourcesStable, sourceFingerprint: inputs, buildIndexHash, node: process.version,
+          productionInputsStable, productionFingerprint: productionInputs,
           expectedComponentCases: pages.length * (library === 'cedar' ? 2 : 4),
           expectedGuideCases: guides.length * 2,
           completedComponentCases: results.filter((result) => result.kind !== 'guide').length,
           results,
         }, null, 2))
         assert.ok(sourcesStable, 'authored demo sources changed during acceptance; rebuild and rerun after parallel changes stabilize')
+        assert.ok(productionInputsStable, 'production documentation inputs changed during acceptance; rebuild and rerun after compiler, preview or dependency changes stabilize')
       } finally {
         await browser?.close()
         if (server?.listening) { server.closeAllConnections(); await new Promise((resolve) => server.close(resolve)) }

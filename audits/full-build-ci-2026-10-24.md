@@ -83,7 +83,7 @@ Maple 最后一轮 lint 曾因本次新增测试的循环缺少花括号失败�
 
 ## 全组件生产浏览器补验（本轮）
 
-本节承接上面的十组件补验，旧轮次结果不改写为全组件通过。**实现、防回归及 CI 接线已完成，最新源码的最终全矩阵验收未完成。** 并行任务先后修改 Image / FAB、Carousel / Tree、Icon / Ripple，随后又启动 Tree / Menu / FloatingPanel 和 Scheduler 修改，并迁移两库包名。过期的诊断已停止，不持续占用并行任务资源；没有把旧快照通过改写成最新源码通过。最新用户决定：不通知第三个迁移任务，保留未完成验收状态；因此停止本轮重建并释放已协调的两个冻结窗口。
+本节承接上面的十组件补验，旧轮次结果不改写为全组件通过。**实现、防回归及 CI 接线已完成；本次用户已要求恢复最终验收，正在等待最后的 Menu 浏览器修复完成后锁定生产输入。** 上轮曾按用户选择停止验收并释放冻结窗口；没有把旧快照通过改写成最新源码通过。并行任务先后修改 Image / FAB、Carousel / Tree、Icon / Ripple、Tree / Menu / FloatingPanel、Scheduler，并迁移两库包名；这些历史轮次与本次最终快照分开记录。
 
 ### 完整清单与检查方式
 
@@ -127,6 +127,7 @@ Cedar 并行启动优化已将生产源码高亮由 Shiki 改为 Prism；旧专�
 - 两库新增根 `check:docs-components`，接在 quality 的生产文档构建之后；旧 `check:docs-theme` 保留。
 - 公共实现及显式行为清单在 `design-ui/browser/`。未知组件、缺失实际 demo、错误手机映射均阻断 CI，`inventory.test.mjs` 与两端 CI / 公共 `check:ci` 联动。
 - Actions 始终归档 `artifacts/docs-components/<library>/coverage.json`、失败截图及诊断；清单区分交互、展示、规范页和实际完成数量。验收结束重新读取 demo 源码，若并行修改导致内容变化则失败并要求重建重跑，不默默接受陈旧源码。
+- 本次补强生产输入门禁：除原有 `sourcesStable` 外，coverage 还记录 `productionFingerprint / productionInputsStable`，检测文档编译器、主题客户端、共享预览代码、依赖清单和锁文件；任一指纹漂移均失败。新增正反回归覆盖主题/编译器编辑、锁文件编辑、生成缓存与测试文件排除，公共 CI 检查已增加至 18 项并全部通过。
 - 诊断过程中发现并行任务修改了模型命名和部分示例格式，因此旧构建的严格源码检查出现过失败；未放宽文本比较。待修改稳定后重新构建，旧诊断或带 name-pattern 筛选的轮次不作为完整通过证明。
 - 本轮未提交、推送或触发远端 Actions；保留原有未提交改动及先前的纯大小写暂存重命名。
 
