@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-23",
+  "timezone": "Asia/Shanghai",
+  "finalGateTime": "23:53",
+  "sourceModules": { "cedar": 1174, "maple": 930 },
+  "toolingModules": { "cedar": 68, "maple": 44 },
+  "cycles": 0,
+  "packageRootBackflow": 0,
+  "prohibitedHmrWorkarounds": 0,
+  "uniqueFocusedTestsPassed": 478,
+  "tests": {
+    "cedarScheduler": 401,
+    "cedarMenu": 26,
+    "mapleMenu": 27,
+    "foundationRuntimeAndMedia": 8,
+    "mapleResolverAndEntry": 12,
+    "cedarSiteImports": 4
+  },
+  "passed": [
+    "Cedar check:runtime-dependencies (includes checker self-tests and site-import tests)",
+    "Maple check:runtime-dependencies (includes checker self-tests)",
+    "Cedar full typecheck",
+    "Maple full typecheck",
+    "Maple full lint:check",
+    "git diff --check in all three repositories",
+    "Scheduler base extraction matches original HEAD function bodies",
+    "Restored Menu / Scheduler browser interaction and zero temporary probes"
+  ],
+  "existingFailedCheck": {
+    "status": "resolved-2026-10-24",
+    "resolutionReport": "../../shared-foundation-2026-10-24.md",
+    "command": "node bin/copied-foundations-check.mjs",
+    "boundary": "cedar-shared/src/index.ts versus maple-shared/src/index.ts",
+    "note": "Parallel shared refactoring has different implementations. Menu and use pairs passed. The old checker was not weakened."
+  },
+  "fullProjectQualityClaimed": false,
+  "fullLibraryBehaviorSuiteRun": false,
+  "fullReleaseBuildRun": false,
+  "remoteCiRun": false,
+  "publicApiChanged": false,
+  "browserEvidence": "native-hmr.json"
+}

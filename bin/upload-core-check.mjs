@@ -16,7 +16,7 @@ const pairs = [
   ...['read-only','queue-request','replacement-validation','custom-surface','external-state'].map(file => ['upload/__demos__/' + file + '.vue','upload/example/demos/' + file + '.vue']),
 ]
 function normalize(source) {
-  return source.replaceAll('@cedarjs/icons-vue', '@maplejs/icons-vue').replaceAll('imagePreview as previewImage', 'previewImage').replaceAll('../_utils/global-config', '../utils/components')
+  return source.replaceAll('@cedar-design/icons-vue', '@maple-design/icons-vue').replaceAll('imagePreview as previewImage', 'previewImage').replaceAll('../image/preview-api', '../image/preview').replaceAll('../_utils/global-config', '../utils/components')
     .replaceAll('../_utils/constant', '../utils/constants')
     .replaceAll('../_utils/size-length', '../utils/size-length')
     .replaceAll('--c-', '--mp-').replaceAll('.c-', '.mp-')
@@ -28,6 +28,7 @@ function normalize(source) {
 function tokens(source) {
   const ast = ts.createSourceFile('contract.ts', source, ts.ScriptTarget.Latest, true, ts.ScriptKind.TS)
   const visit = node => {
+    if (ts.isReturnStatement(node) && !node.expression) return [node.kind]
     // ESLint adds braces around a single non-declaring statement; no lexical scope is introduced.
     if (ts.isBlock(node) && node.statements.length === 1 && [ts.SyntaxKind.ExpressionStatement, ts.SyntaxKind.ReturnStatement, ts.SyntaxKind.ThrowStatement, ts.SyntaxKind.BreakStatement, ts.SyntaxKind.ContinueStatement].includes(node.statements[0].kind) && ts.isIfStatement(node.parent)) return visit(node.statements[0])
     if ([ts.SyntaxKind.CommaToken, ts.SyntaxKind.SemicolonToken, ts.SyntaxKind.EndOfFileToken].includes(node.kind)) return undefined
@@ -50,7 +51,7 @@ function script(source) {
   for (const node of ast.statements) {
     if (ts.isImportDeclaration(node)) {
       // Only the known public import differs; runtime string values remain strict.
-      const path = node.moduleSpecifier.text === '@cedarjs/ui' ? '@maplejs/maple-ui' : node.moduleSpecifier.text
+      const path = node.moduleSpecifier.text === '@cedar-design/ui' ? '@maple-design/ui' : node.moduleSpecifier.text
       const clause = node.importClause
       if (!clause) imports.push([path, 'side-effect'])
       else {

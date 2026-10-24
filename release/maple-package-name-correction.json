@@ -1,0 +1,201 @@
+{
+  "registry": "https://registry.npmjs.org/",
+  "status": "complete",
+  "renames": {
+    "@maple-design/maple-ui": "@maple-design/ui",
+    "@maple-design/maple-cli": "@maple-design/cli",
+    "@maple-design/maple-shared": "@maple-design/shared",
+    "@maple-design/maple-use": "@maple-design/use",
+    "@maple-design/maple-vite-plugins": "@maple-design/vite-plugins",
+    "@maple-design/maple-touch-emulator": "@maple-design/touch-emulator",
+    "@maple-design/maple-preset-unocss": "@maple-design/preset-unocss",
+    "@maple-design/maple-preset-tailwindcss": "@maple-design/preset-tailwindcss"
+  },
+  "unchangedPackage": "@maple-design/icons-vue@1.0.0",
+  "resolverReplacement": {
+    "package": "@maple-design/resolver",
+    "oldVersion": "1.0.0",
+    "newVersion": "1.0.1"
+  },
+  "privatePackagesExcluded": [
+    "@maple-design/ui-playground",
+    "maple-vscode-extension"
+  ],
+  "packages": [
+    {
+      "name": "@maple-design/preset-tailwindcss",
+      "version": "1.0.0",
+      "tarball": "/tmp/npm-maple-short-names/tarballs/maple-design-preset-tailwindcss-1.0.0.tgz",
+      "integrity": "sha512-kxz2BrFbOmj8wvS25liPOCsGd3f2as693eCHgfORfQPtyj1vbv7kKKPWe8k4jQU1R/dNZkslnxEwSUqrbchk1w==",
+      "dependencies": {},
+      "status": "public-verified",
+      "latest": "1.0.0",
+      "url": "https://www.npmjs.com/package/@maple-design/preset-tailwindcss/v/1.0.0"
+    },
+    {
+      "name": "@maple-design/preset-unocss",
+      "version": "1.0.0",
+      "tarball": "/tmp/npm-maple-short-names/tarballs/maple-design-preset-unocss-1.0.0.tgz",
+      "integrity": "sha512-EIRjKjkTO1rlHcNuwVdVtRlC/ri7FmvXhPeE8eIEtTPvMClgMQ8uKROI19wbzdbT4/ID/P4q7Lx9GfcKPfsMXw==",
+      "dependencies": {},
+      "status": "public-verified",
+      "latest": "1.0.0",
+      "url": "https://www.npmjs.com/package/@maple-design/preset-unocss/v/1.0.0"
+    },
+    {
+      "name": "@maple-design/shared",
+      "version": "1.0.0",
+      "tarball": "/tmp/npm-maple-short-names/tarballs/maple-design-shared-1.0.0.tgz",
+      "integrity": "sha512-/DG2NaJeScSlh5NWGTFX2EO5V9KWVhuDl21ITITY/fujZdZLn/5tJ19H7LFvJ3UDx4cHE8W6kaRGPZ2bJMAfpg==",
+      "dependencies": {},
+      "status": "public-verified",
+      "latest": "1.0.0",
+      "url": "https://www.npmjs.com/package/@maple-design/shared/v/1.0.0"
+    },
+    {
+      "name": "@maple-design/touch-emulator",
+      "version": "1.0.0",
+      "tarball": "/tmp/npm-maple-short-names/tarballs/maple-design-touch-emulator-1.0.0.tgz",
+      "integrity": "sha512-xEtDqbdAzp+sMb+L6QCNFmIAZ996ROiQDbWqaKfFOKBBmyMPnj9w1pxVl0bjY0m54qtInpqWu+HWuCAiM8Y9Pw==",
+      "dependencies": {},
+      "status": "public-verified",
+      "latest": "1.0.0",
+      "url": "https://www.npmjs.com/package/@maple-design/touch-emulator/v/1.0.0"
+    },
+    {
+      "name": "@maple-design/resolver",
+      "version": "1.0.1",
+      "tarball": "/tmp/npm-maple-short-names/tarballs/maple-design-resolver-1.0.1.tgz",
+      "integrity": "sha512-NsUtw3jyzZsG+FnLB9Vv4E3vOTTwYi2Jql2xUp/vOqii6vVMMGDn9szH++3XFcNsZriQILwP+GvjE6LciqwHnw==",
+      "dependencies": {
+        "@maple-design/shared": "1.0.0",
+        "@maple-design/icons-vue": "1.0.0"
+      },
+      "status": "public-verified",
+      "latest": "1.0.1",
+      "url": "https://www.npmjs.com/package/@maple-design/resolver/v/1.0.1"
+    },
+    {
+      "name": "@maple-design/use",
+      "version": "1.0.0",
+      "tarball": "/tmp/npm-maple-short-names/tarballs/maple-design-use-1.0.0.tgz",
+      "integrity": "sha512-yM5Ehnw8/FtcdVVxyzUaiHIdQSlUCJAEoowLsFrsjrh3nDlbEsDay2lMWunIw1p0cNgoZB5zdx8NxFJo6+CL2Q==",
+      "dependencies": {
+        "@maple-design/shared": "1.0.0"
+      },
+      "status": "public-verified",
+      "latest": "1.0.0",
+      "url": "https://www.npmjs.com/package/@maple-design/use/v/1.0.0"
+    },
+    {
+      "name": "@maple-design/vite-plugins",
+      "version": "1.0.0",
+      "tarball": "/tmp/npm-maple-short-names/tarballs/maple-design-vite-plugins-1.0.0.tgz",
+      "integrity": "sha512-hcR+iBjebtLBpv3EAUH7lO04lp7AXqr0NurxQu2NYmiHM+M/R4kbmvfHjkOxJO1zsVLUzGv8LQSYGUeQNg6QpA==",
+      "dependencies": {
+        "@maple-design/shared": "1.0.0"
+      },
+      "status": "public-verified",
+      "latest": "1.0.0",
+      "url": "https://www.npmjs.com/package/@maple-design/vite-plugins/v/1.0.0"
+    },
+    {
+      "name": "@maple-design/cli",
+      "version": "1.0.0",
+      "tarball": "/tmp/npm-maple-short-names/tarballs/maple-design-cli-1.0.0.tgz",
+      "integrity": "sha512-QA0pUl1Tu4pZjMuFN2gF8gXuDDGn6QeToSZD+iirclsUcBri4aQaSn/u1BuwJ+Y7BeQUxlwuc9FK/DLMf8ZceA==",
+      "dependencies": {
+        "@maple-design/shared": "1.0.0",
+        "@maple-design/resolver": "1.0.1",
+        "@maple-design/vite-plugins": "1.0.0"
+      },
+      "status": "public-verified",
+      "latest": "1.0.0",
+      "url": "https://www.npmjs.com/package/@maple-design/cli/v/1.0.0"
+    },
+    {
+      "name": "@maple-design/ui",
+      "version": "1.0.0",
+      "tarball": "/tmp/npm-maple-short-names/tarballs/maple-design-ui-1.0.0.tgz",
+      "integrity": "sha512-QbS0mUJXSfYrA5r4bO9Qn/PeV6zildXjeeGhSHiHIG0ddYQrFJIU3HjXqtaeDbsR1h98+uk2NCowaxGywxrAow==",
+      "dependencies": {
+        "@maple-design/shared": "1.0.0",
+        "@maple-design/icons-vue": "1.0.0",
+        "@maple-design/use": "1.0.0"
+      },
+      "status": "public-verified",
+      "latest": "1.0.0",
+      "url": "https://www.npmjs.com/package/@maple-design/ui/v/1.0.0"
+    }
+  ],
+  "removals": [
+    {
+      "spec": "@maple-design/maple-cli",
+      "status": "unpublished",
+      "publicRemovalVerified": true
+    },
+    {
+      "spec": "@maple-design/maple-ui",
+      "status": "unpublished",
+      "publicRemovalVerified": true
+    },
+    {
+      "spec": "@maple-design/resolver@1.0.0",
+      "status": "unpublished",
+      "publicRemovalVerified": true
+    },
+    {
+      "spec": "@maple-design/maple-vite-plugins",
+      "status": "unpublished",
+      "publicRemovalVerified": true
+    },
+    {
+      "spec": "@maple-design/maple-use",
+      "status": "unpublished",
+      "publicRemovalVerified": true
+    },
+    {
+      "spec": "@maple-design/maple-preset-unocss",
+      "status": "unpublished",
+      "publicRemovalVerified": true
+    },
+    {
+      "spec": "@maple-design/maple-preset-tailwindcss",
+      "status": "unpublished",
+      "publicRemovalVerified": true
+    },
+    {
+      "spec": "@maple-design/maple-touch-emulator",
+      "status": "unpublished",
+      "publicRemovalVerified": true
+    },
+    {
+      "spec": "@maple-design/maple-shared",
+      "status": "unpublished",
+      "publicRemovalVerified": true
+    }
+  ],
+  "validation": {
+    "build": "passed",
+    "typecheck": "passed",
+    "cliTests": "13 + bootstrap passed",
+    "resolverTests": 19,
+    "packageCheck": "0 errors, 0 warnings",
+    "lint": "Full check found formatting issues; exact affected files fixed and rechecked successfully",
+    "publicCiTests": 18,
+    "publicRegistry": {
+      "verified": 9,
+      "pending": []
+    },
+    "cleanPublicInstall": "passed",
+    "productionSsrAndResolver": "passed: ui@1.0.0 root/subpath SSR; resolver@1.0.1 resolves @maple-design/ui and styles",
+    "oldNamePackedFileScan": "passed for every file in all nine tarballs",
+    "oldNameSourceScan": "passed outside historical audit/release records",
+    "docPipelineTests": 22,
+    "oldRemovalPublicCheck": {
+      "removed": 9,
+      "pending": []
+    },
+    "iconsVue": "1.0.0 remains public"
+  }
+}

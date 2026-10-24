@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-24",
+  "scope": "Local complete builds and every command in both quality pipelines, executed in stages",
+  "platform": "macOS",
+  "toolchain": { "node": "20.18.3", "pnpm": "9.6.0", "nestedNode": "20.18.3" },
+  "cedar": {
+    "completeBuild": "passed",
+    "fullTests": { "files": 488, "tests": 3225, "passed": true },
+    "subsequentAffectedTests": { "files": 3, "tests": 27, "passed": true },
+    "releaseGates": "passed",
+    "publishedEnvironment": "passed",
+    "authoredModuleCaseChecks": 3958,
+    "productionDocumentationBrowserTests": {
+      "testNodes": 45, "interactionCases": 40, "widths": [1280, 1440],
+      "themes": ["lightTheme", "darkTheme"], "passed": true
+    },
+    "productionSourceAssets": { "pages": 95, "demoReferences": 964, "assets": 1344, "passed": true },
+    "documentationPipeline": { "files": 11, "tests": 27, "passed": true },
+    "imageRegression": { "files": 5, "tests": 64, "passed": true },
+    "caseOnlyIndexRenames": 70,
+    "stagedBlobAndWorkingContentPreserved": true
+  },
+  "maple": {
+    "completeBuild": "passed",
+    "fullTests": { "files": 462, "tests": 3721, "passed": true },
+    "subsequentLinkTests": { "files": 2, "tests": 19, "passed": true },
+    "releaseGates": "passed after fixing the recorded lint failure",
+    "componentBundleLimits": { "entries": 92, "baselineChanged": false, "passed": true },
+    "publishedEnvironment": "passed",
+    "productionDocumentationBrowserTests": { "tests": 6, "passed": true },
+    "authoredModuleCaseChecks": 3962,
+    "documentationRebuiltAfterImageFixtureFix": true,
+    "imageRegression": { "files": 11, "tests": 116, "passed": true }
+  },
+  "sharedCiContractTests": { "tests": 13, "passed": true },
+  "foundationRuntimeSourcePairs": { "pairs": 68, "passed": true },
+  "frozenInstall": "All three repositories passed in a dependency-only temporary snapshot; not a complete source checkout build",
+  "thresholdsRelaxed": false,
+  "remoteActions": "Not run: GitHub CLI is unauthenticated; changes were not committed or pushed",
+  "coverageNote": "Full and subsequent targeted tests overlap and must not be added together. Maple's new Link test was verified in its targeted run after the full suite. The documentation-browser follow-up reran builds, browser gates, documentation pipeline, Image tests, lint and CI contracts, not the entire component suites again. Source-asset coverage is not exhaustive browser interaction coverage."
+}

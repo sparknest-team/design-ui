@@ -235,9 +235,9 @@ const pairs = [
   ['collapse/__tests__/same-source.spec.js', 'collapse/__tests__/same-source.spec.js'],
 ]
 const normalize = (source) => source
-  .replaceAll('@cedarjs/shared', '@maplejs/maple-shared')
-  .replaceAll('@cedarjs/use', '@maplejs/maple-use')
-  .replaceAll('@cedarjs/icons-vue', '@maplejs/icons-vue')
+  .replaceAll('@cedar-design/shared', '@maple-design/shared')
+  .replaceAll('@cedar-design/use', '@maple-design/use')
+  .replaceAll('@cedar-design/icons-vue', '@maple-design/icons-vue')
   .replaceAll('../_utils/maple/elements', '../utils/elements')
   .replaceAll('../_utils/size-length', '../utils/size-length')
   .replaceAll('../_utils/popup-container', '../utils/popup-container')
@@ -308,8 +308,10 @@ for (const [cedarPath, maplePath] of pairs) {
     // Cedar declares its dark override in Less; Maple supplies the same value
     // through ThemeProvider. Verify that adapter before comparing base tokens.
     const dark = await readFile(resolve(maple, 'themes/dark/badge.ts'), 'utf8')
+    assert.match(dark, /'--mp-badge-bg-color':\s*'rgb\(var\(--mp-danger-4\)\)'/)
+    assert.match(dark, /'--mp-badge-status-danger-bg-color':\s*'rgb\(var\(--mp-danger-4\)\)'/)
     assert.match(dark, /'--mp-badge-status-tertiary-text-color':\s*'var\(--mp-sys-color-content-on-bright\)'/)
-    const override = /:root\[cedar-theme="dark"\]\s*\{\s*--c-badge-status-tertiary-text-color:\s*var\(--c-sys-color-content-on-bright\);\s*\}/
+    const override = /:root\[cedar-theme="dark"\]\s*\{\s*--c-badge-bg-color:\s*rgb\(var\(--c-danger-4\)\);\s*--c-badge-status-danger-bg-color:\s*rgb\(var\(--c-danger-4\)\);\s*--c-badge-status-tertiary-text-color:\s*var\(--c-sys-color-content-on-bright\);\s*\}/
     assert.match(left, override)
     left = left.replace(override, '')
   }

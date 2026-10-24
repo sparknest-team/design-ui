@@ -15,8 +15,8 @@ const normalize = text => text
   .replaceAll('../_utils/global-config', '../utils/components')
   .replaceAll('../_utils/input-composition', '../utils/input-composition')
   .replaceAll('../_utils/constant', '../utils/constants')
-  .replaceAll('@cedarjs/ui', '@maplejs/maple-ui')
-  .replaceAll('@cedarjs/icons-vue', '@maplejs/icons-vue')
+  .replaceAll('@cedar-design/ui', '@maple-design/ui')
+  .replaceAll('@cedar-design/icons-vue', '@maple-design/icons-vue')
   .replaceAll('--c-', '--mp-').replaceAll('.c-', '.mp-')
   .replaceAll('<c-', '<mp-').replaceAll('</c-', '</mp-')
 function sortImports(text) {

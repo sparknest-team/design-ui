@@ -17,7 +17,7 @@ const pairs = [
   ['search/__demos__/presentation.vue', 'search/example/demos/presentation.vue'],
 ]
 function normalize(source) {
-  return source.replaceAll('@cedarjs/ui', '@maplejs/maple-ui').replaceAll('c-input__', 'mp-input__')
+  return source.replaceAll('@cedar-design/ui', '@maple-design/ui').replaceAll('c-input__', 'mp-input__')
     .replace(/(historyPopup:\s*\{\s*type: Boolean,\s*default:) true/, '$1 false')
     .replace("default: 'round'", "default: 'square'").replaceAll('c-list', 'mp-list').replaceAll('../_utils/global-config', '../utils/components')
     .replaceAll('../_utils/constant', '../utils/constants')

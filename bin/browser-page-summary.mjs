@@ -33,8 +33,15 @@ const rows = inventory.map(p => {
     const extra = followup.filter(item => item.mode === mode).at(-1);
     if (extra?.selection && extra.closed) return '选中回填并关闭通过';
     if (extra?.controlled && extra.trim) return '值模型与 trim 通过';
-    if (extra?.nativeDragOpened && extra.actionClosed) return '真实侧滑与关闭通过';
-    if (extra?.nativeDraw && extra.resetThenConfirmImages === 0) return '真实绘制与清空通过';
+    if (extra?.nativeDragOpened && extra.actionClosed || extra?.opened && extra.closed) return '真实侧滑与关闭通过';
+    if (extra?.confirmedDataImage && extra.resetThenConfirmImages === 0) return '真实绘制与清空通过';
+    if (extra?.moved) return '真实拖动通过';
+    if (extra?.loadedMore || typeof extra?.before === 'number' && extra.after > extra.before) return '滚动新增列表通过';
+    if (extra?.loadedAfterNativeScroll) return '懒加载触发通过';
+    if (extra?.enteredAndRestored) return '悬停进入与恢复通过';
+    if (extra?.nativePullUpdatedList) return '下拉刷新通过';
+    if (extra?.localMockOnly && extra.retrySucceeded && extra.cancelled && extra.noActiveRequest) return '本地失败、重试、取消通过';
+    if (extra?.localPositionChanged && extra.reset) return '本地位置切换与重置通过';
     const a = r.interaction[mode];
     if (!a || a.status) return '展示／专项待验';
     if (a.error) return '操作未完成';

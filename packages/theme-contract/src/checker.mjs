@@ -175,8 +175,8 @@ export function collectThemeContract({ cedarSource, mapleSource }) {
 
 export function checkThemeContract(options) {
   const actual = collectThemeContract(options)
-  assert.deepEqual(actual.system, contract.tokens.system, 'System tokens differ from @ui-foundation/theme-contract')
-  assert.deepEqual(actual.components, contract.tokens.components, 'Component tokens differ from @ui-foundation/theme-contract')
+  assert.deepEqual(actual.system, contract.tokens.system, 'System tokens differ from @sparknest/theme-contract')
+  assert.deepEqual(actual.components, contract.tokens.components, 'Component tokens differ from @sparknest/theme-contract')
 
   for (const library of [
     { name: 'Cedar', key: 'cedar', prefix: contract.prefixes.cedar, source: options.cedarSource },
@@ -185,7 +185,7 @@ export function checkThemeContract(options) {
     assert.deepEqual(
       logicalSystemTokenValues(library),
       contract.systemTokenValues,
-      `${library.name}: system token values differ from @ui-foundation/theme-contract`,
+      `${library.name}: system token values differ from @sparknest/theme-contract`,
     )
     const platformSystem = contract.platformSystemTokenValues?.[library.key] ?? {}
     for (const token of Object.keys(platformSystem)) assert.ok(!(token in contract.systemTokenValues), `${library.name}: duplicate system default ${token}`)
@@ -195,7 +195,7 @@ export function checkThemeContract(options) {
       assert.deepEqual(
         logicalComponentTokenValues(library, component),
         expected,
-        `${library.name} ${component}: component token values differ from @ui-foundation/theme-contract`,
+        `${library.name} ${component}: component token values differ from @sparknest/theme-contract`,
       )
     }
     for (const [component, expected] of Object.entries(contract.platformComponentTokenValues?.[library.key] ?? {})) {

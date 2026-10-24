@@ -2,11 +2,21 @@
 
 日期：2026-10-23。
 
-## 最新收尾状态（当晚，优先于下文历史记录）
+## 最新补充：全库依赖与 HMR 门禁
 
-已修复上一轮确认的案例错误，并补齐 Dialog、Scheduler、Time、DropdownMenu 的遗留页面／源码检查。**当前不能宣布整个工作区最终验收通过**：收尾期间 Maple 的 `src/dropdown-menu` 正在被另一项改动迁移为 `src/menu`，开发服务生成的 `.maple/pc.routes.ts` 仍引用已不存在的 `dropdown-menu/docs/en-US.md`，浏览器实际显示 Vite import-analysis 错误。未擅自恢复旧目录、添加旧 API 兼容层或覆盖这次迁移。
+Menu / Scheduler 的额外模块环已拆除，两库统一加入全库依赖、自动导入边界和 HMR 兜底回归。范围、478 项测试和真实浏览器证据见 [全库运行时依赖复查](./runtime-dependencies-2026-10-23.md)。旧 shared 同源门禁差异已于 2026-10-24 关闭，后续 629 项消费者测试、双端发布 / 类型检查及原体积上限复验见 [Shared 同源收敛](./shared-foundation-2026-10-24.md)。
 
-本节记录已经完成并留证的修复；待迁移同步完成后，需要重新生成路由并做最后的手势专项及全库检查。页面覆盖数字是逐次巡检的累计记录，不代表并行重构后的当前版本全绿。
+## 最新更正：Image / Upload 已恢复原生局部 HMR（23:21）
+
+按后续要求，已移除两端 Image / Upload 的整页刷新兜底，统一内部依赖边界和预览服务职责，完成原生模板／脚本热更新验证。相关运行时依赖闭包 Cedar 95、Maple 91 个模块无环；本轮 365 项专项单测、两库类型检查、Maple 全库 lint 通过；16 个实际组件／变更组合保留页面外层状态，最终源码恢复后两端 error 为 0。
+
+详见 [Image / Upload 原生热更新修复](./image-upload-native-hmr-2026-10-23.md)。下文关于 Image / Upload “实现更新采用整页刷新”的内容仅为上一轮历史方案，已被移除，不再是当前行为。
+
+## 此前收尾状态（22:52 历史记录，HMR 方案以上节为准）
+
+本轮确认的问题已修复，Dialog、Scheduler、Time、菜单的遗留页面／源码检查已补齐。根据“先完成 Menu 改名，再做最终验收”的确认，已按最终 `Menu` / `MenuOption` API 收尾：两端新路由、源码、亮暗选择回填与关闭均已实际通过；没有恢复 DropdownMenu 兼容别名。
+
+最终门禁通过：两库类型检查、Maple 全库 lint、全量 SFC／引用、共享案例、文档排序和布局契约、两端 Menu ESM/CJS 与 SSR。此前未完成的侧滑、拖动、签名、刷新、悬停、无限滚动、懒加载和本地上传队列均补了亮暗实页操作；当前没有保留本轮已确认、未修复的组件问题。累计页面覆盖不等于逐一人工穷举所有案例的每个 API、设备和品牌组合。
 
 ### 已完成的修复
 
@@ -17,39 +27,67 @@
 | Cedar 组合布局 | Segmented 五档尺寸不再误排成一条横向 Space；Pagination 和 ProgressGroup 同步采用防撑宽布局。Segmented 页面亮暗无 demo 溢出。 |
 | Map | 删除未初始化的 fetch、未定义的 base64ToString、失效凭据流程及远端占位定位图，替换为内联图标。无 SDK 时禁用搜索并明确提示，不请求真实定位；北京／上海本地位置切换及重置实际通过，首例源码一致。未承诺真实 SDK 已接通。 |
 | Table | 基础案例直接展示三列三行数据；空数据独立为 empty-state.vue。清除六个空 Tabs 和无效 default-active-key。实页显示三行和独立空态，两个案例源码均一致。 |
+| Cascader | Cedar 首例原先首先展示禁用控件、另一控件预选三级值，改为单一可用的受控基础案例，显示绑定值，禁用保留在独立案例；两端亮暗均实际选择路径、回填、收起，首例源码一致。 |
 | Textarea | 两端首例均展示 v-model、default-value、v-model.trim；中英文说明与案例一致。实际输入更新受控文本、默认值存在、失焦去除空白，亮暗均通过，首例源码一致。 |
 | 文档组织 | Checkbox、Radio 基础案例优先；区分原生控件和自定义控件插槽；补 FormDetails、HighlighterProvider、LocaleProvider 中英文一级标题与导语。整理器识别基本使用及多行 app-type 结束标签，避免丢标题。 |
 | 源码引用门禁 | 整理器只添加实际存在的示例，不再生成悬空的英文 Button round/stacked 引用；共享检查区分其他组件拥有的引用示例和本组件案例，未放宽本地案例的完整性检查。 |
 | Maple 聚合入口 | 修复聚合默认对象立即读取组件造成的 `Cannot access 'Image' before initialization` 风险，改为保留 ESM live binding 的 getter；入口生成器同步修正，循环依赖加载回归通过。 |
+| Image / Upload 开发更新 | 两端 Upload 直接引用图片预览服务及独立类型。内部 Vue / TS 不再经过站点自动组件和函数导入（包括 `/@fs` 路径），文档和示例保留自动导入。预览服务曾被函数自动导入重新导回 Image 公共入口，编译探针已确认修正后只依赖内部预览文件。Image、Upload 实现文件更新采用整页刷新，不再进行不安全的局部替换；示例和文档仍正常 HMR。此项包含开发更新策略降级，不声称已消除所有底层循环依赖。 |
+| 预览关闭操作 | 双端图片预览关闭控件由 div 改为带可访问名称的原生 button，重置原生边框和内边距以保留外观；亮暗实页验证 Enter 关闭，单元测试约束按钮语义。 |
 | Maple 开发重启 | 配置变更重启改为串行队列，避免 watcher 同时创建多个服务；2 项测试覆盖并发变更和失败后恢复。站点显式声明默认／枫叶两套亮暗菜单选项，避免只依赖 CLI 默认配置。 |
+| 开发解析与构建隔离 | 主导出 Locale、Message 等直接解析到对应模块，不为文档加载整库；保留别名、混合导入、类型导入和样式。工作区浏览器优先读 shared/use/CLI client 源码，避免并行清理 lib 时断页；独立项目不改解析。固定端口、禁止静默漂移到第二实例。 |
+| PullRefresh 示例生命周期 | 本地刷新定时器在卸载、停用时取消并复位刷新状态；独立案例和生成调试案例同步，新增 2 项行为回归。 |
 
 ### 补齐的实际浏览器操作
 
 - Cedar Dialog：亮暗分别打开真实 Dialog，点击取消后确认弹层隐藏；首例展开源码与 basic.vue 一致。
 - Cedar Scheduler：亮暗分别确认网格与事件卡片真实渲染；下一页改变日期、上一页恢复；新建打开编辑器、取消关闭。另实际填标题并保存，网格出现“巡检新增日程”卡片，不仅检查外框。
-- Cedar Time、DropdownMenu：重新展开当前首例源码，均与实际引用的 SFC 一致。DropdownMenu 的结果是在随后 Menu 改名之前取得，改名后的路由仍需验收。
+- Cedar Time：首例源码与实际引用的 SFC 一致。旧菜单名的历史检查不作为最终结果；改名后的 Menu 已按下条及 22:52 记录重新验收。
 - Maple Checkbox、Radio：基础案例顺序与标题已对齐；亮暗手机预览不再撑宽。Rate 的无文字图标 DOM 已实际存在，不能把 `innerText === ''` 当成空案例。
+- 两端 Menu：亮暗实际选择“复制／编辑”，激活值和触发器文字更新、菜单收起；新名称首例源码一致。同步移除用户文档中的兼容旧调用措辞及过时遮层说明。
+- Maple SwipeCell：亮暗均真实拖动打开操作区，观察 `open` 中的 name/position，点击操作后收到 close。
+- Maple Drag / Signature：亮暗均真实拖动改变位置；签名绘制后确认生成 data-image 预览，重置再确认无图片。
+- 两端 InfiniteScroll：亮暗真实滚动后新增行。Maple 12→24，Cedar 按 8 行递增。Cedar 首次读值过早的记录保留，补验明确等待异步新增行后通过。
+- Maple Lazy / Hover / PullRefresh：亮暗分别验证占位图进入视区后加载实际图片、指针进入与离开时恢复颜色、下拉后列表更新为“新的列表项”。触摸类操作使用浏览器鼠标与站点 touch-emulator，不冒充真机 OS 手势验收。
+- 两端 Upload：亮暗使用“加入示例文件”产生公开的本地测试文本，首次模拟失败、重试成功、取消状态为 canceled，活动请求归零；未选取个人文件、未访问真实上传接口。
 - Badge、TabBar 有徽标绝对定位越出自身盒子的几何命中，但手机整页仍为 346px；与整个页面被撑宽区分，不为消除统计值裁剪徽标。Upload 使用 h3 而非 AppType 标题，空的 AppType 列表不代表案例没渲染。
 
 原始补验：[validation.json](./evidence/demo-reorganization-2026-10-23/fixes/validation.json)。对应截图位于同一 fixes 目录。旧失败和超时记录保留，不覆盖成成功。
 
 ### 本轮验证及边界
 
-- 全量 SFC 编译：2,857 个通过；文档引用：2,879 个通过，无缺失（Menu 迁移前的检查结果）。
+- 最终全量 SFC 编译：2,851 个通过；文档引用：2,883 个通过，无缺失。数量随并行案例整理变化，采用最后一次检查结果。
 - 双端共享案例：121 对通过，含 22 次站点 Markdown 转换和 11 份完整 API 表。
-- 布局／整理器回归：10 项通过；入口循环依赖回归：1 项通过；开发重启队列：2 项通过。
-- Maple 手势与生命周期回归：19 个文件的 176 项通过；另一 SwipeCell 文件首次遇到模块 fetch 超时，单独重跑 5 项通过，共 181 项。覆盖 SwipeCell、Drag、PullRefresh、Signature、Ripple、InfiniteScroll、Lazy、Hover；这是组件挂载及事件测试，不是真机触摸认证。
+- 布局／整理器回归：10 项通过；源码解析及入口循环依赖：11 项通过（补充 Upload 依赖边界与完整刷新策略）；开发重启队列：2 项通过；开发不破坏发布产物：4 项通过；Menu 与全导出 resolver：11 项通过。
+- Maple 手势与生命周期最终整批重跑：21 个文件、183 项全部通过，无未处理异常（21:07 开始，41.37 秒完成）。覆盖 SwipeCell、Drag、PullRefresh、Signature、Ripple、InfiniteScroll、Lazy、Hover，并包含新增清理测试。首次历史运行有模块 fetch／RPC 超时，已被本次完整重跑覆盖；这是组件挂载及事件测试，不是真机触摸认证。
 - Cedar Map：原有 7 项通过，并新增本地位置示例操作测试 1 项通过；Map 快照因内联 SVG 和禁用降级态更新。
 - Cedar Dialog：19 项通过；Scheduler：30 项通过。Scheduler 旧快照的唯一变化是选择器文字新增 `c-selection-field__label` 类，已核对差异后更新，无行为断言删除。
-- Maple 全库 lint、Cedar / Maple 类型检查均有通过记录。期间两端 Breadcrumb 原生 lostpointercapture 的声明差异由当前工作区同步调整后，重新检查通过；不是忽略类型错误。
+- Menu：Cedar 25、Maple 26 项通过；发布产物的 ESM/CJS 安装、最终 Menu/Option API、无 DOM 导入及 SSR 均通过。没有靠保留 Group/Submenu 或旧 DropdownMenu 导出来通过检查。
+- PullRefresh 新增示例回归 2 项通过；另补跑 Maple Upload / Image 22 文件、217 项通过，Cedar 站点导入及更新边界 3 项、图片预览渲染 2 项通过。Maple 关闭按钮改造后相关 8 项再次通过，不重复累计。本轮上述专项测试累计 551 项通过，最终实页补验另记，不混为单元测试数。
+- Maple 最终全库 lint、Cedar / Maple 最终类型检查通过。期间 Breadcrumb 原生指针事件和 picker-field 测试类型声明由当前工作区同步调整后重新检查通过；没有通过忽略类型错误收尾。三个仓库最终 diff 空白检查通过。
+- 文档整理器、布局契约均 changed=0；2,851 个 SFC、2,883 个引用、121 对共享案例重跑通过。后续并行更新曾再次产生 Base / ImagePreviewGroup 初始化错误，原始日志保留在 fixes/final-console.json，不能把此前无错误窗口描述为全晚无错误。
+- 22:28 后最终组合策略实测：冷启动 Upload 正常；再次修改 Upload.vue 实现触发整页刷新后恢复，未再出现初始化错误；亮暗分别打开／关闭本地 SVG 图片预览，Image 页面正常渲染。见 fixes/final-runtime-recheck.json；旧错误不抹除。
+- Cedar 采用同样的内部组件自动解析隔离与 Image/Upload 完整刷新策略；独立站点测试命令为 `pnpm --dir packages/cedar-ui exec vitest run --config site-imports.vitest.config.ts --threads=false`。显式 include 隐藏配置目录，避免默认运行时漏掉这组测试。
+- **22:52 最终实页收口**：Cedar / Maple 的最终配置已分别加载，两端 Upload 亮暗图片预览打开与 Enter 关闭通过；两端 Menu 亮暗选择、收起、无整页溢出及首例源码一致再次通过。最新验收窗口 error 均为 0，历史初始化错误仍完整保留于 `final-runtime-recheck.json`；最新两库类型检查和修改组件 lint 通过。不是据旧截图宣称新配置已通过。
 - 未在浏览器巡检期间执行会删除 es/lib 产物的全库构建。没有把更早批次的 550 场景结果当作本轮重跑结果。
 
-### 当前阻塞与准确的待处理项
+最终机器可读检查摘要：[checks.json](./evidence/demo-reorganization-2026-10-23/fixes/checks.json)。
 
-1. **先完成正在并行进行的 Menu 迁移**：目录、组件名、根导出、文档、组件复用清单、自动生成路由要指向同一新名称；只保留最终 API，不恢复旧别名。然后以单一开发实例重新生成并打开两端 Menu 页面。本轮未修改另一项迁移的组件设计。
-2. **稳定后补实际浏览器专项**：SwipeCell 暗色侧滑并点击操作、Drag 拖动位置、Signature 绘制／清空、PullRefresh 真实触摸下拉、Hover 指针进出、InfiniteScroll 滚动加载、Lazy 进入视区、Upload 本地队列取消／重试。已有单元回归不能替代这些尚未完成的实页操作。
-3. **外部集成需业务环境**：真实地图 SDK、真实上传服务器及权限策略没有配置，不应在组件演示中硬编码凭据或上传个人文件。本轮实现的是明确降级和本地可控示例，不是第三方服务联调。
-4. **最后再跑一次统一门禁**：SFC／路径、共享案例、布局契约、lint、两端类型检查和受影响测试。当前 organizer 仍发现 Button、Divider、Icon 的并行新增文档有 6 处顺序差异，未在迁移过程中反复覆盖另一项工作的文件。
+### 遇到的问题与处理
+
+- Menu 改名中途目录、导出、生成路由与运行中 resolver 不同步，出现缺失 import。已在迁移完成后重新生成路由、完整重启载入新 resolver，并在两端新页面完成验收。
+- Cedar 配置在 Menu 入口尚未落盘时热重启，直接因 Missing component entry 退出；不是组件卡片空白就算通过。入口恢复后以单实例重启，保留退出日志及重新验收结果。
+- 并行构建曾删除 shared/use/CLI client 的 lib，引起预转换失败和整页 reload；重复文档实例也曾漂移到 8081。已增加源码解析、串行重启和固定端口，收敛为 Cedar 9991、Maple 8080，未启用 9992，也未关闭安全软件。
+- 测试中出现过模块读取超时、依赖 rattail 链接更新期间无法解析、lint 正在读取的示例被并行改名。依赖恢复后均重新运行；没有把 0 tests、超时或文件缺失当成通过。
+- 晚间 Image / Upload 初始化顺序错误分为冷启动和局部 HMR 两种；最初只隔离 SFC 漏掉了 TS 函数自动导入，Cedar 实页依旧失败。编译探针确认服务 TS 被注入公共入口后，两端组件及函数自动导入均排除内部实现，且这两个组件实现更新时整页刷新。代价是编辑这些实现文件会重置当前 demo 状态。持续并行生成图标和共享命名空间会额外触发整站更新，报告不保证未来修改仍保持本次结果。
+- 巡检脚本现在允许指定当前端口和新版清单，并区分 combobox 的原生只读输入与整个组件的 readonly；历史失败记录保留，覆盖表优先采用实际完成的补验。
+
+### 后续验证边界（不是已确认待修组件缺陷）
+
+1. **真实业务集成**：地图 SDK、真实上传服务器、鉴权与权限策略需要业务环境；当前明确降级和本地模拟演示已通过，不写凭据、不上传个人文件。
+2. **设备／浏览器矩阵**：真实 iOS/Android 触摸、Safari 等浏览器及密码管理器需单独验收。此次真实浏览器输入与 touch-emulator 已通过，但不能代替这些环境。
+3. **非穷举覆盖**：本轮按页面亮暗、首例源码和代表性操作验收，不逐一人工穷举所有案例、全部属性排列、另一品牌色每种组合或逐像素对比度。
+4. **后续并行改动**：本文是本轮收口时的结果；继续修改组件或文档后应重跑门禁和相应实页，避免边清理构建目录边据旧截图宣称验收完成。
 
 ![Cedar Scheduler 暗色：真实新建编辑器](./evidence/demo-reorganization-2026-10-23/fixes/cedar-scheduler-dark.png)
 ![Maple Pagination 暗色：布局修复后](./evidence/demo-reorganization-2026-10-23/fixes/maple-pagination-dark.png)

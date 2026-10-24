@@ -32,7 +32,7 @@ for (const repo of [
         name === "carousel"
           ? h(
               entry.default,
-              { defaultCurrent: 0, autoPlay: false, slidesPerView: 2 },
+              { defaultValue: 0, autoPlay: false, slidesPerView: 2 },
               {
                 default: () => [
                   h(

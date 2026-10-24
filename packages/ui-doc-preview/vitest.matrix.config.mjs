@@ -20,7 +20,7 @@ export default {
       },
       ...["cedar", "maple"].flatMap((platform) => {
         const library =
-          platform === "cedar" ? "@cedarjs/ui" : "@maplejs/maple-ui";
+          platform === "cedar" ? "@cedar-design/ui" : "@maple-design/ui";
         const directory = new URL(
           platform === "cedar"
             ? "../../../cedar-design-web/packages/cedar-ui/src/"

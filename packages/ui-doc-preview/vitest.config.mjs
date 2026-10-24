@@ -24,7 +24,7 @@ export default {
   css: { preprocessorOptions: { less: { javascriptEnabled: true } } },
   resolve: {
     alias: {
-      "@ui-foundation/ui-doc-preview": new URL(
+      "@sparknest/ui-doc-preview": new URL(
         "./src/index.ts",
         import.meta.url,
       ).pathname,

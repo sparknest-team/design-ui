@@ -7,6 +7,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import less from 'less'
 import { build } from 'vite'
 import { collectModuleEntries } from './module-entries.mjs'
+import { libraryDefines } from './environment.mjs'
 
 export function defineConfig(config) {
   return config
@@ -288,6 +289,7 @@ async function buildModules(config, format, outDir, extension) {
   await build({
     root,
     configFile: false,
+    define: libraryDefines(format),
     logLevel: 'warn',
     plugins: vitePlugins(config),
     build: {
@@ -316,6 +318,7 @@ async function buildBundle(config, format, outDir, fileName) {
   await build({
     root,
     configFile: false,
+    define: libraryDefines(format),
     logLevel: 'warn',
     plugins: vitePlugins(config),
     build: {
@@ -357,6 +360,12 @@ async function assertOutputs(config) {
 }
 
 export async function buildLibrary(userConfig) {
+  // A custom NODE_ENV makes Vite compile development-only Vue branches into a
+  // release. Reject it before cleaning any existing output, rather than silently
+  // mutating the environment of another build in the same process.
+  if (process.env.NODE_ENV && process.env.NODE_ENV !== 'production') {
+    throw new Error('buildLibrary requires NODE_ENV=production (or unset); custom compile/test modes are not release builds')
+  }
   const config = {
     sourceDir: 'src',
     entry: 'src/index.ts',

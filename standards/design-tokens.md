@@ -824,22 +824,11 @@ internal              组件实现细节，不构成外部 API
 
 两端当前数值相同不等于语义合格：组件中的颜色字面量和直接引用 foundation 色阶，仍须判断其职责并优先映射到 system Token。主题覆盖同样适用这条规则；若现有 system 角色无法准确表达，不应为通过检查而强行套用相近角色，应先完善语义或明确登记组件特例。
 
-Badge 第三阶段治理：描述使用 `content-primary`；填充背景引用 `status-*`／`action-primary`，轮廓文字及同色描边引用 `content-info/success/warning/danger/brand`。两类角色职责分开；当前品牌与语义状态前景、实心背景均使用第 7 阶，后续仍可按职责独立调整。中性轮廓 default 使用 `content-primary`，secondary 与 tertiary 都使用可读的 `content-secondary`；其填充背景仍保留各自灰阶。外圈使用 `surface-default`，作为与宿主表面相接的隔离环。所有轮廓状态及 `color` 属性定制都通过 `variant-outline-bg-color` 控制背景，默认透明；状态选择器不再用字面量覆盖它。
+Badge 第三阶段治理：描述使用 `content-primary`；填充背景引用 `status-*`／`action-primary`，轮廓文字及同色描边引用 `content-info/success/warning/danger/brand`。两类角色职责分开；当前品牌与语义状态角色遵循 Button 的语义映射，默认通知红底保留独立色阶。中性轮廓 default 使用 `content-primary`，secondary 与 tertiary 都使用可读的 `content-secondary`；其填充背景仍保留各自灰阶。外圈使用 `surface-default`，作为与宿主表面相接的隔离环。所有轮廓状态及 `color` 属性定制都通过 `variant-outline-bg-color` 控制背景，默认透明；状态选择器不再用字面量覆盖它。
 
-填充文字按底色选 `content-on-bright`（黑色）或 `content-on-dark`（浅色）：亮色状态和浅灰底用深字；浅色主题深灰 tertiary 用浅字，暗色主题亮灰 tertiary 用深字。**两端的 Maple 浅色品牌**都为深橙 primary 单独选择浅字。默认危险红接入 system status-danger；中性背景 `#e0e0e0` 保留组件视觉值。
+填充文字以 Button 为准：primary、info、success、warning、danger、secondary 使用 `content-on-dark`，tertiary 在亮色使用浅字、暗色使用深字；固定浅灰 default 使用深字。默认通知徽标维持红底白字，浅色 danger-7、暗色 danger-4；中性背景 `#e0e0e0` 保留组件视觉值。
 
-验证从编译后的 Less/CSS 读取变量、选择器优先级及主题覆盖，透明前景按实际宿主表面合成。覆盖 Cedar／Maple、default／maple 品牌、light／dark 模式、8 种状态、填充／轮廓变体及 `color-bg-1…5` 共 640 个配色组合；普通文字按 [WCAG 2.2 AA 的 4.5:1 门槛](https://www.w3.org/TR/wcag/#contrast-minimum) 判定，使用未四舍五入的值。各状态最低对比度如下；这也修正了早期用近黑示例代替实际黑色 Token 计算的文档值。
-
-| status | 填充最低对比度 | 轮廓最低对比度 |
-| --- | --- | --- |
-| default | 15.91:1 | 9.96:1 |
-| info | 6.58:1 | 7.61:1 |
-| success | 7.56:1 | 5.10:1 |
-| warning | 8.19:1 | 6.05:1 |
-| danger | 5.67:1 | 6.71:1 |
-| primary | 5.18:1 | 4.97:1 |
-| secondary | 6.48:1 | 6.74:1 |
-| tertiary | 4.56:1 | 6.74:1 |
+当前检查从编译后的 Less/CSS 验证两端两品牌明暗主题的文字与 Button 配色一致性、outline 同色描边和背景覆盖能力。720 对表面对比度中有 308 对低于 4.5:1，最低 1.868:1；这反映手动确定的 Button 配色，不声明全部符合普通文字对比度门槛。以本段当前结果替代早期 Badge 配色的对比度表。
 
 自定义背景、`color`／`text-color` 属性或色板变更后须重新验证，以上结果不涵盖任意业务背景。主题若只改 `action-primary`，不会自动改变独立的 `content-brand`；主题作者应同时评估这两个用途。共享契约读取组件的 `:root` 默认值，主题选择器中的覆盖值单独检验。Badge 颜色与非颜色默认值已经分别登记；组件特有比例和形状保留在组件层。
 
@@ -1057,7 +1046,7 @@ Button 提供 58 项公共变量，两端 suffix 和默认值一致，以 theme-
 | `sys-color-surface-tooltip` | `#373739` | 明暗主题都保持深色的紧凑提示表面，搭配 `content-on-dark`；不是随模式反转的 inverse surface。主题改变它时须成对验证文字。 |
 | `sys-color-scrim` | `rgba(0, 0, 0, 0.6)` | 压暗被遮挡内容的半透明黑色遮罩；不承担正文背景，不通过父节点 opacity 实现。 |
 
-`surface-overlay` 仍是 Popover 等弹出内容的实体表面，映射 `color-bg-5`，不能用于替代 scrim。Tooltip 中性提示采用固定深灰，使两端提示外观一致；彩色 status 背景继续使用 `action-primary/status-*`，不是浅色文字专用背景。默认彩色文字使用 `content-on-bright`；两端 Maple 浅色品牌的深橙 primary 使用 `content-on-dark`。
+`surface-overlay` 仍是 Popover 等弹出内容的实体表面，映射 `color-bg-5`，不能用于替代 scrim。Tooltip 中性提示采用固定深灰，使两端提示外观一致；彩色 status 背景继续使用 `action-primary/status-*`，不是浅色文字专用背景。彩色实心状态文字以手动确定的 Button 为准，primary / info / success / warning / danger 统一使用 `content-on-dark`，两品牌明暗模式不再维护单独文字覆盖。
 
 Maple 暗色主题删除 Tooltip 颜色／opacity、Popover 背景和 Overlay 背景的旧覆盖，避免绕过 system。Tooltip 默认 opacity 在两端所有内置主题均为 1；降低它会同时淡化内容和箭头，须重新检查对比度与连接处。
 
@@ -1407,7 +1396,9 @@ BackTop 的 duration（200ms）与 easing（quartOut）是 JS requestAnimationFr
 
 ## Badge 与 Tag：语义色、预设色及覆盖边界
 
-Badge 的默认 status 是 danger；无状态匹配时的 bg-color 兜底也引用 system status-danger，不再固定为 #ef4444。status-default-bg-color 的 #e0e0e0 是有意保留的固定中性底，搭配 content-on-bright（黑色）；secondary / tertiary 保留 gray-6 / gray-7。tertiary 在暗色使用深字，Maple 浅色品牌的 primary 使用浅字。隔离环 border-color 跟随 surface-default；放到其他宿主背景上时可局部覆盖。Maple 暗色主题仅保留必要的 tertiary 文字差异，不重复声明全套默认值。
+Badge 的配色以手动调整后的 Button 为准：outline 保持透明背景，彩色文字与描边使用对应 content-brand / content-info / content-success / content-warning / content-danger，default 与 secondary / tertiary 使用 content-primary / content-secondary。实心 primary / info / success / warning / danger / secondary 使用 content-on-dark；tertiary 明暗规则与 Button 一致。这些配色不承诺全部达到 4.5:1；主题检查验证与 Button 的配色一致性，并报告实际对比度。显式自定义颜色仍由调用方控制。
+
+Badge 的默认 status 是 danger，默认通知样式统一为红底白字；bg-color 兜底与 status-danger-bg-color 使用 danger 色板的浅色第 7 阶、暗色第 4 阶，文字使用 content-on-dark（白色），保证默认通知徽标的文字对比度。status-default-bg-color 的 #e0e0e0 保留固定中性底，搭配 content-on-bright（黑色）；secondary / tertiary 保留 gray-6 / gray-7。tertiary 在暗色使用深字，primary 在两品牌明暗模式均使用浅字。隔离环 border-color 跟随 surface-default；放到其他宿主背景上时可局部覆盖。Maple 暗色主题只覆盖默认通知红色与 tertiary 文字等必要差异。
 
 Tag 的 color 预设色表示色板选择，不是业务 status。13 种预设色在两端遵循同一规则：
 
@@ -1421,7 +1412,7 @@ Tag 的 color 预设色表示色板选择，不是业务 status。13 种预设�
 
 背景变量可在实例根元素覆盖，在暗色同样生效；根级自定义声明需注意与主题 :root 属性选择器的优先级。color（预设／自定义）优先于 status。自定义 default 的背景与边框由 color 属性内联设置，text-color 可覆盖前景；自定义 outline 的 color 控制描边和默认文字，背景透明。自定义色当前不随 checked 自动回到中性，这与预设色不同，不应假定两条路径完全一致。业务负责自定义颜色、透明混合后的文字可读性。
 
-本阶段新增 98 项既有颜色默认值约束，总计 566 项组件默认值；登记不等于每个声明都有消费点。预设 icon-bg-hover 等无消费声明已在下一阶段移除，详见后文；上一阶段的 566 为当时统计。Badge 新增持久化 check:badge-themes：288 个级联状态、720 对配色和 288 项背景覆盖检查，最低 4.563:1。Tag 新增 1664 个预设级联状态与 416 项背景覆盖检查；原有 1024 个语义状态及 640 对对比度检查继续保留。预设色现已追加 2080 对对比度检查，最低 4.529:1：覆盖两端、两品牌、明暗、default / outline、hover 及五类 system 表面；彩色前景使用第 9 阶，灰色使用 content-secondary，gold 的浅色 hover 背景从第 3 阶调整为第 2 阶。自定义色及 loading 透明度不在对比度保证范围；这些是静态编译与级联检查，不是浏览器视觉验收。
+本阶段新增 98 项既有颜色默认值约束，总计 566 项组件默认值；登记不等于每个声明都有消费点。预设 icon-bg-hover 等无消费声明已在下一阶段移除，详见后文；上一阶段的 566 为当时统计。Badge 新增持久化 check:badge-themes：288 个级联状态、720 对配色和 288 项背景覆盖检查，当前以 Button 配色一致性及对比度报告为准（见 Badge 章节）。Tag 新增 1664 个预设级联状态与 416 项背景覆盖检查；原有 1024 个语义状态及 640 对对比度检查继续保留。预设色现已追加 2080 对对比度检查，最低 4.529:1：覆盖两端、两品牌、明暗、default / outline、hover 及五类 system 表面；彩色前景使用第 9 阶，灰色使用 content-secondary，gold 的浅色 hover 背景从第 3 阶调整为第 2 阶。自定义色及 loading 透明度不在对比度保证范围；这些是静态编译与级联检查，不是浏览器视觉验收。
 
 ## Token 必须有消费路径
 

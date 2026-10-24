@@ -84,7 +84,7 @@ function sourceApi(directory, component, filename) {
 }
 const scenarios = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/audits/same-source-demos.json'), 'utf8'))
 const mapleRequire = createRequire(path.join(root, 'maple-design-mobile/packages/maple-cli/package.json'))
-const { markdown } = await import(mapleRequire.resolve('@maplejs/maple-vite-plugins'))
+const { markdown } = await import(mapleRequire.resolve('@maple-design/vite-plugins'))
 let count = 0
 for (const [component, cases] of Object.entries(scenarios)) {
   const cedar = path.join(root, 'cedar-design-web/packages/cedar-ui/src', component)

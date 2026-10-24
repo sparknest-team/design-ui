@@ -1,0 +1,1294 @@
+{
+  "checkedAt": "2026-10-23T15:25:17.736Z",
+  "policy": "Native Vue/Vite HMR; no full-reload hook, no import.meta.hot.accept workaround",
+  "stateSentinel": "HMR-KEEP-* is stored in the parent demo inspector; template/script edits must update component DOM without resetting it",
+  "rawAttempts": [
+    {
+      "library": "maple",
+      "component": "upload",
+      "kind": "template",
+      "marker": 0,
+      "pageStateRetained": false,
+      "checkedAt": "2026-10-23T15:05:10.672Z"
+    },
+    {
+      "library": "cedar",
+      "component": "upload",
+      "kind": "template",
+      "marker": 0,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:05:10.804Z"
+    },
+    {
+      "library": "maple",
+      "component": "upload",
+      "kind": "script-only",
+      "marker": 27,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:06:28.735Z"
+    },
+    {
+      "library": "cedar",
+      "component": "upload",
+      "kind": "script-only",
+      "marker": 12,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:06:29.044Z"
+    },
+    {
+      "library": "maple",
+      "component": "upload",
+      "kind": "template-only-final",
+      "marker": 27,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:06:42.574Z"
+    },
+    {
+      "library": "cedar",
+      "component": "upload",
+      "kind": "template-only-final",
+      "marker": 12,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:06:42.674Z"
+    },
+    {
+      "library": "maple",
+      "component": "image",
+      "kind": "script-only",
+      "marker": 33,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:08:13.436Z"
+    },
+    {
+      "library": "cedar",
+      "component": "image",
+      "kind": "script-only",
+      "marker": 33,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:08:13.639Z"
+    },
+    {
+      "library": "maple",
+      "component": "image",
+      "kind": "template-only",
+      "marker": 33,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:08:35.444Z"
+    },
+    {
+      "library": "cedar",
+      "component": "image",
+      "kind": "template-only",
+      "marker": 33,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:08:35.543Z"
+    },
+    {
+      "library": "maple",
+      "component": "image-preview+image-preview-group",
+      "kind": "script-only-while-open",
+      "preview": 1,
+      "group": 1,
+      "pageStateRetained": true,
+      "errors": [],
+      "checkedAt": "2026-10-23T15:10:00.773Z"
+    },
+    {
+      "library": "cedar",
+      "component": "image-preview+image-preview-group",
+      "kind": "script-only-while-open",
+      "preview": 1,
+      "group": 1,
+      "pageStateRetained": true,
+      "errors": [],
+      "checkedAt": "2026-10-23T15:10:00.974Z"
+    },
+    {
+      "library": "maple",
+      "component": "image-preview+image-preview-group",
+      "kind": "template-only-while-open",
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:10:16.836Z"
+    },
+    {
+      "library": "cedar",
+      "component": "image-preview+image-preview-group",
+      "kind": "template-only-while-open",
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:10:16.954Z"
+    }
+  ],
+  "verifiedChecks": [
+    {
+      "library": "maple",
+      "component": "upload",
+      "kind": "script-only",
+      "marker": 27,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:06:28.735Z"
+    },
+    {
+      "library": "cedar",
+      "component": "upload",
+      "kind": "script-only",
+      "marker": 12,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:06:29.044Z"
+    },
+    {
+      "library": "maple",
+      "component": "upload",
+      "kind": "template-only-final",
+      "marker": 27,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:06:42.574Z"
+    },
+    {
+      "library": "cedar",
+      "component": "upload",
+      "kind": "template-only-final",
+      "marker": 12,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:06:42.674Z"
+    },
+    {
+      "library": "maple",
+      "component": "image",
+      "kind": "script-only",
+      "marker": 33,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:08:13.436Z"
+    },
+    {
+      "library": "cedar",
+      "component": "image",
+      "kind": "script-only",
+      "marker": 33,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:08:13.639Z"
+    },
+    {
+      "library": "maple",
+      "component": "image",
+      "kind": "template-only",
+      "marker": 33,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:08:35.444Z"
+    },
+    {
+      "library": "cedar",
+      "component": "image",
+      "kind": "template-only",
+      "marker": 33,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:08:35.543Z"
+    },
+    {
+      "library": "maple",
+      "component": "image-preview+image-preview-group",
+      "kind": "script-only-while-open",
+      "preview": 1,
+      "group": 1,
+      "pageStateRetained": true,
+      "errors": [],
+      "checkedAt": "2026-10-23T15:10:00.773Z"
+    },
+    {
+      "library": "cedar",
+      "component": "image-preview+image-preview-group",
+      "kind": "script-only-while-open",
+      "preview": 1,
+      "group": 1,
+      "pageStateRetained": true,
+      "errors": [],
+      "checkedAt": "2026-10-23T15:10:00.974Z"
+    },
+    {
+      "library": "maple",
+      "component": "image-preview+image-preview-group",
+      "kind": "template-only-while-open",
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:10:16.836Z"
+    },
+    {
+      "library": "cedar",
+      "component": "image-preview+image-preview-group",
+      "kind": "template-only-while-open",
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:10:16.954Z"
+    }
+  ],
+  "componentChangeCombinations": 16,
+  "discardedAttempts": "First two early reads are preserved. Maple was interrupted by concurrent shared/utils edits; Cedar was read before compilation completed. Only later marker-observed, state-retained checks count.",
+  "finalStates": [
+    {
+      "library": "maple",
+      "restoredSource": true,
+      "pageStateRetained": false,
+      "remainingProbeElements": 0,
+      "errors": [],
+      "hmrLogs": [
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:01:50.372Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:01:50.380Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:02:04.216Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:02:04.224Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:02:12.800Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:02:12.805Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:02:23.853Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:02:23.875Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:02:52.516Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:02:52.530Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:03:10.132Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:03:10.140Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:03:40.418Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:03:40.426Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:03:51.950Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:03:51.964Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/upload/Upload.vue",
+          "timestamp": "2026-10-23T15:04:14.542Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/upload/Upload.vue",
+          "timestamp": "2026-10-23T15:04:14.547Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:05:03.329Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:05:03.335Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:05:25.125Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:05:25.139Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:05:34.735Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:05:34.748Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:05:43.407Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:05:43.412Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:05:57.772Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:05:57.777Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/upload/Upload.vue",
+          "timestamp": "2026-10-23T15:06:19.762Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/upload/Upload.vue",
+          "timestamp": "2026-10-23T15:06:19.804Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/upload/Upload.vue",
+          "timestamp": "2026-10-23T15:06:36.194Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/upload/Upload.vue",
+          "timestamp": "2026-10-23T15:06:36.201Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/upload/Upload.vue",
+          "timestamp": "2026-10-23T15:06:52.518Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/upload/Upload.vue",
+          "timestamp": "2026-10-23T15:06:52.585Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/basic.vue",
+          "timestamp": "2026-10-23T15:07:37.879Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/caption.vue",
+          "timestamp": "2026-10-23T15:07:37.879Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/extra.vue",
+          "timestamp": "2026-10-23T15:07:37.879Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/error.vue",
+          "timestamp": "2026-10-23T15:07:37.879Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/hide-footer-never.vue",
+          "timestamp": "2026-10-23T15:07:37.879Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/lazy.vue",
+          "timestamp": "2026-10-23T15:07:37.879Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/ripple.vue",
+          "timestamp": "2026-10-23T15:07:37.880Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/overlay-closable.vue",
+          "timestamp": "2026-10-23T15:07:37.880Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/presentation.vue",
+          "timestamp": "2026-10-23T15:07:37.880Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/controller-lifecycle.vue",
+          "timestamp": "2026-10-23T15:07:37.880Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/disable-preview.vue",
+          "timestamp": "2026-10-23T15:07:37.880Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/preview-popup-container.vue",
+          "timestamp": "2026-10-23T15:07:37.880Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/preview-group.vue",
+          "timestamp": "2026-10-23T15:07:37.880Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/fit-mode.vue",
+          "timestamp": "2026-10-23T15:07:37.881Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/component-preview.vue",
+          "timestamp": "2026-10-23T15:07:37.881Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/track-lifecycle.vue",
+          "timestamp": "2026-10-23T15:07:37.881Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/preview-entry.vue",
+          "timestamp": "2026-10-23T15:07:37.881Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-3.vue",
+          "timestamp": "2026-10-23T15:07:37.881Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-main.vue",
+          "timestamp": "2026-10-23T15:07:37.881Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-1.vue",
+          "timestamp": "2026-10-23T15:07:37.882Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-2.vue",
+          "timestamp": "2026-10-23T15:07:37.882Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-5.vue",
+          "timestamp": "2026-10-23T15:07:37.882Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-preview-1.vue",
+          "timestamp": "2026-10-23T15:07:37.882Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-service.vue",
+          "timestamp": "2026-10-23T15:07:37.883Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/preview-features.vue",
+          "timestamp": "2026-10-23T15:07:37.883Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/component-preview-group.vue",
+          "timestamp": "2026-10-23T15:07:37.883Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/loader.vue",
+          "timestamp": "2026-10-23T15:07:37.883Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/imperative-preview.vue",
+          "timestamp": "2026-10-23T15:07:37.883Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-4.vue",
+          "timestamp": "2026-10-23T15:07:37.884Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-preview-group-1.vue",
+          "timestamp": "2026-10-23T15:07:37.884Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/basic.vue",
+          "timestamp": "2026-10-23T15:07:38.018Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/caption.vue",
+          "timestamp": "2026-10-23T15:07:38.019Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/extra.vue",
+          "timestamp": "2026-10-23T15:07:38.019Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/error.vue",
+          "timestamp": "2026-10-23T15:07:38.019Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/hide-footer-never.vue",
+          "timestamp": "2026-10-23T15:07:38.019Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/lazy.vue",
+          "timestamp": "2026-10-23T15:07:38.019Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/ripple.vue",
+          "timestamp": "2026-10-23T15:07:38.019Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/overlay-closable.vue",
+          "timestamp": "2026-10-23T15:07:38.019Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/presentation.vue",
+          "timestamp": "2026-10-23T15:07:38.019Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/controller-lifecycle.vue",
+          "timestamp": "2026-10-23T15:07:38.019Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/disable-preview.vue",
+          "timestamp": "2026-10-23T15:07:38.019Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/preview-popup-container.vue",
+          "timestamp": "2026-10-23T15:07:38.020Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/preview-group.vue",
+          "timestamp": "2026-10-23T15:07:38.020Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/fit-mode.vue",
+          "timestamp": "2026-10-23T15:07:38.020Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/component-preview.vue",
+          "timestamp": "2026-10-23T15:07:38.020Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/track-lifecycle.vue",
+          "timestamp": "2026-10-23T15:07:38.020Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/preview-entry.vue",
+          "timestamp": "2026-10-23T15:07:38.020Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-3.vue",
+          "timestamp": "2026-10-23T15:07:38.021Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-main.vue",
+          "timestamp": "2026-10-23T15:07:38.021Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-1.vue",
+          "timestamp": "2026-10-23T15:07:38.021Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-2.vue",
+          "timestamp": "2026-10-23T15:07:38.021Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-5.vue",
+          "timestamp": "2026-10-23T15:07:38.021Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-preview-1.vue",
+          "timestamp": "2026-10-23T15:07:38.021Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-service.vue",
+          "timestamp": "2026-10-23T15:07:38.021Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/preview-features.vue",
+          "timestamp": "2026-10-23T15:07:38.021Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/component-preview-group.vue",
+          "timestamp": "2026-10-23T15:07:38.022Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/loader.vue",
+          "timestamp": "2026-10-23T15:07:38.022Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/imperative-preview.vue",
+          "timestamp": "2026-10-23T15:07:38.022Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-4.vue",
+          "timestamp": "2026-10-23T15:07:38.022Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/example/demos/api-review-mp-image-preview-group-1.vue",
+          "timestamp": "2026-10-23T15:07:38.022Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/Image.vue",
+          "timestamp": "2026-10-23T15:08:05.988Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/Image.vue",
+          "timestamp": "2026-10-23T15:08:06.176Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/Image.vue",
+          "timestamp": "2026-10-23T15:08:18.923Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/Image.vue",
+          "timestamp": "2026-10-23T15:08:18.930Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/Image.vue",
+          "timestamp": "2026-10-23T15:08:48.664Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/Image.vue",
+          "timestamp": "2026-10-23T15:08:48.758Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreview.vue",
+          "timestamp": "2026-10-23T15:09:23.316Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreview.vue",
+          "timestamp": "2026-10-23T15:09:23.347Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreviewGroup.vue",
+          "timestamp": "2026-10-23T15:09:23.464Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreviewGroup.vue",
+          "timestamp": "2026-10-23T15:09:23.474Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreview.vue",
+          "timestamp": "2026-10-23T15:09:52.452Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreview.vue",
+          "timestamp": "2026-10-23T15:09:52.533Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreviewGroup.vue",
+          "timestamp": "2026-10-23T15:09:52.640Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreviewGroup.vue",
+          "timestamp": "2026-10-23T15:09:52.663Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreview.vue",
+          "timestamp": "2026-10-23T15:10:10.846Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreview.vue",
+          "timestamp": "2026-10-23T15:10:10.852Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreviewGroup.vue",
+          "timestamp": "2026-10-23T15:10:10.941Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreviewGroup.vue",
+          "timestamp": "2026-10-23T15:10:10.946Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreview.vue",
+          "timestamp": "2026-10-23T15:10:31.472Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreview.vue",
+          "timestamp": "2026-10-23T15:10:31.537Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreviewGroup.vue",
+          "timestamp": "2026-10-23T15:10:31.745Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/image/ImagePreviewGroup.vue",
+          "timestamp": "2026-10-23T15:10:31.811Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/_components/selection-scrollbar/Scrollbar.vue",
+          "timestamp": "2026-10-23T15:19:08.333Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/_components/selection-scrollbar/Scrollbar.vue",
+          "timestamp": "2026-10-23T15:19:08.353Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:08.357Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:08.373Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:08.381Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/_components/selection-field/MenuPresentation.vue",
+          "timestamp": "2026-10-23T15:19:08.495Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/tooltip/Tooltip.vue",
+          "timestamp": "2026-10-23T15:19:08.495Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:08.495Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/_components/selection-field/SelectionTagLabel.vue",
+          "timestamp": "2026-10-23T15:19:08.495Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/_components/selection-scrollbar/Scrollbar.vue",
+          "timestamp": "2026-10-23T15:19:08.495Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:08.495Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:08.500Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:08.500Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:08.500Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/_components/selection-scrollbar/Scrollbar.vue",
+          "timestamp": "2026-10-23T15:19:08.500Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:08.500Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:08.500Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/_components/selection-field/MenuPresentation.vue",
+          "timestamp": "2026-10-23T15:19:08.500Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/tooltip/Tooltip.vue",
+          "timestamp": "2026-10-23T15:19:08.500Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/_components/selection-field/SelectionTagLabel.vue",
+          "timestamp": "2026-10-23T15:19:08.556Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:09.761Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:09.772Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/_components/selection-scrollbar/Scrollbar.vue",
+          "timestamp": "2026-10-23T15:19:09.933Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:09.933Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/_components/selection-scrollbar/Scrollbar.vue",
+          "timestamp": "2026-10-23T15:19:09.982Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/trigger/trigger.tsx",
+          "timestamp": "2026-10-23T15:19:09.984Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:19:19.224Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:19:19.235Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:19:30.172Z",
+          "url": "http://localhost:8080/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:19:30.178Z",
+          "url": "http://localhost:8080/@vite/client"
+        }
+      ]
+    },
+    {
+      "library": "cedar",
+      "restoredSource": true,
+      "pageStateRetained": true,
+      "remainingProbeElements": 0,
+      "errors": [],
+      "hmrLogs": [
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:03:56.069Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:03:57.253Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/upload/upload.vue",
+          "timestamp": "2026-10-23T15:05:17.748Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/upload/upload.vue",
+          "timestamp": "2026-10-23T15:05:44.998Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/upload/upload.vue",
+          "timestamp": "2026-10-23T15:06:20.135Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/upload/upload.vue",
+          "timestamp": "2026-10-23T15:06:37.335Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/upload/upload.vue",
+          "timestamp": "2026-10-23T15:06:52.783Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:07:21.912Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:07:21.925Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/Image.vue",
+          "timestamp": "2026-10-23T15:08:06.689Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/Image.vue",
+          "timestamp": "2026-10-23T15:08:19.231Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/Image.vue",
+          "timestamp": "2026-10-23T15:08:48.899Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/Preview.vue",
+          "timestamp": "2026-10-23T15:09:23.422Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/PreviewGroup.vue",
+          "timestamp": "2026-10-23T15:09:23.660Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/Preview.vue",
+          "timestamp": "2026-10-23T15:09:52.705Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/PreviewGroup.vue",
+          "timestamp": "2026-10-23T15:09:52.839Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/Preview.vue",
+          "timestamp": "2026-10-23T15:10:10.972Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/PreviewGroup.vue",
+          "timestamp": "2026-10-23T15:10:11.005Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/Preview.vue",
+          "timestamp": "2026-10-23T15:10:31.675Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] hot updated: /@fs/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/PreviewGroup.vue",
+          "timestamp": "2026-10-23T15:10:31.735Z",
+          "url": "http://localhost:9991/@vite/client"
+        }
+      ]
+    }
+  ],
+  "finalShortWindow": [
+    {
+      "library": "maple",
+      "kind": "final-template-recheck-after-external-theme-edit",
+      "marker": 33,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:21:36.864Z"
+    },
+    {
+      "library": "cedar",
+      "kind": "final-template-recheck-after-external-theme-edit",
+      "marker": 33,
+      "pageStateRetained": true,
+      "checkedAt": "2026-10-23T15:21:36.963Z"
+    }
+  ],
+  "finalRestore": [
+    {
+      "library": "maple",
+      "pageStateRetained": true,
+      "remainingProbes": 0,
+      "errors": [],
+      "checkedAt": "2026-10-23T15:21:51.561Z"
+    },
+    {
+      "library": "cedar",
+      "pageStateRetained": true,
+      "remainingProbes": 0,
+      "errors": [],
+      "checkedAt": "2026-10-23T15:21:52.068Z"
+    }
+  ],
+  "finalStatesExplanation": "The earlier finalStates Maple sentinel was reset by an unrelated theme/dark/badge.ts edit at 23:19:18, after the verified component HMR window. The finalShortWindow/finalRestore are a new state-preserving recheck after that external edit.",
+  "sourceHashesAfterProbeRemoval": {
+    "maple-design-mobile/image/index.ts": "00e5ec789f40a90577a50c64b7791150af84007d02d553aa72684dcd8bc233cf",
+    "maple-design-mobile/image/preview.ts": "77c2060939ba221f8fac10d295644af3a7b83305c49d6529c32bd3772075b962",
+    "maple-design-mobile/image/Image.vue": "331fe3c4eda90987a8f3f553962a7544aeab15b0cab6e9d66d992410b8785bcf",
+    "maple-design-mobile/image/ImagePreview.vue": "182bd6940474e83e3211e0ebaf3d9fd6bdc03c5409a67ca0734824a518136eab",
+    "maple-design-mobile/image/ImagePreviewGroup.vue": "b4f3d4eb58b1c45b4e3b857a51052c53821d80e496a6f0b002dfb18811de5c4b",
+    "maple-design-mobile/upload/Upload.vue": "940ea0fd938bfc28fbf080679a05d6eb1debf62e5bb2ab642c7a6f2aff51ac09",
+    "cedar-design-web/image/index.ts": "9c11f6627686a3ecca78b00d6f0fd92de12b1314a7dada4301c3be3a8f956a55",
+    "cedar-design-web/image/preview-api.ts": "0612c6a63c519f75d142c0818629499f3a284ab7c4f9f6fe617f82ba7edf9aa9",
+    "cedar-design-web/image/Image.vue": "3c6949f0804f9e50adabf5ff14e4b8ad33bc142ee9a8edf64366d711c88e010c",
+    "cedar-design-web/image/Preview.vue": "8c024483429155b6bad1e1605465ece2aec1309f666c39a278f274597ed8f2a9",
+    "cedar-design-web/image/PreviewGroup.vue": "897b0a4342ce9006c95e219dabb79f24fc6c6a92cedd4b753e5d7708072f2bf3",
+    "cedar-design-web/upload/upload.vue": "c816e82ccb0db81aef388bc98d2d895a6c5707a69ea15d2b3ee5d5f5c29e74d2"
+  },
+  "automatedChecks": {
+    "mapleImageUpload": 217,
+    "cedarImageUpload": 127,
+    "mapleResolverAndEntry": 11,
+    "cedarSiteImports": 3,
+    "foundationDependencyAndParityGuards": 7,
+    "total": 365
+  }
+}

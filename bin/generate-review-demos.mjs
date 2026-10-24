@@ -611,7 +611,7 @@ export function instrument(
     .relative(path.dirname(filename), panel)
     .split(path.sep)
     .join("/");
-  const imports = `\n${reviewPanelImport(filename)}\nimport { defineReviewConfig, ReviewSlot as DemoReviewSlot } from '@ui-foundation/ui-doc-preview'\nimport __apiReviewRawConfig from './${path.basename(configPath)}'\n`;
+  const imports = `\n${reviewPanelImport(filename)}\nimport { defineReviewConfig, ReviewSlot as DemoReviewSlot } from '@sparknest/ui-doc-preview'\nimport __apiReviewRawConfig from './${path.basename(configPath)}'\n`;
   const wrapped = `\n<DemoApiReviewPanel v-slot="__apiReview" v-bind="defineReviewConfig(__apiReviewRawConfig)">\n${transformed}\n</DemoApiReviewPanel>\n`;
   const replacements = [
     {
@@ -869,7 +869,7 @@ export async function generate() {
         }
         generated = {
           slotNames: [],
-          source: `<script setup>\n${reviewPanelImport(path.join(demoDirectory, "api-review.vue"))}\nimport { defineReviewConfig } from '@ui-foundation/ui-doc-preview'\nimport __apiReviewRawConfig from './api-review.config.json'\n</script>\n<template><DemoApiReviewPanel v-slot="__apiReview" v-bind="defineReviewConfig(__apiReviewRawConfig)">${preview}</DemoApiReviewPanel></template>\n`,
+          source: `<script setup>\n${reviewPanelImport(path.join(demoDirectory, "api-review.vue"))}\nimport { defineReviewConfig } from '@sparknest/ui-doc-preview'\nimport __apiReviewRawConfig from './api-review.config.json'\n</script>\n<template><DemoApiReviewPanel v-slot="__apiReview" v-bind="defineReviewConfig(__apiReviewRawConfig)">${preview}</DemoApiReviewPanel></template>\n`,
         };
         fixture = "directive-api.vue";
       }
@@ -881,7 +881,7 @@ export async function generate() {
         const service =
           component === "notification" ? "Notification" : "LoadingBar";
         const library =
-          platform === "cedar" ? "@cedarjs/ui" : "@maplejs/maple-ui";
+          platform === "cedar" ? "@cedar-design/ui" : "@maple-design/ui";
         const actions =
           service === "Notification"
             ? ["info", "success", "warning", "error"]
@@ -899,7 +899,7 @@ export async function generate() {
             : "(LoadingBar.setDefaultOptions(options), LoadingBar[action]())";
         generated = {
           slotNames: [],
-          source: `<script setup>\n${reviewPanelImport(path.join(demoDirectory, "api-review.vue"))}\nimport { onUnmounted } from 'vue'\nimport { ${service} } from '${library}'\nimport { defineReviewConfig } from '@ui-foundation/ui-doc-preview'\nimport __apiReviewRawConfig from './api-review.config.json'\nfunction run(action, bindings) {\n const options = Object.fromEntries(Object.entries(bindings).filter(([key]) => !key.startsWith('onVnode')).map(([key, value]) => [key.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()), value]))\n ${command}\n}\n${service === "LoadingBar" ? "onUnmounted(() => { LoadingBar.finish(); LoadingBar.resetDefaultOptions() })" : ""}\n</script>\n<template>\n<DemoApiReviewPanel v-slot="__apiReview" v-bind="defineReviewConfig(__apiReviewRawConfig)">\n<p>修改选项后重新触发 / Trigger again to apply options.</p>\n<div style="display:flex;flex-wrap:wrap;gap:12px">${buttons}</div>\n</DemoApiReviewPanel>\n</template>\n`,
+          source: `<script setup>\n${reviewPanelImport(path.join(demoDirectory, "api-review.vue"))}\nimport { onUnmounted } from 'vue'\nimport { ${service} } from '${library}'\nimport { defineReviewConfig } from '@sparknest/ui-doc-preview'\nimport __apiReviewRawConfig from './api-review.config.json'\nfunction run(action, bindings) {\n const options = Object.fromEntries(Object.entries(bindings).filter(([key]) => !key.startsWith('onVnode')).map(([key, value]) => [key.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()), value]))\n ${command}\n}\n${service === "LoadingBar" ? "onUnmounted(() => { LoadingBar.finish(); LoadingBar.resetDefaultOptions() })" : ""}\n</script>\n<template>\n<DemoApiReviewPanel v-slot="__apiReview" v-bind="defineReviewConfig(__apiReviewRawConfig)">\n<p>修改选项后重新触发 / Trigger again to apply options.</p>\n<div style="display:flex;flex-wrap:wrap;gap:12px">${buttons}</div>\n</DemoApiReviewPanel>\n</template>\n`,
         };
         fixture = "programmatic-api.vue";
       }

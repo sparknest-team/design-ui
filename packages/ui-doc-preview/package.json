@@ -1,6 +1,6 @@
 {
-  "name": "@ui-foundation/ui-doc-preview",
-  "version": "0.1.0",
+  "name": "@sparknest/ui-doc-preview",
+  "version": "1.0.0",
   "description": "Shared Vue documentation demo preview for Cedar and Maple",
   "license": "MIT",
   "type": "module",
@@ -12,5 +12,9 @@
   ],
   "peerDependencies": {
     "vue": ">=3.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

@@ -10,7 +10,7 @@ const { transformSync } = require('esbuild')
 const ts = require('typescript')
 const c = resolve(root, 'cedar-design-web/packages/cedar-ui/src')
 const m = resolve(root, 'maple-design-mobile/packages/maple-ui/src')
-const normalize = (s) => s.replaceAll('../_utils/global-config', '../utils/components').replaceAll('../_utils/constant', '../utils/constants').replaceAll('../_utils/input-composition', '../utils/input-composition').replaceAll('../_utils/text-input-value', '../utils/text-input-value').replaceAll('@cedarjs/ui', '@maplejs/maple-ui').replaceAll('@cedarjs/icons-vue', '@maplejs/icons-vue').replaceAll('./input.vue', './Input.vue').replaceAll('--c-', '--mp-').replaceAll('.c-', '.mp-').replaceAll('c-input-', 'mp-input-').replaceAll('<c-', '<mp-').replaceAll('</c-', '</mp-')
+const normalize = (s) => s.replaceAll('../_utils/global-config', '../utils/components').replaceAll('../_utils/constant', '../utils/constants').replaceAll('../_utils/input-composition', '../utils/input-composition').replaceAll('../_utils/text-input-value', '../utils/text-input-value').replaceAll('@cedar-design/ui', '@maple-design/ui').replaceAll('@cedar-design/icons-vue', '@maple-design/icons-vue').replaceAll('./input.vue', './Input.vue').replaceAll('--c-', '--mp-').replaceAll('.c-', '.mp-').replaceAll('c-input-', 'mp-input-').replaceAll('<c-', '<mp-').replaceAll('</c-', '</mp-')
 const sorted = (s) => {
   const imports = []
   const body = s.replace(/^import\s+(?:[\s\S]*?\s+from\s+)?['"][^'"]+['"];?\s*$/gm, (entry) => { imports.push(entry.trim()); return '' })
@@ -30,6 +30,7 @@ function typed(s) {
 assert.notEqual(typed('export interface Expose { focus(): void }'), typed('export interface Expose { blur(): void }'), 'Type-only API drift must remain visible')
 function canonical(s, file) {
   s = normalize(s)
+  s = s.replaceAll('../_utils/popup-container', '../utils/popup-container')
   if (file.endsWith('.vue')) {
     const { descriptor, errors } = parse(s, { filename: 'paired.vue' })
     assert.equal(errors.length, 0, file)

@@ -32,11 +32,11 @@ for (const [repo, declarations] of [
               .join(", ");
             const props =
               name === "Carousel"
-                ? "{ current: 1, effect: 'fade', slidesPerView: 2, centeredSlides: true }"
+                ? "{ modelValue: 1, effect: 'fade', slidesPerView: 2, centeredSlides: true }"
                 : "{ modelValue: [], resolveType: 'file', autoUpload: false, readonly: true, listType: 'picture-card' }";
             const invalid =
               name === "Carousel"
-                ? "{ current: 'not-a-number' }"
+                ? "{ modelValue: 'not-a-number' }"
                 : "{ maxFiles: 'not-a-number' }";
             const method =
               name === "Carousel"

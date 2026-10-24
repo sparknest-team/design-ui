@@ -1,6 +1,6 @@
 {
-  "name": "@ui-foundation/ui-icons",
-  "version": "0.1.0",
+  "name": "@sparknest/ui-icons",
+  "version": "1.0.0",
   "description": "Shared SVG-to-Vue icon source generator for Cedar and Maple",
   "license": "MIT",
   "type": "module",
@@ -10,11 +10,17 @@
   "exports": {
     ".": "./src/index.mjs"
   },
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "dependencies": {
     "svgo": "^3.3.2"
   },
   "engines": {
     "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

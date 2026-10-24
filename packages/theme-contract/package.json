@@ -1,6 +1,6 @@
 {
-  "name": "@ui-foundation/theme-contract",
-  "version": "0.1.0",
+  "name": "@sparknest/theme-contract",
+  "version": "1.0.0",
   "description": "Shared Cedar and Maple theme token contract",
   "license": "MIT",
   "type": "module",
@@ -17,8 +17,18 @@
     "check": "node bin/theme-contract.mjs check",
     "sync": "node bin/theme-contract.mjs sync"
   },
-  "files": ["bin", "contracts", "schema", "src", "README.md"],
+  "files": [
+    "bin",
+    "contracts",
+    "schema",
+    "src",
+    "README.md"
+  ],
   "engines": {
     "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

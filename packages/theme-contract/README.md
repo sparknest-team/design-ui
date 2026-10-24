@@ -1,4 +1,4 @@
-# @ui-foundation/theme-contract
+# @sparknest/theme-contract
 
 Cedar 与 Maple 的主题公共契约。`tokens.components` 是两端必须同时实现的公共 Token；`platformExtensions` 只登记确有不同 DOM/交互职责的组件，未登记组件不得增加单端公开 Token。
 

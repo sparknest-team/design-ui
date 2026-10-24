@@ -1,0 +1,59 @@
+{
+  "openChecks": [
+    {
+      "library": "cedar",
+      "at": "2026-10-23T16:22:32.614Z",
+      "state": [
+        {
+          "background": "rgb(55, 55, 57)",
+          "color": "rgba(255, 255, 255, 0.9)",
+          "height": 38,
+          "text": "This is tooltip content",
+          "width": 171.7109375,
+          "x": 418.6328125,
+          "y": 296.15625
+        }
+      ],
+      "errors": []
+    },
+    {
+      "library": "maple",
+      "at": "2026-10-23T16:22:32.764Z",
+      "state": [
+        {
+          "background": "rgb(55, 55, 57)",
+          "color": "rgb(255, 255, 255)",
+          "height": 38,
+          "text": "Tooltip",
+          "width": 74.875,
+          "x": 333.5625,
+          "y": 288
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "additionalThemes": [
+    {
+      "library": "cedar-light",
+      "at": "2026-10-23T16:24:50.707Z",
+      "tooltips": [],
+      "errors": []
+    },
+    {
+      "library": "maple-dark",
+      "at": "2026-10-23T16:24:50.846Z",
+      "tooltips": [
+        {
+          "height": 38,
+          "text": "Tooltip",
+          "width": 74.875
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "escapeClosedBoth": true,
+  "themePreferencesRestored": true,
+  "scope": "Real Tooltip focus/position/Escape smoke tests, not an exhaustive all-component or legacy-browser certification."
+}

@@ -36,11 +36,11 @@ for (const repo of ['cedar-design-web/packages/cedar-ui', 'maple-design-mobile/p
         name === 'tabs'
           ? h(
               entry.default,
-              { defaultActive: 'one', lazyLoad: false },
+              { defaultValue: 'one', lazyLoad: false },
               {
                 default: () => [
-                  h(entry.TabPane, { key: 'one', title: 'One' }, { default: () => 'First panel' }),
-                  h(entry.TabPane, { key: 'two', title: 'Two' }, { default: () => 'Second panel' }),
+                  h(entry.TabPane, { name: 'one', title: 'One' }, { default: () => 'First panel' }),
+                  h(entry.TabPane, { name: 'two', title: 'Two' }, { default: () => 'Second panel' }),
                 ],
               },
             )

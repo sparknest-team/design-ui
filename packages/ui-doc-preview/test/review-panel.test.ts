@@ -749,7 +749,7 @@ it("reports async tree loading rejection without mutating existing children", as
 });
 
 it("keeps the active Tree loader stable while its source data is mutated", async () => {
-  const data = ref([{ key: "parent", title: "Parent" }]);
+  const data = ref([{ value: "parent", label: "Parent" }]);
   const wrapper = mount(CedarPanel, {
     props: { fields: treeReviewConfig.fields as any },
     slots: {

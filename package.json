@@ -1,12 +1,13 @@
 {
-  "name": "@ui-foundation/design-system",
-  "version": "0.1.0",
+  "name": "@sparknest/design-system",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "bin": {
     "design-system-check": "./bin/spec-check.mjs"
   },
   "scripts": {
+    "check:ci": "node --test bin/ci-contract.test.mjs bin/ci-toolchain-check.test.mjs bin/shared-source-contract.test.mjs bin/case-paths-check.test.mjs packages/ui-build/test/environment.test.mjs browser/inventory.test.mjs",
     "check:demo-design": "node bin/demo-design-check.mjs && node bin/organize-demo-pages.mjs",
     "check:api": "node bin/api-exports-audit.mjs ../cedar-design-web/packages/cedar-ui/src --check && node bin/api-exports-audit.mjs ../maple-design-mobile/packages/maple-ui/src --check",
     "check:form-controls": "node bin/form-control-contract-check.mjs",
@@ -18,14 +19,15 @@
     "check:tag-themes": "node bin/tag-theme-check.mjs",
     "check:alert-themes": "node bin/alert-theme-check.mjs",
     "check:button-themes": "node bin/button-primary-foreground-check.mjs && node bin/button-theme-check.mjs",
-    "check:theme-contract": "pnpm --dir packages/theme-contract check && pnpm check:tag-themes && pnpm check:alert-themes && pnpm check:button-themes && pnpm check:floating-themes && pnpm check:modal-themes && pnpm check:feedback-themes && pnpm check:selection-themes && pnpm check:choice-themes && pnpm check:form-textarea-themes && pnpm check:switch-themes && pnpm check:navigation-themes && pnpm check:numeric-themes && pnpm check:foundation-themes && pnpm check:motion-themes && pnpm check:badge-themes && pnpm check:token-consumers && pnpm check:input-tag-themes && pnpm check:field-themes && pnpm test:theme-contract && pnpm check:non-color-tokens && pnpm check:residual-tokens && pnpm check:token-resolution && pnpm check:all-token-consumers && pnpm check:token-reference && pnpm check:media-themes && pnpm check:token-placement && pnpm check:field-focus",
-    "check": "pnpm check:cedar && pnpm check:maple && pnpm check:tokens && pnpm check:theme-contract && pnpm check:api && pnpm check:form-controls && pnpm check:copies && pnpm check:demos && pnpm check:grid-exports && pnpm check:foundations && pnpm check:input-family && pnpm check:tabs-core && pnpm check:media-core",
+    "check:theme-contract": "pnpm --dir packages/theme-contract check && pnpm check:tag-themes && pnpm check:alert-themes && pnpm check:button-themes && pnpm check:floating-themes && pnpm check:modal-themes && pnpm check:feedback-themes && pnpm check:selection-themes && pnpm check:choice-themes && pnpm check:form-textarea-themes && pnpm check:switch-themes && pnpm check:navigation-themes && pnpm check:numeric-themes && pnpm check:foundation-themes && pnpm check:motion-themes && pnpm check:badge-themes && pnpm check:link-themes && pnpm check:token-consumers && pnpm check:input-tag-themes && pnpm check:field-themes && pnpm test:theme-contract && pnpm check:non-color-tokens && pnpm check:residual-tokens && pnpm check:token-resolution && pnpm check:all-token-consumers && pnpm check:token-reference && pnpm check:media-themes && pnpm check:token-placement && pnpm check:field-focus",
+    "check": "pnpm check:runtime-dependencies && pnpm check:cedar && pnpm check:maple && pnpm check:tokens && pnpm check:theme-contract && pnpm check:api && pnpm check:form-controls && pnpm check:copies && pnpm check:demos && pnpm check:grid-exports && pnpm check:foundations && pnpm check:input-family && pnpm check:tabs-core && pnpm check:media-core",
+    "check:runtime-dependencies": "node --test bin/runtime-dependency-check.test.mjs && node bin/runtime-dependency-check.mjs",
     "check:input-family": "node bin/input-textarea-body-check.mjs && node bin/slider-core-check.mjs && node bin/list-body-check.mjs && node bin/rate-core-check.mjs && node bin/verification-code-core-check.mjs && node bin/search-core-check.mjs",
     "check:input-ssr": "node bin/input-batch-ssr-check.mjs",
     "check:input-types": "node bin/input-batch-types-check.mjs",
     "check:tabs-core": "node bin/tabs-core-check.mjs",
     "check:grid-exports": "node bin/grid-exports-check.mjs",
-    "check:foundations": "pnpm check:menu && node bin/copied-foundations-check.mjs && node bin/trigger-references-check.mjs && pnpm check:portal-scope",
+    "check:foundations": "pnpm check:menu && node --test bin/shared-source-contract.test.mjs && node bin/copied-foundations-check.mjs && node bin/trigger-references-check.mjs && pnpm check:portal-scope",
     "check:foundation-runtime": "node bin/trigger-runtime-check.mjs",
     "test:build-entries": "node --test packages/ui-build/test/module-entries.test.mjs",
     "check:floating-themes": "node bin/floating-theme-check.mjs",
@@ -53,7 +55,7 @@
     "check:all-token-consumers": "node bin/token-inventory.mjs --check-consumers --summary",
     "check:token-reference": "node --test bin/token-catalog.test.mjs bin/filter-form-catalog.test.mjs bin/field-focus-caret.test.mjs bin/select-catalog-closure.test.mjs bin/field-presentation-catalog.test.mjs bin/date-drift-closure.test.mjs && node bin/token-catalog.mjs --check",
     "test:theme-contract": "node --test packages/theme-contract/src/*.test.mjs",
-    "check:media-core": "node --test bin/upload-core-check.test.mjs && node bin/carousel-core-check.mjs && node bin/upload-core-check.mjs",
+    "check:media-core": "node --test bin/upload-core-check.test.mjs bin/media-runtime-graph.test.mjs && node bin/carousel-core-check.mjs && node bin/upload-core-check.mjs",
     "check:media-ssr": "node bin/media-batch-ssr-check.mjs",
     "check:media-types": "node bin/media-batch-types-check.mjs",
     "check:media-themes": "node bin/media-theme-check.mjs",
@@ -65,7 +67,8 @@
     "check:preview-track-motion": "node bin/preview-track-motion-check.mjs",
     "generate:demo-review": "node bin/generate-review-demos.mjs",
     "check:demo-review": "node --test bin/generate-review-demos.test.mjs && node bin/review-demos-check.mjs",
-    "check:menu": "node bin/menu-naming-check.mjs"
+    "check:menu": "node bin/menu-naming-check.mjs",
+    "check:link-themes": "node bin/link-theme-check.mjs"
   },
   "engines": {
     "node": ">=20"

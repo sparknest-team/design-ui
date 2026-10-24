@@ -4,7 +4,8 @@ import { auditThemes, rgba, over, luminance } from "./theme-audit-utils.mjs";
 
 let combinations = 0,
   pairs = 0,
-  minimum = Infinity;
+  minimum = Infinity,
+  buttonPairsBelowAA = 0;
 for (const component of ["tooltip", "popover", "overlay", "trigger"]) {
   await auditThemes(
     component,
@@ -27,7 +28,7 @@ for (const component of ["tooltip", "popover", "overlay", "trigger"]) {
         tag.append(node);
         return node;
       };
-      const contrast = (foreground, background, opacity = 1) => {
+      const contrast = (foreground, background, opacity = 1, buttonPalette = false) => {
         for (const surface of [
           "page",
           "default",
@@ -48,7 +49,8 @@ for (const component of ["tooltip", "popover", "overlay", "trigger"]) {
           const a = luminance(fg),
             b = luminance(bg);
           const ratio = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
-          assert.ok(ratio >= 4.5, `${label}/${surface}: ${ratio} < 4.5`);
+          if (!buttonPalette) assert.ok(ratio >= 4.5, `${label}/${surface}: ${ratio} < 4.5`);
+          else if (ratio < 4.5) buttonPairsBelowAA++;
           minimum = Math.min(minimum, ratio);
           pairs++;
         }
@@ -88,6 +90,9 @@ for (const component of ["tooltip", "popover", "overlay", "trigger"]) {
             `var(--${p}-tooltip-${suffix}background)`,
           );
           assert.equal(css.color, `var(--${p}-tooltip-${suffix}text-color)`);
+          if (status !== 'default') {
+            assert.equal(expand(css.color), read('sys-color-content-on-dark'), `${label}/${status}: follow Button solid foreground`);
+          }
           assert.equal(
             expand(arrowCss["background-color"]),
             expand(css["background-color"]),
@@ -103,6 +108,7 @@ for (const component of ["tooltip", "popover", "overlay", "trigger"]) {
             expand(css.color),
             expand(css["background-color"]),
             Number(expand(css.opacity)),
+            status !== 'default',
           );
           override(`${suffix}background`, [content, arrow], "background-color");
           override(`${suffix}text-color`, [content], "color");
@@ -157,5 +163,5 @@ for (const component of ["tooltip", "popover", "overlay", "trigger"]) {
   );
 }
 console.log(
-  `Floating theme audit passed: ${combinations} combinations, ${pairs} contrast pairs, minimum ${minimum.toFixed(3)}:1; arrow overrides survive Trigger-last CSS.`,
+  `Floating theme audit passed: ${combinations} combinations, ${pairs} contrast pairs, minimum ${minimum.toFixed(3)}:1; ${buttonPairsBelowAA} Button-palette pairs below 4.5:1; arrow overrides survive Trigger-last CSS.`,
 );

@@ -2,13 +2,19 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { canonical } from './upload-core-check.mjs'
 
+test('ignores semicolon-only formatting on empty return without discarding returned values', () => {
+  const file = 'upload/utils/request.ts'
+  assert.equal(canonical('function run() { return; }', file), canonical('function run() { return }', file))
+  assert.notEqual(canonical('function run() { return; }', file), canonical('function run() { return false }', file))
+})
+
 test('maps only the exact local public package in Upload demo imports', () => {
   const demo = path => `<script setup lang="ts">import type { UploadFileItem } from '${path}'; const files: UploadFileItem[] = []</script><template><div>{{ files.length }}</div></template>`
   const file = 'upload/__demos__/queue-request.vue'
-  assert.equal(canonical(demo('@cedarjs/ui'), file), canonical(demo('@maplejs/maple-ui'), file))
-  assert.notEqual(canonical(demo('@cedarjs/ui-extra'), file), canonical(demo('@maplejs/maple-ui-extra'), file))
-  assert.notEqual(canonical(demo('@cedarjs/ui/internal'), file), canonical(demo('@maplejs/maple-ui/internal'), file))
-  assert.notEqual(canonical("const payload = '@cedarjs/ui'", 'upload/utils/request.ts'), canonical("const payload = '@maplejs/maple-ui'", 'upload/utils/request.ts'))
+  assert.equal(canonical(demo('@cedar-design/ui'), file), canonical(demo('@maple-design/ui'), file))
+  assert.notEqual(canonical(demo('@cedar-design/ui-extra'), file), canonical(demo('@maple-design/ui-extra'), file))
+  assert.notEqual(canonical(demo('@cedar-design/ui/internal'), file), canonical(demo('@maple-design/ui/internal'), file))
+  assert.notEqual(canonical("const payload = '@cedar-design/ui'", 'upload/utils/request.ts'), canonical("const payload = '@maple-design/ui'", 'upload/utils/request.ts'))
 })
 
 test('still rejects changed cleanup order or a missing queue unlock', () => {

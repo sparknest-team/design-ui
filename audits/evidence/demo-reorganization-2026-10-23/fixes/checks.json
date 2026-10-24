@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-10-23T14:52:20Z",
+  "status": "passed_with_documented_scope_limits",
+  "nativeHmrFollowUp": {
+    "usesForcedReload": false,
+    "focusedTestsPassed": 365,
+    "report": "../../../image-upload-native-hmr-2026-10-23.md",
+    "evidence": "../../image-upload-native-hmr-2026-10-23/native-hmr.json"
+  },
+  "sfcCompilation": { "passed": 2851, "failed": 0 },
+  "documentationReferences": { "passed": 2883, "missing": 0 },
+  "pairedDemos": { "passed": 121, "markdownTransforms": 22, "apiTables": 11 },
+  "documentationOrganization": { "pages": 271, "changed": 0 },
+  "layoutContract": { "changed": 0 },
+  "focusedTests": {
+    "cedarDialogSchedulerMap": 57,
+    "cedarMenu": 25,
+    "mapleMenu": 26,
+    "mapleGesturesAndLifecycles": 183,
+    "demoOrganizationAndLayout": 10,
+    "sourceResolverAndEntryCycle": 11,
+    "cedarSiteImportBoundaries": 3,
+    "cedarImageRendering": 2,
+    "mapleUploadAndImage": 217,
+    "serialRestart": 2,
+    "devPublishBoundary": 4,
+    "publicResolver": 11,
+    "total": 551,
+    "failed": 0
+  },
+  "typecheck": { "cedar": "passed", "maple": "passed" },
+  "mapleFullLint": "passed",
+  "menuPackageRuntime": {
+    "cedarEsm": "passed",
+    "cedarCjs": "passed",
+    "mapleEsm": "passed",
+    "mapleCjs": "passed",
+    "checks": ["no-DOM import", "install", "final Menu/Option API", "SSR"]
+  },
+  "gitDiffCheck": { "cedar": "passed", "maple": "passed", "foundation": "passed" },
+  "browserEvidence": "validation.json",
+  "browserConsole": "final-console.json",
+  "finalRuntimeRecheck": "final-runtime-recheck.json",
+  "scopeLimits": [
+    "Page coverage is cumulative; not every case/property combination was manually exercised.",
+    "Browser touch-emulator is not physical iOS/Android certification.",
+    "Real map SDK and upload services require business integration.",
+    "Safari, cross-browser matrix, all brand permutations and pixel contrast are not exhaustively certified."
+  ]
+}

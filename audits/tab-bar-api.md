@@ -41,3 +41,7 @@
 
 用户明确排除 route / to / replace，路由联动不进入后续拓展范围。
 已实施 default-active、数字 name 优先匹配、default 插槽 active、异步切换竞态/拒绝/卸载保护、动态占位高度更新，以及图标外侧的小尺寸徽标。新增非受控、数字重排、自定义选中标签、异步拦截 demo，并补充普通/胶囊徽标切换。
+
+## 主值命名最终收敛
+
+本轮以用户确定的规范替代早期保留 active 的决策：TabBar 使用 modelValue/defaultValue 与 update:modelValue，子项仍使用 name；插槽内 active 仍表示渲染状态，不是主值属性。详见 primary-model-naming.md。

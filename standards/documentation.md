@@ -22,7 +22,7 @@ API 变更必须同步中英文文档；暂未提供英文时应在组件元数�
 ## Demo 单一来源
 
 - 中间预览、移动端预览和“查看源码”必须引用同一份组件目录内 `.vue` 文件，不允许把可执行示例再复制进 Markdown。
-- Cedar、Maple 的站点适配器应共同使用 `@ui-foundation/ui-doc-preview` 的展示外壳，但分别解析本端的 VuePress/Markdown 语法。Maple 已接入；Cedar 现有展示行为保持不变，后续只替换展示外壳，不迁移 Demo 文件。
+- Cedar、Maple 的站点适配器应共同使用 `@sparknest/ui-doc-preview` 的展示外壳，但分别解析本端的 VuePress/Markdown 语法。Maple 已接入；Cedar 现有展示行为保持不变，后续只替换展示外壳，不迁移 Demo 文件。
 - Maple 使用 `demo` 文件引用块作为正式格式。尚未拆分的历史页面由适配器读取 `example/index.vue` 生成页面级预览；这是迁移兼容状态，不能等同于逐案例已经单一来源。
 - Maple 右侧集合页按 `section[data-demo]` 排列场景，并导入 `example/demos/*.vue`；中间文档按同一顺序渲染一个场景一张卡片。集合页、消息目录和子 Demo 文件都必须加入 Vite watch graph。
 - 修改 Demo 文件后，开发服务器必须同时刷新运行预览和源码面板；生产构建必须把引用文件纳入依赖图。

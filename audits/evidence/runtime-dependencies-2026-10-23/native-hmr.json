@@ -1,0 +1,307 @@
+{
+  "checks": [
+    {
+      "library": "cedar",
+      "change": "MenuOption template",
+      "at": "2026-10-23T15:41:27.352Z",
+      "state": {
+        "items": [
+          "操作",
+          "导出",
+          "复制",
+          "CSV",
+          "JSON"
+        ],
+        "probes": 5,
+        "sentinel": "HMR-ALL-KEEP"
+      },
+      "errors": []
+    },
+    {
+      "library": "maple",
+      "change": "MenuOption template",
+      "at": "2026-10-23T15:41:27.380Z",
+      "state": {
+        "items": [
+          "操作",
+          "导出",
+          "CSV",
+          "JSON",
+          "复制"
+        ],
+        "probes": 73,
+        "sentinel": "HMR-ALL-KEEP"
+      },
+      "errors": []
+    },
+    {
+      "library": "cedar",
+      "change": "MenuOption script",
+      "at": "2026-10-23T15:41:39.909Z",
+      "state": {
+        "items": [
+          "操作",
+          "导出",
+          "复制",
+          "CSV",
+          "JSON"
+        ],
+        "probes": 5,
+        "sentinel": "HMR-ALL-KEEP"
+      },
+      "errors": []
+    },
+    {
+      "library": "maple",
+      "change": "MenuOption script",
+      "at": "2026-10-23T15:41:39.942Z",
+      "state": {
+        "items": [
+          "操作",
+          "导出",
+          "CSV",
+          "JSON",
+          "复制"
+        ],
+        "probes": 73,
+        "sentinel": "HMR-ALL-KEEP"
+      },
+      "errors": []
+    },
+    {
+      "library": "cedar",
+      "change": "MenuOptions runtime TS",
+      "at": "2026-10-23T15:41:52.302Z",
+      "state": {
+        "items": [],
+        "probes": 0,
+        "sentinel": "HMR-ALL-KEEP"
+      },
+      "errors": []
+    },
+    {
+      "library": "maple",
+      "change": "MenuOptions runtime TS",
+      "at": "2026-10-23T15:41:52.322Z",
+      "state": {
+        "items": [],
+        "probes": 18,
+        "sentinel": "HMR-ALL-KEEP"
+      },
+      "errors": []
+    },
+    {
+      "library": "cedar",
+      "change": "MenuOptions runtime TS after reopen",
+      "at": "2026-10-23T15:42:03.160Z",
+      "state": {
+        "items": [
+          "操作",
+          "导出",
+          "复制",
+          "CSV",
+          "JSON"
+        ],
+        "probes": 3,
+        "sentinel": "HMR-ALL-KEEP"
+      },
+      "errors": []
+    },
+    {
+      "library": "maple",
+      "change": "MenuOptions runtime TS after reopen",
+      "at": "2026-10-23T15:42:03.180Z",
+      "state": {
+        "items": [
+          "操作",
+          "导出",
+          "CSV",
+          "JSON",
+          "复制"
+        ],
+        "probes": 21,
+        "sentinel": "HMR-ALL-KEEP"
+      },
+      "errors": []
+    },
+    {
+      "library": "cedar",
+      "change": "Scheduler template",
+      "at": "2026-10-23T15:43:33.581Z",
+      "state": {
+        "probes": 43,
+        "sentinel": "HMR-SCHEDULER-KEEP"
+      },
+      "errors": []
+    },
+    {
+      "library": "cedar",
+      "change": "Scheduler script",
+      "at": "2026-10-23T15:44:21.191Z",
+      "state": {
+        "probes": 43,
+        "sentinel": ""
+      },
+      "errors": []
+    },
+    {
+      "library": "cedar",
+      "change": "Scheduler isolated script repeat",
+      "at": "2026-10-23T15:45:23.746Z",
+      "state": {
+        "headerExpanded": "true",
+        "probes": 43,
+        "sentinel": ""
+      },
+      "connections": [
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:42:04.428Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:42:04.461Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:42:32.932Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:42:32.948Z",
+          "url": "http://localhost:9991/@vite/client"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "library": "cedar",
+      "change": "Scheduler core/base TS",
+      "at": "2026-10-23T15:45:56.026Z",
+      "state": {
+        "headerExpanded": "true",
+        "probes": 43
+      },
+      "connections": [
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:42:04.428Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:42:04.461Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connecting...",
+          "timestamp": "2026-10-23T15:42:32.932Z",
+          "url": "http://localhost:9991/@vite/client"
+        },
+        {
+          "level": "debug",
+          "message": "[vite] connected.",
+          "timestamp": "2026-10-23T15:42:32.948Z",
+          "url": "http://localhost:9991/@vite/client"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "library": "cedar",
+      "change": "Restored source, three levels and one-layer Escape",
+      "at": "2026-10-23T15:49:34.517Z",
+      "state": {
+        "active": "导出",
+        "items": [
+          "操作",
+          "导出",
+          "复制",
+          "CSV",
+          "JSON"
+        ],
+        "probes": 0
+      },
+      "errors": []
+    },
+    {
+      "library": "maple",
+      "change": "Restored source, three levels and one-layer Escape",
+      "at": "2026-10-23T15:49:39.068Z",
+      "state": {
+        "active": "导出",
+        "items": [
+          "操作",
+          "导出",
+          "CSV",
+          "JSON",
+          "复制"
+        ],
+        "probes": 0
+      },
+      "errors": []
+    }
+  ],
+  "final": [
+    {
+      "library": "cedar-menu",
+      "at": "2026-10-23T15:50:37.603Z",
+      "state": {
+        "focused": "导出",
+        "probes": 0,
+        "title": "Menu 菜单 | Cedar Design Web",
+        "visibleDialogs": [],
+        "visibleMenuItems": [
+          "操作",
+          "导出",
+          "复制"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "library": "maple-menu",
+      "at": "2026-10-23T15:50:37.661Z",
+      "state": {
+        "focused": "导出",
+        "probes": 0,
+        "title": "Maple UI - Vue3 Maple Design 组件库",
+        "visibleDialogs": [],
+        "visibleMenuItems": [
+          "操作",
+          "导出",
+          "复制"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "library": "cedar-scheduler",
+      "at": "2026-10-23T15:50:37.688Z",
+      "state": {
+        "focused": "新建日程",
+        "probes": 0,
+        "title": "Scheduler 日程调度 | Cedar Design Web",
+        "visibleDialogs": [],
+        "visibleMenuItems": []
+      },
+      "errors": []
+    }
+  ],
+  "notes": [
+    "MenuOptions TS updates remount the Menu component; reopened recursion and outer inspector state were verified.",
+    "Scheduler core exports invalidate importing demo components; their inspector input is not an independent page-reload sentinel. Scheduler isolated script/core checks use the persistent header menu and unchanged Vite connection history instead.",
+    "Cedar theme-config edits by parallel tasks caused independent page reloads at 23:42:30 and 23:47:00; these are not successful component HMR checks.",
+    "All temporary probes were removed before final interaction checks."
+  ]
+}

@@ -15,7 +15,7 @@ const m = resolve(root, 'maple-design-mobile/packages/maple-ui/src/rate')
 function normalize(source) {
   return source.replaceAll('../_utils/global-config', '../utils/components')
     .replaceAll('../_utils/size-length', '../utils/size-length')
-    .replace(/@cedarjs\/icons-vue\/[^'"]+/g, '@maplejs/icons-vue')
+    .replace(/@cedar-design\/icons-vue\/[^'"]+/g, '@maple-design/icons-vue')
     .replaceAll('c-rate', 'mp-rate').replaceAll('--c-', '--mp-')
     .replaceAll('<c-', '<mp-').replaceAll('</c-', '</mp-')
 }

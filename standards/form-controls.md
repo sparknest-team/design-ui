@@ -43,7 +43,7 @@
 - 公共 token 后缀必须一致并表达同一 CSS 功效；前缀仅为 `--c-` / `--mp-`。
 - 组件源码只读取已定义 token。公共 token 放 `style/token.less`，实现样式放组件样式文件；禁止在实现体重复写品牌色和系统常量。
 - 桌面与移动实现结构不同的复杂面板，只统一语义层 token；面板内部 token 作为明确的平台扩展，不强求伪一致。
-- 新增、删除或改名 token 时，组件代码、文档、`@ui-foundation/theme-contract` 与检查用例必须在同一变更中更新。
+- 新增、删除或改名 token 时，组件代码、文档、`@sparknest/theme-contract` 与检查用例必须在同一变更中更新。
 
 ## 6. 必要测试矩阵
 
