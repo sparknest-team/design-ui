@@ -28,3 +28,9 @@ API 变更必须同步中英文文档；暂未提供英文时应在组件元数�
 - 修改 Demo 文件后，开发服务器必须同时刷新运行预览和源码面板；生产构建必须把引用文件纳入依赖图。
 
 依据：[VuePress I18n](https://vuepress.vuejs.org/guide/i18n.html)、[Hope 主题语言配置](https://theme-hope.vuejs.press/config/theme/i18n.html)。
+
+## 完整的组件英文 API
+
+组件英文页必须直接包含与中文对应的属性、事件、插槽、方法、类型和配置边界，不用中文 API 链接代替译文。中英文成员名、类型、真实默认值、示例集合及配置对照项必须一致；真实的平台差异保留，不给 Maple 补空的 Cedar-only API。示例中的业务数据及真实默认字符串可以保留原值。
+
+公共译文维护在 `configs/api-documentation.en-US.json`，运行 `node bin/localize-api-documentation.mjs --write` 同步组件英文 API、补充配置章节和配置对照；缺少译文时先报错，不写入半成品。运行 `node --test bin/api-documentation-locales.test.mjs` 检查全部已登记组件族，结合现有示例分组和手机入口门禁；不得把非组件指南的语言回退用于替代组件 API。

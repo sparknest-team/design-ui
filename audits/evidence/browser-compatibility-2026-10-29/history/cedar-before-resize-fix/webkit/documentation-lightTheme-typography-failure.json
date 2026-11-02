@@ -1,0 +1,156 @@
+{
+  "failures": [
+    "ResizeObserver loop completed with undelivered notifications."
+  ],
+  "diagnostic": {
+    "url": "http://127.0.0.1:61163/components/typography/#%E5%8F%AF%E4%BA%A4%E4%BA%92",
+    "text": " or for the implement...--Cedar DesignMore\nA design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. T...--Cedar Design展开\n交互与控制\n可交互\n\n提供复制、编辑文本等功能。\n\nClick the icon to copy this text.\nClick the icon to edit this text.\n生命周期与边界\n测量与复制反馈生命周期\n\n切换 KeepAlive\n\n卸载／挂载\n\n复制通知：0。连续复制后等待 3 秒，或复制后停用再激活。\n\n...展开\n\n复制反馈使用现有 copy-delay（默认 3000ms），是交互反馈等待，不是 CSS 动效完成时间。重复复制替换旧等待；关闭复制、禁用或修改等待时长会清除当前反馈。停用／卸载取消反馈计时与省略测量 RAF，保留操作和旧回调不能继续写入；激活重新测量，不恢复旧任务。禁用态文字仍可测量省略，不允许复制／编辑／展开交互。省略关闭、展开或进入编辑会取消旧测量；完成后重放和测量重入不能覆盖新结果。\n\nAPI\nCommon Props\n\nTypography.Title、Typography.Paragraph、Typography.Text 共享以下属性。\n\n属性名\t描述\t类型\t默认值\nstatus\t文本语义状态\tSemanticStatus\t-\nbold\t粗体\tboolean\tfalse\nmark\t添加标记样式\tboolean | { color: string }\tfalse\nunderline\t下划线样式\tboolean\tfalse\ndelete\t删除线样式\tboolean\tfalse\ncode\t代码块样式\tboolean\tfalse\ndisabled\t禁用状态\tboolean\tfalse\neditable\t开启可编辑功能\tboolean\tfalse\nediting (v-model)\t是否在编辑状态\tboolean\t-\ndefault-editing\t默认的编辑状态\tboolean\tfalse\nedit-text (v-model)\t编辑的文字\tstring\t-\ncopyable\t开启复制功能\tboolean\tfalse\ncopy-text\t复制的文字\tstring\t-\ncopy-delay\t复制成功后，复制按钮恢复到可点击状态的延迟时间，单位是毫秒\tnumber\t3000\nellipsis\t自动溢出省略，具体参数配置看 EllipsisConfig\tboolean | EllipsisConfig\tfalse\nedit-tooltip-props\t编辑按钮 Tooltip 配置\tobject\t-\ncopy-tooltip-props\t拷贝按钮 Tooltip 配置\tobject\t-\nCommon Events\n事件名\t描述\t参数\nedit-start\t开始编辑\t-\nchange\t编辑内容变化\ttext: string\nedit-end\t编辑结束\t-\ncopy\t复制\ttext: string\nellipsis\t省略变化事件\tisEllipsis: boolean\nexpand\t展开收起事件\texpanded: boolean\nCommon Slots\n插槽名\t描述\t参数\nexpand-node\t自定义展开和折叠按钮\texpanded: boolean\ncopy-icon\t自定义复制按钮图标\tcopied: boolean\ncopy-tooltip\t自定义复制按钮的 tooltip 内容\tcopied: boolean\n<TypographyTitle> Props\n属性名\t描述\t类型\t默认值\nheading\t标题级别，相当于 h1 h2 h3 h4 h5 h6\t1 | 2 | 3 | 4 | 5 | 6\t1\n<TypographyParagraph> Props\n属性名\t描述\t类型\t默认值\nblockquote\t长引用\tboolean\tfalse\nspacing\t段落行高；长文本推荐默认行高，短文本推荐 close\t'default' | 'close'\t'default'\nEllipsisConfig\n属性名\t描述\t类型\t默认值\nrows\t显示省略的行数\tnumber\t1\nexpandable\t是否支持展开/折叠\tboolean\tfalse\nellipsisStr\t省略号\tstring\t'...'\nsuffix\t后缀\tstring\t-\nshowTooltip\t配置省略时的弹出框\tboolean | { type: 'tooltip' | 'popover'; props: Record<string, any> }\tfalse\ncss\t是否使用 CSS 省略（此模式暂不支持展开、自定义省略号和后缀）\tboolean\tfalse\n类型定义\n\n组件导出以下类型定义：\n\nimport type {\n  TypographyInstance,\n  TypographyParagraphInstance,\n  TypographyTitleInstance,\n  TypographyTextInstance,\n  EllipsisConfig,\n} from '@cedar-design/ui'\n...展开",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"vmi-previewer-example\" style=\"\"><article class=\"c-typography\"><h1 class=\"c-typography c-typography-title--break-word\">Design system<!----><!----><!----><!----></h1><div class=\"c-typography\"> A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. <!----><!----><!----><!----></div><div class=\"c-typography\"> In some cases, the direct construction of an object without an explicit prior plan (such as in craftwork, some engineering, coding, and graphic design) may also be considered <span class=\"c-typography\"><b>to be a design activity.</b><!----><!----><!----><!----></span><!----><!----><!----><!----></div><h2 class=\"c-typography c-typography-title--break-word\">Cedar Design<!----><!----><!----><!----></h2><div class=\"c-typography\"> The component library defines a set of default particle variables, and a custom theme is to <span class=\"c-typography\"><mark>customize</mark><!----><!----><!----><!----></span> and <span class=\"c-typography\"><u>overwrite</u><!----><!----><!----><!----></span> this variable list. <!----><!----><!----><!----></div><blockquote class=\"c-typography\"> A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, or the result of that plan or specification in the form of a <span class=\"c-typography\"><code>prototype</code><!----><!----><!----><!----></span>, <span class=\"c-typography\"><code>product</code><!----><!----><!----><!----></span> or <span class=\"c-typography\"><code>process</code><!----><!----><!----><!----></span>. The verb to design expresses the process of developing a design. <!----><!----><!----><!----></blockquote><div class=\"c-typography\"><mark><del><u> A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process. </u></del></mark><!----><!----><!----><!----></div><div class=\"c-typography\"><ul><li> Architectural blueprints <ul><li>Architectural blueprints</li></ul></li><li>Engineering drawings</li><li>Business processes</li></ul><!----><!----><!----><!----></div><div class=\"c-typography\"><ol><li>Architectural blueprints</li><li>Engineering drawings</li><li>Business processes</li></ol><!----><!----><!----><!----></div></article></div>",
+      "<div class=\"vmi-previewer-example\" style=\"\"><article class=\"c-typography\"><h1 class=\"c-typography c-typography-title--break-word\">H1. The Pragmatic Romanticism<!----><!----><!----><!----></h1><h2 class=\"c-typography c-typography-title--break-word\">H2. The Pragmatic Romanticism<!----><!----><!----><!----></h2><h3 class=\"c-typography c-typography-title--break-word\">H3. The Pragmatic Romanticism<!----><!----><!----><!----></h3><h4 class=\"c-typography c-typography-title--break-word\">H4. The Pragmatic Romanticism<!----><!----><!----><!----></h4><h5 class=\"c-typography c-typography-title--break-word\">H5. The Pragmatic Romanticism<!----><!----><!----><!----></h5><h6 class=\"c-typography c-typography-title--break-word\">H6. The Pragmatic Romanticism<!----><!----><!----><!----></h6></article></div>"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "选择语言",
+        "class": "vp-dropdown-title"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "搜索",
+        "class": "slimsearch-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到 RTL / Switch to right-to-left",
+        "class": "docs-direction-toggle"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换主题",
+        "class": "cedar-docs-theme__trigger"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "More",
+        "class": "c-typography-operation-expand"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开",
+        "class": "c-typography-operation-expand"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制",
+        "class": "c-typography-operation-copy"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "编辑",
+        "class": "c-typography-operation-edit"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换 KeepAlive",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "卸载／挂载",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制",
+        "class": "c-typography-operation-copy"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开",
+        "class": "c-typography-operation-expand"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制代码",
+        "class": "vp-copy-code-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "返回顶部",
+        "class": "vp-back-to-top-button"
+      },
+      {
+        "tag": "SPAN",
+        "role": "progressbar",
+        "label": "",
+        "class": "vp-scroll-progress"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制",
+        "class": "c-typography-operation-copy"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开",
+        "class": "c-typography-operation-expand"
+      }
+    ]
+  },
+  "error": "AssertionError [ERR_ASSERTION]: no script exceptions or failed local assets\n+ actual - expected\n\n+ [\n+   'ResizeObserver loop completed with undelivered notifications.'\n+ ]\n- []"
+}

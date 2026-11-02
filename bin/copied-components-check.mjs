@@ -1,3 +1,4 @@
+import { normalizeCopiedSource as normalize, normalizeSwitchErrorText, normalizeSwitchTokenDefaults, normalizeCopiedTypeScript } from './copied-source-normalization.mjs'
 import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { createRequire } from 'node:module'
@@ -234,54 +235,7 @@ const pairs = [
   ['collapse/style/index.less', 'collapse/style/index.less'],
   ['collapse/__tests__/same-source.spec.js', 'collapse/__tests__/same-source.spec.js'],
 ]
-const normalize = (source) => source
-  .replaceAll('@cedar-design/shared', '@maple-design/shared')
-  .replaceAll('@cedar-design/use', '@maple-design/use')
-  .replaceAll('@cedar-design/icons-vue', '@maple-design/icons-vue')
-  .replaceAll('../_utils/maple/elements', '../utils/elements')
-  .replaceAll('../_utils/size-length', '../utils/size-length')
-  .replaceAll('../_utils/popup-container', '../utils/popup-container')
-  .replaceAll('../_utils/popup-layer', '../utils/popup-layer')
-  .replaceAll('../_utils/popup-transition', '../utils/popup-transition')
-  .replaceAll('../_utils/text-input-value', '../utils/text-input-value')
-  .replaceAll('../_utils/scroll-lock', '../utils/scroll-lock')
-  .replaceAll('../_utils/global-config', '../utils/components')
-  .replaceAll('../_utils/components', '../utils/components')
-  .replaceAll('../_utils/cedar/components', '../utils/components')
-  .replaceAll('../_utils/constant', '../utils/constants')
-  .replaceAll('./avatar.vue', './Avatar.vue')
-  .replaceAll('./avatar-group.vue', './AvatarGroup.vue')
-  .replaceAll('./empty.vue', './Empty.vue')
-  .replaceAll('./preview-group.vue', './ImagePreviewGroup.vue')
-  .replaceAll('./preview-toolbar.vue', './ImagePreviewToolbar.vue')
-  .replaceAll('./preview-action.vue', './ImagePreviewAction.vue')
-  .replaceAll('./image-footer.vue', './ImageFooter.vue')
-  .replaceAll('./preview.vue', './ImagePreview.vue')
-  .replaceAll('./Preview.vue', './ImagePreview.vue')
-  .replaceAll('./PreviewGroup.vue', './ImagePreviewGroup.vue')
-  .replaceAll('./image.vue', './Image.vue')
-  .replaceAll('../badge.vue', '../Badge.vue')
-  .replaceAll('../card.vue', '../Card.vue')
-  .replaceAll('../affix.vue', '../Affix.vue')
-  .replaceAll('class="c-breadcrumb', 'class="mp-breadcrumb')
-  .replaceAll('c-space-item-', 'mp-space-item-')
-  .replaceAll('c-skeleton-animation', 'mp-skeleton-animation')
-  .replaceAll('c-icon-spin', 'mp-icon-spin')
-  .replaceAll('c-tag', 'mp-tag')
-  .replaceAll('cedar-theme', 'maple-theme')
-  .replaceAll('cedar-style-vars', 'maple-style-vars')
-  .replaceAll('c-switch', 'mp-switch')
-  .replaceAll('c-button', 'mp-button')
-  .replaceAll('c-row', 'mp-row')
-  .replaceAll('c-col', 'mp-col')
-  .replaceAll('`c${Capitalize<string>}`', '`mp${Capitalize<string>}`')
-  .replaceAll('--c-', '--mp-')
-  .replaceAll('.c-', '.mp-')
-  .replaceAll("'c-", "'mp-")
-  .replaceAll('"c-', '"mp-')
-  .replaceAll('import("vue")', "import('vue')")
-  .replace(/\n[ \t]*\n/g, '\n')
-  .trim()
+
 
 for (const [cedarPath, maplePath] of pairs) {
   if (componentFilter && !cedarPath.startsWith(componentFilter + '/')) continue
@@ -339,6 +293,18 @@ for (const [cedarPath, maplePath] of pairs) {
     left = await normalizeButtonDensity(left, cedar, 'c', 'cedar')
     right = await normalizeButtonDensity(right, maple, 'mp', 'maple')
   }
+  if (cedarPath === 'switch/style/token.less') {
+    const contract = JSON.parse(await readFile(resolve(workspace, 'design-ui/packages/theme-contract/contracts/theme-contract.json'), 'utf8'))
+    const expected = platform => contract.platformComponentTokenValues[platform].switch['checked-text-color']
+    left = normalizeSwitchTokenDefaults(left, 'c', expected('cedar').replaceAll('--PREFIX-', '--c-'))
+    right = normalizeSwitchTokenDefaults(right, 'mp', expected('maple').replaceAll('--PREFIX-', '--mp-'))
+  }
+  if (cedarPath === 'switch/style/index.less') {
+    const tokens = await readFile(resolve(maple, 'switch/style/token.less'), 'utf8')
+    assert.match(tokens, /--mp-internal-switch-error-text-color:\s*var\(--mp-sys-color-content-on-bright\);/)
+    left = normalizeSwitchErrorText(left, 'c', 'var(--c-switch-text-color)')
+    right = normalizeSwitchErrorText(right, 'mp', 'var(--mp-internal-switch-error-text-color)')
+  }
   const normalizePair = (source) => {
     let value = normalize(source).replace(/import\s*\{([^}]+)\}\s*from/g, (_match, names) => {
       const sorted = names.split(',').map((name) => name.trim()).filter(Boolean).sort().join(', ')
@@ -348,12 +314,7 @@ for (const [cedarPath, maplePath] of pairs) {
     const imports = lines.filter((line) => line.startsWith('import ')).sort()
     value = [...imports, ...lines.filter((line) => !line.startsWith('import '))].join('\n')
     if (/\.tsx?$/.test(cedarPath)) {
-      return transformSync(value, {
-        loader: cedarPath.endsWith('.tsx') ? 'tsx' : 'ts',
-        format: 'esm',
-        minify: true,
-        treeShaking: false,
-      }).code
+      return normalizeCopiedTypeScript(value, transformSync, cedarPath.endsWith('.tsx') ? 'tsx' : 'ts')
     }
     return value.replace(/\s+/g, '').replaceAll(';', '').replaceAll('"', "'").replace(/(^|[^\d])\.(\d)/g, '$10.$2')
   }

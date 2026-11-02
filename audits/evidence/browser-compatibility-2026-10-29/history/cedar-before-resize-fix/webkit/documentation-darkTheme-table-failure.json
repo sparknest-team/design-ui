@@ -1,0 +1,709 @@
+{
+  "failures": [
+    "ResizeObserver loop completed with undelivered notifications."
+  ],
+  "diagnostic": {
+    "url": "http://127.0.0.1:61163/components/table/",
+    "text": "\t开启虚拟滚动的元素数量阈值，当数据数量小于阈值时不会开启虚拟滚动。\tnumber\t-\nisStaticItemHeight\t（已废除）元素高度是否是固定的，请使用 fixedSize\tboolean\tfalse\nfixedSize\t元素高度是否是固定的。\tboolean\tfalse\nestimatedSize\t元素高度不固定时的预估高度。\tnumber\t-\nbuffer\t视口边界外提前挂载的元素数量。\tnumber\t10\nTableExtraColumnConfig\n参数名\t描述\t类型\t默认值\nwidth\t列宽；未传按表格 size\tnumber\txs 28 / sm 32 / md·lg·xl 36\nfixed\t固定位置\t'left' | 'right'\t'right'\nalign\t对齐\t'left' | 'center' | 'right'\t'center'\ndataIndex\t列标识\tstring\t__cedar_table_extra__\n分页配置类型\n\nTablePaginationConfig = Omit<PaginationProps, 'total'> & { total?: number }。表格省略 pagination.total 时由有效数据条数推导；远程分页可继续显式传入总数。原 PaginationProps 对象仍可直接传给表格，独立 Pagination 的 total 必填要求不变。根入口与 table 入口均导出 TablePaginationConfig。\n\n透传配置的现有优先级（F07）\n\n列 filterable.triggerProps 在内部 Trigger 配置之后展开，嵌套 open 等字段目前可以覆盖筛选浮层状态。F07 兼容阶段保留该顺序和类型，不自动禁止这些旧能力；如未来收紧，需单独评估筛选状态与浮层状态的迁移。\n\n可选的业务行类型配置（F08-A）\nimport { defineTableConfig } from '@cedar-design/ui'\nimport type { TypedTableConfig, TypedTableColumn, TableDataPath } from '@cedar-design/ui/table'\n\ninterface User { id: string; name: string; age: number }\nconst users: User[] = [{ id: 'a', name: 'Alice', age: 20 }]\nconst config = defineTableConfig<User>({\n  rowKey: 'id', data: users,\n  columns: [{ dataIndex: 'age', render: ({ record }) => record.age.toFixed(0) }],\n})\n\n\n将 config 用于 <c-table v-bind=\"config\" /> 或 TSX <Table {...config} />。无需业务侧 as any；原 TableData、TableColumnData、TableProps 及组件 Props 保持。新入口检查发生在入参阶段，返回原 TableProps 供旧组件调用，运行时返回同一对象，不复制数据/列、不调整排序筛选、不包装组件。\n\n关联范围\t新类型的规则\ndata / columns\t相同 Row，树形 children 递归使用同一业务结构\ndataIndex\t校验字段与嵌套路径，例如 profile.city、tags[0].label、tags.0.label；递归最多五层业务结构；动态字符串和更深路径继续使用旧入口\nrender / sortable / filterable\trecord、比较器与筛选器参数为 Row，分组 children 列同样关联\n行回调\t单元格样式/类、rowClass、expandable、loadMore、spanMethod 与自定义合计关联 Row\nrowKey\t必须显式传入 Row 中值为 string/number 的字段；这里是字段名，不是嵌套路径\nsummary\t可省略、false，或返回完整 Row 的自定义函数；自动 summary=true 不保证是业务行，新入口不接受，原 Table 配置仍支持\n\n业务接口通常不需要显式 extends TableData；其 any 索引会使 keyof 变宽，削弱字段拼写检查。使用普通业务 interface，通过泛型约束检查表格保留元数据的兼容性。后端数据内容仍需业务校验，类型不会检查 ID 是否唯一。\n\n类型入口只覆盖这份配置内的关联；原组件的模板插槽、组件事件和自定义 components 扩展不会自动变成 Row 泛型。返回的 TableProps 仍为旧宽类型，不应期待后续任意修改返回对象也继续校验 Row。响应式来源会替换数组时，用 computed(() => defineTableConfig<Row>(...)) 保持更新；不要把调用时的 rows.value 当成持续跟随 ref 的订阅。\n\n自动合计行可能包含文本、总数和缺失字段，不能让 render(record: User) 假定其完整。需要自动合计或异构树行时继续使用原宽配置；采用自定义合计的新入口需提供完整业务行。两种入口的原 Table 行为都不改变。\n\n跨端范围：Maple Table 是原生表格展示容器，没有 data/columns API，本次不增加关联配置入口；两端 Select/Cascader 类型关联留待分别确认。",
+    "numericSteps": [],
+    "overflow": [
+      {
+        "tag": "TABLE",
+        "class": "c-table-element",
+        "text": "ExpandNameSalaryAddressEmail",
+        "right": 1422,
+        "width": 1020
+      },
+      {
+        "tag": "THEAD",
+        "class": "",
+        "text": "ExpandNameSalaryAddressEmail",
+        "right": 1422,
+        "width": 1020
+      },
+      {
+        "tag": "TR",
+        "class": "c-table-tr",
+        "text": "ExpandNameSalaryAddressEmail",
+        "right": 1422,
+        "width": 1020
+      },
+      {
+        "tag": "TABLE",
+        "class": "c-table-element",
+        "text": "Jane Doe2300032 Park Road, Londonjane.doe@example.comAlisa Ross2500035 Park Road, Londonalisa.ross@e",
+        "right": 1422,
+        "width": 1020
+      },
+      {
+        "tag": "TBODY",
+        "class": "",
+        "text": "Jane Doe2300032 Park Road, Londonjane.doe@example.comAlisa Ross2500035 Park Road, Londonalisa.ross@e",
+        "right": 1422,
+        "width": 1020
+      },
+      {
+        "tag": "TR",
+        "class": "c-table-tr",
+        "text": "Jane Doe2300032 Park Road, Londonjane.doe@example.com",
+        "right": 1422,
+        "width": 1020
+      },
+      {
+        "tag": "TR",
+        "class": "c-table-tr",
+        "text": "Alisa Ross2500035 Park Road, Londonalisa.ross@example.com",
+        "right": 1422,
+        "width": 1020
+      },
+      {
+        "tag": "TR",
+        "class": "c-table-tr",
+        "text": "Kevin Sandra2200031 Park Road, Londonkevin.sandra@example.com",
+        "right": 1422,
+        "width": 1020
+      },
+      {
+        "tag": "TR",
+        "class": "c-table-tr",
+        "text": "Ed Hellen1700042 Park Road, Londoned.hellen@example.com",
+        "right": 1422,
+        "width": 1020
+      },
+      {
+        "tag": "TR",
+        "class": "c-table-tr",
+        "text": "William Smith2700062 Park Road, Londonwilliam.smith@example.com",
+        "right": 1422,
+        "width": 1020
+      },
+      {
+        "tag": "TABLE",
+        "class": "c-table-element",
+        "text": "NameUser InfoInformationSalaryBirthdayAddressEmailPhoneCityRoadNo.Jane Doe1994-04-21LondonPark34jane",
+        "right": 1682,
+        "width": 1280
+      },
+      {
+        "tag": "THEAD",
+        "class": "",
+        "text": "NameUser InfoInformationSalaryBirthdayAddressEmailPhoneCityRoadNo.",
+        "right": 1682,
+        "width": 1280
+      },
+      {
+        "tag": "TR",
+        "class": "c-table-tr",
+        "text": "NameUser InfoInformationSalary",
+        "right": 1682,
+        "width": 1280
+      },
+      {
+        "tag": "TH",
+        "class": "c-table-th",
+        "text": "Information",
+        "right": 1562,
+        "width": 400
+      },
+      {
+        "tag": "SPAN",
+        "class": "c-table-cell c-table-cell-align-center",
+        "text": "Information",
+        "right": 1561,
+        "width": 399
+      },
+      {
+        "tag": "SPAN",
+        "class": "c-table-th-main",
+        "text": "Information",
+        "right": 1545,
+        "width": 367
+      },
+      {
+        "tag": "TR",
+        "class": "c-table-tr",
+        "text": "BirthdayAddressEmailPhone",
+        "right": 1682,
+        "width": 1280
+      },
+      {
+        "tag": "TH",
+        "class": "c-table-th",
+        "text": "Email",
+        "right": 1402,
+        "width": 240
+      },
+      {
+        "tag": "SPAN",
+        "class": "c-table-cell c-table-cell-align-left",
+        "text": "Email",
+        "right": 1401,
+        "width": 239
+      },
+      {
+        "tag": "SPAN",
+        "class": "c-table-th-main",
+        "text": "Email",
+        "right": 1385,
+        "width": 207
+      },
+      {
+        "tag": "TH",
+        "class": "c-table-th",
+        "text": "Phone",
+        "right": 1562,
+        "width": 160
+      },
+      {
+        "tag": "SPAN",
+        "class": "c-table-cell c-table-cell-align-left",
+        "text": "Phone",
+        "right": 1561,
+        "width": 159
+      },
+      {
+        "tag": "SPAN",
+        "class": "c-table-th-main",
+        "text": "Phone",
+        "right": 1545,
+        "width": 127
+      },
+      {
+        "tag": "SPAN",
+        "class": "c-table-th-title",
+        "text": "Phone",
+        "right": 1459.6875,
+        "width": 41.6875
+      },
+      {
+        "tag": "TR",
+        "class": "c-table-tr",
+        "text": "CityRoadNo.",
+        "right": 1682,
+        "width": 1280
+      },
+      {
+        "tag": "TBODY",
+        "class": "",
+        "text": "Jane Doe1994-04-21LondonPark34jane.doe@example.com1234567823000Alisa Ross1994-05-21LondonPark37alisa",
+        "right": 1682,
+        "width": 1280
+      },
+      {
+        "tag": "TR",
+        "class": "c-table-tr",
+        "text": "Jane Doe1994-04-21LondonPark34jane.doe@example.com1234567823000",
+        "right": 1682,
+        "width": 1280
+      },
+      {
+        "tag": "TD",
+        "class": "c-table-td",
+        "text": "jane.doe@example.com",
+        "right": 1402,
+        "width": 240
+      },
+      {
+        "tag": "SPAN",
+        "class": "c-table-cell c-table-cell-align-left",
+        "text": "jane.doe@example.com",
+        "right": 1401,
+        "width": 239
+      },
+      {
+        "tag": "SPAN",
+        "class": "c-table-td-content",
+        "text": "jane.doe@example.com",
+        "right": 1385,
+        "width": 207
+      }
+    ],
+    "previews": [
+      "<div class=\"vmi-previewer-example\" style=\"\"><div class=\"c-table c-table-size-md c-table-border c-table-hover c-table-layout-fixed\"><!----><div class=\"c-loading\"><div class=\"c-loading__content\"><!----><div class=\"c-table-container\"><div class=\"c-scrollbar c-scrollbar-type-embed\" style=\"height: 100%;\"><div class=\"c-scrollbar-container c-table-content\"><table class=\"c-table-element\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 796px;\"><colgroup><col width=\"266\"><col width=\"265\"><col width=\"265\"></colgroup><thead><tr class=\"c-table-tr\"><th class=\"c-table-th\" data-column-key=\"name\"><span class=\"c-table-cell c-table-cell-align-left\"><span class=\"c-table-th-main\"><span class=\"c-table-th-title\">Name</span><!----><!----></span><!----></span><!----><!----></th><th class=\"c-table-th\" data-column-key=\"salary\"><span class=\"c-table-cell c-table-cell-align-left\"><span class=\"c-table-th-main\"><span class=\"c-table-th-title\">Salary</span><!----><!----></span><!----></span><!----><!----></th><th class=\"c-table-th\" data-column-key=\"address\"><span class=\"c-table-cell c-table-cell-align-left\"><span class=\"c-table-th-main\"><span class=\"c-table-th-title\">Address</span><!----><!----></span><!----></span><!----><!----></th></tr></thead><tbody><tr class=\"c-table-tr\"><td class=\"c-table-td\" data-column-key=\"name\"><span class=\"c-table-cell c-table-cell-align-left\"><!----><!----><span class=\"c-table-td-content\">Jane Doe</span></span></td><td class=\"c-table-td\" data-column-key=\"salary\"><span class=\"c-table-cell c-table-cell-align-left\"><!----><!----><span class=\"c-table-td-content\">23000</span></span></td><td class=\"c-table-td\" data-column-key=\"address\"><span class=\"c-table-cell c-table-cell-align-left\"><!----><!----><span class=\"c-table-td-content\">32 Park Road, London</span></span></td></tr><!----><tr class=\"c-table-tr\"><td class=\"c-table-td\" data-column-key=\"name\"><span class=\"c-table-cell c-table-cell-align-left\"><!----><!----><span class=\"c-table-td-content\">Alisa Ross</span></span></td><td class=\"c-table-td\" data-column-key=\"salary\"><span class=\"c-table-cell c-table-cell-align-left\"><!----><!----><span class=\"c-table-td-content\">25000</span></span></td><td class=\"c-table-td\" data-column-key=\"address\"><span class=\"c-table-cell c-table-cell-align-left\"><!----><!----><span class=\"c-table-td-content\">35 Park Road, London</span></span></td></tr><!----><tr class=\"c-table-tr\"><td class=\"c-table-td\" data-column-key=\"name\"><span class=\"c-table-cell c-table-cell-align-left\"><!----><!----><span class=\"c-table-td-content\">Kevin Sandra</span></span></td><td class=\"c-table-td\" data-column-key=\"salary\"><span class=\"c-table-cell c-table-cell-align-left\"><!----><!----><span class=\"c-table-td-content\">22000</span></span></td><td class=\"c-table-td\" data-column-key=\"address\"><span class=\"c-table-cell c-table-cell-align-left\"><!----><!----><span class=\"c-table-td-content\">31 Park Road, London</span></span></td></tr><!----></tbody><!----></table></div><!----><!----></div></div><!----><!----><!----></div><!----></div></div></div>",
+      "<div class=\"vmi-previewer-example\" style=\"\"><div class=\"c-table c-table-size-md c-table-border c-table-hover c-table-empty c-table-layout-fixed\"><!----><div class=\"c-loading\"><div class=\"c-loading__content\"><!----><div class=\"c-table-container\"><div class=\"c-scrollbar c-scrollbar-type-embed\" style=\"height: 100%;\"><div class=\"c-scrollbar-container c-table-content\"><table class=\"c-table-element\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: 796px;\"><colgroup><col width=\"398\"><col width=\"398\"></colgroup><thead><tr class=\"c-table-tr\"><th class=\"c-table-th\" data-column-key=\"name\"><span class=\"c-table-cell c-table-cell-align-left\"><span class=\"c-table-th-main\"><span class=\"c-table-th-title\">Name</span><!----><!----></span><!----></span><!----><!----></th><th class=\"c-table-th\" data-column-key=\"address\"><span class=\"c-table-cell c-table-cell-align-left\"><span class=\"c-table-th-main\"><span class=\"c-table-th-title\">Address</span><!----><!----></span><!----></span><!----><!----></th></tr></thead><tbody><tr class=\"c-table-tr c-table-tr-empty\"><td class=\"c-table-td\" colspan=\"2\"><span class=\"c-table-cell c-table-cell-align-left\"><!----><!----><span class=\"c-table-td-content\">暂无记录，请调整筛选条件后重试。</span></span></td></tr></tbody><!----></table></div><!----><!----></div></div><!----><!----><!----></div><!----></div></div></div>"
+    ],
+    "controls": [
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换展开状态",
+        "class": "c-table-expand-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "上一页",
+        "class": "c-pagination__item c-pagination__previous"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "前往 1",
+        "class": "c-pagination__item c-pagination__item--active"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "下一页",
+        "class": "c-pagination__item c-pagination__next"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加一行",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "SPAN",
+        "role": "button",
+        "label": "年龄",
+        "class": "c-table-cell c-table-cell-align-left c-table-cell-with-sorter c-table-cell-next-ascend"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "P",
+        "role": "status",
+        "label": "业务数据：2 行；年龄列支持排序和筛选。",
+        "class": ""
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-input__inner"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "请选择",
+        "class": "c-selection-field__icon"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "查询任务",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空筛选",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "恢复全部任务",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "P",
+        "role": "status",
+        "label": "显示全部任务。输入条件后点击查询。",
+        "class": ""
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "完成展厅设备巡检",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "完成网站交互验收",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "完成品牌物料审核",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "完成移动端体验走查",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--disabled"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "完成会议室设备维护",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "",
+        "class": "c-switch c-switch--variant-circle c-switch--size-md c-switch--checked"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "",
+        "class": "c-switch c-switch--variant-circle c-switch--size-md c-switch--checked"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "",
+        "class": "c-switch c-switch--variant-circle c-switch--size-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "",
+        "class": "c-switch c-switch--variant-circle c-switch--size-md c-switch--checked"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "",
+        "class": "c-switch c-switch--variant-circle c-switch--size-md c-switch--checked"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "",
+        "class": "c-switch c-switch--variant-circle c-switch--size-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "",
+        "class": "c-switch c-switch--variant-circle c-switch--size-md c-switch--checked"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "",
+        "class": "c-switch c-switch--variant-circle c-switch--size-md"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "上一页",
+        "class": "c-pagination__item c-pagination__previous"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "前往 1",
+        "class": "c-pagination__item c-pagination__item--active"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "下一页",
+        "class": "c-pagination__item c-pagination__next"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制代码",
+        "class": "vp-copy-code-button"
+      }
+    ]
+  },
+  "error": "AssertionError [ERR_ASSERTION]: no script exceptions or failed local assets\n+ actual - expected\n\n+ [\n+   'ResizeObserver loop completed with undelivered notifications.'\n+ ]\n- []"
+}

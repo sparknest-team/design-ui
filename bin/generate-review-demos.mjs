@@ -4,6 +4,8 @@ import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
+// Review fixtures remain available to internal checks; they are not published demos.
+const { publicReviewDemos } = JSON.parse(fs.readFileSync(path.join(root, "design-ui/configs/component-showcase.json"), "utf8"));
 const require = createRequire(
   path.join(root, "cedar-design-web/packages/cedar-ui/package.json"),
 );
@@ -899,7 +901,7 @@ export async function generate() {
             : "(LoadingBar.setDefaultOptions(options), LoadingBar[action]())";
         generated = {
           slotNames: [],
-          source: `<script setup>\n${reviewPanelImport(path.join(demoDirectory, "api-review.vue"))}\nimport { onUnmounted } from 'vue'\nimport { ${service} } from '${library}'\nimport { defineReviewConfig } from '@sparknest/ui-doc-preview'\nimport __apiReviewRawConfig from './api-review.config.json'\nfunction run(action, bindings) {\n const options = Object.fromEntries(Object.entries(bindings).filter(([key]) => !key.startsWith('onVnode')).map(([key, value]) => [key.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()), value]))\n ${command}\n}\n${service === "LoadingBar" ? "onUnmounted(() => { LoadingBar.finish(); LoadingBar.resetDefaultOptions() })" : ""}\n</script>\n<template>\n<DemoApiReviewPanel v-slot="__apiReview" v-bind="defineReviewConfig(__apiReviewRawConfig)">\n<p>修改选项后重新触发 / Trigger again to apply options.</p>\n<div style="display:flex;flex-wrap:wrap;gap:12px">${buttons}</div>\n</DemoApiReviewPanel>\n</template>\n`,
+          source: `<script setup>\n${reviewPanelImport(path.join(demoDirectory, "api-review.vue"))}\nimport { onUnmounted } from 'vue'\nimport { ${service} } from '${library}'\nimport { defineReviewConfig } from '@sparknest/ui-doc-preview'\nimport __apiReviewRawConfig from './api-review.config.json'\nfunction run(action, bindings) {\n const options = Object.fromEntries(Object.entries(bindings).filter(([key]) => !key.startsWith('onVnode')).map(([key, value]) => [key.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()), value]))\n ${command}\n}\n${service === "LoadingBar" ? "onUnmounted(() => { LoadingBar.finish(); LoadingBar.resetDefaultOptions() })" : ""}\n</script>\n<template>\n<DemoApiReviewPanel v-slot="__apiReview" v-bind="defineReviewConfig(__apiReviewRawConfig)">\n<p>修改选项后重新触发 / Trigger again to apply options.</p>\n<${platform === "cedar" ? "c" : "mp"}-space wrap :size="12">${buttons}</${platform === "cedar" ? "c" : "mp"}-space>\n</DemoApiReviewPanel>\n</template>\n`,
         };
         fixture = "programmatic-api.vue";
       }
@@ -935,7 +937,7 @@ export async function generate() {
           : `\n### 功能调试\n\n\`\`\`demo\n${path.relative(path.dirname(doc), reviewFile)}\n\`\`\`\n\n`;
       const start = "<!-- api-review:start -->";
       const end = "<!-- api-review:end -->";
-      for (const docPath of [
+      if (publicReviewDemos) for (const docPath of [
         doc,
         ...(platform === "maple"
           ? [path.join(directory, "docs/en-US.md")]
@@ -968,7 +970,7 @@ export async function generate() {
         }
         fs.writeFileSync(docPath, text);
       }
-      if (platform === "maple") {
+      if (platform === "maple" && publicReviewDemos) {
         const indexPath = path.join(directory, "example/index.vue");
         if (!fs.existsSync(indexPath)) {
           fs.writeFileSync(

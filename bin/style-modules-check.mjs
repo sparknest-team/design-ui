@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { assertNoEmbeddedComponentStyles } from './style-module-assertions.mjs'
 import { readFileSync, readdirSync, existsSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { dirname, resolve, relative } from 'node:path'
@@ -17,11 +18,14 @@ for (const [repo, library, prefix] of [
   const src = resolve(root, 'src')
   const walk = dir => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(resolve(dir, e.name)) : [resolve(dir, e.name)])
   const entries = walk(src).filter(file => file.endsWith('/style/index.ts'))
+  const externalCss = new Map()
   const css = new Map(), visiting = new Set(), visited = new Set()
   function dependencies(entry) {
     return [...readFileSync(entry, 'utf8').matchAll(/import\s+['"]([^'"]+)['"]/g)].map(m => {
-      const target = resolve(dirname(entry), m[1])
-      return target.endsWith('.less') ? target : resolve(target, 'index.ts')
+      const external = !m[1].startsWith('.')
+      const target = external ? createRequire(entry).resolve(m[1]) : resolve(dirname(entry), m[1])
+      if (external) externalCss.set(target, m[1])
+      return /\.(?:less|css|ts)$/.test(target) ? target : resolve(target, 'index.ts')
     })
   }
   async function visit(entry) {
@@ -29,7 +33,9 @@ for (const [repo, library, prefix] of [
     if (visited.has(entry)) return
     assert(existsSync(entry), `Missing style dependency: ${entry}`)
     visiting.add(entry)
-    if (entry.endsWith('.less')) {
+    if (entry.endsWith('.css')) {
+      css.set(entry, readFileSync(entry, 'utf8'))
+    } else if (entry.endsWith('.less')) {
       css.set(entry, (await less.render(readFileSync(entry, 'utf8'), { filename: entry, javascriptEnabled: true })).css)
     } else {
       for (const dependency of dependencies(entry)) await visit(dependency)
@@ -38,6 +44,10 @@ for (const [repo, library, prefix] of [
           const target = resolve(root, out, relative(src, entry).replace(/\.ts$/, '.' + ext))
           const output = readFileSync(target, 'utf8')
           for (const dependency of dependencies(entry)) {
+            if (externalCss.has(dependency)) {
+              assert(output.includes(externalCss.get(dependency)), `${target} lost external CSS dependency ${externalCss.get(dependency)}`)
+              continue
+            }
             const spec = relative(dirname(entry), dependency).replace(/\.less$/, '.css').replace(/\.ts$/, '.' + ext)
             assert(output.includes(spec), `${target} lost dependency ${spec}`)
             assert(existsSync(resolve(root, out, relative(src, dependency).replace(/\.less$/, '.css').replace(/\.ts$/, '.' + ext))), `Missing emitted dependency: ${dependency}`)
@@ -54,9 +64,8 @@ for (const [repo, library, prefix] of [
     assert(!output.includes(`--${prefix}-font-size-xs:`), `Foundation embedded in ${file}`)
   }
   const button = css.get(resolve(src, 'button/style/index.less'))
-  assert(!button.includes(`.${prefix}-loading`), `${library}: Button embeds Loading`)
-  assert(!button.includes(`.${prefix}-ripple`), `${library}: Button embeds Ripple`)
-  console.log(`${library}: ${entries.length} style entries, ${css.size} unique Less modules compiled; no cycles, missing imports or embedded foundation${built ? '; ESM/CJS dependencies verified' : ''}`)
+  assertNoEmbeddedComponentStyles(button, prefix, ['loading', 'ripple'], `${library}: Button`)
+  console.log(`${library}: ${entries.length} style entries, ${css.size} unique CSS/Less modules compiled; no cycles, missing imports or embedded foundation${built ? '; ESM/CJS dependencies verified' : ''}`)
   for (const name of ['button', 'message', 'menu', 'split-button', 'radio']) {
     const output = css.get(resolve(src, name, 'style/index.less'))
     if (output !== undefined) console.log(`  ${name}: ${Buffer.byteLength(output)} bytes (own CSS)`)

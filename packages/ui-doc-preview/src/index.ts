@@ -8,3 +8,6 @@ export type { ReviewConfig } from "./review-state";
 
 export { default as ReviewSlot } from "./ReviewSlot.vue";
 export { default as ReviewSuite } from "./ReviewSuite.vue";
+
+export { default as DirectionToggle } from './DirectionToggle.vue'
+export { useDocsDirection } from './docs-direction'

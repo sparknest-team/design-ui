@@ -5,7 +5,11 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    ".": "./src/index.mjs"
+    ".": "./src/index.mjs",
+    "./browser-targets": {
+      "types": "./src/browser-targets.d.mts",
+      "import": "./src/browser-targets.mjs"
+    }
   },
   "bin": {
     "ui-build": "./bin/ui-build.mjs"

@@ -1,0 +1,82 @@
+{
+  "browser": {
+    "name": "chromium",
+    "engine": "chromium",
+    "launchOptions": {},
+    "version": "151.0.7922.34",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "recordedAt": "2026-10-28T17:56:05.763Z",
+    "evidenceType": "automated-engine-regression",
+    "nativeDeviceAcceptance": false,
+    "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+    "gestureInput": "CDP touch injection"
+  },
+  "result": {
+    "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.7922.34 Mobile Safari/537.36",
+    "events": [
+      {
+        "type": "touchstart",
+        "trusted": true,
+        "x": 98
+      },
+      {
+        "type": "touchmove",
+        "trusted": true,
+        "x": 108
+      },
+      {
+        "type": "touchmove",
+        "trusted": true,
+        "x": 118
+      },
+      {
+        "type": "touchmove",
+        "trusted": true,
+        "x": 128
+      },
+      {
+        "type": "touchmove",
+        "trusted": true,
+        "x": 138
+      },
+      {
+        "type": "touchmove",
+        "trusted": true,
+        "x": 148
+      },
+      {
+        "type": "touchmove",
+        "trusted": true,
+        "x": 158
+      },
+      {
+        "type": "touchmove",
+        "trusted": true,
+        "x": 168
+      },
+      {
+        "type": "touchmove",
+        "trusted": true,
+        "x": 178
+      },
+      {
+        "type": "touchend",
+        "trusted": true,
+        "x": 178
+      }
+    ],
+    "features": {
+      "colorMix": true,
+      "has": true,
+      "dvh": true,
+      "resizeObserver": true,
+      "intersectionObserver": true,
+      "visualViewport": true
+    },
+    "padding": "10px",
+    "viewportHeight": 900,
+    "height": 900,
+    "passed": true
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "failures": [],
+  "diagnostic": {},
+  "error": "Error: locator.click: Target crashed \nCall log:\n\u001b[2m  - waiting for locator('.loca-doc-preview__example').first().locator('[data-field-open-trigger]').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" aria-label=\"请选择日期范围\" aria-expanded=\"false\" aria-haspopup=\"dialog\" data-field-open-trigger=\"\" class=\"mp-picker-field__open-trigger\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n"
+}

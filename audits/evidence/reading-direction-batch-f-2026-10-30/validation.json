@@ -1,0 +1,225 @@
+{
+  "date": "2026-10-30",
+  "scope": "F batch core direction contracts and Input composition dependency regression; complete-library release acceptance remains separate",
+  "checks": [
+    {
+      "scope": "cedar input",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/input/__tests__/empty-value-demo.spec.ts",
+        "src/input/__tests__/input.test.tsx",
+        "src/input/__tests__/empty-value.spec.ts",
+        "src/input/__tests__/loading-demo.spec.ts",
+        "src/input/__tests__/pipeline.spec.js",
+        "src/input/__tests__/default-value-demo.spec.ts",
+        "src/input/__tests__/same-source.spec.ts",
+        "--threads=false"
+      ],
+      "log": "cedar-input.log",
+      "exitCode": 0,
+      "passedTests": 86
+    },
+    {
+      "scope": "cedar cascader",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/cascader/__tests__/selection-field.spec.ts",
+        "src/cascader/__tests__/reading-direction.spec.ts",
+        "src/cascader/__tests__/cascader.test.tsx",
+        "src/cascader/__tests__/passthrough-demo.spec.ts",
+        "src/cascader/__tests__/async-owner.spec.ts",
+        "src/cascader/__tests__/contract.spec.ts",
+        "src/cascader/__tests__/passthrough-options.spec.ts",
+        "src/cascader/__tests__/async-options.spec.ts",
+        "src/cascader/__tests__/selection-indicators.spec.ts",
+        "src/cascader/__tests__/case-sensitive.spec.ts",
+        "--threads=false"
+      ],
+      "log": "cedar-cascader.log",
+      "exitCode": 0,
+      "passedTests": 44
+    },
+    {
+      "scope": "cedar tree-select",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/tree-select/__tests__/tree-select.test.tsx",
+        "src/tree-select/__tests__/reading-direction.spec.ts",
+        "src/tree-select/__tests__/filterable.test.ts",
+        "src/tree-select/__tests__/passthrough-demo.spec.ts",
+        "src/tree-select/__tests__/empty-value.spec.ts",
+        "src/tree-select/__tests__/passthrough-options.spec.ts",
+        "src/tree-select/__tests__/case-sensitive.spec.ts",
+        "--threads=false"
+      ],
+      "log": "cedar-tree-select.log",
+      "exitCode": 0,
+      "passedTests": 18
+    },
+    {
+      "scope": "cedar auto-complete",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/auto-complete/__tests__/auto-complete.test.tsx",
+        "src/auto-complete/__tests__/reading-direction.spec.ts",
+        "src/auto-complete/__tests__/passthrough-demo.spec.ts",
+        "src/auto-complete/__tests__/passthrough-options.spec.ts",
+        "--threads=false"
+      ],
+      "log": "cedar-auto-complete.log",
+      "exitCode": 0,
+      "passedTests": 54
+    },
+    {
+      "scope": "maple input",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/input/__tests__/empty-value-demo.spec.ts",
+        "src/input/__tests__/empty-value.spec.ts",
+        "src/input/__tests__/index.spec.js",
+        "src/input/__tests__/loading-demo.spec.ts",
+        "src/input/__tests__/autocomplete.spec.ts",
+        "src/input/__tests__/pipeline.spec.js",
+        "src/input/__tests__/default-value-demo.spec.ts",
+        "src/input/__tests__/extensions.spec.ts",
+        "src/input/__tests__/same-source.spec.ts",
+        "--config",
+        "reading-direction.vitest.config.mjs",
+        "--maxWorkers=1",
+        "--minWorkers=1"
+      ],
+      "log": "maple-input.log",
+      "exitCode": 0,
+      "passedTests": 102
+    },
+    {
+      "scope": "maple cascader",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/cascader/__tests__/selection-field.spec.ts",
+        "src/cascader/__tests__/presentation.spec.js",
+        "src/cascader/__tests__/reading-direction.spec.ts",
+        "src/cascader/__tests__/passthrough-demo.spec.ts",
+        "src/cascader/__tests__/async-owner.spec.ts",
+        "src/cascader/__tests__/index.spec.js",
+        "src/cascader/__tests__/passthrough-options.spec.ts",
+        "src/cascader/__tests__/selection-indicators.spec.ts",
+        "src/cascader/__tests__/case-sensitive.spec.ts",
+        "--config",
+        "reading-direction.vitest.config.mjs",
+        "--maxWorkers=1",
+        "--minWorkers=1"
+      ],
+      "log": "maple-cascader.log",
+      "exitCode": 0,
+      "passedTests": 40
+    },
+    {
+      "scope": "maple auto-complete",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/auto-complete/__tests__/auto-complete.test.tsx",
+        "src/auto-complete/__tests__/reading-direction.spec.ts",
+        "src/auto-complete/__tests__/passthrough-demo.spec.ts",
+        "src/auto-complete/__tests__/passthrough-options.spec.ts",
+        "--config",
+        "reading-direction.vitest.config.mjs",
+        "--maxWorkers=1",
+        "--minWorkers=1"
+      ],
+      "log": "maple-auto-complete.log",
+      "exitCode": 0,
+      "passedTests": 54
+    },
+    {
+      "log": "direction-gate.log",
+      "command": "CHOKIDAR_USEPOLLING=1 pnpm --dir design-ui check:direction",
+      "exitCode": 0,
+      "passedTests": 88
+    },
+    {
+      "log": "browser.log",
+      "command": "node design-ui/browser/reading-direction-batch-f/check.mjs",
+      "exitCode": 0
+    },
+    {
+      "log": "capture.log",
+      "command": "DIRECTION_ENGINES=chromium DIRECTION_CAPTURE_ONLY=1 node design-ui/browser/reading-direction-batch-f/check.mjs",
+      "exitCode": 0
+    },
+    {
+      "log": "cedar-types.log",
+      "command": "pnpm --dir cedar-design-web typecheck",
+      "exitCode": 0
+    },
+    {
+      "log": "maple-types.log",
+      "command": "pnpm --dir maple-design-mobile typecheck",
+      "exitCode": 0
+    },
+    {
+      "log": "cedar-lint.log",
+      "command": "pnpm --dir cedar-design-web lint",
+      "exitCode": 0
+    },
+    {
+      "log": "maple-lint.log",
+      "command": "pnpm --dir maple-design-mobile lint:check",
+      "exitCode": 0
+    }
+  ],
+  "cedarPassedTests": 202,
+  "maplePassedTests": 196,
+  "directionPassedTests": 88,
+  "browserCases": 9,
+  "engines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "notes": [
+    "Explicit component-family test file lists avoid legacy substring-filter collection and node SSR cache contamination.",
+    "Candidate-update tests reproduced native composition text being overwritten by the old model before the Input fix.",
+    "The separate screenshot capture disables animations and preserves the full three-engine results.json.",
+    "Synthetic composition protocol is not system-IME or mobile hardware acceptance."
+  ],
+  "sourceSha256": {
+    "cedar-design-web/packages/cedar-ui/src/cascader/use-cascader-controller.ts": "24f6ced476f28e7bf951fdea17745f4df4a4e95d3e0631de8f84ab9042f232b6",
+    "cedar-design-web/packages/cedar-ui/src/cascader/style/index.less": "ea4857faaea12c5620310eae26b5ef3d44308c5390dd59e938225855adff4f18",
+    "cedar-design-web/packages/cedar-ui/src/auto-complete/__tests__/reading-direction.spec.ts": "6018ea8b8de54dad4e0dd446a6a43180928b36cae88d1505473033e2d75202f6",
+    "maple-design-mobile/packages/maple-ui/src/cascader/use-cascader-controller.ts": "43c16a5ab6ce04a498983c64b23ab356ce9404b5d11b02770518c037f02fe306",
+    "maple-design-mobile/packages/maple-ui/src/cascader/style/index.less": "0d8ea25affd6abdd47f53c212c1574239cc9470a2f221e1add0e4af20adc5788",
+    "maple-design-mobile/packages/maple-ui/src/auto-complete/__tests__/reading-direction.spec.ts": "b664ed5c89dc9e897ff1986f17f564c546b44d636f0756385df8f22e8c8385ad",
+    "cedar-design-web/packages/cedar-ui/src/input/input.vue": "5e3cc3913227b184a26d99071942233f56ef84eb4e806dd5189f5692d21d0a93",
+    "maple-design-mobile/packages/maple-ui/src/input/Input.vue": "cd5b17f44b9e1de9bf553380407fcebe42013531a712644b079917a8610f2d62",
+    "cedar-design-web/packages/cedar-ui/src/tree-select/__tests__/reading-direction.spec.ts": "418b2ba13998a3be1c3ad9c3e6abe288ffef82da2a877cc055511a18d64f305b"
+  }
+}

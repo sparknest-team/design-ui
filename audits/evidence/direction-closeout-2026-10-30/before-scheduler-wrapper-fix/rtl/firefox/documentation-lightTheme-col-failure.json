@@ -1,0 +1,319 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:57149/components/col/",
+    "text": "同源]\nPopover 气泡卡片 [已同源]\nPopconfirm 气泡确认框\nDialog 对话框 [逻辑已同源]\nDrawer 抽屉 [逻辑已同源]\nOverlay 背景层 [已同源]\n\n配置与交互基础\n\nConfigProvider 全局配置\nStyleProvider [已同源]\nFieldDecorator 字段外壳\nTrigger 浮层触发 [已同源]\nWatermark 水印 [已同源]\nRipple 水波指令 [已同源]\nHover 悬停反馈\nHomeComponentsCol\nCol\n孟帅、吴甲明\n2026年9月9日\n大约 3 分钟\n此页内容\n基础示例\n列宽与偏移\n布局与排列\n弹性比例与固定宽度\n响应式对象与隐藏恢复\n内容与展示\n排序与零值恢复\nAPI\nProps\nEvents\nSlots\nMethods\n响应式与可访问性\n导入\n\n24 栏 Flex 栅格。Row 管理间距与对齐，Col 管理列宽、偏移、排序与响应式配置。需要 CSS Grid 折叠与后缀时使用 Grid。\n\n布局怎么选\n\nGrid + GridItem：适合表单分栏、卡片网格，需要统一列宽、跨列、响应式列数或折叠行与后缀时使用。\nRow + Col：适合 24 栏 Flex 布局，需要水平/垂直对齐、控制换行、固定宽度与自适应宽度组合，或响应式排序时使用。Row 控制整行，Col 控制列宽、偏移和排序。\nSpace：适合按钮、标签、文字等简单排列，只需要间距、方向和对齐时使用；更自由的宽度分配可使用原生 Flex。\n基础示例\n列宽与偏移\nSpan\n4\n8\n12\nOffset\n0\n4\n8\n8 / +4\n4\n布局与排列\n弹性比例与固定宽度\n本组配置对照\n配置\t作用\t相关示例\nflex\t弹性比例、固定长度或 CSS flex 值\t弹性比例与固定宽度\nxs\t响应式栏数或包含 span、offset、order 的对象\t响应式对象与隐藏恢复\nsm\t响应式栏数或包含 span、offset、order 的对象\t响应式对象与隐藏恢复\nmd\t响应式栏数或包含 span、offset、order 的对象\t响应式对象与隐藏恢复\nspan\t占用栏数；0 隐藏\t响应式对象与隐藏恢复\n1\n2\n100px\nauto\n响应式对象与隐藏恢复\n\nxs → sm (576px) → md (768px). Hidden columns return at larger breakpoints.\n\n24 / 12 / 8\nHidden / 12 / 8\nReset offset / order\n内容与展示\n排序与零值恢复\n本组配置对照\n配置\t作用\t相关示例\nspan\t占用栏数；0 隐藏\t排序与零值恢复\norder\t排序，0 可恢复\t排序与零值恢复\nReverse order\n1\n2\n3\nAPI\nProps\n属性\t说明\tType\tDefault\nspan\t占用栏数；0 隐藏\tnumber\t24\noffset\t左侧偏移，0 可恢复\tnumber\tundefined\norder\t排序，0 可恢复\tnumber\tundefined\nxs\t响应式栏数或包含 span、offset、order 的对象\tnumber / ColSizeDescriptor\tundefined\nsm\t响应式栏数或包含 span、offset、order 的对象\tnumber / ColSizeDescriptor\tundefined\nmd\t响应式栏数或包含 span、offset、order 的对象\tnumber / ColSizeDescriptor\tundefined\nlg\t响应式栏数或包含 span、offset、order 的对象\tnumber / ColSizeDescriptor\tundefined\nxl\t响应式栏数或包含 span、offset、order 的对象\tnumber / ColSizeDescriptor\tundefined\nxxl\t响应式栏数或包含 span、offset、order 的对象\tnumber / ColSizeDescriptor\tundefined\nflex\t弹性比例、固定长度或 CSS flex 值\tnumber / string\tundefined\nEvents\nEvent\tDescription\nclick\t原生 MouseEvent，每次点击一次\nSlots\nSlot\tDescription\ndefault\t布局内容\nMethods\nMethod\tDescription\n\n排序示例关闭倒序后，各列恢复 order: 0。响应式断点依据浏览器视口，而非 Demo 卡片宽度；仅加宽卡片不会触发断点。span: 0 隐藏列，匹配更大断点后可恢复。\n\n响应式与可访问性\n\n断点基于浏览器视口：xs 为基础值，sm ≥576、md ≥768、lg ≥992、xl ≥1200、xxl ≥1600px；从最大匹配断点向下取已配置值。SSR 首屏使用 xs，挂载后响应视口；Grid 折叠和动态排序在挂载后计算。组件为布局容器，不增加键盘快捷键；内容语义及可聚焦元素由调用者提供。没有公开方法和专用主题 Token。\n\n导入\n\nGrid 仅包含 Grid.Item；Row、Col 是独立组件，拥有独立源码、样式、菜单、文档和 Demo。已移除 Grid.Row/Grid.Col、Grid 入口的 Row/Col 转导出以及 GridRowInstance/GridColInstance。请从库根入口或独立 row/col 入口导入；安装 Grid 不再自动注册 Row/Col。\n\n上次编辑于: 2026/10/23 21:06:46\n贡献者: shuai.meng",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"vmi-previewer-example\" style=\"\"><div data-v-4ddca72e=\"\"><div data-v-4ddca72e=\"\" class=\"controls\">Span<div data-v-4ddca72e=\"\" role=\"radiogroup\" aria-label=\"\" class=\"c-radio-group c-radio-group--horizontal c-radio-group--size-md\"><label data-v-4ddca72e=\"\" class=\"c-radio\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"4\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">4</span><!----></label><label data-v-4ddca72e=\"\" class=\"c-radio c-radio--checked\"><input class=\"c-radio__input\" type=\"radio\" checked=\"\" tabindex=\"0\" aria-checked=\"true\" value=\"8\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">8</span><!----></label><label data-v-4ddca72e=\"\" class=\"c-radio\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"12\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">12</span><!----></label><!----></div></div><div data-v-4ddca72e=\"\" class=\"controls\">Offset<div data-v-4ddca72e=\"\" role=\"radiogroup\" aria-label=\"\" class=\"c-radio-group c-radio-group--horizontal c-radio-group--size-md\"><label data-v-4ddca72e=\"\" class=\"c-radio\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"0\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">0</span><!----></label><label data-v-4ddca72e=\"\" class=\"c-radio c-radio--checked\"><input class=\"c-radio__input\" type=\"radio\" checked=\"\" tabindex=\"0\" aria-checked=\"true\" value=\"4\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">4</span><!----></label><label data-v-4ddca72e=\"\" class=\"c-radio\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"8\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">8</span><!----></label><!----></div></div><div data-v-4ddca72e=\"\" class=\"c-row c-row--align-start c-row--justify-start\" style=\"margin-left: -6px; margin-right: -6px;\"><div data-v-4ddca72e=\"\" class=\"c-col c-col--span-8 c-col--offset-4\" style=\"padding-left: 6px; padding-right: 6px;\"><div data-v-4ddca72e=\"\" class=\"cell\">8 / +4</div></div><div data-v-4ddca72e=\"\" class=\"c-col c-col--span-4\" style=\"padding-left: 6px; padding-right: 6px;\"><div data-v-4ddca72e=\"\" class=\"cell soft\">4</div></div></div></div></div>",
+      "<div class=\"vmi-previewer-example\" style=\"\"><div data-v-1f7c56e9=\"\"><div data-v-1f7c56e9=\"\" class=\"c-row c-row--align-start c-row--justify-start\" style=\"margin-left: -6px; margin-right: -6px;\"><div data-v-1f7c56e9=\"\" class=\"c-col\" style=\"flex: 1 1 0%; padding-left: 6px; padding-right: 6px;\"><div data-v-1f7c56e9=\"\" class=\"cell\">1</div></div><div data-v-1f7c56e9=\"\" class=\"c-col\" style=\"flex: 2 1 0%; padding-left: 6px; padding-right: 6px;\"><div data-v-1f7c56e9=\"\" class=\"cell soft\">2</div></div></div><div data-v-1f7c56e9=\"\" class=\"c-row c-row--nowrap c-row--align-start c-row--justify-start\" style=\"margin-left: -6px; margin-right: -6px;\"><div data-v-1f7c56e9=\"\" class=\"c-col\" style=\"flex: 0 0 100px; padding-left: 6px; padding-right: 6px;\"><div data-v-1f7c56e9=\"\" class=\"cell\">100px</div></div><div data-v-1f7c56e9=\"\" class=\"c-col\" style=\"flex: 1 1 auto; padding-left: 6px; padding-right: 6px;\"><div data-v-1f7c56e9=\"\" class=\"cell soft\">auto</div></div></div></div></div>"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "选择语言",
+        "class": "vp-dropdown-title"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "搜索",
+        "class": "slimsearch-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到 LTR / Switch to left-to-right",
+        "class": "docs-direction-toggle"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换主题",
+        "class": "cedar-docs-theme__trigger"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "radiogroup",
+        "label": "",
+        "class": "c-radio-group c-radio-group--horizontal c-radio-group--size-md"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "DIV",
+        "role": "radiogroup",
+        "label": "",
+        "class": "c-radio-group c-radio-group--horizontal c-radio-group--size-md"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "Reverse order",
+        "class": "c-switch c-switch--variant-circle c-switch--size-md"
+      }
+    ]
+  },
+  "navigation": {
+    "url": "http://127.0.0.1:57149/components/col/",
+    "elapsedMs": 5003,
+    "events": [
+      {
+        "name": "domcontentloaded",
+        "elapsedMs": 0
+      },
+      {
+        "name": "load",
+        "elapsedMs": 0
+      }
+    ],
+    "requests": [
+      {
+        "url": "http://127.0.0.1:57149/components/col/",
+        "type": "document",
+        "startedMs": 3,
+        "status": 200,
+        "finishedMs": 55
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/style-CNx3dR2G.css",
+        "type": "stylesheet",
+        "startedMs": 82,
+        "status": 200,
+        "finishedMs": 107
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/app-B49fxBal.js",
+        "type": "script",
+        "startedMs": 82,
+        "status": 200,
+        "finishedMs": 105
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/siteData-Bqq_TROh.js",
+        "type": "script",
+        "startedMs": 84,
+        "status": 200,
+        "finishedMs": 112
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/index.html-BekCOIU5.js",
+        "type": "script",
+        "startedMs": 84,
+        "status": 200,
+        "finishedMs": 108
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/basic-BcwPDt7L.js",
+        "type": "script",
+        "startedMs": 84,
+        "status": 200,
+        "finishedMs": 110
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/flex-rDQ5CMUW.js",
+        "type": "script",
+        "startedMs": 84,
+        "status": 200,
+        "finishedMs": 126
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/responsive-DToiIYRa.js",
+        "type": "script",
+        "startedMs": 84,
+        "status": 200,
+        "finishedMs": 128
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/order-Drj8zrry.js",
+        "type": "script",
+        "startedMs": 85,
+        "status": 200,
+        "finishedMs": 124
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/index-DY-DwMVa.js",
+        "type": "script",
+        "startedMs": 85,
+        "status": 200,
+        "finishedMs": 110
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/use-responsive-state-DWP6TTx1.js",
+        "type": "script",
+        "startedMs": 85,
+        "status": 200,
+        "finishedMs": 110
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/index-Dau5TD76.js",
+        "type": "script",
+        "startedMs": 85,
+        "status": 200,
+        "finishedMs": 110
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/index-BKZchv0t.js",
+        "type": "script",
+        "startedMs": 85,
+        "status": 200,
+        "finishedMs": 111
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/use-choice-keyboard-DRRhyFLM.js",
+        "type": "script",
+        "startedMs": 85,
+        "status": 200,
+        "finishedMs": 111
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/props-Dl5CejVZ.js",
+        "type": "script",
+        "startedMs": 85,
+        "status": 200,
+        "finishedMs": 111
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/use-option-request-CDZvI_Yo.js",
+        "type": "script",
+        "startedMs": 85,
+        "status": 200,
+        "finishedMs": 111
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/use-selection-session-nOiaWOhy.js",
+        "type": "script",
+        "startedMs": 86,
+        "status": 200,
+        "finishedMs": 112
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/PendingFeedback.vue_vue_type_script_setup_true_lang-CSTha31Q.js",
+        "type": "script",
+        "startedMs": 86,
+        "status": 200,
+        "finishedMs": 111
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/index-ky1ycqNw.js",
+        "type": "script",
+        "startedMs": 86,
+        "status": 200,
+        "finishedMs": 113
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/index-BSLQsg_H.js",
+        "type": "script",
+        "startedMs": 86,
+        "status": 200,
+        "finishedMs": 113
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/constant-0mfGR27J.js",
+        "type": "script",
+        "startedMs": 86,
+        "status": 200,
+        "finishedMs": 114
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/useChildren-D59HAx6Z.js",
+        "type": "script",
+        "startedMs": 86,
+        "status": 200,
+        "finishedMs": 114
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/use-action-guard-jOa_9PCg.js",
+        "type": "script",
+        "startedMs": 86,
+        "status": 200,
+        "finishedMs": 114
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/use-form-item-C9xppHKT.js",
+        "type": "script",
+        "startedMs": 86,
+        "status": 200,
+        "finishedMs": 115
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/index-BMWT6dwW.js",
+        "type": "script",
+        "startedMs": 86,
+        "status": 200,
+        "finishedMs": 115
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/use-size-u8WTq0Rd.js",
+        "type": "script",
+        "startedMs": 86,
+        "status": 200,
+        "finishedMs": 116
+      },
+      {
+        "url": "http://127.0.0.1:57149/assets/index-BWFyfadR.js",
+        "type": "script",
+        "startedMs": 86,
+        "status": 200,
+        "finishedMs": 117
+      },
+      {
+        "url": "http://127.0.0.1:57149/logo.svg",
+        "type": "image",
+        "startedMs": 87,
+        "status": 200,
+        "finishedMs": 117
+      }
+    ],
+    "pending": []
+  },
+  "error": "TimeoutError: page.goto: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:57149/components/col/\", waiting until \"load\"\u001b[22m\n\nNavigation diagnostic: {\"url\":\"http://127.0.0.1:57149/components/col/\",\"elapsedMs\":5003,\"events\":[{\"name\":\"domcontentloaded\",\"elapsedMs\":0},{\"name\":\"load\",\"elapsedMs\":0}],\"requests\":[{\"url\":\"http://127.0.0.1:57149/components/col/\",\"type\":\"document\",\"startedMs\":3,\"status\":200,\"finishedMs\":55},{\"url\":\"http://127.0.0.1:57149/assets/style-CNx3dR2G.css\",\"type\":\"stylesheet\",\"startedMs\":82,\"status\":200,\"finishedMs\":107},{\"url\":\"http://127.0.0.1:57149/assets/app-B49fxBal.js\",\"type\":\"script\",\"startedMs\":82,\"status\":200,\"finishedMs\":105},{\"url\":\"http://127.0.0.1:57149/assets/siteData-Bqq_TROh.js\",\"type\":\"script\",\"startedMs\":84,\"status\":200,\"finishedMs\":112},{\"url\":\"http://127.0.0.1:57149/assets/index.html-BekCOIU5.js\",\"type\":\"script\",\"startedMs\":84,\"status\":200,\"finishedMs\":108},{\"url\":\"http://127.0.0.1:57149/assets/basic-BcwPDt7L.js\",\"type\":\"script\",\"startedMs\":84,\"status\":200,\"finishedMs\":110},{\"url\":\"http://127.0.0.1:57149/assets/flex-rDQ5CMUW.js\",\"type\":\"script\",\"startedMs\":84,\"status\":200,\"finishedMs\":126},{\"url\":\"http://127.0.0.1:57149/assets/responsive-DToiIYRa.js\",\"type\":\"script\",\"startedMs\":84,\"status\":200,\"finishedMs\":128},{\"url\":\"http://127.0.0.1:57149/assets/order-Drj8zrry.js\",\"type\":\"script\",\"startedMs\":85,\"status\":200,\"finishedMs\":124},{\"url\":\"http://127.0.0.1:57149/assets/index-DY-DwMVa.js\",\"type\":\"script\",\"startedMs\":85,\"status\":200,\"finishedMs\":110},{\"url\":\"http://127.0.0.1:57149/assets/use-responsive-state-DWP6TTx1.js\",\"type\":\"script\",\"startedMs\":85,\"status\":200,\"finishedMs\":110},{\"url\":\"http://127.0.0.1:57149/assets/index-Dau5TD76.js\",\"type\":\"script\",\"startedMs\":85,\"status\":200,\"finishedMs\":110},{\"url\":\"http://127.0.0.1:57149/assets/index-BKZchv0t.js\",\"type\":\"script\",\"startedMs\":85,\"status\":200,\"finishedMs\":111},{\"url\":\"http://127.0.0.1:57149/assets/use-choice-keyboard-DRRhyFLM.js\",\"type\":\"script\",\"startedMs\":85,\"status\":200,\"finishedMs\":111},{\"url\":\"http://127.0.0.1:57149/assets/props-Dl5CejVZ.js\",\"type\":\"script\",\"startedMs\":85,\"status\":200,\"finishedMs\":111},{\"url\":\"http://127.0.0.1:57149/assets/use-option-request-CDZvI_Yo.js\",\"type\":\"script\",\"startedMs\":85,\"status\":200,\"finishedMs\":111},{\"url\":\"http://127.0.0.1:57149/assets/use-selection-session-nOiaWOhy.js\",\"type\":\"script\",\"startedMs\":86,\"status\":200,\"finishedMs\":112},{\"url\":\"http://127.0.0.1:57149/assets/PendingFeedback.vue_vue_type_script_setup_true_lang-CSTha31Q.js\",\"type\":\"script\",\"startedMs\":86,\"status\":200,\"finishedMs\":111},{\"url\":\"http://127.0.0.1:57149/assets/index-ky1ycqNw.js\",\"type\":\"script\",\"startedMs\":86,\"status\":200,\"finishedMs\":113},{\"url\":\"http://127.0.0.1:57149/assets/index-BSLQsg_H.js\",\"type\":\"script\",\"startedMs\":86,\"status\":200,\"finishedMs\":113},{\"url\":\"http://127.0.0.1:57149/assets/constant-0mfGR27J.js\",\"type\":\"script\",\"startedMs\":86,\"status\":200,\"finishedMs\":114},{\"url\":\"http://127.0.0.1:57149/assets/useChildren-D59HAx6Z.js\",\"type\":\"script\",\"startedMs\":86,\"status\":200,\"finishedMs\":114},{\"url\":\"http://127.0.0.1:57149/assets/use-action-guard-jOa_9PCg.js\",\"type\":\"script\",\"startedMs\":86,\"status\":200,\"finishedMs\":114},{\"url\":\"http://127.0.0.1:57149/assets/use-form-item-C9xppHKT.js\",\"type\":\"script\",\"startedMs\":86,\"status\":200,\"finishedMs\":115},{\"url\":\"http://127.0.0.1:57149/assets/index-BMWT6dwW.js\",\"type\":\"script\",\"startedMs\":86,\"status\":200,\"finishedMs\":115},{\"url\":\"http://127.0.0.1:57149/assets/use-size-u8WTq0Rd.js\",\"type\":\"script\",\"startedMs\":86,\"status\":200,\"finishedMs\":116},{\"url\":\"http://127.0.0.1:57149/assets/index-BWFyfadR.js\",\"type\":\"script\",\"startedMs\":86,\"status\":200,\"finishedMs\":117},{\"url\":\"http://127.0.0.1:57149/logo.svg\",\"type\":\"image\",\"startedMs\":87,\"status\":200,\"finishedMs\":117}],\"pending\":[]}"
+}

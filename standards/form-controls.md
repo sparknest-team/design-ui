@@ -78,7 +78,8 @@
 
 ## 字段编辑与纯阅读（2026-10-21）
 
-- `presentation`：Cedar 为 `inline | click | dblclick`；Maple 为 `inline | popup`。默认均为 `inline`。
+- `edit-mode`：Cedar 为 `direct | click | dblclick`；Maple 为 `direct | popup`。Cedar 默认 `direct`；Maple 的 Select、Cascader、AutoComplete、Date/DateRange、Time/TimeRange 默认 `popup`，其他字段默认 `direct`。Form/FormItem 未指定时保留各字段默认值，显式设置才统一覆盖；字段 > FormItem > Form。显式 `direct` 保留直接编辑。旧编辑属性 `presentation`、类型别名与编辑值 `inline` 直接移除，不保留兼容层。
+- Search 的 `edit-mode` 两端统一为 `direct | popup`，默认 `direct`；分别使用历史菜单与本地全屏搜索弹层，不再提供 `historyPopup`。
 - `readPretty?: boolean` 独立于 `readonly`、`disabled`；字段 > FormItem > Form 继承，显式 `false` 覆盖父级。仅展示格式化值和 read 插槽，不挂载编辑器或请求搜索。
 - Cedar 的 click/dblclick 使用 Teleport 固定定位覆盖字段原位并复用原控件，保留占位，可扩宽但不得超出视口；Enter/F2 也能进入。没有模态遮罩或 presentation=popover/dialog；悬浮/聚焦显示编辑图标及单击/双击提示，点击图标可直接编辑。
 - Maple popup 点击值区域进入，左侧默认“请输入/请选择”、右侧关闭，底部确认；inline 保留直接编辑。
@@ -91,3 +92,17 @@
 - 原生面板打开时 Enter 选值，Esc 仅关闭最上层面板并恢复控件焦点、保留字段草稿；面板关闭后 Enter 保存、Esc 取消。多行 Enter 换行，Ctrl/Cmd+Enter 保存，IME 组合输入不提交。
 - 字段自身传送到 body 的下拉/日期/时间面板属于内部区域；校验失败后收起候选面板，避免遮挡错误。外部保存成功不抢回焦点。
 - 异步保存复用同一等待结果，期间不能重复确认、取消或打开另一编辑器。重置立即终止保存及等待中的切换，即使业务任务不响应 AbortSignal，也不阻塞后续编辑，迟到结果不写回。
+
+## 共享字段加载
+
+带 FieldDecorator 外壳的字段复用 fieldLoadingProps：loading 表示等待状态，loadingMode 取 default/line，默认 default。默认指示器和底部不定进度线只在 FieldDecorator 渲染；Input/SelectionField/PickerField 负责传入状态并将 aria-busy 关联到原生控件。远程选择器合并自身请求状态后传入，不能再同时绘制尾部 spinner。line 模式保留箭头/搜索图标及原有交互，不让图标跟随旧 spinner class 旋转。
+
+加载展示不隐式改变 disabled/readonly；原有组件对异步操作的业务门控仍按各自契约执行。纯阅读展示和独立面板不因声明字段 loading 就自动套用编辑外壳。Switch、Checkbox、Radio 不套用文本字段的线形布局。
+
+## 按需接入加载（2026-10-30 修订）
+
+fieldPresentationProps 不声明 loading。带输入外壳的字段按需复用 FieldDecorator 的 fieldLoadingProps，不能给所有表单控件统一追加转圈。Checkbox/CheckboxGroup、Radio/RadioGroup、Slider、Rate、VerificationCode、Color、Transfer、Upload 不提供整组件 loading；Scheduler 不提供外部 loading 属性或 loading 插槽，数据加载占位由业务在外层组合 Loading，需要禁止修改时显式设置 readonly。Switch 保留原有开关指示器，Upload 保留文件进度和明确 before 钩子的汇总等待。Message 的 loading 是现有消息类型，不是布尔 loading 属性。
+
+beforeCommit 的确认等待继续由字段提交会话管理，输入框/选择框将 pending 合并到原有指示器，其他字段在编辑面板确认按钮展示等待；不会因此将直接编辑的 change 改为可等待任务。
+
+纯阅读模式不主动触发异步任务；支持 loading 的字段在业务显式传入时仍展示共享反馈，不挂载编辑器。

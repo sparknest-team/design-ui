@@ -1,0 +1,518 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:52065/components/collapse/#%E5%B1%95%E5%BC%80%E9%97%B4%E8%B7%9D",
+    "text": "PI\n\n主值使用普通 v-model：modelValue 表示展开面板的 name 数组，手风琴模式也使用数组。defaultValue 仅在创建时初始化非受控状态，之后修改不会重置当前值；初始化不触发 update:modelValue。提供 modelValue 时由父级控制，以受控值为准。\n\nProps\n属性\t说明\t类型\t默认值\nmodel-value\t当前展开面板的 name，支持 v-model\t(string | number)[]\t—\ndefault-value\t非受控初始展开面板\t(string | number)[]\t[]\naccordion\t手风琴模式，同时最多展开一项\tboolean\tfalse\nshow-expand-icon\t是否显示展开图标；未设置时由子项决定\tboolean\t—\nexpand-icon-position\t展开图标位置\t'left' | 'right'\t'left'\nbordered\t是否显示边框\tboolean\ttrue\ndivider\t是否显示面板分割线\tboolean\ttrue\noffset\t展开面板是否显示间距\tboolean\tfalse\ndestroy-on-hide\t是否在隐藏时销毁内容\tboolean\tfalse\nEvents\nEvent\tDescription\tArguments\nupdate:model-value\t请求更新展开面板\t(string | number)[]\nchange\t展开面板变化时触发\t(string | number)[], Event\nSlots\nSlot\tDescription\tScope\ndefault\t面板列表\t—\nMethods\nMethod\tDescription\ntoggleAll\t开启或关闭所有面板（手风琴模式下无效）\n\n父级可通过 expand-icon 插槽下发默认展开图标，作用域为 expanded、disabled、position。该插槽由子项读取，不在根节点渲染。\n\nCollapseToggleAllOptions\n参数\t描述\t类型\t默认值\nexpand\t'inverse' 切换全部；boolean 控制全部展开或收起\t'inverse' | boolean\t—\nskipDisabled\t是否跳过禁用面板\tboolean\tfalse\n<collapse-item> Props\n参数名\t描述\t类型\t默认值\nname (必填)\t面板唯一标识，对应 modelValue 中的值\tstring | number\t—\ntitle\t面板的标题\tstring\t—\ndisabled\t是否禁用\tboolean\tfalse\nshow-expand-icon\t是否显示展开图标\tboolean\ttrue\ndestroy-on-hide\t是否在隐藏时销毁内容\tboolean\tfalse\n<collapse-item> Slots\n插槽名\t描述\t参数\ntitle\t面板的标题\t—\nextra\t额外内容\t—\nexpand-icon\t展开图标\texpanded: boolean\ndisabled: boolean\nposition: 'left' | 'right'\ndefault\t面板内容\t—\n类型定义\n\n组件导出以下类型定义。Collapse.Item 与 CollapseItem 为同一组件。\n\nimport type { CollapseInstance, CollapseToggleAllOptions, ExpandIconPosition } from '@cedar-design/ui'\n\n颜色变量\n\nCollapse 的公开颜色变量使用 system 语义作为默认值，Cedar 与 Maple 保持一致：\n\n变量\t默认语义\n--c-collapse-border-color\t--c-sys-color-border-default\n--c-collapse-title-bg\t--c-sys-color-surface-default\n--c-collapse-title-bg-active\t--c-sys-color-surface-default\n--c-collapse-title-bg-disabled\t--c-sys-color-surface-default\n--c-collapse-title-text-color\t--c-sys-color-content-primary\n--c-collapse-title-text-color-disabled\t--c-sys-color-content-disabled\n--c-collapse-content-text-color\t--c-sys-color-content-primary\n--c-collapse-content-text-color-disabled\t--c-sys-color-content-disabled\n--c-collapse-content-bg\t--c-sys-color-surface-muted\n--c-collapse-expand-icon\tvar(--c-sys-color-content-secondary)\n--c-collapse-item-border-color\t--c-sys-color-border-default\n减少动态效果\n\n内置 CSS 过渡遵循 prefers-reduced-motion: reduce。关闭过渡不改变最终显隐、选中／展开状态及事件语义；插槽内自定义动画由应用自行控制。\n\n上次编辑于: 2026/10/24 20:08:01\n贡献者: shuai.meng,mengshuai",
+    "numericSteps": [],
+    "overflow": [
+      {
+        "tag": "CODE",
+        "class": "",
+        "text": "import type { CollapseInstance, CollapseToggleAllOptions, ExpandIconPosition } from '@cedar-design/u",
+        "right": 1317.03125,
+        "width": 893.03125
+      },
+      {
+        "tag": "SPAN",
+        "class": "line",
+        "text": "import type { CollapseInstance, CollapseToggleAllOptions, ExpandIconPosition } from '@cedar-design/u",
+        "right": 1297.03125,
+        "width": 857.03125
+      },
+      {
+        "tag": "SPAN",
+        "class": "token string",
+        "text": "'@cedar-design/ui'",
+        "right": 1297.03125,
+        "width": 151.234375
+      }
+    ],
+    "previews": [
+      "<div class=\"vmi-previewer-example\" style=\"\"><div class=\"c-collapse\"><div class=\"c-collapse-item c-collapse-item--active\"><div id=\"c-collapse-item-v-0-1-header\" role=\"button\" tabindex=\"0\" aria-disabled=\"false\" aria-expanded=\"true\" aria-controls=\"c-collapse-item-v-0-1-panel\" class=\"c-collapse-item__header c-collapse-item__header--icon-left\"><div class=\"c-collapse-item__expand-icon-wrap\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-caret-right c-collapse-item__expand-icon\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" stroke=\"none\" d=\"M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937z\"></path></svg></div><div class=\"c-collapse-item__header-title\">Beijing Toutiao Technology Co., Ltd.</div><!----><!----></div><div id=\"c-collapse-item-v-0-1-panel\" role=\"region\" aria-labelledby=\"c-collapse-item-v-0-1-header\" class=\"c-collapse-item__content\"><div class=\"c-collapse-item__content-box\"><div>Beijing Toutiao Technology Co., Ltd.</div></div></div></div><div class=\"c-collapse-item c-collapse-item--active\"><div id=\"c-collapse-item-v-1-2-header\" role=\"button\" tabindex=\"0\" aria-disabled=\"false\" aria-expanded=\"true\" aria-controls=\"c-collapse-item-v-1-2-panel\" class=\"c-collapse-item__header c-collapse-item__header--icon-left\"><div class=\"c-collapse-item__expand-icon-wrap\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-caret-right c-collapse-item__expand-icon\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" stroke=\"none\" d=\"M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937z\"></path></svg></div><div class=\"c-collapse-item__header-title\">Beijing Toutiao Technology Co., Ltd.</div><!----><!----></div><div id=\"c-collapse-item-v-1-2-panel\" role=\"region\" aria-labelledby=\"c-collapse-item-v-1-2-header\" class=\"c-collapse-item__content\"><div class=\"c-collapse-item__content-box\"><div>Beijing Toutiao Technology Co., Ltd.</div></div></div></div><div class=\"c-collapse-item\"><div id=\"c-collapse-item-v-2-3-header\" role=\"button\" tabindex=\"0\" aria-disabled=\"false\" aria-expanded=\"false\" aria-controls=\"c-collapse-item-v-2-3-panel\" class=\"c-collapse-item__header c-collapse-item__header--icon-left\"><div class=\"c-collapse-item__expand-icon-wrap\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-caret-right c-collapse-item__expand-icon\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" stroke=\"none\" d=\"M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937z\"></path></svg></div><div class=\"c-collapse-item__header-title\">Beijing Toutiao Technology Co., Ltd.</div><!----><!----></div><div id=\"c-collapse-item-v-2-3-panel\" role=\"region\" aria-labelledby=\"c-collapse-item-v-2-3-header\" class=\"c-collapse-item__content\" style=\"display: none;\"><div class=\"c-collapse-item__content-box\"><div>Beijing Toutiao Technology Co., Ltd.</div></div></div></div></div></div>",
+      "<div class=\"vmi-previewer-example\" style=\"\"><div class=\"c-space c-space--block\" style=\"gap: var(--c-space-size-md-row-gap) var(--c-space-size-md-column-gap); flex-flow: column; justify-content: flex-start; align-items: stretch; width: 100%;\"><!----><div class=\"c-space__item\"><button class=\"c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">Disable</span><div class=\"c-hover-overlay\"></div></button></div><!----><div class=\"c-space__item\"><div class=\"c-collapse\"><div class=\"c-collapse-item c-collapse-item--active\"><div id=\"c-collapse-item-v-3-1-header\" role=\"button\" tabindex=\"0\" aria-disabled=\"false\" aria-expanded=\"true\" aria-controls=\"c-collapse-item-v-3-1-panel\" class=\"c-collapse-item__header c-collapse-item__header--icon-left\"><div class=\"c-collapse-item__expand-icon-wrap\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-caret-right c-collapse-item__expand-icon\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" stroke=\"none\" d=\"M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937z\"></path></svg></div><div class=\"c-collapse-item__header-title\">Beijing Toutiao Technology Co., Ltd.</div><!----><!----></div><div id=\"c-collapse-item-v-3-1-panel\" role=\"region\" aria-labelledby=\"c-collapse-item-v-3-1-header\" class=\"c-collapse-item__content\"><div class=\"c-collapse-item__content-box\"><div>Beijing Toutiao Technology Co., Ltd.</div></div></div></div><div class=\"c-collapse-item\"><div id=\"c-collapse-item-v-4-2-header\" role=\"button\" tabindex=\"0\" aria-disabled=\"false\" aria-expanded=\"false\" aria-controls=\"c-collapse-item-v-4-2-panel\" class=\"c-collapse-item__header c-collapse-item__header--icon-left\"><div class=\"c-collapse-item__expand-icon-wrap\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-caret-right c-collapse-item__expand-icon\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" stroke=\"none\" d=\"M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937z\"></path></svg></div><div class=\"c-collapse-item__header-title\">Beijing Toutiao Technology Co., Ltd.</div><!----><!----></div><div id=\"c-collapse-item-v-4-2-panel\" role=\"region\" aria-labelledby=\"c-collapse-item-v-4-2-header\" class=\"c-collapse-item__content\" style=\"display: none;\"><div class=\"c-collapse-item__content-box\"><div>Beijing Toutiao Technology Co., Ltd.</div></div></div></div></div></div></div></div>"
+    ],
+    "controls": [
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.Extra",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.Action",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Action",
+        "class": "c-button c-button--size-sm c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.city",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "^^Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "▼Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "▶Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Icon right",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Hide icon",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.city",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Toggle all",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Toggle all (skip disabled)",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Expand all",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Expand all (skip disabled)",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Collapse all",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Collapse all (skip disabled)",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Panel 1",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Panel 2",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "Content 2",
+        "class": "c-collapse-item__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Panel 3",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Panel 4",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "Content 4",
+        "class": "c-collapse-item__content"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "审查对象与场景 / Review target and scenario",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重新挂载 / Remount",
+        "class": "c-button c-button--size-sm c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重置 / Reset",
+        "class": "c-button c-button--size-sm c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "功能分类 / Feature topic",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "筛选属性 / Filter",
+        "class": "c-input__inner"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "值与数据 / Value and data（2）",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "Beijing Toutiao Technology Co., Ltd.",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "实例 API / Instance API",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "当前覆盖值 / Active overrides",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "事件 / Events（0）",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "专项 API 定位 / Scenario API index",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制代码",
+        "class": "vp-copy-code-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "返回顶部",
+        "class": "vp-back-to-top-button"
+      },
+      {
+        "tag": "SPAN",
+        "role": "progressbar",
+        "label": "",
+        "class": "vp-scroll-progress"
+      }
+    ]
+  },
+  "error": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.vmi-previewer').nth(6).locator('[title=\"展开或收起源码\"]')\u001b[22m\n\u001b[2m    - locator resolved to <span title=\"展开或收起源码\" class=\"vmi-previewer-actions-button\">…</span>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n"
+}

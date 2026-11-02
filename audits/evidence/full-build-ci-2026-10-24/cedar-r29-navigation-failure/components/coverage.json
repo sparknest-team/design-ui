@@ -1,0 +1,2052 @@
+{
+  "library": "cedar",
+  "components": 97,
+  "sourcesStable": true,
+  "sourceFingerprint": "00a5bce9126acac366ce46f6bed0a3cbab0285a3ffd997984414630bb54e0c3d",
+  "buildIndexHash": "ff045162ea9fddad14c381042304c2c990fbdd64a5e25df8161b399032dad1f0",
+  "node": "v20.18.3",
+  "productionInputsStable": true,
+  "productionFingerprint": "4a464410cabe6009ef9b8cb67f786f4a3cc6d27af2010566986fdde4cbefa635",
+  "concurrency": 1,
+  "expectedComponentCases": 194,
+  "expectedGuideCases": 14,
+  "completedComponentCases": 194,
+  "results": [
+    {
+      "component": "affix",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/affix/__demos__/basic.vue",
+      "checkedSources": 7,
+      "result": "affix",
+      "passed": true
+    },
+    {
+      "component": "alert",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/alert/__demos__/closable.vue",
+      "checkedSources": 13,
+      "result": "alert",
+      "passed": true
+    },
+    {
+      "component": "anchor",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/anchor/__demos__/basic.vue",
+      "checkedSources": 7,
+      "result": "anchor",
+      "passed": true
+    },
+    {
+      "component": "auto-complete",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/auto-complete/__demos__/basic.vue",
+      "checkedSources": 14,
+      "result": "auto-complete",
+      "passed": true
+    },
+    {
+      "component": "avatar",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/avatar/__demos__/basic.vue",
+      "checkedSources": 13,
+      "result": "avatar: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "back-top",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/back-top/__demos__/basic.vue",
+      "checkedSources": 6,
+      "result": "back-top",
+      "passed": true
+    },
+    {
+      "component": "badge",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/badge/__demos__/basic.vue",
+      "checkedSources": 12,
+      "result": "badge: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "breadcrumb",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/breadcrumb/__demos__/basic.vue",
+      "checkedSources": 8,
+      "result": "breadcrumb: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "button",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/button/__demos__/variants.vue",
+      "checkedSources": 17,
+      "result": "button",
+      "passed": true
+    },
+    {
+      "component": "calendar",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/calendar/__demos__/basic.vue",
+      "checkedSources": 7,
+      "result": "calendar",
+      "passed": true
+    },
+    {
+      "component": "card",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/card/__demos__/basic.vue",
+      "checkedSources": 13,
+      "result": "card: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "carousel",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/carousel/__demos__/basic.vue",
+      "checkedSources": 22,
+      "result": "carousel",
+      "passed": true
+    },
+    {
+      "component": "cascader",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/cascader/__demos__/basic.vue",
+      "checkedSources": 16,
+      "result": "cascader",
+      "passed": true
+    },
+    {
+      "component": "checkbox",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/checkbox/__demos__/basic.vue",
+      "checkedSources": 18,
+      "result": "checkbox",
+      "passed": true
+    },
+    {
+      "component": "col",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/col/__demos__/basic.vue",
+      "checkedSources": 5,
+      "result": "col: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "collapse",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/collapse/__demos__/basic.vue",
+      "checkedSources": 14,
+      "result": "collapse",
+      "passed": true
+    },
+    {
+      "component": "color-picker",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/color-picker/__demos__/basic.vue",
+      "checkedSources": 5,
+      "result": "color-picker",
+      "passed": true
+    },
+    {
+      "component": "color",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/color/__demos__/basic.vue",
+      "checkedSources": 3,
+      "result": "color",
+      "passed": true
+    },
+    {
+      "component": "config-provider",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/config-provider/__demos__/basic.vue",
+      "checkedSources": 2,
+      "result": "config-provider",
+      "passed": true
+    },
+    {
+      "component": "count-to",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/count-to/__demos__/basic.vue",
+      "checkedSources": 7,
+      "result": "count-to",
+      "passed": true
+    },
+    {
+      "component": "countdown",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/countdown/__demos__/basic.vue",
+      "checkedSources": 7,
+      "result": "countdown",
+      "passed": true
+    },
+    {
+      "component": "date-range",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/date-range/__demos__/basic.vue",
+      "checkedSources": 14,
+      "result": "temporal",
+      "passed": true
+    },
+    {
+      "component": "date",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/date/__demos__/basic.vue",
+      "checkedSources": 19,
+      "result": "temporal",
+      "passed": true
+    },
+    {
+      "component": "date-picker",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/date/picker/__demos__/entry-boundary.vue",
+      "checkedSources": 14,
+      "result": "date-panel",
+      "passed": true
+    },
+    {
+      "component": "descriptions",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/descriptions/__demos__/basic.vue",
+      "checkedSources": 6,
+      "result": "descriptions: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "dialog",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/dialog/__demos__/basic.vue",
+      "checkedSources": 17,
+      "result": "dialog",
+      "passed": true
+    },
+    {
+      "component": "divider",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/divider/__demos__/basic.vue",
+      "checkedSources": 9,
+      "result": "divider: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "drawer",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/drawer/__demos__/basic.vue",
+      "checkedSources": 8,
+      "result": "drawer",
+      "passed": true
+    },
+    {
+      "component": "ellipsis",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/ellipsis/__demos__/expand.vue",
+      "checkedSources": 6,
+      "result": "ellipsis",
+      "passed": true
+    },
+    {
+      "component": "empty",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/empty/__demos__/basic.vue",
+      "checkedSources": 6,
+      "result": "empty: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "filter-form",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/filter-form/__demos__/basic.vue",
+      "checkedSources": 4,
+      "result": "filter-form",
+      "passed": true
+    },
+    {
+      "component": "form",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "passed": false,
+      "error": "TimeoutError: page.goto: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:51831/components/form/\", waiting until \"load\"\u001b[22m\n"
+    },
+    {
+      "component": "grid",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/grid/__demos__/basic.vue",
+      "checkedSources": 5,
+      "result": "grid: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "icon",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/icon/__demos__/basic-usage.vue",
+      "checkedSources": 10,
+      "result": "icon: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "image",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/__demos__/basic.vue",
+      "checkedSources": 22,
+      "result": "image",
+      "passed": true
+    },
+    {
+      "component": "infinite-scroll",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/infinite-scroll/__demos__/list.vue",
+      "checkedSources": 5,
+      "result": "infinite-scroll",
+      "passed": true
+    },
+    {
+      "component": "input-number",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/input-number/__demos__/field-basic.vue",
+      "checkedSources": 11,
+      "result": "input-number",
+      "passed": true
+    },
+    {
+      "component": "input-tag",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/input-tag/__demos__/basic.vue",
+      "checkedSources": 5,
+      "result": "input-tag",
+      "passed": true
+    },
+    {
+      "component": "input",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/input/__demos__/default-value.vue",
+      "checkedSources": 17,
+      "result": "input",
+      "passed": true
+    },
+    {
+      "component": "layout",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/layout/__demos__/basic.vue",
+      "checkedSources": 6,
+      "result": "layout: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "link",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/link/__demos__/basic.vue",
+      "checkedSources": 10,
+      "result": "link: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "list",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/list/__demos__/basic.vue",
+      "checkedSources": 9,
+      "result": "list: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "loading",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/loading/__demos__/size.vue",
+      "checkedSources": 6,
+      "result": "loading: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "map",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/map/__demos__/basic.vue",
+      "checkedSources": 4,
+      "result": "map",
+      "passed": true
+    },
+    {
+      "component": "mention",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/mention/__demos__/basic.vue",
+      "checkedSources": 4,
+      "result": "mention",
+      "passed": true
+    },
+    {
+      "component": "menu",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/menu/__demos__/basic.vue",
+      "checkedSources": 15,
+      "result": "menu",
+      "passed": true
+    },
+    {
+      "component": "message",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/message/__demos__/basic.vue",
+      "checkedSources": 14,
+      "result": "message",
+      "passed": true
+    },
+    {
+      "component": "nav-menu",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/nav-menu/__demos__/basic.vue",
+      "checkedSources": 15,
+      "result": "nav-menu",
+      "passed": true
+    },
+    {
+      "component": "notification",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/notification/__demos__/basic.vue",
+      "checkedSources": 2,
+      "result": "notification",
+      "passed": true
+    },
+    {
+      "component": "overflow-list",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/overflow-list/__demos__/basic.vue",
+      "checkedSources": 3,
+      "result": "overflow-list",
+      "passed": true
+    },
+    {
+      "component": "overlay",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/overlay/__demos__/basic.vue",
+      "checkedSources": 2,
+      "result": "overlay",
+      "passed": true
+    },
+    {
+      "component": "page-header",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/page-header/__demos__/basic.vue",
+      "checkedSources": 5,
+      "result": "page-header: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "pagination",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/pagination/__demos__/basic.vue",
+      "checkedSources": 13,
+      "result": "pagination",
+      "passed": true
+    },
+    {
+      "component": "paper",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/paper/__demos__/live-properties.vue",
+      "checkedSources": 3,
+      "result": "paper",
+      "passed": true
+    },
+    {
+      "component": "people-select",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/people-select/__demos__/basic.vue",
+      "checkedSources": 2,
+      "result": "people-select",
+      "passed": true
+    },
+    {
+      "component": "popconfirm",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/popconfirm/__demos__/basic.vue",
+      "checkedSources": 5,
+      "result": "popconfirm",
+      "passed": true
+    },
+    {
+      "component": "popover",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/popover/__demos__/basic.vue",
+      "checkedSources": 3,
+      "result": "popover",
+      "passed": true
+    },
+    {
+      "component": "progress-group",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/basic.vue",
+      "checkedSources": 8,
+      "result": "progress-group: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "progress",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/progress/__demos__/basic.vue",
+      "checkedSources": 8,
+      "result": "progress: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "radio",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/radio/__demos__/basic.vue",
+      "checkedSources": 17,
+      "result": "radio",
+      "passed": true
+    },
+    {
+      "component": "rate",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/rate/__demos__/basic.vue",
+      "checkedSources": 12,
+      "result": "rate",
+      "passed": true
+    },
+    {
+      "component": "resize-box",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/resize-box/__demos__/basic.vue",
+      "checkedSources": 5,
+      "result": "resize-box",
+      "passed": true
+    },
+    {
+      "component": "result",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/result/__demos__/basic.vue",
+      "checkedSources": 10,
+      "result": "result: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "ripple",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/ripple/__demos__/basic.vue",
+      "checkedSources": 2,
+      "result": "ripple",
+      "passed": true
+    },
+    {
+      "component": "row",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/row/__demos__/basic.vue",
+      "checkedSources": 7,
+      "result": "row: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "scheduler",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/basic.vue",
+      "checkedSources": 43,
+      "result": "scheduler",
+      "passed": true
+    },
+    {
+      "component": "scrollbar",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/scrollbar/__demos__/basic.vue",
+      "checkedSources": 5,
+      "result": "scrollbar",
+      "passed": true
+    },
+    {
+      "component": "search",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/search/__demos__/basic.vue",
+      "checkedSources": 8,
+      "result": "search",
+      "passed": true
+    },
+    {
+      "component": "segmented",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/segmented/__demos__/basic.vue",
+      "checkedSources": 6,
+      "result": "segmented",
+      "passed": true
+    },
+    {
+      "component": "select",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/select/__demos__/basic.vue",
+      "checkedSources": 29,
+      "result": "select",
+      "passed": true
+    },
+    {
+      "component": "skeleton",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/skeleton/__demos__/basic.vue",
+      "checkedSources": 7,
+      "result": "skeleton: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "slider",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/slider/__demos__/basic.vue",
+      "checkedSources": 7,
+      "result": "slider",
+      "passed": true
+    },
+    {
+      "component": "space",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/space/__demos__/basic.vue",
+      "checkedSources": 9,
+      "result": "space: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "split-button",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/split-button/__demos__/basic.vue",
+      "checkedSources": 10,
+      "result": "split-button",
+      "passed": true
+    },
+    {
+      "component": "split",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/split/__demos__/basic.vue",
+      "checkedSources": 3,
+      "result": "split",
+      "passed": true
+    },
+    {
+      "component": "statistic",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/statistic/__demos__/basic.vue",
+      "checkedSources": 8,
+      "result": "statistic: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "steps",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/steps/__demos__/basic.vue",
+      "checkedSources": 13,
+      "result": "steps",
+      "passed": true
+    },
+    {
+      "component": "style-provider",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/style-provider/__demos__/basic.vue",
+      "checkedSources": 2,
+      "result": "style-provider",
+      "passed": true
+    },
+    {
+      "component": "switch",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/switch/__demos__/basic.vue",
+      "checkedSources": 16,
+      "result": "switch",
+      "passed": true
+    },
+    {
+      "component": "table-column-manager",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/table-column-manager/__demos__/basic.vue",
+      "checkedSources": 6,
+      "result": "table-column-manager",
+      "passed": true
+    },
+    {
+      "component": "table",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/table/__demos__/basic.vue",
+      "checkedSources": 38,
+      "result": "table: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "tabs",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/tabs/__demos__/basic.vue",
+      "checkedSources": 14,
+      "result": "tabs",
+      "passed": true
+    },
+    {
+      "component": "tag",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/tag/__demos__/closable.vue",
+      "checkedSources": 11,
+      "result": "tag",
+      "passed": true
+    },
+    {
+      "component": "textarea",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/textarea/__demos__/basic.vue",
+      "checkedSources": 11,
+      "result": "textarea",
+      "passed": true
+    },
+    {
+      "component": "time-range",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/time-range/__demos__/basic.vue",
+      "checkedSources": 16,
+      "result": "temporal",
+      "passed": true
+    },
+    {
+      "component": "time",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/time/__demos__/basic.vue",
+      "checkedSources": 17,
+      "result": "temporal",
+      "passed": true
+    },
+    {
+      "component": "time-picker",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/time/picker/__demos__/panel-behavior.vue",
+      "checkedSources": 9,
+      "result": "time-panel",
+      "passed": true
+    },
+    {
+      "component": "timeline",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/timeline/__demos__/basic.vue",
+      "checkedSources": 11,
+      "result": "timeline: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "tooltip",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/tooltip/__demos__/basic.vue",
+      "checkedSources": 9,
+      "result": "tooltip",
+      "passed": true
+    },
+    {
+      "component": "transfer",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/transfer/__demos__/basic.vue",
+      "checkedSources": 8,
+      "result": "transfer",
+      "passed": true
+    },
+    {
+      "component": "tree-select",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/tree-select/__demos__/basic.vue",
+      "checkedSources": 2,
+      "result": "tree-select",
+      "passed": true
+    },
+    {
+      "component": "tree",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/tree/__demos__/basic.vue",
+      "checkedSources": 17,
+      "result": "tree",
+      "passed": true
+    },
+    {
+      "component": "trigger",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/trigger/__demos__/basic.vue",
+      "checkedSources": 4,
+      "result": "trigger",
+      "passed": true
+    },
+    {
+      "component": "typography",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/typography/__demos__/basic.vue",
+      "checkedSources": 8,
+      "result": "typography: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "upload",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/upload/__demos__/read-only.vue",
+      "checkedSources": 12,
+      "result": "upload",
+      "passed": true
+    },
+    {
+      "component": "verification-code",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/verification-code/__demos__/basic.vue",
+      "checkedSources": 7,
+      "result": "verification-code",
+      "passed": true
+    },
+    {
+      "component": "watermark",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/watermark/__demos__/basic.vue",
+      "checkedSources": 6,
+      "result": "watermark",
+      "passed": true
+    },
+    {
+      "component": "affix",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/affix/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "affix",
+      "passed": true
+    },
+    {
+      "component": "alert",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/alert/__demos__/closable.vue",
+      "checkedSources": 2,
+      "result": "alert",
+      "passed": true
+    },
+    {
+      "component": "anchor",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/anchor/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "anchor",
+      "passed": true
+    },
+    {
+      "component": "auto-complete",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/auto-complete/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "auto-complete",
+      "passed": true
+    },
+    {
+      "component": "avatar",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/avatar/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "avatar: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "back-top",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/back-top/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "back-top",
+      "passed": true
+    },
+    {
+      "component": "badge",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/badge/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "badge: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "breadcrumb",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/breadcrumb/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "breadcrumb: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "button",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/button/__demos__/variants.vue",
+      "checkedSources": 2,
+      "result": "button",
+      "passed": true
+    },
+    {
+      "component": "calendar",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/calendar/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "calendar",
+      "passed": true
+    },
+    {
+      "component": "card",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/card/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "card: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "carousel",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/carousel/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "carousel",
+      "passed": true
+    },
+    {
+      "component": "cascader",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/cascader/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "cascader",
+      "passed": true
+    },
+    {
+      "component": "checkbox",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/checkbox/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "checkbox",
+      "passed": true
+    },
+    {
+      "component": "col",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/col/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "col: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "collapse",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/collapse/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "collapse",
+      "passed": true
+    },
+    {
+      "component": "color-picker",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/color-picker/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "color-picker",
+      "passed": true
+    },
+    {
+      "component": "color",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/color/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "color",
+      "passed": true
+    },
+    {
+      "component": "config-provider",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/config-provider/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "config-provider",
+      "passed": true
+    },
+    {
+      "component": "count-to",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/count-to/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "count-to",
+      "passed": true
+    },
+    {
+      "component": "countdown",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/countdown/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "countdown",
+      "passed": true
+    },
+    {
+      "component": "date-range",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/date-range/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "temporal",
+      "passed": true
+    },
+    {
+      "component": "date",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/date/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "temporal",
+      "passed": true
+    },
+    {
+      "component": "date-picker",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/date/picker/__demos__/entry-boundary.vue",
+      "checkedSources": 2,
+      "result": "date-panel",
+      "passed": true
+    },
+    {
+      "component": "descriptions",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/descriptions/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "descriptions: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "dialog",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/dialog/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "dialog",
+      "passed": true
+    },
+    {
+      "component": "divider",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/divider/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "divider: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "drawer",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/drawer/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "drawer",
+      "passed": true
+    },
+    {
+      "component": "ellipsis",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/ellipsis/__demos__/expand.vue",
+      "checkedSources": 2,
+      "result": "ellipsis",
+      "passed": true
+    },
+    {
+      "component": "empty",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/empty/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "empty: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "filter-form",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/filter-form/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "filter-form",
+      "passed": true
+    },
+    {
+      "component": "form",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/form/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "form",
+      "passed": true
+    },
+    {
+      "component": "grid",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/grid/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "grid: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "icon",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/icon/__demos__/basic-usage.vue",
+      "checkedSources": 1,
+      "result": "icon: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "image",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/image/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "image",
+      "passed": true
+    },
+    {
+      "component": "infinite-scroll",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/infinite-scroll/__demos__/list.vue",
+      "checkedSources": 1,
+      "result": "infinite-scroll",
+      "passed": true
+    },
+    {
+      "component": "input-number",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/input-number/__demos__/field-basic.vue",
+      "checkedSources": 1,
+      "result": "input-number",
+      "passed": true
+    },
+    {
+      "component": "input-tag",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/input-tag/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "input-tag",
+      "passed": true
+    },
+    {
+      "component": "input",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/input/__demos__/default-value.vue",
+      "checkedSources": 1,
+      "result": "input",
+      "passed": true
+    },
+    {
+      "component": "layout",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/layout/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "layout: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "link",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/link/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "link: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "list",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/list/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "list: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "loading",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/loading/__demos__/size.vue",
+      "checkedSources": 1,
+      "result": "loading: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "map",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/map/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "map",
+      "passed": true
+    },
+    {
+      "component": "mention",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/mention/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "mention",
+      "passed": true
+    },
+    {
+      "component": "menu",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/menu/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "menu",
+      "passed": true
+    },
+    {
+      "component": "message",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/message/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "message",
+      "passed": true
+    },
+    {
+      "component": "nav-menu",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/nav-menu/__demos__/basic.vue",
+      "checkedSources": 2,
+      "result": "nav-menu",
+      "passed": true
+    },
+    {
+      "component": "notification",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/notification/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "notification",
+      "passed": true
+    },
+    {
+      "component": "overflow-list",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/overflow-list/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "overflow-list",
+      "passed": true
+    },
+    {
+      "component": "overlay",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/overlay/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "overlay",
+      "passed": true
+    },
+    {
+      "component": "page-header",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/page-header/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "page-header: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "pagination",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/pagination/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "pagination",
+      "passed": true
+    },
+    {
+      "component": "paper",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/paper/__demos__/live-properties.vue",
+      "checkedSources": 1,
+      "result": "paper",
+      "passed": true
+    },
+    {
+      "component": "people-select",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/people-select/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "people-select",
+      "passed": true
+    },
+    {
+      "component": "popconfirm",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/popconfirm/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "popconfirm",
+      "passed": true
+    },
+    {
+      "component": "popover",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/popover/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "popover",
+      "passed": true
+    },
+    {
+      "component": "progress-group",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "progress-group: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "progress",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/progress/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "progress: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "radio",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/radio/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "radio",
+      "passed": true
+    },
+    {
+      "component": "rate",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/rate/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "rate",
+      "passed": true
+    },
+    {
+      "component": "resize-box",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/resize-box/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "resize-box",
+      "passed": true
+    },
+    {
+      "component": "result",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/result/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "result: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "ripple",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/ripple/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "ripple",
+      "passed": true
+    },
+    {
+      "component": "row",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/row/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "row: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "scheduler",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "scheduler",
+      "passed": true
+    },
+    {
+      "component": "scrollbar",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/scrollbar/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "scrollbar",
+      "passed": true
+    },
+    {
+      "component": "search",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/search/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "search",
+      "passed": true
+    },
+    {
+      "component": "segmented",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/segmented/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "segmented",
+      "passed": true
+    },
+    {
+      "component": "select",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/select/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "select",
+      "passed": true
+    },
+    {
+      "component": "skeleton",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/skeleton/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "skeleton: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "slider",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/slider/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "slider",
+      "passed": true
+    },
+    {
+      "component": "space",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/space/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "space: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "split-button",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/split-button/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "split-button",
+      "passed": true
+    },
+    {
+      "component": "split",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/split/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "split",
+      "passed": true
+    },
+    {
+      "component": "statistic",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/statistic/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "statistic: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "steps",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/steps/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "steps",
+      "passed": true
+    },
+    {
+      "component": "style-provider",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/style-provider/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "style-provider",
+      "passed": true
+    },
+    {
+      "component": "switch",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/switch/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "switch",
+      "passed": true
+    },
+    {
+      "component": "table-column-manager",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/table-column-manager/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "table-column-manager",
+      "passed": true
+    },
+    {
+      "component": "table",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/table/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "table: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "tabs",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/tabs/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "tabs",
+      "passed": true
+    },
+    {
+      "component": "tag",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/tag/__demos__/closable.vue",
+      "checkedSources": 2,
+      "result": "tag",
+      "passed": true
+    },
+    {
+      "component": "textarea",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/textarea/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "textarea",
+      "passed": true
+    },
+    {
+      "component": "time-range",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/time-range/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "temporal",
+      "passed": true
+    },
+    {
+      "component": "time",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/time/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "temporal",
+      "passed": true
+    },
+    {
+      "component": "time-picker",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/time/picker/__demos__/panel-behavior.vue",
+      "checkedSources": 2,
+      "result": "time-panel",
+      "passed": true
+    },
+    {
+      "component": "timeline",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/timeline/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "timeline: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "tooltip",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/tooltip/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "tooltip",
+      "passed": true
+    },
+    {
+      "component": "transfer",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/transfer/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "transfer",
+      "passed": true
+    },
+    {
+      "component": "tree-select",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/tree-select/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "tree-select",
+      "passed": true
+    },
+    {
+      "component": "tree",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/tree/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "tree",
+      "passed": true
+    },
+    {
+      "component": "trigger",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/trigger/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "trigger",
+      "passed": true
+    },
+    {
+      "component": "typography",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "presentation",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/typography/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "typography: rendered content and geometry",
+      "passed": true
+    },
+    {
+      "component": "upload",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/upload/__demos__/read-only.vue",
+      "checkedSources": 1,
+      "result": "upload",
+      "passed": true
+    },
+    {
+      "component": "verification-code",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/verification-code/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "verification-code",
+      "passed": true
+    },
+    {
+      "component": "watermark",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/watermark/__demos__/basic.vue",
+      "checkedSources": 1,
+      "result": "watermark",
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/atomic-css",
+      "theme": "lightTheme",
+      "checkedSources": 7,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/atomic-usage",
+      "theme": "lightTheme",
+      "checkedSources": 5,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/color",
+      "theme": "lightTheme",
+      "checkedSources": 4,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/elevation",
+      "theme": "lightTheme",
+      "checkedSources": 2,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/palette",
+      "theme": "lightTheme",
+      "checkedSources": 1,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/typography",
+      "theme": "lightTheme",
+      "checkedSources": 6,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/utilities",
+      "theme": "lightTheme",
+      "checkedSources": 1,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/atomic-css",
+      "theme": "darkTheme",
+      "checkedSources": 7,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/atomic-usage",
+      "theme": "darkTheme",
+      "checkedSources": 5,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/color",
+      "theme": "darkTheme",
+      "checkedSources": 4,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/elevation",
+      "theme": "darkTheme",
+      "checkedSources": 2,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/palette",
+      "theme": "darkTheme",
+      "checkedSources": 1,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/typography",
+      "theme": "darkTheme",
+      "checkedSources": 6,
+      "passed": true
+    },
+    {
+      "kind": "guide",
+      "component": "style/utilities",
+      "theme": "darkTheme",
+      "checkedSources": 1,
+      "passed": true
+    }
+  ]
+}

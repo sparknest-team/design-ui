@@ -1,0 +1,3333 @@
+{
+  "date": "2026-10-27",
+  "rule": "基础示例在前；按功能分组；由简单到复杂、由静态到动态；共有案例跨端顺序一致",
+  "cedar": [
+    {
+      "family": "affix",
+      "file": "affix/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "交互与控制"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "affix",
+      "file": "affix/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "交互与控制"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "alert",
+      "file": "alert/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 12,
+      "basicFirst": true
+    },
+    {
+      "family": "anchor",
+      "file": "anchor/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "内容与展示",
+        "生命周期与边界"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "auto-complete",
+      "file": "auto-complete/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "匹配与候选列表",
+        "内容与字段定制",
+        "交互与键盘",
+        "异步与配置"
+      ],
+      "demos": 14,
+      "basicFirst": true
+    },
+    {
+      "family": "auto-complete",
+      "file": "auto-complete/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "匹配与候选列表",
+        "内容与字段定制",
+        "交互与键盘",
+        "异步与配置"
+      ],
+      "demos": 14,
+      "basicFirst": true
+    },
+    {
+      "family": "avatar",
+      "file": "avatar/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 12,
+      "basicFirst": true
+    },
+    {
+      "family": "back-top",
+      "file": "back-top/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "自定义与插槽",
+        "交互与控制",
+        "生命周期与边界"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "back-top",
+      "file": "back-top/README.md",
+      "groups": [
+        "基础示例",
+        "自定义与插槽",
+        "交互与控制",
+        "生命周期与边界"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "badge",
+      "file": "badge/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 10,
+      "basicFirst": true
+    },
+    {
+      "family": "badge",
+      "file": "badge/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 11,
+      "basicFirst": true
+    },
+    {
+      "family": "breadcrumb",
+      "file": "breadcrumb/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 7,
+      "basicFirst": true
+    },
+    {
+      "family": "button",
+      "file": "button/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "图标与布局",
+        "按钮组",
+        "表单与事件",
+        "加载与操作反馈"
+      ],
+      "demos": 11,
+      "basicFirst": true
+    },
+    {
+      "family": "button",
+      "file": "button/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "图标与布局",
+        "按钮组",
+        "表单与事件",
+        "加载与操作反馈"
+      ],
+      "demos": 16,
+      "basicFirst": true
+    },
+    {
+      "family": "calendar",
+      "file": "calendar/README.md",
+      "groups": [
+        "基础示例",
+        "视图与日期展示",
+        "交互与内容定制"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "card",
+      "file": "card/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制",
+        "生命周期与边界"
+      ],
+      "demos": 11,
+      "basicFirst": true
+    },
+    {
+      "family": "card",
+      "file": "card/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制",
+        "生命周期与边界"
+      ],
+      "demos": 12,
+      "basicFirst": true
+    },
+    {
+      "family": "carousel",
+      "file": "carousel/README.md",
+      "groups": [
+        "基础示例",
+        "方向与布局",
+        "切换控件与效果",
+        "播放与交互",
+        "生命周期"
+      ],
+      "demos": 21,
+      "basicFirst": true
+    },
+    {
+      "family": "cascader",
+      "file": "cascader/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "选择模式与路径",
+        "搜索与展示",
+        "交互与控制",
+        "配置与组合",
+        "异步加载与回显"
+      ],
+      "demos": 3,
+      "basicFirst": true
+    },
+    {
+      "family": "cascader",
+      "file": "cascader/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "选择模式与路径",
+        "搜索与展示",
+        "交互与控制",
+        "配置与组合",
+        "异步加载与回显"
+      ],
+      "demos": 18,
+      "basicFirst": true
+    },
+    {
+      "family": "checkbox",
+      "file": "checkbox/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "分组与布局",
+        "选项与值模型",
+        "选择与批量操作",
+        "控件与插槽定制",
+        "异步选项"
+      ],
+      "demos": 17,
+      "basicFirst": true
+    },
+    {
+      "family": "col",
+      "file": "col/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "内容与展示"
+      ],
+      "demos": 4,
+      "basicFirst": true
+    },
+    {
+      "family": "col",
+      "file": "col/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "内容与展示"
+      ],
+      "demos": 4,
+      "basicFirst": true
+    },
+    {
+      "family": "collapse",
+      "file": "collapse/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 13,
+      "basicFirst": true
+    },
+    {
+      "family": "color",
+      "file": "color/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态"
+      ],
+      "demos": 2,
+      "basicFirst": true
+    },
+    {
+      "family": "color-picker",
+      "file": "color-picker/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "数据与选项"
+      ],
+      "demos": 4,
+      "basicFirst": true
+    },
+    {
+      "family": "config-provider",
+      "file": "config-provider/README.md",
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "basicFirst": true
+    },
+    {
+      "family": "count-to",
+      "file": "count-to/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "countdown",
+      "file": "countdown/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "date",
+      "file": "date/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与日期展示",
+        "时间与选择规则",
+        "值模型与输入",
+        "交互与字段配置"
+      ],
+      "demos": 21,
+      "basicFirst": true
+    },
+    {
+      "family": "date",
+      "file": "date/README.md",
+      "groups": [
+        "基础示例",
+        "外观与日期展示",
+        "时间与选择规则",
+        "值模型与输入",
+        "交互与字段配置"
+      ],
+      "demos": 21,
+      "basicFirst": true
+    },
+    {
+      "family": "date-range/picker",
+      "file": "date-range/PICKER.md",
+      "groups": [
+        "基础示例",
+        "日期视图与展示",
+        "时间与选择规则",
+        "快捷工具与定制"
+      ],
+      "demos": 7,
+      "basicFirst": true
+    },
+    {
+      "family": "date-range",
+      "file": "date-range/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与日期展示",
+        "时间与范围规则",
+        "值模型与输入",
+        "交互与字段配置"
+      ],
+      "demos": 16,
+      "basicFirst": true
+    },
+    {
+      "family": "date-range",
+      "file": "date-range/README.md",
+      "groups": [
+        "基础示例",
+        "外观与日期展示",
+        "时间与范围规则",
+        "值模型与输入",
+        "交互与字段配置"
+      ],
+      "demos": 16,
+      "basicFirst": true
+    },
+    {
+      "family": "descriptions",
+      "file": "descriptions/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "内容与展示"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "dialog",
+      "file": "dialog/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "调用方式与内容",
+        "尺寸与布局",
+        "交互与定制",
+        "异步与关闭控制"
+      ],
+      "demos": 17,
+      "basicFirst": true
+    },
+    {
+      "family": "dialog",
+      "file": "dialog/README.md",
+      "groups": [
+        "基础示例",
+        "调用方式与内容",
+        "尺寸与布局",
+        "交互与定制",
+        "异步与关闭控制"
+      ],
+      "demos": 17,
+      "basicFirst": true
+    },
+    {
+      "family": "divider",
+      "file": "divider/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 8,
+      "basicFirst": true
+    },
+    {
+      "family": "divider",
+      "file": "divider/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 8,
+      "basicFirst": true
+    },
+    {
+      "family": "drawer",
+      "file": "drawer/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "尺寸与定位",
+        "内容与嵌套",
+        "关闭与异步控制"
+      ],
+      "demos": 8,
+      "basicFirst": true
+    },
+    {
+      "family": "drawer",
+      "file": "drawer/README.md",
+      "groups": [
+        "基础示例",
+        "尺寸与定位",
+        "内容与嵌套",
+        "关闭与异步控制"
+      ],
+      "demos": 8,
+      "basicFirst": true
+    },
+    {
+      "family": "ellipsis",
+      "file": "ellipsis/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "ellipsis",
+      "file": "ellipsis/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "empty",
+      "file": "empty/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "field-decorator",
+      "file": "field-decorator/README.md",
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "basicFirst": true
+    },
+    {
+      "family": "filter-form",
+      "file": "filter-form/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "异步与动态数据"
+      ],
+      "demos": 3,
+      "basicFirst": true
+    },
+    {
+      "family": "form",
+      "file": "form/README.md",
+      "groups": [
+        "基础示例",
+        "表单外观与布局",
+        "字段与数据模型",
+        "校验与提交",
+        "字段呈现与交互",
+        "动态与异步字段",
+        "业务流程"
+      ],
+      "demos": 35,
+      "basicFirst": true
+    },
+    {
+      "family": "grid",
+      "file": "grid/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 4,
+      "basicFirst": true
+    },
+    {
+      "family": "grid",
+      "file": "grid/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 4,
+      "basicFirst": true
+    },
+    {
+      "family": "hover",
+      "file": "hover/README.md",
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "basicFirst": true
+    },
+    {
+      "family": "icon",
+      "file": "icon/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制",
+        "生命周期与边界"
+      ],
+      "demos": 9,
+      "basicFirst": true
+    },
+    {
+      "family": "image",
+      "file": "image/README.md",
+      "groups": [
+        "基础示例",
+        "图片展示与状态",
+        "预览入口与分组",
+        "预览定制与交互",
+        "生命周期"
+      ],
+      "demos": 21,
+      "basicFirst": true
+    },
+    {
+      "family": "infinite-scroll",
+      "file": "infinite-scroll/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽",
+        "生命周期与边界"
+      ],
+      "demos": 4,
+      "basicFirst": true
+    },
+    {
+      "family": "input",
+      "file": "input/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "输入内容与布局",
+        "值模型与交互",
+        "数据与选项"
+      ],
+      "demos": 3,
+      "basicFirst": true
+    },
+    {
+      "family": "input",
+      "file": "input/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "输入内容与布局",
+        "值模型与交互",
+        "数据与选项"
+      ],
+      "demos": 17,
+      "basicFirst": true
+    },
+    {
+      "family": "input-number",
+      "file": "input-number/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与布局",
+        "数值输入与格式",
+        "交互与表单",
+        "数据与选项"
+      ],
+      "demos": 2,
+      "basicFirst": true
+    },
+    {
+      "family": "input-number",
+      "file": "input-number/README.md",
+      "groups": [
+        "基础示例",
+        "外观与布局",
+        "数值输入与格式",
+        "交互与表单",
+        "数据与选项"
+      ],
+      "demos": 11,
+      "basicFirst": true
+    },
+    {
+      "family": "input-tag",
+      "file": "input-tag/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "数据与选项"
+      ],
+      "demos": 2,
+      "basicFirst": true
+    },
+    {
+      "family": "input-tag",
+      "file": "input-tag/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "数据与选项"
+      ],
+      "demos": 4,
+      "basicFirst": true
+    },
+    {
+      "family": "layout",
+      "file": "layout/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "内容与展示"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "link",
+      "file": "link/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 9,
+      "basicFirst": true
+    },
+    {
+      "family": "list",
+      "file": "list/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与布局",
+        "滚动与虚拟列表",
+        "生命周期"
+      ],
+      "demos": 8,
+      "basicFirst": true
+    },
+    {
+      "family": "loading",
+      "file": "loading/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "map",
+      "file": "map/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "数据与选项"
+      ],
+      "demos": 4,
+      "basicFirst": true
+    },
+    {
+      "family": "mention",
+      "file": "mention/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "数据与选项",
+        "自定义与插槽",
+        "生命周期与边界"
+      ],
+      "demos": 2,
+      "basicFirst": true
+    },
+    {
+      "family": "mention",
+      "file": "mention/README.md",
+      "groups": [
+        "基础示例",
+        "数据与选项",
+        "自定义与插槽",
+        "生命周期与边界"
+      ],
+      "demos": 3,
+      "basicFirst": true
+    },
+    {
+      "family": "menu",
+      "file": "menu/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "选项与层级",
+        "触发与定位",
+        "状态与内容定制"
+      ],
+      "demos": 14,
+      "basicFirst": true
+    },
+    {
+      "family": "message",
+      "file": "message/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 13,
+      "basicFirst": true
+    },
+    {
+      "family": "nav-menu",
+      "file": "nav-menu/README.md",
+      "groups": [
+        "基础示例",
+        "外观与布局",
+        "层级与响应式",
+        "导航入口与业务面板",
+        "数据与状态控制"
+      ],
+      "demos": 14,
+      "basicFirst": true
+    },
+    {
+      "family": "notification",
+      "file": "notification/README.md",
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "basicFirst": true
+    },
+    {
+      "family": "overflow-list",
+      "file": "overflow-list/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列"
+      ],
+      "demos": 2,
+      "basicFirst": true
+    },
+    {
+      "family": "overlay",
+      "file": "overlay/README.md",
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "basicFirst": true
+    },
+    {
+      "family": "page-header",
+      "file": "page-header/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示"
+      ],
+      "demos": 4,
+      "basicFirst": true
+    },
+    {
+      "family": "pagination",
+      "file": "pagination/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "分页模式与信息",
+        "条数、跳转与按钮",
+        "响应式与数据变化"
+      ],
+      "demos": 12,
+      "basicFirst": true
+    },
+    {
+      "family": "pagination",
+      "file": "pagination/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "分页模式与信息",
+        "条数、跳转与按钮",
+        "响应式与数据变化"
+      ],
+      "demos": 12,
+      "basicFirst": true
+    },
+    {
+      "family": "paper",
+      "file": "paper/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "交互与控制"
+      ],
+      "demos": 2,
+      "basicFirst": true
+    },
+    {
+      "family": "paper",
+      "file": "paper/README.md",
+      "groups": [
+        "基础示例",
+        "交互与控制"
+      ],
+      "demos": 2,
+      "basicFirst": true
+    },
+    {
+      "family": "people-select",
+      "file": "people-select/README.en-US.md",
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "basicFirst": true
+    },
+    {
+      "family": "people-select",
+      "file": "people-select/README.md",
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "basicFirst": true
+    },
+    {
+      "family": "popconfirm",
+      "file": "popconfirm/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "popconfirm",
+      "file": "popconfirm/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "popover",
+      "file": "popover/README.md",
+      "groups": [
+        "基础示例",
+        "交互与控制"
+      ],
+      "demos": 2,
+      "basicFirst": true
+    },
+    {
+      "family": "progress",
+      "file": "progress/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示"
+      ],
+      "demos": 7,
+      "basicFirst": true
+    },
+    {
+      "family": "progress-group",
+      "file": "progress-group/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 7,
+      "basicFirst": true
+    },
+    {
+      "family": "radio",
+      "file": "radio/README.md",
+      "groups": [
+        "基础示例",
+        "分组与布局",
+        "选项与值模型",
+        "交互与键盘",
+        "控件与内容定制",
+        "异步选项"
+      ],
+      "demos": 16,
+      "basicFirst": true
+    },
+    {
+      "family": "rate",
+      "file": "rate/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "数据与选项",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 2,
+      "basicFirst": true
+    },
+    {
+      "family": "rate",
+      "file": "rate/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "数据与选项",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 11,
+      "basicFirst": true
+    },
+    {
+      "family": "resize-box",
+      "file": "resize-box/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "交互与控制"
+      ],
+      "demos": 4,
+      "basicFirst": true
+    },
+    {
+      "family": "result",
+      "file": "result/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 9,
+      "basicFirst": true
+    },
+    {
+      "family": "ripple",
+      "file": "ripple/README.md",
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "basicFirst": true
+    },
+    {
+      "family": "row",
+      "file": "row/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "布局与排列"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "row",
+      "file": "row/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "scheduler",
+      "file": "scheduler/README.md",
+      "groups": [
+        "基础示例",
+        "视图与布局",
+        "资源与任务分配",
+        "工作时间与容量",
+        "重复日程与日历",
+        "编辑与交互",
+        "异步加载与保存",
+        "业务组合与集成"
+      ],
+      "demos": 43,
+      "basicFirst": true
+    },
+    {
+      "family": "scrollbar",
+      "file": "scrollbar/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "生命周期与边界"
+      ],
+      "demos": 4,
+      "basicFirst": true
+    },
+    {
+      "family": "search",
+      "file": "search/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "数据与选项",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 8,
+      "basicFirst": true
+    },
+    {
+      "family": "search",
+      "file": "search/README.md",
+      "groups": [
+        "基础示例",
+        "数据与选项",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 8,
+      "basicFirst": true
+    },
+    {
+      "family": "segmented",
+      "file": "segmented/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "交互与控制"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "select",
+      "file": "select/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "选择模式与选项",
+        "搜索与过滤",
+        "内容与下拉定制",
+        "值模型与联动",
+        "异步数据与搜索",
+        "配置与生命周期"
+      ],
+      "demos": 34,
+      "basicFirst": true
+    },
+    {
+      "family": "select",
+      "file": "select/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "选择模式与选项",
+        "搜索与过滤",
+        "内容与下拉定制",
+        "值模型与联动",
+        "异步数据与搜索",
+        "配置与生命周期"
+      ],
+      "demos": 34,
+      "basicFirst": true
+    },
+    {
+      "family": "skeleton",
+      "file": "skeleton/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "slider",
+      "file": "slider/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "space",
+      "file": "space/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "交互与控制"
+      ],
+      "demos": 8,
+      "basicFirst": true
+    },
+    {
+      "family": "split",
+      "file": "split/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列"
+      ],
+      "demos": 2,
+      "basicFirst": true
+    },
+    {
+      "family": "split-button",
+      "file": "split-button/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制",
+        "异步与动态数据"
+      ],
+      "demos": 9,
+      "basicFirst": true
+    },
+    {
+      "family": "statistic",
+      "file": "statistic/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 7,
+      "basicFirst": true
+    },
+    {
+      "family": "steps",
+      "file": "steps/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 13,
+      "basicFirst": true
+    },
+    {
+      "family": "style-provider",
+      "file": "style-provider/README.md",
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "basicFirst": true
+    },
+    {
+      "family": "switch",
+      "file": "switch/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "自定义与插槽",
+        "交互与控制",
+        "异步与动态数据"
+      ],
+      "demos": 13,
+      "basicFirst": true
+    },
+    {
+      "family": "switch",
+      "file": "switch/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "自定义与插槽",
+        "交互与控制",
+        "异步与动态数据"
+      ],
+      "demos": 15,
+      "basicFirst": true
+    },
+    {
+      "family": "table",
+      "file": "table/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "列宽、布局与固定列",
+        "表头与列结构",
+        "滚动与粘性定位",
+        "选择与数据交互",
+        "列管理与渲染定制",
+        "异步与大数据",
+        "业务组合"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "table",
+      "file": "table/README.md",
+      "groups": [
+        "基础示例",
+        "列宽、布局与固定列",
+        "表头与列结构",
+        "滚动与粘性定位",
+        "选择与数据交互",
+        "列管理与渲染定制",
+        "异步与大数据",
+        "业务组合"
+      ],
+      "demos": 35,
+      "basicFirst": true
+    },
+    {
+      "family": "table-column-manager",
+      "file": "table-column-manager/README.md",
+      "groups": [
+        "基础示例",
+        "Table 组合与持久化",
+        "异步目录与搜索"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "tabs",
+      "file": "tabs/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "外观与方向",
+        "导航与内容组合",
+        "交互与动态标签"
+      ],
+      "demos": 13,
+      "basicFirst": true
+    },
+    {
+      "family": "tag",
+      "file": "tag/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 10,
+      "basicFirst": true
+    },
+    {
+      "family": "textarea",
+      "file": "textarea/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "数据与选项",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 2,
+      "basicFirst": true
+    },
+    {
+      "family": "textarea",
+      "file": "textarea/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "数据与选项",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 10,
+      "basicFirst": true
+    },
+    {
+      "family": "themes",
+      "file": "themes/README.md",
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "basicFirst": true
+    },
+    {
+      "family": "time",
+      "file": "time/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与展示",
+        "值模型与选择规则",
+        "输入与状态控制",
+        "数据与选项"
+      ],
+      "demos": 3,
+      "basicFirst": true
+    },
+    {
+      "family": "time",
+      "file": "time/README.md",
+      "groups": [
+        "基础示例",
+        "外观与展示",
+        "值模型与选择规则",
+        "输入与状态控制",
+        "数据与选项"
+      ],
+      "demos": 17,
+      "basicFirst": true
+    },
+    {
+      "family": "time-range/picker",
+      "file": "time-range/PICKER.md",
+      "groups": [
+        "基础示例",
+        "格式与展示",
+        "选择规则与交互"
+      ],
+      "demos": 9,
+      "basicFirst": true
+    },
+    {
+      "family": "time-range",
+      "file": "time-range/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与展示",
+        "值模型与选择规则",
+        "输入与状态控制",
+        "数据与选项"
+      ],
+      "demos": 3,
+      "basicFirst": true
+    },
+    {
+      "family": "time-range",
+      "file": "time-range/README.md",
+      "groups": [
+        "基础示例",
+        "外观与展示",
+        "值模型与选择规则",
+        "输入与状态控制",
+        "数据与选项"
+      ],
+      "demos": 16,
+      "basicFirst": true
+    },
+    {
+      "family": "timeline",
+      "file": "timeline/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 10,
+      "basicFirst": true
+    },
+    {
+      "family": "tooltip",
+      "file": "tooltip/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示"
+      ],
+      "demos": 8,
+      "basicFirst": true
+    },
+    {
+      "family": "transfer",
+      "file": "transfer/README.md",
+      "groups": [
+        "基础示例",
+        "搜索与数据结构",
+        "内容定制",
+        "大数据"
+      ],
+      "demos": 7,
+      "basicFirst": true
+    },
+    {
+      "family": "tree",
+      "file": "tree/README.md",
+      "groups": [
+        "基础示例",
+        "外观与布局",
+        "节点选择与状态",
+        "节点内容定制",
+        "搜索与拖拽",
+        "异步与虚拟滚动"
+      ],
+      "demos": 16,
+      "basicFirst": true
+    },
+    {
+      "family": "tree-select",
+      "file": "tree-select/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "数据与选项",
+        "生命周期与边界"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "tree-select",
+      "file": "tree-select/README.md",
+      "groups": [
+        "基础示例",
+        "数据与选项",
+        "生命周期与边界"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "trigger",
+      "file": "trigger/README.md",
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "交互与控制"
+      ],
+      "demos": 3,
+      "basicFirst": true
+    },
+    {
+      "family": "typography",
+      "file": "typography/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "交互与控制",
+        "生命周期与边界"
+      ],
+      "demos": 7,
+      "basicFirst": true
+    },
+    {
+      "family": "upload",
+      "file": "upload/README.en-US.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "文件来源与约束",
+        "队列与进度",
+        "异步钩子与请求"
+      ],
+      "demos": 12,
+      "basicFirst": true
+    },
+    {
+      "family": "upload",
+      "file": "upload/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "文件来源与约束",
+        "队列与进度",
+        "异步钩子与请求"
+      ],
+      "demos": 13,
+      "basicFirst": true
+    },
+    {
+      "family": "verification-code",
+      "file": "verification-code/README.md",
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "数据与选项",
+        "交互与控制"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "watermark",
+      "file": "watermark/README.md",
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "date/picker",
+      "file": "date/picker/README.md",
+      "groups": [
+        "基础示例",
+        "日期视图与展示",
+        "时间与选择规则",
+        "快捷工具与定制"
+      ],
+      "demos": 13,
+      "basicFirst": true
+    },
+    {
+      "family": "style/atomic-css",
+      "file": "style/atomic-css/README.md",
+      "groups": [
+        "基础示例",
+        "颜色、文字与间距",
+        "响应式与组合"
+      ],
+      "demos": 7,
+      "basicFirst": true
+    },
+    {
+      "family": "style/atomic-usage",
+      "file": "style/atomic-usage/README.md",
+      "groups": [
+        "基础示例",
+        "间距与响应式",
+        "颜色与文字"
+      ],
+      "demos": 5,
+      "basicFirst": true
+    },
+    {
+      "family": "style/color",
+      "file": "style/color/README.md",
+      "groups": [
+        "基础示例",
+        "颜色应用"
+      ],
+      "demos": 4,
+      "basicFirst": true
+    },
+    {
+      "family": "style/elevation",
+      "file": "style/elevation/README.md",
+      "groups": [
+        "基础示例",
+        "阴影组合"
+      ],
+      "demos": 2,
+      "basicFirst": true
+    },
+    {
+      "family": "style/palette",
+      "file": "style/palette/README.md",
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "basicFirst": true
+    },
+    {
+      "family": "style/typography",
+      "file": "style/typography/README.md",
+      "groups": [
+        "基础示例",
+        "字号与字形",
+        "对齐与行高"
+      ],
+      "demos": 6,
+      "basicFirst": true
+    },
+    {
+      "family": "style/utilities",
+      "file": "style/utilities/README.md",
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "basicFirst": true
+    },
+    {
+      "family": "time/picker",
+      "file": "time/picker/README.md",
+      "groups": [
+        "基础示例",
+        "格式与展示",
+        "选择规则与交互"
+      ],
+      "demos": 8,
+      "basicFirst": true
+    }
+  ],
+  "maple": [
+    {
+      "family": "action-sheet",
+      "files": [
+        "action-sheet/docs/zh-CN.md",
+        "action-sheet/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "声明式与状态控制"
+      ],
+      "demos": 2,
+      "phoneEntry": "action-sheet/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "affix",
+      "files": [
+        "affix/docs/zh-CN.md",
+        "affix/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "交互与控制"
+      ],
+      "demos": 6,
+      "phoneEntry": "affix/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "alert",
+      "files": [
+        "alert/docs/zh-CN.md",
+        "alert/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 13,
+      "phoneEntry": "alert/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "atomic-css",
+      "files": [
+        "atomic-css/docs/zh-CN.md",
+        "atomic-css/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "atomic-css/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "atomic-usage",
+      "files": [
+        "atomic-usage/docs/zh-CN.md",
+        "atomic-usage/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "atomic-usage/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "auto-complete",
+      "files": [
+        "auto-complete/docs/zh-CN.md",
+        "auto-complete/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "匹配与候选列表",
+        "内容与字段定制",
+        "交互与键盘",
+        "异步与配置"
+      ],
+      "demos": 14,
+      "phoneEntry": "auto-complete/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "avatar",
+      "files": [
+        "avatar/docs/zh-CN.md",
+        "avatar/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 12,
+      "phoneEntry": "avatar/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "back-top",
+      "files": [
+        "back-top/docs/zh-CN.md",
+        "back-top/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "自定义与插槽",
+        "交互与控制",
+        "生命周期与边界"
+      ],
+      "demos": 5,
+      "phoneEntry": "back-top/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "badge",
+      "files": [
+        "badge/docs/zh-CN.md",
+        "badge/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 11,
+      "phoneEntry": "badge/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "breadcrumb",
+      "files": [
+        "breadcrumb/docs/zh-CN.md",
+        "breadcrumb/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 7,
+      "phoneEntry": "breadcrumb/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "button",
+      "files": [
+        "button/docs/zh-CN.md",
+        "button/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "图标与布局",
+        "按钮组",
+        "表单与事件",
+        "加载与操作反馈"
+      ],
+      "demos": 16,
+      "phoneEntry": "button/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "card",
+      "files": [
+        "card/docs/zh-CN.md",
+        "card/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制",
+        "生命周期与边界"
+      ],
+      "demos": 12,
+      "phoneEntry": "card/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "carousel",
+      "files": [
+        "carousel/docs/zh-CN.md",
+        "carousel/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "方向与布局",
+        "切换控件与效果",
+        "播放与交互",
+        "生命周期"
+      ],
+      "demos": 22,
+      "phoneEntry": "carousel/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "cascader",
+      "files": [
+        "cascader/docs/zh-CN.md",
+        "cascader/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "选择模式与路径",
+        "搜索与展示",
+        "交互与控制",
+        "配置与组合",
+        "异步加载与回显"
+      ],
+      "demos": 15,
+      "phoneEntry": "cascader/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "cell",
+      "files": [
+        "cell/docs/zh-CN.md",
+        "cell/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示"
+      ],
+      "demos": 5,
+      "phoneEntry": "cell/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "checkbox",
+      "files": [
+        "checkbox/docs/zh-CN.md",
+        "checkbox/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "分组与布局",
+        "选项与值模型",
+        "选择与批量操作",
+        "控件与插槽定制",
+        "异步选项"
+      ],
+      "demos": 19,
+      "phoneEntry": "checkbox/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "code",
+      "files": [
+        "code/docs/zh-CN.md",
+        "code/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "布局与排列"
+      ],
+      "demos": 2,
+      "phoneEntry": "code/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "col",
+      "files": [
+        "col/docs/zh-CN.md",
+        "col/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "内容与展示"
+      ],
+      "demos": 4,
+      "phoneEntry": "col/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "collapse",
+      "files": [
+        "collapse/docs/zh-CN.md",
+        "collapse/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 13,
+      "phoneEntry": "collapse/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "color",
+      "files": [
+        "color/docs/zh-CN.md",
+        "color/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "color/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "count-to",
+      "files": [
+        "count-to/docs/zh-CN.md",
+        "count-to/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 6,
+      "phoneEntry": "count-to/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "countdown",
+      "files": [
+        "countdown/docs/zh-CN.md",
+        "countdown/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽",
+        "数据与选项",
+        "交互与控制"
+      ],
+      "demos": 6,
+      "phoneEntry": "countdown/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "date",
+      "files": [
+        "date/docs/zh-CN.md",
+        "date/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与日期展示",
+        "时间与选择规则",
+        "值模型与输入",
+        "布局与排列",
+        "内容与展示",
+        "独立日期面板",
+        "交互与字段配置"
+      ],
+      "demos": 34,
+      "phoneEntry": "date/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "date-range",
+      "files": [
+        "date-range/docs/zh-CN.md",
+        "date-range/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与日期展示",
+        "时间与范围规则",
+        "值模型与输入",
+        "内容与展示",
+        "布局与排列",
+        "独立日期面板",
+        "交互与字段配置"
+      ],
+      "demos": 25,
+      "phoneEntry": "date-range/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "dialog",
+      "files": [
+        "dialog/docs/zh-CN.md",
+        "dialog/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "调用方式与内容",
+        "尺寸与布局",
+        "交互与定制",
+        "异步与关闭控制"
+      ],
+      "demos": 13,
+      "phoneEntry": "dialog/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "divider",
+      "files": [
+        "divider/docs/zh-CN.md",
+        "divider/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 8,
+      "phoneEntry": "divider/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "drag",
+      "files": [
+        "drag/docs/zh-CN.md",
+        "drag/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "方向与拖动范围",
+        "内容与展示"
+      ],
+      "demos": 6,
+      "phoneEntry": "drag/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "ellipsis",
+      "files": [
+        "ellipsis/docs/zh-CN.md",
+        "ellipsis/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "数据与选项",
+        "交互与控制"
+      ],
+      "demos": 5,
+      "phoneEntry": "ellipsis/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "empty",
+      "files": [
+        "empty/docs/zh-CN.md",
+        "empty/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 5,
+      "phoneEntry": "empty/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "fab",
+      "files": [
+        "fab/docs/zh-CN.md",
+        "fab/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "外观与定位",
+        "动作与交互"
+      ],
+      "demos": 10,
+      "phoneEntry": "fab/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "field-decorator",
+      "files": [
+        "field-decorator/docs/zh-CN.md",
+        "field-decorator/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "field-decorator/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "floating-panel",
+      "files": [
+        "floating-panel/docs/zh-CN.md",
+        "floating-panel/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "floating-panel/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "form",
+      "files": [
+        "form/docs/zh-CN.md",
+        "form/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "表单外观与布局",
+        "字段与数据模型",
+        "校验与提交",
+        "内容与展示",
+        "自定义与插槽",
+        "字段呈现与交互",
+        "动态与异步字段",
+        "业务流程"
+      ],
+      "demos": 33,
+      "phoneEntry": "form/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "form-details",
+      "files": [
+        "form-details/docs/zh-CN.md",
+        "form-details/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "自定义与插槽"
+      ],
+      "demos": 2,
+      "phoneEntry": "form-details/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "grid",
+      "files": [
+        "grid/docs/zh-CN.md",
+        "grid/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 4,
+      "phoneEntry": "grid/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "highlighter-provider",
+      "files": [
+        "highlighter-provider/docs/zh-CN.md",
+        "highlighter-provider/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "highlighter-provider/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "hover",
+      "files": [
+        "hover/docs/zh-CN.md",
+        "hover/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "交互与控制"
+      ],
+      "demos": 2,
+      "phoneEntry": "hover/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "icon",
+      "files": [
+        "icon/docs/zh-CN.md",
+        "icon/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制",
+        "生命周期与边界"
+      ],
+      "demos": 9,
+      "phoneEntry": "icon/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "image",
+      "files": [
+        "image/docs/zh-CN.md",
+        "image/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "图片展示与状态",
+        "预览入口与分组",
+        "预览定制与交互",
+        "生命周期"
+      ],
+      "demos": 21,
+      "phoneEntry": "image/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "index-bar",
+      "files": [
+        "index-bar/docs/zh-CN.md",
+        "index-bar/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "生命周期与边界"
+      ],
+      "demos": 2,
+      "phoneEntry": "index-bar/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "infinite-scroll",
+      "files": [
+        "infinite-scroll/docs/zh-CN.md",
+        "infinite-scroll/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽",
+        "生命周期与边界"
+      ],
+      "demos": 4,
+      "phoneEntry": "infinite-scroll/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "input",
+      "files": [
+        "input/docs/zh-CN.md",
+        "input/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "输入内容与布局",
+        "内容与展示",
+        "值模型与交互"
+      ],
+      "demos": 21,
+      "phoneEntry": "input/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "input-number",
+      "files": [
+        "input-number/docs/zh-CN.md",
+        "input-number/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与布局",
+        "数值输入与格式",
+        "交互与表单"
+      ],
+      "demos": 11,
+      "phoneEntry": "input-number/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "lazy",
+      "files": [
+        "lazy/docs/zh-CN.md",
+        "lazy/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示"
+      ],
+      "demos": 2,
+      "phoneEntry": "lazy/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "link",
+      "files": [
+        "link/docs/zh-CN.md",
+        "link/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 10,
+      "phoneEntry": "link/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "list",
+      "files": [
+        "list/docs/zh-CN.md",
+        "list/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "滚动与虚拟列表",
+        "生命周期"
+      ],
+      "demos": 6,
+      "phoneEntry": "list/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "loading",
+      "files": [
+        "loading/docs/zh-CN.md",
+        "loading/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示"
+      ],
+      "demos": 6,
+      "phoneEntry": "loading/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "loading-bar",
+      "files": [
+        "loading-bar/docs/zh-CN.md",
+        "loading-bar/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "loading-bar/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "locale",
+      "files": [
+        "locale/docs/zh-CN.md",
+        "locale/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "locale/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "locale-provider",
+      "files": [
+        "locale-provider/docs/zh-CN.md",
+        "locale-provider/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "locale-provider/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "menu",
+      "files": [
+        "menu/docs/zh-CN.md",
+        "menu/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "选项与层级",
+        "触发与定位",
+        "状态与内容定制"
+      ],
+      "demos": 14,
+      "phoneEntry": "menu/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "message",
+      "files": [
+        "message/docs/zh-CN.md",
+        "message/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示"
+      ],
+      "demos": 5,
+      "phoneEntry": "message/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "notice-bar",
+      "files": [
+        "notice-bar/docs/zh-CN.md",
+        "notice-bar/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "notice-bar/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "number-keyboard",
+      "files": [
+        "number-keyboard/docs/zh-CN.md",
+        "number-keyboard/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "number-keyboard/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "overlay",
+      "files": [
+        "overlay/docs/zh-CN.md",
+        "overlay/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 3,
+      "phoneEntry": "overlay/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "page-header",
+      "files": [
+        "page-header/docs/zh-CN.md",
+        "page-header/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示"
+      ],
+      "demos": 4,
+      "phoneEntry": "page-header/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "pagination",
+      "files": [
+        "pagination/docs/zh-CN.md",
+        "pagination/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "分页模式与信息",
+        "条数、跳转与按钮",
+        "响应式与数据变化"
+      ],
+      "demos": 12,
+      "phoneEntry": "pagination/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "palette",
+      "files": [
+        "palette/docs/zh-CN.md",
+        "palette/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "palette/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "paper",
+      "files": [
+        "paper/docs/zh-CN.md",
+        "paper/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 7,
+      "phoneEntry": "paper/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "people-select",
+      "files": [
+        "people-select/docs/zh-CN.md",
+        "people-select/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "people-select/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "picker",
+      "files": [
+        "picker/docs/zh-CN.md",
+        "picker/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "选择模式与选项",
+        "交互与调用方式"
+      ],
+      "demos": 9,
+      "phoneEntry": "picker/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "popover",
+      "files": [
+        "popover/docs/zh-CN.md",
+        "popover/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "布局与排列",
+        "交互与控制"
+      ],
+      "demos": 9,
+      "phoneEntry": "popover/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "popup",
+      "files": [
+        "popup/docs/zh-CN.md",
+        "popup/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "位置与遮罩",
+        "事件与动效"
+      ],
+      "demos": 5,
+      "phoneEntry": "popup/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "progress",
+      "files": [
+        "progress/docs/zh-CN.md",
+        "progress/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示"
+      ],
+      "demos": 9,
+      "phoneEntry": "progress/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "progress-group",
+      "files": [
+        "progress-group/docs/zh-CN.md",
+        "progress-group/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 7,
+      "phoneEntry": "progress-group/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "pull-refresh",
+      "files": [
+        "pull-refresh/docs/zh-CN.md",
+        "pull-refresh/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "pull-refresh/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "radio",
+      "files": [
+        "radio/docs/zh-CN.md",
+        "radio/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "分组与布局",
+        "选项与值模型",
+        "交互与键盘",
+        "控件与内容定制",
+        "异步选项"
+      ],
+      "demos": 17,
+      "phoneEntry": "radio/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "rate",
+      "files": [
+        "rate/docs/zh-CN.md",
+        "rate/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制"
+      ],
+      "demos": 11,
+      "phoneEntry": "rate/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "result",
+      "files": [
+        "result/docs/zh-CN.md",
+        "result/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示"
+      ],
+      "demos": 2,
+      "phoneEntry": "result/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "ripple",
+      "files": [
+        "ripple/docs/zh-CN.md",
+        "ripple/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示"
+      ],
+      "demos": 4,
+      "phoneEntry": "ripple/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "row",
+      "files": [
+        "row/docs/zh-CN.md",
+        "row/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "布局与排列"
+      ],
+      "demos": 6,
+      "phoneEntry": "row/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "safe-area",
+      "files": [
+        "safe-area/docs/zh-CN.md",
+        "safe-area/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "页面与组件组合"
+      ],
+      "demos": 3,
+      "phoneEntry": "safe-area/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "search",
+      "files": [
+        "search/docs/zh-CN.md",
+        "search/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "数据与选项",
+        "自定义与插槽",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 9,
+      "phoneEntry": "search/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "select",
+      "files": [
+        "select/docs/zh-CN.md",
+        "select/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "选择模式与选项",
+        "搜索与过滤",
+        "内容与下拉定制",
+        "值模型与联动",
+        "异步数据与搜索",
+        "配置与生命周期"
+      ],
+      "demos": 30,
+      "phoneEntry": "select/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "signature",
+      "files": [
+        "signature/docs/zh-CN.md",
+        "signature/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "自定义与插槽"
+      ],
+      "demos": 2,
+      "phoneEntry": "signature/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "skeleton",
+      "files": [
+        "skeleton/docs/zh-CN.md",
+        "skeleton/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 6,
+      "phoneEntry": "skeleton/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "slider",
+      "files": [
+        "slider/docs/zh-CN.md",
+        "slider/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 15,
+      "phoneEntry": "slider/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "space",
+      "files": [
+        "space/docs/zh-CN.md",
+        "space/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "交互与控制"
+      ],
+      "demos": 11,
+      "phoneEntry": "space/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "split-button",
+      "files": [
+        "split-button/docs/zh-CN.md",
+        "split-button/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "自定义与插槽",
+        "交互与控制",
+        "异步与动态数据"
+      ],
+      "demos": 9,
+      "phoneEntry": "split-button/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "statistic",
+      "files": [
+        "statistic/docs/zh-CN.md",
+        "statistic/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 7,
+      "phoneEntry": "statistic/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "steps",
+      "files": [
+        "steps/docs/zh-CN.md",
+        "steps/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 6,
+      "phoneEntry": "steps/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "style",
+      "files": [
+        "style/docs/zh-CN.md",
+        "style/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "style/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "style-provider",
+      "files": [
+        "style-provider/docs/zh-CN.md",
+        "style-provider/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "style-provider/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "swipe-cell",
+      "files": [
+        "swipe-cell/docs/zh-CN.md",
+        "swipe-cell/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "方向与操作区域",
+        "异步关闭控制"
+      ],
+      "demos": 3,
+      "phoneEntry": "swipe-cell/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "switch",
+      "files": [
+        "switch/docs/zh-CN.md",
+        "switch/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "自定义与插槽",
+        "交互与控制",
+        "异步与动态数据"
+      ],
+      "demos": 15,
+      "phoneEntry": "switch/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "tab-bar",
+      "files": [
+        "tab-bar/docs/zh-CN.md",
+        "tab-bar/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与内容",
+        "值模型与交互",
+        "异步切换"
+      ],
+      "demos": 12,
+      "phoneEntry": "tab-bar/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "table",
+      "files": [
+        "table/docs/zh-CN.md",
+        "table/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "滚动与粘性定位",
+        "内容与插槽",
+        "业务组合"
+      ],
+      "demos": 4,
+      "phoneEntry": "table/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "tabs",
+      "files": [
+        "tabs/docs/zh-CN.md",
+        "tabs/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "外观与方向",
+        "导航与内容组合",
+        "内容与展示",
+        "交互与动态标签"
+      ],
+      "demos": 12,
+      "phoneEntry": "tabs/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "tag",
+      "files": [
+        "tag/docs/zh-CN.md",
+        "tag/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 10,
+      "phoneEntry": "tag/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "textarea",
+      "files": [
+        "textarea/docs/zh-CN.md",
+        "textarea/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "内容与展示",
+        "交互与控制"
+      ],
+      "demos": 9,
+      "phoneEntry": "textarea/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "themes",
+      "files": [
+        "themes/docs/zh-CN.md",
+        "themes/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "局部主题与定制",
+        "品牌与状态对照"
+      ],
+      "demos": 3,
+      "phoneEntry": "themes/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "time",
+      "files": [
+        "time/docs/zh-CN.md",
+        "time/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与展示",
+        "值模型与选择规则",
+        "独立时间面板",
+        "输入与状态控制"
+      ],
+      "demos": 28,
+      "phoneEntry": "time/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "time-range",
+      "files": [
+        "time-range/docs/zh-CN.md",
+        "time-range/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与展示",
+        "值模型与选择规则",
+        "内容与展示",
+        "独立时间面板",
+        "输入与状态控制"
+      ],
+      "demos": 20,
+      "phoneEntry": "time-range/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "tooltip",
+      "files": [
+        "tooltip/docs/zh-CN.md",
+        "tooltip/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "布局与排列",
+        "内容与展示"
+      ],
+      "demos": 11,
+      "phoneEntry": "tooltip/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "trigger",
+      "files": [
+        "trigger/docs/zh-CN.md",
+        "trigger/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "布局与排列",
+        "交互与控制"
+      ],
+      "demos": 3,
+      "phoneEntry": "trigger/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "typography",
+      "files": [
+        "typography/docs/zh-CN.md",
+        "typography/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "typography/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "upload",
+      "files": [
+        "upload/docs/zh-CN.md",
+        "upload/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "文件来源与约束",
+        "队列与进度",
+        "异步钩子与请求"
+      ],
+      "demos": 28,
+      "phoneEntry": "upload/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "utilities",
+      "files": [
+        "utilities/docs/zh-CN.md",
+        "utilities/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例"
+      ],
+      "demos": 1,
+      "phoneEntry": "utilities/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "verification-code",
+      "files": [
+        "verification-code/docs/zh-CN.md",
+        "verification-code/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "外观与状态",
+        "数据与选项",
+        "交互与控制"
+      ],
+      "demos": 6,
+      "phoneEntry": "verification-code/example/index.vue",
+      "basicFirst": true
+    },
+    {
+      "family": "watermark",
+      "files": [
+        "watermark/docs/zh-CN.md",
+        "watermark/docs/en-US.md"
+      ],
+      "groups": [
+        "基础示例",
+        "内容与展示",
+        "自定义与插槽"
+      ],
+      "demos": 7,
+      "phoneEntry": "watermark/example/index.vue",
+      "basicFirst": true
+    }
+  ],
+  "totals": {
+    "cedarDocuments": 143,
+    "cedarFamilies": 109,
+    "mapleDocuments": 200,
+    "mapleFamilies": 100,
+    "maplePhoneEntries": 100,
+    "mapleScenarios": 840
+  },
+  "runtimeChecks": [
+    "Cedar Button 的分组标题与 Maple 一致",
+    "Maple 文档和手机预览的中英文分组同步",
+    "FormDetails 基础说明与错误提示实际渲染",
+    "LocaleProvider 分别显示 暂无数据 / No data",
+    "HighlighterProvider 实际渲染 Code 子组件",
+    "Popup 基础示例可以打开和关闭"
+  ],
+  "supersededBy": "demo-content-review-2026-10-28.json",
+  "note": "Historical grouping audit before semantic consolidation; current counts and source fingerprints are recorded in the superseding audit."
+}

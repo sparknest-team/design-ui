@@ -1,0 +1,2952 @@
+{
+  "library": "cedar",
+  "browser": {
+    "name": "firefox",
+    "engine": "firefox",
+    "launchOptions": {},
+    "version": "153.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "recordedAt": "2026-10-28T17:16:20.947Z",
+    "evidenceType": "automated-engine-regression",
+    "nativeDeviceAcceptance": false,
+    "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+    "gestureInput": "synthetic touch events (handler regression only)"
+  },
+  "node": "v20.18.3",
+  "productionFingerprint": "34bd188258c2e099593023b70aef2cb782a21fc2b3e6264f4a24d902b75a3f30",
+  "buildIndexHash": "37e66889668496baedbd866ec297cb3e3e051a44371476eb6c98b4eac79ae63d",
+  "stable": true,
+  "timeoutMs": 5000,
+  "logoDelayMs": 1200,
+  "externalPolicy": "all HTTP(S) requests held without responses until case cleanup",
+  "expected": 4,
+  "completed": 4,
+  "passed": 4,
+  "results": [
+    {
+      "component": "form",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "passed": true,
+      "navigation": {
+        "url": "http://127.0.0.1:56862/components/form/",
+        "elapsedMs": 1958,
+        "events": [
+          {
+            "name": "domcontentloaded",
+            "elapsedMs": 1736
+          },
+          {
+            "name": "load",
+            "elapsedMs": 1958
+          }
+        ],
+        "requests": [
+          {
+            "url": "http://127.0.0.1:56862/components/form/",
+            "type": "document",
+            "startedMs": 57,
+            "status": 200,
+            "finishedMs": 188
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/style-D2QYWmax.css",
+            "type": "stylesheet",
+            "startedMs": 306,
+            "status": 200,
+            "finishedMs": 454
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/app-CnA3yviP.js",
+            "type": "script",
+            "startedMs": 308,
+            "status": 200,
+            "finishedMs": 425
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/siteData-C9ioBdVL.js",
+            "type": "script",
+            "startedMs": 308,
+            "status": 200,
+            "finishedMs": 472
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index.html-D98jAsJL.js",
+            "type": "script",
+            "startedMs": 308,
+            "status": 200,
+            "finishedMs": 435
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/basic.vue_vue_type_script_setup_true_lang-M9GGazqW.js",
+            "type": "script",
+            "startedMs": 308,
+            "status": 200,
+            "finishedMs": 437
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/disabled-cgJbrd7r.js",
+            "type": "script",
+            "startedMs": 311,
+            "status": 200,
+            "finishedMs": 437
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/layout-BdHzU3YR.js",
+            "type": "script",
+            "startedMs": 311,
+            "status": 200,
+            "finishedMs": 440
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/decoration-C_u5-zZi.js",
+            "type": "script",
+            "startedMs": 311,
+            "status": 200,
+            "finishedMs": 455
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/extra-D2dWCZC5.js",
+            "type": "script",
+            "startedMs": 312,
+            "status": 200,
+            "finishedMs": 466
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/label-width-comparison-C2BqX5Ym.js",
+            "type": "script",
+            "startedMs": 312,
+            "status": 200,
+            "finishedMs": 469
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/nested-data-B0oKq0T2.js",
+            "type": "script",
+            "startedMs": 313,
+            "status": 200,
+            "finishedMs": 470
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-components-CZ830e4N.js",
+            "type": "script",
+            "startedMs": 313,
+            "status": 200,
+            "finishedMs": 471
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-choice-DxIPsiQI.js",
+            "type": "script",
+            "startedMs": 313,
+            "status": 200,
+            "finishedMs": 471
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-selection-D1tNEJk6.js",
+            "type": "script",
+            "startedMs": 317,
+            "status": 200,
+            "finishedMs": 471
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-tree-D66InoFo.js",
+            "type": "script",
+            "startedMs": 318,
+            "status": 200,
+            "finishedMs": 471
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-date-Drjo1Yr-.js",
+            "type": "script",
+            "startedMs": 318,
+            "status": 200,
+            "finishedMs": 471
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-time--yTbaagk.js",
+            "type": "script",
+            "startedMs": 318,
+            "status": 200,
+            "finishedMs": 471
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-rating-BPGeHIZ5.js",
+            "type": "script",
+            "startedMs": 318,
+            "status": 200,
+            "finishedMs": 471
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-upload-Ur-JylgQ.js",
+            "type": "script",
+            "startedMs": 318,
+            "status": 200,
+            "finishedMs": 472
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-specialized-BqvhnKJh.js",
+            "type": "script",
+            "startedMs": 319,
+            "status": 200,
+            "finishedMs": 473
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/validate-CsVNZ9Eo.js",
+            "type": "script",
+            "startedMs": 319,
+            "status": 200,
+            "finishedMs": 473
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/cross-field-DAS3jLDo.js",
+            "type": "script",
+            "startedMs": 319,
+            "status": 200,
+            "finishedMs": 473
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/clear-trigger.vue_vue_type_script_setup_true_lang-BHaURZXY.js",
+            "type": "script",
+            "startedMs": 323,
+            "status": 200,
+            "finishedMs": 476
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/feedback-CWgogBQV.js",
+            "type": "script",
+            "startedMs": 323,
+            "status": 200,
+            "finishedMs": 478
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/state-lab-BNGmdcZc.js",
+            "type": "script",
+            "startedMs": 323,
+            "status": 200,
+            "finishedMs": 481
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-presentation-DmH2-DbQ.js",
+            "type": "script",
+            "startedMs": 323,
+            "status": 200,
+            "finishedMs": 481
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/presentation-status-zOAgH4kA.js",
+            "type": "script",
+            "startedMs": 323,
+            "status": 200,
+            "finishedMs": 481
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/platform-presentation-DLI0mKG-.js",
+            "type": "script",
+            "startedMs": 323,
+            "status": 200,
+            "finishedMs": 481
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-panel-actions-Do7ZGHwt.js",
+            "type": "script",
+            "startedMs": 325,
+            "status": 200,
+            "finishedMs": 490
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/scroll-assign-BTD4yC0O.js",
+            "type": "script",
+            "startedMs": 325,
+            "status": 200,
+            "finishedMs": 490
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/dynamic-form-Bubqi7FK.js",
+            "type": "script",
+            "startedMs": 325,
+            "status": 200,
+            "finishedMs": 490
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/async-validate-form.vue_vue_type_script_setup_true_lang-iznPg0vK.js",
+            "type": "script",
+            "startedMs": 327,
+            "status": 200,
+            "finishedMs": 490
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/async-fields-CJlCu3YP.js",
+            "type": "script",
+            "startedMs": 327,
+            "status": 200,
+            "finishedMs": 490
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/presentation-state-gXvbCX57.js",
+            "type": "script",
+            "startedMs": 327,
+            "status": 200,
+            "finishedMs": 490
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/async-race-BlI35ULU.js",
+            "type": "script",
+            "startedMs": 329,
+            "status": 200,
+            "finishedMs": 499
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-range-boundaries.vue_vue_type_script_setup_true_lang-B6Lwq8_r.js",
+            "type": "script",
+            "startedMs": 330,
+            "status": 200,
+            "finishedMs": 494
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/task-workflow-fJZmG9iJ.js",
+            "type": "script",
+            "startedMs": 330,
+            "status": 200,
+            "finishedMs": 498
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DxCe83Kn.js",
+            "type": "script",
+            "startedMs": 330,
+            "status": 200,
+            "finishedMs": 503
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Bl8rNFhg.js",
+            "type": "script",
+            "startedMs": 330,
+            "status": 200,
+            "finishedMs": 503
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/FieldPresentation.vue_vue_type_script_setup_true_lang-DxsO5o09.js",
+            "type": "script",
+            "startedMs": 330,
+            "status": 200,
+            "finishedMs": 505
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Ci5WCD_h.js",
+            "type": "script",
+            "startedMs": 333,
+            "status": 200,
+            "finishedMs": 508
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-C8XPXm95.js",
+            "type": "script",
+            "startedMs": 333,
+            "status": 200,
+            "finishedMs": 508
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/constant-0mfGR27J.js",
+            "type": "script",
+            "startedMs": 333,
+            "status": 200,
+            "finishedMs": 508
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/useChildren-DzjyyzVL.js",
+            "type": "script",
+            "startedMs": 334,
+            "status": 200,
+            "finishedMs": 508
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-action-guard-DdQ66Add.js",
+            "type": "script",
+            "startedMs": 334,
+            "status": 200,
+            "finishedMs": 511
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-form-item-Be38kC2n.js",
+            "type": "script",
+            "startedMs": 334,
+            "status": 200,
+            "finishedMs": 514
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-e9yXCylK.js",
+            "type": "script",
+            "startedMs": 334,
+            "status": 200,
+            "finishedMs": 514
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-size-BgG1ILs8.js",
+            "type": "script",
+            "startedMs": 334,
+            "status": 200,
+            "finishedMs": 514
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/get-value-by-path-I_nBQw80.js",
+            "type": "script",
+            "startedMs": 334,
+            "status": 200,
+            "finishedMs": 514
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Du5cCArF.js",
+            "type": "script",
+            "startedMs": 336,
+            "status": 200,
+            "finishedMs": 518
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BLQOLJdO.js",
+            "type": "script",
+            "startedMs": 336,
+            "status": 200,
+            "finishedMs": 518
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-responsive-state-B36pMA3C.js",
+            "type": "script",
+            "startedMs": 337,
+            "status": 200,
+            "finishedMs": 518
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-HX3oF3Ad.js",
+            "type": "script",
+            "startedMs": 337,
+            "status": 200,
+            "finishedMs": 518
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/cloneDeep-DIZNXq_f.js",
+            "type": "script",
+            "startedMs": 337,
+            "status": 200,
+            "finishedMs": 518
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-B9CHB2WE.js",
+            "type": "script",
+            "startedMs": 337,
+            "status": 200,
+            "finishedMs": 523
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/Optgroup-o2LYdy1m.js",
+            "type": "script",
+            "startedMs": 338,
+            "status": 200,
+            "finishedMs": 524
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-select-BCzTtr7h.js",
+            "type": "script",
+            "startedMs": 338,
+            "status": 200,
+            "finishedMs": 525
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-2DeLd5hT.js",
+            "type": "script",
+            "startedMs": 338,
+            "status": 200,
+            "finishedMs": 524
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/keyboard-CS-YAnUB.js",
+            "type": "script",
+            "startedMs": 340,
+            "status": 200,
+            "finishedMs": 527
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-scrollbar-BEkMNkEi.js",
+            "type": "script",
+            "startedMs": 340,
+            "status": 200,
+            "finishedMs": 527
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Bkkw6REX.js",
+            "type": "script",
+            "startedMs": 340,
+            "status": 200,
+            "finishedMs": 536
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DV_HRYoR.js",
+            "type": "script",
+            "startedMs": 341,
+            "status": 200,
+            "finishedMs": 536
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Dvc6Cwu0.js",
+            "type": "script",
+            "startedMs": 342,
+            "status": 200,
+            "finishedMs": 537
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/resize-observer-v2-Dqr2iqar.js",
+            "type": "script",
+            "startedMs": 342,
+            "status": 200,
+            "finishedMs": 537
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/vue-utils-CIM7NUNn.js",
+            "type": "script",
+            "startedMs": 343,
+            "status": 200,
+            "finishedMs": 537
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/dom-BB9pAC4d.js",
+            "type": "script",
+            "startedMs": 343,
+            "status": 200,
+            "finishedMs": 537
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/option-data-BBVJs5KW.js",
+            "type": "script",
+            "startedMs": 343,
+            "status": 200,
+            "finishedMs": 542
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/SelectionEditor.vue_vue_type_script_setup_true_lang-BDqvuhTV.js",
+            "type": "script",
+            "startedMs": 345,
+            "status": 200,
+            "finishedMs": 542
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/SelectionField.vue_vue_type_script_setup_true_lang-BBUg2v3J.js",
+            "type": "script",
+            "startedMs": 345,
+            "status": 200,
+            "finishedMs": 543
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-4FmdxXnF.js",
+            "type": "script",
+            "startedMs": 345,
+            "status": 200,
+            "finishedMs": 543
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DLqGh6AC.js",
+            "type": "script",
+            "startedMs": 345,
+            "status": 200,
+            "finishedMs": 543
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DkTXnB2D.js",
+            "type": "script",
+            "startedMs": 346,
+            "status": 200,
+            "finishedMs": 543
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/FieldDecorator.vue_vue_type_script_setup_true_lang-BGnved41.js",
+            "type": "script",
+            "startedMs": 346,
+            "status": 200,
+            "finishedMs": 546
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-D4iI0570.js",
+            "type": "script",
+            "startedMs": 346,
+            "status": 200,
+            "finishedMs": 546
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-VqSsT1Jq.js",
+            "type": "script",
+            "startedMs": 346,
+            "status": 200,
+            "finishedMs": 546
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CXn2PgIs.js",
+            "type": "script",
+            "startedMs": 346,
+            "status": 200,
+            "finishedMs": 546
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/open-trigger-BC-t-ULN.js",
+            "type": "script",
+            "startedMs": 348,
+            "status": 200,
+            "finishedMs": 550
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-field-search-BoYSdKKG.js",
+            "type": "script",
+            "startedMs": 350,
+            "status": 200,
+            "finishedMs": 550
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BoUnsJHs.js",
+            "type": "script",
+            "startedMs": 350,
+            "status": 200,
+            "finishedMs": 557
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/props-D2KylGFN.js",
+            "type": "script",
+            "startedMs": 350,
+            "status": 200,
+            "finishedMs": 557
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-6WQfM43e.js",
+            "type": "script",
+            "startedMs": 350,
+            "status": 200,
+            "finishedMs": 557
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BXWfXta5.js",
+            "type": "script",
+            "startedMs": 350,
+            "status": 200,
+            "finishedMs": 557
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DPaVVyAx.js",
+            "type": "script",
+            "startedMs": 350,
+            "status": 200,
+            "finishedMs": 557
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/native-attrs-nsn3Rgl4.js",
+            "type": "script",
+            "startedMs": 351,
+            "status": 200,
+            "finishedMs": 560
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-input-form-D_VekyDy.js",
+            "type": "script",
+            "startedMs": 351,
+            "status": 200,
+            "finishedMs": 563
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-input-value-BpvBeiHr.js",
+            "type": "script",
+            "startedMs": 352,
+            "status": 200,
+            "finishedMs": 563
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CBF8tG9h.js",
+            "type": "script",
+            "startedMs": 352,
+            "status": 200,
+            "finishedMs": 563
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/form-control-DvJrk0bu.js",
+            "type": "script",
+            "startedMs": 352,
+            "status": 200,
+            "finishedMs": 563
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/VirtualList-9aBBTl1Q.js",
+            "type": "script",
+            "startedMs": 352,
+            "status": 200,
+            "finishedMs": 564
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-option-request-Bt7d5j4O.js",
+            "type": "script",
+            "startedMs": 352,
+            "status": 200,
+            "finishedMs": 564
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CZf9fNj5.js",
+            "type": "script",
+            "startedMs": 353,
+            "status": 200,
+            "finishedMs": 565
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Chleu_-_.js",
+            "type": "script",
+            "startedMs": 353,
+            "status": 200,
+            "finishedMs": 569
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-choice-keyboard-B5DzPGCU.js",
+            "type": "script",
+            "startedMs": 353,
+            "status": 200,
+            "finishedMs": 569
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/props-C_pACWjj.js",
+            "type": "script",
+            "startedMs": 354,
+            "status": 200,
+            "finishedMs": 569
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-D_HpkGpg.js",
+            "type": "script",
+            "startedMs": 357,
+            "status": 200,
+            "finishedMs": 569
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-D1rIlMz3.js",
+            "type": "script",
+            "startedMs": 357,
+            "status": 200,
+            "finishedMs": 571
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-6OheFdOe.js",
+            "type": "script",
+            "startedMs": 357,
+            "status": 200,
+            "finishedMs": 571
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DK1lluOK.js",
+            "type": "script",
+            "startedMs": 357,
+            "status": 200,
+            "finishedMs": 575
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-C8wo82iX.js",
+            "type": "script",
+            "startedMs": 357,
+            "status": 200,
+            "finishedMs": 575
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DL6iD18v.js",
+            "type": "script",
+            "startedMs": 358,
+            "status": 200,
+            "finishedMs": 576
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DpKe8U3R.js",
+            "type": "script",
+            "startedMs": 358,
+            "status": 200,
+            "finishedMs": 576
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/ModelOutput-VFvT2MTP.js",
+            "type": "script",
+            "startedMs": 358,
+            "status": 200,
+            "finishedMs": 579
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DUfWWmqZ.js",
+            "type": "script",
+            "startedMs": 358,
+            "status": 200,
+            "finishedMs": 578
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-D_mEVzNh.js",
+            "type": "script",
+            "startedMs": 361,
+            "status": 200,
+            "finishedMs": 579
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Bdqz68Ze.js",
+            "type": "script",
+            "startedMs": 361,
+            "status": 200,
+            "finishedMs": 579
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CdrwDKck.js",
+            "type": "script",
+            "startedMs": 361,
+            "status": 200,
+            "finishedMs": 581
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-merge-state-CczOk4-5.js",
+            "type": "script",
+            "startedMs": 362,
+            "status": 200,
+            "finishedMs": 581
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-state-CjO6DqHJ.js",
+            "type": "script",
+            "startedMs": 362,
+            "status": 200,
+            "finishedMs": 593
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-PF2gGqwl.js",
+            "type": "script",
+            "startedMs": 362,
+            "status": 200,
+            "finishedMs": 594
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/render-function-C5jFi8L9.js",
+            "type": "script",
+            "startedMs": 362,
+            "status": 200,
+            "finishedMs": 594
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/IconHover-DIP_7vZV.js",
+            "type": "script",
+            "startedMs": 362,
+            "status": 200,
+            "finishedMs": 594
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BZlV_9wk.js",
+            "type": "script",
+            "startedMs": 362,
+            "status": 200,
+            "finishedMs": 599
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-uI39lVF5.js",
+            "type": "script",
+            "startedMs": 366,
+            "status": 200,
+            "finishedMs": 600
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/omit-nLibHReH.js",
+            "type": "script",
+            "startedMs": 368,
+            "status": 200,
+            "finishedMs": 602
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/raf-CvKIhKJz.js",
+            "type": "script",
+            "startedMs": 369,
+            "status": 200,
+            "finishedMs": 602
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-C8v8zZ3T.js",
+            "type": "script",
+            "startedMs": 369,
+            "status": 200,
+            "finishedMs": 630
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BhR8TMHY.js",
+            "type": "script",
+            "startedMs": 370,
+            "status": 200,
+            "finishedMs": 629
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DwUeCt4x.js",
+            "type": "script",
+            "startedMs": 370,
+            "status": 200,
+            "finishedMs": 630
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BreXiq7C.js",
+            "type": "script",
+            "startedMs": 370,
+            "status": 200,
+            "finishedMs": 630
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-B1nyA5G5.js",
+            "type": "script",
+            "startedMs": 370,
+            "status": 200,
+            "finishedMs": 630
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DkItbHR6.js",
+            "type": "script",
+            "startedMs": 370,
+            "status": 200,
+            "finishedMs": 630
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/pad-D98-mkS9.js",
+            "type": "script",
+            "startedMs": 379,
+            "status": 200,
+            "finishedMs": 653
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/dayjs.min-BezfI32t.js",
+            "type": "script",
+            "startedMs": 380,
+            "status": 200,
+            "finishedMs": 653
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-6vZw7TyC.js",
+            "type": "script",
+            "startedMs": 382,
+            "status": 200,
+            "finishedMs": 653
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BAUnIz8M.js",
+            "type": "script",
+            "startedMs": 382,
+            "status": 200,
+            "finishedMs": 653
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/FeedbackIcon-DG_RFEqh.js",
+            "type": "script",
+            "startedMs": 382,
+            "status": 200,
+            "finishedMs": 655
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/pick-DpkEveWh.js",
+            "type": "script",
+            "startedMs": 383,
+            "status": 200,
+            "finishedMs": 656
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BPpJ-EUC.js",
+            "type": "script",
+            "startedMs": 383,
+            "status": 200,
+            "finishedMs": 656
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-r9lD7JNW.js",
+            "type": "script",
+            "startedMs": 383,
+            "status": 200,
+            "finishedMs": 656
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BeFSb5SW.js",
+            "type": "script",
+            "startedMs": 383,
+            "status": 200,
+            "finishedMs": 656
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DOB4i5C4.js",
+            "type": "script",
+            "startedMs": 389,
+            "status": 200,
+            "finishedMs": 657
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DmCzSdNl.js",
+            "type": "script",
+            "startedMs": 389,
+            "status": 200,
+            "finishedMs": 694
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-ClQia9B_.js",
+            "type": "script",
+            "startedMs": 389,
+            "status": 200,
+            "finishedMs": 695
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/TimeField.vue_vue_type_script_setup_true_lang-DbYsex0D.js",
+            "type": "script",
+            "startedMs": 389,
+            "status": 200,
+            "finishedMs": 695
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Emwgufy-.js",
+            "type": "script",
+            "startedMs": 389,
+            "status": 200,
+            "finishedMs": 695
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Cy6-Vp0H.js",
+            "type": "script",
+            "startedMs": 390,
+            "status": 200,
+            "finishedMs": 695
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-AgQHxazr.js",
+            "type": "script",
+            "startedMs": 390,
+            "status": 200,
+            "finishedMs": 695
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-B3UeMt6g.js",
+            "type": "script",
+            "startedMs": 390,
+            "status": 200,
+            "finishedMs": 695
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DFSaKmiY.js",
+            "type": "script",
+            "startedMs": 390,
+            "status": 200,
+            "finishedMs": 696
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DPqIjwA3.js",
+            "type": "script",
+            "startedMs": 392,
+            "status": 200,
+            "finishedMs": 695
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/size-length-fpYb7VUl.js",
+            "type": "script",
+            "startedMs": 392,
+            "status": 200,
+            "finishedMs": 696
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CRVe5XfP.js",
+            "type": "script",
+            "startedMs": 392,
+            "status": 200,
+            "finishedMs": 696
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DDXKx4kl.js",
+            "type": "script",
+            "startedMs": 393,
+            "status": 200,
+            "finishedMs": 696
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-pveKOWKl.js",
+            "type": "script",
+            "startedMs": 393,
+            "status": 200,
+            "finishedMs": 697
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CPqYpI0k.js",
+            "type": "script",
+            "startedMs": 393,
+            "status": 200,
+            "finishedMs": 696
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CQTsY0NW.js",
+            "type": "script",
+            "startedMs": 393,
+            "status": 200,
+            "finishedMs": 696
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/preview-api-szEqSIcb.js",
+            "type": "script",
+            "startedMs": 393,
+            "status": 200,
+            "finishedMs": 697
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BO5tbIeT.js",
+            "type": "script",
+            "startedMs": 393,
+            "status": 200,
+            "finishedMs": 710
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/useEventListener-uq-EAbO4.js",
+            "type": "script",
+            "startedMs": 395,
+            "status": 200,
+            "finishedMs": 710
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/popup-transition-DFVR5iSk.js",
+            "type": "script",
+            "startedMs": 396,
+            "status": 200,
+            "finishedMs": 710
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/scroll-lock-Dt57is5K.js",
+            "type": "script",
+            "startedMs": 396,
+            "status": 200,
+            "finishedMs": 887
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Boz7sW0k.js",
+            "type": "script",
+            "startedMs": 396,
+            "status": 200,
+            "finishedMs": 887
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-OYlkbBpw.js",
+            "type": "script",
+            "startedMs": 396,
+            "status": 200,
+            "finishedMs": 888
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-dialog-hI3RgRGa.js",
+            "type": "script",
+            "startedMs": 396,
+            "status": 200,
+            "finishedMs": 889
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CQACck7p.js",
+            "type": "script",
+            "startedMs": 396,
+            "status": 200,
+            "finishedMs": 893
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Cmn6l0EK.js",
+            "type": "script",
+            "startedMs": 396,
+            "status": 200,
+            "finishedMs": 888
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-aAyjrunp.js",
+            "type": "script",
+            "startedMs": 396,
+            "status": 200,
+            "finishedMs": 888
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DMP7tvT5.js",
+            "type": "script",
+            "startedMs": 400,
+            "status": 200,
+            "finishedMs": 893
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BOIuAQoR.js",
+            "type": "script",
+            "startedMs": 400,
+            "status": 200,
+            "finishedMs": 894
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-QULcEJT2.js",
+            "type": "script",
+            "startedMs": 400,
+            "status": 200,
+            "finishedMs": 895
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-xPiBNnJp.js",
+            "type": "script",
+            "startedMs": 400,
+            "status": 200,
+            "finishedMs": 894
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DzYelRAI.js",
+            "type": "script",
+            "startedMs": 400,
+            "status": 200,
+            "finishedMs": 895
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-yr6uKQxl.js",
+            "type": "script",
+            "startedMs": 400,
+            "status": 200,
+            "finishedMs": 895
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DJPDpbxm.js",
+            "type": "script",
+            "startedMs": 401,
+            "status": 200,
+            "finishedMs": 895
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-zbTQaqyi.js",
+            "type": "script",
+            "startedMs": 401,
+            "status": 200,
+            "finishedMs": 895
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/resize-observer-CmqY17Kc.js",
+            "type": "script",
+            "startedMs": 401,
+            "status": 200,
+            "finishedMs": 895
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CxQ7YsQU.js",
+            "type": "script",
+            "startedMs": 406,
+            "status": 200,
+            "finishedMs": 895
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DbXBXu8b.js",
+            "type": "script",
+            "startedMs": 406,
+            "status": 200,
+            "finishedMs": 895
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-T3LYghQX.js",
+            "type": "script",
+            "startedMs": 406,
+            "status": 200,
+            "finishedMs": 895
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BEaNigAM.js",
+            "type": "script",
+            "startedMs": 406,
+            "status": 200,
+            "finishedMs": 895
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BddfSQAD.js",
+            "type": "script",
+            "startedMs": 406,
+            "status": 200,
+            "finishedMs": 895
+          },
+          {
+            "url": "http://127.0.0.1:56862/logo.svg",
+            "type": "image",
+            "startedMs": 406,
+            "status": 200,
+            "finishedMs": 1945
+          }
+        ],
+        "pending": []
+      },
+      "blocked": []
+    },
+    {
+      "component": "form",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "passed": true,
+      "navigation": {
+        "url": "http://127.0.0.1:56862/components/form/",
+        "elapsedMs": 1717,
+        "events": [
+          {
+            "name": "domcontentloaded",
+            "elapsedMs": 504
+          },
+          {
+            "name": "load",
+            "elapsedMs": 1717
+          }
+        ],
+        "requests": [
+          {
+            "url": "http://127.0.0.1:56862/components/form/",
+            "type": "document",
+            "startedMs": 4,
+            "status": 200,
+            "finishedMs": 23
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/style-D2QYWmax.css",
+            "type": "stylesheet",
+            "startedMs": 107,
+            "status": 200,
+            "finishedMs": 199
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/app-CnA3yviP.js",
+            "type": "script",
+            "startedMs": 108,
+            "status": 200,
+            "finishedMs": 199
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/siteData-C9ioBdVL.js",
+            "type": "script",
+            "startedMs": 108,
+            "status": 200,
+            "finishedMs": 237
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index.html-D98jAsJL.js",
+            "type": "script",
+            "startedMs": 108,
+            "status": 200,
+            "finishedMs": 199
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/basic.vue_vue_type_script_setup_true_lang-M9GGazqW.js",
+            "type": "script",
+            "startedMs": 108,
+            "status": 200,
+            "finishedMs": 200
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/disabled-cgJbrd7r.js",
+            "type": "script",
+            "startedMs": 110,
+            "status": 200,
+            "finishedMs": 204
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/layout-BdHzU3YR.js",
+            "type": "script",
+            "startedMs": 111,
+            "status": 200,
+            "finishedMs": 205
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/decoration-C_u5-zZi.js",
+            "type": "script",
+            "startedMs": 111,
+            "status": 200,
+            "finishedMs": 208
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/extra-D2dWCZC5.js",
+            "type": "script",
+            "startedMs": 112,
+            "status": 200,
+            "finishedMs": 208
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/label-width-comparison-C2BqX5Ym.js",
+            "type": "script",
+            "startedMs": 112,
+            "status": 200,
+            "finishedMs": 218
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/nested-data-B0oKq0T2.js",
+            "type": "script",
+            "startedMs": 113,
+            "status": 200,
+            "finishedMs": 218
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-components-CZ830e4N.js",
+            "type": "script",
+            "startedMs": 113,
+            "status": 200,
+            "finishedMs": 221
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-choice-DxIPsiQI.js",
+            "type": "script",
+            "startedMs": 113,
+            "status": 200,
+            "finishedMs": 228
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-selection-D1tNEJk6.js",
+            "type": "script",
+            "startedMs": 116,
+            "status": 200,
+            "finishedMs": 228
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-tree-D66InoFo.js",
+            "type": "script",
+            "startedMs": 116,
+            "status": 200,
+            "finishedMs": 245
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-date-Drjo1Yr-.js",
+            "type": "script",
+            "startedMs": 116,
+            "status": 200,
+            "finishedMs": 246
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-time--yTbaagk.js",
+            "type": "script",
+            "startedMs": 116,
+            "status": 200,
+            "finishedMs": 246
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-rating-BPGeHIZ5.js",
+            "type": "script",
+            "startedMs": 116,
+            "status": 200,
+            "finishedMs": 248
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-upload-Ur-JylgQ.js",
+            "type": "script",
+            "startedMs": 116,
+            "status": 200,
+            "finishedMs": 248
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-specialized-BqvhnKJh.js",
+            "type": "script",
+            "startedMs": 117,
+            "status": 200,
+            "finishedMs": 248
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/validate-CsVNZ9Eo.js",
+            "type": "script",
+            "startedMs": 117,
+            "status": 200,
+            "finishedMs": 251
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/cross-field-DAS3jLDo.js",
+            "type": "script",
+            "startedMs": 117,
+            "status": 200,
+            "finishedMs": 252
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/clear-trigger.vue_vue_type_script_setup_true_lang-BHaURZXY.js",
+            "type": "script",
+            "startedMs": 118,
+            "status": 200,
+            "finishedMs": 252
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/feedback-CWgogBQV.js",
+            "type": "script",
+            "startedMs": 119,
+            "status": 200,
+            "finishedMs": 256
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/state-lab-BNGmdcZc.js",
+            "type": "script",
+            "startedMs": 119,
+            "status": 200,
+            "finishedMs": 256
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-presentation-DmH2-DbQ.js",
+            "type": "script",
+            "startedMs": 119,
+            "status": 200,
+            "finishedMs": 257
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/presentation-status-zOAgH4kA.js",
+            "type": "script",
+            "startedMs": 119,
+            "status": 200,
+            "finishedMs": 259
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/platform-presentation-DLI0mKG-.js",
+            "type": "script",
+            "startedMs": 119,
+            "status": 200,
+            "finishedMs": 259
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-panel-actions-Do7ZGHwt.js",
+            "type": "script",
+            "startedMs": 119,
+            "status": 200,
+            "finishedMs": 260
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/scroll-assign-BTD4yC0O.js",
+            "type": "script",
+            "startedMs": 119,
+            "status": 200,
+            "finishedMs": 260
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/dynamic-form-Bubqi7FK.js",
+            "type": "script",
+            "startedMs": 119,
+            "status": 200,
+            "finishedMs": 264
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/async-validate-form.vue_vue_type_script_setup_true_lang-iznPg0vK.js",
+            "type": "script",
+            "startedMs": 120,
+            "status": 200,
+            "finishedMs": 264
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/async-fields-CJlCu3YP.js",
+            "type": "script",
+            "startedMs": 120,
+            "status": 200,
+            "finishedMs": 264
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/presentation-state-gXvbCX57.js",
+            "type": "script",
+            "startedMs": 121,
+            "status": 200,
+            "finishedMs": 265
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/async-race-BlI35ULU.js",
+            "type": "script",
+            "startedMs": 121,
+            "status": 200,
+            "finishedMs": 265
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/field-range-boundaries.vue_vue_type_script_setup_true_lang-B6Lwq8_r.js",
+            "type": "script",
+            "startedMs": 121,
+            "status": 200,
+            "finishedMs": 265
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/task-workflow-fJZmG9iJ.js",
+            "type": "script",
+            "startedMs": 122,
+            "status": 200,
+            "finishedMs": 268
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DxCe83Kn.js",
+            "type": "script",
+            "startedMs": 122,
+            "status": 200,
+            "finishedMs": 268
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Bl8rNFhg.js",
+            "type": "script",
+            "startedMs": 122,
+            "status": 200,
+            "finishedMs": 270
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/FieldPresentation.vue_vue_type_script_setup_true_lang-DxsO5o09.js",
+            "type": "script",
+            "startedMs": 123,
+            "status": 200,
+            "finishedMs": 269
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Ci5WCD_h.js",
+            "type": "script",
+            "startedMs": 126,
+            "status": 200,
+            "finishedMs": 270
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-C8XPXm95.js",
+            "type": "script",
+            "startedMs": 127,
+            "status": 200,
+            "finishedMs": 273
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/constant-0mfGR27J.js",
+            "type": "script",
+            "startedMs": 127,
+            "status": 200,
+            "finishedMs": 273
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/useChildren-DzjyyzVL.js",
+            "type": "script",
+            "startedMs": 127,
+            "status": 200,
+            "finishedMs": 273
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-action-guard-DdQ66Add.js",
+            "type": "script",
+            "startedMs": 127,
+            "status": 200,
+            "finishedMs": 274
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-form-item-Be38kC2n.js",
+            "type": "script",
+            "startedMs": 127,
+            "status": 200,
+            "finishedMs": 274
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-e9yXCylK.js",
+            "type": "script",
+            "startedMs": 127,
+            "status": 200,
+            "finishedMs": 274
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-size-BgG1ILs8.js",
+            "type": "script",
+            "startedMs": 127,
+            "status": 200,
+            "finishedMs": 275
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/get-value-by-path-I_nBQw80.js",
+            "type": "script",
+            "startedMs": 127,
+            "status": 200,
+            "finishedMs": 277
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Du5cCArF.js",
+            "type": "script",
+            "startedMs": 128,
+            "status": 200,
+            "finishedMs": 279
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BLQOLJdO.js",
+            "type": "script",
+            "startedMs": 129,
+            "status": 200,
+            "finishedMs": 278
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-responsive-state-B36pMA3C.js",
+            "type": "script",
+            "startedMs": 129,
+            "status": 200,
+            "finishedMs": 279
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-HX3oF3Ad.js",
+            "type": "script",
+            "startedMs": 129,
+            "status": 200,
+            "finishedMs": 282
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/cloneDeep-DIZNXq_f.js",
+            "type": "script",
+            "startedMs": 129,
+            "status": 200,
+            "finishedMs": 282
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-B9CHB2WE.js",
+            "type": "script",
+            "startedMs": 129,
+            "status": 200,
+            "finishedMs": 283
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/Optgroup-o2LYdy1m.js",
+            "type": "script",
+            "startedMs": 129,
+            "status": 200,
+            "finishedMs": 285
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-select-BCzTtr7h.js",
+            "type": "script",
+            "startedMs": 129,
+            "status": 200,
+            "finishedMs": 285
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-2DeLd5hT.js",
+            "type": "script",
+            "startedMs": 129,
+            "status": 200,
+            "finishedMs": 285
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/keyboard-CS-YAnUB.js",
+            "type": "script",
+            "startedMs": 130,
+            "status": 200,
+            "finishedMs": 285
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-scrollbar-BEkMNkEi.js",
+            "type": "script",
+            "startedMs": 130,
+            "status": 200,
+            "finishedMs": 289
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Bkkw6REX.js",
+            "type": "script",
+            "startedMs": 130,
+            "status": 200,
+            "finishedMs": 287
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DV_HRYoR.js",
+            "type": "script",
+            "startedMs": 131,
+            "status": 200,
+            "finishedMs": 288
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Dvc6Cwu0.js",
+            "type": "script",
+            "startedMs": 131,
+            "status": 200,
+            "finishedMs": 288
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/resize-observer-v2-Dqr2iqar.js",
+            "type": "script",
+            "startedMs": 131,
+            "status": 200,
+            "finishedMs": 290
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/vue-utils-CIM7NUNn.js",
+            "type": "script",
+            "startedMs": 131,
+            "status": 200,
+            "finishedMs": 290
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/dom-BB9pAC4d.js",
+            "type": "script",
+            "startedMs": 131,
+            "status": 200,
+            "finishedMs": 290
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/option-data-BBVJs5KW.js",
+            "type": "script",
+            "startedMs": 131,
+            "status": 200,
+            "finishedMs": 294
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/SelectionEditor.vue_vue_type_script_setup_true_lang-BDqvuhTV.js",
+            "type": "script",
+            "startedMs": 133,
+            "status": 200,
+            "finishedMs": 297
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/SelectionField.vue_vue_type_script_setup_true_lang-BBUg2v3J.js",
+            "type": "script",
+            "startedMs": 133,
+            "status": 200,
+            "finishedMs": 297
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-4FmdxXnF.js",
+            "type": "script",
+            "startedMs": 133,
+            "status": 200,
+            "finishedMs": 297
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DLqGh6AC.js",
+            "type": "script",
+            "startedMs": 133,
+            "status": 200,
+            "finishedMs": 297
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DkTXnB2D.js",
+            "type": "script",
+            "startedMs": 133,
+            "status": 200,
+            "finishedMs": 299
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/FieldDecorator.vue_vue_type_script_setup_true_lang-BGnved41.js",
+            "type": "script",
+            "startedMs": 133,
+            "status": 200,
+            "finishedMs": 303
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-D4iI0570.js",
+            "type": "script",
+            "startedMs": 134,
+            "status": 200,
+            "finishedMs": 305
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-VqSsT1Jq.js",
+            "type": "script",
+            "startedMs": 134,
+            "status": 200,
+            "finishedMs": 305
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CXn2PgIs.js",
+            "type": "script",
+            "startedMs": 134,
+            "status": 200,
+            "finishedMs": 305
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/open-trigger-BC-t-ULN.js",
+            "type": "script",
+            "startedMs": 135,
+            "status": 200,
+            "finishedMs": 308
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-field-search-BoYSdKKG.js",
+            "type": "script",
+            "startedMs": 135,
+            "status": 200,
+            "finishedMs": 309
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BoUnsJHs.js",
+            "type": "script",
+            "startedMs": 136,
+            "status": 200,
+            "finishedMs": 310
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/props-D2KylGFN.js",
+            "type": "script",
+            "startedMs": 136,
+            "status": 200,
+            "finishedMs": 311
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-6WQfM43e.js",
+            "type": "script",
+            "startedMs": 136,
+            "status": 200,
+            "finishedMs": 317
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BXWfXta5.js",
+            "type": "script",
+            "startedMs": 136,
+            "status": 200,
+            "finishedMs": 318
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DPaVVyAx.js",
+            "type": "script",
+            "startedMs": 136,
+            "status": 200,
+            "finishedMs": 318
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/native-attrs-nsn3Rgl4.js",
+            "type": "script",
+            "startedMs": 136,
+            "status": 200,
+            "finishedMs": 319
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-input-form-D_VekyDy.js",
+            "type": "script",
+            "startedMs": 136,
+            "status": 200,
+            "finishedMs": 319
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-input-value-BpvBeiHr.js",
+            "type": "script",
+            "startedMs": 139,
+            "status": 200,
+            "finishedMs": 321
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CBF8tG9h.js",
+            "type": "script",
+            "startedMs": 139,
+            "status": 200,
+            "finishedMs": 321
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/form-control-DvJrk0bu.js",
+            "type": "script",
+            "startedMs": 139,
+            "status": 200,
+            "finishedMs": 326
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/VirtualList-9aBBTl1Q.js",
+            "type": "script",
+            "startedMs": 139,
+            "status": 200,
+            "finishedMs": 328
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-option-request-Bt7d5j4O.js",
+            "type": "script",
+            "startedMs": 139,
+            "status": 200,
+            "finishedMs": 327
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CZf9fNj5.js",
+            "type": "script",
+            "startedMs": 139,
+            "status": 200,
+            "finishedMs": 328
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Chleu_-_.js",
+            "type": "script",
+            "startedMs": 139,
+            "status": 200,
+            "finishedMs": 328
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-choice-keyboard-B5DzPGCU.js",
+            "type": "script",
+            "startedMs": 139,
+            "status": 200,
+            "finishedMs": 328
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/props-C_pACWjj.js",
+            "type": "script",
+            "startedMs": 139,
+            "status": 200,
+            "finishedMs": 331
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-D_HpkGpg.js",
+            "type": "script",
+            "startedMs": 145,
+            "status": 200,
+            "finishedMs": 336
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-D1rIlMz3.js",
+            "type": "script",
+            "startedMs": 145,
+            "status": 200,
+            "finishedMs": 336
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-6OheFdOe.js",
+            "type": "script",
+            "startedMs": 145,
+            "status": 200,
+            "finishedMs": 336
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DK1lluOK.js",
+            "type": "script",
+            "startedMs": 145,
+            "status": 200,
+            "finishedMs": 336
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-C8wo82iX.js",
+            "type": "script",
+            "startedMs": 145,
+            "status": 200,
+            "finishedMs": 336
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DL6iD18v.js",
+            "type": "script",
+            "startedMs": 145,
+            "status": 200,
+            "finishedMs": 343
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DpKe8U3R.js",
+            "type": "script",
+            "startedMs": 145,
+            "status": 200,
+            "finishedMs": 344
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/ModelOutput-VFvT2MTP.js",
+            "type": "script",
+            "startedMs": 146,
+            "status": 200,
+            "finishedMs": 344
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DUfWWmqZ.js",
+            "type": "script",
+            "startedMs": 146,
+            "status": 200,
+            "finishedMs": 344
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-D_mEVzNh.js",
+            "type": "script",
+            "startedMs": 147,
+            "status": 200,
+            "finishedMs": 344
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Bdqz68Ze.js",
+            "type": "script",
+            "startedMs": 148,
+            "status": 200,
+            "finishedMs": 348
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CdrwDKck.js",
+            "type": "script",
+            "startedMs": 148,
+            "status": 200,
+            "finishedMs": 351
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-merge-state-CczOk4-5.js",
+            "type": "script",
+            "startedMs": 148,
+            "status": 200,
+            "finishedMs": 351
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-state-CjO6DqHJ.js",
+            "type": "script",
+            "startedMs": 148,
+            "status": 200,
+            "finishedMs": 351
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-PF2gGqwl.js",
+            "type": "script",
+            "startedMs": 148,
+            "status": 200,
+            "finishedMs": 352
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/render-function-C5jFi8L9.js",
+            "type": "script",
+            "startedMs": 148,
+            "status": 200,
+            "finishedMs": 352
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/IconHover-DIP_7vZV.js",
+            "type": "script",
+            "startedMs": 148,
+            "status": 200,
+            "finishedMs": 357
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BZlV_9wk.js",
+            "type": "script",
+            "startedMs": 148,
+            "status": 200,
+            "finishedMs": 357
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-uI39lVF5.js",
+            "type": "script",
+            "startedMs": 151,
+            "status": 200,
+            "finishedMs": 356
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/omit-nLibHReH.js",
+            "type": "script",
+            "startedMs": 152,
+            "status": 200,
+            "finishedMs": 357
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/raf-CvKIhKJz.js",
+            "type": "script",
+            "startedMs": 152,
+            "status": 200,
+            "finishedMs": 365
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-C8v8zZ3T.js",
+            "type": "script",
+            "startedMs": 152,
+            "status": 200,
+            "finishedMs": 365
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BhR8TMHY.js",
+            "type": "script",
+            "startedMs": 152,
+            "status": 200,
+            "finishedMs": 367
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DwUeCt4x.js",
+            "type": "script",
+            "startedMs": 152,
+            "status": 200,
+            "finishedMs": 367
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BreXiq7C.js",
+            "type": "script",
+            "startedMs": 152,
+            "status": 200,
+            "finishedMs": 373
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-B1nyA5G5.js",
+            "type": "script",
+            "startedMs": 152,
+            "status": 200,
+            "finishedMs": 367
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DkItbHR6.js",
+            "type": "script",
+            "startedMs": 152,
+            "status": 200,
+            "finishedMs": 373
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/pad-D98-mkS9.js",
+            "type": "script",
+            "startedMs": 154,
+            "status": 200,
+            "finishedMs": 374
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/dayjs.min-BezfI32t.js",
+            "type": "script",
+            "startedMs": 154,
+            "status": 200,
+            "finishedMs": 380
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-6vZw7TyC.js",
+            "type": "script",
+            "startedMs": 154,
+            "status": 200,
+            "finishedMs": 381
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BAUnIz8M.js",
+            "type": "script",
+            "startedMs": 154,
+            "status": 200,
+            "finishedMs": 382
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/FeedbackIcon-DG_RFEqh.js",
+            "type": "script",
+            "startedMs": 154,
+            "status": 200,
+            "finishedMs": 383
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/pick-DpkEveWh.js",
+            "type": "script",
+            "startedMs": 154,
+            "status": 200,
+            "finishedMs": 389
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BPpJ-EUC.js",
+            "type": "script",
+            "startedMs": 154,
+            "status": 200,
+            "finishedMs": 400
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-r9lD7JNW.js",
+            "type": "script",
+            "startedMs": 154,
+            "status": 200,
+            "finishedMs": 401
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BeFSb5SW.js",
+            "type": "script",
+            "startedMs": 154,
+            "status": 200,
+            "finishedMs": 400
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DOB4i5C4.js",
+            "type": "script",
+            "startedMs": 155,
+            "status": 200,
+            "finishedMs": 401
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DmCzSdNl.js",
+            "type": "script",
+            "startedMs": 156,
+            "status": 200,
+            "finishedMs": 403
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-ClQia9B_.js",
+            "type": "script",
+            "startedMs": 156,
+            "status": 200,
+            "finishedMs": 416
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/TimeField.vue_vue_type_script_setup_true_lang-DbYsex0D.js",
+            "type": "script",
+            "startedMs": 156,
+            "status": 200,
+            "finishedMs": 416
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Emwgufy-.js",
+            "type": "script",
+            "startedMs": 156,
+            "status": 200,
+            "finishedMs": 416
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Cy6-Vp0H.js",
+            "type": "script",
+            "startedMs": 156,
+            "status": 200,
+            "finishedMs": 442
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-AgQHxazr.js",
+            "type": "script",
+            "startedMs": 156,
+            "status": 200,
+            "finishedMs": 442
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-B3UeMt6g.js",
+            "type": "script",
+            "startedMs": 156,
+            "status": 200,
+            "finishedMs": 442
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DFSaKmiY.js",
+            "type": "script",
+            "startedMs": 156,
+            "status": 200,
+            "finishedMs": 447
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DPqIjwA3.js",
+            "type": "script",
+            "startedMs": 158,
+            "status": 200,
+            "finishedMs": 447
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/size-length-fpYb7VUl.js",
+            "type": "script",
+            "startedMs": 159,
+            "status": 200,
+            "finishedMs": 447
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CRVe5XfP.js",
+            "type": "script",
+            "startedMs": 159,
+            "status": 200,
+            "finishedMs": 459
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DDXKx4kl.js",
+            "type": "script",
+            "startedMs": 159,
+            "status": 200,
+            "finishedMs": 459
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-pveKOWKl.js",
+            "type": "script",
+            "startedMs": 160,
+            "status": 200,
+            "finishedMs": 460
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CPqYpI0k.js",
+            "type": "script",
+            "startedMs": 160,
+            "status": 200,
+            "finishedMs": 487
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CQTsY0NW.js",
+            "type": "script",
+            "startedMs": 160,
+            "status": 200,
+            "finishedMs": 487
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/preview-api-szEqSIcb.js",
+            "type": "script",
+            "startedMs": 161,
+            "status": 200,
+            "finishedMs": 488
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BO5tbIeT.js",
+            "type": "script",
+            "startedMs": 161,
+            "status": 200,
+            "finishedMs": 490
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/useEventListener-uq-EAbO4.js",
+            "type": "script",
+            "startedMs": 167,
+            "status": 200,
+            "finishedMs": 490
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/popup-transition-DFVR5iSk.js",
+            "type": "script",
+            "startedMs": 167,
+            "status": 200,
+            "finishedMs": 491
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/scroll-lock-Dt57is5K.js",
+            "type": "script",
+            "startedMs": 167,
+            "status": 200,
+            "finishedMs": 495
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Boz7sW0k.js",
+            "type": "script",
+            "startedMs": 168,
+            "status": 200,
+            "finishedMs": 495
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-OYlkbBpw.js",
+            "type": "script",
+            "startedMs": 168,
+            "status": 200,
+            "finishedMs": 496
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-dialog-hI3RgRGa.js",
+            "type": "script",
+            "startedMs": 168,
+            "status": 200,
+            "finishedMs": 496
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CQACck7p.js",
+            "type": "script",
+            "startedMs": 168,
+            "status": 200,
+            "finishedMs": 500
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Cmn6l0EK.js",
+            "type": "script",
+            "startedMs": 168,
+            "status": 200,
+            "finishedMs": 500
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-aAyjrunp.js",
+            "type": "script",
+            "startedMs": 172,
+            "status": 200,
+            "finishedMs": 501
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DMP7tvT5.js",
+            "type": "script",
+            "startedMs": 172,
+            "status": 200,
+            "finishedMs": 501
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BOIuAQoR.js",
+            "type": "script",
+            "startedMs": 172,
+            "status": 200,
+            "finishedMs": 501
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-QULcEJT2.js",
+            "type": "script",
+            "startedMs": 172,
+            "status": 200,
+            "finishedMs": 501
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-xPiBNnJp.js",
+            "type": "script",
+            "startedMs": 172,
+            "status": 200,
+            "finishedMs": 505
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DzYelRAI.js",
+            "type": "script",
+            "startedMs": 173,
+            "status": 200,
+            "finishedMs": 505
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-yr6uKQxl.js",
+            "type": "script",
+            "startedMs": 173,
+            "status": 200,
+            "finishedMs": 504
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DJPDpbxm.js",
+            "type": "script",
+            "startedMs": 173,
+            "status": 200,
+            "finishedMs": 505
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-zbTQaqyi.js",
+            "type": "script",
+            "startedMs": 173,
+            "status": 200,
+            "finishedMs": 505
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/resize-observer-CmqY17Kc.js",
+            "type": "script",
+            "startedMs": 176,
+            "status": 200,
+            "finishedMs": 510
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CxQ7YsQU.js",
+            "type": "script",
+            "startedMs": 176,
+            "status": 200,
+            "finishedMs": 509
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DbXBXu8b.js",
+            "type": "script",
+            "startedMs": 176,
+            "status": 200,
+            "finishedMs": 510
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-T3LYghQX.js",
+            "type": "script",
+            "startedMs": 176,
+            "status": 200,
+            "finishedMs": 510
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BEaNigAM.js",
+            "type": "script",
+            "startedMs": 176,
+            "status": 200,
+            "finishedMs": 510
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BddfSQAD.js",
+            "type": "script",
+            "startedMs": 176,
+            "status": 200,
+            "finishedMs": 512
+          },
+          {
+            "url": "http://127.0.0.1:56862/logo.svg",
+            "type": "image",
+            "startedMs": 177,
+            "status": 200,
+            "finishedMs": 1716
+          }
+        ],
+        "pending": []
+      },
+      "blocked": []
+    },
+    {
+      "component": "collapse",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "passed": true,
+      "navigation": {
+        "url": "http://127.0.0.1:56862/components/collapse/",
+        "elapsedMs": 1361,
+        "events": [
+          {
+            "name": "domcontentloaded",
+            "elapsedMs": 197
+          },
+          {
+            "name": "load",
+            "elapsedMs": 1361
+          }
+        ],
+        "requests": [
+          {
+            "url": "http://127.0.0.1:56862/components/collapse/",
+            "type": "document",
+            "startedMs": 3,
+            "status": 200,
+            "finishedMs": 16
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/style-D2QYWmax.css",
+            "type": "stylesheet",
+            "startedMs": 49,
+            "status": 200,
+            "finishedMs": 102
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/app-CnA3yviP.js",
+            "type": "script",
+            "startedMs": 50,
+            "status": 200,
+            "finishedMs": 75
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/siteData-C9ioBdVL.js",
+            "type": "script",
+            "startedMs": 50,
+            "status": 200,
+            "finishedMs": 110
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index.html-DU3bFRNe.js",
+            "type": "script",
+            "startedMs": 50,
+            "status": 200,
+            "finishedMs": 88
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/basic-BBo2hwiV.js",
+            "type": "script",
+            "startedMs": 50,
+            "status": 200,
+            "finishedMs": 81
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/disabled.vue_vue_type_script_setup_true_lang-DVee--1k.js",
+            "type": "script",
+            "startedMs": 50,
+            "status": 200,
+            "finishedMs": 92
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/nested-C_xnFP3h.js",
+            "type": "script",
+            "startedMs": 56,
+            "status": 200,
+            "finishedMs": 92
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/offset.vue_vue_type_script_setup_true_lang-DPcr-7eG.js",
+            "type": "script",
+            "startedMs": 57,
+            "status": 200,
+            "finishedMs": 103
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/icon-position.vue_vue_type_script_setup_true_lang-Cb6dDoyw.js",
+            "type": "script",
+            "startedMs": 57,
+            "status": 200,
+            "finishedMs": 103
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/accordion-CZ7CWY61.js",
+            "type": "script",
+            "startedMs": 57,
+            "status": 200,
+            "finishedMs": 109
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/border-comparison-Dn3WrrOj.js",
+            "type": "script",
+            "startedMs": 57,
+            "status": 200,
+            "finishedMs": 109
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/extra-DbMsxbkF.js",
+            "type": "script",
+            "startedMs": 58,
+            "status": 200,
+            "finishedMs": 133
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/expand-icon-Br0jTchF.js",
+            "type": "script",
+            "startedMs": 58,
+            "status": 200,
+            "finishedMs": 133
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/destroy-BX3B51qY.js",
+            "type": "script",
+            "startedMs": 58,
+            "status": 200,
+            "finishedMs": 133
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/custom.vue_vue_type_script_setup_true_lang-CuE9ebhu.js",
+            "type": "script",
+            "startedMs": 58,
+            "status": 200,
+            "finishedMs": 133
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/toggle-all.vue_vue_type_script_setup_true_lang-DAy4h8vx.js",
+            "type": "script",
+            "startedMs": 60,
+            "status": 200,
+            "finishedMs": 136
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BEaNigAM.js",
+            "type": "script",
+            "startedMs": 60,
+            "status": 200,
+            "finishedMs": 136
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BddfSQAD.js",
+            "type": "script",
+            "startedMs": 60,
+            "status": 200,
+            "finishedMs": 136
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CZf9fNj5.js",
+            "type": "script",
+            "startedMs": 60,
+            "status": 200,
+            "finishedMs": 140
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/constant-0mfGR27J.js",
+            "type": "script",
+            "startedMs": 60,
+            "status": 200,
+            "finishedMs": 140
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Ci5WCD_h.js",
+            "type": "script",
+            "startedMs": 60,
+            "status": 200,
+            "finishedMs": 139
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-C8XPXm95.js",
+            "type": "script",
+            "startedMs": 60,
+            "status": 200,
+            "finishedMs": 145
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/useChildren-DzjyyzVL.js",
+            "type": "script",
+            "startedMs": 60,
+            "status": 200,
+            "finishedMs": 144
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-VqSsT1Jq.js",
+            "type": "script",
+            "startedMs": 60,
+            "status": 200,
+            "finishedMs": 144
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-size-BgG1ILs8.js",
+            "type": "script",
+            "startedMs": 61,
+            "status": 200,
+            "finishedMs": 142
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CXn2PgIs.js",
+            "type": "script",
+            "startedMs": 61,
+            "status": 200,
+            "finishedMs": 146
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DLqGh6AC.js",
+            "type": "script",
+            "startedMs": 61,
+            "status": 200,
+            "finishedMs": 146
+          },
+          {
+            "url": "http://127.0.0.1:56862/logo.svg",
+            "type": "image",
+            "startedMs": 62,
+            "status": 200,
+            "finishedMs": 1349
+          }
+        ],
+        "pending": []
+      },
+      "blocked": []
+    },
+    {
+      "component": "collapse",
+      "surface": "documentation",
+      "theme": "darkTheme",
+      "passed": true,
+      "navigation": {
+        "url": "http://127.0.0.1:56862/components/collapse/",
+        "elapsedMs": 1298,
+        "events": [
+          {
+            "name": "domcontentloaded",
+            "elapsedMs": 250
+          },
+          {
+            "name": "load",
+            "elapsedMs": 1298
+          }
+        ],
+        "requests": [
+          {
+            "url": "http://127.0.0.1:56862/components/collapse/",
+            "type": "document",
+            "startedMs": 2,
+            "status": 200,
+            "finishedMs": 11
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/style-D2QYWmax.css",
+            "type": "stylesheet",
+            "startedMs": 29,
+            "status": 200,
+            "finishedMs": 78
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/app-CnA3yviP.js",
+            "type": "script",
+            "startedMs": 29,
+            "status": 200,
+            "finishedMs": 48
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/siteData-C9ioBdVL.js",
+            "type": "script",
+            "startedMs": 30,
+            "status": 200,
+            "finishedMs": 81
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index.html-DU3bFRNe.js",
+            "type": "script",
+            "startedMs": 30,
+            "status": 200,
+            "finishedMs": 55
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/basic-BBo2hwiV.js",
+            "type": "script",
+            "startedMs": 30,
+            "status": 200,
+            "finishedMs": 57
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/disabled.vue_vue_type_script_setup_true_lang-DVee--1k.js",
+            "type": "script",
+            "startedMs": 30,
+            "status": 200,
+            "finishedMs": 62
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/nested-C_xnFP3h.js",
+            "type": "script",
+            "startedMs": 31,
+            "status": 200,
+            "finishedMs": 67
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/offset.vue_vue_type_script_setup_true_lang-DPcr-7eG.js",
+            "type": "script",
+            "startedMs": 31,
+            "status": 200,
+            "finishedMs": 78
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/icon-position.vue_vue_type_script_setup_true_lang-Cb6dDoyw.js",
+            "type": "script",
+            "startedMs": 31,
+            "status": 200,
+            "finishedMs": 79
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/accordion-CZ7CWY61.js",
+            "type": "script",
+            "startedMs": 31,
+            "status": 200,
+            "finishedMs": 80
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/border-comparison-Dn3WrrOj.js",
+            "type": "script",
+            "startedMs": 31,
+            "status": 200,
+            "finishedMs": 81
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/extra-DbMsxbkF.js",
+            "type": "script",
+            "startedMs": 31,
+            "status": 200,
+            "finishedMs": 82
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/expand-icon-Br0jTchF.js",
+            "type": "script",
+            "startedMs": 31,
+            "status": 200,
+            "finishedMs": 82
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/destroy-BX3B51qY.js",
+            "type": "script",
+            "startedMs": 31,
+            "status": 200,
+            "finishedMs": 84
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/custom.vue_vue_type_script_setup_true_lang-CuE9ebhu.js",
+            "type": "script",
+            "startedMs": 31,
+            "status": 200,
+            "finishedMs": 84
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/toggle-all.vue_vue_type_script_setup_true_lang-DAy4h8vx.js",
+            "type": "script",
+            "startedMs": 32,
+            "status": 200,
+            "finishedMs": 84
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BEaNigAM.js",
+            "type": "script",
+            "startedMs": 32,
+            "status": 200,
+            "finishedMs": 87
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-BddfSQAD.js",
+            "type": "script",
+            "startedMs": 32,
+            "status": 200,
+            "finishedMs": 87
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CZf9fNj5.js",
+            "type": "script",
+            "startedMs": 33,
+            "status": 200,
+            "finishedMs": 90
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/constant-0mfGR27J.js",
+            "type": "script",
+            "startedMs": 33,
+            "status": 200,
+            "finishedMs": 90
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-Ci5WCD_h.js",
+            "type": "script",
+            "startedMs": 33,
+            "status": 200,
+            "finishedMs": 87
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-C8XPXm95.js",
+            "type": "script",
+            "startedMs": 33,
+            "status": 200,
+            "finishedMs": 90
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/useChildren-DzjyyzVL.js",
+            "type": "script",
+            "startedMs": 33,
+            "status": 200,
+            "finishedMs": 93
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-VqSsT1Jq.js",
+            "type": "script",
+            "startedMs": 33,
+            "status": 200,
+            "finishedMs": 93
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/use-size-BgG1ILs8.js",
+            "type": "script",
+            "startedMs": 34,
+            "status": 200,
+            "finishedMs": 93
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-CXn2PgIs.js",
+            "type": "script",
+            "startedMs": 34,
+            "status": 200,
+            "finishedMs": 94
+          },
+          {
+            "url": "http://127.0.0.1:56862/assets/index-DLqGh6AC.js",
+            "type": "script",
+            "startedMs": 34,
+            "status": 200,
+            "finishedMs": 94
+          },
+          {
+            "url": "http://127.0.0.1:56862/logo.svg",
+            "type": "image",
+            "startedMs": 34,
+            "status": 200,
+            "finishedMs": 1296
+          }
+        ],
+        "pending": []
+      },
+      "blocked": []
+    }
+  ]
+}

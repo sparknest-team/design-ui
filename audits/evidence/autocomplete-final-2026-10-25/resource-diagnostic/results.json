@@ -1,0 +1,488 @@
+{
+  "initial": {
+    "at": "2026-10-25T09:40:44.072Z",
+    "cpus": 8,
+    "loadavg": [
+      11.4970703125,
+      28.3154296875,
+      28.408203125
+    ],
+    "freeBytes": 117538816
+  },
+  "final": {
+    "at": "2026-10-25T09:41:12.613Z",
+    "cpus": 8,
+    "loadavg": [
+      16.740234375,
+      27.99462890625,
+      28.28857421875
+    ],
+    "freeBytes": 316129280
+  },
+  "results": [
+    {
+      "library": "cedar",
+      "run": 1,
+      "passed": true,
+      "total": 13468.520917000002,
+      "timings": [
+        {
+          "sourceIndex": 0,
+          "elapsed": 96.10341700000026
+        },
+        {
+          "sourceIndex": 1,
+          "elapsed": 104.49074999999903
+        },
+        {
+          "sourceIndex": 2,
+          "elapsed": 98.97891700000037
+        },
+        {
+          "sourceIndex": 3,
+          "elapsed": 130.85208299999977
+        },
+        {
+          "sourceIndex": 4,
+          "elapsed": 98.15654099999847
+        },
+        {
+          "sourceIndex": 5,
+          "elapsed": 101.00333300000057
+        },
+        {
+          "sourceIndex": 6,
+          "elapsed": 98.5296670000007
+        },
+        {
+          "sourceIndex": 7,
+          "elapsed": 100.1082920000008
+        },
+        {
+          "sourceIndex": 8,
+          "elapsed": 100.87366699999984
+        },
+        {
+          "sourceIndex": 9,
+          "elapsed": 98.48308299999917
+        },
+        {
+          "sourceIndex": 10,
+          "elapsed": 153.3114999999998
+        },
+        {
+          "sourceIndex": 11,
+          "elapsed": 98.47883299999921
+        }
+      ],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/e10b5374278cb469863f99cb00fb8c69cc7bd27075b57efb80d19971790ec1f9.json",
+          "start": 12221.582875,
+          "elapsed": 11.13629199999923
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/61619d95674979033c8a2da51b28f662e8c1a01a6f40c76db10188430e9f3d7b.json",
+          "start": 12318.079958999999,
+          "elapsed": 21.248625000000175
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/535a3360b4cadf0bea4c131af88c4b4f6ac25d1faadeeb2e160cbedb46e07b1b.json",
+          "start": 12419.150916999999,
+          "elapsed": 17.445583000000624
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/149d5ac13c2478a2409b0a4c4c30a57ce475a2d9d775632da97df7a289d9eec1.json",
+          "start": 12551.937750000001,
+          "elapsed": 17.896333999997296
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/ab047c036d29d61e03198c265a6ab5a9f2fa2374d9a2e502712b254d33fe539f.json",
+          "start": 12651.779542,
+          "elapsed": 13.78637499999968
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/c11a9a1210002e914ffc3ef06406c0beb2be089d07acf1a6ea158daf81980b11.json",
+          "start": 12753.268791999999,
+          "elapsed": 12.165375000000495
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/916e120b79b3833e9f15ca15de76f408acb4f026e1e99c150664b3de6f674e98.json",
+          "start": 12851.504375,
+          "elapsed": 13.874458999998751
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/b96e903039595f66f82c916d923bef2b0960af379fb4661756518391d8f5048a.json",
+          "start": 12951.144499999999,
+          "elapsed": 14.497042000002693
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/a99a49abf1e23000e73a71fce07576751312fdcc94f95bc14c21348a7a1281d8.json",
+          "start": 13051.425875,
+          "elapsed": 18.868333999998868
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/f83a8eaa35a682def17ac87ad1587b5429d2ea2159e8109725ee5a1e50ea50b2.json",
+          "start": 13151.174667,
+          "elapsed": 15.72241700000086
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/10c408d3e388b7a3841b7bc59b0b2102c79dc373879e623855cbca3d77e69404.json",
+          "start": 13250.329375000001,
+          "elapsed": 23.823749999999563
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/1fb256a3efbee842959ec082e55c48dc4e36ed5c43558f8e07ced5c88b9a12c3.json",
+          "start": 13403.010708999998,
+          "elapsed": 20.09450000000288
+        }
+      ],
+      "states": []
+    },
+    {
+      "library": "cedar",
+      "run": 2,
+      "passed": true,
+      "total": 2043.4709160000002,
+      "timings": [
+        {
+          "sourceIndex": 0,
+          "elapsed": 105.98266599999988
+        },
+        {
+          "sourceIndex": 1,
+          "elapsed": 105.23633300000074
+        },
+        {
+          "sourceIndex": 2,
+          "elapsed": 114.10866600000008
+        },
+        {
+          "sourceIndex": 3,
+          "elapsed": 132.49095900000066
+        },
+        {
+          "sourceIndex": 4,
+          "elapsed": 98.68670799999927
+        },
+        {
+          "sourceIndex": 5,
+          "elapsed": 102.14674999999988
+        },
+        {
+          "sourceIndex": 6,
+          "elapsed": 96.30545799999891
+        },
+        {
+          "sourceIndex": 7,
+          "elapsed": 102.9186660000014
+        },
+        {
+          "sourceIndex": 8,
+          "elapsed": 99.51537499999904
+        },
+        {
+          "sourceIndex": 9,
+          "elapsed": 98.45804100000169
+        },
+        {
+          "sourceIndex": 10,
+          "elapsed": 98.94279200000165
+        },
+        {
+          "sourceIndex": 11,
+          "elapsed": 99.61641599999712
+        }
+      ],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/e10b5374278cb469863f99cb00fb8c69cc7bd27075b57efb80d19971790ec1f9.json",
+          "start": 828.6500410000008,
+          "elapsed": 12.915750000000116
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/61619d95674979033c8a2da51b28f662e8c1a01a6f40c76db10188430e9f3d7b.json",
+          "start": 927.7169580000009,
+          "elapsed": 22.757916999998997
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/535a3360b4cadf0bea4c131af88c4b4f6ac25d1faadeeb2e160cbedb46e07b1b.json",
+          "start": 1029.846708000001,
+          "elapsed": 12.462416999998823
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/149d5ac13c2478a2409b0a4c4c30a57ce475a2d9d775632da97df7a289d9eec1.json",
+          "start": 1162.908958,
+          "elapsed": 12.064792000001034
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/ab047c036d29d61e03198c265a6ab5a9f2fa2374d9a2e502712b254d33fe539f.json",
+          "start": 1278.5362079999995,
+          "elapsed": 13.298375000000306
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/c11a9a1210002e914ffc3ef06406c0beb2be089d07acf1a6ea158daf81980b11.json",
+          "start": 1377.957708,
+          "elapsed": 13.619708000001992
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/916e120b79b3833e9f15ca15de76f408acb4f026e1e99c150664b3de6f674e98.json",
+          "start": 1478.0557080000017,
+          "elapsed": 13.436125000000175
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/b96e903039595f66f82c916d923bef2b0960af379fb4661756518391d8f5048a.json",
+          "start": 1577.8482080000013,
+          "elapsed": 14.514957999999751
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/a99a49abf1e23000e73a71fce07576751312fdcc94f95bc14c21348a7a1281d8.json",
+          "start": 1679.4222500000014,
+          "elapsed": 13.577499999999418
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/f83a8eaa35a682def17ac87ad1587b5429d2ea2159e8109725ee5a1e50ea50b2.json",
+          "start": 1778.4217499999995,
+          "elapsed": 13.407708000002458
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/10c408d3e388b7a3841b7bc59b0b2102c79dc373879e623855cbca3d77e69404.json",
+          "start": 1877.1445829999993,
+          "elapsed": 14.829458000000159
+        },
+        {
+          "url": "http://127.0.0.1:57883/__demo-sources/1fb256a3efbee842959ec082e55c48dc4e36ed5c43558f8e07ced5c88b9a12c3.json",
+          "start": 1978.3084160000017,
+          "elapsed": 13.354291999999987
+        }
+      ],
+      "states": []
+    },
+    {
+      "library": "maple",
+      "run": 1,
+      "passed": true,
+      "total": 9812.637334,
+      "timings": [
+        {
+          "sourceIndex": 0,
+          "elapsed": 66.75820799999929
+        }
+      ],
+      "requests": [],
+      "states": [
+        {
+          "time": 8774.910875000001,
+          "value": [
+            {
+              "opacity": "0",
+              "width": 0,
+              "transition": "0s"
+            }
+          ]
+        },
+        {
+          "time": 8875.363792,
+          "value": [
+            {
+              "opacity": "0",
+              "width": 0,
+              "transition": "0s"
+            }
+          ]
+        },
+        {
+          "time": 8978.451792,
+          "value": [
+            {
+              "opacity": "0.287949",
+              "width": 3.671875,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 9077.216541999998,
+          "value": [
+            {
+              "opacity": "0.882769",
+              "width": 67.9375,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 9178.494625,
+          "value": [
+            {
+              "opacity": "1",
+              "width": 984.40625,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 9278.921333999999,
+          "value": [
+            {
+              "opacity": "1",
+              "width": 1266.890625,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 9381.879375,
+          "value": [
+            {
+              "opacity": "0.947324",
+              "width": 1280,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 9483.290042,
+          "value": [
+            {
+              "opacity": "0.165473",
+              "width": 1280,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 9584.816374999999,
+          "value": [
+            {
+              "opacity": "0.00235993",
+              "width": 1280,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 9687.713709,
+          "value": []
+        },
+        {
+          "time": 9784.517209000001,
+          "value": []
+        }
+      ]
+    },
+    {
+      "library": "maple",
+      "run": 2,
+      "passed": true,
+      "total": 2633.893959000001,
+      "timings": [
+        {
+          "sourceIndex": 0,
+          "elapsed": 81.43387500000244
+        }
+      ],
+      "requests": [],
+      "states": [
+        {
+          "time": 1598.4133340000008,
+          "value": [
+            {
+              "opacity": "0",
+              "width": 0,
+              "transition": "0s"
+            }
+          ]
+        },
+        {
+          "time": 1677.2014170000002,
+          "value": [
+            {
+              "opacity": "0",
+              "width": 0,
+              "transition": "0s"
+            }
+          ]
+        },
+        {
+          "time": 1778.7852090000015,
+          "value": [
+            {
+              "opacity": "0.301017",
+              "width": 7.703125,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 1878.8800420000007,
+          "value": [
+            {
+              "opacity": "0.886936",
+              "width": 21.390625,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 1979.6448340000024,
+          "value": [
+            {
+              "opacity": "1",
+              "width": 875.15625,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 2081.341542000002,
+          "value": [
+            {
+              "opacity": "1",
+              "width": 1249.265625,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 2182.1849170000023,
+          "value": [
+            {
+              "opacity": "1",
+              "width": 1280,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 2283.4864590000034,
+          "value": [
+            {
+              "opacity": "0.317192",
+              "width": 1280,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 2387.722584000003,
+          "value": [
+            {
+              "opacity": "0.0243966",
+              "width": 1280,
+              "transition": "0.25s, 0.25s, 0.25s"
+            }
+          ]
+        },
+        {
+          "time": 2488.4851670000025,
+          "value": []
+        },
+        {
+          "time": 2593.232917000001,
+          "value": []
+        }
+      ]
+    }
+  ]
+}

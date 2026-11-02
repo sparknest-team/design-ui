@@ -1,0 +1,19 @@
+{
+  "library": "maple",
+  "generatedAt": "2026-10-29T07:30:21.174Z",
+  "nativeDeviceAcceptance": false,
+  "latestTwoVersionsAccepted": false,
+  "completeEngineMatrix": false,
+  "evidenceOnly": false,
+  "results": [
+    {
+      "name": "chrome",
+      "startedAt": "2026-10-29T07:06:52.068Z",
+      "completedAt": "2026-10-29T07:30:21.174Z",
+      "passed": false,
+      "exitCode": 1,
+      "evidence": "/tmp/cedar-maple-native-validation/accepted-version-results/maple-chrome-156.0.8078.73/maple/chrome",
+      "error": "AssertionError [ERR_ASSERTION]: component/guide failure"
+    }
+  ]
+}

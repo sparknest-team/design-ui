@@ -1,0 +1,64 @@
+{
+  "scope": "2026-10-25 to 2026-10-26 user review follow-up; no commit or publish",
+  "decisions": {
+    "clearProp": "emptyValue / empty-value; omitted defaults unchanged",
+    "english": "current functionality and new examples first; 64 Cedar pages remain"
+  },
+  "checks": {
+    "cedarRelevantTests": 166,
+    "mapleRelevantTests": 217,
+    "llmGeneratorTests": 7,
+    "cedarLint": "passed",
+    "mapleLint": "passed",
+    "cedarTypecheck": "passed",
+    "mapleTypecheck": "passed",
+    "cedarUiBuild": "passed",
+    "mapleUiBuild": "passed",
+    "cedarDocsBuild": "passed",
+    "mapleDocsBuild": "passed",
+    "mapleDemoSfcs": 1507,
+    "specComponents": {
+      "cedar": 95,
+      "maple": 91,
+      "errors": 0,
+      "warnings": 0
+    },
+    "sharedThemeContract": "passed",
+    "inputSourceParity": "18 pairs and both Less outputs passed",
+    "autoCompleteSourceParity": "7 pairs and both Less outputs passed",
+    "diffWhitespace": "passed"
+  },
+  "remainingSourceChecks": [
+    {
+      "check": "check:date-family",
+      "failure": "date-range/__tests__/field-range-session.spec.js",
+      "detail": "Pre-existing desktop/mobile range interaction test differences remain. No assertions removed."
+    },
+    {
+      "check": "check:time-rules",
+      "failure": "range owner event wiring",
+      "detail": "Pre-existing platform owner wiring differs, including mobile range-panel setup. No assertions removed."
+    }
+  ],
+  "browserEvidence": {
+    "peopleChat": "evidence/review-followup-2026-10-25/people-chat.png",
+    "searchClear": "evidence/review-followup-2026-10-25/search-cleared.png",
+    "safeArea": "evidence/review-followup-2026-10-25/safe-area-popup.png"
+  },
+  "observed": {
+    "peopleChat": "Chat clicked: alice; selection unchanged, editor closed",
+    "searchModel": {
+      "name": "",
+      "tenant": "demo"
+    },
+    "safeAreaPopupPadding": "0px 12px 34px",
+    "englishHtmlLang": "en-US",
+    "englishLlmHome": "llms/en-US/index.md",
+    "unusedFontAwesomeCdnInBuiltCedarHtml": false
+  },
+  "limits": [
+    "Relevant suites and builds were run; full repository quality was not declared green.",
+    "Browser inset simulation is not a native-device test.",
+    "Existing English pages may still contain older untranslated example labels; current new examples have English copies."
+  ]
+}

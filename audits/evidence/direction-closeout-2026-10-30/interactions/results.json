@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-10-30T09:10:48.290Z",
+  "results": [
+    {
+      "engine": "chromium",
+      "passed": true,
+      "checks": [
+        "carousel-consecutive-and-wrap-transition",
+        "physical-collapse-side",
+        "physical-sider-placement",
+        "preview-keyboard",
+        "preview-pointer-swipe",
+        "preview-runtime-recenter",
+        "value-invariance",
+        "escape-close"
+      ]
+    },
+    {
+      "engine": "firefox",
+      "passed": true,
+      "checks": [
+        "carousel-consecutive-and-wrap-transition",
+        "physical-collapse-side",
+        "physical-sider-placement",
+        "preview-keyboard",
+        "preview-pointer-swipe",
+        "preview-runtime-recenter",
+        "value-invariance",
+        "escape-close"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "passed": true,
+      "checks": [
+        "carousel-consecutive-and-wrap-transition",
+        "physical-collapse-side",
+        "physical-sider-placement",
+        "preview-keyboard",
+        "preview-pointer-swipe",
+        "preview-runtime-recenter",
+        "value-invariance",
+        "escape-close"
+      ]
+    }
+  ]
+}

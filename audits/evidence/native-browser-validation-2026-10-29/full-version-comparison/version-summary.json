@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-10-29T07:06:42.571Z",
+  "scope": "Version comparison of the previously quality-accepted artifact; excludes later unbuilt working-tree changes.",
+  "acceptedQualityManifestSha256": "41db75843c06222ca1186a5debdb45b8033d760988efe4f2fe406914999abcba",
+  "acceptedQualityGeneratedAt": "2026-10-29T06:12:40.217Z",
+  "nativeDeviceAcceptance": false,
+  "latestTwoVersionsAccepted": false,
+  "results": [
+    {
+      "library": "maple",
+      "version": "156.0.8078.73",
+      "exitCode": 1,
+      "passed": false,
+      "cases": null,
+      "codeSourceFingerprint": "e193b56c21f82f5ca64fa9b89b5f6c49e543ece614b7c304084be2444a5181d4",
+      "codeProductionFingerprint": "14fe338b3f9d755bed67debf02106e46c5f14cb787ef62237f0ae0a794803a03",
+      "artifactSha256": "3af805f0b605ab822a3dca6ae5b4858f68440dce30c71afef450531e00792f0b",
+      "buildIndexHash": "f14c96ae80c03094598b15de9589f2d99d02520854a1f055e065ccf2223bc707",
+      "executableSha256": "9c5ab4582272b583d209b854fd7c494c50f11026c5728f84b4ffb7001a9e5e45",
+      "archiveSha256": "a46be48ee2e33b3edc1a98a39668b9f0abb8f23f031bc4df195e2388e6de28d1",
+      "downloadURL": "https://storage.googleapis.com/chrome-for-testing-public/156.0.8078.73/mac-arm64/chrome-mac-arm64.zip",
+      "officialReleaseSource": "https://chromereleases.googleblog.com/2026/10/",
+      "log": "/tmp/cedar-maple-native-validation/accepted-version-results/maple-chrome-156.0.8078.73/run.log",
+      "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n",
+      "platformScope": "Desktop Chrome for Testing with emulated mobile contexts; NOT Android Chrome, iOS Safari, WeChat or App WebView."
+    }
+  ],
+  "complete": false,
+  "totalCases": 0
+}

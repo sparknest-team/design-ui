@@ -1,0 +1,19 @@
+{
+  "library": "cedar",
+  "generatedAt": "2026-10-28T17:24:21.968Z",
+  "nativeDeviceAcceptance": false,
+  "latestTwoVersionsAccepted": false,
+  "completeEngineMatrix": false,
+  "evidenceOnly": false,
+  "results": [
+    {
+      "name": "firefox",
+      "startedAt": "2026-10-28T17:15:06.969Z",
+      "completedAt": "2026-10-28T17:24:21.968Z",
+      "passed": false,
+      "exitCode": 1,
+      "evidence": "/private/tmp/cedar-maple-compatibility-20261029-2jkkvvre/cedar-design-web/artifacts/docs-components/cedar/firefox",
+      "error": "AssertionError [ERR_ASSERTION]: component/guide failure"
+    }
+  ]
+}

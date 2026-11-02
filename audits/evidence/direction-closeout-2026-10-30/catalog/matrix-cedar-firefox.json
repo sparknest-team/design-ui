@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-10-30T09:42:01.002Z",
+  "scope": "all documented components; representative exact authored source and domain behavior in each reading direction, plus nested/runtime direction and value invariance",
+  "fullThemeMatrix": false,
+  "nativeDeviceAcceptance": false,
+  "results": [
+    {
+      "library": "cedar",
+      "direction": "ltr",
+      "engine": "firefox",
+      "startedAt": "2026-10-30T09:29:18.567Z",
+      "completedAt": "2026-10-30T09:36:56.146Z",
+      "exitCode": 1,
+      "passed": false,
+      "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/cedar-ltr-firefox.log",
+      "coverage": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/ltr/cedar/firefox/coverage.json",
+      "componentCount": 99,
+      "componentCases": 99
+    },
+    {
+      "library": "cedar",
+      "direction": "rtl",
+      "engine": "firefox",
+      "startedAt": "2026-10-30T09:36:56.164Z",
+      "completedAt": "2026-10-30T09:42:01.002Z",
+      "exitCode": 0,
+      "passed": true,
+      "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/cedar-rtl-firefox.log",
+      "coverage": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/rtl/cedar/firefox/coverage.json",
+      "componentCount": 99,
+      "componentCases": 99
+    }
+  ]
+}

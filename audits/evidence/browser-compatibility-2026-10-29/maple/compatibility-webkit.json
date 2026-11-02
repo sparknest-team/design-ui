@@ -1,0 +1,37 @@
+{
+  "library": "maple",
+  "generatedAt": "2026-10-28T17:22:28.702Z",
+  "nativeDeviceAcceptance": false,
+  "latestTwoVersionsAccepted": false,
+  "completeEngineMatrix": false,
+  "evidenceOnly": false,
+  "results": [
+    {
+      "name": "webkit",
+      "startedAt": "2026-10-28T17:11:13.403Z",
+      "completedAt": "2026-10-28T17:22:28.702Z",
+      "passed": true,
+      "exitCode": 0,
+      "evidence": "/private/tmp/cedar-maple-compatibility-20261029-2jkkvvre/maple-design-mobile/artifacts/docs-components/maple/webkit",
+      "verified": {
+        "browser": {
+          "name": "webkit",
+          "engine": "webkit",
+          "launchOptions": {},
+          "version": "26.5",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "recordedAt": "2026-10-28T17:22:26.277Z",
+          "evidenceType": "automated-engine-regression",
+          "nativeDeviceAcceptance": false,
+          "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+          "gestureInput": "synthetic touch events (handler regression only)"
+        },
+        "componentCases": 372,
+        "guideCases": 16,
+        "navigationCases": 4,
+        "passed": true
+      }
+    }
+  ]
+}

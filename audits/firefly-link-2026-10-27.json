@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-27",
+  "change": "Firefly Link uses corresponding Button text foreground roles; keep primary/secondary/tertiary distinct in light/dark and converted Cedar themes",
+  "verification": {
+    "tests": "47 passed: 28 theme + 19 Link",
+    "browser": "12/12 actual computed Link/Button color pairs matched, including converted Cedar light/dark",
+    "demoSfc": "1520 demo SFCs checked; 0 failures",
+    "rootLint": "failed on files not changed in this fix: test-utils/demo-controls.ts import formatting and 12 attribute-order warnings",
+    "typecheck": "passed root runtime and API typecheck",
+    "scopedLint": "passed all changed theme/demo files with 0 warnings"
+  },
+  "evidence": "evidence/firefly-link-2026-10-27/palette.png",
+  "publication": "No commit or release"
+}

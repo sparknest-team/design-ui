@@ -1,0 +1,37 @@
+{
+  "library": "maple",
+  "generatedAt": "2026-10-28T17:41:38.394Z",
+  "nativeDeviceAcceptance": false,
+  "latestTwoVersionsAccepted": false,
+  "completeEngineMatrix": false,
+  "evidenceOnly": false,
+  "results": [
+    {
+      "name": "firefox",
+      "startedAt": "2026-10-28T17:28:27.883Z",
+      "completedAt": "2026-10-28T17:41:38.394Z",
+      "passed": true,
+      "exitCode": 0,
+      "evidence": "/private/tmp/cedar-maple-compatibility-20261029-2jkkvvre/maple-design-mobile/artifacts/docs-components/maple/firefox",
+      "verified": {
+        "browser": {
+          "name": "firefox",
+          "engine": "firefox",
+          "launchOptions": {},
+          "version": "153.0",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "recordedAt": "2026-10-28T17:41:36.170Z",
+          "evidenceType": "automated-engine-regression",
+          "nativeDeviceAcceptance": false,
+          "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+          "gestureInput": "synthetic touch events (handler regression only)"
+        },
+        "componentCases": 372,
+        "guideCases": 16,
+        "navigationCases": 4,
+        "passed": true
+      }
+    }
+  ]
+}

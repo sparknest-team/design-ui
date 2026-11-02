@@ -29,10 +29,10 @@ for (const repo of repositories) {
     assert.match(workflow, /- run: node \.\.\/design-ui\/bin\/case-paths-check\.mjs/)
     assert.match(workflow, /case-paths-check\.test\.mjs/)
     assert.doesNotMatch(workflow, /continue-on-error|--no-frozen-lockfile|\|\| true/)
-    for (const gate of ['check:runtime-dependencies', 'check:shared', 'spec:check', 'check:style-vars', 'typecheck', 'test', 'check:cli', 'package:check', 'check:published-environment', 'check:doc-pipeline', 'check:docs-theme', 'check:docs-components']) {
+    for (const gate of ['check:runtime-dependencies', 'check:shared', 'spec:check', 'check:style-vars', 'typecheck', 'test', 'check:cli', 'package:check', 'check:published-environment', 'check:doc-pipeline', 'check:docs-theme', 'check:docs-components', 'check:compatibility']) {
       assert.ok(scripts.quality.split(' && ').includes(`pnpm ${gate}`), `${gate} must run in quality`)
     }
-    assert.match(workflow, /- run: pnpm exec playwright install --with-deps chromium/)
+    assert.match(workflow, /- run: pnpm exec playwright install --with-deps chromium firefox webkit/)
     assert.ok(workflow.indexOf('playwright install --with-deps chromium') < workflow.indexOf('- run: pnpm quality'))
     assert.ok(scripts.quality.indexOf('pnpm build:doc') < scripts.quality.indexOf('pnpm check:docs-theme'))
     assert.ok(scripts.quality.indexOf('pnpm check:doc-pipeline') < scripts.quality.indexOf('pnpm build:doc'))
@@ -40,6 +40,9 @@ for (const repo of repositories) {
     assert.equal(scripts['check:docs-components'], 'node --test scripts/browser/components.test.mjs')
     assert.ok(scripts.quality.indexOf('pnpm build:doc') < scripts.quality.indexOf('pnpm check:docs-components'))
     assert.match(workflow, /browser\/inventory\.test\.mjs/)
+    assert.match(workflow, /browser\/navigation\.test\.mjs/)
+    const browserEntry = readFileSync(resolve(root, 'scripts/browser/components.test.mjs'), 'utf8')
+    assert.match(browserEntry, /defineProductionNavigationTests\(/)
     assert.match(workflow, /actions\/upload-artifact@v4/)
     assert.match(workflow, /if: always\(\)/)
     if (repo === 'cedar-design-web') {

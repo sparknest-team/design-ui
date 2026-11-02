@@ -1,0 +1,16 @@
+{
+  "cedar": {
+    "exitCode": 2,
+    "findings": [
+      "packages/cedar-ui/src/input-number/InputNumber.vue:48: trailing whitespace on a blank line",
+      "packages/cedar-ui/src/textarea/textarea.vue:15: trailing whitespace on a blank line"
+    ],
+    "scope": "shared loading API cleanup; current RTL production acceptance keeps its exact source revision"
+  },
+  "maple": {
+    "exitCode": 0
+  },
+  "design-ui": {
+    "exitCode": 0
+  }
+}

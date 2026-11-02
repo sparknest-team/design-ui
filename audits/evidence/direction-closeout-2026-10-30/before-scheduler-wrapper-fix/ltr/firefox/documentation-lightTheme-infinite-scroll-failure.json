@@ -1,0 +1,238 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:65512/components/infinite-scroll/",
+    "text": "20px;\n  overflow-y: auto;\n}\n</style>\n\n内容与展示\n加载失败\n本组配置对照\n配置\t作用\t相关示例\nstatus\t分页状态，支持 v-model:status\t加载失败\ntarget\t滚动容器；未传时使用最近滚动父级\t加载失败\n\n请求失败时将 status 设置为 error。默认错误区域和 error 插槽都可以触发 retry，重试事件不会额外触发 load。\n\nCedar list item 1\nCedar list item 2\nCedar list item 3\nCedar list item 4\nCedar list item 5\nCedar list item 6\nCedar list item 7\nCedar list item 8\n\n自定义重试操作请使用按钮，支持键盘 Enter/Space。示例中的模拟请求会在卸载或停用时清理计时器，避免离开页面后继续回写。\n\n基础、自定义状态和错误重试示例均清理模拟请求；KeepAlive 恢复后可从 idle 状态重新加载，不复用取消前的计时器。\n\n自定义与插槽\n自定义状态\n本组配置对照\n配置\t作用\t相关示例\nstatus\t分页状态，支持 v-model:status\t自定义状态\ntarget\t滚动容器；未传时使用最近滚动父级\t自定义状态\nbottom-offset\t距离底部的触发阈值，数字按 px，字符串按 CSS length\t自定义状态\n\n通过 loading、finished 插槽自定义底部状态，同时可使用 CSS 长度设置 bottom-offset。\n\nCedar list item 1\nCedar list item 2\nCedar list item 3\nCedar list item 4\nCedar list item 5\nCedar list item 6\nCedar list item 7\nCedar list item 8\n\n虚拟列表场景应将 target 指向实际虚拟滚动容器，并在追加数据后把 status 改回 idle；必要时调用 check()。\n\n生命周期与边界\n测量绑定生命周期\n本组配置对照\n配置\t作用\t相关示例\nstatus\t分页状态，支持 v-model:status\t测量绑定生命周期\ntarget\t滚动容器；未传时使用最近滚动父级\t测量绑定生命周期\nimmediate\t挂载并解析滚动容器后是否立即检查\t测量绑定生命周期\nSwitch target / 切换目标\nActivate / 停用与激活\nNew status cycle / 新状态循环\n\nLoads / 加载次数: 0. Old checks must not replay / 旧检查不能重放。\n\nTarget A\nTarget B\nDetector / 触底检测\nAPI\n<infinite-scroll> Props\n参数名\t描述\t类型\t默认值\nstatus\t分页状态，支持 v-model:status\t'idle' | 'loading' | 'error' | 'finished'\t'idle'\nbottom-offset\t距离底部的触发阈值，数字按 px，字符串按 CSS length\tstring | number\t0\nimmediate\t挂载并解析滚动容器后是否立即检查\tboolean\ttrue\ndisabled\t是否暂停加载和重试\tboolean\tfalse\ntarget\t滚动容器；未传时使用最近滚动父级\tstring | HTMLElement\t-\n<infinite-scroll> Events\n事件名\t描述\t参数\nupdate:status\t请求分页状态改为 loading\tloading\nload\t空闲状态下到达阈值时触发\t-\nretry\t错误状态下调用重试时触发\t-\n\nretry 不会同时触发 load。业务可让两个事件调用同一个请求函数。\n\n<infinite-scroll> Methods\n方法名\t描述\ncheck\t立即检查当前是否到达加载阈值\nretry\t在 error 状态下发起重试\n<infinite-scroll> Slots\n插槽名\t描述\t参数\ndefault\t被监听的内容\t-\nloading\t分页加载状态\t-\nerror\t分页失败状态\tretry: () => void\nfinished\t全部加载完成状态\t-\n\n默认错误区域可点击重试。finished 是终态，只有外部将 status 重置为 idle 后才会恢复检测。\n\n类型定义\nimport type {\n  InfiniteScrollInstance,\n  InfiniteScrollMethods,\n  InfiniteScrollProps,\n  InfiniteScrollStatus,\n} from \"@cedar-design/ui\";\n\n样式变量\n变量名\t默认值\n--c-infinite-scroll-status-min-height\t50px\n--c-infinite-scroll-status-padding\t12px 0\n--c-infinite-scroll-status-color\tvar(--c-color-text-3)\n--c-infinite-scroll-status-font-size\tvar(--c-font-size-md)\n--c-infinite-scroll-loading-gap\t8px\n--c-infinite-scroll-error-color\tvar(--c-color-danger)\n上次编辑于: 2026/10/24 20:08:01\n贡献者: shuai.meng",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"vmi-previewer-example\" style=\"\"><div data-v-082628fb=\"\" class=\"infinite-scroll-demo\"><div data-v-082628fb=\"\" class=\"c-infinite-scroll c--box\"><div data-v-082628fb=\"\" class=\"c-list c-list--md c-list--bordered c-list--split\" aria-busy=\"false\"><div class=\"c-loading c-list__loading\"><div class=\"c-loading__content\"><div class=\"c-list__viewport\"><div class=\"c-list__header\">Infinite list</div><div class=\"c-list__content\" role=\"list\"><div data-v-082628fb=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 1</div><!----></div><div data-v-082628fb=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 2</div><!----></div><div data-v-082628fb=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 3</div><!----></div><div data-v-082628fb=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 4</div><!----></div><div data-v-082628fb=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 5</div><!----></div><div data-v-082628fb=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 6</div><!----></div><div data-v-082628fb=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 7</div><!----></div><div data-v-082628fb=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 8</div><!----></div></div><!----></div><!----></div><!----></div></div><div class=\"c-infinite-scroll__detector\" aria-hidden=\"true\"></div><!----><div aria-hidden=\"true\" style=\"position: absolute; visibility: hidden; pointer-events: none; height: 0px; overflow: hidden;\"></div></div></div></div>",
+      "<div class=\"vmi-previewer-example\" style=\"\"><div data-v-8536f562=\"\" class=\"infinite-scroll-demo\"><div data-v-8536f562=\"\" class=\"c-infinite-scroll c--box\"><div data-v-8536f562=\"\" class=\"c-list c-list--md c-list--bordered c-list--split\" aria-busy=\"false\"><div class=\"c-loading c-list__loading\"><div class=\"c-loading__content\"><div class=\"c-list__viewport\"><!----><div class=\"c-list__content\" role=\"list\"><div data-v-8536f562=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 1</div><!----></div><div data-v-8536f562=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 2</div><!----></div><div data-v-8536f562=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 3</div><!----></div><div data-v-8536f562=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 4</div><!----></div><div data-v-8536f562=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 5</div><!----></div><div data-v-8536f562=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 6</div><!----></div><div data-v-8536f562=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 7</div><!----></div><div data-v-8536f562=\"\" class=\"c-list-item\" role=\"listitem\"><!----><div class=\"c-list-item__main\">Cedar list item 8</div><!----></div></div><!----></div><!----></div><!----></div></div><div class=\"c-infinite-scroll__detector\" aria-hidden=\"true\"></div><!----><div aria-hidden=\"true\" style=\"position: absolute; visibility: hidden; pointer-events: none; height: 0px; overflow: hidden;\"></div></div></div></div>"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "选择语言",
+        "class": "vp-dropdown-title"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "搜索",
+        "class": "slimsearch-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到 RTL / Switch to right-to-left",
+        "class": "docs-direction-toggle"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换主题",
+        "class": "cedar-docs-theme__trigger"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "list",
+        "label": "Cedar list item 1Cedar list item 2Cedar list item 3Cedar list item 4Ce",
+        "class": "c-list__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 1",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 2",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 3",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 4",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 5",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 6",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 7",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 8",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "list",
+        "label": "Cedar list item 1Cedar list item 2Cedar list item 3Cedar list item 4Ce",
+        "class": "c-list__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 1",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 2",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 3",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 4",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 5",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 6",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 7",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 8",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "list",
+        "label": "Cedar list item 1Cedar list item 2Cedar list item 3Cedar list item 4Ce",
+        "class": "c-list__content"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 1",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 2",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 3",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 4",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 5",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 6",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 7",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "listitem",
+        "label": "Cedar list item 8",
+        "class": "c-list-item"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Switch target / 切换目标",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Activate / 停用与激活",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "New status cycle / 新状态循环",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制代码",
+        "class": "vp-copy-code-button"
+      }
+    ]
+  },
+  "error": "TimeoutError: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.vmi-previewer').first().locator('.vmi-previewer-sources pre').first() to be hidden\u001b[22m\n\u001b[2m    13 × locator resolved to visible <pre class=\"cedar-demo-code\">…</pre>\u001b[22m\n"
+}

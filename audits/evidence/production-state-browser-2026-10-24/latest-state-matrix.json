@@ -1,0 +1,497 @@
+[
+  {
+    "label": "cedar-r22-desktop-light",
+    "component": "nav-menu",
+    "geometry": [
+      {
+        "listClient": 798,
+        "listScroll": 798,
+        "parentWidth": 798,
+        "width": 798
+      },
+      {
+        "listClient": 798,
+        "listScroll": 798,
+        "parentWidth": 798,
+        "width": 798
+      }
+    ],
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-desktop-light",
+    "component": "menu",
+    "parent": {
+      "background": "rgb(242, 243, 245)",
+      "className": "c-menu-option c-menu-option-active c-menu-option-has-suffix",
+      "text": "设置当前项未选中"
+    },
+    "highlighted": "c-menu-option c-menu-option-active",
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-desktop-light",
+    "component": "collapse",
+    "states": [
+      {
+        "expanded": "false",
+        "text": "vvBeijing Toutiao Technology Co., Ltd."
+      },
+      {
+        "expanded": "false",
+        "text": "▶Beijing Toutiao Technology Co., Ltd."
+      }
+    ],
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-desktop-light",
+    "component": "steps",
+    "items": [
+      {
+        "className": "c-steps-item c-steps-item-finish",
+        "text": "SucceededThis is a description"
+      },
+      {
+        "className": "c-steps-item c-steps-item-process c-steps-item-active",
+        "text": "2ProcessingThis is a description"
+      },
+      {
+        "className": "c-steps-item c-steps-item-wait",
+        "text": "3PendingThis is a description"
+      }
+    ],
+    "errorActive": true,
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-desktop-dark",
+    "component": "steps",
+    "items": [
+      {
+        "className": "c-steps-item c-steps-item-finish",
+        "text": "SucceededThis is a description"
+      },
+      {
+        "className": "c-steps-item c-steps-item-process c-steps-item-active",
+        "text": "2ProcessingThis is a description"
+      },
+      {
+        "className": "c-steps-item c-steps-item-wait",
+        "text": "3PendingThis is a description"
+      }
+    ],
+    "errorActive": true,
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-desktop-dark",
+    "component": "collapse",
+    "states": [
+      {
+        "expanded": "false",
+        "text": "vvBeijing Toutiao Technology Co., Ltd."
+      },
+      {
+        "expanded": "false",
+        "text": "▶Beijing Toutiao Technology Co., Ltd."
+      }
+    ],
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-desktop-dark",
+    "component": "menu",
+    "parent": {
+      "background": "rgba(255, 255, 255, 0.08)",
+      "className": "c-menu-option c-menu-option-active c-menu-option-has-suffix",
+      "text": "设置当前项未选中"
+    },
+    "highlighted": "c-menu-option c-menu-option-active",
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-desktop-dark",
+    "component": "nav-menu",
+    "geometry": [
+      {
+        "listClient": 798,
+        "listScroll": 798,
+        "parentWidth": 798,
+        "width": 798
+      },
+      {
+        "listClient": 798,
+        "listScroll": 798,
+        "parentWidth": 798,
+        "width": 798
+      }
+    ],
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-phone-dark",
+    "component": "nav-menu",
+    "geometry": [
+      {
+        "listClient": 213,
+        "listScroll": 261,
+        "parentWidth": 213,
+        "width": 213
+      },
+      {
+        "listClient": 213,
+        "listScroll": 498,
+        "parentWidth": 213,
+        "width": 213
+      }
+    ],
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-phone-dark",
+    "component": "menu",
+    "parent": {
+      "background": "rgba(255, 255, 255, 0.08)",
+      "className": "c-menu-option c-menu-option-active c-menu-option-has-suffix",
+      "text": "设置当前项未选中"
+    },
+    "highlighted": "c-menu-option c-menu-option-active",
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-phone-dark",
+    "component": "collapse",
+    "states": [
+      {
+        "expanded": "false",
+        "text": "vvBeijing Toutiao Technology Co., Ltd."
+      },
+      {
+        "expanded": "false",
+        "text": "▶Beijing Toutiao Technology Co., Ltd."
+      }
+    ],
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-phone-dark",
+    "component": "steps",
+    "items": [
+      {
+        "className": "c-steps-item c-steps-item-finish",
+        "text": "SucceededThis is a description"
+      },
+      {
+        "className": "c-steps-item c-steps-item-process c-steps-item-active",
+        "text": "2ProcessingThis is a description"
+      },
+      {
+        "className": "c-steps-item c-steps-item-wait",
+        "text": "3PendingThis is a description"
+      }
+    ],
+    "errorActive": true,
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-phone-light",
+    "component": "steps",
+    "items": [
+      {
+        "className": "c-steps-item c-steps-item-finish",
+        "text": "SucceededThis is a description"
+      },
+      {
+        "className": "c-steps-item c-steps-item-process c-steps-item-active",
+        "text": "2ProcessingThis is a description"
+      },
+      {
+        "className": "c-steps-item c-steps-item-wait",
+        "text": "3PendingThis is a description"
+      }
+    ],
+    "errorActive": true,
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-phone-light",
+    "component": "collapse",
+    "states": [
+      {
+        "expanded": "false",
+        "text": "vvBeijing Toutiao Technology Co., Ltd."
+      },
+      {
+        "expanded": "false",
+        "text": "▶Beijing Toutiao Technology Co., Ltd."
+      }
+    ],
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-phone-light",
+    "component": "menu",
+    "parent": {
+      "background": "rgb(242, 243, 245)",
+      "className": "c-menu-option c-menu-option-active c-menu-option-has-suffix",
+      "text": "设置当前项未选中"
+    },
+    "highlighted": "c-menu-option c-menu-option-active",
+    "passed": true
+  },
+  {
+    "label": "cedar-r22-phone-light",
+    "component": "nav-menu",
+    "geometry": [
+      {
+        "listClient": 213,
+        "listScroll": 261,
+        "parentWidth": 213,
+        "width": 213
+      },
+      {
+        "listClient": 213,
+        "listScroll": 498,
+        "parentWidth": 213,
+        "width": 213
+      }
+    ],
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-phone-light",
+    "component": "menu",
+    "parent": {
+      "background": "rgb(242, 243, 245)",
+      "className": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active mp-menu-option--children-trigger mp-menu-option--has-suffix",
+      "text": "设置当前项未选中"
+    },
+    "highlighted": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active",
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-phone-light",
+    "component": "collapse",
+    "states": [
+      {
+        "expanded": "false",
+        "text": "vvBeijing Toutiao Technology Co., Ltd."
+      },
+      {
+        "expanded": "false",
+        "text": "▶Beijing Toutiao Technology Co., Ltd."
+      }
+    ],
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-phone-light",
+    "component": "steps",
+    "items": [
+      {
+        "className": "mp-steps-item mp-steps-item-finish",
+        "text": "步骤1这是描述信息"
+      },
+      {
+        "className": "mp-steps-item mp-steps-item-finish mp-steps-item-next-error",
+        "text": "步骤2这是描述信息"
+      },
+      {
+        "className": "mp-steps-item mp-steps-item-error mp-steps-item-active",
+        "text": "步骤3这是描述信息"
+      },
+      {
+        "className": "mp-steps-item mp-steps-item-wait",
+        "text": "4步骤4这是描述信息"
+      }
+    ],
+    "control": "inline radio",
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-phone-light",
+    "component": "tab-bar",
+    "active": [
+      "我的"
+    ],
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-phone-dark",
+    "component": "tab-bar",
+    "active": [
+      "我的"
+    ],
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-phone-dark",
+    "component": "steps",
+    "items": [
+      {
+        "className": "mp-steps-item mp-steps-item-finish",
+        "text": "步骤1这是描述信息"
+      },
+      {
+        "className": "mp-steps-item mp-steps-item-finish mp-steps-item-next-error",
+        "text": "步骤2这是描述信息"
+      },
+      {
+        "className": "mp-steps-item mp-steps-item-error mp-steps-item-active",
+        "text": "步骤3这是描述信息"
+      },
+      {
+        "className": "mp-steps-item mp-steps-item-wait",
+        "text": "4步骤4这是描述信息"
+      }
+    ],
+    "control": "inline radio",
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-phone-dark",
+    "component": "collapse",
+    "states": [
+      {
+        "expanded": "false",
+        "text": "vvBeijing Toutiao Technology Co., Ltd."
+      },
+      {
+        "expanded": "false",
+        "text": "▶Beijing Toutiao Technology Co., Ltd."
+      }
+    ],
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-phone-dark",
+    "component": "menu",
+    "parent": {
+      "background": "rgba(255, 255, 255, 0.08)",
+      "className": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active mp-menu-option--children-trigger mp-menu-option--has-suffix",
+      "text": "设置当前项未选中"
+    },
+    "highlighted": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active",
+    "peerMenusClosed": true,
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-desktop-dark",
+    "component": "menu",
+    "parent": {
+      "background": "rgba(255, 255, 255, 0.08)",
+      "className": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active mp-menu-option--children-trigger mp-menu-option--has-suffix",
+      "text": "设置当前项未选中"
+    },
+    "highlighted": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active",
+    "peerMenusClosed": true,
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-desktop-dark",
+    "component": "collapse",
+    "states": [
+      {
+        "expanded": "false",
+        "text": "vvBeijing Toutiao Technology Co., Ltd."
+      },
+      {
+        "expanded": "false",
+        "text": "▶Beijing Toutiao Technology Co., Ltd."
+      }
+    ],
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-desktop-dark",
+    "component": "steps",
+    "items": [
+      {
+        "className": "mp-steps-item mp-steps-item-finish",
+        "text": "步骤1这是描述信息"
+      },
+      {
+        "className": "mp-steps-item mp-steps-item-finish mp-steps-item-next-error",
+        "text": "步骤2这是描述信息"
+      },
+      {
+        "className": "mp-steps-item mp-steps-item-error mp-steps-item-active",
+        "text": "步骤3这是描述信息"
+      },
+      {
+        "className": "mp-steps-item mp-steps-item-wait",
+        "text": "4步骤4这是描述信息"
+      }
+    ],
+    "control": "inline radio",
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-desktop-dark",
+    "component": "tab-bar",
+    "active": [
+      "我的"
+    ],
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-desktop-light",
+    "component": "tab-bar",
+    "active": [
+      "我的"
+    ],
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-desktop-light",
+    "component": "steps",
+    "items": [
+      {
+        "className": "mp-steps-item mp-steps-item-finish",
+        "text": "步骤1这是描述信息"
+      },
+      {
+        "className": "mp-steps-item mp-steps-item-finish mp-steps-item-next-error",
+        "text": "步骤2这是描述信息"
+      },
+      {
+        "className": "mp-steps-item mp-steps-item-error mp-steps-item-active",
+        "text": "步骤3这是描述信息"
+      },
+      {
+        "className": "mp-steps-item mp-steps-item-wait",
+        "text": "4步骤4这是描述信息"
+      }
+    ],
+    "control": "inline radio",
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-desktop-light",
+    "component": "collapse",
+    "states": [
+      {
+        "expanded": "false",
+        "text": "vvBeijing Toutiao Technology Co., Ltd."
+      },
+      {
+        "expanded": "false",
+        "text": "▶Beijing Toutiao Technology Co., Ltd."
+      }
+    ],
+    "passed": true
+  },
+  {
+    "label": "maple-refrozen-desktop-light",
+    "component": "menu",
+    "parent": {
+      "background": "rgb(242, 243, 245)",
+      "className": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active mp-menu-option--children-trigger mp-menu-option--has-suffix",
+      "text": "设置当前项未选中"
+    },
+    "highlighted": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active",
+    "peerMenusClosed": true,
+    "passed": true
+  }
+]

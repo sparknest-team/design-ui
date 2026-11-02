@@ -1,4 +1,5 @@
 import { spawn } from 'node:child_process'
+import { createRequire } from 'node:module'
 import { existsSync } from 'node:fs'
 import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { basename, dirname, relative, resolve } from 'node:path'
@@ -8,6 +9,8 @@ import less from 'less'
 import { build } from 'vite'
 import { collectModuleEntries } from './module-entries.mjs'
 import { libraryDefines } from './environment.mjs'
+import { browserTargets } from './browser-targets.mjs'
+export { browserTargets } from './browser-targets.mjs'
 
 export function defineConfig(config) {
   return config
@@ -164,15 +167,21 @@ async function renderAggregatedLibraryCss(sourceRoot) {
   const collect = async (path) => {
     if (seen.has(path) || !existsSync(path)) return
     seen.add(path)
+    if (path.endsWith('.css')) {
+      lines.push(`@import (inline) ${JSON.stringify(path)};`)
+      return
+    }
     if (path.endsWith('.less')) {
       lines.push(`@import "./${relative(sourceRoot, path).replaceAll('\\', '/')}";`)
       return
     }
     const source = await readFile(path, 'utf8')
     for (const match of source.matchAll(/import\s+['"]([^'"]+)['"]/g)) {
-      if (!match[1].startsWith('.')) continue
-      const target = resolve(dirname(path), match[1])
-      await collect(target.endsWith('.less') || target.endsWith('.ts') ? target : resolve(target, 'index.ts'))
+      if (!match[1].startsWith('.') && !match[1].endsWith('.css')) continue
+      const target = match[1].startsWith('.')
+        ? resolve(dirname(path), match[1])
+        : createRequire(path).resolve(match[1])
+      await collect(/\.(?:less|css|ts)$/.test(target) ? target : resolve(target, 'index.ts'))
     }
   }
   if (existsSync(foundationPath)) {
@@ -293,6 +302,8 @@ async function buildModules(config, format, outDir, extension) {
     logLevel: 'warn',
     plugins: vitePlugins(config),
     build: {
+      target: [...browserTargets],
+      cssTarget: [...browserTargets],
       copyPublicDir: false,
       emptyOutDir: false,
       minify: false,
@@ -322,6 +333,8 @@ async function buildBundle(config, format, outDir, fileName) {
     logLevel: 'warn',
     plugins: vitePlugins(config),
     build: {
+      target: [...browserTargets],
+      cssTarget: [...browserTargets],
       copyPublicDir: false,
       emptyOutDir: false,
       minify: format === 'cjs' ? false : 'esbuild',

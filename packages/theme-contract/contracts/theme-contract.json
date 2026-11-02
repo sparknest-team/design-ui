@@ -69,7 +69,8 @@
     "layer-behind": "-1",
     "layer-base": "0",
     "layer-raised": "1",
-    "control-touch-target": "44px"
+    "control-touch-target": "44px",
+    "font-family": "initial"
   },
   "componentTokenValues": {
     "rate": {
@@ -130,7 +131,12 @@
       "size-xs-font-size": "12px",
       "size-sm-font-size": "14px",
       "variant-standard-line-size": "1px",
-      "variant-standard-line-size-focus": "2px"
+      "variant-standard-line-size-focus": "2px",
+      "caret-color": "currentColor",
+      "variant-outline-background": "transparent",
+      "loading-line-size": "2px",
+      "loading-duration": "1s",
+      "loading-color": "var(--PREFIX-field-focus-color)"
     },
     "collapse": {
       "border-color": "var(--PREFIX-sys-color-border-default)",
@@ -635,27 +641,28 @@
       "control-line-height": "inherit",
       "control-padding-horizontal": "0",
       "counter-font-size": "12px",
-      "feedback-duration": "1s"
+      "feedback-duration": "1s",
+      "caret-color": "var(--PREFIX-field-caret-color)"
     },
     "auto-complete": {
-      "popup-bg": "var(--PREFIX-sys-color-surface-overlay)",
-      "popup-border-color": "var(--PREFIX-sys-color-border-default)",
-      "option-bg-default": "var(--PREFIX-sys-color-surface-overlay)",
-      "option-bg-hover": "var(--PREFIX-sys-color-state-hover)",
-      "option-bg-selected": "var(--PREFIX-sys-color-surface-overlay)",
-      "option-bg-disabled": "var(--PREFIX-sys-color-surface-overlay)",
-      "option-text-color-default": "var(--PREFIX-sys-color-content-primary)",
-      "option-text-color-hover": "var(--PREFIX-sys-color-content-primary)",
-      "option-text-color-selected": "var(--PREFIX-sys-color-content-primary)",
-      "option-text-color-disabled": "var(--PREFIX-sys-color-content-disabled)",
-      "popup-max-height": "200px",
-      "popup-border-radius": "var(--PREFIX-sys-radius-md)",
-      "popup-padding-vertical": "var(--PREFIX-sys-space-2)",
-      "popup-font-size": "var(--PREFIX-sys-font-size-md)",
-      "popup-box-shadow": "0 4px 10px rgba(0, 0, 0, 0.1)",
-      "option-height": "36px",
-      "option-font-weight-selected": "var(--PREFIX-sys-font-weight-medium)",
-      "option-padding-horizontal": "var(--PREFIX-sys-space-5)"
+      "popup-max-height": "var(--PREFIX-select-popup-max-height)",
+      "popup-bg": "var(--PREFIX-select-popup-bg)",
+      "popup-border-radius": "var(--PREFIX-select-popup-border-radius)",
+      "popup-padding-vertical": "var(--PREFIX-select-popup-padding-vertical)",
+      "popup-font-size": "var(--PREFIX-select-popup-font-size)",
+      "popup-border-color": "var(--PREFIX-select-popup-border-color)",
+      "popup-box-shadow": "var(--PREFIX-select-popup-box-shadow)",
+      "option-height": "var(--PREFIX-select-popup-option-height)",
+      "option-font-weight-selected": "var(--PREFIX-select-popup-option-font-weight-selected)",
+      "option-padding-horizontal": "var(--PREFIX-select-popup-option-padding-horizontal)",
+      "option-bg-default": "var(--PREFIX-select-popup-option-bg)",
+      "option-bg-hover": "var(--PREFIX-select-popup-option-bg-hover)",
+      "option-bg-selected": "var(--PREFIX-select-popup-option-bg-selected)",
+      "option-bg-disabled": "var(--PREFIX-select-popup-option-bg-disabled)",
+      "option-text-color-default": "var(--PREFIX-select-popup-option-text-color)",
+      "option-text-color-hover": "var(--PREFIX-select-popup-option-text-color-hover)",
+      "option-text-color-selected": "var(--PREFIX-select-popup-option-text-color-selected)",
+      "option-text-color-disabled": "var(--PREFIX-select-popup-option-text-color-disabled)"
     },
     "select": {
       "popup-bg": "var(--PREFIX-sys-color-surface-overlay)",
@@ -676,7 +683,8 @@
       "control-color-disabled": "var(--PREFIX-sys-color-content-disabled)",
       "control-color-error": "var(--PREFIX-sys-color-content-danger)",
       "label-text-color": "var(--PREFIX-sys-color-content-primary)",
-      "label-text-color-disabled": "var(--PREFIX-sys-color-content-disabled)"
+      "label-text-color-disabled": "var(--PREFIX-sys-color-content-disabled)",
+      "control-border-radius": "2px"
     },
     "radio": {
       "control-color": "var(--PREFIX-sys-color-content-secondary)",
@@ -698,7 +706,8 @@
       "placeholder-color": "var(--PREFIX-sys-color-content-secondary)",
       "counter-color": "var(--PREFIX-sys-color-content-secondary)",
       "counter-font-size": "var(--PREFIX-sys-font-size-xs)",
-      "counter-margin-top": "var(--PREFIX-sys-space-2)"
+      "counter-margin-top": "var(--PREFIX-sys-space-2)",
+      "caret-color": "var(--PREFIX-field-caret-color)"
     },
     "switch": {
       "track-background": "var(--PREFIX-sys-color-content-secondary)",
@@ -851,7 +860,8 @@
       "size-sm-step-button-width": "var(--PREFIX-sys-control-height-sm)",
       "size-md-step-button-width": "var(--PREFIX-sys-control-height-md)",
       "size-lg-step-button-width": "var(--PREFIX-sys-control-height-lg)",
-      "size-xl-step-button-width": "var(--PREFIX-sys-control-height-xl)"
+      "size-xl-step-button-width": "var(--PREFIX-sys-control-height-xl)",
+      "caret-color": "var(--PREFIX-field-caret-color)"
     },
     "count-to": {
       "text-color": "var(--PREFIX-sys-color-content-primary)",
@@ -1146,7 +1156,7 @@
       "history-item-color-border": "var(--PREFIX-sys-color-border-default)",
       "field-radius": "4px",
       "opacity-disabled": "0.6",
-      "select-size-min-width": "72px",
+      "select-size-min-width": "96px",
       "select-size-max-width": "120px",
       "select-icon-spacing": "2px",
       "select-icon-size": "18px",
@@ -1172,7 +1182,12 @@
       "action-size": "var(--PREFIX-sys-control-touch-target)",
       "progress-height": "var(--PREFIX-sys-space-2)",
       "disabled-opacity": "0.56",
-      "font-size": "var(--PREFIX-sys-font-size-md)"
+      "font-size": "var(--PREFIX-sys-font-size-md)",
+      "duration-background": "var(--PREFIX-sys-color-surface-tooltip)",
+      "duration-color": "var(--PREFIX-sys-color-content-on-dark)",
+      "duration-radius": "var(--PREFIX-sys-radius-sm)",
+      "duration-padding": "var(--PREFIX-sys-space-1) var(--PREFIX-sys-space-2)",
+      "duration-font-size": "var(--PREFIX-sys-font-size-sm)"
     },
     "carousel": {
       "indicator-dot-size": "8px",
@@ -1201,6 +1216,11 @@
       "focus-width": "2px",
       "focus-offset": "2px",
       "focus-color": "var(--PREFIX-sys-color-content-brand)"
+    },
+    "people-select": {
+      "avatar-size": "24px",
+      "avatar-radius": "50%",
+      "content-gap": "8px"
     }
   },
   "components": [
@@ -1252,7 +1272,8 @@
     "verification-code",
     "search",
     "upload",
-    "carousel"
+    "carousel",
+    "people-select"
   ],
   "tokens": {
     "system": [
@@ -1291,6 +1312,7 @@
       "control-height-xl",
       "control-height-xs",
       "control-touch-target",
+      "font-family",
       "font-size-lg",
       "font-size-md",
       "font-size-sm",
@@ -1690,6 +1712,7 @@
       "checkbox": [
         "action-padding",
         "animation-duration",
+        "control-border-radius",
         "control-color",
         "control-color-checked",
         "control-color-disabled",
@@ -1699,7 +1722,8 @@
         "label-font-size",
         "label-gap",
         "label-text-color",
-        "label-text-color-disabled"
+        "label-text-color-disabled",
+        "mark-color"
       ],
       "collapse": [
         "border-color",
@@ -1827,6 +1851,7 @@
         "blur-color",
         "border-radius",
         "border-width",
+        "caret-color",
         "clear-icon-color",
         "clear-icon-size",
         "clear-padding",
@@ -1843,6 +1868,9 @@
         "hint-space",
         "icon-size",
         "line-height",
+        "loading-color",
+        "loading-duration",
+        "loading-line-size",
         "padding-horizontal",
         "placeholder-text-color",
         "prefix-text-color",
@@ -1862,6 +1890,7 @@
         "variant-filled-background-error",
         "variant-filled-background-focus",
         "variant-filled-background-hover",
+        "variant-outline-background",
         "variant-outline-border-color",
         "variant-outline-border-color-disabled",
         "variant-outline-border-color-error",
@@ -1896,6 +1925,7 @@
         "spin-duration"
       ],
       "input": [
+        "caret-color",
         "control-font-size",
         "control-height",
         "control-line-height",
@@ -2001,6 +2031,9 @@
         "popup-option-bg-disabled",
         "popup-option-bg-hover",
         "popup-option-bg-selected",
+        "popup-option-check-color",
+        "popup-option-check-gap",
+        "popup-option-check-size",
         "popup-option-font-weight-selected",
         "popup-option-height",
         "popup-option-icon-margin-right",
@@ -2184,6 +2217,7 @@
         "vertical-item-min-height"
       ],
       "switch": [
+        "checked-text-color",
         "disabled-opacity",
         "duration",
         "focus-width",
@@ -2397,6 +2431,7 @@
         "variant-outline-status-warning-color"
       ],
       "textarea": [
+        "caret-color",
         "counter-color",
         "counter-font-size",
         "counter-margin-top",
@@ -2446,6 +2481,7 @@
         "addon-color",
         "border-radius",
         "border-width",
+        "caret-color",
         "size-lg-step-button-width",
         "size-md-step-button-width",
         "size-sm-step-button-width",
@@ -2750,6 +2786,11 @@
         "border-radius",
         "card-size",
         "disabled-opacity",
+        "duration-background",
+        "duration-color",
+        "duration-font-size",
+        "duration-padding",
+        "duration-radius",
         "error-color",
         "font-size",
         "gap",
@@ -2791,6 +2832,11 @@
         "navigation-z-index",
         "transition-duration",
         "transition-timing-function"
+      ],
+      "people-select": [
+        "avatar-radius",
+        "avatar-size",
+        "content-gap"
       ]
     }
   },
@@ -2857,7 +2903,8 @@
         "label-gap": "var(--PREFIX-spacing-4)",
         "action-padding": "5px",
         "group-gap": "var(--PREFIX-spacing-7)",
-        "animation-duration": "var(--PREFIX-transition-duration-3)"
+        "animation-duration": "var(--PREFIX-transition-duration-3)",
+        "mark-color": "var(--PREFIX-sys-color-surface-default)"
       },
       "collapse": {
         "border-width": "var(--PREFIX-border-width-1)",
@@ -2984,6 +3031,10 @@
         "md-height": "32px",
         "lg-height": "36px",
         "xl-height": "44px"
+      },
+      "people-select": {},
+      "switch": {
+        "checked-text-color": "var(--PREFIX-switch-text-color)"
       }
     },
     "maple": {
@@ -2999,7 +3050,15 @@
         "input-trigger-padding": "0",
         "input-trigger-outline-width": "var(--PREFIX-sys-space-1)",
         "input-trigger-outline-color": "var(--PREFIX-sys-color-content-brand)",
-        "input-trigger-outline-offset": "var(--PREFIX-sys-space-1)"
+        "input-trigger-outline-offset": "var(--PREFIX-sys-space-1)",
+        "calendar-selected-background": "var(--PREFIX-sys-color-action-primary)",
+        "calendar-selected-color": "var(--PREFIX-button-solid-text-color)",
+        "calendar-today-color": "var(--PREFIX-button-default-foreground-color)",
+        "calendar-scroll-height": "320px",
+        "calendar-month-height": "320px",
+        "calendar-row-height": "38px",
+        "calendar-line-height": "60px",
+        "calendar-disabled-opacity": "0.4"
       },
       "rate": {
         "size": "24px",
@@ -3047,7 +3106,8 @@
         "label-gap": "0",
         "action-padding": "6px",
         "group-gap": "0",
-        "animation-duration": "var(--PREFIX-sys-motion-duration-standard)"
+        "animation-duration": "var(--PREFIX-sys-motion-duration-standard)",
+        "mark-color": "var(--PREFIX-sys-color-content-on-bright)"
       },
       "collapse": {
         "border-width": "1px",
@@ -3084,7 +3144,7 @@
         "size-xl": "160px"
       },
       "field-decorator": {
-        "border-radius": "4px",
+        "border-radius": "var(--PREFIX-sys-radius-md)",
         "padding-horizontal": "16px",
         "clear-icon-size": "var(--PREFIX-field-icon-size)",
         "icon-size": "20px",
@@ -3117,7 +3177,8 @@
       },
       "carousel": {},
       "picker": {
-        "option-check-color": "var(--PREFIX-sys-color-content-brand)"
+        "option-check-color": "var(--PREFIX-sys-color-content-brand)",
+        "option-active-text-color": "var(--PREFIX-picker-option-text-color)"
       },
       "time-range": {
         "picker-next-day-color": "var(--PREFIX-sys-color-content-secondary)"
@@ -3180,6 +3241,10 @@
         "md-height": "48px",
         "lg-height": "56px",
         "xl-height": "64px"
+      },
+      "people-select": {},
+      "switch": {
+        "checked-text-color": "var(--PREFIX-sys-color-content-on-bright)"
       }
     }
   },

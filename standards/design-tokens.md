@@ -1523,3 +1523,9 @@ Input、Textarea、InputNumber 的实际原生控件使用 `caret-color: current
 `check:portal-scope` 使用真实 Teleport，检查 body／选择器／元素／inline 挂载、宿主切换后的实例状态、旧宿主滚动锁释放、跨文档参数与事件归属及卸载清理。DOM 和生命周期测试不计算浏览器像素；CSS 检查器验证局部覆盖时不能把根层的原始别名表达式带到子节点后重新求值。窄屏、200% 浏览器缩放、长文本、跨文档焦点和浏览器实际继承仍需独立实测。
 
 打开中的模态面板跨文档切换挂载目标时，事件监听、焦点约束、弹层栈和滚动锁必须随实际目标迁移；同一 DOM 被 adopt 后 ownerDocument 会变化，但 Vue 元素引用可能不变，内部逻辑不得仅依赖该引用触发重绑。迁回原文档和卸载都要清理旧监听。此契约不增加公开 CSS 变量，真实 iframe 焦点与样式仍需浏览器验收。
+
+### 品牌字体、光标与移动宿主安全区（2026-10-25）
+
+公共 `--PREFIX-sys-font-family` 以 `initial` 使 var() 回退生效，未配置时保留既有字体来源；品牌字体文件由业务显式加载。`--PREFIX-field-caret-color` 默认 currentColor，Input、InputNumber、Textarea 各自的 caret-color Token 默认引用它，允许分组件覆盖。根品牌切换仍由 StyleProvider 所有。
+
+Maple 的 `--mp-safe-area-top/right/bottom/left` 属于运行宿主值，不写入品牌主题。SafeArea.setInsets 独立管理目标 DOM 上四边覆盖，0 有效、null 清除，不修改品牌样式节点。SafeArea 与贴边容器只为所选边增加留白并在实际 DOM 后代建立消费边界；Teleport 按目标 DOM 继承，不能由 Vue inject 猜测原生可用区。App 单一适配器管理初始化、变更订阅和清理；键盘几何独立验证。完整入口见 Maple safe-area 文档。

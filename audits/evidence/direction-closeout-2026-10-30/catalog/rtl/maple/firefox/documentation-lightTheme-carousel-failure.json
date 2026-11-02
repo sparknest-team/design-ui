@@ -1,0 +1,496 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:56058/#/zh-CN/carousel",
+    "text": "KeepAlive 停用始终暂停。尊重减少动态效果偏好。输入框、按钮等交互子项保留原生行为，自定义交互区域可加 data-carousel-no-drag。show-arrow=hover 在键盘聚焦时也显示。\n\n#\nEvents\n事件\t参数\nupdate:model-value\tslideNumber: number\nchange\tslideNumber: number, previousSlideNumber: number, isManual: boolean\n#\nSlots\n插槽\t参数\ndefault\tCarouselItem\nprev / next / indicator\t{ slideNumber, length, hovering, prev, next, to, resize }\n#\nMethods\n方法\t签名\nprev / next\t(options?: CarouselToOptions) => void\nto\t(slideNumber: number, options?: CarouselToOptions) => void\nresize\t() => void\n\nCarouselItem 无自有 Props、事件或方法；默认插槽为页面内容。\n\n#\nTypes\n\nCarouselProps, CarouselItemProps, CarouselInstance, CarouselItemInstance, CarouselEmits, CarouselSlots, CarouselItemSlots, CarouselExpose, CarouselSlotScope, CarouselToOptions, CarouselChangeData, CarouselOrientation, CarouselEffect, CarouselAutoPlayConfig, CarouselArrowType, CarouselIndicatorType, CarouselIndicatorPosition, CarouselTriggerEvent.\n\n#\n样式变量\nToken\t默认值\n--mp-carousel-indicator-dot-size\t8px\n--mp-carousel-indicator-position\tvar(--mp-sys-space-4)\n--mp-carousel-indicator-gap\tvar(--mp-sys-space-3)\n--mp-carousel-indicator-color-default\trgb(255 255 255 / 35%)\n--mp-carousel-indicator-color-active\tvar(--mp-sys-color-content-on-dark)\n--mp-carousel-indicator-outer-margin-bottom\tvar(--mp-sys-space-8)\n--mp-carousel-indicator-line-width\t20px\n--mp-carousel-indicator-line-height\t3px\n--mp-carousel-indicator-line-border-radius\tvar(--mp-sys-radius-sm)\n--mp-carousel-arrow-size\tvar(--mp-sys-control-height-md)\n--mp-carousel-arrow-font-size\tvar(--mp-sys-font-size-xl)\n--mp-carousel-arrow-margin\tvar(--mp-sys-space-4)\n--mp-carousel-arrow-color\tvar(--mp-sys-color-content-on-dark)\n--mp-carousel-arrow-background\trgb(0 0 0 / 35%)\n--mp-carousel-arrow-background-hover\trgb(0 0 0 / 55%)\n--mp-carousel-arrow-disabled-opacity\t0.4\n--mp-carousel-navigation-z-index\t10\n--mp-carousel-transition-duration\tvar(--mp-sys-motion-duration-standard)\n--mp-carousel-transition-timing-function\tease\n--mp-carousel-fade-duration\tvar(--mp-sys-motion-duration-standard)\n--mp-carousel-card-duration\tvar(--mp-sys-motion-duration-standard)\n--mp-carousel-card-scale\t0.85\n--mp-carousel-card-opacity\t0.6\n--mp-carousel-focus-width\t2px\n--mp-carousel-focus-offset\t2px\n--mp-carousel-focus-color\tvar(--mp-sys-color-content-brand)\n#\n循环过渡边界\n\n每个轮播项始终只有一个组件实例。普通上一页/下一页在出场项离开后回收位置；跨多页或居中跳转若需要同一项同时占据两个位置，则直接无动画定位，不复制交互内容，也不排队执行无限过渡。项目数量小于可视页数时不会复制项目填满。可访问名称跟随全局 Locale，显式标签属性优先。\n\n移动预览\n本页目录",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"loca-doc-preview__example\"><div data-v-8d3352d0=\"\" class=\"mp-carousel mp-carousel--slide mp-carousel--rtl carousel\" role=\"region\" aria-roledescription=\"carousel\" aria-label=\"轮播\"><div class=\"mp-carousel__viewport\" style=\"touch-action: pan-y;\"><div class=\"mp-carousel__track\" style=\"gap: 0px; transform: translateX(0px);\"><div data-v-8d3352d0=\"\" class=\"mp-carousel-item mp-carousel-item--active\" style=\"width: 502px; flex-shrink: 0;\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"第 1 页，共 3 页\" aria-hidden=\"false\" tabindex=\"-1\"><img data-v-8d3352d0=\"\" class=\"carousel-item\" src=\"cat.jpg\" alt=\"\"></div><div data-v-8d3352d0=\"\" class=\"mp-carousel-item\" style=\"width: 502px; flex-shrink: 0;\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"第 2 页，共 3 页\" aria-hidden=\"true\" inert=\"\" tabindex=\"-1\"><img data-v-8d3352d0=\"\" class=\"carousel-item\" src=\"cat2.jpg\" alt=\"\"></div><div data-v-8d3352d0=\"\" class=\"mp-carousel-item\" style=\"width: 502px; flex-shrink: 0;\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"第 3 页，共 3 页\" aria-hidden=\"true\" inert=\"\" tabindex=\"-1\"><img data-v-8d3352d0=\"\" class=\"carousel-item\" src=\"cat3.jpg\" alt=\"\"></div></div></div><button type=\"button\" class=\"mp-carousel__arrow mp-carousel__arrow-prev\" aria-label=\"上一页\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"mp-svg-icon\" style=\"width: 1em; height: 1em; flex-shrink: 0;\" fill=\"currentColor\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\"><!--v-if--><path d=\"M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6z\"></path></svg></button><button type=\"button\" class=\"mp-carousel__arrow mp-carousel__arrow-next\" aria-label=\"下一页\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"mp-svg-icon\" style=\"width: 1em; height: 1em; flex-shrink: 0;\" fill=\"currentColor\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\"><!--v-if--><path d=\"M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6z\"></path></svg></button><div class=\"mp-carousel__indicators mp-carousel--indicators-bottom\"><button type=\"button\" class=\"mp-carousel__indicator mp-carousel--indicator-dot mp-carousel--indicator-active\" aria-label=\"切换到第 1 页\" aria-current=\"true\"></button><button type=\"button\" class=\"mp-carousel__indicator mp-carousel--indicator-dot\" aria-label=\"切换到第 2 页\"></button><button type=\"button\" class=\"mp-carousel__indicator mp-carousel--indicator-dot\" aria-label=\"切换到第 3 页\"></button></div></div></div>",
+      "<div class=\"loca-doc-preview__example\"><div data-v-2c5bfaf9=\"\" class=\"mp-carousel mp-carousel--slide mp-carousel--vertical mp-carousel--rtl carousel\" role=\"region\" aria-roledescription=\"carousel\" aria-label=\"轮播\"><div class=\"mp-carousel__viewport\" style=\"touch-action: pan-x;\"><div class=\"mp-carousel__track\" style=\"gap: 0px; transform: translateY(0px);\"><div data-v-2c5bfaf9=\"\" class=\"mp-carousel-item mp-carousel-item--active\" style=\"height: 160px; flex-shrink: 0;\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"第 1 页，共 3 页\" aria-hidden=\"false\" tabindex=\"-1\"><img data-v-2c5bfaf9=\"\" class=\"carousel-item\" src=\"cat.jpg\" alt=\"\"></div><div data-v-2c5bfaf9=\"\" class=\"mp-carousel-item\" style=\"height: 160px; flex-shrink: 0;\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"第 2 页，共 3 页\" aria-hidden=\"true\" inert=\"\" tabindex=\"-1\"><img data-v-2c5bfaf9=\"\" class=\"carousel-item\" src=\"cat2.jpg\" alt=\"\"></div><div data-v-2c5bfaf9=\"\" class=\"mp-carousel-item\" style=\"height: 160px; flex-shrink: 0;\" role=\"group\" aria-roledescription=\"slide\" aria-label=\"第 3 页，共 3 页\" aria-hidden=\"true\" inert=\"\" tabindex=\"-1\"><img data-v-2c5bfaf9=\"\" class=\"carousel-item\" src=\"cat3.jpg\" alt=\"\"></div></div></div><button type=\"button\" class=\"mp-carousel__arrow mp-carousel__arrow-prev\" aria-label=\"上一页\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"mp-svg-icon\" style=\"width: 1em; height: 1em; flex-shrink: 0;\" fill=\"currentColor\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\"><!--v-if--><path d=\"M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z\"></path></svg></button><button type=\"button\" class=\"mp-carousel__arrow mp-carousel__arrow-next\" aria-label=\"下一页\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"mp-svg-icon\" style=\"width: 1em; height: 1em; flex-shrink: 0;\" fill=\"currentColor\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\"><!--v-if--><path d=\"M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6z\"></path></svg></button><div class=\"mp-carousel__indicators mp-carousel--indicators-bottom\"><button type=\"button\" class=\"mp-carousel__indicator mp-carousel--indicator-dot mp-carousel--indicator-active\" aria-label=\"切换到第 1 页\" aria-current=\"true\"></button><button type=\"button\" class=\"mp-carousel__indicator mp-carousel--indicator-dot\" aria-label=\"切换到第 2 页\"></button><button type=\"button\" class=\"mp-carousel__indicator mp-carousel--indicator-dot\" aria-label=\"切换到第 3 页\"></button></div></div></div>"
+    ],
+    "controls": [
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 3 页，共 3 页",
+        "class": "mp-carousel-item"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "上一页",
+        "class": "mp-carousel__arrow mp-carousel__arrow-prev"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "下一页",
+        "class": "mp-carousel__arrow mp-carousel__arrow-next"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 1 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot mp-carousel--indicator-active"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 2 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 3 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "轮播",
+        "class": "mp-carousel mp-carousel--slide mp-carousel--rtl carousel"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 1 页，共 3 页",
+        "class": "mp-carousel-item mp-carousel-item--active"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 2 页，共 3 页",
+        "class": "mp-carousel-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 3 页，共 3 页",
+        "class": "mp-carousel-item"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "上一页",
+        "class": "mp-carousel__arrow mp-carousel__arrow-prev"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "下一页",
+        "class": "mp-carousel__arrow mp-carousel__arrow-next"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 1 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot mp-carousel--indicator-active"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 2 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 3 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-checkbox__input"
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "轮播",
+        "class": "mp-carousel mp-carousel--slide mp-carousel--rtl"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 1 页，共 4 页",
+        "class": "mp-carousel-item mp-carousel-item--active"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 2 页，共 4 页",
+        "class": "mp-carousel-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 3 页，共 4 页",
+        "class": "mp-carousel-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 4 页，共 4 页",
+        "class": "mp-carousel-item"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "上一页",
+        "class": "mp-carousel__arrow mp-carousel__arrow-prev"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "下一页",
+        "class": "mp-carousel__arrow mp-carousel__arrow-next"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 1 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot mp-carousel--indicator-active"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 2 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 3 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 4 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "P",
+        "role": "status",
+        "label": "Current: 1 · Changes: 0",
+        "class": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "轮播",
+        "class": "mp-carousel mp-carousel--slide mp-carousel--rtl carousel-interactive-demo"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 1 页，共 3 页",
+        "class": "mp-carousel-item mp-carousel-item--active"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "Slide 1",
+        "class": "mp-input__inner"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 2 页，共 3 页",
+        "class": "mp-carousel-item"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "Slide 2",
+        "class": "mp-input__inner"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 3 页，共 3 页",
+        "class": "mp-carousel-item"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "Slide 3",
+        "class": "mp-input__inner"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "上一页",
+        "class": "mp-carousel__arrow mp-carousel__arrow-prev"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "下一页",
+        "class": "mp-carousel__arrow mp-carousel__arrow-next"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 1 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot mp-carousel--indicator-active"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 2 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 3 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Autoplay / 自动播放",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Activate / 停用与激活",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Mount / 卸载与挂载",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "region",
+        "label": "轮播",
+        "class": "mp-carousel mp-carousel--slide mp-carousel--rtl"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 1 页，共 3 页",
+        "class": "mp-carousel-item mp-carousel-item--active"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 2 页，共 3 页",
+        "class": "mp-carousel-item"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "第 3 页，共 3 页",
+        "class": "mp-carousel-item"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "上一页",
+        "class": "mp-carousel__arrow mp-carousel__arrow-prev"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "下一页",
+        "class": "mp-carousel__arrow mp-carousel__arrow-next"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 1 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot mp-carousel--indicator-active"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 2 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到第 3 页",
+        "class": "mp-carousel__indicator mp-carousel--indicator-dot"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "右侧面板",
+        "class": "maple-site-mobile-toolbar"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "移动预览",
+        "class": ""
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "本页目录",
+        "class": ""
+      }
+    ]
+  },
+  "error": "TimeoutError: locator.hover: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.maple-site-header__theme')\u001b[22m\n\u001b[2m    - locator resolved to <div data-v-7bde259a=\"\" class=\"maple-site-header__theme\">…</div>\u001b[22m\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    - waiting for element to be visible and stable\u001b[22m\n"
+}

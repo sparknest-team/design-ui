@@ -1,0 +1,2446 @@
+{
+  "date": "2026-10-27",
+  "scope": "Cedar and Maple authored example controls and layout; no component runtime or theme-token changes",
+  "policy": {
+    "smallChoices": "Fixed configuration options (1–5), single selection without search use button RadioGroup",
+    "select": "Keep Select feature demos, business fields, long/dynamic/search/multiple lists; provide a FormItem or existing width owner",
+    "layout": "Use Form/FormItem/Space for simple configuration layouts; retain geometry and component-specific teaching layouts"
+  },
+  "summary": {
+    "authoredExamplesChecked": 2243,
+    "selectToRadioGroup": 141,
+    "simpleLayoutsReplaced": 67,
+    "authoredFilesMigrated": 175,
+    "reviewFixturesRegenerated": 19
+  },
+  "platforms": {
+    "maple": {
+      "filesMigrated": 92,
+      "selectToRadioGroup": 80,
+      "retainedSelect": 83
+    },
+    "cedar": {
+      "filesMigrated": 83,
+      "selectToRadioGroup": 61,
+      "retainedSelect": 89
+    }
+  },
+  "files": [
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/affix/example/demos/controls.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/alert/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['status']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/alert/example/demos/variant.vue",
+      "controls": [
+        {
+          "model": "type",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/auto-complete/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/badge/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['status']",
+          "count": 8,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/button/example/demos/auto-loading.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/button/example/demos/basic.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/button/example/demos/custom-color.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/button/example/demos/disabled.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/card/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/cascader/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/cascader/example/demos/async-devices.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/cascader/example/demos/en-US/async-devices.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date/example/demos/en-US/rejected-close.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date/example/demos/rejected-close.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date/example/demos/responsive-panels.vue",
+      "controls": [
+        {
+          "model": "position",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "presentation",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date/example/demos/time-zone-views.vue",
+      "controls": [
+        {
+          "model": "zone",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "mode",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/calendar-mode.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/en-US/calendar-mode.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/en-US/picker-calendar.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/en-US/rejected-close.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/picker-calendar.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/rejected-close.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/zoned-range.vue",
+      "controls": [
+        {
+          "model": "zone",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "mode",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "lock",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/dialog/example/demos/en-US/guard-protocol.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/dialog/example/demos/guard-protocol.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/en-US/events.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/en-US/example.vue",
+      "controls": [
+        {
+          "model": "formData.department",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/events.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/example.vue",
+      "controls": [
+        {
+          "model": "formData.department",
+          "count": null,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        },
+        {
+          "model": "formData.group",
+          "count": null,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-choice.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-components.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-date.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-presentation.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "form.deviceIds",
+          "count": 3,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-rating.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-selection.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "model.device",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        },
+        {
+          "model": "model.devices",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        },
+        {
+          "model": "model.person",
+          "count": 3,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-time.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-tree.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-upload.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/presentation-state.vue",
+      "controls": [
+        {
+          "model": "scenario",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "model.department",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/input/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/input-number/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/loading-bar/example/demos/api-review-main.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/message/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['status']",
+          "count": 6,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/popover/example/demos/placement.vue",
+      "controls": [
+        {
+          "model": "placementValue",
+          "count": null,
+          "kind": "select",
+          "reason": "dynamic-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/popover/example/demos/trigger.vue",
+      "controls": [
+        {
+          "model": "trigger",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/progress/example/demos/advanced.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/progress/example/demos/loop.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/progress/example/demos/size.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/progress/example/demos/status.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/progress/example/demos/step.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/progress-group/example/demos/overflow-keyboard.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/row/example/demos/layout-lab.vue",
+      "controls": [
+        {
+          "model": "__demoLayout['align']",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoLayout['justify']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/safe-area/example/demos/affected-components.vue",
+      "controls": [
+        {
+          "model": "active",
+          "count": 8,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "person",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "existing-container"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/safe-area/example/demos/app-form.vue",
+      "controls": [
+        {
+          "model": "fieldVariant",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "fieldSize",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "presentation",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "calendarMode",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "calendarZone",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "dateScenario",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "rangeLock",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "guardMode",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "uploadScenario",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "uploadLayout",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "model.city",
+          "count": 3,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/safe-area/example/demos/en-US/affected-components.vue",
+      "controls": [
+        {
+          "model": "active",
+          "count": 8,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "person",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "existing-container"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/select/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "value",
+          "count": 3,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "existing-container"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/select/example/demos/open-trigger-target.vue",
+      "controls": [
+        {
+          "model": "value",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/select/example/demos/search-matching.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "value",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "existing-container"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/select/example/demos/selection-data-flow.vue",
+      "controls": [
+        {
+          "model": "form.city",
+          "count": null,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "form.panelCity",
+          "count": null,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/select/example/demos/standard.vue",
+      "controls": [
+        {
+          "model": "value",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/slider/example/demos/controlled-range.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/slider/example/demos/keyboard-input.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/slider/example/demos/touch-and-labels.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/space/example/demos/layout-lab.vue",
+      "controls": [
+        {
+          "model": "__demoLayout['direction']",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoLayout['align']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoLayout['justify']",
+          "count": 6,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/split-button/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "appearance['status']",
+          "count": 8,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "appearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/steps/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['status']",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/steps/example/demos/types.vue",
+      "controls": [
+        {
+          "model": "current",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/switch/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/tabs/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 6,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/tag/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['status']",
+          "count": 8,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/textarea/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/themes/example/FireflyScenes.vue",
+      "controls": [
+        {
+          "model": "background",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/default-state.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/en-US/default-state.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/en-US/panel-behavior.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/en-US/selection-events.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/panel-behavior.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/selection-events.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/time-fields.vue",
+      "controls": [
+        {
+          "model": "preset",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/default-state.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/en-US/default-state.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/en-US/panel-behavior.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/en-US/selection-events.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/panel-behavior.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/selection-events.vue",
+      "controls": []
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['status']",
+          "count": 6,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/placement.vue",
+      "controls": [
+        {
+          "model": "placementValue",
+          "count": null,
+          "kind": "select",
+          "reason": "dynamic-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/trigger.vue",
+      "controls": [
+        {
+          "model": "trigger",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/maple-ui/src/verification-code/example/demos/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/affix/__demos__/controls.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/alert/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['status']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/auto-complete/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/badge/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['status']",
+          "count": 8,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/button/__demos__/auto-loading.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/button/__demos__/basic.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/button/__demos__/custom-color.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/button/__demos__/disabled.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/card/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/cascader/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/date/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/date/__demos__/rejected-close.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/date/picker/__demos__/responsive-panels.vue",
+      "controls": [
+        {
+          "model": "position",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/date-range/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/date-range/__demos__/rejected-close.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/dialog/__demos__/en-US/guard-protocol.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/dialog/__demos__/guard-protocol.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/drawer/__demos__/en-US/guard-protocol.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/drawer/__demos__/guard-protocol.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-choice.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-components.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-date.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-presentation.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "form.deviceIds",
+          "count": 3,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-rating.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-selection.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "model.device",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        },
+        {
+          "model": "model.devices",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-specialized.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-time.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-tree.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-upload.vue",
+      "controls": [
+        {
+          "model": "presentation",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/nested-data.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/presentation-state.vue",
+      "controls": [
+        {
+          "model": "scenario",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "model.department",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/input/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/input-number/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/message/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['status']",
+          "count": 6,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/notification/__demos__/api-review-main.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/people-select/__demos__/search-matching.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/popconfirm/__demos__/en-US/guard-protocol.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/popconfirm/__demos__/guard-protocol.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/progress/__demos__/advanced.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/progress/__demos__/loop.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/progress/__demos__/size.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/progress/__demos__/status.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/progress/__demos__/step.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/circle.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/color.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/orientation.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/overflow-keyboard.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/sizes.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/row/__demos__/layout-lab.vue",
+      "controls": [
+        {
+          "model": "__demoLayout['align']",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoLayout['justify']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/async-resources.vue",
+      "controls": [
+        {
+          "model": "kind",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/calendar-recurrence.vue",
+      "controls": [
+        {
+          "model": "preset",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/select/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "value",
+          "count": 3,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "existing-container"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/select/__demos__/open-trigger-target.en-US.vue",
+      "controls": [
+        {
+          "model": "value",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/select/__demos__/open-trigger-target.vue",
+      "controls": [
+        {
+          "model": "value",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/select/__demos__/search-matching.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "value",
+          "count": 2,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "existing-container"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/select/__demos__/selection-data-flow.vue",
+      "controls": [
+        {
+          "model": "form.city",
+          "count": null,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "form.panelCity",
+          "count": null,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/slider/__demos__/controlled-range.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/slider/__demos__/keyboard-input.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/slider/__demos__/touch-and-labels.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/space/__demos__/layout-lab.vue",
+      "controls": [
+        {
+          "model": "__demoLayout['direction']",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoLayout['align']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoLayout['justify']",
+          "count": 6,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/split-button/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "appearance['status']",
+          "count": 8,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "appearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/steps/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['status']",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/steps/__demos__/types.vue",
+      "controls": [
+        {
+          "model": "current",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/switch/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 4,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/table/__demos__/column-manager-async.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/table/__demos__/column-manager-basic.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/table/__demos__/custom-table-columns.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/table/__demos__/editable-form.vue",
+      "controls": [
+        {
+          "model": "data[rowIndex].province",
+          "count": null,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "data[rowIndex].city",
+          "count": null,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "record.province",
+          "count": null,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "record.city",
+          "count": null,
+          "kind": "select",
+          "reason": "select-feature-or-business-field",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/table/__demos__/layout-fit-matrix.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/table-column-manager/__demos__/with-table-header-menu.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/table-column-manager/__demos__/with-table.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/tabs/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 6,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/tag/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['status']",
+          "count": 8,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/textarea/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/time/__demos__/default-state.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/time/__demos__/selection-events.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/time/picker/__demos__/panel-behavior.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/default-state.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/panel-behavior.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/selection-events.vue",
+      "controls": []
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/tooltip/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['status']",
+          "count": 6,
+          "kind": "select",
+          "reason": "long-configuration-list",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/tree-select/__demos__/search-matching.vue",
+      "controls": [
+        {
+          "model": "mode",
+          "count": 2,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/verification-code/__demos__/appearance-lab.vue",
+      "controls": [
+        {
+          "model": "__demoAppearance['variant']",
+          "count": 3,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        },
+        {
+          "model": "__demoAppearance['size']",
+          "count": 5,
+          "kind": "radio",
+          "reason": "small-configuration",
+          "width": "standard-form-item"
+        }
+      ]
+    }
+  ],
+  "changedFiles": [
+    "maple-design-mobile/packages/maple-ui/src/affix/example/demos/controls.vue",
+    "maple-design-mobile/packages/maple-ui/src/alert/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/alert/example/demos/variant.vue",
+    "maple-design-mobile/packages/maple-ui/src/auto-complete/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/badge/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/button/example/demos/auto-loading.vue",
+    "maple-design-mobile/packages/maple-ui/src/button/example/demos/basic.vue",
+    "maple-design-mobile/packages/maple-ui/src/button/example/demos/custom-color.vue",
+    "maple-design-mobile/packages/maple-ui/src/button/example/demos/disabled.vue",
+    "maple-design-mobile/packages/maple-ui/src/card/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/cascader/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/cascader/example/demos/async-devices.vue",
+    "maple-design-mobile/packages/maple-ui/src/cascader/example/demos/en-US/async-devices.vue",
+    "maple-design-mobile/packages/maple-ui/src/date/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/date/example/demos/en-US/rejected-close.vue",
+    "maple-design-mobile/packages/maple-ui/src/date/example/demos/rejected-close.vue",
+    "maple-design-mobile/packages/maple-ui/src/date/example/demos/responsive-panels.vue",
+    "maple-design-mobile/packages/maple-ui/src/date/example/demos/time-zone-views.vue",
+    "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/calendar-mode.vue",
+    "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/en-US/calendar-mode.vue",
+    "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/en-US/picker-calendar.vue",
+    "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/en-US/rejected-close.vue",
+    "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/picker-calendar.vue",
+    "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/rejected-close.vue",
+    "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/zoned-range.vue",
+    "maple-design-mobile/packages/maple-ui/src/dialog/example/demos/en-US/guard-protocol.vue",
+    "maple-design-mobile/packages/maple-ui/src/dialog/example/demos/guard-protocol.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/en-US/events.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/en-US/example.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/events.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/example.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-choice.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-components.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-date.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-presentation.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-rating.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-selection.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-time.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-tree.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/field-upload.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/presentation-state.vue",
+    "maple-design-mobile/packages/maple-ui/src/input/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/input-number/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/loading-bar/example/demos/api-review-main.vue",
+    "maple-design-mobile/packages/maple-ui/src/message/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/popover/example/demos/placement.vue",
+    "maple-design-mobile/packages/maple-ui/src/popover/example/demos/trigger.vue",
+    "maple-design-mobile/packages/maple-ui/src/progress/example/demos/advanced.vue",
+    "maple-design-mobile/packages/maple-ui/src/progress/example/demos/loop.vue",
+    "maple-design-mobile/packages/maple-ui/src/progress/example/demos/size.vue",
+    "maple-design-mobile/packages/maple-ui/src/progress/example/demos/status.vue",
+    "maple-design-mobile/packages/maple-ui/src/progress/example/demos/step.vue",
+    "maple-design-mobile/packages/maple-ui/src/progress-group/example/demos/overflow-keyboard.vue",
+    "maple-design-mobile/packages/maple-ui/src/row/example/demos/layout-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/safe-area/example/demos/affected-components.vue",
+    "maple-design-mobile/packages/maple-ui/src/safe-area/example/demos/app-form.vue",
+    "maple-design-mobile/packages/maple-ui/src/safe-area/example/demos/en-US/affected-components.vue",
+    "maple-design-mobile/packages/maple-ui/src/select/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/select/example/demos/open-trigger-target.vue",
+    "maple-design-mobile/packages/maple-ui/src/select/example/demos/search-matching.vue",
+    "maple-design-mobile/packages/maple-ui/src/select/example/demos/selection-data-flow.vue",
+    "maple-design-mobile/packages/maple-ui/src/select/example/demos/standard.vue",
+    "maple-design-mobile/packages/maple-ui/src/slider/example/demos/controlled-range.vue",
+    "maple-design-mobile/packages/maple-ui/src/slider/example/demos/keyboard-input.vue",
+    "maple-design-mobile/packages/maple-ui/src/slider/example/demos/touch-and-labels.vue",
+    "maple-design-mobile/packages/maple-ui/src/space/example/demos/layout-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/split-button/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/steps/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/steps/example/demos/types.vue",
+    "maple-design-mobile/packages/maple-ui/src/switch/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/tabs/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/tag/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/textarea/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/themes/example/FireflyScenes.vue",
+    "maple-design-mobile/packages/maple-ui/src/time/example/demos/default-state.vue",
+    "maple-design-mobile/packages/maple-ui/src/time/example/demos/en-US/default-state.vue",
+    "maple-design-mobile/packages/maple-ui/src/time/example/demos/en-US/panel-behavior.vue",
+    "maple-design-mobile/packages/maple-ui/src/time/example/demos/en-US/selection-events.vue",
+    "maple-design-mobile/packages/maple-ui/src/time/example/demos/panel-behavior.vue",
+    "maple-design-mobile/packages/maple-ui/src/time/example/demos/selection-events.vue",
+    "maple-design-mobile/packages/maple-ui/src/time/example/demos/time-fields.vue",
+    "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/default-state.vue",
+    "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/en-US/default-state.vue",
+    "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/en-US/panel-behavior.vue",
+    "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/en-US/selection-events.vue",
+    "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/panel-behavior.vue",
+    "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/selection-events.vue",
+    "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/placement.vue",
+    "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/trigger.vue",
+    "maple-design-mobile/packages/maple-ui/src/verification-code/example/demos/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/affix/__demos__/controls.vue",
+    "cedar-design-web/packages/cedar-ui/src/alert/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/auto-complete/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/badge/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/button/__demos__/auto-loading.vue",
+    "cedar-design-web/packages/cedar-ui/src/button/__demos__/basic.vue",
+    "cedar-design-web/packages/cedar-ui/src/button/__demos__/custom-color.vue",
+    "cedar-design-web/packages/cedar-ui/src/button/__demos__/disabled.vue",
+    "cedar-design-web/packages/cedar-ui/src/card/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/cascader/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/date/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/date/__demos__/rejected-close.vue",
+    "cedar-design-web/packages/cedar-ui/src/date/picker/__demos__/responsive-panels.vue",
+    "cedar-design-web/packages/cedar-ui/src/date-range/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/date-range/__demos__/rejected-close.vue",
+    "cedar-design-web/packages/cedar-ui/src/dialog/__demos__/en-US/guard-protocol.vue",
+    "cedar-design-web/packages/cedar-ui/src/dialog/__demos__/guard-protocol.vue",
+    "cedar-design-web/packages/cedar-ui/src/drawer/__demos__/en-US/guard-protocol.vue",
+    "cedar-design-web/packages/cedar-ui/src/drawer/__demos__/guard-protocol.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-choice.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-components.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-date.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-presentation.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-rating.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-selection.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-specialized.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-time.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-tree.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/field-upload.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/nested-data.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/presentation-state.vue",
+    "cedar-design-web/packages/cedar-ui/src/input/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/input-number/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/message/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/notification/__demos__/api-review-main.vue",
+    "cedar-design-web/packages/cedar-ui/src/people-select/__demos__/search-matching.vue",
+    "cedar-design-web/packages/cedar-ui/src/popconfirm/__demos__/en-US/guard-protocol.vue",
+    "cedar-design-web/packages/cedar-ui/src/popconfirm/__demos__/guard-protocol.vue",
+    "cedar-design-web/packages/cedar-ui/src/progress/__demos__/advanced.vue",
+    "cedar-design-web/packages/cedar-ui/src/progress/__demos__/loop.vue",
+    "cedar-design-web/packages/cedar-ui/src/progress/__demos__/size.vue",
+    "cedar-design-web/packages/cedar-ui/src/progress/__demos__/status.vue",
+    "cedar-design-web/packages/cedar-ui/src/progress/__demos__/step.vue",
+    "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/circle.vue",
+    "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/color.vue",
+    "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/orientation.vue",
+    "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/overflow-keyboard.vue",
+    "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/sizes.vue",
+    "cedar-design-web/packages/cedar-ui/src/row/__demos__/layout-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/async-resources.vue",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/calendar-recurrence.vue",
+    "cedar-design-web/packages/cedar-ui/src/select/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/select/__demos__/open-trigger-target.en-US.vue",
+    "cedar-design-web/packages/cedar-ui/src/select/__demos__/open-trigger-target.vue",
+    "cedar-design-web/packages/cedar-ui/src/select/__demos__/search-matching.vue",
+    "cedar-design-web/packages/cedar-ui/src/select/__demos__/selection-data-flow.vue",
+    "cedar-design-web/packages/cedar-ui/src/slider/__demos__/controlled-range.vue",
+    "cedar-design-web/packages/cedar-ui/src/slider/__demos__/keyboard-input.vue",
+    "cedar-design-web/packages/cedar-ui/src/slider/__demos__/touch-and-labels.vue",
+    "cedar-design-web/packages/cedar-ui/src/space/__demos__/layout-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/split-button/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/steps/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/steps/__demos__/types.vue",
+    "cedar-design-web/packages/cedar-ui/src/switch/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/table/__demos__/column-manager-async.vue",
+    "cedar-design-web/packages/cedar-ui/src/table/__demos__/column-manager-basic.vue",
+    "cedar-design-web/packages/cedar-ui/src/table/__demos__/custom-table-columns.vue",
+    "cedar-design-web/packages/cedar-ui/src/table/__demos__/editable-form.vue",
+    "cedar-design-web/packages/cedar-ui/src/table/__demos__/layout-fit-matrix.vue",
+    "cedar-design-web/packages/cedar-ui/src/table-column-manager/__demos__/with-table-header-menu.vue",
+    "cedar-design-web/packages/cedar-ui/src/table-column-manager/__demos__/with-table.vue",
+    "cedar-design-web/packages/cedar-ui/src/tabs/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/tag/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/textarea/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/time/__demos__/default-state.vue",
+    "cedar-design-web/packages/cedar-ui/src/time/__demos__/selection-events.vue",
+    "cedar-design-web/packages/cedar-ui/src/time/picker/__demos__/panel-behavior.vue",
+    "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/default-state.vue",
+    "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/panel-behavior.vue",
+    "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/selection-events.vue",
+    "cedar-design-web/packages/cedar-ui/src/tooltip/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/cedar-ui/src/tree-select/__demos__/search-matching.vue",
+    "cedar-design-web/packages/cedar-ui/src/verification-code/__demos__/appearance-lab.vue",
+    "maple-design-mobile/packages/maple-ui/src/alert/example/demos/api-review-mp-alert-1.vue",
+    "maple-design-mobile/packages/maple-ui/src/button/example/demos/api-review-main.vue",
+    "maple-design-mobile/packages/maple-ui/src/cascader/example/demos/api-review-main.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/api-review-mp-form-2.vue",
+    "maple-design-mobile/packages/maple-ui/src/popover/example/demos/api-review-mp-popover-2.vue",
+    "maple-design-mobile/packages/maple-ui/src/popover/example/demos/api-review-mp-popover-3.vue",
+    "maple-design-mobile/packages/maple-ui/src/progress/example/demos/api-review-mp-progress-1.vue",
+    "maple-design-mobile/packages/maple-ui/src/slider/example/demos/api-review-mp-slider-1.vue",
+    "maple-design-mobile/packages/maple-ui/src/slider/example/demos/api-review-mp-slider-2.vue",
+    "maple-design-mobile/packages/maple-ui/src/time/example/demos/api-review-mp-time-3.vue",
+    "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/api-review-mp-time-range-2.vue",
+    "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/api-review-mp-tooltip-3.vue",
+    "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/api-review-mp-tooltip-4.vue",
+    "cedar-design-web/packages/cedar-ui/src/button/__demos__/api-review-main.vue",
+    "cedar-design-web/packages/cedar-ui/src/progress/__demos__/api-review-c-progress-1.vue",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/api-review-c-scheduler-2.vue",
+    "cedar-design-web/packages/cedar-ui/src/slider/__demos__/api-review-c-slider-1.vue",
+    "cedar-design-web/packages/cedar-ui/src/slider/__demos__/api-review-c-slider-2.vue",
+    "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/api-review-c-time-range-1.vue",
+    "maple-design-mobile/packages/maple-ui/test-utils/demo-controls.ts",
+    "cedar-design-web/packages/cedar-ui/test-utils/demo-controls.ts",
+    "maple-design-mobile/scripts/browser/button-theme.test.mjs",
+    "maple-design-mobile/scripts/browser/brand-form.test.mjs",
+    "maple-design-mobile/scripts/browser/brand-docs.test.mjs",
+    "maple-design-mobile/scripts/browser/date-docs.test.mjs",
+    "maple-design-mobile/scripts/browser/input-menu-select-clip.test.mjs",
+    "cedar-design-web/scripts/browser/docs-theme.test.mjs",
+    "maple-design-mobile/packages/maple-ui/src/themes/example/ThemeDetails.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/example/demos/task-workflow.vue",
+    "cedar-design-web/packages/cedar-ui/src/form/__demos__/task-workflow.vue",
+    "maple-design-mobile/packages/maple-ui/src/form/__tests__/events-demo.spec.js",
+    "maple-design-mobile/packages/maple-ui/src/progress-group/__tests__/demo-state.spec.js",
+    "maple-design-mobile/packages/maple-ui/src/select/__tests__/search-matching-demo.spec.ts",
+    "maple-design-mobile/packages/maple-ui/src/select/__tests__/selection-data-flow-demo.spec.ts",
+    "maple-design-mobile/packages/maple-ui/src/split-button/__tests__/demo-language.spec.js",
+    "maple-design-mobile/packages/maple-ui/src/steps/__tests__/types-demo.spec.ts",
+    "maple-design-mobile/packages/maple-ui/src/time-range/__tests__/controlled-demo.spec.js",
+    "cedar-design-web/packages/cedar-ui/src/progress-group/__tests__/demo-state.spec.js",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/__tests__/async-resources-demo.test.tsx",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/__tests__/calendar-recurrence-demo.test.tsx",
+    "cedar-design-web/packages/cedar-ui/src/select/__tests__/search-matching-demo.spec.ts",
+    "cedar-design-web/packages/cedar-ui/src/select/__tests__/selection-data-flow-demo.spec.ts",
+    "cedar-design-web/packages/cedar-ui/src/steps/__tests__/types-demo.spec.ts",
+    "cedar-design-web/packages/cedar-ui/src/time-range/__tests__/controlled-demo.test.tsx"
+  ],
+  "evidence": {
+    "browser": "audits/evidence/demo-controls-2026-10-27",
+    "sourceChecks": {
+      "demos": 2979,
+      "documentationReferences": 2880,
+      "reviewSFCs": 549,
+      "documentationSnippets": 1777
+    },
+    "policyTests": 29,
+    "browserResults": {
+      "maple": {
+        "cases": 23,
+        "modeScenarios": 46,
+        "modes": [
+          "light",
+          "dark"
+        ],
+        "viewportWidth": 346,
+        "passed": true
+      },
+      "cedar": {
+        "cases": 22,
+        "modeScenarios": 44,
+        "modes": [
+          "light",
+          "dark"
+        ],
+        "viewportWidth": 346,
+        "passed": true
+      }
+    },
+    "checks": {
+      "policyTests": "29 passed",
+      "authoredPolicyScan": "2243 examples, zero failures",
+      "reviewChecks": "549 review SFCs; 2979 demo SFCs; 1777 snippets; passed",
+      "sameSource": "110 paired demos and 11 complete API tables; passed",
+      "mapleLint": "full lint check passed",
+      "cedarLint": "changed files passed",
+      "cedarAffectedTests": "7 files, 8 tests passed",
+      "mapleAffectedTests": "17 affected integration tests passed; repaired parent-proposal demo test passed separately (18 total)",
+      "demoDesign": "2979 SFCs and 2880 references; zero failures",
+      "whitespace": "All changed source paths passed git diff --check"
+    }
+  },
+  "supportingRepairs": [
+    "Regenerate 19 review fixtures from their authored cases",
+    "Use Collapse for remaining native details controls in touched form/safe-area/theme examples",
+    "Remove obsolete Counter review registration only after confirming its component entry is absent",
+    "Document existing Switch clearable and empty-value props in the three aligned API tables"
+  ]
+}

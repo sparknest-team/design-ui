@@ -1,0 +1,91 @@
+{
+  "library": "cedar",
+  "generatedAt": "2026-10-29T05:18:22.523Z",
+  "nativeDeviceAcceptance": false,
+  "latestTwoVersionsAccepted": false,
+  "completeEngineMatrix": true,
+  "evidenceOnly": false,
+  "results": [
+    {
+      "name": "chromium",
+      "startedAt": "2026-10-29T04:53:28.570Z",
+      "completedAt": "2026-10-29T04:59:58.988Z",
+      "passed": true,
+      "exitCode": 0,
+      "evidence": "/Users/shuaimeng/github_web/cedar-design-web/artifacts/docs-components/cedar/chromium",
+      "verified": {
+        "browser": {
+          "name": "chromium",
+          "engine": "chromium",
+          "launchOptions": {},
+          "version": "151.0.7922.34",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "recordedAt": "2026-10-29T04:59:54.930Z",
+          "evidenceType": "automated-engine-regression",
+          "nativeDeviceAcceptance": false,
+          "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+          "gestureInput": "CDP touch injection"
+        },
+        "componentCases": 198,
+        "guideCases": 14,
+        "navigationCases": 4,
+        "passed": true
+      }
+    },
+    {
+      "name": "firefox",
+      "startedAt": "2026-10-29T04:59:58.988Z",
+      "completedAt": "2026-10-29T05:09:50.975Z",
+      "passed": true,
+      "exitCode": 0,
+      "evidence": "/Users/shuaimeng/github_web/cedar-design-web/artifacts/docs-components/cedar/firefox",
+      "verified": {
+        "browser": {
+          "name": "firefox",
+          "engine": "firefox",
+          "launchOptions": {},
+          "version": "153.0",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "recordedAt": "2026-10-29T05:09:41.393Z",
+          "evidenceType": "automated-engine-regression",
+          "nativeDeviceAcceptance": false,
+          "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+          "gestureInput": "synthetic touch events (handler regression only)"
+        },
+        "componentCases": 198,
+        "guideCases": 14,
+        "navigationCases": 4,
+        "passed": true
+      }
+    },
+    {
+      "name": "webkit",
+      "startedAt": "2026-10-29T05:09:50.975Z",
+      "completedAt": "2026-10-29T05:18:22.521Z",
+      "passed": true,
+      "exitCode": 0,
+      "evidence": "/Users/shuaimeng/github_web/cedar-design-web/artifacts/docs-components/cedar/webkit",
+      "verified": {
+        "browser": {
+          "name": "webkit",
+          "engine": "webkit",
+          "launchOptions": {},
+          "version": "26.5",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "recordedAt": "2026-10-29T05:18:10.133Z",
+          "evidenceType": "automated-engine-regression",
+          "nativeDeviceAcceptance": false,
+          "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+          "gestureInput": "synthetic touch events (handler regression only)"
+        },
+        "componentCases": 198,
+        "guideCases": 14,
+        "navigationCases": 4,
+        "passed": true
+      }
+    }
+  ]
+}

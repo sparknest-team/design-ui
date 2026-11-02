@@ -1,0 +1,232 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:58300/components/people-select/",
+    "text": "姓名或 ID\"\n      clearable\n      :fetch=\"fetch\"\n      @change=\"latest = `change: ${$event || '已清空'}`\"\n      @clear=\"latest = 'clear'\"\n    />\n    <c-people-select :model-value=\"value\" :fetch=\"fetch\" is-label />\n    <p>当前 ID：{{ value || \"未选择\" }}；最近通知：{{ latest }}</p>\n    <c-button @click=\"value = 'demo.chen'\">恢复异步反显 ID</c-button>\n  </c-space>\n</template>\n\n组件配置\n功能调试\nc-people-select · 组合属性\n功能调试 / Feature playground\n重新挂载 / Remount\n重置 / Reset\n\n选择一类功能后调整相关属性。切换功能会清除上一次覆盖，恢复案例原有绑定。 default-* 等初始属性修改后，点击“重新挂载”验证。\n\nExplore one feature at a time. Changing the topic removes previous overrides.\n\n专项行为 / Component behavior (1/2)\n专项行为 / Component behavior (1/2)（3）\n案例插槽 / Fixture slots\n\n初始 ID 不在首批列表中，通过异步详情接口反显。搜索姓名或 ID；下方阅读模式与选择值同步。\n\n陈悦（demo.chen）\n陈悦（demo.chen）\n\n当前 ID：demo.chen；最近通知：等待操作\n\n恢复异步反显 ID\n当前覆盖值 / Active overrides\n事件 / Events（0）\n专项 API 定位 / Scenario API index\nAPI\n主值与默认值\n\n使用普通 v-model。modelValue 表示选中人员的标识；defaultValue 仅在创建时初始化非受控值，后续修改不会重置当前状态。显式绑定值优先，初始化不发出 update:modelValue。\n\nPeopleSelect Props\n\n其它属性参照Select组件。\n\n属性\t说明\t类型\t默认值\nfetch\t旧接口请求适配器（支持 ConfigProvider 注入）\tany\t-\nmodel-value\t绑定值\tstring\t-\nis-label\t是否是阅读模式\tboolean\t-\nurl-type\t选人地址的url类型，支持 oss、ares\tstring\tares\n可选业务数据源\n\n新增 request-people(query) 和 resolve-people(ids, context)，返回 PeopleSelectOption[] 或 Promise；选项为 { value: string, label: string, mobile?: string }。可返回只读数组，组件不会修改调用方数据。根入口和组件入口导出 PeopleSelectOption、PeopleSelectQuery、PeopleSelectRequestContext、PeopleSelectRequest、PeopleSelectResolve、PeopleSelectDataSources。\n\nrequest-people 优先接管搜索；resolve-people 优先接管 ID 反显。仅配置搜索源时不再请求旧详情地址；如需外部 ID 的姓名反显，请一并提供反显源。仅配置反显源时，搜索继续采用 fetch / url-type。未配置新源时，旧请求地址、参数、响应格式全部保留。\n\n搜索上下文包含 query?: string 和 signal: AbortSignal；反显上下文包含 signal。新搜索、清空/选中后的旧反显、关闭候选以及卸载时会中止相应请求；忽略 signal 的旧请求也不能覆盖较新结果。未提供请求器或请求失败时结束加载并显示空候选。\n\n孟帅（mengshuai）\n\ndisabled、readonly 支持字段显式设置及 Form / FormItem 继承。弹层确认期间不可编辑；校验失败保留草稿，表单重置关闭弹层并丢弃未完成提交。\n\nPeopleSelect Events\n事件名\t说明\t参数\nchange\t选人时候触发的事件\t(val: string) => void\nclear\t点击清除触发的事件\t-\nPeopleSelect Slots\n插槽名\t说明\ndefault\t自定义默认内容\n类型定义\n\n组件导出以下类型定义\n\nimport type { PeopleSelectProps } from '@cedar-design/ui'\n\nForm 字段展示与确认\n\nCedar 使用 presentation=\"click\" / \"dblclick\" 在原位进入编辑，Enter/F2 也可进入；取消/Escape 丢弃草稿，确认后提交。 readPretty 为纯阅读属性，与 readonly、disabled 独立。\n\n搜索输入变化时立即移除旧候选，防抖与请求期间不能通过 Enter 选择旧结果；只采纳最后一次搜索响应。ID 反显不进入候选列表，关闭面板或重置后，迟到响应不会恢复旧列表。校验失败保留所选草稿，异步确认期间锁定字段及取消操作，重置可中止本次编辑。\n\n上次编辑于: 2026/10/24 20:08:01\n贡献者: shuai.meng,mengshuai",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"vmi-previewer-example\" style=\"\"><div class=\"c-space c-space--block\" fill=\"\" style=\"gap: var(--c-space-size-md-row-gap) var(--c-space-size-md-column-gap); flex-flow: column; justify-content: flex-start; align-items: stretch;\"><!----><div class=\"c-space__item\"><p> 初始 ID 不在首批列表中，通过异步详情接口反显。搜索姓名或 ID；下方阅读模式与选择值同步。 </p></div><!----><div class=\"c-space__item\"><div class=\"c-select\" style=\"width: 320px; max-width: 100%;\"><div class=\"c-field-decorator c-field-decorator--size-md c-field-decorator--variant-filled c-selection-field\" style=\"--c-internal-field-content-offset: 12px; --c-internal-field-content-width: 250px;\"><!----><span class=\"c-field-decorator__middle\"><span class=\"c-selection-field__content\" style=\"text-align: left;\"><span class=\"c-selection-field__selection\"><span class=\"c-selection-field__label\">陈悦（demo.chen）</span></span><input fetch=\"[object Object]\" defaulttext=\"-\" islabel=\"false\" label=\"\" urltype=\"ares\" id=\"v-0\" class=\"c-selection-field__input c-selection-field__input--with-value\" aria-label=\"搜索姓名或 ID\" aria-expanded=\"false\" aria-autocomplete=\"list\" role=\"combobox\" autocomplete=\"off\" value=\"\"></span></span><!----><span class=\"c-field-decorator__suffix\"><button type=\"button\" class=\"c-field-decorator__clear-btn\" aria-label=\"清空\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-close-circle-fill\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" fill-rule=\"evenodd\" stroke=\"none\" d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20m4.955-27.771-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-4.95-4.95 4.95-4.95a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0\" clip-rule=\"evenodd\"></path></svg></button><span class=\"c-selection-field__icon\" aria-hidden=\"true\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-down\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path d=\"M39.6 17.443 24.043 33 8.487 17.443\"></path></svg></span></span><span class=\"c-field-decorator__border\" aria-hidden=\"true\"></span><span class=\"c-field-decorator__border-state\" aria-hidden=\"true\"></span></div></div></div><!----><div class=\"c-space__item\"><div>陈悦（demo.chen）</div></div><!----><div class=\"c-space__item\"><p>当前 ID：demo.chen；最近通知：等待操作</p></div><!----><div class=\"c-space__item\"><button class=\"c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">恢复异步反显 ID</span><div class=\"c-hover-overlay\"></div></button></div></div></div>",
+      "<div class=\"vmi-previewer-example\" style=\"\"><div class=\"demo-review-suite\"><div class=\"c-select\"><div class=\"c-field-decorator c-field-decorator--size-md c-field-decorator--variant-filled c-selection-field\" style=\"--c-internal-field-content-offset: 12px; --c-internal-field-content-width: 752px;\"><!----><span class=\"c-field-decorator__middle\"><span class=\"c-selection-field__content\" style=\"text-align: left;\"><span class=\"c-selection-field__selection\"><span class=\"c-selection-field__label\">c-people-select · 组合属性</span></span><input aria-label=\"审查对象与场景 / Review target and scenario\" id=\"v-2\" class=\"c-selection-field__input c-selection-field__input--with-value\" readonly=\"\" aria-expanded=\"false\" aria-autocomplete=\"none\" role=\"combobox\" autocomplete=\"off\" value=\"\"></span></span><!----><span class=\"c-field-decorator__suffix\"><!----><span class=\"c-selection-field__icon\" aria-hidden=\"true\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-down\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path d=\"M39.6 17.443 24.043 33 8.487 17.443\"></path></svg></span></span><span class=\"c-field-decorator__border\" aria-hidden=\"true\"></span><span class=\"c-field-decorator__border-state\" aria-hidden=\"true\"></span></div></div><div data-v-9fd5bc5c=\"\" class=\"demo-review\"><div data-v-9fd5bc5c=\"\" class=\"demo-review__toolbar\"><strong data-v-9fd5bc5c=\"\">功能调试 / Feature playground</strong><div data-v-9fd5bc5c=\"\" class=\"demo-review__actions\"><button data-v-9fd5bc5c=\"\" class=\"c-button c-button--size-sm c-button--status-default c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">重新挂载 / Remount</span><div class=\"c-hover-overlay\"></div></button><button data-v-9fd5bc5c=\"\" class=\"c-button c-button--size-sm c-button--status-default c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">重置 / Reset</span><div class=\"c-hover-overlay\"></div></button></div></div><p data-v-9fd5bc5c=\"\"> 选择一类功能后调整相关属性。切换功能会清除上一次覆盖，恢复案例原有绑定。 default-* 等初始属性修改后，点击“重新挂载”验证。 </p><p data-v-9fd5bc5c=\"\" lang=\"en\"> Explore one feature at a time. Changing the topic removes previous overrides. </p><div class=\"c-select demo-review__topic\"><div class=\"c-field-decorator c-field-decorator--size-md c-field-decorator--variant-filled c-selection-field\" style=\"--c-internal-field-content-offset: 12px; --c-internal-field-content-width: 752px;\"><!----><span class=\"c-field-decorator__middle\"><span class=\"c-selection-field__content\" style=\"text-align: left;\"><span class=\"c-selection-field__selection\"><span class=\"c-selection-field__label\">专项行为 / Component behavior (1/2)</span></span><input aria-label=\"功能分类 / Feature topic\" id=\"v-4\" class=\"c-selection-field__input c-selection-field__input--with-value\" readonly=\"\" aria-expanded=\"false\" aria-autocomplete=\"none\" role=\"combobox\" autocomplete=\"off\" value=\"\"></span></span><!----><span class=\"c-field-decorator__suffix\"><!----><span class=\"c-selection-field__icon\" aria-hidden=\"true\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-down\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path d=\"M39.6 17.443 24.043 33 8.487 17.443\"></path></svg></span></span><span class=\"c-field-decorator__border\" aria-hidden=\"true\"></span><span class=\"c-field-decorator__border-state\" aria-hidden=\"true\"></span></div></div><div data-v-9fd5bc5c=\"\" class=\"demo-review__search\"><div data-v-9fd5bc5c=\"\" class=\"c-input\"><div class=\"c-field-decorator c-field-decorator--size-md c-field-decorator--variant-outline\" style=\"--c-internal-field-content-offset: 12px; --c-internal-field-content-width: 774px;\"><!----><span class=\"c-field-decorator__middle\"><input id=\"v-6\" class=\"c-input__inner\" type=\"text\" placeholder=\"筛选属性 / Filter\" aria-label=\"筛选属性 / Filter\" value=\"\"></span><!----><!----><span class=\"c-field-decorator__border\" aria-hidden=\"true\"></span><span class=\"c-field-decorator__border-state\" aria-hidden=\"true\"></span></div></div></div><div data-v-9fd5bc5c=\"\" class=\"c-collapse\" default-active-names=\"props\"><div data-v-9fd5bc5c=\"\" class=\"c-collapse-item demo-review__controls\"><div id=\"c-collapse-item-v-7-props-header\" role=\"button\" tabindex=\"0\" aria-disabled=\"false\" aria-expanded=\"false\" aria-controls=\"c-collapse-item-v-7-props-panel\" class=\"c-collapse-item__header c-collapse-item__header--icon-left\"><div class=\"c-collapse-item__expand-icon-wrap\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-caret-right c-collapse-item__expand-icon\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" stroke=\"none\" d=\"M34.829 23.063c.6.48.6 1.394 0 1.874L17.949 38.44c-.785.629-1.949.07-1.949-.937V10.497c0-1.007 1.164-1.566 1.95-.937z\"></path></svg></div><div class=\"c-collapse-item__header-title\">专项行为 / Component behavior (1/2)（3）</div><!----><!----></div><div id=\"c-collapse-item-v-7-props-panel\" role=\"region\" aria-labelledby=\"c-collapse-item-v-7-props-header\" class=\"c-collapse-item__content\" style=\"display: none;\"><div class=\"c-collapse-item__content-box\"><div data-v-9fd5bc5c=\"\" class=\"demo-review__grid\"><div data-v-9fd5bc5c=\"\" class=\"demo-review__field\"><label data-v-9fd5bc5c=\"\" class=\"c-checkbox c-checkbox--disabled\" aria-disabled=\"true\"><input class=\"c-checkbox__input\" type=\"checkbox\" aria-label=\"fetch\" aria-checked=\"false\" value=\"true\" disabled=\"\"><span class=\"c-checkbox__control\" aria-hidden=\"true\"><span class=\"c-checkbox__icon\"></span></span><span class=\"c-checkbox__label\"><code data-v-9fd5bc5c=\"\">fetch</code></span></label><small data-v-9fd5bc5c=\"\">需要主动传入发请求的fetch · any · 默认 / Default: undefined</small><!----><small data-v-9fd"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "选择语言",
+        "class": "vp-dropdown-title"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "搜索",
+        "class": "slimsearch-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换主题",
+        "class": "cedar-docs-theme__trigger"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "搜索姓名或 ID",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "恢复异步反显 ID",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "审查对象与场景 / Review target and scenario",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重新挂载 / Remount",
+        "class": "c-button c-button--size-sm c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重置 / Reset",
+        "class": "c-button c-button--size-sm c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "功能分类 / Feature topic",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "筛选属性 / Filter",
+        "class": "c-input__inner"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "专项行为 / Component behavior (1/2)（3）",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "案例插槽 / Fixture slots",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "搜索姓名或 ID",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "恢复异步反显 ID",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "当前覆盖值 / Active overrides",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "事件 / Events（0）",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "专项 API 定位 / Scenario API index",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      }
+    ]
+  },
+  "error": "AssertionError [ERR_ASSERTION]: expanded source matches /Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/people-select/__demos__/basic.vue exactly\n+ actual - expected ... Lines skipped\n\n  '<script setup lang=\"ts\">\\n' +\n    'import { ref } from \"vue\";\\n' +\n+   '\\n' +\n+   'const value = ref(\"demo.chen\");\\n' +\n+   'const latest = ref(\"等待操作\");\\n' +\n+   'const people = [\\n' +\n+   '  { user_id: \"demo.lin\", display_name: \"林晓\", name: \"林晓\" },\\n' +\n+   '  { user_id: \"demo.zhou\", display_name: \"周宁\", name: \"周宁\" },\\n' +\n+   '  { user_id: \"demo.chen\", display_name: \"陈悦\", name: \"陈悦\" },\\n' +\n+   '];\\n' +\n+   'const wait = () => new Promise<void>((resolve) => setTimeout(resolve, 250));\\n' +\n+   '\\n' +\n+   '// Local asynchronous adapter: no credentials or external personnel requests.\\n' +\n+   'const fetch = {\\n' +\n+   '  async get(_url: string, options: { params: { worker_user_id?: string } }) {\\n' +\n+   '    await wait();\\n' +\n+   '    return {\\n' +\n+   '      resultCode: \"success\",\\n' +\n+   '      data: {\\n' +\n+   '        list: people\\n' +\n+   '          .filter((person) => person.user_id === options.params.worker_user_id)\\n' +\n+   '          .map((person) => ({ ...person })),\\n' +\n+   '      },\\n' +\n+   '    };\\n' +\n+   '  },\\n' +\n+   '  async post(_url: string, options: { params: { name?: string } }) {\\n' +\n+   '    await wait();\\n' +\n+   '    const query = options.params.name?.toLowerCase();\\n' +\n+   '    const matches = query\\n' +\n+   '      ? people.filter((person) =>\\n' +\n+   '          `${person.display_name} ${person.user_id}`\\n' +\n+   '            .toLowerCase()\\n' +\n...\n-   'import type { PeopleSelectFetch } from \"@cedar-design/ui\";\\n' +\n-   '\\n' +\n-   'const value = ref(\"demo.chen\");\\n' +\n-   'const latest = ref(\"等待操作\");\\n' +\n-   'const people = [\\n' +\n-   '  { value: \"demo.lin\", label: \"林晓\" },\\n' +\n-   '  { value: \"demo.zhou\", label: \"周宁\" },\\n' +\n-   '  { value: \"demo.chen\", label: \"陈悦\" },\\n' +\n-   '];\\n' +\n-   'const wait = () => new Promise<void>((resolve) => setTimeout(resolve, 250));\\n' +\n-   '\\n' +\n-   '// The application owns the request and response mapping. This example stays local.\\n' +\n-   'const fetch: PeopleSelectFetch = async ({ query, ids, signal }) => {\\n' +\n-   '  await wait();\\n' +\n-   '  if (signal.aborted) return [];\\n' +\n-   '  if (ids) return people.filter(person => ids.includes(person.value));\\n' +\n-   '  return query\\n' +\n-   '    ? people.filter(person => `${person.label} ${person.value}`.toLowerCase().includes(query.toLowerCase()))\\n' +\n-   '    : people.slice(0, 2);\\n' +\n..."
+}

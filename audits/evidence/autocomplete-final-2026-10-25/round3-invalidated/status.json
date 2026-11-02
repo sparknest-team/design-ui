@@ -1,0 +1,5 @@
+{
+  "accepted": false,
+  "reason": "Both libraries source and production inputs changed while Maple complete matrix was running; Cedar 212 passed only the invalidated snapshot. Only this run's Maple process tree was stopped, preserving other work.",
+  "next": "Wait for both active tasks to complete, capture a new stable baseline, rebuild both libraries and repeat full matrices and eight AutoComplete cases."
+}

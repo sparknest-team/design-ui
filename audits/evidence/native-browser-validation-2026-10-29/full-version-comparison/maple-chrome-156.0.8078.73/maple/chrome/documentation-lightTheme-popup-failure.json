@@ -1,0 +1,286 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:64525/#/zh-CN/popup#zhe1zhao4yang4shi4",
+    "text": "内容节点设置内容变量，通过 overlay-style 设置遮罩变量；或在实际共同祖先设置 system 变量。Teleport 不会从原调用位置继承变量。Dialog 使用独立的遮罩变量，不受 Popup 组件变量影响。\n\n#\n焦点管理\n\n内置 fade、center 缩放与四方向 pop 和内容／遮罩基础过渡消费 duration／timing-function 两项 Token，默认仍为 250ms／ease。要整层统一覆写，设置在 Teleport 后实际共同祖先或 popup-container 宿主；style 仅覆盖内容，overlay-style 仅覆盖遮罩。使用有效、非负 CSS 时间。prefers-reduced-motion: reduce 优先关闭内置过渡及起始位移／缩放；自定义动画由业务适配，编译检查及显式 0ms 都不代表真实 OS 偏好验收。\n\nunmount-on-close=true 时关闭途中保留内容，完成回调后卸载；关闭前锁不会提前释放。快速重开取消关闭并保留插槽状态。opened／closed 每个有效阶段只发一次，销毁后不再补发；没有固定 250ms JS 定时器。初始打开仍沿用 mounted 通知，不承诺完整 appear 计时；自定义转场或内容与外层时长不同需要业务自行协调。\n\n打开时焦点进入实际 dialog 面板，Tab/Shift+Tab 在可用控件间循环，跳过隐藏和禁用项。嵌套弹层由最上层接管；关闭后回到打开它的控件。应用必须保留触发器节点；内部焦点根标记不应由业务覆盖。\n\n#\nLandscape safe areas\n\nsafe-area-inset-left / safe-area-inset-right (boolean, default false) complement the existing top/bottom flags. Native overrides and nested consumption follow SafeArea.\n\n#\n从头部下拉关闭\n\n底部弹层设置 swipe-to-close，在可拖动标题区域添加 data-popup-swipe-handle。默认关闭；其他 placement 不触发。swipe-threshold 默认 40，单位为布局 CSS px（父级缩放时也保持一致）。手势结束前最后的移动方向为向下，且位移达到阈值才请求 update:open(false) 并发出 swipe-close(PointerEvent)。位移不足、横向手势、pointercancel、按钮/输入框和正文滚动不会关闭；受控父级拒绝时弹层保留并回到原位。已有 Esc、遮罩、关闭按钮继续可用。\n\n<mp-popup v-model:open=\"open\" placement=\"bottom\" swipe-to-close>\n  <header data-popup-swipe-handle>编辑信息</header>\n  <main>弹层内容</main>\n</mp-popup>\n\n\nMaple 字段编辑弹层默认从标题空白处下拉取消草稿；异步确认 pending 时禁用手势。ActionSheet 可以显式设置 swipe-to-close / swipe-threshold，默认标题已标记；自定义 title 插槽需自行标记拖动区域。\n\n异步关闭拦截\n\n关闭原因包括 overlay、escape、route、swipe、close、api、model。默认插槽提供 { close, pending }，关闭按钮应调用 close('close', event)；实例 close() 使用 api，requestClose(reason, event) 可指定原因并返回 Promise<boolean>。外部将 open 设为 false 使用 model，拒绝后会发送 update:open(true)，受控父组件应正常接收该事件。只有启用对应关闭能力的入口会发起请求。\n\n直接销毁组件、移除 v-if 或销毁路由页面不属于关闭请求，无法等待组件内的异步拦截；在父级执行这些操作前等待 requestClose() 的结果。业务表单确认继续使用 beforeCommit，不要用关闭 guard 替代数据校验。主题页完整表单提供延迟允许、拒绝、报错与各关闭入口的验证弹层。\n\nbefore 钩子与 done 兼容\n\n只记录日志的同步钩子应显式 return true；同步 undefined 表示仍在等待回调。注意：以前返回 Promise<void> 却不调用 done 的异步钩子，现在会在 Promise 完成后放行。\n\nPopup 原因为 overlay、escape、route、swipe、close、api、model。拒绝外部 open=false 时请求 update:open(true)。直接销毁组件不能等待内部钩子，应先 await requestClose()。\n\n守卫统一使用 (payload, done, context)：关闭 payload 为 { action }，切换和提交为 { value, previousValue }，Popup 为 { reason }。context 提供 signal 和可选原始 event。返回 boolean/Promise，或调用 done()/done(false)；同步 void 等待 done，Promise<void> 放行。首次完成生效。等待期间自动管理 loading/disabled，取消后旧结果失效，不暴露内部按钮 refs。\n\n移动预览\n本页目录",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"loca-doc-preview__example\"><button class=\"mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">打开弹出层</span><div class=\"mp-hover-overlay\"></div></button></div>",
+      "<div class=\"loca-doc-preview__example\"><div data-v-cd17d4a0=\"\" class=\"mp-space mp-space--block\" style=\"gap: 3vmin 4vmin; flex-flow: column; justify-content: flex-start; align-items: stretch;\"><!----><div class=\"mp-space__item\"><button data-v-cd17d4a0=\"\" class=\"mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">居中弹出</span><div class=\"mp-hover-overlay\"></div></button></div><!----><div class=\"mp-space__item\"><button data-v-cd17d4a0=\"\" class=\"mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">下方弹出</span><div class=\"mp-hover-overlay\"></div></button></div><!----><div class=\"mp-space__item\"><button data-v-cd17d4a0=\"\" class=\"mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">上方弹出</span><div class=\"mp-hover-overlay\"></div></button></div><!----><div class=\"mp-space__item\"><button data-v-cd17d4a0=\"\" class=\"mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">左侧弹出</span><div class=\"mp-hover-overlay\"></div></button></div><!----><div class=\"mp-space__item\"><button data-v-cd17d4a0=\"\" class=\"mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">右侧弹出</span><div class=\"mp-hover-overlay\"></div></button></div></div></div>"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-button--round mp-elevation--2 maple-site-ad__close-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "特色与场景",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "组件",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到 RTL / Switch to right-to-left",
+        "class": "docs-direction-toggle"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "打开弹出层",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "居中弹出",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "下方弹出",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "上方弹出",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "左侧弹出",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "右侧弹出",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "背景层class",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "背景层样式",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "注册事件",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "600ms / linear 弹出层",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Edit In Playground",
+        "class": "mp-site-code-example__toolbar-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Copy Example Code",
+        "class": "mp-site-code-example__toolbar-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Hide Source",
+        "class": "mp-site-code-example__toolbar-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "右侧面板",
+        "class": "maple-site-mobile-toolbar"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "移动预览",
+        "class": ""
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "本页目录",
+        "class": ""
+      }
+    ]
+  },
+  "error": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.loca-doc-preview').nth(3).getByRole('button', { name: '展开源码', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button title=\"展开源码\" type=\"button\" aria-label=\"展开源码\" aria-expanded=\"false\" class=\"loca-doc-preview__action\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n"
+}

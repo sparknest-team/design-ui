@@ -1,0 +1,244 @@
+{
+  "date": "2026-10-29",
+  "scope": "D batch core direction contracts for five Cedar and four existing Maple component families; not complete-library release acceptance",
+  "checks": [
+    {
+      "scope": "Cedar input",
+      "log": "cedar-input.log",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/input/__tests__/empty-value-demo.spec.ts",
+        "src/input/__tests__/input.test.tsx",
+        "src/input/__tests__/empty-value.spec.ts",
+        "src/input/__tests__/pipeline.spec.js",
+        "src/input/__tests__/default-value-demo.spec.ts",
+        "src/input/__tests__/same-source.spec.ts",
+        "--threads=false"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "exitCode": 0,
+      "passedTests": 84
+    },
+    {
+      "scope": "Cedar input-number",
+      "log": "cedar-input-number.log",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/input-number/__tests__/step-ownership.test.tsx",
+        "src/input-number/__tests__/field-contract.spec.ts",
+        "src/input-number/__tests__/quantity-controls.test.ts",
+        "src/input-number/__tests__/number-core.spec.ts",
+        "src/input-number/__tests__/input-number.test.tsx",
+        "--threads=false"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "exitCode": 0,
+      "passedTests": 59
+    },
+    {
+      "scope": "Cedar input-tag",
+      "log": "cedar-input-tag.log",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/input-tag/__tests__/empty-value.spec.ts",
+        "src/input-tag/__tests__/input-tag.test.tsx",
+        "--threads=false"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "exitCode": 0,
+      "passedTests": 17
+    },
+    {
+      "scope": "Cedar textarea",
+      "log": "cedar-textarea.log",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/textarea/__tests__/auto-size.spec.ts",
+        "src/textarea/__tests__/body-contract.spec.js",
+        "src/textarea/__tests__/textarea.test.tsx",
+        "--threads=false"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "exitCode": 0,
+      "passedTests": 14
+    },
+    {
+      "scope": "Cedar select",
+      "log": "cedar-select.log",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/select/__tests__/menu-types.test.ts",
+        "src/select/__tests__/request.spec.ts",
+        "src/select/__tests__/clear-compatibility.spec.js",
+        "src/select/__tests__/passthrough-demo.spec.ts",
+        "src/select/__tests__/scheduler-lifecycle.test.ts",
+        "src/select/__tests__/select.test.tsx",
+        "src/select/__tests__/search-matching-demo.spec.ts",
+        "src/select/__tests__/selection-field.test.tsx",
+        "src/select/__tests__/contract.spec.ts",
+        "src/select/__tests__/passthrough-options.spec.ts",
+        "src/select/__tests__/selection-data-flow-demo.spec.ts",
+        "src/select/__tests__/selection-check.spec.ts",
+        "src/select/__tests__/group-consumers.test.tsx",
+        "src/select/__tests__/case-sensitive.spec.ts",
+        "--threads=false"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "exitCode": 0,
+      "passedTests": 85
+    },
+    {
+      "scope": "Cedar field-decorator",
+      "log": "cedar-field-decorator.log",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/field-decorator/__tests__/registration.spec.ts",
+        "src/field-decorator/__tests__/field-decorator.spec.ts",
+        "src/field-decorator/__tests__/focus-caret-consumers.test.tsx",
+        "src/field-decorator/__tests__/control-sizes-demo.spec.ts",
+        "src/field-decorator/__tests__/reading-direction.spec.js",
+        "--threads=false"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "exitCode": 0,
+      "passedTests": 20
+    },
+    {
+      "scope": "Cedar _components/selection-field",
+      "log": "cedar-_components-selection-field.log",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/_components/selection-field/__tests__/selection-tag-label.spec.ts",
+        "src/_components/selection-field/__tests__/selection-field.spec.ts",
+        "src/_components/selection-field/__tests__/selection-key.spec.ts",
+        "--threads=false"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "exitCode": 0,
+      "passedTests": 14
+    },
+    {
+      "scope": "Cedar SSR",
+      "log": "cedar-ssr.log",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/input-number/__tests__/number-ssr.spec.ts",
+        "--threads=false"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "exitCode": 0,
+      "passedTests": 1
+    },
+    {
+      "log": "maple-regression.log",
+      "command": "pnpm --dir maple-design-mobile/packages/maple-ui exec vitest run --config reading-direction.vitest.config.mjs src/input src/input-number src/textarea src/select src/field-decorator src/_components/selection-field --maxWorkers=1 --minWorkers=1",
+      "exitCode": 0,
+      "passedTests": 307
+    },
+    {
+      "log": "direction-gate.log",
+      "command": "CHOKIDAR_USEPOLLING=1 pnpm --dir design-ui check:direction",
+      "exitCode": 0,
+      "passedTests": 62
+    },
+    {
+      "log": "browser.log",
+      "command": "node design-ui/browser/reading-direction-batch-d/check.mjs",
+      "exitCode": 0
+    },
+    {
+      "log": "cedar-types.log",
+      "command": "pnpm --dir cedar-design-web typecheck",
+      "exitCode": 0
+    },
+    {
+      "log": "maple-types.log",
+      "command": "pnpm --dir maple-design-mobile typecheck",
+      "exitCode": 0
+    },
+    {
+      "log": "cedar-lint.log",
+      "command": "pnpm --dir cedar-design-web lint",
+      "exitCode": 0
+    },
+    {
+      "log": "maple-lint.log",
+      "command": "pnpm --dir maple-design-mobile lint:check",
+      "exitCode": 0
+    }
+  ],
+  "browserCases": 9,
+  "engines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "cedarPassedTests": 294,
+  "maplePassedTests": 307,
+  "directionPassedTests": 62,
+  "notes": [
+    "Cedar regression groups and node SSR run in separate processes to avoid the existing Vitest 0.x Vue runtime/global-timer contamination.",
+    "Final focused gate includes the formatted geometry helper and KeepAlive direction tests.",
+    "Synthetic IME composition checks are not system IME or mobile hardware acceptance."
+  ],
+  "sourceSha256": {
+    "cedar-design-web/packages/cedar-ui/src/field-decorator/use-field-geometry.ts": "3c7818f352a6b9e72a25261b328b475d2f1113973171a642e7f172d2b608ead6",
+    "cedar-design-web/packages/cedar-ui/src/field-decorator/style/field-decorator.less": "b523050ef3d547893ce5094434edea2c035cdb31238c9a26e9cb842656183f43",
+    "cedar-design-web/packages/cedar-ui/src/_components/selection-field/SelectionField.vue": "b9f183d3c5df40d13d33aae89e5979ff44f5a54ea3ab9f4813df263534c291b7",
+    "cedar-design-web/packages/cedar-ui/src/_components/selection-field/style/index.less": "9b1a82276a1bea16bf091be7ede2bcabf69b970fdff8b34a1ecfdf0ffd3f8dd8",
+    "cedar-design-web/packages/cedar-ui/src/field-decorator/__tests__/reading-direction.spec.js": "096181280f4750e0cbb4807f994595072a1c2eb022fe28d9cd4578ed665c3071",
+    "maple-design-mobile/packages/maple-ui/src/field-decorator/use-field-geometry.ts": "31f5bce79c9f5c0ab68a6f8dbbb9f18ff2c1777cb83f4374855148d434194ecc",
+    "maple-design-mobile/packages/maple-ui/src/field-decorator/style/field-decorator.less": "e0d89217be964dcaaf02c7bf0d15b2ee77bf4f4a3da34e6cabbbb825fb1c0f23",
+    "maple-design-mobile/packages/maple-ui/src/_components/selection-field/SelectionField.vue": "518fc38446c55c4a80cda6824a54b78b082d7d4e939fa6194e8f7c76a5648339",
+    "maple-design-mobile/packages/maple-ui/src/_components/selection-field/style/index.less": "3c4ea7c5e4fbb747d03f6c33420ccfa24ca09178c02406ca0673fe3f8cbbfac3",
+    "maple-design-mobile/packages/maple-ui/src/field-decorator/__tests__/reading-direction.spec.js": "2d51c1c97158921bc8fcf8d960c3ca463fa254e0f99c2f8c751e1ca4c1804870"
+  }
+}

@@ -6,8 +6,24 @@ import { resolve } from 'node:path'
 import test from 'node:test'
 import { componentPages, demoIndex, mobileSection, guidePages, mapleGuides, sourceFingerprint, productionFingerprint } from './inventory.mjs'
 import { contractFor } from './contracts.mjs'
+import { copyProductionSnapshot } from './snapshot.mjs'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
+
+test('production snapshots preserve nested files independently of later builds', async () => {
+  const directory = mkdtempSync(resolve(tmpdir(), 'docs-snapshot-test-'))
+  try {
+    const source = resolve(directory, 'source'), target = resolve(directory, 'snapshot')
+    mkdirSync(resolve(source, 'assets/empty'), { recursive: true })
+    writeFileSync(resolve(source, 'index.html'), 'original')
+    writeFileSync(resolve(source, 'assets/code.js'), 'code')
+    await copyProductionSnapshot(source, target)
+    writeFileSync(resolve(source, 'index.html'), 'next build')
+    rmSync(resolve(source, 'assets/code.js'))
+    assert.equal(readFileSync(resolve(target, 'index.html'), 'utf8'), 'original')
+    assert.equal(readFileSync(resolve(target, 'assets/code.js'), 'utf8'), 'code')
+  } finally { rmSync(directory, { recursive: true, force: true }) }
+})
 
 test('production acceptance detects compiler, theme client and lockfile edits, excluding generated caches and tests', () => {
   const directory = mkdtempSync(resolve(tmpdir(), 'docs-production-inventory-'))
@@ -24,6 +40,17 @@ test('production acceptance detects compiler, theme client and lockfile edits, e
     writeFileSync(resolve(docs, '.temp-build/generated.ts'), 'export {}')
     writeFileSync(resolve(docs, 'client.test.ts'), 'export {}')
     assert.equal(productionFingerprint(directory, 'cedar'), initial)
+    const home = resolve(docs, '../README.md')
+    writeFileSync(home, '# Homepage')
+    assert.notEqual(productionFingerprint(directory, 'cedar'), initial)
+    rmSync(home)
+    assert.equal(productionFingerprint(directory, 'cedar'), initial)
+    mkdirSync(resolve(docs, 'public'))
+    const logo = resolve(docs, 'public/logo.svg')
+    writeFileSync(logo, '<svg/>')
+    assert.notEqual(productionFingerprint(directory, 'cedar'), initial)
+    rmSync(logo)
+    assert.equal(productionFingerprint(directory, 'cedar'), initial)
     writeFileSync(resolve(directory, 'pnpm-lock.yaml'), 'lockfileVersion: 9')
     assert.notEqual(productionFingerprint(directory, 'cedar'), initial)
     mkdirSync(resolve(directory, 'packages/maple-ui/src'), { recursive: true })
@@ -33,6 +60,24 @@ test('production acceptance detects compiler, theme client and lockfile edits, e
     const originalCompiler = productionFingerprint(directory, 'maple')
     writeFileSync(resolve(cli, 'build.ts'), 'export const version = 2')
     assert.notEqual(productionFingerprint(directory, 'maple'), originalCompiler)
+  } finally { rmSync(directory, { recursive: true, force: true }) }
+})
+
+test('Maple production fingerprint includes HTML templates, site runtime and mjs configuration', () => {
+  const directory = mkdtempSync(resolve(tmpdir(), 'docs-html-inventory-'))
+  try {
+    mkdirSync(resolve(directory, 'packages/maple-ui/src'), { recursive: true })
+    mkdirSync(resolve(directory, 'packages/maple-cli/site/pc'), { recursive: true })
+    for (const file of ['packages/maple-cli/site/index.html', 'packages/maple-cli/site/mobile.html', 'packages/maple-cli/site/pc/App.vue', 'packages/maple-ui/maple.config.mjs']) {
+      const before = productionFingerprint(directory, 'maple')
+      writeFileSync(resolve(directory, file), 'changed production input')
+      assert.notEqual(productionFingerprint(directory, 'maple'), before, file)
+      rmSync(resolve(directory, file))
+      assert.equal(productionFingerprint(directory, 'maple'), before)
+    }
+    const before = productionFingerprint(directory, 'maple')
+    writeFileSync(resolve(directory, 'packages/maple-cli/site/pc/App.spec.ts'), 'test only')
+    assert.equal(productionFingerprint(directory, 'maple'), before)
   } finally { rmSync(directory, { recursive: true, force: true }) }
 })
 

@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-29",
+  "scope": "C batch Scheduler core direction contracts; complete-library release acceptance remains separate",
+  "checks": [
+    {
+      "log": "scheduler-regression.log",
+      "command": "CHOKIDAR_USEPOLLING=1 pnpm --dir cedar-design-web/packages/cedar-ui exec vitest run src/scheduler --threads=false",
+      "exitCode": 0,
+      "passedTests": 408
+    },
+    {
+      "log": "direction-gate.log",
+      "command": "CHOKIDAR_USEPOLLING=1 pnpm --dir design-ui check:direction",
+      "exitCode": 0,
+      "passedTests": 56
+    },
+    {
+      "log": "browser.log",
+      "command": "node design-ui/browser/reading-direction-batch-c/check.mjs",
+      "exitCode": 0
+    },
+    {
+      "log": "navigation-browser.log",
+      "command": "node design-ui/browser/reading-direction-batch-c/keyboard.mjs",
+      "exitCode": 0
+    },
+    {
+      "log": "cedar-types.log",
+      "command": "pnpm --dir cedar-design-web typecheck",
+      "exitCode": 0
+    },
+    {
+      "log": "cedar-lint.log",
+      "command": "pnpm --dir cedar-design-web lint",
+      "exitCode": 0
+    }
+  ],
+  "browserCases": 9,
+  "navigationCases": 6,
+  "engines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "notes": [
+    "One concurrent full run hit the existing 5s recurrence demo timeout; the final default-timeout full run passed all 408 tests.",
+    "Core browser acceptance and final navigation/icon acceptance are separate production builds.",
+    "Source hashes describe the saved final implementation, not a Git commit or release artifact."
+  ],
+  "sourceSha256": {
+    "cedar-design-web/packages/cedar-ui/src/scheduler/Scheduler.vue": "10401e0f7326ca538ce3d059e19118b9fd5661e2f35fbcc21f501df05559d608",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerDependencies.vue": "e5ce5641cfc86c0da06675782e17976547c20d24825e11bbf126d9a8d4b5c184",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerEditor.vue": "f7ddf8570554b3fb8ed6835979983ac2b37a96c0d6cf8596925c8492a74d34af",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerEvent.vue": "6b0ca5ce494ab2d9e17d2380ff7d72c939814daedd6951e6792cda8229178a3f",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerMonthView.vue": "61c1229cc8ea332a11f5a995ada8bef5fcc57dc418ff6232fca668135a8cb49c",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerResourceSelect.vue": "bc44ab782b31822534c464c7da2b7e7a176cc0dd5e7c36bd3bc016d63de13e9e",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerTimeGrid.vue": "76f82bbcca0b8aa81969d355f1899dac3a349d46184eede5dc0a04999145aab1",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/components/SchedulerTimelineRows.vue": "ecddd8bbb31ff3fd5257f0205697fe4da956b80421752f9ccec9e2061bff1e0c",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/coordinates.ts": "4ae9fbcd7b487881974dacb812b9c8a464061f84a8237b3544f0f838fede092c",
+    "cedar-design-web/packages/cedar-ui/src/scheduler/style/index.less": "d52b582ba5dbf5707a27ab16053c48170deaa0078f0e81fb139f75ba97be339b"
+  }
+}

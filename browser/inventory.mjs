@@ -27,7 +27,7 @@ export function documentationPages(root, library) {
     const guide = (library === 'cedar' ? cedarGuides : mapleGuides).includes(directory)
     const component = guide ? directory : library === 'cedar' ? basename(route.replace(/\/$/, '')) : directory
     const references = [...markdown.matchAll(library === 'cedar'
-      ? /^<demo\b[^>]*\bsrc="([^"]+\.vue)"/gm
+      ? /^[ \t]{0,3}<demo\b[^>]*\bsrc="([^"]+\.vue)"/gm
       : /```demo\s*\n([^\n]+\.vue)\s*\n```|<demo\b[^>]*\bsrc="([^"]+\.vue)"/g)]
     assert.ok(guide || references.length, `${library}/${component}: component documentation must have a runnable demo`)
     const demos = references.map((match) => {
@@ -73,16 +73,17 @@ export function productionFingerprint(root, library) {
       const file = resolve(directory, entry.name)
       if (entry.isDirectory()) {
         if (!entry.name.startsWith('.') && !['__tests__', 'node_modules'].includes(entry.name)) walk(file)
-      } else if (/\.(?:[cm]?[jt]sx?|vue|less|scss|css|md|json)$/.test(file) && !/\.(?:test|spec)\./.test(file)) {
+      } else if (/\.(?:[cm]?[jt]sx?|vue|less|scss|css|md|json|html|svg)$/.test(file) && !/\.(?:test|spec)\./.test(file)) {
         hash.update(relative(root, file)).update('\0').update(readFileSync(file)).update('\0')
       }
     }
   }
   for (const directory of library === 'cedar'
-    ? ['packages/cedar-ui/docs/.vuepress', 'packages/cedar-resolver/src']
-    : ['packages/maple-cli/src', 'packages/maple-resolver/src']) walk(resolve(root, directory))
+    ? ['packages/cedar-ui/docs', 'packages/cedar-ui/docs/.vuepress', 'packages/cedar-resolver/src']
+    : ['packages/maple-cli/src', 'packages/maple-cli/site', 'packages/maple-resolver/src']) walk(resolve(root, directory))
   walk(resolve(root, '../design-ui/packages/ui-doc-preview/src'))
-  for (const name of ['package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', `packages/${library}-ui/package.json`, `packages/${library}-ui/maple.config.js`, `packages/${library}-ui/maple.config.ts`, 'packages/maple-cli/package.json', '../design-ui/packages/ui-doc-preview/package.json']) {
+  walk(resolve(root, '../design-ui/packages/ui-build/src'))
+  for (const name of ['package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', `packages/${library}-ui/package.json`, `packages/${library}-ui/maple.config.js`, `packages/${library}-ui/maple.config.ts`, `packages/${library}-ui/maple.config.mjs`, 'packages/maple-cli/package.json', 'packages/cedar-ui/docs/.vuepress/public/logo.svg', '../design-ui/packages/ui-doc-preview/package.json']) {
     const file = resolve(root, name)
     if (existsSync(file)) hash.update(name).update('\0').update(readFileSync(file)).update('\0')
   }

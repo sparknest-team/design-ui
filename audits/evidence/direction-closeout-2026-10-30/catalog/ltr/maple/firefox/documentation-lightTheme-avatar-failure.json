@@ -1,0 +1,1111 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:63110/#/zh-CN/avatar",
+    "text": "\ntrigger-icon\t头像上的交互图标\n#\nMethods\n\n无自定义公开方法。\n\n#\nAvatarGroup Props\n属性\t说明\t类型\t默认值\nshape\t子头像形状\tcircle / square\tcircle\nsize\t子头像宽高；数字为 px，字符串为 CSS 长度\tnumber / string\t-\nauto-fix-font-size\t是否自动缩放子头像中的文字\tboolean\ttrue\nmax-count\t最多直接展示的头像数，0 表示不限\tnumber\t0\nz-index-ascend\t头像层级是否按顺序递增\tboolean\tfalse\nmax-style\t数量汇总头像的自定义样式\tCSSProperties\t-\nmax-popover-props\t汇总 Popover 的属性\tPopoverProps\t-\noffset\t组内头像的重叠偏移量\tnumber / string\t-\nvertical\t是否纵向堆叠\tboolean\tfalse\n#\nAvatarGroup Slots\n插槽\t说明\ndefault\t头像列表\n#\n类型定义\nimport type {\n  AvatarGroupInstance,\n  AvatarGroupProps,\n  AvatarInstance,\n  AvatarProps,\n  AvatarObjectFit,\n  AvatarShape,\n  AvatarTriggerType,\n} from '@maple-design/ui';\n\n#\n样式变量\n变量\t默认值\n--mp-avatar-size-default\t40px\n--mp-avatar-font-size-text\t20px\n--mp-avatar-text-color\tvar(--mp-sys-color-content-primary)\n--mp-avatar-text-padding-inline\t4px\n--mp-avatar-bg\tvar(--mp-color-fill-4)\n--mp-avatar-border-width\t2px\n--mp-avatar-border-color\tvar(--mp-sys-color-surface-default)\n--mp-avatar-group-item-border\tvar(--mp-sys-color-surface-default)\n--mp-avatar-group-item-border-width\t2px\n--mp-avatar-group-offset\t-10px\n--mp-avatar-group-popover-item-spacing\t8px\n--mp-avatar-font-weight-text\t500\n--mp-avatar-circle-border-radius\t50%\n--mp-avatar-square-border-radius\t4px\n--mp-avatar-size-trigger-button\t20px\n--mp-avatar-trigger-button-bg\tvar(--mp-color-fill-2)\n--mp-avatar-trigger-button-bg-hover\tvar(--mp-color-fill-3)\n--mp-avatar-trigger-overlay-icon\tvar(--mp-sys-color-content-on-dark)\n--mp-avatar-trigger-overlay-bg\tcolor-mix(in srgb, var(--mp-color-black) 60%, transparent)\n--mp-avatar-trigger-icon-button\tvar(--mp-sys-color-content-primary)\n--mp-avatar-spacing-trigger-button-right\t4px\n--mp-avatar-spacing-trigger-button-bottom\t4px\n--mp-avatar-size-trigger-icon\t12px\n--mp-avatar-trigger-button-border-radius\t50%\n--mp-avatar-font-size-max-count\t20px\n--mp-avatar-max-count-text-color\tvar(--mp-sys-color-content-primary)\n--mp-avatar-trigger-overlay-font-size\t16px\n--mp-avatar-hover-transform\tscale(1.1)\n--mp-avatar-motion-duration\t0.2s\n--mp-avatar-z-index-trigger\t1\n--mp-avatar-z-index-overlay\t0\n--mp-avatar-z-index-overlay-hover\t2\n\n文字、汇总数量和按钮式触发图标默认使用主要内容色；描边跟随容器表面；只有深色交互遮罩上的图标使用 content-on-dark。头像背景的 fill-4、按钮背景与 hover 阶梯、黑色半透明遮罩保留为组件视觉值。使用 color 属性覆盖头像背景时，应同步检查文字对比度，必要时覆盖 text-color。Maple 暗色主题背景仍采用组件专属的 #303030。\n\n#\n减少动态效果\n\n内置 CSS 过渡遵循 prefers-reduced-motion: reduce。关闭过渡不改变最终显隐、选中／展开状态及事件语义；插槽内自定义动画由应用自行控制。\n\n移动预览\n本页目录",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"loca-doc-preview__example\"><div class=\"mp-space mp-space--block\" style=\"gap: 16px; flex-flow: wrap; justify-content: flex-start; align-items: center;\"><!----><div class=\"mp-space__item\"><div class=\"mp-avatar mp-avatar--circle\"><span class=\"mp-avatar__text\">C</span><!--v-if--></div></div><!----><div class=\"mp-space__item\"><div class=\"mp-avatar mp-avatar--circle\"><span class=\"mp-avatar__text\">CD</span><!--v-if--></div></div><!----><div class=\"mp-space__item\"><div class=\"mp-avatar mp-avatar--square\"><span class=\"mp-avatar__text\" style=\"transform: scale(0.615385);\">Cedar</span><!--v-if--></div></div><!----><div class=\"mp-space__item\"><div class=\"mp-avatar mp-avatar--circle\" style=\"background-color: rgb(0, 190, 190);\"><span class=\"mp-avatar__text\">U</span><!--v-if--></div></div><!----><div class=\"mp-space__item\"><div class=\"mp-avatar mp-avatar--circle\"><span class=\"mp-avatar__image\"><img src=\"/cat.jpg\" role=\"img\" alt=\"一只猫\" style=\"object-fit: cover; display: none;\"><span class=\"mp-avatar__image-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" class=\"mp-svg-icon\" style=\"width: 1em; height: 1em; flex-shrink: 0;\" fill=\"none\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\"><!--v-if--><path d=\"M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6\"></path></svg></span></span><!--v-if--></div></div></div></div>",
+      "<div class=\"loca-doc-preview__example\"><div data-v-84aba254=\"\" class=\"demo-comparison\"><section data-v-84aba254=\"\" class=\"demo-comparison-case demo-comparison-case--1\" data-comparison-scene=\"size\"><h4 data-v-84aba254=\"\"><span data-v-84aba254=\"\" lang=\"zh-CN\">尺寸</span><span data-v-84aba254=\"\" lang=\"en-US\">Size</span></h4><div data-v-84aba254=\"\" class=\"mp-space mp-space--block\" style=\"gap: 20px; flex-flow: column; justify-content: flex-start; align-items: stretch;\"><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-space mp-space--block\" style=\"gap: 16px; flex-flow: wrap; justify-content: flex-start; align-items: flex-end;\"><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-space mp-space--block\" style=\"gap: 8px; flex-flow: column; justify-content: flex-start; align-items: center;\"><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-avatar mp-avatar--circle\" style=\"width: 24px; height: 24px; font-size: 12px;\"><span class=\"mp-avatar__text\">A</span><!--v-if--></div></div><!----><div class=\"mp-space__item\"><span data-v-84aba254=\"\" class=\"label\">24px</span></div></div></div><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-space mp-space--block\" style=\"gap: 8px; flex-flow: column; justify-content: flex-start; align-items: center;\"><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-avatar mp-avatar--circle\" style=\"width: 32px; height: 32px; font-size: 16px;\"><span class=\"mp-avatar__text\">B</span><!--v-if--></div></div><!----><div class=\"mp-space__item\"><span data-v-84aba254=\"\" class=\"label\">32px</span></div></div></div><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-space mp-space--block\" style=\"gap: 8px; flex-flow: column; justify-content: flex-start; align-items: center;\"><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-avatar mp-avatar--circle\" style=\"width: 40px; height: 40px; font-size: 20px;\"><span class=\"mp-avatar__text\">C</span><!--v-if--></div></div><!----><div class=\"mp-space__item\"><span data-v-84aba254=\"\" class=\"label\">40px</span></div></div></div><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-space mp-space--block\" style=\"gap: 8px; flex-flow: column; justify-content: flex-start; align-items: center;\"><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-avatar mp-avatar--circle\" style=\"width: 48px; height: 48px; font-size: 24px;\"><span class=\"mp-avatar__text\">D</span><!--v-if--></div></div><!----><div class=\"mp-space__item\"><span data-v-84aba254=\"\" class=\"label\">48px</span></div></div></div><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-space mp-space--block\" style=\"gap: 8px; flex-flow: column; justify-content: flex-start; align-items: center;\"><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-avatar mp-avatar--circle\" style=\"width: 64px; height: 64px; font-size: 32px;\"><span class=\"mp-avatar__text\">E</span><!--v-if--></div></div><!----><div class=\"mp-space__item\"><span data-v-84aba254=\"\" class=\"label\">64px</span></div></div></div></div></div><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-space mp-space--block\" style=\"gap: 16px; flex-flow: wrap; justify-content: flex-start; align-items: flex-end;\"><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-space mp-space--block\" style=\"gap: 8px; flex-flow: column; justify-content: flex-start; align-items: center;\"><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-avatar mp-avatar--circle\" style=\"width: 28px; height: 28px; font-size: 14px;\"><span class=\"mp-avatar__image\"><img src=\"/cat.jpg\" role=\"img\" alt=\"28px\" style=\"object-fit: cover; display: none;\"><span class=\"mp-avatar__image-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" class=\"mp-svg-icon\" style=\"width: 1em; height: 1em; flex-shrink: 0;\" fill=\"none\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\"><!--v-if--><path d=\"M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6\"></path></svg></span></span><!--v-if--></div></div><!----><div class=\"mp-space__item\"><span data-v-84aba254=\"\" class=\"label\">28px</span></div></div></div><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-space mp-space--block\" style=\"gap: 8px; flex-flow: column; justify-content: flex-start; align-items: center;\"><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-avatar mp-avatar--circle\" style=\"width: 36px; height: 36px; font-size: 18px;\"><span class=\"mp-avatar__image\"><img src=\"/cat.jpg\" role=\"img\" alt=\"36px\" style=\"object-fit: cover; display: none;\"><span class=\"mp-avatar__image-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" class=\"mp-svg-icon\" style=\"width: 1em; height: 1em; flex-shrink: 0;\" fill=\"none\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\"><!--v-if--><path d=\"M42 24c0 9.941-8.059 18-18 18S6 33.941 6 24 14.059 6 24 6\"></path></svg></span></span><!--v-if--></div></div><!----><div class=\"mp-space__item\"><span data-v-84aba254=\"\" class=\"label\">36px</span></div></div></div><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-space mp-space--block\" style=\"gap: 8px; flex-flow: column; justify-content: flex-start; align-items: center;\"><!----><div class=\"mp-space__item\"><div data-v-84aba254=\"\" class=\"mp-avatar mp-avatar--circle\" style=\"width: 48px; height: 48px; font-size: 24px;\"><span class=\"mp-avatar__image\"><img src=\"/cat.jpg\" role=\"img\" alt=\"48px\" style=\"object-fit: cover; display: none;\"><span class=\"mp-avatar__image-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" class=\"mp-svg-icon\" style=\"width: 1em; height: 1em; flex-shrink: 0;\" fill=\"none\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\"><!--v-if--><path d=\"M42 24c0 9.941-8.059 18-18 1"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-input__inner"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "mp-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "IMG",
+        "role": "img",
+        "label": "",
+        "class": ""
+      },
+      {
+        "tag": "IMG",
+        "role": "img",
+        "label": "",
+        "class": ""
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Edit In Playground",
+        "class": "mp-site-code-example__toolbar-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Copy Example Code",
+        "class": "mp-site-code-example__toolbar-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Hide Source",
+        "class": "mp-site-code-example__toolbar-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "右侧面板",
+        "class": "maple-site-mobile-toolbar"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "移动预览",
+        "class": ""
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "本页目录",
+        "class": ""
+      }
+    ]
+  },
+  "navigation": {
+    "url": "http://127.0.0.1:63110/#/zh-CN/avatar",
+    "elapsedMs": 5004,
+    "events": [
+      {
+        "name": "domcontentloaded",
+        "elapsedMs": 0
+      },
+      {
+        "name": "load",
+        "elapsedMs": 0
+      },
+      {
+        "name": "domcontentloaded",
+        "elapsedMs": 137
+      }
+    ],
+    "requests": [
+      {
+        "url": "http://127.0.0.1:63110/",
+        "type": "document",
+        "startedMs": 4,
+        "status": 200,
+        "finishedMs": 13
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/main-Ch6po88g.js",
+        "type": "script",
+        "startedMs": 36,
+        "status": 200,
+        "finishedMs": 53
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-Cg2gv3RF.js",
+        "type": "script",
+        "startedMs": 37,
+        "status": 200,
+        "finishedMs": 54
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-Cmhr5VOr.js",
+        "type": "script",
+        "startedMs": 37,
+        "status": 200,
+        "finishedMs": 53
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/popup-container-BpgVwK2m.js",
+        "type": "script",
+        "startedMs": 37,
+        "status": 200,
+        "finishedMs": 53
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-Clk2n13x.js",
+        "type": "script",
+        "startedMs": 37,
+        "status": 200,
+        "finishedMs": 64
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BThNqyif.js",
+        "type": "script",
+        "startedMs": 37,
+        "status": 200,
+        "finishedMs": 63
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-DFmzH3R6.js",
+        "type": "script",
+        "startedMs": 37,
+        "status": 200,
+        "finishedMs": 65
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-DOvwrb66.js",
+        "type": "script",
+        "startedMs": 37,
+        "status": 200,
+        "finishedMs": 65
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-DYrAi89V.js",
+        "type": "script",
+        "startedMs": 37,
+        "status": 200,
+        "finishedMs": 65
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BoIOrzdd.js",
+        "type": "script",
+        "startedMs": 37,
+        "status": 200,
+        "finishedMs": 65
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/useDirection-BksU4y26.js",
+        "type": "script",
+        "startedMs": 37,
+        "status": 200,
+        "finishedMs": 68
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-DdqxjOPd.js",
+        "type": "script",
+        "startedMs": 37,
+        "status": 200,
+        "finishedMs": 69
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/_commonjsHelpers-CqkleIqs.js",
+        "type": "script",
+        "startedMs": 38,
+        "status": 200,
+        "finishedMs": 69
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/DemoPreview.vue_vue_type_style_index_0_lang-DF1W8xHr.js",
+        "type": "script",
+        "startedMs": 38,
+        "status": 200,
+        "finishedMs": 69
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-CnNfNvvf.css",
+        "type": "stylesheet",
+        "startedMs": 38,
+        "status": 200,
+        "finishedMs": 72
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-CUwy9w5a.css",
+        "type": "stylesheet",
+        "startedMs": 38,
+        "status": 200,
+        "finishedMs": 72
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/DemoPreview-DwizLAxL.css",
+        "type": "stylesheet",
+        "startedMs": 38,
+        "status": 200,
+        "finishedMs": 73
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/main-cQfJj8zd.css",
+        "type": "stylesheet",
+        "startedMs": 39,
+        "status": 200,
+        "finishedMs": 73
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/Layout-BTroWYqt.js",
+        "type": "script",
+        "startedMs": 100,
+        "status": 200,
+        "finishedMs": 128
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BjT8ijCP.js",
+        "type": "script",
+        "startedMs": 101,
+        "status": 200,
+        "finishedMs": 135
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/use-action-guard-BCVFgsod.js",
+        "type": "script",
+        "startedMs": 104,
+        "status": 200,
+        "finishedMs": 137
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-CKZOnjY0.js",
+        "type": "script",
+        "startedMs": 105,
+        "status": 200,
+        "finishedMs": 137
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-DMn45UcD.js",
+        "type": "script",
+        "startedMs": 109,
+        "status": 200,
+        "finishedMs": 138
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-DHG67kwc.js",
+        "type": "script",
+        "startedMs": 114,
+        "status": 200,
+        "finishedMs": 143
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/constants-C5L4eL5m.js",
+        "type": "script",
+        "startedMs": 115,
+        "status": 200,
+        "finishedMs": 150
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/useParent-CXvqoF8s.js",
+        "type": "script",
+        "startedMs": 119,
+        "status": 200,
+        "finishedMs": 150
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/useChildren-Dq8sDCNl.js",
+        "type": "script",
+        "startedMs": 119,
+        "status": 200,
+        "finishedMs": 151
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/zIndex-CY58EiNR.js",
+        "type": "script",
+        "startedMs": 122,
+        "status": 200,
+        "finishedMs": 152
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/popup-layer-B1GLDwX-.js",
+        "type": "script",
+        "startedMs": 125,
+        "status": 200,
+        "finishedMs": 153
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/popup-transition-CFfj0b6X.js",
+        "type": "script",
+        "startedMs": 125,
+        "status": 200,
+        "finishedMs": 152
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/scroll-lock-Zr4oo2AQ.js",
+        "type": "script",
+        "startedMs": 125,
+        "status": 200,
+        "finishedMs": 154
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/direction-K6xvf2CW.js",
+        "type": "script",
+        "startedMs": 127,
+        "status": 200,
+        "finishedMs": 155
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/AppHeader-Cx0dOsHl.js",
+        "type": "script",
+        "startedMs": 127,
+        "status": 200,
+        "finishedMs": 155
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-CR_DGlMe.js",
+        "type": "script",
+        "startedMs": 127,
+        "status": 200,
+        "finishedMs": 159
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/Icon.vue_vue_type_script_setup_true_lang-YsCrvJlx.js",
+        "type": "script",
+        "startedMs": 127,
+        "status": 200,
+        "finishedMs": 159
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-Cpwbh3D3.js",
+        "type": "script",
+        "startedMs": 127,
+        "status": 200,
+        "finishedMs": 159
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-Bnzdv4Ii.js",
+        "type": "script",
+        "startedMs": 127,
+        "status": 200,
+        "finishedMs": 163
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-5ISyo1xh.js",
+        "type": "script",
+        "startedMs": 127,
+        "status": 200,
+        "finishedMs": 164
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-DEcdJ9w2.js",
+        "type": "script",
+        "startedMs": 127,
+        "status": 200,
+        "finishedMs": 164
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BwP79sms.js",
+        "type": "script",
+        "startedMs": 128,
+        "status": 200,
+        "finishedMs": 164
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/RegisteredIcon.vue_vue_type_script_setup_true_lang-CvyGPLLT.js",
+        "type": "script",
+        "startedMs": 128,
+        "status": 200,
+        "finishedMs": 169
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-CkZdMSsh.css",
+        "type": "stylesheet",
+        "startedMs": 128,
+        "status": 200,
+        "finishedMs": 202
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BvvPjb5u.js",
+        "type": "script",
+        "startedMs": 128,
+        "status": 200,
+        "finishedMs": 169
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-DH4lcIxK.js",
+        "type": "script",
+        "startedMs": 128,
+        "status": 200,
+        "finishedMs": 169
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BnW27dCc.css",
+        "type": "stylesheet",
+        "startedMs": 128,
+        "status": 200,
+        "finishedMs": 202
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/DirectionToggle-Dmn5pDlv.js",
+        "type": "script",
+        "startedMs": 128,
+        "status": 200,
+        "finishedMs": 169
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/AppHeader-C4nozFFj.css",
+        "type": "stylesheet",
+        "startedMs": 128,
+        "status": 200,
+        "finishedMs": 210
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BZV32hCn.css",
+        "type": "stylesheet",
+        "startedMs": 128,
+        "status": 200,
+        "finishedMs": 209
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-Bxi0oulb.css",
+        "type": "stylesheet",
+        "startedMs": 128,
+        "status": 200,
+        "finishedMs": 210
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BGn7efBF.css",
+        "type": "stylesheet",
+        "startedMs": 129,
+        "status": 200,
+        "finishedMs": 210
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-CRo9VaSd.css",
+        "type": "stylesheet",
+        "startedMs": 129,
+        "status": 200,
+        "finishedMs": 210
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-D_7y1r7N.css",
+        "type": "stylesheet",
+        "startedMs": 129
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/documentation-sections-B-IVR2T4.js",
+        "type": "script",
+        "startedMs": 129,
+        "status": 200,
+        "finishedMs": 177
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/Layout-CMlWINDq.css",
+        "type": "stylesheet",
+        "startedMs": 129
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-SfvBJZcL.css",
+        "type": "stylesheet",
+        "startedMs": 129
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BzlSnL6X.css",
+        "type": "stylesheet",
+        "startedMs": 130
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/zh-CN-oCKCz3op.js",
+        "type": "script",
+        "startedMs": 130,
+        "status": 200,
+        "finishedMs": 177
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/trigger-B62Id5GY.js",
+        "type": "script",
+        "startedMs": 131,
+        "status": 200,
+        "finishedMs": 177
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BRggtJ3T.js",
+        "type": "script",
+        "startedMs": 132,
+        "status": 200,
+        "finishedMs": 193
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/resize-observer-CQcWe8SU.js",
+        "type": "script",
+        "startedMs": 132,
+        "status": 200,
+        "finishedMs": 184
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-DFybd-Ov.js",
+        "type": "script",
+        "startedMs": 132,
+        "status": 200,
+        "finishedMs": 184
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BpCico8w.js",
+        "type": "script",
+        "startedMs": 132,
+        "status": 200,
+        "finishedMs": 202
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BXFegqxS.js",
+        "type": "script",
+        "startedMs": 132,
+        "status": 200,
+        "finishedMs": 184
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/wrapper-B0jtK0li.js",
+        "type": "script",
+        "startedMs": 132,
+        "status": 200,
+        "finishedMs": 184
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BaE3HElr.css",
+        "type": "stylesheet",
+        "startedMs": 132
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-Dv4E6Vbd.css",
+        "type": "stylesheet",
+        "startedMs": 132
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-CfNJ9JkR.js",
+        "type": "script",
+        "startedMs": 132,
+        "status": 200,
+        "finishedMs": 194
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/style-CFsnMd34.js",
+        "type": "script",
+        "startedMs": 132,
+        "status": 200,
+        "finishedMs": 194
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/provide-D0gMSz5F.js",
+        "type": "script",
+        "startedMs": 132,
+        "status": 200,
+        "finishedMs": 196
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/style-DZ1BdvJ9.css",
+        "type": "stylesheet",
+        "startedMs": 133
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-CY9pwEOs.js",
+        "type": "script",
+        "startedMs": 134,
+        "status": 200,
+        "finishedMs": 196
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-CJdofoIJ.js",
+        "type": "script",
+        "startedMs": 134,
+        "status": 200,
+        "finishedMs": 196
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-ChbYkvt5.js",
+        "type": "script",
+        "startedMs": 134,
+        "status": 200,
+        "finishedMs": 197
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-CpY6BISO.css",
+        "type": "stylesheet",
+        "startedMs": 134
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-CtANb-kJ.js",
+        "type": "script",
+        "startedMs": 136,
+        "status": 200,
+        "finishedMs": 202
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-TFq5YDPr.css",
+        "type": "stylesheet",
+        "startedMs": 136
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/use-input-value-Dc6qyK26.js",
+        "type": "script",
+        "startedMs": 136,
+        "status": 200,
+        "finishedMs": 202
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/trigger-k9n22nt2.css",
+        "type": "stylesheet",
+        "startedMs": 136
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-Dgw_7IRi.css",
+        "type": "stylesheet",
+        "startedMs": 136
+      }
+    ],
+    "pending": [
+      {
+        "url": "http://127.0.0.1:63110/assets/index-D_7y1r7N.css",
+        "type": "stylesheet",
+        "startedMs": 129
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/Layout-CMlWINDq.css",
+        "type": "stylesheet",
+        "startedMs": 129
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-SfvBJZcL.css",
+        "type": "stylesheet",
+        "startedMs": 129
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BzlSnL6X.css",
+        "type": "stylesheet",
+        "startedMs": 130
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-BaE3HElr.css",
+        "type": "stylesheet",
+        "startedMs": 132
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-Dv4E6Vbd.css",
+        "type": "stylesheet",
+        "startedMs": 132
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/style-DZ1BdvJ9.css",
+        "type": "stylesheet",
+        "startedMs": 133
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-CpY6BISO.css",
+        "type": "stylesheet",
+        "startedMs": 134
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-TFq5YDPr.css",
+        "type": "stylesheet",
+        "startedMs": 136
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/trigger-k9n22nt2.css",
+        "type": "stylesheet",
+        "startedMs": 136
+      },
+      {
+        "url": "http://127.0.0.1:63110/assets/index-Dgw_7IRi.css",
+        "type": "stylesheet",
+        "startedMs": 136
+      }
+    ]
+  },
+  "error": "TimeoutError: page.goto: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:63110/#/zh-CN/avatar\", waiting until \"load\"\u001b[22m\n\nNavigation diagnostic: {\"url\":\"http://127.0.0.1:63110/#/zh-CN/avatar\",\"elapsedMs\":5004,\"events\":[{\"name\":\"domcontentloaded\",\"elapsedMs\":0},{\"name\":\"load\",\"elapsedMs\":0},{\"name\":\"domcontentloaded\",\"elapsedMs\":137}],\"requests\":[{\"url\":\"http://127.0.0.1:63110/\",\"type\":\"document\",\"startedMs\":4,\"status\":200,\"finishedMs\":13},{\"url\":\"http://127.0.0.1:63110/assets/main-Ch6po88g.js\",\"type\":\"script\",\"startedMs\":36,\"status\":200,\"finishedMs\":53},{\"url\":\"http://127.0.0.1:63110/assets/index-Cg2gv3RF.js\",\"type\":\"script\",\"startedMs\":37,\"status\":200,\"finishedMs\":54},{\"url\":\"http://127.0.0.1:63110/assets/index-Cmhr5VOr.js\",\"type\":\"script\",\"startedMs\":37,\"status\":200,\"finishedMs\":53},{\"url\":\"http://127.0.0.1:63110/assets/popup-container-BpgVwK2m.js\",\"type\":\"script\",\"startedMs\":37,\"status\":200,\"finishedMs\":53},{\"url\":\"http://127.0.0.1:63110/assets/index-Clk2n13x.js\",\"type\":\"script\",\"startedMs\":37,\"status\":200,\"finishedMs\":64},{\"url\":\"http://127.0.0.1:63110/assets/index-BThNqyif.js\",\"type\":\"script\",\"startedMs\":37,\"status\":200,\"finishedMs\":63},{\"url\":\"http://127.0.0.1:63110/assets/index-DFmzH3R6.js\",\"type\":\"script\",\"startedMs\":37,\"status\":200,\"finishedMs\":65},{\"url\":\"http://127.0.0.1:63110/assets/index-DOvwrb66.js\",\"type\":\"script\",\"startedMs\":37,\"status\":200,\"finishedMs\":65},{\"url\":\"http://127.0.0.1:63110/assets/index-DYrAi89V.js\",\"type\":\"script\",\"startedMs\":37,\"status\":200,\"finishedMs\":65},{\"url\":\"http://127.0.0.1:63110/assets/index-BoIOrzdd.js\",\"type\":\"script\",\"startedMs\":37,\"status\":200,\"finishedMs\":65},{\"url\":\"http://127.0.0.1:63110/assets/useDirection-BksU4y26.js\",\"type\":\"script\",\"startedMs\":37,\"status\":200,\"finishedMs\":68},{\"url\":\"http://127.0.0.1:63110/assets/index-DdqxjOPd.js\",\"type\":\"script\",\"startedMs\":37,\"status\":200,\"finishedMs\":69},{\"url\":\"http://127.0.0.1:63110/assets/_commonjsHelpers-CqkleIqs.js\",\"type\":\"script\",\"startedMs\":38,\"status\":200,\"finishedMs\":69},{\"url\":\"http://127.0.0.1:63110/assets/DemoPreview.vue_vue_type_style_index_0_lang-DF1W8xHr.js\",\"type\":\"script\",\"startedMs\":38,\"status\":200,\"finishedMs\":69},{\"url\":\"http://127.0.0.1:63110/assets/index-CnNfNvvf.css\",\"type\":\"stylesheet\",\"startedMs\":38,\"status\":200,\"finishedMs\":72},{\"url\":\"http://127.0.0.1:63110/assets/index-CUwy9w5a.css\",\"type\":\"stylesheet\",\"startedMs\":38,\"status\":200,\"finishedMs\":72},{\"url\":\"http://127.0.0.1:63110/assets/DemoPreview-DwizLAxL.css\",\"type\":\"stylesheet\",\"startedMs\":38,\"status\":200,\"finishedMs\":73},{\"url\":\"http://127.0.0.1:63110/assets/main-cQfJj8zd.css\",\"type\":\"stylesheet\",\"startedMs\":39,\"status\":200,\"finishedMs\":73},{\"url\":\"http://127.0.0.1:63110/assets/Layout-BTroWYqt.js\",\"type\":\"script\",\"startedMs\":100,\"status\":200,\"finishedMs\":128},{\"url\":\"http://127.0.0.1:63110/assets/index-BjT8ijCP.js\",\"type\":\"script\",\"startedMs\":101,\"status\":200,\"finishedMs\":135},{\"url\":\"http://127.0.0.1:63110/assets/use-action-guard-BCVFgsod.js\",\"type\":\"script\",\"startedMs\":104,\"status\":200,\"finishedMs\":137},{\"url\":\"http://127.0.0.1:63110/assets/index-CKZOnjY0.js\",\"type\":\"script\",\"startedMs\":105,\"status\":200,\"finishedMs\":137},{\"url\":\"http://127.0.0.1:63110/assets/index-DMn45UcD.js\",\"type\":\"script\",\"startedMs\":109,\"status\":200,\"finishedMs\":138},{\"url\":\"http://127.0.0.1:63110/assets/index-DHG67kwc.js\",\"type\":\"script\",\"startedMs\":114,\"status\":200,\"finishedMs\":143},{\"url\":\"http://127.0.0.1:63110/assets/constants-C5L4eL5m.js\",\"type\":\"script\",\"startedMs\":115,\"status\":200,\"finishedMs\":150},{\"url\":\"http://127.0.0.1:63110/assets/useParent-CXvqoF8s.js\",\"type\":\"script\",\"startedMs\":119,\"status\":200,\"finishedMs\":150},{\"url\":\"http://127.0.0.1:63110/assets/useChildren-Dq8sDCNl.js\",\"type\":\"script\",\"startedMs\":119,\"status\":200,\"finishedMs\":151},{\"url\":\"http://127.0.0.1:63110/assets/zIndex-CY58EiNR.js\",\"type\":\"script\",\"startedMs\":122,\"status\":200,\"finishedMs\":152},{\"url\":\"http://127.0.0.1:63110/assets/popup-layer-B1GLDwX-.js\",\"type\":\"script\",\"startedMs\":125,\"status\":200,\"finishedMs\":153},{\"url\":\"http://127.0.0.1:63110/assets/popup-transition-CFfj0b6X.js\",\"type\":\"script\",\"startedMs\":125,\"status\":200,\"finishedMs\":152},{\"url\":\"http://127.0.0.1:63110/assets/scroll-lock-Zr4oo2AQ.js\",\"type\":\"script\",\"startedMs\":125,\"status\":200,\"finishedMs\":154},{\"url\":\"http://127.0.0.1:63110/assets/direction-K6xvf2CW.js\",\"type\":\"script\",\"startedMs\":127,\"status\":200,\"finishedMs\":155},{\"url\":\"http://127.0.0.1:63110/assets/AppHeader-Cx0dOsHl.js\",\"type\":\"script\",\"startedMs\":127,\"status\":200,\"finishedMs\":155},{\"url\":\"http://127.0.0.1:63110/assets/index-CR_DGlMe.js\",\"type\":\"script\",\"startedMs\":127,\"status\":200,\"finishedMs\":159},{\"url\":\"http://127.0.0.1:63110/assets/Icon.vue_vue_type_script_setup_true_lang-YsCrvJlx.js\",\"type\":\"script\",\"startedMs\":127,\"status\":200,\"finishedMs\":159},{\"url\":\"http://127.0.0.1:63110/assets/index-Cpwbh3D3.js\",\"type\":\"script\",\"startedMs\":127,\"status\":200,\"finishedMs\":159},{\"url\":\"http://127.0.0.1:63110/assets/index-Bnzdv4Ii.js\",\"type\":\"script\",\"startedMs\":127,\"status\":200,\"finishedMs\":163},{\"url\":\"http://127.0.0.1:63110/assets/index-5ISyo1xh.js\",\"type\":\"script\",\"startedMs\":127,\"status\":200,\"finishedMs\":164},{\"url\":\"http://127.0.0.1:63110/assets/index-DEcdJ9w2.js\",\"type\":\"script\",\"startedMs\":127,\"status\":200,\"finishedMs\":164},{\"url\":\"http://127.0.0.1:63110/assets/index-BwP79sms.js\",\"type\":\"script\",\"startedMs\":128,\"status\":200,\"finishedMs\":164},{\"url\":\"http://127.0.0.1:63110/assets/RegisteredIcon.vue_vue_type_script_setup_true_lang-CvyGPLLT.js\",\"type\":\"script\",\"startedMs\":128,\"status\":200,\"finishedMs\":169},{\"url\":\"http://127.0.0.1:63110/assets/index-CkZdMSsh.css\",\"type\":\"stylesheet\",\"startedMs\":128,\"status\":200,\"finishedMs\":202},{\"url\":\"http://127.0.0.1:63110/assets/index-BvvPjb5u.js\",\"type\":\"script\",\"startedMs\":128,\"status\":200,\"finishedMs\":169},{\"url\":\"http://127.0.0.1:63110/assets/index-DH4lcIxK.js\",\"type\":\"script\",\"startedMs\":128,\"status\":200,\"finishedMs\":169},{\"url\":\"http://127.0.0.1:63110/assets/index-BnW27dCc.css\",\"type\":\"stylesheet\",\"startedMs\":128,\"status\":200,\"finishedMs\":202},{\"url\":\"http://127.0.0.1:63110/assets/DirectionToggle-Dmn5pDlv.js\",\"type\":\"script\",\"startedMs\":128,\"status\":200,\"finishedMs\":169},{\"url\":\"http://127.0.0.1:63110/assets/AppHeader-C4nozFFj.css\",\"type\":\"stylesheet\",\"startedMs\":128,\"status\":200,\"finishedMs\":210},{\"url\":\"http://127.0.0.1:63110/assets/index-BZV32hCn.css\",\"type\":\"stylesheet\",\"startedMs\":128,\"status\":200,\"finishedMs\":209},{\"url\":\"http://127.0.0.1:63110/assets/index-Bxi0oulb.css\",\"type\":\"stylesheet\",\"startedMs\":128,\"status\":200,\"finishedMs\":210},{\"url\":\"http://127.0.0.1:63110/assets/index-BGn7efBF.css\",\"type\":\"stylesheet\",\"startedMs\":129,\"status\":200,\"finishedMs\":210},{\"url\":\"http://127.0.0.1:63110/assets/index-CRo9VaSd.css\",\"type\":\"stylesheet\",\"startedMs\":129,\"status\":200,\"finishedMs\":210},{\"url\":\"http://127.0.0.1:63110/assets/index-D_7y1r7N.css\",\"type\":\"stylesheet\",\"startedMs\":129},{\"url\":\"http://127.0.0.1:63110/assets/documentation-sections-B-IVR2T4.js\",\"type\":\"script\",\"startedMs\":129,\"status\":200,\"finishedMs\":177},{\"url\":\"http://127.0.0.1:63110/assets/Layout-CMlWINDq.css\",\"type\":\"stylesheet\",\"startedMs\":129},{\"url\":\"http://127.0.0.1:63110/assets/index-SfvBJZcL.css\",\"type\":\"stylesheet\",\"startedMs\":129},{\"url\":\"http://127.0.0.1:63110/assets/index-BzlSnL6X.css\",\"type\":\"stylesheet\",\"startedMs\":130},{\"url\":\"http://127.0.0.1:63110/assets/zh-CN-oCKCz3op.js\",\"type\":\"script\",\"startedMs\":130,\"status\":200,\"finishedMs\":177},{\"url\":\"http://127.0.0.1:63110/assets/trigger-B62Id5GY.js\",\"type\":\"script\",\"startedMs\":131,\"status\":200,\"finishedMs\":177},{\"url\":\"http://127.0.0.1:63110/assets/index-BRggtJ3T.js\",\"type\":\"script\",\"startedMs\":132,\"status\":200,\"finishedMs\":193},{\"url\":\"http://127.0.0.1:63110/assets/resize-observer-CQcWe8SU.js\",\"type\":\"script\",\"startedMs\":132,\"status\":200,\"finishedMs\":184},{\"url\":\"http://127.0.0.1:63110/assets/index-DFybd-Ov.js\",\"type\":\"script\",\"startedMs\":132,\"status\":200,\"finishedMs\":184},{\"url\":\"http://127.0.0.1:63110/assets/index-BpCico8w.js\",\"type\":\"script\",\"startedMs\":132,\"status\":200,\"finishedMs\":202},{\"url\":\"http://127.0.0.1:63110/assets/index-BXFegqxS.js\",\"type\":\"script\",\"startedMs\":132,\"status\":200,\"finishedMs\":184},{\"url\":\"http://127.0.0.1:63110/assets/wrapper-B0jtK0li.js\",\"type\":\"script\",\"startedMs\":132,\"status\":200,\"finishedMs\":184},{\"url\":\"http://127.0.0.1:63110/assets/index-BaE3HElr.css\",\"type\":\"stylesheet\",\"startedMs\":132},{\"url\":\"http://127.0.0.1:63110/assets/index-Dv4E6Vbd.css\",\"type\":\"stylesheet\",\"startedMs\":132},{\"url\":\"http://127.0.0.1:63110/assets/index-CfNJ9JkR.js\",\"type\":\"script\",\"startedMs\":132,\"status\":200,\"finishedMs\":194},{\"url\":\"http://127.0.0.1:63110/assets/style-CFsnMd34.js\",\"type\":\"script\",\"startedMs\":132,\"status\":200,\"finishedMs\":194},{\"url\":\"http://127.0.0.1:63110/assets/provide-D0gMSz5F.js\",\"type\":\"script\",\"startedMs\":132,\"status\":200,\"finishedMs\":196},{\"url\":\"http://127.0.0.1:63110/assets/style-DZ1BdvJ9.css\",\"type\":\"stylesheet\",\"startedMs\":133},{\"url\":\"http://127.0.0.1:63110/assets/index-CY9pwEOs.js\",\"type\":\"script\",\"startedMs\":134,\"status\":200,\"finishedMs\":196},{\"url\":\"http://127.0.0.1:63110/assets/index-CJdofoIJ.js\",\"type\":\"script\",\"startedMs\":134,\"status\":200,\"finishedMs\":196},{\"url\":\"http://127.0.0.1:63110/assets/index-ChbYkvt5.js\",\"type\":\"script\",\"startedMs\":134,\"status\":200,\"finishedMs\":197},{\"url\":\"http://127.0.0.1:63110/assets/index-CpY6BISO.css\",\"type\":\"stylesheet\",\"startedMs\":134},{\"url\":\"http://127.0.0.1:63110/assets/index-CtANb-kJ.js\",\"type\":\"script\",\"startedMs\":136,\"status\":200,\"finishedMs\":202},{\"url\":\"http://127.0.0.1:63110/assets/index-TFq5YDPr.css\",\"type\":\"stylesheet\",\"startedMs\":136},{\"url\":\"http://127.0.0.1:63110/assets/use-input-value-Dc6qyK26.js\",\"type\":\"script\",\"startedMs\":136,\"status\":200,\"finishedMs\":202},{\"url\":\"http://127.0.0.1:63110/assets/trigger-k9n22nt2.css\",\"type\":\"stylesheet\",\"startedMs\":136},{\"url\":\"http://127.0.0.1:63110/assets/index-Dgw_7IRi.css\",\"type\":\"stylesheet\",\"startedMs\":136}],\"pending\":[{\"url\":\"http://127.0.0.1:63110/assets/index-D_7y1r7N.css\",\"type\":\"stylesheet\",\"startedMs\":129},{\"url\":\"http://127.0.0.1:63110/assets/Layout-CMlWINDq.css\",\"type\":\"stylesheet\",\"startedMs\":129},{\"url\":\"http://127.0.0.1:63110/assets/index-SfvBJZcL.css\",\"type\":\"stylesheet\",\"startedMs\":129},{\"url\":\"http://127.0.0.1:63110/assets/index-BzlSnL6X.css\",\"type\":\"stylesheet\",\"startedMs\":130},{\"url\":\"http://127.0.0.1:63110/assets/index-BaE3HElr.css\",\"type\":\"stylesheet\",\"startedMs\":132},{\"url\":\"http://127.0.0.1:63110/assets/index-Dv4E6Vbd.css\",\"type\":\"stylesheet\",\"startedMs\":132},{\"url\":\"http://127.0.0.1:63110/assets/style-DZ1BdvJ9.css\",\"type\":\"stylesheet\",\"startedMs\":133},{\"url\":\"http://127.0.0.1:63110/assets/index-CpY6BISO.css\",\"type\":\"stylesheet\",\"startedMs\":134},{\"url\":\"http://127.0.0.1:63110/assets/index-TFq5YDPr.css\",\"type\":\"stylesheet\",\"startedMs\":136},{\"url\":\"http://127.0.0.1:63110/assets/trigger-k9n22nt2.css\",\"type\":\"stylesheet\",\"startedMs\":136},{\"url\":\"http://127.0.0.1:63110/assets/index-Dgw_7IRi.css\",\"type\":\"stylesheet\",\"startedMs\":136}]}"
+}

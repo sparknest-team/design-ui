@@ -1,0 +1,44 @@
+{
+  "library": "cedar",
+  "browser": {
+    "name": "firefox",
+    "engine": "firefox",
+    "launchOptions": {},
+    "version": "153.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "recordedAt": "2026-10-30T09:42:24.540Z",
+    "evidenceType": "automated-engine-regression",
+    "nativeDeviceAcceptance": false,
+    "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+    "gestureInput": "synthetic touch events (handler regression only)"
+  },
+  "components": 1,
+  "sourcesStable": true,
+  "sourceFingerprint": "04b4e8db3b9b1eb59ebae0be9a6ef601ad3ce37a017647a9481235e389d2893b",
+  "buildIndexHash": "fc43c5a57985fa6b46b80b6d96ee6bf19f4f0c71fc79360a27cbc416193bf14c",
+  "node": "v23.2.0",
+  "productionInputsStable": true,
+  "productionFingerprint": "8a7dd0605f35c6756cf8f3211583ac7214b7fca689625750689b0659a0ea3ab5",
+  "concurrency": 1,
+  "browserLaunches": 1,
+  "expectedComponentCases": 1,
+  "readingDirection": "ltr",
+  "directionCore": true,
+  "expectedGuideCases": 0,
+  "completedComponentCases": 1,
+  "results": [
+    {
+      "readingDirection": "ltr",
+      "component": "cascader",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/cascader/__demos__/basic.vue",
+      "directionGeometry": [],
+      "checkedSources": 1,
+      "result": "cascader",
+      "passed": true
+    }
+  ]
+}

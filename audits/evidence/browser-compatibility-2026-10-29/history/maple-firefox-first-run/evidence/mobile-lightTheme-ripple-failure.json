@@ -1,0 +1,70 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:50375/mobile.html#/ripple?language=zh-CN",
+    "text": "Maple Design Mobile · Cedar’s Mobile Counterpart\nMaple Design Mobile,Cedar Design Web,Vue 3,TypeScript,移动端组件库,语义 Token,主题定制\n\nMaple Design Mobile is a mobile component library built with Vue 3 and TypeScript, maintained by 孟帅 and 吴甲明. It shares semantic tokens and component API conventions with Cedar Design Web and supports on-demand imports, theming and internationalization.\n\nRipple\nLTR →\n特色与场景\n组件\n基础示例\n基本使用\n点击\n外观与状态\n自定义颜色\n点击\n禁用状态\n点击\n内容与展示\n长时长动效 Token\n600ms 扩散／800ms 消退 — Enter 或 Space",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<section data-demo=\"basic-usage\"><div class=\"app-type\">基本使用</div><div data-v-832bcd0a=\"\" class=\"ripple-example__block mp-elevation--2\">点击</div></section>",
+      "<section data-demo=\"custom-color\"><div class=\"app-type\">自定义颜色</div><div data-v-da7c5b1c=\"\" class=\"ripple-example__block mp-elevation--2\">点击</div></section>"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Back",
+        "class": "mp-page-header__back"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到 RTL / Switch to right-to-left",
+        "class": "docs-direction-toggle"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2 theme-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "特色与场景",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "组件",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "600ms 扩散／800ms 消退 — Enter 或 Space",
+        "class": "ripple-motion-demo"
+      }
+    ]
+  },
+  "error": "TimeoutError: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('section[data-demo=\"basic-usage\"]').locator('.ripple-example__block').locator('.mp-ripple').first() to be visible\u001b[22m\n"
+}

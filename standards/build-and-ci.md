@@ -34,4 +34,21 @@ Cedar / Maple 的库构建都使用 `@sparknest/ui-build`。源码同源、单�
 - 文档源码/依赖注册表只能在真正渲染页面时更新。搜索、摘要等只调用 Markdown parse 的步骤不能清空它；重复渲染同一 token 流须保持源码链接和资产一致，移除 demo 时也不能保留旧依赖或误删另一语言页面。Cedar 的这组回归通过 `check:doc-pipeline` 接入 quality，禁止用清理构建缓存代替修复。
 - Cedar 覆盖桌面 1280/1440px 的亮暗模式，以及 Button、Input、Select、Tabs、Switch、Checkbox、Dialog、Scheduler、Upload、Image 的代表性交互。Maple 保留手机 320/375/390px 的示例/文档四主题检查。平台主题数量和断点各自保留，不制造无效选项。
 - 浏览器脚本异常、失败的本地资源和页面级水平溢出必须失败；外部统计脚本可在测试中隔离，不能屏蔽站内错误。真实 Teleport 内容从页面级 DOM 查询，不用 stub 代替浏览器交互。
+- 站点启动所需的图标、脚本与样式不得隐式依赖远程 CDN；优先使用随产物发布的 SVG / 模块。可选统计脚本必须在文档 `load` 后启动，显式 async，不得依靠 CDN 正常或立即失败才能完成首次导航。不得以 `domcontentloaded` 代替原 `load` 条件、延长超时或自动重试消除失败。
+- `check:docs-components` 同时执行 `browser/navigation-gate.mjs`：永久挂起全部外部 HTTP(S) 请求，在同一 5000ms 导航门槛下验证真实产物的亮暗主题、交互和源码；Cedar 为 Form / Collapse，Maple 为 Form 桌面 / 手机。用 1200ms 本地 logo 响应延迟控制“初始化脚本先于 load 插入”的竞态，不给第三方请求伪造成功响应；允许配置的可选统计在 load 后继续挂起，但不能引入未声明的外部资源。原全组件矩阵不得减少。
+- 所有生产导航入口使用共同诊断器 `browser/navigation.mjs`，在超时当刻保存加载阶段及完整的未完成请求（含外部脚本、重复 URL 的独立请求），之后再收集 DOM / 截图；不能只记录站内请求，或等截图后才判断当时在等待什么。诊断器不得修改调用方时限、吞错或重试。
+- Maple 的生产输入指纹必须包含 CLI 的 `site/` 模板与客户端、HTML 入口以及 `maple.config.mjs`；只比较 `src/` 无法发现此次统计脚本初始化时序变化。对应正反测试与统计启动时序测试必须进入两端公共 CI 检查。
 - 清理浏览器、上下文、HTTP 连接及本轮临时快照。代表性交互不等于所有组件的全部功能已被浏览器穷尽覆盖。
+- 资源受限时可设置 `DOCS_BROWSER_CONCURRENCY=1` 串行运行完整组件矩阵；默认及最大为 2。coverage 记录实际并发度，不能借此减少用例、修改 5 秒操作/导航时限或 30 秒单项时限。
+
+## 面向 LLM 的文档产物
+
+Cedar 与 Maple 的文档菜单都提供「LLM 文档」入口（中英文）。两端包内 `pnpm docs:llms` 调用共享生成器 `design-ui/bin/llms-docs.mjs`，输出 `llms.txt`、`llms-full.txt` 与 `llms/<locale>/**/*.md` 到各自静态资源目录；两端 `build:doc` 都先重新生成。Cedar 的 `dev` 不自动生成，本地预览最新文本文件时在 UI 包内手动运行 `pnpm docs:llms`；Maple 的 `dev` 仍先重新生成。生成文件不提交，随站点构建发布，适用于站点子路径部署。
+
+索引按语言列出当前公共文档，不伪造英文翻译；全文保留 API 表格并展开真实 Demo 源码，代码围栏中的演示语法保持字面值。组件和指南的本地文档链接转换为对应 Markdown 链接；示例代码中的模块导入仍以标注的源码路径为基准。缺失或越界的 Demo 引用必须使生成失败，删除文档后不得残留旧单页文件。全文较大，使用说明应优先引导索引和单页读取。
+
+`node --test design-ui/bin/llms-docs.test.mjs`（工作区根目录）覆盖语言、引用、代码围栏、链接、确定性输出和旧产物清理；两端 `check:doc-pipeline` 都执行这组测试。部署时同时发布整个静态目录，不单独更新入口页面或文本文件。
+
+## 浏览器兼容性
+
+两端 `quality` 追加完整三引擎 `check:compatibility`，CI 安装 Chromium、Firefox、WebKit 并归档独立证据。原有 Chromium 门禁不减少。构建目标、Maple 移动端及原生发布证据遵循 [浏览器兼容性与验收](./browser-compatibility.md)。

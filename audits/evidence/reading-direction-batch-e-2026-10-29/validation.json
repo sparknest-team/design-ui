@@ -1,0 +1,159 @@
+{
+  "date": "2026-10-29",
+  "scope": "E batch core direction contracts; not complete-library release acceptance",
+  "checks": [
+    {
+      "log": "cedar-form.log",
+      "command": "CHOKIDAR_USEPOLLING=1 pnpm --dir cedar-design-web/packages/cedar-ui exec vitest run src/form --threads=false",
+      "exitCode": 0,
+      "passedTests": 330
+    },
+    {
+      "log": "cedar-radio.log",
+      "command": "CHOKIDAR_USEPOLLING=1 pnpm --dir cedar-design-web/packages/cedar-ui exec vitest run src/radio --threads=false",
+      "exitCode": 0,
+      "passedTests": 15
+    },
+    {
+      "log": "cedar-checkbox.log",
+      "command": "CHOKIDAR_USEPOLLING=1 pnpm --dir cedar-design-web/packages/cedar-ui exec vitest run src/checkbox/__tests__/<DOM files> --threads=false",
+      "exitCode": 0,
+      "passedTests": 89,
+      "testFiles": [
+        "src/checkbox/__tests__/async-focus-demo.spec.js",
+        "src/checkbox/__tests__/group-contract.spec.js",
+        "src/checkbox/__tests__/group-options.spec.js",
+        "src/checkbox/__tests__/group-methods.spec.js",
+        "src/checkbox/__tests__/choice-state.spec.js",
+        "src/checkbox/__tests__/body-contract.spec.js",
+        "src/checkbox/__tests__/radio-navigation.spec.js",
+        "src/checkbox/__tests__/checkbox.test.tsx",
+        "src/checkbox/__tests__/control-contract.spec.js",
+        "src/checkbox/__tests__/async-race-demo.spec.js"
+      ]
+    },
+    {
+      "log": "cedar-checkbox-ssr.log",
+      "command": "CHOKIDAR_USEPOLLING=1 pnpm --dir cedar-design-web/packages/cedar-ui exec vitest run src/checkbox/__tests__/group-ssr.spec.js --threads=false",
+      "exitCode": 0,
+      "passedTests": 4
+    },
+    {
+      "log": "cedar-switch.log",
+      "command": "CHOKIDAR_USEPOLLING=1 pnpm --dir cedar-design-web/packages/cedar-ui exec vitest run src/switch --threads=false",
+      "exitCode": 0,
+      "passedTests": 39
+    },
+    {
+      "log": "maple-form-radio.log",
+      "command": "pnpm --dir maple-design-mobile/packages/maple-ui exec vitest run --config reading-direction.vitest.config.mjs src/form src/radio --maxWorkers=1 --minWorkers=1",
+      "exitCode": 0,
+      "passedTests": 372
+    },
+    {
+      "log": "maple-checkbox.log",
+      "command": "pnpm --dir maple-design-mobile/packages/maple-ui exec vitest run --config reading-direction.vitest.config.mjs src/checkbox/__tests__/<DOM files> --maxWorkers=1 --minWorkers=1",
+      "exitCode": 0,
+      "passedTests": 114,
+      "testFiles": [
+        "src/checkbox/__tests__/async-focus-demo.spec.js",
+        "src/checkbox/__tests__/demo-comparison-methods.spec.js",
+        "src/checkbox/__tests__/group-bulk.spec.js",
+        "src/checkbox/__tests__/group-contract.spec.js",
+        "src/checkbox/__tests__/group-options.spec.js",
+        "src/checkbox/__tests__/group-methods.spec.js",
+        "src/checkbox/__tests__/choice-state.spec.js",
+        "src/checkbox/__tests__/demo-language.spec.js",
+        "src/checkbox/__tests__/index.spec.js",
+        "src/checkbox/__tests__/body-contract.spec.js",
+        "src/checkbox/__tests__/radio-navigation.spec.js",
+        "src/checkbox/__tests__/control-contract.spec.js",
+        "src/checkbox/__tests__/async-race-demo.spec.js"
+      ]
+    },
+    {
+      "log": "maple-checkbox-ssr.log",
+      "command": "pnpm --dir maple-design-mobile/packages/maple-ui exec vitest run --config reading-direction.vitest.config.mjs src/checkbox/__tests__/group-ssr.spec.js --maxWorkers=1 --minWorkers=1",
+      "exitCode": 0,
+      "passedTests": 4
+    },
+    {
+      "log": "maple-switch.log",
+      "command": "pnpm --dir maple-design-mobile/packages/maple-ui exec vitest run --config reading-direction.vitest.config.mjs src/switch --maxWorkers=1 --minWorkers=1",
+      "exitCode": 0,
+      "passedTests": 37
+    },
+    {
+      "log": "maple-form-details.log",
+      "command": "pnpm --dir maple-design-mobile/packages/maple-ui exec vitest run --config reading-direction.vitest.config.mjs src/form-details --maxWorkers=1 --minWorkers=1",
+      "exitCode": 0,
+      "passedTests": 4
+    },
+    {
+      "log": "direction-gate.log",
+      "command": "CHOKIDAR_USEPOLLING=1 pnpm --dir design-ui check:direction",
+      "exitCode": 0,
+      "passedTests": 72
+    },
+    {
+      "log": "browser.log",
+      "command": "node design-ui/browser/reading-direction-batch-e/check.mjs",
+      "exitCode": 0
+    },
+    {
+      "log": "cedar-types.log",
+      "command": "pnpm --dir cedar-design-web typecheck",
+      "exitCode": 0
+    },
+    {
+      "log": "maple-types.log",
+      "command": "pnpm --dir maple-design-mobile typecheck",
+      "exitCode": 0
+    },
+    {
+      "log": "cedar-lint.log",
+      "command": "pnpm --dir cedar-design-web lint",
+      "exitCode": 0
+    },
+    {
+      "log": "maple-lint.log",
+      "command": "pnpm --dir maple-design-mobile lint:check",
+      "exitCode": 0
+    },
+    {
+      "log": "cedar-spec.log",
+      "command": "pnpm --dir cedar-design-web spec:check",
+      "exitCode": 0
+    },
+    {
+      "log": "maple-spec.log",
+      "command": "pnpm --dir maple-design-mobile spec:check",
+      "exitCode": 0
+    }
+  ],
+  "cedarPassedTests": 477,
+  "maplePassedTests": 531,
+  "directionPassedTests": 72,
+  "browserCases": 9,
+  "engines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "notes": [
+    "Cedar DOM component families and node SSR run in separate processes to avoid legacy Vitest runtime/timer/focus-spy pollution.",
+    "FormDetails is included as a Maple Form validation-layout dependency.",
+    "Final source hashes are review snapshots, not a commit or published artifact."
+  ],
+  "sourceSha256": {
+    "cedar-design-web/packages/cedar-ui/src/form/layout-props.ts": "533a180579f4a6f3dc4fd2a6dc3a815cb9b4993dad07c70023d4f28497593967",
+    "cedar-design-web/packages/cedar-ui/src/form/use-form-item-layout.ts": "b7ace5070eab16d3f21448819fc50ea691731e79720da5497aa7244fd086176a",
+    "cedar-design-web/packages/cedar-ui/src/form/__tests__/reading-direction.spec.ts": "9010dde48095e99eace4c19550eebd7c6074fc953b8668b891241f2cf85349f9",
+    "maple-design-mobile/packages/maple-ui/src/form/layout-props.ts": "b0ba4343f4df0ae3f65cd3835e3d547aaff9d5700aa8d099b45d4ffa5d8806bd",
+    "maple-design-mobile/packages/maple-ui/src/form/use-form-item-layout.ts": "b14b04bd4b3c8d12a5811f9069d348817b94c8e29d4288e5bf6cecd7a8edc058",
+    "maple-design-mobile/packages/maple-ui/src/form/__tests__/reading-direction.spec.ts": "1a100d23af94e20bdc6c16e813e9f0b4d037eba965fcc24db05102e99be9da0e",
+    "maple-design-mobile/packages/maple-ui/src/radio/use-radio-navigation.ts": "20a15e0d12dc03c2f4a305fbdd0185e8652c092ecc2c33a298fe987608d6259b",
+    "maple-design-mobile/packages/maple-ui/src/form-details/style/form-details.less": "9cbe859185b1069964b9d6b7df0467bf33b8346b8574132a86db02ff280ab04e",
+    "cedar-design-web/packages/cedar-ui/src/form/style/status.less": "c027854209191c5f4d56e274204ceb8510b9a6ad425d694bcd15790388937221"
+  }
+}

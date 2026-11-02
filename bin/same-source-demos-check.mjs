@@ -110,7 +110,7 @@ for (const [component, cases] of Object.entries(scenarios)) {
     .map(m => path.basename(m[1].trim(), '.vue')))
   assert.deepEqual([...example.matchAll(/data-demo="([^"]+)"/g)].map(m => m[1]).filter(name => !externalDemos.has(name)), cases.map(c => c.name), `${component}: Maple scenario order`)
   // Generated review scenarios have their own manifest and compiler gate.
-  const authored = f => f.endsWith('.vue') && !f.startsWith('api-review-')
+  const authored = f => f.endsWith('.vue') && !/^api-review(?:-|\.)/.test(f)
   assert.deepEqual(fs.readdirSync(path.join(cedar, '__demos__')).filter(authored).sort(), cases.map(c => `${c.name}.vue`).sort(), `${component}: untracked Cedar demo`)
   assert.deepEqual(fs.readdirSync(path.join(maple, 'example/demos')).filter(authored).sort(), cases.map(c => `${c.name}.vue`).sort(), `${component}: untracked Maple demo`)
   // Maple reserves vue fences for preview imports, not complete example SFCs.
@@ -140,7 +140,8 @@ for (const [component, cases] of Object.entries(scenarios)) {
     for (const lang of ['zh-CN', 'en-US']) {
       const docs = fs.readFileSync(path.join(maple, 'docs', `${lang}.md`), 'utf8')
       assert(
-        docs.includes(`../example/demos/${item.name}.vue`),
+        docs.includes(`../example/demos/${item.name}.vue`) ||
+          (lang === 'en-US' && docs.includes(`../example/demos/en-US/${item.name}.vue`)),
         `${component}/${item.name}: ${lang} demo reference drift`,
       )
       const locale = JSON.parse(fs.readFileSync(path.join(maple, 'example/messages.json'), 'utf8'))

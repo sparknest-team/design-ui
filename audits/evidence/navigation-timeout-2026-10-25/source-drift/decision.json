@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-25",
+  "status": "not_accepted",
+  "userDecision": "其他改造继续，本轮保留未完成验收状态",
+  "latestBrowserProcessesStopped": true,
+  "reason": "Production inputs changed after builds; no final acceptance receipt was issued.",
+  "observations": [
+    {
+      "library": "cedar",
+      "observedAt": "2026-10-25T08:17:50.279Z",
+      "source": "4ade5b14fdffb3d766e2c6ec2a943a3ab75b69c2dd978ae68011a77036f6d2c2",
+      "production": "45b5090d6dc83ae79ef0e55726858c1bdae8fcfbc55d101897528b732f240381",
+      "accepted": false
+    },
+    {
+      "library": "maple",
+      "observedAt": "2026-10-25T08:18:02.799Z",
+      "source": "23b1e34de8b26c426c380faffa97bbb8abcf322dd10d2c0bf474276f6633c4d5",
+      "production": "2afcf59794e7d8efe4d872a861582c320d97b2541c65f5d6ab737a498312c24b",
+      "accepted": false
+    }
+  ]
+}

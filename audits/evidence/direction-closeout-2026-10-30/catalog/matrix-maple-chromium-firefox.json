@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-10-30T07:45:28.543Z",
+  "scope": "all documented components; representative exact authored source and domain behavior in each reading direction, plus nested/runtime direction and value invariance",
+  "fullThemeMatrix": false,
+  "nativeDeviceAcceptance": false,
+  "results": [
+    {
+      "library": "maple",
+      "direction": "ltr",
+      "engine": "chromium",
+      "startedAt": "2026-10-30T07:28:26.283Z",
+      "completedAt": "2026-10-30T07:35:49.454Z",
+      "exitCode": 0,
+      "passed": true,
+      "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/maple-ltr-chromium.log",
+      "coverage": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/ltr/maple/chromium/coverage.json",
+      "componentCount": 93,
+      "componentCases": 186
+    },
+    {
+      "library": "maple",
+      "direction": "ltr",
+      "engine": "firefox",
+      "startedAt": "2026-10-30T07:35:49.485Z",
+      "completedAt": "2026-10-30T07:45:28.542Z",
+      "exitCode": 0,
+      "passed": false,
+      "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/maple-ltr-firefox.log",
+      "coverage": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/ltr/maple/firefox/coverage.json",
+      "componentCount": 93,
+      "componentCases": 186
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Maple demo phone review</title>
+  <style>
+    body { margin: 0; padding: 16px; font: 14px sans-serif; }
+    iframe { display: block; width: 346px; height: 800px; border: 1px solid #888; }
+  </style>
+</head>
+<body>
+  <h1>Maple demo phone review</h1>
+  <label>Component <select id="component" aria-label="Component"></select></label>
+  <label>Language <select id="language" aria-label="Language"><option value="zh-CN">中文</option><option value="en-US">English</option></select></label>
+  <iframe title="Maple phone preview"></iframe>
+  <script>
+    const query = new URLSearchParams(location.search)
+    const component = query.get('component') || 'input'
+    const language = query.get('language') === 'en-US' ? 'en-US' : 'zh-CN'
+    if (!/^[a-z-]+$/.test(component)) throw new Error('Invalid component')
+    window.onMobileRouteChange = () => {}
+    window.scrollToMenu = () => {}
+    window.scrollToSection = () => {}
+    const names = ["action-sheet","affix","alert","atomic-css","atomic-usage","auto-complete","avatar","back-top","badge","breadcrumb","button","card","carousel","cascader","cell","checkbox","code","col","collapse","color","count-to","countdown","date","date-range","dialog","divider","drag","ellipsis","empty","fab","field-decorator","floating-panel","form","form-details","grid","highlighter-provider","hover","icon","image","index-bar","infinite-scroll","input","input-number","lazy","link","list","loading","loading-bar","locale","locale-provider","menu","message","notice-bar","number-keyboard","overlay","page-header","pagination","palette","paper","people-select","picker","popover","popup","progress","progress-group","pull-refresh","radio","rate","result","ripple","row","safe-area","search","select","signature","skeleton","slider","space","split-button","statistic","steps","style","style-provider","swipe-cell","switch","tab-bar","table","tabs","tag","textarea","themes","time","time-range","tooltip","trigger","typography","upload","utilities","verification-code","watermark"]
+    const components = document.querySelector('#component')
+    const languages = document.querySelector('#language')
+    for (const name of names) { const option = document.createElement('option'); option.value = name; option.textContent = name; components.append(option) }
+    components.value = component
+    languages.value = language
+    function update() { document.querySelector('iframe').src = '/mobile.html#/' + components.value + '?language=' + languages.value + '&platform=pc&replace=' + components.value }
+    components.addEventListener('change', update)
+    languages.addEventListener('change', update)
+    document.querySelector('iframe').src = '/mobile.html#/' + component + '?language=' + language + '&platform=pc&replace=' + component
+  </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-28",
+  "component": "Cedar Table",
+  "configuration": {
+    "scrollX": "omitted in all cases",
+    "tableLayout": "fixed (default)",
+    "fit": true
+  },
+  "browserChecks": [
+    {
+      "tableCssWidth": "100%",
+      "rootWidth": 640,
+      "viewport": 638,
+      "mixedColumns": [
+        398,
+        120,
+        120
+      ],
+      "overflowColumns": [
+        280,
+        280,
+        280
+      ],
+      "overflowScrollWidth": 840
+    },
+    {
+      "tableCssWidth": "480px",
+      "rootWidth": 480,
+      "viewport": 478,
+      "mixedColumns": [
+        238,
+        120,
+        120
+      ],
+      "overflowScrollWidth": 840
+    },
+    {
+      "tableCssWidth": "360px",
+      "rootWidth": 360,
+      "viewport": 358,
+      "mixedColumns": [
+        160,
+        120,
+        120
+      ],
+      "mixedScrollWidth": 400,
+      "overflowScrollWidth": 840
+    }
+  ],
+  "fixedColumns": {
+    "widths": [
+      140,
+      440,
+      120
+    ],
+    "scrollWidth": 700,
+    "drag": {
+      "bodyScrollLeft": 204.5,
+      "stickyRailScrollLeft": 204.5,
+      "leftCellBeforeAndAfter": [
+        396.5,
+        536.5
+      ],
+      "rightCellBeforeAndAfter": [
+        754.5,
+        874.5
+      ],
+      "middleCellLeftBefore": 536.5,
+      "middleCellLeftAfter": 332
+    }
+  },
+  "stickyRail": {
+    "hover": {
+      "active": true,
+      "opacity": 0.8
+    },
+    "pointerOutside": {
+      "active": false,
+      "opacity": 0
+    },
+    "restoredPercentWidth": 640
+  },
+  "browserErrors": [],
+  "checks": {
+    "tableTestFiles": 14,
+    "tableTests": 31,
+    "lintAffectedFiles": "passed",
+    "diffWhitespace": "passed"
+  }
+}

@@ -18,7 +18,6 @@ const pairs = [
 ]
 function normalize(source) {
   return source.replaceAll('@cedar-design/ui', '@maple-design/ui').replaceAll('c-input__', 'mp-input__')
-    .replace(/(historyPopup:\s*\{\s*type: Boolean,\s*default:) true/, '$1 false')
     .replace("default: 'round'", "default: 'square'").replaceAll('c-list', 'mp-list').replaceAll('../_utils/global-config', '../utils/components')
     .replaceAll('../_utils/constant', '../utils/constants')
     .replaceAll('../_utils/size-length', '../utils/size-length')
@@ -87,9 +86,10 @@ for (const [cedar, maple] of pairs) {
 const suffixes = []
 for (const [index, repo] of roots.entries()) {
   const props = readFileSync(resolve(root, repo, 'src/search/props.ts'), 'utf8')
-  const history = props.match(/historyPopup:\s*\{\s*type: Boolean,\s*default: (true|false)/)?.[1]
+  const presentation = props.match(/presentation:\s*\{\s*type: String as PropType<SearchPresentation>,\s*default: ['"](inline|popup)['"]/)?.[1]
   const shape = props.match(/shape:\s*\{[\s\S]*?default: ['"](square|round)['"]/ )?.[1]
-  assert.equal(history, index === 0 ? 'false' : 'true', 'Declared platform historyPopup default')
+  assert.equal(presentation, 'inline', 'Search defaults to inline on both platforms')
+  assert.doesNotMatch(props, /\bhistoryPopup\s*:/, 'Removed boolean presentation API must not return')
   assert.equal(shape, index === 0 ? 'square' : 'round', 'Declared platform shape default')
 }
 for (const repo of roots) {
@@ -105,4 +105,4 @@ for (const repo of roots) {
 }
 assert.deepEqual(suffixes[0], suffixes[1], 'Public token suffixes')
 console.log('Search: ' + pairs.length + ' independent controller/Props/types/history/test/demo pairs verified; ' + suffixes[0].length + ' common public token suffixes; both Less entries compile.')
-console.log('Explicit boundaries: local InputGroup/mobile bar layout, Drawer/Popup history presentation, global locale adapters, token default density, installation. historyPopup/shape defaults are the only public Props defaults differing.')
+console.log('Explicit boundaries: local InputGroup/mobile bar layout, Drawer/Popup history presentation, global locale adapters, token default density, installation. Search presentation is inline/popup with a shared inline default; shape is the only differing public Props default.')

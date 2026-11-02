@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-29",
+  "scope": "Batch A core direction and interaction contracts; not full-library quality or release acceptance",
+  "checks": [
+    {
+      "name": "Cedar affected component regression",
+      "log": "cedar-regression.log",
+      "exitCode": 0,
+      "passedTests": 175
+    },
+    {
+      "name": "Maple affected component regression",
+      "log": "maple-regression.log",
+      "exitCode": 0,
+      "passedTests": 30
+    },
+    {
+      "name": "Shared direction gate",
+      "log": "direction-gate.log",
+      "exitCode": 0,
+      "passedTests": 38
+    },
+    {
+      "name": "Cedar types",
+      "log": "cedar-types.log",
+      "exitCode": 0
+    },
+    {
+      "name": "Maple types",
+      "log": "maple-types.log",
+      "exitCode": 0
+    },
+    {
+      "name": "Cedar full lint and API naming",
+      "log": "cedar-lint.log",
+      "exitCode": 0
+    },
+    {
+      "name": "Maple full lint and API naming",
+      "log": "maple-lint.log",
+      "exitCode": 0
+    },
+    {
+      "name": "Steps source parity",
+      "log": "steps-parity.log",
+      "exitCode": 0
+    },
+    {
+      "name": "Cedar style variable contract",
+      "log": "style-vars.log",
+      "exitCode": 0
+    },
+    {
+      "name": "Production source browser fixture",
+      "log": "browser.log",
+      "exitCode": 0
+    }
+  ],
+  "browserEngines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "cedarTestEnvironment": {
+    "CHOKIDAR_USEPOLLING": "1"
+  },
+  "results": "results.json"
+}

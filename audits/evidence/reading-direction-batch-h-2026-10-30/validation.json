@@ -1,0 +1,366 @@
+{
+  "date": "2026-10-30",
+  "scope": "H core direction acceptance; complete workspace lint is not green",
+  "coreDirectionAcceptance": true,
+  "fullWorkspaceChecks": false,
+  "checks": [
+    {
+      "scope": "cedar button",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/button/__tests__/button.test.tsx",
+        "src/button/__tests__/contract.spec.js",
+        "src/button/__tests__/loading-size.spec.js",
+        "src/button/__tests__/loading-demo.spec.js",
+        "src/button/__tests__/reading-direction.spec.ts",
+        "src/button/__tests__/button.accessibility.test.tsx",
+        "src/button/__tests__/events.spec.js",
+        "src/button/__tests__/icons-demo.spec.js",
+        "src/button/__tests__/variant-demo.spec.js",
+        "--threads=false"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "log": "cedar-button-dom.log",
+      "exitCode": 0,
+      "passedTests": 51
+    },
+    {
+      "scope": "cedar split-button",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/split-button/__tests__/contract.spec.js",
+        "src/split-button/__tests__/reading-direction.spec.ts",
+        "src/split-button/__tests__/split-button.test.tsx",
+        "src/split-button/__tests__/controlled-demo.spec.js",
+        "--threads=false"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "log": "cedar-split-button-dom.log",
+      "exitCode": 0,
+      "passedTests": 53
+    },
+    {
+      "scope": "cedar space",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/space/__tests__/reading-direction.spec.ts",
+        "src/space/__tests__/same-source.spec.js",
+        "src/space/__tests__/space.test.tsx",
+        "src/space/__tests__/token-consumer.spec.js",
+        "src/space/__tests__/interactive-demo.spec.js",
+        "--threads=false"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "log": "cedar-space-dom.log",
+      "exitCode": 0,
+      "passedTests": 17
+    },
+    {
+      "scope": "cedar divider",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/divider/__tests__/live-demo.spec.js",
+        "src/divider/__tests__/reading-direction.spec.ts",
+        "src/divider/__tests__/style-layout.spec.js",
+        "src/divider/__tests__/same-source.spec.js",
+        "src/divider/__tests__/divider.test.tsx",
+        "src/divider/__tests__/spacing.test.ts",
+        "--threads=false"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "log": "cedar-divider-dom.log",
+      "exitCode": 0,
+      "passedTests": 10
+    },
+    {
+      "scope": "maple button",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/button/__tests__/contract.spec.js",
+        "src/button/__tests__/loading-size.spec.js",
+        "src/button/__tests__/loading-demo.spec.js",
+        "src/button/__tests__/reading-direction.spec.ts",
+        "src/button/__tests__/theme.spec.js",
+        "src/button/__tests__/index.spec.js",
+        "src/button/__tests__/events.spec.js",
+        "src/button/__tests__/icons-demo.spec.js",
+        "src/button/__tests__/accessibility.spec.ts",
+        "src/button/__tests__/variant-demo.spec.js",
+        "--config",
+        "reading-direction.vitest.config.mjs",
+        "--maxWorkers=1",
+        "--minWorkers=1"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "log": "maple-button-dom.log",
+      "exitCode": 0,
+      "passedTests": 79
+    },
+    {
+      "scope": "maple split-button",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/split-button/__tests__/contract.spec.js",
+        "src/split-button/__tests__/reading-direction.spec.ts",
+        "src/split-button/__tests__/demo-language.spec.js",
+        "src/split-button/__tests__/index.spec.js",
+        "src/split-button/__tests__/controlled-demo.spec.js",
+        "--config",
+        "reading-direction.vitest.config.mjs",
+        "--maxWorkers=1",
+        "--minWorkers=1"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "log": "maple-split-button-dom.log",
+      "exitCode": 0,
+      "passedTests": 64
+    },
+    {
+      "scope": "maple space",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/space/__tests__/reading-direction.spec.ts",
+        "src/space/__tests__/same-source.spec.js",
+        "src/space/__tests__/index.spec.js",
+        "src/space/__tests__/token-consumer.spec.js",
+        "src/space/__tests__/interactive-demo.spec.js",
+        "--config",
+        "reading-direction.vitest.config.mjs",
+        "--maxWorkers=1",
+        "--minWorkers=1"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "log": "maple-space-dom.log",
+      "exitCode": 0,
+      "passedTests": 24
+    },
+    {
+      "scope": "maple divider",
+      "cwd": "maple-design-mobile/packages/maple-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "src/divider/__tests__/live-demo.spec.js",
+        "src/divider/__tests__/reading-direction.spec.ts",
+        "src/divider/__tests__/style-layout.spec.js",
+        "src/divider/__tests__/same-source.spec.js",
+        "src/divider/__tests__/spacing.spec.js",
+        "src/divider/__tests__/index.spec.js",
+        "--config",
+        "reading-direction.vitest.config.mjs",
+        "--maxWorkers=1",
+        "--minWorkers=1"
+      ],
+      "env": {
+        "CHOKIDAR_USEPOLLING": "1"
+      },
+      "log": "maple-divider-dom.log",
+      "exitCode": 0,
+      "passedTests": 19
+    },
+    {
+      "scope": "cedar types",
+      "cwd": "cedar-design-web",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "log": "cedar-types.log",
+      "exitCode": 0
+    },
+    {
+      "scope": "maple types",
+      "cwd": "maple-design-mobile",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "log": "maple-types.log",
+      "exitCode": 0
+    },
+    {
+      "scope": "cedar lint",
+      "cwd": "cedar-design-web",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "log": "cedar-lint.log",
+      "exitCode": 0
+    },
+    {
+      "scope": "maple full lint",
+      "cwd": "maple-design-mobile",
+      "command": [
+        "pnpm",
+        "lint:check"
+      ],
+      "log": "maple-full-lint.log",
+      "exitCode": 1
+    },
+    {
+      "scope": "maple H scope lint",
+      "cwd": "maple-design-mobile",
+      "command": [
+        "pnpm",
+        "exec",
+        "eslint",
+        "packages/maple-ui/src/button",
+        "packages/maple-ui/src/split-button",
+        "packages/maple-ui/src/space",
+        "packages/maple-ui/src/divider",
+        "--max-warnings",
+        "0"
+      ],
+      "log": "maple-h-scope-lint.log",
+      "exitCode": 0
+    },
+    {
+      "scope": "cedar updated test lint",
+      "cwd": "cedar-design-web/packages/cedar-ui",
+      "command": [
+        "pnpm",
+        "exec",
+        "eslint",
+        "src/button/__tests__/reading-direction.spec.ts",
+        "src/split-button/__tests__/reading-direction.spec.ts",
+        "src/space/__tests__/reading-direction.spec.ts",
+        "src/divider/__tests__/reading-direction.spec.ts",
+        "--max-warnings",
+        "0"
+      ],
+      "log": "cedar-updated-test-lint.log",
+      "exitCode": 0
+    },
+    {
+      "scope": "API naming",
+      "cwd": "maple-design-mobile",
+      "command": [
+        "pnpm",
+        "check:api-naming"
+      ],
+      "log": "api-naming.log",
+      "exitCode": 0
+    },
+    {
+      "scope": "direction",
+      "cwd": "design-ui",
+      "command": [
+        "pnpm",
+        "check:direction"
+      ],
+      "log": "direction.log",
+      "exitCode": 0,
+      "passedTests": 118
+    },
+    {
+      "scope": "browser",
+      "cwd": "design-ui",
+      "command": [
+        "node",
+        "browser/reading-direction-batch-h/check.mjs"
+      ],
+      "log": "browser.log",
+      "exitCode": 0,
+      "passedScenarios": 15
+    }
+  ],
+  "componentTestTotals": {
+    "cedar": 131,
+    "maple": 186
+  },
+  "knownCheckLimitations": [
+    {
+      "check": "maple lint:check",
+      "errors": 29,
+      "scope": "Files outside this batch: dialog, swipe-cell, tab-bar, table, upload",
+      "log": "maple-full-lint.log"
+    }
+  ],
+  "sourceSha256": {
+    "design-ui/browser/reading-direction-batch-h/main.ts": "7912b8616de89922887b8911fb5d6e8aa905e04ba705a23c1d1de68c89a3ae31",
+    "design-ui/browser/reading-direction-batch-h/check.mjs": "cd0b31c6a8079786f6f108ae86edb5a1884db59dc3b1fb9bf7eb8d88c44e4f5c",
+    "cedar-design-web/packages/cedar-ui/src/button/style/buttonGroup.less": "954769a7bb9b82a8a69162eee3a5062a1a81568b591aa66a9023f080421bbe81",
+    "cedar-design-web/packages/cedar-ui/src/divider/style/implementation.less": "2b44a897d4c760dce559a33c45227fb980f28f82e2a14fc85ecac91a8bde732f",
+    "maple-design-mobile/packages/maple-ui/src/button/style/button-group.less": "345198c957a6ba35afbb92dd39d9a967a28c76b863709411507f5ebfdf270c86",
+    "maple-design-mobile/packages/maple-ui/src/divider/style/implementation.less": "0558962b42253835345284220967c2cbcd8f8715908bcb6332e7dbc90f0e860c",
+    "cedar-design-web/packages/cedar-ui/src/button/__tests__/reading-direction.spec.ts": "8d076867e12a3715b84467bc9c6e8531b78bb9eef59ec1bf24c4b6784e1f4b2c",
+    "cedar-design-web/packages/cedar-ui/src/split-button/__tests__/reading-direction.spec.ts": "630b16541080e1588e4afdfdd838a80d548ff4168a6ee20e83afc22361321441",
+    "cedar-design-web/packages/cedar-ui/src/space/__tests__/reading-direction.spec.ts": "81b9bed846d6513f4b88d136be3c5c4fa16f403b1061c10c111e73a91d04f74a",
+    "cedar-design-web/packages/cedar-ui/src/divider/__tests__/reading-direction.spec.ts": "976f14417038d8c3c6b33711ea4fb204a33d977cfe3f2657ef54eabe1827bccd",
+    "maple-design-mobile/packages/maple-ui/src/button/__tests__/reading-direction.spec.ts": "9bbfee48fa54acc0a9458dbc30ef455681b30fb8eb858a3884051f6d5ae2a556",
+    "maple-design-mobile/packages/maple-ui/src/split-button/__tests__/reading-direction.spec.ts": "f43cf0635a8178888cbc9b62091adac78e127d2f1572d1d9cb7d99816a98a960",
+    "maple-design-mobile/packages/maple-ui/src/space/__tests__/reading-direction.spec.ts": "2884ac372cba25252584cc5b9af61f91074ffd99a6a371b7bfa98a06597c8d91",
+    "maple-design-mobile/packages/maple-ui/src/divider/__tests__/reading-direction.spec.ts": "15cf6f2203894e5c46dde61604e0e52319c7f7d45e58a4b26fa1cc91a492f9ca"
+  },
+  "artifactSha256": {
+    "webkit-rtl-actions.png": "935d4dd05394cb8ad03d440e7a9770537cc65188ad06aaf14ebf5c7549a2f357",
+    "webkit-mobile-rtl-actions.png": "8bc8064205a8eeed0c5dcba4e5c15e82df4931667edd1b77fd09497102003063",
+    "browser.log": "268053154d0a447f526b695092024373b9ffa50e71f84e8960c8ee483df7d0c0",
+    "api-naming.log": "47e5b3818be31c326561d4270ce00b08db7f7f4abd78a61da7af4c401d3f275f",
+    "chromium-rtl-actions.png": "80082f795c13f9730c95ad462226c2534b6a7bf14c9134a10e938e5d27fa3bbc",
+    "results.json": "95da292e3328b45f41c1c773937c0a43d174d9008ae1ba7aad3d4fe5d7aa50ac",
+    "maple-types.log": "df70a3705452abdd50391d60056a91a8a5cdc352fce4168becfec90900a953b3",
+    "maple-full-lint.log": "80b55648a2b55cd83cf88d05128f96f63e26c5c877cfd51f1f15baf5e9ffa060",
+    "firefox-rtl-actions.png": "3d2a42c244f087e6b48552b4ee32d3f8d3062cdf380daedc4d29812dc1b9140e",
+    "cedar-lint.log": "2bcda6cb25b235774474d1f95490a167730bed54184258ccb37e5619a1af61d1",
+    "cedar-types.log": "cbf3064d37a2dd9d060986a213f5367d93e5ca2728e6526493dc678859f08a5d",
+    "maple-space-dom.log": "941807b74a9d93b4d9fe730ad6ee304b723a5c403c071b8d0f90010fdd79e8dc",
+    "maple-h-scope-lint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cedar-split-button-dom.log": "3907acd452be483c69d222652d2274970230244ecb5b07f8bd321f78dc2c9c35",
+    "maple-button-dom.log": "eff7c572c33a00646285a2c3ce634b1d9e94e36de0a6ead2e6d5bcdd760ae2e8",
+    "firefox-mobile-rtl-actions.png": "ce4d3b2e1ad692e7612a4d669a03af9d632b56781914f12edb2e123f34c8fe48",
+    "cedar-space-dom.log": "bed6308028caa7f44328a0547c2cd15c579f4bcf7e0b7e4c33207b1ce67ee0ca",
+    "chromium-mobile-rtl-actions.png": "af45ef7b93815d92447d947520177ae19031a593ce3aa64ebf5362eb1c60797b",
+    "cedar-divider-dom.log": "67e8a51e291299221c4c35761c2da1fd0411fba23caa010eb882ea7f0fb64ca6",
+    "cedar-button-dom.log": "cc1feec1f7472cb8148535c6819044a887535d5ba6edd6d0e3b8e3b423fcc779",
+    "direction.log": "cb4ec2c4f4d4e84712f14822d735edbd18f98a9429792e5fc4f607e2c7a36736",
+    "cedar-updated-test-lint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "maple-divider-dom.log": "1f56f457d796eda3fedff3a5acf69e27cb5cc782cef50585fef5a184e844e4e8",
+    "maple-split-button-dom.log": "d6856e270cecdbe85acafb450e9698c4b6d64ccfa9b9fd123c8a5e5da0682f1f"
+  }
+}

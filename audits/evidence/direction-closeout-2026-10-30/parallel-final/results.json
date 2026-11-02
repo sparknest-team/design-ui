@@ -1,0 +1,74 @@
+[
+  {
+    "library": "maple",
+    "engine": "firefox",
+    "directions": "rtl",
+    "command": [
+      "node",
+      "design-ui/browser/reading-direction-catalog/gate.mjs"
+    ],
+    "exitCode": 0,
+    "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/parallel-final/maple-firefox-rtl.log",
+    "seconds": 676.6
+  },
+  {
+    "library": "cedar",
+    "engine": "firefox",
+    "directions": "ltr,rtl",
+    "command": [
+      "node",
+      "design-ui/browser/reading-direction-catalog/gate.mjs"
+    ],
+    "exitCode": 0,
+    "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/parallel-final/cedar-firefox-ltr-rtl.log",
+    "seconds": 802.9
+  },
+  {
+    "library": "maple",
+    "engine": "chromium",
+    "directions": "rtl",
+    "command": [
+      "node",
+      "design-ui/browser/reading-direction-catalog/gate.mjs"
+    ],
+    "exitCode": 0,
+    "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/parallel-final/maple-chromium-rtl.log",
+    "seconds": 401.8
+  },
+  {
+    "library": "cedar",
+    "engine": "chromium",
+    "directions": "ltr,rtl",
+    "command": [
+      "node",
+      "design-ui/browser/reading-direction-catalog/gate.mjs"
+    ],
+    "exitCode": 0,
+    "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/parallel-final/cedar-chromium-ltr-rtl.log",
+    "seconds": 588.2
+  },
+  {
+    "library": "maple",
+    "engine": "webkit",
+    "directions": "rtl",
+    "command": [
+      "node",
+      "design-ui/browser/reading-direction-catalog/gate.mjs"
+    ],
+    "exitCode": 0,
+    "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/parallel-final/maple-webkit-rtl.log",
+    "seconds": 437.3
+  },
+  {
+    "library": "cedar",
+    "engine": "webkit",
+    "directions": "ltr,rtl",
+    "command": [
+      "node",
+      "design-ui/browser/reading-direction-catalog/gate.mjs"
+    ],
+    "exitCode": 0,
+    "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/parallel-final/cedar-webkit-ltr-rtl.log",
+    "seconds": 547.5
+  }
+]

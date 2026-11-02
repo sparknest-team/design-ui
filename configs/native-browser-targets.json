@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-29T06:32:42.003798+00:00",
+  "validDays": 30,
+  "selectionPolicy": "Latest two generally released browser version lines on each platform, not two patches; exclude Early Stable/Beta. Safari uses named feature releases; 27.1 is iPhone Duo only and is not a desktop Safari release. Also recommend an iOS26.7.2 device as supplemental previous-major coverage, without assuming its Safari version.",
+  "excludedEarlyStable": {
+    "chrome": "157.0.8103.30",
+    "reason": "2026-10-28 Early Stable only; not the general Stable baseline"
+  },
+  "cedar": {
+    "chrome-current": {
+      "browserFamily": "chrome",
+      "platform": "desktop",
+      "releaseLine": "156",
+      "minimumVerifiedVersion": "156.0.8078.73",
+      "versionSource": "https://chromereleases.googleblog.com/2026/10/"
+    },
+    "chrome-previous": {
+      "browserFamily": "chrome",
+      "platform": "desktop",
+      "releaseLine": "155",
+      "minimumVerifiedVersion": "155.0.8059.79",
+      "versionSource": "https://chromereleases.googleblog.com/2026/10/"
+    },
+    "chrome-minimum": {
+      "browserFamily": "chrome",
+      "platform": "desktop",
+      "releaseLine": "111",
+      "minimumVerifiedVersion": "111",
+      "versionSource": "https://chromereleases.googleblog.com/2023/03/",
+      "candidateMinimum": true
+    },
+    "edge-current": {
+      "browserFamily": "edge",
+      "platform": "desktop",
+      "releaseLine": "156",
+      "minimumVerifiedVersion": "156.0.4314.50",
+      "versionSource": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel"
+    },
+    "edge-previous": {
+      "browserFamily": "edge",
+      "platform": "desktop",
+      "releaseLine": "155",
+      "minimumVerifiedVersion": "155.0.4283.62",
+      "versionSource": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel"
+    },
+    "edge-minimum": {
+      "browserFamily": "edge",
+      "platform": "desktop",
+      "releaseLine": "111",
+      "minimumVerifiedVersion": "111",
+      "versionSource": "https://learn.microsoft.com/en-us/DeployEdge/microsoft-edge-relnotes-security",
+      "candidateMinimum": true
+    },
+    "firefox-current": {
+      "browserFamily": "firefox",
+      "platform": "desktop",
+      "releaseLine": "159",
+      "minimumVerifiedVersion": "159.0",
+      "versionSource": "https://www.firefox.com/en-US/firefox/159.0/releasenotes/"
+    },
+    "firefox-previous": {
+      "browserFamily": "firefox",
+      "platform": "desktop",
+      "releaseLine": "158",
+      "minimumVerifiedVersion": "158.0.1",
+      "versionSource": "https://www.firefox.com/en-US/firefox/158.0.1/releasenotes/"
+    },
+    "firefox-minimum": {
+      "browserFamily": "firefox",
+      "platform": "desktop",
+      "releaseLine": "121",
+      "minimumVerifiedVersion": "121",
+      "versionSource": "https://www.firefox.com/en-US/firefox/121.0/releasenotes/",
+      "candidateMinimum": true
+    },
+    "safari-current": {
+      "browserFamily": "safari",
+      "platform": "desktop",
+      "releaseLine": "27.2",
+      "minimumVerifiedVersion": "27.2",
+      "versionSource": "https://webkit.org/blog/18515/webkit-features-for-safari-27-2/"
+    },
+    "safari-previous": {
+      "browserFamily": "safari",
+      "platform": "desktop",
+      "releaseLine": "27.0",
+      "minimumVerifiedVersion": "27.0",
+      "versionSource": "https://support.apple.com/en-us/100100"
+    },
+    "safari-minimum": {
+      "browserFamily": "safari",
+      "platform": "desktop",
+      "releaseLine": "16.4",
+      "minimumVerifiedVersion": "16.4",
+      "versionSource": "https://webkit.org/blog/13966/webkit-features-in-safari-16-4/",
+      "candidateMinimum": true
+    }
+  },
+  "maple": {
+    "ios-safari-current": {
+      "browserFamily": "safari",
+      "platform": "ios",
+      "releaseLine": "27.2",
+      "minimumVerifiedVersion": "27.2",
+      "versionSource": "https://webkit.org/blog/18515/webkit-features-for-safari-27-2/",
+      "osReleaseLine": "27.2"
+    },
+    "ios-safari-previous": {
+      "browserFamily": "safari",
+      "platform": "ios",
+      "releaseLine": "27.1",
+      "minimumVerifiedVersion": "27.1",
+      "versionSource": "https://webkit.org/blog/18486/webkit-features-for-safari-27-1/",
+      "osReleaseLine": "27.1",
+      "deviceRequirement": "iPhone Duo; Safari 27.1 is device-specific",
+      "deviceModel": "iPhone Duo"
+    },
+    "ios-safari-minimum": {
+      "browserFamily": "safari",
+      "platform": "ios",
+      "releaseLine": "16.4",
+      "minimumVerifiedVersion": "16.4",
+      "versionSource": "https://webkit.org/blog/13966/webkit-features-in-safari-16-4/",
+      "osReleaseLine": "16.4",
+      "candidateMinimum": true
+    },
+    "android-chrome-current": {
+      "browserFamily": "chrome",
+      "platform": "android",
+      "releaseLine": "156",
+      "minimumVerifiedVersion": "156.0.8078.73",
+      "versionSource": "https://chromereleases.googleblog.com/2026/10/"
+    },
+    "android-chrome-previous": {
+      "browserFamily": "chrome",
+      "platform": "android",
+      "releaseLine": "155",
+      "minimumVerifiedVersion": "155.0.8059.79",
+      "versionSource": "https://chromereleases.googleblog.com/2026/10/chrome-for-android-update_01360129943.html"
+    },
+    "android-chrome-minimum": {
+      "browserFamily": "chrome",
+      "platform": "android",
+      "releaseLine": "111",
+      "minimumVerifiedVersion": "111",
+      "versionSource": "https://chromereleases.googleblog.com/2023/03/",
+      "candidateMinimum": true
+    },
+    "android-webview-minimum": {
+      "browserFamily": "android-webview",
+      "platform": "android",
+      "releaseLine": "111",
+      "minimumVerifiedVersion": "111",
+      "versionSource": "https://developer.android.com/develop/ui/views/layout/webapps/debug-webview-devtools-app",
+      "candidateMinimum": true,
+      "requiresHost": true
+    },
+    "wechat-ios": {
+      "browserFamily": "wechat",
+      "platform": "ios",
+      "releaseLine": null,
+      "minimumVerifiedVersion": null,
+      "versionSource": null,
+      "requiresHost": true
+    },
+    "wechat-android": {
+      "browserFamily": "wechat",
+      "platform": "android",
+      "releaseLine": null,
+      "minimumVerifiedVersion": null,
+      "versionSource": null,
+      "requiresHost": true
+    },
+    "app-wkwebview": {
+      "browserFamily": "wkwebview",
+      "platform": "ios",
+      "releaseLine": null,
+      "minimumVerifiedVersion": null,
+      "versionSource": null,
+      "requiresHost": true
+    },
+    "app-android-webview": {
+      "browserFamily": "android-webview",
+      "platform": "android",
+      "releaseLine": null,
+      "minimumVerifiedVersion": null,
+      "versionSource": null,
+      "requiresHost": true
+    }
+  },
+  "supplemental": [
+    {
+      "id": "ios-previous-major",
+      "osVersion": "26.7.2",
+      "browserVersion": "record actual Safari version on device; do not copy OS version",
+      "source": "https://support.apple.com/en-us/100100",
+      "status": "pending"
+    }
+  ]
+}

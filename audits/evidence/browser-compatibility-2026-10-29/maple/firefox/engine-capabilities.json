@@ -1,0 +1,82 @@
+{
+  "browser": {
+    "name": "firefox",
+    "engine": "firefox",
+    "launchOptions": {},
+    "version": "153.0",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "recordedAt": "2026-10-28T17:28:32.636Z",
+    "evidenceType": "automated-engine-regression",
+    "nativeDeviceAcceptance": false,
+    "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+    "gestureInput": "synthetic touch events (handler regression only)"
+  },
+  "result": {
+    "userAgent": "Mozilla/5.0 (Android 13; Mobile; rv:153.0) Gecko/153.0 Firefox/153.0",
+    "events": [
+      {
+        "type": "touchstart",
+        "trusted": false,
+        "x": 98
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 108
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 118
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 128
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 138
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 148
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 158
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 168
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 178
+      },
+      {
+        "type": "touchend",
+        "trusted": false,
+        "x": 178
+      }
+    ],
+    "features": {
+      "colorMix": true,
+      "has": true,
+      "dvh": true,
+      "resizeObserver": true,
+      "intersectionObserver": true,
+      "visualViewport": true
+    },
+    "padding": "10px",
+    "viewportHeight": 900,
+    "height": 900,
+    "passed": true
+  }
+}

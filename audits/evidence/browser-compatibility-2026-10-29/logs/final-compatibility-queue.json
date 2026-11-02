@@ -1,0 +1,67 @@
+{
+  "root": "/tmp/cedar-maple-compatibility-20261029-2jkkvvre",
+  "maxConcurrentJobs": 2,
+  "results": [
+    {
+      "library": "maple",
+      "browser": "chromium",
+      "startedAt": "2026-10-28T17:02:15.748Z",
+      "completedAt": "2026-10-28T17:11:13.076Z",
+      "code": 0,
+      "signal": null
+    },
+    {
+      "library": "maple",
+      "browser": "firefox",
+      "startedAt": "2026-10-28T17:02:15.728Z",
+      "completedAt": "2026-10-28T17:15:06.850Z",
+      "code": 1,
+      "signal": null
+    },
+    {
+      "library": "maple",
+      "browser": "webkit",
+      "startedAt": "2026-10-28T17:11:13.085Z",
+      "completedAt": "2026-10-28T17:22:28.706Z",
+      "code": 0,
+      "signal": null
+    },
+    {
+      "library": "cedar",
+      "browser": "firefox",
+      "startedAt": "2026-10-28T17:15:06.888Z",
+      "completedAt": "2026-10-28T17:24:21.972Z",
+      "code": 1,
+      "signal": null
+    },
+    {
+      "library": "cedar",
+      "browser": "chromium",
+      "startedAt": "2026-10-28T17:22:28.716Z",
+      "completedAt": "2026-10-28T17:28:25.045Z",
+      "code": 0,
+      "signal": null
+    },
+    {
+      "library": "cedar",
+      "browser": "webkit",
+      "startedAt": "2026-10-28T17:24:21.977Z",
+      "completedAt": "2026-10-28T17:32:19.898Z",
+      "code": 1,
+      "signal": null
+    }
+  ],
+  "summaries": [
+    {
+      "library": "cedar",
+      "code": 1,
+      "signal": null
+    },
+    {
+      "library": "maple",
+      "code": 1,
+      "signal": null
+    }
+  ],
+  "completedAt": "2026-10-28T17:32:30.998Z"
+}

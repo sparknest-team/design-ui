@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-29",
+  "scope": "B batch core layout and interaction contracts; complete-library release acceptance remains separate",
+  "checks": [
+    {
+      "log": "cedar-regression.log",
+      "exitCode": 0,
+      "passedTests": 62
+    },
+    {
+      "log": "coordinate-regression.log",
+      "exitCode": 0,
+      "passedTests": 9
+    },
+    {
+      "log": "maple-regression.log",
+      "exitCode": 0,
+      "passedTests": 27
+    },
+    {
+      "log": "direction-gate.log",
+      "exitCode": 0,
+      "passedTests": 51
+    },
+    {
+      "log": "cedar-types.log",
+      "exitCode": 0
+    },
+    {
+      "log": "maple-types.log",
+      "exitCode": 0
+    },
+    {
+      "log": "cedar-lint.log",
+      "exitCode": 0
+    },
+    {
+      "log": "maple-lint.log",
+      "exitCode": 0
+    },
+    {
+      "log": "final-source-lint.log",
+      "exitCode": 0
+    },
+    {
+      "log": "browser.log",
+      "exitCode": 0
+    }
+  ],
+  "engines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "browser": "Vite production source fixture",
+  "browserResults": "results.json",
+  "cedarTestEnvironment": {
+    "CHOKIDAR_USEPOLLING": "1"
+  },
+  "touchCoverage": "pointerType=touch browser event path, not native-device acceptance"
+}

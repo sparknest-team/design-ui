@@ -1,0 +1,534 @@
+[
+  {
+    "id": "platform-contract",
+    "level": "体系级特点",
+    "title": "桌面与移动沿用同一套公共约定",
+    "value": "公共尺寸、变体、值绑定与主题语言对齐，端侧密度和操作形态分别适配。",
+    "demonstration": "使用同一巡检任务：Cedar 在字段附近操作；Maple 的选择与日期时间进入 Popup。先取消，再确认，对照已提交模型。",
+    "components": [
+      "button",
+      "input",
+      "select",
+      "form"
+    ],
+    "cedar": {
+      "component": "form",
+      "source": "src/form/__demos__/platform-presentation.vue"
+    },
+    "maple": {
+      "component": "form",
+      "source": "src/form/example/demos/platform-presentation.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "task-workbench",
+    "level": "场景组合能力",
+    "title": "筛选、行操作和统计来自同一份业务数据",
+    "value": "条件查询、状态变更、空结果与统计联动，桌面表格与移动表格使用同一任务场景。",
+    "demonstration": "查询运营部 → 完成任务 → 按状态过滤 → 空结果 → 清空筛选并恢复任务。",
+    "components": [
+      "table",
+      "input",
+      "select"
+    ],
+    "cedar": {
+      "component": "table",
+      "source": "src/table/__demos__/task-workbench.vue"
+    },
+    "maple": {
+      "component": "table",
+      "source": "src/table/example/demos/task-workbench.vue"
+    },
+    "note": "业务流程示例使用本地数据与模拟保存，不代表组件内置业务后端。"
+  },
+  {
+    "id": "task-workflow",
+    "level": "场景组合能力",
+    "title": "从字段校验走到确认、失败与恢复",
+    "value": "把 Form 校验、预览和保存状态组合为业务流程，失败保留草稿，提交记录独立保存。",
+    "demonstration": "空值校验 → 填入数据 → 返回修改 → 模拟失败 → 重试成功 → 查看提交记录。",
+    "components": [
+      "form",
+      "input",
+      "select"
+    ],
+    "cedar": {
+      "component": "form",
+      "source": "src/form/__demos__/task-workflow.vue"
+    },
+    "maple": {
+      "component": "form",
+      "source": "src/form/example/demos/task-workflow.vue"
+    },
+    "note": "业务流程示例使用本地数据与模拟保存，不代表组件内置业务后端。"
+  },
+  {
+    "id": "theme-layers",
+    "level": "体系级特点",
+    "title": "主题从品牌延伸到组件与局部覆盖",
+    "value": "品牌、语义颜色与组件变量分层，亮暗模式和局部覆盖可以组合使用。",
+    "demonstration": "切换品牌和亮暗，再比较默认按钮与局部覆盖按钮，随后打开字段弹层。",
+    "components": [
+      "config-provider",
+      "style-provider",
+      "button",
+      "field-decorator"
+    ],
+    "cedar": {
+      "component": "themes",
+      "source": "src/themes/__demos__/toggle.vue"
+    },
+    "maple": {
+      "component": "themes",
+      "source": "src/themes/example/LocalTheme.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "field-geometry",
+    "level": "体系级特点",
+    "title": "跨控件保持字段外观与几何一致",
+    "value": "Input、Select、日期时间字段通过共同外壳组织尺寸、变体、前后缀和清除区域。",
+    "demonstration": "一次切换尺寸与变体，对照普通、有值、多选长标签和日期范围字段。",
+    "components": [
+      "field-decorator",
+      "input",
+      "textarea",
+      "select",
+      "cascader",
+      "date",
+      "time",
+      "button"
+    ],
+    "cedar": {
+      "component": "field-decorator",
+      "source": "src/field-decorator/__demos__/control-sizes.vue"
+    },
+    "maple": {
+      "component": "field-decorator",
+      "source": "src/field-decorator/example/demos/control-sizes.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "read-edit",
+    "level": "体系级特点",
+    "title": "同一字段承接阅读与编辑",
+    "value": "Form、FormItem 与字段可继承阅读展示和编辑方式，字段可以覆盖父级配置。",
+    "demonstration": "切换阅读态、直接编辑和确认后提交，再查看单项覆盖。",
+    "components": [
+      "form",
+      "input",
+      "textarea",
+      "input-number",
+      "select",
+      "people-select",
+      "date",
+      "time",
+      "upload"
+    ],
+    "cedar": {
+      "component": "form",
+      "source": "src/form/__demos__/field-presentation.vue"
+    },
+    "maple": {
+      "component": "form",
+      "source": "src/form/example/demos/field-presentation.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "commit-session",
+    "level": "交互与数据特点",
+    "title": "编辑过程具有草稿、确认和失败恢复语义",
+    "value": "编辑过程区分临时输入与已保存值，确认失败时可以保留内容供用户修正。",
+    "demonstration": "修改后取消，再模拟拒绝确认并重试；观察最终模型和仍在编辑的内容。",
+    "components": [
+      "form",
+      "input",
+      "select",
+      "date",
+      "time"
+    ],
+    "cedar": {
+      "component": "form",
+      "source": "src/form/__demos__/presentation-state.vue"
+    },
+    "maple": {
+      "component": "form",
+      "source": "src/form/example/demos/presentation-state.vue"
+    },
+    "note": "Cedar 的 click/dblclick 原位编辑还包含字段切换与面板键盘优先级；Maple 按自身弹层交互演示。"
+  },
+  {
+    "id": "candidate-model",
+    "level": "交互与数据特点",
+    "title": "候选高亮、搜索词、草稿与业务值分开",
+    "value": "打开或搜索候选时不应意外提交表单，选择和确认按字段展示方式更新模型。",
+    "demonstration": "先打开、搜索和移动候选，再选择与确认，对照更新次数与真实事件。",
+    "components": [
+      "select",
+      "auto-complete",
+      "people-select",
+      "cascader",
+      "tree-select",
+      "form"
+    ],
+    "cedar": {
+      "component": "select",
+      "source": "src/select/__demos__/selection-data-flow.vue"
+    },
+    "maple": {
+      "component": "select",
+      "source": "src/select/example/demos/selection-data-flow.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "async-resolve",
+    "level": "交互与数据特点",
+    "title": "远程搜索与已选 ID 回显分工",
+    "value": "候选获取和已选内容解析分别接入业务服务，处理异步状态与过期结果。",
+    "demonstration": "从仅有 ID 的模型开始，展示名称回显，再连续切换搜索词。",
+    "components": [
+      "select",
+      "people-select",
+      "auto-complete",
+      "tree-select"
+    ],
+    "cedar": {
+      "component": "people-select",
+      "source": "src/people-select/__demos__/injected-services.vue"
+    },
+    "maple": {
+      "component": "people-select",
+      "source": "src/people-select/example/demos/injected-services.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "people-services",
+    "level": "业务组件特点",
+    "title": "人员字段可以连接业务操作",
+    "value": "人员显示与选择复用统一字段行为；头像与操作区由业务提供，不绑定聊天 SDK。",
+    "demonstration": "同一人员 ID 在编辑字段和阅读字段中联动，并触发示例业务操作。",
+    "components": [
+      "people-select",
+      "form"
+    ],
+    "cedar": {
+      "component": "people-select",
+      "source": "src/people-select/__demos__/injected-services.vue"
+    },
+    "maple": {
+      "component": "people-select",
+      "source": "src/people-select/example/demos/injected-services.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "numeric-model",
+    "level": "交互与数据特点",
+    "title": "数值显示格式与业务数字分离",
+    "value": "formatter / parser 处理展示与解析，精度、步长及边界共同约束最终数值。",
+    "demonstration": "输入带格式的值，再尝试小数步长和边界，观察模型中保存的数字。",
+    "components": [
+      "input-number",
+      "form"
+    ],
+    "cedar": {
+      "component": "input-number",
+      "source": "src/input-number/__demos__/number-boundaries.vue"
+    },
+    "maple": {
+      "component": "input-number",
+      "source": "src/input-number/example/demos/number-boundaries.vue"
+    },
+    "note": "模型仍为 JavaScript number；不将十进制计算等同于任意精度的大数存储。"
+  },
+  {
+    "id": "field-panel",
+    "level": "体系级特点",
+    "title": "日期时间字段和独立面板分别使用",
+    "value": "带触发器的字段与可嵌入的面板分层，单值、范围和提交规则按公开契约接入。",
+    "demonstration": "对照带输入框的字段与内嵌面板，检查手输、取消和确认后的值。",
+    "components": [
+      "date",
+      "date-range",
+      "time",
+      "time-range",
+      "date-picker",
+      "time-picker"
+    ],
+    "cedar": {
+      "component": "date",
+      "source": "src/date/picker/__demos__/field-panel-tools.vue"
+    },
+    "maple": {
+      "component": "date",
+      "source": "src/date/example/demos/field-panel-tools.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "column-management",
+    "level": "业务组件特点",
+    "title": "表格列管理是独立可组合能力",
+    "value": "列显隐、重命名、顺序、冻结及宽度通过结构化状态回写；业务决定持久化位置。",
+    "demonstration": "修改列后取消，再确认；恢复保存配置并核对必选列与冻结顺序。",
+    "components": [
+      "table",
+      "table-column-manager"
+    ],
+    "cedar": {
+      "component": "table-column-manager",
+      "source": "src/table-column-manager/__demos__/with-table-header-menu.vue"
+    },
+    "maple": null,
+    "note": ""
+  },
+  {
+    "id": "typed-table",
+    "level": "业务组件特点",
+    "title": "表格配置能关联实际业务行类型",
+    "value": "表格列配置与业务数据类型相连，配合虚拟列表、编辑和列管理扩展点使用。",
+    "demonstration": "展开关联业务类型的示例源码，再对照相应表格配置。",
+    "components": [
+      "table"
+    ],
+    "cedar": {
+      "component": "table",
+      "source": "src/table/__demos__/typed-config.vue"
+    },
+    "maple": null,
+    "note": ""
+  },
+  {
+    "id": "upload-pipeline",
+    "level": "业务组件特点",
+    "title": "文件读取、准备、请求和展示可分别接入",
+    "value": "不配置上传接口时可以只读取文件；请求、进度和自定义展示按业务需要组合。",
+    "demonstration": "先选择本地文件，再展示手动提交、外部进度与独立 hook。",
+    "components": [
+      "upload",
+      "uploader"
+    ],
+    "cedar": {
+      "component": "upload",
+      "source": "src/upload/__demos__/queue-request.vue"
+    },
+    "maple": {
+      "component": "upload",
+      "source": "src/upload/example/demos/queue-request.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "upload-cancel",
+    "level": "交互与数据特点",
+    "title": "上传准备与取消竞争有明确处理",
+    "value": "异步准备、取消、重试和迟到请求句柄之间隔离失效结果，文件替换后重新检查限制。",
+    "demonstration": "等待准备时取消并重新提交，再放行旧结果，核对有效请求与文件状态。",
+    "components": [
+      "upload",
+      "uploader"
+    ],
+    "cedar": {
+      "component": "upload",
+      "source": "src/upload/__demos__/prepare-request.vue"
+    },
+    "maple": {
+      "component": "upload",
+      "source": "src/upload/example/demos/prepare-request.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "resources",
+    "level": "业务组件特点",
+    "title": "排期包含资源、容量和可用时间",
+    "value": "人员、设备、会议室复用资源模型，关联占用量、工作时间、维护与容量规则。",
+    "demonstration": "调整资源容量，再将日程拖入冲突时段，观察拒绝与修正后的提交。",
+    "components": [
+      "scheduler"
+    ],
+    "cedar": {
+      "component": "scheduler",
+      "source": "src/scheduler/__demos__/resource-capacity.vue"
+    },
+    "maple": null,
+    "note": ""
+  },
+  {
+    "id": "transactions",
+    "level": "业务组件特点",
+    "title": "排期支持批量事务与撤销重做",
+    "value": "批量变更以最终状态校验，可结合异步保存、版本保护和撤销重做形成完整流程。",
+    "demonstration": "交换两条排期或批量调整，先模拟失败，再修正重试并撤销。",
+    "components": [
+      "scheduler"
+    ],
+    "cedar": {
+      "component": "scheduler",
+      "source": "src/scheduler/__demos__/atomic-swap.vue"
+    },
+    "maple": null,
+    "note": ""
+  },
+  {
+    "id": "advanced-planning",
+    "level": "业务组件特点",
+    "title": "排期可表达依赖、里程碑和资源负载",
+    "value": "依赖关系、零时长里程碑、时间线缩放和负载统计补充常规日历展示。",
+    "demonstration": "缩放资源时间线，查看依赖与里程碑，再检查资源负载。",
+    "components": [
+      "scheduler"
+    ],
+    "cedar": {
+      "component": "scheduler",
+      "source": "src/scheduler/__demos__/advanced-planning.vue"
+    },
+    "maple": null,
+    "note": "依赖校验不会自动重排其他任务；负载统计基于已加载数据。"
+  },
+  {
+    "id": "calendar-adapters",
+    "level": "业务组件特点",
+    "title": "排期可通过适配器连接外部日历语义",
+    "value": "高级适配器提供 RRULE、时区转换、ICS 导入导出与打印；轻量核心继续独立使用。",
+    "demonstration": "展示指定时区的重复规则，再查看日历交换示例与导出内容。",
+    "components": [
+      "scheduler"
+    ],
+    "cedar": {
+      "component": "scheduler",
+      "source": "src/scheduler/__demos__/zoned-recurrence.vue"
+    },
+    "maple": null,
+    "note": "组件网格仍使用运行环境本地时间；模拟协同提供方不是已接入真实服务。"
+  },
+  {
+    "id": "touch-actions",
+    "level": "移动端特点",
+    "title": "滑动操作包含关闭确认和取消处理",
+    "value": "SwipeCell 为左右操作区、关闭前确认和拖动取消提供专门的触控场景。",
+    "demonstration": "左右滑动并尝试拒绝关闭，再通过可见按钮完成同一操作。",
+    "components": [
+      "swipe-cell"
+    ],
+    "cedar": null,
+    "maple": {
+      "component": "swipe-cell",
+      "source": "src/swipe-cell/example/demos/before-close.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "touch-content",
+    "level": "移动端特点",
+    "title": "刷新、滚动与内容定位有专用组件",
+    "value": "下拉刷新、无限加载和分组索引分别处理移动内容的刷新与定位。",
+    "demonstration": "下拉刷新结束后再次操作；再对照无限加载和分组索引入口。",
+    "components": [
+      "pull-refresh",
+      "infinite-scroll",
+      "index-bar"
+    ],
+    "cedar": null,
+    "maple": {
+      "component": "pull-refresh",
+      "source": "src/pull-refresh/example/demos/basic.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "safe-area",
+    "level": "移动端特点",
+    "title": "安全区与底部操作区可以组合",
+    "value": "安全区留白与弹层、底部栏等组件联动，覆盖嵌套和应用容器接入。",
+    "demonstration": "切换安全区模拟条件，观察底部按钮及嵌套区域的留白。",
+    "components": [
+      "safe-area",
+      "popup",
+      "tab-bar",
+      "floating-panel"
+    ],
+    "cedar": null,
+    "maple": {
+      "component": "safe-area",
+      "source": "src/safe-area/example/demos/basic.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "layer-control",
+    "level": "交互与数据特点",
+    "title": "浮层开合、异步关闭和焦点按职责处理",
+    "value": "弹层的展示控制、异步确认及焦点恢复与业务保存逻辑配合，嵌套时按当前层操作。",
+    "demonstration": "在弹层内打开字段面板，尝试 Esc 和拒绝关闭，再核对焦点返回。",
+    "components": [
+      "dialog",
+      "drawer",
+      "popup",
+      "popover",
+      "trigger"
+    ],
+    "cedar": {
+      "component": "dialog",
+      "source": "src/dialog/__demos__/advanced.vue"
+    },
+    "maple": {
+      "component": "popup",
+      "source": "src/popup/example/demos/event.vue"
+    },
+    "note": ""
+  },
+  {
+    "id": "headless-core",
+    "level": "工程保障",
+    "title": "部分稳定逻辑可以脱离默认界面复用",
+    "value": "useUploader、列管理 hook 与 Scheduler 纯核心为自定义界面和业务适配提供入口。",
+    "demonstration": "展开 hook 示例，识别业务模型、请求服务和默认展示之间的边界。",
+    "components": [
+      "upload",
+      "uploader",
+      "table-column-manager",
+      "scheduler"
+    ],
+    "cedar": {
+      "component": "upload",
+      "source": "src/upload/__demos__/prepare-request.vue"
+    },
+    "maple": {
+      "component": "upload",
+      "source": "src/upload/example/demos/prepare-request.vue"
+    },
+    "note": "",
+    "mapleValue": "useUploader 提供独立文件处理逻辑，可以接入自定义界面与请求服务。",
+    "mapleDemonstration": "展开 useUploader 示例，查看模型、文件校验与自定义请求如何连接。"
+  },
+  {
+    "id": "lifecycle",
+    "level": "工程保障",
+    "title": "复杂交互明确考虑停用、卸载与过期任务",
+    "value": "对选择请求、计时、拖动和滚动等异步过程提供生命周期示例与相应检查。",
+    "demonstration": "启动操作后改变状态或停用实例，再恢复并重新操作，观察旧任务是否干扰。",
+    "components": [
+      "select",
+      "search",
+      "upload",
+      "countdown",
+      "scrollbar"
+    ],
+    "cedar": {
+      "component": "select",
+      "source": "src/select/__demos__/scheduler-lifecycle.vue"
+    },
+    "maple": {
+      "component": "select",
+      "source": "src/select/example/demos/scheduler-lifecycle.vue"
+    },
+    "note": ""
+  }
+]

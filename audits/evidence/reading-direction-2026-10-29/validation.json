@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-29",
+  "readingDirectionTests": {
+    "cedar": 11,
+    "maple": 10,
+    "docs": 4,
+    "status": "passed"
+  },
+  "scrollbarTests": {
+    "cedar": 75,
+    "maple": 37,
+    "status": "passed"
+  },
+  "surfaceTests": {
+    "cedarDom": 100,
+    "cedarNodeSsr": 2,
+    "maple": 173,
+    "status": "passed"
+  },
+  "tabsTests": {
+    "cedar": 36,
+    "status": "passed"
+  },
+  "typecheck": {
+    "cedar": "passed",
+    "maple": "passed"
+  },
+  "lint": {
+    "cedarFull": "passed",
+    "mapleChangedFiles": "passed",
+    "mapleFull": "not accepted; initial full run contained other formatting errors"
+  },
+  "styleCompilation": {
+    "files": 42,
+    "status": "passed"
+  },
+  "sourceParity": {
+    "foundations": 68,
+    "carousel": 12,
+    "status": "passed",
+    "legacyPropsChecks": "Slider, Rate and Tabs props normalization remains unresolved"
+  },
+  "browserEvidence": [
+    "../reading-direction-2026-10-28/cedar-slider-rtl.png",
+    "../reading-direction-2026-10-28/maple-slider-rtl.png"
+  ],
+  "wholeLibraryRtlAcceptance": "pending; see reading-direction-plan.md"
+}

@@ -1,0 +1,79 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:63353/mobile.html#/safe-area?language=zh-CN",
+    "text": "Maple Design Mobile · Cedar’s Mobile Counterpart\nMaple Design Mobile,Cedar Design Web,Vue 3,TypeScript,移动端组件库,语义 Token,主题定制\n\nMaple Design Mobile is a mobile component library built with Vue 3 and TypeScript, maintained by 孟帅 and 吴甲明. It shares semantic tokens and component API conventions with Cedar Design Web and supports on-demand imports, theming and internationalization.\n\nSafeArea\n中文\nEnglish\n\n局部模拟 App 安全区 / Simulated native insets\n\n嵌套内容不重复留白 / No duplicate inset",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Back",
+        "class": "mp-page-header__back"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2 theme-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "mp-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "mp-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "mp-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "嵌套内容不重复留白 / No duplicate inset",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-button--block mp-elevation--2"
+      }
+    ]
+  },
+  "error": "Error: safe-area/basic.vue: documented demo has no matching standalone section"
+}

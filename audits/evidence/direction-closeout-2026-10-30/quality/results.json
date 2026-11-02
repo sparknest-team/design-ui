@@ -1,0 +1,38 @@
+[
+  {
+    "repository": "cedar-design-web",
+    "script": "spec:check",
+    "exitCode": 0,
+    "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/quality/cedar-design-web-spec-check.log"
+  },
+  {
+    "repository": "maple-design-mobile",
+    "script": "spec:check",
+    "exitCode": 0,
+    "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/quality/maple-design-mobile-spec-check.log"
+  },
+  {
+    "repository": "cedar-design-web",
+    "script": "check:style-vars",
+    "exitCode": 0,
+    "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/quality/cedar-design-web-check-style-vars.log"
+  },
+  {
+    "repository": "maple-design-mobile",
+    "script": "check:style-vars",
+    "exitCode": 0,
+    "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/quality/maple-design-mobile-check-style-vars.log"
+  },
+  {
+    "repository": "maple-design-mobile",
+    "script": "check:source-normalization",
+    "exitCode": 0,
+    "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/quality/maple-design-mobile-check-source-normalization.log"
+  },
+  {
+    "repository": "design-ui",
+    "script": "check:motion-themes",
+    "exitCode": 1,
+    "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/quality/design-ui-check-motion-themes.log"
+  }
+]

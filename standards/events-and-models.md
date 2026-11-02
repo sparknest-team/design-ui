@@ -9,7 +9,7 @@
 - 主值使用 `modelValue`/`update:modelValue`；具名模型使用 `open`/`update:open`、`show`/`update:show`。
 - `change` 表示值已提交或完成变化，`input` 仅用于确有逐字符语义的组件。
 
-Button 及组合它的 SplitButton 的 Promise click 自动 loading 属于明确例外：`onClick` 为控制回调 Prop，保留 `@click` 用法，直接消费返回的 Promise，不再同时 emit click。SplitButton 将自身与 `buttonProps.onClick` 的回调交给 Button 执行，每个回调只调用一次。其他新组件优先通过显式 `action` 控制 Prop 或外部 loading 管理。
+Button/SplitButton 的 click/touchstart 使用普通 Emits 通知，支持 async 监听器，但不使用监听器返回值驱动加载。业务通过 loading（SplitButton 通过 buttonProps.loading）控制等待，并在 finally 中恢复；错误处理使用正常的 Vue 事件错误链。基础 Button 不提供 action 或 autoLoading 任务入口。
 
 主值与默认值统一采用 `modelValue` / `defaultValue`，支持普通 `v-model`。Tabs 主值为标签 name，Collapse 为展开项 name 数组，Pagination 为当前页码，Steps 为当前步骤（后二者从 1 开始）。`defaultValue` 仅在创建时初始化非受控状态，不监听后续变化、不在初始化时发更新事件、不回写父级；显式受控值优先。Pagination 的 `pageSize/defaultPageSize`、选择器的 `inputValue/defaultInputValue` 与 `open/defaultOpen` 仍为独立状态。选项对象的 `value/label` 表示身份/展示内容，与组件主值无冲突。
 
@@ -20,3 +20,11 @@ Button 及组合它的 SplitButton 的 Promise click 自动 loading 属于明确
 ### 数据字段、序号与尺寸状态
 
 Tree / TreeSelect 业务节点使用 value/label/children，状态集合使用 selectedValues/checkedValues/halfCheckedValues/expandedValues；声明式子项使用 name，Vue key 与 Table rowKey 保持原有含义。Carousel / ImagePreviewGroup 对外序号从 1 开始，包括模型、方法与事件；渲染参数使用 slideNumber/imageNumber，内部数组下标仍从 0 开始。FloatingPanel 使用 modelValue/defaultValue/update:modelValue 表示 px 高度，FAB.visible/open 分别控制整体显示和动作菜单展开。
+
+## Explicit loading and before-hook feedback (2026-10-30)
+
+普通通知事件不读取返回值、不推断 async loading。业务 loading 与守卫 pending 是两个独立来源，展示取 OR。守卫等待期间标记 aria-busy 并给出可见反馈；false/拒绝/异常后恢复，重置或失活后的旧结果不能写回或清除新等待。
+
+组件保留具名职责：字段复用 FieldDecorator 或共享 PendingFeedback；Dialog/Drawer/Popconfirm 的确认/取消使用原有按钮加载属性；没有默认按钮的关闭操作和自定义 footer 使用公共反馈。Upload 的 beforeAdd/beforeRead/beforeUpload/beforeRemove 汇总并发等待，不串行化不同文件。TabBar 保留不同目标的最后请求优先，同一目标不重复提交。SwipeCell 关闭守卫异常改为 guard-error 通知并恢复；新手势取消旧关闭请求。
+
+保留现有 before 签名和 done 协议，不把普通事件改成函数 Prop。纯布局组件不因统一规则而新增 loading。

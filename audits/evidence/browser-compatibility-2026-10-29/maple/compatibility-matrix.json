@@ -1,0 +1,91 @@
+{
+  "library": "maple",
+  "generatedAt": "2026-10-28T17:42:21.267Z",
+  "nativeDeviceAcceptance": false,
+  "latestTwoVersionsAccepted": false,
+  "completeEngineMatrix": true,
+  "evidenceOnly": true,
+  "results": [
+    {
+      "name": "chromium",
+      "startedAt": "2026-10-28T17:42:13.126Z",
+      "completedAt": "2026-10-28T17:42:15.289Z",
+      "passed": true,
+      "exitCode": null,
+      "evidence": "/private/tmp/cedar-maple-compatibility-20261029-2jkkvvre/maple-design-mobile/artifacts/docs-components/maple/chromium",
+      "verified": {
+        "browser": {
+          "name": "chromium",
+          "engine": "chromium",
+          "launchOptions": {},
+          "version": "151.0.7922.34",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "recordedAt": "2026-10-28T17:11:10.789Z",
+          "evidenceType": "automated-engine-regression",
+          "nativeDeviceAcceptance": false,
+          "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+          "gestureInput": "CDP touch injection"
+        },
+        "componentCases": 372,
+        "guideCases": 16,
+        "navigationCases": 4,
+        "passed": true
+      }
+    },
+    {
+      "name": "firefox",
+      "startedAt": "2026-10-28T17:42:15.289Z",
+      "completedAt": "2026-10-28T17:42:18.251Z",
+      "passed": true,
+      "exitCode": null,
+      "evidence": "/private/tmp/cedar-maple-compatibility-20261029-2jkkvvre/maple-design-mobile/artifacts/docs-components/maple/firefox",
+      "verified": {
+        "browser": {
+          "name": "firefox",
+          "engine": "firefox",
+          "launchOptions": {},
+          "version": "153.0",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "recordedAt": "2026-10-28T17:41:36.170Z",
+          "evidenceType": "automated-engine-regression",
+          "nativeDeviceAcceptance": false,
+          "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+          "gestureInput": "synthetic touch events (handler regression only)"
+        },
+        "componentCases": 372,
+        "guideCases": 16,
+        "navigationCases": 4,
+        "passed": true
+      }
+    },
+    {
+      "name": "webkit",
+      "startedAt": "2026-10-28T17:42:18.251Z",
+      "completedAt": "2026-10-28T17:42:21.267Z",
+      "passed": true,
+      "exitCode": null,
+      "evidence": "/private/tmp/cedar-maple-compatibility-20261029-2jkkvvre/maple-design-mobile/artifacts/docs-components/maple/webkit",
+      "verified": {
+        "browser": {
+          "name": "webkit",
+          "engine": "webkit",
+          "launchOptions": {},
+          "version": "26.5",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "recordedAt": "2026-10-28T17:22:26.277Z",
+          "evidenceType": "automated-engine-regression",
+          "nativeDeviceAcceptance": false,
+          "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+          "gestureInput": "synthetic touch events (handler regression only)"
+        },
+        "componentCases": 372,
+        "guideCases": 16,
+        "navigationCases": 4,
+        "passed": true
+      }
+    }
+  ]
+}

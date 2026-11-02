@@ -30,6 +30,23 @@ test('comment/type-only style imports and orphan style.ts cannot claim executabl
   assert.equal(graph.less.size, 0);
   assert.equal(graph.modules.size, 1);
 });
+test('private style/index.ts must be reached from a public entry, never from an orphan root', () => {
+  const root = '/fixture/src';
+  const module = root + '/_components/field-presentation/style/index.ts';
+  const entry = root + '/_components/field-presentation/style.less';
+  const token = root + '/_components/field-presentation/token.less';
+  const files = new Map([
+    [root + '/select/style/index.ts', "import '../../_components/field-presentation/style'"],
+    [module, "import '../style.less'"], [entry, ''], [token, ''],
+  ]);
+  const collect = () => collectStyleGraph(root, [...files.keys()], file => files.get(file), file => files.has(file), ts);
+  const graph = collect();
+  assert.equal(tokenStyleLayout(root, token, graph, file => files.has(file)).error, undefined);
+  files.set(root + '/select/style/index.ts', '');
+  const orphan = collect();
+  assert.equal(orphan.modules.has(module), false);
+  assert.ok(tokenStyleLayout(root, token, orphan, file => files.has(file)).error);
+});
 test('style import graph cannot claim files outside the platform source root', () => {
   const root = '/fixture/src';
   const files = new Map([[root + '/select/style/index.ts', "import '../../../../outside.less'"], ['/outside.less', '']]);

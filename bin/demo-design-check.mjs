@@ -22,7 +22,9 @@ for (const library of ['cedar-design-web/packages/cedar-ui', 'maple-design-mobil
     }
     if (!file.endsWith('.vue') || !/\/(?:__demos__|example)\//.test('/' + file)) continue;
     try {
-      const { descriptor, errors } = parse(fs.readFileSync(full, 'utf8'), { filename: full });
+      const source = fs.readFileSync(full, 'utf8');
+      for (const match of source.matchAll(/from\s*['"](\.[^'"]+\.vue)(?:\?[^'"]+)?['"]/g)) assert(fs.existsSync(path.resolve(path.dirname(full), match[1])), `${full}: missing import ${match[1]}`);
+      const { descriptor, errors } = parse(source, { filename: full });
       assert.deepEqual(errors, []);
       const script = descriptor.scriptSetup || descriptor.script ? compileScript(descriptor, { id: full }) : undefined;
       if (descriptor.template) {

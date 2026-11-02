@@ -7,8 +7,9 @@
     "design-system-check": "./bin/spec-check.mjs"
   },
   "scripts": {
-    "check:ci": "node --test bin/ci-contract.test.mjs bin/ci-toolchain-check.test.mjs bin/shared-source-contract.test.mjs bin/case-paths-check.test.mjs packages/ui-build/test/environment.test.mjs browser/inventory.test.mjs",
-    "check:demo-design": "node bin/demo-design-check.mjs && node bin/organize-demo-pages.mjs",
+    "check:ci": "node --test bin/ci-contract.test.mjs bin/ci-toolchain-check.test.mjs bin/shared-source-contract.test.mjs bin/case-paths-check.test.mjs packages/ui-build/test/environment.test.mjs browser/inventory.test.mjs browser/navigation.test.mjs bin/api-naming-check.test.mjs browser/compatibility.test.mjs browser/native-acceptance.test.mjs browser/native-handoff.test.mjs",
+    "check:demo-controls": "node --test bin/demo-control-policy.test.mjs && node bin/demo-controls-check.mjs",
+    "check:demo-design": "node bin/demo-design-check.mjs && node bin/demo-controls-check.mjs && node bin/organize-demo-pages.mjs",
     "check:api": "node bin/api-exports-audit.mjs ../cedar-design-web/packages/cedar-ui/src --check && node bin/api-exports-audit.mjs ../maple-design-mobile/packages/maple-ui/src --check",
     "check:form-controls": "node bin/form-control-contract-check.mjs",
     "check:copies": "node bin/copied-components-check.mjs",
@@ -20,7 +21,7 @@
     "check:alert-themes": "node bin/alert-theme-check.mjs",
     "check:button-themes": "node bin/button-primary-foreground-check.mjs && node bin/button-theme-check.mjs",
     "check:theme-contract": "pnpm --dir packages/theme-contract check && pnpm check:tag-themes && pnpm check:alert-themes && pnpm check:button-themes && pnpm check:floating-themes && pnpm check:modal-themes && pnpm check:feedback-themes && pnpm check:selection-themes && pnpm check:choice-themes && pnpm check:form-textarea-themes && pnpm check:switch-themes && pnpm check:navigation-themes && pnpm check:numeric-themes && pnpm check:foundation-themes && pnpm check:motion-themes && pnpm check:badge-themes && pnpm check:link-themes && pnpm check:token-consumers && pnpm check:input-tag-themes && pnpm check:field-themes && pnpm test:theme-contract && pnpm check:non-color-tokens && pnpm check:residual-tokens && pnpm check:token-resolution && pnpm check:all-token-consumers && pnpm check:token-reference && pnpm check:media-themes && pnpm check:token-placement && pnpm check:field-focus",
-    "check": "pnpm check:runtime-dependencies && pnpm check:cedar && pnpm check:maple && pnpm check:tokens && pnpm check:theme-contract && pnpm check:api && pnpm check:form-controls && pnpm check:copies && pnpm check:demos && pnpm check:grid-exports && pnpm check:foundations && pnpm check:input-family && pnpm check:tabs-core && pnpm check:media-core",
+    "check": "pnpm check:runtime-dependencies && pnpm check:cedar && pnpm check:maple && pnpm check:tokens && pnpm check:theme-contract && pnpm check:api && pnpm check:form-controls && pnpm check:copies && pnpm check:demos && pnpm check:grid-exports && pnpm check:foundations && pnpm check:input-family && pnpm check:tabs-core && pnpm check:media-core && pnpm check:api-naming && pnpm check:direction",
     "check:runtime-dependencies": "node --test bin/runtime-dependency-check.test.mjs && node bin/runtime-dependency-check.mjs",
     "check:input-family": "node bin/input-textarea-body-check.mjs && node bin/slider-core-check.mjs && node bin/list-body-check.mjs && node bin/rate-core-check.mjs && node bin/verification-code-core-check.mjs && node bin/search-core-check.mjs",
     "check:input-ssr": "node bin/input-batch-ssr-check.mjs",
@@ -68,7 +69,25 @@
     "generate:demo-review": "node bin/generate-review-demos.mjs",
     "check:demo-review": "node --test bin/generate-review-demos.test.mjs && node bin/review-demos-check.mjs",
     "check:menu": "node bin/menu-naming-check.mjs",
-    "check:link-themes": "node bin/link-theme-check.mjs"
+    "check:link-themes": "node bin/link-theme-check.mjs",
+    "check:llms": "node --test bin/llms-docs.test.mjs",
+    "generate:component-showcase": "node bin/organize-component-showcase.mjs --write && node bin/build-component-catalog.mjs && node bin/build-mobile-component-catalog.mjs && node bin/build-core-strengths.mjs",
+    "check:component-showcase": "node --test bin/organize-component-showcase.test.mjs bin/component-feature-analysis.test.mjs && node bin/organize-component-showcase.mjs && node bin/build-component-catalog.mjs --check && node bin/build-mobile-component-catalog.mjs --check && node bin/build-core-strengths.mjs --check",
+    "check:api-naming": "node --test bin/api-naming-check.test.mjs && node bin/api-naming-check.mjs",
+    "check:direction": "node bin/reading-direction-check.mjs",
+    "check:direction:browser": "node browser/reading-direction-batch/check.mjs && node browser/reading-direction-batch-b/check.mjs && node browser/reading-direction-batch-c/check.mjs && node browser/reading-direction-batch-d/check.mjs && node browser/reading-direction-batch-e/check.mjs && node browser/reading-direction-batch-f/check.mjs && node browser/reading-direction-batch-g/check.mjs && node browser/reading-direction-batch-h/check.mjs && node browser/reading-direction-closeout/check.mjs",
+    "compatibility:handoff": "node browser/native-handoff.mjs",
+    "check:direction:browser:b": "node browser/reading-direction-batch-b/check.mjs",
+    "check:direction:browser:c": "node browser/reading-direction-batch-c/check.mjs",
+    "check:direction:browser:d": "node browser/reading-direction-batch-d/check.mjs",
+    "check:direction:browser:e": "node browser/reading-direction-batch-e/check.mjs",
+    "check:direction:browser:f": "node browser/reading-direction-batch-f/check.mjs",
+    "check:direction:browser:g": "node browser/reading-direction-batch-g/check.mjs",
+    "check:direction:browser:h": "node browser/reading-direction-batch-h/check.mjs",
+    "check:direction:catalog": "node browser/reading-direction-catalog/gate.mjs",
+    "check:direction:closeout": "node browser/reading-direction-closeout/check.mjs",
+    "check:direction:all": "pnpm check:direction && pnpm check:direction:browser && pnpm check:direction:catalog",
+    "check:direction:catalog:retry": "node browser/reading-direction-catalog/retry.mjs"
   },
   "engines": {
     "node": ">=20"

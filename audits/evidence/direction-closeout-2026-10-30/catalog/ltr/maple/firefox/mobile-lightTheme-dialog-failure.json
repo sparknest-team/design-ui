@@ -1,0 +1,268 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:59892/mobile.html#/dialog?language=zh-CN",
+    "text": "Maple Design Mobile · Cedar’s Mobile Counterpart\nMaple Design Mobile,Cedar Design Web,Vue 3,TypeScript,移动端组件库,语义 Token,主题定制\n\nMaple Design Mobile is a mobile component library built with Vue 3 and TypeScript, maintained by 孟帅 and 吴甲明. It shares semantic tokens and component API conventions with Cedar Design Web and supports on-demand imports, theming and internationalization.\n\nDialog\nLTR →\n特色与场景\n组件\n基础示例\n基本使用\n组件调用\n调用方式与内容\nfunction call\n基本使用\n打开对话框\n动态更新\n处理用户行为\n隐藏按钮\nalert dialog\nAlert 对话框\nconfirm box\n确认对话框\n危险操作确认\n组件调用\ntype icon\nInfo\nSuccess\nWarning\nError\n组件调用\nform dialog\n对话框表单\n尺寸与布局\n弹窗尺寸与长内容\nlayout\n自定义宽度\n简洁对话框\n可拖动对话框\n全屏对话框\nlong content\n长内容\n交互与定制\ncustom footer\n自定义插槽\ncustom button text\n定制按钮文字\n高级用法\n隐藏 Footer\n隐藏标题\n自定义 body\n关闭后卸载\n异步与关闭控制\nasync close\n异步关闭\n按钮 Loading\n异步守卫 / Guard protocol\nmode\nPromise\ndone 回调\n打开\n\n默认亮色\n默认暗色\n枫叶亮色\n枫叶暗色\nAlps 乐道\nFirefly 萤火虫\nAlps 乐道暗色\nFirefly 萤火虫暗色",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<section data-demo=\"basic-usage\"><div class=\"app-type\">基本使用</div><button data-v-20febd3b=\"\" class=\"mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">组件调用</span><div class=\"mp-hover-overlay\"></div></button></section>",
+      "<section data-demo=\"function-call\"><div class=\"app-type\">function call</div><button data-v-0d3632b4=\"\" class=\"mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">基本使用</span><div class=\"mp-hover-overlay\"></div></button><button data-v-0d3632b4=\"\" class=\"mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">打开对话框</span><div class=\"mp-hover-overlay\"></div></button><button data-v-0d3632b4=\"\" class=\"mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">动态更新</span><div class=\"mp-hover-overlay\"></div></button><button data-v-0d3632b4=\"\" class=\"mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">处理用户行为</span><div class=\"mp-hover-overlay\"></div></button><button data-v-0d3632b4=\"\" class=\"mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">隐藏按钮</span><div class=\"mp-hover-overlay\"></div></button></section>"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Back",
+        "class": "mp-page-header__back"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到 RTL / Switch to right-to-left",
+        "class": "docs-direction-toggle"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2 mp-button--focus theme-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "特色与场景",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "组件",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "组件调用",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "基本使用",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "打开对话框",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "动态更新",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "处理用户行为",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "隐藏按钮",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Alert 对话框",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "确认对话框",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "危险操作确认",
+        "class": "mp-button mp-button--size-md mp-button--status-danger mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "组件调用",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Info",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Success",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Warning",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Error",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "组件调用",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "对话框表单",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "自定义宽度",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "简洁对话框",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "可拖动对话框",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "全屏对话框",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "长内容",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "自定义插槽",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "定制按钮文字",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "隐藏 Footer",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "隐藏标题",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "自定义 body",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "关闭后卸载",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "异步关闭",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "按钮 Loading",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--block mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "",
+        "class": "mp-switch mp-switch--variant-circle mp-switch--size-md"
+      },
+      {
+        "tag": "DIV",
+        "role": "radiogroup",
+        "label": "mode",
+        "class": "mp-radio-group mp-radio-group--horizontal mp-radio-group--size-sm mp-radio-group--button"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-radio__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "打开",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      }
+    ]
+  },
+  "error": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.mobile-theme-cell').filter({ hasText: '默认亮色' })\u001b[22m\n\u001b[2m    - locator resolved to <div data-v-395263c6=\"\" class=\"mp-cell mp-cell--cursor mobile-theme-cell mobile-theme-cell--active\">…</div>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n"
+}

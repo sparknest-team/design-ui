@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "timeoutMs": 5000,
+  "localLogoDelayMs": 1200,
+  "scenario": "DIAG_ROUNDS=1 DIAG_BLOCK_ICONS=1 DIAG_BLOCK_ANALYTICS=1 DIAG_LOGO_DELAY=1200",
+  "results": [
+    {
+      "library": "cedar",
+      "beforeMs": 5002.663875,
+      "beforeEvents": [
+        {
+          "name": "domcontentloaded",
+          "at": 305.59400000000005
+        }
+      ],
+      "pendingBefore": [
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/brands.min.js",
+          "type": "Script",
+          "start": 663.802584,
+          "initiator": "script"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/solid.min.js",
+          "type": "Script",
+          "start": 663.8075839999999,
+          "initiator": "script"
+        },
+        {
+          "url": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/js/fontawesome.min.js",
+          "type": "Script",
+          "start": 663.8133339999999,
+          "initiator": "script"
+        }
+      ],
+      "afterMs": 1466.929375,
+      "afterEvents": [
+        {
+          "name": "domcontentloaded",
+          "at": 110.73708299999998
+        },
+        {
+          "name": "load",
+          "at": 1466.897083
+        }
+      ],
+      "externalAfter": []
+    },
+    {
+      "library": "maple",
+      "beforeMs": 5013.061,
+      "beforeEvents": [
+        {
+          "name": "domcontentloaded",
+          "at": 122.03645899999992
+        }
+      ],
+      "pendingBefore": [
+        {
+          "url": "https://hm.baidu.com/hm.js?5c628ce58967c90ff4dd9c8803d930fa",
+          "type": "Script",
+          "start": 21.752666999999747,
+          "initiator": "script"
+        },
+        {
+          "url": "https://hm.baidu.com/hm.js?5c628ce58967c90ff4dd9c8803d930fa",
+          "type": "Script",
+          "start": 742.2059169999993,
+          "initiator": "script"
+        }
+      ],
+      "afterMs": 231.09558400000014,
+      "afterEvents": [
+        {
+          "name": "domcontentloaded",
+          "at": 182.0068339999998
+        },
+        {
+          "name": "load",
+          "at": 231.06891700000006
+        }
+      ],
+      "externalAfter": [
+        {
+          "url": "https://hm.baidu.com/hm.js?5c628ce58967c90ff4dd9c8803d930fa",
+          "type": "Script",
+          "start": 232.29645900000014,
+          "initiator": "script"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:63370/components/form/#%E6%A0%87%E7%AD%BE%E4%B8%8E%E5%86%85%E5%AE%B9%E8%A3%85%E9%A5%B0",
+    "text": "FormItem> Slots\n插槽名\t描述\t参数\nlabel\t标签\t-\nhelp\t帮助信息\t-\nextra\t额外内容\t-\nType\nFieldRule\n参数名\t描述\t类型\t默认值\ntype\t校验的值的类型，默认为 'string'\t'string' | 'number' | 'boolean' | 'array' | 'object' | 'email' | 'url' | 'ip'\t-\nrequired\t是否必填\tboolean\tfalse\nmessage\t校验失败时展示的信息\tstring\t-\nlength\t校验长度（string, array）\tnumber\t-\nmaxLength\t最大长度（string）\tnumber\t-\nminLength\t最小长度（string）\tnumber\t-\nmatch\t匹配校验（string）\tRegExp\t-\nuppercase\t大写（string）\tboolean\tfalse\nlowercase\t小写（string）\tboolean\tfalse\nmin\t最小值（number）\tnumber\t-\nmax\t最大值（number）\tnumber\t-\nequal\t校验数值（number）\tnumber\t-\npositive\t正数（number）\tboolean\tfalse\nnegative\t负数（number）\tboolean\tfalse\ntrue\t是否为 true（boolean）\tboolean\tfalse\nfalse\t是否为 false（boolean）\tboolean\tfalse\nincludes\t数组中是否包含给定值（array）\tany[]\t-\ndeepEqual\t数组元素是否相等（array）\tany\t-\nempty\t是否为空（object）\tboolean\tfalse\nhasKeys\t对象是否包含给定属性（object）\tstring[]\t-\nvalidator\t自定义校验规则\t( value: FieldValue | undefined, callback: (error?: string) => void ) => void\t-\nFieldData\n参数名\t描述\t类型\t默认值\nvalue\t字段的值\tany\t-\nstatus\t字段的状态\tValidateStatus\t-\nmessage\t字段的错误信息\tstring\t-\nValidatedError\n参数名\t描述\t类型\t默认值\nlabel\t标签的文本\tstring\t-\nfield\t字段名\tstring\t-\nvalue\t字段值\tany\t-\ntype\t字段类型\tstring\t-\nisRequiredError\t是否为 required 错误\tboolean\tfalse\nmessage\t错误信息\tstring\t-\nFormItemEventHandler\n参数名\t描述\t类型\t默认值\nonChange\tonChange\t(ev?: Event) => void\t-\nonInput\tonInput\t(ev?: Event) => void\t-\nonFocus\tonFocus\t(ev?: Event) => void\t-\nonBlur\tonBlur\t(ev?: Event) => void\t-\nuseFormItem\nconst useFormItem = (data: {\n  size?: Ref<Size | undefined>;\n  disabled?: Ref<boolean>;\n  error?: Ref<boolean>;\n}) => {\n  mergedSize: Ref<Size>;\n  mergedDisabled: Ref<boolean>;\n  mergedError: Ref<boolean>;\n  feedback: Ref<string>;\n  eventHandlers: Ref<FormItemEventHandler>;\n};\n\n类型定义\n\n组件导出以下类型定义\n\nimport type { FormProps } from \"@cedar-design/ui\";\n\n五档密度与项目间距\n\nxs/sm/md/lg/xl 均通过 size 类选择对应几何。项目下间距和验证文案预留高度共同使用 size-*-item-margin-bottom；inline 使用独立 inline-item-margin-bottom，error/help 不重复添加项目下间距。\n\n变量\t默认值\n--c-form-size-xl-height\tvar(--c-size-xl)\n--c-form-size-xl-label-font-size\tvar(--c-sys-font-size-lg)\n--c-form-size-xl-item-margin-bottom\tvar(--c-spacing-8)\nedit-mode 继承规则\n\nForm 支持 direct / click / dblclick；未设置时保留字段各自的默认值，FormItem 和字段继承上层显式设置的值，字段显式值优先。readPretty 是阅读属性，与 readonly/disabled 分开。确认编辑未结束时整表提交会失败并保留草稿；reset 取消编辑。原有默认插槽与 v-model 保持不变，不需要 editor 插槽。\n\nread-pretty 为独立布尔属性，与 readonly、disabled 同级；字段 > FormItem > Form 继承，显式 false 覆盖父级。默认 false。纯阅读不显示编辑器。\n\n上次编辑于: 2026/10/24 20:08:01\n贡献者: shuai.meng,mengshuai",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"vmi-previewer-example\" style=\"\"><form class=\"c-form c-form-layout-horizontal c-form-size-md\"><div class=\"c-row c-row--align-start c-row--justify-start c-form-item c-form-item-layout-horizontal c-form-item-status-success\"><div class=\"c-col c-col--span-5 c-col--offset-0 c-form-item-label-col\" style=\"justify-content: flex-end;\"><label class=\"c-form-item-label\"><strong class=\"c-form-item-label-required-symbol\"><svg fill=\"currentColor\" viewBox=\"0 0 1024 1024\" width=\"1em\" height=\"1em\"><path d=\"M583.338667 17.066667c18.773333 0 34.133333 15.36 34.133333 34.133333v349.013333l313.344-101.888a34.133333 34.133333 0 0 1 43.008 22.016l42.154667 129.706667a34.133333 34.133333 0 0 1-21.845334 43.178667l-315.733333 102.4 208.896 287.744a34.133333 34.133333 0 0 1-7.509333 47.786666l-110.421334 80.213334a34.133333 34.133333 0 0 1-47.786666-7.509334L505.685333 706.218667 288.426667 1005.226667a34.133333 34.133333 0 0 1-47.786667 7.509333l-110.421333-80.213333a34.133333 34.133333 0 0 1-7.509334-47.786667l214.186667-295.253333L29.013333 489.813333a34.133333 34.133333 0 0 1-22.016-43.008l42.154667-129.877333a34.133333 34.133333 0 0 1 43.008-22.016l320.512 104.106667L412.672 51.2c0-18.773333 15.36-34.133333 34.133333-34.133333h136.533334z\"></path></svg></strong>Username<!----><!----> </label></div><div class=\"c-col c-col--span-19 c-col--offset-0 c-form-item-wrapper-col\" id=\"name\"><div class=\"c-form-item-content-wrapper\"><div style=\"--c-form-content-align: start; --c-form-content-justify: flex-start; text-align: start; justify-content: flex-start;\" class=\"c-form-item-content c-form-item-content-flex\"><div class=\"c-select\"><div class=\"c-field-decorator c-field-decorator--size-md c-field-decorator--variant-filled c-field-decorator--focus c-selection-field\" style=\"--c-internal-field-content-offset: 12px; --c-internal-field-content-width: 562px; --c-internal-field-hint-origin: right center;\"><!----><span class=\"c-field-decorator__middle\"><span class=\"c-selection-field__content\"><span class=\"c-selection-field__selection\"><span class=\"c-selection-field__label\">Beijing</span></span><input id=\"v-0\" class=\"c-selection-field__input c-selection-field__input--with-value\" readonly=\"\" aria-expanded=\"false\" aria-autocomplete=\"none\" role=\"combobox\" autocomplete=\"off\" value=\"\"></span></span><!----><span class=\"c-field-decorator__suffix\"><button type=\"button\" class=\"c-field-decorator__clear-btn\" aria-label=\"清空\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-close-circle-fill\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" fill-rule=\"evenodd\" stroke=\"none\" d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20m4.955-27.771-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-4.95-4.95 4.95-4.95a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0\" clip-rule=\"evenodd\"></path></svg></button><!----><button type=\"button\" data-field-open-trigger=\"\" aria-label=\"请选择\" aria-expanded=\"false\" aria-haspopup=\"listbox\" class=\"c-selection-field__icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-down\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path d=\"M39.6 17.443 24.043 33 8.487 17.443\"></path></svg></button></span><!----><span class=\"c-field-decorator__border\" aria-hidden=\"true\"></span><span class=\"c-field-decorator__border-state\" aria-hidden=\"true\"></span></div></div></div></div><!----><!----></div></div><div class=\"c-row c-row--align-start c-row--justify-start c-form-item c-form-item-layout-horizontal\"><div class=\"c-col c-col--span-5 c-col--offset-0 c-form-item-label-col\" style=\"justify-content: flex-end;\"><label class=\"c-form-item-label\"><!----><!----><!----> </label></div><div class=\"c-col c-col--span-19 c-col--offset-0 c-form-item-wrapper-col\"><div class=\"c-form-item-content-wrapper\"><div style=\"--c-form-content-align: start; --c-form-content-justify: flex-start; text-align: start; justify-content: flex-start;\" class=\"c-form-item-content c-form-item-content-flex\"><button class=\"c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2\" type=\"submit\" style=\"overflow: hidden; z-index: 1;\"><!----><!----><span class=\"c-button__content\">Submit</span><div class=\"c-hover-overlay\"></div></button></div></div><!----><!----></div></div></form> Beijing</div>",
+      "<div class=\"vmi-previewer-example\" style=\"\"><form class=\"c-form c-form-layout-horizontal c-form-size-md\" style=\"width: 600px;\"><div class=\"c-row c-row--align-start c-row--justify-start c-form-item c-form-item-layout-horizontal\"><div class=\"c-col c-col--span-5 c-col--offset-0 c-form-item-label-col\" style=\"justify-content: flex-end;\"><label class=\"c-form-item-label\"><!---->Username<!----><!----> </label></div><div class=\"c-col c-col--span-19 c-col--offset-0 c-form-item-wrapper-col\" id=\"name\"><div class=\"c-form-item-content-wrapper\"><div style=\"--c-form-content-align: start; --c-form-content-justify: flex-start; text-align: start; justify-content: flex-start;\" class=\"c-form-item-content c-form-item-content-flex\"><div class=\"c-input c-input--disabled\"><div class=\"c-field-decorator c-field-decorator--size-md c-field-decorator--variant-outline c-field-decorator--disabled\" style=\"--c-internal-field-hint-origin: right center; --c-internal-field-content-offset: 12px; --c-internal-field-content-width: 451px;\"><!----><span class=\"c-field-decorator__middle\"><input id=\"v-2\" autocomplete=\"off\" class=\"c-input__inner\" type=\"text\" disabled=\"\" placeholder=\"please enter your username...\" value=\"\"></span><!----><!----><!----><span class=\"c-field-decorator__border\" aria-hidden=\"true\"></span><span class=\"c-field-decorator__border-state\" aria-hidden=\"true\"></span></div></div></div></div><!----><!----></div></div></form></div>"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "原生异步提交",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空校验",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "写入服务端错误",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "校验两个字段",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "返回用户名结果",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--disabled"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "返回代码结果",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--disabled"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "返回最新用户名结果",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--disabled"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "返回最新代码结果",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--disabled"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重置两个字段",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "P",
+        "role": "status",
+        "label": "结果：尚未校验；用户名等待：0；代码等待：0",
+        "class": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "radiogroup",
+        "label": "异步保存场景",
+        "class": "c-radio-group c-radio-group--horizontal c-radio-group--size-sm c-radio-group--button"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "事务名称",
+        "class": "c-field-presentation__reference"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "编辑：事务名称",
+        "class": "c-field-presentation__edit"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "事务备注",
+        "class": "c-field-presentation__reference"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "编辑：事务备注",
+        "class": "c-field-presentation__edit"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "事务部门",
+        "class": "c-field-presentation__reference"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "编辑：事务部门",
+        "class": "c-field-presentation__edit"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重置状态示例",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "P",
+        "role": "status",
+        "label": "事务保存状态",
+        "class": ""
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-input__inner"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "校验字段",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "校验整表",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "返回最早结果",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--disabled"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "返回最新结果",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--disabled"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "写入服务端错误",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空校验",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重置",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "P",
+        "role": "status",
+        "label": "校验结果：尚未校验；等待结果：0",
+        "class": ""
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "开始日期",
+        "class": "c-picker-field__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "结束日期",
+        "class": "c-picker-field__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "开始日期",
+        "class": "c-picker-field__open-trigger"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "开始月份",
+        "class": "c-picker-field__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "结束月份",
+        "class": "c-picker-field__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "开始月份",
+        "class": "c-picker-field__open-trigger"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "开始年份",
+        "class": "c-picker-field__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "结束年份",
+        "class": "c-picker-field__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "开始年份",
+        "class": "c-picker-field__open-trigger"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-input__inner"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "请选择",
+        "class": "c-selection-field__icon"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "请选择",
+        "class": "c-selection-field__icon"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "校验并预览",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "填入演示数据",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "P",
+        "role": "status",
+        "label": "填写任务后进入确认；也可以直接提交空表单查看校验。",
+        "class": ""
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "查看已提交记录",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重新演示",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制代码",
+        "class": "vp-copy-code-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制代码",
+        "class": "vp-copy-code-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "返回顶部",
+        "class": "vp-back-to-top-button"
+      },
+      {
+        "tag": "SPAN",
+        "role": "progressbar",
+        "label": "",
+        "class": "vp-scroll-progress"
+      }
+    ]
+  },
+  "error": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.vmi-previewer-example').nth(22).getByRole('radiogroup', { name: 'Form 展示方式', exact: true }).or(locator('.vmi-previewer-example').nth(22).getByRole('combobox', { name: 'Form 展示方式', exact: true })).first().getByText('click', { exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <span class=\"c-radio__button-label\">click</span>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not stable\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - element is outside of the viewport\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n"
+}

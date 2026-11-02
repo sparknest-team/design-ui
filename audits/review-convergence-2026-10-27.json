@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-27",
+  "scope": [
+    "Cedar/Maple PeopleSelect reactive fallback-option",
+    "Cascader fallback-option naming and read display",
+    "Dialog/Drawer/Popup/Popconfirm close/confirm guards, Switch beforeChange, field beforeCommit",
+    "Cedar Table managed sticky footer, pagination slot/external container and shared hover scrollbar"
+  ],
+  "contracts": {
+    "people": "options array/loader; synchronous reactive fallback-option; no resolve or selected-options property",
+    "guards": "(payload, done, context); no refs or callable-context; no function.length inference; sync void waits for done; boolean/Promise settles; first completion wins",
+    "table": "external demo container owns vertical scrolling; no Table height/scroll.y; shared Scrollbar embed proxy; hidden internal horizontal thumb/native scrollbar; one managed footer including custom/external pagination"
+  },
+  "browser": {
+    "sourceComponents": true,
+    "container": {
+      "pageY": 149,
+      "outerY": 1344,
+      "tableBodyY": 0,
+      "bodyX": 486.5,
+      "railX": 486.5,
+      "horizontalThumbCount": 1
+    },
+    "page": {
+      "pageY": 879,
+      "outerY": 0,
+      "tableBodyY": 0,
+      "bodyX": 347.5,
+      "railX": 347.5,
+      "headerTop": 0,
+      "footerBottom": 1099,
+      "horizontalThumbCount": 1,
+      "nativeScrollbarWidth": "none",
+      "customPagination": true,
+      "externalFooter": true
+    },
+    "evidence": [
+      "evidence/review-convergence-2026-10-27/container-single-hover-scrollbar.png",
+      "evidence/review-convergence-2026-10-27/page-single-hover-scrollbar.png"
+    ]
+  },
+  "validation": {
+    "cedarLint": "passed full source lint",
+    "mapleLint": "passed full repository lint",
+    "cedarTypes": "passed root runtime/API typecheck",
+    "mapleTypes": "passed root runtime/API typecheck",
+    "tableScrollbarTests": "78 passed including shared Scrollbar lifecycle/drag tests",
+    "reactiveFallbackTests": "Cedar 14 passed, Maple 2 passed",
+    "libraries": "passed: both complete library builds, plus final Cedar UI rebuild after correcting field locale imports",
+    "mapleDocumentation": "passed production build; 1512 demo SFCs checked with 0 failures",
+    "cedarDocumentation": "passed final production build: 301 pages; temporary config race and invalid locale imports corrected/retried",
+    "sameSourceChecks": {
+      "input": "fails on input/use-input-value.ts parentheses formatting; this file was not changed in this implementation",
+      "selectionPresentations": "fails on existing platform-specific with-field-presentation.ts structure; this file was not changed in this implementation"
+    },
+    "quantityControls": "Cedar 15 passed and Maple 15 passed with the new payload/done/context protocol",
+    "selectionLocale": "23 tests passed; SelectionField and PickerField use the existing Cedar field locale adapter",
+    "pickerLocale": "13 tests passed in a single process; previous collection RPC timeout resolved",
+    "diffCheck": "both repositories passed git diff --check; final locale/test edits also passed targeted diff check"
+  },
+  "publication": "No commit, push or release performed.",
+  "completed": true
+}

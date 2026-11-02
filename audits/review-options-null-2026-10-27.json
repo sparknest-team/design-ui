@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-27",
+  "scope": "PeopleSelect actions, array/loader source props, nullable clear values, familiar before hooks, unified Table pagination placement",
+  "contracts": {
+    "peopleSelect": {
+      "globalDefaults": "PeopleSelect.setPropsDefaults",
+      "localOverrides": [
+        "options",
+        "resolve",
+        "showPhone",
+        "showChat",
+        "call",
+        "chat"
+      ],
+      "defaultActionsVisible": false,
+      "businessImplementation": "caller-owned callbacks; optional actions slot/renderActions remain",
+      "events": [
+        "load-error(error, options|resolve)",
+        "action-error(error, call|chat)"
+      ]
+    },
+    "candidateSources": {
+      "options": [
+        "Select",
+        "AutoComplete",
+        "PeopleSelect",
+        "Cascader",
+        "CheckboxGroup",
+        "RadioGroup"
+      ],
+      "data": [
+        "TreeSelect (Cedar)",
+        "Mention (Cedar)",
+        "Transfer (Cedar)"
+      ],
+      "type": "array | (query, { signal }) => array/Promise<array>",
+      "noSeparateRequestProp": true,
+      "ownership": "outer field owns popup source; schema-matched inner editor reuses it; errors and stale results are isolated"
+    },
+    "emptyValue": {
+      "explicitNull": true,
+      "defaultsChanged": false,
+      "ordinaryEmptyStringPreserved": true,
+      "zeroFalseRemainValues": true,
+      "popupClear": "draft only; confirm publishes, cancel discards",
+      "modelAndEventTypesNullable": true
+    },
+    "beforeHooks": {
+      "closeConfirm": [
+        "Dialog",
+        "Drawer",
+        "Popup (Maple)",
+        "Popconfirm"
+      ],
+      "additionalDone": [
+        "Switch.beforeChange(next, done)",
+        "beforeCommit(value, context, done)"
+      ],
+      "completion": "first boolean/Promise/done completion wins; stale/cancelled completion ignored; existing sync-void semantics preserved"
+    },
+    "table": {
+      "api": "pagination: boolean | config; config.container: string | HTMLElement",
+      "implementation": "same managed pagination/footer mounted internally or at container",
+      "sticky": "horizontal rail stays above footer; use same scroll context; zero offsets supported",
+      "customSlotRequired": false
+    }
+  },
+  "research": [
+    {
+      "library": "Element Plus",
+      "source": "https://github.com/element-plus/element-plus/blob/dev/packages/hooks/use-empty-values/index.ts",
+      "finding": "empty-values defines empty recognition; value-on-clear defines clear output and accepts null"
+    },
+    {
+      "library": "Vant",
+      "source": "https://github.com/youzan/vant/blob/main/packages/vant/src/field/Field.tsx",
+      "finding": "Field onClear emits an empty string"
+    }
+  ],
+  "validation": {
+    "cedarMainRegressionTests": 79,
+    "mapleMainRegressionTests": 107,
+    "popupOwnerFinalTestsPerPlatform": 6,
+    "mainRegressionsAlreadyIncludeFivePopupOwnerTests": true,
+    "additionalRegressionGroups": "modal guards, transfer, rate, mention, input-tag and global defaults passed in focused runs",
+    "typechecks": "both passed",
+    "componentBuilds": "both passed",
+    "documentationBuilds": "both passed",
+    "cedarLint": "passed",
+    "mapleChangedSourceLint": "passed",
+    "mapleFullLint": "102 remaining errors in documentation aggregation/config/compiler/test files; no full-green claim",
+    "autoCompleteSameSource": "8 pairs and both Less outputs passed"
+  },
+  "evidence": [
+    "audits/evidence/review-options-2026-10-27/people-actions-null.png",
+    "audits/evidence/review-options-2026-10-27/people-null-external-pagination.png"
+  ],
+  "published": false
+}

@@ -29,6 +29,19 @@ export async function generateVueIcons({
   check = false,
 }) {
   const expected = new Map()
+  expected.set('../style.css', `svg.${classPrefix}--spin {
+  animation: ${classPrefix}-spin var(--${classPrefix.replace(/-svg-icon$/, '')}-icon-spin-duration, 1s) infinite linear;
+}
+
+@keyframes ${classPrefix}-spin {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  svg.${classPrefix}--spin { animation: none; }
+}
+`)
   const icons = []
   const names = new Map()
 

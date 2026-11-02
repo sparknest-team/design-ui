@@ -1,0 +1,1274 @@
+{
+  "date": "2026-10-24",
+  "status": "passed",
+  "environment": {
+    "desktop": "Chrome 1280×900",
+    "cedarPhone": "375×900 responsive browser viewport",
+    "maplePhone": "Exact 375px iframe harness loading unmodified production mobile.html; full suite separately uses iPhone 13 emulation.",
+    "physicalDevice": false
+  },
+  "focusedCases": [
+    {
+      "library": "cedar",
+      "surface": "desktop",
+      "theme": "light",
+      "component": "menu",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "desktop",
+      "theme": "light",
+      "component": "nav-menu",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "desktop",
+      "theme": "light",
+      "component": "collapse",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "desktop",
+      "theme": "light",
+      "component": "steps",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "desktop",
+      "theme": "dark",
+      "component": "menu",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "desktop",
+      "theme": "dark",
+      "component": "nav-menu",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "desktop",
+      "theme": "dark",
+      "component": "collapse",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "desktop",
+      "theme": "dark",
+      "component": "steps",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "phone",
+      "theme": "light",
+      "component": "menu",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "phone",
+      "theme": "light",
+      "component": "nav-menu",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "phone",
+      "theme": "light",
+      "component": "collapse",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "phone",
+      "theme": "light",
+      "component": "steps",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "phone",
+      "theme": "dark",
+      "component": "menu",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "phone",
+      "theme": "dark",
+      "component": "nav-menu",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "phone",
+      "theme": "dark",
+      "component": "collapse",
+      "passed": true
+    },
+    {
+      "library": "cedar",
+      "surface": "phone",
+      "theme": "dark",
+      "component": "steps",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "desktop",
+      "theme": "light",
+      "component": "menu",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "desktop",
+      "theme": "light",
+      "component": "tab-bar",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "desktop",
+      "theme": "light",
+      "component": "collapse",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "desktop",
+      "theme": "light",
+      "component": "steps",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "desktop",
+      "theme": "dark",
+      "component": "menu",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "desktop",
+      "theme": "dark",
+      "component": "tab-bar",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "desktop",
+      "theme": "dark",
+      "component": "collapse",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "desktop",
+      "theme": "dark",
+      "component": "steps",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "phone",
+      "theme": "light",
+      "component": "menu",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "phone",
+      "theme": "light",
+      "component": "tab-bar",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "phone",
+      "theme": "light",
+      "component": "collapse",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "phone",
+      "theme": "light",
+      "component": "steps",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "phone",
+      "theme": "dark",
+      "component": "menu",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "phone",
+      "theme": "dark",
+      "component": "tab-bar",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "phone",
+      "theme": "dark",
+      "component": "collapse",
+      "passed": true
+    },
+    {
+      "library": "maple",
+      "surface": "phone",
+      "theme": "dark",
+      "component": "steps",
+      "passed": true
+    }
+  ],
+  "semantics": {
+    "menu": "Parent path has visual emphasis while parent render active remains false; leaf active follows modelValue; highlight does not select; render functions and scoped slots checked.",
+    "navMenu": "Opening entry does not activate it; named entry switches after leaf selection; independent values 0 and empty string match, unknown value is inactive; highlight overrides appearance without changing active.",
+    "collapse": "Item and root expand-icon slots receive expanded; icon and aria-expanded follow actual state.",
+    "steps": "Current item has active in process and error states; previous and future items do not become the current item.",
+    "tabBar": "Name-based model selects exactly one current item."
+  },
+  "browserIssues": [
+    "A transient browser connection interruption and automation timeout were recovered; did not count incomplete actions as passes.",
+    "Phone triggers obscured by menu popups were activated with Enter; full gate separately covers pointer interactions.",
+    "A closing-transition overlap briefly produced duplicate menu labels. The final Menu check explicitly waits for the previous render-function/scoped-slot parent to become hidden before asserting the new menu; no product code or assertions were bypassed."
+  ],
+  "console": {
+    "errors": 0,
+    "warnings": 0,
+    "scope": "focused production pages inspected in the browser"
+  },
+  "evidence": [
+    {
+      "file": "cedar-desktop-dark-menu.jpg",
+      "sha256": "057b493284086fc0ddfe70fa0a5ea52ed5ba28a71ec31c84975160f1f15fe837"
+    },
+    {
+      "file": "cedar-desktop-dark-nav-menu.jpg",
+      "sha256": "816d0bbbb687f5bfb472e66c5f93c58f5efd3ddfc03aa60a6c86428bc6c32b40"
+    },
+    {
+      "file": "cedar-desktop-light-menu.jpg",
+      "sha256": "be7d0eb0a599eac2619258112a04bb7e7b715d1fc0acab711d30edeec9d04852"
+    },
+    {
+      "file": "cedar-desktop-light-nav-menu.jpg",
+      "sha256": "6402c2d96f7e4c916750c58d20e1a4ca416e5b9f0663d62c3966eba2ceb1311e"
+    },
+    {
+      "file": "cedar-phone-dark-menu.jpg",
+      "sha256": "e702e1f565580ec9e08c92586b84125c6918552f2bc1fcd4f23dfe8b334fa903"
+    },
+    {
+      "file": "cedar-phone-dark-nav-menu.jpg",
+      "sha256": "95e0c983e8584e3378937ce45f7e3e16fbb6d12aae5dac08c6284fac084f8fa4"
+    },
+    {
+      "file": "cedar-phone-light-menu.jpg",
+      "sha256": "cd990f19f2f3dcfe44d45fd68e0c8db1355bf54d7b7d362159923ea53bfd4746"
+    },
+    {
+      "file": "cedar-phone-light-nav-exclusive.jpg",
+      "sha256": "75c5df003264f5aead6e69fbf88490ec46546b1acdf6ffdcd3e60c7fe45c704a"
+    },
+    {
+      "file": "cedar-phone-light-nav-menu.jpg",
+      "sha256": "91b755a79976a2a9c0006974e2372b0e0da182954da0f10684b92eefba170a7f"
+    },
+    {
+      "file": "cedar-phone-light-steps.jpg",
+      "sha256": "2b167e7a899f8d58623a591775b61a555c7c4fa315b32347bbe0bb15e8553513"
+    },
+    {
+      "file": "cedar-r15-desktop-dark-menu-final.jpg",
+      "sha256": "117ee81196463a064a7b4046fc39ee372018adb361a6a306f6bcbb9cf86283e3"
+    },
+    {
+      "file": "cedar-r15-desktop-dark-nav-menu-final.jpg",
+      "sha256": "2c4fb8287df1630f876c963a5551bd331925dfeefe735d92575d3b8f468a1dfc"
+    },
+    {
+      "file": "cedar-r15-desktop-light-menu-final.jpg",
+      "sha256": "bd213b8ae495610ead2a316ac7c9c83bf135ef906ed9ac66e480ebf2cec8a145"
+    },
+    {
+      "file": "cedar-r15-desktop-light-nav-menu-final.jpg",
+      "sha256": "cafaf644964d91d84a3f5dbc29b59b521b9955d32372b72dc5d55f66068bf210"
+    },
+    {
+      "file": "cedar-r15-phone-dark-menu-final.jpg",
+      "sha256": "6794f89c4a3a8e71cb5b79d01a66f5ee4afdf9679830e386c25db2e4a84ddc5d"
+    },
+    {
+      "file": "cedar-r15-phone-dark-nav-menu-final.jpg",
+      "sha256": "eac29e203f21cb867d57536e47905ba6586c8e1befb61b72013228f1fe03ef14"
+    },
+    {
+      "file": "cedar-r15-phone-light-menu-final.jpg",
+      "sha256": "af52a990fbfb0db6857ab5f8c6bdb9299ec9548d18bbee8a2bddb8fb7ebe902d"
+    },
+    {
+      "file": "cedar-r15-phone-light-nav-menu-final.jpg",
+      "sha256": "8541b00f807006b847cc8991ec96b71d1c1e10dc6271037e235b98659a751791"
+    },
+    {
+      "file": "cedar-r17-desktop-dark-menu-final.jpg",
+      "sha256": "117ee81196463a064a7b4046fc39ee372018adb361a6a306f6bcbb9cf86283e3"
+    },
+    {
+      "file": "cedar-r17-desktop-dark-nav-menu-final.jpg",
+      "sha256": "2c4fb8287df1630f876c963a5551bd331925dfeefe735d92575d3b8f468a1dfc"
+    },
+    {
+      "file": "cedar-r17-desktop-light-menu-final.jpg",
+      "sha256": "bd213b8ae495610ead2a316ac7c9c83bf135ef906ed9ac66e480ebf2cec8a145"
+    },
+    {
+      "file": "cedar-r17-desktop-light-nav-menu-final.jpg",
+      "sha256": "e1eae0dbf59d7187cd0ff1f6b3192c3dbed1048c6a23a65414706e2a2a3a345c"
+    },
+    {
+      "file": "cedar-r17-phone-dark-menu-final.jpg",
+      "sha256": "0380b08d0b9448ff36e9df83a7bab589f4bb703812d497d42e474ffc5be1ccdd"
+    },
+    {
+      "file": "cedar-r17-phone-dark-nav-menu-final.jpg",
+      "sha256": "109161b0b401b518bc770452c66d8c0e48cf7bbc585da1fae55e10952fdb0612"
+    },
+    {
+      "file": "cedar-r17-phone-light-menu-final.jpg",
+      "sha256": "77b72845472c5c0a270e77aecda215b178694570bd7993983a7467cf3a3d92b3"
+    },
+    {
+      "file": "cedar-r17-phone-light-nav-menu-final.jpg",
+      "sha256": "b4ef95ce0deaf711455695a765dbd12b4791e78ff70e6f7ee54aae3e6c0608ec"
+    },
+    {
+      "file": "cedar-r19-phone-dark-title-layout.png",
+      "sha256": "7554945f248a01ec256168e86c2b7d4dfd0e8b61df62844584a37071b45be46c"
+    },
+    {
+      "file": "cedar-r19-phone-light-title-layout.png",
+      "sha256": "7048495b0726e033d13b62b1be260a2cdc743f017715dd1abe993df041dd82fd"
+    },
+    {
+      "file": "cedar-r21-desktop-dark-menu-final.jpg",
+      "sha256": "aee7525fd5048dccf5b7819d10938242fbe3d05a684adbb60f2ddb0db702e534"
+    },
+    {
+      "file": "cedar-r21-desktop-dark-nav-menu-final.jpg",
+      "sha256": "e981a0acedf34d35e60ab29a27dc5e7a6fd729ec7c7e70d220fb47b10d373196"
+    },
+    {
+      "file": "cedar-r21-desktop-light-menu-final.jpg",
+      "sha256": "161f7b17f9bc7434d6684ff887160a7b3f64e57e9dafd3bc9899b8d7c915b087"
+    },
+    {
+      "file": "cedar-r21-desktop-light-nav-menu-final.jpg",
+      "sha256": "fb2ae6ce294fd8c624eaea59c8809ca595e25e380af60f2c89d3bd8b3416a83c"
+    },
+    {
+      "file": "cedar-r21-phone-dark-menu-final.jpg",
+      "sha256": "ef2de209922b6bb55907064c5d47ca7a0d8c92d2d57341944e11595d47360122"
+    },
+    {
+      "file": "cedar-r21-phone-dark-nav-menu-final.jpg",
+      "sha256": "c9a60fc76f98e2a37255206a125792049715ec208b732d8534d5855b110fab7c"
+    },
+    {
+      "file": "cedar-r21-phone-light-menu-final.jpg",
+      "sha256": "8e491dd3bc7982ea18e3b69f8da7feaacf40a69c24ad28d6e7b7a7c6c8938b1b"
+    },
+    {
+      "file": "cedar-r21-phone-light-nav-menu-final.jpg",
+      "sha256": "b2893e7909470505215a96fd8e4d199dd4a53c3dabfe05b9ade403f48658671b"
+    },
+    {
+      "file": "cedar-r22-desktop-dark-menu-final.jpg",
+      "sha256": "fc24de754f8471b412af9a4f0d894d1ce5c28cdeaa7df331b1ab993f62114cf9"
+    },
+    {
+      "file": "cedar-r22-desktop-dark-nav-menu-final.jpg",
+      "sha256": "70833a3eda7a2ab4e020890e0c5119182e0aeb780083a13eabd81a891b4da478"
+    },
+    {
+      "file": "cedar-r22-desktop-light-menu-final.jpg",
+      "sha256": "42016cfeb09f4294af1e17aef528056595ca13aaf53b2f7c1d7097fa719b79cf"
+    },
+    {
+      "file": "cedar-r22-desktop-light-nav-menu-final.jpg",
+      "sha256": "fb2ae6ce294fd8c624eaea59c8809ca595e25e380af60f2c89d3bd8b3416a83c"
+    },
+    {
+      "file": "cedar-r22-phone-dark-menu-final.jpg",
+      "sha256": "936c489229c86ef8b024742584d946433614659991f4b78e7aa5c7756e1c9392"
+    },
+    {
+      "file": "cedar-r22-phone-dark-nav-menu-final.jpg",
+      "sha256": "c9a60fc76f98e2a37255206a125792049715ec208b732d8534d5855b110fab7c"
+    },
+    {
+      "file": "cedar-r22-phone-light-menu-final.jpg",
+      "sha256": "4e7028ddf5cf56e7901c79c729a08d0d7911c3f76316f048e453cb2aa7270f54"
+    },
+    {
+      "file": "cedar-r22-phone-light-nav-menu-final.jpg",
+      "sha256": "b2893e7909470505215a96fd8e4d199dd4a53c3dabfe05b9ade403f48658671b"
+    },
+    {
+      "file": "maple-desktop-dark-menu.jpg",
+      "sha256": "11599aaf6c17ce96a80f7a2c8217926b2007c0d1a63d174c13d8b14d0a5f578b"
+    },
+    {
+      "file": "maple-desktop-light-menu.jpg",
+      "sha256": "ea8e6b493fdf52ebf6eed9ff4eb084c0dea6cf5574965798d968031b43fa5d3a"
+    },
+    {
+      "file": "maple-phone-dark-menu-detail.jpg",
+      "sha256": "ece811067e750a1378c7cfdc30d2d8f742033bfdb1c9b365b23142fd9daf0690"
+    },
+    {
+      "file": "maple-phone-dark-menu.jpg",
+      "sha256": "6b8616d14153ade10614b2e2feedbde4d75a3c607a8e12f5b7784fcfdeba59d8"
+    },
+    {
+      "file": "maple-phone-dark-tab-bar.jpg",
+      "sha256": "8a25c62e026195db463005cbf7811859b4546eec7c393b9f4dfbd6ce88bf3135"
+    },
+    {
+      "file": "maple-phone-light-menu.jpg",
+      "sha256": "fc9714b1b26028686d149d29d3105b434db3447854175dc2998db2248ba2d090"
+    },
+    {
+      "file": "maple-r16-desktop-dark-menu-final.jpg",
+      "sha256": "7fde578f0ea4801b4ccc2cf0b8de89ce66ccc414db06575bc95d6cc7b80274f6"
+    },
+    {
+      "file": "maple-r16-desktop-light-menu-final.jpg",
+      "sha256": "5c38c74a838d97ee3542cdcc2011fe5050e62ea0a3ef0e40c68c293a13b2ae6d"
+    },
+    {
+      "file": "maple-r16-phone-dark-menu-final.jpg",
+      "sha256": "aae05228bd8dff2e184bbac9ffa61b53dbcbd6cb501c3339201b223a3a72603a"
+    },
+    {
+      "file": "maple-r16-phone-light-menu-final.jpg",
+      "sha256": "7bcda87567ecec643f8d67fd10a4ba0ef3b2c291c8c82e367425171fdf7dbb2f"
+    },
+    {
+      "file": "maple-r18-desktop-dark-menu-final.jpg",
+      "sha256": "3526f016bebb1e3e541651d2d9d076e0c4ac3a35b46c5cd0e5719e755140efa6"
+    },
+    {
+      "file": "maple-r18-desktop-light-menu-final.jpg",
+      "sha256": "7a57a4b38d61cc774cf582394e6ca6105a3b3eff8cdd5b8b4a98c8bb77aad762"
+    },
+    {
+      "file": "maple-r18-phone-dark-menu-final.jpg",
+      "sha256": "3c122ad54bb3aee0543ddfb3489cc3a975e5ec534e601bd7e2c458bcd40b770d"
+    },
+    {
+      "file": "maple-r18-phone-light-menu-final.jpg",
+      "sha256": "6eb2a5b41d59edfabd7f4c36570db4ffc925bd2ae5fad16a54d6ffb38841268d"
+    },
+    {
+      "file": "maple-refrozen-desktop-dark-menu-final.jpg",
+      "sha256": "52d05311150bf05f62624e96c64deaf37ef9abcbd91f7d575336233bb78ee8f5"
+    },
+    {
+      "file": "maple-refrozen-desktop-light-menu-final.jpg",
+      "sha256": "4f2b649b4a8f63f23fab5187b5f66fef4839d1d163519c1c75b7379360c7acbc"
+    },
+    {
+      "file": "maple-refrozen-phone-dark-menu-final.jpg",
+      "sha256": "f544488da139a91d7b15813f3d4d937a09b2514d2fd2076a1ca3af525163425c"
+    },
+    {
+      "file": "maple-refrozen-phone-light-menu-final.jpg",
+      "sha256": "02d7469c2d357c58c842b537ee18f4c693d8397390048cf19d70a16ad76473b7"
+    }
+  ],
+  "next": "No remaining work for this production-browser acceptance snapshot. Later product changes require their own rebuild and acceptance.",
+  "findings": [
+    {
+      "component": "Cedar NavMenu entry-state demo",
+      "issue": "At phone width the two named entry labels expanded the Nav root to about 498px, overflowing the example container.",
+      "fix": "Scoped width:100%; min-width:0 on the two demo Nav roots; reuse existing horizontal list scrolling.",
+      "apiChanged": false,
+      "productionRetested": true,
+      "validation": {
+        "eslint": "passed",
+        "demoDesign": {
+          "demos": 2862,
+          "references": 2895,
+          "pairedDemos": 80,
+          "failures": 0
+        },
+        "isolatedLayoutFixture": {
+          "viewport": 375,
+          "pageWidth": 375,
+          "menuWidth": 327,
+          "namedListScrollWidth": 503,
+          "productionRetest": false
+        }
+      },
+      "productionSnapshot": "Cedar r17"
+    },
+    {
+      "component": "Cedar documentation API tables",
+      "issue": "Wide API tables expanded phone pages.",
+      "fix": "Mobile-only direct documentation tables use local horizontal scrolling.",
+      "productionRetested": true,
+      "observed": {
+        "navTableWidth": 263,
+        "navTableScrollWidth": 560,
+        "overflowX": "auto",
+        "menuViewport": 364,
+        "menuPageWidth": 364
+      }
+    },
+    {
+      "component": "Maple Steps and TabBar bilingual documentation",
+      "issue": "Steps introduction still named current; TabBar default slot text incorrectly named modelValue.",
+      "fix": "Steps primary value is modelValue; TabBar slot boolean is active; both zh-CN and en-US corrected.",
+      "productionRetested": true,
+      "productionSnapshot": "Maple r18",
+      "verifiedLanguages": [
+        "zh-CN",
+        "en-US"
+      ]
+    },
+    {
+      "component": "Cedar NavMenu item-label demo",
+      "issue": "Default grid minimum track expanded title-strategy content to 300px, causing residual phone overflow.",
+      "productionRetested": true,
+      "owner": "Coordinated final production acceptance",
+      "fix": "Single grid column uses minmax(0,1fr), min-width:0; auxiliary buttons wrap.",
+      "productionSnapshot": "Cedar r19",
+      "layout": {
+        "light": {
+          "page": 364,
+          "tables": [
+            {
+              "overflow": "auto",
+              "scroll": 560,
+              "width": 252.7578125
+            },
+            {
+              "overflow": "auto",
+              "scroll": 253,
+              "width": 252.7578125
+            },
+            {
+              "overflow": "auto",
+              "scroll": 253,
+              "width": 252.7578125
+            },
+            {
+              "overflow": "auto",
+              "scroll": 343,
+              "width": 252.7578125
+            },
+            {
+              "overflow": "auto",
+              "scroll": 519,
+              "width": 252.7578125
+            },
+            {
+              "overflow": "auto",
+              "scroll": 253,
+              "width": 252.7578125
+            }
+          ],
+          "theme": "light",
+          "titleGrid": [
+            {
+              "column": "202.758px",
+              "maxChildRight": 315,
+              "width": 202.7578125,
+              "wrap": "wrap"
+            }
+          ],
+          "viewport": 364
+        },
+        "dark": {
+          "page": 364,
+          "theme": "dark",
+          "viewport": 364
+        },
+        "indexHash": "a3482f9bcc3b66bc0d92a29a501835f55b25ca665f94f01fa25e64f6425a7bff",
+        "passed": true
+      }
+    }
+  ],
+  "finalFocusedCases": [
+    {
+      "label": "cedar-r22-desktop-light",
+      "component": "nav-menu",
+      "geometry": [
+        {
+          "listClient": 798,
+          "listScroll": 798,
+          "parentWidth": 798,
+          "width": 798
+        },
+        {
+          "listClient": 798,
+          "listScroll": 798,
+          "parentWidth": 798,
+          "width": 798
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-desktop-light",
+      "component": "menu",
+      "parent": {
+        "background": "rgb(242, 243, 245)",
+        "className": "c-menu-option c-menu-option-active c-menu-option-has-suffix",
+        "text": "设置当前项未选中"
+      },
+      "highlighted": "c-menu-option c-menu-option-active",
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-desktop-light",
+      "component": "collapse",
+      "states": [
+        {
+          "expanded": "false",
+          "text": "vvBeijing Toutiao Technology Co., Ltd."
+        },
+        {
+          "expanded": "false",
+          "text": "▶Beijing Toutiao Technology Co., Ltd."
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-desktop-light",
+      "component": "steps",
+      "items": [
+        {
+          "className": "c-steps-item c-steps-item-finish",
+          "text": "SucceededThis is a description"
+        },
+        {
+          "className": "c-steps-item c-steps-item-process c-steps-item-active",
+          "text": "2ProcessingThis is a description"
+        },
+        {
+          "className": "c-steps-item c-steps-item-wait",
+          "text": "3PendingThis is a description"
+        }
+      ],
+      "errorActive": true,
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-desktop-dark",
+      "component": "steps",
+      "items": [
+        {
+          "className": "c-steps-item c-steps-item-finish",
+          "text": "SucceededThis is a description"
+        },
+        {
+          "className": "c-steps-item c-steps-item-process c-steps-item-active",
+          "text": "2ProcessingThis is a description"
+        },
+        {
+          "className": "c-steps-item c-steps-item-wait",
+          "text": "3PendingThis is a description"
+        }
+      ],
+      "errorActive": true,
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-desktop-dark",
+      "component": "collapse",
+      "states": [
+        {
+          "expanded": "false",
+          "text": "vvBeijing Toutiao Technology Co., Ltd."
+        },
+        {
+          "expanded": "false",
+          "text": "▶Beijing Toutiao Technology Co., Ltd."
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-desktop-dark",
+      "component": "menu",
+      "parent": {
+        "background": "rgba(255, 255, 255, 0.08)",
+        "className": "c-menu-option c-menu-option-active c-menu-option-has-suffix",
+        "text": "设置当前项未选中"
+      },
+      "highlighted": "c-menu-option c-menu-option-active",
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-desktop-dark",
+      "component": "nav-menu",
+      "geometry": [
+        {
+          "listClient": 798,
+          "listScroll": 798,
+          "parentWidth": 798,
+          "width": 798
+        },
+        {
+          "listClient": 798,
+          "listScroll": 798,
+          "parentWidth": 798,
+          "width": 798
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-phone-dark",
+      "component": "nav-menu",
+      "geometry": [
+        {
+          "listClient": 213,
+          "listScroll": 261,
+          "parentWidth": 213,
+          "width": 213
+        },
+        {
+          "listClient": 213,
+          "listScroll": 498,
+          "parentWidth": 213,
+          "width": 213
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-phone-dark",
+      "component": "menu",
+      "parent": {
+        "background": "rgba(255, 255, 255, 0.08)",
+        "className": "c-menu-option c-menu-option-active c-menu-option-has-suffix",
+        "text": "设置当前项未选中"
+      },
+      "highlighted": "c-menu-option c-menu-option-active",
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-phone-dark",
+      "component": "collapse",
+      "states": [
+        {
+          "expanded": "false",
+          "text": "vvBeijing Toutiao Technology Co., Ltd."
+        },
+        {
+          "expanded": "false",
+          "text": "▶Beijing Toutiao Technology Co., Ltd."
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-phone-dark",
+      "component": "steps",
+      "items": [
+        {
+          "className": "c-steps-item c-steps-item-finish",
+          "text": "SucceededThis is a description"
+        },
+        {
+          "className": "c-steps-item c-steps-item-process c-steps-item-active",
+          "text": "2ProcessingThis is a description"
+        },
+        {
+          "className": "c-steps-item c-steps-item-wait",
+          "text": "3PendingThis is a description"
+        }
+      ],
+      "errorActive": true,
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-phone-light",
+      "component": "steps",
+      "items": [
+        {
+          "className": "c-steps-item c-steps-item-finish",
+          "text": "SucceededThis is a description"
+        },
+        {
+          "className": "c-steps-item c-steps-item-process c-steps-item-active",
+          "text": "2ProcessingThis is a description"
+        },
+        {
+          "className": "c-steps-item c-steps-item-wait",
+          "text": "3PendingThis is a description"
+        }
+      ],
+      "errorActive": true,
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-phone-light",
+      "component": "collapse",
+      "states": [
+        {
+          "expanded": "false",
+          "text": "vvBeijing Toutiao Technology Co., Ltd."
+        },
+        {
+          "expanded": "false",
+          "text": "▶Beijing Toutiao Technology Co., Ltd."
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-phone-light",
+      "component": "menu",
+      "parent": {
+        "background": "rgb(242, 243, 245)",
+        "className": "c-menu-option c-menu-option-active c-menu-option-has-suffix",
+        "text": "设置当前项未选中"
+      },
+      "highlighted": "c-menu-option c-menu-option-active",
+      "passed": true
+    },
+    {
+      "label": "cedar-r22-phone-light",
+      "component": "nav-menu",
+      "geometry": [
+        {
+          "listClient": 213,
+          "listScroll": 261,
+          "parentWidth": 213,
+          "width": 213
+        },
+        {
+          "listClient": 213,
+          "listScroll": 498,
+          "parentWidth": 213,
+          "width": 213
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-phone-light",
+      "component": "menu",
+      "parent": {
+        "background": "rgb(242, 243, 245)",
+        "className": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active mp-menu-option--children-trigger mp-menu-option--has-suffix",
+        "text": "设置当前项未选中"
+      },
+      "highlighted": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active",
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-phone-light",
+      "component": "collapse",
+      "states": [
+        {
+          "expanded": "false",
+          "text": "vvBeijing Toutiao Technology Co., Ltd."
+        },
+        {
+          "expanded": "false",
+          "text": "▶Beijing Toutiao Technology Co., Ltd."
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-phone-light",
+      "component": "steps",
+      "items": [
+        {
+          "className": "mp-steps-item mp-steps-item-finish",
+          "text": "步骤1这是描述信息"
+        },
+        {
+          "className": "mp-steps-item mp-steps-item-finish mp-steps-item-next-error",
+          "text": "步骤2这是描述信息"
+        },
+        {
+          "className": "mp-steps-item mp-steps-item-error mp-steps-item-active",
+          "text": "步骤3这是描述信息"
+        },
+        {
+          "className": "mp-steps-item mp-steps-item-wait",
+          "text": "4步骤4这是描述信息"
+        }
+      ],
+      "control": "inline radio",
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-phone-light",
+      "component": "tab-bar",
+      "active": [
+        "我的"
+      ],
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-phone-dark",
+      "component": "tab-bar",
+      "active": [
+        "我的"
+      ],
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-phone-dark",
+      "component": "steps",
+      "items": [
+        {
+          "className": "mp-steps-item mp-steps-item-finish",
+          "text": "步骤1这是描述信息"
+        },
+        {
+          "className": "mp-steps-item mp-steps-item-finish mp-steps-item-next-error",
+          "text": "步骤2这是描述信息"
+        },
+        {
+          "className": "mp-steps-item mp-steps-item-error mp-steps-item-active",
+          "text": "步骤3这是描述信息"
+        },
+        {
+          "className": "mp-steps-item mp-steps-item-wait",
+          "text": "4步骤4这是描述信息"
+        }
+      ],
+      "control": "inline radio",
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-phone-dark",
+      "component": "collapse",
+      "states": [
+        {
+          "expanded": "false",
+          "text": "vvBeijing Toutiao Technology Co., Ltd."
+        },
+        {
+          "expanded": "false",
+          "text": "▶Beijing Toutiao Technology Co., Ltd."
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-phone-dark",
+      "component": "menu",
+      "parent": {
+        "background": "rgba(255, 255, 255, 0.08)",
+        "className": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active mp-menu-option--children-trigger mp-menu-option--has-suffix",
+        "text": "设置当前项未选中"
+      },
+      "highlighted": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active",
+      "peerMenusClosed": true,
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-desktop-dark",
+      "component": "menu",
+      "parent": {
+        "background": "rgba(255, 255, 255, 0.08)",
+        "className": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active mp-menu-option--children-trigger mp-menu-option--has-suffix",
+        "text": "设置当前项未选中"
+      },
+      "highlighted": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active",
+      "peerMenusClosed": true,
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-desktop-dark",
+      "component": "collapse",
+      "states": [
+        {
+          "expanded": "false",
+          "text": "vvBeijing Toutiao Technology Co., Ltd."
+        },
+        {
+          "expanded": "false",
+          "text": "▶Beijing Toutiao Technology Co., Ltd."
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-desktop-dark",
+      "component": "steps",
+      "items": [
+        {
+          "className": "mp-steps-item mp-steps-item-finish",
+          "text": "步骤1这是描述信息"
+        },
+        {
+          "className": "mp-steps-item mp-steps-item-finish mp-steps-item-next-error",
+          "text": "步骤2这是描述信息"
+        },
+        {
+          "className": "mp-steps-item mp-steps-item-error mp-steps-item-active",
+          "text": "步骤3这是描述信息"
+        },
+        {
+          "className": "mp-steps-item mp-steps-item-wait",
+          "text": "4步骤4这是描述信息"
+        }
+      ],
+      "control": "inline radio",
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-desktop-dark",
+      "component": "tab-bar",
+      "active": [
+        "我的"
+      ],
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-desktop-light",
+      "component": "tab-bar",
+      "active": [
+        "我的"
+      ],
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-desktop-light",
+      "component": "steps",
+      "items": [
+        {
+          "className": "mp-steps-item mp-steps-item-finish",
+          "text": "步骤1这是描述信息"
+        },
+        {
+          "className": "mp-steps-item mp-steps-item-finish mp-steps-item-next-error",
+          "text": "步骤2这是描述信息"
+        },
+        {
+          "className": "mp-steps-item mp-steps-item-error mp-steps-item-active",
+          "text": "步骤3这是描述信息"
+        },
+        {
+          "className": "mp-steps-item mp-steps-item-wait",
+          "text": "4步骤4这是描述信息"
+        }
+      ],
+      "control": "inline radio",
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-desktop-light",
+      "component": "collapse",
+      "states": [
+        {
+          "expanded": "false",
+          "text": "vvBeijing Toutiao Technology Co., Ltd."
+        },
+        {
+          "expanded": "false",
+          "text": "▶Beijing Toutiao Technology Co., Ltd."
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "maple-refrozen-desktop-light",
+      "component": "menu",
+      "parent": {
+        "background": "rgb(242, 243, 245)",
+        "className": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active mp-menu-option--children-trigger mp-menu-option--has-suffix",
+        "text": "设置当前项未选中"
+      },
+      "highlighted": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--active",
+      "peerMenusClosed": true,
+      "passed": true
+    }
+  ],
+  "finalFocusedCount": 32,
+  "finalBuildIndexes": {
+    "cedar": "47a786048a983c37c3e782b9c90a4709697f884b428f55ae47ffec8ca2254b96",
+    "maple": "e12a1fa1d3ccae5e12fcfeac9965c69071ab9fe4074d2ef376d8d2c1e7d3df2a"
+  },
+  "finalResponsiveBuildIndex": "a3482f9bcc3b66bc0d92a29a501835f55b25ca665f94f01fa25e64f6425a7bff",
+  "finalMatrixScope": "Current frozen production snapshots: Cedar r22 and Maple grouped final. Both source and production-input fingerprints independently match successful complete gate evidence.",
+  "latestFullGates": {
+    "cedar": {
+      "componentCases": 194,
+      "guideCases": 14,
+      "passed": 208,
+      "failed": 0,
+      "sourcesStable": true,
+      "productionInputsStable": true,
+      "sourceFingerprint": "7fed7364222b1581d2313cb1b866bc09c0997cf3d1d4c25fa205b962e14b884a",
+      "productionFingerprint": "6cf870efce720df05ad9ae03e6e3e4849ee31f85e87933396d3765d6454f4127",
+      "buildIndexHash": "47a786048a983c37c3e782b9c90a4709697f884b428f55ae47ffec8ca2254b96",
+      "commandExitCode": 0,
+      "themeCases": {
+        "passed": 45,
+        "failed": 0
+      }
+    },
+    "maple": {
+      "componentCases": 364,
+      "guideCases": 16,
+      "passed": 380,
+      "failed": 0,
+      "sourcesStable": true,
+      "productionInputsStable": true,
+      "sourceFingerprint": "7800248a161dd33a0b97b46cf4329be7548ef45893f37e28e08d5f0612c8d7e1",
+      "productionFingerprint": "0274f972b389f02c294e353c953276654046d606f2c334799b9e1ec8038e953b",
+      "buildIndexHash": "e12a1fa1d3ccae5e12fcfeac9965c69071ab9fe4074d2ef376d8d2c1e7d3df2a",
+      "commandExitCode": 0,
+      "themeCases": {
+        "passed": 6,
+        "failed": 0
+      },
+      "presentationModeCases": {
+        "passed": 308,
+        "failed": 0
+      }
+    }
+  },
+  "latestCedarResponsiveAndLogo": {
+    "light": {
+      "page": 364,
+      "theme": "light",
+      "width": 364
+    },
+    "dark": {
+      "page": 364,
+      "theme": "dark",
+      "width": 364
+    },
+    "logo": {
+      "src": "/logo.svg",
+      "loaded": true,
+      "naturalWidth": 150
+    },
+    "indexHash": "47a786048a983c37c3e782b9c90a4709697f884b428f55ae47ffec8ca2254b96",
+    "passed": true
+  },
+  "historicalSnapshots": [
+    {
+      "library": "cedar",
+      "sourceFingerprint": "0684a547881f445fce860421753a6c2e45d27f8befbaa9ebb21c5edda0088623",
+      "productionFingerprint": "6c9130e3143a85abe43933d09edbe8b85cf6c937c9043c9a6fdd2f3ec1a387a2",
+      "buildIndexHash": "8487629e3c8f7bcbbe43205c302097c4f688f95be862130fbb9563a7398c037c",
+      "sourceStable": true,
+      "productionInputsStable": true,
+      "passed": 207,
+      "failed": 1,
+      "failedCases": [
+        {
+          "component": "collapse",
+          "surface": "documentation",
+          "theme": "darkTheme",
+          "kind": "interaction",
+          "passed": false,
+          "error": "TimeoutError: page.goto: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:55549/components/collapse/\", waiting until \"load\"\u001b[22m\n"
+        }
+      ]
+    },
+    {
+      "library": "maple",
+      "sourceFingerprint": "2369e7c40c177d69db86c394b51c1d48c1eadda08a24d332382d6df15f2f62fa",
+      "productionFingerprint": "8f19f186efe6f6da6a4246cf24941b579660a810321557722d78fff85b8727f2",
+      "buildIndexHash": "f2ab1aad46300cdbc27d26bf93943116fc9b6924c5541b2c9c6158a1c7091cf3",
+      "sourceStable": true,
+      "productionInputsStable": true,
+      "passed": 380,
+      "failed": 0,
+      "failedCases": []
+    }
+  ],
+  "historicalBlockedFullGates": {
+    "cedar": {
+      "snapshot": "r21",
+      "componentCases": 194,
+      "guideCases": 14,
+      "passed": 208,
+      "failedCases": 0,
+      "sourcesStable": false,
+      "productionInputsStable": false,
+      "sourceFingerprint": "562c00a2cad7dccdb52c708566ed8b9ae1150a1a6519341322c38548fbebcfb7",
+      "productionFingerprint": "ae3c0f95673b95aba0336d923b838fd33ad2de873b788356a2144cdcc7fa234e",
+      "buildIndexHash": "1ef98ecbd61efdf4767ce93d6c15d6b0b521f57c971772f88347a672cd6d50f4",
+      "commandExitCode": 1,
+      "blockingReason": "Authored demo sources changed during acceptance; the after-hook requires rebuilding and rerunning after parallel changes stabilize.",
+      "themeCases": {
+        "passed": 45,
+        "failed": 0
+      }
+    },
+    "maple": {
+      "status": "latest-full-signoff-pending",
+      "blockingReason": "Further presentation/style fixes and newly requested APIs are being coordinated; earlier 380-case snapshot is historical evidence only."
+    }
+  },
+  "historicalPostSnapshotDrift": {
+    "cedar": {
+      "source": "0684a547881f445fce860421753a6c2e45d27f8befbaa9ebb21c5edda0088623",
+      "production": "14dc42e73f8421e8babc8384ec5579a5b64559c8fe9f8415b982cb5187181732",
+      "reason": "Cedar documentation theme author changed after snapshot build."
+    },
+    "maple": {
+      "source": "bba183f5339c7c85d914457d9c760c0f71ae3add7652a2b56ac025a211cf8fff",
+      "production": "6ec11924f8a6ff02f262cb01a7169f5d360d943664817928eea9f464862ead1a",
+      "reason": "Another authorized task is changing default popup behavior; old production acceptance does not cover these changes."
+    }
+  },
+  "acceptedAt": "2026-10-24T14:52:02.041Z",
+  "independentFingerprintVerification": [
+    {
+      "library": "cedar",
+      "source": "7fed7364222b1581d2313cb1b866bc09c0997cf3d1d4c25fa205b962e14b884a",
+      "production": "6cf870efce720df05ad9ae03e6e3e4849ee31f85e87933396d3765d6454f4127",
+      "index": "47a786048a983c37c3e782b9c90a4709697f884b428f55ae47ffec8ca2254b96",
+      "passed": 208,
+      "failed": 0,
+      "verifiedAt": "2026-10-24T14:48:51.441Z"
+    },
+    {
+      "library": "maple",
+      "source": "7800248a161dd33a0b97b46cf4329be7548ef45893f37e28e08d5f0612c8d7e1",
+      "production": "0274f972b389f02c294e353c953276654046d606f2c334799b9e1ec8038e953b",
+      "index": "e12a1fa1d3ccae5e12fcfeac9965c69071ab9fe4074d2ef376d8d2c1e7d3df2a",
+      "passed": 380,
+      "failed": 0,
+      "verifiedAt": "2026-10-24T14:48:53.639Z"
+    }
+  ],
+  "finalDocNaming": {
+    "steps": "Steps is a navigation bar that guides users through the steps of a task. Progress is controlled by modelValue, counted from 1 (aligned with Pagination / PC).",
+    "tabBar": "Use the default slot’s active parameter to make the selected label bold.",
+    "indexHash": "e12a1fa1d3ccae5e12fcfeac9965c69071ab9fe4074d2ef376d8d2c1e7d3df2a",
+    "passed": true
+  },
+  "platformLimit": "Chromium desktop and simulated phone browser viewports; no physical-device acceptance was performed."
+}

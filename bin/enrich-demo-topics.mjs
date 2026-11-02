@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
+import { renderConfigurationField } from './demo-control-policy.mjs';
+import { enhanceConfigurationComparison } from './demo-config-comparison.mjs';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const require = createRequire(path.join(root, 'cedar-design-web/packages/cedar-ui/package.json'));
@@ -144,14 +146,13 @@ for (const component of [...new Set(owners.map(owner => owner.component))]) {
       const cleanNode = parseDom(seedSource).children[0];
       const offset = cleanNode.props.at(-1)?.loc.end.offset ?? cleanNode.tag.length + 1;
       const target = (seedSource.slice(0, offset) + ` v-bind="${prop}"` + seedSource.slice(offset)).replace(/\s+(?:disabled|readonly|error)(?=[\s/>])/g, '');
-      const selectors = fields.map(field => field.options
-        ? `<div><span>${field.name}</span><${prefix}-select v-model="${prop}['${field.name}']" :clearable="false" :options='${JSON.stringify(field.options.map(value => ({ label: value, value })))}' aria-label="${field.name}" /></div>`
-        : `<${prefix}-checkbox v-model="${prop}['${field.name}']">${field.name}</${prefix}-checkbox>`).join('\n');
-      const template = `<${prefix}-space direction="column" :size="16">\n<${prefix}-space wrap>\n${selectors}\n</${prefix}-space>\n${target}\n</${prefix}-space>`;
+      const selectors = fields.map(field => renderConfigurationField(prefix, field, `${prop}['${field.name}']`)).join('\n');
+      const template = `<${prefix}-space direction="column" :size="16">\n<${prefix}-form layout="vertical">\n${selectors}\n</${prefix}-form>\n${target}\n</${prefix}-space>`;
       const originalScript = scriptFor(seed.descriptor.scriptSetup, target).replace(/from (['"])(\.[^'"]+)\1/g, (_, quote, relative) => `from ${quote}${path.relative(directory, path.resolve(path.dirname(seed.file), relative)).replace(/^(?!\.)/, './')}${quote}`);
       const values = Object.fromEntries(fields.map(field => [field.name, field.initial ?? false]));
       const styles = seed.descriptor.styles.map(style => `<style scoped${style.lang ? ` lang="${style.lang}"` : ''}>${style.content}</style>`).join('\n');
-      const source = `<script setup${seed.descriptor.scriptSetup?.lang ? ` lang="${seed.descriptor.scriptSetup.lang}"` : ''}>\nimport { reactive as __demoReactive } from 'vue'\n${originalScript}\nconst ${prop} = __demoReactive(${JSON.stringify(values)})\n</script>\n<template>\n${template}\n</template>\n${styles}\n`;
+      let source = `<script setup${seed.descriptor.scriptSetup?.lang ? ` lang="${seed.descriptor.scriptSetup.lang}"` : ''}>\nimport { reactive as __demoReactive } from 'vue'\n${originalScript}\nconst ${prop} = __demoReactive(${JSON.stringify(values)})\n</script>\n<template>\n${template}\n</template>\n${styles}\n`;
+      if (name === 'appearance-lab') source = enhanceConfigurationComparison(source);
       const { descriptor, errors } = parse(source, { filename: file });
       if (errors.length) throw errors;
       const compiled = compileScript(descriptor, { id: file });

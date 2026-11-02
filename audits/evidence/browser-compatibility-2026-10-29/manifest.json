@@ -1,0 +1,1077 @@
+{
+  "generatedAt": "2026-10-28T17:57:38.275Z",
+  "frozenWorkspace": "/tmp/cedar-maple-compatibility-20261029-2jkkvvre",
+  "validationScope": "Frozen sibling source snapshot and rebuilt production documents/libraries; live inputs may have concurrent changes.",
+  "latestTwoVersionsAccepted": false,
+  "nativeDeviceAcceptance": false,
+  "minimumVersionsAccepted": false,
+  "originalTimeoutsMs": {
+    "operation": 5000,
+    "componentCase": 30000
+  },
+  "acceptedRunsHaveNoSkippedCases": true,
+  "maxConcurrentBrowserJobs": 2,
+  "repositories": [
+    {
+      "library": "cedar",
+      "repository": "cedar-design-web",
+      "publishedJsCssSha256": "32e6a4f08a3fc62011cb49fb1e5165a761ed15870e1b7d15ca0ca6c4e7a40020",
+      "sourceFingerprint": "a6a211a07849f8ed0819362d511d3f01d7848a4505489e0608bed7f38bc1f3ad",
+      "productionFingerprint": "03783574ea9d547a6b8a04cc333b59265d271968621e9c9498f3fa77bdb1f777",
+      "liveSourceMatches": false,
+      "liveProductionInputsMatch": false,
+      "completedCases": 651,
+      "nativeDeviceAcceptance": false,
+      "latestTwoVersionsAccepted": false
+    },
+    {
+      "library": "maple",
+      "repository": "maple-design-mobile",
+      "publishedJsCssSha256": "cf88437bce009c1bc4f1e451fab22b5630269b26731c3a73fbac31bc81b9ac3d",
+      "sourceFingerprint": "3827e8fcbf4a013e05441d454b53408da9e3ed6cb8c0d05666dee03d131ec459",
+      "productionFingerprint": "6156698a6558813c633d6669e1035ce4cf2061f85480c5944a9490b46d585aee",
+      "liveSourceMatches": true,
+      "liveProductionInputsMatch": false,
+      "completedCases": 1179,
+      "nativeDeviceAcceptance": false,
+      "latestTwoVersionsAccepted": false
+    }
+  ],
+  "totalCases": 1830,
+  "failureHistory": "First bounded Firefox failures and the old Cedar WebKit ResizeObserver failures retained. Corrected pointer readiness; fixed and rebuilt Cedar resize scheduling, then reran all three Cedar engines. Final accepted runs have no filtering. Focused diagnostic logs are separate and not counted as acceptance. Initial oversubscribed attempts were not accepted.",
+  "evidenceFiles": [
+    {
+      "path": "cedar/chromium/coverage.json",
+      "sha256": "c4278b378786e62bb9cfcc8dd4ddefefdcbd0b20bbb854df891c7d02925e2c2e"
+    },
+    {
+      "path": "cedar/chromium/documentation-darkTheme-input-number-passed.png",
+      "sha256": "f680cdf6419a95ceb52830c821ebcfe626c93f1bc8d6e857680e652680ec0b14"
+    },
+    {
+      "path": "cedar/chromium/documentation-darkTheme-table-column-manager-passed.png",
+      "sha256": "42ca3b72184656db70b8d9a60ede3fd9c53ca11e22fcd574c97cf8c4c07f75c6"
+    },
+    {
+      "path": "cedar/chromium/documentation-darkTheme-tabs-passed.png",
+      "sha256": "cdd72c3985033fc1afc1866c13861c9f2097d790ea8716d15e90d40d16b9ff8d"
+    },
+    {
+      "path": "cedar/chromium/documentation-lightTheme-input-number-passed.png",
+      "sha256": "0a5714a3efa01b3fedacdc67d4c89b39112297065a71f8c57e276a461194cdc0"
+    },
+    {
+      "path": "cedar/chromium/documentation-lightTheme-table-column-manager-passed.png",
+      "sha256": "ddc5c3bc2282f7421826d902622df84072d1ec84f3f4f5b70a40133462c1dcde"
+    },
+    {
+      "path": "cedar/chromium/documentation-lightTheme-tabs-passed.png",
+      "sha256": "d14f690f8a4c0b1063f37edea7169e765933bd392bdfaa2bd737e1bdfa5c8921"
+    },
+    {
+      "path": "cedar/chromium/engine-capabilities.json",
+      "sha256": "eb3eb42503367b4407e16adae23d781edb87b00035349e8cde906942724372f3"
+    },
+    {
+      "path": "cedar/chromium/engine-capabilities.png",
+      "sha256": "000f04f68b680549a914e7f553a568bbf8ea3493b999cfd5c53a0a6723dd4b6f"
+    },
+    {
+      "path": "cedar/chromium/navigation-outage.json",
+      "sha256": "ac066d9757c83225a0358179b064f9e3ae58a631e55708646562c3c768c1646f"
+    },
+    {
+      "path": "cedar/compatibility-chromium.json",
+      "sha256": "c2fd614c37bd710650abd866d65fa73e36559ed61b575cb806bf756aa7ae0ee9"
+    },
+    {
+      "path": "cedar/compatibility-firefox.json",
+      "sha256": "698530606eed765fc1d32fd358bf779491a024f42144c34d9d19ff1fa6f74038"
+    },
+    {
+      "path": "cedar/compatibility-matrix.json",
+      "sha256": "3c574c793f882b3753c4d2e204829851580618fbdd8f8067545849ee1a12662a"
+    },
+    {
+      "path": "cedar/compatibility-webkit.json",
+      "sha256": "c4b87f118c5cad7b7c0dc8f7f0066f9d055903cfeaf2bd465a23510001ab50ff"
+    },
+    {
+      "path": "cedar/firefox/coverage.json",
+      "sha256": "f82131989cabcda10072d7c2f238daa170f728dfc302b3021c6409aba1d6b9b9"
+    },
+    {
+      "path": "cedar/firefox/documentation-darkTheme-input-number-passed.png",
+      "sha256": "d8a6d81b8217586dba759cb5d8fa780d0be89f7c563dfa4388f19eb95d819378"
+    },
+    {
+      "path": "cedar/firefox/documentation-darkTheme-table-column-manager-passed.png",
+      "sha256": "d7f42fd8dd6e316c26951e7930613a33f80b556d8a14ed3604a9944b8ce6b8c7"
+    },
+    {
+      "path": "cedar/firefox/documentation-darkTheme-tabs-passed.png",
+      "sha256": "272f60c52f73c691947a1eba10612b8335154177a617b0e5e205b75f31b20bdd"
+    },
+    {
+      "path": "cedar/firefox/documentation-lightTheme-input-number-passed.png",
+      "sha256": "99bbb8f7355eafb7c40530c729b07e5212fd0e9fb1b4aded72754a70c8562c8d"
+    },
+    {
+      "path": "cedar/firefox/documentation-lightTheme-table-column-manager-passed.png",
+      "sha256": "2f947fab71dcf67b3c8fbcad38cd7b6207da140cb9444830c204c6fe49e3090f"
+    },
+    {
+      "path": "cedar/firefox/documentation-lightTheme-tabs-passed.png",
+      "sha256": "1ea15630bce53077e9193757af3b799f84705c8100227ca5823404a5d0acac37"
+    },
+    {
+      "path": "cedar/firefox/engine-capabilities.json",
+      "sha256": "ad7efb1c815eeddb58453457fc3ea5e5a224c191b6e622fe40a8e91ba1b40f4e"
+    },
+    {
+      "path": "cedar/firefox/engine-capabilities.png",
+      "sha256": "f8d34a39dead3618dcd5a8a94ade68d97d5eb77ada6fbd982bad22e134643585"
+    },
+    {
+      "path": "cedar/firefox/navigation-outage.json",
+      "sha256": "dce0fc8d15ddd13fc827cb583979cccc37b509f0e71b537732b36c3888b7ca20"
+    },
+    {
+      "path": "cedar/webkit/coverage.json",
+      "sha256": "25dda0f35fa60eb0c53bd3ce95921e5e637bf7b4cc1e2628f406f9a80145d6f6"
+    },
+    {
+      "path": "cedar/webkit/documentation-darkTheme-input-number-passed.png",
+      "sha256": "d328dbadc6d3d635baa0f52ed35504676eb6faabbb949eff80ee8e0945122b62"
+    },
+    {
+      "path": "cedar/webkit/documentation-darkTheme-table-column-manager-passed.png",
+      "sha256": "83418b6fbdd380cda59e1bd94ccaf3f0edd2b5654b0354240fbdcf065acd1d83"
+    },
+    {
+      "path": "cedar/webkit/documentation-darkTheme-tabs-passed.png",
+      "sha256": "fbe565b2ceafefbead9d8fe686deb53a9c1b7c065bc937fc87e0c8e716e123c8"
+    },
+    {
+      "path": "cedar/webkit/documentation-lightTheme-input-number-passed.png",
+      "sha256": "834b02e6a78f8fb800695fb35c9debf53007e1727edb51def74615d223f5a4d6"
+    },
+    {
+      "path": "cedar/webkit/documentation-lightTheme-table-column-manager-passed.png",
+      "sha256": "f29b873d5eb776b6ea289acab8dca31b1500cfbc780ecee52b6ea2937bff384d"
+    },
+    {
+      "path": "cedar/webkit/documentation-lightTheme-tabs-passed.png",
+      "sha256": "29359cc3d479972cc59deae6c852e72c854e7a7f0b3bf9c1d36501acc73dbe90"
+    },
+    {
+      "path": "cedar/webkit/engine-capabilities.json",
+      "sha256": "5e55e93e9e06ec6700282447d77cdd0ca933114034232aecaf6574d154dbfb64"
+    },
+    {
+      "path": "cedar/webkit/engine-capabilities.png",
+      "sha256": "097f4ffcb2b592a1a84dde5445d9ac7fb16ff038f217cd5d4bddaf27253f5f3d"
+    },
+    {
+      "path": "cedar/webkit/navigation-outage.json",
+      "sha256": "24f9aec474e200c54e73fdb238e96690e95519422f8c71c8e26dcd541c0fc5b1"
+    },
+    {
+      "path": "harness/actions.mjs",
+      "sha256": "a75f361e5990c349fdc1fe9cea09925381b6162671bf879fee8645f6c11661e1"
+    },
+    {
+      "path": "harness/compatibility.mjs",
+      "sha256": "e0f6976ee2c110193ae83eaab3e3aaa6382faa859e3e85b0f72df45666263f6e"
+    },
+    {
+      "path": "harness/compatibility.test.mjs",
+      "sha256": "f5c18681ef86caecca6ebdd6f08dac8addd2c00877962985dac324ff98b6862e"
+    },
+    {
+      "path": "harness/contracts.mjs",
+      "sha256": "1e4739668b57c1379ba4e21915479e886cdae40adc031efeb6813665421ada15"
+    },
+    {
+      "path": "harness/demo-control.mjs",
+      "sha256": "79a7eaaf9629d88647c84f2f4dc9f7959d6c68ae7bd8f10864ab5b8053c5423d"
+    },
+    {
+      "path": "harness/demo-controls.test.mjs",
+      "sha256": "125160460d5541c45fc61ca04877a183d7adb29453e6ad36470802377b86019b"
+    },
+    {
+      "path": "harness/engine-input.test.mjs",
+      "sha256": "4dc404a0e37a042444ca2553b98fc66403c8c81fbd1460ca518e5347229e40ad"
+    },
+    {
+      "path": "harness/evidence.mjs",
+      "sha256": "2f3e311b9f2a9247ae873417fcfe6d5e2c319593864163cce7c5afe64a3eb812"
+    },
+    {
+      "path": "harness/fixtures/demo-phone-review.html",
+      "sha256": "ef43b3806375cf6c83a32ffdb11f1b1c4667afc64d1f5608fccdd759af016c8f"
+    },
+    {
+      "path": "harness/inventory.mjs",
+      "sha256": "e72b1838ce9298314893b441a15cfbe7b8d5b4427d206bedcdc2ca8991b6b6a3"
+    },
+    {
+      "path": "harness/inventory.test.mjs",
+      "sha256": "a5bd571f366b61c64eb2bd27faa568aa6d0b98336fd242154626bcb792177fae"
+    },
+    {
+      "path": "harness/matrix.mjs",
+      "sha256": "25a418c4fadaedac14a8f2f66b229b8a6034c58f23231840512fc2b27ad44754"
+    },
+    {
+      "path": "harness/native-acceptance.mjs",
+      "sha256": "248d60bbd1ff0118fcca62b6d731e922d95dd076e6807bc405155a5d1d4ce0e6"
+    },
+    {
+      "path": "harness/native-acceptance.test.mjs",
+      "sha256": "e4ec923ebce964ecbb8d38ab4c94e1c3bdeea5b121de57f0014f7274a6b82a91"
+    },
+    {
+      "path": "harness/navigation-gate.mjs",
+      "sha256": "f3cb103a614728c389d5591347992b9f969eca5db01c8e74a654e9527cd3e065"
+    },
+    {
+      "path": "harness/navigation.mjs",
+      "sha256": "a74415c2cb68e2ff60669aa9aae22e9afd83a3ddf00f0c98624b393cae163e18"
+    },
+    {
+      "path": "harness/navigation.test.mjs",
+      "sha256": "7dc9deefd0032ae2c1c8485847269d60b53b6f9151c31853c93c19980e4759f8"
+    },
+    {
+      "path": "harness/runner.mjs",
+      "sha256": "5c4f4b4c33313630568b8ca82be2f8bea70225a4927e3ba554f4ab7cfdc1118e"
+    },
+    {
+      "path": "harness/snapshot.mjs",
+      "sha256": "3c3aa8d7bf3a8adff1a34c8bc0160356736b4b650acc349f2f87ab56b5dcc665"
+    },
+    {
+      "path": "harness/touch.mjs",
+      "sha256": "474aa7b85f27632320db6532d72b7024391a8295b81e52361ff3b67a83025448"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/chromium/coverage.json",
+      "sha256": "f732c7a0b69eac35977603ae701f57956951b24cc67ad4c83ba92710d6c7d00b"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/chromium/documentation-darkTheme-input-number-passed.png",
+      "sha256": "f8aba999899032832bd4696c44c1101fe8da91c63679bc7fb9f2da5a85d6f2bf"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/chromium/documentation-darkTheme-table-column-manager-passed.png",
+      "sha256": "42ca3b72184656db70b8d9a60ede3fd9c53ca11e22fcd574c97cf8c4c07f75c6"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/chromium/documentation-darkTheme-tabs-passed.png",
+      "sha256": "cdd72c3985033fc1afc1866c13861c9f2097d790ea8716d15e90d40d16b9ff8d"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/chromium/documentation-lightTheme-input-number-passed.png",
+      "sha256": "bb80e58dd91d76e1279cc431f1fd83811f838149b3a888743b01f61940a38e42"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/chromium/documentation-lightTheme-table-column-manager-passed.png",
+      "sha256": "ddc5c3bc2282f7421826d902622df84072d1ec84f3f4f5b70a40133462c1dcde"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/chromium/documentation-lightTheme-tabs-passed.png",
+      "sha256": "d14f690f8a4c0b1063f37edea7169e765933bd392bdfaa2bd737e1bdfa5c8921"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/chromium/engine-capabilities.json",
+      "sha256": "0e3e73bbb4b71435be733180d5234bae316f311e08534f1d52e64a111d13eefd"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/chromium/engine-capabilities.png",
+      "sha256": "000f04f68b680549a914e7f553a568bbf8ea3493b999cfd5c53a0a6723dd4b6f"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/chromium/navigation-outage.json",
+      "sha256": "9133789999d6bd6e64cc5089bd19e72b98937f4705a1ea04270e5e6494e6f8de"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/compatibility-chromium.json",
+      "sha256": "c838c7ac77d510e46dbe17f422432c4b57257e308d5cecb459f2b971f318bbe1"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/compatibility-firefox.json",
+      "sha256": "f825d48c9f1af57d00f7a11bfb74be967750265600c5a5399ac090d1639715d2"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/compatibility-matrix.json",
+      "sha256": "8e5378629ff85fb7b7c7d3232e423f58e00277eb024144ef9f250c87d61673c4"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/compatibility-webkit.json",
+      "sha256": "b590d355442ae1f2b59a7a87f7330061ad0d0399a51208daffe9e7e509a40b2d"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/firefox/coverage.json",
+      "sha256": "5b9a4369b7b371812ba99907a571aec0bd39ab9209dc003edd2aa0770aae276c"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/firefox/documentation-darkTheme-input-number-passed.png",
+      "sha256": "7a09b0671a374c7d294ae6b3b2c72d8e9b18fc93c66cb4567c9e95decf828fd5"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/firefox/documentation-darkTheme-scheduler-failure.json",
+      "sha256": "198db438cb05e1cecdf8735bf0797eb33c2e70dcc368ddc551b684c5e814ed8a"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/firefox/documentation-darkTheme-scheduler-failure.png",
+      "sha256": "3480de35f6671fc053a74319edd5d80ea417904d4d695581e34220bbd7e7f74b"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/firefox/documentation-darkTheme-table-column-manager-passed.png",
+      "sha256": "d7f42fd8dd6e316c26951e7930613a33f80b556d8a14ed3604a9944b8ce6b8c7"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/firefox/documentation-darkTheme-tabs-passed.png",
+      "sha256": "5663dcd3d68847ea09c77e8f483126ab134922cd003f9c9b1bfd3cafdaeb8068"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/firefox/documentation-lightTheme-input-number-passed.png",
+      "sha256": "cbbd3d9822637a2bee5e7a8d01bdbb421b93a14b42e35d67d4de1787d5ec3435"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/firefox/documentation-lightTheme-table-column-manager-passed.png",
+      "sha256": "2f947fab71dcf67b3c8fbcad38cd7b6207da140cb9444830c204c6fe49e3090f"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/firefox/documentation-lightTheme-tabs-passed.png",
+      "sha256": "3ad40d1c46c0b33767cd2146d7f3b3e5ab22e44c69e5044d8f7c9dba9494b8aa"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/firefox/engine-capabilities.json",
+      "sha256": "96c4a403d80c170e21909716f90a3fa6c1c8c139f349fcb70498feb5201d3b29"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/firefox/engine-capabilities.png",
+      "sha256": "f8d34a39dead3618dcd5a8a94ade68d97d5eb77ada6fbd982bad22e134643585"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/firefox/navigation-outage.json",
+      "sha256": "fbaab312c884875c0e437a3a5de2720a9af567a9ed51b0ae94a0f921f4f454d4"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/coverage.json",
+      "sha256": "c79d79c294ac3fba24fa0aa2e257cbca2cf4d14a4cbb9bb749ed3cfbe3cdbfb7"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-darkTheme-input-number-passed.png",
+      "sha256": "b77f0bbc0be7fb2fd991c3c85cb3d573a5ebf452f1455e1dc4af8dfff93c5eb6"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-darkTheme-scheduler-failure.json",
+      "sha256": "fd8bdc3ec0a749aacf1338c717e13d9d601156ea6d0ff9ae9adbb904ef8b4d5e"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-darkTheme-scheduler-failure.png",
+      "sha256": "fce681f77d5c1914a787924887b62bee63adf52fbacdd273e2551f42e2877599"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-darkTheme-table-column-manager-passed.png",
+      "sha256": "83418b6fbdd380cda59e1bd94ccaf3f0edd2b5654b0354240fbdcf065acd1d83"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-darkTheme-table-failure.json",
+      "sha256": "2bfdb1c5b0d6d874df4afc1b85a855c2da4a205b86630028a0d3522b9e4ab0f5"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-darkTheme-table-failure.png",
+      "sha256": "d5f5b7a33bf301c53af17780d7026d919f7c8ada214fc727534ec91e915a456f"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-darkTheme-tabs-passed.png",
+      "sha256": "ffef09afee9bd54bf433174c8622997ae7dea38c11e03a5db89bf3ac352e70be"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-darkTheme-typography-failure.json",
+      "sha256": "e87d03907abd9bd577e825762c8843a0be16ef625dec8194ae506ed14ff34bc4"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-darkTheme-typography-failure.png",
+      "sha256": "539833105a5b3035d824b0b4f6e7ecf98c17e96bad9fc83c51a9308da7d5599c"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-lightTheme-input-number-passed.png",
+      "sha256": "7708774cf9d1ceb9c7dc66365bd4afed8a06dc63c6a3259578a84c683a56bd7a"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-lightTheme-table-column-manager-passed.png",
+      "sha256": "f29b873d5eb776b6ea289acab8dca31b1500cfbc780ecee52b6ea2937bff384d"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-lightTheme-table-failure.json",
+      "sha256": "5ef253c1efdfcedffe65f3667ba559a5b576f0ad8c460d5beb4a1241beaf6028"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-lightTheme-table-failure.png",
+      "sha256": "893e691d9c6bd5f42fc2a1a383e5cf11beed737c0bd0e517efc4c2b1eda18fbf"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-lightTheme-tabs-passed.png",
+      "sha256": "49f06e42a2cdd802de6982a16c188c8cac4322ec8b5c80420b9128250421eba4"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-lightTheme-typography-failure.json",
+      "sha256": "7b3f23dfb0ac4559ea5afbc8d1809f61f9378b136135dfcd29f647b5e7c85930"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/documentation-lightTheme-typography-failure.png",
+      "sha256": "920e4dc5b0bce96ea996fd7e972c4176029d76d0e27337e3103cd43c95bb6923"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/engine-capabilities.json",
+      "sha256": "1fa8c468dbcb4ac4ebcf852812df2291962c647f8434ade5a5a27f3606390e50"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/engine-capabilities.png",
+      "sha256": "097f4ffcb2b592a1a84dde5445d9ac7fb16ff038f217cd5d4bddaf27253f5f3d"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-darkTheme-style-atomic-css-failure.json",
+      "sha256": "d2b59c3c81b79e6cd27b2b60346529429098791bc37f49e7c2fa4559ce644900"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-darkTheme-style-atomic-css-failure.png",
+      "sha256": "6d92026adcbcbdb65d6170d754b372d84a2b3549c1555116d83e9007ed67cee4"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-darkTheme-style-atomic-usage-failure.json",
+      "sha256": "183e4014fc8a117a911c83eceb383405f0f2613504900251b9416d512cff9263"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-darkTheme-style-atomic-usage-failure.png",
+      "sha256": "ded6fdab266cc7e44a582ca16cc0bae67ef80ea782cb39e8a162d3a3c5c7ed2f"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-darkTheme-style-color-failure.json",
+      "sha256": "3072f6bc8a4a691e022b26a6ab13f740b100a22eab2802af244e014115ec43d4"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-darkTheme-style-color-failure.png",
+      "sha256": "c7eb52e6531f9c78a73349992f15e93fde83e4466dfe9f42a3c4815f81a3d24c"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-darkTheme-style-elevation-failure.json",
+      "sha256": "bcb4b0dcdb3699498f67c4229ebca80415b747b5472c2f64809663780e6a2c95"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-darkTheme-style-elevation-failure.png",
+      "sha256": "8367cbe69eee6a2f3b0f89383fd203b04250825dd4f6e2d72a9a17b624e36236"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-darkTheme-style-typography-failure.json",
+      "sha256": "bb60f2d01f8ddc22dd008d1ff7ee4d26db2c5c4385db4d41e8a177905a06bd8b"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-darkTheme-style-typography-failure.png",
+      "sha256": "46b6e8368fcf0c1b58cf50846630d28aacaef8f55717b290b4b1e2017beb5362"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-lightTheme-style-atomic-css-failure.json",
+      "sha256": "50719fadd69569de470bde811267137268d96738d35118c2398828bcf0535825"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-lightTheme-style-atomic-css-failure.png",
+      "sha256": "129ee535ae789a4905e9c030cdbc435091099443b55d5ef2bd3b4ec55a7ee140"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-lightTheme-style-atomic-usage-failure.json",
+      "sha256": "183e4014fc8a117a911c83eceb383405f0f2613504900251b9416d512cff9263"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-lightTheme-style-atomic-usage-failure.png",
+      "sha256": "be1ee1e11dbedca1a27698f03c1dfc99e5219a58b2a07a0cf5317b4e475f4778"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-lightTheme-style-color-failure.json",
+      "sha256": "3072f6bc8a4a691e022b26a6ab13f740b100a22eab2802af244e014115ec43d4"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-lightTheme-style-color-failure.png",
+      "sha256": "bd2cf95c740dde7636d6e957785434df28fd009d52c0094b586482bcf90243e5"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-lightTheme-style-elevation-failure.json",
+      "sha256": "bcb4b0dcdb3699498f67c4229ebca80415b747b5472c2f64809663780e6a2c95"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-lightTheme-style-elevation-failure.png",
+      "sha256": "216cda2128f72c6b132ed4530a62fcbba2b950659995138a53e916df5d2b5b79"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-lightTheme-style-typography-failure.json",
+      "sha256": "40d17baf87ad1703ded3b77dff21696702a175aa543da2d2c41214dfe5c83a99"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/guide-lightTheme-style-typography-failure.png",
+      "sha256": "24a677e66d1e5b55669a594befbe8fcf07ef6498bbdda997abdedda93be58c49"
+    },
+    {
+      "path": "history/cedar-before-resize-fix/webkit/navigation-outage.json",
+      "sha256": "2b3203c7a8bc754de53a2d83cd803843d73855e4e6cd315a5a202ed83ef8b5a4"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/cedar-firefox.log",
+      "sha256": "6a50e0d61adb544b35acd9d74021806e2d2ef11fd0b724062e43105399fe82ee"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/evidence/coverage.json",
+      "sha256": "5b9a4369b7b371812ba99907a571aec0bd39ab9209dc003edd2aa0770aae276c"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/evidence/documentation-darkTheme-input-number-passed.png",
+      "sha256": "7a09b0671a374c7d294ae6b3b2c72d8e9b18fc93c66cb4567c9e95decf828fd5"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/evidence/documentation-darkTheme-scheduler-failure.json",
+      "sha256": "198db438cb05e1cecdf8735bf0797eb33c2e70dcc368ddc551b684c5e814ed8a"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/evidence/documentation-darkTheme-scheduler-failure.png",
+      "sha256": "3480de35f6671fc053a74319edd5d80ea417904d4d695581e34220bbd7e7f74b"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/evidence/documentation-darkTheme-table-column-manager-passed.png",
+      "sha256": "d7f42fd8dd6e316c26951e7930613a33f80b556d8a14ed3604a9944b8ce6b8c7"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/evidence/documentation-darkTheme-tabs-passed.png",
+      "sha256": "5663dcd3d68847ea09c77e8f483126ab134922cd003f9c9b1bfd3cafdaeb8068"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/evidence/documentation-lightTheme-input-number-passed.png",
+      "sha256": "cbbd3d9822637a2bee5e7a8d01bdbb421b93a14b42e35d67d4de1787d5ec3435"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/evidence/documentation-lightTheme-table-column-manager-passed.png",
+      "sha256": "2f947fab71dcf67b3c8fbcad38cd7b6207da140cb9444830c204c6fe49e3090f"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/evidence/documentation-lightTheme-tabs-passed.png",
+      "sha256": "3ad40d1c46c0b33767cd2146d7f3b3e5ab22e44c69e5044d8f7c9dba9494b8aa"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/evidence/engine-capabilities.json",
+      "sha256": "96c4a403d80c170e21909716f90a3fa6c1c8c139f349fcb70498feb5201d3b29"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/evidence/engine-capabilities.png",
+      "sha256": "f8d34a39dead3618dcd5a8a94ade68d97d5eb77ada6fbd982bad22e134643585"
+    },
+    {
+      "path": "history/cedar-firefox-first-run/evidence/navigation-outage.json",
+      "sha256": "fbaab312c884875c0e437a3a5de2720a9af567a9ed51b0ae94a0f921f4f454d4"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/coverage.json",
+      "sha256": "800ebac7bd85a8270c1ea63e194c4b7855e0ad3ce3e0a8d1cdc8afc9fcda6b01"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/documentation-darkTheme-code-passed.png",
+      "sha256": "27e5e601a66626b06daaae754683cf8f6265e31d1f1f50b85c2141bd5feb3aba"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/documentation-darkTheme-input-number-passed.png",
+      "sha256": "736b6e6e86274c8ef04f7efb7df1308114f29de0abc1d219954f1ea09b494a8f"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/documentation-darkTheme-pull-refresh-passed.png",
+      "sha256": "52f429123ca5942334436595ba0fd8a6fd4536dc6d36dec1718e3d7cecf53195"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/documentation-darkTheme-tabs-passed.png",
+      "sha256": "de5f11d01fdf78f397407dc24e993de92b0b4975a659755ffaeafe966e5bd4f8"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/documentation-lightTheme-code-passed.png",
+      "sha256": "96b24638632233cfd872e25c620aa1468b1057134b38d45c1014a756cb662555"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/documentation-lightTheme-date-range-failure.json",
+      "sha256": "0c3d0ac70e5ce8abdaee681870f018de9cef5fdaffac37484a758504b8fe1c0d"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/documentation-lightTheme-date-range-failure.png",
+      "sha256": "86e06d27c56d9c55731ec193be9b650af109b9c91b3bbc6ea12c8e412b65a0d6"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/documentation-lightTheme-input-number-passed.png",
+      "sha256": "4c17872012a0719c825d951020a3d3ffa847e55acd968459f94947c19f55ebce"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/documentation-lightTheme-pull-refresh-passed.png",
+      "sha256": "d80d2d2cd8ce976eed0a07e1daa0737082d25e1b6097389b5ed4492c8d2aa88b"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/documentation-lightTheme-tabs-passed.png",
+      "sha256": "fb80be2f30c587968d8cf067617b2f3b251279d3dc91db81a61c72db2b818a2b"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/engine-capabilities.json",
+      "sha256": "fc8b2ce691af1c6242c1ef87f48208f4524d359c6fdaf872848110b195900638"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/engine-capabilities.png",
+      "sha256": "f8d34a39dead3618dcd5a8a94ade68d97d5eb77ada6fbd982bad22e134643585"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/mobile-darkTheme-code-passed.png",
+      "sha256": "859ae4b436bf7faf72b120af64c5836a0088edec090f3a563c9002bbaf74b45f"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/mobile-darkTheme-input-number-passed.png",
+      "sha256": "bfdaa321471fd2a17ee5315b8a60c0860e99a899077e9ef3b8a498f720c49f13"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/mobile-darkTheme-pull-refresh-passed.png",
+      "sha256": "fa6f486e94eec1ec5a86122b10b3dafe293d1bbd669f7ce5a02fb0447b260f52"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/mobile-darkTheme-tabs-passed.png",
+      "sha256": "baca3d219ee3e1626b5a1ed9e651852d22338e36ff0bf8da778a347d9696a8dc"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/mobile-lightTheme-code-passed.png",
+      "sha256": "33c48836d21ebd967cae7947d7223a086b5db81de2a62c74dba650aa105a59bf"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/mobile-lightTheme-input-number-passed.png",
+      "sha256": "d6b984c2a4737672bb1a15d450d7e849beba6da3bc40bb564b5d3a2f54db4306"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/mobile-lightTheme-pull-refresh-passed.png",
+      "sha256": "c3f95c0cff3b3d2cd6054529165df98e11efa1bb6d3bfff405778306b23b2c01"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/mobile-lightTheme-ripple-failure.json",
+      "sha256": "7f57d00384a6806d8df526b9729591f9af7228c1287e9db515319ce816d9b6c7"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/mobile-lightTheme-ripple-failure.png",
+      "sha256": "7436b35343eb5958be55f31666f5cf905ab5f2bc278f5e40be1a441fe2a7f4a3"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/mobile-lightTheme-tabs-passed.png",
+      "sha256": "3c74a52a39a26e8b747ae186076fa92682d13e4f5513efe4baae428df3daf049"
+    },
+    {
+      "path": "history/maple-firefox-first-run/evidence/navigation-outage.json",
+      "sha256": "db3ef5a496a1124d1b88abfcff0ec568b5b126f4539d3d138c966f37b9bf08e9"
+    },
+    {
+      "path": "history/maple-firefox-first-run/maple-firefox.log",
+      "sha256": "957d254bce464dec8d653fa1e250f77869ec405487c0a0dc75645c2587335dd4"
+    },
+    {
+      "path": "logs/cedar-compatibility-cli-tests.log",
+      "sha256": "a929fca6fa581d7e77c165ae47ccc897b6d33440fb36383a20979fd968ce28c9"
+    },
+    {
+      "path": "logs/cedar-compatibility-scoped-lint-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "logs/cedar-nav-full-panel-resize-tests.log",
+      "sha256": "c8727db88a66c305edb48b3c65099ad5040746743e1f5e8d03a468b9ef2d1186"
+    },
+    {
+      "path": "logs/cedar-resize-observer-lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "logs/cedar-resize-observer-scoped-tests-final.log",
+      "sha256": "24644968fb3b6ae13ef9103a7dee052b08145422b301f63b7a8d6fe901993e68"
+    },
+    {
+      "path": "logs/cedar-resize-observer-tests-final.log",
+      "sha256": "4a0e0555e09285acccf0a319849e9929c9fa97685dea0d6c878228099bb4a3ff"
+    },
+    {
+      "path": "logs/cedar-tree-select-final-tests.log",
+      "sha256": "a7b75d3e255adfd53211f38b9dc94e8e1508615fa2110a61207aeae7c44afcfc"
+    },
+    {
+      "path": "logs/cedar-typography-resize-tests.log",
+      "sha256": "985bdf9e4894fcd0b6ee1f5d34c216b0b86531b280b6f84500c12c8d35e95edc"
+    },
+    {
+      "path": "logs/cedar-webkit-resize-diagnostics.log",
+      "sha256": "198fcfa16dc92d275c5a3a30fd0bf9c2639027c7f6ff9fe1b4969036e0af232c"
+    },
+    {
+      "path": "logs/cedar-webkit-scheduler-diagnostics.log",
+      "sha256": "7ab11333f5c0b12a23c8a40491f75e8eb08c2e471ce455dc97ab9063634e4af7"
+    },
+    {
+      "path": "logs/compatibility-final-contracts.log",
+      "sha256": "0393f0b8fb434955559e0248c6fb72dee048e20608e40968fa1c4d616f4e56c1"
+    },
+    {
+      "path": "logs/compatibility-snapshot.json",
+      "sha256": "6703b41fa263b5761914936f5a3116f117e39e50aceb9bf7ae3dc3022a0ef1fb"
+    },
+    {
+      "path": "logs/final-cedar-chromium-rerun.log",
+      "sha256": "5fc358a16a9a15b249940e4742c318ac6031cdce0077925399604e32ceb395a2"
+    },
+    {
+      "path": "logs/final-cedar-chromium.log",
+      "sha256": "263678331a41f946eff735424ce41677bcb8e4292bcef55b76eb221855a55033"
+    },
+    {
+      "path": "logs/final-cedar-firefox-rerun.json",
+      "sha256": "b529154aaaee4f3c90770d09a815843101603a918542c5ced0944d0bfb3d6984"
+    },
+    {
+      "path": "logs/final-cedar-firefox-rerun.log",
+      "sha256": "0ee40ce30bf843b55cae5b12b580eb49c2c41402b539e7d59101a91186f3237e"
+    },
+    {
+      "path": "logs/final-cedar-firefox.log",
+      "sha256": "6a50e0d61adb544b35acd9d74021806e2d2ef11fd0b724062e43105399fe82ee"
+    },
+    {
+      "path": "logs/final-cedar-rebuilt-queue.json",
+      "sha256": "bc57aa9e180619a3516694bfedb2ea7349d1efc57d0cca58cfe378858d279df6"
+    },
+    {
+      "path": "logs/final-cedar-summary.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "logs/final-cedar-webkit-rerun.log",
+      "sha256": "6e9c1f2b59b56b1272771d02b3cb7a4b085c8823a18f6f686573a7b3d6a46d52"
+    },
+    {
+      "path": "logs/final-cedar-webkit.log",
+      "sha256": "77b06d0b075f78a6cf2a2b47e30b6860bbb5e4e13026e3cdae1bb46bcd49c3b7"
+    },
+    {
+      "path": "logs/final-compatibility-queue.json",
+      "sha256": "1cd8732fec27c273d8b165559e4e732cb3c4963a51e86ac30111ed4770f7ee13"
+    },
+    {
+      "path": "logs/final-maple-chromium.log",
+      "sha256": "b29f6748a275e5e49ea721e8e255588ecd8b3bbfa82ddd38a4a3e68108b26891"
+    },
+    {
+      "path": "logs/final-maple-firefox-rerun.json",
+      "sha256": "aa6ce71beea9c9c40545cb05b4283e512fb19783fb484415b1f7fc9975a01eb4"
+    },
+    {
+      "path": "logs/final-maple-firefox-rerun.log",
+      "sha256": "7067dae8b93392284cbfdb2eff3b88c6480a21d43bef32037592f8b337245afd"
+    },
+    {
+      "path": "logs/final-maple-firefox.log",
+      "sha256": "957d254bce464dec8d653fa1e250f77869ec405487c0a0dc75645c2587335dd4"
+    },
+    {
+      "path": "logs/final-maple-summary.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "logs/final-maple-webkit.log",
+      "sha256": "58a6294bc6e0cb06676ba8d055da7503c8af27f88193506850f6647fa58a1573"
+    },
+    {
+      "path": "logs/frozen-cedar-resize-build-doc.log",
+      "sha256": "a5d16664b03ce7aa24b9d85b348ff2b5ce4dee7c64299891b531b5709d68dc96"
+    },
+    {
+      "path": "logs/frozen-cedar-resize-build-lib.log",
+      "sha256": "350a1eec3645219c638f34954fa48f07b80df7c8702435a5d0ed1b5387858934"
+    },
+    {
+      "path": "logs/frozen-cedar-resize-typecheck.log",
+      "sha256": "c6f6d4d4e2c3b042dfc7560d1d085c711ae9cd15e6a91208b7db0240fdc09ecd"
+    },
+    {
+      "path": "logs/frozen-cedar-typecheck.log",
+      "sha256": "69975bb2003bbf1ec3d61a1d6fd31a201551d9b11db33be5952f6df409a6b7e5"
+    },
+    {
+      "path": "logs/frozen-maple-typecheck.log",
+      "sha256": "bc1f72acd11858210b38327e1e0702d6e155860637e8de8b8d848568d2fe5931"
+    },
+    {
+      "path": "logs/maple-compatibility-cli-tests.log",
+      "sha256": "e6130af7bb42cd86ff6c336abc6a652111cce8c57bb536c8e44e5eaa951057d5"
+    },
+    {
+      "path": "logs/maple-compatibility-markdown-tests.log",
+      "sha256": "90cd8fa0fe1f331dcbe8de11d3cbeac9458475b0e4655220fbb7b4d1c65514f2"
+    },
+    {
+      "path": "logs/maple-compatibility-scoped-lint-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "maple/chromium/coverage.json",
+      "sha256": "cce27dc4b669dc40648db3df988eb17919b1eee9af60c8797819de2d88180647"
+    },
+    {
+      "path": "maple/chromium/documentation-darkTheme-code-passed.png",
+      "sha256": "95612b3a9d89b817b7370f521db6d1609b45bdfd4268d2d8ba0cfde8b7440b83"
+    },
+    {
+      "path": "maple/chromium/documentation-darkTheme-input-number-passed.png",
+      "sha256": "4d60f27c43e568b1f6726d67d3b5f2a41c743659a43b9dcf5e1f6e84e887e81d"
+    },
+    {
+      "path": "maple/chromium/documentation-darkTheme-pull-refresh-passed.png",
+      "sha256": "a0d0019d40e2dd6b22f14e08d4f813bd6b792ccd9a9c6bd85ec97270c1da2fc8"
+    },
+    {
+      "path": "maple/chromium/documentation-darkTheme-tabs-passed.png",
+      "sha256": "cfb49eabb72eb8695e3e87625440c8de12a16216ebaf6dc703b70e6652f774f8"
+    },
+    {
+      "path": "maple/chromium/documentation-lightTheme-code-passed.png",
+      "sha256": "49b1fd8434d7b172c9f6e78712eadf90c7d5907eca07d2e491ff6ad02b84c95b"
+    },
+    {
+      "path": "maple/chromium/documentation-lightTheme-input-number-passed.png",
+      "sha256": "2d9cb395b32d0a6d719c43e76f7da14f9a94918511e68c5d55af56a1765853f6"
+    },
+    {
+      "path": "maple/chromium/documentation-lightTheme-pull-refresh-passed.png",
+      "sha256": "07a042bbe22bb2557b8594b81c8cfb257d0cf23f531226e896b429096e996a39"
+    },
+    {
+      "path": "maple/chromium/documentation-lightTheme-tabs-passed.png",
+      "sha256": "17ac87fa8773539679f8c46213b0cc4c2a9a6201d774e0210034755916191b43"
+    },
+    {
+      "path": "maple/chromium/engine-capabilities.json",
+      "sha256": "dc984c89d8bf76299a011b8c2f0d059a9ec0129f4e3e618fae326dc662960179"
+    },
+    {
+      "path": "maple/chromium/engine-capabilities.png",
+      "sha256": "000f04f68b680549a914e7f553a568bbf8ea3493b999cfd5c53a0a6723dd4b6f"
+    },
+    {
+      "path": "maple/chromium/mobile-darkTheme-code-passed.png",
+      "sha256": "48821499e7a5664c28a73156c9b55545839817bc6c864ae5a1224e158d9d2fad"
+    },
+    {
+      "path": "maple/chromium/mobile-darkTheme-input-number-passed.png",
+      "sha256": "df771e5ea95149aa647343d64fecac4301de9fa56f518f63a654c002e80d4838"
+    },
+    {
+      "path": "maple/chromium/mobile-darkTheme-pull-refresh-passed.png",
+      "sha256": "5eb44817b46e83dee7369f1f0e6b5bc2bd7a89889803dd8999481f7b40167958"
+    },
+    {
+      "path": "maple/chromium/mobile-darkTheme-tabs-passed.png",
+      "sha256": "d2d0a318a88725c5eab26abce9ac8bd3e6bcdf8b769cba610ce1d69266e3b4d9"
+    },
+    {
+      "path": "maple/chromium/mobile-lightTheme-code-passed.png",
+      "sha256": "f4863288bb65cf1cf690b3a716f999fd79243fad2220c40865104a93205d6a55"
+    },
+    {
+      "path": "maple/chromium/mobile-lightTheme-input-number-passed.png",
+      "sha256": "d711772d0c688782bcb9c080946f510abba84c8bf61941d5910c6085b841c1d3"
+    },
+    {
+      "path": "maple/chromium/mobile-lightTheme-pull-refresh-passed.png",
+      "sha256": "17edd57c556caddd016b887ff2d72005ac560db3ec304846e4cd91429eea7b6c"
+    },
+    {
+      "path": "maple/chromium/mobile-lightTheme-tabs-passed.png",
+      "sha256": "9a3f3039624776a7235688ca60e4b882fa99ed9b3294d5612e471030625a1664"
+    },
+    {
+      "path": "maple/chromium/navigation-outage.json",
+      "sha256": "8dd8193d7125d9a86460bd9f8f224f3aba14b2f291edaed4ee51c14ef0fefcc7"
+    },
+    {
+      "path": "maple/compatibility-chromium.json",
+      "sha256": "b29c0c5d0a658098a85adf19559eed85dbe3c3204b85fe23a408fb72e0812ab0"
+    },
+    {
+      "path": "maple/compatibility-firefox.json",
+      "sha256": "2ebf75ff73100f1416491a942e0cb6d7f0ffce7aef5cb794b7c5ffae51dc3687"
+    },
+    {
+      "path": "maple/compatibility-matrix.json",
+      "sha256": "b47fdccfd6f05287f561d83105f9b7bd5c435440e868f26ccd05cdc4408b1aea"
+    },
+    {
+      "path": "maple/compatibility-webkit.json",
+      "sha256": "15f79f2cc940b2b7d33819f2e82462d4e486134c61c5c34cc97c8cda7f0ca0ef"
+    },
+    {
+      "path": "maple/firefox/coverage.json",
+      "sha256": "b8b2fe5e1bfd9efbc7a0ca7999a5a6f574dd9a8b11b918ed49fb89353d116404"
+    },
+    {
+      "path": "maple/firefox/documentation-darkTheme-code-passed.png",
+      "sha256": "83793db2feed0efe77e006b0de90a5e90fbe3e8d57a28fb8275ff1a001c2bdfb"
+    },
+    {
+      "path": "maple/firefox/documentation-darkTheme-input-number-passed.png",
+      "sha256": "001ccc3268c36e8d1db5c7ad80d1afee82e82ea8af135a403f94241d1978c520"
+    },
+    {
+      "path": "maple/firefox/documentation-darkTheme-pull-refresh-passed.png",
+      "sha256": "52f429123ca5942334436595ba0fd8a6fd4536dc6d36dec1718e3d7cecf53195"
+    },
+    {
+      "path": "maple/firefox/documentation-darkTheme-tabs-passed.png",
+      "sha256": "fb187ef4271f8a5b88488ba0d8462e638ac70c6e3a22613e560c8c87a6eac81d"
+    },
+    {
+      "path": "maple/firefox/documentation-lightTheme-code-passed.png",
+      "sha256": "051c826f8110508f8df786382178b012e35f6087b484fc68e95ca70c8d77efd2"
+    },
+    {
+      "path": "maple/firefox/documentation-lightTheme-input-number-passed.png",
+      "sha256": "4c17872012a0719c825d951020a3d3ffa847e55acd968459f94947c19f55ebce"
+    },
+    {
+      "path": "maple/firefox/documentation-lightTheme-pull-refresh-passed.png",
+      "sha256": "d80d2d2cd8ce976eed0a07e1daa0737082d25e1b6097389b5ed4492c8d2aa88b"
+    },
+    {
+      "path": "maple/firefox/documentation-lightTheme-tabs-passed.png",
+      "sha256": "fb80be2f30c587968d8cf067617b2f3b251279d3dc91db81a61c72db2b818a2b"
+    },
+    {
+      "path": "maple/firefox/engine-capabilities.json",
+      "sha256": "be8618e04127dda8a9a784bbeb9e7692db52e373ed6d74dfbb89c3453b37d37a"
+    },
+    {
+      "path": "maple/firefox/engine-capabilities.png",
+      "sha256": "f8d34a39dead3618dcd5a8a94ade68d97d5eb77ada6fbd982bad22e134643585"
+    },
+    {
+      "path": "maple/firefox/mobile-darkTheme-code-passed.png",
+      "sha256": "859ae4b436bf7faf72b120af64c5836a0088edec090f3a563c9002bbaf74b45f"
+    },
+    {
+      "path": "maple/firefox/mobile-darkTheme-input-number-passed.png",
+      "sha256": "b0f2089c0f79cf5dab3f028492003206aeb08a3a064b47861e73a67da8f5315a"
+    },
+    {
+      "path": "maple/firefox/mobile-darkTheme-pull-refresh-passed.png",
+      "sha256": "875c3b4541ae5022c28ca8d9f2163e4b0dbaed71763797b0878bc5a099d9d318"
+    },
+    {
+      "path": "maple/firefox/mobile-darkTheme-tabs-passed.png",
+      "sha256": "baca3d219ee3e1626b5a1ed9e651852d22338e36ff0bf8da778a347d9696a8dc"
+    },
+    {
+      "path": "maple/firefox/mobile-lightTheme-code-passed.png",
+      "sha256": "3d3382bb2c337055e93be42bc325aa85f5f966d2169756304de7e769cf88b4f2"
+    },
+    {
+      "path": "maple/firefox/mobile-lightTheme-input-number-passed.png",
+      "sha256": "b3ab3e3e66532fb6ec2c4589bf8d78aa3d2bdacbe71c8878fd7557ee6a967abf"
+    },
+    {
+      "path": "maple/firefox/mobile-lightTheme-pull-refresh-passed.png",
+      "sha256": "4d604612973878bf16a1e43c0229403497cdd54a81d4ff9bd0c42a3b9b424215"
+    },
+    {
+      "path": "maple/firefox/mobile-lightTheme-tabs-passed.png",
+      "sha256": "4c526cf8ad7cbea5498536a6e2981d0623b9654441f5f75022c14a113a5e11de"
+    },
+    {
+      "path": "maple/firefox/navigation-outage.json",
+      "sha256": "360d0b2390a8a020444cab184b3634ca19c15c18236f8c5fb0e56c64977d1081"
+    },
+    {
+      "path": "maple/webkit/coverage.json",
+      "sha256": "be8ceb62331d3cd63430d069335e9ea21827d40be61c27d51668e17dce602f73"
+    },
+    {
+      "path": "maple/webkit/documentation-darkTheme-code-passed.png",
+      "sha256": "bcb5b9d2b29f43c5eef7a9c4136bb7563fc288f25cf415e95c2bf00d3c18e52f"
+    },
+    {
+      "path": "maple/webkit/documentation-darkTheme-input-number-passed.png",
+      "sha256": "efeadbc39eb2468ed1008b3d719693cf82ca3e2e3a8633ae4d482115b87a8bd2"
+    },
+    {
+      "path": "maple/webkit/documentation-darkTheme-pull-refresh-passed.png",
+      "sha256": "2e5ae82042502d9e60fe061e42d3ca3d6060a17a83c08187fea9a9414c0867b8"
+    },
+    {
+      "path": "maple/webkit/documentation-darkTheme-tabs-passed.png",
+      "sha256": "04d0e1a1c516e47dc8bab6e4f5f268925999ba232f86de99d20aca259c2ab633"
+    },
+    {
+      "path": "maple/webkit/documentation-lightTheme-code-passed.png",
+      "sha256": "cc0de6d69a977aad522c12ee57191d9fcb5fe6c75be80e4a15c515a91f07ffb8"
+    },
+    {
+      "path": "maple/webkit/documentation-lightTheme-input-number-passed.png",
+      "sha256": "411bf90a59651e4b51cb2b9ea56ea355e4b79c4d75ab816a882811a06cca5752"
+    },
+    {
+      "path": "maple/webkit/documentation-lightTheme-pull-refresh-passed.png",
+      "sha256": "c4f951bfd77789f0a4e4b7148a25fddea9bdb2433db6d91d4ff4c81e350f97ed"
+    },
+    {
+      "path": "maple/webkit/documentation-lightTheme-tabs-passed.png",
+      "sha256": "a7a3047b94900a72272ac8766707e493f0bd43f4e445ae2f926349439cfa980c"
+    },
+    {
+      "path": "maple/webkit/engine-capabilities.json",
+      "sha256": "ed0a21395e154312f384b80f07fcaae10017d8e183c7c4c7495c15d3b9b9d3a6"
+    },
+    {
+      "path": "maple/webkit/engine-capabilities.png",
+      "sha256": "097f4ffcb2b592a1a84dde5445d9ac7fb16ff038f217cd5d4bddaf27253f5f3d"
+    },
+    {
+      "path": "maple/webkit/mobile-darkTheme-code-passed.png",
+      "sha256": "8f37345a2a60ba9a95ed338245cbf0f549252bb242f6c8360ead97e9ca593597"
+    },
+    {
+      "path": "maple/webkit/mobile-darkTheme-input-number-passed.png",
+      "sha256": "3037ffc711d3dff5259d4ddfe06884e01a715866bfae93678cff540baff13b4a"
+    },
+    {
+      "path": "maple/webkit/mobile-darkTheme-pull-refresh-passed.png",
+      "sha256": "f7a3b204c6b1db218a4d984328ac4bdc046b4ecfc4abc73ff0ed6bae12be189e"
+    },
+    {
+      "path": "maple/webkit/mobile-darkTheme-tabs-passed.png",
+      "sha256": "6f28cb8c62592bb965a53dcc395e19c86f939077d26cc87513577f2b4f212827"
+    },
+    {
+      "path": "maple/webkit/mobile-lightTheme-code-passed.png",
+      "sha256": "388167b1580d2e2af3eb40be19b737a21bad3bcb17cc98aaebef43f679750841"
+    },
+    {
+      "path": "maple/webkit/mobile-lightTheme-input-number-passed.png",
+      "sha256": "073b767d42baebde2e0e86e52f15ece3e168812ed3ed3e4825473e8931f4383d"
+    },
+    {
+      "path": "maple/webkit/mobile-lightTheme-pull-refresh-passed.png",
+      "sha256": "89122dd97dca4ab24f78b13a0fc447680e1e4580877d2fcbc269983796636f91"
+    },
+    {
+      "path": "maple/webkit/mobile-lightTheme-tabs-passed.png",
+      "sha256": "59def4e695d4211b87c100af56b59a96c6175cdbee9b48fa2c6324284d1e6ce9"
+    },
+    {
+      "path": "maple/webkit/navigation-outage.json",
+      "sha256": "5f05a30135bd842ed1d9b192e286bbef1653dbcf161ff06a1a2b750fc487a52d"
+    }
+  ],
+  "archiveOrganization": "Prior Maple Firefox failure captures are preserved byte-for-byte under history/maple-firefox-first-run/evidence; stale copies excluded from the accepted engine folder."
+}

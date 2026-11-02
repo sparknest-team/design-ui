@@ -1,0 +1,28 @@
+{
+  "root": "/tmp/cedar-maple-compatibility-20261029-2jkkvvre",
+  "repositories": [
+    "design-ui",
+    "cedar-design-web",
+    "maple-design-mobile"
+  ],
+  "frozenAt": "2026-10-29",
+  "purpose": "Frozen validation workspace; source repairs were stabilized and production outputs rebuilt before final acceptance. Not a Git checkout or native-device acceptance.",
+  "stabilization": [
+    {
+      "file": "cedar-design-web/packages/cedar-ui/src/index.ts",
+      "change": "Direction type export -> Orientation",
+      "reason": "The concurrent direction migration had already completed this change in the live workspace after the snapshot started; make the frozen API export coherent."
+    }
+  ],
+  "sourceUpdatesBeforeFinalBuild": [
+    "Cedar TreeSelect uses resolved option data in its panel",
+    "Cedar ResizeObserver coalesces notifications in a frame and cancels stale callbacks",
+    "Maple Markdown preserves explanatory Vue snippets as highlighted static code",
+    "Maple provider demos expose local configuration changes for interaction verification"
+  ],
+  "acceptanceHarnessRepairs": [
+    "Visible actionable pointer placement",
+    "PullRefresh starts at the actual scroller top",
+    "Scheduler toolbar centered and popup entrance animations completed before selecting"
+  ]
+}

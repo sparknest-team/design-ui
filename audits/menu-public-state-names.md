@@ -37,3 +37,7 @@ NavMenu 的 selectedOption 是选项对象，autoExpandSelected 是现有自动�
 - [Cedar NavMenu 数据上下文](../../cedar-design-web/packages/cedar-ui/src/nav-menu/types.ts)、[NavMenuItem](../../cedar-design-web/packages/cedar-ui/src/nav-menu/item.tsx)
 - [Cedar Collapse 插槽类型](../../cedar-design-web/packages/cedar-ui/src/collapse/props.ts)、[Maple Collapse 插槽类型](../../maple-design-mobile/packages/maple-ui/src/collapse/props.ts)
 - [Maple TabBarItem](../../maple-design-mobile/packages/maple-ui/src/tab-bar/TabBarItem.vue)、[Cedar Step](../../cedar-design-web/packages/cedar-ui/src/steps/Step.vue)、[Maple Step](../../maple-design-mobile/packages/maple-ui/src/steps/Step.vue)
+
+## 后续真实浏览器验收
+
+见 [2026-10-24 浏览器验收记录](active-expanded-browser-2026-10-24.md)。本轮补充 NavMenu 入口状态 demo，并修复预先挂载子菜单时切换同级 Menu 触发器的旧父菜单残留问题；公开状态命名保持不变。

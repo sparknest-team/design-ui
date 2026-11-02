@@ -1,0 +1,55 @@
+{
+  "library": "maple",
+  "browser": {
+    "name": "webkit",
+    "engine": "webkit",
+    "launchOptions": {},
+    "version": "26.5",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "recordedAt": "2026-10-30T08:16:07.220Z",
+    "evidenceType": "automated-engine-regression",
+    "nativeDeviceAcceptance": false,
+    "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+    "gestureInput": "synthetic touch events (handler regression only)"
+  },
+  "components": 1,
+  "sourcesStable": true,
+  "sourceFingerprint": "cfbe34619c4d1ffbd4b59948e3cb8a98160fa278ae98bfba374afacbf8b94389",
+  "buildIndexHash": "809cc781db0ce29a1d03a6fe60bf5d85a9f0942b4c6482f25bbfcdda7364411f",
+  "node": "v23.2.0",
+  "productionInputsStable": true,
+  "productionFingerprint": "4bf5a2e4e862a3849abd00692c2173825970f72b9c1d6c2de9f06fe530e3cfed",
+  "concurrency": 1,
+  "expectedComponentCases": 2,
+  "readingDirection": "ltr",
+  "directionCore": true,
+  "expectedGuideCases": 0,
+  "completedComponentCases": 2,
+  "results": [
+    {
+      "readingDirection": "ltr",
+      "component": "slider",
+      "surface": "documentation",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/slider/example/demos/basic-usage.vue",
+      "directionGeometry": [],
+      "checkedSources": 1,
+      "result": "slider",
+      "passed": true
+    },
+    {
+      "readingDirection": "ltr",
+      "component": "slider",
+      "surface": "mobile",
+      "theme": "lightTheme",
+      "kind": "interaction",
+      "source": "/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/slider/example/demos/basic-usage.vue",
+      "directionGeometry": [],
+      "checkedSources": 0,
+      "result": "slider",
+      "passed": true
+    }
+  ]
+}

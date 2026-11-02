@@ -1,0 +1,370 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:63464/components/menu/#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%80%89%E9%A1%B9%E5%86%85%E5%AE%B9",
+    "text": "a[]\t[]\nfield-names\tlabel/value/children/disabled 字段映射\tMenuFieldNames\t-\nmodel-value (v-model)\t当前激活值，用于受控高亮\tMenuValue\t-\nopen (v-model)\t浮层是否可见\tboolean\t-\ndefault-open\t非受控默认可见状态\tboolean\tfalse\ntrigger\t根菜单触发方式\t'hover' | 'click' | 'focus' | 'contextMenu'\t'click'\nsubmenu-trigger\t各级子菜单的展开方式，对所有层级统一生效\t'hover' | 'click'\t'hover'\nplacement\t弹出位置\tMenuPosition\t'bottom'\nstrategy\t根菜单及全部子菜单的定位策略\t'absolute' | 'fixed'\t'absolute'\npopup-container\t浮层挂载容器\tstring | HTMLElement | false\t-\npopup-max-height\t默认限制、自定义像素高度或不限高\tboolean | number\ttrue\nhide-on-select\t激活命令后关闭浮层\tboolean\ttrue\nauto-fit-popup-width\t浮层宽度跟随触发器\tboolean\tfalse\ndisabled\t禁用菜单\tboolean\tfalse\nalign-point\t按触发时的鼠标坐标定位；打开后保持该位置，再次右键时更新\tboolean\tfalse\nMenuOptionData\n字段\t描述\t类型\ntype\t普通命令、分组或分隔线\t'item' | 'group' | 'divider'\nlabel\t主内容\tVNodeChild | (context) => VNodeChild\nicon\t前置图标\tVNodeChild | (context) => VNodeChild\nextra\t右侧辅助内容，如快捷键\tVNodeChild | (context) => VNodeChild\nvalue\t激活命令时传给事件的值\tany\nchildren\t子命令；普通项带 children 时成为子菜单\tMenuOptionData[]\ndisabled\t禁用当前项及其后代\tboolean\nshow\t是否渲染\tboolean\nripple\t是否显示点击波纹\tboolean\nprops\t透传给命令行元素的 HTML 属性\tHTMLAttributes\n\n渲染上下文为 { option, active, level }。type: 'group' 只负责视觉分组，不增加子项层级；type: 'divider' 不可聚焦或激活。\n\nEvents\n事件名\t描述\t参数\nupdate:model-value\t当前选中值更新请求\tvalue: MenuValue\nopen-change\t浮层显示状态更新请求\topen: boolean\nselect\t用户激活菜单项\tvalue, option, event\nSlots\n插槽名\t描述\t参数\ndefault\t触发元素\t-\ncontent\t追加手写内容，适合与 MenuOption 组合\t-\nfooter\t页脚\t-\noption-label\t统一渲染选项主内容\t{ option, active, level }\noption-icon\t统一渲染选项图标\t{ option, active, level }\noption-extra\t统一渲染选项右侧内容\t{ option, active, level }\n<MenuOption>\n\n保留给 SplitButton 和少量手写 content 场景。Props 包含 label、value、disabled、ripple、highlight；label 渲染函数及 default、icon、suffix 插槽统一接收 { option, active, level }；点击时触发 click。highlight 只控制视觉强调，不提交选中值。分组和子菜单只通过 options 描述，不再导出 MenuGroup、MenuSubmenu。\n\n实例与键盘\n\n实例提供 open()、close()、resize()、setReference(reference?)。根菜单支持上下键、Home/End、Enter；子菜单通过右键进入、左键或 Escape 返回，Escape 每次只关闭最上层并恢复焦点。\n\n样式类、CSS 变量与内部 DOM 标记统一使用 c-menu-* / --c-menu-* / data-menu-*。\n\n状态与时长变量\n\n禁用优先于选中、指针 hover 和键盘焦点。选中后的 hover 使用独立角色，默认继承选中背景；可单独覆盖以增加 hover 反馈。两端的选中背景都直接绘制在选项上。\n\nToken\tDefault\n--c-menu-option-bg-selected-hover\tvar(--c-menu-option-bg-selected)\n数据身份与触发器切换\n\n可重排的数据项应提供稳定、唯一的 value，内部 Vue key 由业务值生成；数字 0、字符串 '0'、布尔值 false 保持不同身份。没有显式 value 的分组、分隔符或展示项按原始选项对象维持渲染身份，不新增公开 key 别名。点击另一个已经因 hover 打开的同级触发按钮，会关闭原先的菜单；点击子菜单内部不会误关父级。\n\n上次编辑于: 2026/10/24 20:08:01\n贡献者: shuai.meng,mengshuai\n首页\n产品\n关于我们",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"vmi-previewer-example\" style=\"\"><button class=\"c-button c-button--size-md c-button--status-default c-button--variant-tonal c-button--icon-only\" type=\"button\" aria-label=\"更多操作\" style=\"overflow: hidden; z-index: 1;\"><!----><span class=\"c-button--icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-more\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" stroke=\"none\" d=\"M38 25v-2h2v2zM23 25v-2h2v2zM8 25v-2h2v2z\"></path><path d=\"M38 25v-2h2v2zM23 25v-2h2v2zM8 25v-2h2v2z\"></path></svg><!----></span><!----><div class=\"c-hover-overlay\"></div></button></div>",
+      "<div class=\"vmi-previewer-example\" style=\"\"><div class=\"c-space c-space--block\" style=\"gap: var(--c-space-size-md-row-gap) var(--c-space-size-md-column-gap); flex-flow: wrap; justify-content: flex-start; align-items: center;\"><!----><div class=\"c-space__item\"><button class=\"c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--disabled\" type=\"button\" disabled=\"\"><!----><!----><span class=\"c-button__content\">菜单禁用</span><div class=\"c-hover-overlay\"></div></button></div><!----><div class=\"c-space__item\"><button class=\"c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">选项禁用</span><div class=\"c-hover-overlay\"></div></button></div></div></div>"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "选择语言",
+        "class": "vp-dropdown-title"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "搜索",
+        "class": "slimsearch-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换主题",
+        "class": "cedar-docs-theme__trigger"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "更多操作",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-tonal c-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "菜单禁用",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--disabled"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "选项禁用",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "编辑",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "选项分组",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "多级菜单",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--focus c-menu-open"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "自定义选项内容",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "渲染函数中的 active",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "作用域插槽中的 active",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "自定义子项与 highlight",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "点击触发",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "悬浮触发",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "限制为 120px",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "不限制高度",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "打开菜单",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "菜单触发器",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "页脚",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Bottom Left",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Bottom",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Bottom Right",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Top Left",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Top",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Top Right",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换定位：fixed",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "打开三级菜单",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "审查对象与场景 / Review target and scenario",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重新挂载 / Remount",
+        "class": "c-button c-button--size-sm c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重置 / Reset",
+        "class": "c-button c-button--size-sm c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "功能分类 / Feature topic",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "筛选属性 / Filter",
+        "class": "c-input__inner"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "值与数据 / Value and data (1/2)（3）",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "案例插槽 / Fixture slots",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "更多操作",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-tonal c-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "实例 API / Instance API",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "当前覆盖值 / Active overrides",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "事件 / Events（0）",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "专项 API 定位 / Scenario API index",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "返回顶部",
+        "class": "vp-back-to-top-button"
+      },
+      {
+        "tag": "SPAN",
+        "role": "progressbar",
+        "label": "",
+        "class": "vp-scroll-progress"
+      },
+      {
+        "tag": "DIV",
+        "role": "menu",
+        "label": "首页产品关于我们",
+        "class": "c-menu"
+      },
+      {
+        "tag": "LI",
+        "role": "menuitem",
+        "label": "首页",
+        "class": "c-menu-option"
+      },
+      {
+        "tag": "LI",
+        "role": "menuitem",
+        "label": "产品",
+        "class": "c-menu-option c-menu-option-has-suffix"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "LI",
+        "role": "menuitem",
+        "label": "关于我们",
+        "class": "c-menu-option"
+      }
+    ]
+  },
+  "error": "AssertionError [ERR_ASSERTION]: nested menu opens its actual child popup; last observed: 1"
+}

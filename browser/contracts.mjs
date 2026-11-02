@@ -19,7 +19,7 @@ const interactive = {
   textarea: 'textarea', time: 'temporal', 'time-range': 'temporal', tooltip: 'tooltip',
   transfer: 'transfer', tree: 'tree', 'tree-select': 'tree-select', trigger: 'trigger',
   upload: 'upload', 'verification-code': 'verification-code', watermark: 'watermark', image: 'image',
-  'action-sheet': 'action-sheet', counter: 'counter', drag: 'drag', fab: 'fab',
+  'action-sheet': 'action-sheet', drag: 'drag', fab: 'fab',
   'floating-panel': 'floating-panel', hover: 'hover', 'index-bar': 'index-bar', lazy: 'lazy',
   'loading-bar': 'loading-bar', locale: 'locale', 'locale-provider': 'locale',
   'highlighter-provider': 'highlighter-provider', 'notice-bar': 'notice-bar',
@@ -34,20 +34,25 @@ const presentation = {
   icon: ['icon', 1], layout: ['layout', 1], link: ['link', 1], list: ['list', 1], loading: ['loading', 1],
   'page-header': ['page-header', 1], paper: ['paper', 1], progress: ['progress', 1],
   'progress-group': ['progress-group', 1], result: ['result', 1], row: ['row', 1],
+  'safe-area': ['safe-area', 2],
   skeleton: ['skeleton', 1], space: ['space', 1], statistic: ['statistic', 1],
   table: ['table', 1], timeline: ['timeline', 1], typography: ['typography', 1],
 }
 
 const overrides = {
   cedar: {
-    paper: { kind: 'interaction', action: 'paper' },
+    paper: { kind: 'interaction', action: 'paper', demo: 'live-properties.vue' },
+    'field-decorator': { root: 'field-decorator', minimum: 5 },
     'date-picker': { demo: 'entry-boundary.vue' },
     'time-picker': { demo: 'panel-behavior.vue' },
     button: { demo: 'variants.vue' },
-    alert: { demo: 'closable.vue' }, ellipsis: { demo: 'expand.vue' },
+    alert: { demo: 'dismiss-comparison.vue' }, ellipsis: { demo: 'expand.vue' },
     'nav-menu': { demo: 'basic.vue' }, tag: { demo: 'closable.vue' },
   },
   maple: {
+    picker: { demo: 'disabled.vue' },
+    alert: { demo: 'dismiss-comparison.vue' },
+    'nav-menu': { demo: 'basic.vue', action: 'nav-menu-filter' },
     button: { demo: 'variants.vue' },
     'field-decorator': { root: 'field-decorator', minimum: 1 },
     form: { demo: 'events.vue' },

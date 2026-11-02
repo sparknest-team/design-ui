@@ -1,0 +1,1 @@
+本轮证据：CI 55/55，专项 14/14，两个固定 Chrome 版本关键交互 116/116；full-version-comparison 包含完整 Chrome156 的失败及后续任务中止记录，不属于通过证据。quality-baseline 为 14:12 构建原始三引擎质量归档的报告子集，完整195文件原档仍在相邻 browser-compatibility-current-2026-10-29 目录。桌面自动化环境原始探针明确标为 pending、非物理设备。诊断脚本保留原执行路径；设备操作不依赖这些脚本，使用交接包根目录的 serve.mjs 和探针。

@@ -1,0 +1,496 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:59924/components/space/",
+    "text": "m2\n/\nItem3\n/\nItem4\n/\nItem5\n/\nItem6\n/\nItem7\n/\nItem8\n/\nItem9\n/\nItem10\n布局与对齐\n\n适用于space。调整排列方向、交叉轴对齐、主轴分配，用相同数据观察变化。内容保持一致，便于比较不同设置的实际效果。\n\ndirection\nrow\ncolumn\nalign\nflex-start\nflex-end\ncenter\nbaseline\nstretch\njustify\nflex-start\nSpace:\nItem1\nItem2\n交互与控制\n动态布局\n本组配置对照\n配置\t作用\t相关示例\nwrap\t是否超出换行\t动态布局\nsize\t间距，可选值为 xs sm md lg xl 或 [rowGap, columnGap] (支持长度单位和简写方式)\t动态布局\ndirection\t子元素的行列排列顺序，默认 row；column 表示按列排列，不使用 horizontal/vertical\t动态布局\n\n切换方向、列间距和换行，添加/删除子项；行间距固定8px，列间距在8px/24px间切换。方向不会交换两个gap的几何轴含义。窄容器内未换行时可横向滚动。\n\nToggle direction\nToggle gap\nToggle wrap\nAdd item\nRemove item\n\nrow / gap 8 / wrap false / items 3\n\nItem 1\nItem 2\nItem 3\n阅读方向\n\n继承最近的 dir=\"ltr|rtl\"。direction=\"row\" 沿阅读顺序排列，column 保持从上到下；justify/align 的 flex-start、flex-end 跟随对应 flex 轴。size=[rowGap,columnGap] 始终分别表示行间距、列间距，不因 RTL 交换。换行与 split 插槽沿内容顺序排列，方向切换不反转数据或重建有稳定 key 的子节点。\n\nAPI\nSpace Props\n属性\n参数\t说明\t类型\t默认值\ndirection\t子元素的行列排列顺序，默认 row；column 表示按列排列，不使用 horizontal/vertical\tstring\trow\njustify\t主轴排列方式 可选值为 flex-start flex-end center space-around space-between space-evenly\tstring\tflex-start\nalign\t交叉轴排列方式 可选值为 flex-start flex-end center stretch baseline，未传时根据 direction 推断（row → center，column → stretch）\tstring\t-\nsize\t间距，可选值为 xs sm md lg xl 或 [rowGap, columnGap] (支持长度单位和简写方式)\tstring | number | [string | number, string | number]\tmd\nwrap\t是否超出换行\tboolean\tfalse\nblock\t是否为flex元素\tboolean\ttrue\n插槽\n插槽名\t说明\t参数\ndefault\tSpace 内容\t-\nsplit\t分隔符\t-\n样式变量\n变量名\t默认值\n--c-space-size-xs-row-gap\tvar(--c-sys-space-2)\n--c-space-size-xs-column-gap\tvar(--c-sys-space-2)\n--c-space-size-sm-row-gap\tvar(--c-sys-space-4)\n--c-space-size-sm-column-gap\tvar(--c-sys-space-3)\n--c-space-size-md-row-gap\tvar(--c-sys-space-5)\n--c-space-size-md-column-gap\tvar(--c-sys-space-4)\n--c-space-size-lg-row-gap\tvar(--c-sys-space-6)\n--c-space-size-lg-column-gap\tvar(--c-sys-space-5)\n--c-space-size-xl-row-gap\tvar(--c-sys-space-8)\n--c-space-size-xl-column-gap\tvar(--c-sys-space-6)\n同源实现与平台边界\n\n两端各自保存完整源码，不引用公共核心，不共享组件实例或响应式状态；修改时同步维护两份实现。主体、Props、子节点展开、主样式、尺寸 token 和配对测试纳入只读一致性检查。仅安装入口与命名空间各自适配。\n\n两端默认均为 size=\"md\"、wrap=false、block=true、direction=\"row\"。未传 align 时，row 为 center、column 为 stretch。Maple 原来依赖默认换行的用法请显式添加 wrap。\n\nsize 支持全部五档预设、number（px）、数字字符串（px）、CSS 长度或表达式（例如 1rem、var(--gap)）以及二元组 [rowGap, columnGap]。数组始终先行后列，direction 切换不会交换它们；数组项为长度，不支持预设名。预设 [行, 列]：xs=[4,4]、sm=[8,6]、md=[12,8]、lg=[16,12]、xl=[24,16] px，两端一致，仍可通过 CSS 变量覆盖。\n\n上次编辑于: 2026/10/23 21:06:46\n贡献者: shuai.meng,mengshuai",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"vmi-previewer-example\" style=\"\"><div class=\"c-space c-space--block\" style=\"gap: var(--c-space-size-md-row-gap) var(--c-space-size-md-column-gap); flex-flow: row; justify-content: flex-start; align-items: center;\"><!----><div class=\"c-space__item\"><div>Space:</div></div><!----><div class=\"c-space__item\"><button class=\"c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">Item1</span><div class=\"c-hover-overlay\"></div></button></div><!----><div class=\"c-space__item\"><button class=\"c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">Item2</span><div class=\"c-hover-overlay\"></div></button></div></div></div>",
+      "<div class=\"vmi-previewer-example\" style=\"\"><div><div style=\"margin-bottom: 20px;\"><div role=\"radiogroup\" aria-label=\"\" class=\"c-radio-group c-radio-group--horizontal c-radio-group--size-md\" type=\"button\"><label class=\"c-radio\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"xs\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">xs</span><!----></label><label class=\"c-radio\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"sm\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">sm</span><!----></label><label class=\"c-radio c-radio--checked\"><input class=\"c-radio__input\" type=\"radio\" checked=\"\" tabindex=\"0\" aria-checked=\"true\" value=\"md\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">md</span><!----></label><label class=\"c-radio\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"lg\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">lg</span><!----></label><label class=\"c-radio\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"xl\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">xl</span><!----></label><!----></div></div><div class=\"c-space c-space--block\" style=\"gap: var(--c-space-size-md-row-gap) var(--c-space-size-md-column-gap); flex-flow: row; justify-content: flex-start; align-items: center;\"><!----><div class=\"c-space__item\"><button class=\"c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">Item1</span><div class=\"c-hover-overlay\"></div></button></div><!----><div class=\"c-space__item\"><button class=\"c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">Item2</span><div class=\"c-hover-overlay\"></div></button></div><!----><div class=\"c-space__item\"><button class=\"c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">Item3</span><div class=\"c-hover-overlay\"></div></button></div></div></div></div>"
+    ],
+    "controls": [
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item2",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item1",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item2",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item3",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item4",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item5",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item6",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item7",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item8",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item9",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item10",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item11",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item12",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item13",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item14",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item15",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item16",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item17",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item18",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item19",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item20",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "radiogroup",
+        "label": "",
+        "class": "c-radio-group c-radio-group--horizontal c-radio-group--size-md"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item1",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "separator",
+        "label": "",
+        "class": "c-divider c-divider--orientation-vertical c-divider--text-align-center c-divider--type-solid c-divider--inset-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item2",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "separator",
+        "label": "",
+        "class": "c-divider c-divider--orientation-vertical c-divider--text-align-center c-divider--type-solid c-divider--inset-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item3",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "separator",
+        "label": "",
+        "class": "c-divider c-divider--orientation-vertical c-divider--text-align-center c-divider--type-solid c-divider--inset-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item4",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "separator",
+        "label": "",
+        "class": "c-divider c-divider--orientation-vertical c-divider--text-align-center c-divider--type-solid c-divider--inset-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item5",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "separator",
+        "label": "",
+        "class": "c-divider c-divider--orientation-vertical c-divider--text-align-center c-divider--type-solid c-divider--inset-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item6",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "separator",
+        "label": "",
+        "class": "c-divider c-divider--orientation-vertical c-divider--text-align-center c-divider--type-solid c-divider--inset-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item7",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "separator",
+        "label": "",
+        "class": "c-divider c-divider--orientation-vertical c-divider--text-align-center c-divider--type-solid c-divider--inset-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item8",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "separator",
+        "label": "",
+        "class": "c-divider c-divider--orientation-vertical c-divider--text-align-center c-divider--type-solid c-divider--inset-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item9",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "separator",
+        "label": "",
+        "class": "c-divider c-divider--orientation-vertical c-divider--text-align-center c-divider--type-solid c-divider--inset-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item10",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item1",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item2",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item3",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item4",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item5",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item6",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item7",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item8",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item9",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item10",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "radiogroup",
+        "label": "direction",
+        "class": "c-radio-group c-radio-group--horizontal c-radio-group--size-sm c-radio-group--button"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "DIV",
+        "role": "radiogroup",
+        "label": "align",
+        "class": "c-radio-group c-radio-group--horizontal c-radio-group--size-sm c-radio-group--button"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "justify",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "请选择",
+        "class": "c-selection-field__icon"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item1",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Item2",
+        "class": "c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Toggle direction",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Toggle gap",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Toggle wrap",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Add item",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Remove item",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      }
+    ]
+  },
+  "error": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('menuitemradio', { name: '默认亮色', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-v-47d192dd=\"\" aria-checked=\"true\" role=\"menuitemradio\" data-theme-value=\"lightTheme\" class=\"cedar-docs-theme__item cedar-docs-theme__item--active\">默认亮色</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n"
+}

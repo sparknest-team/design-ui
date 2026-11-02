@@ -1,0 +1,1248 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:59924/components/input-number/",
+    "text": "\n  InputNumberProps,\n  InputNumberInstance,\n  InputNumberMode,\n  InputNumberModelEvent,\n  InputNumberSize,\n  InputNumberVariant,\n  InputNumberFormatter,\n  InputNumberParser,\n} from \"@cedar-design/ui\";\n\n样式变量\nToken\tDefault\n--c-input-number-step-button-width\tvar(--c-sys-control-height-md)\n--c-input-number-step-button-color\tvar(--c-sys-color-content-secondary)\n--c-input-number-step-button-disabled-color\tvar(--c-sys-color-content-disabled)\n--c-input-number-step-button-border-color\tvar(--c-sys-color-border-subtle)\n--c-input-number-step-button-background\tvar(--c-sys-color-surface-muted)\n--c-input-number-step-button-hover-background\tvar(--c-sys-color-state-hover)\n--c-input-number-step-button-active-background\tvar(--c-sys-color-state-selected)\n--c-input-number-step-button-icon-size\t14px\n--c-input-number-step-button-transition-duration\t0.2s\n--c-input-number-addon-background\tvar(--c-sys-color-surface-muted)\n--c-input-number-addon-color\tvar(--c-sys-color-content-primary)\n--c-input-number-addon-border-color\tvar(--c-sys-color-border-default)\n--c-input-number-border-width\t1px\n--c-input-number-border-radius\tvar(--c-field-border-radius)\n--c-input-number-size-xs-step-button-width\tvar(--c-sys-control-height-xs)\n--c-input-number-size-sm-step-button-width\tvar(--c-sys-control-height-sm)\n--c-input-number-size-md-step-button-width\tvar(--c-sys-control-height-md)\n--c-input-number-size-lg-step-button-width\tvar(--c-sys-control-height-lg)\n--c-input-number-size-xl-step-button-width\tvar(--c-sys-control-height-xl)\n\n旧的 --c-field-number-* Token 已移除，统一为以上 --c-input-number-*；不保留旧别名。字段通用外观继续使用 FieldDecorator 的 --c-field-* Token。\n\nForm 字段展示与确认\n\n本组件支持 edit-mode，字段 > FormItem > Form 逐层继承；未指定时为 direct，保留原有交互。支持值：direct / click / dblclick。非 direct 编辑模式通过字段值入口打开编辑面板，并维护单份草稿；确认后才更新 v-model，取消、重置或启用 readPretty 时丢弃草稿。\n\nCedar 使用 edit-mode=\"click\" / \"dblclick\" 在字段附近打开编辑浮层，Enter/F2 也可进入；取消/Escape 丢弃草稿，确认后提交。readPretty 为独立阅读属性，与 readonly、disabled 分开。\n\nbefore-commit(value, { previousValue, signal }) 可拦截弹层保存；FormItem 先校验候选值，失败保持编辑。open / default-open / update:open 控制编辑层。#read=\"{ value, text }\" 可自定义阅读内容。集中示例见 Form 的“各类字段统一展示”。\n\nread-pretty 为独立布尔属性，与 readonly、disabled 同级；字段 > FormItem > Form 继承，显式 false 覆盖父级。默认 false。纯阅读不显示编辑器。\n\n统一光标色通过 --c-field-caret-color 设置（默认 currentColor）；本组件可用 --c-input-number-caret-color 单独覆盖，默认 var(--c-field-caret-color)。\n\n上次编辑于: 2026/10/24 20:08:01\n贡献者: shuai.meng,jiaming.wu,mengshuai",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"vmi-previewer-example\" style=\"\"><div data-v-048b60ef=\"\" class=\"number-demo\"><div data-v-048b60ef=\"\" class=\"number-demo__options\"><label data-v-048b60ef=\"\" class=\"c-checkbox\"><input class=\"c-checkbox__input\" type=\"checkbox\" aria-checked=\"false\" value=\"true\"><span class=\"c-checkbox__control\" aria-hidden=\"true\"><span class=\"c-checkbox__icon\"></span></span><span class=\"c-checkbox__label\">禁用</span><!----></label><label data-v-048b60ef=\"\" class=\"c-checkbox\"><input class=\"c-checkbox__input\" type=\"checkbox\" aria-checked=\"false\" value=\"true\"><span class=\"c-checkbox__control\" aria-hidden=\"true\"><span class=\"c-checkbox__icon\"></span></span><span class=\"c-checkbox__label\">只读</span><!----></label><label data-v-048b60ef=\"\" class=\"c-checkbox c-checkbox--checked\"><input class=\"c-checkbox__input\" type=\"checkbox\" checked=\"\" aria-checked=\"true\" value=\"true\"><span class=\"c-checkbox__control\" aria-hidden=\"true\"><span class=\"c-checkbox__icon\"><svg class=\"c-checkbox__check\" viewBox=\"0 0 12 12\" focusable=\"false\"><path d=\"M2 6l2.5 2.5L10 3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"></path></svg></span></span><span class=\"c-checkbox__label\">可清空</span><!----></label><label data-v-048b60ef=\"\" class=\"c-checkbox\"><input class=\"c-checkbox__input\" type=\"checkbox\" aria-checked=\"false\" value=\"true\"><span class=\"c-checkbox__control\" aria-hidden=\"true\"><span class=\"c-checkbox__icon\"></span></span><span class=\"c-checkbox__label\">浮动提示</span><!----></label></div><div data-v-048b60ef=\"\" class=\"c-input-number c-input-number--mode-embed c-input-number--size-md\"><!----><div class=\"c-field-decorator c-field-decorator--size-md c-field-decorator--variant-outline c-input-number__field\" style=\"--c-internal-field-content-offset: 12px; --c-internal-field-content-width: 718px;\"><!----><span class=\"c-field-decorator__middle\"><input id=\"v-0\" autocomplete=\"off\" class=\"c-input-number__input\" type=\"text\" role=\"spinbutton\" placeholder=\"数量\" aria-valuenow=\"12\" aria-valuetext=\"12\" inputmode=\"decimal\" value=\"12\"></span><!----><span class=\"c-field-decorator__suffix\"><button type=\"button\" class=\"c-field-decorator__clear-btn\" aria-label=\"清空\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-close-circle-fill\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" fill-rule=\"evenodd\" stroke=\"none\" d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20m4.955-27.771-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-4.95-4.95 4.95-4.95a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0\" clip-rule=\"evenodd\"></path></svg></button><!----><!----><!----><div class=\"c-input-number__step\"><button type=\"button\" tabindex=\"-1\" class=\"c-input-number__step-button\" aria-label=\"增加数值\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-chevron-up\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\" style=\"fill: currentcolor; stroke: none;\"><!--v-if--><path d=\"M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z\"></path></svg></button><button type=\"button\" tabindex=\"-1\" class=\"c-input-number__step-button\" aria-label=\"减少数值\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-chevron-down\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\" style=\"fill: currentcolor; stroke: none;\"><!--v-if--><path d=\"M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6z\"></path></svg></button></div></span><!----><span class=\"c-field-decorator__border\" aria-hidden=\"true\"></span><span class=\"c-field-decorator__border-state\" aria-hidden=\"true\"></span></div><!----></div><output data-v-048b60ef=\"\">业务数值：12</output></div></div>",
+      "<div class=\"vmi-previewer-example\" style=\"\"><div data-v-6543e030=\"\" class=\"c-space c-space--block\" style=\"gap: 16px; flex-flow: column; justify-content: flex-start; align-items: stretch;\"><!----><div class=\"c-space__item\"><form data-v-6543e030=\"\" class=\"c-form c-form-layout-vertical c-form-size-md\"><div data-v-6543e030=\"\" class=\"c-form-item c-form-item-layout-vertical\"><div class=\"c-form-item-label-col\"><label class=\"c-form-item-label\"><!---->variant<!----><!----> </label></div><div class=\"c-form-item-wrapper-col\"><div class=\"c-form-item-content-wrapper\"><div class=\"c-form-item-content c-form-item-content-flex\" style=\"--c-form-content-align: start; --c-form-content-justify: flex-start; text-align: start; justify-content: flex-start;\"><div data-v-6543e030=\"\" role=\"radiogroup\" aria-label=\"variant\" class=\"c-radio-group c-radio-group--horizontal c-radio-group--size-sm c-radio-group--button\"><label class=\"c-radio c-radio--button c-radio--checked\"><input class=\"c-radio__input\" type=\"radio\" checked=\"\" tabindex=\"0\" aria-checked=\"true\" value=\"filled\"><span class=\"c-radio__button-label\">filled</span><!----></label><label class=\"c-radio c-radio--button\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"outline\"><span class=\"c-radio__button-label\">outline</span><!----></label><label class=\"c-radio c-radio--button\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"standard\"><span class=\"c-radio__button-label\">standard</span><!----></label><!----></div></div></div><!----><!----></div></div><div data-v-6543e030=\"\" class=\"c-form-item c-form-item-layout-vertical\"><div class=\"c-form-item-label-col\"><label class=\"c-form-item-label\"><!---->size<!----><!----> </label></div><div class=\"c-form-item-wrapper-col\"><div class=\"c-form-item-content-wrapper\"><div class=\"c-form-item-content c-form-item-content-flex\" style=\"--c-form-content-align: start; --c-form-content-justify: flex-start; text-align: start; justify-content: flex-start;\"><div data-v-6543e030=\"\" role=\"radiogroup\" aria-label=\"size\" class=\"c-radio-group c-radio-group--horizontal c-radio-group--size-sm c-radio-group--button\"><label class=\"c-radio c-radio--button\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"xs\"><span class=\"c-radio__button-label\">xs</span><!----></label><label class=\"c-radio c-radio--button\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"sm\"><span class=\"c-radio__button-label\">sm</span><!----></label><label class=\"c-radio c-radio--button c-radio--checked\"><input class=\"c-radio__input\" type=\"radio\" checked=\"\" tabindex=\"0\" aria-checked=\"true\" value=\"md\"><span class=\"c-radio__button-label\">md</span><!----></label><label class=\"c-radio c-radio--button\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"lg\"><span class=\"c-radio__button-label\">lg</span><!----></label><label class=\"c-radio c-radio--button\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"xl\"><span class=\"c-radio__button-label\">xl</span><!----></label><!----></div></div></div><!----><!----></div></div></form></div><!----><div class=\"c-space__item\"><p data-v-6543e030=\"\" class=\"demo-config-comparison-hint\"><span data-v-6543e030=\"\" lang=\"zh-CN\">选择一个对比维度；其他配置和内容保持一致。输入类示例共享同一个值，便于比较外观。</span><span data-v-6543e030=\"\" lang=\"en-US\">Compare one dimension while keeping the other settings and content identical. Input specimens share the same value.</span></p></div><!----><div class=\"c-space__item\"><div data-v-6543e030=\"\" role=\"radiogroup\" aria-label=\"Compare configuration\" class=\"c-radio-group c-radio-group--horizontal c-radio-group--size-md\"><label class=\"c-radio c-radio--checked\"><input class=\"c-radio__input\" type=\"radio\" checked=\"\" tabindex=\"0\" aria-checked=\"true\" value=\"variant\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">variant</span><!----></label><label class=\"c-radio\"><input class=\"c-radio__input\" type=\"radio\" tabindex=\"-1\" aria-checked=\"false\" value=\"size\"><span class=\"c-radio__control\" aria-hidden=\"true\"><span class=\"c-radio__icon\"></span></span><span class=\"c-radio__label\">size</span><!----></label><!----></div></div><!----><div class=\"c-space__item\"><div data-v-6543e030=\"\" class=\"demo-config-comparison\"><section data-v-6543e030=\"\"><p data-v-6543e030=\"\"><code data-v-6543e030=\"\">variant=filled</code></p><div data-v-6543e030=\"\" class=\"c-input-number c-input-number--mode-embed c-input-number--size-md\"><!----><div class=\"c-field-decorator c-field-decorator--size-md c-field-decorator--variant-filled c-input-number__field\" style=\"--c-internal-field-content-offset: 12px; --c-internal-field-content-width: 269px;\"><!----><span class=\"c-field-decorator__middle\"><input id=\"v-1\" autocomplete=\"off\" class=\"c-input-number__input\" type=\"text\" role=\"spinbutton\" aria-valuemin=\"0\" aria-valuemax=\"10\" aria-valuenow=\"3\" aria-valuetext=\"3\" inputmode=\"decimal\" value=\"3\"></span><!----><span class=\"c-field-decorator__suffix\"><!----><!----><!----><!----><div class=\"c-input-number__step\"><button type=\"button\" tabindex=\"-1\" class=\"c-input-number__step-button\" aria-label=\"增加数值\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-chevron-up\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\" style=\"fill: currentcolor; stroke: none;\"><!--v-if--><path d=\"M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z\"></path></svg></button><button type=\"button\" tabindex=\"-1\" class=\"c-input-number__step-button\" aria-label=\"减少数值\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-chevron-down\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\" style=\"fill: currentcolor; stroke: none;\"><!--v-if--><path d=\"M7.41 8.58 12 13.17l4.59-4.59L18 10l-6 6-6-6z"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "允许本次变更",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--disabled"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "拒绝本次变更",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--disabled"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "模拟失败",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2 c-button--disabled"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "外部回填 10",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "禁用控件",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "P",
+        "role": "status",
+        "label": "—；已提交值：2",
+        "class": ""
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "c-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空金额",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "c-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "c-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "c-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "c-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "c-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "设为 0",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "设为 -1",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "c-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "c-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "c-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "c-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "c-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "",
+        "class": "c-input-number__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "增加数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "减少数值",
+        "class": "c-input-number__step-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      }
+    ]
+  },
+  "navigation": {
+    "url": "http://127.0.0.1:59924/components/input-number/",
+    "elapsedMs": 5006,
+    "events": [
+      {
+        "name": "domcontentloaded",
+        "elapsedMs": 576
+      }
+    ],
+    "requests": [
+      {
+        "url": "http://127.0.0.1:59924/components/input-number/",
+        "type": "document",
+        "startedMs": 3,
+        "status": 200,
+        "finishedMs": 282
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/style-CNx3dR2G.css",
+        "type": "stylesheet",
+        "startedMs": 282,
+        "status": 200,
+        "finishedMs": 397
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/app-B49fxBal.js",
+        "type": "script",
+        "startedMs": 282,
+        "status": 200,
+        "finishedMs": 390
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/siteData-Bqq_TROh.js",
+        "type": "script",
+        "startedMs": 282,
+        "status": 200,
+        "finishedMs": 565
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index.html-DaPuBtH1.js",
+        "type": "script",
+        "startedMs": 282,
+        "status": 200,
+        "finishedMs": 565
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/field-basic-Ch6YUsUe.js",
+        "type": "script",
+        "startedMs": 282,
+        "status": 200,
+        "finishedMs": 565
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/appearance-lab-Blz_5Pbv.js",
+        "type": "script",
+        "startedMs": 282,
+        "status": 200,
+        "finishedMs": 617
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/control-sizes-BLIKTGDS.js",
+        "type": "script",
+        "startedMs": 283,
+        "status": 200,
+        "finishedMs": 565
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/field-modes-BhOchxYg.js",
+        "type": "script",
+        "startedMs": 283,
+        "status": 200,
+        "finishedMs": 566
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/field-options-BNgQGCEF.js",
+        "type": "script",
+        "startedMs": 284,
+        "status": 200,
+        "finishedMs": 565
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/quantity-controls.vue_vue_type_script_setup_true_lang-CUfb2I9J.js",
+        "type": "script",
+        "startedMs": 284,
+        "status": 200,
+        "finishedMs": 619
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/format-slots.vue_vue_type_script_setup_true_lang-9P9dNXsr.js",
+        "type": "script",
+        "startedMs": 285,
+        "status": 200,
+        "finishedMs": 619
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/number-boundaries-BLvgJBUb.js",
+        "type": "script",
+        "startedMs": 285,
+        "status": 200,
+        "finishedMs": 621
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/empty-value.vue_vue_type_script_setup_true_lang-ABMsbZRq.js",
+        "type": "script",
+        "startedMs": 286,
+        "status": 200,
+        "finishedMs": 621
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/state-lab-CA9tIQyM.js",
+        "type": "script",
+        "startedMs": 286,
+        "status": 200,
+        "finishedMs": 670
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/controlled-events-DsNUpBbF.js",
+        "type": "script",
+        "startedMs": 288,
+        "status": 200,
+        "finishedMs": 671
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/form-inheritance-Ci9MxvMc.js",
+        "type": "script",
+        "startedMs": 288,
+        "status": 200,
+        "finishedMs": 672
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-DuW2_uhp.js",
+        "type": "script",
+        "startedMs": 288,
+        "status": 200,
+        "finishedMs": 674
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/props-Dl5CejVZ.js",
+        "type": "script",
+        "startedMs": 288,
+        "status": 200,
+        "finishedMs": 704
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-option-request-CDZvI_Yo.js",
+        "type": "script",
+        "startedMs": 288,
+        "status": 200,
+        "finishedMs": 705
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-selection-session-nOiaWOhy.js",
+        "type": "script",
+        "startedMs": 288,
+        "status": 200,
+        "finishedMs": 709
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/PendingFeedback.vue_vue_type_script_setup_true_lang-CSTha31Q.js",
+        "type": "script",
+        "startedMs": 288,
+        "status": 200,
+        "finishedMs": 709
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-ky1ycqNw.js",
+        "type": "script",
+        "startedMs": 290,
+        "status": 200,
+        "finishedMs": 710
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-BSLQsg_H.js",
+        "type": "script",
+        "startedMs": 290,
+        "status": 200,
+        "finishedMs": 732
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/constant-0mfGR27J.js",
+        "type": "script",
+        "startedMs": 290,
+        "status": 200,
+        "finishedMs": 732
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/useChildren-D59HAx6Z.js",
+        "type": "script",
+        "startedMs": 290,
+        "status": 200,
+        "finishedMs": 733
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-action-guard-jOa_9PCg.js",
+        "type": "script",
+        "startedMs": 290,
+        "status": 200,
+        "finishedMs": 733
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-form-item-C9xppHKT.js",
+        "type": "script",
+        "startedMs": 290,
+        "status": 200,
+        "finishedMs": 733
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-BMWT6dwW.js",
+        "type": "script",
+        "startedMs": 290,
+        "status": 200,
+        "finishedMs": 733
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-Ca-fbaJj.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 736
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/FieldDecorator.vue_vue_type_script_setup_true_lang-CPCCoC_I.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 738
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-BGghL0Ap.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 737
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/props-DFeXdXMz.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 739
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-CNB5vpFL.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 741
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-tWjBhigj.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 741
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-cUgmJ0Fs.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 752
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/native-attrs-nsn3Rgl4.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 751
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-input-form-BTRasUw8.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 753
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-size-u8WTq0Rd.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 753
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-Dndyme61.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 753
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-D6DQsk_P.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 754
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-Ca31i6Bj.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 764
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-BYWnbKEv.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 765
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-choice-keyboard-DRRhyFLM.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 764
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-CW3SumKJ.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 764
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-oAC2zrR_.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 774
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-Bl8rNFhg.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 765
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/get-value-by-path-7s8tlWFV.js",
+        "type": "script",
+        "startedMs": 292,
+        "status": 200,
+        "finishedMs": 774
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-Dau5TD76.js",
+        "type": "script",
+        "startedMs": 293,
+        "status": 200,
+        "finishedMs": 776
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-DY-DwMVa.js",
+        "type": "script",
+        "startedMs": 293,
+        "status": 200,
+        "finishedMs": 776
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-responsive-state-DWP6TTx1.js",
+        "type": "script",
+        "startedMs": 293,
+        "status": 200,
+        "finishedMs": 776
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-Bl-YV4MB.js",
+        "type": "script",
+        "startedMs": 293,
+        "status": 200,
+        "finishedMs": 784
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/cloneDeep-DIZNXq_f.js",
+        "type": "script",
+        "startedMs": 293,
+        "status": 200,
+        "finishedMs": 784
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-BKZchv0t.js",
+        "type": "script",
+        "startedMs": 293,
+        "status": 200,
+        "finishedMs": 784
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-Citt3n21.js",
+        "type": "script",
+        "startedMs": 293,
+        "status": 200,
+        "finishedMs": 784
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/TimeField.vue_vue_type_script_setup_true_lang-Da1taNhp.js",
+        "type": "script",
+        "startedMs": 293,
+        "status": 200,
+        "finishedMs": 792
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-Cpri50U5.js",
+        "type": "script",
+        "startedMs": 293,
+        "status": 200,
+        "finishedMs": 794
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/pad-CZvtSGEo.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 795
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/dayjs.min-Cj4-WAy3.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 795
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-CDN29UFE.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 795
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-DcuaxbdI.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 795
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/open-trigger-Bj5XettS.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 804
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/FeedbackIcon-sOOH9NQk.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 803
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/form-control-DvJrk0bu.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 804
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-BRjeeart.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 804
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-aPLvCDfy.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 821
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/pick-DpkEveWh.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 821
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-state-CqeZXjFw.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 821
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/render-function-DSFHcFtk.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 821
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-Dt90wwW2.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 833
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-Cn8VGW2W.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 835
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-CrF55WPB.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 835
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-DDMCO5Ca.js",
+        "type": "script",
+        "startedMs": 294,
+        "status": 200,
+        "finishedMs": 835
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-BrWvESt3.js",
+        "type": "script",
+        "startedMs": 295,
+        "status": 200,
+        "finishedMs": 835
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-merge-state-BmEMlxbf.js",
+        "type": "script",
+        "startedMs": 295,
+        "status": 200,
+        "finishedMs": 835
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/omit-nLibHReH.js",
+        "type": "script",
+        "startedMs": 295,
+        "status": 200,
+        "finishedMs": 864
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-DIsRShnE.js",
+        "type": "script",
+        "startedMs": 295,
+        "status": 200,
+        "finishedMs": 864
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/keyboard-CD2Ud0tQ.js",
+        "type": "script",
+        "startedMs": 295,
+        "status": 200,
+        "finishedMs": 864
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-Cdr6kKKP.js",
+        "type": "script",
+        "startedMs": 295,
+        "status": 200,
+        "finishedMs": 864
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-BXk_kVzD.js",
+        "type": "script",
+        "startedMs": 295,
+        "status": 200,
+        "finishedMs": 874
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/VirtualList-Baxt1gnm.js",
+        "type": "script",
+        "startedMs": 295,
+        "status": 200,
+        "finishedMs": 875
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/vue-utils-hB1GfrSI.js",
+        "type": "script",
+        "startedMs": 295,
+        "status": 200,
+        "finishedMs": 875
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-D5rBrcWb.js",
+        "type": "script",
+        "startedMs": 295,
+        "status": 200,
+        "finishedMs": 876
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/resize-observer-v2-BLLPlvVP.js",
+        "type": "script",
+        "startedMs": 295,
+        "status": 200,
+        "finishedMs": 883
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-D-S2qeM2.js",
+        "type": "script",
+        "startedMs": 296,
+        "status": 200,
+        "finishedMs": 883
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/SelectionField.vue_vue_type_script_setup_true_lang-DLlqphfG.js",
+        "type": "script",
+        "startedMs": 296,
+        "status": 200,
+        "finishedMs": 886
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/SelectionEditor.vue_vue_type_script_setup_true_lang-D8nROczT.js",
+        "type": "script",
+        "startedMs": 296,
+        "status": 200,
+        "finishedMs": 886
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-DKj7Bp5q.js",
+        "type": "script",
+        "startedMs": 296,
+        "status": 200,
+        "finishedMs": 886
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-XuJGcMT3.js",
+        "type": "script",
+        "startedMs": 296,
+        "status": 200,
+        "finishedMs": 893
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-BzZg1amC.js",
+        "type": "script",
+        "startedMs": 296,
+        "status": 200,
+        "finishedMs": 894
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-DUdPNfWH.js",
+        "type": "script",
+        "startedMs": 296,
+        "status": 200,
+        "finishedMs": 895
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-8zmlmdmT.js",
+        "type": "script",
+        "startedMs": 296,
+        "status": 200,
+        "finishedMs": 896
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-input-value-Bpjpisfq.js",
+        "type": "script",
+        "startedMs": 297,
+        "status": 200,
+        "finishedMs": 896
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-BdS9v5Ol.js",
+        "type": "script",
+        "startedMs": 297,
+        "status": 200,
+        "finishedMs": 897
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-field-search-B6eORyAT.js",
+        "type": "script",
+        "startedMs": 297,
+        "status": 200,
+        "finishedMs": 958
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-D4CGEY28.js",
+        "type": "script",
+        "startedMs": 297,
+        "status": 200,
+        "finishedMs": 965
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-select-s76tn0nR.js",
+        "type": "script",
+        "startedMs": 297,
+        "status": 200,
+        "finishedMs": 966
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/use-scrollbar-B1FPNrKW.js",
+        "type": "script",
+        "startedMs": 297,
+        "status": 200,
+        "finishedMs": 1124
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/dom-Ck6TXjqe.js",
+        "type": "script",
+        "startedMs": 297,
+        "status": 200,
+        "finishedMs": 1124
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/option-data-BBVJs5KW.js",
+        "type": "script",
+        "startedMs": 297,
+        "status": 200,
+        "finishedMs": 1124
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/Optgroup-BmS2HMCp.js",
+        "type": "script",
+        "startedMs": 298,
+        "status": 200,
+        "finishedMs": 1124
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-CU8MUCiz.js",
+        "type": "script",
+        "startedMs": 299,
+        "status": 200,
+        "finishedMs": 4946
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-j9C1470y.js",
+        "type": "script",
+        "startedMs": 299,
+        "status": 200,
+        "finishedMs": 4947
+      },
+      {
+        "url": "http://127.0.0.1:59924/assets/index-DuqeCsYO.js",
+        "type": "script",
+        "startedMs": 299,
+        "status": 200,
+        "finishedMs": 4947
+      },
+      {
+        "url": "http://127.0.0.1:59924/logo.svg",
+        "type": "image",
+        "startedMs": 299
+      }
+    ],
+    "pending": [
+      {
+        "url": "http://127.0.0.1:59924/logo.svg",
+        "type": "image",
+        "startedMs": 299
+      }
+    ]
+  },
+  "error": "TimeoutError: page.goto: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:59924/components/input-number/\", waiting until \"load\"\u001b[22m\n\nNavigation diagnostic: {\"url\":\"http://127.0.0.1:59924/components/input-number/\",\"elapsedMs\":5006,\"events\":[{\"name\":\"domcontentloaded\",\"elapsedMs\":576}],\"requests\":[{\"url\":\"http://127.0.0.1:59924/components/input-number/\",\"type\":\"document\",\"startedMs\":3,\"status\":200,\"finishedMs\":282},{\"url\":\"http://127.0.0.1:59924/assets/style-CNx3dR2G.css\",\"type\":\"stylesheet\",\"startedMs\":282,\"status\":200,\"finishedMs\":397},{\"url\":\"http://127.0.0.1:59924/assets/app-B49fxBal.js\",\"type\":\"script\",\"startedMs\":282,\"status\":200,\"finishedMs\":390},{\"url\":\"http://127.0.0.1:59924/assets/siteData-Bqq_TROh.js\",\"type\":\"script\",\"startedMs\":282,\"status\":200,\"finishedMs\":565},{\"url\":\"http://127.0.0.1:59924/assets/index.html-DaPuBtH1.js\",\"type\":\"script\",\"startedMs\":282,\"status\":200,\"finishedMs\":565},{\"url\":\"http://127.0.0.1:59924/assets/field-basic-Ch6YUsUe.js\",\"type\":\"script\",\"startedMs\":282,\"status\":200,\"finishedMs\":565},{\"url\":\"http://127.0.0.1:59924/assets/appearance-lab-Blz_5Pbv.js\",\"type\":\"script\",\"startedMs\":282,\"status\":200,\"finishedMs\":617},{\"url\":\"http://127.0.0.1:59924/assets/control-sizes-BLIKTGDS.js\",\"type\":\"script\",\"startedMs\":283,\"status\":200,\"finishedMs\":565},{\"url\":\"http://127.0.0.1:59924/assets/field-modes-BhOchxYg.js\",\"type\":\"script\",\"startedMs\":283,\"status\":200,\"finishedMs\":566},{\"url\":\"http://127.0.0.1:59924/assets/field-options-BNgQGCEF.js\",\"type\":\"script\",\"startedMs\":284,\"status\":200,\"finishedMs\":565},{\"url\":\"http://127.0.0.1:59924/assets/quantity-controls.vue_vue_type_script_setup_true_lang-CUfb2I9J.js\",\"type\":\"script\",\"startedMs\":284,\"status\":200,\"finishedMs\":619},{\"url\":\"http://127.0.0.1:59924/assets/format-slots.vue_vue_type_script_setup_true_lang-9P9dNXsr.js\",\"type\":\"script\",\"startedMs\":285,\"status\":200,\"finishedMs\":619},{\"url\":\"http://127.0.0.1:59924/assets/number-boundaries-BLvgJBUb.js\",\"type\":\"script\",\"startedMs\":285,\"status\":200,\"finishedMs\":621},{\"url\":\"http://127.0.0.1:59924/assets/empty-value.vue_vue_type_script_setup_true_lang-ABMsbZRq.js\",\"type\":\"script\",\"startedMs\":286,\"status\":200,\"finishedMs\":621},{\"url\":\"http://127.0.0.1:59924/assets/state-lab-CA9tIQyM.js\",\"type\":\"script\",\"startedMs\":286,\"status\":200,\"finishedMs\":670},{\"url\":\"http://127.0.0.1:59924/assets/controlled-events-DsNUpBbF.js\",\"type\":\"script\",\"startedMs\":288,\"status\":200,\"finishedMs\":671},{\"url\":\"http://127.0.0.1:59924/assets/form-inheritance-Ci9MxvMc.js\",\"type\":\"script\",\"startedMs\":288,\"status\":200,\"finishedMs\":672},{\"url\":\"http://127.0.0.1:59924/assets/index-DuW2_uhp.js\",\"type\":\"script\",\"startedMs\":288,\"status\":200,\"finishedMs\":674},{\"url\":\"http://127.0.0.1:59924/assets/props-Dl5CejVZ.js\",\"type\":\"script\",\"startedMs\":288,\"status\":200,\"finishedMs\":704},{\"url\":\"http://127.0.0.1:59924/assets/use-option-request-CDZvI_Yo.js\",\"type\":\"script\",\"startedMs\":288,\"status\":200,\"finishedMs\":705},{\"url\":\"http://127.0.0.1:59924/assets/use-selection-session-nOiaWOhy.js\",\"type\":\"script\",\"startedMs\":288,\"status\":200,\"finishedMs\":709},{\"url\":\"http://127.0.0.1:59924/assets/PendingFeedback.vue_vue_type_script_setup_true_lang-CSTha31Q.js\",\"type\":\"script\",\"startedMs\":288,\"status\":200,\"finishedMs\":709},{\"url\":\"http://127.0.0.1:59924/assets/index-ky1ycqNw.js\",\"type\":\"script\",\"startedMs\":290,\"status\":200,\"finishedMs\":710},{\"url\":\"http://127.0.0.1:59924/assets/index-BSLQsg_H.js\",\"type\":\"script\",\"startedMs\":290,\"status\":200,\"finishedMs\":732},{\"url\":\"http://127.0.0.1:59924/assets/constant-0mfGR27J.js\",\"type\":\"script\",\"startedMs\":290,\"status\":200,\"finishedMs\":732},{\"url\":\"http://127.0.0.1:59924/assets/useChildren-D59HAx6Z.js\",\"type\":\"script\",\"startedMs\":290,\"status\":200,\"finishedMs\":733},{\"url\":\"http://127.0.0.1:59924/assets/use-action-guard-jOa_9PCg.js\",\"type\":\"script\",\"startedMs\":290,\"status\":200,\"finishedMs\":733},{\"url\":\"http://127.0.0.1:59924/assets/use-form-item-C9xppHKT.js\",\"type\":\"script\",\"startedMs\":290,\"status\":200,\"finishedMs\":733},{\"url\":\"http://127.0.0.1:59924/assets/index-BMWT6dwW.js\",\"type\":\"script\",\"startedMs\":290,\"status\":200,\"finishedMs\":733},{\"url\":\"http://127.0.0.1:59924/assets/index-Ca-fbaJj.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":736},{\"url\":\"http://127.0.0.1:59924/assets/FieldDecorator.vue_vue_type_script_setup_true_lang-CPCCoC_I.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":738},{\"url\":\"http://127.0.0.1:59924/assets/index-BGghL0Ap.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":737},{\"url\":\"http://127.0.0.1:59924/assets/props-DFeXdXMz.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":739},{\"url\":\"http://127.0.0.1:59924/assets/index-CNB5vpFL.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":741},{\"url\":\"http://127.0.0.1:59924/assets/index-tWjBhigj.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":741},{\"url\":\"http://127.0.0.1:59924/assets/index-cUgmJ0Fs.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":752},{\"url\":\"http://127.0.0.1:59924/assets/native-attrs-nsn3Rgl4.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":751},{\"url\":\"http://127.0.0.1:59924/assets/use-input-form-BTRasUw8.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":753},{\"url\":\"http://127.0.0.1:59924/assets/use-size-u8WTq0Rd.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":753},{\"url\":\"http://127.0.0.1:59924/assets/index-Dndyme61.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":753},{\"url\":\"http://127.0.0.1:59924/assets/index-D6DQsk_P.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":754},{\"url\":\"http://127.0.0.1:59924/assets/index-Ca31i6Bj.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":764},{\"url\":\"http://127.0.0.1:59924/assets/index-BYWnbKEv.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":765},{\"url\":\"http://127.0.0.1:59924/assets/use-choice-keyboard-DRRhyFLM.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":764},{\"url\":\"http://127.0.0.1:59924/assets/index-CW3SumKJ.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":764},{\"url\":\"http://127.0.0.1:59924/assets/index-oAC2zrR_.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":774},{\"url\":\"http://127.0.0.1:59924/assets/index-Bl8rNFhg.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":765},{\"url\":\"http://127.0.0.1:59924/assets/get-value-by-path-7s8tlWFV.js\",\"type\":\"script\",\"startedMs\":292,\"status\":200,\"finishedMs\":774},{\"url\":\"http://127.0.0.1:59924/assets/index-Dau5TD76.js\",\"type\":\"script\",\"startedMs\":293,\"status\":200,\"finishedMs\":776},{\"url\":\"http://127.0.0.1:59924/assets/index-DY-DwMVa.js\",\"type\":\"script\",\"startedMs\":293,\"status\":200,\"finishedMs\":776},{\"url\":\"http://127.0.0.1:59924/assets/use-responsive-state-DWP6TTx1.js\",\"type\":\"script\",\"startedMs\":293,\"status\":200,\"finishedMs\":776},{\"url\":\"http://127.0.0.1:59924/assets/index-Bl-YV4MB.js\",\"type\":\"script\",\"startedMs\":293,\"status\":200,\"finishedMs\":784},{\"url\":\"http://127.0.0.1:59924/assets/cloneDeep-DIZNXq_f.js\",\"type\":\"script\",\"startedMs\":293,\"status\":200,\"finishedMs\":784},{\"url\":\"http://127.0.0.1:59924/assets/index-BKZchv0t.js\",\"type\":\"script\",\"startedMs\":293,\"status\":200,\"finishedMs\":784},{\"url\":\"http://127.0.0.1:59924/assets/index-Citt3n21.js\",\"type\":\"script\",\"startedMs\":293,\"status\":200,\"finishedMs\":784},{\"url\":\"http://127.0.0.1:59924/assets/TimeField.vue_vue_type_script_setup_true_lang-Da1taNhp.js\",\"type\":\"script\",\"startedMs\":293,\"status\":200,\"finishedMs\":792},{\"url\":\"http://127.0.0.1:59924/assets/index-Cpri50U5.js\",\"type\":\"script\",\"startedMs\":293,\"status\":200,\"finishedMs\":794},{\"url\":\"http://127.0.0.1:59924/assets/pad-CZvtSGEo.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":795},{\"url\":\"http://127.0.0.1:59924/assets/dayjs.min-Cj4-WAy3.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":795},{\"url\":\"http://127.0.0.1:59924/assets/index-CDN29UFE.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":795},{\"url\":\"http://127.0.0.1:59924/assets/index-DcuaxbdI.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":795},{\"url\":\"http://127.0.0.1:59924/assets/open-trigger-Bj5XettS.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":804},{\"url\":\"http://127.0.0.1:59924/assets/FeedbackIcon-sOOH9NQk.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":803},{\"url\":\"http://127.0.0.1:59924/assets/form-control-DvJrk0bu.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":804},{\"url\":\"http://127.0.0.1:59924/assets/index-BRjeeart.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":804},{\"url\":\"http://127.0.0.1:59924/assets/index-aPLvCDfy.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":821},{\"url\":\"http://127.0.0.1:59924/assets/pick-DpkEveWh.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":821},{\"url\":\"http://127.0.0.1:59924/assets/use-state-CqeZXjFw.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":821},{\"url\":\"http://127.0.0.1:59924/assets/render-function-DSFHcFtk.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":821},{\"url\":\"http://127.0.0.1:59924/assets/index-Dt90wwW2.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":833},{\"url\":\"http://127.0.0.1:59924/assets/index-Cn8VGW2W.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":835},{\"url\":\"http://127.0.0.1:59924/assets/index-CrF55WPB.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":835},{\"url\":\"http://127.0.0.1:59924/assets/index-DDMCO5Ca.js\",\"type\":\"script\",\"startedMs\":294,\"status\":200,\"finishedMs\":835},{\"url\":\"http://127.0.0.1:59924/assets/index-BrWvESt3.js\",\"type\":\"script\",\"startedMs\":295,\"status\":200,\"finishedMs\":835},{\"url\":\"http://127.0.0.1:59924/assets/use-merge-state-BmEMlxbf.js\",\"type\":\"script\",\"startedMs\":295,\"status\":200,\"finishedMs\":835},{\"url\":\"http://127.0.0.1:59924/assets/omit-nLibHReH.js\",\"type\":\"script\",\"startedMs\":295,\"status\":200,\"finishedMs\":864},{\"url\":\"http://127.0.0.1:59924/assets/index-DIsRShnE.js\",\"type\":\"script\",\"startedMs\":295,\"status\":200,\"finishedMs\":864},{\"url\":\"http://127.0.0.1:59924/assets/keyboard-CD2Ud0tQ.js\",\"type\":\"script\",\"startedMs\":295,\"status\":200,\"finishedMs\":864},{\"url\":\"http://127.0.0.1:59924/assets/index-Cdr6kKKP.js\",\"type\":\"script\",\"startedMs\":295,\"status\":200,\"finishedMs\":864},{\"url\":\"http://127.0.0.1:59924/assets/index-BXk_kVzD.js\",\"type\":\"script\",\"startedMs\":295,\"status\":200,\"finishedMs\":874},{\"url\":\"http://127.0.0.1:59924/assets/VirtualList-Baxt1gnm.js\",\"type\":\"script\",\"startedMs\":295,\"status\":200,\"finishedMs\":875},{\"url\":\"http://127.0.0.1:59924/assets/vue-utils-hB1GfrSI.js\",\"type\":\"script\",\"startedMs\":295,\"status\":200,\"finishedMs\":875},{\"url\":\"http://127.0.0.1:59924/assets/index-D5rBrcWb.js\",\"type\":\"script\",\"startedMs\":295,\"status\":200,\"finishedMs\":876},{\"url\":\"http://127.0.0.1:59924/assets/resize-observer-v2-BLLPlvVP.js\",\"type\":\"script\",\"startedMs\":295,\"status\":200,\"finishedMs\":883},{\"url\":\"http://127.0.0.1:59924/assets/index-D-S2qeM2.js\",\"type\":\"script\",\"startedMs\":296,\"status\":200,\"finishedMs\":883},{\"url\":\"http://127.0.0.1:59924/assets/SelectionField.vue_vue_type_script_setup_true_lang-DLlqphfG.js\",\"type\":\"script\",\"startedMs\":296,\"status\":200,\"finishedMs\":886},{\"url\":\"http://127.0.0.1:59924/assets/SelectionEditor.vue_vue_type_script_setup_true_lang-D8nROczT.js\",\"type\":\"script\",\"startedMs\":296,\"status\":200,\"finishedMs\":886},{\"url\":\"http://127.0.0.1:59924/assets/index-DKj7Bp5q.js\",\"type\":\"script\",\"startedMs\":296,\"status\":200,\"finishedMs\":886},{\"url\":\"http://127.0.0.1:59924/assets/index-XuJGcMT3.js\",\"type\":\"script\",\"startedMs\":296,\"status\":200,\"finishedMs\":893},{\"url\":\"http://127.0.0.1:59924/assets/index-BzZg1amC.js\",\"type\":\"script\",\"startedMs\":296,\"status\":200,\"finishedMs\":894},{\"url\":\"http://127.0.0.1:59924/assets/index-DUdPNfWH.js\",\"type\":\"script\",\"startedMs\":296,\"status\":200,\"finishedMs\":895},{\"url\":\"http://127.0.0.1:59924/assets/index-8zmlmdmT.js\",\"type\":\"script\",\"startedMs\":296,\"status\":200,\"finishedMs\":896},{\"url\":\"http://127.0.0.1:59924/assets/use-input-value-Bpjpisfq.js\",\"type\":\"script\",\"startedMs\":297,\"status\":200,\"finishedMs\":896},{\"url\":\"http://127.0.0.1:59924/assets/index-BdS9v5Ol.js\",\"type\":\"script\",\"startedMs\":297,\"status\":200,\"finishedMs\":897},{\"url\":\"http://127.0.0.1:59924/assets/use-field-search-B6eORyAT.js\",\"type\":\"script\",\"startedMs\":297,\"status\":200,\"finishedMs\":958},{\"url\":\"http://127.0.0.1:59924/assets/index-D4CGEY28.js\",\"type\":\"script\",\"startedMs\":297,\"status\":200,\"finishedMs\":965},{\"url\":\"http://127.0.0.1:59924/assets/use-select-s76tn0nR.js\",\"type\":\"script\",\"startedMs\":297,\"status\":200,\"finishedMs\":966},{\"url\":\"http://127.0.0.1:59924/assets/use-scrollbar-B1FPNrKW.js\",\"type\":\"script\",\"startedMs\":297,\"status\":200,\"finishedMs\":1124},{\"url\":\"http://127.0.0.1:59924/assets/dom-Ck6TXjqe.js\",\"type\":\"script\",\"startedMs\":297,\"status\":200,\"finishedMs\":1124},{\"url\":\"http://127.0.0.1:59924/assets/option-data-BBVJs5KW.js\",\"type\":\"script\",\"startedMs\":297,\"status\":200,\"finishedMs\":1124},{\"url\":\"http://127.0.0.1:59924/assets/Optgroup-BmS2HMCp.js\",\"type\":\"script\",\"startedMs\":298,\"status\":200,\"finishedMs\":1124},{\"url\":\"http://127.0.0.1:59924/assets/index-CU8MUCiz.js\",\"type\":\"script\",\"startedMs\":299,\"status\":200,\"finishedMs\":4946},{\"url\":\"http://127.0.0.1:59924/assets/index-j9C1470y.js\",\"type\":\"script\",\"startedMs\":299,\"status\":200,\"finishedMs\":4947},{\"url\":\"http://127.0.0.1:59924/assets/index-DuqeCsYO.js\",\"type\":\"script\",\"startedMs\":299,\"status\":200,\"finishedMs\":4947},{\"url\":\"http://127.0.0.1:59924/logo.svg\",\"type\":\"image\",\"startedMs\":299}],\"pending\":[{\"url\":\"http://127.0.0.1:59924/logo.svg\",\"type\":\"image\",\"startedMs\":299}]}"
+}

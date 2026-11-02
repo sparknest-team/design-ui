@@ -1,0 +1,36 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:54898/#/zh-CN/number-keyboard",
+    "text": "\n    \n      Maple Design Mobile · Cedar’s Mobile Counterpart\n      Maple Design Mobile,Cedar Design Web,Vue 3,TypeScript,移动端组件库,语义 Token,主题定制\n      Maple Design Mobile is a mobile component library built with Vue 3 and TypeScript, maintained by 孟帅 and 吴甲明. It shares semantic tokens and component API conventions with Cedar Design Web and supports on-demand imports, theming and internationalization.\n    \n    \n    \n    \n    \n  \n\n",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [],
+    "controls": []
+  },
+  "navigation": {
+    "url": "http://127.0.0.1:54898/#/zh-CN/number-keyboard",
+    "elapsedMs": 5002,
+    "events": [
+      {
+        "name": "domcontentloaded",
+        "elapsedMs": 0
+      },
+      {
+        "name": "load",
+        "elapsedMs": 0
+      }
+    ],
+    "requests": [
+      {
+        "url": "http://127.0.0.1:54898/",
+        "type": "document",
+        "startedMs": 8,
+        "status": 200,
+        "finishedMs": 53
+      }
+    ],
+    "pending": []
+  },
+  "error": "TimeoutError: page.goto: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:54898/#/zh-CN/number-keyboard\", waiting until \"load\"\u001b[22m\n\nNavigation diagnostic: {\"url\":\"http://127.0.0.1:54898/#/zh-CN/number-keyboard\",\"elapsedMs\":5002,\"events\":[{\"name\":\"domcontentloaded\",\"elapsedMs\":0},{\"name\":\"load\",\"elapsedMs\":0}],\"requests\":[{\"url\":\"http://127.0.0.1:54898/\",\"type\":\"document\",\"startedMs\":8,\"status\":200,\"finishedMs\":53}],\"pending\":[]}"
+}

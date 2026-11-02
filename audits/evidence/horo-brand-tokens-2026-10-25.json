@@ -1,0 +1,1749 @@
+{
+  "capturedAt": "2026-10-25",
+  "method": "Chrome Save Page Complete; iframe docs-token-style; offline Chromium computed custom properties with all network requests blocked",
+  "scope": "Skyline H5, default size ratio 1, auto-round buttons; light themes. Dark class does not supply a full dark palette in captured CSS.",
+  "brands": {
+    "alps": {
+      "url": "https://fx.nioint.com/pages/horo-ui/skyline/components/AtomicInput/doc.html?token=alps",
+      "cssSha256": "ad3bcf3ba6c48cf67460c2df8d96f6d8c7f457eaf6d67e2a88c6f0aca854629a",
+      "rootClass": "h-root-alps-namespace",
+      "mappings": {
+        "--mp-sys-font-family": {
+          "source": "--h-font-family-regular-var",
+          "value": "ALPSSans-Regular, PingFang SC, Helvetica, Verdana, Arial, sans-serif"
+        },
+        "--mp-color-primary": {
+          "source": "--h-button__primary-default-bg-color",
+          "value": "rgb(9, 12, 26)"
+        },
+        "--mp-sys-color-action-primary": {
+          "source": "--h-button__primary-default-bg-color",
+          "value": "rgb(9, 12, 26)"
+        },
+        "--mp-sys-color-content-brand": {
+          "source": "--text_brandauxi_default",
+          "value": "rgb(255, 61, 0)"
+        },
+        "--mp-color-body": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-color-text": {
+          "source": "--text_primary",
+          "value": "rgb(9, 12, 26)"
+        },
+        "--mp-sys-color-surface-page": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-sys-color-surface-default": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-sys-color-surface-raised": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-sys-color-surface-overlay": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-sys-color-surface-muted": {
+          "source": "--bg_secondary",
+          "value": "rgb(247, 247, 247)"
+        },
+        "--mp-color-text-1": {
+          "source": "--text_primary",
+          "value": "rgb(9, 12, 26)"
+        },
+        "--mp-color-text-2": {
+          "source": "--text_secondary",
+          "value": "rgb(107, 109, 120)"
+        },
+        "--mp-color-text-3": {
+          "source": "--text_tertiary",
+          "value": "rgb(155, 157, 166)"
+        },
+        "--mp-color-text-4": {
+          "source": "--text_disabled",
+          "value": "rgb(204, 205, 210)"
+        },
+        "--mp-color-text-disabled": {
+          "source": "--text_disabled",
+          "value": "rgb(204, 205, 210)"
+        },
+        "--mp-sys-color-content-primary": {
+          "source": "--text_primary",
+          "value": "rgb(9, 12, 26)"
+        },
+        "--mp-sys-color-content-secondary": {
+          "source": "--text_secondary",
+          "value": "rgb(107, 109, 120)"
+        },
+        "--mp-sys-color-content-tertiary": {
+          "source": "--text_tertiary",
+          "value": "rgb(155, 157, 166)"
+        },
+        "--mp-sys-color-content-decorative": {
+          "source": "--text_disabled",
+          "value": "rgb(204, 205, 210)"
+        },
+        "--mp-sys-color-content-disabled": {
+          "source": "--text_disabled",
+          "value": "rgb(204, 205, 210)"
+        },
+        "--mp-sys-color-border-subtle": {
+          "source": "--divider_default",
+          "value": "rgb(235, 236, 238)"
+        },
+        "--mp-sys-color-border-default": {
+          "source": "--border_disabled",
+          "value": "rgb(220, 222, 228)"
+        },
+        "--mp-sys-color-border-strong": {
+          "source": "--border_secondary",
+          "value": "rgb(107, 109, 120)"
+        },
+        "--mp-sys-color-state-hover": {
+          "source": "--bg_secondary",
+          "value": "rgb(247, 247, 247)"
+        },
+        "--mp-sys-color-state-selected": {
+          "source": "--bg_info_weak_default",
+          "value": "rgb(240, 248, 255)"
+        },
+        "--mp-sys-color-scrim": {
+          "source": "--bg_overlay_default",
+          "value": "rgba(0, 0, 0, 0.3)"
+        },
+        "--mp-field-caret-color": {
+          "source": "--h-atomic-input__caret-color",
+          "value": "rgb(218, 44, 0)"
+        },
+        "--mp-field-control-text-color-disabled": {
+          "source": "--h-atomic-input__disabled-color",
+          "value": "rgb(155, 157, 166)"
+        },
+        "--mp-field-border-radius": {
+          "source": "--h-input_wrap-radius",
+          "value": "0px"
+        },
+        "--mp-field-padding-horizontal": {
+          "source": "--h-input_hor-padding",
+          "value": "0"
+        },
+        "--mp-field-variant-outline-background": {
+          "source": "--h-input_default-bg-color",
+          "value": "transparent"
+        },
+        "--mp-field-variant-outline-border-color": {
+          "source": "--h-input_normal-border-color",
+          "value": "rgb(220, 222, 228)"
+        },
+        "--mp-field-variant-outline-border-color-hover": {
+          "source": "--h-input_normal-border-color",
+          "value": "rgb(220, 222, 228)"
+        },
+        "--mp-field-variant-outline-border-color-focus": {
+          "source": "--h-input_focus-border-color",
+          "value": "rgb(9, 12, 26)"
+        },
+        "--mp-field-variant-outline-border-color-disabled": {
+          "source": "--h-input_normal-border-color",
+          "value": "rgb(220, 222, 228)"
+        },
+        "--mp-field-variant-outline-border-color-error": {
+          "source": "--h-input_error-border-color",
+          "value": "rgb(244, 85, 82)"
+        },
+        "--mp-field-focus-color": {
+          "source": "--h-input_focus-border-color",
+          "value": "rgb(9, 12, 26)"
+        },
+        "--mp-field-error-color": {
+          "source": "--h-input_error-border-color",
+          "value": "rgb(244, 85, 82)"
+        },
+        "--mp-field-variant-filled-background": {
+          "source": "--h-input_default-bg-color",
+          "value": "transparent"
+        },
+        "--mp-field-variant-filled-background-hover": {
+          "source": "--h-input_default-bg-color",
+          "value": "transparent"
+        },
+        "--mp-field-variant-filled-background-focus": {
+          "source": "--h-input_focus-bg-color",
+          "value": "transparent"
+        },
+        "--mp-field-variant-filled-background-disabled": {
+          "source": "--h-input_disabled-bg-color",
+          "value": "transparent"
+        },
+        "--mp-field-variant-standard-line-color": {
+          "source": "--h-input_normal-border-color",
+          "value": "rgb(220, 222, 228)"
+        },
+        "--mp-field-variant-standard-line-color-focus": {
+          "source": "--h-input_focus-border-color",
+          "value": "rgb(9, 12, 26)"
+        },
+        "--mp-button-solid-text-color": {
+          "source": "--h-button__primary-default-text-color",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-button-primary-disabled-color": {
+          "source": "--h-button__primary-disable-bg-color",
+          "value": "rgb(220, 222, 228)"
+        },
+        "--mp-button-disabled-solid-text-color": {
+          "source": "--h-button__primary-disable-text-color",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-button-primary-state-layer-color": {
+          "source": "--h-button__primary-active-bg-color",
+          "value": "rgb(57, 60, 72)"
+        },
+        "--mp-checkbox-control-color": {
+          "source": "--h-checkbox__main-color-unselected",
+          "value": "rgb(155, 157, 166)"
+        },
+        "--mp-checkbox-control-color-checked": {
+          "source": "--h-checkbox__main-color-selected",
+          "value": "rgb(255, 61, 0)"
+        },
+        "--mp-checkbox-control-color-disabled": {
+          "source": "--h-checkbox__main-color-disabled",
+          "value": "rgb(220, 222, 228)"
+        },
+        "--mp-checkbox-control-border-radius": {
+          "source": "--h-checkbox__border-radius",
+          "value": "999px"
+        },
+        "--mp-radio-control-color": {
+          "source": "--h-radio__main-color-unselected",
+          "value": "rgb(155, 157, 166)"
+        },
+        "--mp-radio-control-color-checked": {
+          "source": "--h-radio__main-color-selected",
+          "value": "rgb(255, 61, 0)"
+        },
+        "--mp-radio-control-color-disabled": {
+          "source": "--h-radio__main-color-disabled",
+          "value": "rgb(220, 222, 228)"
+        },
+        "--mp-switch-track-active-background": {
+          "source": "--h-switch__background-color",
+          "value": "rgb(255, 61, 0)"
+        },
+        "--mp-switch-track-background": {
+          "source": "--h-switch__background-color-off",
+          "value": "rgb(220, 222, 228)"
+        },
+        "--mp-switch-handle-background": {
+          "source": "--h-switch-knob__background-color",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-switch-width": {
+          "source": "--h-switch-track_width",
+          "value": "calc(44px * 1)"
+        },
+        "--mp-switch-height": {
+          "source": "--h-switch-track_height",
+          "value": "calc(24px * 1)"
+        },
+        "--mp-switch-handle-size": {
+          "source": "--h-switch-knob_width",
+          "value": "calc(20px * 1)"
+        },
+        "--mp-sys-radius-sm": {
+          "source": "--radius_s",
+          "value": "4px"
+        },
+        "--mp-sys-radius-md": {
+          "source": "--radius_m",
+          "value": "8px"
+        },
+        "--mp-sys-radius-lg": {
+          "source": "--radius_l",
+          "value": "12px"
+        },
+        "--mp-button-border-radius": {
+          "source": "--radius_max",
+          "value": "99999px"
+        },
+        "--mp-button-lg-height": {
+          "source": "--spacing_11",
+          "value": "44px"
+        },
+        "--mp-button-md-height": {
+          "source": "--spacing_11",
+          "value": "44px"
+        },
+        "--mp-button-sm-height": {
+          "source": "--spacing_9",
+          "value": "32px"
+        },
+        "--mp-button-xs-height": {
+          "source": "--spacing_8",
+          "value": "28px"
+        },
+        "--mp-color-info": {
+          "source": "--bg_info_default",
+          "value": "rgb(56, 134, 239)"
+        },
+        "--mp-color-info-light-1": {
+          "source": "--bg_info_weak_default",
+          "value": "rgb(240, 248, 255)"
+        },
+        "--mp-sys-color-status-info": {
+          "source": "--bg_info_default",
+          "value": "rgb(56, 134, 239)"
+        },
+        "--mp-sys-color-content-info": {
+          "source": "--text_info_default",
+          "value": "rgb(56, 134, 239)"
+        },
+        "--mp-button-info-foreground-color": {
+          "source": "--text_info_default",
+          "value": "rgb(56, 134, 239)"
+        },
+        "--mp-button-info-tonal-color": {
+          "source": "--bg_info_weak_default",
+          "value": "rgb(240, 248, 255)"
+        },
+        "--mp-button-info-disabled-color": {
+          "source": "--bg_info_disabled",
+          "value": "rgb(240, 248, 255)"
+        },
+        "--mp-color-success": {
+          "source": "--bg_success_default",
+          "value": "rgb(56, 134, 239)"
+        },
+        "--mp-color-success-light-1": {
+          "source": "--bg_success_weak_default",
+          "value": "rgb(240, 248, 255)"
+        },
+        "--mp-sys-color-status-success": {
+          "source": "--bg_success_default",
+          "value": "rgb(56, 134, 239)"
+        },
+        "--mp-sys-color-content-success": {
+          "source": "--text_success_default",
+          "value": "rgb(56, 134, 239)"
+        },
+        "--mp-button-success-foreground-color": {
+          "source": "--text_success_default",
+          "value": "rgb(56, 134, 239)"
+        },
+        "--mp-button-success-tonal-color": {
+          "source": "--bg_success_weak_default",
+          "value": "rgb(240, 248, 255)"
+        },
+        "--mp-button-success-disabled-color": {
+          "source": "--bg_success_disabled",
+          "value": "rgb(240, 248, 255)"
+        },
+        "--mp-color-warning": {
+          "source": "--bg_warning_default",
+          "value": "rgb(238, 141, 45)"
+        },
+        "--mp-color-warning-light-1": {
+          "source": "--bg_warning_weak_default",
+          "value": "rgb(255, 250, 237)"
+        },
+        "--mp-sys-color-status-warning": {
+          "source": "--bg_warning_default",
+          "value": "rgb(238, 141, 45)"
+        },
+        "--mp-sys-color-content-warning": {
+          "source": "--text_warning_default",
+          "value": "rgb(238, 141, 45)"
+        },
+        "--mp-button-warning-foreground-color": {
+          "source": "--text_warning_default",
+          "value": "rgb(238, 141, 45)"
+        },
+        "--mp-button-warning-tonal-color": {
+          "source": "--bg_warning_weak_default",
+          "value": "rgb(255, 250, 237)"
+        },
+        "--mp-button-warning-disabled-color": {
+          "source": "--bg_warning_disabled",
+          "value": "rgb(255, 250, 237)"
+        },
+        "--mp-color-danger": {
+          "source": "--bg_error_default",
+          "value": "rgb(244, 85, 82)"
+        },
+        "--mp-color-danger-light-1": {
+          "source": "--bg_error_weak_default",
+          "value": "rgb(255, 243, 239)"
+        },
+        "--mp-sys-color-status-danger": {
+          "source": "--bg_error_default",
+          "value": "rgb(244, 85, 82)"
+        },
+        "--mp-sys-color-content-danger": {
+          "source": "--text_error_default",
+          "value": "rgb(244, 85, 82)"
+        },
+        "--mp-button-danger-foreground-color": {
+          "source": "--text_error_default",
+          "value": "rgb(244, 85, 82)"
+        },
+        "--mp-button-danger-tonal-color": {
+          "source": "--bg_error_weak_default",
+          "value": "rgb(255, 243, 239)"
+        },
+        "--mp-button-danger-disabled-color": {
+          "source": "--bg_error_disabled",
+          "value": "rgb(255, 243, 239)"
+        },
+        "--mp-color-bg-1": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-color-bg-2": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-color-bg-3": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-color-bg-4": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-color-bg-5": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-color-fill-1": {
+          "source": "--bg_secondary",
+          "value": "rgb(247, 247, 247)"
+        },
+        "--mp-color-fill-2": {
+          "source": "--bg_tertiary",
+          "value": "rgb(235, 236, 238)"
+        },
+        "--mp-color-fill-3": {
+          "source": "--bg_disabled",
+          "value": "rgb(220, 222, 228)"
+        },
+        "--mp-color-fill-4": {
+          "source": "--bg_tertiary",
+          "value": "rgb(235, 236, 238)"
+        },
+        "--mp-color-border-1": {
+          "source": "--divider_default",
+          "value": "rgb(235, 236, 238)"
+        },
+        "--mp-color-border-2": {
+          "source": "--border_disabled",
+          "value": "rgb(220, 222, 228)"
+        },
+        "--mp-color-border-3": {
+          "source": "--border_secondary",
+          "value": "rgb(107, 109, 120)"
+        },
+        "--mp-color-border-4": {
+          "source": "--border_default",
+          "value": "rgb(9, 12, 26)"
+        },
+        "--mp-brand-1": {
+          "source": "--color_2_1",
+          "value": "255,  247,  240",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-2": {
+          "source": "--color_2_2",
+          "value": "255,  239,  224",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-3": {
+          "source": "--color_2_3",
+          "value": "255,  213,  189",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-4": {
+          "source": "--color_2_4",
+          "value": "255,  170,  134",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-5": {
+          "source": "--color_2_5",
+          "value": "253,  114,  70",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-6": {
+          "source": "--color_2_6",
+          "value": "255,  61,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-7": {
+          "source": "--color_2_7",
+          "value": "218,  44,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-8": {
+          "source": "--color_2_8",
+          "value": "181,  32,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-9": {
+          "source": "--color_2_9",
+          "value": "133,  19,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-10": {
+          "source": "--color_2_10",
+          "value": "87,  9,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-1": {
+          "source": "--color_1_1",
+          "value": "247,  247,  247",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-2": {
+          "source": "--color_1_2",
+          "value": "235,  236,  238",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-3": {
+          "source": "--color_1_3",
+          "value": "220,  222,  228",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-4": {
+          "source": "--color_1_4",
+          "value": "204,  205,  210",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-5": {
+          "source": "--color_1_5",
+          "value": "183,  184,  191",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-6": {
+          "source": "--color_1_9",
+          "value": "9, 12, 26"
+        },
+        "--mp-primary-7": {
+          "source": "--color_1_8",
+          "value": "57, 60, 72"
+        },
+        "--mp-primary-8": {
+          "source": "--color_1_8",
+          "value": "57,  60,  72",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-9": {
+          "source": "--color_1_9",
+          "value": "9,  12,  26",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-10": {
+          "source": "--color_1_10",
+          "value": "0,  3,  14",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-1": {
+          "source": "--color_10_1",
+          "value": "240,  248,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-2": {
+          "source": "--color_10_2",
+          "value": "209,  234,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-3": {
+          "source": "--color_10_3",
+          "value": "174,  217,  253",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-4": {
+          "source": "--color_10_4",
+          "value": "126,  189,  254",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-5": {
+          "source": "--color_10_5",
+          "value": "87,  164,  253",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-6": {
+          "source": "--color_10_6",
+          "value": "56,  134,  239",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-7": {
+          "source": "--color_10_7",
+          "value": "36,  103,  201",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-8": {
+          "source": "--color_10_8",
+          "value": "19,  74,  163",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-9": {
+          "source": "--color_10_9",
+          "value": "9,  48,  125",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-10": {
+          "source": "--color_10_10",
+          "value": "5,  30,  87",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-1": {
+          "source": "--color_10_1",
+          "value": "240,  248,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-2": {
+          "source": "--color_10_2",
+          "value": "209,  234,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-3": {
+          "source": "--color_10_3",
+          "value": "174,  217,  253",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-4": {
+          "source": "--color_10_4",
+          "value": "126,  189,  254",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-5": {
+          "source": "--color_10_5",
+          "value": "87,  164,  253",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-6": {
+          "source": "--color_10_6",
+          "value": "56,  134,  239",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-7": {
+          "source": "--color_10_7",
+          "value": "36,  103,  201",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-8": {
+          "source": "--color_10_8",
+          "value": "19,  74,  163",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-9": {
+          "source": "--color_10_9",
+          "value": "9,  48,  125",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-10": {
+          "source": "--color_10_10",
+          "value": "5,  30,  87",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-1": {
+          "source": "--color_10_1",
+          "value": "240,  248,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-2": {
+          "source": "--color_10_2",
+          "value": "209,  234,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-3": {
+          "source": "--color_10_3",
+          "value": "174,  217,  253",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-4": {
+          "source": "--color_10_4",
+          "value": "126,  189,  254",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-5": {
+          "source": "--color_10_5",
+          "value": "87,  164,  253",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-6": {
+          "source": "--color_10_6",
+          "value": "56,  134,  239",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-7": {
+          "source": "--color_10_7",
+          "value": "36,  103,  201",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-8": {
+          "source": "--color_10_8",
+          "value": "19,  74,  163",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-9": {
+          "source": "--color_10_9",
+          "value": "9,  48,  125",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-10": {
+          "source": "--color_10_10",
+          "value": "5,  30,  87",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-1": {
+          "source": "--color_4_1",
+          "value": "255,  250,  237",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-2": {
+          "source": "--color_4_2",
+          "value": "255,  236,  189",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-3": {
+          "source": "--color_4_3",
+          "value": "255,  219,  148",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-4": {
+          "source": "--color_4_4",
+          "value": "255,  201,  107",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-5": {
+          "source": "--color_4_5",
+          "value": "250,  176,  64",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-6": {
+          "source": "--color_4_6",
+          "value": "238,  141,  45",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-7": {
+          "source": "--color_4_7",
+          "value": "199,  110,  10",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-8": {
+          "source": "--color_4_8",
+          "value": "162,  80,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-9": {
+          "source": "--color_4_9",
+          "value": "123,  58,  1",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-10": {
+          "source": "--color_4_10",
+          "value": "84,  37,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-1": {
+          "source": "--color_6_1",
+          "value": "255,  243,  239",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-2": {
+          "source": "--color_6_2",
+          "value": "255,  224,  219",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-3": {
+          "source": "--color_6_3",
+          "value": "255,  190,  180",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-4": {
+          "source": "--color_6_4",
+          "value": "253,  156,  151",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-5": {
+          "source": "--color_6_5",
+          "value": "249,  119,  111",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-6": {
+          "source": "--color_6_6",
+          "value": "244,  85,  82",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-7": {
+          "source": "--color_6_7",
+          "value": "197,  53,  52",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-8": {
+          "source": "--color_6_8",
+          "value": "158,  35,  38",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-9": {
+          "source": "--color_6_9",
+          "value": "121,  20,  27",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-10": {
+          "source": "--color_6_10",
+          "value": "82,  13,  20",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-field-size-md-font-size": {
+          "source": "--body_1",
+          "value": "16px"
+        },
+        "--mp-date-calendar-selected-background": {
+          "source": "--h-calendar__focused-font-color-date-core",
+          "value": "rgb(255, 61, 0)"
+        },
+        "--mp-date-calendar-selected-color": {
+          "source": "--h-calendar__selected-color",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-date-calendar-today-color": {
+          "source": "--h-calendar__today-color",
+          "value": "rgb(255, 61, 0)"
+        },
+        "--mp-picker-option-text-color": {
+          "source": "--h-atomic-picker__column-item-color",
+          "value": "rgb(155, 157, 166)"
+        },
+        "--mp-picker-option-active-text-color": {
+          "source": "--h-atomic-picker__column-item-active-color",
+          "value": "rgb(9, 12, 26)"
+        },
+        "--mp-upload-card-size": {
+          "source": "--h-uploader_size",
+          "value": "108px"
+        },
+        "--mp-upload-border-radius": {
+          "source": "--h-uploader_item-radius",
+          "value": "8px"
+        },
+        "--mp-upload-background": {
+          "source": "--h-uploader_icon-box-bgcolor",
+          "value": "rgb(247, 247, 247)"
+        },
+        "--mp-upload-active-color": {
+          "source": "--h-uploader_loading-color",
+          "value": "rgb(255, 61, 0)"
+        },
+        "--mp-upload-error-color": {
+          "source": "--h-uploader_error-msg-color",
+          "value": "rgb(244, 85, 82)"
+        },
+        "--mp-upload-duration-background": {
+          "source": "--bg_overlay_default",
+          "value": "rgba(0, 0, 0, 0.3)"
+        },
+        "--mp-upload-duration-color": {
+          "source": "--text_inverse",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-upload-duration-radius": {
+          "source": "--h-uploader_mask-video-radius",
+          "value": "4px"
+        }
+      },
+      "darkClassChangedTokens": [
+        "--h-notify_info-bg-color",
+        "--text_inverse_disabled",
+        "--bg_overlay_moderate",
+        "--text_inverse_press",
+        "--h-snackbar__bg-color",
+        "--h-overlay__bg-color",
+        "--bg_overlay_default",
+        "--border_inverse_press",
+        "--h-uploader_mask-bg-color",
+        "--h-toast__bg-color",
+        "--bg_overlay_weaker",
+        "--h-overlay__bg-weaker",
+        "--bg_overlay_weak",
+        "--h-popover_bg-color",
+        "--h-button__secondary_bg-active-bg-color",
+        "--bg_overlay_strong",
+        "--bg_overlay_inverse",
+        "--border_inverse_disabled"
+      ],
+      "notes": [
+        "Alps input text line is 24px, Maple composite target remains 48px.",
+        "Brand font family names captured; font binaries are not redistributed.",
+        "Maple validation, draft confirmation and field wrapping remain unchanged."
+      ]
+    },
+    "firefly": {
+      "url": "https://fx.nioint.com/pages/horo-ui/skyline/components/AtomicInput/doc.html?token=fy",
+      "cssSha256": "9b977e0f6d953f2461e4655c2c9cd3cd20ead2345e6768e7d88c27bc3cbc6eb0",
+      "rootClass": "h-root-fy-namespace",
+      "mappings": {
+        "--mp-sys-font-family": {
+          "source": "--h-font-family-regular-var",
+          "value": "Pyro QiHei, PingFang SC, Helvetica, Verdana, Arial, sans-serif"
+        },
+        "--mp-color-primary": {
+          "source": "--h-button__primary-default-bg-color",
+          "value": "rgb(234, 255, 104)"
+        },
+        "--mp-sys-color-action-primary": {
+          "source": "--h-button__primary-default-bg-color",
+          "value": "rgb(234, 255, 104)"
+        },
+        "--mp-sys-color-content-brand": {
+          "source": "--text_brandauxi_default",
+          "value": "rgb(154, 137, 235)"
+        },
+        "--mp-color-body": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-color-text": {
+          "source": "--text_primary",
+          "value": "rgba(23, 34, 75, 1)"
+        },
+        "--mp-sys-color-surface-page": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-sys-color-surface-default": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-sys-color-surface-raised": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-sys-color-surface-overlay": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-sys-color-surface-muted": {
+          "source": "--bg_secondary",
+          "value": "rgba(23, 34, 75, 0.04)"
+        },
+        "--mp-color-text-1": {
+          "source": "--text_primary",
+          "value": "rgba(23, 34, 75, 1)"
+        },
+        "--mp-color-text-2": {
+          "source": "--text_secondary",
+          "value": "rgba(23, 34, 75, 0.6)"
+        },
+        "--mp-color-text-3": {
+          "source": "--text_tertiary",
+          "value": "rgba(23, 34, 75, 0.36)"
+        },
+        "--mp-color-text-4": {
+          "source": "--text_disabled",
+          "value": "rgba(23, 34, 75, 0.16)"
+        },
+        "--mp-color-text-disabled": {
+          "source": "--text_disabled",
+          "value": "rgba(23, 34, 75, 0.16)"
+        },
+        "--mp-sys-color-content-primary": {
+          "source": "--text_primary",
+          "value": "rgba(23, 34, 75, 1)"
+        },
+        "--mp-sys-color-content-secondary": {
+          "source": "--text_secondary",
+          "value": "rgba(23, 34, 75, 0.6)"
+        },
+        "--mp-sys-color-content-tertiary": {
+          "source": "--text_tertiary",
+          "value": "rgba(23, 34, 75, 0.36)"
+        },
+        "--mp-sys-color-content-decorative": {
+          "source": "--text_disabled",
+          "value": "rgba(23, 34, 75, 0.16)"
+        },
+        "--mp-sys-color-content-disabled": {
+          "source": "--text_disabled",
+          "value": "rgba(23, 34, 75, 0.16)"
+        },
+        "--mp-sys-color-border-subtle": {
+          "source": "--divider_default",
+          "value": "rgba(23, 34, 75, 0.08)"
+        },
+        "--mp-sys-color-border-default": {
+          "source": "--border_disabled",
+          "value": "rgba(23, 34, 75, 0.16)"
+        },
+        "--mp-sys-color-border-strong": {
+          "source": "--border_secondary",
+          "value": "rgba(23, 34, 75, 0.6)"
+        },
+        "--mp-sys-color-state-hover": {
+          "source": "--bg_secondary",
+          "value": "rgba(23, 34, 75, 0.04)"
+        },
+        "--mp-sys-color-state-selected": {
+          "source": "--bg_info_weak_default",
+          "value": "rgba(207, 199, 255, 0.24)"
+        },
+        "--mp-sys-color-scrim": {
+          "source": "--bg_overlay_default",
+          "value": "rgba(0, 0, 0, 0.36)"
+        },
+        "--mp-field-caret-color": {
+          "source": "--h-atomic-input__caret-color",
+          "value": "rgb(207, 199, 255)"
+        },
+        "--mp-field-control-text-color-disabled": {
+          "source": "--h-atomic-input__disabled-color",
+          "value": "rgba(23, 34, 75, 0.36)"
+        },
+        "--mp-field-border-radius": {
+          "source": "--h-input_wrap-radius",
+          "value": "24px"
+        },
+        "--mp-field-padding-horizontal": {
+          "source": "--h-input_hor-padding",
+          "value": "20px"
+        },
+        "--mp-field-variant-outline-background": {
+          "source": "--h-input_default-bg-color",
+          "value": "rgba(23, 34, 75, 0.04)"
+        },
+        "--mp-field-variant-outline-border-color": {
+          "source": "--h-input_normal-border-color",
+          "value": "transparent"
+        },
+        "--mp-field-variant-outline-border-color-hover": {
+          "source": "--h-input_normal-border-color",
+          "value": "transparent"
+        },
+        "--mp-field-variant-outline-border-color-focus": {
+          "source": "--h-input_focus-border-color",
+          "value": "rgb(154, 137, 235)"
+        },
+        "--mp-field-variant-outline-border-color-disabled": {
+          "source": "--h-input_normal-border-color",
+          "value": "transparent"
+        },
+        "--mp-field-variant-outline-border-color-error": {
+          "source": "--h-input_error-border-color",
+          "value": "rgb(255, 115, 91)"
+        },
+        "--mp-field-focus-color": {
+          "source": "--h-input_focus-border-color",
+          "value": "rgb(154, 137, 235)"
+        },
+        "--mp-field-error-color": {
+          "source": "--h-input_error-border-color",
+          "value": "rgb(255, 115, 91)"
+        },
+        "--mp-field-variant-filled-background": {
+          "source": "--h-input_default-bg-color",
+          "value": "rgba(23, 34, 75, 0.04)"
+        },
+        "--mp-field-variant-filled-background-hover": {
+          "source": "--h-input_default-bg-color",
+          "value": "rgba(23, 34, 75, 0.04)"
+        },
+        "--mp-field-variant-filled-background-focus": {
+          "source": "--h-input_focus-bg-color",
+          "value": "rgba(23, 34, 75, 0.04)"
+        },
+        "--mp-field-variant-filled-background-disabled": {
+          "source": "--h-input_disabled-bg-color",
+          "value": "rgba(23, 34, 75, 0.04)"
+        },
+        "--mp-field-variant-standard-line-color": {
+          "source": "--h-input_normal-border-color",
+          "value": "transparent"
+        },
+        "--mp-field-variant-standard-line-color-focus": {
+          "source": "--h-input_focus-border-color",
+          "value": "rgb(154, 137, 235)"
+        },
+        "--mp-button-solid-text-color": {
+          "source": "--h-button__primary-default-text-color",
+          "value": "rgba(23, 34, 75, 1)"
+        },
+        "--mp-button-primary-disabled-color": {
+          "source": "--h-button__primary-disable-bg-color",
+          "value": "rgba(23, 34, 75, 0.08)"
+        },
+        "--mp-button-disabled-solid-text-color": {
+          "source": "--h-button__primary-disable-text-color",
+          "value": "rgba(23, 34, 75, 0.16)"
+        },
+        "--mp-button-primary-state-layer-color": {
+          "source": "--h-button__primary-active-bg-color",
+          "value": "rgb(207, 223, 38)"
+        },
+        "--mp-checkbox-control-color": {
+          "source": "--h-checkbox__main-color-unselected",
+          "value": "rgba(23, 34, 75, 0.36)"
+        },
+        "--mp-checkbox-control-color-checked": {
+          "source": "--h-checkbox__main-color-selected",
+          "value": "rgb(207, 199, 255)"
+        },
+        "--mp-checkbox-control-color-disabled": {
+          "source": "--h-checkbox__main-color-disabled",
+          "value": "rgba(23, 34, 75, 0.16)"
+        },
+        "--mp-checkbox-control-border-radius": {
+          "source": "--h-checkbox__border-radius",
+          "value": "8px"
+        },
+        "--mp-radio-control-color": {
+          "source": "--h-radio__main-color-unselected",
+          "value": "rgba(23, 34, 75, 0.36)"
+        },
+        "--mp-radio-control-color-checked": {
+          "source": "--h-radio__main-color-selected",
+          "value": "rgb(207, 199, 255)"
+        },
+        "--mp-radio-control-color-disabled": {
+          "source": "--h-radio__main-color-disabled",
+          "value": "rgba(23, 34, 75, 0.08)"
+        },
+        "--mp-switch-track-active-background": {
+          "source": "--h-switch__background-color",
+          "value": "rgb(182, 168, 251)"
+        },
+        "--mp-switch-track-background": {
+          "source": "--h-switch__background-color-off",
+          "value": "rgba(23, 34, 75, 0.08)"
+        },
+        "--mp-switch-handle-background": {
+          "source": "--h-switch-knob__background-color",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-switch-width": {
+          "source": "--h-switch-track_width",
+          "value": "calc(44px * 1)"
+        },
+        "--mp-switch-height": {
+          "source": "--h-switch-track_height",
+          "value": "calc(26px * 1)"
+        },
+        "--mp-switch-handle-size": {
+          "source": "--h-switch-knob_width",
+          "value": "calc(20px * 1)"
+        },
+        "--mp-sys-radius-sm": {
+          "source": "--radius_s",
+          "value": "12px"
+        },
+        "--mp-sys-radius-md": {
+          "source": "--radius_m",
+          "value": "24px"
+        },
+        "--mp-sys-radius-lg": {
+          "source": "--radius_l",
+          "value": "32px"
+        },
+        "--mp-button-border-radius": {
+          "source": "--radius_max",
+          "value": "99999px"
+        },
+        "--mp-button-lg-height": {
+          "source": "--spacing_11",
+          "value": "44px"
+        },
+        "--mp-button-md-height": {
+          "source": "--spacing_11",
+          "value": "44px"
+        },
+        "--mp-button-sm-height": {
+          "source": "--spacing_9",
+          "value": "32px"
+        },
+        "--mp-button-xs-height": {
+          "source": "--spacing_8",
+          "value": "28px"
+        },
+        "--mp-color-info": {
+          "source": "--bg_info_default",
+          "value": "rgba(207, 199, 255, 0.6)"
+        },
+        "--mp-color-info-light-1": {
+          "source": "--bg_info_weak_default",
+          "value": "rgba(207, 199, 255, 0.24)"
+        },
+        "--mp-sys-color-status-info": {
+          "source": "--bg_info_default",
+          "value": "rgba(207, 199, 255, 0.6)"
+        },
+        "--mp-sys-color-content-info": {
+          "source": "--text_info_default",
+          "value": "rgb(154, 137, 235)"
+        },
+        "--mp-button-info-foreground-color": {
+          "source": "--text_info_default",
+          "value": "rgb(154, 137, 235)"
+        },
+        "--mp-button-info-tonal-color": {
+          "source": "--bg_info_weak_default",
+          "value": "rgba(207, 199, 255, 0.24)"
+        },
+        "--mp-button-info-disabled-color": {
+          "source": "--bg_info_disabled",
+          "value": "rgba(207, 199, 255, 0.24)"
+        },
+        "--mp-color-success": {
+          "source": "--bg_success_default",
+          "value": "rgb(90, 233, 133)"
+        },
+        "--mp-color-success-light-1": {
+          "source": "--bg_success_weak_default",
+          "value": "rgba(90, 233, 133, 0.16)"
+        },
+        "--mp-sys-color-status-success": {
+          "source": "--bg_success_default",
+          "value": "rgb(90, 233, 133)"
+        },
+        "--mp-sys-color-content-success": {
+          "source": "--text_success_default",
+          "value": "rgb(45, 216, 101)"
+        },
+        "--mp-button-success-foreground-color": {
+          "source": "--text_success_default",
+          "value": "rgb(45, 216, 101)"
+        },
+        "--mp-button-success-tonal-color": {
+          "source": "--bg_success_weak_default",
+          "value": "rgba(90, 233, 133, 0.16)"
+        },
+        "--mp-button-success-disabled-color": {
+          "source": "--bg_success_disabled",
+          "value": "rgba(90, 233, 133, 0.24)"
+        },
+        "--mp-color-warning": {
+          "source": "--bg_warning_default",
+          "value": "rgb(255, 183, 42)"
+        },
+        "--mp-color-warning-light-1": {
+          "source": "--bg_warning_weak_default",
+          "value": "rgba(255, 183, 42, 0.16)"
+        },
+        "--mp-sys-color-status-warning": {
+          "source": "--bg_warning_default",
+          "value": "rgb(255, 183, 42)"
+        },
+        "--mp-sys-color-content-warning": {
+          "source": "--text_warning_default",
+          "value": "rgb(245, 162, 1)"
+        },
+        "--mp-button-warning-foreground-color": {
+          "source": "--text_warning_default",
+          "value": "rgb(245, 162, 1)"
+        },
+        "--mp-button-warning-tonal-color": {
+          "source": "--bg_warning_weak_default",
+          "value": "rgba(255, 183, 42, 0.16)"
+        },
+        "--mp-button-warning-disabled-color": {
+          "source": "--bg_warning_disabled",
+          "value": "rgba(255, 183, 42, 0.24)"
+        },
+        "--mp-color-danger": {
+          "source": "--bg_error_default",
+          "value": "rgb(255, 115, 91)"
+        },
+        "--mp-color-danger-light-1": {
+          "source": "--bg_error_weak_default",
+          "value": "rgba(255, 115, 91, 0.16)"
+        },
+        "--mp-sys-color-status-danger": {
+          "source": "--bg_error_default",
+          "value": "rgb(255, 115, 91)"
+        },
+        "--mp-sys-color-content-danger": {
+          "source": "--text_error_default",
+          "value": "rgb(253, 89, 64)"
+        },
+        "--mp-button-danger-foreground-color": {
+          "source": "--text_error_default",
+          "value": "rgb(253, 89, 64)"
+        },
+        "--mp-button-danger-tonal-color": {
+          "source": "--bg_error_weak_default",
+          "value": "rgba(255, 115, 91, 0.16)"
+        },
+        "--mp-button-danger-disabled-color": {
+          "source": "--bg_error_disabled",
+          "value": "rgba(255, 115, 91, 0.24)"
+        },
+        "--mp-color-bg-1": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-color-bg-2": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-color-bg-3": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-color-bg-4": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-color-bg-5": {
+          "source": "--bg_default",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-color-fill-1": {
+          "source": "--bg_secondary",
+          "value": "rgba(23, 34, 75, 0.04)"
+        },
+        "--mp-color-fill-2": {
+          "source": "--bg_tertiary",
+          "value": "rgba(23, 34, 75, 0.08)"
+        },
+        "--mp-color-fill-3": {
+          "source": "--bg_disabled",
+          "value": "rgba(23, 34, 75, 0.08)"
+        },
+        "--mp-color-fill-4": {
+          "source": "--bg_tertiary",
+          "value": "rgba(23, 34, 75, 0.08)"
+        },
+        "--mp-color-border-1": {
+          "source": "--divider_default",
+          "value": "rgba(23, 34, 75, 0.08)"
+        },
+        "--mp-color-border-2": {
+          "source": "--border_disabled",
+          "value": "rgba(23, 34, 75, 0.16)"
+        },
+        "--mp-color-border-3": {
+          "source": "--border_secondary",
+          "value": "rgba(23, 34, 75, 0.6)"
+        },
+        "--mp-color-border-4": {
+          "source": "--border_default",
+          "value": "rgba(23, 34, 75, 1)"
+        },
+        "--mp-brand-1": {
+          "source": "--color_2_1",
+          "value": "247,  255,  202",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-2": {
+          "source": "--color_2_2",
+          "value": "240,  255,  152",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-3": {
+          "source": "--color_2_3",
+          "value": "234,  255,  104",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-4": {
+          "source": "--color_2_4",
+          "value": "219,  241,  82",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-5": {
+          "source": "--color_2_5",
+          "value": "207,  223,  38",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-6": {
+          "source": "--color_2_6",
+          "value": "188,  202,  25",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-7": {
+          "source": "--color_2_7",
+          "value": "169,  183,  2",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-8": {
+          "source": "--color_2_8",
+          "value": "136,  148,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-9": {
+          "source": "--color_2_9",
+          "value": "91,  98,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-brand-10": {
+          "source": "--color_2_10",
+          "value": "55,  59,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-1": {
+          "source": "--color_2_1",
+          "value": "247,  255,  202",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-2": {
+          "source": "--color_2_2",
+          "value": "240,  255,  152",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-3": {
+          "source": "--color_2_3",
+          "value": "234,  255,  104",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-4": {
+          "source": "--color_2_4",
+          "value": "219,  241,  82",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-5": {
+          "source": "--color_2_5",
+          "value": "207,  223,  38",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-6": {
+          "source": "--color_2_3",
+          "value": "234, 255, 104"
+        },
+        "--mp-primary-7": {
+          "source": "--color_2_5",
+          "value": "207, 223, 38"
+        },
+        "--mp-primary-8": {
+          "source": "--color_2_8",
+          "value": "136,  148,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-9": {
+          "source": "--color_2_9",
+          "value": "91,  98,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-primary-10": {
+          "source": "--color_2_10",
+          "value": "55,  59,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-1": {
+          "source": "--color_10_1",
+          "value": "230,  247,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-2": {
+          "source": "--color_10_2",
+          "value": "207,  239,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-3": {
+          "source": "--color_10_3",
+          "value": "166,  221,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-4": {
+          "source": "--color_10_4",
+          "value": "126,  201,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-5": {
+          "source": "--color_10_5",
+          "value": "84,  179,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-6": {
+          "source": "--color_10_6",
+          "value": "43,  147,  243",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-7": {
+          "source": "--color_10_7",
+          "value": "31,  117,  209",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-8": {
+          "source": "--color_10_8",
+          "value": "11,  81,  167",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-9": {
+          "source": "--color_10_9",
+          "value": "2,  55,  129",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-blue-10": {
+          "source": "--color_10_10",
+          "value": "1,  35,  89",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-1": {
+          "source": "--color_10_1",
+          "value": "230,  247,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-2": {
+          "source": "--color_10_2",
+          "value": "207,  239,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-3": {
+          "source": "--color_10_3",
+          "value": "166,  221,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-4": {
+          "source": "--color_10_4",
+          "value": "126,  201,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-5": {
+          "source": "--color_10_5",
+          "value": "84,  179,  255",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-6": {
+          "source": "--color_10_6",
+          "value": "43,  147,  243",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-7": {
+          "source": "--color_10_7",
+          "value": "31,  117,  209",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-8": {
+          "source": "--color_10_8",
+          "value": "11,  81,  167",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-9": {
+          "source": "--color_10_9",
+          "value": "2,  55,  129",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-info-10": {
+          "source": "--color_10_10",
+          "value": "1,  35,  89",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-1": {
+          "source": "--color_12_1",
+          "value": "227,  255,  231",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-2": {
+          "source": "--color_12_2",
+          "value": "199,  255,  209",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-3": {
+          "source": "--color_12_3",
+          "value": "157,  255,  179",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-4": {
+          "source": "--color_12_4",
+          "value": "130,  244,  162",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-5": {
+          "source": "--color_12_5",
+          "value": "90,  233,  133",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-6": {
+          "source": "--color_12_6",
+          "value": "45,  216,  101",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-7": {
+          "source": "--color_12_7",
+          "value": "30,  180,  84",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-8": {
+          "source": "--color_12_8",
+          "value": "18,  140,  66",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-9": {
+          "source": "--color_12_9",
+          "value": "6,  102,  48",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-success-10": {
+          "source": "--color_12_10",
+          "value": "2,  64,  31",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-1": {
+          "source": "--color_4_1",
+          "value": "255,  250,  222",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-2": {
+          "source": "--color_4_2",
+          "value": "255,  240,  180",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-3": {
+          "source": "--color_4_3",
+          "value": "255,  224,  123",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-4": {
+          "source": "--color_4_4",
+          "value": "255,  209,  82",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-5": {
+          "source": "--color_4_5",
+          "value": "255,  183,  42",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-6": {
+          "source": "--color_4_6",
+          "value": "245,  162,  1",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-7": {
+          "source": "--color_4_7",
+          "value": "207,  131,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-8": {
+          "source": "--color_4_8",
+          "value": "168,  102,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-9": {
+          "source": "--color_4_9",
+          "value": "130,  74,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-warning-10": {
+          "source": "--color_4_10",
+          "value": "93,  49,  0",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-1": {
+          "source": "--color_6_1",
+          "value": "255,  244,  239",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-2": {
+          "source": "--color_6_2",
+          "value": "255,  229,  220",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-3": {
+          "source": "--color_6_3",
+          "value": "255,  202,  186",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-4": {
+          "source": "--color_6_4",
+          "value": "255,  167,  145",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-5": {
+          "source": "--color_6_5",
+          "value": "255,  115,  91",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-6": {
+          "source": "--color_6_6",
+          "value": "253,  89,  64",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-7": {
+          "source": "--color_6_7",
+          "value": "214,  60,  43",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-8": {
+          "source": "--color_6_8",
+          "value": "176,  36,  27",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-9": {
+          "source": "--color_6_9",
+          "value": "138,  19,  13",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-danger-10": {
+          "source": "--color_6_10",
+          "value": "99,  9,  9",
+          "conversion": "RGB channels (semantic tokens preserve source alpha separately)"
+        },
+        "--mp-field-size-md-font-size": {
+          "source": "--body_1",
+          "value": "16px"
+        },
+        "--mp-date-calendar-selected-background": {
+          "source": "--h-calendar__focused-font-color-date-core",
+          "value": "rgb(207, 199, 255)"
+        },
+        "--mp-date-calendar-selected-color": {
+          "source": "--h-calendar__selected-color",
+          "value": "rgba(23, 34, 75, 1)"
+        },
+        "--mp-date-calendar-today-color": {
+          "source": "--h-calendar__today-color",
+          "value": "rgb(119, 104, 211)"
+        },
+        "--mp-picker-option-text-color": {
+          "source": "--h-atomic-picker__column-item-color",
+          "value": "rgba(23, 34, 75, 0.36)"
+        },
+        "--mp-picker-option-active-text-color": {
+          "source": "--h-atomic-picker__column-item-active-color",
+          "value": "rgba(23, 34, 75, 1)"
+        },
+        "--mp-upload-card-size": {
+          "source": "--h-uploader_size",
+          "value": "108px"
+        },
+        "--mp-upload-border-radius": {
+          "source": "--h-uploader_item-radius",
+          "value": "24px"
+        },
+        "--mp-upload-background": {
+          "source": "--h-uploader_icon-box-bgcolor",
+          "value": "rgba(23, 34, 75, 0.04)"
+        },
+        "--mp-upload-active-color": {
+          "source": "--h-uploader_loading-color",
+          "value": "rgb(154, 137, 235)"
+        },
+        "--mp-upload-error-color": {
+          "source": "--h-uploader_error-msg-color",
+          "value": "rgb(253, 89, 64)"
+        },
+        "--mp-upload-duration-background": {
+          "source": "--bg_overlay_default",
+          "value": "rgba(0, 0, 0, 0.36)"
+        },
+        "--mp-upload-duration-color": {
+          "source": "--text_inverse",
+          "value": "rgb(255, 255, 255)"
+        },
+        "--mp-upload-duration-radius": {
+          "source": "--h-uploader_mask-video-radius",
+          "value": "8px"
+        }
+      },
+      "darkClassChangedTokens": [],
+      "notes": [
+        "Alps input text line is 24px, Maple composite target remains 48px.",
+        "Brand font family names captured; font binaries are not redistributed.",
+        "Maple validation, draft confirmation and field wrapping remain unchanged.",
+        "Maple adaptation: temporal summary text and time-edit icon use content-primary for contrast on light surfaces; these two overrides are not claimed as captured Horo values."
+      ]
+    }
+  }
+}

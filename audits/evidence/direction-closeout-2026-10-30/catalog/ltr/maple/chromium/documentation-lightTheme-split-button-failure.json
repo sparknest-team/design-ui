@@ -1,0 +1,496 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:54262/#/zh-CN/split-button",
+    "text": "\n展开菜单\n关闭菜单\n发布\n已关闭\n异步与动态数据\n#\n异步操作\n\nclick 是普通事件通知，支持 async 回调；loading 由业务状态控制，建议在 finally 中恢复。事件监听器的 Promise 不会自动驱动加载。禁用／加载链接移除有效 href。\n\n发布\n完成次数: 0\n阅读方向\n\n主按钮位于阅读起点，菜单按钮位于阅读终点；LTR/RTL 切换不交换业务动作或额外触发选择。Enter/Space 保留原生按钮行为，菜单按钮支持上下键打开菜单并跳过禁用项，Home/End 定位首尾，Enter 选择，Escape 关闭并归还焦点。弹层继承触发按钮来源方向，start/end 对齐随方向变化，显式 left/right 保持物理侧。自定义向下图形不额外镜像。\n\nAPI\n#\n属性\n参数\t说明\t类型\t默认值\nopen\t菜单是否打开，支持 v-model:open\tboolean\tundefined\ndefault-open\t菜单默认是否打开\tboolean\tfalse\ndisabled\t是否禁用整个分裂按钮\tboolean\tfalse\nstatus\t按钮组主题色\tSemanticStatus\tdefault\nvariant\t按钮组变体\tButtonVariant\tdefault\nsize\t按钮组尺寸\tComponentSize\tmd\ncolor\t自定义背景色\tstring\t''\ntext-color\t自定义文字色\tstring\t''\nelevation\t按钮组海拔阴影\tboolean | number\ttrue\nbutton-props\t主按钮属性\tPartial<ButtonProps>\tundefined\ntrigger-button-props\t菜单触发按钮属性\tPartial<ButtonProps>\tundefined\ntrigger\t菜单触发方式\tTriggerEvent | TriggerEvent[]\tclick\nplacement\t浮层相对触发元素的首选方位，默认 bottom；启用默认的 auto-fit-position 时，空间不足会自动翻转并约束到可视区域，不保证最终停在该侧\tMenuPosition\tbottom\npopup-container\t菜单挂载容器\tPopupContainer\tbody\npopup-max-height\t菜单最大高度\tboolean | number\ttrue\npopup-class\t菜单浮层类名\tstring | array | object\tundefined\noffset-x\t菜单横向偏移\tstring | number\t0\noffset-y\t菜单纵向偏移\tstring | number\t0\nhide-on-select\t选择菜单项后是否关闭菜单\tboolean\ttrue\n#\n事件\n事件名\t说明\t回调参数\nupdate:open\t菜单打开状态请求更新时触发\topen: boolean\nopen-change\t菜单打开状态变化时触发\topen: boolean\nclick\t点击主按钮时触发\tevent: Event\nselect\t选择菜单项时触发\tvalue, option, event\n#\n插槽\n插槽名\t说明\t参数\ndefault\t主按钮内容\t-\nicon\t菜单触发按钮图标\topen: boolean\ncontent\t菜单内容\t-\n#\n异步操作与点击语义\n\nclick 是普通事件通知，支持 async 回调；loading 由业务状态控制，建议在 finally 中恢复。事件监听器的 Promise 不会自动驱动加载。禁用／加载链接移除有效 href。\n\n<script setup>\nimport { ref } from 'vue'\nconst publishing = ref(false)\nconst publish = async () => {\n  if (publishing.value) return\n  publishing.value = true\n  try { await new Promise((resolve) => setTimeout(resolve, 800)) }\n  finally { publishing.value = false }\n}\n</script>\n\n<template>\n  <mp-split-button :button-props=\"{ loading: publishing }\" @click=\"publish\">\n    发布\n    <template #content><mp-menu-option label=\"保存草稿\" /></template>\n  </mp-split-button>\n</template>\n\n\nclick 是普通 Emits 事件；主按钮正常冒泡，不打开菜单；整体 disabled 优先于两个按钮的 disabled 配置。\n\n#\n实例方法\n方法\t说明\nopen()\t请求展开菜单，禁用时不展开\nclose()\t请求关闭菜单\nresize()\t重新计算菜单位置\n\n受控 open 只请求更新，需由调用方更新绑定值。offset-x / offset-y 表示屏幕 X/Y 轴，数字单位为 px，长度字符串按现有长度工具转换。\n\n两端主体、Props、样式依赖入口和契约测试为独立同源副本；底层 Menu 保留平台适配，不共享实例。\n\n#\n方位语义与配置入口\n\n菜单方位通过内部 Menu 的 placement 传递给 Trigger，使用 MenuPlacement 类型，不新增第二个定位入口。\n\n移动预览\n本页目录\n保存草稿\n保存并发布\n暂无权限\n发布成功",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"loca-doc-preview__example\"><div class=\"mp-button-group mp--box mp-button-group--variant-default mp-button-group--horizontal mp-elevation--2 mp-split-button\"><button class=\"mp-button mp-button--size-md mp-button--status-default mp-button--variant-default\" type=\"button\" style=\"overflow: hidden; z-index: 1;\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">发布 </span><div class=\"mp-hover-overlay\"></div><div class=\"mp-ripple\" data-created-at=\"2393.5999999046326\" style=\"opacity: 0.25; transform: translate(-8px, -16px) scale3d(1, 1, 1); width: 80px; height: 80px;\"></div></button><button aria-expanded=\"true\" aria-haspopup=\"menu\" class=\"mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-button--icon-only mp-button--focus\" type=\"button\" style=\"overflow: hidden; z-index: 1;\"><!--v-if--><span class=\"mp-button--icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"mp-svg-icon\" fill=\"currentColor\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\" style=\"width: 1em; height: 1em; flex-shrink: 0;\"><!--v-if--><path d=\"m7 10 5 5 5-5z\"></path></svg><!--v-if--></span><!--v-if--><div class=\"mp-hover-overlay\"></div><div class=\"mp-ripple\" data-created-at=\"2441.5\" style=\"opacity: 0.25; transform: translate(-9.94113px, -9.94113px) scale3d(1, 1, 1); width: 67.8823px; height: 67.8823px;\"></div></button></div></div>",
+      "<div class=\"loca-doc-preview__example\"><div class=\"mp-space mp-space--block\" style=\"gap: var(--mp-space-size-md-row-gap) var(--mp-space-size-md-column-gap); flex-flow: wrap; justify-content: flex-start; align-items: center;\"><!----><div class=\"mp-space__item\"><div class=\"mp-button-group mp--box mp-button-group--variant-default mp-button-group--horizontal mp-elevation--2 mp-split-button\"><button class=\"mp-button mp-button--size-md mp-button--status-default mp-button--variant-default\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">default </span><div class=\"mp-hover-overlay\"></div></button><button aria-expanded=\"false\" aria-haspopup=\"menu\" class=\"mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-button--icon-only\" type=\"button\"><!--v-if--><span class=\"mp-button--icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"mp-svg-icon\" fill=\"currentColor\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\" style=\"width: 1em; height: 1em; flex-shrink: 0;\"><!--v-if--><path d=\"m7 10 5 5 5-5z\"></path></svg><!--v-if--></span><!--v-if--><div class=\"mp-hover-overlay\"></div></button></div></div><!----><div class=\"mp-space__item\"><div class=\"mp-button-group mp--box mp-button-group--variant-outline mp-button-group--horizontal mp-split-button\"><button class=\"mp-button mp-button--size-md mp-button--status-default mp-button--variant-outline\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">outline </span><div class=\"mp-hover-overlay\"></div></button><button aria-expanded=\"false\" aria-haspopup=\"menu\" class=\"mp-button mp-button--size-md mp-button--status-default mp-button--variant-outline mp-button--icon-only\" type=\"button\"><!--v-if--><span class=\"mp-button--icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"mp-svg-icon\" fill=\"currentColor\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\" style=\"width: 1em; height: 1em; flex-shrink: 0;\"><!--v-if--><path d=\"m7 10 5 5 5-5z\"></path></svg><!--v-if--></span><!--v-if--><div class=\"mp-hover-overlay\"></div></button></div></div><!----><div class=\"mp-space__item\"><div class=\"mp-button-group mp--box mp-button-group--variant-tonal mp-button-group--horizontal mp-split-button\"><button class=\"mp-button mp-button--size-md mp-button--status-default mp-button--variant-tonal\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">tonal </span><div class=\"mp-hover-overlay\"></div></button><button aria-expanded=\"false\" aria-haspopup=\"menu\" class=\"mp-button mp-button--size-md mp-button--status-default mp-button--variant-tonal mp-button--icon-only\" type=\"button\"><!--v-if--><span class=\"mp-button--icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"mp-svg-icon\" fill=\"currentColor\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\" style=\"width: 1em; height: 1em; flex-shrink: 0;\"><!--v-if--><path d=\"m7 10 5 5 5-5z\"></path></svg><!--v-if--></span><!--v-if--><div class=\"mp-hover-overlay\"></div></button></div></div><!----><div class=\"mp-space__item\"><div class=\"mp-button-group mp--box mp-button-group--variant-text mp-button-group--horizontal mp-split-button\"><button class=\"mp-button mp-button--size-md mp-button--status-default mp-button--variant-text\" type=\"button\"><!--v-if--><!--v-if--><span class=\"mp-button__content\">text </span><div class=\"mp-hover-overlay\"></div></button><button aria-expanded=\"false\" aria-haspopup=\"menu\" class=\"mp-button mp-button--size-md mp-button--status-default mp-button--variant-text mp-button--icon-only\" type=\"button\"><!--v-if--><span class=\"mp-button--icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" class=\"mp-svg-icon\" fill=\"currentColor\" aria-hidden=\"true\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" role=\"img\" style=\"width: 1em; height: 1em; flex-shrink: 0;\"><!--v-if--><path d=\"m7 10 5 5 5-5z\"></path></svg><!--v-if--></span><!--v-if--><div class=\"mp-hover-overlay\"></div></button></div></div></div></div>"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "status",
+        "class": "mp-field-presentation__reference"
+      },
+      {
+        "tag": "DIV",
+        "role": "radiogroup",
+        "label": "size",
+        "class": "mp-radio-group mp-radio-group--horizontal mp-radio-group--size-sm mp-radio-group--button"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-radio__input"
+      },
+      {
+        "tag": "DIV",
+        "role": "radiogroup",
+        "label": "Compare configuration",
+        "class": "mp-radio-group mp-radio-group--horizontal mp-radio-group--size-md"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-radio__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-radio__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "发布",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "发布",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "发布",
+        "class": "mp-button mp-button--size-md mp-button--status-secondary mp-button--variant-default"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-secondary mp-button--variant-default mp-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "发布",
+        "class": "mp-button mp-button--size-md mp-button--status-tertiary mp-button--variant-default"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-tertiary mp-button--variant-default mp-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "发布",
+        "class": "mp-button mp-button--size-md mp-button--status-info mp-button--variant-default"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-info mp-button--variant-default mp-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "发布",
+        "class": "mp-button mp-button--size-md mp-button--status-success mp-button--variant-default"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-success mp-button--variant-default mp-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "发布",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-warning mp-button--variant-default mp-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "发布",
+        "class": "mp-button mp-button--size-md mp-button--status-danger mp-button--variant-default"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-danger mp-button--variant-default mp-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "选择操作",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "发布",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开菜单",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "关闭菜单",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "发布",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "发布",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-button--icon-only"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在 Playground 中编辑",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "展开源码",
+        "class": "loca-doc-preview__action"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Edit In Playground",
+        "class": "mp-site-code-example__toolbar-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Copy Example Code",
+        "class": "mp-site-code-example__toolbar-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Hide Source",
+        "class": "mp-site-code-example__toolbar-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "右侧面板",
+        "class": "maple-site-mobile-toolbar"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "移动预览",
+        "class": ""
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "本页目录",
+        "class": ""
+      },
+      {
+        "tag": "UL",
+        "role": "menu",
+        "label": "保存草稿保存并发布暂无权限",
+        "class": "mp-menu__list mp-menu--max-height"
+      },
+      {
+        "tag": "LI",
+        "role": "menuitem",
+        "label": "保存草稿",
+        "class": "mp-menu-option mp--box mp-menu-option--md"
+      },
+      {
+        "tag": "LI",
+        "role": "menuitem",
+        "label": "保存并发布",
+        "class": "mp-menu-option mp--box mp-menu-option--md"
+      },
+      {
+        "tag": "LI",
+        "role": "menuitem",
+        "label": "暂无权限",
+        "class": "mp-menu-option mp--box mp-menu-option--md mp-menu-option--disabled"
+      },
+      {
+        "tag": "DIV",
+        "role": "alert",
+        "label": "发布成功",
+        "class": "mp-message__wrapper mp-message--variant-neutral mp-message__wrapper-info"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      }
+    ]
+  },
+  "error": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('保存草稿', { exact: true }).filter({ visible: true }).last()\u001b[22m\n\u001b[2m    - locator resolved to <span class=\"mp--ellipsis\">保存草稿</span>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <p>主按钮执行发布，右侧按钮展开菜单；菜单项提供稳定的 value，并展示无权限的禁用项。</p> from <div id=\"app\" data-v-app=\"\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - <p>主按钮执行发布，右侧按钮展开菜单；菜单项提供稳定的 value，并展示无权限的禁用项。</p> from <div id=\"app\" data-v-app=\"\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 100ms\u001b[22m\n"
+}

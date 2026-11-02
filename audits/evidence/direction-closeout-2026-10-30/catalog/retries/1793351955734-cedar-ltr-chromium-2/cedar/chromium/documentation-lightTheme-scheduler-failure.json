@@ -1,0 +1,707 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:52436/components/scheduler/#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95",
+    "text": "e SchedulerRequestResources = (\n  query: SchedulerResourceQuery,\n) => SchedulerResourcePage | Promise<SchedulerResourcePage>;\ntype SchedulerResolveResources = (\n  ids: string[],\n  context: { signal: AbortSignal },\n) => SchedulerResource[] | Promise<SchedulerResource[]>;\ntype SchedulerResourceErrorContext =\n  | { type: \"search\"; query: string; cursor?: string }\n  | { type: \"resolve\"; ids: string[] };\n\ntype SchedulerEditorAction = \"create\" | \"edit\";\ntype SchedulerEditorRequest = { event: SchedulerEvent; readonly: boolean } & (\n  | { action: \"create\"; source: \"toolbar\" | \"cell\" | \"drop\" }\n  | { action: \"edit\"; source: \"event\" }\n);\ninterface SchedulerEditorSlotProps {\n  action: SchedulerEditorAction;\n  event: SchedulerEvent;\n  error?: SchedulerError;\n  errorMessage?: string;\n  readonly: boolean;\n  pending: boolean;\n  save: (event?: SchedulerEvent) => void;\n  remove: () => void;\n  close: () => void;\n}\n\n\n每条日程 id 必须唯一。start/end 同时省略表示未排期；否则 end 必须晚于 start；定时 milestone 例外，要求 start=end。所有区间为 [start, end)，前后相邻不冲突。allDay 为 true 时使用 YYYY-MM-DD 字符串，end 是不包含的结束日期（一天事项如 9 月 9 日至 9 月 10 日）。\n\n当前按运行环境本地时区显示，定时日程建议传 ISO 时间点；没有任意 IANA 显示时区的承诺。跨时区 RRULE、ICS 与版本同步从独立 adapters 入口提供，真实外部账号连接需业务实现；虚拟资源行通过 virtual-list-props 配置。本地历史撤销与按范围远程加载见上方示例。指针拖拽支持移动与拉伸，Escape 取消；键盘与触屏也可通过编辑表单完成排期/分配修改。资源选项的 disabled 禁止新增分配与拖入，已存在的关联可保留或移除。\n\n独立核心\n\n源码 src/scheduler/core 不导入 Vue、DOM 或外部日历库，可单独测试及后续提取为 scheduler-core 包。发布后可直接使用纯核心子入口，避免导入组件运行时：\n\nimport {\n  applySchedulerChange,\n  getSchedulerConflicts,\n  layoutSchedulerEvents,\n} from \"@cedar-design/ui/scheduler/core\";\n\n\n其余日期与时间线工具也从该入口导出。核心提供计算与不可变变更，不承担网络、权限认证或数据库事务。\n\n样式变量\n\n所有变量集中于 style/token.less，支持亮暗主题覆盖。\n\n变量名\t默认值\n--c-scheduler-background\tvar(--c-color-bg-2)\n--c-scheduler-color\tvar(--c-color-text-1)\n--c-scheduler-border-color\tvar(--c-color-border)\n--c-scheduler-sidebar-width\t220px\n--c-scheduler-slot-height\t36px\n--c-scheduler-column-min-width\t120px\n--c-scheduler-max-height\t720px\n--c-scheduler-event-color\trgb(var(--c-primary-6))\n--c-scheduler-event-accent-color\tvar(--c-scheduler-event-color)\n--c-scheduler-event-background\tvar(--c-color-primary-light-1)\n--c-scheduler-lane-height\t38px\n--c-scheduler-ghost-opacity\t0.75\n--c-scheduler-preview-opacity\t0.85\n--c-scheduler-preview-duration\t100ms\n--c-scheduler-ghost-z-index\t2000\n守卫等待反馈\n\nbefore-* 等待期间显示加载反馈并标记 aria-busy；拒绝或失败后恢复，重复提交不再启动同一操作。普通事件返回的 Promise 不参与加载。\n\n上次编辑于: 2026/10/24 20:08:01\n贡献者: shuai.meng",
+    "numericSteps": [],
+    "overflow": [
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__time-grid",
+        "text": "9月7日周一9月8日周二9月9日周三9月10日周四9月11日周五9月12日周六9月13日周日全天08:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013",
+        "right": 1526,
+        "width": 904
+      },
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__time-header",
+        "text": "9月7日周一9月8日周二9月9日周三9月10日周四9月11日周五9月12日周六9月13日周日全天",
+        "right": 1526,
+        "width": 904
+      },
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__time-heading",
+        "text": "9月7日周一9月8日周二9月9日周三9月10日周四9月11日周五9月12日周六9月13日周日",
+        "right": 1526,
+        "width": 904
+      },
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__column-heading",
+        "text": "9月11日周五",
+        "right": 1286,
+        "width": 120
+      },
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__column-heading",
+        "text": "9月12日周六",
+        "right": 1406,
+        "width": 120
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "9月12日周六",
+        "right": 1386.203125,
+        "width": 79.40625
+      },
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__column-heading",
+        "text": "9月13日周日",
+        "right": 1526,
+        "width": 120
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "9月13日周日",
+        "right": 1506.359375,
+        "width": 79.734375
+      },
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__time-heading",
+        "text": "全天",
+        "right": 1526,
+        "width": 904
+      },
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__all-day",
+        "text": "",
+        "right": 1286,
+        "width": 120
+      },
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__all-day",
+        "text": "",
+        "right": 1406,
+        "width": 120
+      },
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__all-day",
+        "text": "",
+        "right": 1526,
+        "width": 120
+      },
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__time-body",
+        "text": "08:0008:3009:0009:3010:0010:3011:0011:3012:0012:3013:0013:3014:0014:3015:0015:3016:0016:3017:0017:30",
+        "right": 1526,
+        "width": 904
+      },
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__time-column",
+        "text": "",
+        "right": 1286,
+        "width": 120
+      },
+      {
+        "tag": "DIV",
+        "class": "c-scheduler__column-background",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "BUTTON",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "DIV",
+        "class": "c-hover-overlay",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "BUTTON",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "DIV",
+        "class": "c-hover-overlay",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "BUTTON",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "DIV",
+        "class": "c-hover-overlay",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "BUTTON",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "DIV",
+        "class": "c-hover-overlay",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "BUTTON",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "DIV",
+        "class": "c-hover-overlay",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "BUTTON",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "DIV",
+        "class": "c-hover-overlay",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "BUTTON",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "DIV",
+        "class": "c-hover-overlay",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      },
+      {
+        "tag": "BUTTON",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell",
+        "text": "",
+        "right": 1286,
+        "width": 119
+      }
+    ],
+    "previews": [
+      "<div class=\"vmi-previewer-example\" style=\"\"><section class=\"c-scheduler\" aria-label=\"任务日程\" aria-busy=\"false\" tabindex=\"-1\"><!----><header class=\"c-scheduler__toolbar\"><div class=\"c-scheduler__navigation\"><button aria-label=\"上一页\" class=\"c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\"><span dir=\"ltr\" aria-hidden=\"true\">‹</span></span><div class=\"c-hover-overlay\"></div></button><button class=\"c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">今天</span><div class=\"c-hover-overlay\"></div></button><button aria-label=\"下一页\" class=\"c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\"><span dir=\"ltr\" aria-hidden=\"true\">›</span></span><div class=\"c-hover-overlay\"></div></button><strong class=\"c-scheduler__range-title\">9月7日周一 – 9月13日周日</strong></div><div class=\"c-scheduler__navigation\"><div class=\"c-select c-scheduler__mode-select\"><div class=\"c-field-decorator c-field-decorator--size-md c-field-decorator--variant-filled c-selection-field\" style=\"--c-internal-field-content-offset: 12px; --c-internal-field-content-width: 80px;\"><!----><span class=\"c-field-decorator__middle\"><span class=\"c-selection-field__content\"><span class=\"c-selection-field__selection\"><span class=\"c-selection-field__label\">周</span></span><input aria-label=\"任务日程\" id=\"v-0\" class=\"c-selection-field__input c-selection-field__input--with-value\" readonly=\"\" aria-expanded=\"false\" aria-autocomplete=\"none\" role=\"combobox\" autocomplete=\"off\" value=\"\"></span></span><!----><span class=\"c-field-decorator__suffix\"><button type=\"button\" class=\"c-field-decorator__clear-btn\" aria-label=\"清空\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-close-circle-fill\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" fill-rule=\"evenodd\" stroke=\"none\" d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20m4.955-27.771-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-4.95-4.95 4.95-4.95a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0\" clip-rule=\"evenodd\"></path></svg></button><!----><button type=\"button\" data-field-open-trigger=\"\" aria-label=\"请选择\" aria-expanded=\"false\" aria-haspopup=\"listbox\" class=\"c-selection-field__icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-down\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path d=\"M39.6 17.443 24.043 33 8.487 17.443\"></path></svg></button></span><!----><span class=\"c-field-decorator__border\" aria-hidden=\"true\"></span><span class=\"c-field-decorator__border-state\" aria-hidden=\"true\"></span></div></div><!----><!----><!----><button class=\"c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">新建日程</span><div class=\"c-hover-overlay\"></div></button></div></header><!----><!----><!----><div class=\"c-scheduler__workspace\"><aside class=\"c-scheduler__sidebar\"><div class=\"c-input\"><div class=\"c-field-decorator c-field-decorator--size-md c-field-decorator--variant-outline c-field-decorator--hint\" style=\"--c-internal-field-content-offset: 12px; --c-internal-field-content-width: 163px;\"><!----><span class=\"c-field-decorator__middle\"><input aria-label=\"搜索日程\" id=\"v-2\" autocomplete=\"off\" class=\"c-input__inner\" type=\"text\" value=\"\"></span><label for=\"v-2\" class=\"c-field-decorator__placeholder\">搜索日程</label><!----><!----><fieldset class=\"c-field-decorator__border c-field-decorator__border--notched\" aria-hidden=\"true\"><legend class=\"c-field-decorator__legend\"><span>搜索日程</span></legend></fieldset><fieldset class=\"c-field-decorator__border-state c-field-decorator__border--notched\" aria-hidden=\"true\"><legend class=\"c-field-decorator__legend\"><span>搜索日程</span></legend></fieldset></div></div><!----><!----><div class=\"c-scheduler__sidebar-title\">未排期 <span class=\"c-tag c-tag--size-sm c-tag--variant-default c-tag--status-default c-tag--checked\"><!---->0<!----><!----></span></div><div class=\"c-empty\"><div class=\"c-empty__image c-empty__image--md\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-empty\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path d=\"M24 5v6m7 1 4-4m-18 4-4-4m28.5 22H28s-1 3-4 3-4-3-4-3H6.5M40 41H8a2 2 0 0 1-2-2v-8.46a2 2 0 0 1 .272-1.007l6.15-10.54A2 2 0 0 1 14.148 18H33.85a2 2 0 0 1 1.728.992l6.149 10.541A2 2 0 0 1 42 30.541V39a2 2 0 0 1-2 2Z\"></path></svg></div><div class=\"c-empty__description\">暂无日程</div><!----></div></aside><main class=\"c-scheduler__main\"><div class=\"c-scheduler__time-grid\" style=\"--c-scheduler-columns: 7;\"><div class=\"c-scheduler__time-header\"><div class=\"c-scheduler__time-heading\"><span class=\"c-scheduler__time-gutter\"></span><div class=\"c-scheduler__column-heading\" data-scheduler-heading-date=\"2026-09-06T16:00:00.000Z\"><span>9月7日周一</span></div><div class=\"c-scheduler__column-heading\" data-scheduler-heading-date=\"2026-09-07T16:00:00.000Z\"><span>9月8日周二</span></div><div class=\"c-scheduler__column-heading\" data-scheduler-heading-date=\"2026-09-08T16:00:00.000Z\"><span>9月9日周三</span></div><div class=\"c-scheduler__column-heading\" data-scheduler-heading-date=\"2026-09-09T16:00:00.000Z\"><span>9月10日周四</span></div><div class=\"c-scheduler__column-heading\" data-scheduler",
+      "<div class=\"vmi-previewer-example\" style=\"\"><div class=\"c-space c-space--block\" style=\"gap: var(--c-space-size-md-row-gap) var(--c-space-size-md-column-gap); flex-flow: column; justify-content: flex-start; align-items: stretch;\"><!----><div class=\"c-space__item\"><div role=\"alert\" class=\"c-alert c-alert--info c-alert--standard\"><div class=\"c-alert__icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-info-circle-fill\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" fill-rule=\"evenodd\" stroke=\"none\" d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20m2-30a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0 17h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1v-8a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1z\" clip-rule=\"evenodd\"></path></svg></div><div class=\"c-alert__body\"><!----><div class=\"c-alert__content\">分组仅共享布局位置。业务关联保存在 metadata，修改单块不会自动修改整组。</div></div><!----><!----></div></div><!----><div class=\"c-space__item\"><div class=\"c-space c-space--block\" style=\"gap: var(--c-space-size-md-row-gap) var(--c-space-size-md-column-gap); flex-flow: row; justify-content: flex-start; align-items: center;\"><!----><div class=\"c-space__item\"><label class=\"c-checkbox c-checkbox--checked\"><input class=\"c-checkbox__input\" type=\"checkbox\" checked=\"\" aria-checked=\"true\" value=\"true\"><span class=\"c-checkbox__control\" aria-hidden=\"true\"><span class=\"c-checkbox__icon\"><svg class=\"c-checkbox__check\" viewBox=\"0 0 12 12\" focusable=\"false\"><path d=\"M2 6l2.5 2.5L10 3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"></path></svg></span></span><span class=\"c-checkbox__label\">连续日程组成布局组</span></label></div><!----><div class=\"c-space__item\"><label class=\"c-checkbox\"><input class=\"c-checkbox__input\" type=\"checkbox\" aria-checked=\"false\" value=\"true\"><span class=\"c-checkbox__control\" aria-hidden=\"true\"><span class=\"c-checkbox__icon\"></span></span><span class=\"c-checkbox__label\">自定义横向留白</span></label></div></div></div><!----><div class=\"c-space__item\"><section class=\"c-scheduler\" aria-label=\"任务日程\" aria-busy=\"false\" tabindex=\"-1\"><!----><header class=\"c-scheduler__toolbar\"><div class=\"c-scheduler__navigation\"><button aria-label=\"上一页\" class=\"c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\"><span dir=\"ltr\" aria-hidden=\"true\">‹</span></span><div class=\"c-hover-overlay\"></div></button><button class=\"c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">今天</span><div class=\"c-hover-overlay\"></div></button><button aria-label=\"下一页\" class=\"c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\"><span dir=\"ltr\" aria-hidden=\"true\">›</span></span><div class=\"c-hover-overlay\"></div></button><strong class=\"c-scheduler__range-title\">10月30日周五</strong></div><div class=\"c-scheduler__navigation\"><div class=\"c-select c-scheduler__mode-select\"><div class=\"c-field-decorator c-field-decorator--size-md c-field-decorator--variant-filled c-selection-field\" style=\"--c-internal-field-content-offset: 12px; --c-internal-field-content-width: 80px;\"><!----><span class=\"c-field-decorator__middle\"><span class=\"c-selection-field__content\"><span class=\"c-selection-field__selection\"><span class=\"c-selection-field__label\">日</span></span><input aria-label=\"任务日程\" id=\"v-3\" class=\"c-selection-field__input c-selection-field__input--with-value\" readonly=\"\" aria-expanded=\"false\" aria-autocomplete=\"none\" role=\"combobox\" autocomplete=\"off\" value=\"\"></span></span><!----><span class=\"c-field-decorator__suffix\"><button type=\"button\" class=\"c-field-decorator__clear-btn\" aria-label=\"清空\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-close-circle-fill\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path fill=\"currentColor\" fill-rule=\"evenodd\" stroke=\"none\" d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20m4.955-27.771-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-4.95-4.95 4.95-4.95a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0\" clip-rule=\"evenodd\"></path></svg></button><!----><button type=\"button\" data-field-open-trigger=\"\" aria-label=\"请选择\" aria-expanded=\"false\" aria-haspopup=\"listbox\" class=\"c-selection-field__icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 48 48\" width=\"1em\" height=\"1em\" class=\"c-icon c-icon-down\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" aria-hidden=\"true\" role=\"img\"><!--v-if--><path d=\"M39.6 17.443 24.043 33 8.487 17.443\"></path></svg></button></span><!----><span class=\"c-field-decorator__border\" aria-hidden=\"true\"></span><span class=\"c-field-decorator__border-state\" aria-hidden=\"true\"></span></div></div><!----><!----><!----><button class=\"c-button c-button--size-md c-button--status-primary c-button--variant-default c-elevation--2\" type=\"button\"><!----><!----><span class=\"c-button__content\">新建日程</span><div class=\"c-hover-overlay\"></div></button></div></header><!----><!----><!----><div class=\"c-scheduler__workspace\"><!----><main class=\"c-scheduler__main\"><div class=\"c-scheduler__time-grid\" style=\"--c-scheduler-columns: 1;\"><div class=\"c-scheduler__time-header\"><div class=\"c-scheduler__time-heading\"><span class=\"c-scheduler__time-gutter\"></span><div class=\"c-scheduler__column-heading c-scheduler__column-heading--today\" data-sch"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 11:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 12:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 13:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 14:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 15:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 16:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 17:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 18:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 19:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 20:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 21:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 22:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月30日周五 23:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "DIV",
+        "role": "img",
+        "label": "当前时间: 17:19",
+        "class": "c-scheduler__now-indicator"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "预警处理 08:12",
+        "class": "c-button c-button--size-sm c-button--status-default c-button--variant-text c-scheduler__event-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "月检 09:00",
+        "class": "c-button c-button--size-sm c-button--status-default c-button--variant-text c-scheduler__event-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "双月检 10:00",
+        "class": "c-button c-button--size-sm c-button--status-default c-button--variant-text c-scheduler__event-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "电池划痕复核 10:00",
+        "class": "c-button c-button--size-sm c-button--status-default c-button--variant-text c-scheduler__event-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 00:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 01:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 02:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 03:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 04:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 05:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 06:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 07:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 08:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 09:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 10:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 11:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 12:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 13:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 14:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 15:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 16:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 17:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 18:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 19:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 20:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 21:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 22:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 10月31日周六 23:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 00:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 01:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 02:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 03:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 04:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 05:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 06:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 07:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 08:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 09:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 10:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 11:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 12:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 13:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 14:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 15:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 16:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 17:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 18:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 19:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 20:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 21:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 22:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "在此新建日程: 11月1日周日 23:00",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-text c-scheduler__time-cell"
+      },
+      {
+        "tag": "DIV",
+        "role": "status",
+        "label": "",
+        "class": "c-scheduler__live"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "清空",
+        "class": "c-field-decorator__clear-btn"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "请选择",
+        "class": "c-selection-field__icon"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "c-checkbox__input"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重新加载",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "提交数据",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制代码",
+        "class": "vp-copy-code-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制代码",
+        "class": "vp-copy-code-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "返回顶部",
+        "class": "vp-back-to-top-button"
+      },
+      {
+        "tag": "SPAN",
+        "role": "progressbar",
+        "label": "",
+        "class": "vp-scroll-progress"
+      }
+    ]
+  },
+  "error": "AssertionError [ERR_ASSERTION]: component demo cannot widen the page: [{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-grid\",\"left\":622,\"right\":1526,\"position\":\"static\",\"overflow\":\"visible\",\"ancestors\":[{\"tag\":\"MAIN\",\"class\":\"c-scheduler__main\",\"display\":\"block\",\"overflow\":\"auto\",\"width\":576},{\"tag\":\"DIV\",\"class\":\"c-scheduler__workspace\",\"display\":\"flex\",\"overflow\":\"visible\",\"width\":796},{\"tag\":\"SECTION\",\"class\":\"c-scheduler\",\"display\":\"flex\",\"overflow\":\"hidden\",\"width\":798},{\"tag\":\"DIV\",\"class\":\"vmi-previewer-example\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":846}]},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-header\",\"left\":622,\"right\":1526,\"position\":\"sticky\",\"overflow\":\"visible\",\"ancestors\":[{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-grid\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"MAIN\",\"class\":\"c-scheduler__main\",\"display\":\"block\",\"overflow\":\"auto\",\"width\":576},{\"tag\":\"DIV\",\"class\":\"c-scheduler__workspace\",\"display\":\"flex\",\"overflow\":\"visible\",\"width\":796},{\"tag\":\"SECTION\",\"class\":\"c-scheduler\",\"display\":\"flex\",\"overflow\":\"hidden\",\"width\":798}]},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-heading\",\"left\":622,\"right\":1526,\"position\":\"static\",\"overflow\":\"visible\",\"ancestors\":[{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-header\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-grid\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"MAIN\",\"class\":\"c-scheduler__main\",\"display\":\"block\",\"overflow\":\"auto\",\"width\":576},{\"tag\":\"DIV\",\"class\":\"c-scheduler__workspace\",\"display\":\"flex\",\"overflow\":\"visible\",\"width\":796}]},{\"tag\":\"DIV\",\"class\":\"c-scheduler__column-heading\",\"left\":1166,\"right\":1286,\"position\":\"static\",\"overflow\":\"visible\",\"ancestors\":[{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-heading\",\"display\":\"grid\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-header\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-grid\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"MAIN\",\"class\":\"c-scheduler__main\",\"display\":\"block\",\"overflow\":\"auto\",\"width\":576}]},{\"tag\":\"DIV\",\"class\":\"c-scheduler__column-heading\",\"left\":1286,\"right\":1406,\"position\":\"static\",\"overflow\":\"visible\",\"ancestors\":[{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-heading\",\"display\":\"grid\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-header\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-grid\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"MAIN\",\"class\":\"c-scheduler__main\",\"display\":\"block\",\"overflow\":\"auto\",\"width\":576}]},{\"tag\":\"SPAN\",\"class\":\"\",\"left\":1306.796875,\"right\":1386.203125,\"position\":\"static\",\"overflow\":\"visible\",\"ancestors\":[{\"tag\":\"DIV\",\"class\":\"c-scheduler__column-heading\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":120},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-heading\",\"display\":\"grid\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-header\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-grid\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904}]},{\"tag\":\"DIV\",\"class\":\"c-scheduler__column-heading\",\"left\":1406,\"right\":1526,\"position\":\"static\",\"overflow\":\"visible\",\"ancestors\":[{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-heading\",\"display\":\"grid\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-header\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-grid\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"MAIN\",\"class\":\"c-scheduler__main\",\"display\":\"block\",\"overflow\":\"auto\",\"width\":576}]},{\"tag\":\"SPAN\",\"class\":\"\",\"left\":1426.625,\"right\":1506.359375,\"position\":\"static\",\"overflow\":\"visible\",\"ancestors\":[{\"tag\":\"DIV\",\"class\":\"c-scheduler__column-heading\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":120},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-heading\",\"display\":\"grid\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-header\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-grid\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904}]},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-heading\",\"left\":622,\"right\":1526,\"position\":\"static\",\"overflow\":\"visible\",\"ancestors\":[{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-header\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-grid\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"MAIN\",\"class\":\"c-scheduler__main\",\"display\":\"block\",\"overflow\":\"auto\",\"width\":576},{\"tag\":\"DIV\",\"class\":\"c-scheduler__workspace\",\"display\":\"flex\",\"overflow\":\"visible\",\"width\":796}]},{\"tag\":\"DIV\",\"class\":\"c-scheduler__all-day\",\"left\":1166,\"right\":1286,\"position\":\"static\",\"overflow\":\"visible\",\"ancestors\":[{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-heading\",\"display\":\"grid\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-header\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-grid\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"MAIN\",\"class\":\"c-scheduler__main\",\"display\":\"block\",\"overflow\":\"auto\",\"width\":576}]},{\"tag\":\"DIV\",\"class\":\"c-scheduler__all-day\",\"left\":1286,\"right\":1406,\"position\":\"static\",\"overflow\":\"visible\",\"ancestors\":[{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-heading\",\"display\":\"grid\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-header\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-grid\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"MAIN\",\"class\":\"c-scheduler__main\",\"display\":\"block\",\"overflow\":\"auto\",\"width\":576}]},{\"tag\":\"DIV\",\"class\":\"c-scheduler__all-day\",\"left\":1406,\"right\":1526,\"position\":\"static\",\"overflow\":\"visible\",\"ancestors\":[{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-heading\",\"display\":\"grid\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-header\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"DIV\",\"class\":\"c-scheduler__time-grid\",\"display\":\"block\",\"overflow\":\"visible\",\"width\":904},{\"tag\":\"MAIN\",\"class\":\"c-scheduler__main\",\"display\":\"block\",\"overflow\":\"auto\",\"width\":576}]}]\n\n1527 !== 1280\n"
+}

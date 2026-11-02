@@ -1,0 +1,154 @@
+{
+  "groups": [
+    {
+      "id": "general",
+      "label": "通用组件",
+      "en": "General",
+      "components": [
+        "button",
+        "icon",
+        "link",
+        "typography"
+      ]
+    },
+    {
+      "id": "layout",
+      "label": "布局",
+      "en": "Layout",
+      "components": [
+        "layout",
+        "row",
+        "col",
+        "grid",
+        "space",
+        "divider",
+        "split",
+        "resize-box",
+        "overflow-list"
+      ]
+    },
+    {
+      "id": "navigation",
+      "label": "导航",
+      "en": "Navigation",
+      "components": [
+        "breadcrumb",
+        "menu",
+        "nav-menu",
+        "split-button",
+        "page-header",
+        "pagination",
+        "steps",
+        "anchor"
+      ]
+    },
+    {
+      "id": "entry",
+      "label": "数据输入",
+      "en": "Data entry",
+      "components": [
+        "form",
+        "filter-form",
+        "field-decorator",
+        "input",
+        "textarea",
+        "input-number",
+        "input-tag",
+        "verification-code",
+        "auto-complete",
+        "mention",
+        "search",
+        "select",
+        "people-select",
+        "tree-select",
+        "cascader",
+        "transfer",
+        "checkbox",
+        "radio",
+        "switch",
+        "segmented",
+        "slider",
+        "rate",
+        "date",
+        "date-range",
+        "date-picker",
+        "date-range-picker",
+        "time",
+        "time-range",
+        "time-picker",
+        "time-range-picker",
+        "color",
+        "color-picker",
+        "upload"
+      ]
+    },
+    {
+      "id": "display",
+      "label": "数据展示",
+      "en": "Data display",
+      "components": [
+        "avatar",
+        "badge",
+        "tag",
+        "ellipsis",
+        "empty",
+        "image",
+        "tabs",
+        "collapse",
+        "list",
+        "infinite-scroll",
+        "carousel",
+        "paper",
+        "card",
+        "table",
+        "table-column-manager",
+        "tree",
+        "descriptions",
+        "calendar",
+        "scheduler",
+        "map",
+        "timeline",
+        "statistic",
+        "count-to",
+        "countdown",
+        "popover",
+        "tooltip",
+        "trigger"
+      ]
+    },
+    {
+      "id": "feedback",
+      "label": "反馈",
+      "en": "Feedback",
+      "components": [
+        "alert",
+        "message",
+        "notification",
+        "overlay",
+        "dialog",
+        "drawer",
+        "popconfirm",
+        "loading",
+        "skeleton",
+        "progress",
+        "progress-group",
+        "result"
+      ]
+    },
+    {
+      "id": "other",
+      "label": "其他",
+      "en": "Other",
+      "components": [
+        "affix",
+        "back-top",
+        "scrollbar",
+        "watermark",
+        "ripple",
+        "hover",
+        "config-provider",
+        "style-provider"
+      ]
+    }
+  ]
+}

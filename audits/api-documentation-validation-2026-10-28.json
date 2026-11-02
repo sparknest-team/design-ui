@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-28",
+  "scope": {
+    "cedarFamilies": 109,
+    "mapleFamilies": 100,
+    "bilingualDocuments": 418,
+    "cedarFallbacksReplaced": 97
+  },
+  "checks": {
+    "apiLocaleTests": {
+      "passed": 3,
+      "families": 209,
+      "missingTranslations": 0,
+      "idempotent": true
+    },
+    "sharedDocumentationTests": 35,
+    "cedarDocumentationTests": 50,
+    "mapleDocumentationTests": 25,
+    "cedarMarkdownTemplates": {
+      "pages": 218,
+      "failures": 0
+    },
+    "mapleMarkdownTemplates": {
+      "pages": 200,
+      "failures": 0
+    },
+    "sameSource": {
+      "pairedDemos": 95,
+      "markdownTransforms": 22,
+      "publicApiTables": 11
+    },
+    "mapleLint": "passed",
+    "diffCheck": {
+      "cedar": "passed",
+      "maple": "passed",
+      "designUi": "passed"
+    }
+  },
+  "browser": {
+    "cedar": [
+      {
+        "component": "form",
+        "result": "Full English props, events, methods and comparison notes render"
+      },
+      {
+        "component": "table",
+        "result": "Column width scenarios and complete English API render"
+      },
+      {
+        "component": "nav-menu",
+        "result": "Nonstandard API sections and ten tables render"
+      }
+    ],
+    "maple": {
+      "component": "form",
+      "languages": [
+        "zh-CN",
+        "en-US"
+      ],
+      "phoneCases": 31,
+      "clientWidth": 345,
+      "scrollWidth": 345,
+      "result": "Localized route, first group and all scenario IDs match. Entered name survives fixed-width and responsive-column switches.",
+      "consoleErrors": 0
+    },
+    "scope": "Representative real browser verification; full 100-family, 200-route phone layout evidence remains in demo-content-phone-browser-2026-10-28.json. This is not a manual interaction test of every event."
+  },
+  "exports": {
+    "cedar": {
+      "pages": 244,
+      "files": 250
+    },
+    "maple": {
+      "pages": 262,
+      "files": 268
+    }
+  },
+  "evidence": [
+    "/Users/shuaimeng/.codex/visualizations/2026/10/27/01a17ca9-cf3d-71d2-9861-3273fc66ed0d/cedar-english-api.png",
+    "/Users/shuaimeng/.codex/visualizations/2026/10/27/01a17ca9-cf3d-71d2-9861-3273fc66ed0d/maple-english-phone-api.png"
+  ],
+  "notes": [
+    "Actual API identifiers, signatures and literal defaults are preserved. Chinese sample values and genuine Chinese default strings remain unchanged.",
+    "The change adds authored English documentation and regression gates; component runtime behavior was not changed."
+  ]
+}

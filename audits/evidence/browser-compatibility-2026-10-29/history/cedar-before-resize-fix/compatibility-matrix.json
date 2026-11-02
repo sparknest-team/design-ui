@@ -1,0 +1,55 @@
+{
+  "library": "cedar",
+  "generatedAt": "2026-10-28T17:32:25.457Z",
+  "nativeDeviceAcceptance": false,
+  "latestTwoVersionsAccepted": false,
+  "completeEngineMatrix": false,
+  "evidenceOnly": true,
+  "results": [
+    {
+      "name": "chromium",
+      "startedAt": "2026-10-28T17:32:19.988Z",
+      "completedAt": "2026-10-28T17:32:22.010Z",
+      "passed": true,
+      "exitCode": null,
+      "evidence": "/private/tmp/cedar-maple-compatibility-20261029-2jkkvvre/cedar-design-web/artifacts/docs-components/cedar/chromium",
+      "verified": {
+        "browser": {
+          "name": "chromium",
+          "engine": "chromium",
+          "launchOptions": {},
+          "version": "151.0.7922.34",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "recordedAt": "2026-10-28T17:28:21.340Z",
+          "evidenceType": "automated-engine-regression",
+          "nativeDeviceAcceptance": false,
+          "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+          "gestureInput": "CDP touch injection"
+        },
+        "componentCases": 198,
+        "guideCases": 14,
+        "navigationCases": 4,
+        "passed": true
+      }
+    },
+    {
+      "name": "firefox",
+      "startedAt": "2026-10-28T17:32:22.010Z",
+      "completedAt": "2026-10-28T17:32:23.669Z",
+      "passed": false,
+      "exitCode": null,
+      "evidence": "/private/tmp/cedar-maple-compatibility-20261029-2jkkvvre/cedar-design-web/artifacts/docs-components/cedar/firefox",
+      "error": "AssertionError [ERR_ASSERTION]: component/guide failure"
+    },
+    {
+      "name": "webkit",
+      "startedAt": "2026-10-28T17:32:23.669Z",
+      "completedAt": "2026-10-28T17:32:25.456Z",
+      "passed": false,
+      "exitCode": null,
+      "evidence": "/private/tmp/cedar-maple-compatibility-20261029-2jkkvvre/cedar-design-web/artifacts/docs-components/cedar/webkit",
+      "error": "AssertionError [ERR_ASSERTION]: component/guide failure"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "label": "cedar-desktop-dark",
+    "component": "nav-menu",
+    "passed": true,
+    "checks": [
+      "highlight override",
+      "zero",
+      "empty-string",
+      "unknown value",
+      "open != active",
+      "named exclusive"
+    ]
+  }
+]

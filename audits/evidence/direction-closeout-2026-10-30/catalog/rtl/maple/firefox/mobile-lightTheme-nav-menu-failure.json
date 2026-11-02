@@ -1,0 +1,160 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:59005/mobile.html#/nav-menu?language=zh-CN",
+    "text": "Maple Design Mobile · Cedar’s Mobile Counterpart\nMaple Design Mobile,Cedar Design Web,Vue 3,TypeScript,移动端组件库,语义 Token,主题定制\n\nMaple Design Mobile is a mobile component library built with Vue 3 and TypeScript, maintained by 孟帅 and 吴甲明. It shares semantic tokens and component API conventions with Cedar Design Web and supports on-demand imports, theming and internationalization.\n\nNavMenu\nRTL ←\n特色与场景\n组件\n基础示例\n横向筛选栏\n设计资源\n华东\n更多筛选\n\n分类：设计资源；地区：华东；关键词：design\n\n布局与排列\n长内容与固定操作区\n选项 40\n更多条件\n\n长列表选中：39；已应用 1 项\n\n数据与状态控制\n受控状态与禁用\n当前接受更新，点击拒绝\n受控筛选\n禁用入口\n\n选中：未选择；展开：false\n\n面板状态与关闭\n关闭后卸载\n关闭当前面板\n草稿表单\n分类\n\n默认保留面板内部草稿；开启卸载后再次展开会重新创建。关闭面板不会提交或重置业务筛选值。",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<section data-demo=\"basic\"><h3 class=\"mobile-demo-case-heading\"><span lang=\"zh-CN\">横向筛选栏</span><span lang=\"en-US\">Horizontal filters</span></h3><div><div class=\"mp-nav-menu mp--box\" style=\"\"><div class=\"mp-nav-menu__bar\" role=\"group\"><div class=\"mp-nav-menu__node\"><button type=\"button\" data-nav-item=\"\" aria-expanded=\"false\" aria-controls=\"mp-nav-menu-v-0\" class=\"mp-nav-menu__item mp-nav-menu--md mp-nav-menu--active\"><!----><span class=\"mp-nav-menu__label\">设计资源</span><span class=\"mp-nav-menu__arrow\" aria-hidden=\"true\"></span></button></div><div class=\"mp-nav-menu__node\"><button type=\"button\" data-nav-item=\"\" aria-expanded=\"false\" aria-controls=\"mp-nav-menu-v-1\" class=\"mp-nav-menu__item mp-nav-menu--md mp-nav-menu--active\"><!----><span class=\"mp-nav-menu__label\">华东</span><span class=\"mp-nav-menu__arrow\" aria-hidden=\"true\"></span></button></div><div class=\"mp-nav-menu__node\"><button type=\"button\" data-nav-item=\"\" aria-expanded=\"false\" aria-controls=\"mp-nav-menu-v-2\" class=\"mp-nav-menu__item mp-nav-menu--md mp-nav-menu--active\"><!----><span class=\"mp-nav-menu__label\">更多筛选</span><span class=\"mp-nav-menu__arrow\" aria-hidden=\"true\"></span></button></div></div></div><p aria-live=\"polite\">分类：设计资源；地区：华东；关键词：design</p></div></section>",
+      "<section data-demo=\"long-content\"><h3 class=\"mobile-demo-case-heading\"><span lang=\"zh-CN\">长内容与固定操作区</span><span lang=\"en-US\">Long content and fixed actions</span></h3><div data-nav-long-demo=\"\"><div class=\"mp-nav-menu mp--box\" style=\"\"><div class=\"mp-nav-menu__bar\" role=\"group\"><div class=\"mp-nav-menu__node\"><button type=\"button\" data-nav-item=\"\" aria-expanded=\"false\" aria-controls=\"mp-nav-menu-v-3\" class=\"mp-nav-menu__item mp-nav-menu--md mp-nav-menu--active\"><!----><span class=\"mp-nav-menu__label\">选项 40</span><span class=\"mp-nav-menu__arrow\" aria-hidden=\"true\"></span></button></div><div class=\"mp-nav-menu__node\"><button type=\"button\" data-nav-item=\"\" aria-expanded=\"false\" aria-controls=\"mp-nav-menu-v-4\" class=\"mp-nav-menu__item mp-nav-menu--md mp-nav-menu--active\"><!----><span class=\"mp-nav-menu__label\">更多条件</span><span class=\"mp-nav-menu__arrow\" aria-hidden=\"true\"></span></button></div></div></div><p aria-live=\"polite\">长列表选中：39；已应用 1 项</p></div></section>"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Back",
+        "class": "mp-page-header__back"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到 LTR / Switch to left-to-right",
+        "class": "docs-direction-toggle"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2 theme-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "特色与场景",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "组件",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "设计资源华东更多筛选",
+        "class": "mp-nav-menu__bar"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "设计资源",
+        "class": "mp-nav-menu__item mp-nav-menu--md mp-nav-menu--active"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "华东",
+        "class": "mp-nav-menu__item mp-nav-menu--md mp-nav-menu--active"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "更多筛选",
+        "class": "mp-nav-menu__item mp-nav-menu--md mp-nav-menu--active"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "选项 40更多条件",
+        "class": "mp-nav-menu__bar"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "选项 40",
+        "class": "mp-nav-menu__item mp-nav-menu--md mp-nav-menu--active"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "更多条件",
+        "class": "mp-nav-menu__item mp-nav-menu--md mp-nav-menu--active"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "当前接受更新，点击拒绝",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "受控筛选禁用入口",
+        "class": "mp-nav-menu__bar"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "受控筛选",
+        "class": "mp-nav-menu__item mp-nav-menu--md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "禁用入口",
+        "class": "mp-nav-menu__item mp-nav-menu--md mp-nav-menu--disabled"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "",
+        "class": "mp-switch mp-switch--variant-circle mp-switch--size-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "关闭当前面板",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "DIV",
+        "role": "group",
+        "label": "草稿表单分类",
+        "class": "mp-nav-menu__bar"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "草稿表单",
+        "class": "mp-nav-menu__item mp-nav-menu--md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "分类",
+        "class": "mp-nav-menu__item mp-nav-menu--md"
+      }
+    ]
+  },
+  "error": "TimeoutError: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.mp-nav-menu__overlay:visible') to be hidden\u001b[22m\n\u001b[2m    - locator resolved to visible <div dir=\"rtl\" class=\"mp-overlay mp-nav-menu__overlay mp-overlay--fade-leave-from mp-overlay--fade-leave-active\">…</div>\u001b[22m\n\u001b[2m    3 × locator resolved to visible <div dir=\"rtl\" class=\"mp-overlay mp-nav-menu__overlay mp-overlay--fade-leave-active mp-overlay--fade-leave-to\">…</div>\u001b[22m\n"
+}

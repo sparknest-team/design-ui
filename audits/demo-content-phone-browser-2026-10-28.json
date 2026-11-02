@@ -1,0 +1,6656 @@
+{
+  "date": "2026-10-28",
+  "platform": "maple",
+  "viewportWidth": 346,
+  "routes": 200,
+  "families": 100,
+  "scope": "Actual phone iframe routes; each measurement validates language, route owner and complete source-derived case IDs. Representative interactions are listed separately; this is not an assertion that every event in every scenario was manually exercised.",
+  "interactions": [
+    {
+      "family": "input",
+      "action": "Type into the first visual comparison input",
+      "result": "All three specimens receive the same value."
+    },
+    {
+      "family": "form",
+      "action": "Enter a name, select fixed width and responsive columns",
+      "result": "One form model retains the entered name; mobile width remains 346px."
+    },
+    {
+      "family": "carousel",
+      "action": "Click the first indicator comparison Next slide button",
+      "result": "All five carousels show 2 of 3 and the shared status reads Slide: 2."
+    },
+    {
+      "family": "pagination",
+      "action": "Advance the page-size comparison specimen",
+      "result": "Current changes from 5 to 6; adjacent total and jumper specimens remain unchanged."
+    },
+    {
+      "family": "dialog",
+      "action": "Open custom-width dialog and click Cancel",
+      "result": "One dialog opens, then all Close dialog controls disappear after its closing transition."
+    },
+    {
+      "family": "watermark",
+      "action": "Render the geometry comparison in the real browser",
+      "result": "Seven watermark backgrounds contain generated data:image content; gap, offset and rotation scenes all render."
+    },
+    {
+      "family": "message",
+      "action": "Click a visual preset in Cedar English docs and the real Maple phone iframe",
+      "result": "The message becomes visible; Cedar also closes and reopens it with another preset."
+    },
+    {
+      "family": "steps",
+      "action": "Select step 3 and error status in the English phone comparison",
+      "result": "All four types show Done as active and one error node; both language pages remain 346px wide."
+    }
+  ],
+  "measurements": [
+    {
+      "family": "action-sheet",
+      "language": "en-US",
+      "expectedIds": [
+        "function-call",
+        "component-call"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "function-call",
+        "component-call"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "action-sheet"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/action-sheet?language=en-US&platform=pc&replace=action-sheet",
+      "width": 346
+    },
+    {
+      "family": "action-sheet",
+      "language": "zh-CN",
+      "expectedIds": [
+        "function-call",
+        "component-call"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "function-call",
+        "component-call"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "action-sheet"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/action-sheet?language=zh-CN&platform=pc&replace=action-sheet",
+      "width": 346
+    },
+    {
+      "family": "affix",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "offset-container-comparison",
+        "fix-change",
+        "controls"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "offset-container-comparison",
+        "fix-change",
+        "controls"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "affix"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/affix?language=en-US&platform=pc&replace=affix",
+      "width": 346
+    },
+    {
+      "family": "affix",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "offset-container-comparison",
+        "fix-change",
+        "controls"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "offset-container-comparison",
+        "fix-change",
+        "controls"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "affix"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/affix?language=zh-CN&platform=pc&replace=affix",
+      "width": 346
+    },
+    {
+      "family": "alert",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "appearance-lab",
+        "content-comparison",
+        "show-icon",
+        "action",
+        "message",
+        "custom-icon",
+        "dismiss-comparison"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "appearance-lab",
+        "content-comparison",
+        "show-icon",
+        "action",
+        "message",
+        "custom-icon",
+        "dismiss-comparison"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "alert"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/alert?language=en-US&platform=pc&replace=alert",
+      "width": 346
+    },
+    {
+      "family": "alert",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "appearance-lab",
+        "content-comparison",
+        "show-icon",
+        "action",
+        "message",
+        "custom-icon",
+        "dismiss-comparison"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "appearance-lab",
+        "content-comparison",
+        "show-icon",
+        "action",
+        "message",
+        "custom-icon",
+        "dismiss-comparison"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "alert"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/alert?language=zh-CN&platform=pc&replace=alert",
+      "width": 346
+    },
+    {
+      "family": "atomic-css",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "atomic-css"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/atomic-css?language=en-US&platform=pc&replace=atomic-css",
+      "width": 346
+    },
+    {
+      "family": "atomic-css",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "atomic-css"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/atomic-css?language=zh-CN&platform=pc&replace=atomic-css",
+      "width": 346
+    },
+    {
+      "family": "atomic-usage",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "atomic-usage"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/atomic-usage?language=en-US&platform=pc&replace=atomic-usage",
+      "width": 346
+    },
+    {
+      "family": "atomic-usage",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "atomic-usage"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/atomic-usage?language=zh-CN&platform=pc&replace=atomic-usage",
+      "width": 346
+    },
+    {
+      "family": "auto-complete",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "appearance-lab",
+        "opening-policy",
+        "case-sensitive",
+        "group-spacing",
+        "virtual-list",
+        "footer",
+        "decorator",
+        "state-lab",
+        "accessibility",
+        "remote",
+        "passthrough-options"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "appearance-lab",
+        "opening-policy",
+        "case-sensitive",
+        "group-spacing",
+        "virtual-list",
+        "footer",
+        "decorator",
+        "state-lab",
+        "accessibility",
+        "remote",
+        "passthrough-options"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "auto-complete"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/auto-complete?language=en-US&platform=pc&replace=auto-complete",
+      "width": 346
+    },
+    {
+      "family": "auto-complete",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "appearance-lab",
+        "opening-policy",
+        "case-sensitive",
+        "group-spacing",
+        "virtual-list",
+        "footer",
+        "decorator",
+        "state-lab",
+        "accessibility",
+        "remote",
+        "passthrough-options"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "appearance-lab",
+        "opening-policy",
+        "case-sensitive",
+        "group-spacing",
+        "virtual-list",
+        "footer",
+        "decorator",
+        "state-lab",
+        "accessibility",
+        "remote",
+        "passthrough-options"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "auto-complete"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/auto-complete?language=zh-CN&platform=pc&replace=auto-complete",
+      "width": 346
+    },
+    {
+      "family": "avatar",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "shape-size-comparison",
+        "style",
+        "hoverable",
+        "group-comparison",
+        "auto-fix",
+        "image",
+        "fit",
+        "fallback",
+        "trigger"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "shape-size-comparison",
+        "style",
+        "hoverable",
+        "group-comparison",
+        "auto-fix",
+        "image",
+        "fit",
+        "fallback",
+        "trigger"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "avatar"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/avatar?language=en-US&platform=pc&replace=avatar",
+      "width": 346
+    },
+    {
+      "family": "avatar",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "shape-size-comparison",
+        "style",
+        "hoverable",
+        "group-comparison",
+        "auto-fix",
+        "image",
+        "fit",
+        "fallback",
+        "trigger"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "shape-size-comparison",
+        "style",
+        "hoverable",
+        "group-comparison",
+        "auto-fix",
+        "image",
+        "fit",
+        "fallback",
+        "trigger"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "avatar"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/avatar?language=zh-CN&platform=pc&replace=avatar",
+      "width": 346
+    },
+    {
+      "family": "back-top",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "custom-position",
+        "target-container",
+        "custom-content",
+        "scheduler-lifecycle"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "custom-position",
+        "target-container",
+        "custom-content",
+        "scheduler-lifecycle"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "back-top"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/back-top?language=en-US&platform=pc&replace=back-top",
+      "width": 346
+    },
+    {
+      "family": "back-top",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "custom-position",
+        "target-container",
+        "custom-content",
+        "scheduler-lifecycle"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "custom-position",
+        "target-container",
+        "custom-content",
+        "scheduler-lifecycle"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "back-top"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/back-top?language=zh-CN&platform=pc&replace=back-top",
+      "width": 346
+    },
+    {
+      "family": "badge",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "color",
+        "appearance-lab",
+        "position",
+        "inline",
+        "dot",
+        "max",
+        "show",
+        "content"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "color",
+        "appearance-lab",
+        "position",
+        "inline",
+        "dot",
+        "max",
+        "show",
+        "content"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "badge"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/badge?language=en-US&platform=pc&replace=badge",
+      "width": 346
+    },
+    {
+      "family": "badge",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "color",
+        "appearance-lab",
+        "position",
+        "inline",
+        "dot",
+        "max",
+        "show",
+        "content"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "color",
+        "appearance-lab",
+        "position",
+        "inline",
+        "dot",
+        "max",
+        "show",
+        "content"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "badge"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/badge?language=zh-CN&platform=pc&replace=badge",
+      "width": 346
+    },
+    {
+      "family": "breadcrumb",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "routes-mode",
+        "dropdown",
+        "max-count",
+        "click-event",
+        "separator",
+        "custom-icon"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "routes-mode",
+        "dropdown",
+        "max-count",
+        "click-event",
+        "separator",
+        "custom-icon"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "breadcrumb"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/breadcrumb?language=en-US&platform=pc&replace=breadcrumb",
+      "width": 346
+    },
+    {
+      "family": "breadcrumb",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "routes-mode",
+        "dropdown",
+        "max-count",
+        "click-event",
+        "separator",
+        "custom-icon"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "routes-mode",
+        "dropdown",
+        "max-count",
+        "click-event",
+        "separator",
+        "custom-icon"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "breadcrumb"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/breadcrumb?language=zh-CN&platform=pc&replace=breadcrumb",
+      "width": 346
+    },
+    {
+      "family": "button",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "variants",
+        "size",
+        "disabled",
+        "custom-color",
+        "icons",
+        "block",
+        "button-group",
+        "button-group-layout",
+        "button-group-content",
+        "control-sizes",
+        "native-events",
+        "loading",
+        "loading-appearance",
+        "feedback",
+        "auto-loading"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "variants",
+        "size",
+        "disabled",
+        "custom-color",
+        "icons",
+        "block",
+        "button-group",
+        "button-group-layout",
+        "button-group-content",
+        "control-sizes",
+        "native-events",
+        "loading",
+        "loading-appearance",
+        "feedback",
+        "auto-loading"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "button"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/button?language=en-US&platform=pc&replace=button",
+      "width": 346
+    },
+    {
+      "family": "button",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "variants",
+        "size",
+        "disabled",
+        "custom-color",
+        "icons",
+        "block",
+        "button-group",
+        "button-group-layout",
+        "button-group-content",
+        "control-sizes",
+        "native-events",
+        "loading",
+        "loading-appearance",
+        "feedback",
+        "auto-loading"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "variants",
+        "size",
+        "disabled",
+        "custom-color",
+        "icons",
+        "block",
+        "button-group",
+        "button-group-layout",
+        "button-group-content",
+        "control-sizes",
+        "native-events",
+        "loading",
+        "loading-appearance",
+        "feedback",
+        "auto-loading"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "button"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/button?language=zh-CN&platform=pc&replace=button",
+      "width": 346
+    },
+    {
+      "family": "card",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "appearance-lab",
+        "hoverable",
+        "image",
+        "tooltip",
+        "no-padding",
+        "slots",
+        "ripple",
+        "floating",
+        "scheduler-lifecycle"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "appearance-lab",
+        "hoverable",
+        "image",
+        "tooltip",
+        "no-padding",
+        "slots",
+        "ripple",
+        "floating",
+        "scheduler-lifecycle"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "card"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/card?language=en-US&platform=pc&replace=card",
+      "width": 346
+    },
+    {
+      "family": "card",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "appearance-lab",
+        "hoverable",
+        "image",
+        "tooltip",
+        "no-padding",
+        "slots",
+        "ripple",
+        "floating",
+        "scheduler-lifecycle"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "appearance-lab",
+        "hoverable",
+        "image",
+        "tooltip",
+        "no-padding",
+        "slots",
+        "ripple",
+        "floating",
+        "scheduler-lifecycle"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "card"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/card?language=zh-CN&platform=pc&replace=card",
+      "width": 346
+    },
+    {
+      "family": "carousel",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "vertical",
+        "multi-slides",
+        "centered-slides",
+        "auto-sized",
+        "navigation",
+        "indicator-comparison",
+        "effect-comparison",
+        "custom-indicator",
+        "forbid-loop",
+        "autoplay",
+        "autoplay-hover-pause",
+        "trigger-hover",
+        "mousewheel",
+        "keyboard",
+        "handle-change",
+        "controlled",
+        "interactive-content",
+        "scheduler-lifecycle"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "vertical",
+        "multi-slides",
+        "centered-slides",
+        "auto-sized",
+        "navigation",
+        "indicator-comparison",
+        "effect-comparison",
+        "custom-indicator",
+        "forbid-loop",
+        "autoplay",
+        "autoplay-hover-pause",
+        "trigger-hover",
+        "mousewheel",
+        "keyboard",
+        "handle-change",
+        "controlled",
+        "interactive-content",
+        "scheduler-lifecycle"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "carousel"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/carousel?language=en-US&platform=pc&replace=carousel",
+      "width": 346
+    },
+    {
+      "family": "carousel",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "vertical",
+        "multi-slides",
+        "centered-slides",
+        "auto-sized",
+        "navigation",
+        "indicator-comparison",
+        "effect-comparison",
+        "custom-indicator",
+        "forbid-loop",
+        "autoplay",
+        "autoplay-hover-pause",
+        "trigger-hover",
+        "mousewheel",
+        "keyboard",
+        "handle-change",
+        "controlled",
+        "interactive-content",
+        "scheduler-lifecycle"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "vertical",
+        "multi-slides",
+        "centered-slides",
+        "auto-sized",
+        "navigation",
+        "indicator-comparison",
+        "effect-comparison",
+        "custom-indicator",
+        "forbid-loop",
+        "autoplay",
+        "autoplay-hover-pause",
+        "trigger-hover",
+        "mousewheel",
+        "keyboard",
+        "handle-change",
+        "controlled",
+        "interactive-content",
+        "scheduler-lifecycle"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "carousel"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/carousel?language=zh-CN&platform=pc&replace=carousel",
+      "width": 346
+    },
+    {
+      "family": "cascader",
+      "language": "en-US",
+      "expectedIds": [
+        "placeholder",
+        "appearance-lab",
+        "control-sizes",
+        "placeholder-multiple",
+        "placeholder-picker-multiple",
+        "placeholder-list-multiple",
+        "placeholder-path-mode",
+        "placeholder-list",
+        "case-sensitive",
+        "placeholder-picker",
+        "panel-review",
+        "state-lab",
+        "passthrough-options",
+        "open-trigger-target",
+        "async-devices"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "placeholder",
+        "appearance-lab",
+        "control-sizes",
+        "placeholder-multiple",
+        "placeholder-picker-multiple",
+        "placeholder-list-multiple",
+        "placeholder-path-mode",
+        "placeholder-list",
+        "case-sensitive",
+        "placeholder-picker",
+        "panel-review",
+        "state-lab",
+        "passthrough-options",
+        "open-trigger-target",
+        "async-devices"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "cascader"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/cascader?language=en-US&platform=pc&replace=cascader",
+      "width": 346
+    },
+    {
+      "family": "cascader",
+      "language": "zh-CN",
+      "expectedIds": [
+        "placeholder",
+        "appearance-lab",
+        "control-sizes",
+        "placeholder-multiple",
+        "placeholder-picker-multiple",
+        "placeholder-list-multiple",
+        "placeholder-path-mode",
+        "placeholder-list",
+        "case-sensitive",
+        "placeholder-picker",
+        "panel-review",
+        "state-lab",
+        "passthrough-options",
+        "open-trigger-target",
+        "async-devices"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "placeholder",
+        "appearance-lab",
+        "control-sizes",
+        "placeholder-multiple",
+        "placeholder-picker-multiple",
+        "placeholder-list-multiple",
+        "placeholder-path-mode",
+        "placeholder-list",
+        "case-sensitive",
+        "placeholder-picker",
+        "panel-review",
+        "state-lab",
+        "passthrough-options",
+        "open-trigger-target",
+        "async-devices"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "cascader"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/cascader?language=zh-CN&platform=pc&replace=cascader",
+      "width": 346
+    },
+    {
+      "family": "cell",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "content-comparison",
+        "list"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "content-comparison",
+        "list"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "cell"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/cell?language=en-US&platform=pc&replace=cell",
+      "width": 346
+    },
+    {
+      "family": "cell",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "content-comparison",
+        "list"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "content-comparison",
+        "list"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "cell"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/cell?language=zh-CN&platform=pc&replace=cell",
+      "width": 346
+    },
+    {
+      "family": "checkbox",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "group-declaration-comparison",
+        "group-state",
+        "vertical",
+        "control-value",
+        "option-data",
+        "custom-fields",
+        "set-state",
+        "max",
+        "indeterminate",
+        "group-methods",
+        "state-lab",
+        "native-control",
+        "set-style",
+        "custom-control",
+        "async-options"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "group-declaration-comparison",
+        "group-state",
+        "vertical",
+        "control-value",
+        "option-data",
+        "custom-fields",
+        "set-state",
+        "max",
+        "indeterminate",
+        "group-methods",
+        "state-lab",
+        "native-control",
+        "set-style",
+        "custom-control",
+        "async-options"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "checkbox"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/checkbox?language=en-US&platform=pc&replace=checkbox",
+      "width": 346
+    },
+    {
+      "family": "checkbox",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "group-declaration-comparison",
+        "group-state",
+        "vertical",
+        "control-value",
+        "option-data",
+        "custom-fields",
+        "set-state",
+        "max",
+        "indeterminate",
+        "group-methods",
+        "state-lab",
+        "native-control",
+        "set-style",
+        "custom-control",
+        "async-options"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "group-declaration-comparison",
+        "group-state",
+        "vertical",
+        "control-value",
+        "option-data",
+        "custom-fields",
+        "set-state",
+        "max",
+        "indeterminate",
+        "group-methods",
+        "state-lab",
+        "native-control",
+        "set-style",
+        "custom-control",
+        "async-options"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "checkbox"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/checkbox?language=zh-CN&platform=pc&replace=checkbox",
+      "width": 346
+    },
+    {
+      "family": "code",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "word-wrap"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "word-wrap"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "code"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/code?language=en-US&platform=pc&replace=code",
+      "width": 346
+    },
+    {
+      "family": "code",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "word-wrap"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "word-wrap"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "code"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/code?language=zh-CN&platform=pc&replace=code",
+      "width": 346
+    },
+    {
+      "family": "col",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "flex",
+        "responsive",
+        "order"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "flex",
+        "responsive",
+        "order"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "col"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/col?language=en-US&platform=pc&replace=col",
+      "width": 346
+    },
+    {
+      "family": "collapse",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "disabled",
+        "nested",
+        "offset",
+        "icon-position",
+        "accordion",
+        "border-comparison",
+        "extra",
+        "expand-icon",
+        "destroy",
+        "custom",
+        "toggle-all"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "disabled",
+        "nested",
+        "offset",
+        "icon-position",
+        "accordion",
+        "border-comparison",
+        "extra",
+        "expand-icon",
+        "destroy",
+        "custom",
+        "toggle-all"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "collapse"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/collapse?language=en-US&platform=pc&replace=collapse",
+      "width": 346
+    },
+    {
+      "family": "collapse",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "disabled",
+        "nested",
+        "offset",
+        "icon-position",
+        "accordion",
+        "border-comparison",
+        "extra",
+        "expand-icon",
+        "destroy",
+        "custom",
+        "toggle-all"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "disabled",
+        "nested",
+        "offset",
+        "icon-position",
+        "accordion",
+        "border-comparison",
+        "extra",
+        "expand-icon",
+        "destroy",
+        "custom",
+        "toggle-all"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "collapse"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/collapse?language=zh-CN&platform=pc&replace=collapse",
+      "width": 346
+    },
+    {
+      "family": "color",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "color"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/color?language=en-US&platform=pc&replace=color",
+      "width": 346
+    },
+    {
+      "family": "color",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "color"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/color?language=zh-CN&platform=pc&replace=color",
+      "width": 346
+    },
+    {
+      "family": "col",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "flex",
+        "responsive",
+        "order"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "flex",
+        "responsive",
+        "order"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "col"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/col?language=zh-CN&platform=pc&replace=col",
+      "width": 346
+    },
+    {
+      "family": "count-to",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "number-format-comparison",
+        "custom-style",
+        "manual-control"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "number-format-comparison",
+        "custom-style",
+        "manual-control"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "count-to"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/count-to?language=en-US&platform=pc&replace=count-to",
+      "width": 346
+    },
+    {
+      "family": "count-to",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "number-format-comparison",
+        "custom-style",
+        "manual-control"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "number-format-comparison",
+        "custom-style",
+        "manual-control"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "count-to"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/count-to?language=zh-CN&platform=pc&replace=count-to",
+      "width": 346
+    },
+    {
+      "family": "countdown",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "embed-statistic",
+        "format-comparison",
+        "manual-control"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "embed-statistic",
+        "format-comparison",
+        "manual-control"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "countdown"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/countdown?language=en-US&platform=pc&replace=countdown",
+      "width": 346
+    },
+    {
+      "family": "countdown",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "embed-statistic",
+        "format-comparison",
+        "manual-control"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "embed-statistic",
+        "format-comparison",
+        "manual-control"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "countdown"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/countdown?language=zh-CN&platform=pc&replace=countdown",
+      "width": 346
+    },
+    {
+      "family": "date-range",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "appearance-lab",
+        "separator",
+        "boundaries",
+        "string-values",
+        "text-entry",
+        "date-time",
+        "zoned-range",
+        "calendar-mode",
+        "type",
+        "with-form-item",
+        "endpoint-lock",
+        "responsive-panels",
+        "picker-basic",
+        "picker-readonly",
+        "picker-calendar",
+        "picker-date-time",
+        "picker-type",
+        "state-lab",
+        "rejected-close",
+        "field-panel-tools",
+        "entry-boundary",
+        "passthrough-options",
+        "open-trigger-target"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "appearance-lab",
+        "separator",
+        "boundaries",
+        "string-values",
+        "text-entry",
+        "date-time",
+        "zoned-range",
+        "calendar-mode",
+        "type",
+        "with-form-item",
+        "endpoint-lock",
+        "responsive-panels",
+        "picker-basic",
+        "picker-readonly",
+        "picker-calendar",
+        "picker-date-time",
+        "picker-type",
+        "state-lab",
+        "rejected-close",
+        "field-panel-tools",
+        "entry-boundary",
+        "passthrough-options",
+        "open-trigger-target"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "date-range"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/date-range?language=en-US&platform=pc&replace=date-range",
+      "width": 346
+    },
+    {
+      "family": "date-range",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "appearance-lab",
+        "separator",
+        "boundaries",
+        "string-values",
+        "text-entry",
+        "date-time",
+        "zoned-range",
+        "calendar-mode",
+        "type",
+        "with-form-item",
+        "endpoint-lock",
+        "responsive-panels",
+        "picker-basic",
+        "picker-readonly",
+        "picker-calendar",
+        "picker-date-time",
+        "picker-type",
+        "state-lab",
+        "rejected-close",
+        "field-panel-tools",
+        "entry-boundary",
+        "passthrough-options",
+        "open-trigger-target"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "appearance-lab",
+        "separator",
+        "boundaries",
+        "string-values",
+        "text-entry",
+        "date-time",
+        "zoned-range",
+        "calendar-mode",
+        "type",
+        "with-form-item",
+        "endpoint-lock",
+        "responsive-panels",
+        "picker-basic",
+        "picker-readonly",
+        "picker-calendar",
+        "picker-date-time",
+        "picker-type",
+        "state-lab",
+        "rejected-close",
+        "field-panel-tools",
+        "entry-boundary",
+        "passthrough-options",
+        "open-trigger-target"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "date-range"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/date-range?language=zh-CN&platform=pc&replace=date-range",
+      "width": 346
+    },
+    {
+      "family": "date",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "appearance-lab",
+        "control-sizes",
+        "type",
+        "month-labels",
+        "locale-isolation",
+        "time-presentation",
+        "time-zone-views",
+        "multiple",
+        "date-time",
+        "value-formats",
+        "date-fields",
+        "string-values",
+        "text-entry",
+        "responsive-panels",
+        "calendar-mode",
+        "with-form-item",
+        "panel-tools",
+        "current-range",
+        "picker-basic",
+        "picker-calendar",
+        "picker-month",
+        "picker-multiple",
+        "picker-range",
+        "picker-limit",
+        "picker-date-time",
+        "state-lab",
+        "rejected-close",
+        "field-panel-tools",
+        "field-protocol",
+        "entry-boundary",
+        "passthrough-options",
+        "open-trigger-target"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "appearance-lab",
+        "control-sizes",
+        "type",
+        "month-labels",
+        "locale-isolation",
+        "time-presentation",
+        "time-zone-views",
+        "multiple",
+        "date-time",
+        "value-formats",
+        "date-fields",
+        "string-values",
+        "text-entry",
+        "responsive-panels",
+        "calendar-mode",
+        "with-form-item",
+        "panel-tools",
+        "current-range",
+        "picker-basic",
+        "picker-calendar",
+        "picker-month",
+        "picker-multiple",
+        "picker-range",
+        "picker-limit",
+        "picker-date-time",
+        "state-lab",
+        "rejected-close",
+        "field-panel-tools",
+        "field-protocol",
+        "entry-boundary",
+        "passthrough-options",
+        "open-trigger-target"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "date"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/date?language=en-US&platform=pc&replace=date",
+      "width": 346
+    },
+    {
+      "family": "date",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "appearance-lab",
+        "control-sizes",
+        "type",
+        "month-labels",
+        "locale-isolation",
+        "time-presentation",
+        "time-zone-views",
+        "multiple",
+        "date-time",
+        "value-formats",
+        "date-fields",
+        "string-values",
+        "text-entry",
+        "responsive-panels",
+        "calendar-mode",
+        "with-form-item",
+        "panel-tools",
+        "current-range",
+        "picker-basic",
+        "picker-calendar",
+        "picker-month",
+        "picker-multiple",
+        "picker-range",
+        "picker-limit",
+        "picker-date-time",
+        "state-lab",
+        "rejected-close",
+        "field-panel-tools",
+        "field-protocol",
+        "entry-boundary",
+        "passthrough-options",
+        "open-trigger-target"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "appearance-lab",
+        "control-sizes",
+        "type",
+        "month-labels",
+        "locale-isolation",
+        "time-presentation",
+        "time-zone-views",
+        "multiple",
+        "date-time",
+        "value-formats",
+        "date-fields",
+        "string-values",
+        "text-entry",
+        "responsive-panels",
+        "calendar-mode",
+        "with-form-item",
+        "panel-tools",
+        "current-range",
+        "picker-basic",
+        "picker-calendar",
+        "picker-month",
+        "picker-multiple",
+        "picker-range",
+        "picker-limit",
+        "picker-date-time",
+        "state-lab",
+        "rejected-close",
+        "field-panel-tools",
+        "field-protocol",
+        "entry-boundary",
+        "passthrough-options",
+        "open-trigger-target"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "date"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/date?language=zh-CN&platform=pc&replace=date",
+      "width": 346
+    },
+    {
+      "family": "dialog",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "function-call",
+        "alert-dialog",
+        "confirm-box",
+        "type-icon",
+        "form-dialog",
+        "size-comparison",
+        "custom-footer",
+        "custom-button-text",
+        "advanced-props",
+        "async-close",
+        "guard-protocol"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "function-call",
+        "alert-dialog",
+        "confirm-box",
+        "type-icon",
+        "form-dialog",
+        "size-comparison",
+        "custom-footer",
+        "custom-button-text",
+        "advanced-props",
+        "async-close",
+        "guard-protocol"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "dialog"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/dialog?language=en-US&platform=pc&replace=dialog",
+      "width": 346
+    },
+    {
+      "family": "dialog",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "function-call",
+        "alert-dialog",
+        "confirm-box",
+        "type-icon",
+        "form-dialog",
+        "size-comparison",
+        "custom-footer",
+        "custom-button-text",
+        "advanced-props",
+        "async-close",
+        "guard-protocol"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "function-call",
+        "alert-dialog",
+        "confirm-box",
+        "type-icon",
+        "form-dialog",
+        "size-comparison",
+        "custom-footer",
+        "custom-button-text",
+        "advanced-props",
+        "async-close",
+        "guard-protocol"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "dialog"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/dialog?language=zh-CN&platform=pc&replace=dialog",
+      "width": 346
+    },
+    {
+      "family": "divider",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "vertical",
+        "with-desc",
+        "line-appearance-comparison",
+        "custom",
+        "live-properties"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "vertical",
+        "with-desc",
+        "line-appearance-comparison",
+        "custom",
+        "live-properties"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "divider"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/divider?language=en-US&platform=pc&replace=divider",
+      "width": 346
+    },
+    {
+      "family": "divider",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "vertical",
+        "with-desc",
+        "line-appearance-comparison",
+        "custom",
+        "live-properties"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "vertical",
+        "with-desc",
+        "line-appearance-comparison",
+        "custom",
+        "live-properties"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "divider"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/divider?language=zh-CN&platform=pc&replace=divider",
+      "width": 346
+    },
+    {
+      "family": "drag",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-use",
+        "disabled",
+        "direction",
+        "boundary",
+        "attraction",
+        "reset"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-use",
+        "disabled",
+        "direction",
+        "boundary",
+        "attraction",
+        "reset"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "drag"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/drag?language=en-US&platform=pc&replace=drag",
+      "width": 346
+    },
+    {
+      "family": "drag",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-use",
+        "disabled",
+        "direction",
+        "boundary",
+        "attraction",
+        "reset"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-use",
+        "disabled",
+        "direction",
+        "boundary",
+        "attraction",
+        "reset"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "drag"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/drag?language=zh-CN&platform=pc&replace=drag",
+      "width": 346
+    },
+    {
+      "family": "ellipsis",
+      "language": "en-US",
+      "expectedIds": [
+        "line",
+        "two-way-binding",
+        "tooltip",
+        "multiple-line",
+        "expand"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "line",
+        "two-way-binding",
+        "tooltip",
+        "multiple-line",
+        "expand"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "ellipsis"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/ellipsis?language=en-US&platform=pc&replace=ellipsis",
+      "width": 346
+    },
+    {
+      "family": "ellipsis",
+      "language": "zh-CN",
+      "expectedIds": [
+        "line",
+        "two-way-binding",
+        "tooltip",
+        "multiple-line",
+        "expand"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "line",
+        "two-way-binding",
+        "tooltip",
+        "multiple-line",
+        "expand"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "ellipsis"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/ellipsis?language=zh-CN&platform=pc&replace=ellipsis",
+      "width": 346
+    },
+    {
+      "family": "empty",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "image-size",
+        "content-comparison",
+        "show"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "image-size",
+        "content-comparison",
+        "show"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "empty"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/empty?language=en-US&platform=pc&replace=empty",
+      "width": 346
+    },
+    {
+      "family": "empty",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "image-size",
+        "content-comparison",
+        "show"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "image-size",
+        "content-comparison",
+        "show"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "empty"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/empty?language=zh-CN&platform=pc&replace=empty",
+      "width": 346
+    },
+    {
+      "family": "fab",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "status",
+        "disabled",
+        "position",
+        "trigger",
+        "direction",
+        "drag",
+        "visibility",
+        "controlled",
+        "custom-trigger"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "status",
+        "disabled",
+        "position",
+        "trigger",
+        "direction",
+        "drag",
+        "visibility",
+        "controlled",
+        "custom-trigger"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "fab"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/fab?language=en-US&platform=pc&replace=fab",
+      "width": 346
+    },
+    {
+      "family": "fab",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "status",
+        "disabled",
+        "position",
+        "trigger",
+        "direction",
+        "drag",
+        "visibility",
+        "controlled",
+        "custom-trigger"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "status",
+        "disabled",
+        "position",
+        "trigger",
+        "direction",
+        "drag",
+        "visibility",
+        "controlled",
+        "custom-trigger"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "fab"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/fab?language=zh-CN&platform=pc&replace=fab",
+      "width": 346
+    },
+    {
+      "family": "field-decorator",
+      "language": "en-US",
+      "expectedIds": [
+        "control-sizes"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "control-sizes"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "field-decorator"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/field-decorator?language=en-US&platform=pc&replace=field-decorator",
+      "width": 346
+    },
+    {
+      "family": "field-decorator",
+      "language": "zh-CN",
+      "expectedIds": [
+        "control-sizes"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "control-sizes"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "field-decorator"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/field-decorator?language=zh-CN&platform=pc&replace=field-decorator",
+      "width": 346
+    },
+    {
+      "family": "floating-panel",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "floating-panel"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/floating-panel?language=en-US&platform=pc&replace=floating-panel",
+      "width": 346
+    },
+    {
+      "family": "floating-panel",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "floating-panel"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/floating-panel?language=zh-CN&platform=pc&replace=floating-panel",
+      "width": 346
+    },
+    {
+      "family": "form-details",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "extra-slot"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "extra-slot"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "form-details"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/form-details?language=en-US&platform=pc&replace=form-details",
+      "width": 346
+    },
+    {
+      "family": "form-details",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "extra-slot"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "extra-slot"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "form-details"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/form-details?language=zh-CN&platform=pc&replace=form-details",
+      "width": 346
+    },
+    {
+      "family": "form",
+      "language": "en-US",
+      "expectedIds": [
+        "example",
+        "decoration",
+        "label-width-comparison",
+        "vertical-label",
+        "horizontal-layout",
+        "field-components",
+        "field-choice",
+        "field-selection",
+        "selection-summary",
+        "field-tree",
+        "field-date",
+        "field-time",
+        "field-rating",
+        "field-upload",
+        "cross-field",
+        "clear-trigger",
+        "controller",
+        "events",
+        "floating-placeholder",
+        "help-extra",
+        "custom-control",
+        "state-lab",
+        "field-presentation",
+        "presentation-status",
+        "platform-presentation",
+        "field-panel-actions",
+        "async-fields",
+        "presentation-state",
+        "async-race",
+        "field-range-boundaries",
+        "task-workflow"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "example",
+        "decoration",
+        "label-width-comparison",
+        "vertical-label",
+        "horizontal-layout",
+        "field-components",
+        "field-choice",
+        "field-selection",
+        "selection-summary",
+        "field-tree",
+        "field-date",
+        "field-time",
+        "field-rating",
+        "field-upload",
+        "cross-field",
+        "clear-trigger",
+        "controller",
+        "events",
+        "floating-placeholder",
+        "help-extra",
+        "custom-control",
+        "state-lab",
+        "field-presentation",
+        "presentation-status",
+        "platform-presentation",
+        "field-panel-actions",
+        "async-fields",
+        "presentation-state",
+        "async-race",
+        "field-range-boundaries",
+        "task-workflow"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "form"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/form?language=en-US&platform=pc&replace=form",
+      "width": 346
+    },
+    {
+      "family": "form",
+      "language": "zh-CN",
+      "expectedIds": [
+        "example",
+        "decoration",
+        "label-width-comparison",
+        "vertical-label",
+        "horizontal-layout",
+        "field-components",
+        "field-choice",
+        "field-selection",
+        "selection-summary",
+        "field-tree",
+        "field-date",
+        "field-time",
+        "field-rating",
+        "field-upload",
+        "cross-field",
+        "clear-trigger",
+        "controller",
+        "events",
+        "floating-placeholder",
+        "help-extra",
+        "custom-control",
+        "state-lab",
+        "field-presentation",
+        "presentation-status",
+        "platform-presentation",
+        "field-panel-actions",
+        "async-fields",
+        "presentation-state",
+        "async-race",
+        "field-range-boundaries",
+        "task-workflow"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "example",
+        "decoration",
+        "label-width-comparison",
+        "vertical-label",
+        "horizontal-layout",
+        "field-components",
+        "field-choice",
+        "field-selection",
+        "selection-summary",
+        "field-tree",
+        "field-date",
+        "field-time",
+        "field-rating",
+        "field-upload",
+        "cross-field",
+        "clear-trigger",
+        "controller",
+        "events",
+        "floating-placeholder",
+        "help-extra",
+        "custom-control",
+        "state-lab",
+        "field-presentation",
+        "presentation-status",
+        "platform-presentation",
+        "field-panel-actions",
+        "async-fields",
+        "presentation-state",
+        "async-race",
+        "field-range-boundaries",
+        "task-workflow"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "form"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/form?language=zh-CN&platform=pc&replace=form",
+      "width": 346
+    },
+    {
+      "family": "grid",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "responsive",
+        "collapse",
+        "dynamic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "responsive",
+        "collapse",
+        "dynamic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "grid"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/grid?language=en-US&platform=pc&replace=grid",
+      "width": 346
+    },
+    {
+      "family": "grid",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "responsive",
+        "collapse",
+        "dynamic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "responsive",
+        "collapse",
+        "dynamic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "grid"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/grid?language=zh-CN&platform=pc&replace=grid",
+      "width": 346
+    },
+    {
+      "family": "highlighter-provider",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "highlighter-provider"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/highlighter-provider?language=en-US&platform=pc&replace=highlighter-provider",
+      "width": 346
+    },
+    {
+      "family": "highlighter-provider",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "highlighter-provider"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/highlighter-provider?language=zh-CN&platform=pc&replace=highlighter-provider",
+      "width": 346
+    },
+    {
+      "family": "hover",
+      "language": "en-US",
+      "expectedIds": [
+        "style-binding",
+        "function-binding"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "style-binding",
+        "function-binding"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "hover"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/hover?language=en-US&platform=pc&replace=hover",
+      "width": 346
+    },
+    {
+      "family": "hover",
+      "language": "zh-CN",
+      "expectedIds": [
+        "style-binding",
+        "function-binding"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "style-binding",
+        "function-binding"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "hover"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/hover?language=zh-CN&platform=pc&replace=hover",
+      "width": 346
+    },
+    {
+      "family": "icon",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "appearance-comparison",
+        "rotate-and-spin",
+        "icon-list",
+        "custom",
+        "click-event",
+        "icon-animation",
+        "lifecycle"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "appearance-comparison",
+        "rotate-and-spin",
+        "icon-list",
+        "custom",
+        "click-event",
+        "icon-animation",
+        "lifecycle"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "icon"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/icon?language=en-US&platform=pc&replace=icon",
+      "width": 346
+    },
+    {
+      "family": "icon",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "appearance-comparison",
+        "rotate-and-spin",
+        "icon-list",
+        "custom",
+        "click-event",
+        "icon-animation",
+        "lifecycle"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "appearance-comparison",
+        "rotate-and-spin",
+        "icon-list",
+        "custom",
+        "click-event",
+        "icon-animation",
+        "lifecycle"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "icon"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/icon?language=zh-CN&platform=pc&replace=icon",
+      "width": 346
+    },
+    {
+      "family": "image",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "fit-mode",
+        "content-comparison",
+        "error",
+        "loader",
+        "lazy",
+        "disable-preview",
+        "preview-entry",
+        "component-preview",
+        "imperative-preview",
+        "preview-group",
+        "component-preview-group",
+        "ripple",
+        "overlay-closable",
+        "hide-footer-never",
+        "preview-features",
+        "presentation",
+        "preview-popup-container",
+        "track-lifecycle",
+        "controller-lifecycle"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "fit-mode",
+        "content-comparison",
+        "error",
+        "loader",
+        "lazy",
+        "disable-preview",
+        "preview-entry",
+        "component-preview",
+        "imperative-preview",
+        "preview-group",
+        "component-preview-group",
+        "ripple",
+        "overlay-closable",
+        "hide-footer-never",
+        "preview-features",
+        "presentation",
+        "preview-popup-container",
+        "track-lifecycle",
+        "controller-lifecycle"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "image"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/image?language=en-US&platform=pc&replace=image",
+      "width": 346
+    },
+    {
+      "family": "image",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "fit-mode",
+        "content-comparison",
+        "error",
+        "loader",
+        "lazy",
+        "disable-preview",
+        "preview-entry",
+        "component-preview",
+        "imperative-preview",
+        "preview-group",
+        "component-preview-group",
+        "ripple",
+        "overlay-closable",
+        "hide-footer-never",
+        "preview-features",
+        "presentation",
+        "preview-popup-container",
+        "track-lifecycle",
+        "controller-lifecycle"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "fit-mode",
+        "content-comparison",
+        "error",
+        "loader",
+        "lazy",
+        "disable-preview",
+        "preview-entry",
+        "component-preview",
+        "imperative-preview",
+        "preview-group",
+        "component-preview-group",
+        "ripple",
+        "overlay-closable",
+        "hide-footer-never",
+        "preview-features",
+        "presentation",
+        "preview-popup-container",
+        "track-lifecycle",
+        "controller-lifecycle"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "image"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/image?language=zh-CN&platform=pc&replace=image",
+      "width": 346
+    },
+    {
+      "family": "index-bar",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "lifecycle"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "lifecycle"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "index-bar"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/index-bar?language=en-US&platform=pc&replace=index-bar",
+      "width": 346
+    },
+    {
+      "family": "index-bar",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "lifecycle"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "lifecycle"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "index-bar"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/index-bar?language=zh-CN&platform=pc&replace=index-bar",
+      "width": 346
+    },
+    {
+      "family": "infinite-scroll",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "error",
+        "custom-status",
+        "scheduler-lifecycle"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "error",
+        "custom-status",
+        "scheduler-lifecycle"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "infinite-scroll"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/infinite-scroll?language=en-US&platform=pc&replace=infinite-scroll",
+      "width": 346
+    },
+    {
+      "family": "infinite-scroll",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "error",
+        "custom-status",
+        "scheduler-lifecycle"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "error",
+        "custom-status",
+        "scheduler-lifecycle"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "infinite-scroll"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/infinite-scroll?language=zh-CN&platform=pc&replace=infinite-scroll",
+      "width": 346
+    },
+    {
+      "family": "input-number",
+      "language": "en-US",
+      "expectedIds": [
+        "field-basic",
+        "appearance-lab",
+        "control-sizes",
+        "field-modes",
+        "field-options",
+        "quantity-controls",
+        "format-slots",
+        "number-boundaries",
+        "state-lab",
+        "controlled-events",
+        "form-inheritance"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "field-basic",
+        "appearance-lab",
+        "control-sizes",
+        "field-modes",
+        "field-options",
+        "quantity-controls",
+        "format-slots",
+        "number-boundaries",
+        "state-lab",
+        "controlled-events",
+        "form-inheritance"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "input-number"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/input-number?language=en-US&platform=pc&replace=input-number",
+      "width": 346
+    },
+    {
+      "family": "input-number",
+      "language": "zh-CN",
+      "expectedIds": [
+        "field-basic",
+        "appearance-lab",
+        "control-sizes",
+        "field-modes",
+        "field-options",
+        "quantity-controls",
+        "format-slots",
+        "number-boundaries",
+        "state-lab",
+        "controlled-events",
+        "form-inheritance"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "field-basic",
+        "appearance-lab",
+        "control-sizes",
+        "field-modes",
+        "field-options",
+        "quantity-controls",
+        "format-slots",
+        "number-boundaries",
+        "state-lab",
+        "controlled-events",
+        "form-inheritance"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "input-number"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/input-number?language=zh-CN&platform=pc&replace=input-number",
+      "width": 346
+    },
+    {
+      "family": "input",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "control-sizes",
+        "appearance-lab",
+        "form-feedback",
+        "hint",
+        "max-length",
+        "password",
+        "prefix-suffix",
+        "custom-clear-icon",
+        "group",
+        "group-state",
+        "type",
+        "default-value",
+        "model-modifier",
+        "state-lab",
+        "event-pipeline",
+        "native-attrs",
+        "commit-protocol"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "control-sizes",
+        "appearance-lab",
+        "form-feedback",
+        "hint",
+        "max-length",
+        "password",
+        "prefix-suffix",
+        "custom-clear-icon",
+        "group",
+        "group-state",
+        "type",
+        "default-value",
+        "model-modifier",
+        "state-lab",
+        "event-pipeline",
+        "native-attrs",
+        "commit-protocol"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "input"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/input?language=en-US&platform=pc&replace=input",
+      "width": 346
+    },
+    {
+      "family": "input",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "control-sizes",
+        "appearance-lab",
+        "form-feedback",
+        "hint",
+        "max-length",
+        "password",
+        "prefix-suffix",
+        "custom-clear-icon",
+        "group",
+        "group-state",
+        "type",
+        "default-value",
+        "model-modifier",
+        "state-lab",
+        "event-pipeline",
+        "native-attrs",
+        "commit-protocol"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "control-sizes",
+        "appearance-lab",
+        "form-feedback",
+        "hint",
+        "max-length",
+        "password",
+        "prefix-suffix",
+        "custom-clear-icon",
+        "group",
+        "group-state",
+        "type",
+        "default-value",
+        "model-modifier",
+        "state-lab",
+        "event-pipeline",
+        "native-attrs",
+        "commit-protocol"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "input"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/input?language=zh-CN&platform=pc&replace=input",
+      "width": 346
+    },
+    {
+      "family": "lazy",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "background-image-lazy-load"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "background-image-lazy-load"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "lazy"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/lazy?language=en-US&platform=pc&replace=lazy",
+      "width": 346
+    },
+    {
+      "family": "lazy",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "background-image-lazy-load"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "background-image-lazy-load"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "lazy"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/lazy?language=zh-CN&platform=pc&replace=lazy",
+      "width": 346
+    },
+    {
+      "family": "link",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "appearance-comparison",
+        "mode",
+        "underline",
+        "disabled-status",
+        "hoverable",
+        "icon",
+        "theme-colors",
+        "loading"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "appearance-comparison",
+        "mode",
+        "underline",
+        "disabled-status",
+        "hoverable",
+        "icon",
+        "theme-colors",
+        "loading"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "link"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/link?language=en-US&platform=pc&replace=link",
+      "width": 346
+    },
+    {
+      "family": "link",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "appearance-comparison",
+        "mode",
+        "underline",
+        "disabled-status",
+        "hoverable",
+        "icon",
+        "theme-colors",
+        "loading"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "appearance-comparison",
+        "mode",
+        "underline",
+        "disabled-status",
+        "hoverable",
+        "icon",
+        "theme-colors",
+        "loading"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "link"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/link?language=zh-CN&platform=pc&replace=link",
+      "width": 346
+    },
+    {
+      "family": "list",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "states",
+        "bounded-scroll",
+        "virtual-navigation",
+        "manual-usage",
+        "virtual-lifecycle"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "states",
+        "bounded-scroll",
+        "virtual-navigation",
+        "manual-usage",
+        "virtual-lifecycle"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "list"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/list?language=en-US&platform=pc&replace=list",
+      "width": 346
+    },
+    {
+      "family": "list",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "states",
+        "bounded-scroll",
+        "virtual-navigation",
+        "manual-usage",
+        "virtual-lifecycle"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "states",
+        "bounded-scroll",
+        "virtual-navigation",
+        "manual-usage",
+        "virtual-lifecycle"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "list"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/list?language=zh-CN&platform=pc&replace=list",
+      "width": 346
+    },
+    {
+      "family": "loading-bar",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "loading-bar"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/loading-bar?language=en-US&platform=pc&replace=loading-bar",
+      "width": 346
+    },
+    {
+      "family": "loading-bar",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "loading-bar"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/loading-bar?language=zh-CN&platform=pc&replace=loading-bar",
+      "width": 346
+    },
+    {
+      "family": "loading",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "appearance-comparison",
+        "wrap",
+        "directive"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "appearance-comparison",
+        "wrap",
+        "directive"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "loading"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/loading?language=en-US&platform=pc&replace=loading",
+      "width": 346
+    },
+    {
+      "family": "loading",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "appearance-comparison",
+        "wrap",
+        "directive"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "appearance-comparison",
+        "wrap",
+        "directive"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "loading"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/loading?language=zh-CN&platform=pc&replace=loading",
+      "width": 346
+    },
+    {
+      "family": "locale-provider",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "locale-provider"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/locale-provider?language=en-US&platform=pc&replace=locale-provider",
+      "width": 346
+    },
+    {
+      "family": "locale-provider",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "locale-provider"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/locale-provider?language=zh-CN&platform=pc&replace=locale-provider",
+      "width": 346
+    },
+    {
+      "family": "locale",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "locale"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/locale?language=en-US&platform=pc&replace=locale",
+      "width": 346
+    },
+    {
+      "family": "locale",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "locale"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/locale?language=zh-CN&platform=pc&replace=locale",
+      "width": 346
+    },
+    {
+      "family": "menu",
+      "language": "en-US",
+      "expectedIds": [
+        "overflow-actions",
+        "disabled-state",
+        "structure-comparison",
+        "active-rendering",
+        "context-menu",
+        "trigger",
+        "placement",
+        "positioning",
+        "popup-max-height",
+        "selection",
+        "controlled",
+        "footer"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "overflow-actions",
+        "disabled-state",
+        "structure-comparison",
+        "active-rendering",
+        "context-menu",
+        "trigger",
+        "placement",
+        "positioning",
+        "popup-max-height",
+        "selection",
+        "controlled",
+        "footer"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "menu"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/menu?language=en-US&platform=pc&replace=menu",
+      "width": 346
+    },
+    {
+      "family": "menu",
+      "language": "zh-CN",
+      "expectedIds": [
+        "overflow-actions",
+        "disabled-state",
+        "structure-comparison",
+        "active-rendering",
+        "context-menu",
+        "trigger",
+        "placement",
+        "positioning",
+        "popup-max-height",
+        "selection",
+        "controlled",
+        "footer"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "overflow-actions",
+        "disabled-state",
+        "structure-comparison",
+        "active-rendering",
+        "context-menu",
+        "trigger",
+        "placement",
+        "positioning",
+        "popup-max-height",
+        "selection",
+        "controlled",
+        "footer"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "menu"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/menu?language=zh-CN&platform=pc&replace=menu",
+      "width": 346
+    },
+    {
+      "family": "message",
+      "language": "en-US",
+      "expectedIds": [
+        "function-call",
+        "type",
+        "variant",
+        "appearance-lab",
+        "component-call"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "function-call",
+        "type",
+        "variant",
+        "appearance-lab",
+        "component-call"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "message"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/message?language=en-US&platform=pc&replace=message",
+      "width": 346
+    },
+    {
+      "family": "message",
+      "language": "zh-CN",
+      "expectedIds": [
+        "function-call",
+        "type",
+        "variant",
+        "appearance-lab",
+        "component-call"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "function-call",
+        "type",
+        "variant",
+        "appearance-lab",
+        "component-call"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "message"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/message?language=zh-CN&platform=pc&replace=message",
+      "width": 346
+    },
+    {
+      "family": "notice-bar",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "notice-bar"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/notice-bar?language=en-US&platform=pc&replace=notice-bar",
+      "width": 346
+    },
+    {
+      "family": "notice-bar",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "notice-bar"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/notice-bar?language=zh-CN&platform=pc&replace=notice-bar",
+      "width": 346
+    },
+    {
+      "family": "number-keyboard",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "number-keyboard"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/number-keyboard?language=en-US&platform=pc&replace=number-keyboard",
+      "width": 346
+    },
+    {
+      "family": "number-keyboard",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "number-keyboard"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/number-keyboard?language=zh-CN&platform=pc&replace=number-keyboard",
+      "width": 346
+    },
+    {
+      "family": "overlay",
+      "language": "en-US",
+      "expectedIds": [
+        "overlay-base",
+        "overlay-content",
+        "click-event"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "overlay-base",
+        "overlay-content",
+        "click-event"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "overlay"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/overlay?language=en-US&platform=pc&replace=overlay",
+      "width": 346
+    },
+    {
+      "family": "overlay",
+      "language": "zh-CN",
+      "expectedIds": [
+        "overlay-base",
+        "overlay-content",
+        "click-event"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "overlay-base",
+        "overlay-content",
+        "click-event"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "overlay"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/overlay?language=zh-CN&platform=pc&replace=overlay",
+      "width": 346
+    },
+    {
+      "family": "page-header",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "surface-comparison",
+        "complete"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "surface-comparison",
+        "complete"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "page-header"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/page-header?language=en-US&platform=pc&replace=page-header",
+      "width": 346
+    },
+    {
+      "family": "page-header",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "surface-comparison",
+        "complete"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "surface-comparison",
+        "complete"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "page-header"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/page-header?language=zh-CN&platform=pc&replace=page-header",
+      "width": 346
+    },
+    {
+      "family": "pagination",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "size",
+        "disabled",
+        "simple",
+        "more-page-size",
+        "auxiliary-controls-comparison",
+        "custom-page-button",
+        "responsive",
+        "auto-adjust",
+        "all"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "size",
+        "disabled",
+        "simple",
+        "more-page-size",
+        "auxiliary-controls-comparison",
+        "custom-page-button",
+        "responsive",
+        "auto-adjust",
+        "all"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "pagination"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/pagination?language=en-US&platform=pc&replace=pagination",
+      "width": 346
+    },
+    {
+      "family": "pagination",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "size",
+        "disabled",
+        "simple",
+        "more-page-size",
+        "auxiliary-controls-comparison",
+        "custom-page-button",
+        "responsive",
+        "auto-adjust",
+        "all"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "size",
+        "disabled",
+        "simple",
+        "more-page-size",
+        "auxiliary-controls-comparison",
+        "custom-page-button",
+        "responsive",
+        "auto-adjust",
+        "all"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "pagination"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/pagination?language=zh-CN&platform=pc&replace=pagination",
+      "width": 346
+    },
+    {
+      "family": "palette",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "palette"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/palette?language=en-US&platform=pc&replace=palette",
+      "width": 346
+    },
+    {
+      "family": "palette",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "palette"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/palette?language=zh-CN&platform=pc&replace=palette",
+      "width": 346
+    },
+    {
+      "family": "paper",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "surface-comparison",
+        "slot",
+        "live-properties",
+        "ripple"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "surface-comparison",
+        "slot",
+        "live-properties",
+        "ripple"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "paper"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/paper?language=en-US&platform=pc&replace=paper",
+      "width": 346
+    },
+    {
+      "family": "paper",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "surface-comparison",
+        "slot",
+        "live-properties",
+        "ripple"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "surface-comparison",
+        "slot",
+        "live-properties",
+        "ripple"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "paper"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/paper?language=zh-CN&platform=pc&replace=paper",
+      "width": 346
+    },
+    {
+      "family": "people-select",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "people-select"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/people-select?language=en-US&platform=pc&replace=people-select",
+      "width": 346
+    },
+    {
+      "family": "people-select",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "people-select"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/people-select?language=zh-CN&platform=pc&replace=people-select",
+      "width": 346
+    },
+    {
+      "family": "picker",
+      "language": "en-US",
+      "expectedIds": [
+        "single-picker",
+        "multiple-picker",
+        "cascade-picker",
+        "area-picker",
+        "columns-count",
+        "value-mapping",
+        "disabled",
+        "two-way-binding",
+        "function-call"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "single-picker",
+        "multiple-picker",
+        "cascade-picker",
+        "area-picker",
+        "columns-count",
+        "value-mapping",
+        "disabled",
+        "two-way-binding",
+        "function-call"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "picker"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/picker?language=en-US&platform=pc&replace=picker",
+      "width": 346
+    },
+    {
+      "family": "picker",
+      "language": "zh-CN",
+      "expectedIds": [
+        "single-picker",
+        "multiple-picker",
+        "cascade-picker",
+        "area-picker",
+        "columns-count",
+        "value-mapping",
+        "disabled",
+        "two-way-binding",
+        "function-call"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "single-picker",
+        "multiple-picker",
+        "cascade-picker",
+        "area-picker",
+        "columns-count",
+        "value-mapping",
+        "disabled",
+        "two-way-binding",
+        "function-call"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "picker"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/picker?language=zh-CN&platform=pc&replace=picker",
+      "width": 346
+    },
+    {
+      "family": "popover",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "disabled",
+        "positioning-comparison",
+        "trigger",
+        "two-way-binding",
+        "interactive",
+        "events"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "disabled",
+        "positioning-comparison",
+        "trigger",
+        "two-way-binding",
+        "interactive",
+        "events"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "popover"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/popover?language=en-US&platform=pc&replace=popover",
+      "width": 346
+    },
+    {
+      "family": "popover",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "disabled",
+        "positioning-comparison",
+        "trigger",
+        "two-way-binding",
+        "interactive",
+        "events"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "disabled",
+        "positioning-comparison",
+        "trigger",
+        "two-way-binding",
+        "interactive",
+        "events"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "popover"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/popover?language=zh-CN&platform=pc&replace=popover",
+      "width": 346
+    },
+    {
+      "family": "popup",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "popup-position",
+        "overlay-style",
+        "event",
+        "motion-token"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "popup-position",
+        "overlay-style",
+        "event",
+        "motion-token"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "popup"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/popup?language=en-US&platform=pc&replace=popup",
+      "width": 346
+    },
+    {
+      "family": "popup",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "popup-position",
+        "overlay-style",
+        "event",
+        "motion-token"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "popup-position",
+        "overlay-style",
+        "event",
+        "motion-token"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "popup"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/popup?language=zh-CN&platform=pc&replace=popup",
+      "width": 346
+    },
+    {
+      "family": "progress-group",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "appearance-comparison",
+        "orientation",
+        "circle",
+        "overflow-keyboard",
+        "custom"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "appearance-comparison",
+        "orientation",
+        "circle",
+        "overflow-keyboard",
+        "custom"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "progress-group"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/progress-group?language=en-US&platform=pc&replace=progress-group",
+      "width": 346
+    },
+    {
+      "family": "progress-group",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "appearance-comparison",
+        "orientation",
+        "circle",
+        "overflow-keyboard",
+        "custom"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "appearance-comparison",
+        "orientation",
+        "circle",
+        "overflow-keyboard",
+        "custom"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "progress-group"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/progress-group?language=zh-CN&platform=pc&replace=progress-group",
+      "width": 346
+    },
+    {
+      "family": "progress",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "appearance-comparison",
+        "circle",
+        "step",
+        "loop",
+        "indeterminate-progress",
+        "advanced",
+        "style"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "appearance-comparison",
+        "circle",
+        "step",
+        "loop",
+        "indeterminate-progress",
+        "advanced",
+        "style"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "progress"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/progress?language=en-US&platform=pc&replace=progress",
+      "width": 346
+    },
+    {
+      "family": "progress",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "appearance-comparison",
+        "circle",
+        "step",
+        "loop",
+        "indeterminate-progress",
+        "advanced",
+        "style"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "appearance-comparison",
+        "circle",
+        "step",
+        "loop",
+        "indeterminate-progress",
+        "advanced",
+        "style"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "progress"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/progress?language=zh-CN&platform=pc&replace=progress",
+      "width": 346
+    },
+    {
+      "family": "pull-refresh",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "pull-refresh"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/pull-refresh?language=en-US&platform=pc&replace=pull-refresh",
+      "width": 346
+    },
+    {
+      "family": "pull-refresh",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "pull-refresh"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/pull-refresh?language=zh-CN&platform=pc&replace=pull-refresh",
+      "width": 346
+    },
+    {
+      "family": "radio",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "disabled",
+        "readonly",
+        "group-declaration-comparison",
+        "vertical",
+        "group-state",
+        "button-sizes",
+        "control-value",
+        "option-data",
+        "custom-fields",
+        "set-state",
+        "state-lab",
+        "keyboard-navigation",
+        "native-control",
+        "set-style",
+        "async-options"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "disabled",
+        "readonly",
+        "group-declaration-comparison",
+        "vertical",
+        "group-state",
+        "button-sizes",
+        "control-value",
+        "option-data",
+        "custom-fields",
+        "set-state",
+        "state-lab",
+        "keyboard-navigation",
+        "native-control",
+        "set-style",
+        "async-options"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "radio"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/radio?language=en-US&platform=pc&replace=radio",
+      "width": 346
+    },
+    {
+      "family": "radio",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "disabled",
+        "readonly",
+        "group-declaration-comparison",
+        "vertical",
+        "group-state",
+        "button-sizes",
+        "control-value",
+        "option-data",
+        "custom-fields",
+        "set-state",
+        "state-lab",
+        "keyboard-navigation",
+        "native-control",
+        "set-style",
+        "async-options"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "disabled",
+        "readonly",
+        "group-declaration-comparison",
+        "vertical",
+        "group-state",
+        "button-sizes",
+        "control-value",
+        "option-data",
+        "custom-fields",
+        "set-state",
+        "state-lab",
+        "keyboard-navigation",
+        "native-control",
+        "set-style",
+        "async-options"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "radio"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/radio?language=zh-CN&platform=pc&replace=radio",
+      "width": 346
+    },
+    {
+      "family": "rate",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "disabled-and-readonly",
+        "sizes-and-symbols",
+        "custom-rating-icon-size-and-gap",
+        "half-star",
+        "value-rules-comparison",
+        "custom-rating-icon-style",
+        "state-lab",
+        "keyboard",
+        "listen-event"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "disabled-and-readonly",
+        "sizes-and-symbols",
+        "custom-rating-icon-size-and-gap",
+        "half-star",
+        "value-rules-comparison",
+        "custom-rating-icon-style",
+        "state-lab",
+        "keyboard",
+        "listen-event"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "rate"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/rate?language=en-US&platform=pc&replace=rate",
+      "width": 346
+    },
+    {
+      "family": "rate",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "disabled-and-readonly",
+        "sizes-and-symbols",
+        "custom-rating-icon-size-and-gap",
+        "half-star",
+        "value-rules-comparison",
+        "custom-rating-icon-style",
+        "state-lab",
+        "keyboard",
+        "listen-event"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "disabled-and-readonly",
+        "sizes-and-symbols",
+        "custom-rating-icon-size-and-gap",
+        "half-star",
+        "value-rules-comparison",
+        "custom-rating-icon-style",
+        "state-lab",
+        "keyboard",
+        "listen-event"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "rate"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/rate?language=zh-CN&platform=pc&replace=rate",
+      "width": 346
+    },
+    {
+      "family": "result",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "type"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "type"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "result"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/result?language=en-US&platform=pc&replace=result",
+      "width": 346
+    },
+    {
+      "family": "result",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "type"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "type"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "result"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/result?language=zh-CN&platform=pc&replace=result",
+      "width": 346
+    },
+    {
+      "family": "ripple",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "custom-color",
+        "disabled-status",
+        "motion-token"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "custom-color",
+        "disabled-status",
+        "motion-token"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "ripple"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/ripple?language=en-US&platform=pc&replace=ripple",
+      "width": 346
+    },
+    {
+      "family": "ripple",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "custom-color",
+        "disabled-status",
+        "motion-token"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "custom-color",
+        "disabled-status",
+        "motion-token"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "ripple"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/ripple?language=zh-CN&platform=pc&replace=ripple",
+      "width": 346
+    },
+    {
+      "family": "row",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "gutter",
+        "alignment",
+        "wrap",
+        "nested",
+        "layout-lab"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "gutter",
+        "alignment",
+        "wrap",
+        "nested",
+        "layout-lab"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "row"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/row?language=en-US&platform=pc&replace=row",
+      "width": 346
+    },
+    {
+      "family": "row",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "gutter",
+        "alignment",
+        "wrap",
+        "nested",
+        "layout-lab"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "gutter",
+        "alignment",
+        "wrap",
+        "nested",
+        "layout-lab"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "row"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/row?language=zh-CN&platform=pc&replace=row",
+      "width": 346
+    },
+    {
+      "family": "safe-area",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "app-form",
+        "affected-components"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "app-form",
+        "affected-components"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "safe-area"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/safe-area?language=en-US&platform=pc&replace=safe-area",
+      "width": 346
+    },
+    {
+      "family": "safe-area",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "app-form",
+        "affected-components"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "app-form",
+        "affected-components"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "safe-area"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/safe-area?language=zh-CN&platform=pc&replace=safe-area",
+      "width": 346
+    },
+    {
+      "family": "search",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "shape",
+        "search-button",
+        "fields",
+        "history",
+        "presentation",
+        "action",
+        "state-lab",
+        "state"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "shape",
+        "search-button",
+        "fields",
+        "history",
+        "presentation",
+        "action",
+        "state-lab",
+        "state"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "search"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/search?language=en-US&platform=pc&replace=search",
+      "width": 346
+    },
+    {
+      "family": "search",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "shape",
+        "search-button",
+        "fields",
+        "history",
+        "presentation",
+        "action",
+        "state-lab",
+        "state"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "shape",
+        "search-button",
+        "fields",
+        "history",
+        "presentation",
+        "action",
+        "state-lab",
+        "state"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "search"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/search?language=zh-CN&platform=pc&replace=search",
+      "width": 346
+    },
+    {
+      "family": "select",
+      "language": "en-US",
+      "expectedIds": [
+        "standard",
+        "appearance-lab",
+        "control-sizes",
+        "multiple",
+        "same-label",
+        "value-mapping",
+        "group-spacing",
+        "options-review",
+        "options",
+        "field-names",
+        "search-matching",
+        "custom-icons",
+        "dialog",
+        "popup",
+        "slots-review",
+        "selection-data-flow",
+        "empty-value",
+        "clearable",
+        "state-lab",
+        "async-devices",
+        "async-source",
+        "async-data",
+        "passthrough-options",
+        "scheduler-lifecycle",
+        "thumb-lifecycle",
+        "scrollbar-lifecycle",
+        "open-trigger-target"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "standard",
+        "appearance-lab",
+        "control-sizes",
+        "multiple",
+        "same-label",
+        "value-mapping",
+        "group-spacing",
+        "options-review",
+        "options",
+        "field-names",
+        "search-matching",
+        "custom-icons",
+        "dialog",
+        "popup",
+        "slots-review",
+        "selection-data-flow",
+        "empty-value",
+        "clearable",
+        "state-lab",
+        "async-devices",
+        "async-source",
+        "async-data",
+        "passthrough-options",
+        "scheduler-lifecycle",
+        "thumb-lifecycle",
+        "scrollbar-lifecycle",
+        "open-trigger-target"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "select"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/select?language=en-US&platform=pc&replace=select",
+      "width": 346
+    },
+    {
+      "family": "select",
+      "language": "zh-CN",
+      "expectedIds": [
+        "standard",
+        "appearance-lab",
+        "control-sizes",
+        "multiple",
+        "same-label",
+        "value-mapping",
+        "group-spacing",
+        "options-review",
+        "options",
+        "field-names",
+        "search-matching",
+        "custom-icons",
+        "dialog",
+        "popup",
+        "slots-review",
+        "selection-data-flow",
+        "empty-value",
+        "clearable",
+        "state-lab",
+        "async-devices",
+        "async-source",
+        "async-data",
+        "passthrough-options",
+        "scheduler-lifecycle",
+        "thumb-lifecycle",
+        "scrollbar-lifecycle",
+        "open-trigger-target"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "standard",
+        "appearance-lab",
+        "control-sizes",
+        "multiple",
+        "same-label",
+        "value-mapping",
+        "group-spacing",
+        "options-review",
+        "options",
+        "field-names",
+        "search-matching",
+        "custom-icons",
+        "dialog",
+        "popup",
+        "slots-review",
+        "selection-data-flow",
+        "empty-value",
+        "clearable",
+        "state-lab",
+        "async-devices",
+        "async-source",
+        "async-data",
+        "passthrough-options",
+        "scheduler-lifecycle",
+        "thumb-lifecycle",
+        "scrollbar-lifecycle",
+        "open-trigger-target"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "select"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/select?language=zh-CN&platform=pc&replace=select",
+      "width": 346
+    },
+    {
+      "family": "signature",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "custom-style"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "custom-style"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "signature"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/signature?language=en-US&platform=pc&replace=signature",
+      "width": 346
+    },
+    {
+      "family": "signature",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "custom-style"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "custom-style"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "signature"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/signature?language=zh-CN&platform=pc&replace=signature",
+      "width": 346
+    },
+    {
+      "family": "skeleton",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "content-comparison",
+        "animation",
+        "fullscreen-mode",
+        "custom-template"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "content-comparison",
+        "animation",
+        "fullscreen-mode",
+        "custom-template"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "skeleton"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/skeleton?language=en-US&platform=pc&replace=skeleton",
+      "width": 346
+    },
+    {
+      "family": "skeleton",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "content-comparison",
+        "animation",
+        "fullscreen-mode",
+        "custom-template"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "content-comparison",
+        "animation",
+        "fullscreen-mode",
+        "custom-template"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "skeleton"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/skeleton?language=zh-CN&platform=pc&replace=skeleton",
+      "width": 346
+    },
+    {
+      "family": "slider",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "vertical",
+        "touch-and-labels",
+        "slider-size",
+        "custom-style",
+        "thumb-label-comparison",
+        "state-lab",
+        "keyboard-input",
+        "step-size",
+        "controlled-range",
+        "dual-thumb",
+        "range"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "vertical",
+        "touch-and-labels",
+        "slider-size",
+        "custom-style",
+        "thumb-label-comparison",
+        "state-lab",
+        "keyboard-input",
+        "step-size",
+        "controlled-range",
+        "dual-thumb",
+        "range"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "slider"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/slider?language=en-US&platform=pc&replace=slider",
+      "width": 346
+    },
+    {
+      "family": "slider",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "vertical",
+        "touch-and-labels",
+        "slider-size",
+        "custom-style",
+        "thumb-label-comparison",
+        "state-lab",
+        "keyboard-input",
+        "step-size",
+        "controlled-range",
+        "dual-thumb",
+        "range"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "vertical",
+        "touch-and-labels",
+        "slider-size",
+        "custom-style",
+        "thumb-label-comparison",
+        "state-lab",
+        "keyboard-input",
+        "step-size",
+        "controlled-range",
+        "dual-thumb",
+        "range"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "slider"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/slider?language=zh-CN&platform=pc&replace=slider",
+      "width": 346
+    },
+    {
+      "family": "space",
+      "language": "en-US",
+      "expectedIds": [
+        "base-use",
+        "space",
+        "demo-8",
+        "vertical",
+        "alignment-comparison",
+        "wrap",
+        "around",
+        "layout-lab",
+        "interactive-layout"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "base-use",
+        "space",
+        "demo-8",
+        "vertical",
+        "alignment-comparison",
+        "wrap",
+        "around",
+        "layout-lab",
+        "interactive-layout"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "space"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/space?language=en-US&platform=pc&replace=space",
+      "width": 346
+    },
+    {
+      "family": "space",
+      "language": "zh-CN",
+      "expectedIds": [
+        "base-use",
+        "space",
+        "demo-8",
+        "vertical",
+        "alignment-comparison",
+        "wrap",
+        "around",
+        "layout-lab",
+        "interactive-layout"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "base-use",
+        "space",
+        "demo-8",
+        "vertical",
+        "alignment-comparison",
+        "wrap",
+        "around",
+        "layout-lab",
+        "interactive-layout"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "space"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/space?language=zh-CN&platform=pc&replace=space",
+      "width": 346
+    },
+    {
+      "family": "split-button",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "variants",
+        "disabled",
+        "appearance-lab",
+        "popup",
+        "custom-icon",
+        "controlled",
+        "async-action"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "variants",
+        "disabled",
+        "appearance-lab",
+        "popup",
+        "custom-icon",
+        "controlled",
+        "async-action"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "split-button"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/split-button?language=en-US&platform=pc&replace=split-button",
+      "width": 346
+    },
+    {
+      "family": "split-button",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "variants",
+        "disabled",
+        "appearance-lab",
+        "popup",
+        "custom-icon",
+        "controlled",
+        "async-action"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "variants",
+        "disabled",
+        "appearance-lab",
+        "popup",
+        "custom-icon",
+        "controlled",
+        "async-action"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "split-button"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/split-button?language=zh-CN&platform=pc&replace=split-button",
+      "width": 346
+    },
+    {
+      "family": "statistic",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "tabular-nums",
+        "extra",
+        "animation",
+        "countdown",
+        "prefix-suffix",
+        "custom-value"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "tabular-nums",
+        "extra",
+        "animation",
+        "countdown",
+        "prefix-suffix",
+        "custom-value"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "statistic"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/statistic?language=en-US&platform=pc&replace=statistic",
+      "width": 346
+    },
+    {
+      "family": "statistic",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "tabular-nums",
+        "extra",
+        "animation",
+        "countdown",
+        "prefix-suffix",
+        "custom-value"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "tabular-nums",
+        "extra",
+        "animation",
+        "countdown",
+        "prefix-suffix",
+        "custom-value"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "statistic"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/statistic?language=zh-CN&platform=pc&replace=statistic",
+      "width": 346
+    },
+    {
+      "family": "steps",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "appearance-lab",
+        "types",
+        "vertical",
+        "changeable"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "appearance-lab",
+        "types",
+        "vertical",
+        "changeable"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "steps"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/steps?language=en-US&platform=pc&replace=steps#Steptypesandstates",
+      "width": 346
+    },
+    {
+      "family": "steps",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "appearance-lab",
+        "types",
+        "vertical",
+        "changeable"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "appearance-lab",
+        "types",
+        "vertical",
+        "changeable"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "steps"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/steps?language=zh-CN&platform=pc&replace=steps",
+      "width": 346
+    },
+    {
+      "family": "style-provider",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "style-provider"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/style-provider?language=en-US&platform=pc&replace=style-provider",
+      "width": 346
+    },
+    {
+      "family": "style-provider",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "style-provider"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/style-provider?language=zh-CN&platform=pc&replace=style-provider",
+      "width": 346
+    },
+    {
+      "family": "style",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "style"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/style?language=en-US&platform=pc&replace=style",
+      "width": 346
+    },
+    {
+      "family": "style",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "style"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/style?language=zh-CN&platform=pc&replace=style",
+      "width": 346
+    },
+    {
+      "family": "swipe-cell",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "both-sides",
+        "before-close"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "both-sides",
+        "before-close"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "swipe-cell"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/swipe-cell?language=en-US&platform=pc&replace=swipe-cell",
+      "width": 346
+    },
+    {
+      "family": "swipe-cell",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "both-sides",
+        "before-close"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "both-sides",
+        "before-close"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "swipe-cell"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/swipe-cell?language=zh-CN&platform=pc&replace=swipe-cell",
+      "width": 346
+    },
+    {
+      "family": "switch",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "appearance-lab",
+        "custom-color",
+        "custom-text",
+        "custom-icon",
+        "custom",
+        "state-lab",
+        "loading",
+        "events",
+        "custom-value",
+        "switch-interception"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "appearance-lab",
+        "custom-color",
+        "custom-text",
+        "custom-icon",
+        "custom",
+        "state-lab",
+        "loading",
+        "events",
+        "custom-value",
+        "switch-interception"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "switch"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/switch?language=en-US&platform=pc&replace=switch",
+      "width": 346
+    },
+    {
+      "family": "switch",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "appearance-lab",
+        "custom-color",
+        "custom-text",
+        "custom-icon",
+        "custom",
+        "state-lab",
+        "loading",
+        "events",
+        "custom-value",
+        "switch-interception"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "appearance-lab",
+        "custom-color",
+        "custom-text",
+        "custom-icon",
+        "custom",
+        "state-lab",
+        "loading",
+        "events",
+        "custom-value",
+        "switch-interception"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "switch"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/switch?language=zh-CN&platform=pc&replace=switch",
+      "width": 346
+    },
+    {
+      "family": "tab-bar",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "variant",
+        "show-badge",
+        "custom-color",
+        "fab",
+        "custom-label",
+        "match-by-name",
+        "event-comparison",
+        "uncontrolled",
+        "stable-key",
+        "async-change"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "variant",
+        "show-badge",
+        "custom-color",
+        "fab",
+        "custom-label",
+        "match-by-name",
+        "event-comparison",
+        "uncontrolled",
+        "stable-key",
+        "async-change"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "tab-bar"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/tab-bar?language=en-US&platform=pc&replace=tab-bar",
+      "width": 346
+    },
+    {
+      "family": "tab-bar",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "variant",
+        "show-badge",
+        "custom-color",
+        "fab",
+        "custom-label",
+        "match-by-name",
+        "event-comparison",
+        "uncontrolled",
+        "stable-key",
+        "async-change"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "variant",
+        "show-badge",
+        "custom-color",
+        "fab",
+        "custom-label",
+        "match-by-name",
+        "event-comparison",
+        "uncontrolled",
+        "stable-key",
+        "async-change"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "tab-bar"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/tab-bar?language=zh-CN&platform=pc&replace=tab-bar",
+      "width": 346
+    },
+    {
+      "family": "table",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "fixed-header",
+        "slot",
+        "task-workbench"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "fixed-header",
+        "slot",
+        "task-workbench"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "table"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/table?language=en-US&platform=pc&replace=table",
+      "width": 346
+    },
+    {
+      "family": "table",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "fixed-header",
+        "slot",
+        "task-workbench"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "fixed-header",
+        "slot",
+        "task-workbench"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "table"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/table?language=zh-CN&platform=pc&replace=table",
+      "width": 346
+    },
+    {
+      "family": "tabs",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "appearance-lab",
+        "variants",
+        "position",
+        "icons-and-slots",
+        "custom-style",
+        "nav-content",
+        "navs-review",
+        "scrollable",
+        "lazy-load",
+        "editable",
+        "controlled"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "appearance-lab",
+        "variants",
+        "position",
+        "icons-and-slots",
+        "custom-style",
+        "nav-content",
+        "navs-review",
+        "scrollable",
+        "lazy-load",
+        "editable",
+        "controlled"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "tabs"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/tabs?language=en-US&platform=pc&replace=tabs",
+      "width": 346
+    },
+    {
+      "family": "tabs",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "appearance-lab",
+        "variants",
+        "position",
+        "icons-and-slots",
+        "custom-style",
+        "nav-content",
+        "navs-review",
+        "scrollable",
+        "lazy-load",
+        "editable",
+        "controlled"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "appearance-lab",
+        "variants",
+        "position",
+        "icons-and-slots",
+        "custom-style",
+        "nav-content",
+        "navs-review",
+        "scrollable",
+        "lazy-load",
+        "editable",
+        "controlled"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "tabs"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/tabs?language=zh-CN&platform=pc&replace=tabs",
+      "width": 346
+    },
+    {
+      "family": "tag",
+      "language": "en-US",
+      "expectedIds": [
+        "theme-color-tag",
+        "round-tag",
+        "custom-color-tag",
+        "appearance-lab",
+        "checkable-tag",
+        "icon-tag",
+        "closable-tag",
+        "loading-tag"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "theme-color-tag",
+        "round-tag",
+        "custom-color-tag",
+        "appearance-lab",
+        "checkable-tag",
+        "icon-tag",
+        "closable-tag",
+        "loading-tag"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "tag"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/tag?language=en-US&platform=pc&replace=tag",
+      "width": 346
+    },
+    {
+      "family": "tag",
+      "language": "zh-CN",
+      "expectedIds": [
+        "theme-color-tag",
+        "round-tag",
+        "custom-color-tag",
+        "appearance-lab",
+        "checkable-tag",
+        "icon-tag",
+        "closable-tag",
+        "loading-tag"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "theme-color-tag",
+        "round-tag",
+        "custom-color-tag",
+        "appearance-lab",
+        "checkable-tag",
+        "icon-tag",
+        "closable-tag",
+        "loading-tag"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "tag"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/tag?language=zh-CN&platform=pc&replace=tag",
+      "width": 346
+    },
+    {
+      "family": "textarea",
+      "language": "en-US",
+      "expectedIds": [
+        "demo-1",
+        "demo-3",
+        "demo-4",
+        "demo-6",
+        "appearance-lab",
+        "demo-5",
+        "state-lab",
+        "body-contract"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "demo-1",
+        "demo-3",
+        "demo-4",
+        "demo-6",
+        "appearance-lab",
+        "demo-5",
+        "state-lab",
+        "body-contract"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "textarea"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/textarea?language=en-US&platform=pc&replace=textarea",
+      "width": 346
+    },
+    {
+      "family": "textarea",
+      "language": "zh-CN",
+      "expectedIds": [
+        "demo-1",
+        "demo-3",
+        "demo-4",
+        "demo-6",
+        "appearance-lab",
+        "demo-5",
+        "state-lab",
+        "body-contract"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "demo-1",
+        "demo-3",
+        "demo-4",
+        "demo-6",
+        "appearance-lab",
+        "demo-5",
+        "state-lab",
+        "body-contract"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "textarea"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/textarea?language=zh-CN&platform=pc&replace=textarea",
+      "width": 346
+    },
+    {
+      "family": "themes",
+      "language": "en-US",
+      "expectedIds": [
+        "theme-1",
+        "theme-2",
+        "theme-3"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "theme-1",
+        "theme-2",
+        "theme-3"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "themes"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/themes?language=en-US&platform=pc&replace=themes",
+      "width": 346
+    },
+    {
+      "family": "themes",
+      "language": "zh-CN",
+      "expectedIds": [
+        "theme-1",
+        "theme-2",
+        "theme-3"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "theme-1",
+        "theme-2",
+        "theme-3"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "themes"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/themes?language=zh-CN&platform=pc&replace=themes",
+      "width": 346
+    },
+    {
+      "family": "time-range",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "field-appearance",
+        "format-comparison",
+        "time-fields",
+        "separator",
+        "next-day",
+        "format-model",
+        "step",
+        "bounds",
+        "wheel-limits",
+        "with-form-item",
+        "panel-behavior",
+        "picker-seconds",
+        "state-lab",
+        "text-entry",
+        "default-state",
+        "selection-events",
+        "open-trigger-target"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "field-appearance",
+        "format-comparison",
+        "time-fields",
+        "separator",
+        "next-day",
+        "format-model",
+        "step",
+        "bounds",
+        "wheel-limits",
+        "with-form-item",
+        "panel-behavior",
+        "picker-seconds",
+        "state-lab",
+        "text-entry",
+        "default-state",
+        "selection-events",
+        "open-trigger-target"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "time-range"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/time-range?language=en-US&platform=pc&replace=time-range",
+      "width": 346
+    },
+    {
+      "family": "time-range",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "field-appearance",
+        "format-comparison",
+        "time-fields",
+        "separator",
+        "next-day",
+        "format-model",
+        "step",
+        "bounds",
+        "wheel-limits",
+        "with-form-item",
+        "panel-behavior",
+        "picker-seconds",
+        "state-lab",
+        "text-entry",
+        "default-state",
+        "selection-events",
+        "open-trigger-target"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "field-appearance",
+        "format-comparison",
+        "time-fields",
+        "separator",
+        "next-day",
+        "format-model",
+        "step",
+        "bounds",
+        "wheel-limits",
+        "with-form-item",
+        "panel-behavior",
+        "picker-seconds",
+        "state-lab",
+        "text-entry",
+        "default-state",
+        "selection-events",
+        "open-trigger-target"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "time-range"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/time-range?language=zh-CN&platform=pc&replace=time-range",
+      "width": 346
+    },
+    {
+      "family": "time",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "control-sizes",
+        "field-appearance",
+        "format-comparison",
+        "time-fields",
+        "ampm-formats",
+        "format-model",
+        "step",
+        "bounds",
+        "wheel-limits",
+        "picker-basic",
+        "panel-behavior",
+        "picker-readonly",
+        "picker-hour24",
+        "picker-seconds",
+        "picker-limit",
+        "picker-actions",
+        "state-lab",
+        "text-entry",
+        "default-state",
+        "selection-events",
+        "multiple-fields",
+        "with-form-item",
+        "open-trigger-target"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "control-sizes",
+        "field-appearance",
+        "format-comparison",
+        "time-fields",
+        "ampm-formats",
+        "format-model",
+        "step",
+        "bounds",
+        "wheel-limits",
+        "picker-basic",
+        "panel-behavior",
+        "picker-readonly",
+        "picker-hour24",
+        "picker-seconds",
+        "picker-limit",
+        "picker-actions",
+        "state-lab",
+        "text-entry",
+        "default-state",
+        "selection-events",
+        "multiple-fields",
+        "with-form-item",
+        "open-trigger-target"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "time"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/time?language=en-US&platform=pc&replace=time",
+      "width": 346
+    },
+    {
+      "family": "time",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "control-sizes",
+        "field-appearance",
+        "format-comparison",
+        "time-fields",
+        "ampm-formats",
+        "format-model",
+        "step",
+        "bounds",
+        "wheel-limits",
+        "picker-basic",
+        "panel-behavior",
+        "picker-readonly",
+        "picker-hour24",
+        "picker-seconds",
+        "picker-limit",
+        "picker-actions",
+        "state-lab",
+        "text-entry",
+        "default-state",
+        "selection-events",
+        "multiple-fields",
+        "with-form-item",
+        "open-trigger-target"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "control-sizes",
+        "field-appearance",
+        "format-comparison",
+        "time-fields",
+        "ampm-formats",
+        "format-model",
+        "step",
+        "bounds",
+        "wheel-limits",
+        "picker-basic",
+        "panel-behavior",
+        "picker-readonly",
+        "picker-hour24",
+        "picker-seconds",
+        "picker-limit",
+        "picker-actions",
+        "state-lab",
+        "text-entry",
+        "default-state",
+        "selection-events",
+        "multiple-fields",
+        "with-form-item",
+        "open-trigger-target"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "time"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/time?language=zh-CN&platform=pc&replace=time",
+      "width": 346
+    },
+    {
+      "family": "tooltip",
+      "language": "en-US",
+      "expectedIds": [
+        "basic-usage",
+        "custom-color",
+        "appearance-lab",
+        "placement",
+        "offset",
+        "trigger",
+        "content-slot",
+        "events",
+        "disabled"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic-usage",
+        "custom-color",
+        "appearance-lab",
+        "placement",
+        "offset",
+        "trigger",
+        "content-slot",
+        "events",
+        "disabled"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "tooltip"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/tooltip?language=en-US&platform=pc&replace=tooltip",
+      "width": 346
+    },
+    {
+      "family": "tooltip",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic-usage",
+        "custom-color",
+        "appearance-lab",
+        "placement",
+        "offset",
+        "trigger",
+        "content-slot",
+        "events",
+        "disabled"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic-usage",
+        "custom-color",
+        "appearance-lab",
+        "placement",
+        "offset",
+        "trigger",
+        "content-slot",
+        "events",
+        "disabled"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "tooltip"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/tooltip?language=zh-CN&platform=pc&replace=tooltip",
+      "width": 346
+    },
+    {
+      "family": "trigger",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "placement",
+        "controlled"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "placement",
+        "controlled"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "trigger"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/trigger?language=en-US&platform=pc&replace=trigger",
+      "width": 346
+    },
+    {
+      "family": "trigger",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "placement",
+        "controlled"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "placement",
+        "controlled"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "trigger"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/trigger?language=zh-CN&platform=pc&replace=trigger",
+      "width": 346
+    },
+    {
+      "family": "typography",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "typography"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/typography?language=en-US&platform=pc&replace=typography",
+      "width": 346
+    },
+    {
+      "family": "typography",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "typography"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/typography?language=zh-CN&platform=pc&replace=typography",
+      "width": 346
+    },
+    {
+      "family": "upload",
+      "language": "en-US",
+      "expectedIds": [
+        "read-only",
+        "basic-usage",
+        "state-controls",
+        "state",
+        "state-lab",
+        "custom-surface",
+        "custom-render",
+        "remove-button-slot",
+        "style",
+        "custom-preview",
+        "preview",
+        "directory",
+        "click-action",
+        "clipboard",
+        "replacement-validation",
+        "before-add",
+        "before-read",
+        "selection-limits-comparison",
+        "external-state",
+        "use-progress",
+        "queue-request",
+        "before-remove",
+        "prepare-request",
+        "metadata-request",
+        "late-request"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "read-only",
+        "basic-usage",
+        "state-controls",
+        "state",
+        "state-lab",
+        "custom-surface",
+        "custom-render",
+        "remove-button-slot",
+        "style",
+        "custom-preview",
+        "preview",
+        "directory",
+        "click-action",
+        "clipboard",
+        "replacement-validation",
+        "before-add",
+        "before-read",
+        "selection-limits-comparison",
+        "external-state",
+        "use-progress",
+        "queue-request",
+        "before-remove",
+        "prepare-request",
+        "metadata-request",
+        "late-request"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "upload"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/upload?language=en-US&platform=pc&replace=upload",
+      "width": 346
+    },
+    {
+      "family": "upload",
+      "language": "zh-CN",
+      "expectedIds": [
+        "read-only",
+        "basic-usage",
+        "state-controls",
+        "state",
+        "state-lab",
+        "custom-surface",
+        "custom-render",
+        "remove-button-slot",
+        "style",
+        "custom-preview",
+        "preview",
+        "directory",
+        "click-action",
+        "clipboard",
+        "replacement-validation",
+        "before-add",
+        "before-read",
+        "selection-limits-comparison",
+        "external-state",
+        "use-progress",
+        "queue-request",
+        "before-remove",
+        "prepare-request",
+        "metadata-request",
+        "late-request"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "read-only",
+        "basic-usage",
+        "state-controls",
+        "state",
+        "state-lab",
+        "custom-surface",
+        "custom-render",
+        "remove-button-slot",
+        "style",
+        "custom-preview",
+        "preview",
+        "directory",
+        "click-action",
+        "clipboard",
+        "replacement-validation",
+        "before-add",
+        "before-read",
+        "selection-limits-comparison",
+        "external-state",
+        "use-progress",
+        "queue-request",
+        "before-remove",
+        "prepare-request",
+        "metadata-request",
+        "late-request"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "upload"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/upload?language=zh-CN&platform=pc&replace=upload",
+      "width": 346
+    },
+    {
+      "family": "utilities",
+      "language": "en-US",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "utilities"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/utilities?language=en-US&platform=pc&replace=utilities",
+      "width": 346
+    },
+    {
+      "family": "utilities",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "utilities"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/utilities?language=zh-CN&platform=pc&replace=utilities",
+      "width": 346
+    },
+    {
+      "family": "verification-code",
+      "language": "en-US",
+      "expectedIds": [
+        "basic",
+        "appearance",
+        "appearance-lab",
+        "states",
+        "formatting",
+        "state-lab"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "basic",
+        "appearance",
+        "appearance-lab",
+        "states",
+        "formatting",
+        "state-lab"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "verification-code"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/verification-code?language=en-US&platform=pc&replace=verification-code",
+      "width": 346
+    },
+    {
+      "family": "verification-code",
+      "language": "zh-CN",
+      "expectedIds": [
+        "basic",
+        "appearance",
+        "appearance-lab",
+        "states",
+        "formatting",
+        "state-lab"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "basic",
+        "appearance",
+        "appearance-lab",
+        "states",
+        "formatting",
+        "state-lab"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "verification-code"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/verification-code?language=zh-CN&platform=pc&replace=verification-code",
+      "width": 346
+    },
+    {
+      "family": "watermark",
+      "language": "en-US",
+      "expectedIds": [
+        "text-watermark",
+        "multiline",
+        "image-watermark",
+        "fullscreen",
+        "geometry-comparison"
+      ],
+      "display": "block",
+      "group": "Basic examples",
+      "ids": [
+        "text-watermark",
+        "multiline",
+        "image-watermark",
+        "fullscreen",
+        "geometry-comparison"
+      ],
+      "lang": "en-US",
+      "leaking": [],
+      "owners": [
+        "watermark"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/watermark?language=en-US&platform=pc&replace=watermark",
+      "width": 346
+    },
+    {
+      "family": "watermark",
+      "language": "zh-CN",
+      "expectedIds": [
+        "text-watermark",
+        "multiline",
+        "image-watermark",
+        "fullscreen",
+        "geometry-comparison"
+      ],
+      "display": "block",
+      "group": "基础示例",
+      "ids": [
+        "text-watermark",
+        "multiline",
+        "image-watermark",
+        "fullscreen",
+        "geometry-comparison"
+      ],
+      "lang": "zh-CN",
+      "leaking": [],
+      "owners": [
+        "watermark"
+      ],
+      "scroll": 346,
+      "url": "http://127.0.0.1:8080/mobile.html#/watermark?language=zh-CN&platform=pc&replace=watermark",
+      "width": 346
+    }
+  ]
+}

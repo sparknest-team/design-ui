@@ -1,0 +1,37 @@
+{
+  "library": "cedar",
+  "generatedAt": "2026-10-28T17:56:07.310Z",
+  "nativeDeviceAcceptance": false,
+  "latestTwoVersionsAccepted": false,
+  "completeEngineMatrix": false,
+  "evidenceOnly": false,
+  "results": [
+    {
+      "name": "chromium",
+      "startedAt": "2026-10-28T17:50:17.445Z",
+      "completedAt": "2026-10-28T17:56:07.310Z",
+      "passed": true,
+      "exitCode": 0,
+      "evidence": "/private/tmp/cedar-maple-compatibility-20261029-2jkkvvre/cedar-design-web/artifacts/docs-components/cedar/chromium",
+      "verified": {
+        "browser": {
+          "name": "chromium",
+          "engine": "chromium",
+          "launchOptions": {},
+          "version": "151.0.7922.34",
+          "platform": "darwin",
+          "architecture": "arm64",
+          "recordedAt": "2026-10-28T17:56:03.948Z",
+          "evidenceType": "automated-engine-regression",
+          "nativeDeviceAcceptance": false,
+          "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+          "gestureInput": "CDP touch injection"
+        },
+        "componentCases": 198,
+        "guideCases": 14,
+        "navigationCases": 4,
+        "passed": true
+      }
+    }
+  ]
+}

@@ -6,19 +6,9 @@
       "en": "Basic usage and subtitle"
     },
     {
-      "name": "variant",
-      "zh": "变体与阴影",
-      "en": "Variants and elevation"
-    },
-    {
-      "name": "size",
-      "zh": "尺寸",
-      "en": "Sizes"
-    },
-    {
-      "name": "no-padding",
-      "zh": "自定义标题区域",
-      "en": "Custom header"
+      "name": "appearance-lab",
+      "zh": "外观组合",
+      "en": "Appearance configuration comparison"
     },
     {
       "name": "hoverable",
@@ -36,6 +26,16 @@
       "en": "Long title and tooltip"
     },
     {
+      "name": "no-padding",
+      "zh": "自定义标题区域",
+      "en": "Custom header"
+    },
+    {
+      "name": "slots",
+      "zh": "内容插槽",
+      "en": "Content slots"
+    },
+    {
       "name": "ripple",
       "zh": "水波与点击事件",
       "en": "Ripple and click"
@@ -46,24 +46,9 @@
       "en": "Floating and close"
     },
     {
-      "name": "appearance-lab",
-      "zh": "外观组合",
-      "en": "appearance-lab"
-    },
-    {
-      "name": "slots",
-      "zh": "内容插槽",
-      "en": "Content slots"
-    },
-    {
       "name": "scheduler-lifecycle",
       "zh": "Floating scheduler lifecycle / 浮起调度生命周期",
-      "en": "scheduler-lifecycle"
-    },
-    {
-      "name": "api-review",
-      "zh": "功能调试",
-      "en": "Feature playground"
+      "en": "Floating scheduler lifecycle"
     }
   ],
   "badge": [
@@ -73,14 +58,19 @@
       "en": "Basic usage"
     },
     {
-      "name": "size",
-      "zh": "五种尺寸",
-      "en": "Five sizes"
+      "name": "color",
+      "zh": "状态和颜色",
+      "en": "Statuses and colors"
     },
     {
-      "name": "variant",
-      "zh": "实心与描边",
-      "en": "Solid and outline"
+      "name": "appearance-lab",
+      "zh": "外观组合",
+      "en": "Appearance configuration comparison"
+    },
+    {
+      "name": "position",
+      "zh": "位置与偏移",
+      "en": "Positions and offsets"
     },
     {
       "name": "inline",
@@ -93,24 +83,9 @@
       "en": "Dot badges"
     },
     {
-      "name": "content",
-      "zh": "自定义内容",
-      "en": "Custom content"
-    },
-    {
       "name": "max",
       "zh": "最大值与零值",
       "en": "Maximum and zero"
-    },
-    {
-      "name": "color",
-      "zh": "状态和颜色",
-      "en": "Statuses and colors"
-    },
-    {
-      "name": "position",
-      "zh": "位置与偏移",
-      "en": "Positions and offsets"
     },
     {
       "name": "show",
@@ -118,14 +93,9 @@
       "en": "Show and hide"
     },
     {
-      "name": "appearance-lab",
-      "zh": "外观组合",
-      "en": "appearance-lab"
-    },
-    {
-      "name": "api-review",
-      "zh": "功能调试",
-      "en": "Feature playground"
+      "name": "content",
+      "zh": "自定义内容",
+      "en": "Custom content"
     }
   ],
   "affix": [
@@ -135,19 +105,9 @@
       "en": "Basic usage"
     },
     {
-      "name": "top",
-      "zh": "顶部偏移",
-      "en": "Top offset"
-    },
-    {
-      "name": "bottom",
-      "zh": "底部偏移",
-      "en": "Bottom offset"
-    },
-    {
-      "name": "container",
-      "zh": "指定滚动容器",
-      "en": "Scroll container"
+      "name": "offset-container-comparison",
+      "zh": "吸附方向、偏移与容器",
+      "en": "Affix direction, offset and container"
     },
     {
       "name": "fix-change",
@@ -158,11 +118,6 @@
       "name": "controls",
       "zh": "禁用、CSS 模式与手动更新",
       "en": "Disabled, CSS mode and manual update"
-    },
-    {
-      "name": "api-review",
-      "zh": "功能调试",
-      "en": "Feature playground"
     }
   ],
   "switch": [
@@ -172,29 +127,9 @@
       "en": "Controlled and default value"
     },
     {
-      "name": "size",
-      "zh": "三种尺寸",
-      "en": "Three sizes"
-    },
-    {
-      "name": "disabled",
-      "zh": "禁用",
-      "en": "Disabled"
-    },
-    {
-      "name": "readonly",
-      "zh": "只读",
-      "en": "Read only"
-    },
-    {
-      "name": "type",
-      "zh": "四种变体",
-      "en": "Four variants"
-    },
-    {
-      "name": "loading",
-      "zh": "加载中",
-      "en": "Loading"
+      "name": "appearance-lab",
+      "zh": "外观组合",
+      "en": "Appearance configuration comparison"
     },
     {
       "name": "custom-color",
@@ -217,6 +152,21 @@
       "en": "Ripple and handle elevation"
     },
     {
+      "name": "state-lab",
+      "zh": "交互状态切换",
+      "en": "Interaction state comparison"
+    },
+    {
+      "name": "loading",
+      "zh": "加载中",
+      "en": "Loading"
+    },
+    {
+      "name": "events",
+      "zh": "焦点与事件顺序",
+      "en": "Focus and event order"
+    },
+    {
       "name": "custom-value",
       "zh": "自定义值与事件",
       "en": "Custom values and events"
@@ -225,26 +175,6 @@
       "name": "switch-interception",
       "zh": "异步允许、阻止与异常",
       "en": "Async allow, deny and rejection"
-    },
-    {
-      "name": "events",
-      "zh": "焦点与事件顺序",
-      "en": "Focus and event order"
-    },
-    {
-      "name": "appearance-lab",
-      "zh": "外观组合",
-      "en": "appearance-lab"
-    },
-    {
-      "name": "state-lab",
-      "zh": "交互状态切换",
-      "en": "state-lab"
-    },
-    {
-      "name": "api-review",
-      "zh": "功能调试",
-      "en": "Feature playground"
     }
   ],
   "button": [
@@ -256,7 +186,7 @@
     {
       "name": "variants",
       "zh": "变体、状态与尺寸",
-      "en": "Variants, statuses and sizes"
+      "en": "Four variants"
     },
     {
       "name": "size",
@@ -269,29 +199,19 @@
       "en": "Disabled buttons and links"
     },
     {
-      "name": "loading",
-      "zh": "加载动画、布局与尺寸",
-      "en": "Loading animations, layouts and sizes"
+      "name": "custom-color",
+      "zh": "自定义颜色",
+      "en": "Colors, ripple and elevation"
     },
     {
-      "name": "loading-appearance",
-      "zh": "加载指示器样式",
-      "en": "Loading indicator appearance"
-    },
-    {
-      "name": "auto-loading",
-      "zh": "同步、异步与失败恢复",
-      "en": "Sync, async and rejection recovery"
+      "name": "icons",
+      "zh": "图标与图文布局",
+      "en": "Icons and label layouts"
     },
     {
       "name": "block",
       "zh": "块级按钮",
       "en": "Block buttons"
-    },
-    {
-      "name": "custom-color",
-      "zh": "自定义颜色",
-      "en": "Custom colors"
     },
     {
       "name": "button-group",
@@ -301,12 +221,12 @@
     {
       "name": "button-group-layout",
       "zh": "按钮组布局",
-      "en": "Group layouts"
+      "en": "Button Group Layout"
     },
     {
       "name": "button-group-content",
       "zh": "按钮组图文与加载",
-      "en": "Group icons and loading"
+      "en": "Button Group Content"
     },
     {
       "name": "native-events",
@@ -314,19 +234,24 @@
       "en": "Native form, focus and touch events"
     },
     {
+      "name": "loading",
+      "zh": "加载动画、布局与尺寸",
+      "en": "Loading layouts and animations"
+    },
+    {
+      "name": "loading-appearance",
+      "zh": "加载指示器样式",
+      "en": "Loading Appearance"
+    },
+    {
       "name": "feedback",
       "zh": "水波与阴影反馈",
-      "en": "Ripple and elevation feedback"
+      "en": "Feedback"
     },
     {
-      "name": "icons",
-      "zh": "图标与图文布局",
-      "en": "icons"
-    },
-    {
-      "name": "api-review",
-      "zh": "功能调试",
-      "en": "Feature playground"
+      "name": "auto-loading",
+      "zh": "同步、异步与失败恢复",
+      "en": "Sync, async and rejection recovery"
     }
   ],
   "grid": [
@@ -336,24 +261,19 @@
       "en": "Columns, spans and offsets"
     },
     {
-      "name": "collapse",
-      "zh": "折叠行数与后缀插槽",
-      "en": "Collapsed rows and suffix slot"
-    },
-    {
       "name": "responsive",
       "zh": "响应式列数、间距与跨列",
       "en": "Responsive columns, gaps and spans"
     },
     {
+      "name": "collapse",
+      "zh": "折叠行数与后缀插槽",
+      "en": "Collapsed rows and suffix slot"
+    },
+    {
       "name": "dynamic",
       "zh": "动态插入、删除与排序",
       "en": "Insert, remove and reorder"
-    },
-    {
-      "name": "api-review",
-      "zh": "功能调试",
-      "en": "Feature playground"
     }
   ],
   "row": [
@@ -385,12 +305,7 @@
     {
       "name": "layout-lab",
       "zh": "布局与对齐",
-      "en": "layout-lab"
-    },
-    {
-      "name": "api-review",
-      "zh": "功能调试",
-      "en": "Feature playground"
+      "en": "Layout Lab"
     }
   ],
   "col": [
@@ -398,11 +313,6 @@
       "name": "basic",
       "zh": "列宽与偏移",
       "en": "Span and offset"
-    },
-    {
-      "name": "order",
-      "zh": "排序与零值恢复",
-      "en": "Ordering and resetting to zero"
     },
     {
       "name": "flex",
@@ -415,9 +325,9 @@
       "en": "Responsive objects and visibility"
     },
     {
-      "name": "api-review",
-      "zh": "功能调试",
-      "en": "Feature playground"
+      "name": "order",
+      "zh": "排序与零值恢复",
+      "en": "Ordering and resetting to zero"
     }
   ],
   "pagination": [
@@ -437,34 +347,19 @@
       "en": "Disabled and hide on single page"
     },
     {
-      "name": "more-page-size",
-      "zh": "更多页码与省略跳转",
-      "en": "Page window and ellipsis"
-    },
-    {
-      "name": "show-page-size",
-      "zh": "每页条数与公共选择器配置",
-      "en": "Page size and shared selector options"
-    },
-    {
-      "name": "show-jumper",
-      "zh": "跳转与前后缀插槽",
-      "en": "Jumper and prefix/suffix slots"
-    },
-    {
       "name": "simple",
       "zh": "简洁模式",
       "en": "Simple mode"
     },
     {
-      "name": "show-total",
-      "zh": "自定义总数插槽",
-      "en": "Custom total slot"
+      "name": "more-page-size",
+      "zh": "更多页码与省略跳转",
+      "en": "Page window and ellipsis"
     },
     {
-      "name": "all",
-      "zh": "完整功能交互",
-      "en": "Full feature controls"
+      "name": "auxiliary-controls-comparison",
+      "zh": "总数、每页条数与跳页",
+      "en": "Totals, page sizes and jumpers"
     },
     {
       "name": "custom-page-button",
@@ -472,19 +367,19 @@
       "en": "Custom page slots and styles"
     },
     {
-      "name": "auto-adjust",
-      "zh": "数据变化与自动调整",
-      "en": "Data changes and auto adjustment"
-    },
-    {
       "name": "responsive",
       "zh": "容器宽度与窄屏布局",
       "en": "Container width and compact layout"
     },
     {
-      "name": "api-review",
-      "zh": "功能调试",
-      "en": "Feature playground"
+      "name": "auto-adjust",
+      "zh": "数据变化与自动调整",
+      "en": "Data changes and auto adjustment"
+    },
+    {
+      "name": "all",
+      "zh": "完整功能交互",
+      "en": "Full feature controls"
     }
   ],
   "avatar": [
@@ -494,49 +389,14 @@
       "en": "Basic usage"
     },
     {
-      "name": "size",
-      "zh": "尺寸",
-      "en": "Size"
-    },
-    {
-      "name": "shape",
-      "zh": "形状",
-      "en": "Shape"
-    },
-    {
-      "name": "auto-fix",
-      "zh": "文字自适应",
-      "en": "Auto-fit text"
-    },
-    {
-      "name": "image",
-      "zh": "图片头像",
-      "en": "Image avatar"
-    },
-    {
-      "name": "fit",
-      "zh": "图片填充",
-      "en": "Image fit"
-    },
-    {
-      "name": "fallback",
-      "zh": "加载与回退",
-      "en": "Loading and fallback"
+      "name": "shape-size-comparison",
+      "zh": "尺寸与形状对比",
+      "en": "Size and shape comparison"
     },
     {
       "name": "style",
       "zh": "颜色与边框",
-      "en": "Color and border"
-    },
-    {
-      "name": "group",
-      "zh": "头像组",
-      "en": "Avatar group"
-    },
-    {
-      "name": "group-vertical",
-      "zh": "纵向头像组",
-      "en": "Vertical group"
+      "en": "Style"
     },
     {
       "name": "hoverable",
@@ -544,14 +404,34 @@
       "en": "Hoverable"
     },
     {
-      "name": "trigger",
-      "zh": "交互图标",
-      "en": "Trigger icon"
+      "name": "group-comparison",
+      "zh": "头像组排列与溢出",
+      "en": "Group direction and overflow"
     },
     {
-      "name": "api-review",
-      "zh": "功能调试",
-      "en": "Feature playground"
+      "name": "auto-fix",
+      "zh": "文字自适应",
+      "en": "Auto Fix"
+    },
+    {
+      "name": "image",
+      "zh": "图片头像",
+      "en": "Image"
+    },
+    {
+      "name": "fit",
+      "zh": "图片填充",
+      "en": "Fit"
+    },
+    {
+      "name": "fallback",
+      "zh": "加载与回退",
+      "en": "Fallback"
+    },
+    {
+      "name": "trigger",
+      "zh": "交互图标",
+      "en": "Trigger"
     }
   ],
   "collapse": [
@@ -566,29 +446,29 @@
       "en": "Disabled"
     },
     {
+      "name": "nested",
+      "zh": "嵌套面板",
+      "en": "Nested"
+    },
+    {
+      "name": "offset",
+      "zh": "展开间距",
+      "en": "Offset"
+    },
+    {
+      "name": "icon-position",
+      "zh": "展开图标位置",
+      "en": "Icon Position"
+    },
+    {
       "name": "accordion",
       "zh": "手风琴模式",
       "en": "Accordion"
     },
     {
-      "name": "nested",
-      "zh": "嵌套面板",
-      "en": "Nested panels"
-    },
-    {
-      "name": "border-less",
-      "zh": "无边框模式",
-      "en": "Borderless"
-    },
-    {
-      "name": "divider",
-      "zh": "分割线",
-      "en": "Divider"
-    },
-    {
-      "name": "offset",
-      "zh": "展开间距",
-      "en": "Expanded offset"
+      "name": "border-comparison",
+      "zh": "边框与分隔线",
+      "en": "Borders and dividers"
     },
     {
       "name": "extra",
@@ -598,32 +478,22 @@
     {
       "name": "expand-icon",
       "zh": "展开图标",
-      "en": "Expand icon"
-    },
-    {
-      "name": "custom",
-      "zh": "自定义样式",
-      "en": "Custom style"
-    },
-    {
-      "name": "icon-position",
-      "zh": "展开图标位置",
-      "en": "Icon position"
+      "en": "Expand Icon"
     },
     {
       "name": "destroy",
       "zh": "隐藏时销毁",
-      "en": "Destroy on hide"
+      "en": "Destroy"
+    },
+    {
+      "name": "custom",
+      "zh": "自定义样式",
+      "en": "Custom"
     },
     {
       "name": "toggle-all",
       "zh": "切换全部",
-      "en": "Toggle all"
-    },
-    {
-      "name": "api-review",
-      "zh": "功能调试",
-      "en": "Feature playground"
+      "en": "Toggle All"
     }
   ]
 }

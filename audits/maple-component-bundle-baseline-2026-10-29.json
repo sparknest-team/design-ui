@@ -1,0 +1,4835 @@
+{
+  "generatedAt": "2026-10-29T04:46:25.817396+00:00",
+  "scope": "Current live Maple source, same Vue/Babel/esbuild compiler for current and HEAD comparison; HEAD is diagnostic only, never compatibility acceptance.",
+  "head": "f2c60197852275839bd1cfbd41116e8e27d4d41b",
+  "policy": "Entry-specific minified JS/gzip caps. Keep existing caps where current output fits; raise only to exact measured output for reviewed current functionality, without percentage headroom. Three new entries registered. No runtime dependency or size assertion removed.",
+  "growthSources": [
+    "Reading direction inheritance, DOM direction observation and portal propagation",
+    "Field presentation, async option requests, selection/commit cancellation and focus ownership",
+    "Calendar viewport, timezone and range implementations",
+    "New NavMenu, PeopleSelect and SafeArea public entry points",
+    "Small gzip-only deltas can occur despite smaller raw output after module/name changes"
+  ],
+  "counts": {
+    "entries": 94,
+    "newEntries": 3,
+    "changedExistingCaps": 73
+  },
+  "priorBaselineSha256": "e5523afde8fcbe11680a2086a953167455e120c5a40d5d352d332962110299ee",
+  "rows": [
+    {
+      "name": "action-sheet",
+      "previousCap": {
+        "name": "action-sheet",
+        "bytes": 36673,
+        "gzip": 13249
+      },
+      "currentMeasured": {
+        "name": "action-sheet",
+        "bytes": 41918,
+        "gzip": 15349,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 41918,
+        "gzip": 15349
+      },
+      "headMeasured": {
+        "name": "action-sheet",
+        "bytes": 36054,
+        "gzip": 13180,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2876
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 996
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/action-sheet",
+          "bytesDelta": 315
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 52
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/dom.ts",
+          "bytesDelta": 3
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useChildren.ts",
+          "bytesDelta": 2
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/ripple",
+          "bytesDelta": 2
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/array.ts",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/predicates.ts",
+          "bytesDelta": 1
+        }
+      ]
+    },
+    {
+      "name": "affix",
+      "previousCap": {
+        "name": "affix",
+        "bytes": 7284,
+        "gzip": 3042
+      },
+      "currentMeasured": {
+        "name": "affix",
+        "bytes": 7196,
+        "gzip": 2995,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 7284,
+        "gzip": 3042
+      },
+      "headMeasured": {
+        "name": "affix",
+        "bytes": 7133,
+        "gzip": 2975,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "previousCap": {
+        "name": "alert",
+        "bytes": 11849,
+        "gzip": 3062
+      },
+      "currentMeasured": {
+        "name": "alert",
+        "bytes": 11844,
+        "gzip": 3082,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 11849,
+        "gzip": 3082
+      },
+      "headMeasured": {
+        "name": "alert",
+        "bytes": 11781,
+        "gzip": 3058,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "auto-complete",
+      "previousCap": {
+        "name": "auto-complete",
+        "bytes": 150956,
+        "gzip": 48101
+      },
+      "currentMeasured": {
+        "name": "auto-complete",
+        "bytes": 160530,
+        "gzip": 52021,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 160530,
+        "gzip": 52021
+      },
+      "headMeasured": {
+        "name": "auto-complete",
+        "bytes": 147838,
+        "gzip": 47565,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2871
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2521
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/auto-complete",
+          "bytesDelta": 486
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 485
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/select",
+          "bytesDelta": 436
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 277
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 265
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input",
+          "bytesDelta": 232
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selection-scrollbar",
+          "bytesDelta": 111
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/virtual-list-v2",
+          "bytesDelta": -11
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "previousCap": {
+        "name": "avatar",
+        "bytes": 35970,
+        "gzip": 12618
+      },
+      "currentMeasured": {
+        "name": "avatar",
+        "bytes": 37488,
+        "gzip": 13216,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 37488,
+        "gzip": 13216
+      },
+      "headMeasured": {
+        "name": "avatar",
+        "bytes": 35581,
+        "gzip": 12481,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 485
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        }
+      ]
+    },
+    {
+      "name": "back-top",
+      "previousCap": {
+        "name": "back-top",
+        "bytes": 7836,
+        "gzip": 3541
+      },
+      "currentMeasured": {
+        "name": "back-top",
+        "bytes": 8732,
+        "gzip": 3980,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 8732,
+        "gzip": 3980
+      },
+      "headMeasured": {
+        "name": "back-top",
+        "bytes": 7248,
+        "gzip": 3333,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1325
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/back-top",
+          "bytesDelta": 91
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 65
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-to-top",
+          "bytesDelta": 3
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "previousCap": {
+        "name": "badge",
+        "bytes": 4617,
+        "gzip": 1892
+      },
+      "currentMeasured": {
+        "name": "badge",
+        "bytes": 4523,
+        "gzip": 1862,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 4617,
+        "gzip": 1892
+      },
+      "headMeasured": {
+        "name": "badge",
+        "bytes": 4549,
+        "gzip": 1883,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/badge",
+          "bytesDelta": -89
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "previousCap": {
+        "name": "breadcrumb",
+        "bytes": 61635,
+        "gzip": 20574
+      },
+      "currentMeasured": {
+        "name": "breadcrumb",
+        "bytes": 64179,
+        "gzip": 21649,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 64179,
+        "gzip": 21649
+      },
+      "headMeasured": {
+        "name": "breadcrumb",
+        "bytes": 62091,
+        "gzip": 20814,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1336
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 485
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/menu",
+          "bytesDelta": 183
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "previousCap": {
+        "name": "button",
+        "bytes": 22853,
+        "gzip": 8116
+      },
+      "currentMeasured": {
+        "name": "button",
+        "bytes": 22665,
+        "gzip": 8167,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 22853,
+        "gzip": 8167
+      },
+      "headMeasured": {
+        "name": "button",
+        "bytes": 22602,
+        "gzip": 8150,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "previousCap": {
+        "name": "card",
+        "bytes": 37236,
+        "gzip": 12779
+      },
+      "currentMeasured": {
+        "name": "card",
+        "bytes": 37040,
+        "gzip": 12856,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 37236,
+        "gzip": 12856
+      },
+      "headMeasured": {
+        "name": "card",
+        "bytes": 36977,
+        "gzip": 12837,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "previousCap": {
+        "name": "carousel",
+        "bytes": 26784,
+        "gzip": 8878
+      },
+      "currentMeasured": {
+        "name": "carousel",
+        "bytes": 28642,
+        "gzip": 9594,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 28642,
+        "gzip": 9594
+      },
+      "headMeasured": {
+        "name": "carousel",
+        "bytes": 26777,
+        "gzip": 8892,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/carousel",
+          "bytesDelta": 207
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "cascader",
+      "previousCap": {
+        "name": "cascader",
+        "bytes": 187480,
+        "gzip": 57223
+      },
+      "currentMeasured": {
+        "name": "cascader",
+        "bytes": 209063,
+        "gzip": 65334,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 209063,
+        "gzip": 65334
+      },
+      "headMeasured": {
+        "name": "cascader",
+        "bytes": 195024,
+        "gzip": 60201,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2850
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2839
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/cascader",
+          "bytesDelta": 694
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selection-field",
+          "bytesDelta": 621
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 511
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/picker-field",
+          "bytesDelta": 473
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 277
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 266
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/checkbox",
+          "bytesDelta": 217
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input",
+          "bytesDelta": 214
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selection-scrollbar",
+          "bytesDelta": 116
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selected-options",
+          "bytesDelta": 10
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/field-decorator",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/tooltip",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/button",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/empty",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/virtual-list-v2",
+          "bytesDelta": -11
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/tag",
+          "bytesDelta": -41
+        }
+      ]
+    },
+    {
+      "name": "cell",
+      "previousCap": {
+        "name": "cell",
+        "bytes": 12172,
+        "gzip": 4723
+      },
+      "currentMeasured": {
+        "name": "cell",
+        "bytes": 11960,
+        "gzip": 4782,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 12172,
+        "gzip": 4782
+      },
+      "headMeasured": {
+        "name": "cell",
+        "bytes": 11897,
+        "gzip": 4762,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "previousCap": {
+        "name": "checkbox",
+        "bytes": 68595,
+        "gzip": 23150
+      },
+      "currentMeasured": {
+        "name": "checkbox",
+        "bytes": 79121,
+        "gzip": 27038,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 79121,
+        "gzip": 27038
+      },
+      "headMeasured": {
+        "name": "checkbox",
+        "bytes": 67891,
+        "gzip": 23047,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2878
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2834
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/checkbox",
+          "bytesDelta": 216
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 75
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/ripple",
+          "bytesDelta": 9
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/button",
+          "bytesDelta": 8
+        }
+      ]
+    },
+    {
+      "name": "code",
+      "previousCap": {
+        "name": "code",
+        "bytes": 2425,
+        "gzip": 1236
+      },
+      "currentMeasured": {
+        "name": "code",
+        "bytes": 2605,
+        "gzip": 1347,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 2605,
+        "gzip": 1347
+      },
+      "headMeasured": {
+        "name": "code",
+        "bytes": 2542,
+        "gzip": 1321,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "col",
+      "previousCap": {
+        "name": "col",
+        "bytes": 2809,
+        "gzip": 1390
+      },
+      "currentMeasured": {
+        "name": "col",
+        "bytes": 2809,
+        "gzip": 1402,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 2809,
+        "gzip": 1402
+      },
+      "headMeasured": {
+        "name": "col",
+        "bytes": 2746,
+        "gzip": 1380,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "collapse",
+      "previousCap": {
+        "name": "collapse",
+        "bytes": 11100,
+        "gzip": 4509
+      },
+      "currentMeasured": {
+        "name": "collapse",
+        "bytes": 11010,
+        "gzip": 4480,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 11100,
+        "gzip": 4509
+      },
+      "headMeasured": {
+        "name": "collapse",
+        "bytes": 10947,
+        "gzip": 4462,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "context",
+      "previousCap": {
+        "name": "context",
+        "bytes": 125,
+        "gzip": 132
+      },
+      "currentMeasured": {
+        "name": "context",
+        "bytes": 125,
+        "gzip": 132,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 125,
+        "gzip": 132
+      },
+      "headMeasured": {
+        "name": "context",
+        "bytes": 125,
+        "gzip": 132,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": []
+    },
+    {
+      "name": "count-to",
+      "previousCap": {
+        "name": "count-to",
+        "bytes": 4289,
+        "gzip": 1937
+      },
+      "currentMeasured": {
+        "name": "count-to",
+        "bytes": 4282,
+        "gzip": 1942,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 4289,
+        "gzip": 1942
+      },
+      "headMeasured": {
+        "name": "count-to",
+        "bytes": 4219,
+        "gzip": 1919,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "countdown",
+      "previousCap": {
+        "name": "countdown",
+        "bytes": 3603,
+        "gzip": 1755
+      },
+      "currentMeasured": {
+        "name": "countdown",
+        "bytes": 3604,
+        "gzip": 1768,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 3604,
+        "gzip": 1768
+      },
+      "headMeasured": {
+        "name": "countdown",
+        "bytes": 3541,
+        "gzip": 1740,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "date",
+      "previousCap": {
+        "name": "date",
+        "bytes": 245176,
+        "gzip": 75971
+      },
+      "currentMeasured": {
+        "name": "date",
+        "bytes": 278414,
+        "gzip": 86835,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 278414,
+        "gzip": 86835
+      },
+      "headMeasured": {
+        "name": "date",
+        "bytes": 244450,
+        "gzip": 75845,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/date",
+          "bytesDelta": 14807
+        },
+        {
+          "moduleGroup": "node_modules/.pnpm/dayjs@1.11.21/node_modules",
+          "bytesDelta": 4436
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2877
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2511
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/date-range",
+          "bytesDelta": 2150
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/picker-field",
+          "bytesDelta": 1384
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 510
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 265
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/picker",
+          "bytesDelta": 4
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/affix",
+          "bytesDelta": 1
+        }
+      ]
+    },
+    {
+      "name": "date-range",
+      "previousCap": {
+        "name": "date-range",
+        "bytes": 245492,
+        "gzip": 76070
+      },
+      "currentMeasured": {
+        "name": "date-range",
+        "bytes": 278713,
+        "gzip": 86923,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 278713,
+        "gzip": 86923
+      },
+      "headMeasured": {
+        "name": "date-range",
+        "bytes": 244766,
+        "gzip": 75945,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/date",
+          "bytesDelta": 14711
+        },
+        {
+          "moduleGroup": "node_modules/.pnpm/dayjs@1.11.21/node_modules",
+          "bytesDelta": 4436
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2877
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2511
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/date-range",
+          "bytesDelta": 2229
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/picker-field",
+          "bytesDelta": 1384
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 510
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 265
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/picker",
+          "bytesDelta": 4
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/affix",
+          "bytesDelta": 1
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "previousCap": {
+        "name": "dialog",
+        "bytes": 58830,
+        "gzip": 18622
+      },
+      "currentMeasured": {
+        "name": "dialog",
+        "bytes": 61190,
+        "gzip": 19728,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 61190,
+        "gzip": 19728
+      },
+      "headMeasured": {
+        "name": "dialog",
+        "bytes": 58129,
+        "gzip": 18544,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 996
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/dialog",
+          "bytesDelta": 385
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 64
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        }
+      ]
+    },
+    {
+      "name": "divider",
+      "previousCap": {
+        "name": "divider",
+        "bytes": 3561,
+        "gzip": 1678
+      },
+      "currentMeasured": {
+        "name": "divider",
+        "bytes": 3485,
+        "gzip": 1628,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 3561,
+        "gzip": 1678
+      },
+      "headMeasured": {
+        "name": "divider",
+        "bytes": 3422,
+        "gzip": 1607,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "drag",
+      "previousCap": {
+        "name": "drag",
+        "bytes": 9757,
+        "gzip": 4085
+      },
+      "currentMeasured": {
+        "name": "drag",
+        "bytes": 10634,
+        "gzip": 4482,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 10634,
+        "gzip": 4482
+      },
+      "headMeasured": {
+        "name": "drag",
+        "bytes": 9161,
+        "gzip": 3821,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/drag",
+          "bytesDelta": 72
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "ellipsis",
+      "previousCap": {
+        "name": "ellipsis",
+        "bytes": 27580,
+        "gzip": 9766
+      },
+      "currentMeasured": {
+        "name": "ellipsis",
+        "bytes": 30112,
+        "gzip": 10750,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 30112,
+        "gzip": 10750
+      },
+      "headMeasured": {
+        "name": "ellipsis",
+        "bytes": 28203,
+        "gzip": 10016,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1333
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 492
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "previousCap": {
+        "name": "empty",
+        "bytes": 10324,
+        "gzip": 3983
+      },
+      "currentMeasured": {
+        "name": "empty",
+        "bytes": 10576,
+        "gzip": 4067,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 10576,
+        "gzip": 4067
+      },
+      "headMeasured": {
+        "name": "empty",
+        "bytes": 10256,
+        "gzip": 3975,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "fab",
+      "previousCap": {
+        "name": "fab",
+        "bytes": 40604,
+        "gzip": 14020
+      },
+      "currentMeasured": {
+        "name": "fab",
+        "bytes": 41024,
+        "gzip": 14432,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 41024,
+        "gzip": 14432
+      },
+      "headMeasured": {
+        "name": "fab",
+        "bytes": 39561,
+        "gzip": 13818,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/drag",
+          "bytesDelta": 72
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/fab",
+          "bytesDelta": -10
+        }
+      ]
+    },
+    {
+      "name": "field-decorator",
+      "previousCap": {
+        "name": "field-decorator",
+        "bytes": 12748,
+        "gzip": 4782
+      },
+      "currentMeasured": {
+        "name": "field-decorator",
+        "bytes": 12998,
+        "gzip": 4866,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 12998,
+        "gzip": 4866
+      },
+      "headMeasured": {
+        "name": "field-decorator",
+        "bytes": 12678,
+        "gzip": 4779,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "floating-panel",
+      "previousCap": {
+        "name": "floating-panel",
+        "bytes": 10455,
+        "gzip": 4374
+      },
+      "currentMeasured": {
+        "name": "floating-panel",
+        "bytes": 11433,
+        "gzip": 4778,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 11433,
+        "gzip": 4778
+      },
+      "headMeasured": {
+        "name": "floating-panel",
+        "bytes": 9933,
+        "gzip": 4134,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/floating-panel",
+          "bytesDelta": 92
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 67
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/onWindowResize.ts",
+          "bytesDelta": 2
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useEventListener.ts",
+          "bytesDelta": 1
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "previousCap": {
+        "name": "form",
+        "bytes": 59161,
+        "gzip": 20695
+      },
+      "currentMeasured": {
+        "name": "form",
+        "bytes": 62013,
+        "gzip": 21765,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 62013,
+        "gzip": 21765
+      },
+      "headMeasured": {
+        "name": "form",
+        "bytes": 58707,
+        "gzip": 20566,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 1372
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 488
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 67
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 18
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/object.ts",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/predicates.ts",
+          "bytesDelta": 1
+        }
+      ]
+    },
+    {
+      "name": "form-details",
+      "previousCap": {
+        "name": "form-details",
+        "bytes": 2357,
+        "gzip": 1108
+      },
+      "currentMeasured": {
+        "name": "form-details",
+        "bytes": 2359,
+        "gzip": 1120,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 2359,
+        "gzip": 1120
+      },
+      "headMeasured": {
+        "name": "form-details",
+        "bytes": 2296,
+        "gzip": 1097,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "grid",
+      "previousCap": {
+        "name": "grid",
+        "bytes": 5656,
+        "gzip": 2544
+      },
+      "currentMeasured": {
+        "name": "grid",
+        "bytes": 5657,
+        "gzip": 2555,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 5657,
+        "gzip": 2555
+      },
+      "headMeasured": {
+        "name": "grid",
+        "bytes": 5594,
+        "gzip": 2536,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "highlighter-provider",
+      "previousCap": {
+        "name": "highlighter-provider",
+        "bytes": 1894,
+        "gzip": 974
+      },
+      "currentMeasured": {
+        "name": "highlighter-provider",
+        "bytes": 1887,
+        "gzip": 977,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 1894,
+        "gzip": 977
+      },
+      "headMeasured": {
+        "name": "highlighter-provider",
+        "bytes": 1824,
+        "gzip": 954,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "hover",
+      "previousCap": {
+        "name": "hover",
+        "bytes": 3426,
+        "gzip": 1524
+      },
+      "currentMeasured": {
+        "name": "hover",
+        "bytes": 3407,
+        "gzip": 1532,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 3426,
+        "gzip": 1532
+      },
+      "headMeasured": {
+        "name": "hover",
+        "bytes": 3344,
+        "gzip": 1513,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "previousCap": {
+        "name": "icon",
+        "bytes": 3737,
+        "gzip": 1919
+      },
+      "currentMeasured": {
+        "name": "icon",
+        "bytes": 3668,
+        "gzip": 1863,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 3737,
+        "gzip": 1919
+      },
+      "headMeasured": {
+        "name": "icon",
+        "bytes": 3605,
+        "gzip": 1838,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "image",
+      "previousCap": {
+        "name": "image",
+        "bytes": 49200,
+        "gzip": 16581
+      },
+      "currentMeasured": {
+        "name": "image",
+        "bytes": 50233,
+        "gzip": 17130,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 50233,
+        "gzip": 17130
+      },
+      "headMeasured": {
+        "name": "image",
+        "bytes": 48758,
+        "gzip": 16527,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/overlay",
+          "bytesDelta": 74
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "index-bar",
+      "previousCap": {
+        "name": "index-bar",
+        "bytes": 15009,
+        "gzip": 6009
+      },
+      "currentMeasured": {
+        "name": "index-bar",
+        "bytes": 14813,
+        "gzip": 5918,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 15009,
+        "gzip": 6009
+      },
+      "headMeasured": {
+        "name": "index-bar",
+        "bytes": 14750,
+        "gzip": 5899,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "infinite-scroll",
+      "previousCap": {
+        "name": "infinite-scroll",
+        "bytes": 17591,
+        "gzip": 6381
+      },
+      "currentMeasured": {
+        "name": "infinite-scroll",
+        "bytes": 17769,
+        "gzip": 6402,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 17769,
+        "gzip": 6402
+      },
+      "headMeasured": {
+        "name": "infinite-scroll",
+        "bytes": 17449,
+        "gzip": 6313,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "previousCap": {
+        "name": "input",
+        "bytes": 81526,
+        "gzip": 25598
+      },
+      "currentMeasured": {
+        "name": "input",
+        "bytes": 88252,
+        "gzip": 28127,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 88252,
+        "gzip": 28127
+      },
+      "headMeasured": {
+        "name": "input",
+        "bytes": 80825,
+        "gzip": 25476,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2878
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 1381
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 996
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 263
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input",
+          "bytesDelta": 217
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/field-decorator",
+          "bytesDelta": 12
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": -2
+        }
+      ]
+    },
+    {
+      "name": "input-number",
+      "previousCap": {
+        "name": "input-number",
+        "bytes": 122274,
+        "gzip": 40735
+      },
+      "currentMeasured": {
+        "name": "input-number",
+        "bytes": 134359,
+        "gzip": 45099,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 134359,
+        "gzip": 45099
+      },
+      "headMeasured": {
+        "name": "input-number",
+        "bytes": 121573,
+        "gzip": 40605,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2872
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2503
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input-number",
+          "bytesDelta": 2035
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 265
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input",
+          "bytesDelta": 52
+        },
+        {
+          "moduleGroup": "node_modules/.pnpm/decimal.js@10.6.0/node_modules",
+          "bytesDelta": 35
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/button",
+          "bytesDelta": 2
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/field-decorator",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/hover",
+          "bytesDelta": 1
+        }
+      ]
+    },
+    {
+      "name": "lazy",
+      "previousCap": {
+        "name": "lazy",
+        "bytes": 3941,
+        "gzip": 1765
+      },
+      "currentMeasured": {
+        "name": "lazy",
+        "bytes": 3825,
+        "gzip": 1691,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 3941,
+        "gzip": 1765
+      },
+      "headMeasured": {
+        "name": "lazy",
+        "bytes": 3825,
+        "gzip": 1691,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": []
+    },
+    {
+      "name": "link",
+      "previousCap": {
+        "name": "link",
+        "bytes": 6102,
+        "gzip": 2264
+      },
+      "currentMeasured": {
+        "name": "link",
+        "bytes": 6037,
+        "gzip": 2217,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 6102,
+        "gzip": 2264
+      },
+      "headMeasured": {
+        "name": "link",
+        "bytes": 5974,
+        "gzip": 2193,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "previousCap": {
+        "name": "list",
+        "bytes": 35934,
+        "gzip": 12752
+      },
+      "currentMeasured": {
+        "name": "list",
+        "bytes": 37720,
+        "gzip": 13391,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 37720,
+        "gzip": 13391
+      },
+      "headMeasured": {
+        "name": "list",
+        "bytes": 35692,
+        "gzip": 12625,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 256
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selection-scrollbar",
+          "bytesDelta": 117
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/virtual-list-v2",
+          "bytesDelta": -3
+        }
+      ]
+    },
+    {
+      "name": "loading",
+      "previousCap": {
+        "name": "loading",
+        "bytes": 6252,
+        "gzip": 2620
+      },
+      "currentMeasured": {
+        "name": "loading",
+        "bytes": 6181,
+        "gzip": 2565,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 6252,
+        "gzip": 2620
+      },
+      "headMeasured": {
+        "name": "loading",
+        "bytes": 6118,
+        "gzip": 2544,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "loading-bar",
+      "previousCap": {
+        "name": "loading-bar",
+        "bytes": 3522,
+        "gzip": 1718
+      },
+      "currentMeasured": {
+        "name": "loading-bar",
+        "bytes": 3414,
+        "gzip": 1656,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 3522,
+        "gzip": 1718
+      },
+      "headMeasured": {
+        "name": "loading-bar",
+        "bytes": 3414,
+        "gzip": 1656,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": []
+    },
+    {
+      "name": "locale",
+      "previousCap": {
+        "name": "locale",
+        "bytes": 24452,
+        "gzip": 4824
+      },
+      "currentMeasured": {
+        "name": "locale",
+        "bytes": 25903,
+        "gzip": 5096,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 25903,
+        "gzip": 5096
+      },
+      "headMeasured": {
+        "name": "locale",
+        "bytes": 24452,
+        "gzip": 4822,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 1451
+        }
+      ]
+    },
+    {
+      "name": "locale-provider",
+      "previousCap": {
+        "name": "locale-provider",
+        "bytes": 2082,
+        "gzip": 1052
+      },
+      "currentMeasured": {
+        "name": "locale-provider",
+        "bytes": 2425,
+        "gzip": 1207,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 2425,
+        "gzip": 1207
+      },
+      "headMeasured": {
+        "name": "locale-provider",
+        "bytes": 2012,
+        "gzip": 1033,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 262
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale-provider",
+          "bytesDelta": 88
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "previousCap": {
+        "name": "menu",
+        "bytes": 52915,
+        "gzip": 18114
+      },
+      "currentMeasured": {
+        "name": "menu",
+        "bytes": 55465,
+        "gzip": 19136,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 55465,
+        "gzip": 19136
+      },
+      "headMeasured": {
+        "name": "menu",
+        "bytes": 53379,
+        "gzip": 18365,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1336
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 485
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/menu",
+          "bytesDelta": 178
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 64
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/dom.ts",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/ripple",
+          "bytesDelta": 1
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "previousCap": {
+        "name": "message",
+        "bytes": 18065,
+        "gzip": 5089
+      },
+      "currentMeasured": {
+        "name": "message",
+        "bytes": 19001,
+        "gzip": 5542,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 19001,
+        "gzip": 5542
+      },
+      "headMeasured": {
+        "name": "message",
+        "bytes": 17584,
+        "gzip": 4916,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1333
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/message",
+          "bytesDelta": 76
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-checkbox-marked-circle-fill",
+          "bytesDelta": 6
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 2
+        }
+      ]
+    },
+    {
+      "name": "nav-menu",
+      "previousCap": null,
+      "currentMeasured": {
+        "name": "nav-menu",
+        "bytes": 22929,
+        "gzip": 8797,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 22929,
+        "gzip": 8797
+      },
+      "headMeasured": null,
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/nav-menu",
+          "bytesDelta": 11654
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 5869
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/overlay",
+          "bytesDelta": 2490
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useEventListener.ts",
+          "bytesDelta": 485
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/context",
+          "bytesDelta": 298
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/namespace.ts",
+          "bytesDelta": 213
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/predicates.ts",
+          "bytesDelta": 156
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/string.ts",
+          "bytesDelta": 143
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/onSmartMounted.ts",
+          "bytesDelta": 136
+        }
+      ]
+    },
+    {
+      "name": "notice-bar",
+      "previousCap": {
+        "name": "notice-bar",
+        "bytes": 8910,
+        "gzip": 3818
+      },
+      "currentMeasured": {
+        "name": "notice-bar",
+        "bytes": 8818,
+        "gzip": 3785,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 8910,
+        "gzip": 3818
+      },
+      "headMeasured": {
+        "name": "notice-bar",
+        "bytes": 8755,
+        "gzip": 3763,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "number-keyboard",
+      "previousCap": {
+        "name": "number-keyboard",
+        "bytes": 36052,
+        "gzip": 12970
+      },
+      "currentMeasured": {
+        "name": "number-keyboard",
+        "bytes": 41077,
+        "gzip": 14976,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 41077,
+        "gzip": 14976
+      },
+      "headMeasured": {
+        "name": "number-keyboard",
+        "bytes": 35528,
+        "gzip": 12903,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2876
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 996
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 52
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/dom.ts",
+          "bytesDelta": 3
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useChildren.ts",
+          "bytesDelta": 2
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/ripple",
+          "bytesDelta": 2
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/array.ts",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/predicates.ts",
+          "bytesDelta": 1
+        }
+      ]
+    },
+    {
+      "name": "overlay",
+      "previousCap": {
+        "name": "overlay",
+        "bytes": 8908,
+        "gzip": 3776
+      },
+      "currentMeasured": {
+        "name": "overlay",
+        "bytes": 9873,
+        "gzip": 4199,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 9873,
+        "gzip": 4199
+      },
+      "headMeasured": {
+        "name": "overlay",
+        "bytes": 8396,
+        "gzip": 3599,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1325
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/overlay",
+          "bytesDelta": 84
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 68
+        }
+      ]
+    },
+    {
+      "name": "page-header",
+      "previousCap": {
+        "name": "page-header",
+        "bytes": 4625,
+        "gzip": 1967
+      },
+      "currentMeasured": {
+        "name": "page-header",
+        "bytes": 4624,
+        "gzip": 1981,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 4625,
+        "gzip": 1981
+      },
+      "headMeasured": {
+        "name": "page-header",
+        "bytes": 4561,
+        "gzip": 1958,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "previousCap": {
+        "name": "pagination",
+        "bytes": 197197,
+        "gzip": 58876
+      },
+      "currentMeasured": {
+        "name": "pagination",
+        "bytes": 207001,
+        "gzip": 63106,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 207001,
+        "gzip": 63106
+      },
+      "headMeasured": {
+        "name": "pagination",
+        "bytes": 194081,
+        "gzip": 58366,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2850
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1898
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 1397
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/select",
+          "bytesDelta": 1192
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selection-field",
+          "bytesDelta": 621
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 511
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/picker-field",
+          "bytesDelta": 473
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 277
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 266
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input",
+          "bytesDelta": 224
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selection-scrollbar",
+          "bytesDelta": 116
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/pagination",
+          "bytesDelta": 69
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selected-options",
+          "bytesDelta": 11
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/ripple",
+          "bytesDelta": 2
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/field-decorator",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/tooltip",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/button",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/empty",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/virtual-list-v2",
+          "bytesDelta": -4
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/tag",
+          "bytesDelta": -41
+        }
+      ]
+    },
+    {
+      "name": "paper",
+      "previousCap": {
+        "name": "paper",
+        "bytes": 8326,
+        "gzip": 3303
+      },
+      "currentMeasured": {
+        "name": "paper",
+        "bytes": 8147,
+        "gzip": 3374,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 8326,
+        "gzip": 3374
+      },
+      "headMeasured": {
+        "name": "paper",
+        "bytes": 8084,
+        "gzip": 3348,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "people-select",
+      "previousCap": null,
+      "currentMeasured": {
+        "name": "people-select",
+        "bytes": 201216,
+        "gzip": 62862,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 201216,
+        "gzip": 62862
+      },
+      "headMeasured": null,
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/select",
+          "bytesDelta": 26668
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 20111
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 17453
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input",
+          "bytesDelta": 13894
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 12689
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selection-field",
+          "bytesDelta": 10470
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/people-select",
+          "bytesDelta": 7917
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selection-scrollbar",
+          "bytesDelta": 7848
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/button",
+          "bytesDelta": 6718
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/virtual-list-v2",
+          "bytesDelta": 6168
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 6063
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/ripple",
+          "bytesDelta": 5306
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 5240
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": 4750
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/field-decorator",
+          "bytesDelta": 4437
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selected-options",
+          "bytesDelta": 3909
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/tag",
+          "bytesDelta": 3347
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 2838
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 2830
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/tooltip",
+          "bytesDelta": 2476
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/hover",
+          "bytesDelta": 2044
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/empty",
+          "bytesDelta": 1980
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-check-circle-fill",
+          "bytesDelta": 1848
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-exclamation-circle-fill",
+          "bytesDelta": 1844
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-eye-invisible",
+          "bytesDelta": 1768
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-empty",
+          "bytesDelta": 1732
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-eye",
+          "bytesDelta": 1710
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-search",
+          "bytesDelta": 1696
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-close-circle-fill",
+          "bytesDelta": 1692
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-close",
+          "bytesDelta": 1605
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-loading",
+          "bytesDelta": 1579
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-check",
+          "bytesDelta": 1553
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-down",
+          "bytesDelta": 1551
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 867
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useChildren.ts",
+          "bytesDelta": 730
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/predicates.ts",
+          "bytesDelta": 548
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useParent.ts",
+          "bytesDelta": 533
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/picker-field",
+          "bytesDelta": 473
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/resize-observer-v2.ts",
+          "bytesDelta": 323
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/context",
+          "bytesDelta": 298
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/string.ts",
+          "bytesDelta": 241
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/dom.ts",
+          "bytesDelta": 227
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/namespace.ts",
+          "bytesDelta": 213
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale-provider",
+          "bytesDelta": 125
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/array.ts",
+          "bytesDelta": 79
+        }
+      ]
+    },
+    {
+      "name": "picker",
+      "previousCap": {
+        "name": "picker",
+        "bytes": 60164,
+        "gzip": 20813
+      },
+      "currentMeasured": {
+        "name": "picker",
+        "bytes": 64810,
+        "gzip": 22683,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 64810,
+        "gzip": 22683
+      },
+      "headMeasured": {
+        "name": "picker",
+        "bytes": 59249,
+        "gzip": 20610,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2878
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 996
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 55
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/ripple",
+          "bytesDelta": 12
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": 9
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/context",
+          "bytesDelta": 4
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/picker",
+          "bytesDelta": -9
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "previousCap": {
+        "name": "popover",
+        "bytes": 25922,
+        "gzip": 9205
+      },
+      "currentMeasured": {
+        "name": "popover",
+        "bytes": 28454,
+        "gzip": 10187,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 28454,
+        "gzip": 10187
+      },
+      "headMeasured": {
+        "name": "popover",
+        "bytes": 26545,
+        "gzip": 9458,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1333
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 492
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        }
+      ]
+    },
+    {
+      "name": "popup",
+      "previousCap": {
+        "name": "popup",
+        "bytes": 14961,
+        "gzip": 5934
+      },
+      "currentMeasured": {
+        "name": "popup",
+        "bytes": 19743,
+        "gzip": 7798,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 19743,
+        "gzip": 7798
+      },
+      "headMeasured": {
+        "name": "popup",
+        "bytes": 14451,
+        "gzip": 5756,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2869
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1333
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 996
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/context",
+          "bytesDelta": 7
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "previousCap": {
+        "name": "progress",
+        "bytes": 9550,
+        "gzip": 3726
+      },
+      "currentMeasured": {
+        "name": "progress",
+        "bytes": 9463,
+        "gzip": 3671,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 9550,
+        "gzip": 3726
+      },
+      "headMeasured": {
+        "name": "progress",
+        "bytes": 9400,
+        "gzip": 3648,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "progress-group",
+      "previousCap": {
+        "name": "progress-group",
+        "bytes": 8588,
+        "gzip": 3069
+      },
+      "currentMeasured": {
+        "name": "progress-group",
+        "bytes": 8581,
+        "gzip": 3079,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 8588,
+        "gzip": 3079
+      },
+      "headMeasured": {
+        "name": "progress-group",
+        "bytes": 8518,
+        "gzip": 3056,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "pull-refresh",
+      "previousCap": {
+        "name": "pull-refresh",
+        "bytes": 17508,
+        "gzip": 6300
+      },
+      "currentMeasured": {
+        "name": "pull-refresh",
+        "bytes": 17537,
+        "gzip": 6311,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 17537,
+        "gzip": 6311
+      },
+      "headMeasured": {
+        "name": "pull-refresh",
+        "bytes": 17474,
+        "gzip": 6290,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "radio",
+      "previousCap": {
+        "name": "radio",
+        "bytes": 68351,
+        "gzip": 23139
+      },
+      "currentMeasured": {
+        "name": "radio",
+        "bytes": 78854,
+        "gzip": 26988,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 78854,
+        "gzip": 26988
+      },
+      "headMeasured": {
+        "name": "radio",
+        "bytes": 67645,
+        "gzip": 23029,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2878
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2834
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/radio",
+          "bytesDelta": 182
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 75
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/button",
+          "bytesDelta": 12
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/checkbox",
+          "bytesDelta": 11
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/ripple",
+          "bytesDelta": 9
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": -2
+        }
+      ]
+    },
+    {
+      "name": "rate",
+      "previousCap": {
+        "name": "rate",
+        "bytes": 75286,
+        "gzip": 23958
+      },
+      "currentMeasured": {
+        "name": "rate",
+        "bytes": 85472,
+        "gzip": 27716,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 85472,
+        "gzip": 27716
+      },
+      "headMeasured": {
+        "name": "rate",
+        "bytes": 74583,
+        "gzip": 23847,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2873
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2507
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 260
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/rate",
+          "bytesDelta": 203
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 75
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": 9
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/ripple",
+          "bytesDelta": 9
+        }
+      ]
+    },
+    {
+      "name": "result",
+      "previousCap": {
+        "name": "result",
+        "bytes": 78273,
+        "gzip": 30121
+      },
+      "currentMeasured": {
+        "name": "result",
+        "bytes": 78206,
+        "gzip": 30059,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 78273,
+        "gzip": 30121
+      },
+      "headMeasured": {
+        "name": "result",
+        "bytes": 78143,
+        "gzip": 30036,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "ripple",
+      "previousCap": {
+        "name": "ripple",
+        "bytes": 6375,
+        "gzip": 2415
+      },
+      "currentMeasured": {
+        "name": "ripple",
+        "bytes": 6232,
+        "gzip": 2526,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 6375,
+        "gzip": 2526
+      },
+      "headMeasured": {
+        "name": "ripple",
+        "bytes": 6232,
+        "gzip": 2526,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": []
+    },
+    {
+      "name": "row",
+      "previousCap": {
+        "name": "row",
+        "bytes": 3280,
+        "gzip": 1578
+      },
+      "currentMeasured": {
+        "name": "row",
+        "bytes": 3282,
+        "gzip": 1591,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 3282,
+        "gzip": 1591
+      },
+      "headMeasured": {
+        "name": "row",
+        "bytes": 3219,
+        "gzip": 1572,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "safe-area",
+      "previousCap": null,
+      "currentMeasured": {
+        "name": "safe-area",
+        "bytes": 2578,
+        "gzip": 1349,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 2578,
+        "gzip": 1349
+      },
+      "headMeasured": null,
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/safe-area",
+          "bytesDelta": 1275
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 794
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/namespace.ts",
+          "bytesDelta": 211
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/string.ts",
+          "bytesDelta": 142
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/predicates.ts",
+          "bytesDelta": 75
+        }
+      ]
+    },
+    {
+      "name": "search",
+      "previousCap": {
+        "name": "search",
+        "bytes": 215148,
+        "gzip": 65966
+      },
+      "currentMeasured": {
+        "name": "search",
+        "bytes": 226485,
+        "gzip": 70490,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 226485,
+        "gzip": 70490
+      },
+      "headMeasured": {
+        "name": "search",
+        "bytes": 212945,
+        "gzip": 65736,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2877
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1898
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 1397
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/select",
+          "bytesDelta": 1183
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selection-field",
+          "bytesDelta": 621
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 510
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/search",
+          "bytesDelta": 501
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/picker-field",
+          "bytesDelta": 473
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 277
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 265
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input",
+          "bytesDelta": 220
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/menu",
+          "bytesDelta": 181
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selection-scrollbar",
+          "bytesDelta": 115
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selected-options",
+          "bytesDelta": 11
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/tag",
+          "bytesDelta": -42
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "previousCap": {
+        "name": "select",
+        "bytes": 176878,
+        "gzip": 54148
+      },
+      "currentMeasured": {
+        "name": "select",
+        "bytes": 186612,
+        "gzip": 58324,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 186612,
+        "gzip": 58324
+      },
+      "headMeasured": {
+        "name": "select",
+        "bytes": 173762,
+        "gzip": 53638,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2850
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1898
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 1397
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/select",
+          "bytesDelta": 1176
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selection-field",
+          "bytesDelta": 621
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 511
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/picker-field",
+          "bytesDelta": 473
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 277
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 266
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input",
+          "bytesDelta": 220
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selection-scrollbar",
+          "bytesDelta": 114
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/selected-options",
+          "bytesDelta": 37
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/ripple",
+          "bytesDelta": 2
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/field-decorator",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/tooltip",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/button",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/empty",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/virtual-list-v2",
+          "bytesDelta": -9
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/tag",
+          "bytesDelta": -41
+        }
+      ]
+    },
+    {
+      "name": "signature",
+      "previousCap": {
+        "name": "signature",
+        "bytes": 4260,
+        "gzip": 1984
+      },
+      "currentMeasured": {
+        "name": "signature",
+        "bytes": 4253,
+        "gzip": 1991,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 4260,
+        "gzip": 1991
+      },
+      "headMeasured": {
+        "name": "signature",
+        "bytes": 4190,
+        "gzip": 1970,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "previousCap": {
+        "name": "skeleton",
+        "bytes": 5108,
+        "gzip": 1993
+      },
+      "currentMeasured": {
+        "name": "skeleton",
+        "bytes": 5039,
+        "gzip": 1938,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 5108,
+        "gzip": 1993
+      },
+      "headMeasured": {
+        "name": "skeleton",
+        "bytes": 4976,
+        "gzip": 1914,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "previousCap": {
+        "name": "slider",
+        "bytes": 133376,
+        "gzip": 44339
+      },
+      "currentMeasured": {
+        "name": "slider",
+        "bytes": 145680,
+        "gzip": 48798,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 145680,
+        "gzip": 48798
+      },
+      "headMeasured": {
+        "name": "slider",
+        "bytes": 132666,
+        "gzip": 44235,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2871
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2510
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input-number",
+          "bytesDelta": 2038
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 262
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/slider",
+          "bytesDelta": 228
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input",
+          "bytesDelta": 45
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "node_modules/.pnpm/decimal.js@10.6.0/node_modules",
+          "bytesDelta": 20
+        }
+      ]
+    },
+    {
+      "name": "space",
+      "previousCap": {
+        "name": "space",
+        "bytes": 2956,
+        "gzip": 1491
+      },
+      "currentMeasured": {
+        "name": "space",
+        "bytes": 2878,
+        "gzip": 1433,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 2956,
+        "gzip": 1491
+      },
+      "headMeasured": {
+        "name": "space",
+        "bytes": 2815,
+        "gzip": 1410,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "split-button",
+      "previousCap": {
+        "name": "split-button",
+        "bytes": 72195,
+        "gzip": 23917
+      },
+      "currentMeasured": {
+        "name": "split-button",
+        "bytes": 74730,
+        "gzip": 24976,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 74730,
+        "gzip": 24976
+      },
+      "headMeasured": {
+        "name": "split-button",
+        "bytes": 72642,
+        "gzip": 24152,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 485
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/menu",
+          "bytesDelta": 181
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        }
+      ]
+    },
+    {
+      "name": "statistic",
+      "previousCap": {
+        "name": "statistic",
+        "bytes": 13818,
+        "gzip": 5725
+      },
+      "currentMeasured": {
+        "name": "statistic",
+        "bytes": 13811,
+        "gzip": 5735,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 13818,
+        "gzip": 5735
+      },
+      "headMeasured": {
+        "name": "statistic",
+        "bytes": 13748,
+        "gzip": 5718,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "steps",
+      "previousCap": {
+        "name": "steps",
+        "bytes": 9371,
+        "gzip": 3353
+      },
+      "currentMeasured": {
+        "name": "steps",
+        "bytes": 9376,
+        "gzip": 3372,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 9376,
+        "gzip": 3372
+      },
+      "headMeasured": {
+        "name": "steps",
+        "bytes": 9313,
+        "gzip": 3350,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "style-provider",
+      "previousCap": {
+        "name": "style-provider",
+        "bytes": 2940,
+        "gzip": 1467
+      },
+      "currentMeasured": {
+        "name": "style-provider",
+        "bytes": 2823,
+        "gzip": 1405,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 2940,
+        "gzip": 1467
+      },
+      "headMeasured": {
+        "name": "style-provider",
+        "bytes": 2760,
+        "gzip": 1382,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "swipe-cell",
+      "previousCap": {
+        "name": "swipe-cell",
+        "bytes": 8057,
+        "gzip": 3331
+      },
+      "currentMeasured": {
+        "name": "swipe-cell",
+        "bytes": 8050,
+        "gzip": 3347,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 8057,
+        "gzip": 3347
+      },
+      "headMeasured": {
+        "name": "swipe-cell",
+        "bytes": 7987,
+        "gzip": 3330,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "previousCap": {
+        "name": "switch",
+        "bytes": 61927,
+        "gzip": 20874
+      },
+      "currentMeasured": {
+        "name": "switch",
+        "bytes": 72157,
+        "gzip": 24612,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 72157,
+        "gzip": 24612
+      },
+      "headMeasured": {
+        "name": "switch",
+        "bytes": 61266,
+        "gzip": 20775,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2878
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2509
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/switch",
+          "bytesDelta": 201
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 75
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/button",
+          "bytesDelta": 18
+        }
+      ]
+    },
+    {
+      "name": "tab-bar",
+      "previousCap": {
+        "name": "tab-bar",
+        "bytes": 36036,
+        "gzip": 12482
+      },
+      "currentMeasured": {
+        "name": "tab-bar",
+        "bytes": 37072,
+        "gzip": 13002,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 37072,
+        "gzip": 13002
+      },
+      "headMeasured": {
+        "name": "tab-bar",
+        "bytes": 35820,
+        "gzip": 12545,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 1291
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/tab-bar",
+          "bytesDelta": 59
+        },
+        {
+          "moduleGroup": "packages/maple-shared/src/dom.ts",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/ripple",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/icon",
+          "bytesDelta": -5
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/badge",
+          "bytesDelta": -95
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "previousCap": {
+        "name": "table",
+        "bytes": 2583,
+        "gzip": 1311
+      },
+      "currentMeasured": {
+        "name": "table",
+        "bytes": 2506,
+        "gzip": 1259,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 2583,
+        "gzip": 1311
+      },
+      "headMeasured": {
+        "name": "table",
+        "bytes": 2443,
+        "gzip": 1236,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "previousCap": {
+        "name": "tabs",
+        "bytes": 14900,
+        "gzip": 5455
+      },
+      "currentMeasured": {
+        "name": "tabs",
+        "bytes": 16431,
+        "gzip": 6049,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 16431,
+        "gzip": 6049
+      },
+      "headMeasured": {
+        "name": "tabs",
+        "bytes": 14933,
+        "gzip": 5444,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1336
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/tabs",
+          "bytesDelta": 99
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    },
+    {
+      "name": "tag",
+      "previousCap": {
+        "name": "tag",
+        "bytes": 7776,
+        "gzip": 2827
+      },
+      "currentMeasured": {
+        "name": "tag",
+        "bytes": 7742,
+        "gzip": 2835,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 7776,
+        "gzip": 2835
+      },
+      "headMeasured": {
+        "name": "tag",
+        "bytes": 7720,
+        "gzip": 2825,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        },
+        {
+          "moduleGroup": "packages/maple-icons-vue/src/icon-close",
+          "bytesDelta": -2
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/tag",
+          "bytesDelta": -39
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "previousCap": {
+        "name": "textarea",
+        "bytes": 81210,
+        "gzip": 26339
+      },
+      "currentMeasured": {
+        "name": "textarea",
+        "bytes": 91329,
+        "gzip": 30129,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 91329,
+        "gzip": 30129
+      },
+      "headMeasured": {
+        "name": "textarea",
+        "bytes": 80509,
+        "gzip": 26247,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2876
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2507
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input",
+          "bytesDelta": 94
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/textarea",
+          "bytesDelta": 36
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": 11
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/field-decorator",
+          "bytesDelta": 10
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/button",
+          "bytesDelta": 10
+        }
+      ]
+    },
+    {
+      "name": "time",
+      "previousCap": {
+        "name": "time",
+        "bytes": 157237,
+        "gzip": 52226
+      },
+      "currentMeasured": {
+        "name": "time",
+        "bytes": 170236,
+        "gzip": 56956,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 170236,
+        "gzip": 56956
+      },
+      "headMeasured": {
+        "name": "time",
+        "bytes": 156519,
+        "gzip": 52116,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2871
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2501
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/picker-field",
+          "bytesDelta": 1236
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 500
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/time-range",
+          "bytesDelta": 425
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/time",
+          "bytesDelta": 291
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 258
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "node_modules/.pnpm/dayjs@1.11.21/node_modules",
+          "bytesDelta": 69
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useTouch.ts",
+          "bytesDelta": 16
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/field-decorator",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale-provider",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/picker",
+          "bytesDelta": -9
+        }
+      ]
+    },
+    {
+      "name": "time-range",
+      "previousCap": {
+        "name": "time-range",
+        "bytes": 157384,
+        "gzip": 52239
+      },
+      "currentMeasured": {
+        "name": "time-range",
+        "bytes": 170383,
+        "gzip": 57000,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 170383,
+        "gzip": 57000
+      },
+      "headMeasured": {
+        "name": "time-range",
+        "bytes": 156666,
+        "gzip": 52118,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2871
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2501
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/picker-field",
+          "bytesDelta": 1236
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 500
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/time-range",
+          "bytesDelta": 476
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 258
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/time",
+          "bytesDelta": 240
+        },
+        {
+          "moduleGroup": "node_modules/.pnpm/dayjs@1.11.21/node_modules",
+          "bytesDelta": 69
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useTouch.ts",
+          "bytesDelta": 16
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/field-decorator",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale-provider",
+          "bytesDelta": 1
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/picker",
+          "bytesDelta": -9
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "previousCap": {
+        "name": "tooltip",
+        "bytes": 25761,
+        "gzip": 9138
+      },
+      "currentMeasured": {
+        "name": "tooltip",
+        "bytes": 28293,
+        "gzip": 10128,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 28293,
+        "gzip": 10128
+      },
+      "headMeasured": {
+        "name": "tooltip",
+        "bytes": 26384,
+        "gzip": 9393,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1333
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 492
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        }
+      ]
+    },
+    {
+      "name": "trigger",
+      "previousCap": {
+        "name": "trigger",
+        "bytes": 22810,
+        "gzip": 8244
+      },
+      "currentMeasured": {
+        "name": "trigger",
+        "bytes": 25339,
+        "gzip": 9206,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 25339,
+        "gzip": 9206
+      },
+      "headMeasured": {
+        "name": "trigger",
+        "bytes": 23433,
+        "gzip": 8481,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1333
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/trigger",
+          "bytesDelta": 488
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 64
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        }
+      ]
+    },
+    {
+      "name": "upload",
+      "previousCap": {
+        "name": "upload",
+        "bytes": 114971,
+        "gzip": 37085
+      },
+      "currentMeasured": {
+        "name": "upload",
+        "bytes": 129539,
+        "gzip": 42060,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 129539,
+        "gzip": 42060
+      },
+      "headMeasured": {
+        "name": "upload",
+        "bytes": 114574,
+        "gzip": 37031,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/upload",
+          "bytesDelta": 4140
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2878
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2513
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 265
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/overlay",
+          "bytesDelta": 75
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input",
+          "bytesDelta": 33
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/image",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        }
+      ]
+    },
+    {
+      "name": "verification-code",
+      "previousCap": {
+        "name": "verification-code",
+        "bytes": 92998,
+        "gzip": 29537
+      },
+      "currentMeasured": {
+        "name": "verification-code",
+        "bytes": 103219,
+        "gzip": 33340,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 103219,
+        "gzip": 33340
+      },
+      "headMeasured": {
+        "name": "verification-code",
+        "bytes": 92297,
+        "gzip": 29438,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/popup",
+          "bytesDelta": 2876
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_components/field-presentation",
+          "bytesDelta": 2508
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_hooks",
+          "bytesDelta": 1945
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useAsyncData.ts",
+          "bytesDelta": 1392
+        },
+        {
+          "moduleGroup": "packages/maple-use/src/useDirection.ts",
+          "bytesDelta": 1338
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 267
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/locale",
+          "bytesDelta": 257
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/input",
+          "bytesDelta": 205
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/form",
+          "bytesDelta": 66
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/verification-code",
+          "bytesDelta": 33
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/_utils",
+          "bytesDelta": 21
+        },
+        {
+          "moduleGroup": "packages/maple-ui/src/loading",
+          "bytesDelta": 14
+        }
+      ]
+    },
+    {
+      "name": "watermark",
+      "previousCap": {
+        "name": "watermark",
+        "bytes": 7262,
+        "gzip": 3309
+      },
+      "currentMeasured": {
+        "name": "watermark",
+        "bytes": 7263,
+        "gzip": 3315,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "newCap": {
+        "bytes": 7263,
+        "gzip": 3315
+      },
+      "headMeasured": {
+        "name": "watermark",
+        "bytes": 7200,
+        "gzip": 3294,
+        "rattailBytes": 0,
+        "mittBytes": 0
+      },
+      "retainedModuleDeltasAgainstHead": [
+        {
+          "moduleGroup": "packages/maple-ui/src/utils",
+          "bytesDelta": 63
+        }
+      ]
+    }
+  ]
+}

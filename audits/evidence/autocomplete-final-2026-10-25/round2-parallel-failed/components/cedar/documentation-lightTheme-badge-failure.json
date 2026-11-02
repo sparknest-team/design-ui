@@ -1,0 +1,244 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:52065/components/badge/#%E7%8A%B6%E6%80%81%E5%92%8C%E9%A2%9C%E8%89%B2",
+    "text": "uccess)\n--c-badge-status-success-text-color\tvar(--c-sys-color-content-on-dark)\n--c-badge-status-warning-bg-color\tvar(--c-sys-color-status-warning)\n--c-badge-status-warning-text-color\tvar(--c-sys-color-content-on-dark)\n--c-badge-status-danger-bg-color\trgb(var(--c-danger-7))\n--c-badge-status-danger-text-color\tvar(--c-sys-color-content-on-dark)\n--c-badge-status-primary-bg-color\tvar(--c-sys-color-action-primary)\n--c-badge-status-primary-text-color\tvar(--c-sys-color-content-on-dark)\n--c-badge-status-secondary-bg-color\trgb(var(--c-gray-6))\n--c-badge-status-secondary-text-color\tvar(--c-sys-color-content-on-dark)\n--c-badge-status-tertiary-bg-color\trgb(var(--c-gray-7))\n--c-badge-status-tertiary-text-color\tvar(--c-sys-color-content-on-dark)\n--c-badge-variant-outline-bg-color\ttransparent\n--c-badge-variant-outline-text-color\tvar(--c-sys-color-content-danger)\n--c-badge-variant-outline-status-info-text-color\tvar(--c-sys-color-content-info)\n--c-badge-variant-outline-status-success-text-color\tvar(--c-sys-color-content-success)\n--c-badge-variant-outline-status-warning-text-color\tvar(--c-sys-color-content-warning)\n--c-badge-variant-outline-status-danger-text-color\tvar(--c-sys-color-content-danger)\n--c-badge-variant-outline-status-primary-text-color\tvar(--c-sys-color-content-brand)\n--c-badge-variant-outline-status-default-text-color\tvar(--c-sys-color-content-primary)\n--c-badge-variant-outline-status-secondary-text-color\tvar(--c-sys-color-content-secondary)\n--c-badge-variant-outline-status-tertiary-text-color\tvar(--c-sys-color-content-secondary)\n--c-badge-border-color\tvar(--c-sys-color-surface-default)\n--c-badge-offset\t2px\n--c-badge-ring-width\t2px\n\n填充徽标的文字配色以 Button 为准：primary、info、success、warning、danger、secondary 使用 content-on-dark；tertiary 在亮色使用 content-on-dark，暗色使用 content-on-bright。默认通知徽标使用红底白字，中性背景 #e0e0e0 为固定浅灰色。\n\n彩色轮廓文字和描边与 Button 一致，使用对应的 content-brand / content-info / content-success / content-warning / content-danger 语义色；secondary 与 tertiary 轮廓均使用 content-secondary 保持可读性。variant-outline-bg-color 对所有状态均生效，默认透明。color 属性覆盖轮廓文字和描边，text-color 进一步覆盖文字；二者均保留背景变量的控制权。自定义前景或背景后须重新验证对比度。\n\n类型定义\n\n组件导出以下类型定义\n\nimport type { BadgeInstance } from '@cedar-design/ui'\n\n颜色覆盖边界\n\nbg-color 兜底和 danger 填充均使用红色背景与白色文字：浅色主题为 danger 第 7 阶，暗色主题为第 4 阶。中性固定浅灰与 secondary/tertiary 灰阶是有意的组件配色；border-color 隔离环可按宿主表面覆盖。自定义 color/text-color 由调用方保证对比度。\n\n上次编辑于: 2026/10/24 20:08:01\n贡献者: shuai.meng,mengshuai",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<div class=\"vmi-previewer-example\" style=\"\"><div class=\"c-space c-space--block\" style=\"gap: 24px; flex-flow: wrap; justify-content: flex-start; align-items: center;\"><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--position-top-right c-badge--mode-floating c-badge--size-md c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__content\">9</span></span><span class=\"c-badge__description-wrapper\"><span style=\"display: inline-block; padding: 12px; border: 1px solid; border-radius: 4px;\">Inbox</span></span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--position-top-right c-badge--mode-floating c-badge--dot c-badge--size-md c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__dot-content\"></span></span><span class=\"c-badge__description-wrapper\"><span style=\"display: inline-block; padding: 12px; border: 1px solid; border-radius: 4px;\">Inbox</span></span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--position-top-right c-badge--mode-floating c-badge--dot c-badge--size-md c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__custom-dot c-badge__content-wrapper\"><span aria-label=\"New activity\">!</span></span><span class=\"c-badge__description-wrapper\"><span style=\"display: inline-block; padding: 12px; border: 1px solid; border-radius: 4px;\">Inbox</span></span></span></span></div></div></div>",
+      "<div class=\"vmi-previewer-example\" style=\"\"><div class=\"c-space c-space--block\" style=\"gap: 24px; flex-flow: column; justify-content: flex-start; align-items: stretch;\"><!----><div class=\"c-space__item\"><div class=\"c-space c-space--block\" style=\"gap: var(--c-space-size-md-row-gap) var(--c-space-size-md-column-gap); flex-flow: wrap; justify-content: flex-start; align-items: center;\"><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--inline-position-end c-badge--mode-inline c-badge--size-xs c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__content\">1</span></span><span class=\"c-badge__description-wrapper\">xs</span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--inline-position-end c-badge--mode-inline c-badge--size-sm c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__content\">1</span></span><span class=\"c-badge__description-wrapper\">sm</span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--inline-position-end c-badge--mode-inline c-badge--size-md c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__content\">1</span></span><span class=\"c-badge__description-wrapper\">md</span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--inline-position-end c-badge--mode-inline c-badge--size-lg c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__content\">1</span></span><span class=\"c-badge__description-wrapper\">lg</span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--inline-position-end c-badge--mode-inline c-badge--size-xl c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__content\">1</span></span><span class=\"c-badge__description-wrapper\">xl</span></span></span></div></div></div><!----><div class=\"c-space__item\"><div class=\"c-space c-space--block\" style=\"gap: var(--c-space-size-md-row-gap) var(--c-space-size-md-column-gap); flex-flow: wrap; justify-content: flex-start; align-items: center;\"><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--inline-position-end c-badge--mode-inline c-badge--dot c-badge--size-xs c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__dot-content\"></span></span><span class=\"c-badge__description-wrapper\">xs</span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--inline-position-end c-badge--mode-inline c-badge--dot c-badge--size-sm c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__dot-content\"></span></span><span class=\"c-badge__description-wrapper\">sm</span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--inline-position-end c-badge--mode-inline c-badge--dot c-badge--size-md c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__dot-content\"></span></span><span class=\"c-badge__description-wrapper\">md</span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--inline-position-end c-badge--mode-inline c-badge--dot c-badge--size-lg c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__dot-content\"></span></span><span class=\"c-badge__description-wrapper\">lg</span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--inline-position-end c-badge--mode-inline c-badge--dot c-badge--size-xl c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__dot-content\"></span></span><span class=\"c-badge__description-wrapper\">xl</span></span></span></div></div></div><!----><div class=\"c-space__item\"><div class=\"c-space c-space--block\" style=\"gap: 24px; flex-flow: wrap; justify-content: flex-start; align-items: center;\"><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--position-top-right c-badge--mode-floating c-badge--size-xs c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__content\">1</span></span><span class=\"c-badge__description-wrapper\"><span style=\"display: inline-block; padding: 12px; border: 1px solid; border-radius: 4px;\">Inbox</span></span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--position-top-right c-badge--mode-floating c-badge--size-sm c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__content\">1</span></span><span class=\"c-badge__description-wrapper\"><span style=\"display: inline-block; padding: 12px; border: 1px solid; border-radius: 4px;\">Inbox</span></span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--position-top-right c-badge--mode-floating c-badge--size-md c-badge--status-danger c-badge--variant-default\"><span class=\"c-badge__wrapper\"><span class=\"c-badge__content-wrapper\"><span class=\"c-badge__content\">1</span></span><span class=\"c-badge__description-wrapper\"><span style=\"display: inline-block; padding: 12px; border: 1px solid; border-radius: 4px;\">Inbox</span></span></span></span></div><!----><div class=\"c-space__item\"><span class=\"c-badge c-badge--position-top-right c-badge--mode-floating c-badge--size-lg c-badge--status-danger c-badge--variant-def"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "选择语言",
+        "class": "vp-dropdown-title"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "搜索",
+        "class": "slimsearch-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换主题",
+        "class": "cedar-docs-theme__trigger"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Offset +1",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Offset -1",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Reset",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "Toggle dot",
+        "class": "c-switch c-switch--variant-circle c-switch--size-md"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "Show badge",
+        "class": "c-switch c-switch--variant-circle c-switch--size-md c-switch--checked"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Add",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Subtract",
+        "class": "c-button c-button--size-md c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "variant",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "status",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "size",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "审查对象与场景 / Review target and scenario",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重新挂载 / Remount",
+        "class": "c-button c-button--size-sm c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "重置 / Reset",
+        "class": "c-button c-button--size-sm c-button--status-default c-button--variant-default c-elevation--2"
+      },
+      {
+        "tag": "INPUT",
+        "role": "combobox",
+        "label": "功能分类 / Feature topic",
+        "class": "c-selection-field__input c-selection-field__input--with-value"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "筛选属性 / Filter",
+        "class": "c-input__inner"
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "文案与内容 / Content（2）",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "案例插槽 / Fixture slots",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "当前覆盖值 / Active overrides",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "事件 / Events（0）",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "DIV",
+        "role": "button",
+        "label": "专项 API 定位 / Scenario API index",
+        "class": "c-collapse-item__header c-collapse-item__header--icon-left"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "复制代码",
+        "class": "vp-copy-code-button"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "返回顶部",
+        "class": "vp-back-to-top-button"
+      },
+      {
+        "tag": "SPAN",
+        "role": "progressbar",
+        "label": "",
+        "class": "vp-scroll-progress"
+      }
+    ]
+  },
+  "error": "TimeoutError: locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.vmi-previewer').nth(10).locator('.vmi-previewer-sources pre').first() to be visible\u001b[22m\n"
+}

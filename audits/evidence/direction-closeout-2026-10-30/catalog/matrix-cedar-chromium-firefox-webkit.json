@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-10-30T09:22:47.324Z",
+  "scope": "all documented components; representative exact authored source and domain behavior in each reading direction, plus nested/runtime direction and value invariance",
+  "fullThemeMatrix": false,
+  "nativeDeviceAcceptance": false,
+  "results": [
+    {
+      "library": "cedar",
+      "direction": "ltr",
+      "engine": "chromium",
+      "startedAt": "2026-10-30T09:11:01.119Z",
+      "completedAt": "2026-10-30T09:13:35.436Z",
+      "exitCode": 1,
+      "passed": false,
+      "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/cedar-ltr-chromium.log",
+      "coverage": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/ltr/cedar/chromium/coverage.json",
+      "componentCount": 99,
+      "componentCases": 99
+    },
+    {
+      "library": "cedar",
+      "direction": "ltr",
+      "engine": "firefox",
+      "startedAt": "2026-10-30T09:13:35.584Z",
+      "completedAt": "2026-10-30T09:19:30.614Z",
+      "exitCode": 1,
+      "passed": false,
+      "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/cedar-ltr-firefox.log",
+      "coverage": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/ltr/cedar/firefox/coverage.json",
+      "componentCount": 99,
+      "componentCases": 99
+    },
+    {
+      "library": "cedar",
+      "direction": "ltr",
+      "engine": "webkit",
+      "startedAt": "2026-10-30T09:19:30.628Z",
+      "completedAt": "2026-10-30T09:22:47.324Z",
+      "exitCode": 1,
+      "passed": false,
+      "log": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/cedar-ltr-webkit.log",
+      "coverage": "/Users/shuaimeng/github_web/design-ui/audits/evidence/direction-closeout-2026-10-30/catalog/ltr/cedar/webkit/coverage.json",
+      "componentCount": 99,
+      "componentCases": 99
+    }
+  ]
+}

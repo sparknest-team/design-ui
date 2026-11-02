@@ -5640,23 +5640,6 @@
   },
   {
     "platform": "maple",
-    "component": "counter",
-    "directory": "maple-design-mobile/packages/maple-ui/src/counter",
-    "entry": "maple-design-mobile/packages/maple-ui/src/counter/example/demos/api-review.vue",
-    "cases": [
-      {
-        "name": "main",
-        "label": "mp-counter · 组合属性",
-        "file": "example/demos/api-review-main.vue",
-        "tag": "mp-counter",
-        "config": "example/demos/api-review.config.json",
-        "fields": 30
-      }
-    ],
-    "schemas": []
-  },
-  {
-    "platform": "maple",
     "component": "date",
     "directory": "maple-design-mobile/packages/maple-ui/src/date",
     "entry": "maple-design-mobile/packages/maple-ui/src/date/example/demos/api-review.vue",

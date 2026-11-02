@@ -44,7 +44,7 @@ for (const [component, demos] of Object.entries(cases)) {
     assert(english.includes(`<demo src="./__demos__/${demo.name}.vue">`))
   }
 }
-console.log('PASS site language normalization, SSR fallback, reactive demo messages, navigation mapping and 9 native English component pages')
+console.log(`PASS site language normalization, SSR fallback, reactive demo messages, navigation mapping and ${Object.keys(cases).length} native English component pages`)
 const changes = []
 const localeBridge = evaluate('cedar-design-web/packages/cedar-ui/docs/.vuepress/i18n/client.ts', {
   '../../../src/locale': { addI18nMessages: packs => assert.deepEqual(Object.keys(packs), ['zh-CN', 'en-US']), useLocale: lang => changes.push(lang) },

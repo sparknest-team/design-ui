@@ -1,0 +1,301 @@
+{
+  "affix": {
+    "offset": "top"
+  },
+  "avatar": {
+    "basic-usage": "basic",
+    "avatar-size": "size",
+    "avatar-shape": "shape"
+  },
+  "breadcrumb": {
+    "basic-usage": "basic",
+    "custom-separator": "custom-split",
+    "separator": "custom-split",
+    "routes-mode": "routes",
+    "dropdown": "droplist",
+    "click-event": "link"
+  },
+  "cascader": {
+    "placeholder": "basic",
+    "placeholder-path-mode": "path-mode",
+    "placeholder-multiple": "multiple",
+    "placeholder-picker": "format-label",
+    "placeholder-picker-multiple": "multiple",
+    "placeholder-list": "filterable",
+    "placeholder-list-multiple": "multiple",
+    "panel-review": "format-label"
+  },
+  "checkbox": {
+    "basic-usage": "basic",
+    "set-state": "controlled-mode",
+    "set-style": "native-control",
+    "custom-fields": "option-data",
+    "max": "max-checked",
+    "check-all": "checked-all-indeterminate",
+    "indeterminate": "checked-all-indeterminate"
+  },
+  "dialog": {
+    "basic-usage": "basic",
+    "long-content": "max-height",
+    "function-call": "global",
+    "alert-dialog": "alert",
+    "confirm-box": "confirm",
+    "type-icon": "message",
+    "form-dialog": "form",
+    "custom-button-text": "custom-text",
+    "async-close": "async",
+    "advanced-props": "advanced",
+    "layout": "width"
+  },
+  "divider": {
+    "basic-usage": "basic",
+    "text-content": "with-text",
+    "vertical-divider": "vertical"
+  },
+  "form": {
+    "example": "basic",
+    "controller": "clear-trigger",
+    "events": "clear-trigger",
+    "selection-summary": "field-selection"
+  },
+  "hover": {
+    "style-binding": "basic"
+  },
+  "icon": {
+    "icon-size": "size",
+    "icon-color": "color",
+    "rotate-and-spin": "rotate-spin",
+    "click-event": "click",
+    "icon-animation": "dynamic-name",
+    "icon-list": "catalog"
+  },
+  "input": {
+    "hint": "floating-hint",
+    "prefix-suffix": "prefix",
+    "max-length": "word-limit",
+    "custom-clear-icon": "prefix",
+    "model-modifier": "default-value",
+    "native-attrs": "event-pipeline"
+  },
+  "link": {
+    "semantic-status": "link-status",
+    "mode": "link-mode",
+    "underline": "link-underline",
+    "disabled-status": "link-disabled",
+    "icon": "link-icon",
+    "loading": "link-loading"
+  },
+  "list": {
+    "basic-usage": "basic",
+    "manual-usage": "virtual-navigation",
+    "states": "size"
+  },
+  "menu": {
+    "overflow-actions": "basic",
+    "disabled-state": "disabled",
+    "popup-max-height": "popup-height"
+  },
+  "message": {
+    "function-call": "basic",
+    "component-call": "component"
+  },
+  "overlay": {
+    "overlay-base": "basic"
+  },
+  "page-header": {
+    "complete": "content"
+  },
+  "paper": {
+    "basic-usage": "basic",
+    "ripple": "live-properties"
+  },
+  "picker": {
+    "single-picker": "basic"
+  },
+  "popover": {
+    "basic-usage": "basic"
+  },
+  "progress": {
+    "basic-usage": "basic",
+    "style": "advanced",
+    "indeterminate-progress": "loop"
+  },
+  "progress-group": {
+    "size": "sizes",
+    "custom": "slots"
+  },
+  "radio": {
+    "basic-usage": "basic",
+    "set-state": "controlled",
+    "set-style": "native-control",
+    "radio-group": "group",
+    "radio-group-options": "group-options",
+    "custom-fields": "option-data",
+    "vertical": "group-direction"
+  },
+  "rate": {
+    "basic-usage": "basic",
+    "custom-total-rating": "count",
+    "custom-rating-icon-style": "character",
+    "custom-rating-icon-size-and-gap": "sizes-and-symbols",
+    "half-star": "half",
+    "disabled-and-readonly": "readonly",
+    "clearable": "clear",
+    "listen-event": "keyboard"
+  },
+  "ripple": {
+    "basic-usage": "basic"
+  },
+  "search": {
+    "fields": "with-fields",
+    "history": "local-storage",
+    "state": "state-lab"
+  },
+  "select": {
+    "standard": "basic",
+    "value-mapping": "same-label",
+    "clearable": "empty-value",
+    "options": "options-review",
+    "field-names": "options-review",
+    "custom-icons": "custom-label",
+    "dialog": "custom-label",
+    "popup": "custom-label",
+    "outline": "variant",
+    "thumb-lifecycle": "scheduler-lifecycle",
+    "scrollbar-lifecycle": "scheduler-lifecycle"
+  },
+  "skeleton": {
+    "basic-usage": "basic",
+    "custom-rows-width": "title-and-rows",
+    "display-card": "avatar-and-card",
+    "fullscreen-mode": "fullscreen"
+  },
+  "slider": {
+    "basic-usage": "basic",
+    "readonly": "state-lab",
+    "step-size": "keyboard-input",
+    "dual-thumb": "controlled-range",
+    "range": "controlled-range",
+    "disable": "state-lab",
+    "slider-size": "touch-and-labels",
+    "custom-style": "touch-and-labels",
+    "custom-btn": "touch-and-labels",
+    "show-label": "touch-and-labels"
+  },
+  "space": {
+    "base-use": "basic",
+    "space": "size",
+    "right-align": "align",
+    "around": "wrap",
+    "center": "align",
+    "between": "align",
+    "demo-8": "size"
+  },
+  "statistic": {
+    "basic-usage": "basic",
+    "custom-value": "count-to",
+    "countdown": "statistic"
+  },
+  "steps": {
+    "basic-usage": "basic",
+    "error-status": "error"
+  },
+  "table": {
+    "basic-usage": "basic",
+    "fixed-header": "scroll"
+  },
+  "tabs": {
+    "variants": "type",
+    "icons-and-slots": "icon-tabs",
+    "navs-review": "nav-content"
+  },
+  "tag": {
+    "theme-color-tag": "basic",
+    "outline-tag": "status",
+    "round-tag": "status",
+    "tag-size": "size",
+    "closable-tag": "closable",
+    "loading-tag": "loading",
+    "checkable-tag": "checkable",
+    "icon-tag": "icon",
+    "custom-color-tag": "color"
+  },
+  "textarea": {
+    "demo-1": "basic",
+    "demo-5": "max-length",
+    "demo-2": "status",
+    "demo-3": "status",
+    "demo-4": "status",
+    "demo-6": "status",
+    "body-contract": "body-contract"
+  },
+  "time": {
+    "basic-usage": "basic",
+    "disabled": "status",
+    "readonly": "status",
+    "ampm-formats": "ampm",
+    "hour24": "format",
+    "show-second": "format",
+    "with-form-item": "multiple-fields",
+    "wheel-limits": "bounds",
+    "time-fields": "format"
+  },
+  "time-range": {
+    "basic-usage": "basic",
+    "disabled": "status",
+    "hour24": "format",
+    "separator": "placeholder",
+    "next-day": "show-next-day",
+    "with-form-item": "multiple-fields",
+    "wheel-limits": "bounds",
+    "time-fields": "format"
+  },
+  "tooltip": {
+    "basic-usage": "basic",
+    "size": "mini",
+    "content-slot": "directive",
+    "theme-color-tooltip": "status",
+    "custom-color": "color",
+    "offset": "placement",
+    "trigger": "placement",
+    "events": "directive",
+    "disabled": "directive"
+  },
+  "upload": {
+    "basic-usage": "read-only",
+    "disabled": "state-controls",
+    "readonly": "state-controls",
+    "state": "state-controls",
+    "before-add": "replacement-validation",
+    "before-read": "replacement-validation",
+    "click-action": "directory",
+    "custom-render": "custom-surface",
+    "max-file-size": "replacement-validation",
+    "max-files": "replacement-validation",
+    "remove-button-slot": "custom-surface",
+    "style": "custom-surface",
+    "use-progress": "external-state",
+    "custom-preview": "custom-surface",
+    "preview": "custom-surface"
+  },
+  "watermark": {
+    "text-watermark": "basic",
+    "image-watermark": "image",
+    "custom-gap": "custom",
+    "custom-offset": "custom",
+    "custom-rotate": "custom"
+  },
+  "alert": {
+    "allow-to-close": "closable",
+    "custom-close-icon": "close-icon"
+  },
+  "back-top": {
+    "target-container": "container",
+    "custom-content": "custom"
+  },
+  "carousel": {
+    "autoplay-hover-pause": "auto-play-hover",
+    "trigger-hover": "trigger",
+    "handle-change": "change-event"
+  }
+}

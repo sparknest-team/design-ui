@@ -1,0 +1,29 @@
+{
+  "failures": [],
+  "diagnostic": {},
+  "navigation": {
+    "url": "http://127.0.0.1:59005/#/zh-CN/loading",
+    "elapsedMs": 5007,
+    "events": [
+      {
+        "name": "domcontentloaded",
+        "elapsedMs": 0
+      },
+      {
+        "name": "load",
+        "elapsedMs": 0
+      }
+    ],
+    "requests": [
+      {
+        "url": "http://127.0.0.1:59005/",
+        "type": "document",
+        "startedMs": 4,
+        "status": 200,
+        "finishedMs": 17
+      }
+    ],
+    "pending": []
+  },
+  "error": "TimeoutError: page.goto: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:59005/#/zh-CN/loading\", waiting until \"load\"\u001b[22m\n\nNavigation diagnostic: {\"url\":\"http://127.0.0.1:59005/#/zh-CN/loading\",\"elapsedMs\":5007,\"events\":[{\"name\":\"domcontentloaded\",\"elapsedMs\":0},{\"name\":\"load\",\"elapsedMs\":0}],\"requests\":[{\"url\":\"http://127.0.0.1:59005/\",\"type\":\"document\",\"startedMs\":4,\"status\":200,\"finishedMs\":17}],\"pending\":[]}"
+}

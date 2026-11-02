@@ -1,0 +1,328 @@
+{
+  "failures": [],
+  "diagnostic": {
+    "url": "http://127.0.0.1:60935/mobile.html#/slider?language=zh-CN",
+    "text": "Maple Design Mobile · Cedar’s Mobile Counterpart\nMaple Design Mobile,Cedar Design Web,Vue 3,TypeScript,移动端组件库,语义 Token,主题定制\n\nMaple Design Mobile is a mobile component library built with Vue 3 and TypeScript, maintained by 孟帅 and 吴甲明. It shares semantic tokens and component API conventions with Cedar Design Web and supports on-demand imports, theming and internationalization.\n\nSlider\nLTR →\n特色与场景\n组件\n受控加载 / Controlled loading\n加载状态 / Loading\n\n通过 loading 显式控制等待展示，普通事件返回 Promise 不会自动加载。Loading is controlled by business state.\n\n基础示例\n基础用法\n布局与排列\n垂直\n7\n64\n50 / 7–64\n内容与展示\n触控提示与定制\n45\n45\n几何尺寸\n颜色\n滑块按钮与数值标签\n自定义拇指\n5\n38\n提示\n50\n交互与控制\n交互状态对比\ndisabled\nreadonly\nerror\n刻度、标记和数字输入\n0255075100\n步长\n受控与非交叉范围\n30\n70\n50\n范围\n自定义边界\n0\n默认亮色\n默认暗色\n枫叶亮色\n枫叶暗色\nAlps 乐道\nFirefly 萤火虫\nAlps 乐道暗色\nFirefly 萤火虫暗色",
+    "numericSteps": [],
+    "overflow": [],
+    "previews": [
+      "<section data-demo=\"loading\"><h3>受控加载 / Controlled loading</h3><div class=\"mp-space mp-space--block\" style=\"gap: 16px; flex-flow: column; justify-content: flex-start; align-items: stretch; width: 100%;\"><!----><div class=\"mp-space__item\"><form class=\"mp-form\"><div class=\"mp-form-item mp--box mp-form-item--vertical mp-form-item--with-label\"><div class=\"mp-form-item__label-col\"><label class=\"mp-form-item__label\"><!--v-if-->加载状态 / Loading<!--v-if--><!--v-if--> </label></div><div class=\"mp-form-item__wrapper\"><div class=\"mp-form-item__content mp-form-item__content--flex\" style=\"--mp-form-content-align: start; --mp-form-content-justify: flex-start; text-align: start; justify-content: flex-start;\"><button type=\"button\" role=\"switch\" class=\"mp-switch mp-switch--variant-circle mp-switch--size-md mp-switch--checked\" aria-checked=\"true\"><span class=\"mp-switch__track\" aria-hidden=\"true\"></span><span class=\"mp-switch__text\"></span><span class=\"mp-switch__handle\" style=\"box-shadow: 0 1px 3px var(--mp-switch-shadow-color);\"><!--v-if--></span></button></div><!--v-if--><!--v-if--></div></div></form></div><!----><div class=\"mp-space__item\"><div class=\"mp-slider mp-slider--horizontal\" aria-busy=\"true\"><div class=\"mp-slider__track\"><div class=\"mp-slider__rail\"></div><div class=\"mp-slider__fill\" style=\"left: 0%; width: 40%;\"></div><div class=\"mp-slider__thumb\" role=\"slider\" tabindex=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"40\" aria-valuetext=\"40\" aria-orientation=\"horizontal\" style=\"left: 40%;\"><span class=\"mp-slider__handle\"></span><!--v-if--></div></div><!--v-if--><span class=\"mp-pending-feedback\" aria-busy=\"true\"><div class=\"mp-loading\" role=\"status\" aria-live=\"polite\"><!--v-if--><div class=\"mp-loading__body\"><div class=\"mp-loading__circle\" aria-hidden=\"true\"><span class=\"mp-loading__circle-block mp-loading__circle-block--sm\"><svg viewBox=\"25 25 50 50\" aria-hidden=\"true\"><circle cx=\"50\" cy=\"50\" r=\"20\" fill=\"none\"></circle></svg></span></div><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--></div></div></span></div></div><!----><div class=\"mp-space__item\"><p>通过 loading 显式控制等待展示，普通事件返回 Promise 不会自动加载。Loading is controlled by business state.</p></div></div></section>",
+      "<section data-demo=\"basic-usage\"><div class=\"app-type\">基础用法</div><div class=\"mp-slider mp-slider--horizontal\"><div class=\"mp-slider__track\"><div class=\"mp-slider__rail\"></div><div class=\"mp-slider__fill\" style=\"left: 0%; width: 3%;\"></div><div class=\"mp-slider__thumb\" role=\"slider\" tabindex=\"0\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"3\" aria-valuetext=\"3\" aria-orientation=\"horizontal\" style=\"left: 3%;\"><span class=\"mp-slider__handle\"></span><!--v-if--></div></div><!--v-if--><!--v-if--></div></section>"
+    ],
+    "controls": [
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "Back",
+        "class": "mp-page-header__back"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "切换到 RTL / Switch to right-to-left",
+        "class": "docs-direction-toggle"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2 theme-button"
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "svg",
+        "role": "img",
+        "label": "",
+        "class": {}
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "特色与场景",
+        "class": "mp-button mp-button--size-md mp-button--status-default mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": null,
+        "label": "组件",
+        "class": "mp-button mp-button--size-md mp-button--status-primary mp-button--variant-default mp-elevation--2"
+      },
+      {
+        "tag": "BUTTON",
+        "role": "switch",
+        "label": "",
+        "class": "mp-switch mp-switch--variant-circle mp-switch--size-md mp-switch--checked"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "status",
+        "label": "",
+        "class": "mp-loading"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Vertical value",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Vertical minimum",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "SPAN",
+        "role": "tooltip",
+        "label": "7",
+        "class": "mp-slider__tooltip"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Vertical maximum",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "SPAN",
+        "role": "tooltip",
+        "label": "64",
+        "class": "mp-slider__tooltip"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Always visible",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "SPAN",
+        "role": "tooltip",
+        "label": "45",
+        "class": "mp-slider__tooltip"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Custom size",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Custom handle",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "5",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "38",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "50",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "SPAN",
+        "role": "tooltip",
+        "label": "50",
+        "class": "mp-slider__tooltip"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-checkbox__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": null,
+        "label": "",
+        "class": "mp-checkbox__input"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Volume",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "Volume",
+        "class": "mp-input-number__input"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Minimum",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Maximum",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "Minimum",
+        "class": "mp-input-number__input"
+      },
+      {
+        "tag": "INPUT",
+        "role": "spinbutton",
+        "label": "Maximum",
+        "class": "mp-input-number__input"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Minimum",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "SPAN",
+        "role": "tooltip",
+        "label": "30",
+        "class": "mp-slider__tooltip"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Maximum",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "SPAN",
+        "role": "tooltip",
+        "label": "70",
+        "class": "mp-slider__tooltip"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Controlled rejection",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Read only",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "Disabled",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "DIV",
+        "role": "slider",
+        "label": "0",
+        "class": "mp-slider__thumb"
+      },
+      {
+        "tag": "SPAN",
+        "role": "tooltip",
+        "label": "0",
+        "class": "mp-slider__tooltip"
+      }
+    ]
+  },
+  "error": "TimeoutError: page.waitForFunction: Timeout 5000ms exceeded."
+}

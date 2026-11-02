@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "evidenceType": "environment-probe",
+  "status": "pending",
+  "nativeDeviceAcceptance": false,
+  "collectedAt": "2026-10-29T07:23:53.860Z",
+  "library": "maple",
+  "targetId": "ios-safari-minimum",
+  "artifactSha256": "3af805f0b605ab822a3dca6ae5b4858f68440dce30c71afef450531e00792f0b",
+  "targetCatalogSha256": "775e8d362ee561ef8484caff680fbf8f022d9f39c022f221519c0dfb98786d9d",
+  "userAgent": "Mozilla/5.0 (Linux; Android 13; QA Emulation) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.8059.79 Mobile Safari/537.36",
+  "navigatorPlatform": "MacIntel",
+  "maxTouchPoints": 1,
+  "secureContext": true,
+  "claimedMetadata": {
+    "osVersion": "",
+    "device": "",
+    "browserVersion": "",
+    "hostVersion": "",
+    "engine": "",
+    "physicalDeviceAttestation": false
+  },
+  "features": {
+    "colorMix": true,
+    "has": true,
+    "dvh": true,
+    "resizeObserver": true,
+    "intersectionObserver": true,
+    "visualViewport": true
+  },
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "dvhHeight": 844,
+    "visual": {
+      "width": 390,
+      "height": 844,
+      "scale": 1,
+      "offsetTop": 0
+    },
+    "safeArea": {
+      "top": "0px",
+      "right": "0px",
+      "bottom": "0px",
+      "left": "0px"
+    }
+  },
+  "events": [
+    {
+      "type": "focus",
+      "timeMs": 733,
+      "field": "ime",
+      "valueLength": 0,
+      "inputType": null,
+      "trusted": true
+    },
+    {
+      "type": "input",
+      "timeMs": 744,
+      "field": "ime",
+      "valueLength": 24,
+      "inputType": "insertText",
+      "trusted": true
+    },
+    {
+      "type": "blur",
+      "timeMs": 809,
+      "field": "ime",
+      "valueLength": 24,
+      "inputType": null,
+      "trusted": true
+    }
+  ],
+  "viewportEvents": [],
+  "files": [
+    {
+      "field": "file",
+      "files": [
+        {
+          "type": "image/png",
+          "bytes": 2
+        }
+      ]
+    }
+  ],
+  "cases": {
+    "tap-drag-swipe-longpress": "pending",
+    "input-ime-autofill": "pending",
+    "native-keyboard-visibility": "pending",
+    "popup-position-scroll-lock": "pending",
+    "nested-scroll": "pending",
+    "orientation-address-bar-viewport": "pending",
+    "safe-area-teleport": "pending",
+    "upload-camera": "pending",
+    "light-dark-layout": "pending"
+  },
+  "userAgentData": {
+    "brands": [
+      {
+        "brand": "Chromium",
+        "version": "155"
+      },
+      {
+        "brand": "Not(A:Brand",
+        "version": "24"
+      }
+    ],
+    "fullVersionList": [
+      {
+        "brand": "Chromium",
+        "version": "155.0.8059.79"
+      },
+      {
+        "brand": "Not(A:Brand",
+        "version": "24.0.0.0"
+      }
+    ],
+    "mobile": true,
+    "platform": "Android",
+    "platformVersion": "13"
+  }
+}

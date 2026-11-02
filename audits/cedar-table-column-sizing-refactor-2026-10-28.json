@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-28",
+  "component": "Cedar Table",
+  "group": "列宽、布局与固定列",
+  "cases": [
+    "column-width-scenarios",
+    "fixed",
+    "columns-children-and-fixed",
+    "column-sizing-playground"
+  ],
+  "consolidated": [
+    "column-width-fit",
+    "column-fit",
+    "column-scroll-x",
+    "table-layout",
+    "layout-fit-matrix",
+    "column-resizable"
+  ],
+  "internalStates": {
+    "horizontal": "hasHorizontalOverflow: calculated from column widths and available container width",
+    "vertical": "hasBodyHeightConstraint: derived from height/maxHeight; no scroll.x/scroll.y settings"
+  },
+  "checks": {
+    "tableTests": 32,
+    "groupTests": 14,
+    "lint": "passed",
+    "browser": [
+      "fit distribution",
+      "grouped headers",
+      "fixed layout resize handles",
+      "auto layout hides resize handles",
+      "narrow container overflow",
+      "sticky scrollbar hover visibility"
+    ],
+    "consoleErrors": []
+  }
+}

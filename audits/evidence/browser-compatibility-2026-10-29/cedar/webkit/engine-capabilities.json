@@ -1,0 +1,82 @@
+{
+  "browser": {
+    "name": "webkit",
+    "engine": "webkit",
+    "launchOptions": {},
+    "version": "26.5",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "recordedAt": "2026-10-28T17:50:15.329Z",
+    "evidenceType": "automated-engine-regression",
+    "nativeDeviceAcceptance": false,
+    "userAgentEmulation": "device routing preset; not evidence of an actual OS/browser version",
+    "gestureInput": "synthetic touch events (handler regression only)"
+  },
+  "result": {
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Mobile/15E148 Safari/604.1",
+    "events": [
+      {
+        "type": "touchstart",
+        "trusted": false,
+        "x": 98
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 108
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 118
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 128
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 138
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 148
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 158
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 168
+      },
+      {
+        "type": "touchmove",
+        "trusted": false,
+        "x": 178
+      },
+      {
+        "type": "touchend",
+        "trusted": false,
+        "x": 178
+      }
+    ],
+    "features": {
+      "colorMix": true,
+      "has": true,
+      "dvh": true,
+      "resizeObserver": true,
+      "intersectionObserver": true,
+      "visualViewport": true
+    },
+    "padding": "10px",
+    "viewportHeight": 900,
+    "height": 900,
+    "passed": true
+  }
+}
