@@ -1,8 +1,8 @@
 import { createApp, h, nextTick, ref } from 'vue'
-import Cedar from '/cedar-design-web/packages/cedar-ui/src/message/index.ts'
-import Maple from '/maple-design-mobile/packages/maple-ui/src/message/index.ts'
-import '/cedar-design-web/packages/cedar-ui/src/message/style/index.ts'
-import '/maple-design-mobile/packages/maple-ui/src/message/style/index.ts'
+import Cedar from '/cedar-design-web/packages/ui/src/message/index.ts'
+import Maple from '/maple-design-mobile/packages/ui/src/message/index.ts'
+import '/cedar-design-web/packages/ui/src/message/style/index.ts'
+import '/maple-design-mobile/packages/ui/src/message/style/index.ts'
 
 const records = ref([]), busy = ref(false)
 let current, identity = 0

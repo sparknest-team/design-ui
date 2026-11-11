@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url'
 const root = fileURLToPath(new URL('../../', import.meta.url))
 const req = createRequire(path.join(root, 'maple-design-mobile/package.json'))
 const ts = req('typescript')
-const uiRequire = createRequire(path.join(root, 'maple-design-mobile/packages/maple-ui/package.json'))
+const uiRequire = createRequire(path.join(root, 'maple-design-mobile/packages/ui/package.json'))
 function evaluate(relative, overrides = {}) {
   const source = fs.readFileSync(path.join(root, relative), 'utf8')
   const output = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText
@@ -14,7 +14,7 @@ function evaluate(relative, overrides = {}) {
   new Function('require', 'module', 'exports', output)(name => overrides[name] ?? uiRequire(name), module, module.exports)
   return module.exports
 }
-const language = evaluate('maple-design-mobile/packages/maple-cli/src/client/language.ts')
+const language = evaluate('maple-design-mobile/packages/cli/src/client/language.ts')
 assert.equal(language.normalizeLanguage('en-US'), 'en-US')
 assert.equal(language.normalizeLanguage('invalid'), 'zh-CN')
 assert.equal(language.getSavedLanguage('en-US'), 'en-US') // SSR / unavailable storage
@@ -26,7 +26,7 @@ assert.equal(messages.t('fallback'), '回退')
 assert.equal(messages.t('missing'), 'missing')
 messages.use('unknown')
 assert.equal(messages.t('title'), '标题')
-const nav = evaluate('cedar-design-web/packages/cedar-ui/docs/.vuepress/i18n/navigation.ts')
+const nav = evaluate('cedar-design-web/packages/ui/docs/.vuepress/i18n/navigation.ts')
 const source = [{ text: 'Button 按钮 [已同源]', link: '/components/button/', children: [{ text: '设计规范', link: 'https://example.com' }] }]
 const en = nav.translateNavigation(source)
 assert.equal(en[0].text, 'Button [Shared]')
@@ -35,7 +35,7 @@ assert.equal(en[0].children[0].link, 'https://example.com')
 assert.equal(source[0].text, 'Button 按钮 [已同源]')
 const cases = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/audits/same-source-demos.json')))
 for (const [component, demos] of Object.entries(cases)) {
-  const base = path.join(root, 'cedar-design-web/packages/cedar-ui/src', component)
+  const base = path.join(root, 'cedar-design-web/packages/ui/src', component)
   const english = fs.readFileSync(path.join(base, 'README.en-US.md'), 'utf8')
   assert(english.includes(`permalink: /en/components/${component}/`))
   assert(english.includes('lang: en-US'))
@@ -46,7 +46,7 @@ for (const [component, demos] of Object.entries(cases)) {
 }
 console.log(`PASS site language normalization, SSR fallback, reactive demo messages, navigation mapping and ${Object.keys(cases).length} native English component pages`)
 const changes = []
-const localeBridge = evaluate('cedar-design-web/packages/cedar-ui/docs/.vuepress/i18n/client.ts', {
+const localeBridge = evaluate('cedar-design-web/packages/ui/docs/.vuepress/i18n/client.ts', {
   '../../../src/locale': { addI18nMessages: packs => assert.deepEqual(Object.keys(packs), ['zh-CN', 'en-US']), useLocale: lang => changes.push(lang) },
   '../../../src/locale/lang/en-us': { locale: 'en-US' },
   '../../../src/locale/lang/zh-cn': { locale: 'zh-CN' },

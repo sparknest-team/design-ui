@@ -18,18 +18,18 @@ import {
   existsSync,
 } from "node:fs";
 import { pathToFileURL } from "node:url";
-import Cedar from "../../../../cedar-design-web/packages/cedar-ui/src/cedar-vue";
-import Maple from "../../../../maple-design-mobile/packages/maple-ui/src/maple-vue";
-import * as CedarIcons from "../../../../cedar-design-web/packages/cedar-icons-vue/src/index";
-import * as MapleIcons from "../../../../maple-design-mobile/packages/maple-icons-vue/src/index";
+import Cedar from "../../../../cedar-design-web/packages/ui/src/cedar-vue";
+import Maple from "../../../../maple-design-mobile/packages/ui/src/maple-vue";
+import * as CedarIcons from "../../../../cedar-design-web/packages/icons/src/index";
+import * as MapleIcons from "../../../../maple-design-mobile/packages/icons/src/index";
 import ReviewPanel from "../src/ReviewPanel.vue";
-import { ImagePreviewAction as MpImagePreviewAction } from "../../../../maple-design-mobile/packages/maple-ui/src/image";
-import CLoading from "../../../../cedar-design-web/packages/cedar-ui/src/loading";
-import CEllipsis from "../../../../cedar-design-web/packages/cedar-ui/src/ellipsis";
+import { ImagePreviewAction as MpImagePreviewAction } from "../../../../maple-design-mobile/packages/ui/src/image";
+import CLoading from "../../../../cedar-design-web/packages/ui/src/loading";
+import CEllipsis from "../../../../cedar-design-web/packages/ui/src/ellipsis";
 import { initialReviewValue, parseReviewValue } from "../src/review-state";
 
 const demos = import.meta.glob(
-  "../../../../{cedar-design-web/packages/cedar-ui,maple-design-mobile/packages/maple-ui}/src/**/api-review*.vue",
+  "../../../../{cedar-design-web/packages/ui,maple-design-mobile/packages/ui}/src/**/api-review*.vue",
 );
 const caseManifest = JSON.parse(
   readFileSync(

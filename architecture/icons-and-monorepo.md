@@ -7,8 +7,8 @@ Cedar 已经是 pnpm monorepo：根目录包含 `pnpm-workspace.yaml`，UI、pre
 推荐两端分别发布独立图标包，生成器保留在各自仓库内部，不强行共享图标源：
 
 ```text
-cedar-design-web/packages/cedar-icons-vue   # @cedar-design/icons-vue
-maple-design-mobile/packages/maple-icons-vue # @maple-design/icons-vue
+cedar-design-web/packages/icons   # @cedar-design/icons-vue
+maple-design-mobile/packages/icons # @maple-design/icons-vue
 ```
 
 Cedar 当前的 Vue SVG component 路线作为技术方向，但不直接搬迁现有实现：它支持单图标 Tree Shaking、currentColor、多色 SVG、按图标设置 `aria-hidden`/accessible title，也不依赖字体加载和私有区字符映射。Maple 的 icon font、PNG 和旧 class API 直接移除，不建立兼容包。

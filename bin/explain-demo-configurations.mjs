@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import { readDemoSections, groupDemoSections } from './group-demo-sections.mjs';
 const root=fileURLToPath(new URL('../../',import.meta.url));
-const require=createRequire(new URL('../../cedar-design-web/packages/cedar-ui/package.json',import.meta.url));
+const require=createRequire(new URL('../../cedar-design-web/packages/ui/package.json',import.meta.url));
 const {parse}=require('@vue/compiler-sfc');
 const {parse:parseDom}=require('@vue/compiler-dom');
 const write=process.argv.includes('--write');
@@ -32,7 +32,7 @@ function usedProps(file,tag,publicNames) {
 for(const platform of ['cedar','maple']) {
  const groups=JSON.parse(fs.readFileSync(path.join(root,`design-ui/configs/demo-groups${platform==='maple'?'.maple':''}.json`)));
  for(const [family,chapters] of Object.entries(groups)) {
-  let base=path.join(root,`${platform==='cedar'?'cedar-design-web/packages/cedar-ui':'maple-design-mobile/packages/maple-ui'}/src`,family);
+  let base=path.join(root,`${platform==='cedar'?'cedar-design-web/packages/ui':'maple-design-mobile/packages/ui'}/src`,family);
   const docs=platform==='maple'?['docs/zh-CN.md','docs/en-US.md']:['README.md','README.en-US.md'];
   if(platform==='cedar'&&family.endsWith('/picker')&&!fs.existsSync(path.join(base,'README.md'))){base=path.dirname(base);docs.splice(0,2,'PICKER.md','PICKER.en-US.md');}
   for(const relative of docs){if(languageFilter && (/en-US/.test(relative)?'en-US':'zh-CN')!==languageFilter)continue;const file=path.join(base,relative);if(!fs.existsSync(file))continue;const original=fs.readFileSync(file,'utf8');

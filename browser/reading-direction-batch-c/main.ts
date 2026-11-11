@@ -1,6 +1,6 @@
 import { createApp, defineComponent, h, ref } from 'vue'
-import Scheduler from '../../../cedar-design-web/packages/cedar-ui/src/scheduler'
-import '../../../cedar-design-web/packages/cedar-ui/src/scheduler/style'
+import Scheduler from '../../../cedar-design-web/packages/ui/src/scheduler'
+import '../../../cedar-design-web/packages/ui/src/scheduler/style'
 const initial = () => [
   { id: 'a', title: 'Alpha', start: '2026-09-22T09:00:00', end: '2026-09-22T10:00:00', resourceIds: ['r0'] },
   { id: 'b', title: 'Beta', start: '2026-09-22T12:00:00', end: '2026-09-22T13:00:00', resourceIds: ['r0'] },

@@ -9,7 +9,7 @@
 - 主值使用 `modelValue`/`update:modelValue`；具名模型使用 `open`/`update:open`、`show`/`update:show`。
 - `change` 表示值已提交或完成变化，`input` 仅用于确有逐字符语义的组件。
 
-Button/SplitButton 的 click/touchstart 使用普通 Emits 通知，支持 async 监听器，但不使用监听器返回值驱动加载。业务通过 loading（SplitButton 通过 buttonProps.loading）控制等待，并在 finally 中恢复；错误处理使用正常的 Vue 事件错误链。基础 Button 不提供 action 或 autoLoading 任务入口。
+Button/SplitButton 的 click 使用普通 Emits 通知，支持 async 监听器，但不使用监听器返回值驱动加载。业务通过 loading（SplitButton 通过 buttonProps.loading）控制等待，并在 finally 中恢复；错误处理使用正常的 Vue 事件错误链。基础 Button 不提供 action 或 autoLoading 任务入口。
 
 主值与默认值统一采用 `modelValue` / `defaultValue`，支持普通 `v-model`。Tabs 主值为标签 name，Collapse 为展开项 name 数组，Pagination 为当前页码，Steps 为当前步骤（后二者从 1 开始）。`defaultValue` 仅在创建时初始化非受控状态，不监听后续变化、不在初始化时发更新事件、不回写父级；显式受控值优先。Pagination 的 `pageSize/defaultPageSize`、选择器的 `inputValue/defaultInputValue` 与 `open/defaultOpen` 仍为独立状态。选项对象的 `value/label` 表示身份/展示内容，与组件主值无冲突。
 

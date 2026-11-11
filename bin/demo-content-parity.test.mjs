@@ -37,7 +37,7 @@ test('retired standalone scenarios never return to public groups', () => {
 
 test('authored showcase and guide pages keep valid demo references after consolidation', () => {
   for (const platform of ['cedar', 'maple']) {
-    const base = path.join(root, platform === 'cedar' ? 'cedar-design-web/packages/cedar-ui/docs' : 'maple-design-mobile/packages/maple-ui/docs');
+    const base = path.join(root, platform === 'cedar' ? 'cedar-design-web/packages/ui/docs' : 'maple-design-mobile/packages/ui/docs');
     for (const name of fs.readdirSync(base, { recursive: true }).filter(name => name.endsWith('.md') && !name.split('/').some(part => part.startsWith('.')))) {
       const file = path.join(base, name);
       const raw = fs.readFileSync(file, 'utf8');

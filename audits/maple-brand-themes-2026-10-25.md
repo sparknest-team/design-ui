@@ -8,7 +8,7 @@
 - 文档站、手机示例、Playground 的两个品牌入口；亮色外壳继承文档站现有亮色配置，避免从暗色切换后留下暗色背景。
 - `--mp-field-variant-outline-background`、`--mp-checkbox-control-border-radius` 两个公开样式入口；Cedar 对应 Token、实现及共享契约同步，默认外观保持透明背景和 2px Checkbox 圆角。
 - 同一份完整预约表单：文本、手机号、数字、Select、Cascader、日期、时间、Radio、Checkbox、Switch、Textarea、Upload、必填校验、disabled、readonly、readPretty、popup 草稿事务、重置、底部 SafeArea。附件仅本地预览。
-- [主题文档](../../maple-design-mobile/packages/maple-ui/src/themes/docs/zh-CN.md) 解释主题覆盖、真实值、字体加载和视觉边界；[App 安全区入口](../../maple-design-mobile/packages/maple-ui/src/safe-area/docs/zh-CN.md) 解释宿主注入、0 覆盖、横屏、嵌套消费和 Teleport。
+- [主题文档](../../maple-design-mobile/packages/ui/src/themes/docs/zh-CN.md) 解释主题覆盖、真实值、字体加载和视觉边界；[App 安全区入口](../../maple-design-mobile/packages/ui/src/safe-area/docs/zh-CN.md) 解释宿主注入、0 覆盖、横屏、嵌套消费和 Teleport。
 
 ## 采集方法与边界
 
@@ -58,7 +58,7 @@ HoroUI 浏览器 DOM 接口超时后，使用已登录 Chrome 的原生界面读
 - 类型检查通过；库全量构建通过；包检查 3388 文件，0 errors / 0 warnings。
 - 共享主题契约通过（65 system，1036 component values，49 components）；三页生成 Token 参考检查通过；spec check 90 components，0 errors / 0 warnings。
 - 首次生产文档构建通过（1478 示例检查，4940 模块）。后续更新文档外壳后再次验证，结果追加在下方。
-- 本次文件定向 ESLint 通过。全库 ESLint 运行时出现其他正在修改的 `src/_hooks/__tests__/async-data.spec.ts`、`packages/maple-use/src/useAsyncData.ts` 等格式问题；未覆盖其他任务的代码。
+- 本次文件定向 ESLint 通过。全库 ESLint 运行时出现其他正在修改的 `src/_hooks/__tests__/async-data.spec.ts`、`packages/use/src/useAsyncData.ts` 等格式问题；未覆盖其他任务的代码。
 - 扩大到全部 Checkbox 示例时，`demo-language.spec.js` 的两项测试期望 dialog 入口，但当前示例输出 inline 控件。这两项与本次颜色/圆角映射无关，未将其计为通过。
 
 文档构建期间，新增 Select 示例的相对路径写成 `./example/...`，解析到不存在的 `select/docs/example`。仅将该引用修正为 `../example/demos/async-source.vue` 以解除构建阻塞，未修改该示例行为。

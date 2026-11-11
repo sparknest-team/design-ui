@@ -3,9 +3,10 @@ import { readFileSync, existsSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { normalizeTypeScript, normalizeVueSyntaxSource } from '../../cedar-design-web/checks/normalize-source.mjs'
 const root = fileURLToPath(new URL('../../', import.meta.url))
-const c = resolve(root, 'cedar-design-web/packages/cedar-ui/src/carousel')
-const m = resolve(root, 'maple-design-mobile/packages/maple-ui/src/carousel')
+const c = resolve(root, 'cedar-design-web/packages/ui/src/carousel')
+const m = resolve(root, 'maple-design-mobile/packages/ui/src/carousel')
 const require = createRequire(resolve(c, '../../package.json'))
 const prettier = require('prettier')
 const less = require('less')
@@ -18,7 +19,12 @@ function normalize(s) {
 const pairs = [['carousel.vue','Carousel.vue'], ...['CarouselItem.vue','props.ts','types.ts','context.ts','layout.ts','index.ts','style/index.ts','style/index.less','style/token.less','__tests__/body-contract.spec.js'].map(f=>[f,f])]
 for (const [a,b] of pairs) {
  const parser=a.endsWith('.vue')?'vue':a.endsWith('.less')?'less':'typescript'
- assert.equal(await prettier.format(normalize(readFileSync(resolve(c,a),'utf8')),{parser}),await prettier.format(normalize(readFileSync(resolve(m,b),'utf8')),{parser}),a)
+ const canonical = async source => parser === 'vue'
+   ? normalizeVueSyntaxSource(normalize(source), { sortBoundImports: false })
+   : parser === 'typescript'
+     ? normalizeTypeScript(normalize(source), { sortBoundImports: false })
+     : prettier.format(normalize(source), { parser })
+ assert.equal(await canonical(readFileSync(resolve(c,a),'utf8')),await canonical(readFileSync(resolve(m,b),'utf8')),a)
 }
 for(const dir of [c,m]){
  assert.ok(!existsSync(resolve(dir,'platform.ts')))

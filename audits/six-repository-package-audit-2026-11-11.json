@@ -1,0 +1,336 @@
+{
+  "date": "2026-11-11",
+  "workspaces": 42,
+  "templates": 2,
+  "extraManifests": 0,
+  "authoredModules": 7745,
+  "boundaryRegressionTests": 75,
+  "manifests": [
+    {
+      "repository": "cedar-design-web",
+      "path": "package.json",
+      "name": "@cedar-design/workspace-vue",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web",
+      "path": "packages/cli/package.json",
+      "name": "@cedar-design/cli-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web",
+      "path": "packages/icons/package.json",
+      "name": "@cedar-design/icons-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web",
+      "path": "packages/preset-tailwindcss/package.json",
+      "name": "@cedar-design/preset-tailwindcss-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web",
+      "path": "packages/preset-unocss/package.json",
+      "name": "@cedar-design/preset-unocss-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web",
+      "path": "packages/resolver/package.json",
+      "name": "@cedar-design/resolver-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web",
+      "path": "packages/shared/package.json",
+      "name": "@cedar-design/shared-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web",
+      "path": "packages/ui/package.json",
+      "name": "@cedar-design/ui-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web",
+      "path": "packages/use/package.json",
+      "name": "@cedar-design/use-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "package.json",
+      "name": "@maple-design/workspace-vue",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/cli/package.json",
+      "name": "@maple-design/cli-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/icons/package.json",
+      "name": "@maple-design/icons-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/preset-tailwindcss/package.json",
+      "name": "@maple-design/preset-tailwindcss-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/preset-unocss/package.json",
+      "name": "@maple-design/preset-unocss-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/resolver/package.json",
+      "name": "@maple-design/resolver-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/shared/package.json",
+      "name": "@maple-design/shared-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/touch-emulator/package.json",
+      "name": "@maple-design/touch-emulator-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/ui/package.json",
+      "name": "@maple-design/ui-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/ui-playground/package.json",
+      "name": "@maple-design/ui-playground-vue",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/use/package.json",
+      "name": "@maple-design/use-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/vite-plugins/package.json",
+      "name": "@maple-design/vite-plugins-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/vscode-extension/package.json",
+      "name": "maple-vscode-extension-vue",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web-react",
+      "path": "package.json",
+      "name": "@cedar-design/workspace-react",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web-react",
+      "path": "packages/cli/package.json",
+      "name": "@cedar-design/cli-react",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web-react",
+      "path": "packages/shared/package.json",
+      "name": "@cedar-design/shared-react",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web-react",
+      "path": "packages/ui/package.json",
+      "name": "@cedar-design/ui-react",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "cedar-design-web-react",
+      "path": "packages/use/package.json",
+      "name": "@cedar-design/use-react",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile-react",
+      "path": "package.json",
+      "name": "@maple-design/workspace-react",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile-react",
+      "path": "packages/cli/package.json",
+      "name": "@maple-design/cli-react",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile-react",
+      "path": "packages/shared/package.json",
+      "name": "@maple-design/shared-react",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile-react",
+      "path": "packages/ui/package.json",
+      "name": "@maple-design/ui-react",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile-react",
+      "path": "packages/use/package.json",
+      "name": "@maple-design/use-react",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "design-ui",
+      "path": "package.json",
+      "name": "@sparknest/design-system-vue",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "design-ui",
+      "path": "packages/theme-contract/package.json",
+      "name": "@sparknest/theme-contract-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "design-ui",
+      "path": "packages/ui-build/package.json",
+      "name": "@sparknest/ui-build-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "design-ui",
+      "path": "packages/ui-doc-preview/package.json",
+      "name": "@sparknest/ui-doc-preview-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "design-ui",
+      "path": "packages/ui-icons/package.json",
+      "name": "@sparknest/ui-icons-vue",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "design-ui-react",
+      "path": "package.json",
+      "name": "@sparknest/design-system-react",
+      "private": true,
+      "classification": "workspace"
+    },
+    {
+      "repository": "design-ui-react",
+      "path": "packages/theme-contract/package.json",
+      "name": "@sparknest/theme-contract-react",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "design-ui-react",
+      "path": "packages/ui-build/package.json",
+      "name": "@sparknest/ui-build-react",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "design-ui-react",
+      "path": "packages/ui-doc-preview/package.json",
+      "name": "@sparknest/ui-doc-preview-react",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "design-ui-react",
+      "path": "packages/ui-icons/package.json",
+      "name": "@sparknest/ui-icons-react",
+      "private": false,
+      "classification": "workspace"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/cli/template/generators/base/package.json",
+      "name": "maple-library-template-vue",
+      "private": false,
+      "classification": "project-template"
+    },
+    {
+      "repository": "maple-design-mobile",
+      "path": "packages/ui-playground/src/download/template/package.json",
+      "name": "maple-playground-demo-vue",
+      "private": true,
+      "classification": "project-template"
+    }
+  ],
+  "remaining": [
+    "Maple Card test has three existing formatting errors",
+    "Historical shared-scroll native fixture hash drift; original evidence unchanged",
+    "Existing third-party peer range warnings",
+    "No npm publication or full native/browser acceptance performed"
+  ],
+  "manifestGenerationTests": 8,
+  "projectTemplateTests": 9,
+  "generatedLibraryVariants": [
+    "sfc",
+    "sfc+locale",
+    "tsx",
+    "tsx+locale"
+  ],
+  "cliRegressionTests": {
+    "node": 16,
+    "vitest": 44
+  }
+}

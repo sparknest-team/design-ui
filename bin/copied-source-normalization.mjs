@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict'
 import { createRequire } from 'node:module'
 
-const ts = createRequire(new URL('../../maple-design-mobile/packages/maple-ui/package.json', import.meta.url))('typescript')
+const ts = createRequire(new URL('../../maple-design-mobile/packages/ui/package.json', import.meta.url))('typescript')
 
 export const normalizeCopiedSource = (source) => source
-  .replaceAll('@cedar-design/shared', '@maple-design/shared')
-  .replaceAll('@cedar-design/use', '@maple-design/use')
+  .replaceAll('@cedar-design/shared-vue', '@maple-design/shared-vue')
+  .replaceAll('@cedar-design/use-vue', '@maple-design/use-vue')
   .replaceAll('@cedar-design/icons-vue', '@maple-design/icons-vue')
   .replaceAll('../_utils/maple/elements', '../utils/elements')
   .replaceAll('../_utils/size-length', '../utils/size-length')
@@ -38,6 +38,7 @@ export const normalizeCopiedSource = (source) => source
   .replaceAll('c-skeleton-animation', 'mp-skeleton-animation')
   .replaceAll('c-icon-spin', 'mp-icon-spin')
   .replaceAll('c-tag', 'mp-tag')
+  .replaceAll('data-c-theme', 'data-mp-theme')
   .replaceAll('cedar-theme', 'maple-theme')
   .replaceAll('cedar-style-vars', 'maple-style-vars')
   .replaceAll('c-switch', 'mp-switch')
@@ -105,4 +106,24 @@ export function normalizeCopiedTypeScript(source, transform, loader = 'ts') {
     minifyIdentifiers: false,
     treeShaking: false,
   }).code
+}
+
+// Parse the SFC script independently: removing all SFC whitespace would also
+// erase significant whitespace in JavaScript strings and template literals.
+export function normalizeCopiedSfcScript(source, transform) {
+  const script = normalizeCopiedSource(source).match(/<script\b[^>]*>([\s\S]*?)<\/script>/)?.[1]
+  assert.notEqual(script, undefined, 'Cannot compare an SFC without a script')
+  const lines = script.replace(/import\s*\{([^}]+)\}\s*from/g, (_match, names) => {
+    const imports = names.split(',').map((name) => name.trim()).filter(Boolean).sort().join(', ')
+    return `import { ${imports} } from`
+  }).split('\n')
+  const imports = lines.filter((line) => line.startsWith('import ')).sort()
+  return normalizeCopiedTypeScript([...imports, ...lines.filter((line) => !line.startsWith('import '))].join('\n'), transform)
+}
+
+/** Leave SFC markup intact while comparing its script through the AST path. */
+export function stripCopiedSfcScript(source) {
+  const pattern = /(<script\b[^>]*>)[\s\S]*?(<\/script>)/
+  assert.match(source, pattern, 'Cannot compare an SFC without a script')
+  return source.replace(pattern, '$1$2')
 }

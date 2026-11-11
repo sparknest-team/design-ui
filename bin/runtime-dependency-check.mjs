@@ -6,8 +6,8 @@ import { fileURLToPath } from 'node:url'
 import { implementationFiles, runtimeGraph } from './runtime-dependency-graph.mjs'
 
 export const libraries = {
-  cedar: { repository: 'cedar-design-web', directory: 'cedar-ui', packageName: '@cedar-design/ui', shared: 'cedar-shared', use: 'cedar-use' },
-  maple: { repository: 'maple-design-mobile', directory: 'maple-ui', packageName: '@maple-design/ui', shared: 'maple-shared', use: 'maple-use' },
+  cedar: { repository: 'cedar-design-web', directory: 'ui', packageName: '@cedar-design/ui-vue', shared: 'shared', use: 'use' },
+  maple: { repository: 'maple-design-mobile', directory: 'ui', packageName: '@maple-design/ui-vue', shared: 'shared', use: 'use' },
 }
 
 // Parse syntax rather than matching comments/documentation about prohibited workarounds.
@@ -60,8 +60,8 @@ export function auditRuntimeDependencies(repositoryRoot, library) {
   const result = runtimeGraph(sourceDir, config.packageName, roots, { workspacePackages })
   const tooling = [
     ...toolingFiles(resolve(repositoryRoot, 'packages', config.directory, 'docs/.vuepress')),
-    ...toolingFiles(resolve(repositoryRoot, 'packages', library === 'maple' ? 'maple-cli' : 'cedar-cli', 'src')),
-    ...toolingFiles(resolve(repositoryRoot, 'packages', library === 'maple' ? 'maple-vite-plugins' : 'cedar-vite-plugins', 'src')),
+    ...toolingFiles(resolve(repositoryRoot, 'packages', 'cli', 'src')),
+    ...toolingFiles(resolve(repositoryRoot, 'packages', 'vite-plugins', 'src')),
   ]
   const violations = []
   for (const file of new Set([...result.graph.keys(), ...tooling])) {

@@ -58,3 +58,5 @@ pnpm check:maple
 [Cedar / Maple 基础层重构计划](refactors/foundation-alignment/plan.md) · [进度与验证](refactors/foundation-alignment/progress.md) · [首批迁移说明](refactors/foundation-alignment/migration.md)
 
 `node bin/foundation-inventory.mjs` 更新基础文件摘要与静态直接引用清单，`--check` 检查漂移；`pnpm check:foundations` 检查两库独立基础源码一致性。
+
+包名与目录规则、全量包清单见[包目录与框架边界](standards/package-layout.md)。

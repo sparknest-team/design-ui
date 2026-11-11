@@ -96,7 +96,7 @@ export function defineProductionComponentTests({ root, library }) {
     const results = []
     const evidence = evidenceDirectory(root, library)
     before(async () => {
-      const output = resolve(root, `packages/${library}-ui/${library === 'cedar' ? 'dist' : 'site'}`)
+      const output = resolve(root, `packages/ui/${library === 'cedar' ? 'dist' : 'site'}`)
       await readFile(resolve(output, 'index.html')).catch(() => { throw new Error('Build production docs first: pnpm build:doc') })
       directory = await mkdtemp(resolve(tmpdir(), `${library}-components-browser-`))
       await copyProductionSnapshot(output, directory)

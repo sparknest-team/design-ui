@@ -6,8 +6,8 @@ import { resolve } from 'node:path'
 const root = fileURLToPath(new URL('../../', import.meta.url))
 const require = createRequire(import.meta.url)
 const libraries = [
-  ['Cedar', 'cedar-design-web/packages/cedar-ui', 'CTrigger'],
-  ['Maple', 'maple-design-mobile/packages/maple-ui', 'MpTrigger'],
+  ['Cedar', 'cedar-design-web/packages/ui', 'CTrigger'],
+  ['Maple', 'maple-design-mobile/packages/ui', 'MpTrigger'],
 ]
 const defaults = { unmountOnClose: true, trigger: 'hover', mouseEnterDelay: 100, mouseLeaveDelay: 100, focusDelay: 0, closeOnClickReference: true, clickOutsideToClose: true, escToClose: true, restoreFocus: true }
 for (const [name, directory, componentName] of libraries) {

@@ -1,6 +1,6 @@
 import { createApp, h, ref, nextTick } from 'vue'
-import NavMenu from '/cedar-design-web/packages/cedar-ui/src/nav-menu/index.ts'
-import '/cedar-design-web/packages/cedar-ui/src/nav-menu/style/index.ts'
+import NavMenu from '/cedar-design-web/packages/ui/src/nav-menu/index.ts'
+import '/cedar-design-web/packages/ui/src/nav-menu/style/index.ts'
 const host = document.querySelector('#fixture'), results = []
 const settle = async () => { await nextTick(); await new Promise(resolve => setTimeout(resolve, 250)); await nextTick() }
 const assert = (value, message) => { if (!value) throw new Error(message) }

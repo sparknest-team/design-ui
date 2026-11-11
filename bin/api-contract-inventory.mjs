@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url'
 // Read-only inventory of actual public runtime Props exports, including child components.
 // A name-set difference is not evidence of a semantic mismatch or missing implementation.
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
-const ts = createRequire(path.join(workspace, 'cedar-design-web/packages/cedar-ui/package.json'))('typescript')
+const ts = createRequire(path.join(workspace, 'cedar-design-web/packages/ui/package.json'))('typescript')
 function inventory(relative) {
   const root = path.join(workspace, relative, 'src')
   const entry = path.join(root, 'index.ts')
@@ -30,8 +30,8 @@ function inventory(relative) {
   }
   return result
 }
-const cedar = inventory('cedar-design-web/packages/cedar-ui')
-const maple = inventory('maple-design-mobile/packages/maple-ui')
+const cedar = inventory('cedar-design-web/packages/ui')
+const maple = inventory('maple-design-mobile/packages/ui')
 const shared = [...cedar.keys()].filter(name => maple.has(name)).sort()
 const cell = values => values.length ? values.map(value => '`' + value + '`').join(', ') : '—'
 const lines = [

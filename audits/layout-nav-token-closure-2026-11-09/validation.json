@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-09",
+  "scope": "Closure of the 10 previously pending Cedar Vue Layout/NavMenu consumers; Cedar + Maple Vue variable and documentation gates",
+  "runtimeFinding": "At the start of this closure, source already removed nine unused dark-specific declarations and wired --c-layout-sider-light-box-shadow to Sider box-shadow. This work verifies that implementation and adds regression gates and current-use documentation.",
+  "totals": {
+    "files": 177,
+    "declarations": 4672,
+    "candidates": 52,
+    "crossComponentCss": 22,
+    "literalRuntime": 9,
+    "dynamicRuntime": 21,
+    "needsManualReview": 0,
+    "errors": 0
+  },
+  "pending": [],
+  "checks": {
+    "cedarCheckStyleVars": {
+      "status": "passed",
+      "log": "cedar-gate.log"
+    },
+    "mapleCheckStyleVars": {
+      "status": "passed",
+      "log": "maple-gate.log"
+    },
+    "componentCssDocs": {
+      "status": "passed",
+      "tests": 12,
+      "documents": 393,
+      "drift": 0,
+      "log": "doc-gate.log"
+    },
+    "publicDocs": {
+      "status": "passed",
+      "tests": 5,
+      "documents": 421,
+      "issues": 0,
+      "log": "public-gate.log"
+    },
+    "tokenCatalog": {
+      "status": "passed",
+      "pages": 3,
+      "log": "catalog-gate.log"
+    },
+    "vueComponents": {
+      "status": "passed",
+      "files": 16,
+      "tests": 150,
+      "log": "vue-tests.log"
+    },
+    "compiledCssBrowser": {
+      "status": "passed",
+      "scenarios": 5,
+      "results": "results.json",
+      "image": "overrides.png",
+      "scope": "Compiled production CSS with matching DOM classes; global light/dark, nested local theme boundaries, public overrides and state styling. Vue mounting and Teleport behavior are covered separately by component tests."
+    }
+  },
+  "limits": "This closure does not claim full quality, production documentation-site build or API translation pipeline passage."
+}

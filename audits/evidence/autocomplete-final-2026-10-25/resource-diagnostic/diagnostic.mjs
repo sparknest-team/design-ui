@@ -17,7 +17,7 @@ const resources=()=>({at:new Date().toISOString(),cpus:cpus().length,loadavg:loa
 const initial=resources()
 try{
  for(const library of ['cedar','maple']){
-  const root=workspace+'/'+(library==='cedar'?'cedar-design-web':'maple-design-mobile'),directory=root+`/packages/${library}-ui/`+(library==='cedar'?'dist':'site')
+  const root=workspace+'/'+(library==='cedar'?'cedar-design-web':'maple-design-mobile'),directory=root+`/packages/ui/`+(library==='cedar'?'dist':'site')
   const server=createServer(async(req,res)=>{try{const p=decodeURIComponent(new URL(req.url,'http://localhost').pathname),f=resolve(directory,'.'+(p.endsWith('/')?p+'index.html':p));assert.ok(f.startsWith(directory+sep));const data=await readFile(f);res.writeHead(200,{'content-type':({'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.wasm':'application/wasm'})[extname(f)]??'application/octet-stream'}).end(data)}catch{res.writeHead(404).end()}})
   await new Promise(done=>server.listen(0,'127.0.0.1',done));const origin='http://127.0.0.1:'+server.address().port
   try{for(let run=1;run<=2;run++){

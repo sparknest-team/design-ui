@@ -1,6 +1,6 @@
 # TabBar API 对比与拓展建议
 
-检查日期：2026-09-08。当前实现位于 Maple `packages/maple-ui/src/tab-bar`，Cedar 没有对应组件。本次只完成 BottomNavigation → TabBar 重命名，不同时改变 Props、事件或默认交互。
+检查日期：2026-09-08。当前实现位于 Maple `packages/ui/src/tab-bar`，Cedar 没有对应组件。本次只完成 BottomNavigation → TabBar 重命名，不同时改变 Props、事件或默认交互。
 
 ## 对标依据
 

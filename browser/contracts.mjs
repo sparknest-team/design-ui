@@ -14,7 +14,7 @@ const interactive = {
   popconfirm: 'popconfirm', popover: 'popover', radio: 'radio', rate: 'rate',
   'resize-box': 'resize-box', ripple: 'ripple', scheduler: 'scheduler', scrollbar: 'scrollbar',
   search: 'search', segmented: 'segmented', select: 'select', slider: 'slider', split: 'split',
-  'split-button': 'split-button', steps: 'steps', 'style-provider': 'style-provider',
+  'split-button': 'split-button', steps: 'steps', 'theme-provider': 'theme-provider',
   switch: 'switch', 'table-column-manager': 'table-column-manager', tabs: 'tabs', tag: 'tag',
   textarea: 'textarea', time: 'temporal', 'time-range': 'temporal', tooltip: 'tooltip',
   transfer: 'transfer', tree: 'tree', 'tree-select': 'tree-select', trigger: 'trigger',

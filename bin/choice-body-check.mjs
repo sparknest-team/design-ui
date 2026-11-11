@@ -5,7 +5,7 @@ import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = fileURLToPath(new URL('../../', import.meta.url))
-const require = createRequire(resolve(root, 'cedar-design-web/packages/cedar-ui/package.json'))
+const require = createRequire(resolve(root, 'cedar-design-web/packages/ui/package.json'))
 const ts = require('typescript')
 const { parse, compileTemplate } = require('@vue/compiler-sfc')
 const esRequire = createRequire(resolve(root, 'maple-design-mobile/node_modules/.pnpm/node_modules/esbuild/package.json'))
@@ -17,11 +17,12 @@ const pairs = [
   ['radio/radio-group.vue', 'radio/RadioGroup.vue'],
   ['checkbox/checkbox.vue', 'checkbox/Checkbox.vue'],
   ['checkbox/checkbox-group.vue', 'checkbox/CheckboxGroup.vue'],
-  ...['radio', 'checkbox'].flatMap(name => ['context.ts', 'props.ts', 'style/index.less'].map(file => [name + '/' + file, name + '/' + file])),
+  ...['radio', 'checkbox'].flatMap(name => ['context.ts', 'props.ts', 'types.ts', 'style/index.less'].map(file => [name + '/' + file, name + '/' + file])),
   ...['radio-button.less', 'radio-button-token.less', 'radio-core-token.less'].map(file => ['radio/style/' + file, 'radio/style/' + file]),
 ]
 function normalize(source) {
   return source.replaceAll('../_utils/global-config', '../utils/components')
+    .replaceAll('../_utils/empty-value', '../utils/empty-value')
     .replaceAll('../_utils/constant', '../utils/constants')
     .replaceAll('../_utils/size-length', '../utils/size-length')
     .replaceAll('--c-', '--mp-').replaceAll('.c-', '.mp-')
@@ -67,6 +68,12 @@ function script(source) {
 }
 function canonical(source, file) {
   source = normalize(source)
+  if (['checkbox/Checkbox.vue', 'radio/Radio.vue'].includes(file)) {
+    assert.equal([...source.matchAll(/autocomplete="off"/g)].length, 1, 'Retained Maple native autocomplete policy')
+    source = source.replace('autocomplete="off"', '')
+  } else if (['checkbox/checkbox.vue', 'radio/radio.vue'].includes(file)) {
+    assert.equal([...source.matchAll(/autocomplete="off"/g)].length, 0, 'Cedar retains browser native default')
+  }
   if (file.endsWith('.vue')) {
     const { descriptor, errors } = parse(source, { filename: 'contract.vue' })
     assert.equal(errors.length, 0, file)
@@ -80,8 +87,8 @@ function canonical(source, file) {
 }
 const errors = []
 for (const [cedar, maple] of pairs) {
-  const left = canonical(readFileSync(resolve(root, 'cedar-design-web/packages/cedar-ui/src', cedar), 'utf8'), cedar)
-  const right = canonical(readFileSync(resolve(root, 'maple-design-mobile/packages/maple-ui/src', maple), 'utf8'), maple)
+  const left = canonical(readFileSync(resolve(root, 'cedar-design-web/packages/ui/src', cedar), 'utf8'), cedar)
+  const right = canonical(readFileSync(resolve(root, 'maple-design-mobile/packages/ui/src', maple), 'utf8'), maple)
   if (left !== right) {
     const index = [...left].findIndex((char, i) => char !== right[i])
     errors.push(cedar + ' <> ' + maple + '\n  Cedar: ' + left.slice(Math.max(0, index - 80), index + 160) + '\n  Maple: ' + right.slice(Math.max(0, index - 80), index + 160))

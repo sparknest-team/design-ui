@@ -51,7 +51,7 @@ export async function createAudit(tabs, write, options = {}) {
       controls: [...body.querySelectorAll('input,textarea,[role="switch"],[role="slider"]')].slice(0, 12).map(e => ({ value: e.value, checked: e.checked, role: e.getAttribute('role'), ariaChecked: e.getAttribute('aria-checked'), disabled: e.disabled })),
     }));
   }
-  const presentation = new Set('avatar badge breadcrumb card col descriptions divider empty grid icon layout link list loading page-header paper progress progress-group result row skeleton space statistic timeline typography style-provider config-provider locale locale-provider highlighter-provider code field-decorator form-details upload map signature drag resize-box split scrollbar ripple hover lazy affix back-top infinite-scroll pull-refresh watermark'.split(' '));
+  const presentation = new Set('avatar badge breadcrumb card col descriptions divider empty grid icon layout link list loading page-header paper progress progress-group result row skeleton space statistic timeline typography theme-provider config-provider locale locale-provider highlighter-provider code field-decorator form-details upload map signature drag resize-box split scrollbar ripple hover lazy affix back-top infinite-scroll pull-refresh watermark'.split(' '));
   function choose(r, dom) {
     if (presentation.has(r.component)) return null;
     const controls = dom.controls.filter(e => e.visible && !e.disabled && !e.readonly);

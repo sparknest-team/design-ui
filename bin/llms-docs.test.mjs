@@ -30,6 +30,7 @@ test('Cedar includes public permalinks and expands demos while preserving litera
   assert.match(guide, /\[Button\]\(\.\.\/components\/button.md\)/)
   assert.match(guide, /<demo src=".\/missing.vue"><\/demo>/)
   const full = readFileSync(path.join(output, 'llms-full.txt'), 'utf8')
+  assert.match(full, /@cedar-design\/ui-vue\./)
   assert.match(full, /\[Button\]\(llms\/zh-CN\/components\/button.md\)/)
 })
 
@@ -43,6 +44,7 @@ test('Maple retains locales, excludes drafts, expands demo fences, and cleans re
   const output = path.join(root, 'public')
   generateDocs({ root, platform: 'maple', output })
   const index = readFileSync(path.join(output, 'llms.txt'), 'utf8')
+  assert.match(index, /@maple-design\/ui-vue\./)
   assert.match(index, /## zh-CN/)
   assert.match(index, /## en-US/)
   assert.doesNotMatch(index, /Draft/)

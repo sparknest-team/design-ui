@@ -13,7 +13,7 @@ const workspace = fileURLToPath(new URL('../../', import.meta.url))
 const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((entry) =>
   entry.isDirectory() ? walk(resolve(dir, entry.name)) : [resolve(dir, entry.name)])
 const misplaced = []
-for (const [repo, pkg] of [['cedar-design-web', 'cedar-ui'], ['maple-design-mobile', 'maple-ui']]) {
+for (const [repo, pkg] of [['cedar-design-web', 'ui'], ['maple-design-mobile', 'ui']]) {
   const root = resolve(workspace, repo, 'packages', pkg, 'src')
   for (const file of walk(root).filter((path) => path.includes('/style/') && path.endsWith('.less') &&
     !path.endsWith('/token.less') && !path.startsWith(root + '/style/') && !path.startsWith(root + '/themes/'))) {

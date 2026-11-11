@@ -21,12 +21,12 @@ test("reads only public API tables, including escaped unions and old emphasis sy
 });
 test("resolves inherited prop objects, scalar aliases and quoted enum defaults", () => {
   const file = new URL(
-    "../../maple-design-mobile/packages/maple-ui/src/input/props.ts",
+    "../../maple-design-mobile/packages/ui/src/input/props.ts",
     import.meta.url,
   ).pathname;
   const fields = sourceProps(file, "inputProps").map(makeField);
   assert.equal(
-    fields.find((field) => field.name === "presentation").kind,
+    fields.find((field) => field.name === "edit-mode").kind,
     "enum",
   );
   assert.deepEqual(fields.find((field) => field.name === "variant").options, [
@@ -93,7 +93,7 @@ test("generated suite entries pass Maple lint before any batch fix and format id
   const mapleRoot = new URL("../../maple-design-mobile/", import.meta.url).pathname;
   const require = createRequire(new URL("../../maple-design-mobile/package.json", import.meta.url));
   const { ESLint } = require("eslint");
-  const filename = `${mapleRoot}packages/maple-ui/src/space/example/demos/api-review.vue`;
+  const filename = `${mapleRoot}packages/ui/src/space/example/demos/api-review.vue`;
   const source = `<script setup>
 import { markRaw } from 'vue'
 import DemoApiReviewSuite from '../../../../docs/components/ApiReviewSuite.vue'
@@ -116,7 +116,7 @@ const cases = [{name:"main",label:"mp-space · 组合属性",component:markRaw(C
 });
 
 test("rejects malformed generated Vue before it can be written", async () => {
-  const filename = new URL("../../maple-design-mobile/packages/maple-ui/src/space/example/demos/api-review.vue", import.meta.url).pathname;
+  const filename = new URL("../../maple-design-mobile/packages/ui/src/space/example/demos/api-review.vue", import.meta.url).pathname;
   await assert.rejects(formatReviewVue("<template><div></template>", filename));
 });
 

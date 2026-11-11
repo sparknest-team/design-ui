@@ -1,0 +1,55 @@
+{
+  "library": "cedar",
+  "toolchain": {
+    "node": "v20.18.3",
+    "pnpm": "9.6.0"
+  },
+  "declaredQuality": "pnpm check:shared && pnpm check:runtime-dependencies && pnpm build:lib && pnpm spec:check && pnpm check:style-vars && pnpm lint && pnpm typecheck && pnpm test && pnpm check:direction && pnpm check:cli && pnpm check:resolver && pnpm check:doc-pipeline && pnpm build:doc && pnpm package:check && pnpm check:published-environment && pnpm check:docs-theme && pnpm check:docs-components && pnpm check:compatibility",
+  "earlierStages": [
+    "check:shared",
+    "check:runtime-dependencies",
+    "build:lib",
+    "spec:check"
+  ],
+  "stages": [
+    {
+      "stage": "check:style-vars",
+      "startedAt": "2026-11-09T09:22:18.556Z",
+      "endedAt": "2026-11-09T09:22:53.810Z",
+      "exitCode": 0,
+      "signal": null,
+      "log": "check-style-vars.log"
+    },
+    {
+      "stage": "lint",
+      "startedAt": "2026-11-09T09:22:53.825Z",
+      "endedAt": "2026-11-09T09:24:03.340Z",
+      "exitCode": 0,
+      "signal": null,
+      "log": "lint.log"
+    },
+    {
+      "stage": "typecheck",
+      "startedAt": "2026-11-09T09:24:03.342Z",
+      "endedAt": "2026-11-09T09:25:34.244Z",
+      "exitCode": 0,
+      "signal": null,
+      "log": "typecheck.log"
+    }
+  ],
+  "remaining": [
+    "test",
+    "check:direction",
+    "check:cli",
+    "check:resolver",
+    "check:doc-pipeline",
+    "build:doc",
+    "package:check",
+    "check:published-environment",
+    "check:docs-theme",
+    "check:docs-components",
+    "check:compatibility"
+  ],
+  "status": "interrupted",
+  "note": "The turn interruption terminated the full test process; unfinished test output is not final evidence."
+}

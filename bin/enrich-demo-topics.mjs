@@ -6,7 +6,7 @@ import { renderConfigurationField } from './demo-control-policy.mjs';
 import { enhanceConfigurationComparison } from './demo-config-comparison.mjs';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
-const require = createRequire(path.join(root, 'cedar-design-web/packages/cedar-ui/package.json'));
+const require = createRequire(path.join(root, 'cedar-design-web/packages/ui/package.json'));
 const { parse, compileScript, compileTemplate } = require('@vue/compiler-sfc');
 const { parse: parseDom } = require('@vue/compiler-dom');
 const ts = require('typescript');

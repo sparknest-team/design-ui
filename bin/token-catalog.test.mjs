@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { renderCatalog } from './token-catalog.mjs';
 import { createRequire } from 'node:module';
-const require = createRequire(new URL('../../cedar-design-web/packages/cedar-ui/package.json', import.meta.url));
+const require = createRequire(new URL('../../cedar-design-web/packages/ui/package.json', import.meta.url));
 
 test('catalog retains conditional declarations, internal scope and actual properties', () => {
   const report = { totals: { errors: 0 }, components: [{ platform: 'c', component: 'example', tokens: {

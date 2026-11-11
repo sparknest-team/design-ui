@@ -327,8 +327,7 @@
     "kind": "建议做组合验收",
     "priority": "P1",
     "components": [
-      "config-provider",
-      "style-provider"
+      "theme-provider"
     ],
     "reason": "主题切换应连同移到其他容器的浮层一起展示。",
     "acceptance": "同时打开弹层并切换品牌和亮暗；检查局部覆盖、禁用和错误状态。",

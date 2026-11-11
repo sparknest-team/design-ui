@@ -4,7 +4,7 @@ import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
-const ts = createRequire(path.join(workspace, 'cedar-design-web/packages/cedar-ui/package.json'))('typescript')
+const ts = createRequire(path.join(workspace, 'cedar-design-web/packages/ui/package.json'))('typescript')
 
 function publicProps(relative, exportName) {
   const entry = path.join(workspace, relative, 'src/index.ts')
@@ -29,8 +29,8 @@ function publicProps(relative, exportName) {
 }
 
 const libraries = {
-  cedar: 'cedar-design-web/packages/cedar-ui',
-  maple: 'maple-design-mobile/packages/maple-ui',
+  cedar: 'cedar-design-web/packages/ui',
+  maple: 'maple-design-mobile/packages/ui',
 }
 const requiredFormProps = [
   'model',

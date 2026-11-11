@@ -40,7 +40,7 @@ export function acceptanceCases(library) {
     : ['tap-drag-swipe-longpress', 'input-ime-autofill', 'native-keyboard-visibility', 'popup-position-scroll-lock', 'nested-scroll', 'orientation-address-bar-viewport', 'safe-area-teleport', 'upload-camera', 'light-dark-layout']
 }
 export async function artifactHash(root, library) {
-  const directory = resolve(root, `packages/${library}-ui`)
+  const directory = resolve(root, `packages/ui`)
   const files = []
   async function walk(path) {
     for (const entry of await readdir(path, { withFileTypes: true })) {

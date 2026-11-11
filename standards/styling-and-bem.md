@@ -15,6 +15,7 @@
 - 发布编译保留完整入口依赖图，将 Less 引用转换为 CSS，目录入口转换为 ESM/CJS 对应的明确文件路径。禁止把入口重写为仅 `import './index.css'`。
 - `package.json#sideEffects` 必须覆盖源码样式入口、发布样式入口及 CSS / Less，避免源码文档构建或下游构建误删样式。全量 CSS 同样遵循依赖先于自身的顺序。
 - Cedar / Maple 独立维护各自样式；构建工具的复用不引入跨端运行时依赖。
+- 平台专属的私有样式由实际消费的私有模块维护，不混入两端共用控件的 Token 文件。Maple 时间面板的内部变量与规则位于 `_components/temporal-panel/style`，日期和时间组件通过各自的 TS 样式入口声明依赖；PickerField 只维护字段本身的规则。内部变量仍进入消费扫描，但不作为公共覆盖 API 发布。
 - 验证：在工作区根执行 `node design-ui/bin/style-modules-check.mjs`；构建两端后追加 `--built` 检查发布依赖。构建器测试：`node --test design-ui/packages/ui-build/test/style-dependencies.test.mjs`。
 
 参考：[Arco 样式入口](https://github.com/arco-design/arco-design-vue/blob/main/packages/web-vue/components/button/style/index.ts)、[Element Plus 样式入口](https://github.com/element-plus/element-plus/blob/dev/packages/components/message/style/css.ts)。

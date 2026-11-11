@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import assert from 'node:assert/strict'
 
 const root = fileURLToPath(new URL('../../', import.meta.url))
-const roots = ['cedar-design-web/packages/cedar-ui/src', 'maple-design-mobile/packages/maple-ui/src']
+const roots = ['cedar-design-web/packages/ui/src', 'maple-design-mobile/packages/ui/src']
 const entries = []
 async function walk(dir) {
   for (const entry of await fs.readdir(dir, { withFileTypes: true })) {

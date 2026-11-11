@@ -2,7 +2,7 @@ import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import { createRequire } from 'node:module'
 const root = fileURLToPath(new URL('../../../../', import.meta.url))
-const require = createRequire(path.join(root, 'cedar-design-web/packages/cedar-ui/package.json'))
+const require = createRequire(path.join(root, 'cedar-design-web/packages/ui/package.json'))
 const { createServer } = require('vite')
 const { default: vue } = await import(require.resolve('@vitejs/plugin-vue'))
 const { default: jsx } = await import(require.resolve('@vitejs/plugin-vue-jsx'))

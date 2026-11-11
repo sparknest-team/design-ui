@@ -22,7 +22,7 @@ test('keeps configuration schemas separate from component props',()=>{
  assert.deepEqual([...api.keys()],['c-table','schema:TableColumnData','schema:ActionSheetOptions']);
 });
 test('merges authored spreads and preserves conditional slots without duplicate directives',()=>{
- const filename=new URL('../../cedar-design-web/packages/cedar-ui/src/table/__demos__/example.vue',import.meta.url).pathname;
+ const filename=new URL('../../cedar-design-web/packages/ui/src/table/__demos__/example.vue',import.meta.url).pathname;
  const result=instrument('<script setup>const options={};const shown=true</script><template><c-table v-bind="options"><template v-if="shown" #footer>Footer</template></c-table></template>',filename,'c-table',filename.replace('.vue','.json'),[{name:'footer'},{name:'cell'}]);
  assert.match(result.source,/\.\.\.\(options\), \.\.\.__apiReview.bindings/);
  assert.match(result.source,/:context="__reviewSlot"/);

@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 import { readDemoSections, demoRefs } from './group-demo-sections.mjs';
 const root=fileURLToPath(new URL('../../',import.meta.url));
-const require=createRequire(new URL('../../cedar-design-web/packages/cedar-ui/package.json',import.meta.url));
+const require=createRequire(new URL('../../cedar-design-web/packages/ui/package.json',import.meta.url));
 const {parse}=require('@vue/compiler-sfc');const {parse:parseDom}=require('@vue/compiler-dom');
 const write=process.argv.includes('--write');
 const groups=JSON.parse(fs.readFileSync(path.join(root,'design-ui/configs/demo-groups.json')));
@@ -14,7 +14,7 @@ const titleCase=value=>value.replace(/(^|[-/])(\w)/g,(_,a,b)=>(a?' ':'')+b.toUpp
 const glossary={size:'Controls the component size.',variant:'Selects the visual variant.',status:'Selects the semantic state.',disabled:'Prevents user interaction.',readonly:'Displays the current value without allowing edits.',width:'Sets the configured width.',height:'Constrains the component height.',direction:'Controls the content direction.',align:'Controls alignment on the cross axis.',justify:'Distributes remaining space on the main axis.',elevation:'Controls the shadow intensity.',color:'Overrides the color.',placement:'Chooses the position relative to the trigger.',format:'Controls the displayed format.',options:'Supplies the available options.',data:'Supplies the example data.',max:'Sets the upper bound.',min:'Sets the lower bound.',step:'Controls the allowed increment.'};
 const records=[];
 for(const [family,chapters]of Object.entries(groups)) {
- let directory=path.join(root,'cedar-design-web/packages/cedar-ui/src',family),primary=path.join(directory,'README.md');
+ let directory=path.join(root,'cedar-design-web/packages/ui/src',family),primary=path.join(directory,'README.md');
  if(!fs.existsSync(primary)&&family.endsWith('/picker')){directory=path.dirname(directory);primary=path.join(directory,'PICKER.md');}
  const source=fs.readFileSync(primary,'utf8'),english=primary.replace(/\.md$/,'.en-US.md'),old=fs.existsSync(english)?fs.readFileSync(english,'utf8'):'';
  const zh=readDemoSections(source),en=readDemoSections(old);

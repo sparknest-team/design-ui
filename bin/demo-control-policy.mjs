@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
-const require = createRequire(path.join(root, 'cedar-design-web/packages/cedar-ui/package.json'));
+const require = createRequire(path.join(root, 'cedar-design-web/packages/ui/package.json'));
 const { parse } = require('@vue/compiler-sfc');
 const { parse: parseTemplate } = require('@vue/compiler-dom');
 const ts = require('typescript');

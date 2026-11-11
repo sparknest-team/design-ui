@@ -1,0 +1,32 @@
+{
+  "browser": "151.0.7922.34",
+  "scope": "Real compiled foundation/Layout/NavMenu CSS, global and nested explicit theme boundaries, matching rendered DOM classes. Component behavior is covered separately by Vue tests.",
+  "results": [
+    {
+      "globalTheme": "light",
+      "nestedDarkAndLight": "passed"
+    },
+    {
+      "globalTheme": "dark",
+      "nestedDarkAndLight": "passed"
+    },
+    {
+      "scope": "global",
+      "publicOverrides": "passed",
+      "shadowNone": "passed",
+      "hoverSelectedDisabled": "passed"
+    },
+    {
+      "scope": "dark",
+      "publicOverrides": "passed",
+      "shadowNone": "passed",
+      "hoverSelectedDisabled": "passed"
+    },
+    {
+      "scope": "light",
+      "publicOverrides": "passed",
+      "shadowNone": "passed",
+      "hoverSelectedDisabled": "passed"
+    }
+  ]
+}

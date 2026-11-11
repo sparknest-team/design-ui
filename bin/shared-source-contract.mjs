@@ -5,7 +5,7 @@ import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
-const candidates = ['maple-design-mobile/packages/maple-shared', 'cedar-design-web/packages/cedar-shared']
+const candidates = ['maple-design-mobile/packages/shared', 'cedar-design-web/packages/shared']
 const compilerRoot = candidates.map(path => resolve(workspace, path, 'package.json')).find(existsSync)
 const ts = createRequire(compilerRoot)('typescript')
 
@@ -31,8 +31,8 @@ export function assertSharedSourcePair(left, right, name = 'shared source') {
 }
 
 export function checkSharedSourceContract() {
-  const cedar = resolve(workspace, 'cedar-design-web/packages/cedar-shared')
-  const maple = resolve(workspace, 'maple-design-mobile/packages/maple-shared')
+  const cedar = resolve(workspace, 'cedar-design-web/packages/shared')
+  const maple = resolve(workspace, 'maple-design-mobile/packages/shared')
   const inventory = root => {
     const files = []
     function walk(dir, prefix = '') {

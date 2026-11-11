@@ -7,15 +7,15 @@ import { spawnSync } from 'node:child_process';
 import { renderCatalog } from './token-catalog.mjs';
 import { checkClassification } from './runtime-motion-classification.mjs';
 
-const root = new URL('../../maple-design-mobile/packages/maple-ui/src/', import.meta.url);
-const less = createRequire(new URL('../../maple-design-mobile/packages/maple-cli/package.json', import.meta.url))('less');
-const postcss = createRequire(new URL('../../cedar-design-web/packages/cedar-ui/package.json', import.meta.url))('postcss');
+const root = new URL('../../maple-design-mobile/packages/ui/src/', import.meta.url);
+const less = createRequire(new URL('../../maple-design-mobile/packages/cli/package.json', import.meta.url))('less');
+const postcss = createRequire(new URL('../../cedar-design-web/packages/ui/package.json', import.meta.url))('postcss');
 test('Cedar DateRangePicker current hash, interaction-delay and exact call-site are revalidated independently', () => {
   const classification = JSON.parse(readFileSync(new URL('../audits/runtime-motion-classification.json', import.meta.url), 'utf8'));
   const inventory = JSON.parse(readFileSync(new URL('../audits/motion-source-inventory.json', import.meta.url), 'utf8'));
   const row = classification.rows.find(r => r.repo === 'cedar-design-web' && r.file === 'date/picker/DateRangePicker.vue');
   const candidate = inventory.platforms.find(p => p.repo === row.repo).candidates.find(r => r.file === row.file);
-  const source = readFileSync(new URL('../../cedar-design-web/packages/cedar-ui/src/' + row.file, import.meta.url), 'utf8');
+  const source = readFileSync(new URL('../../cedar-design-web/packages/ui/src/' + row.file, import.meta.url), 'utf8');
   const result = checkClassification({ ...classification, rows: [row] }, {
     platforms: [{ repo: row.repo, runtimeCallCandidates: candidate.runtime.length, candidates: [candidate] }],
   }, () => source);
@@ -60,24 +60,33 @@ for (const component of ['date-range', 'time-range']) {
     const token = '--mp-' + component + '-picker-background';
     assert.ok(values(css, ':root', token).includes('var(--mp-sys-color-surface-overlay)'));
     assert.ok(values(css, shell, 'background').includes('var(' + token + ')'));
-    for (const alias of ['--mp-picker-background', '--mp-time-picker-body-background',
+    for (const alias of ['--mp-picker-background',
       ...(component === 'date-range' ? ['--mp-date-picker-body-background-color'] : [])])
       assert.ok(values(css, shell, alias).includes('var(' + token + ')'), alias);
     assert.ok(values(css, '.mp-picker', 'background').includes('var(--mp-picker-background)'));
-    assert.ok(values(css, '.mp-time-picker__body', 'background-color').includes('var(--mp-time-picker-body-background)'));
     if (component === 'date-range')
       assert.ok(values(css, '.mp-date-picker__body', 'background-color').includes('var(--mp-date-picker-body-background-color)'));
   });
 }
 for (const [component, selectors] of [
   ['date', ['.mp-date-picker__title-year', '.mp-date-picker__title-date', '.mp-date-picker-translatey-enter-active', '.mp-date-picker__view-tab']],
-  ['time', ['.mp-time-picker__title', '.mp-time-picker__title-btn', '.mp-time-picker__body', '.mp-time-picker-panel-fade-enter-from']],
 ]) {
   test(component + ': legacy and current panel transition declarations compile without claiming all states rendered', async () => {
     const css = await compile(component);
     for (const selector of selectors) assert.ok(values(css, selector, 'transition').length, selector);
   });
 }
+
+test('time uses the shared picker scroll motion rather than obsolete panel transition selectors', async () => {
+  const css = await compile('time', ['picker']);
+  assert.ok(values(css, '.mp-time-picker', 'background').includes('var(--mp-time-picker-body-background)'));
+  assert.ok(values(css, '.mp-picker__scroller', 'transition-timing-function').includes('var(--mp-picker-scroll-easing)'));
+  const time = readFileSync(new URL('time/presentation/TimePanelContent.vue', root), 'utf8');
+  const picker = readFileSync(new URL('picker/Picker.vue', root), 'utf8');
+  assert.match(time, /<mp-picker/);
+  assert.match(picker, /transitionDuration: `\$\{c\.duration\}ms`/);
+  assert.match(picker, /transitionProperty: c\.duration \? 'transform' : 'none'/);
+});
 
 const scan = spawnSync(process.execPath, [fileURLToPath(new URL('./token-inventory.mjs', import.meta.url))], {
   encoding: 'utf8', maxBuffer: 32 * 1024 * 1024,

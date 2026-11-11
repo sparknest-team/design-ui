@@ -7,12 +7,12 @@ const root = resolve(import.meta.dirname, "../..");
 const sides = [
   {
     name: "cedar",
-    root: join(root, "cedar-design-web/packages/cedar-ui/src"),
+    root: join(root, "cedar-design-web/packages/ui/src"),
     prefix: "--c-",
   },
   {
     name: "maple",
-    root: join(root, "maple-design-mobile/packages/maple-ui/src"),
+    root: join(root, "maple-design-mobile/packages/ui/src"),
     prefix: "--mp-",
   },
 ];

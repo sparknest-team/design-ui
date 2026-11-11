@@ -1,12 +1,12 @@
 import { createApp, h, KeepAlive, nextTick, ref } from 'vue'
-import CedarNumber from '/cedar-design-web/packages/cedar-ui/src/input-number/index.ts'
-import MapleNumber from '/maple-design-mobile/packages/maple-ui/src/input-number/index.ts'
-import CedarCountdown from '/cedar-design-web/packages/cedar-ui/src/countdown/index.ts'
-import MapleCountdown from '/maple-design-mobile/packages/maple-ui/src/countdown/index.ts'
-import '/cedar-design-web/packages/cedar-ui/src/input-number/style/index.ts'
-import '/maple-design-mobile/packages/maple-ui/src/input-number/style/index.ts'
-import '/cedar-design-web/packages/cedar-ui/src/countdown/style/index.ts'
-import '/maple-design-mobile/packages/maple-ui/src/countdown/style/index.ts'
+import CedarNumber from '/cedar-design-web/packages/ui/src/input-number/index.ts'
+import MapleNumber from '/maple-design-mobile/packages/ui/src/input-number/index.ts'
+import CedarCountdown from '/cedar-design-web/packages/ui/src/countdown/index.ts'
+import MapleCountdown from '/maple-design-mobile/packages/ui/src/countdown/index.ts'
+import '/cedar-design-web/packages/ui/src/input-number/style/index.ts'
+import '/maple-design-mobile/packages/ui/src/input-number/style/index.ts'
+import '/cedar-design-web/packages/ui/src/countdown/style/index.ts'
+import '/maple-design-mobile/packages/ui/src/countdown/style/index.ts'
 
 const results = ref([]), busy = ref(false), jobs = new Map()
 const wait = ms => new Promise(resolve => {

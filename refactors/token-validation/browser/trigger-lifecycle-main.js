@@ -1,8 +1,8 @@
 import { createApp, h, KeepAlive, nextTick, ref } from 'vue'
-import CedarTrigger from '/cedar-design-web/packages/cedar-ui/src/trigger/index.ts'
-import MapleTrigger from '/maple-design-mobile/packages/maple-ui/src/trigger/index.ts'
-import '/cedar-design-web/packages/cedar-ui/src/trigger/style/index.ts'
-import '/maple-design-mobile/packages/maple-ui/src/trigger/style/index.ts'
+import CedarTrigger from '/cedar-design-web/packages/ui/src/trigger/index.ts'
+import MapleTrigger from '/maple-design-mobile/packages/ui/src/trigger/index.ts'
+import '/cedar-design-web/packages/ui/src/trigger/style/index.ts'
+import '/maple-design-mobile/packages/ui/src/trigger/style/index.ts'
 
 const results = ref([]), busy = ref(false), jobs = new Map()
 const wait = ms => new Promise(resolve => {

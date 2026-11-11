@@ -13,7 +13,13 @@ await auditThemes('button', ({ prefix, repo, brand, mode, tag, cascade, expand }
 let states = 0, pairs = 0, overrides = 0, minimum = Infinity, belowAA = 0;
 await auditThemes('badge', ({ prefix, repo, brand, mode, tag, document, variables, expand, cascade }) => {
   const content = document.createElement('span');
-  tag.append(content);
+  const wrapper = document.createElement('span');
+  const contentWrapper = document.createElement('span');
+  wrapper.className = `${prefix}-badge__wrapper`;
+  contentWrapper.className = `${prefix}-badge__content-wrapper`;
+  tag.append(wrapper);
+  wrapper.append(contentWrapper);
+  contentWrapper.append(content);
   for (const status of ['', 'default', 'primary', 'secondary', 'tertiary', 'info', 'success', 'warning', 'danger'])
     for (const variant of ['default', 'outline'])
       for (const part of ['content', 'dot-content']) {

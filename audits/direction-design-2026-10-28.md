@@ -43,14 +43,14 @@ Naive UI 的本地证据为 [ConfigProvider.ts](/Users/shuaimeng/github_web/naiv
 
 关键源码证据：
 
-- [Cedar ConfigProvider](/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/config-provider/ConfigProvider.vue:1)：slot 模板及提供的 rtl 状态。
-- [Tabs 左右键](/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/tabs/TabNav.vue:98)：根据最近 dir 切换 previous/next。
-- [Badge](/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/badge/Badge.vue:30)：浮动角落明确使用物理语义。
-- [Maple Tag](/Users/shuaimeng/github_web/maple-design-mobile/packages/maple-ui/src/tag/platform.ts:6)：rtl 固定 false。
-- [Slider 位置](/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/slider/Slider.vue:118)、[指针](/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/slider/Slider.vue:209)、[按键](/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/slider/Slider.vue:302)。
-- [Rate 半星命中](/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/rate/rate-core.tsx:150)、[按键](/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/rate/rate-core.tsx:175)。
-- [Carousel 按键](/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/carousel/carousel.vue:340)。
-- [Trigger 对齐计算](/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/trigger/geometry.ts:45)、[弹层 attrs](/Users/shuaimeng/github_web/cedar-design-web/packages/cedar-ui/src/trigger/trigger.tsx:122)。
+- [Cedar ConfigProvider](/Users/shuaimeng/github_web/cedar-design-web/packages/ui/src/config-provider/ConfigProvider.vue:1)：slot 模板及提供的 rtl 状态。
+- [Tabs 左右键](/Users/shuaimeng/github_web/cedar-design-web/packages/ui/src/tabs/TabNav.vue:98)：根据最近 dir 切换 previous/next。
+- [Badge](/Users/shuaimeng/github_web/cedar-design-web/packages/ui/src/badge/Badge.vue:30)：浮动角落明确使用物理语义。
+- [Maple Tag](/Users/shuaimeng/github_web/maple-design-mobile/packages/ui/src/tag/platform.ts:6)：rtl 固定 false。
+- [Slider 位置](/Users/shuaimeng/github_web/cedar-design-web/packages/ui/src/slider/Slider.vue:118)、[指针](/Users/shuaimeng/github_web/cedar-design-web/packages/ui/src/slider/Slider.vue:209)、[按键](/Users/shuaimeng/github_web/cedar-design-web/packages/ui/src/slider/Slider.vue:302)。
+- [Rate 半星命中](/Users/shuaimeng/github_web/cedar-design-web/packages/ui/src/rate/rate-core.tsx:150)、[按键](/Users/shuaimeng/github_web/cedar-design-web/packages/ui/src/rate/rate-core.tsx:175)。
+- [Carousel 按键](/Users/shuaimeng/github_web/cedar-design-web/packages/ui/src/carousel/carousel.vue:340)。
+- [Trigger 对齐计算](/Users/shuaimeng/github_web/cedar-design-web/packages/ui/src/trigger/geometry.ts:45)、[弹层 attrs](/Users/shuaimeng/github_web/cedar-design-web/packages/ui/src/trigger/trigger.tsx:122)。
 
 ## 建议采用的统一设计
 

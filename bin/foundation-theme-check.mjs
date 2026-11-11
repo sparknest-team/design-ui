@@ -53,7 +53,7 @@ for (const component of ['hover', 'icon', 'paper', 'ripple', 'skeleton', 'space'
       const mapping = {
         content: { padding: 'content-padding' },
         card: { height: 'card-height', 'border-radius': 'card-border-radius', 'margin-bottom': 'card-margin-bottom', 'background-color': 'card-background-color' },
-        avatar: { width: 'avatar-size', height: 'avatar-size', 'border-radius': 'avatar-border-radius', 'margin-right': 'avatar-margin-right', 'background-color': 'avatar-background-color' },
+        avatar: { width: 'avatar-size', height: 'avatar-size', 'border-radius': 'avatar-border-radius', 'margin-inline-end': 'avatar-margin-right', 'background-color': 'avatar-background-color' },
         title: { width: 'title-width', 'border-radius': 'title-border-radius', 'background-color': 'title-background-color', height: 'row-height' },
         row: { height: 'row-height', 'border-radius': 'row-border-radius', 'margin-top': 'row-margin-top', 'background-color': 'title-background-color' },
         shimmer: { background: 'animation-background' },

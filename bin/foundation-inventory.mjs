@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { createHash } from 'node:crypto'
 
 const root = fileURLToPath(new URL('../../', import.meta.url))
-const ui = ['cedar-design-web/packages/cedar-ui/src', 'maple-design-mobile/packages/maple-ui/src']
+const ui = ['cedar-design-web/packages/ui/src', 'maple-design-mobile/packages/ui/src']
 const groups = [
   ['modal', ['_utils/popup-transition.ts', 'dialog/dialog.vue', 'drawer/drawer.vue', 'overlay/overlay.vue'], ['utils/popup-transition.ts', 'dialog/Dialog.vue', 'popup/Popup.tsx', 'overlay/Overlay.tsx']],
   ['picker', ['_utils/picker-data.ts', 'date/picker/panels/date/index.vue', 'time/picker/utils/index.ts', 'time/picker/hooks/use-time-list.ts'], ['utils/picker-data.ts', 'date/datetime.ts', 'date/picker-panels/day-picker-panel.vue', 'time/picker-utils.ts', 'time-range/picker-utils.ts', 'time-range/TimeRangePicker.vue']],
@@ -20,7 +20,7 @@ const groups = [
   ['observer', ['_utils/resize-observer.ts', '_utils/responsive-observe.ts', '_hooks/use-resize-observer.ts', '_components/resize-observer-v2.ts'], ['utils/resize-observer.ts', 'utils/responsive-observe.ts', 'trigger/useFloatingTrigger.ts']],
   ['selection', ['_utils/option-data.ts', '_utils/tree-data.ts', '_utils/input-composition.ts', 'select/hooks/use-options.ts', 'select/utils.ts', 'cascader/utils.ts', '_hooks/use-input.ts', '_components/select-view/select-view.tsx'], ['utils/option-data.ts', 'utils/tree-data.ts', 'utils/input-composition.ts', 'cascader/Cascader.vue', 'input/Input.vue', 'utils/options.ts', 'select/useSelectController.ts']],
   ['form', ['_utils/async-request.ts', '_utils/field-path.ts', 'form/form-item.vue', 'form/utils.ts', '_utils/form-control.ts', '_hooks/use-form-item.ts'], ['utils/async-request.ts', 'utils/field-path.ts', 'form/FormItem.vue', 'form/utils.ts']],
-  ['configuration', ['_utils/global-config.ts', 'config-provider/config-provider.vue'], ['utils/components.ts', 'style-provider/index.ts', 'locale-provider/provide.ts']],
+  ['configuration', ['_utils/global-config.ts', 'config-provider/config-provider.vue'], ['utils/components.ts', 'theme-provider/index.ts', 'locale-provider/provide.ts']],
   ['measure', ['_utils/size-length.ts', '_utils/throttle-by-raf.ts'], ['utils/size-length.ts', 'utils/throttle-by-raf.ts']],
 ]
 const production = file => /\.(ts|tsx|vue|js)$/.test(file) && !/(?:^|\/)(?:__tests__|__demos__|example|docs|style|themes)(?:\/|$)/.test(file)

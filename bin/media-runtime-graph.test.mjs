@@ -19,8 +19,8 @@ test('runtime graph guard detects a public barrel back-edge rather than treating
   ])), [])
 })
 for (const [repository, directory, packageName, service] of [
-  ['cedar-design-web', 'cedar-ui', '@cedar-design/ui', 'preview-api.ts'],
-  ['maple-design-mobile', 'maple-ui', '@maple-design/ui', 'preview.ts'],
+  ['cedar-design-web', 'ui', '@cedar-design/ui-vue', 'preview-api.ts'],
+  ['maple-design-mobile', 'ui', '@maple-design/ui-vue', 'preview.ts'],
 ]) {
   test(`${directory}: Image / Upload runtime dependency closure is acyclic and never enters the package root`, () => {
     const sourceDir = resolve(workspace, repository, 'packages', directory, 'src')

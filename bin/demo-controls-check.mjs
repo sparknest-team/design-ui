@@ -6,7 +6,7 @@ import { normalizeDemoSource } from './demo-control-policy.mjs';
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const failures = [];
 let examples = 0;
-for (const [repo, pkg, prefix] of [['cedar-design-web', 'cedar-ui', 'c'], ['maple-design-mobile', 'maple-ui', 'mp']]) {
+for (const [repo, pkg, prefix] of [['cedar-design-web', 'ui', 'c'], ['maple-design-mobile', 'ui', 'mp']]) {
   const base = path.join(root, repo, 'packages', pkg, 'src');
   for (const relative of fs.readdirSync(base, { recursive: true })) {
     if (!relative.endsWith('.vue') || !/(?:^|\/)(?:__demos__|example)\//.test(relative) || /(?:^|\/)api-review[^/]*\.vue$/.test(relative)) continue;

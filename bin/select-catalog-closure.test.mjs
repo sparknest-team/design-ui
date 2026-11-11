@@ -8,11 +8,11 @@ import { renderCatalog } from './token-catalog.mjs';
 import { checkClassification } from './runtime-motion-classification.mjs';
 
 const workspace = new URL('../../', import.meta.url);
-const cedar = createRequire(new URL('cedar-design-web/packages/cedar-ui/package.json', workspace));
-const mobile = createRequire(new URL('maple-design-mobile/packages/maple-cli/package.json', workspace));
+const cedar = createRequire(new URL('cedar-design-web/packages/ui/package.json', workspace));
+const mobile = createRequire(new URL('maple-design-mobile/packages/cli/package.json', workspace));
 const postcss = cedar('postcss');
 async function compile(repo, component) {
-  const pkg = repo === 'cedar-design-web' ? 'cedar-ui' : 'maple-ui';
+  const pkg = 'ui';
   const entry = new URL(`${repo}/packages/${pkg}/src/${component}/style/index.less`, workspace);
   return postcss.parse((await (repo === 'cedar-design-web' ? cedar : mobile)('less').render(
     readFileSync(entry, 'utf8'), { filename: fileURLToPath(entry), javascriptEnabled: true },
@@ -30,7 +30,7 @@ test('Cedar Select current source hash and all six classified call sites are ind
   const inventory = JSON.parse(readFileSync(new URL('../audits/motion-source-inventory.json', import.meta.url)));
   const row = classification.rows.find(r => r.repo === 'cedar-design-web' && r.file === 'select/hooks/use-select.ts');
   const candidate = inventory.platforms.find(p => p.repo === row.repo).candidates.find(r => r.file === row.file);
-  const source = readFileSync(new URL('cedar-design-web/packages/cedar-ui/src/' + row.file, workspace), 'utf8');
+  const source = readFileSync(new URL('cedar-design-web/packages/ui/src/' + row.file, workspace), 'utf8');
   const result = checkClassification({ ...classification, rows: [row] }, {
     platforms: [{ repo: row.repo, runtimeCallCandidates: candidate.runtime.length, candidates: [candidate] }],
   }, () => source);
@@ -39,13 +39,13 @@ test('Cedar Select current source hash and all six classified call sites are ind
   assert.deepEqual(result.categories, { 'delegated-scroll': 1, 'native-scroll': 2, 'state-settlement': 1, 'interaction-dispatch': 2 });
 });
 for (const [repo, prefix] of [['cedar-design-web', 'c'], ['maple-design-mobile', 'mp']]) {
-  test(repo + ': flat group headings consume vertical/horizontal padding and first heading has no top margin', async () => {
+  test(repo + ': grouped headings consume vertical/horizontal padding and the first group has no top margin', async () => {
     const css = await compile(repo, 'select');
     const selector = `.${prefix}-select-dropdown .${prefix}-select-group-title`;
     assert.ok(values(css, selector, 'padding').includes(`var(--${prefix}-select-popup-padding-vertical) var(--${prefix}-select-popup-group-title-padding-horizontal)`));
-    assert.ok(values(css, selector + ':first-child', 'margin-top').includes('0'));
+    assert.ok(values(css, `.${prefix}-select-dropdown .${prefix}-select-group:first-child > .${prefix}-select-group-title`, 'margin-top').includes('0'));
     assert.ok(values(css, ':root', `--${prefix}-select-popup-group-title-padding-horizontal`).includes(`var(--${prefix}-select-popup-option-padding-horizontal)`));
-    assert.equal(values(css, `.${prefix}-select-dropdown .${prefix}-select-group:first-child .${prefix}-select-group-title`, 'margin-top').length, 0);
+    assert.equal(values(css, selector + ':first-child', 'margin-top').length, 0);
   });
 }
 test('Maple Menu current row states, group geometry and overlay tokens reach actual compiled properties', async () => {
@@ -80,9 +80,9 @@ assert.equal(scan.status, 0, scan.stderr);
 const report = JSON.parse(scan.stdout);
 const section = (text, name) => text.split('## ' + name + '\n\n')[1]?.split('\n## ')[0].trim();
 for (const [prefix, language, path, components] of [
-  ['c', 'zh', 'cedar-design-web/packages/cedar-ui/docs/guide/design-token-reference.md', ['select']],
-  ['mp', 'zh', 'maple-design-mobile/packages/maple-ui/docs/designTokenReference.zh-CN.md', ['select', 'menu', 'floating-panel']],
-  ['mp', 'en', 'maple-design-mobile/packages/maple-ui/docs/designTokenReference.en-US.md', ['select', 'menu', 'floating-panel']],
+  ['c', 'zh', 'cedar-design-web/packages/ui/docs/guide/design-token-reference.md', ['select']],
+  ['mp', 'zh', 'maple-design-mobile/packages/ui/docs/designTokenReference.zh-CN.md', ['select', 'menu', 'floating-panel']],
+  ['mp', 'en', 'maple-design-mobile/packages/ui/docs/designTokenReference.en-US.md', ['select', 'menu', 'floating-panel']],
 ]) for (const component of components) {
   test(prefix + '/' + language + '/' + component + ': authorized catalog matches current compiled consumers', () => {
     const actual = readFileSync(new URL(path, workspace), 'utf8');

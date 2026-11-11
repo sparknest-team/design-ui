@@ -16,19 +16,19 @@ const selected = localRoot
 assert.ok(selected.length > 0, 'No target component library found')
 const source = localRoot
   ? resolve(localRoot, 'packages', selected[0][1].directory, 'src')
-  : resolve(workspace, 'cedar-design-web/packages/cedar-ui/src')
+  : resolve(workspace, 'cedar-design-web/packages/ui/src')
 const require = createRequire(resolve(source, '../package.json'))
 const ts = require('typescript')
 
 test('emitted dependency graph erases type-only imports and retains literal dynamic imports', () => {
-  const { graph, cycles } = runtimeGraph(source, '@cedar-design/ui', [resolve(fixtures, 'entry.ts')])
+  const { graph, cycles } = runtimeGraph(source, '@cedar-design/ui-vue', [resolve(fixtures, 'entry.ts')])
   assert.deepEqual([...graph.keys()].map(file => file.slice(fixtures.length)).sort(), ['entry.ts', 'leaf.ts'])
   assert.deepEqual(cycles, [])
   assert.equal(graph.get(resolve(fixtures, 'entry.ts')).length, 2, 'static export plus dynamic import')
 })
 
 test('orphan/private modules and compiled SFC imports cannot conceal a runtime cycle', () => {
-  const { graph, cycles } = runtimeGraph(source, '@cedar-design/ui', implementationFiles(fixtures))
+  const { graph, cycles } = runtimeGraph(source, '@cedar-design/ui-vue', implementationFiles(fixtures))
   assert.ok(graph.has(resolve(fixtures, 'Cycle.vue')))
   assert.equal(cycles.length, 1)
   assert.equal(cycles[0][0], cycles[0].at(-1))

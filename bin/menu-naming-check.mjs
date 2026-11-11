@@ -2,11 +2,16 @@ import assert from 'node:assert/strict'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { dirname, join, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { catalogNamingText } from './menu-naming-catalog.mjs'
 
 const workspace = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 const legacyName = /dropdown[-_]?menu/i
 const skipped = new Set(['node_modules', '.git', '.cache', '.temp', '.maple', 'dist', 'coverage'])
 const failures = []
+const comparisonCatalogs = new Set([
+  'cedar-design-web/packages/ui/docs/.vuepress/configs/component-catalog.json',
+  'maple-design-mobile/packages/ui/docs/components/component-catalog.json',
+])
 let checked = 0
 
 function scan(path) {
@@ -18,14 +23,17 @@ function scan(path) {
     if (entry.isDirectory()) scan(file)
     else if (/\.(?:[cm]?js|jsx|tsx?|vue|md|json|less|s[ac]ss|css|html)$/.test(entry.name)) {
       checked += 1
-      if (legacyName.test(readFileSync(file, 'utf8'))) failures.push(relative(workspace, file))
+      const name = relative(workspace, file)
+      const text = readFileSync(file, 'utf8')
+      const localNames = comparisonCatalogs.has(name) ? catalogNamingText(text) : text
+      if (legacyName.test(localNames)) failures.push(name)
     }
   }
 }
 
 for (const [repo, library, resolver] of [
-  ['cedar-design-web', 'cedar-ui', 'cedar-resolver'],
-  ['maple-design-mobile', 'maple-ui', 'maple-resolver'],
+  ['cedar-design-web', 'ui', 'resolver'],
+  ['maple-design-mobile', 'ui', 'resolver'],
 ]) {
   const source = join(workspace, repo, 'packages', library, 'src')
   assert.ok(existsSync(join(source, 'menu/index.ts')), `${library}: Menu entry is required`)
@@ -40,20 +48,20 @@ for (const [repo, library, resolver] of [
   }
 }
 for (const directory of [
-  'maple-design-mobile/packages/maple-cli/src',
-  'maple-design-mobile/packages/maple-vscode-extension/src',
-  'maple-design-mobile/packages/maple-ui-playground/src',
+  'maple-design-mobile/packages/cli/src',
+  'maple-design-mobile/packages/vscode-extension/src',
+  'maple-design-mobile/packages/ui-playground/src',
   'design-ui/refactors/token-validation/browser',
 ]) scan(join(workspace, directory))
 for (const file of [
   'cedar-design-web/API-MIGRATION.md',
-  'cedar-design-web/packages/cedar-ui/index.html',
+  'cedar-design-web/packages/ui/index.html',
   'design-ui/refactors/foundation-alignment/trigger-consumers.json',
   'design-ui/audits/non-color-token-contract-suggestions.json',
   'design-ui/audits/api-props-inventory.md',
   ...(process.argv.includes('--built') ? [
-    'maple-design-mobile/packages/maple-ui-playground/public/maple.esm.js',
-    'maple-design-mobile/packages/maple-ui-playground/public/maple.css',
+    'maple-design-mobile/packages/ui-playground/public/maple.esm.js',
+    'maple-design-mobile/packages/ui-playground/public/maple.css',
   ] : []),
 ]) {
   const path = join(workspace, file)

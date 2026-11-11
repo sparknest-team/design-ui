@@ -38,13 +38,15 @@ await auditThemes('menu', ({ prefix: p, document, tag, variables, expand, cascad
     const el = document.createElement('div'), base = `${p}-menu-option`, separator = p === 'c' ? '-' : '--'
     el.className = [base, selected && `${base}${separator}${p === 'c' ? 'selected' : 'selected-color'}`, disabled && `${base}${separator}disabled`, active && `${base}${separator}active`, hover && 'audit-hover'].filter(Boolean).join(' ')
     tag.append(el)
-    let painted = el
-    if (p === 'mp') { painted = document.createElement('div'); painted.className = `${base}__cover${selected ? ` ${base}--selected-background` : ''}`; el.append(painted) }
+    // Both current MenuOption renderers paint selection on the row itself.
+    const painted = el
     const properties = cascade(painted)
-    const property = p === 'c' ? 'background-color' : 'background'
+    const property = p === 'mp' && disabled ? 'background' : 'background-color'
     const selectedKey = `--${p}-menu-option-${p === 'c' ? 'bg-selected' : 'selected-background'}`
     const key = disabled ? `--${p}-menu-option-bg-disabled` : selected ? (hover || active ? `--${p}-menu-option-bg-selected-hover` : selectedKey) : null
     if (key) {
+      assert.ok(variables[key], `${key}: declared default`)
+      assert.ok(properties[property]?.includes(`var(${key})`), `${key}: painted row consumes variable`)
       assert.equal(expand(properties[property]), expand(variables[key]), `${p}: selected=${selected}, disabled=${disabled}, hover=${hover}, active=${active}`)
       const old = variables[key]; variables[key] = '#123456'; assert.equal(expand(properties[property]), '#123456', key); variables[key] = old; overrides++
     }

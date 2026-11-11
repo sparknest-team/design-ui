@@ -1,0 +1,47 @@
+{
+  "library": "maple",
+  "toolchain": {
+    "node": "v20.18.3",
+    "pnpm": "9.6.0"
+  },
+  "declaredQuality": "pnpm check:runtime-dependencies && pnpm check:shared && pnpm build:lib && pnpm spec:check && pnpm check:style-vars && pnpm check:dev-boundary && pnpm check:cross-platform && pnpm lint:check && pnpm typecheck && pnpm check:test-collection && pnpm test && pnpm check:direction && pnpm check:cli && pnpm check:doc-pipeline && pnpm check:source-normalization && pnpm check:icon-bundle && pnpm check:component-bundle && pnpm build:doc && pnpm package:check && pnpm check:published-environment && pnpm check:docs-theme && pnpm check:docs-components && pnpm check:safe-area && pnpm check:brand-form && pnpm check:compatibility",
+  "earlierStages": [
+    "check:runtime-dependencies",
+    "check:shared",
+    "build:lib",
+    "spec:check",
+    "check:style-vars",
+    "check:dev-boundary"
+  ],
+  "stages": [
+    {
+      "stage": "check:cross-platform",
+      "startedAt": "2026-11-09T09:30:42.096Z",
+      "endedAt": "2026-11-09T09:31:22.130Z",
+      "exitCode": 1,
+      "signal": null,
+      "log": "check-cross-platform.log"
+    }
+  ],
+  "remaining": [
+    "lint:check",
+    "typecheck",
+    "check:test-collection",
+    "test",
+    "check:direction",
+    "check:cli",
+    "check:doc-pipeline",
+    "check:source-normalization",
+    "check:icon-bundle",
+    "check:component-bundle",
+    "build:doc",
+    "package:check",
+    "check:published-environment",
+    "check:docs-theme",
+    "check:docs-components",
+    "check:safe-area",
+    "check:brand-form",
+    "check:compatibility"
+  ],
+  "status": "failed"
+}

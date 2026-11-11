@@ -48,10 +48,10 @@ const maps = Object.fromEntries(
   ]),
 )
 write(
-  'cedar-design-web/packages/cedar-ui/docs/.vuepress/configs/sidebar/component-reuse.json',
+  'cedar-design-web/packages/ui/docs/.vuepress/configs/sidebar/component-reuse.json',
   JSON.stringify(maps.cedar, null, 2) + '\n',
 )
-write('maple-design-mobile/packages/maple-ui/component-reuse.json', JSON.stringify(maps.maple, null, 2) + '\n')
+write('maple-design-mobile/packages/ui/component-reuse.json', JSON.stringify(maps.maple, null, 2) + '\n')
 const counts = Object.entries(audit.labels)
   .map(([key, label]) => `${label} ${audit.components.filter((item) => item.level === key).length} 组`)
   .join('；')
@@ -91,12 +91,12 @@ write(
     '\n',
 )
 write(
-  'cedar-design-web/packages/cedar-ui/docs/guide/component-reuse.md',
+  'cedar-design-web/packages/ui/docs/guide/component-reuse.md',
   '---\npermalink: /guide/component-reuse/\n---\n\n' + report,
 )
-write('maple-design-mobile/packages/maple-ui/docs/componentReuse.zh-CN.md', report)
+write('maple-design-mobile/packages/ui/docs/componentReuse.zh-CN.md', report)
 write(
-  'maple-design-mobile/packages/maple-ui/docs/componentReuse.en-US.md',
+  'maple-design-mobile/packages/ui/docs/componentReuse.en-US.md',
   '# Cross-platform component reuse\n\nThe labels mean: Same source (verified copies), Logic copies (verified), Same source (planned copies), Adapt (planned copies after adaptation), Logic copies (planned; keep platform UI), Separate (different abstraction). Each library owns its source; there is no shared runtime core or generated component source. Planned labels do not mean completed alignment. Unmarked entries are unassessed or have no confirmed counterpart. The detailed audit below is maintained in Chinese.\n\n' +
     report,
 )

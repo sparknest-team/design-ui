@@ -1,6 +1,6 @@
 import { createApp, defineComponent, h, ref } from 'vue'
-import Popup from '/maple-design-mobile/packages/maple-ui/src/popup/index.ts'
-import '/maple-design-mobile/packages/maple-ui/src/popup/style/index.ts'
+import Popup from '/maple-design-mobile/packages/ui/src/popup/index.ts'
+import '/maple-design-mobile/packages/ui/src/popup/style/index.ts'
 const open = ref(false), enabled = ref(true), host = ref()
 const duration = ref('250ms'), easing = ref('ease'), placement = ref('center')
 const events = ref([]), mounts = ref(0), unmounts = ref(0)

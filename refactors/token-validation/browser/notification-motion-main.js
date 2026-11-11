@@ -1,6 +1,6 @@
 import { createApp, h, nextTick, ref } from 'vue'
-import Notification from '/cedar-design-web/packages/cedar-ui/src/notification/index.ts'
-import '/cedar-design-web/packages/cedar-ui/src/notification/style/index.ts'
+import Notification from '/cedar-design-web/packages/ui/src/notification/index.ts'
+import '/cedar-design-web/packages/ui/src/notification/style/index.ts'
 
 const records = ref([]), busy = ref(false)
 let current, nextIdentity = 0

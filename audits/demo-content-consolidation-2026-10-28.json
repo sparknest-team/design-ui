@@ -3,1420 +3,1420 @@
   "plans": 121,
   "consolidated": 121,
   "changedFiles": [
-    "cedar-design-web/packages/cedar-ui/src/alert/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/alert/README.md",
-    "maple-design-mobile/packages/maple-ui/src/alert/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/alert/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/alert/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/alert/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/auto-complete/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/auto-complete/README.md",
-    "cedar-design-web/packages/cedar-ui/src/auto-complete/README.en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/auto-complete/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/auto-complete/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/auto-complete/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/auto-complete/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/badge/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/badge/README.md",
-    "cedar-design-web/packages/cedar-ui/src/badge/README.en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/badge/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/badge/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/badge/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/badge/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/card/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/card/README.md",
-    "cedar-design-web/packages/cedar-ui/src/card/README.en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/card/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/card/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/card/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/card/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/cascader/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/cascader/README.md",
-    "cedar-design-web/packages/cedar-ui/src/date/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/date/README.md",
-    "cedar-design-web/packages/cedar-ui/src/date/README.en-US.md",
-    "cedar-design-web/packages/cedar-ui/src/date-range/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/date-range/README.md",
-    "cedar-design-web/packages/cedar-ui/src/date-range/README.en-US.md",
-    "cedar-design-web/packages/cedar-ui/src/input/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/input/README.md",
-    "maple-design-mobile/packages/maple-ui/src/input/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/input/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/input/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/input/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/select/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/select/README.md",
-    "cedar-design-web/packages/cedar-ui/src/select/README.en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/select/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/select/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/select/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/select/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/split-button/README.md",
-    "maple-design-mobile/packages/maple-ui/src/split-button/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/split-button/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/split-button/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/switch/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/switch/README.md",
-    "cedar-design-web/packages/cedar-ui/src/switch/README.en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/switch/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/switch/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/switch/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/switch/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/tag/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/tag/README.md",
-    "maple-design-mobile/packages/maple-ui/src/tag/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/tag/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/tag/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/tag/example/index.vue",
-    "maple-design-mobile/packages/maple-ui/src/textarea/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/textarea/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/textarea/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/textarea/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/tooltip/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/tooltip/README.md",
-    "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/tooltip/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/tooltip/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/tooltip/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/checkbox/README.md",
-    "maple-design-mobile/packages/maple-ui/src/checkbox/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/checkbox/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/checkbox/example/index.vue",
-    "maple-design-mobile/packages/maple-ui/src/date/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/date/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/date/example/index.vue",
-    "maple-design-mobile/packages/maple-ui/src/date-range/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/date-range/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/date-range/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/time/README.md",
-    "maple-design-mobile/packages/maple-ui/src/time/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/time/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/time/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/time-range/README.md",
-    "maple-design-mobile/packages/maple-ui/src/time-range/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/time-range/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/time-range/example/index.vue",
-    "maple-design-mobile/packages/maple-ui/src/slider/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/slider/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/slider/example/index.vue",
-    "maple-design-mobile/packages/maple-ui/src/upload/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/upload/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/upload/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/alert/__demos__/content-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/alert/example/demos/content-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/alert/__demos__/dismiss-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/alert/example/demos/dismiss-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/avatar/__demos__/shape-size-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/avatar/README.md",
-    "maple-design-mobile/packages/maple-ui/src/avatar/example/demos/shape-size-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/avatar/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/avatar/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/avatar/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/avatar/__demos__/group-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/avatar/example/demos/group-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/carousel/__demos__/indicator-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/carousel/README.md",
-    "maple-design-mobile/packages/maple-ui/src/carousel/example/demos/indicator-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/carousel/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/carousel/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/carousel/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/carousel/__demos__/effect-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/carousel/example/demos/effect-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/checkbox/__demos__/group-declaration-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/checkbox/example/demos/group-declaration-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/collapse/__demos__/border-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/collapse/README.md",
-    "maple-design-mobile/packages/maple-ui/src/collapse/example/demos/border-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/collapse/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/collapse/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/collapse/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/count-to/__demos__/number-format-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/count-to/README.md",
-    "maple-design-mobile/packages/maple-ui/src/count-to/example/demos/number-format-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/count-to/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/count-to/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/count-to/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/countdown/__demos__/format-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/countdown/README.md",
-    "maple-design-mobile/packages/maple-ui/src/countdown/example/demos/format-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/countdown/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/countdown/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/countdown/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/dialog/__demos__/size-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/dialog/README.md",
-    "cedar-design-web/packages/cedar-ui/src/dialog/README.en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/dialog/example/demos/size-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/dialog/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/dialog/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/dialog/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/divider/__demos__/line-appearance-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/divider/README.md",
-    "cedar-design-web/packages/cedar-ui/src/divider/README.en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/divider/example/demos/line-appearance-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/divider/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/divider/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/divider/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/drawer/__demos__/position-size-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/drawer/README.md",
-    "cedar-design-web/packages/cedar-ui/src/drawer/README.en-US.md",
-    "cedar-design-web/packages/cedar-ui/src/empty/__demos__/content-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/empty/README.md",
-    "maple-design-mobile/packages/maple-ui/src/empty/example/demos/content-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/empty/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/empty/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/empty/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/form/__demos__/label-width-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/form/README.md",
-    "maple-design-mobile/packages/maple-ui/src/form/example/demos/label-width-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/form/example/demos/en-US/label-width-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/form/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/form/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/form/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/icon/__demos__/appearance-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/icon/README.md",
-    "maple-design-mobile/packages/maple-ui/src/icon/example/demos/appearance-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/icon/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/icon/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/icon/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/image/__demos__/content-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/image/README.md",
-    "maple-design-mobile/packages/maple-ui/src/image/example/demos/content-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/image/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/image/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/image/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/input-tag/__demos__/appearance-state-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/input-tag/README.md",
-    "cedar-design-web/packages/cedar-ui/src/link/__demos__/appearance-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/link/README.md",
-    "maple-design-mobile/packages/maple-ui/src/link/example/demos/appearance-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/link/example/demos/en-US/appearance-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/link/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/link/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/link/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/loading/__demos__/appearance-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/loading/README.md",
-    "maple-design-mobile/packages/maple-ui/src/loading/example/demos/appearance-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/loading/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/loading/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/loading/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/menu/__demos__/structure-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/menu/README.md",
-    "maple-design-mobile/packages/maple-ui/src/menu/example/demos/structure-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/menu/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/menu/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/menu/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/page-header/__demos__/surface-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/page-header/README.md",
-    "maple-design-mobile/packages/maple-ui/src/page-header/example/demos/surface-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/page-header/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/page-header/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/page-header/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/pagination/__demos__/auxiliary-controls-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/pagination/README.md",
-    "cedar-design-web/packages/cedar-ui/src/pagination/README.en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/pagination/example/demos/auxiliary-controls-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/pagination/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/pagination/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/pagination/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/progress/__demos__/appearance-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/progress/README.md",
-    "maple-design-mobile/packages/maple-ui/src/progress/example/demos/appearance-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/progress/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/progress/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/progress/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/appearance-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/progress-group/README.md",
-    "maple-design-mobile/packages/maple-ui/src/progress-group/example/demos/appearance-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/progress-group/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/progress-group/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/progress-group/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/radio/__demos__/group-declaration-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/radio/README.md",
-    "maple-design-mobile/packages/maple-ui/src/radio/example/demos/group-declaration-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/radio/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/radio/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/radio/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/rate/__demos__/value-rules-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/rate/README.md",
-    "maple-design-mobile/packages/maple-ui/src/rate/example/demos/value-rules-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/rate/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/rate/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/rate/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/result/__demos__/status-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/result/README.md",
-    "cedar-design-web/packages/cedar-ui/src/result/__demos__/http-status-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/segmented/__demos__/appearance-state-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/segmented/README.md",
-    "cedar-design-web/packages/cedar-ui/src/skeleton/__demos__/content-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/skeleton/README.md",
-    "maple-design-mobile/packages/maple-ui/src/skeleton/example/demos/content-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/skeleton/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/skeleton/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/skeleton/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/timeline/__demos__/layout-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/timeline/README.md",
-    "cedar-design-web/packages/cedar-ui/src/tree/__demos__/appearance-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/tree/README.md",
-    "maple-design-mobile/packages/maple-ui/src/cell/example/demos/content-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/cell/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/cell/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/cell/example/index.vue",
-    "maple-design-mobile/packages/maple-ui/src/paper/example/demos/surface-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/paper/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/paper/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/paper/example/index.vue",
-    "maple-design-mobile/packages/maple-ui/src/popover/example/demos/positioning-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/popover/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/popover/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/popover/example/index.vue",
-    "maple-design-mobile/packages/maple-ui/src/watermark/example/demos/geometry-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/watermark/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/watermark/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/watermark/example/index.vue",
-    "maple-design-mobile/packages/maple-ui/src/space/example/demos/alignment-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/space/example/demos/en-US/alignment-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/space/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/space/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/space/example/index.vue",
-    "maple-design-mobile/packages/maple-ui/src/tab-bar/example/demos/event-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/tab-bar/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/tab-bar/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/tab-bar/example/index.vue",
-    "maple-design-mobile/packages/maple-ui/src/slider/example/demos/thumb-label-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/affix/__demos__/offset-container-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/affix/README.md",
-    "cedar-design-web/packages/cedar-ui/src/affix/README.en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/affix/example/demos/offset-container-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/affix/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/affix/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/affix/example/index.vue",
-    "cedar-design-web/packages/cedar-ui/src/time/__demos__/format-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/time/example/demos/format-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/time/example/demos/en-US/format-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/format-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/format-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/en-US/format-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/working-hours-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/scheduler/README.md",
-    "maple-design-mobile/packages/maple-ui/src/upload/example/demos/selection-limits-comparison.vue",
-    "maple-design-mobile/packages/maple-ui/src/upload/example/demos/en-US/selection-limits-comparison.vue",
-    "cedar-design-web/packages/cedar-ui/src/input-number/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/message/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/steps/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/tabs/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/textarea/__demos__/appearance-lab.vue",
-    "cedar-design-web/packages/cedar-ui/src/verification-code/__demos__/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/cascader/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/date/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/input-number/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/message/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/steps/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/tabs/example/demos/appearance-lab.vue",
-    "maple-design-mobile/packages/maple-ui/src/verification-code/example/demos/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/alert/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/alert/README.md",
+    "maple-design-mobile/packages/ui/src/alert/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/alert/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/alert/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/alert/example/index.vue",
+    "cedar-design-web/packages/ui/src/auto-complete/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/auto-complete/README.md",
+    "cedar-design-web/packages/ui/src/auto-complete/README.en-US.md",
+    "maple-design-mobile/packages/ui/src/auto-complete/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/auto-complete/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/auto-complete/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/auto-complete/example/index.vue",
+    "cedar-design-web/packages/ui/src/badge/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/badge/README.md",
+    "cedar-design-web/packages/ui/src/badge/README.en-US.md",
+    "maple-design-mobile/packages/ui/src/badge/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/badge/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/badge/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/badge/example/index.vue",
+    "cedar-design-web/packages/ui/src/card/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/card/README.md",
+    "cedar-design-web/packages/ui/src/card/README.en-US.md",
+    "maple-design-mobile/packages/ui/src/card/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/card/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/card/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/card/example/index.vue",
+    "cedar-design-web/packages/ui/src/cascader/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/cascader/README.md",
+    "cedar-design-web/packages/ui/src/date/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/date/README.md",
+    "cedar-design-web/packages/ui/src/date/README.en-US.md",
+    "cedar-design-web/packages/ui/src/date-range/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/date-range/README.md",
+    "cedar-design-web/packages/ui/src/date-range/README.en-US.md",
+    "cedar-design-web/packages/ui/src/input/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/input/README.md",
+    "maple-design-mobile/packages/ui/src/input/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/input/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/input/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/input/example/index.vue",
+    "cedar-design-web/packages/ui/src/select/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/select/README.md",
+    "cedar-design-web/packages/ui/src/select/README.en-US.md",
+    "maple-design-mobile/packages/ui/src/select/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/select/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/select/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/select/example/index.vue",
+    "cedar-design-web/packages/ui/src/split-button/README.md",
+    "maple-design-mobile/packages/ui/src/split-button/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/split-button/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/split-button/example/index.vue",
+    "cedar-design-web/packages/ui/src/switch/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/switch/README.md",
+    "cedar-design-web/packages/ui/src/switch/README.en-US.md",
+    "maple-design-mobile/packages/ui/src/switch/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/switch/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/switch/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/switch/example/index.vue",
+    "cedar-design-web/packages/ui/src/tag/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/tag/README.md",
+    "maple-design-mobile/packages/ui/src/tag/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/tag/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/tag/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/tag/example/index.vue",
+    "maple-design-mobile/packages/ui/src/textarea/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/textarea/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/textarea/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/textarea/example/index.vue",
+    "cedar-design-web/packages/ui/src/tooltip/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/tooltip/README.md",
+    "maple-design-mobile/packages/ui/src/tooltip/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/tooltip/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/tooltip/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/tooltip/example/index.vue",
+    "cedar-design-web/packages/ui/src/checkbox/README.md",
+    "maple-design-mobile/packages/ui/src/checkbox/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/checkbox/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/checkbox/example/index.vue",
+    "maple-design-mobile/packages/ui/src/date/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/date/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/date/example/index.vue",
+    "maple-design-mobile/packages/ui/src/date-range/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/date-range/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/date-range/example/index.vue",
+    "cedar-design-web/packages/ui/src/time/README.md",
+    "maple-design-mobile/packages/ui/src/time/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/time/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/time/example/index.vue",
+    "cedar-design-web/packages/ui/src/time-range/README.md",
+    "maple-design-mobile/packages/ui/src/time-range/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/time-range/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/time-range/example/index.vue",
+    "maple-design-mobile/packages/ui/src/slider/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/slider/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/slider/example/index.vue",
+    "maple-design-mobile/packages/ui/src/upload/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/upload/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/upload/example/index.vue",
+    "cedar-design-web/packages/ui/src/alert/__demos__/content-comparison.vue",
+    "maple-design-mobile/packages/ui/src/alert/example/demos/content-comparison.vue",
+    "cedar-design-web/packages/ui/src/alert/__demos__/dismiss-comparison.vue",
+    "maple-design-mobile/packages/ui/src/alert/example/demos/dismiss-comparison.vue",
+    "cedar-design-web/packages/ui/src/avatar/__demos__/shape-size-comparison.vue",
+    "cedar-design-web/packages/ui/src/avatar/README.md",
+    "maple-design-mobile/packages/ui/src/avatar/example/demos/shape-size-comparison.vue",
+    "maple-design-mobile/packages/ui/src/avatar/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/avatar/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/avatar/example/index.vue",
+    "cedar-design-web/packages/ui/src/avatar/__demos__/group-comparison.vue",
+    "maple-design-mobile/packages/ui/src/avatar/example/demos/group-comparison.vue",
+    "cedar-design-web/packages/ui/src/carousel/__demos__/indicator-comparison.vue",
+    "cedar-design-web/packages/ui/src/carousel/README.md",
+    "maple-design-mobile/packages/ui/src/carousel/example/demos/indicator-comparison.vue",
+    "maple-design-mobile/packages/ui/src/carousel/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/carousel/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/carousel/example/index.vue",
+    "cedar-design-web/packages/ui/src/carousel/__demos__/effect-comparison.vue",
+    "maple-design-mobile/packages/ui/src/carousel/example/demos/effect-comparison.vue",
+    "cedar-design-web/packages/ui/src/checkbox/__demos__/group-declaration-comparison.vue",
+    "maple-design-mobile/packages/ui/src/checkbox/example/demos/group-declaration-comparison.vue",
+    "cedar-design-web/packages/ui/src/collapse/__demos__/border-comparison.vue",
+    "cedar-design-web/packages/ui/src/collapse/README.md",
+    "maple-design-mobile/packages/ui/src/collapse/example/demos/border-comparison.vue",
+    "maple-design-mobile/packages/ui/src/collapse/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/collapse/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/collapse/example/index.vue",
+    "cedar-design-web/packages/ui/src/count-to/__demos__/number-format-comparison.vue",
+    "cedar-design-web/packages/ui/src/count-to/README.md",
+    "maple-design-mobile/packages/ui/src/count-to/example/demos/number-format-comparison.vue",
+    "maple-design-mobile/packages/ui/src/count-to/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/count-to/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/count-to/example/index.vue",
+    "cedar-design-web/packages/ui/src/countdown/__demos__/format-comparison.vue",
+    "cedar-design-web/packages/ui/src/countdown/README.md",
+    "maple-design-mobile/packages/ui/src/countdown/example/demos/format-comparison.vue",
+    "maple-design-mobile/packages/ui/src/countdown/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/countdown/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/countdown/example/index.vue",
+    "cedar-design-web/packages/ui/src/dialog/__demos__/size-comparison.vue",
+    "cedar-design-web/packages/ui/src/dialog/README.md",
+    "cedar-design-web/packages/ui/src/dialog/README.en-US.md",
+    "maple-design-mobile/packages/ui/src/dialog/example/demos/size-comparison.vue",
+    "maple-design-mobile/packages/ui/src/dialog/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/dialog/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/dialog/example/index.vue",
+    "cedar-design-web/packages/ui/src/divider/__demos__/line-appearance-comparison.vue",
+    "cedar-design-web/packages/ui/src/divider/README.md",
+    "cedar-design-web/packages/ui/src/divider/README.en-US.md",
+    "maple-design-mobile/packages/ui/src/divider/example/demos/line-appearance-comparison.vue",
+    "maple-design-mobile/packages/ui/src/divider/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/divider/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/divider/example/index.vue",
+    "cedar-design-web/packages/ui/src/drawer/__demos__/position-size-comparison.vue",
+    "cedar-design-web/packages/ui/src/drawer/README.md",
+    "cedar-design-web/packages/ui/src/drawer/README.en-US.md",
+    "cedar-design-web/packages/ui/src/empty/__demos__/content-comparison.vue",
+    "cedar-design-web/packages/ui/src/empty/README.md",
+    "maple-design-mobile/packages/ui/src/empty/example/demos/content-comparison.vue",
+    "maple-design-mobile/packages/ui/src/empty/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/empty/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/empty/example/index.vue",
+    "cedar-design-web/packages/ui/src/form/__demos__/label-width-comparison.vue",
+    "cedar-design-web/packages/ui/src/form/README.md",
+    "maple-design-mobile/packages/ui/src/form/example/demos/label-width-comparison.vue",
+    "maple-design-mobile/packages/ui/src/form/example/demos/en-US/label-width-comparison.vue",
+    "maple-design-mobile/packages/ui/src/form/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/form/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/form/example/index.vue",
+    "cedar-design-web/packages/ui/src/icon/__demos__/appearance-comparison.vue",
+    "cedar-design-web/packages/ui/src/icon/README.md",
+    "maple-design-mobile/packages/ui/src/icon/example/demos/appearance-comparison.vue",
+    "maple-design-mobile/packages/ui/src/icon/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/icon/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/icon/example/index.vue",
+    "cedar-design-web/packages/ui/src/image/__demos__/content-comparison.vue",
+    "cedar-design-web/packages/ui/src/image/README.md",
+    "maple-design-mobile/packages/ui/src/image/example/demos/content-comparison.vue",
+    "maple-design-mobile/packages/ui/src/image/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/image/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/image/example/index.vue",
+    "cedar-design-web/packages/ui/src/input-tag/__demos__/appearance-state-comparison.vue",
+    "cedar-design-web/packages/ui/src/input-tag/README.md",
+    "cedar-design-web/packages/ui/src/link/__demos__/appearance-comparison.vue",
+    "cedar-design-web/packages/ui/src/link/README.md",
+    "maple-design-mobile/packages/ui/src/link/example/demos/appearance-comparison.vue",
+    "maple-design-mobile/packages/ui/src/link/example/demos/en-US/appearance-comparison.vue",
+    "maple-design-mobile/packages/ui/src/link/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/link/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/link/example/index.vue",
+    "cedar-design-web/packages/ui/src/loading/__demos__/appearance-comparison.vue",
+    "cedar-design-web/packages/ui/src/loading/README.md",
+    "maple-design-mobile/packages/ui/src/loading/example/demos/appearance-comparison.vue",
+    "maple-design-mobile/packages/ui/src/loading/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/loading/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/loading/example/index.vue",
+    "cedar-design-web/packages/ui/src/menu/__demos__/structure-comparison.vue",
+    "cedar-design-web/packages/ui/src/menu/README.md",
+    "maple-design-mobile/packages/ui/src/menu/example/demos/structure-comparison.vue",
+    "maple-design-mobile/packages/ui/src/menu/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/menu/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/menu/example/index.vue",
+    "cedar-design-web/packages/ui/src/page-header/__demos__/surface-comparison.vue",
+    "cedar-design-web/packages/ui/src/page-header/README.md",
+    "maple-design-mobile/packages/ui/src/page-header/example/demos/surface-comparison.vue",
+    "maple-design-mobile/packages/ui/src/page-header/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/page-header/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/page-header/example/index.vue",
+    "cedar-design-web/packages/ui/src/pagination/__demos__/auxiliary-controls-comparison.vue",
+    "cedar-design-web/packages/ui/src/pagination/README.md",
+    "cedar-design-web/packages/ui/src/pagination/README.en-US.md",
+    "maple-design-mobile/packages/ui/src/pagination/example/demos/auxiliary-controls-comparison.vue",
+    "maple-design-mobile/packages/ui/src/pagination/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/pagination/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/pagination/example/index.vue",
+    "cedar-design-web/packages/ui/src/progress/__demos__/appearance-comparison.vue",
+    "cedar-design-web/packages/ui/src/progress/README.md",
+    "maple-design-mobile/packages/ui/src/progress/example/demos/appearance-comparison.vue",
+    "maple-design-mobile/packages/ui/src/progress/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/progress/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/progress/example/index.vue",
+    "cedar-design-web/packages/ui/src/progress-group/__demos__/appearance-comparison.vue",
+    "cedar-design-web/packages/ui/src/progress-group/README.md",
+    "maple-design-mobile/packages/ui/src/progress-group/example/demos/appearance-comparison.vue",
+    "maple-design-mobile/packages/ui/src/progress-group/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/progress-group/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/progress-group/example/index.vue",
+    "cedar-design-web/packages/ui/src/radio/__demos__/group-declaration-comparison.vue",
+    "cedar-design-web/packages/ui/src/radio/README.md",
+    "maple-design-mobile/packages/ui/src/radio/example/demos/group-declaration-comparison.vue",
+    "maple-design-mobile/packages/ui/src/radio/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/radio/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/radio/example/index.vue",
+    "cedar-design-web/packages/ui/src/rate/__demos__/value-rules-comparison.vue",
+    "cedar-design-web/packages/ui/src/rate/README.md",
+    "maple-design-mobile/packages/ui/src/rate/example/demos/value-rules-comparison.vue",
+    "maple-design-mobile/packages/ui/src/rate/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/rate/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/rate/example/index.vue",
+    "cedar-design-web/packages/ui/src/result/__demos__/status-comparison.vue",
+    "cedar-design-web/packages/ui/src/result/README.md",
+    "cedar-design-web/packages/ui/src/result/__demos__/http-status-comparison.vue",
+    "cedar-design-web/packages/ui/src/segmented/__demos__/appearance-state-comparison.vue",
+    "cedar-design-web/packages/ui/src/segmented/README.md",
+    "cedar-design-web/packages/ui/src/skeleton/__demos__/content-comparison.vue",
+    "cedar-design-web/packages/ui/src/skeleton/README.md",
+    "maple-design-mobile/packages/ui/src/skeleton/example/demos/content-comparison.vue",
+    "maple-design-mobile/packages/ui/src/skeleton/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/skeleton/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/skeleton/example/index.vue",
+    "cedar-design-web/packages/ui/src/timeline/__demos__/layout-comparison.vue",
+    "cedar-design-web/packages/ui/src/timeline/README.md",
+    "cedar-design-web/packages/ui/src/tree/__demos__/appearance-comparison.vue",
+    "cedar-design-web/packages/ui/src/tree/README.md",
+    "maple-design-mobile/packages/ui/src/cell/example/demos/content-comparison.vue",
+    "maple-design-mobile/packages/ui/src/cell/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/cell/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/cell/example/index.vue",
+    "maple-design-mobile/packages/ui/src/paper/example/demos/surface-comparison.vue",
+    "maple-design-mobile/packages/ui/src/paper/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/paper/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/paper/example/index.vue",
+    "maple-design-mobile/packages/ui/src/popover/example/demos/positioning-comparison.vue",
+    "maple-design-mobile/packages/ui/src/popover/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/popover/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/popover/example/index.vue",
+    "maple-design-mobile/packages/ui/src/watermark/example/demos/geometry-comparison.vue",
+    "maple-design-mobile/packages/ui/src/watermark/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/watermark/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/watermark/example/index.vue",
+    "maple-design-mobile/packages/ui/src/space/example/demos/alignment-comparison.vue",
+    "maple-design-mobile/packages/ui/src/space/example/demos/en-US/alignment-comparison.vue",
+    "maple-design-mobile/packages/ui/src/space/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/space/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/space/example/index.vue",
+    "maple-design-mobile/packages/ui/src/tab-bar/example/demos/event-comparison.vue",
+    "maple-design-mobile/packages/ui/src/tab-bar/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/tab-bar/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/tab-bar/example/index.vue",
+    "maple-design-mobile/packages/ui/src/slider/example/demos/thumb-label-comparison.vue",
+    "cedar-design-web/packages/ui/src/affix/__demos__/offset-container-comparison.vue",
+    "cedar-design-web/packages/ui/src/affix/README.md",
+    "cedar-design-web/packages/ui/src/affix/README.en-US.md",
+    "maple-design-mobile/packages/ui/src/affix/example/demos/offset-container-comparison.vue",
+    "maple-design-mobile/packages/ui/src/affix/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/affix/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/affix/example/index.vue",
+    "cedar-design-web/packages/ui/src/time/__demos__/format-comparison.vue",
+    "maple-design-mobile/packages/ui/src/time/example/demos/format-comparison.vue",
+    "maple-design-mobile/packages/ui/src/time/example/demos/en-US/format-comparison.vue",
+    "cedar-design-web/packages/ui/src/time-range/__demos__/format-comparison.vue",
+    "maple-design-mobile/packages/ui/src/time-range/example/demos/format-comparison.vue",
+    "maple-design-mobile/packages/ui/src/time-range/example/demos/en-US/format-comparison.vue",
+    "cedar-design-web/packages/ui/src/scheduler/__demos__/working-hours-comparison.vue",
+    "cedar-design-web/packages/ui/src/scheduler/README.md",
+    "maple-design-mobile/packages/ui/src/upload/example/demos/selection-limits-comparison.vue",
+    "maple-design-mobile/packages/ui/src/upload/example/demos/en-US/selection-limits-comparison.vue",
+    "cedar-design-web/packages/ui/src/input-number/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/message/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/steps/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/tabs/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/textarea/__demos__/appearance-lab.vue",
+    "cedar-design-web/packages/ui/src/verification-code/__demos__/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/cascader/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/date/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/date-range/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/input-number/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/message/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/steps/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/tabs/example/demos/appearance-lab.vue",
+    "maple-design-mobile/packages/ui/src/verification-code/example/demos/appearance-lab.vue",
     "design-ui/configs/demo-groups.json",
     "design-ui/configs/demo-groups.maple.json",
-    "cedar-design-web/packages/cedar-ui/src/steps/README.md",
-    "cedar-design-web/packages/cedar-ui/src/steps/README.en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/steps/docs/zh-CN.md",
-    "maple-design-mobile/packages/maple-ui/src/steps/docs/en-US.md",
-    "maple-design-mobile/packages/maple-ui/src/steps/example/index.vue"
+    "cedar-design-web/packages/ui/src/steps/README.md",
+    "cedar-design-web/packages/ui/src/steps/README.en-US.md",
+    "maple-design-mobile/packages/ui/src/steps/docs/zh-CN.md",
+    "maple-design-mobile/packages/ui/src/steps/docs/en-US.md",
+    "maple-design-mobile/packages/ui/src/steps/example/index.vue"
   ],
   "retired": [
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/alert/__demos__/variant.vue",
+      "file": "cedar-design-web/packages/ui/src/alert/__demos__/variant.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/alert/__demos__/type.vue",
+      "file": "cedar-design-web/packages/ui/src/alert/__demos__/type.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/alert/example/demos/variant.vue",
+      "file": "maple-design-mobile/packages/ui/src/alert/example/demos/variant.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/alert/example/demos/type.vue",
+      "file": "maple-design-mobile/packages/ui/src/alert/example/demos/type.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/auto-complete/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/auto-complete/__demos__/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/auto-complete/example/demos/zh-CN/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/auto-complete/example/demos/zh-CN/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/auto-complete/example/demos/en-US/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/auto-complete/example/demos/en-US/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/badge/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/badge/__demos__/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/badge/__demos__/variant.vue",
+      "file": "cedar-design-web/packages/ui/src/badge/__demos__/variant.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/badge/example/demos/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/badge/example/demos/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/badge/example/demos/variant.vue",
+      "file": "maple-design-mobile/packages/ui/src/badge/example/demos/variant.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/card/__demos__/variant.vue",
+      "file": "cedar-design-web/packages/ui/src/card/__demos__/variant.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/card/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/card/__demos__/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/card/example/demos/variant.vue",
+      "file": "maple-design-mobile/packages/ui/src/card/example/demos/variant.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/card/example/demos/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/card/example/demos/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/cascader/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/cascader/__demos__/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/date/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/date/__demos__/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/date-range/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/date-range/__demos__/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/input/__demos__/variant.vue",
+      "file": "cedar-design-web/packages/ui/src/input/__demos__/variant.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/input/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/input/__demos__/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/input/example/demos/variant.vue",
+      "file": "maple-design-mobile/packages/ui/src/input/example/demos/variant.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/input/example/demos/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/input/example/demos/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/input/example/demos/en-US/variant.vue",
+      "file": "maple-design-mobile/packages/ui/src/input/example/demos/en-US/variant.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/input/example/demos/en-US/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/input/example/demos/en-US/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/select/__demos__/variant.vue",
+      "file": "cedar-design-web/packages/ui/src/select/__demos__/variant.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/select/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/select/__demos__/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/select/example/demos/outline.vue",
+      "file": "maple-design-mobile/packages/ui/src/select/example/demos/outline.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/select/example/demos/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/select/example/demos/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/split-button/__demos__/sizes.vue",
+      "file": "cedar-design-web/packages/ui/src/split-button/__demos__/sizes.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/split-button/example/sizes.vue",
+      "file": "maple-design-mobile/packages/ui/src/split-button/example/sizes.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/switch/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/switch/__demos__/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/switch/__demos__/type.vue",
+      "file": "cedar-design-web/packages/ui/src/switch/__demos__/type.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/switch/example/demos/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/switch/example/demos/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/switch/example/demos/type.vue",
+      "file": "maple-design-mobile/packages/ui/src/switch/example/demos/type.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/tag/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/tag/__demos__/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/tag/__demos__/status.vue",
+      "file": "cedar-design-web/packages/ui/src/tag/__demos__/status.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/tag/example/demos/tag-size.vue",
+      "file": "maple-design-mobile/packages/ui/src/tag/example/demos/tag-size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/tag/example/demos/outline-tag.vue",
+      "file": "maple-design-mobile/packages/ui/src/tag/example/demos/outline-tag.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/textarea/example/demos/demo-2.vue",
+      "file": "maple-design-mobile/packages/ui/src/textarea/example/demos/demo-2.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/textarea/example/demos/en-US/demo-2.vue",
+      "file": "maple-design-mobile/packages/ui/src/textarea/example/demos/en-US/demo-2.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/tooltip/__demos__/mini.vue",
+      "file": "cedar-design-web/packages/ui/src/tooltip/__demos__/mini.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/tooltip/example/demos/size.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/theme-color-tooltip.vue",
+      "file": "maple-design-mobile/packages/ui/src/tooltip/example/demos/theme-color-tooltip.vue",
       "into": "appearance-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/auto-complete/__demos__/state.vue",
+      "file": "cedar-design-web/packages/ui/src/auto-complete/__demos__/state.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/auto-complete/example/demos/zh-CN/state.vue",
+      "file": "maple-design-mobile/packages/ui/src/auto-complete/example/demos/zh-CN/state.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/auto-complete/example/demos/en-US/state.vue",
+      "file": "maple-design-mobile/packages/ui/src/auto-complete/example/demos/en-US/state.vue",
       "into": "state-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/checkbox/__demos__/disabled.vue",
+      "file": "cedar-design-web/packages/ui/src/checkbox/__demos__/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/checkbox/example/demos/disabled.vue",
+      "file": "maple-design-mobile/packages/ui/src/checkbox/example/demos/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/checkbox/example/demos/readonly.vue",
+      "file": "maple-design-mobile/packages/ui/src/checkbox/example/demos/readonly.vue",
       "into": "state-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/cascader/__demos__/disabled.vue",
+      "file": "cedar-design-web/packages/ui/src/cascader/__demos__/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/input/__demos__/state.vue",
+      "file": "cedar-design-web/packages/ui/src/input/__demos__/state.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/input/example/demos/state.vue",
+      "file": "maple-design-mobile/packages/ui/src/input/example/demos/state.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/input/example/demos/en-US/state.vue",
+      "file": "maple-design-mobile/packages/ui/src/input/example/demos/en-US/state.vue",
       "into": "state-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/select/__demos__/state.vue",
+      "file": "cedar-design-web/packages/ui/src/select/__demos__/state.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/select/example/demos/state.vue",
+      "file": "maple-design-mobile/packages/ui/src/select/example/demos/state.vue",
       "into": "state-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/date/__demos__/status.vue",
+      "file": "cedar-design-web/packages/ui/src/date/__demos__/status.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/date/example/demos/disabled.vue",
+      "file": "maple-design-mobile/packages/ui/src/date/example/demos/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/date/example/demos/en-US/disabled.vue",
+      "file": "maple-design-mobile/packages/ui/src/date/example/demos/en-US/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/date-range/__demos__/status.vue",
+      "file": "cedar-design-web/packages/ui/src/date-range/__demos__/status.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/disabled.vue",
+      "file": "maple-design-mobile/packages/ui/src/date-range/example/demos/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/en-US/disabled.vue",
+      "file": "maple-design-mobile/packages/ui/src/date-range/example/demos/en-US/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/switch/__demos__/disabled.vue",
+      "file": "cedar-design-web/packages/ui/src/switch/__demos__/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/switch/__demos__/readonly.vue",
+      "file": "cedar-design-web/packages/ui/src/switch/__demos__/readonly.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/switch/example/demos/disabled.vue",
+      "file": "maple-design-mobile/packages/ui/src/switch/example/demos/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/switch/example/demos/readonly.vue",
+      "file": "maple-design-mobile/packages/ui/src/switch/example/demos/readonly.vue",
       "into": "state-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/time/__demos__/status.vue",
+      "file": "cedar-design-web/packages/ui/src/time/__demos__/status.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/disabled.vue",
+      "file": "maple-design-mobile/packages/ui/src/time/example/demos/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/readonly.vue",
+      "file": "maple-design-mobile/packages/ui/src/time/example/demos/readonly.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/en-US/disabled.vue",
+      "file": "maple-design-mobile/packages/ui/src/time/example/demos/en-US/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/en-US/readonly.vue",
+      "file": "maple-design-mobile/packages/ui/src/time/example/demos/en-US/readonly.vue",
       "into": "state-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/status.vue",
+      "file": "cedar-design-web/packages/ui/src/time-range/__demos__/status.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/disabled.vue",
+      "file": "maple-design-mobile/packages/ui/src/time-range/example/demos/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/slider/example/demos/readonly.vue",
+      "file": "maple-design-mobile/packages/ui/src/slider/example/demos/readonly.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/slider/example/demos/disable.vue",
+      "file": "maple-design-mobile/packages/ui/src/slider/example/demos/disable.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/upload/example/demos/disabled.vue",
+      "file": "maple-design-mobile/packages/ui/src/upload/example/demos/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/upload/example/demos/readonly.vue",
+      "file": "maple-design-mobile/packages/ui/src/upload/example/demos/readonly.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/upload/example/demos/en-US/disabled.vue",
+      "file": "maple-design-mobile/packages/ui/src/upload/example/demos/en-US/disabled.vue",
       "into": "state-lab"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/upload/example/demos/en-US/readonly.vue",
+      "file": "maple-design-mobile/packages/ui/src/upload/example/demos/en-US/readonly.vue",
       "into": "state-lab"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/alert/__demos__/title.vue",
+      "file": "cedar-design-web/packages/ui/src/alert/__demos__/title.vue",
       "into": "content-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/alert/__demos__/center.vue",
+      "file": "cedar-design-web/packages/ui/src/alert/__demos__/center.vue",
       "into": "content-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/alert/__demos__/banner.vue",
+      "file": "cedar-design-web/packages/ui/src/alert/__demos__/banner.vue",
       "into": "content-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/alert/example/demos/title.vue",
+      "file": "maple-design-mobile/packages/ui/src/alert/example/demos/title.vue",
       "into": "content-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/alert/example/demos/center.vue",
+      "file": "maple-design-mobile/packages/ui/src/alert/example/demos/center.vue",
       "into": "content-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/alert/example/demos/banner.vue",
+      "file": "maple-design-mobile/packages/ui/src/alert/example/demos/banner.vue",
       "into": "content-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/alert/__demos__/closable.vue",
+      "file": "cedar-design-web/packages/ui/src/alert/__demos__/closable.vue",
       "into": "dismiss-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/alert/__demos__/close-icon.vue",
+      "file": "cedar-design-web/packages/ui/src/alert/__demos__/close-icon.vue",
       "into": "dismiss-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/alert/example/demos/allow-to-close.vue",
+      "file": "maple-design-mobile/packages/ui/src/alert/example/demos/allow-to-close.vue",
       "into": "dismiss-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/alert/example/demos/custom-close-icon.vue",
+      "file": "maple-design-mobile/packages/ui/src/alert/example/demos/custom-close-icon.vue",
       "into": "dismiss-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/avatar/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/avatar/__demos__/size.vue",
       "into": "shape-size-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/avatar/__demos__/shape.vue",
+      "file": "cedar-design-web/packages/ui/src/avatar/__demos__/shape.vue",
       "into": "shape-size-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/avatar/example/demos/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/avatar/example/demos/size.vue",
       "into": "shape-size-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/avatar/example/demos/shape.vue",
+      "file": "maple-design-mobile/packages/ui/src/avatar/example/demos/shape.vue",
       "into": "shape-size-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/avatar/__demos__/group.vue",
+      "file": "cedar-design-web/packages/ui/src/avatar/__demos__/group.vue",
       "into": "group-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/avatar/__demos__/group-vertical.vue",
+      "file": "cedar-design-web/packages/ui/src/avatar/__demos__/group-vertical.vue",
       "into": "group-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/avatar/example/demos/group.vue",
+      "file": "maple-design-mobile/packages/ui/src/avatar/example/demos/group.vue",
       "into": "group-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/avatar/example/demos/group-vertical.vue",
+      "file": "maple-design-mobile/packages/ui/src/avatar/example/demos/group-vertical.vue",
       "into": "group-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/carousel/__demos__/indicator-type.vue",
+      "file": "cedar-design-web/packages/ui/src/carousel/__demos__/indicator-type.vue",
       "into": "indicator-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/carousel/__demos__/indicator-position.vue",
+      "file": "cedar-design-web/packages/ui/src/carousel/__demos__/indicator-position.vue",
       "into": "indicator-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/carousel/example/demos/indicator-type.vue",
+      "file": "maple-design-mobile/packages/ui/src/carousel/example/demos/indicator-type.vue",
       "into": "indicator-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/carousel/example/demos/indicator-position.vue",
+      "file": "maple-design-mobile/packages/ui/src/carousel/example/demos/indicator-position.vue",
       "into": "indicator-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/carousel/__demos__/effect-fade.vue",
+      "file": "cedar-design-web/packages/ui/src/carousel/__demos__/effect-fade.vue",
       "into": "effect-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/carousel/__demos__/effect-card.vue",
+      "file": "cedar-design-web/packages/ui/src/carousel/__demos__/effect-card.vue",
       "into": "effect-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/carousel/example/demos/effect-fade.vue",
+      "file": "maple-design-mobile/packages/ui/src/carousel/example/demos/effect-fade.vue",
       "into": "effect-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/carousel/example/demos/effect-card.vue",
+      "file": "maple-design-mobile/packages/ui/src/carousel/example/demos/effect-card.vue",
       "into": "effect-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/carousel/example/demos/effect-slide.vue",
+      "file": "maple-design-mobile/packages/ui/src/carousel/example/demos/effect-slide.vue",
       "into": "effect-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/checkbox/__demos__/checkbox-group.vue",
+      "file": "cedar-design-web/packages/ui/src/checkbox/__demos__/checkbox-group.vue",
       "into": "group-declaration-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/checkbox/__demos__/checkbox-group-options.vue",
+      "file": "cedar-design-web/packages/ui/src/checkbox/__demos__/checkbox-group-options.vue",
       "into": "group-declaration-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/checkbox/example/demos/checkbox-group.vue",
+      "file": "maple-design-mobile/packages/ui/src/checkbox/example/demos/checkbox-group.vue",
       "into": "group-declaration-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/checkbox/example/demos/checkbox-group-options.vue",
+      "file": "maple-design-mobile/packages/ui/src/checkbox/example/demos/checkbox-group-options.vue",
       "into": "group-declaration-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/collapse/__demos__/border-less.vue",
+      "file": "cedar-design-web/packages/ui/src/collapse/__demos__/border-less.vue",
       "into": "border-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/collapse/__demos__/divider.vue",
+      "file": "cedar-design-web/packages/ui/src/collapse/__demos__/divider.vue",
       "into": "border-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/collapse/example/demos/border-less.vue",
+      "file": "maple-design-mobile/packages/ui/src/collapse/example/demos/border-less.vue",
       "into": "border-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/collapse/example/demos/divider.vue",
+      "file": "maple-design-mobile/packages/ui/src/collapse/example/demos/divider.vue",
       "into": "border-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/count-to/__demos__/precision.vue",
+      "file": "cedar-design-web/packages/ui/src/count-to/__demos__/precision.vue",
       "into": "number-format-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/count-to/__demos__/duration.vue",
+      "file": "cedar-design-web/packages/ui/src/count-to/__demos__/duration.vue",
       "into": "number-format-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/count-to/__demos__/timing-function.vue",
+      "file": "cedar-design-web/packages/ui/src/count-to/__demos__/timing-function.vue",
       "into": "number-format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/count-to/example/demos/precision.vue",
+      "file": "maple-design-mobile/packages/ui/src/count-to/example/demos/precision.vue",
       "into": "number-format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/count-to/example/demos/custom-duration.vue",
+      "file": "maple-design-mobile/packages/ui/src/count-to/example/demos/custom-duration.vue",
       "into": "number-format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/count-to/example/demos/custom-animation-curve.vue",
+      "file": "maple-design-mobile/packages/ui/src/count-to/example/demos/custom-animation-curve.vue",
       "into": "number-format-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/countdown/__demos__/millisecond.vue",
+      "file": "cedar-design-web/packages/ui/src/countdown/__demos__/millisecond.vue",
       "into": "format-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/countdown/__demos__/format.vue",
+      "file": "cedar-design-web/packages/ui/src/countdown/__demos__/format.vue",
       "into": "format-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/countdown/__demos__/custom.vue",
+      "file": "cedar-design-web/packages/ui/src/countdown/__demos__/custom.vue",
       "into": "format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/countdown/example/demos/custom-format.vue",
+      "file": "maple-design-mobile/packages/ui/src/countdown/example/demos/custom-format.vue",
       "into": "format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/countdown/example/demos/custom-style.vue",
+      "file": "maple-design-mobile/packages/ui/src/countdown/example/demos/custom-style.vue",
       "into": "format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/countdown/example/demos/show-millisecond.vue",
+      "file": "maple-design-mobile/packages/ui/src/countdown/example/demos/show-millisecond.vue",
       "into": "format-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/dialog/__demos__/width.vue",
+      "file": "cedar-design-web/packages/ui/src/dialog/__demos__/width.vue",
       "into": "size-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/dialog/__demos__/fullscreen.vue",
+      "file": "cedar-design-web/packages/ui/src/dialog/__demos__/fullscreen.vue",
       "into": "size-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/dialog/example/demos/layout.vue",
+      "file": "maple-design-mobile/packages/ui/src/dialog/example/demos/layout.vue",
       "into": "size-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/dialog/example/demos/long-content.vue",
+      "file": "maple-design-mobile/packages/ui/src/dialog/example/demos/long-content.vue",
       "into": "size-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/divider/__demos__/size-inset.vue",
+      "file": "cedar-design-web/packages/ui/src/divider/__demos__/size-inset.vue",
       "into": "line-appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/divider/__demos__/line-type.vue",
+      "file": "cedar-design-web/packages/ui/src/divider/__demos__/line-type.vue",
       "into": "line-appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/divider/__demos__/opacity-color.vue",
+      "file": "cedar-design-web/packages/ui/src/divider/__demos__/opacity-color.vue",
       "into": "line-appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/divider/example/demos/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/divider/example/demos/size.vue",
       "into": "line-appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/divider/example/demos/color.vue",
+      "file": "maple-design-mobile/packages/ui/src/divider/example/demos/color.vue",
       "into": "line-appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/divider/example/demos/type.vue",
+      "file": "maple-design-mobile/packages/ui/src/divider/example/demos/type.vue",
       "into": "line-appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/drawer/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/drawer/__demos__/size.vue",
       "into": "position-size-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/drawer/__demos__/location.vue",
+      "file": "cedar-design-web/packages/ui/src/drawer/__demos__/location.vue",
       "into": "position-size-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/empty/__demos__/extra.vue",
+      "file": "cedar-design-web/packages/ui/src/empty/__demos__/extra.vue",
       "into": "content-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/empty/__demos__/user-define.vue",
+      "file": "cedar-design-web/packages/ui/src/empty/__demos__/user-define.vue",
       "into": "content-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/empty/example/demos/custom-image.vue",
+      "file": "maple-design-mobile/packages/ui/src/empty/example/demos/custom-image.vue",
       "into": "content-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/empty/example/demos/extra-slot.vue",
+      "file": "maple-design-mobile/packages/ui/src/empty/example/demos/extra-slot.vue",
       "into": "content-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/auto-label-width.vue",
+      "file": "cedar-design-web/packages/ui/src/form/__demos__/auto-label-width.vue",
       "into": "label-width-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/label-columns.vue",
+      "file": "cedar-design-web/packages/ui/src/form/__demos__/label-columns.vue",
       "into": "label-width-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/form/__demos__/fixed-label-width.vue",
+      "file": "cedar-design-web/packages/ui/src/form/__demos__/fixed-label-width.vue",
       "into": "label-width-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/auto-label-width.vue",
+      "file": "maple-design-mobile/packages/ui/src/form/example/demos/auto-label-width.vue",
       "into": "label-width-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/label-columns.vue",
+      "file": "maple-design-mobile/packages/ui/src/form/example/demos/label-columns.vue",
       "into": "label-width-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/fixed-label-width.vue",
+      "file": "maple-design-mobile/packages/ui/src/form/example/demos/fixed-label-width.vue",
       "into": "label-width-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/en-US/auto-label-width.vue",
+      "file": "maple-design-mobile/packages/ui/src/form/example/demos/en-US/auto-label-width.vue",
       "into": "label-width-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/en-US/label-columns.vue",
+      "file": "maple-design-mobile/packages/ui/src/form/example/demos/en-US/label-columns.vue",
       "into": "label-width-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/form/example/demos/en-US/fixed-label-width.vue",
+      "file": "maple-design-mobile/packages/ui/src/form/example/demos/en-US/fixed-label-width.vue",
       "into": "label-width-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/icon/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/icon/__demos__/size.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/icon/__demos__/color.vue",
+      "file": "cedar-design-web/packages/ui/src/icon/__demos__/color.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/icon/example/demos/icon-size.vue",
+      "file": "maple-design-mobile/packages/ui/src/icon/example/demos/icon-size.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/icon/example/demos/icon-color.vue",
+      "file": "maple-design-mobile/packages/ui/src/icon/example/demos/icon-color.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/image/__demos__/caption.vue",
+      "file": "cedar-design-web/packages/ui/src/image/__demos__/caption.vue",
       "into": "content-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/image/__demos__/extra.vue",
+      "file": "cedar-design-web/packages/ui/src/image/__demos__/extra.vue",
       "into": "content-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/image/example/demos/caption.vue",
+      "file": "maple-design-mobile/packages/ui/src/image/example/demos/caption.vue",
       "into": "content-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/image/example/demos/extra.vue",
+      "file": "maple-design-mobile/packages/ui/src/image/example/demos/extra.vue",
       "into": "content-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/input-tag/__demos__/status.vue",
+      "file": "cedar-design-web/packages/ui/src/input-tag/__demos__/status.vue",
       "into": "appearance-state-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/input-tag/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/input-tag/__demos__/size.vue",
       "into": "appearance-state-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/link/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/link/__demos__/size.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/link/__demos__/link-status.vue",
+      "file": "cedar-design-web/packages/ui/src/link/__demos__/link-status.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/link/example/demos/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/link/example/demos/size.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/link/example/demos/semantic-status.vue",
+      "file": "maple-design-mobile/packages/ui/src/link/example/demos/semantic-status.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/link/example/demos/en-US/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/link/example/demos/en-US/size.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/link/example/demos/en-US/semantic-status.vue",
+      "file": "maple-design-mobile/packages/ui/src/link/example/demos/en-US/semantic-status.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/loading/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/loading/__demos__/size.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/loading/__demos__/color.vue",
+      "file": "cedar-design-web/packages/ui/src/loading/__demos__/color.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/loading/__demos__/type.vue",
+      "file": "cedar-design-web/packages/ui/src/loading/__demos__/type.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/loading/example/demos/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/loading/example/demos/size.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/loading/example/demos/color.vue",
+      "file": "maple-design-mobile/packages/ui/src/loading/example/demos/color.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/loading/example/demos/type.vue",
+      "file": "maple-design-mobile/packages/ui/src/loading/example/demos/type.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/menu/__demos__/group.vue",
+      "file": "cedar-design-web/packages/ui/src/menu/__demos__/group.vue",
       "into": "structure-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/menu/__demos__/submenu.vue",
+      "file": "cedar-design-web/packages/ui/src/menu/__demos__/submenu.vue",
       "into": "structure-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/menu/__demos__/option-content.vue",
+      "file": "cedar-design-web/packages/ui/src/menu/__demos__/option-content.vue",
       "into": "structure-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/menu/example/demos/group.vue",
+      "file": "maple-design-mobile/packages/ui/src/menu/example/demos/group.vue",
       "into": "structure-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/menu/example/demos/submenu.vue",
+      "file": "maple-design-mobile/packages/ui/src/menu/example/demos/submenu.vue",
       "into": "structure-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/menu/example/demos/option-content.vue",
+      "file": "maple-design-mobile/packages/ui/src/menu/example/demos/option-content.vue",
       "into": "structure-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/page-header/__demos__/breadcrumb.vue",
+      "file": "cedar-design-web/packages/ui/src/page-header/__demos__/breadcrumb.vue",
       "into": "surface-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/page-header/__demos__/transparent.vue",
+      "file": "cedar-design-web/packages/ui/src/page-header/__demos__/transparent.vue",
       "into": "surface-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/page-header/example/demos/breadcrumb.vue",
+      "file": "maple-design-mobile/packages/ui/src/page-header/example/demos/breadcrumb.vue",
       "into": "surface-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/page-header/example/demos/transparent.vue",
+      "file": "maple-design-mobile/packages/ui/src/page-header/example/demos/transparent.vue",
       "into": "surface-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/pagination/__demos__/show-total.vue",
+      "file": "cedar-design-web/packages/ui/src/pagination/__demos__/show-total.vue",
       "into": "auxiliary-controls-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/pagination/__demos__/show-page-size.vue",
+      "file": "cedar-design-web/packages/ui/src/pagination/__demos__/show-page-size.vue",
       "into": "auxiliary-controls-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/pagination/__demos__/show-jumper.vue",
+      "file": "cedar-design-web/packages/ui/src/pagination/__demos__/show-jumper.vue",
       "into": "auxiliary-controls-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/pagination/example/demos/show-total.vue",
+      "file": "maple-design-mobile/packages/ui/src/pagination/example/demos/show-total.vue",
       "into": "auxiliary-controls-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/pagination/example/demos/show-page-size.vue",
+      "file": "maple-design-mobile/packages/ui/src/pagination/example/demos/show-page-size.vue",
       "into": "auxiliary-controls-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/pagination/example/demos/show-jumper.vue",
+      "file": "maple-design-mobile/packages/ui/src/pagination/example/demos/show-jumper.vue",
       "into": "auxiliary-controls-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/progress/__demos__/status.vue",
+      "file": "cedar-design-web/packages/ui/src/progress/__demos__/status.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/progress/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/progress/__demos__/size.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/progress/example/demos/status.vue",
+      "file": "maple-design-mobile/packages/ui/src/progress/example/demos/status.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/progress/example/demos/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/progress/example/demos/size.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/sizes.vue",
+      "file": "cedar-design-web/packages/ui/src/progress-group/__demos__/sizes.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/color.vue",
+      "file": "cedar-design-web/packages/ui/src/progress-group/__demos__/color.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/progress-group/example/demos/size.vue",
+      "file": "maple-design-mobile/packages/ui/src/progress-group/example/demos/size.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/progress-group/example/demos/color.vue",
+      "file": "maple-design-mobile/packages/ui/src/progress-group/example/demos/color.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/radio/__demos__/group.vue",
+      "file": "cedar-design-web/packages/ui/src/radio/__demos__/group.vue",
       "into": "group-declaration-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/radio/__demos__/group-options.vue",
+      "file": "cedar-design-web/packages/ui/src/radio/__demos__/group-options.vue",
       "into": "group-declaration-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/radio/example/demos/radio-group.vue",
+      "file": "maple-design-mobile/packages/ui/src/radio/example/demos/radio-group.vue",
       "into": "group-declaration-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/radio/example/demos/radio-group-options.vue",
+      "file": "maple-design-mobile/packages/ui/src/radio/example/demos/radio-group-options.vue",
       "into": "group-declaration-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/rate/__demos__/clear.vue",
+      "file": "cedar-design-web/packages/ui/src/rate/__demos__/clear.vue",
       "into": "value-rules-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/rate/__demos__/count.vue",
+      "file": "cedar-design-web/packages/ui/src/rate/__demos__/count.vue",
       "into": "value-rules-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/rate/example/demos/clearable.vue",
+      "file": "maple-design-mobile/packages/ui/src/rate/example/demos/clearable.vue",
       "into": "value-rules-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/rate/example/demos/custom-total-rating.vue",
+      "file": "maple-design-mobile/packages/ui/src/rate/example/demos/custom-total-rating.vue",
       "into": "value-rules-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/result/__demos__/success.vue",
+      "file": "cedar-design-web/packages/ui/src/result/__demos__/success.vue",
       "into": "status-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/result/__demos__/warning.vue",
+      "file": "cedar-design-web/packages/ui/src/result/__demos__/warning.vue",
       "into": "status-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/result/__demos__/error.vue",
+      "file": "cedar-design-web/packages/ui/src/result/__demos__/error.vue",
       "into": "status-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/result/__demos__/403.vue",
+      "file": "cedar-design-web/packages/ui/src/result/__demos__/403.vue",
       "into": "http-status-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/result/__demos__/404.vue",
+      "file": "cedar-design-web/packages/ui/src/result/__demos__/404.vue",
       "into": "http-status-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/result/__demos__/500.vue",
+      "file": "cedar-design-web/packages/ui/src/result/__demos__/500.vue",
       "into": "http-status-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/segmented/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/segmented/__demos__/size.vue",
       "into": "appearance-state-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/segmented/__demos__/disabled.vue",
+      "file": "cedar-design-web/packages/ui/src/segmented/__demos__/disabled.vue",
       "into": "appearance-state-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/skeleton/__demos__/title-and-rows.vue",
+      "file": "cedar-design-web/packages/ui/src/skeleton/__demos__/title-and-rows.vue",
       "into": "content-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/skeleton/__demos__/avatar-and-card.vue",
+      "file": "cedar-design-web/packages/ui/src/skeleton/__demos__/avatar-and-card.vue",
       "into": "content-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/skeleton/example/demos/custom-rows-width.vue",
+      "file": "maple-design-mobile/packages/ui/src/skeleton/example/demos/custom-rows-width.vue",
       "into": "content-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/skeleton/example/demos/display-card.vue",
+      "file": "maple-design-mobile/packages/ui/src/skeleton/example/demos/display-card.vue",
       "into": "content-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/timeline/__demos__/vertical.vue",
+      "file": "cedar-design-web/packages/ui/src/timeline/__demos__/vertical.vue",
       "into": "layout-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/timeline/__demos__/direction.vue",
+      "file": "cedar-design-web/packages/ui/src/timeline/__demos__/direction.vue",
       "into": "layout-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/timeline/__demos__/label.vue",
+      "file": "cedar-design-web/packages/ui/src/timeline/__demos__/label.vue",
       "into": "layout-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/tree/__demos__/size.vue",
+      "file": "cedar-design-web/packages/ui/src/tree/__demos__/size.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/tree/__demos__/block-node.vue",
+      "file": "cedar-design-web/packages/ui/src/tree/__demos__/block-node.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/tree/__demos__/show-line.vue",
+      "file": "cedar-design-web/packages/ui/src/tree/__demos__/show-line.vue",
       "into": "appearance-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/cell/example/demos/show-icon.vue",
+      "file": "maple-design-mobile/packages/ui/src/cell/example/demos/show-icon.vue",
       "into": "content-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/cell/example/demos/show-desc.vue",
+      "file": "maple-design-mobile/packages/ui/src/cell/example/demos/show-desc.vue",
       "into": "content-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/cell/example/demos/show-border.vue",
+      "file": "maple-design-mobile/packages/ui/src/cell/example/demos/show-border.vue",
       "into": "content-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/paper/example/demos/bordered.vue",
+      "file": "maple-design-mobile/packages/ui/src/paper/example/demos/bordered.vue",
       "into": "surface-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/paper/example/demos/round.vue",
+      "file": "maple-design-mobile/packages/ui/src/paper/example/demos/round.vue",
       "into": "surface-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/paper/example/demos/radius.vue",
+      "file": "maple-design-mobile/packages/ui/src/paper/example/demos/radius.vue",
       "into": "surface-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/popover/example/demos/placement.vue",
+      "file": "maple-design-mobile/packages/ui/src/popover/example/demos/placement.vue",
       "into": "positioning-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/popover/example/demos/offset.vue",
+      "file": "maple-design-mobile/packages/ui/src/popover/example/demos/offset.vue",
       "into": "positioning-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/popover/example/demos/auto-fit-popup-width.vue",
+      "file": "maple-design-mobile/packages/ui/src/popover/example/demos/auto-fit-popup-width.vue",
       "into": "positioning-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/watermark/example/demos/custom-gap.vue",
+      "file": "maple-design-mobile/packages/ui/src/watermark/example/demos/custom-gap.vue",
       "into": "geometry-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/watermark/example/demos/custom-offset.vue",
+      "file": "maple-design-mobile/packages/ui/src/watermark/example/demos/custom-offset.vue",
       "into": "geometry-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/watermark/example/demos/custom-rotate.vue",
+      "file": "maple-design-mobile/packages/ui/src/watermark/example/demos/custom-rotate.vue",
       "into": "geometry-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/space/example/demos/right-align.vue",
+      "file": "maple-design-mobile/packages/ui/src/space/example/demos/right-align.vue",
       "into": "alignment-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/space/example/demos/center.vue",
+      "file": "maple-design-mobile/packages/ui/src/space/example/demos/center.vue",
       "into": "alignment-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/space/example/demos/between.vue",
+      "file": "maple-design-mobile/packages/ui/src/space/example/demos/between.vue",
       "into": "alignment-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/space/example/demos/en-US/right-align.vue",
+      "file": "maple-design-mobile/packages/ui/src/space/example/demos/en-US/right-align.vue",
       "into": "alignment-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/space/example/demos/en-US/center.vue",
+      "file": "maple-design-mobile/packages/ui/src/space/example/demos/en-US/center.vue",
       "into": "alignment-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/space/example/demos/en-US/between.vue",
+      "file": "maple-design-mobile/packages/ui/src/space/example/demos/en-US/between.vue",
       "into": "alignment-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/tab-bar/example/demos/change-event.vue",
+      "file": "maple-design-mobile/packages/ui/src/tab-bar/example/demos/change-event.vue",
       "into": "event-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/tab-bar/example/demos/click-event.vue",
+      "file": "maple-design-mobile/packages/ui/src/tab-bar/example/demos/click-event.vue",
       "into": "event-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/slider/example/demos/custom-btn.vue",
+      "file": "maple-design-mobile/packages/ui/src/slider/example/demos/custom-btn.vue",
       "into": "thumb-label-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/slider/example/demos/show-label.vue",
+      "file": "maple-design-mobile/packages/ui/src/slider/example/demos/show-label.vue",
       "into": "thumb-label-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/affix/__demos__/top.vue",
+      "file": "cedar-design-web/packages/ui/src/affix/__demos__/top.vue",
       "into": "offset-container-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/affix/__demos__/bottom.vue",
+      "file": "cedar-design-web/packages/ui/src/affix/__demos__/bottom.vue",
       "into": "offset-container-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/affix/__demos__/container.vue",
+      "file": "cedar-design-web/packages/ui/src/affix/__demos__/container.vue",
       "into": "offset-container-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/affix/example/demos/top.vue",
+      "file": "maple-design-mobile/packages/ui/src/affix/example/demos/top.vue",
       "into": "offset-container-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/affix/example/demos/bottom.vue",
+      "file": "maple-design-mobile/packages/ui/src/affix/example/demos/bottom.vue",
       "into": "offset-container-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/affix/example/demos/container.vue",
+      "file": "maple-design-mobile/packages/ui/src/affix/example/demos/container.vue",
       "into": "offset-container-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/time/__demos__/format.vue",
+      "file": "cedar-design-web/packages/ui/src/time/__demos__/format.vue",
       "into": "format-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/time/__demos__/ampm.vue",
+      "file": "cedar-design-web/packages/ui/src/time/__demos__/ampm.vue",
       "into": "format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/hour24.vue",
+      "file": "maple-design-mobile/packages/ui/src/time/example/demos/hour24.vue",
       "into": "format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/show-second.vue",
+      "file": "maple-design-mobile/packages/ui/src/time/example/demos/show-second.vue",
       "into": "format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/ampm.vue",
+      "file": "maple-design-mobile/packages/ui/src/time/example/demos/ampm.vue",
       "into": "format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/en-US/hour24.vue",
+      "file": "maple-design-mobile/packages/ui/src/time/example/demos/en-US/hour24.vue",
       "into": "format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/en-US/show-second.vue",
+      "file": "maple-design-mobile/packages/ui/src/time/example/demos/en-US/show-second.vue",
       "into": "format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time/example/demos/en-US/ampm.vue",
+      "file": "maple-design-mobile/packages/ui/src/time/example/demos/en-US/ampm.vue",
       "into": "format-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/format.vue",
+      "file": "cedar-design-web/packages/ui/src/time-range/__demos__/format.vue",
       "into": "format-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/ampm.vue",
+      "file": "cedar-design-web/packages/ui/src/time-range/__demos__/ampm.vue",
       "into": "format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/hour24.vue",
+      "file": "maple-design-mobile/packages/ui/src/time-range/example/demos/hour24.vue",
       "into": "format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/ampm.vue",
+      "file": "maple-design-mobile/packages/ui/src/time-range/example/demos/ampm.vue",
       "into": "format-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/en-US/ampm.vue",
+      "file": "maple-design-mobile/packages/ui/src/time-range/example/demos/en-US/ampm.vue",
       "into": "format-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/working-hours.vue",
+      "file": "cedar-design-web/packages/ui/src/scheduler/__demos__/working-hours.vue",
       "into": "working-hours-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/date-working-hours.vue",
+      "file": "cedar-design-web/packages/ui/src/scheduler/__demos__/date-working-hours.vue",
       "into": "working-hours-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/upload/example/demos/max-file-size.vue",
+      "file": "maple-design-mobile/packages/ui/src/upload/example/demos/max-file-size.vue",
       "into": "selection-limits-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/upload/example/demos/max-files.vue",
+      "file": "maple-design-mobile/packages/ui/src/upload/example/demos/max-files.vue",
       "into": "selection-limits-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/upload/example/demos/en-US/max-file-size.vue",
+      "file": "maple-design-mobile/packages/ui/src/upload/example/demos/en-US/max-file-size.vue",
       "into": "selection-limits-comparison"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/upload/example/demos/en-US/max-files.vue",
+      "file": "maple-design-mobile/packages/ui/src/upload/example/demos/en-US/max-files.vue",
       "into": "selection-limits-comparison"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/steps/__demos__/error.vue",
+      "file": "cedar-design-web/packages/ui/src/steps/__demos__/error.vue",
       "into": "types"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/steps/__demos__/arrow.vue",
+      "file": "cedar-design-web/packages/ui/src/steps/__demos__/arrow.vue",
       "into": "types"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/steps/__demos__/dot.vue",
+      "file": "cedar-design-web/packages/ui/src/steps/__demos__/dot.vue",
       "into": "types"
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/steps/__demos__/navigation.vue",
+      "file": "cedar-design-web/packages/ui/src/steps/__demos__/navigation.vue",
       "into": "types"
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/steps/example/demos/error-status.vue",
+      "file": "maple-design-mobile/packages/ui/src/steps/example/demos/error-status.vue",
       "into": "types"
     }
   ],
@@ -1433,7 +1433,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/alert/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/alert/__demos__/appearance-lab.vue"
     },
     {
       "platform": "maple",
@@ -1447,7 +1447,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/alert/example/demos/appearance-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/alert/example/demos/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1460,7 +1460,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/auto-complete/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/auto-complete/__demos__/appearance-lab.vue"
     },
     {
       "platform": "maple",
@@ -1473,7 +1473,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/auto-complete/example/demos/appearance-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/auto-complete/example/demos/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1487,7 +1487,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/badge/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/badge/__demos__/appearance-lab.vue"
     },
     {
       "platform": "maple",
@@ -1501,7 +1501,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/badge/example/demos/appearance-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/badge/example/demos/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1515,7 +1515,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/card/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/card/__demos__/appearance-lab.vue"
     },
     {
       "platform": "maple",
@@ -1529,7 +1529,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/card/example/demos/appearance-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/card/example/demos/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1542,7 +1542,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/cascader/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/cascader/__demos__/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1555,7 +1555,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/date/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/date/__demos__/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1568,7 +1568,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/date-range/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/date-range/__demos__/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1582,7 +1582,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/input/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/input/__demos__/appearance-lab.vue"
     },
     {
       "platform": "maple",
@@ -1596,7 +1596,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/input/example/demos/appearance-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/input/example/demos/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1610,7 +1610,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/select/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/select/__demos__/appearance-lab.vue"
     },
     {
       "platform": "maple",
@@ -1624,7 +1624,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/select/example/demos/appearance-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/select/example/demos/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1637,7 +1637,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/split-button/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/split-button/__demos__/appearance-lab.vue"
     },
     {
       "platform": "maple",
@@ -1650,7 +1650,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/split-button/example/demos/appearance-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/split-button/example/demos/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1664,7 +1664,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/switch/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/switch/__demos__/appearance-lab.vue"
     },
     {
       "platform": "maple",
@@ -1678,7 +1678,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/switch/example/demos/appearance-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/switch/example/demos/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1692,7 +1692,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/tag/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/tag/__demos__/appearance-lab.vue"
     },
     {
       "platform": "maple",
@@ -1706,7 +1706,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/tag/example/demos/appearance-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/tag/example/demos/appearance-lab.vue"
     },
     {
       "platform": "maple",
@@ -1719,7 +1719,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/textarea/example/demos/appearance-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/textarea/example/demos/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1732,7 +1732,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/tooltip/__demos__/appearance-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/tooltip/__demos__/appearance-lab.vue"
     },
     {
       "platform": "maple",
@@ -1746,7 +1746,7 @@
       "title": "外观配置对比",
       "en": "Appearance configuration comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/tooltip/example/demos/appearance-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/tooltip/example/demos/appearance-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1759,7 +1759,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/auto-complete/__demos__/state-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/auto-complete/__demos__/state-lab.vue"
     },
     {
       "platform": "maple",
@@ -1772,7 +1772,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/auto-complete/example/demos/state-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/auto-complete/example/demos/state-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1785,7 +1785,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/checkbox/__demos__/state-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/checkbox/__demos__/state-lab.vue"
     },
     {
       "platform": "maple",
@@ -1799,7 +1799,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/checkbox/example/demos/state-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/checkbox/example/demos/state-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1812,7 +1812,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/cascader/__demos__/state-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/cascader/__demos__/state-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1825,7 +1825,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/input/__demos__/state-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/input/__demos__/state-lab.vue"
     },
     {
       "platform": "maple",
@@ -1838,7 +1838,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/input/example/demos/state-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/input/example/demos/state-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1851,7 +1851,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/select/__demos__/state-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/select/__demos__/state-lab.vue"
     },
     {
       "platform": "maple",
@@ -1864,7 +1864,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/select/example/demos/state-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/select/example/demos/state-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1877,7 +1877,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/date/__demos__/state-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/date/__demos__/state-lab.vue"
     },
     {
       "platform": "maple",
@@ -1890,7 +1890,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/date/example/demos/state-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/date/example/demos/state-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1903,7 +1903,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/date-range/__demos__/state-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/date-range/__demos__/state-lab.vue"
     },
     {
       "platform": "maple",
@@ -1916,7 +1916,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/date-range/example/demos/state-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/date-range/example/demos/state-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1930,7 +1930,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/switch/__demos__/state-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/switch/__demos__/state-lab.vue"
     },
     {
       "platform": "maple",
@@ -1944,7 +1944,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/switch/example/demos/state-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/switch/example/demos/state-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1957,7 +1957,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/time/__demos__/state-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/time/__demos__/state-lab.vue"
     },
     {
       "platform": "maple",
@@ -1971,7 +1971,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/time/example/demos/state-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/time/example/demos/state-lab.vue"
     },
     {
       "platform": "cedar",
@@ -1984,7 +1984,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/state-lab.vue"
+      "source": "cedar-design-web/packages/ui/src/time-range/__demos__/state-lab.vue"
     },
     {
       "platform": "maple",
@@ -1997,7 +1997,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/state-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/time-range/example/demos/state-lab.vue"
     },
     {
       "platform": "maple",
@@ -2011,7 +2011,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/slider/example/demos/state-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/slider/example/demos/state-lab.vue"
     },
     {
       "platform": "maple",
@@ -2025,7 +2025,7 @@
       "title": "交互状态对比",
       "en": "Interaction state comparison",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/upload/example/demos/state-lab.vue"
+      "source": "maple-design-mobile/packages/ui/src/upload/example/demos/state-lab.vue"
     },
     {
       "platform": "cedar",
@@ -2042,7 +2042,7 @@
       "explanation": "比较标题层级、内容居中与通栏布局。通栏用于页面级提示；操作和关闭能力另见后续示例。",
       "english": "Compare title hierarchy, centered content and page-wide banners. Actions and dismiss behavior have separate examples.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/alert/__demos__/content-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/alert/__demos__/content-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2059,7 +2059,7 @@
       "explanation": "比较标题层级、内容居中与通栏布局。通栏用于页面级提示；操作和关闭能力另见后续示例。",
       "english": "Compare title hierarchy, centered content and page-wide banners. Actions and dismiss behavior have separate examples.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/alert/example/demos/content-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/alert/example/demos/content-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2075,7 +2075,7 @@
       "explanation": "分别操作默认与自定义关闭入口，比较相同关闭能力的呈现方式。",
       "english": "Operate the default and custom dismiss controls to compare the same dismissal behavior.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/alert/__demos__/dismiss-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/alert/__demos__/dismiss-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2091,7 +2091,7 @@
       "explanation": "分别操作默认与自定义关闭入口，比较相同关闭能力的呈现方式。",
       "english": "Operate the default and custom dismiss controls to compare the same dismissal behavior.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/alert/example/demos/dismiss-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/alert/example/demos/dismiss-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2107,7 +2107,7 @@
       "explanation": "先比较相同内容在各尺寸下的占位，再比较圆形和方形边界；图片适配与错误回退保持独立。",
       "english": "Compare space used at each size, then round and square boundaries. Image fitting and fallback remain separate.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/avatar/__demos__/shape-size-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/avatar/__demos__/shape-size-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2123,7 +2123,7 @@
       "explanation": "先比较相同内容在各尺寸下的占位，再比较圆形和方形边界；图片适配与错误回退保持独立。",
       "english": "Compare space used at each size, then round and square boundaries. Image fitting and fallback remain separate.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/avatar/example/demos/shape-size-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/avatar/example/demos/shape-size-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2139,7 +2139,7 @@
       "explanation": "比较横向和纵向头像组，观察最大数量、重叠顺序和溢出提示。",
       "english": "Compare horizontal and vertical groups, maximum counts, stacking and overflow indicators.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/avatar/__demos__/group-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/avatar/__demos__/group-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2155,7 +2155,7 @@
       "explanation": "比较横向和纵向头像组，观察最大数量、重叠顺序和溢出提示。",
       "english": "Compare horizontal and vertical groups, maximum counts, stacking and overflow indicators.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/avatar/example/demos/group-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/avatar/example/demos/group-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2171,7 +2171,7 @@
       "explanation": "对比指示器类型和位置；切换轮播页后观察活动指示器，导航箭头和自定义指示器另行展示。",
       "english": "Compare indicator types and positions, then change slides to observe the active indicator.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/carousel/__demos__/indicator-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/carousel/__demos__/indicator-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2187,7 +2187,7 @@
       "explanation": "对比指示器类型和位置；切换轮播页后观察活动指示器，导航箭头和自定义指示器另行展示。",
       "english": "Compare indicator types and positions, then change slides to observe the active indicator.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/carousel/example/demos/indicator-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/carousel/example/demos/indicator-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2203,7 +2203,7 @@
       "explanation": "在各预览中切换相邻项，比较淡入淡出、卡片与滑动效果；自动播放和输入方式不混入效果配置。",
       "english": "Change adjacent slides to compare fade, card and slide effects independently of autoplay and input methods.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/carousel/__demos__/effect-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/carousel/__demos__/effect-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2220,7 +2220,7 @@
       "explanation": "在各预览中切换相邻项，比较淡入淡出、卡片与滑动效果；自动播放和输入方式不混入效果配置。",
       "english": "Change adjacent slides to compare fade, card and slide effects independently of autoplay and input methods.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/carousel/example/demos/effect-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/carousel/example/demos/effect-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2236,7 +2236,7 @@
       "explanation": "比较子组件声明和 options 数据声明；两种方式都使用组值，字段映射和异步选项另见对应示例。",
       "english": "Compare child-component declarations with options data. Both use a group model; field mapping and asynchronous data are separate.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/checkbox/__demos__/group-declaration-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/checkbox/__demos__/group-declaration-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2252,7 +2252,7 @@
       "explanation": "比较子组件声明和 options 数据声明；两种方式都使用组值，字段映射和异步选项另见对应示例。",
       "english": "Compare child-component declarations with options data. Both use a group model; field mapping and asynchronous data are separate.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/checkbox/example/demos/group-declaration-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/checkbox/example/demos/group-declaration-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2268,7 +2268,7 @@
       "explanation": "比较外边框和面板间分隔线，分别展开面板观察两种装饰的边界。",
       "english": "Compare outer borders and separators between panels, including their appearance while expanded.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/collapse/__demos__/border-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/collapse/__demos__/border-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2284,7 +2284,7 @@
       "explanation": "比较外边框和面板间分隔线，分别展开面板观察两种装饰的边界。",
       "english": "Compare outer borders and separators between panels, including their appearance while expanded.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/collapse/example/demos/border-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/collapse/example/demos/border-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2301,7 +2301,7 @@
       "explanation": "比较小数精度对最终文本的影响，以及时长和缓动曲线对数字变化过程的影响；手动启动、暂停另行展示。",
       "english": "Compare final precision and the effect of duration and easing on number transitions. Manual playback remains separate.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/count-to/__demos__/number-format-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/count-to/__demos__/number-format-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2318,7 +2318,7 @@
       "explanation": "比较小数精度对最终文本的影响，以及时长和缓动曲线对数字变化过程的影响；手动启动、暂停另行展示。",
       "english": "Compare final precision and the effect of duration and easing on number transitions. Manual playback remains separate.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/count-to/example/demos/number-format-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/count-to/example/demos/number-format-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2335,7 +2335,7 @@
       "explanation": "比较单位格式、毫秒显示和自定义时间片段。使用各示例中的时间字段检查最终文本，而非把精度与启动控制混在一起。",
       "english": "Compare unit formats, milliseconds and custom time fragments, independently of playback controls.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/countdown/__demos__/format-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/countdown/__demos__/format-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2352,7 +2352,7 @@
       "explanation": "比较单位格式、毫秒显示和自定义时间片段。使用各示例中的时间字段检查最终文本，而非把精度与启动控制混在一起。",
       "english": "Compare unit formats, milliseconds and custom time fragments, independently of playback controls.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/countdown/example/demos/format-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/countdown/example/demos/format-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2368,7 +2368,7 @@
       "explanation": "分别打开弹窗，比较宽度、全屏或长内容的可视范围；关闭当前弹窗后再打开另一种布局。",
       "english": "Open one dialog at a time to compare widths, fullscreen layouts and long-content boundaries.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/dialog/__demos__/size-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/dialog/__demos__/size-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2384,7 +2384,7 @@
       "explanation": "分别打开弹窗，比较宽度、全屏或长内容的可视范围；关闭当前弹窗后再打开另一种布局。",
       "english": "Open one dialog at a time to compare widths, fullscreen layouts and long-content boundaries.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/dialog/example/demos/size-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/dialog/example/demos/size-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2401,7 +2401,7 @@
       "explanation": "比较线宽/缩进、线型和颜色；带文字与自定义内容保持独立，避免把插槽行为混入线条装饰。",
       "english": "Compare thickness or insets, line style and color. Text and custom content remain separate.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/divider/__demos__/line-appearance-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/divider/__demos__/line-appearance-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2418,7 +2418,7 @@
       "explanation": "比较线宽/缩进、线型和颜色；带文字与自定义内容保持独立，避免把插槽行为混入线条装饰。",
       "english": "Compare thickness or insets, line style and color. Text and custom content remain separate.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/divider/example/demos/line-appearance-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/divider/example/demos/line-appearance-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2434,7 +2434,7 @@
       "explanation": "依次打开不同抽屉，比较方向和占用空间；嵌套、挂载容器与关闭拦截另见后续案例。",
       "english": "Open each drawer separately to compare placement and occupied space. Nesting, containers and guards remain separate.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/drawer/__demos__/position-size-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/drawer/__demos__/position-size-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2450,7 +2450,7 @@
       "explanation": "对比自定义图形和补充操作，观察替换默认内容与保留业务操作入口的区别。",
       "english": "Compare custom artwork and extra actions to distinguish content replacement from supplemental controls.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/empty/__demos__/content-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/empty/__demos__/content-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2466,7 +2466,7 @@
       "explanation": "对比自定义图形和补充操作，观察替换默认内容与保留业务操作入口的区别。",
       "english": "Compare custom artwork and extra actions to distinguish content replacement from supplemental controls.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/empty/example/demos/content-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/empty/example/demos/content-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2483,7 +2483,7 @@
       "explanation": "比较自动测量、栅格分配和固定标签宽度。用长短标签观察输入区域对齐；标签方向和校验协议保持独立。",
       "english": "Compare measured, grid-based and fixed label widths with different label lengths. Orientation and validation remain separate.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/form/__demos__/label-width-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/form/__demos__/label-width-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2500,7 +2500,7 @@
       "explanation": "比较自动测量、栅格分配和固定标签宽度。用长短标签观察输入区域对齐；标签方向和校验协议保持独立。",
       "english": "Compare measured, grid-based and fixed label widths with different label lengths. Orientation and validation remain separate.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/form/example/demos/label-width-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/form/example/demos/label-width-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2516,7 +2516,7 @@
       "explanation": "比较相同图标的尺寸和颜色，旋转/动画与点击行为另行展示。",
       "english": "Compare size and color independently of rotation, animation and click handling.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/icon/__demos__/appearance-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/icon/__demos__/appearance-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2532,7 +2532,7 @@
       "explanation": "比较相同图标的尺寸和颜色，旋转/动画与点击行为另行展示。",
       "english": "Compare size and color independently of rotation, animation and click handling.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/icon/example/demos/appearance-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/icon/example/demos/appearance-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2548,7 +2548,7 @@
       "explanation": "比较图片说明和附加插槽的位置；预览入口、加载和错误回退保持独立。",
       "english": "Compare caption and extra-slot placement independently of previews, loading and failures.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/image/__demos__/content-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/image/__demos__/content-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2564,7 +2564,7 @@
       "explanation": "比较图片说明和附加插槽的位置；预览入口、加载和错误回退保持独立。",
       "english": "Compare caption and extra-slot placement independently of previews, loading and failures.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/image/example/demos/content-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/image/example/demos/content-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2580,7 +2580,7 @@
       "explanation": "比较尺寸和禁用/只读/错误外观，操作可编辑实例观察标签布局；空值协议保持独立。",
       "english": "Compare sizes and disabled, read-only or error appearance while keeping the empty-value protocol separate.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/input-tag/__demos__/appearance-state-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/input-tag/__demos__/appearance-state-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2596,7 +2596,7 @@
       "explanation": "比较尺寸和语义颜色；导航目标、禁用拦截和加载反馈保留独立行为示例。",
       "english": "Compare sizes and semantic colors independently of navigation, disabled interception and loading.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/link/__demos__/appearance-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/link/__demos__/appearance-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2612,7 +2612,7 @@
       "explanation": "比较尺寸和语义颜色；导航目标、禁用拦截和加载反馈保留独立行为示例。",
       "english": "Compare sizes and semantic colors independently of navigation, disabled interception and loading.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/link/example/demos/appearance-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/link/example/demos/appearance-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2629,7 +2629,7 @@
       "explanation": "对比相同加载状态的图形、尺寸和颜色；容器遮罩与指令用法保持独立。",
       "english": "Compare the shape, size and color of loading indicators. Container masks and directives remain separate.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/loading/__demos__/appearance-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/loading/__demos__/appearance-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2646,7 +2646,7 @@
       "explanation": "对比相同加载状态的图形、尺寸和颜色；容器遮罩与指令用法保持独立。",
       "english": "Compare the shape, size and color of loading indicators. Container masks and directives remain separate.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/loading/example/demos/appearance-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/loading/example/demos/appearance-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2663,7 +2663,7 @@
       "explanation": "比较平级分组、层级菜单和自定义选项内容。展开子菜单或选择选项，观察各自的数据层级；受控选中与外部定位独立展示。",
       "english": "Compare flat groups, nested menus and option content. Expand or select options to inspect their hierarchy.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/menu/__demos__/structure-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/menu/__demos__/structure-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2680,7 +2680,7 @@
       "explanation": "比较平级分组、层级菜单和自定义选项内容。展开子菜单或选择选项，观察各自的数据层级；受控选中与外部定位独立展示。",
       "english": "Compare flat groups, nested menus and option content. Expand or select options to inspect their hierarchy.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/menu/example/demos/structure-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/menu/example/demos/structure-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2696,7 +2696,7 @@
       "explanation": "比较面包屑导航和透明背景下的标题层级；完整业务内容另见独立案例。",
       "english": "Compare breadcrumb navigation and title hierarchy on transparent surfaces.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/page-header/__demos__/surface-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/page-header/__demos__/surface-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2712,7 +2712,7 @@
       "explanation": "比较面包屑导航和透明背景下的标题层级；完整业务内容另见独立案例。",
       "english": "Compare breadcrumb navigation and title hierarchy on transparent surfaces.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/page-header/example/demos/surface-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/page-header/example/demos/surface-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2729,7 +2729,7 @@
       "explanation": "比较三种分页附加能力。更改页码或每页条数时观察对应输出，数据总数与自动修正另行说明。",
       "english": "Compare total labels, page-size selection and page jumpers. Change the available controls and observe their output.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/pagination/__demos__/auxiliary-controls-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/pagination/__demos__/auxiliary-controls-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2746,7 +2746,7 @@
       "explanation": "比较三种分页附加能力。更改页码或每页条数时观察对应输出，数据总数与自动修正另行说明。",
       "english": "Compare total labels, page-size selection and page jumpers. Change the available controls and observe their output.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/pagination/example/demos/auxiliary-controls-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/pagination/example/demos/auxiliary-controls-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2762,7 +2762,7 @@
       "explanation": "在相同进度范围内比较尺寸和状态色；环形、分段和不确定进度保留独立模型。",
       "english": "Compare sizes and semantic states independently of circular, stepped and indeterminate models.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/progress/__demos__/appearance-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/progress/__demos__/appearance-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2778,7 +2778,7 @@
       "explanation": "在相同进度范围内比较尺寸和状态色；环形、分段和不确定进度保留独立模型。",
       "english": "Compare sizes and semantic states independently of circular, stepped and indeterminate models.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/progress/example/demos/appearance-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/progress/example/demos/appearance-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2794,7 +2794,7 @@
       "explanation": "比较同类分段数据的尺寸和颜色覆盖；方向、环形布局、总量溢出与键盘操作另行展示。",
       "english": "Compare segment sizes and color overrides separately from orientation, circular layouts, overflow and keyboard interaction.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/progress-group/__demos__/appearance-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/progress-group/__demos__/appearance-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2810,7 +2810,7 @@
       "explanation": "比较同类分段数据的尺寸和颜色覆盖；方向、环形布局、总量溢出与键盘操作另行展示。",
       "english": "Compare segment sizes and color overrides separately from orientation, circular layouts, overflow and keyboard interaction.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/progress-group/example/demos/appearance-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/progress-group/example/demos/appearance-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2826,7 +2826,7 @@
       "explanation": "比较子项与 options 声明，选择不同项观察组值；自定义字段与异步数据仍单独展示。",
       "english": "Compare child and options declarations, then select items to inspect the group model.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/radio/__demos__/group-declaration-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/radio/__demos__/group-declaration-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2842,7 +2842,7 @@
       "explanation": "比较子项与 options 声明，选择不同项观察组值；自定义字段与异步数据仍单独展示。",
       "english": "Compare child and options declarations, then select items to inspect the group model.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/radio/example/demos/group-declaration-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/radio/example/demos/group-declaration-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2858,7 +2858,7 @@
       "explanation": "比较评分上限和重复选择时的清除行为；半星精度、键盘输入与受控值保持独立。",
       "english": "Compare rating totals and clearing the current selection, separately from half steps, keyboards and controlled values.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/rate/__demos__/value-rules-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/rate/__demos__/value-rules-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2874,7 +2874,7 @@
       "explanation": "比较评分上限和重复选择时的清除行为；半星精度、键盘输入与受控值保持独立。",
       "english": "Compare rating totals and clearing the current selection, separately from half steps, keyboards and controlled values.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/rate/example/demos/value-rules-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/rate/example/demos/value-rules-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2891,7 +2891,7 @@
       "explanation": "对比语义状态如何影响图形、标题和操作区；HTTP 状态与自定义图形另行展示。",
       "english": "Compare how semantic states affect the icon, title and actions. HTTP statuses and custom artwork remain separate.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/result/__demos__/status-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/result/__demos__/status-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2908,7 +2908,7 @@
       "explanation": "比较无权限、资源不存在和服务器错误的内容层级，按业务恢复路径选择操作文案。",
       "english": "Compare permission, missing-resource and server-error content, with recovery actions appropriate to each case.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/result/__demos__/http-status-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/result/__demos__/http-status-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2924,7 +2924,7 @@
       "explanation": "比较不同尺寸的密度与禁用选项的行为；受控值和块级布局保持独立。",
       "english": "Compare density at each size and disabled-option behavior.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/segmented/__demos__/appearance-state-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/segmented/__demos__/appearance-state-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2940,7 +2940,7 @@
       "explanation": "比较标题/文本行与头像/卡片形态，按最终内容轮廓选择占位布局；动画和全屏加载另行展示。",
       "english": "Compare text-row placeholders with avatar and card shapes according to the final content layout.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/skeleton/__demos__/content-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/skeleton/__demos__/content-comparison.vue"
     },
     {
       "platform": "maple",
@@ -2956,7 +2956,7 @@
       "explanation": "比较标题/文本行与头像/卡片形态，按最终内容轮廓选择占位布局；动画和全屏加载另行展示。",
       "english": "Compare text-row placeholders with avatar and card shapes according to the final content layout.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/skeleton/example/demos/content-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/skeleton/example/demos/content-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2973,7 +2973,7 @@
       "explanation": "比较排列方向、顺序与标签位置；待完成状态和自定义节点不与布局混合。",
       "english": "Compare orientation, sequence and label placement independently of pending states and custom nodes.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/timeline/__demos__/layout-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/timeline/__demos__/layout-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -2990,7 +2990,7 @@
       "explanation": "比较节点尺寸、整行占位和连接线；选择策略、拖拽与异步子节点保持独立。",
       "english": "Compare node sizes, full-row blocks and connecting lines separately from selection, dragging and asynchronous nodes.",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/tree/__demos__/appearance-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/tree/__demos__/appearance-comparison.vue"
     },
     {
       "platform": "maple",
@@ -3007,7 +3007,7 @@
       "explanation": "比较单元格的前置图标、补充描述和列表分隔，按信息层级选择组合。",
       "english": "Compare leading icons, supplementary descriptions and row separators according to information hierarchy.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/cell/example/demos/content-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/cell/example/demos/content-comparison.vue"
     },
     {
       "platform": "maple",
@@ -3024,7 +3024,7 @@
       "explanation": "比较边框、完全圆角和指定半径；动态属性与点击波纹另行展示。",
       "english": "Compare borders, fully rounded corners and explicit radii independently of live updates and ripple interaction.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/paper/example/demos/surface-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/paper/example/demos/surface-comparison.vue"
     },
     {
       "platform": "maple",
@@ -3041,7 +3041,7 @@
       "explanation": "依次触发浮层，对比锚点方向、偏移与触发器宽度适配。关闭当前浮层后比较下一种配置。",
       "english": "Open popovers one at a time to compare placement, offsets and trigger-width fitting.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/popover/example/demos/positioning-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/popover/example/demos/positioning-comparison.vue"
     },
     {
       "platform": "maple",
@@ -3058,7 +3058,7 @@
       "explanation": "比较水印重复间距、起始偏移和旋转角度；图片加载与全屏定位保持独立。",
       "english": "Compare repetition gaps, origin offsets and rotation independently of image loading and fullscreen positioning.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/watermark/example/demos/geometry-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/watermark/example/demos/geometry-comparison.vue"
     },
     {
       "platform": "maple",
@@ -3075,7 +3075,7 @@
       "explanation": "比较靠右、居中和两端分布；保持相同内容数量时观察剩余空间如何分配。",
       "english": "Compare end, center and space-between alignment while observing how remaining space is allocated.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/space/example/demos/alignment-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/space/example/demos/alignment-comparison.vue"
     },
     {
       "platform": "maple",
@@ -3091,7 +3091,7 @@
       "explanation": "分别点击当前项和其他项，对比点击通知与值变更通知；受控和非受控值模型另行展示。",
       "english": "Click the current and a different item to distinguish click notifications from value changes.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/tab-bar/example/demos/event-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/tab-bar/example/demos/event-comparison.vue"
     },
     {
       "platform": "maple",
@@ -3107,7 +3107,7 @@
       "explanation": "拖动滑块对比自定义按钮和数值标签；步长、双滑块与键盘模型保留独立场景。",
       "english": "Drag the sliders to compare custom thumbs and value labels independently of steps, ranges and keyboard models.",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/slider/example/demos/thumb-label-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/slider/example/demos/thumb-label-comparison.vue"
     },
     {
       "family": "affix",
@@ -3124,7 +3124,7 @@
       "english": "Scroll each bordered area separately to compare top/bottom affixing and offsets within an explicit scroll container.",
       "mode": "compose",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/affix/__demos__/offset-container-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/affix/__demos__/offset-container-comparison.vue"
     },
     {
       "family": "affix",
@@ -3141,7 +3141,7 @@
       "english": "Scroll each bordered area separately to compare top/bottom affixing and offsets within an explicit scroll container.",
       "mode": "compose",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/affix/example/demos/offset-container-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/affix/example/demos/offset-container-comparison.vue"
     },
     {
       "family": "time",
@@ -3157,7 +3157,7 @@
       "english": "Compare minute, second and 12-hour displays. Distinguish midnight (12 AM) from noon (12 PM); model formats and step constraints remain separate.",
       "mode": "compose",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/time/__demos__/format-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/time/__demos__/format-comparison.vue"
     },
     {
       "family": "time",
@@ -3174,7 +3174,7 @@
       "english": "Compare minute, second and 12-hour displays. Distinguish midnight (12 AM) from noon (12 PM); model formats and step constraints remain separate.",
       "mode": "compose",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/time/example/demos/format-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/time/example/demos/format-comparison.vue"
     },
     {
       "family": "time-range",
@@ -3190,7 +3190,7 @@
       "english": "Compare minute, second and 12-hour range displays and edit both endpoints. Next-day rules and model formats remain separate.",
       "mode": "compose",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/time-range/__demos__/format-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/time-range/__demos__/format-comparison.vue"
     },
     {
       "family": "time-range",
@@ -3206,7 +3206,7 @@
       "english": "Compare minute, second and 12-hour range displays and edit both endpoints. Next-day rules and model formats remain separate.",
       "mode": "compose",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/time-range/example/demos/format-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/time-range/example/demos/format-comparison.vue"
     },
     {
       "family": "scheduler",
@@ -3222,7 +3222,7 @@
       "english": "Compare recurring hours with date-specific overrides. Attempt creation or editing inside and outside available periods to inspect full-duration validation.",
       "mode": "compose",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/scheduler/__demos__/working-hours-comparison.vue"
+      "source": "cedar-design-web/packages/ui/src/scheduler/__demos__/working-hours-comparison.vue"
     },
     {
       "family": "upload",
@@ -3238,7 +3238,7 @@
       "english": "Choose local files exceeding the size or count limits and inspect the rejection feedback. Selection limits are separate from request preparation and upload queues.",
       "mode": "compose",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/upload/example/demos/selection-limits-comparison.vue"
+      "source": "maple-design-mobile/packages/ui/src/upload/example/demos/selection-limits-comparison.vue"
     },
     {
       "platform": "cedar",
@@ -3254,7 +3254,7 @@
       "title": "类型与状态对比",
       "en": "Step types and states",
       "status": "consolidated",
-      "source": "cedar-design-web/packages/cedar-ui/src/steps/__demos__/types.vue"
+      "source": "cedar-design-web/packages/ui/src/steps/__demos__/types.vue"
     },
     {
       "platform": "maple",
@@ -3267,7 +3267,7 @@
       "title": "类型与状态对比",
       "en": "Step types and states",
       "status": "consolidated",
-      "source": "maple-design-mobile/packages/maple-ui/src/steps/example/demos/types.vue"
+      "source": "maple-design-mobile/packages/ui/src/steps/example/demos/types.vue"
     }
   ],
   "errors": []

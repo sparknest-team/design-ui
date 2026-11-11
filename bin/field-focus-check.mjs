@@ -6,8 +6,8 @@ import { fileURLToPath } from 'node:url'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
 for (const [source, prefix, compilerPackage] of [
-  ['cedar-design-web/packages/cedar-ui/src', 'c', '../node_modules/less/package.json'],
-  ['maple-design-mobile/packages/maple-ui/src', 'mp', '../../maple-cli/node_modules/less/package.json'],
+  ['cedar-design-web/packages/ui/src', 'c', '../node_modules/less/package.json'],
+  ['maple-design-mobile/packages/ui/src', 'mp', '../../cli/node_modules/less/package.json'],
 ]) {
   const root = resolve(workspace, source)
   const require = createRequire(resolve(root, compilerPackage))

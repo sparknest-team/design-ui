@@ -18,7 +18,7 @@ for(const library of libraries) {
  const inputs={source:sourceFingerprint(root,library),production:productionFingerprint(root,library)}
  const snapshot=await mkdtemp(resolve(tmpdir(),`direction-${library}-production-`))
  try {
- await copyProductionSnapshot(resolve(root,`packages/${library}-ui/${library==='cedar'?'dist':'site'}`),snapshot)
+ await copyProductionSnapshot(resolve(root,`packages/ui/${library==='cedar'?'dist':'site'}`),snapshot)
  assert.equal(sourceFingerprint(root,library),inputs.source,'source changed while snapshotting')
  assert.equal(productionFingerprint(root,library),inputs.production,'production inputs changed while snapshotting')
  for(const direction of directions) for(const engine of engines) {

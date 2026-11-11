@@ -3,6 +3,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { inventoryDemoContent } from './inventory-demo-content.mjs';
 import { readDemoSections, groupDemoSections, demoRefs } from './group-demo-sections.mjs';
+import { componentName, normalizeApiHeadings } from './normalize-api-headings.mjs';
+import { cleanPublicDocumentation } from './clean-public-component-docs.mjs';
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const dictionaryFile = path.join(root, 'design-ui/configs/api-documentation.en-US.json');
 const dictionary = JSON.parse(fs.readFileSync(dictionaryFile, 'utf8'));
@@ -14,10 +16,14 @@ const unknown = new Map();
 function protectInlineCode(source, translated) {
   const literals = [...new Set([...source.matchAll(/`([^`]+)`/g)].map(match => match[1]))].sort((a,b) => b.length-a.length);
   for (const literal of literals) {
-    if (hasChinese(literal)) continue;
+    // Authored translations may already mark the intended occurrence. Avoid
+    // marking ordinary prose occurrences of short identifiers such as `to`.
+    if (hasChinese(literal) || translated.includes('`' + literal + '`')) continue;
     const escaped = literal.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const expression = new RegExp((/^\w/.test(literal) ? '(?<![\\w])' : '') + escaped + (/\w$/.test(literal) ? '(?![\\w])' : ''), 'g');
-    translated = translated.split(/(`[^`]*`)/g).map((part,index) => index%2 ? part : part.replace(expression, match => '`'+match+'`')).join('');
+    // Punctuation-only values (for example `-`) must not match inside words.
+    const punctuationOnly = !/[\p{L}\p{N}_]/u.test(literal);
+    const expression = new RegExp((/^\w/.test(literal) || punctuationOnly ? '(?<![\\w-])' : '') + escaped + (/\w$/.test(literal) || punctuationOnly ? '(?![\\w-])' : ''), 'g');
+    translated = translated.split(/(`[^`]*`|\]\([^)]*\))/g).map((part,index) => index%2 ? part : part.replace(expression, match => '`'+match+'`')).join('');
   }
   return translated;
 }
@@ -39,7 +45,8 @@ export function translateFragment(source, owner, extra = {}) {
     if (/^\s*```/.test(line)) { fence = !fence; return line; }
     if (!fence && line.startsWith('|')) {
       const cells = line.split(/(?<!\\)\|/).slice(1,-1);
-      return '| ' + cells.map(cell => translateText(cell.trim(),owner,false,extra).replace(/(?<!\\)\|/g,'\\|')).join(' | ') + ' |';
+      const argumentHeader = /^(?:事件(?:名|名称)?|方法(?:名|名称)?)$/.test(cells[0]?.trim() ?? '');
+      return '| ' + cells.map(cell => (argumentHeader && cell.trim() === '参数' ? 'Arguments' : translateText(cell.trim(),owner,false,extra)).replace(/(?<!\\)\|/g,'\\|')).join(' | ') + ' |';
     }
     return translateText(line, owner, fence, extra);
   }).join('\n').replace(/\]\(#\/zh-CN\//g,'](#/en-US/').replace(/\]\(\/zh-CN\//g,'](#/en-US/').replace(/\]\(\/components\//g,'](/en/components/');
@@ -73,13 +80,21 @@ function configurationNotes(chinese, english, owner) {
     return translateFragment(enriched,owner,extra);
   });
 }
-export function localizeApiDocumentation({write=false}={}) {
+export function localizeApiDocumentation({write=false, onGenerated}={}) {
   unknown.clear();
   const writes=[],records=[];
   const manifests=Object.fromEntries(['cedar','maple'].map(platform=>[platform,JSON.parse(fs.readFileSync(path.join(root,`design-ui/configs/demo-groups${platform==='maple'?'.maple':''}.json`)))]));
   for (const row of inventoryDemoContent()) {
     const zhFile=path.join(root,row.document),enFile=zhFile.replace(/README\.md$/,'README.en-US.md').replace(/PICKER\.md$/,'PICKER.en-US.md').replace(/zh-CN\.md$/,'en-US.md');
-    const zh=readDemoSections(fs.readFileSync(zhFile,'utf8')),before=fs.readFileSync(enFile,'utf8'),en=readDemoSections(before);
+    const generated = /<!-- component-css-variables:start -->[\s\S]*?<!-- component-css-variables:end -->/;
+    const placeholder = '<!-- component-css-localization-placeholder -->';
+    const before=fs.readFileSync(enFile,'utf8');
+    const englishVariables=before.match(generated)?.[0];
+    const chineseSource=fs.readFileSync(zhFile,'utf8');
+    if (generated.test(chineseSource) && !englishVariables) throw new Error('Generate bilingual CSS variable documentation first: '+enFile);
+    // The component CSS generator owns both languages and checks them against
+    // compiled source. API translation must not retranslate its generated table.
+    const zh=readDemoSections(chineseSource.replace(generated,placeholder)),en=readDemoSections(before.replace(generated,placeholder));
     const seen=new Set();
     en.cases=en.cases.filter(item=>{const id=caseId(item.refs[0]);if(seen.has(id))return false;seen.add(id);return true;}).map(item=>{
       if(hasChinese(item.title) && dictionary[item.title])return {...item,title:dictionary[item.title],text:item.text.replace(/^(###)[^\n]+/,'$1 '+dictionary[item.title])};
@@ -93,11 +108,13 @@ export function localizeApiDocumentation({write=false}={}) {
     const preserved=zh.preserved.map(section=>translateFragment(section,row.platform+'/'+row.family));
     const api=translateFragment(zh.api,row.platform+'/'+row.family);
     const grouped=groupDemoSections([translateFragment(en.prefix.trimEnd(),row.platform+'/'+row.family),'## Cases\n\n'+cases.join('\n\n'),...preserved,api.trimEnd()].filter(Boolean).join('\n\n')+'\n',manifests[row.platform][row.family],true);
-    const next=localizeDemoReferences(grouped,enFile);
+    const primary=componentName(row.family);
+    const next=normalizeApiHeadings(cleanPublicDocumentation(localizeDemoReferences(grouped,enFile),{primary}).text,primary).replace(placeholder,englishVariables ?? '');
     const ids=source=>[...new Set(demoRefs(source).map(caseId))].sort();
     if(JSON.stringify(ids(next))!==JSON.stringify(ids(fs.readFileSync(zhFile,'utf8'))))throw new Error('Example parity failed: '+enFile);
     if(/complete component API reference in Chinese/.test(next))throw new Error('Chinese API fallback retained: '+enFile);
     if(process.argv.includes('--debug') && next!==before){const debug=path.join('/tmp/api-documentation-debug',row.platform,row.family.replaceAll('/','-')+'.md');fs.mkdirSync(path.dirname(debug),{recursive:true});fs.writeFileSync(debug,next);}
+    onGenerated?.({platform:row.platform,family:row.family,source:next});
     writes.push([enFile,next]);
     records.push({platform:row.platform,family:row.family,file:path.relative(root,enFile),changed:next!==before,apiLines:api.split('\n').filter(Boolean).length,preservedSections:preserved.length,examples:ids(next).length});
   }

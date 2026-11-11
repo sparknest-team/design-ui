@@ -672,9 +672,9 @@ mouse-enter-delay／mouse-leave-delay 是交互请求延迟，不是 CSS 视觉�
 首批人工分类 14 文件／18 条线索：6 声明、6 测量调度、4 交互延迟、2 原生滚动调用。Layout 原生 scrollTo 保留调用者 options，不等于已验证 smooth 或减少动效；Trigger RAF 的 owner-window 取消、已出队回调归属，交互延迟的失效回调，仍需独立生命周期回归。分类保存源码哈希／原行，变更时重新审阅，不能自动刷新哈希冒充复核。剩余159条尚未录入此分类表，包含已有专项审计，不等于159个未修问题。分类新增浏览器／OS通过均为0，不改变变量层级、默认值或公开API。
 
 
-第 6 阶当前验证：80 项主题前景／实心背景角色检查及 64 组 primary 白字检查通过。200 组文字／中性表面对比度中 94 组低于 4.5:1，本次配色不声明普通文字对比度全部通过。
+历史第 6 阶验证：80 项主题前景／实心背景角色检查及 64 组 primary 白字检查通过；当时200组文字／中性表面对比度中94组低于4.5:1。后续内容角色对比度修复以本文“内容色默认对比度”为准。
 
-当前品牌及 info/success/warning/danger 的前景和实心背景统一使用第 6 阶，primary 实心按钮保留白字；本文既有第 7 阶对比度统计为历史记录，不能作为当前配色结论。
+action/status实心填充保留第6阶与既有Button白字例外；content内容角色按可读性采用独立色阶。既有第6/7阶对比度统计为历史记录，不能作为修复后所有内容角色的结论。
 
 
 ### Button 配色、7 阶与对比度边界
@@ -812,7 +812,7 @@ internal              组件实现细节，不构成外部 API
 | surface | `page / default / raised / overlay / muted / tooltip` | 页面、普通容器、浮层、覆盖层、弱化填充表面 |
 | scrim | `sys-color-scrim` | 半透明遮罩；与承载内容的 surface 分开。 |
 | content | `primary / secondary / tertiary / decorative / disabled / on-dark / on-bright` | 普通表面上的内容层级，以及已确认的深色／亮色底上的对比前景；后两者必须按前景与背景成对选择 |
-| content（语义色） | `brand / info / success / warning / danger` | 普通中性表面上的可读彩色文字、图标及同色描边；品牌色与 info/success/warning/danger 均使用对应色板第 6 阶 |
+| content（语义色） | `brand / info / success / warning / danger` | 普通中性表面上的可读彩色文字、图标及同色描边；默认分别使用primary-9、blue-8、success-9、warning-8、danger-8；填充角色独立 |
 | border | `subtle / default / strong` | 弱分隔、常规边框、强调边框 |
 | action | `primary` | 主操作及品牌交互强调 |
 | status | `info / success / warning / danger` | 状态填充和强调色；普通表面上的可读彩色文字选对应 `content-*` |
@@ -903,11 +903,11 @@ Token 重命名必须同步源码、主题、文档和测试，并生成迁移�
 | `surface-muted` | `color-fill-1` | filled 默认态或弱化填充；不是禁用态的统称。 |
 | `content-primary` | `color-text-1` | 标题、主要正文及普通表面上的主要图标。 |
 | `content-secondary` | `color-text-2` | 辅助文字、次要操作与 Divider 标签。 |
-| `content-brand` | `primary-6`，经 `rgb(var(...))` 转换 | 普通中性表面上的品牌文字、图标及同色描边；区别于主内容层级 `content-primary` 和填充强调色 `action-primary`。 |
-| `content-info` | `blue-6`，经 `rgb(var(...))` 转换 | 普通中性表面上的信息文字、图标及同色描边。 |
-| `content-success` | `success-6`，经 `rgb(var(...))` 转换 | 普通中性表面上的成功文字、图标及同色描边。 |
-| `content-warning` | `warning-6`，经 `rgb(var(...))` 转换 | 普通中性表面上的警告文字、图标及同色描边。 |
-| `content-danger` | `danger-6`，经 `rgb(var(...))` 转换 | 普通中性表面上的危险文字、图标及同色描边。 |
+| `content-brand` | `primary-9`，经 `rgb(var(...))` 转换 | 普通中性表面上的品牌文字、图标及同色描边；区别于主内容层级 `content-primary` 和填充强调色 `action-primary`。 |
+| `content-info` | `blue-8`，经 `rgb(var(...))` 转换 | 普通中性表面上的信息文字、图标及同色描边。 |
+| `content-success` | `success-9`，经 `rgb(var(...))` 转换 | 普通中性表面上的成功文字、图标及同色描边。 |
+| `content-warning` | `warning-8`，经 `rgb(var(...))` 转换 | 普通中性表面上的警告文字、图标及同色描边。 |
+| `content-danger` | `danger-8`，经 `rgb(var(...))` 转换 | 普通中性表面上的危险文字、图标及同色描边。 |
 | `content-tertiary` | `color-text-3` | 占位、低强调说明；必要时检查文字对比度。 |
 | `content-decorative` | `color-text-4` | 空状态等非文字装饰图形；不可用于需要阅读的文字。 |
 | `content-disabled` | `color-text-disabled` | 真正不可交互的内容；不能拿来表示装饰。 |
@@ -1492,10 +1492,11 @@ Input、Textarea、InputNumber 的实际原生控件使用 `caret-color: current
 
 | 场景 | 正确入口 |
 | --- | --- |
-| 全局切换主题 | 在文档根作用域通过本库 StyleProvider 全局方法切换；根层依赖链一起重算 |
-| 定制局部组件 | 覆盖实际消费的公开 component 变量；只改 palette/system 不等于完整的局部主题重建 |
+| 全局切换主题 | 在应用根部放置 ThemeProvider，响应式更新 theme；不修改文档根节点 |
+| 局部亮暗主题 | 使用 ThemeProvider 的 theme="light/dark"；显式边界重新声明 palette/system/component 别名，支持嵌套 |
+| 定制局部组件 | style-vars 覆盖主题默认值；未指定 theme 时，只改 palette/system 不等于完整的局部主题重建 |
 | 局部 system 到 component 映射 | 在同一局部宿主显式重新声明需要的组件别名，不依赖根层旧映射 |
-| Teleport 到 body | 继承 body/html；触发器、调用处 Provider 的局部变量不自动复制过去 |
+| Teleport 到 body | 库内声明式弹层通过 Vue 上下文继承所属 ThemeProvider；第三方 Teleport 和脱离 Provider 的命令式服务需要显式设置宿主 |
 | 指定 popup-container | 宿主必须已经存在；变量放在目标宿主或真正面板上 |
 | popup-container=false | 保留调用位置的 DOM 继承；同时承担祖先 overflow、transform、定位和层叠的约束 |
 | iframe 宿主元素 | 允许来自另一文档的 HTMLElement；对方文档必须自行加载样式并提供变量，字符串选择器只查调用方文档 |
@@ -1518,7 +1519,7 @@ Input、Textarea、InputNumber 的实际原生控件使用 `caret-color: current
 
 若需要联动局部 system 色，在该宿主同时声明对应组件变量，例如 `--mp-popup-content-background-color: var(--mp-sys-color-surface-raised)`；只在宿主设置 surface-raised 不足以重算根上已经声明的别名。面板与遮罩是兄弟节点，面板变量不会向上或横向传给遮罩；共同覆盖放在共同宿主，或分别使用各组件现有的面板／overlay 样式属性。
 
-不自动复制触发器 computed style、不批量重写 root 默认值，也不为另一端不存在的组件制造变量。本条明确现有定制范围，不新增 Token、不承诺局部 StyleProvider 会自动重建全部主题依赖链。自定义前景和背景需配对检查，本文的示例不是任意插槽配色保证。
+ThemeProvider 的显式 theme 边界通过按需 CSS 重建主题依赖链，库内弹层传递主题上下文与用户变量。实现不扫描 computed style、不逐个改写后代，也不修改文档根主题；未指定 theme 时仍保留原有局部变量覆盖语义。自定义前景和背景需配对检查，本文的示例不是任意插槽配色保证。
 
 `check:portal-scope` 使用真实 Teleport，检查 body／选择器／元素／inline 挂载、宿主切换后的实例状态、旧宿主滚动锁释放、跨文档参数与事件归属及卸载清理。DOM 和生命周期测试不计算浏览器像素；CSS 检查器验证局部覆盖时不能把根层的原始别名表达式带到子节点后重新求值。窄屏、200% 浏览器缩放、长文本、跨文档焦点和浏览器实际继承仍需独立实测。
 
@@ -1526,6 +1527,11 @@ Input、Textarea、InputNumber 的实际原生控件使用 `caret-color: current
 
 ### 品牌字体、光标与移动宿主安全区（2026-10-25）
 
-公共 `--PREFIX-sys-font-family` 以 `initial` 使 var() 回退生效，未配置时保留既有字体来源；品牌字体文件由业务显式加载。`--PREFIX-field-caret-color` 默认 currentColor，Input、InputNumber、Textarea 各自的 caret-color Token 默认引用它，允许分组件覆盖。根品牌切换仍由 StyleProvider 所有。
+公共 `--PREFIX-sys-font-family` 以 `initial` 使 var() 回退生效，未配置时保留既有字体来源；品牌字体文件由业务显式加载。`--PREFIX-field-caret-color` 默认 currentColor，Input、InputNumber、Textarea 各自的 caret-color Token 默认引用它，允许分组件覆盖。根品牌切换仍由 ThemeProvider 所有。
 
 Maple 的 `--mp-safe-area-top/right/bottom/left` 属于运行宿主值，不写入品牌主题。SafeArea.setInsets 独立管理目标 DOM 上四边覆盖，0 有效、null 清除，不修改品牌样式节点。SafeArea 与贴边容器只为所选边增加留白并在实际 DOM 后代建立消费边界；Teleport 按目标 DOM 继承，不能由 Vue inject 猜测原生可用区。App 单一适配器管理初始化、变更订阅和清理；键盘几何独立验证。完整入口见 Maple safe-area 文档。
+
+
+### 内容色默认对比度
+
+默认内容角色使用 primary-9（品牌）、blue-8（信息）、success-9（成功）、warning-8（警告）、danger-8（危险）；action/status填充角色不变。两端default/maple明暗主题，候选160组覆盖默认、muted、hover、fill-3字段表面，按文字4.5:1选择可用色阶，而非沿用填充第6阶。组件公开变量仍可覆盖，实际业务背景和自定义主题需要重新检验；Firefly/Alps等额外品牌不能由default/maple门禁推定通过。编译主题、伪元素及真实浏览器的验证范围分别记录。

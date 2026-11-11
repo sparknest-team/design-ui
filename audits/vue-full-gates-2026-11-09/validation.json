@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-09",
+  "scope": [
+    "Cedar Vue root quality",
+    "Maple Vue root quality"
+  ],
+  "status": "waiting-for-other-chats-before-final-verification",
+  "toolchain": {
+    "node": "v20.18.3",
+    "pnpm": "9.6.0",
+    "nestedNode": "v20.18.3"
+  },
+  "verification": "Local verification, not remote GitHub Actions or native-device acceptance.",
+  "currentRuns": {},
+  "documentation": {
+    "families": 210,
+    "localizationChanged": 0,
+    "missingTranslations": 0,
+    "publicDocuments": 421,
+    "publicIssues": 0
+  },
+  "diagnosticHistory": [
+    "Initial default-terminal toolchain diagnostic stopped; final verification uses the declared Node 20/pnpm 9.6.0.",
+    "Early library builds overlapped ThemeProvider renaming and other builds cleaning the same output directories. Those failures are retained as diagnostics and are not passing evidence.",
+    "Standalone Cedar typecheck overlapped icon-output cleanup; final typecheck runs in quality after dependency builds.",
+    "Standalone Maple typecheck revealed test typing issues and missing root fieldLoadingModes export. The compiler template and typed tests were repaired.",
+    "An initial targeted test run overlapped rebuilding dependencies, and was terminated. It is not passing evidence."
+  ],
+  "userInstruction": "Wait for other chats using the same workspace to finish before final verification.",
+  "coordination": {
+    "hostId": "local",
+    "threads": [
+      "01a1bf21-6420-7112-9761-180df43bf578",
+      "01a187da-72a9-73d2-b267-548813eca0dd"
+    ],
+    "completedThreads": [
+      "01a1bf21-6420-7112-9761-180df43bf578"
+    ],
+    "waitingForThreads": [
+      "01a187da-72a9-73d2-b267-548813eca0dd"
+    ],
+    "note": "The Row/full-quality chat is idle. The component-comparison chat continues starting source-editing turns, including shared timers, scrolling, positioning and reduced-motion styles. A completed individual turn is not evidence of a stable workspace."
+  },
+  "staticChecks": {
+    "regressions": {
+      "status": "passed",
+      "tests": 23,
+      "log": "static-regressions.log"
+    },
+    "variableConsumers": {
+      "status": "passed",
+      "tests": 6,
+      "log": "variable-consumers.log",
+      "totals": {
+        "files": 178,
+        "declarations": 4672,
+        "candidates": 46,
+        "crossComponentCss": 16,
+        "literalRuntime": 9,
+        "dynamicRuntime": 21,
+        "needsManualReview": 0,
+        "errors": 0
+      }
+    },
+    "tokenCatalog": {
+      "status": "passed",
+      "pages": 3,
+      "log": "token-catalog.log"
+    },
+    "mapleCrossPlatform": {
+      "status": "passed",
+      "log": "maple-cross-platform.log"
+    },
+    "localization": {
+      "families": 210,
+      "changed": 0,
+      "missing": 0,
+      "log": "localization.log"
+    },
+    "publicDocs": {
+      "checked": 421,
+      "changed": 0,
+      "issues": [],
+      "log": "public-docs.log"
+    },
+    "documentationAndConsumers": {
+      "status": "passed",
+      "tests": 27,
+      "log": "documentation-and-consumers.log"
+    },
+    "sourceNormalization": {
+      "status": "passed",
+      "tests": 10,
+      "log": "source-normalization.log"
+    },
+    "currentUseCleanup": {
+      "status": "passed",
+      "changedFiles": 34,
+      "evidence": "current-use-cleanup.json",
+      "scope": "Current-use wording, obsolete VirtualList references, and retired temporal variable tables. NavMenu translation fixed separately."
+    }
+  },
+  "pendingBundleVerification": {
+    "library": "Maple Vue",
+    "diagnosticExceededEntries": 89,
+    "baselinePolicy": "Keep original baseline and limits unchanged. Remeasure using the declared toolchain after source edits finish.",
+    "diagnosticReport": "/tmp/maple-bundle-audit.md",
+    "status": "not-final-evidence"
+  }
+}

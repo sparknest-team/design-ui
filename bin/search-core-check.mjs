@@ -1,3 +1,4 @@
+import { normalizeCopiedTypeScript } from './copied-source-normalization.mjs'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
@@ -5,19 +6,20 @@ import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = fileURLToPath(new URL('../../', import.meta.url))
-const require = createRequire(resolve(root, 'cedar-design-web/packages/cedar-ui/package.json'))
+const require = createRequire(resolve(root, 'cedar-design-web/packages/ui/package.json'))
 const ts = require('typescript')
 const less = require('less')
 const { parse, compileTemplate } = require('@vue/compiler-sfc')
 const esRequire = createRequire(resolve(root, 'maple-design-mobile/node_modules/.pnpm/node_modules/esbuild/package.json'))
 const { transformSync } = esRequire('esbuild')
 const pairs = [
-  ...['use-search-control.ts', 'props.ts', 'types.ts', 'result.ts', 'HistoryContent.vue', 'FieldSelect.vue', '__tests__/control.spec.js'].map(file => ['search/' + file, 'search/' + file]),
+  ...['use-search-control.ts', 'use-search-input.ts', 'props.ts', 'types.ts', 'result.ts', 'HistoryContent.vue', 'FieldSelect.vue', '__tests__/control.spec.js', '__tests__/native-ownership.spec.ts'].map(file => ['search/' + file, 'search/' + file]),
   ['search/__demos__/controlled-fields.vue', 'search/example/demos/fields.vue'],
   ['search/__demos__/presentation.vue', 'search/example/demos/presentation.vue'],
+  ['search/__demos__/native-form.vue', 'search/example/demos/native-form.vue'],
 ]
 function normalize(source) {
-  return source.replaceAll('@cedar-design/ui', '@maple-design/ui').replaceAll('c-input__', 'mp-input__')
+  return source.replaceAll('../_utils/empty-value', '../utils/empty-value').replaceAll('@cedar-design/ui-vue', '@maple-design/ui-vue').replaceAll('c-input__', 'mp-input__')
     .replace("default: 'round'", "default: 'square'").replaceAll('c-list', 'mp-list').replaceAll('../_utils/global-config', '../utils/components')
     .replaceAll('../_utils/constant', '../utils/constants')
     .replaceAll('../_utils/size-length', '../utils/size-length')
@@ -71,13 +73,13 @@ function canonical(source, file) {
     assert.equal(errors.length, 0, file)
     const result = compileTemplate({ source: descriptor.template?.content || '', filename: 'contract.vue', id: 'contract', compilerOptions: { comments: false } })
     assert.equal(result.errors.length, 0, file)
-    return script(descriptor.scriptSetup?.content || descriptor.script?.content || '') + transformSync(result.code, { loader: 'js', minify: true }).code
+    return script(descriptor.scriptSetup?.content || descriptor.script?.content || '') + normalizeCopiedTypeScript(result.code, transformSync, 'js')
   }
   if (file.endsWith('.less')) return source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/[^\n]*/g, '').replace(/\s+/g, '').replaceAll('"', "'")
   return script(source)
 }
 
-const roots = ['cedar-design-web/packages/cedar-ui', 'maple-design-mobile/packages/maple-ui']
+const roots = ['cedar-design-web/packages/ui', 'maple-design-mobile/packages/ui']
 for (const [cedar, maple] of pairs) {
   const left = canonical(readFileSync(resolve(root, roots[0], 'src', cedar), 'utf8'), cedar)
   const right = canonical(readFileSync(resolve(root, roots[1], 'src', maple), 'utf8'), maple)
@@ -86,10 +88,10 @@ for (const [cedar, maple] of pairs) {
 const suffixes = []
 for (const [index, repo] of roots.entries()) {
   const props = readFileSync(resolve(root, repo, 'src/search/props.ts'), 'utf8')
-  const presentation = props.match(/presentation:\s*\{\s*type: String as PropType<SearchPresentation>,\s*default: ['"](inline|popup)['"]/)?.[1]
+  const presentation = props.match(/editMode:\s*\{\s*type: String as PropType<SearchEditMode>,\s*default: ['"](direct|popup)['"]/)?.[1]
   const shape = props.match(/shape:\s*\{[\s\S]*?default: ['"](square|round)['"]/ )?.[1]
-  assert.equal(presentation, 'inline', 'Search defaults to inline on both platforms')
-  assert.doesNotMatch(props, /\bhistoryPopup\s*:/, 'Removed boolean presentation API must not return')
+  assert.equal(presentation, 'direct', 'Search defaults to direct editing on both platforms')
+  assert.doesNotMatch(props, /\b(?:presentation|historyPopup)\s*:/, 'Removed boolean presentation API must not return')
   assert.equal(shape, index === 0 ? 'square' : 'round', 'Declared platform shape default')
 }
 for (const repo of roots) {
@@ -105,4 +107,4 @@ for (const repo of roots) {
 }
 assert.deepEqual(suffixes[0], suffixes[1], 'Public token suffixes')
 console.log('Search: ' + pairs.length + ' independent controller/Props/types/history/test/demo pairs verified; ' + suffixes[0].length + ' common public token suffixes; both Less entries compile.')
-console.log('Explicit boundaries: local InputGroup/mobile bar layout, Drawer/Popup history presentation, global locale adapters, token default density, installation. Search presentation is inline/popup with a shared inline default; shape is the only differing public Props default.')
+console.log('Explicit boundaries: local InputGroup/mobile bar layout, Drawer/Popup history presentation, global locale adapters, token default density, installation. Search edit-mode is direct/popup with a shared direct default; shape is the only differing declared Props default. Platform-local border assertions remain in presentation-local.spec.js and are run separately.')

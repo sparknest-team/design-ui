@@ -12,7 +12,7 @@ const before = lines(`${evidence}/final/navigation-inputs-before-build-20261025.
 assert.deepEqual(lines(`${evidence}/final/navigation-inputs-after-build-20261025.jsonl`), before)
 const results = []
 for (const [library, repository, themeCases] of [['cedar', 'cedar-design-web', 45], ['maple', 'maple-design-mobile', 6]]) {
-  const root = resolve(workspace, repository), output = `${root}/packages/${library}-ui/${library === 'cedar' ? 'dist' : 'site'}`
+  const root = resolve(workspace, repository), output = `${root}/packages/ui/${library === 'cedar' ? 'dist' : 'site'}`
   const pages = componentPages(root, library), guides = guidePages(root, library)
   const cases = pages.length * (library === 'cedar' ? 2 : 4) + guides.length * 2
   const expectedSources = pages.reduce((sum, page) => sum + page.demos.length + new Set([0, demoIndex(page, contractFor(library, page.component).demo)]).size, 0) + guides.reduce((sum, page) => sum + page.demos.length * 2, 0)

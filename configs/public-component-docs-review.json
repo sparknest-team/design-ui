@@ -1,0 +1,1043 @@
+[
+  {
+    "before": "允许自由输入的单行文本框，候选只是快捷填写方式。两端独立维护同源主体、Props、Menu 和样式；触控与 hover 差异由本地 Input 处理，没有跨库运行时或 platform 配置。",
+    "after": "允许自由输入的单行文本框，候选用于快捷填写。",
+    "english": "A single-line text field that allows free input and offers suggestions for quick entry.",
+    "englishBefore": "允许自由输入的单行文本框，候选只是快捷填写方式。两端独立维护同源主体、Props、Menu 和样式；触控与 hover 差异由本地 Input 处理，没有跨库运行时或 platform 配置。"
+  },
+  {
+    "before": "尺寸与跨端迁移约定见仓库根目录 `API-MIGRATION.md`。只支持文档列出的档位，不代表支持全部 ComponentSize。",
+    "after": "尺寸只支持文档列出的档位，不支持全部 ComponentSize 值。",
+    "english": "Only the documented size presets are supported, rather than every ComponentSize value.",
+    "englishBefore": "See `API-MIGRATION.md` at the repository root for size and cross-platform migration rules. Only the documented sizes are supported, not every ComponentSize."
+  },
+  {
+    "before": "两端主体均独立复制为原生 checkbox + label。Tab 聚焦，空格/Enter 切换；只读可聚焦，禁用不可聚焦。半选通过 aria-checked=\"mixed\" 表达，点击标签只激活一次。没有可见标签时设置 aria-label；name 传到原生输入，子项未设置时继承 Group。",
+    "after": "Tab 聚焦，空格/Enter 切换；只读可聚焦，禁用不可聚焦。半选通过 aria-checked=\"mixed\" 表达，点击标签只激活一次。没有可见标签时设置 aria-label；name 传到原生输入，子项未设置时继承 Group。",
+    "english": "Tab focuses the control and Space/Enter toggles it. Readonly controls remain focusable; disabled controls do not. Indeterminate state uses aria-checked=\"mixed\", and clicking the label activates the control once. Provide aria-label when there is no visible label. name is passed to the native input and inherited from Group when omitted.",
+    "englishBefore": "两端主体均独立复制为原生 checkbox + label。Tab 聚焦，空格/Enter 切换；只读可聚焦，禁用不可聚焦。半选通过 aria-checked=\"mixed\" 表达，点击标签只激活一次。没有可见标签时设置 aria-label；name 传到原生输入，子项未设置时继承 Group。"
+  },
+  {
+    "before": "Grid 仅包含 Grid.Item；Row、Col 是独立组件，拥有独立源码、样式、菜单、文档和 Demo。已移除 Grid.Row/Grid.Col、Grid 入口的 Row/Col 转导出以及 GridRowInstance/GridColInstance。请从库根入口或独立 row/col 入口导入；安装 Grid 不再自动注册 Row/Col。",
+    "after": "Grid 仅包含 Grid.Item。Row、Col 是独立组件，请从库根入口或对应的 row/col 子入口导入；安装 Grid 不会注册 Row 或 Col。旧 Grid.Row/Grid.Col 以及 GridRowInstance/GridColInstance 不再提供。",
+    "english": "Grid contains only Grid.Item. Import the independent Row and Col components from the library root or their row/col subpaths; installing Grid does not register them. The old Grid.Row/Grid.Col, GridRowInstance and GridColInstance exports are no longer available.",
+    "englishBefore": "Grid contains only Grid.Item. Row and Col are independent components with their own source, styles, navigation, documentation and demos. Grid.Row/Grid.Col, Row/Col re-exports from Grid and GridRowInstance/GridColInstance are removed. Import them from the library root or separate row/col entries. Installing Grid no longer registers Row/Col automatically."
+  },
+  {
+    "before": "日期所有者读取本库全局 Locale/Provider，周起始日由各实例 `day-start-of-week` 管理。不切换宿主 Dayjs 默认语言，也不覆盖宿主基础语言配置；只在各库命名空间下注册日期语言元数据，组件实例与源码不跨库共享。",
+    "after": "日期组件使用当前库的 Locale/Provider 配置，周起始日由各实例的 `day-start-of-week` 控制，不会修改应用中 Dayjs 的默认语言或基础语言配置。",
+    "english": "Date components use the current library Locale/Provider configuration. Each instance controls its first weekday through `day-start-of-week`, without changing the application Dayjs default locale or base locale configuration.",
+    "englishBefore": "Date owners read local global Locale/Provider. Each instance controls week start through `day-start-of-week`. They do not change host Dayjs default locale/base language settings; date metadata is registered under library namespaces. Neither instances nor sources are shared across libraries."
+  },
+  {
+    "before": "日期字段的可编辑条件由公共所有者统一管理：`input-editable` 默认 true，函数 `format` 不可反解析，因此输入只读。两端单值/范围的 Enter、失焦、组合输入、受控拒绝回写、禁用与范围顺序通过同一组原生输入测试；Maple 多选拼接文本保持只读，由面板选择。",
+    "after": "`input-editable` 默认 true；当 `format` 为函数时无法反向解析，输入保持只读。Maple 多选模式通过面板选择，不支持手动编辑拼接文本。",
+    "english": "`input-editable` defaults to true. A function `format` cannot be parsed in reverse, so its input remains readonly. Maple multiple selection uses the panel and does not support manually editing the combined text.",
+    "englishBefore": "日期字段的可编辑条件由公共所有者统一管理：`input-editable` 默认 true，函数 `format` 不可反解析，因此输入只读。两端单值/范围的 Enter、失焦、组合输入、受控拒绝回写、禁用与范围顺序通过同一组原生输入测试；Maple 多选拼接文本保持只读，由面板选择。"
+  },
+  {
+    "before": "两端使用独立复制的日期值、约束、面板和字段主体。年/月/日模型格式为 `YYYY` / `YYYY-MM` / `YYYY-MM-DD`，日期时间默认含秒；`format=\"YYYY-MM-DD HH:mm\"` 与 `value-format=\"YYYY-MM-DD HH:mm\"` 使用分钟字符串。`format` 只控制显示，`value-format` 控制模型和事件，支持自定义格式、`Date` 与 `timestamp`。Cedar 另提供周/季度面板；Maple 另提供移动端滚轮和时钟展示。",
+    "after": "年/月/日模型格式为 `YYYY` / `YYYY-MM` / `YYYY-MM-DD`，日期时间默认含秒；`format=\"YYYY-MM-DD HH:mm\"` 与 `value-format=\"YYYY-MM-DD HH:mm\"` 使用分钟字符串。`format` 控制显示，`value-format` 控制模型和事件，支持自定义格式、`Date` 与 `timestamp`。Cedar 提供周/季度面板；Maple 提供移动端滚轮和时钟展示。",
+    "english": "Year/month/day model formats are `YYYY` / `YYYY-MM` / `YYYY-MM-DD`. Date-time values include seconds by default; `format=\"YYYY-MM-DD HH:mm\"` with `value-format=\"YYYY-MM-DD HH:mm\"` uses minute-precision strings. `format` controls display, while `value-format` controls models and events, supporting custom formats, `Date` and `timestamp`. Cedar provides week/quarter panels; Maple provides mobile wheels and clock presentation.",
+    "englishBefore": "两端使用独立复制的日期值、约束、面板和字段主体。年/月/日模型格式为 `YYYY` / `YYYY-MM` / `YYYY-MM-DD`，日期时间默认含秒；`format=\"YYYY-MM-DD HH:mm\"` 与 `value-format=\"YYYY-MM-DD HH:mm\"` 使用分钟字符串。`format` 只控制显示，`value-format` 控制模型和事件，支持自定义格式、`Date` 与 `timestamp`。Cedar 另提供周/季度面板；Maple 另提供移动端滚轮和时钟展示。"
+  },
+  {
+    "before": "与 DatePicker 使用同一份独立复制的快捷项与视口控制器；范围值及 picker-value 均包含两个日期，锁定端点不能被快捷项改写。详见 [快捷选项与日历视口](/components/date-picker/#快捷选项与日历视口)。",
+    "after": "范围值及 picker-value 均包含两个日期，锁定端点不能被快捷项改写。详见 [快捷选项与日历视口](/components/date-picker/#快捷选项与日历视口)。",
+    "english": "Range values and picker-value each contain two dates. Shortcuts cannot overwrite locked endpoints. See [Shortcuts and calendar viewport](/en/components/date-picker/#shortcuts-and-calendar-viewport).",
+    "englishBefore": "Uses the same independently copied shortcut/viewport controller as DatePicker. Range values/picker-value contain two dates. Shortcuts cannot overwrite locked endpoints. See [Shortcuts and calendar viewport](/en/components/date-picker/#shortcuts-and-calendar-viewport)."
+  },
+  {
+    "before": "描边缺口通过 `fieldset / legend` 实现，不使用背景色遮罩。缺口起点与内容列对齐，左右各预留 `hint-space`；`padding-inline-start` 中的 CSS `max()/calc()` 必须使用 Less 原样输出，避免不同 Less 版本将其提前计算为 `0px`。`check:input` 同时检查源码一致性和两端 Less 编译产物。",
+    "after": "浮动提示为描边预留缺口，缺口与内容列对齐，左右间距通过 `hint-space` 调整。",
+    "english": "The floating hint leaves a gap in the outline, aligned with the content column. Adjust the space on either side through `hint-space`.",
+    "englishBefore": "The outline notch uses `fieldset / legend`, not a background mask. It starts aligned with the content column and reserves `hint-space` on both sides. CSS `max()/calc()` in `padding-inline-start` must be emitted verbatim by Less, preventing different Less versions from prematurely evaluating it as `0px`. `check:input` checks source parity and both libraries’ Less output."
+  },
+  {
+    "before": "两端维护独立复制的主体。输入按 input → update:modelValue 通知；清空按 clear → input → update:modelValue → change 通知，各一次，Form 对应语义也各接收一次。只读、禁用和组合输入期间禁止清空。受控提议被拒绝后恢复原生内容，包括不支持光标 API 的输入类型。",
+    "after": "输入按 input → update:modelValue 通知；清空按 clear → input → update:modelValue → change 通知，各一次，Form 对应语义也各接收一次。只读、禁用和组合输入期间禁止清空。受控提议被拒绝后恢复原生内容，包括不支持光标 API 的输入类型。",
+    "english": "Input notifies input → update:modelValue. Clearing notifies clear → input → update:modelValue → change once each, with one corresponding Form notification. Clearing is blocked while readonly, disabled or composing. Rejected controlled proposals restore the native content, including input types without cursor APIs.",
+    "englishBefore": "两端维护独立复制的主体。输入按 input → update:modelValue 通知；清空按 clear → input → update:modelValue → change 通知，各一次，Form 对应语义也各接收一次。只读、禁用和组合输入期间禁止清空。受控提议被拒绝后恢复原生内容，包括不支持光标 API 的输入类型。"
+  },
+  {
+    "before": "InputNumber 用于编辑和提交业务数字。两端主体、数值控制器、样式及公开 API 按独立源码复制维护，不共享运行时实例。",
+    "after": "InputNumber 用于编辑和提交业务数字。",
+    "english": "InputNumber edits and commits numeric values.",
+    "englishBefore": "InputNumber 用于编辑和提交业务数字。两端主体、数值控制器、样式及公开 API 按独立源码复制维护，不共享运行时实例。"
+  },
+  {
+    "before": "InputTag 保留 27 项内容变量，已加入无消费检查；两端 Badge / Tag 加 Cedar InputTag 共检查 441 项声明，内容 size / focus / disabled 级联覆盖 80 组。共享默认值契约仍为 553 项；Cedar-only InputTag 不冒充跨端共享组件。默认文字、禁用文字、标签底色与焦点底色分别引用 content-primary、content-disabled、surface-default、state-hover。禁用状态只重绘中性标签，不覆盖显式 color / status；业务自定义颜色的可读性由业务负责。父级 disabled / readonly 优先于 tagProps.closable / checkable，loading 或显式不可关闭的标签也不能用 Backspace 删除。已完成 Cedar 浏览器五档布局、xl 输入与键盘删除、明暗模式以及禁用自定义色的抽验，不代表全组件视觉验收。",
+    "after": "默认文字、禁用文字、标签底色与焦点底色分别使用对应的系统语义色。禁用状态不会覆盖显式设置的 color / status；自定义颜色时需保证文字可读性。父级 disabled / readonly 优先于 tagProps.closable / checkable，loading 或显式不可关闭的标签不能用 Backspace 删除。",
+    "english": "Default text, disabled text, tag backgrounds and focus backgrounds use the corresponding system semantic colors. Disabled state does not override explicit color / status; keep text readable when supplying custom colors. Parent disabled / readonly takes precedence over tagProps.closable / checkable. Loading or explicitly nonclosable tags cannot be removed with Backspace.",
+    "englishBefore": "InputTag retains 27 content variables in unused-consumer checks. Both libraries’ Badge/Tag plus Cedar InputTag cover 441 declarations and 80 size/focus/disabled cascades. The shared-default contract remains 553 entries; Cedar-only InputTag is not a cross-platform shared component. Default text, disabled text, tag backgrounds and focused backgrounds use content-primary, content-disabled, surface-default and state-hover. Disabled restyles neutral tags only, preserving explicit color/status; business themes own custom-color contrast. Parent disabled/readonly overrides tagProps.closable/checkable. Loading or explicitly nonclosable tags cannot be removed with Backspace. Cedar spot checks cover five sizes, xl input/keyboard removal, light/dark modes and disabled custom colors, not a complete visual audit."
+  },
+  {
+    "before": "内部类名统一为 `c-link--status-*`、`c-link--underline-*`、`c-link--disabled`、`c-link--loading` 和 `c-link__icon`。请迁移旧的单连字符选择器，优先通过 `--c-link-*` CSS 变量定制。焦点支持 `--c-link-focus-width`（2px）、`--c-link-focus-offset`（2px）、`--c-link-focus-color`（currentColor）、`--c-link-focus-opacity`（0.8）。减少动态效果偏好下关闭加载旋转和过渡。",
+    "after": "优先通过 `--c-link-*` CSS 变量定制外观。键盘焦点支持 `--c-link-focus-width`（2px）、`--c-link-focus-offset`（2px）、`--c-link-focus-color`（currentColor）和 `--c-link-focus-opacity`（0.8）。启用减少动态效果时，关闭加载旋转和过渡。",
+    "english": "Customize appearance through `--c-link-*` CSS variables. Keyboard focus supports `--c-link-focus-width` (2px), `--c-link-focus-offset` (2px), `--c-link-focus-color` (currentColor) and `--c-link-focus-opacity` (0.8). Reduced motion disables loading rotation and transitions.",
+    "englishBefore": "Internal classes use `c-link--status-*`, `c-link--underline-*`, `c-link--disabled`, `c-link--loading` and `c-link__icon`. Migrate old single-hyphen selectors and prefer `--c-link-*` CSS variables. Focus supports `--c-link-focus-width` (2px), `--c-link-focus-offset` (2px), `--c-link-focus-color` (currentColor) and `--c-link-focus-opacity` (0.8). Reduced motion disables loading rotation and transitions."
+  },
+  {
+    "before": "无需登录或配置密钥即可运行。点击按钮更新本地位置模型；未接入 SDK 时显示降级提示并禁用搜索，不请求定位权限。真实地图的选点与搜索需要应用接入 SDK 适配器后再验收。",
+    "after": "无需登录或配置密钥即可运行示例。点击按钮更新本地位置模型；未接入可用 SDK 时显示降级提示并禁用搜索，不请求定位权限。",
+    "english": "The demo runs without signing in or configuring a key. Buttons update a local position model. Without a working SDK, it shows a fallback, disables search and does not request location permission.",
+    "englishBefore": "无需登录或配置密钥即可运行。点击按钮更新本地位置模型；未接入 SDK 时显示降级提示并禁用搜索，不请求定位权限。真实地图的选点与搜索需要应用接入 SDK 适配器后再验收。"
+  },
+  {
+    "before": "地图SDK正在迁移：当前源码未提供原map-core运行时导入；MapService、SearchService、LngLat的类型声明不等于可用依赖，缺任一依赖时初始化会进入降级显示，不代表真实地图初始化成功。恢复正式适配器／第三方生命周期契约前，不将降级渲染测试当地图服务验收。",
+    "after": "当前未提供原 `map-core` 运行时依赖；缺少 MapService、SearchService 或 LngLat 的可用实现时，组件显示降级状态。对应类型声明不能替代运行时依赖。",
+    "english": "The original `map-core` runtime dependency is not currently provided. The component shows a fallback when working MapService, SearchService or LngLat implementations are missing. Their type declarations do not provide runtime dependencies.",
+    "englishBefore": "地图SDK正在迁移：当前源码未提供原map-core运行时导入；MapService、SearchService、LngLat的类型声明不等于可用依赖，缺任一依赖时初始化会进入降级显示，不代表真实地图初始化成功。恢复正式适配器／第三方生命周期契约前，不将降级渲染测试当地图服务验收。"
+  },
+  {
+    "before": "内部300ms中心更新和500ms选点等待用于抑制程序化moveend反向解析，不是CSS动画完成时长或公开CSS变量；不应通过覆盖视觉duration Token控制它们。真实SDK下的计时取消、停用／卸载、旧回调／异步结果及监听释放尚待独立验证；MapSelect地址回填和定位也不由缺SDK测试覆盖。",
+    "after": "地图交互的业务等待不通过 CSS 动效变量控制。",
+    "english": "CSS motion variables do not control the waiting periods used by map interactions.",
+    "englishBefore": "内部300ms中心更新和500ms选点等待用于抑制程序化moveend反向解析，不是CSS动画完成时长或公开CSS变量；不应通过覆盖视觉duration Token控制它们。真实SDK下的计时取消、停用／卸载、旧回调／异步结果及监听释放尚待独立验证；MapSelect地址回填和定位也不由缺SDK测试覆盖。"
+  },
+  {
+    "before": "用于展示轻量级、非模态的全局反馈。Cedar 与 Maple 共享同一套公开契约、队列、计时和命令式服务；两端分别维护源码和端侧外观。",
+    "after": "用于展示轻量级、非模态的全局反馈。",
+    "english": "Displays lightweight, nonmodal global feedback.",
+    "englishBefore": "用于展示轻量级、非模态的全局反馈。Cedar 与 Maple 共享同一套公开契约、队列、计时和命令式服务；两端分别维护源码和端侧外观。"
+  },
+  {
+    "before": "clear 同步释放条目与 ID，随后即使在同一个更新周期重加相同 ID，也会使用独立内部实例和新的完整展示计时；活动 ID 的普通更新仍原位更新。内部实例键不作为公共变量／API 暴露，clear 仍不额外触发业务 onClose。组件样式入口在减少动效下关闭 opacity／左右进入、appear、离开过渡及起始位移，不依赖全局极短时长兜底；静态布局／配色、业务展示期限不变。真实 OS 与浏览器矩阵另行验收。",
+    "after": "clear 同步移除条目并释放 ID；随后重新添加相同 ID 会创建新条目，并从完整展示时长开始计时。活动条目的普通更新保持原位，clear 不额外触发业务 onClose。启用减少动态效果时，关闭内置进出场过渡和位移，保留静态布局、颜色及业务展示时长。",
+    "english": "clear removes entries and releases their IDs synchronously. Adding the same ID afterward creates a new entry with a full display duration. Ordinary updates keep active entries in place, and clear does not additionally invoke the business onClose callback. Reduced motion disables built-in enter/leave transitions and movement while retaining static layout, colors and display duration.",
+    "englishBefore": "clear immediately releases entries and IDs. Re-adding the same ID, even in the same update cycle, creates an independent internal instance and a fresh complete display timer. Ordinary active-ID updates remain in place. Internal keys are not public API. clear still does not add business onClose calls. Reduced-motion component styles disable opacity, left/right enter, appear and leave transitions and initial displacement without a global tiny-duration fallback. Static layout/colors and business display deadlines remain unchanged. Real OS/browser matrices require separate validation."
+  },
+  {
+    "before": "Maple 迁移说明：默认背景改为主题表面色，默认不再显示手形光标；inline 内部类改为 mp-paper--inline。原有尺寸、圆角、阴影与水波 API 保留。",
+    "after": "默认背景使用主题表面色，默认不显示手形光标；通过尺寸、圆角、阴影和水波属性定制外观。",
+    "english": "The default background uses the theme surface color without a pointer cursor. Customize appearance through size, radius, elevation and ripple props.",
+    "englishBefore": "Maple migration: the default background becomes the theme surface, and the default pointer cursor is removed. The inline class becomes mp-paper--inline. Existing dimensions, radii, elevation and ripple APIs remain."
+  },
+  {
+    "before": "展示确定或不确定任务进度。两端主体、API 与样式为独立同源代码。",
+    "after": "展示确定或不确定任务的进度。",
+    "english": "Displays determinate or indeterminate task progress.",
+    "englishBefore": "展示确定或不确定任务进度。两端主体、API 与样式为独立同源代码。"
+  },
+  {
+    "before": "两端公开 Token 后缀及含义一致；Cedar 保留金色星形和紧凑间距，Maple 保留主色星形与触控内边距，默认值差异已登记主题契约。源码各自维护，不共享运行时。",
+    "after": "Cedar 默认使用金色星形与紧凑间距；Maple 默认使用主题主色与更大的触控间距。两端同名 CSS 变量具有相同用途，默认值可以不同。",
+    "english": "Cedar defaults to gold stars and compact spacing. Maple defaults to the theme primary color and larger touch spacing. CSS variables with the same suffix serve the same purpose on both platforms, while defaults may differ.",
+    "englishBefore": "Public token suffixes/meanings match across platforms. Cedar retains gold stars and compact spacing; Maple retains primary-color stars and touch padding. Defaults are recorded in the theme contract. Sources are maintained independently without a shared runtime."
+  },
+  {
+    "before": "在元素上添加点击、触摸或键盘水波效果。指令主体与 Maple 独立复制同源，不共享实例或运行时；本地包依赖、命名空间与 Token 默认值独立维护。",
+    "after": "在元素上添加点击、触摸或键盘水波效果。",
+    "english": "Adds pointer, touch and keyboard ripple feedback to an element.",
+    "englishBefore": "在元素上添加点击、触摸或键盘水波效果。指令主体与 Maple 独立复制同源，不共享实例或运行时；本地包依赖、命名空间与 Token 默认值独立维护。"
+  },
+  {
+    "before": "时间线示例可把容量降至1后，将样品甲移出与样品乙的重叠时段，再拖入冲突区观察容量拒绝；拒绝保留原排期，下一次合法移动仍可保存。结束恰等于另一项开始的相邻区间不重叠。当前资源时间线卡片没有拉伸手柄，不能把移动路径当作水平拉伸验收；持按取消、触屏和其他视图需分别验证。",
+    "after": "将容量降至 1，把任务移出重叠时段后可保存，再拖入冲突区会拒绝修改并保留原排期。结束时间恰等于另一项开始时间时不算重叠。当前资源时间线卡片只支持移动，不提供拉伸手柄。",
+    "english": "Set capacity to 1 and move a task out of an overlapping interval to save it. Moving it back into a conflict rejects the edit and preserves the schedule. An interval ending exactly when another starts does not overlap. Resource timeline cards support moving but do not expose resize handles.",
+    "englishBefore": "时间线示例可把容量降至1后，将样品甲移出与样品乙的重叠时段，再拖入冲突区观察容量拒绝；拒绝保留原排期，下一次合法移动仍可保存。结束恰等于另一项开始的相邻区间不重叠。当前资源时间线卡片没有拉伸手柄，不能把移动路径当作水平拉伸验收；持按取消、触屏和其他视图需分别验证。"
+  },
+  {
+    "before": "修改工作日历可能改变“最后工作日”的原始发生时间，已有例外不能自动迁移；请沿用系列规则变更的显式清理或迁移策略。本轮不包含地区节假日下载、调休规则推算、按资源选择多个企业日历或工作小时的日期级覆盖。",
+    "after": "修改工作日历可能改变“最后工作日”的原始发生时间，已有例外不能自动迁移；需显式保留、清理或迁移。示例不提供节假日下载、调休推算、按资源选择多个企业日历或工作小时的日期级覆盖。",
+    "english": "Changing a working calendar may change the original occurrence of the last working day. Existing exceptions require an explicit retain, cleanup or migration policy. The demo does not provide holiday downloads, compensatory-day calculations, per-resource enterprise calendars or date-specific working-hour overrides.",
+    "englishBefore": "修改工作日历可能改变“最后工作日”的原始发生时间，已有例外不能自动迁移；请沿用系列规则变更的显式清理或迁移策略。本轮不包含地区节假日下载、调休规则推算、按资源选择多个企业日历或工作小时的日期级覆盖。"
+  },
+  {
+    "before": "源码 `src/scheduler/core` 不导入 Vue、DOM 或外部日历库，可单独测试及后续提取为 scheduler-core 包。发布后可直接使用纯核心子入口，避免导入组件运行时：",
+    "after": "可通过 `@cedar-design/ui-vue/scheduler/core` 使用不依赖 Vue 或 DOM 的日程计算工具：",
+    "english": "Use the Vue- and DOM-independent scheduling utilities through `@cedar-design/ui-vue/scheduler/core`:",
+    "englishBefore": "`src/scheduler/core` imports no Vue, DOM or external calendar library. It can be tested independently and later extracted as scheduler-core. The published pure-core subentry avoids importing component runtime:"
+  },
+  {
+    "before": "方向、max、thumbSize、ratio的有效值变化取消当前手势；仅替换等值data对象不取消连续拖动。最终偏移仍由父级新测量／setOffset结算。几何读取与响应式写入后重新核对会话，防止同步卸载后绑定或通知。停用／卸载保留按下／轨道点击／setOffset入口无效且不preventDefault；非左键不启动／跳转。当前setOffset夹取、拖动期间忽略外部setOffset和轨道一thumb-size步进保持。没有Pointer／touch拖动协议迁移或原生滚动回滚承诺。",
+    "after": "拖动期间改变方向或滑块尺寸会结束当前拖动；只替换内容相同的 data 对象不会中断。setOffset 将偏移限制在有效范围内，拖动期间调用不会覆盖正在进行的拖动。非鼠标主键不启动操作，轨道点击按一个滑块长度步进。",
+    "english": "Changing direction or thumb geometry during dragging ends the drag; replacing data with equivalent contents does not interrupt it. setOffset clamps to the valid range and does not override an active drag. Nonprimary mouse buttons do not start an operation; clicking the track advances by one thumb length.",
+    "englishBefore": "方向、max、thumbSize、ratio的有效值变化取消当前手势；仅替换等值data对象不取消连续拖动。最终偏移仍由父级新测量／setOffset结算。几何读取与响应式写入后重新核对会话，防止同步卸载后绑定或通知。停用／卸载保留按下／轨道点击／setOffset入口无效且不preventDefault；非左键不启动／跳转。当前setOffset夹取、拖动期间忽略外部setOffset和轨道一thumb-size步进保持。没有Pointer／touch拖动协议迁移或原生滚动回滚承诺。"
+  },
+  {
+    "before": "双方控制器、公开 API 和历史内容独立维护。两端默认 edit-mode=direct；Cedar 默认 shape=square，Maple 默认 shape=round。全屏历史使用各端 Drawer / Popup。Cedar 保留外侧 InputGroup，Maple 保留移动搜索条布局和触控间距；历史编辑层由自身容器绘制边界。Input 支持五种尺寸，外层条密度由 Search token 控制。",
+    "after": "两端默认 edit-mode=direct；Cedar 默认 shape=square，Maple 默认 shape=round。Cedar 保留外侧 InputGroup，Maple 使用移动搜索条布局和触控间距。Input 支持五种尺寸，外层条密度通过 Search 的 CSS 变量控制。",
+    "english": "Both platforms default to edit-mode=direct. Cedar defaults to shape=square, while Maple defaults to shape=round. Cedar retains an outer InputGroup; Maple uses a mobile search-bar layout and touch spacing. Input supports five sizes, and Search CSS variables control the outer density.",
+    "englishBefore": "Controller, public API and history content are independently maintained. Both default to edit-mode=direct; Cedar defaults to shape=square and Maple to shape=round. Fullscreen history uses each platform's Drawer/Popup. Cedar retains the outer InputGroup; Maple retains its mobile bar layout and touch spacing. The history editor container draws its boundary. Input supports five sizes, while Search tokens control outer bar density."
+  },
+  {
+    "before": "主体、控制器、选项算法与样式在两端独立维护；展示方式继承 Form/Item。完整对比示例集中在 Form 文档。",
+    "after": "编辑展示方式继承 Form / FormItem。完整对比示例见 Form 文档。",
+    "english": "The editing presentation inherits from Form / FormItem. See the Form documentation for complete comparison examples.",
+    "englishBefore": "主体、控制器、选项算法与样式在两端独立维护；展示方式继承 Form/Item。完整对比示例集中在 Form 文档。"
+  },
+  {
+    "before": "Option.extra 已移除；业务数据通过对象 value 或 options 原始数据传递。公开 OptionProps 与 optionProps 不包含私有 internal，内部候选渲染仍独立维护该标记。",
+    "after": "Option.extra 已移除；业务数据通过对象 value 或 options 原始数据传递。",
+    "english": "Option.extra has been removed; pass business data through object values or the original options data.",
+    "englishBefore": "Option.extra has been removed; pass business data through object values or raw options. Public OptionProps and optionProps exclude private internal metadata, which remains managed by the internal candidate renderer."
+  },
+  {
+    "before": "导出SliderProps、SliderValue、SliderOrientation、SliderTooltipFormatter、SliderTooltipVisibility、SliderEmits、SliderSlots、SliderExpose、SliderInstance和运行时sliderProps。两端主体/样式独立复制；仅安装和Form接线使用各库独立实现。",
+    "after": "导出 SliderProps、SliderValue、SliderOrientation、SliderTooltipFormatter、SliderTooltipVisibility、SliderEmits、SliderSlots、SliderExpose、SliderInstance 和运行时 sliderProps。",
+    "english": "Exports SliderProps, SliderValue, SliderOrientation, SliderTooltipFormatter, SliderTooltipVisibility, SliderEmits, SliderSlots, SliderExpose, SliderInstance and runtime sliderProps.",
+    "englishBefore": "Exports SliderProps, SliderValue, SliderOrientation, SliderTooltipFormatter, SliderTooltipVisibility, SliderEmits, SliderSlots, SliderExpose, SliderInstance and runtime sliderProps. Component bodies/styles are independently copied; installation/Form integration remain local to each library."
+  },
+  {
+    "before": "内置 xs / sm / md / lg / xl 五档，默认 md；支持数字、CSS 长度和 [行间距, 列间距]，具体值见下方同源约定。",
+    "after": "内置 xs / sm / md / lg / xl 五档，默认 md；支持数字、CSS 长度和 [行间距, 列间距]。预设间距和默认行为见下方使用说明。",
+    "english": "Includes xs / sm / md / lg / xl presets, defaulting to md. Also supports numbers, CSS lengths and [row gap, column gap]. See the usage notes below for preset gaps and default behavior.",
+    "englishBefore": "内置 xs / sm / md / lg / xl 五档，默认 md；支持数字、CSS 长度和 [行间距, 列间距]，具体值见下方同源约定。"
+  },
+  {
+    "before": "两端独立同源，API、安装、默认值设置和运行逻辑一致；仅平台标识与本地导入不同。",
+    "after": "为后代组件提供局部 CSS 变量覆盖。",
+    "english": "Provides local CSS variable overrides for descendant components.",
+    "englishBefore": "两端独立同源，API、安装、默认值设置和运行逻辑一致；仅平台标识与本地导入不同。"
+  },
+  {
+    "before": "跨端边界：本组件与 Maple Table 独立维护，菜单保留“独立”。Maple 的轻量插槽表格/本地分页示例不提供本组件的排序、行选择或远程数据 API；两端有交互记录不等于 API 同源或全部配置已验收。",
+    "after": "Cedar Table 支持排序、行选择和远程数据等功能；Maple Table 是轻量级原生表格展示容器，不提供相同的数据和交互 API。",
+    "english": "Cedar Table supports features such as sorting, row selection and remote data. Maple Table is a lightweight native-table presentation container and does not provide the same data and interaction APIs.",
+    "englishBefore": "跨端边界：本组件与 Maple Table 独立维护，菜单保留“独立”。Maple 的轻量插槽表格/本地分页示例不提供本组件的排序、行选择或远程数据 API；两端有交互记录不等于 API 同源或全部配置已验收。"
+  },
+  {
+    "before": "列 filterable.triggerProps 在内部 Trigger 配置之后展开，嵌套 open 等字段目前可以覆盖筛选浮层状态。F07 兼容阶段保留该顺序和类型，不自动禁止这些旧能力；如未来收紧，需单独评估筛选状态与浮层状态的迁移。",
+    "after": "列 filterable.triggerProps 中的嵌套 open 等字段可以覆盖筛选浮层状态。需要由业务控制筛选浮层时，应同时管理其打开状态与筛选条件。",
+    "english": "Nested fields such as open in column filterable.triggerProps can override the filter popup state. Manage both popup visibility and filter conditions when controlling it from the application.",
+    "englishBefore": "Column filterable.triggerProps is spread after internal Trigger settings, so nested fields such as open can currently override filter-popup state. F07 preserves this order/type for compatibility without automatically forbidding existing capabilities. Future restrictions require separate migration assessment of filter/popup states."
+  },
+  {
+    "before": "跨端范围：Maple Table 是原生表格展示容器，没有 data/columns API，本次不增加关联配置入口；两端 Select/Cascader 类型关联留待分别确认。",
+    "after": "Maple Table 是原生表格展示容器，不提供 data / columns 配置。",
+    "english": "Maple Table is a native-table presentation container without data / columns configuration.",
+    "englishBefore": "Platform scope: Maple Table is a native-table display container without data/columns API, so no associated-config entry is added there. Select/Cascader type associations require separate assessment."
+  },
+  {
+    "before": "两端独立维护 Tabs、TabPane、TabsNavs、TabNav、TabsItems、TabItem 六件套，不跨库引用运行时，也不使用通用平台配置。size 的 xs/sm/md/lg/xl 五档均已实现。Cedar 继承 ConfigProvider 的 size/rtl；Maple 默认 md，支持 setPropsDefaults、显式 size 与 DOM dir。面板通过原生 hidden 显隐，InfiniteScroll 直接观察可见性，不再依赖旧面板注册。",
+    "after": "支持 xs / sm / md / lg / xl 五档尺寸。Cedar 继承 ConfigProvider 的 size / rtl；Maple 默认 md，支持 setPropsDefaults、显式 size 与 DOM dir。未激活面板被隐藏，InfiniteScroll 会随面板可见性工作。",
+    "english": "Supports xs / sm / md / lg / xl sizes. Cedar inherits ConfigProvider size / rtl. Maple defaults to md and supports setPropsDefaults, explicit size and DOM dir. Inactive panels are hidden, and InfiniteScroll follows panel visibility.",
+    "englishBefore": "Both platforms independently maintain Tabs, TabPane, TabsNavs, TabNav, TabsItems and TabItem without cross-library runtimes or generic platform configuration. All xs/sm/md/lg/xl sizes are implemented. Cedar inherits ConfigProvider size/rtl. Maple defaults to md and supports setPropsDefaults, explicit size and DOM dir. Panels use native hidden; InfiniteScroll observes visibility directly rather than old panel registration."
+  },
+  {
+    "before": "迁移：旧 TreeSelect 的 value + 大小写敏感默认行为，显式设置 `:search-fields=\"['value']\" case-sensitive` 即可恢复。本次默认值变化标记为 major。",
+    "after": "如需按 value 区分大小写搜索，显式设置 `:search-fields=\"['value']\" case-sensitive`。",
+    "english": "To search value with case sensitivity, explicitly set `:search-fields=\"['value']\" case-sensitive`.",
+    "englishBefore": "迁移：旧 TreeSelect 的 value + 大小写敏感默认行为，显式设置 `:search-fields=\"['value']\" case-sensitive` 即可恢复。本次默认值变化标记为 major。"
+  },
+  {
+    "before": "迁移：`allow-search` 改为 `filterable`；原 `{ retainInputValue: true }` 写法改为 `filterable` 加 `retain-input-value`。当前 API 收敛期移除旧入口，不保留兼容别名。",
+    "after": "旧 `allow-search` 改为 `filterable`；原 `{ retainInputValue: true }` 写法改为 `filterable` 加 `retain-input-value`。",
+    "english": "Replace the old `allow-search` with `filterable`. Replace `{ retainInputValue: true }` with `filterable` plus `retain-input-value`.",
+    "englishBefore": "Migration: `allow-search` becomes `filterable`; `{ retainInputValue: true }` becomes `filterable` plus `retain-input-value`. Old entries are removed without compatibility aliases during the current API convergence period."
+  },
+  {
+    "before": "更换或清空popup ref、watcher刷新前卸载时，scroll监听在实际原绑定窗口解绑，不依赖当前ref反查。此模拟回归不涵盖同节点跨document adopt或真实浏览器视觉／OS验收。",
+    "after": "更换或清空浮层引用，以及卸载组件时，会移除旧窗口的滚动监听。",
+    "english": "Replacing or clearing the popup reference, or unmounting the component, removes the old window scroll listeners.",
+    "englishBefore": "更换或清空popup ref、watcher刷新前卸载时，scroll监听在实际原绑定窗口解绑，不依赖当前ref反查。此模拟回归不涵盖同节点跨document adopt或真实浏览器视觉／OS验收。"
+  },
+  {
+    "before": "定位／滚动关闭 RAF 在事件元素或浮层的所属窗口申请，并在原申请窗口取消。关闭／解绑后已出队旧帧不消费新的滚动任务。RAF是必要测量调度，不是CSS动效时长；旧监听原窗口解绑已完成后续模拟回归，同节点adopt与真实浏览器仍需单独验收。",
+    "after": "关闭或解绑后，尚未执行的定位和滚动关闭任务不会影响后续打开的浮层。",
+    "english": "Pending positioning and scroll-close tasks do not affect subsequently opened popups after closing or unbinding.",
+    "englishBefore": "定位／滚动关闭 RAF 在事件元素或浮层的所属窗口申请，并在原申请窗口取消。关闭／解绑后已出队旧帧不消费新的滚动任务。RAF是必要测量调度，不是CSS动效时长；旧监听原窗口解绑已完成后续模拟回归，同节点adopt与真实浏览器仍需单独验收。"
+  },
+  {
+    "before": "读取、队列和请求采用两端独立复制的同源实现；未配置 action/custom-request 时仅读取，供业务自行管理进度与结果。",
+    "after": "未配置 action / custom-request 时，组件仅读取文件，进度和结果由业务管理。",
+    "english": "Without action / custom-request, the component only reads files; the application manages progress and results.",
+    "englishBefore": "读取、队列和请求采用两端独立复制的同源实现；未配置 action/custom-request 时仅读取，供业务自行管理进度与结果。"
+  },
+  {
+    "before": "chooseFile()、replace(file,replacement?)、submit(file?)、abort(file?)、retry(file)、remove(file)、reset()、clearSuccess()、clearError()、getFiles(status?)、preview(file)、closePreview()。useUploader(options)提供同源无UI逻辑，另有addFiles(files)和input/drag处理接口。",
+    "after": "提供 chooseFile()、replace(file,replacement?)、submit(file?)、abort(file?)、retry(file)、remove(file)、reset()、clearSuccess()、clearError()、getFiles(status?)、preview(file)、closePreview()。useUploader(options) 提供不含界面的上传逻辑，以及 addFiles(files) 和输入、拖放处理接口。",
+    "english": "Provides chooseFile(), replace(file,replacement?), submit(file?), abort(file?), retry(file), remove(file), reset(), clearSuccess(), clearError(), getFiles(status?), preview(file) and closePreview(). useUploader(options) provides headless upload logic, addFiles(files), and input/drag handlers.",
+    "englishBefore": "chooseFile(), replace(file,replacement?), submit(file?), abort(file?), retry(file), remove(file), reset(), clearSuccess(), clearError(), getFiles(status?), preview(file), closePreview(). useUploader(options) provides the independent headless core with addFiles(files) and input/drag handlers."
+  },
+  {
+    "before": "独立维护的跨端同源验证码输入，支持整码输入分配、格式化和表单继承。",
+    "after": "验证码输入，支持整码分配、格式化和表单继承。",
+    "english": "Verification-code input supporting whole-code distribution, formatting and form inheritance.",
+    "englishBefore": "独立维护的跨端同源验证码输入，支持整码输入分配、格式化和表单继承。"
+  },
+  {
+    "before": "字段外壳与菜单 Token 保持两端同源；popup / dialog 的容器和工具栏统一复用内部 FieldEditMode。",
+    "after": "通过 `edit-mode` 选择直接编辑或移动端编辑面板。",
+    "english": "Use `edit-mode` to choose direct editing or a mobile editor panel.",
+    "englishBefore": "The field shell and menu tokens share the same source contract across platforms; popup/dialog containers and toolbars reuse the internal FieldEditMode."
+  },
+  {
+    "before": "> 源码已并入 `date/`，安装父组件时一并注册。静态成员：`Date.Picker`。",
+    "after": "安装 Date 时会一并注册 DatePicker，也可通过静态成员 `Date.Picker` 使用。",
+    "english": "Installing Date also registers DatePicker, which is available through the static member `Date.Picker`.",
+    "englishBefore": "> Source is merged into `date/`. Installing the parent also registers it. Static member: `Date.Picker`."
+  },
+  {
+    "before": "两端使用独立复制的值、校验和提交逻辑。年、月、日模型默认格式为 `YYYY`、`YYYY-MM`、`YYYY-MM-DD`，日期时间默认包含秒；分钟精度设置 `time-fields=\"['hour', 'minute']\"`。`format` 控制显示，`value-format` 控制模型，支持自定义格式、`Date` 与 `timestamp`。Maple 展示支持年/月/日及移动端日历和滚轮；周/季度面板仍是 Cedar 的展示能力。",
+    "after": "年、月、日模型默认格式为 `YYYY`、`YYYY-MM`、`YYYY-MM-DD`，日期时间默认包含秒；分钟精度设置 `time-fields=\"['hour', 'minute']\"`。`format` 控制显示，`value-format` 控制模型，支持自定义格式、`Date` 与 `timestamp`。Maple 提供年/月/日面板和移动端日历、滚轮；周/季度面板仅由 Cedar 提供。",
+    "english": "Year/month/day model formats default to `YYYY`, `YYYY-MM` and `YYYY-MM-DD`. Date-time values include seconds by default; use `time-fields=\"['hour', 'minute']\"` for minute precision. `format` controls display and `value-format` controls models, supporting custom formats, `Date` and `timestamp`. Maple provides year/month/day panels and mobile calendars and wheels; week/quarter panels are only available in Cedar.",
+    "englishBefore": "两端使用独立复制的值、校验和提交逻辑。年、月、日模型默认格式为 `YYYY`、`YYYY-MM`、`YYYY-MM-DD`，日期时间默认包含秒；分钟精度设置 `time-fields=\"['hour', 'minute']\"`。`format` 控制显示，`value-format` 控制模型，支持自定义格式、`Date` 与 `timestamp`。Maple 展示支持年/月/日及移动端日历和滚轮；周/季度面板仍是 Cedar 的展示能力。"
+  },
+  {
+    "before": "公共日期解析器按展示 `format` 严格解析，再以 `value-format` 序列化并执行原有禁用/范围校验。日期单值/范围字段已接入真实原生输入；默认允许手输，点击输入只编辑，日历按钮或 ArrowDown 打开面板，Enter/失焦提交。设置 `input-editable=false` 可仅使用面板；multiple 和函数 format 不提供文本逆解析，输入保持 readonly。`format` 为函数没有逆解析协议，应关闭 `input-editable` 并使用选择面板。Maple 暂无周/季度展示模式，不为保持解析逻辑同源而暴露无效类型。",
+    "after": "日期输入按 `format` 严格解析，再按 `value-format` 输出，并校验禁用规则及范围。默认允许手输，点击输入编辑，日历按钮或 ArrowDown 打开面板，Enter / 失焦提交。设置 `input-editable=false` 可仅通过面板选择。multiple 模式或函数 format 不支持文本逆解析，输入保持只读；函数 format 应配合关闭 `input-editable` 使用。Maple 不提供周/季度展示模式。",
+    "english": "Date input is parsed strictly according to `format`, serialized according to `value-format`, and checked against disabled rules and bounds. Manual entry is enabled by default. Clicking edits the input; the calendar button or ArrowDown opens the panel; Enter / blur commits. Set `input-editable=false` for panel-only selection. Multiple mode and function format do not support reverse parsing and keep the input readonly; disable `input-editable` with function format. Maple does not provide week/quarter presentation modes.",
+    "englishBefore": "The copied date parser strictly uses display `format`, serializes through `value-format`, and checks the existing disabled/range rules. Single/range date fields now wire real native input. Editing is enabled by default: input clicks only edit; the calendar button or ArrowDown opens the panel, and Enter/blur commits. Set `input-editable=false` for panel-only selection. Multiple/function-formatted display has no inverse text protocol and stays readonly. A function `format` has no inverse parsing protocol: disable `input-editable` and use the selection panel. Maple has no week/quarter presentation; copied parsing logic does not introduce unsupported component types."
+  },
+  {
+    "before": "Date / DateRange / Time / TimeRange 使用同源的 PickerField → FieldDecorator 字段层。Date/DateRange 默认允许手输（可关闭）；Time 是否手输由其 inputEditable 控制。面板编辑草稿，确认才写回，取消或外部关闭不改变值。清除立即写入空值并关闭面板，不恢复旧草稿。日期和时间范围显示两个独立输入位置，跨日时间保留“次日”提示。",
+    "after": "Date / DateRange 默认允许手输，可通过 input-editable 关闭；Time 是否手输由 inputEditable 控制。面板编辑草稿，确认才写回，取消或外部关闭不改变值。清除立即提交空值并关闭面板。日期和时间范围分别显示两个输入位置，跨日时间保留“次日”提示。",
+    "english": "Date / DateRange allow manual entry by default; input-editable can disable it. Time manual entry is controlled by inputEditable. Panels edit a draft and commit on confirmation; cancellation or external closing leaves the value unchanged. Clearing commits an empty value immediately and closes the panel. Date and time ranges display two inputs, retaining a next-day indicator for overnight time ranges.",
+    "englishBefore": "Date / DateRange / Time / TimeRange 使用同源的 PickerField → FieldDecorator 字段层。Date/DateRange 默认允许手输（可关闭）；Time 是否手输由其 inputEditable 控制。面板编辑草稿，确认才写回，取消或外部关闭不改变值。清除立即写入空值并关闭面板，不恢复旧草稿。日期和时间范围显示两个独立输入位置，跨日时间保留“次日”提示。"
+  },
+  {
+    "before": "> 源码已并入 `date-range/`，安装父组件时一并注册。静态成员：`DateRange.Picker`。",
+    "after": "安装 DateRange 时会一并注册 DateRangePicker，也可通过静态成员 `DateRange.Picker` 使用。",
+    "english": "Installing DateRange also registers DateRangePicker, which is available through the static member `DateRange.Picker`.",
+    "englishBefore": "> Source is merged into `date-range/`. Installing the parent also registers it. Static member: `DateRange.Picker`."
+  },
+  {
+    "before": "字段使用两端独立同源的 PickerField → FieldDecorator。面板编辑草稿，确认才写回；取消或关闭不写回，清除立即提交空值并关闭。DateRange 默认允许手输，设置 `input-editable=false` 可只通过面板选择。四类字段的组合示例见 Date 文档“统一字段与提交”。",
+    "after": "面板编辑草稿，确认才写回；取消或关闭不写回，清除立即提交空值并关闭。DateRange 默认允许手输，设置 `input-editable=false` 可只通过面板选择。四类字段的组合示例见 Date 文档“统一字段与提交”。",
+    "english": "Panels edit a draft and commit on confirmation. Cancellation or closing does not commit, while clearing commits an empty value and closes immediately. DateRange allows manual entry by default; set `input-editable=false` for panel-only selection. See the combined field examples in the Date documentation.",
+    "englishBefore": "Fields use independently copied PickerField → FieldDecorator implementations. Panels edit drafts and write back only on confirmation; cancel/close do not write back. Clearing commits empty immediately and closes. DateRange allows typing by default; `input-editable=false` requires panel selection. See Date's unified field/commit example for all four fields."
+  },
+  {
+    "before": "主体、Props、主样式和测试为两份独立维护的同源复制，仅前缀、本地图标和主题 token 不同，不共享核心或实例。禁用/加载时移除 href/target/rel、阻止 click，并退出 Tab 顺序（包括显式 tabindex）。loading 优先于图标插槽，动态图标插槽实时更新。",
+    "after": "禁用或加载时移除 href / target / rel，阻止 click 并退出 Tab 顺序（包括显式 tabindex）。loading 优先于图标插槽，动态图标插槽实时更新。",
+    "english": "Disabled or loading links remove href / target / rel, block click and leave the Tab order, including explicit tabindex. Loading takes precedence over the icon slot, which updates dynamically.",
+    "englishBefore": "主体、Props、主样式和测试为两份独立维护的同源复制，仅前缀、本地图标和主题 token 不同，不共享核心或实例。禁用/加载时移除 href/target/rel、阻止 click，并退出 Tab 顺序（包括显式 tabindex）。loading 优先于图标插槽，动态图标插槽实时更新。"
+  },
+  {
+    "before": "内部类名统一为 `mp-link--status-*`、`mp-link--underline-*` 和 `mp-link__icon`；请使用 CSS 变量定制，迁移旧的 `mp-link--primary` 等选择器。原有颜色/icon/focus CSS 变量继续保留，并映射至同源主样式。",
+    "after": "请使用 `--mp-link-*` CSS 变量定制颜色、图标和焦点样式。",
+    "english": "Customize colors, icons and focus appearance through `--mp-link-*` CSS variables.",
+    "englishBefore": "Internal classes use `mp-link--status-*`, `mp-link--underline-*` and `mp-link__icon`. Migrate old selectors such as `mp-link--primary`; prefer CSS variables. Existing color/icon/focus variables are retained as aliases for the copied styles."
+  },
+  {
+    "before": "`scrollIntoView` 仅在虚拟模式向内部 VirtualList 的 `scrollTo` 转发 options，不是直接 DOM `scrollIntoView`，没有本地动效计时器。原生滚动、减少动效和保留命令生命周期须独立审查 VirtualList；方法名／调用线索不等于视觉验收。本轮分类不改 List API／实现。",
+    "after": "`scrollIntoView` 仅在虚拟模式可用，参数与内部 VirtualList 的 `scrollTo` 一致，不等同于原生 DOM 的 `scrollIntoView`。",
+    "english": "`scrollIntoView` is available only in virtual mode and takes the same options as VirtualList `scrollTo`; it is not the native DOM `scrollIntoView` method.",
+    "englishBefore": "`scrollIntoView` 仅在虚拟模式向内部 VirtualList 的 `scrollTo` 转发 options，不是直接 DOM `scrollIntoView`，没有本地动效计时器。原生滚动、减少动效和保留命令生命周期须独立审查 VirtualList；方法名／调用线索不等于视觉验收。本轮分类不改 List API／实现。"
+  },
+  {
+    "before": "展示duration是业务期限，不是CSS进出场时长；0常驻，只有有限正值排自动关闭。hover保留剩余期限，KeepAlive重新激活重新开始完整配置期限；停用／卸载使旧计时失效。2026-10-15计时源码与既有审计hash一致，本次仅补录business-clock分类；当前39项回归不增加原生浏览器验收，也不自动认证服务nextTick更新身份或跨文档迁移。",
+    "after": "duration 控制展示时长，0 表示常驻；只有有限正数会自动关闭。鼠标悬停时保留剩余时长；KeepAlive 重新激活后按完整配置时长计时，停用或卸载取消旧计时。",
+    "english": "duration controls display time; 0 keeps the message open, and only finite positive values schedule automatic closing. Hover preserves remaining time. KeepAlive reactivation starts a full configured duration, while deactivation or unmounting cancels the old timer.",
+    "englishBefore": "展示duration是业务期限，不是CSS进出场时长；0常驻，只有有限正值排自动关闭。hover保留剩余期限，KeepAlive重新激活重新开始完整配置期限；停用／卸载使旧计时失效。2026-10-15计时源码与既有审计hash一致，本次仅补录business-clock分类；当前39项回归不增加原生浏览器验收，也不自动认证服务nextTick更新身份或跨文档迁移。"
+  },
+  {
+    "before": "用于展示轻量级、非模态的全局反馈。Maple 与 Cedar 共享同一套公开契约、队列、计时和命令式服务；两端分别维护源码和端侧外观。Message 不锁滚动，也不阻断页面操作。",
+    "after": "用于展示轻量级、非模态的全局反馈，不锁定滚动，也不阻断页面操作。",
+    "english": "Displays lightweight, nonmodal global feedback without locking scrolling or blocking page interaction.",
+    "englishBefore": "用于展示轻量级、非模态的全局反馈。Maple 与 Cedar 共享同一套公开契约、队列、计时和命令式服务；两端分别维护源码和端侧外观。Message 不锁滚动，也不阻断页面操作。"
+  },
+  {
+    "before": "从 Cedar NavMenu 迁移，保留 NavMenu/NavMenuItem、独立选中值、标题跟随、插槽与受控状态写法。移动端只提供横向筛选入口，不包含桌面侧栏、折叠导航、悬停或“更多”收纳。",
+    "after": "移动端提供横向筛选入口，支持 NavMenu / NavMenuItem、独立选中值、标题跟随、插槽和受控状态；不提供桌面侧栏、折叠导航、悬停展开或“更多”收纳。",
+    "english": "The mobile component provides horizontal filter entries with NavMenu / NavMenuItem, independent values, matching titles, slots and controlled state. It does not provide a desktop sidebar, collapsed navigation, hover opening or overflow collection.",
+    "englishBefore": "从 Cedar NavMenu 迁移，保留 NavMenu/NavMenuItem、独立选中值、标题跟随、插槽与受控状态写法。移动端只提供横向筛选入口，不包含桌面侧栏、折叠导航、悬停或“更多”收纳。"
+  },
+  {
+    "before": "两端主体、API 与样式独立同源。",
+    "after": "展示确定或不确定任务的进度。",
+    "english": "Displays determinate or indeterminate task progress.",
+    "englishBefore": "两端主体、API 与样式独立同源。"
+  },
+  {
+    "before": "inline 默认即选即提交；popup 确认后提交。确认只提交一次；取消、遮罩关闭、Escape、切换展示方式都丢弃草稿。外部更新 modelValue 优先于草稿。两端控制器独立同源，Cedar 适配 direct / click/dblclick，Maple 适配 direct / popup。",
+    "after": "inline 默认即选即提交；popup 确认后提交，取消、遮罩关闭、Escape 或切换展示方式均丢弃草稿。外部 modelValue 更新优先于草稿。Cedar 支持 direct / click / dblclick，Maple 支持 direct / popup。",
+    "english": "Inline selection commits immediately by default. Popup editing commits on confirmation; cancellation, overlay closing, Escape or switching presentation discards the draft. External modelValue updates take precedence. Cedar supports direct / click / dblclick, while Maple supports direct / popup.",
+    "englishBefore": "inline 默认即选即提交；popup 确认后提交。确认只提交一次；取消、遮罩关闭、Escape、切换展示方式都丢弃草稿。外部更新 modelValue 优先于草稿。两端控制器独立同源，Cedar 适配 direct / click/dblclick，Maple 适配 direct / popup。"
+  },
+  {
+    "before": "> 源码已并入 `time/`，安装父组件时一并注册。静态成员：`Time.Picker`。",
+    "after": "安装 Time 时会一并注册 TimePicker，也可通过静态成员 `Time.Picker` 使用。",
+    "english": "Installing Time also registers TimePicker, which is available through the static member `Time.Picker`.",
+    "englishBefore": "> Source is merged into `time/`. Installing the parent also registers it. Static member: `Time.Picker`."
+  },
+  {
+    "before": "字段使用两端独立同源的 PickerField → FieldDecorator。面板编辑草稿，确认才写回；取消或关闭不写回，清除立即提交空值并关闭。移动端字段不唤起软键盘。四类字段的组合示例见 Date 文档“统一字段与提交”。",
+    "after": "面板编辑草稿，确认才写回；取消或关闭不写回，清除立即提交空值并关闭。移动端时间字段不唤起软键盘。四类字段的组合示例见 Date 文档“统一字段与提交”。",
+    "english": "Panels edit a draft and commit on confirmation. Cancellation or closing does not commit, while clearing commits an empty value and closes immediately. Mobile time fields do not open the software keyboard. See the combined field examples in the Date documentation.",
+    "englishBefore": "Fields use independently copied PickerField → FieldDecorator. Panels edit drafts and write back only on confirmation; cancel/close do not write back. Clearing commits empty and closes immediately. Mobile fields do not open the software keyboard. See Date's unified field/commit example for all four fields."
+  },
+  {
+    "before": "> 源码已并入 `time-range/`，安装父组件时一并注册。静态成员：`TimeRange.Picker`。",
+    "after": "安装 TimeRange 时会一并注册 TimeRangePicker，也可通过静态成员 `TimeRange.Picker` 使用。",
+    "english": "Installing TimeRange also registers TimeRangePicker, which is available through the static member `TimeRange.Picker`.",
+    "englishBefore": "> Source is merged into `time-range/`. Installing the parent also registers it. Static member: `TimeRange.Picker`."
+  },
+  {
+    "before": "与 Maple 使用相同场景、参数和交互顺序；示例源码仅替换组件前缀，主题与站点外壳各自保留。",
+    "after": "",
+    "english": "",
+    "englishBefore": "与 Maple 使用相同场景、参数和交互顺序；示例源码仅替换组件前缀，主题与站点外壳各自保留。"
+  },
+  {
+    "before": "两端各自保存完整源码，不引用公共核心，不共享组件实例或响应式状态；修改时同步维护两份实现。主体、Props、关键样式及配对测试纳入只读源码一致性检查，主题 token 和安装入口各自维护。",
+    "after": "",
+    "english": "",
+    "englishBefore": "Each platform maintains a complete local implementation. They do not import a common core or share component instances or reactive state. Changes must update both implementations. Component bodies, props, key styles and paired tests have read-only source consistency checks; theme tokens and installation entries remain local to each library."
+  },
+  {
+    "before": "Breadcrumb 与 BreadcrumbItem 在 Cedar / Maple 中独立复制维护，主体、Props、上下文、类型、关键样式及配对测试纳入 `design-ui/bin/copied-components-check.mjs`。图标、安装入口、菜单实现和主题 token 由各库本地提供。",
+    "after": "",
+    "english": "",
+    "englishBefore": "Breadcrumb and BreadcrumbItem are maintained as local copies in Cedar / Maple. Component bodies, props, context, types, key styles and paired tests are checked by `design-ui/bin/copied-components-check.mjs`. Each library supplies its own icons, installation entry, menu implementation and theme tokens."
+  },
+  {
+    "before": "21项受控范围专项通过；其余分层回归见证据。此审计不认证所有select／confirm／input命令、非快捷表头调用方或原生hover／OS，API／CSS Token／100ms默认值保持。证据：design-ui/audits/evidence/date-range-shortcut-preview-2026-10-16/results.json。",
+    "after": "",
+    "english": "",
+    "englishBefore": "21项受控范围专项通过；其余分层回归见证据。此审计不认证所有select／confirm／input命令、非快捷表头调用方或原生hover／OS，API／CSS Token／100ms默认值保持。证据：design-ui/audits/evidence/date-range-shortcut-preview-2026-10-16/results.json。"
+  },
+  {
+    "before": "Cedar 完成实现后独立复制到 Maple，替换命名空间与导入路径；两端不引用另一端的运行时代码。主体、几何测量、插槽、事件及样式规则一致。",
+    "after": "",
+    "english": "",
+    "englishBefore": "Cedar 完成实现后独立复制到 Maple，替换命名空间与导入路径；两端不引用另一端的运行时代码。主体、几何测量、插槽、事件及样式规则一致。"
+  },
+  {
+    "before": "两端 Link 主体、Props、主样式和测试采用独立同源复制；仅组件前缀、本地图标与主题 token 适配不同，不共享核心或实例。",
+    "after": "",
+    "english": "",
+    "englishBefore": "两端 Link 主体、Props、主样式和测试采用独立同源复制；仅组件前缀、本地图标与主题 token 适配不同，不共享核心或实例。"
+  },
+  {
+    "before": "所有库内演示、组件导出、全局类型和 resolver 均已迁移。样式改为 BEM `c-nav-menu__*` 与 `c-nav-menu--*`，旧选择器与未使用 token 不再保留。",
+    "after": "",
+    "english": "",
+    "englishBefore": "All library demos, exports, global types and resolver entries are migrated. Styles use BEM `c-nav-menu__*` / `c-nav-menu--*`; old selectors and unused tokens are removed."
+  },
+  {
+    "before": "Skeleton、SkeletonLine、SkeletonShape 均采用独立复制的源码；各库骨架主题和尺寸 token 独立维护。",
+    "after": "",
+    "english": "",
+    "englishBefore": "Skeleton, SkeletonLine and SkeletonShape use independently copied source. Each library maintains its skeleton theme and size tokens."
+  },
+  {
+    "before": "两端各自保存完整源码，不引用公共核心，不共享组件实例或响应式状态；修改时同步维护两份实现。主体、Props、子节点展开、主样式、尺寸 token 和配对测试纳入只读一致性检查。仅安装入口与命名空间各自适配。",
+    "after": "",
+    "english": "",
+    "englishBefore": "Each platform maintains complete local source without a common core or shared instances/reactive state. Update both implementations together. Read-only parity checks cover bodies, props, child flattening, main styles, size tokens and paired tests. Only installation entries/namespaces are adapted locally."
+  },
+  {
+    "before": "两端示例场景及交互逻辑保持一致，分别维护代码副本；仅组件前缀、包名和文档语言接入不同。",
+    "after": "",
+    "english": "",
+    "englishBefore": "两端示例场景及交互逻辑保持一致，分别维护代码副本；仅组件前缀、包名和文档语言接入不同。"
+  },
+  {
+    "before": "两端主体、Props、样式依赖入口及契约测试独立同源复制；Cedar 菜单定位由 Menu 适配，不共享实例或运行时。",
+    "after": "",
+    "english": "",
+    "englishBefore": "Both platforms independently copy bodies, props, style dependency entries and contract tests. Cedar adapts positioning through Menu without shared instances/runtime."
+  },
+  {
+    "before": "Steps 和 Step 的主体、Props、上下文协议与样式同源复制；注入 Symbol 分别定义在各库，不跨库共享。保留四种 type 和原有状态/事件契约。",
+    "after": "",
+    "english": "",
+    "englishBefore": "Steps/Step bodies, props, context protocol and styles are source copies. Injection Symbols are defined separately per library, not shared. The four types and existing status/event contracts remain."
+  },
+  {
+    "before": "真实IAB default/light完成两端延迟取消／KeepAlive测量四组，包含重新挂载正向计时对照，最终面板节点0。入口按钮原生点击但mouseenter由夹具脚本发出，不称原生hover、跨窗口视觉或OS验收。",
+    "after": "",
+    "english": "",
+    "englishBefore": "真实IAB default/light完成两端延迟取消／KeepAlive测量四组，包含重新挂载正向计时对照，最终面板节点0。入口按钮原生点击但mouseenter由夹具脚本发出，不称原生hover、跨窗口视觉或OS验收。"
+  },
+  {
+    "before": "与 Cedar 使用相同场景、参数和交互顺序；示例源码仅替换组件前缀，主题与站点外壳各自保留。",
+    "after": "",
+    "english": "",
+    "englishBefore": "与 Cedar 使用相同场景、参数和交互顺序；示例源码仅替换组件前缀，主题与站点外壳各自保留。"
+  },
+  {
+    "before": "消费者11＋私有任务4＋既有9共24测试通过，真实IAB四组4/4（替换、两帧状态、卸载、KeepAlive），节点0、无warn/error。范围仅default/light父文档，入口原生点击而内部命令／scroll事件由夹具脚本发出；原生手势、其他主题／窗口及OS仍独立待验。下文共享工具结果为历史工具证据，不替代本批消费者回归。",
+    "after": "",
+    "english": "",
+    "englishBefore": "消费者11＋私有任务4＋既有9共24测试通过，真实IAB四组4/4（替换、两帧状态、卸载、KeepAlive），节点0、无warn/error。范围仅default/light父文档，入口原生点击而内部命令／scroll事件由夹具脚本发出；原生手势、其他主题／窗口及OS仍独立待验。下文共享工具结果为历史工具证据，不替代本批消费者回归。"
+  },
+  {
+    "before": "Cedar 与 Maple 独立维护相同指令主体、动画及键盘生命周期，只调整本地依赖、命名空间与 Token 默认值。复制门禁同时编译两端实际样式入口并检查声明和消费，不将样式 import 误判为运行时逻辑差异。",
+    "after": "",
+    "english": "",
+    "englishBefore": "Cedar/Maple independently maintain matching directive bodies, animation and keyboard lifecycles, adapting local dependencies, namespaces and token defaults only. Copy checks compile both actual style entries and check declarations/consumers without mistaking style imports for runtime differences."
+  },
+  {
+    "before": "两端主体、Props、样式依赖入口和契约测试为独立同源副本；底层 Menu 保留平台适配，不共享实例。",
+    "after": "",
+    "english": "",
+    "englishBefore": "Both platforms keep independent copies of bodies, props, style dependencies and contract tests. Menu retains local platform adaptation; instances are not shared."
+  },
+  {
+    "before": "Card 主体颜色按 system 语义分层：普通背景、filled 背景和描边分别使用 `surface-default`、`surface-muted`、`border-default`；标题、正文、辅助文字分别使用 `content-primary`、`content-tertiary`、`content-secondary`。展开后的悬浮按钮容器位于卡片表面，使用 `content-primary`；深色关闭按钮上的文字与图标使用 `content-on-dark`。关闭按钮背景 `#212121` 是 Card 专属值，并非全局主操作色。旧变量名的迁移关系见 Design Token 规范。",
+    "after": "普通背景、filled 背景和描边分别使用 `surface-default`、`surface-muted`、`border-default`；标题、正文和辅助文字分别使用 `content-primary`、`content-tertiary`、`content-secondary`。展开后的悬浮按钮使用 `content-primary`，深色关闭按钮上的文字和图标使用 `content-on-dark`。",
+    "english": "Regular/filled backgrounds and borders use `surface-default`, `surface-muted` and `border-default`. Titles, body and secondary text use `content-primary`, `content-tertiary` and `content-secondary`. Expanded floating buttons use `content-primary`; text and icons on dark close buttons use `content-on-dark`.",
+    "englishBefore": "Card colors follow system semantics: regular/filled backgrounds and borders use `surface-default`, `surface-muted` and `border-default`. Titles, body text and secondary text use `content-primary`, `content-tertiary` and `content-secondary`. Expanded floating-button containers sit on the card surface and use `content-primary`; text/icons on dark close buttons use `content-on-dark`. The `#212121` close-button background is Card-specific, not the global primary-action color. See the Design Token specification for old variable mappings."
+  },
+  {
+    "before": "示例同时显示2.5项，可用鼠标拖拽并切换“接受切换”和“循环”。Current为父级已接受的从 1 开始的页序号，Proposal记录切换请求，Changes统计change事件；受控拒绝时仍可能发出提案及change，不等于模型已更新。接受后可正反拖动，首项向前循环到末项；关闭循环后末端继续拖动不越界、不重复通知。此处是鼠标组合示例，不代表真机触屏或所有居中/自动宽度组合均已验收。",
+    "after": "示例同时显示 2.5 项，可拖拽并切换“接受切换”和“循环”。Current 显示父级接受的页序号（从 1 开始），Proposal 记录切换请求，Changes 统计 change 通知。拒绝更新时，收到请求或 change 不表示模型已更新；接受后可正反拖动，关闭循环后不会越过首尾边界。",
+    "english": "The demo shows 2.5 items and lets you drag or toggle acceptance and looping. Current is the parent-accepted page index starting at 1, Proposal records requests, and Changes counts change notifications. When updates are rejected, a request or change does not mean the model changed. Accepted updates allow dragging in either direction; disabling looping prevents crossing the ends.",
+    "englishBefore": "示例同时显示2.5项，可用鼠标拖拽并切换“接受切换”和“循环”。Current为父级已接受的从 1 开始的页序号，Proposal记录切换请求，Changes统计change事件；受控拒绝时仍可能发出提案及change，不等于模型已更新。接受后可正反拖动，首项向前循环到末项；关闭循环后末端继续拖动不越界、不重复通知。此处是鼠标组合示例，不代表真机触屏或所有居中/自动宽度组合均已验收。"
+  },
+  {
+    "before": "居中自动宽度示例包含140/220/180/260px四个独立项目，间隔12px。鼠标拖拽逐项切换，首尾均可循环；Current显示已接受的从 1 开始的模型，Changes记录change事件次数。当前项宽度不同仍保持居中。本示例不代表真机触屏、手势中尺寸变化或动态增删项目已全部验收。",
+    "after": "示例中的项目宽度不同。拖动时当前项保持居中，首尾可以循环切换；Current 显示已接受的页序号（从 1 开始），Changes 显示 change 通知次数。",
+    "english": "Items have different widths. Dragging keeps the current item centered and can loop across either end. Current shows the accepted page index starting at 1; Changes counts change notifications.",
+    "englishBefore": "居中自动宽度示例包含140/220/180/260px四个独立项目，间隔12px。鼠标拖拽逐项切换，首尾均可循环；Current显示已接受的从 1 开始的模型，Changes记录change事件次数。当前项宽度不同仍保持居中。本示例不代表真机触屏、手势中尺寸变化或动态增删项目已全部验收。"
+  },
+  {
+    "before": "内置 fade／四方向 slide 在 prefers-reduced-motion: reduce 下关闭过渡与起始位移，组件样式自身生效，不依赖全局动效兜底。默认时长不变；业务自定义动画另行适配。已有编译 CSS 检查不等于真实 OS 动态切换验收。",
+    "after": "内置淡入和四方向滑动在 `prefers-reduced-motion: reduce` 下关闭过渡及起始位移。自定义动画需由业务适配减少动态效果的偏好。",
+    "english": "Built-in fade and four-direction slide disable transitions and initial displacement under `prefers-reduced-motion: reduce`. Adapt custom animations to the reduced-motion preference in your application.",
+    "englishBefore": "Built-in fade and four-direction slide disable transitions and initial displacement under prefers-reduced-motion: reduce. Component styles handle this without global fallbacks. Default durations remain unchanged; business-defined animations require separate handling. Compiled-CSS checks do not substitute for testing live OS preference changes."
+  },
+  {
+    "before": "减少动效偏好下，独立样式取消根/进出过渡及装饰图标淡入，保留静态定位、颜色和业务展示期限；子图标自身动效仍由Icon规范负责。隔离Less检查不是实际OS验收。",
+    "after": "启用减少动态效果时，关闭内置进出场过渡和装饰图标淡入，保留静态位置、颜色和展示时长；自定义图标动效由调用方适配。",
+    "english": "Reduced motion disables built-in enter/leave transitions and decorative icon fading, while retaining static positioning, colors and display duration. Adapt custom icon motion in your application.",
+    "englishBefore": "减少动效偏好下，独立样式取消根/进出过渡及装饰图标淡入，保留静态定位、颜色和业务展示期限；子图标自身动效仍由Icon规范负责。隔离Less检查不是实际OS验收。"
+  },
+  {
+    "before": "支持触摸、鼠标主键和宿主 Enter/Space；鼠标从实际按下位置扩散，在所属 document 松开或窗口失焦时释放。忽略非主键与触摸产生的兼容鼠标事件；缺少 sourceCapabilities 时采用触摸后 800ms 去重窗口。键盘从中心扩散，请使用原生按钮。移动模拟站的点击不等同真实触屏验收。",
+    "after": "支持触摸、鼠标主键和宿主 Enter / Space。鼠标水波从按下位置扩散，松开或窗口失焦时结束；忽略非主键及触摸产生的兼容鼠标事件。键盘水波从中心扩散，建议使用原生按钮承载交互。",
+    "english": "Supports touch, primary mouse clicks and host Enter / Space. Mouse ripples expand from the press location and end on release or window blur. Nonprimary buttons and compatibility mouse events after touch are ignored. Keyboard ripples expand from the center; use native buttons for interactive hosts.",
+    "englishBefore": "支持触摸、鼠标主键和宿主 Enter/Space；鼠标从实际按下位置扩散，在所属 document 松开或窗口失焦时释放。忽略非主键与触摸产生的兼容鼠标事件；缺少 sourceCapabilities 时采用触摸后 800ms 去重窗口。键盘从中心扩散，请使用原生按钮。移动模拟站的点击不等同真实触屏验收。"
+  },
+  {
+    "before": "可选中标签可用 Space / Enter 切换，checked 受控时仍由父级决定是否接受；未传 checked 的此示例由组件自持状态。loading 阻止选中动作，但不是 disabled API。关闭按钮也支持 Space / Enter，关闭不应冒泡为选中。动态示例点击 Add Tag 后聚焦输入，Enter 新增一项；固定首项不提供关闭按钮。这里只说明已展示的操作，不代表长按/异步与触屏组合已全部验收。",
+    "after": "可选中标签支持 Space / Enter；受控 checked 由父级决定是否接受，未传时由组件保存状态。loading 阻止选中动作。关闭按钮也支持 Space / Enter，关闭不会同时触发选中。动态示例通过 Add Tag 聚焦输入，按 Enter 新增；固定首项不提供关闭按钮。",
+    "english": "Selectable tags support Space / Enter. Controlled checked is accepted by the parent; otherwise the component stores its state. Loading blocks selection. The close button also supports Space / Enter without selecting the tag. In the dynamic demo, Add Tag focuses the input and Enter adds a tag; the fixed first item is not closable.",
+    "englishBefore": "可选中标签可用 Space / Enter 切换，checked 受控时仍由父级决定是否接受；未传 checked 的此示例由组件自持状态。loading 阻止选中动作，但不是 disabled API。关闭按钮也支持 Space / Enter，关闭不应冒泡为选中。动态示例点击 Add Tag 后聚焦输入，Enter 新增一项；固定首项不提供关闭按钮。这里只说明已展示的操作，不代表长按/异步与触屏组合已全部验收。"
+  },
+  {
+    "before": "十二小时显示与5小时步长组合：步长仍以24小时的0点为起点，合法小时为0/5/10/15/20，而不是在中午重新起算。AM候选12/05/10，PM候选03/08；显示为03 PM时提交模型仍为15:30:00（示例format保持HH:mm:ss）。切换规则不改旧09:30:00，取消也不提交候选对齐值；确认合法候选后才写回。可再开启“禁用15点”叠加disabled-hours回调，此时03 PM不可选而08 PM仍对应20点。“父级接受更新”关闭时只记录提议，不改业务值；重新接受后确认才回写。提议次数不是模型接受次数。其他非整除步长和物理触屏仍需单独验收。",
+    "after": "十二小时显示与 5 小时步长组合时，步长从 24 小时制的零点计算，合法小时为 0 / 5 / 10 / 15 / 20，不在中午重新起算。AM 显示 12 / 05 / 10，PM 显示 03 / 08；03 PM 对应模型 15:30:00。切换规则不修改已有值，确认合法候选后才提交，取消保留原值；禁用 15 点后，03 PM 不可选，08 PM 仍对应 20 点。",
+    "english": "With twelve-hour display and a five-hour step, sampling starts at midnight in the 24-hour clock: 0 / 5 / 10 / 15 / 20. It does not restart at noon. AM shows 12 / 05 / 10 and PM shows 03 / 08; 03 PM corresponds to model 15:30:00. Rule changes do not change existing values. Confirm a valid option to commit, or cancel to retain the original value. Disabling hour 15 blocks 03 PM; 08 PM still corresponds to hour 20.",
+    "englishBefore": "十二小时显示与5小时步长组合：步长仍以24小时的0点为起点，合法小时为0/5/10/15/20，而不是在中午重新起算。AM候选12/05/10，PM候选03/08；显示为03 PM时提交模型仍为15:30:00（示例format保持HH:mm:ss）。切换规则不改旧09:30:00，取消也不提交候选对齐值；确认合法候选后才写回。可再开启“禁用15点”叠加disabled-hours回调，此时03 PM不可选而08 PM仍对应20点。“父级接受更新”关闭时只记录提议，不改业务值；重新接受后确认才回写。提议次数不是模型接受次数。其他非整除步长和物理触屏仍需单独验收。"
+  },
+  {
+    "before": "单值面板未确认草稿中打开只读、隐藏禁用小时或切立即提交，不会隐式提交旧草稿；解除只读也不提交，下一次有效选择才提交一次。Maple滚轮/时钟展示切换保留同一草稿，不回写父模型；鼠标/键盘验收不等于物理触屏惯性行为通过。",
+    "after": "在未确认的草稿中启用只读、隐藏禁用小时或切换立即提交，不会提交旧草稿；解除只读也不提交，下一次有效选择才提交。切换移动端滚轮或时钟展示会保留草稿，不改变父级模型。",
+    "english": "Enabling readonly, hiding disabled hours or switching to immediate commit does not submit an existing unconfirmed draft. Leaving readonly does not submit either; the next valid selection commits. Switching mobile wheel or clock presentation retains the draft without changing the parent model.",
+    "englishBefore": "单值面板未确认草稿中打开只读、隐藏禁用小时或切立即提交，不会隐式提交旧草稿；解除只读也不提交，下一次有效选择才提交一次。Maple滚轮/时钟展示切换保留同一草稿，不回写父模型；鼠标/键盘验收不等于物理触屏惯性行为通过。"
+  },
+  {
+    "before": "加入小图片前开启 FileReader/data-url 开关，接受的替换 File 会经过浏览器原生 FileReader。16px图片用于核对解码；Data URLs 是当前data-url项目数，Decoded images 是自上次重置以来累计load事件数。删除移除对应图片但不递减累计计数，重置清零两者；类型拒绝发生在读取前。使用本地生成File，不代表原生文件选择器或网络上传已验收。",
+    "after": "开启 FileReader / data-url 后，接受的 File 会读取为 data URL。Data URLs 显示当前 data-url 项目数，Decoded images 显示重置以来累计的 load 次数。删除项目不会减少累计次数；重置清零两者，类型拒绝发生在读取之前。",
+    "english": "With FileReader / data-url enabled, accepted File objects are read as data URLs. Data URLs shows the current data-url item count; Decoded images counts load events since reset. Removing items does not reduce the cumulative count. Reset clears both counts, and type rejection happens before reading.",
+    "englishBefore": "加入小图片前开启 FileReader/data-url 开关，接受的替换 File 会经过浏览器原生 FileReader。16px图片用于核对解码；Data URLs 是当前data-url项目数，Decoded images 是自上次重置以来累计load事件数。删除移除对应图片但不递减累计计数，重置清零两者；类型拒绝发生在读取前。使用本地生成File，不代表原生文件选择器或网络上传已验收。"
+  },
+  {
+    "before": "局部示例提供深色底、显示开关及合成文字输入；显式font.color在深色底用白色0.4透明度、浅色底用黑色0.25透明度。改变文字/颜色会重新生成PNG；水印层pointer-events:none，内容按钮支持点击和Enter。隐藏卸载该实例，恢复后只保留一层并保留示例计数。这是局部显式配色与清理验收，不代表默认主题Token、全站暗色或防篡改已验收，不提供正文文字对比度合规保证。",
+    "after": "示例支持切换深浅背景、显示状态和水印文字；font.color 在深色底使用半透明白色，在浅色底使用半透明黑色。修改文字或颜色会重新生成水印。水印不拦截指针操作，内容按钮支持点击和 Enter；隐藏后重新显示只保留一层水印。",
+    "english": "The demo toggles light/dark backgrounds, visibility and watermark text. font.color uses translucent white on dark surfaces and translucent black on light surfaces. Changing text or color regenerates the watermark. The watermark does not intercept pointer input; content buttons support click and Enter. Hiding and showing leaves one watermark layer.",
+    "englishBefore": "局部示例提供深色底、显示开关及合成文字输入；显式font.color在深色底用白色0.4透明度、浅色底用黑色0.25透明度。改变文字/颜色会重新生成PNG；水印层pointer-events:none，内容按钮支持点击和Enter。隐藏卸载该实例，恢复后只保留一层并保留示例计数。这是局部显式配色与清理验收，不代表默认主题Token、全站暗色或防篡改已验收，不提供正文文字对比度合规保证。"
+  },
+  {
+    "before": "图片示例只使用合成SVG data URL。“本地图片失败”切换为故意无效的data URL，原生Image错误通知source=image，并回退红色FALLBACK 201文字。聚焦“恢复图片”按Enter后恢复原图，错误历史保留但不追加、覆盖层仍一层；恢复按钮再次禁用。这不是外部网络、CORS、Canvas故障或图片加载竞争验收。",
+    "after": "“本地图片失败”使用无效的 data URL，触发 source=image 错误通知并回退为 FALLBACK 201 文字。按 Enter 激活“恢复图片”后恢复原图，错误记录保留，水印层仍只有一层。",
+    "english": "Local image failure uses an invalid data URL, emits a source=image error and falls back to FALLBACK 201 text. Activate Restore image with Enter to restore the image. Error history remains, with one watermark layer.",
+    "englishBefore": "图片示例只使用合成SVG data URL。“本地图片失败”切换为故意无效的data URL，原生Image错误通知source=image，并回退红色FALLBACK 201文字。聚焦“恢复图片”按Enter后恢复原图，错误历史保留但不追加、覆盖层仍一层；恢复按钮再次禁用。这不是外部网络、CORS、Canvas故障或图片加载竞争验收。"
+  },
+  {
+    "before": "示例按钮可点击、Space 或 Enter 切换。全屏层固定覆盖视口且不拦截指针操作；退出后回到原局部容器，默认插槽内容不搬走。反复开启/退出不应累积全屏层，卸载会移除该实例的层。这里使用本地文字生成PNG，不代表图片加载失败、动态主题或防篡改组合均已浏览器验收。",
+    "after": "通过点击、Space 或 Enter 切换全屏水印。全屏层固定覆盖视口，不拦截指针操作；退出后回到原局部容器，默认插槽内容保持原位。重复切换不会累积水印层，卸载会移除该实例的水印。",
+    "english": "Toggle the full-screen watermark with click, Space or Enter. The fixed layer covers the viewport without intercepting pointer input. Exiting returns it to the original container without moving default-slot content. Repeated toggling does not accumulate layers; unmounting removes that instance.",
+    "englishBefore": "示例按钮可点击、Space 或 Enter 切换。全屏层固定覆盖视口且不拦截指针操作；退出后回到原局部容器，默认插槽内容不搬走。反复开启/退出不应累积全屏层，卸载会移除该实例的层。这里使用本地文字生成PNG，不代表图片加载失败、动态主题或防篡改组合均已浏览器验收。"
+  },
+  {
+    "before": "当前 FieldDecorator 不额外绘制外圈 outline；outline 通过 border-state 边框、filled 通过背景、standard 通过底线响应 `--focus` 或 `:focus-within`。内部清除、密码切换和数字步进按钮保留自身键盘焦点指示。只读保留聚焦，禁用和错误的颜色优先级不变；不据此宣称错误态焦点可辨识性或原生可访问性已验收。",
+    "after": "outline 变体通过边框、filled 通过背景、standard 通过底线反馈焦点。清除、密码切换和数字步进按钮保留各自的键盘焦点指示。只读状态仍可聚焦，禁用和错误颜色具有更高优先级。",
+    "english": "The outline variant indicates focus through its border, filled through its background, and standard through its underline. Clear, password-toggle and stepper buttons retain keyboard focus indicators. Readonly remains focusable; disabled and error colors have higher priority.",
+    "englishBefore": "FieldDecorator adds no outer outline: outline variants use border-state, filled uses backgrounds and standard uses underlines for `--focus`/`:focus-within`. Clear/password/stepper buttons retain their own keyboard focus indicators. Readonly retains focus; disabled/error color precedence stays unchanged. This is not a claim that error-focus distinguishability/native accessibility has been validated."
+  },
+  {
+    "before": "此前工具各端10项和真实IAB8组为独立工具证据。IndexBar当前由私有可取消任务管理零／非正／非有限时长、owner偏好及稳定帧；通用工具不新增取消参数，Form不受本批影响。零时长仍有入口／两帧等待，CSS动效Token不替代duration。",
+    "after": "滚动时长由 `duration` 控制，CSS 动效变量不改变滚动时长。`duration` 为零时，定位仍等待渲染和布局就绪。",
+    "english": "`duration` controls scroll timing independently of CSS motion variables. When `duration` is zero, positioning still waits for rendering and layout to be ready.",
+    "englishBefore": "此前工具各端10项和真实IAB8组为独立工具证据。IndexBar当前由私有可取消任务管理零／非正／非有限时长、owner偏好及稳定帧；通用工具不新增取消参数，Form不受本批影响。零时长仍有入口／两帧等待，CSS动效Token不替代duration。"
+  },
+  {
+    "before": "关闭按钮支持 Space / Enter，关闭不应冒泡为选中。可选中标签支持 Space / Enter；受控 checked 仍由父级决定是否接受，未传时由组件自持状态。loading 阻止选中动作，不是 disabled API。两端各自维护状态，不共享实例；这些基本操作不等于长按/异步或触屏组合均已验收。",
+    "after": "关闭按钮支持 Space / Enter，关闭不会同时触发选中。可选中标签支持 Space / Enter；受控 checked 由父级决定是否接受，未传时由组件保存状态。loading 阻止选中动作。",
+    "english": "Close buttons support Space / Enter without selecting the tag. Selectable tags also support Space / Enter. Controlled checked is accepted by the parent; otherwise the component stores its state. Loading blocks selection.",
+    "englishBefore": "关闭按钮支持 Space / Enter，关闭不应冒泡为选中。可选中标签支持 Space / Enter；受控 checked 仍由父级决定是否接受，未传时由组件自持状态。loading 阻止选中动作，不是 disabled API。两端各自维护状态，不共享实例；这些基本操作不等于长按/异步或触屏组合均已验收。"
+  },
+  {
+    "before": "单值示例收紧下限至10:30:40后，字段仍反显10:30:38、纯面板禁止确认。滚轮跨到31分钟会将秒草稿对齐合法候选，显式选择02并确认后才回写包含上界10:31:02。再打开字段把秒草稿改00并取消，模型仍02；滚轮候选对齐不等于外部模型已提交。此处鼠标/键盘证据不代表物理触屏惯性。",
+    "after": "收紧下限至 10:30:40 时，字段仍显示原值 10:30:38，但面板不能确认该值。选择上界 10:31:02 并确认后才更新模型；再次编辑为秒数 00 后取消，模型仍保留秒数 02。",
+    "english": "After tightening the minimum to 10:30:40, the field retains 10:30:38 but the panel cannot confirm it. Selecting and confirming the inclusive maximum 10:31:02 updates the model. Editing seconds to 00 and canceling keeps seconds 02.",
+    "englishBefore": "单值示例收紧下限至10:30:40后，字段仍反显10:30:38、纯面板禁止确认。滚轮跨到31分钟会将秒草稿对齐合法候选，显式选择02并确认后才回写包含上界10:31:02。再打开字段把秒草稿改00并取消，模型仍02；滚轮候选对齐不等于外部模型已提交。此处鼠标/键盘证据不代表物理触屏惯性。"
+  },
+  {
+    "before": "单值面板未确认草稿中打开只读、隐藏禁用小时或切立即提交，不会隐式提交旧草稿；解除只读也不提交，下一次有效选择才提交一次。Maple滚轮展示切换保留同一草稿，不回写父模型；鼠标/键盘验收不等于物理触屏惯性行为通过。",
+    "after": "在未确认的草稿中启用只读、隐藏禁用小时或切换立即提交，不会提交旧草稿；解除只读也不提交，下一次有效选择才提交。切换移动端滚轮展示会保留草稿，不改变父级模型。",
+    "english": "Enabling readonly, hiding disabled hours or switching to immediate commit does not submit an existing unconfirmed draft. Leaving readonly does not submit either; the next valid selection commits. Switching mobile wheel presentation retains the draft without changing the parent model.",
+    "englishBefore": "单值面板未确认草稿中打开只读、隐藏禁用小时或切立即提交，不会隐式提交旧草稿；解除只读也不提交，下一次有效选择才提交一次。Maple滚轮展示切换保留同一草稿，不回写父模型；鼠标/键盘验收不等于物理触屏惯性行为通过。"
+  },
+  {
+    "before": "全屏水印层固定覆盖视口且不拦截指针操作；退出后回到原局部容器，默认插槽内容不搬走。反复开启/退出不应累积全屏层，卸载移除该实例的层。两端各自维护实例；基本开关记录不等于图片失败、主题与防篡改组合均已浏览器验收。",
+    "after": "全屏水印固定覆盖视口，不拦截指针操作；退出后回到局部容器，默认插槽内容保持原位。重复切换不会累积水印层，卸载会移除该实例的水印。",
+    "english": "The full-screen watermark covers the viewport without intercepting pointer input. Exiting returns it to the local container without moving default-slot content. Repeated toggling does not accumulate layers; unmounting removes that instance.",
+    "englishBefore": "全屏水印层固定覆盖视口且不拦截指针操作；退出后回到原局部容器，默认插槽内容不搬走。反复开启/退出不应累积全屏层，卸载移除该实例的层。两端各自维护实例；基本开关记录不等于图片失败、主题与防篡改组合均已浏览器验收。"
+  },
+  {
+    "before": "Card 主体颜色与 Cedar 共用 system 语义：普通背景、filled 背景和描边分别使用 `surface-default`、`surface-muted`、`border-default`；标题、正文、辅助文字分别使用 `content-primary`、`content-tertiary`、`content-secondary`。暗色主题沿用相同角色。展开后的悬浮按钮容器位于卡片表面，使用 `content-primary`；深色关闭按钮上的文字与图标使用 `content-on-dark`。关闭按钮背景 `#212121` 是 Card 专属值，并非全局主操作色。旧变量名的迁移关系见 Design Token 规范。",
+    "after": "普通背景、filled 背景和描边分别使用 `surface-default`、`surface-muted`、`border-default`；标题、正文和辅助文字分别使用 `content-primary`、`content-tertiary`、`content-secondary`。展开后的悬浮按钮使用 `content-primary`，深色关闭按钮上的文字和图标使用 `content-on-dark`。",
+    "english": "Regular/filled backgrounds and borders use `surface-default`, `surface-muted` and `border-default`. Titles, body and secondary text use `content-primary`, `content-tertiary` and `content-secondary`. Expanded floating buttons use `content-primary`; text and icons on dark close buttons use `content-on-dark`.",
+    "englishBefore": "Card colors share Cedar's system semantics: regular/filled backgrounds and borders use `surface-default`/`surface-muted`/`border-default`; titles/body/secondary text use `content-primary`/`content-tertiary`/`content-secondary`, including dark themes. Expanded floating-button containers use `content-primary` on the card surface; dark close-button text/icons use `content-on-dark`. `#212121` close-button backgrounds are Card-specific, not global primary-action colors. See Design Token migration mappings."
+  },
+  {
+    "before": "duration（默认 3000ms，0 持续显示）是业务展示计时，不是 CSS 动效时长。close 每个挂载实例只通知一次，立即取消计时器；离场期间的更新／重复关闭不再安排自动关闭。reset-on-update 只重启活动且未关闭实例的计时。KeepAlive 停用取消计时，重新激活从完整配置时长计时；卸载和已失效回调不会补发 close。列表仍通过实际 TransitionGroup 的离场完成卸载，不按 duration 等待 CSS 动画。现有六项 transition-* Token 控制 opacity／左右进入／离开效果，不改变自动关闭期限；正常消费者覆写检查不等于真实 OS 减少动效验收。",
+    "after": "duration（默认 3000ms，0 持续显示）是业务展示计时，不是 CSS 动效时长。close 每个挂载实例只通知一次，立即取消计时器；离场期间的更新／重复关闭不再安排自动关闭。reset-on-update 只重启活动且未关闭实例的计时。KeepAlive 停用取消计时，重新激活从完整配置时长计时；卸载和已失效回调不会补发 close。列表仍通过实际 TransitionGroup 的离场完成卸载，不按 duration 等待 CSS 动画。现有六项 transition-* Token 控制 opacity／左右进入／离开效果，不改变自动关闭期限。",
+    "english": "duration (default 3000ms; 0 stays open) is a business display timer, not CSS animation duration. close notifies once per mounted instance and immediately cancels timers. Updates/repeated closing during leave do not reschedule auto-close. reset-on-update restarts only active, unclosed instances. KeepAlive deactivation cancels timing; reactivation restarts the full configured duration. Unmounting/stale callbacks emit no delayed close. TransitionGroup unmounts after actual leave completion, independently of duration. Six transition-* tokens control opacity/left/right enter/leave without changing auto-close deadlines.",
+    "englishBefore": "duration (default 3000ms; 0 stays open) is a business display timer, not CSS animation duration. close notifies once per mounted instance and immediately cancels timers. Updates/repeated closing during leave do not reschedule auto-close. reset-on-update restarts only active, unclosed instances. KeepAlive deactivation cancels timing; reactivation restarts the full configured duration. Unmounting/stale callbacks emit no delayed close. TransitionGroup unmounts after actual leave completion, independently of duration. Six transition-* tokens control opacity/left/right enter/leave without changing auto-close deadlines. Normal override checks are not real OS reduced-motion validation."
+  },
+  {
+    "before": "重复释放只排队一次；禁用／卸载清理所属定时器与直接子波纹，不误删嵌套实例。文档事件绑定／移除使用挂载时 ownerDocument，不承诺跨文档搬迁自动重绑。仅本宿主 Enter／Space 与对应 keyup 或 blur 参与；指令不为普通 div 提供按钮语义、可访问名称或点击业务能力。真实触摸设备／OS 偏好另行验收。",
+    "after": "重复释放只排队一次；禁用／卸载清理所属定时器与直接子波纹，不误删嵌套实例。文档事件绑定／移除使用挂载时 ownerDocument，不承诺跨文档搬迁自动重绑。仅本宿主 Enter／Space 与对应 keyup 或 blur 参与；指令不为普通 div 提供按钮语义、可访问名称或点击业务能力。",
+    "english": "Repeated release queues once. Disabling/unmounting cleans owned timers/direct ripples without deleting nested instances. Document listeners bind/remove against mount-time ownerDocument, without automatic cross-document rebinding. Only host Enter/Space and matching keyup/blur participate. The directive does not supply button semantics, accessible names or business clicking to plain divs.",
+    "englishBefore": "Repeated release queues once. Disabling/unmounting cleans owned timers/direct ripples without deleting nested instances. Document listeners bind/remove against mount-time ownerDocument, without automatic cross-document rebinding. Only host Enter/Space and matching keyup/blur participate. The directive does not supply button semantics, accessible names or business clicking to plain divs. Real touch/OS preferences need separate validation."
+  },
+  {
+    "before": "内置 fade、center 缩放与四方向 pop 和内容／遮罩基础过渡消费 duration／timing-function 两项 Token，默认仍为 250ms／ease。要整层统一覆写，设置在 Teleport 后实际共同祖先或 popup-container 宿主；style 仅覆盖内容，overlay-style 仅覆盖遮罩。使用有效、非负 CSS 时间。prefers-reduced-motion: reduce 优先关闭内置过渡及起始位移／缩放；自定义动画由业务适配，编译检查及显式 0ms 都不代表真实 OS 偏好验收。",
+    "after": "内置 fade、center 缩放与四方向 pop 和内容／遮罩基础过渡消费 duration／timing-function 两项 Token，默认仍为 250ms／ease。要整层统一覆写，设置在 Teleport 后实际共同祖先或 popup-container 宿主；style 仅覆盖内容，overlay-style 仅覆盖遮罩。使用有效、非负 CSS 时间。prefers-reduced-motion: reduce 优先关闭内置过渡及起始位移／缩放；自定义动画由业务适配。",
+    "english": "Built-in fade, center scaling, four-direction pop and base content/scrim transitions consume duration/timing-function tokens, retaining 250ms/ease defaults. Whole-layer overrides belong on the actual post-Teleport common ancestor or popup-container host. style affects content only; overlay-style affects scrim only. Use valid nonnegative CSS times. prefers-reduced-motion: reduce overrides built-in transitions/initial displacement/scaling. Business code adapts custom animations.",
+    "englishBefore": "Built-in fade, center scaling, four-direction pop and base content/scrim transitions consume duration/timing-function tokens, retaining 250ms/ease defaults. Whole-layer overrides belong on the actual post-Teleport common ancestor or popup-container host. style affects content only; overlay-style affects scrim only. Use valid nonnegative CSS times. prefers-reduced-motion: reduce overrides built-in transitions/initial displacement/scaling. Business code adapts custom animations. Compilation checks or explicit 0ms are not real OS-preference validation."
+  },
+  {
+    "before": "重复释放不重复排队；禁用／卸载清理所属定时器与直接子波纹，不误删嵌套实例。文档监听绑定挂载时 ownerDocument，跨文档搬迁后重绑不在范围内。Enter／Space 在本宿主触发，仅对应 keyup 或 blur 结束；普通 div 必须自行提供交互语义、键盘能力和可访问名称，v-ripple 本身不提供这些。真实触摸设备、OS 偏好切换仍未验收。",
+    "after": "重复释放不重复排队；禁用／卸载清理所属定时器与直接子波纹，不误删嵌套实例。文档监听绑定挂载时 ownerDocument，跨文档搬迁后重绑不在范围内。Enter／Space 在本宿主触发，仅对应 keyup 或 blur 结束；普通 div 必须自行提供交互语义、键盘能力和可访问名称，v-ripple 本身不提供这些。",
+    "english": "Repeated release does not duplicate work. Disabling/unmounting cleans owned timers/direct child ripples without removing nested instances. Document listeners bind to the mount-time ownerDocument; rebinding after cross-document movement is out of scope. Enter/Space activate on this host and end only on matching keyup/blur. Plain divs must provide their own interactive semantics, keyboard behavior and accessible names; v-ripple supplies none.",
+    "englishBefore": "Repeated release does not duplicate work. Disabling/unmounting cleans owned timers/direct child ripples without removing nested instances. Document listeners bind to the mount-time ownerDocument; rebinding after cross-document movement is out of scope. Enter/Space activate on this host and end only on matching keyup/blur. Plain divs must provide their own interactive semantics, keyboard behavior and accessible names; v-ripple supplies none. Real touch devices and live OS-preference switching remain unvalidated."
+  },
+  {
+    "before": "- `duration` 单位为毫秒，`0` 表示常驻；`Message.loading(...)` 默认常驻。\n- 同一挂载容器和位置内，相同 `id` 更新原实例，不创建重复 DOM。\n- 仅当 `resetOnUpdate` 为 `true` 时，相同 id 更新会重新计算完整显示时长。\n- `pauseOnHover` 保存剩余时间，鼠标离开后从剩余时间继续。\n- 展示期限独立于 CSS 动效；重启、hover 暂停、清理或卸载使旧计时回调失效，执行时再次检查 open。\n- KeepAlive 停用取消计时，激活从当前配置完整 duration 重启；停用更新和卸载后保留的 restart 不调度。\n- hover 正时长已耗尽时恢复会请求关闭；显式重置为0仍常驻。仅有限正 duration 自动关闭，负数和非有限值不调度。\n- 服务等待真实离场完成，不再强制150ms或200ms退出。未挂载就 close/clear 直接清理并报告服务 onClosed，不伪造组件 open/opened/close 动画事件；业务 duration 独立于 CSS 过渡。\n- 真实IAB default/light/top服务默认、600ms、零和离场重开四组已通过；重开可替换根DOM，其他主题／位置、hover、KeepAlive及真实OS仍需独立验收。\n- 局部减少动效取消进出过渡和动画位移，保留独立提示的水平/居中静态定位、颜色及业务展示期限；不依赖全局极短时长，隔离Less检查不是实际OS验收。\n- 队列按 `popupContainer + position` 隔离；`Message.clear(position?)` 可按位置清理。",
+    "after": "- `duration` 单位为毫秒，`0` 表示常驻；`Message.loading(...)` 默认常驻。\n- 同一挂载容器和位置内，相同 `id` 更新原实例，不创建重复 DOM。\n- 仅当 `resetOnUpdate` 为 `true` 时，相同 id 更新会重新计算完整显示时长。\n- `pauseOnHover` 保存剩余时间，鼠标离开后从剩余时间继续。\n- 展示期限独立于 CSS 动效；重启、hover 暂停、清理或卸载使旧计时回调失效，执行时再次检查 open。\n- KeepAlive 停用取消计时，激活从当前配置完整 duration 重启；停用更新和卸载后保留的 restart 不调度。\n- hover 正时长已耗尽时恢复会请求关闭；显式重置为0仍常驻。仅有限正 duration 自动关闭，负数和非有限值不调度。\n- 服务等待真实离场完成，不再强制150ms或200ms退出。未挂载就 close/clear 直接清理并报告服务 onClosed，不伪造组件 open/opened/close 动画事件；业务 duration 独立于 CSS 过渡。\n- 局部减少动效取消进出过渡和动画位移，保留独立提示的水平/居中静态定位、颜色及业务展示期限；不依赖全局极短时长。\n- 队列按 `popupContainer + position` 隔离；`Message.clear(position?)` 可按位置清理。",
+    "english": "- `duration` is milliseconds; `0` stays open. `Message.loading(...)` stays open by default.\n- Within one mount container/position, the same `id` updates the instance without duplicate DOM.\n- Only `resetOnUpdate`=`true` restarts the full duration on same-id updates.\n- `pauseOnHover` saves remaining time and resumes it on pointer leave.\n- Display deadlines are independent of CSS motion. Restarting, hover pause, cleanup/unmount invalidate old timer callbacks, which recheck open before running.\n- KeepAlive deactivation cancels timers; reactivation restarts the current full duration. Updates while deactivated/retained restart after unmount do not schedule work.\n- Resuming exhausted positive hover timing requests closing; resetting duration to 0 keeps it open. Only finite positive durations auto-close; negative/nonfinite values do not schedule.\n- Services await actual leave completion rather than forcing 150ms/200ms exits. Closing/clearing before mount cleans up directly and reports service onClosed without inventing component open/opened/close animation events. Business duration stays independent of CSS transitions.\n- Local reduced motion cancels transitions/displacement while retaining independent-message static horizontal/center positioning, colors and display deadlines. No global tiny-duration fallback is required.\n- Queues isolate by `popupContainer + position`; `Message.clear(position?)` clears per position.",
+    "englishBefore": "- `duration` is milliseconds; `0` stays open. `Message.loading(...)` stays open by default.\n- Within one mount container/position, the same `id` updates the instance without duplicate DOM.\n- Only `resetOnUpdate`=`true` restarts the full duration on same-id updates.\n- `pauseOnHover` saves remaining time and resumes it on pointer leave.\n- Display deadlines are independent of CSS motion. Restarting, hover pause, cleanup/unmount invalidate old timer callbacks, which recheck open before running.\n- KeepAlive deactivation cancels timers; reactivation restarts the current full duration. Updates while deactivated/retained restart after unmount do not schedule work.\n- Resuming exhausted positive hover timing requests closing; resetting duration to 0 keeps it open. Only finite positive durations auto-close; negative/nonfinite values do not schedule.\n- Services await actual leave completion rather than forcing 150ms/200ms exits. Closing/clearing before mount cleans up directly and reports service onClosed without inventing component open/opened/close animation events. Business duration stays independent of CSS transitions.\n- Actual IAB default/light/top service checks passed for defaults, 600ms, zero and reopening during leave. Reopening may replace root DOM. Other themes/positions, hover, KeepAlive and real OS preferences need separate validation.\n- Local reduced motion cancels transitions/displacement while retaining independent-message static horizontal/center positioning, colors and display deadlines. No global tiny-duration fallback is required. Isolated Less checks are not real OS validation.\n- Queues isolate by `popupContainer + position`; `Message.clear(position?)` clears per position."
+  },
+  {
+    "before": "两端分别保存主体、Props、样式、token 和契约测试，只调整前缀及本地导入；不引用跨库核心，不共享组件实例或状态。",
+    "after": "",
+    "english": "",
+    "englishBefore": "Each platform maintains its own component body, props, styles, tokens and contract tests, adapting prefixes/local imports without a cross-library core or shared instances/state."
+  },
+  {
+    "before": "关闭按钮支持键盘操作，close 只触发一次，closed 在离场动画完成后触发。Maple 内部关闭类由 __close-icon 调整为 __close-btn；默认图标资源由各库本地适配。",
+    "after": "关闭按钮支持键盘操作；close 只触发一次，closed 在离场动画完成后触发。",
+    "english": "The close button supports keyboard activation. close fires once; closed fires after the leave transition finishes.",
+    "englishBefore": "The close button supports keyboard activation. close fires once, and closed fires after the leave transition. Maple renamed its internal __close-icon class to __close-btn. Default icons are adapted locally in each library."
+  },
+  {
+    "before": "只解析本应用已注册的图标；连续切换 name 会取消过期定时器，卸载后不再执行切换。各库注册前缀和历史 spin 类由本地适配保留，图标资源不跨库引用。",
+    "after": "只解析当前应用已注册的图标。连续切换 name 时只展示最新请求的图标，卸载后停止切换。",
+    "english": "Only resolves icons registered in the current application. Repeated name changes display the latest requested icon, and unmounting stops pending switches.",
+    "englishBefore": "Only icons registered in the current application are resolved. Repeated name changes cancel stale timers; no changes run after unmount. Each library locally adapts its registration prefix and legacy spin class; icon resources are not imported across libraries."
+  },
+  {
+    "before": "两端保留独立的 show/checked 状态，受控值由调用方更新；保留淡出效果，class/style 显式透传给实际标签。尺寸配置、RTL 上下文及图标资源由各库本地适配，移动端触控尺寸保留在 token 中。",
+    "after": "show / checked 为受控值时由调用方更新。隐藏时保留淡出效果，class / style 作用于实际标签；移动端触控尺寸可通过 CSS 变量定制。",
+    "english": "The application updates controlled show / checked values. Hiding retains the fade-out effect; class / style apply to the actual tag. CSS variables customize mobile touch sizing.",
+    "englishBefore": "Both retain independent show/checked state, with controlled values updated by callers. Fade-out remains; class/style fall through explicitly to the actual tag. Size configuration, RTL context and icons are locally adapted. Mobile touch dimensions remain in tokens."
+  },
+  {
+    "before": "Cedar 与 Maple 独立保存同一份主体、Props、外观映射和结构样式。无样式定位场景直接使用 Trigger；Popover 不提供 `defaultStyle`、`popoverClass` 或 `elevation`，自定义外观使用组件 Token、`content-class` 或 `content-style`。",
+    "after": "无样式定位场景使用 Trigger。Popover 不提供 `defaultStyle`、`popoverClass` 或 `elevation`；通过 CSS 变量、`content-class` 或 `content-style` 定制外观。",
+    "english": "Use Trigger for unstyled positioning. Popover does not provide `defaultStyle`, `popoverClass` or `elevation`; customize appearance through CSS variables, `content-class` or `content-style`.",
+    "englishBefore": "Cedar and Maple independently maintain the same component body, props, appearance mapping and structural styles. Use Trigger directly for unstyled positioning. Popover has no `defaultStyle`, `popoverClass` or `elevation`; customize appearance through component tokens, `content-class` or `content-style`."
+  },
+  {
+    "before": "Cedar 与 Maple 独立保存同一份主体、Props、外观映射和结构样式，只允许前缀、本地导入及主题 Token 值不同。不提供 `backgroundColor` 或布尔 `xs` 兼容入口。",
+    "after": "使用 `color` 定制背景、`size=\"xs\"` 选择最小尺寸；不提供 `backgroundColor` 或布尔 `xs` 属性。",
+    "english": "Use `color` to customize the background and `size=\"xs\"` for the smallest size. There is no `backgroundColor` or boolean `xs` prop.",
+    "englishBefore": "Cedar/Maple independently maintain matching bodies, props, appearance mappings and structural styles. Only prefixes, local imports and theme-token values differ. No `backgroundColor` or boolean `xs` compatibility entry exists."
+  },
+  {
+    "before": "状态文字与 outline 描边使用可读 system content，彩色填充使用对应色板第 1 阶。未选中保持中性，已选中状态色优先于通用 hover；默认中性填充为 fill-2 → fill-3。color 优先于 status；预设色不属于本批对比度保证范围。自定义背景需要调用方验证文字对比度，必要时传 text-color。尺寸保留平台差异。以下列出全部公开声明；15 项无消费的预设图标 hover 背景／尺寸变量已移除。custom-icon-bg-hover 及 InputTag 的旧引用也已移除，不保留兼容别名。",
+    "after": "状态文字与 outline 描边使用对应的主题语义色，彩色填充使用浅色背景。未选中时保持中性，已选中状态色优先于 hover；默认中性背景在 fill-2 与 fill-3 之间切换。color 优先于 status。自定义背景时需保证文字对比度，必要时设置 text-color。",
+    "english": "Status text and outline borders use the corresponding theme semantic colors with light colored fills. Unselected tags remain neutral; selected status colors take precedence over hover. The neutral background switches between fill-2 and fill-3. color takes precedence over status. Keep text readable on custom backgrounds and set text-color when needed.",
+    "englishBefore": "Status text and outline borders use readable system content colors; colored fills use palette level 1. Unchecked stays neutral; checked status colors override generic hover. Neutral fills use fill-2 → fill-3. color overrides status; preset colors are outside this contrast guarantee. Callers must check custom backgrounds and set text-color if needed. Platform dimensions remain distinct. All public declarations are listed; 15 unused preset-icon hover-background/size variables, custom-icon-bg-hover and old InputTag references are removed without aliases."
+  },
+  {
+    "before": "内置动效遵循 prefers-reduced-motion: reduce：保留内容与状态反馈，关闭装饰性旋转、扫光和波纹。Icon 名称切换跳过等待，并取消尚未结束的切换。Ripple 时长变量只控制 CSS，250ms 生命周期计时未改变，每段视觉时长应不超过 250ms；自定义动画类由调用方负责适配。",
+    "after": "内置动效遵循 `prefers-reduced-motion: reduce`：保留内容与状态反馈，关闭装饰性动画。自定义动画需由调用方适配该偏好。",
+    "english": "Built-in motion respects `prefers-reduced-motion: reduce`, keeping content and state feedback while disabling decorative animations. Adapt custom animations to that preference in your application.",
+    "englishBefore": "Built-in motion follows prefers-reduced-motion: reduce, preserving content/state feedback while disabling decorative spinning, shimmer and ripples. Icon name changes skip waiting and cancel unfinished transitions. Ripple duration variables affect only CSS; the 250ms lifecycle timer remains unchanged, so each visual stage should not exceed 250ms. Callers must adapt custom animation classes."
+  },
+  {
+    "before": "私有工具保留正时长线性滚动（列选择100ms）；零／负／非有限时长及owner减弱动态直接到位，动态reduce下一帧收束。同元素新请求取消旧任务，旧帧／重复帧不覆盖新偏移。工具取消保持当前偏移，不触发选择提交；无新增公开API或CSS Token。",
+    "after": "选择时间列会滚动到对应选项。启用减少动态效果时直接定位，不执行滚动动画；仅滚动定位不会提交选择。",
+    "english": "Selecting a time column scrolls to its option. Reduced motion positions it directly without a scroll animation. Scrolling alone does not commit a selection.",
+    "englishBefore": "私有工具保留正时长线性滚动（列选择100ms）；零／负／非有限时长及owner减弱动态直接到位，动态reduce下一帧收束。同元素新请求取消旧任务，旧帧／重复帧不覆盖新偏移。工具取消保持当前偏移，不触发选择提交；无新增公开API或CSS Token。"
+  },
+  {
+    "before": "- Cedar 项内容新增 `__content` 包装，属性透传到该内容节点；Maple 原有主题变量继续通过 token 映射生效。",
+    "after": "- 自定义属性作用于面包屑项的内容节点。",
+    "english": "- Custom attributes apply to the breadcrumb item content node.",
+    "englishBefore": "- Cedar adds a `__content` wrapper for item content; attributes fall through to it. Maple retains its existing theme variables through token mappings."
+  },
+  {
+    "before": "横向内容区独立消费 `--c-card-content-row-margin`，不再误用标题间距。Card 的密度 API 明确只支持 sm/md，不套用表单控件五档。动效时长 `--c-card-animation-duration` 默认为 `var(--c-sys-motion-duration-slow)`，曲线 `--c-card-animation-easing` 默认为 `var(--c-sys-motion-easing-standard)`。reduced-motion 关闭所有 Card 动画分区的过渡。",
+    "after": "横向内容区的间距由 `--c-card-content-row-margin` 控制。Card 只支持 sm / md 两档尺寸。动效时长 `--c-card-animation-duration` 默认为 `var(--c-sys-motion-duration-slow)`，曲线 `--c-card-animation-easing` 默认为 `var(--c-sys-motion-easing-standard)`；启用减少动态效果时关闭 Card 的过渡。",
+    "english": "Use `--c-card-content-row-margin` for horizontal content spacing. Card supports only sm / md sizes. `--c-card-animation-duration` defaults to `var(--c-sys-motion-duration-slow)` and `--c-card-animation-easing` to `var(--c-sys-motion-easing-standard)`. Reduced motion disables Card transitions.",
+    "englishBefore": "Row content consumes `--c-card-content-row-margin`, independently from the title margin. Card intentionally exposes only sm/md density, not all five control sizes. Motion uses `--c-card-animation-duration` (`var(--c-sys-motion-duration-slow)`) and `--c-card-animation-easing` (`var(--c-sys-motion-easing-standard)`). Reduced motion disables transitions on every animated Card section."
+  },
+  {
+    "before": "横向内容区独立消费 `--mp-card-content-row-margin`，不再误用标题间距。Card 的密度 API 明确只支持 sm/md，不套用表单控件五档。动效时长 `--mp-card-animation-duration` 默认为 `var(--mp-sys-motion-duration-slow)`，曲线 `--mp-card-animation-easing` 默认为 `var(--mp-sys-motion-easing-standard)`。reduced-motion 关闭所有 Card 动画分区的过渡。",
+    "after": "横向内容区的间距由 `--mp-card-content-row-margin` 控制。Card 只支持 sm / md 两档尺寸。动效时长 `--mp-card-animation-duration` 默认为 `var(--mp-sys-motion-duration-slow)`，曲线 `--mp-card-animation-easing` 默认为 `var(--mp-sys-motion-easing-standard)`；启用减少动态效果时关闭 Card 的过渡。",
+    "english": "Use `--mp-card-content-row-margin` for horizontal content spacing. Card supports only sm / md sizes. `--mp-card-animation-duration` defaults to `var(--mp-sys-motion-duration-slow)` and `--mp-card-animation-easing` to `var(--mp-sys-motion-easing-standard)`. Reduced motion disables Card transitions.",
+    "englishBefore": "Row content consumes `--mp-card-content-row-margin`, independently from the title margin. Card intentionally exposes only sm/md density, not all five control sizes. Motion uses `--mp-card-animation-duration` (`var(--mp-sys-motion-duration-slow)`) and `--mp-card-animation-easing` (`var(--mp-sys-motion-easing-standard)`). Reduced motion disables transitions on every animated Card section."
+  },
+  {
+    "before": "500ms ripple wait is interaction policy; floating-duration defaults to250ms for collapse and transition. DoubleRaf settles layout; cancellation rejects stale continuation writes, not underlying frames. Public API and CSS variables are unchanged. Full Card Cedar21/Maple44 and scoped15 each are controlled tests, not native browser/OS certification.",
+    "after": "",
+    "englishBefore": "500ms ripple wait is interaction policy; floating-duration defaults to250ms for collapse and transition. DoubleRaf settles layout; cancellation rejects stale continuation writes, not underlying frames. Public API and CSS variables are unchanged. Full Card Cedar21/Maple44 and scoped15 each are controlled tests, not native browser/OS certification.",
+    "english": ""
+  },
+  {
+    "before": "One real IAB default/light clock lifecycle case passes per platform: decrement, public pause/start, stable inactive callbacks, inactive time reset-to900ms without background ticking, reactivation and stable callbacks after unmount, final nodes0. Stable cached containers deliver inactive props; deferred parent delivery is not mislabeled a product defect. Not dequeued-race/cross-window/OS certification.",
+    "after": "",
+    "englishBefore": "One real IAB default/light clock lifecycle case passes per platform: decrement, public pause/start, stable inactive callbacks, inactive time reset-to900ms without background ticking, reactivation and stable callbacks after unmount, final nodes0. Stable cached containers deliver inactive props; deferred parent delivery is not mislabeled a product defect. Not dequeued-race/cross-window/OS certification.",
+    "english": ""
+  },
+  {
+    "before": "Final batch verification:Form115tests/19files within the combined Maple532tests/95files pass;root read-only lint,types and shared29tests pass. Runtime-candidate classification33/33families is not whole-component/native acceptance;latest evidence below retains diagnostics/boundaries.",
+    "after": "",
+    "englishBefore": "Final batch verification:Form115tests/19files within the combined Maple532tests/95files pass;root read-only lint,types and shared29tests pass. Runtime-candidate classification33/33families is not whole-component/native acceptance;latest evidence below retains diagnostics/boundaries.",
+    "english": ""
+  },
+  {
+    "before": "Lint follow-up (2026-10-19): current scoped/root lint, configured types, 300 related regressions and SFC compilation pass after pre-existing formatting corrections. This run did not change business source; the 1200ms delay, cancellation signal and once-only settlement remain intact. Example compilation is not native-browser acceptance; automation remains paused.",
+    "after": "",
+    "englishBefore": "Lint follow-up (2026-10-19): current scoped/root lint, configured types, 300 related regressions and SFC compilation pass after pre-existing formatting corrections. This run did not change business source; the 1200ms delay, cancellation signal and once-only settlement remain intact. Example compilation is not native-browser acceptance; automation remains paused.",
+    "english": ""
+  },
+  {
+    "before": "Shared helper8 real IAB cases pass: main default/zero and same-origin iframe element/Window on both platforms. Default302.5–313.9ms, zero has no RAF, iframe host RAF0, stable targets and cleanup. This certifies scoped helper execution, not IndexBar entry-frame/doubleRaf/clickedName/disposal cancellation or OS reduced motion.",
+    "after": "",
+    "englishBefore": "Shared helper8 real IAB cases pass: main default/zero and same-origin iframe element/Window on both platforms. Default302.5–313.9ms, zero has no RAF, iframe host RAF0, stable targets and cleanup. This certifies scoped helper execution, not IndexBar entry-frame/doubleRaf/clickedName/disposal cancellation or OS reduced motion.",
+    "english": ""
+  },
+  {
+    "before": "One real IAB default/light repeat lifecycle case passes per platform: actual first/subsequent repeat, stable after cancellation, fresh hold unmounted before800ms and stable beyond deadline, final nodes0. Entry click is native but internal pointerdown/pointercancel is scripted; not native long press/touch, dequeued-race, cross-window or OS evidence.",
+    "after": "",
+    "englishBefore": "One real IAB default/light repeat lifecycle case passes per platform: actual first/subsequent repeat, stable after cancellation, fresh hold unmounted before800ms and stable beyond deadline, final nodes0. Entry click is native but internal pointerdown/pointercancel is scripted; not native long press/touch, dequeued-race, cross-window or OS evidence.",
+    "english": ""
+  },
+  {
+    "before": "Final Picker30tests/4files pass,including10new targeted cases;combined Maple affected532tests/95files,root read-only lint,types and shared29tests pass. Runtime-candidate classification is not native touch/OS/whole-component acceptance.",
+    "after": "",
+    "englishBefore": "Final Picker30tests/4files pass,including10new targeted cases;combined Maple affected532tests/95files,root read-only lint,types and shared29tests pass. Runtime-candidate classification is not native touch/OS/whole-component acceptance.",
+    "english": ""
+  },
+  {
+    "before": "Current-source revalidation,2026-10-16:36 Ripple tests pass,including11 dispatch/12 motion/three mouse cases;pre/post hashes match. Mouse press,document release,blur and touch-compatibility suppression are controlled evidence,not a new product repair or trusted-input acceptance. The800ms Date.now gate adds no timer/CSS duration. Classification hash is manually reviewed;adoption/OS boundaries remain separate.",
+    "after": "",
+    "englishBefore": "Current-source revalidation,2026-10-16:36 Ripple tests pass,including11 dispatch/12 motion/three mouse cases;pre/post hashes match. Mouse press,document release,blur and touch-compatibility suppression are controlled evidence,not a new product repair or trusted-input acceptance. The800ms Date.now gate adds no timer/CSS duration. Classification hash is manually reviewed;adoption/OS boundaries remain separate.",
+    "english": ""
+  },
+  {
+    "before": "Real IAB default/light completes delayed-unmount and KeepAlive resize on both platforms (four cases), including a positive timer/remount control and final panel nodes0. Entry buttons use native clicks; mouseenter is fixture-scripted, not native-hover, cross-window or OS acceptance.",
+    "after": "",
+    "englishBefore": "Real IAB default/light completes delayed-unmount and KeepAlive resize on both platforms (four cases), including a positive timer/remount control and final panel nodes0. Entry buttons use native clicks; mouseenter is fixture-scripted, not native-hover, cross-window or OS acceptance.",
+    "english": ""
+  },
+  {
+    "before": "Each frame validates and consumes its generation before clearing its handle/calculating/notifying, then rechecks after change listeners. Reentrant reset/pause/start cannot be overwritten by an old frame; consumed frames cannot update twice or replace successors. End emits once, reset permits a new completion. Eight controlled clock/RAF tests pass per platform, six failing at baseline; full Countdown Cedar18/Maple20 pass. No CSS variable/public API additions; simulated RAF is not real browser/OS acceptance.",
+    "after": "Pausing or resetting cancels pending countdown updates. A newer start or reset takes precedence over an earlier update. end fires once per round; reset permits a new completion.",
+    "englishBefore": "Each frame validates and consumes its generation before clearing its handle/calculating/notifying, then rechecks after change listeners. Reentrant reset/pause/start cannot be overwritten by an old frame; consumed frames cannot update twice or replace successors. End emits once, reset permits a new completion. Eight controlled clock/RAF tests pass per platform, six failing at baseline; full Countdown Cedar18/Maple20 pass. No CSS variable/public API additions; simulated RAF is not real browser/OS acceptance.",
+    "english": "Pausing or resetting cancels pending countdown updates. A newer start or reset takes precedence over an earlier update. end fires once per round; reset permits a new completion."
+  },
+  {
+    "before": "Track scheduling is now independently reviewed (earlier pending notes are historical): close/image/loop changes, deactivation and disposal invalidate work; callbacks consume once, activation only canonicalizes current coordinates, retained commands never replay. Double RAF is settlement even at zero duration; triplicated looping remains. Both tracks consume system slow/standard (currently240ms), replacing Maple's fixed280ms. Recenter reads actual transform duration+delay;400ms is only unresolved-style fallback. Scoped27 each/full Image Cedar62/Maple114 and32 Less cascade cases are controlled evidence, not native browser acceptance.",
+    "after": "Closing the preview, changing the image or changing looping cancels pending movement. Deactivation or unmounting stops movement; reactivation uses the current image.",
+    "englishBefore": "Track scheduling is now independently reviewed (earlier pending notes are historical): close/image/loop changes, deactivation and disposal invalidate work; callbacks consume once, activation only canonicalizes current coordinates, retained commands never replay. Double RAF is settlement even at zero duration; triplicated looping remains. Both tracks consume system slow/standard (currently240ms), replacing Maple's fixed280ms. Recenter reads actual transform duration+delay;400ms is only unresolved-style fallback. Scoped27 each/full Image Cedar62/Maple114 and32 Less cascade cases are controlled evidence, not native browser acceptance.",
+    "english": "Closing the preview, changing the image or changing looping cancels pending movement. Deactivation or unmounting stops movement; reactivation uses the current image."
+  },
+  {
+    "before": "Timer callbacks and both width/opacity render continuations consume once under their original generation. Restart invalidates old work; duplicate progress cannot advance twice. If computed-style lookup restarts loading, old hide/unmount scheduling cannot adopt the new generation. The200ms cadence, finishDelay, default250ms transition and300/250ms cleanup floors stay unchanged. nextTick is logically invalidated, not physically removed. The2026-10-15 targeted10/full22 tests are controlled service-DOM/clock evidence, not new native browser/OS acceptance.",
+    "after": "CSS motion variables control progress-bar and fade transitions. Completion and cleanup wait for the visual transition; CSS styling does not control progress-update timing.",
+    "englishBefore": "Timer callbacks and both width/opacity render continuations consume once under their original generation. Restart invalidates old work; duplicate progress cannot advance twice. If computed-style lookup restarts loading, old hide/unmount scheduling cannot adopt the new generation. The200ms cadence, finishDelay, default250ms transition and300/250ms cleanup floors stay unchanged. nextTick is logically invalidated, not physically removed. The2026-10-15 targeted10/full22 tests are controlled service-DOM/clock evidence, not new native browser/OS acceptance.",
+    "english": "CSS motion variables control progress-bar and fade transitions. Completion and cleanup wait for the visual transition; CSS styling does not control progress-update timing."
+  },
+  {
+    "before": "Display duration is a business deadline, not CSS enter/leave time. Zero is persistent; only finite positive values schedule auto-close. Hover preserves remaining time; KeepAlive activation restarts the full configured deadline, while suspension/disposal invalidate old timers. The2026-10-15 reconciliation confirms the existing audited source hash and adds business-clock classification only. Current39 tests do not add native-browser acceptance or certify service nextTick update identity/cross-document adoption.",
+    "after": "duration controls display time; 0 keeps the message open, and only finite positive values schedule automatic closing. Hover preserves remaining time. KeepAlive reactivation starts a full configured duration, while deactivation or unmounting cancels the old timer.",
+    "englishBefore": "Display duration is a business deadline, not CSS enter/leave time. Zero is persistent; only finite positive values schedule auto-close. Hover preserves remaining time; KeepAlive activation restarts the full configured deadline, while suspension/disposal invalidate old timers. The2026-10-15 reconciliation confirms the existing audited source hash and adds business-clock classification only. Current39 tests do not add native-browser acceptance or certify service nextTick update identity/cross-document adoption.",
+    "english": "duration controls display time; 0 keeps the message open, and only finite positive values schedule automatic closing. Hover preserves remaining time. KeepAlive reactivation starts a full configured duration, while deactivation or unmounting cancels the old timer."
+  },
+  {
+    "before": "Earlier helper10 tests per platform and real IAB8 cases are independent tool evidence. IndexBar now privately owns cancellation, owner preference and settlement for zero/nonpositive/nonfinite duration; the generic helper receives no cancellation parameter. Zero duration retains entry/two-frame waits, and CSS tokens do not replace duration. Parallel Form remains untouched.",
+    "after": "`duration` controls scroll timing independently of CSS motion variables. When `duration` is zero, positioning still waits for rendering and layout to be ready.",
+    "englishBefore": "Earlier helper10 tests per platform and real IAB8 cases are independent tool evidence. IndexBar now privately owns cancellation, owner preference and settlement for zero/nonpositive/nonfinite duration; the generic helper receives no cancellation parameter. Zero duration retains entry/two-frame waits, and CSS tokens do not replace duration. Parallel Form remains untouched.",
+    "english": "`duration` controls scroll timing independently of CSS motion variables. When `duration` is zero, positioning still waits for rendering and layout to be ready."
+  },
+  {
+    "before": "Replacing/clearing the popup ref or unmounting before watcher flush removes scroll listeners on their original binding window, independent of the current ref. Simulated regression does not cover same-node document adoption or real browser/OS visuals.",
+    "after": "Replacing or clearing the popup reference, or unmounting the component, removes the old window scroll listeners.",
+    "englishBefore": "Replacing/clearing the popup ref or unmounting before watcher flush removes scroll listeners on their original binding window, independent of the current ref. Simulated regression does not cover same-node document adoption or real browser/OS visuals.",
+    "english": "Replacing or clearing the popup reference, or unmounting the component, removes the old window scroll listeners."
+  },
+  {
+    "before": "The two libraries maintain independent copies of the body. Input emits input before update:modelValue. Clearing emits clear → input → update:modelValue → change once each; Form receives each semantic once. Readonly/disabled/composing controls cannot clear. A rejected controlled value is restored, including input types without selection APIs.",
+    "after": "Input notifies input → update:modelValue. Clearing notifies clear → input → update:modelValue → change once each, with one corresponding Form notification. Clearing is blocked while readonly, disabled or composing. Rejected controlled proposals restore the native content, including input types without cursor APIs.",
+    "englishBefore": "The two libraries maintain independent copies of the body. Input emits input before update:modelValue. Clearing emits clear → input → update:modelValue → change once each; Form receives each semantic once. Readonly/disabled/composing controls cannot clear. A rejected controlled value is restored, including input types without selection APIs.",
+    "english": "Input notifies input → update:modelValue. Clearing notifies clear → input → update:modelValue → change once each, with one corresponding Form notification. Clearing is blocked while readonly, disabled or composing. Rejected controlled proposals restore the native content, including input types without cursor APIs."
+  },
+  {
+    "before": "InputNumber edits and commits JavaScript numbers. The libraries own independent copies of the view, controller, styles and API; no runtime instance is shared.",
+    "after": "InputNumber edits and commits numeric values.",
+    "englishBefore": "InputNumber edits and commits JavaScript numbers. The libraries own independent copies of the view, controller, styles and API; no runtime instance is shared.",
+    "english": "InputNumber edits and commits numeric values."
+  },
+  {
+    "before": "Displays determinate or indeterminate progress. Cedar and Maple maintain independent copies of the same implementation.",
+    "after": "Displays determinate or indeterminate task progress.",
+    "englishBefore": "Displays determinate or indeterminate progress. Cedar and Maple maintain independent copies of the same implementation.",
+    "english": "Displays determinate or indeterminate task progress."
+  },
+  {
+    "before": "The field, controller, option algorithms, Menu and styles are independently copied from Cedar. Maple uses the shared internal field presentation host for popup; neither library imports the other at runtime.",
+    "after": "Use edit-mode to choose direct editing or a popup editor. Confirmation commits a draft; cancellation discards it.",
+    "englishBefore": "The field, controller, option algorithms, Menu and styles are independently copied from Cedar. Maple uses the shared internal field presentation host for popup; neither library imports the other at runtime.",
+    "english": "Use edit-mode to choose direct editing or a popup editor. Confirmation commits a draft; cancellation discards it."
+  },
+  {
+    "before": "Both libraries maintain independent copies of the upload queue, file reader and request core. Without action/custom-request, reading only creates ready items for application-managed uploads.",
+    "after": "Without action / custom-request, the component only reads files; the application manages progress and results.",
+    "englishBefore": "Both libraries maintain independent copies of the upload queue, file reader and request core. Without action/custom-request, reading only creates ready items for application-managed uploads.",
+    "english": "Without action / custom-request, the component only reads files; the application manages progress and results."
+  },
+  {
+    "before": "The fullscreen layer covers the viewport without intercepting pointer interaction. Turning fullscreen off restores the layer to its local container without moving default-slot content. Repeated toggles must not accumulate fullscreen layers, and unmounting removes that instance's layer. Libraries maintain independent instances; basic toggle evidence does not certify image failures, theme changes or anti-tamper combinations.",
+    "after": "The full-screen watermark covers the viewport without intercepting pointer input. Exiting returns it to the local container without moving default-slot content. Repeated toggling does not accumulate layers; unmounting removes that instance.",
+    "englishBefore": "The fullscreen layer covers the viewport without intercepting pointer interaction. Turning fullscreen off restores the layer to its local container without moving default-slot content. Repeated toggles must not accumulate fullscreen layers, and unmounting removes that instance's layer. Libraries maintain independent instances; basic toggle evidence does not certify image failures, theme changes or anti-tamper combinations.",
+    "english": "The full-screen watermark covers the viewport without intercepting pointer input. Exiting returns it to the local container without moving default-slot content. Repeated toggling does not accumulate layers; unmounting removes that instance."
+  },
+  {
+    "before": "Both libraries independently copy the same value, validation and transaction logic. Year/month/date model formats default to `YYYY`, `YYYY-MM`, `YYYY-MM-DD`; date-time defaults to seconds. Use time-fields to hide wheel seconds; set format and value-format explicitly when minute strings are required. `format` controls labels; `value-format` controls models, supporting custom formats, `Date` and `timestamp`. Maple provides year/month/date calendar, wheel presentations; week/quarter remain Cedar presentation capabilities.",
+    "after": "Year/month/day model formats default to `YYYY`, `YYYY-MM` and `YYYY-MM-DD`. Date-time values include seconds by default; use `time-fields=\"['hour', 'minute']\"` for minute precision. `format` controls display and `value-format` controls models, supporting custom formats, `Date` and `timestamp`. Maple provides year/month/day panels and mobile calendars and wheels; week/quarter panels are only available in Cedar.",
+    "englishBefore": "Both libraries independently copy the same value, validation and transaction logic. Year/month/date model formats default to `YYYY`, `YYYY-MM`, `YYYY-MM-DD`; date-time defaults to seconds. Use time-fields to hide wheel seconds; set format and value-format explicitly when minute strings are required. `format` controls labels; `value-format` controls models, supporting custom formats, `Date` and `timestamp`. Maple provides year/month/date calendar, wheel presentations; week/quarter remain Cedar presentation capabilities.",
+    "english": "Year/month/day model formats default to `YYYY`, `YYYY-MM` and `YYYY-MM-DD`. Date-time values include seconds by default; use `time-fields=\"['hour', 'minute']\"` for minute precision. `format` controls display and `value-format` controls models, supporting custom formats, `Date` and `timestamp`. Maple provides year/month/day panels and mobile calendars and wheels; week/quarter panels are only available in Cedar."
+  },
+  {
+    "before": "Date, DateRange, Time and TimeRange use independent same-source copies of PickerField and FieldDecorator. Date/DateRange enable text entry by default (it can be disabled); Time uses its own inputEditable setting. Panels edit a draft, Confirm commits it, and Cancel or dismissal discards it. Clear commits an empty value and closes the panel. Range fields retain separate start/end values and overnight hints.",
+    "after": "Date / DateRange allow manual entry by default; input-editable can disable it. Time manual entry is controlled by inputEditable. Panels edit a draft and commit on confirmation; cancellation or external closing leaves the value unchanged. Clearing commits an empty value immediately and closes the panel. Date and time ranges display two inputs, retaining a next-day indicator for overnight time ranges.",
+    "englishBefore": "Date, DateRange, Time and TimeRange use independent same-source copies of PickerField and FieldDecorator. Date/DateRange enable text entry by default (it can be disabled); Time uses its own inputEditable setting. Panels edit a draft, Confirm commits it, and Cancel or dismissal discards it. Clear commits an empty value and closes the panel. Range fields retain separate start/end values and overnight hints.",
+    "english": "Date / DateRange allow manual entry by default; input-editable can disable it. Time manual entry is controlled by inputEditable. Panels edit a draft and commit on confirmation; cancellation or external closing leaves the value unchanged. Clearing commits an empty value immediately and closes the panel. Date and time ranges display two inputs, retaining a next-day indicator for overnight time ranges."
+  },
+  {
+    "before": "## Shared-source contract",
+    "after": "## Usage notes",
+    "englishBefore": "## Shared-source contract",
+    "english": "## Usage notes"
+  },
+  {
+    "before": "### Shared-source style rules",
+    "after": "### Custom styling",
+    "englishBefore": "### Shared-source style rules",
+    "english": "### Custom styling"
+  },
+  {
+    "before": "Enable native Blob/object-url to create local blob: URLs with URL.createObjectURL for subsequent accepted Files. It takes priority over data-url without rereading existing items. Blob URLs counts current blob items; Decoded images accumulates both image modes' load events until reset. The component releases its owned URLs on removal, reset and unmount. The browser Demo verifies decoding and list cleanup; exact revokeObjectURL calls are covered by automated regression, not inferred from an image disappearing. External custom URLs and cancellation during reading remain separate cases.",
+    "after": "Enable native Blob/object-url to create local blob: URLs with URL.createObjectURL for subsequent accepted Files. It takes priority over data-url without rereading existing items. Blob URLs counts current blob items; Decoded images accumulates load events from both image modes until reset. The component releases its owned URLs on removal, reset and unmount.",
+    "englishBefore": "Enable native Blob/object-url to create local blob: URLs with URL.createObjectURL for subsequent accepted Files. It takes priority over data-url without rereading existing items. Blob URLs counts current blob items; Decoded images accumulates both image modes' load events until reset. The component releases its owned URLs on removal, reset and unmount. The browser Demo verifies decoding and list cleanup; exact revokeObjectURL calls are covered by automated regression, not inferred from an image disappearing. External custom URLs and cancellation during reading remain separate cases.",
+    "english": "Enable native Blob/object-url to create local blob: URLs with URL.createObjectURL for subsequent accepted Files. It takes priority over data-url without rereading existing items. Blob URLs counts current blob items; Decoded images accumulates load events from both image modes until reset. The component releases its owned URLs on removal, reset and unmount."
+  },
+  {
+    "before": "Tooltip content has `role=\"tooltip\"` and its ID is added to the actual reference’s `aria-describedby` while open. Existing and reference-attrs descriptions are merged without duplicates; closing, changing references or unmounting removes the tooltip ID and preserves existing descriptions. Cedar and Maple maintain independent implementations; neither provides `backgroundColor` or boolean `xs` compatibility aliases.",
+    "after": "Tooltip content has role=\"tooltip\". While open, its ID is added to the actual reference aria-describedby without duplicating existing descriptions. Closing, changing references or unmounting removes only that tooltip ID and preserves other descriptions. Use color for backgrounds and text-color for text; backgroundColor and boolean xs props are not supported.",
+    "englishBefore": "Tooltip content has `role=\"tooltip\"` and its ID is added to the actual reference’s `aria-describedby` while open. Existing and reference-attrs descriptions are merged without duplicates; closing, changing references or unmounting removes the tooltip ID and preserves existing descriptions. Cedar and Maple maintain independent implementations; neither provides `backgroundColor` or boolean `xs` compatibility aliases.",
+    "english": "Tooltip content has role=\"tooltip\". While open, its ID is added to the actual reference aria-describedby without duplicating existing descriptions. Closing, changing references or unmounting removes only that tooltip ID and preserves other descriptions. Use color for backgrounds and text-color for text; backgroundColor and boolean xs props are not supported."
+  },
+  {
+    "before": "现有 TimePopupPresentationProps 与运行时过滤保持；open/defaultOpen、disabled、trigger、closeOnClickReference、preventFocus 和对应展开更新归字段管理。顶层 popup-container 明确设置时优先，否则嵌套回退，popupClass 合并内部类。inline 展示层固定 popupOffset=4；Maple 还固定 unmountOnClose=true，这些旧类型中的字段不保证能控制最终值。本轮不收窄既有 Time 类型，也不改变运行行为。",
+    "after": "现有 TimePopupPresentationProps 与运行时过滤保持；open/defaultOpen、disabled、trigger、closeOnClickReference、preventFocus 和对应展开更新归字段管理。顶层 popup-container 明确设置时优先，否则嵌套回退，popupClass 合并内部类。inline 展示层固定 popupOffset=4；Maple 还固定 unmountOnClose=true，这些旧类型中的字段不保证能控制最终值。",
+    "english": "Fields own open/defaultOpen, disabled, trigger, closeOnClickReference, preventFocus and the corresponding visibility updates. A top-level popup-container takes precedence over nested configuration, while popupClass is merged. Inline presentation fixes popupOffset=4; Maple also fixes unmountOnClose=true, so those fields in older types do not necessarily control the final value.",
+    "englishBefore": "Existing TimePopupPresentationProps and runtime filtering remain. Fields own open/defaultOpen, disabled, trigger, closeOnClickReference, preventFocus and expansion updates. Explicit top-level popup-container takes precedence, otherwise nested configuration is used. popupClass merges internal classes. Inline popupOffset stays 4; Maple also fixes unmountOnClose=true. Such fields in old types are not guaranteed to control final values. Existing Time types/runtime behavior are not narrowed here."
+  },
+  {
+    "before": "默认值引用对应 system 角色，例如 var(--c-sys-color-content-secondary)。tonal 未选中时使用 tonal-text-color / tonal-handle-color；需要全变体定制时请同时覆盖普通和 tonal 前景。可交互错误态使用普通文字／滑块配对，disabled / loading 抑制错误色。自定义轨道颜色需自行验证前景对比。阴影、尺寸及动效不在本批颜色契约中。",
+    "after": "默认值引用对应 system 角色，例如 var(--c-sys-color-content-secondary)。tonal 未选中时使用 tonal-text-color / tonal-handle-color；需要全变体定制时请同时覆盖普通和 tonal 前景。可交互错误态使用普通文字／滑块配对，disabled / loading 抑制错误色。自定义轨道颜色需自行验证前景对比。",
+    "english": "Defaults use the corresponding system roles, such as var(--c-sys-color-content-secondary). Unchecked tonal uses tonal-text-color / tonal-handle-color; override both ordinary and tonal foregrounds when customizing every variant. Interactive error state uses paired text/handle colors, while disabled / loading suppresses error colors. Keep foregrounds readable on custom track colors.",
+    "englishBefore": "Defaults reference matching system roles, e.g. var(--c-sys-color-content-secondary). Unchecked tonal uses tonal-text-color / tonal-handle-color; customize both ordinary and tonal foregrounds for all variants. Interactive errors use ordinary text/thumb pairing; disabled/loading suppress error colors. Custom tracks require foreground-contrast checks. Shadows, geometry and motion are outside this color contract."
+  },
+  {
+    "before": "默认值引用对应 system 角色，例如 var(--mp-sys-color-content-secondary)。tonal 未选中时使用 tonal-text-color / tonal-handle-color；需要全变体定制时请同时覆盖普通和 tonal 前景。可交互错误态使用普通文字／滑块配对，disabled / loading 抑制错误色。自定义轨道颜色需自行验证前景对比。阴影、尺寸及动效不在本批颜色契约中。",
+    "after": "默认值引用对应 system 角色，例如 var(--mp-sys-color-content-secondary)。tonal 未选中时使用 tonal-text-color / tonal-handle-color；需要全变体定制时请同时覆盖普通和 tonal 前景。可交互错误态使用普通文字／滑块配对，disabled / loading 抑制错误色。自定义轨道颜色需自行验证前景对比。",
+    "english": "Defaults use the corresponding system roles, such as var(--mp-sys-color-content-secondary). Unchecked tonal uses tonal-text-color / tonal-handle-color; override both ordinary and tonal foregrounds when customizing every variant. Interactive error state uses paired text/handle colors, while disabled / loading suppresses error colors. Keep foregrounds readable on custom track colors.",
+    "englishBefore": "Defaults reference corresponding system roles, e.g. var(--mp-sys-color-content-secondary). Unchecked tonal uses tonal-text-color/tonal-handle-color; customize ordinary and tonal foregrounds together for all variants. Interactive errors use ordinary text/thumb pairing; disabled/loading suppress errors. Callers must check custom-track contrast. Shadows, dimensions and motion are outside this color contract."
+  },
+  {
+    "before": "全天系列保留日期字符串与日历天数；定时系列在运行环境本地日历上重复，保持原始时分及实际经过时长。夏令时不存在的时刻遵循 JavaScript Date 的归一化，随后日期恢复起点时分。本轮不支持任意 IANA 时区或完整 RRULE；前后端须统一时区，不能依赖实例 ID 跨时区不变。",
+    "after": "全天系列保留日期字符串与日历天数；定时系列在运行环境本地日历上重复，保持原始时分及实际经过时长。夏令时不存在的时刻遵循 JavaScript Date 的归一化，随后日期恢复起点时分。不支持任意 IANA 时区或完整 RRULE；前后端须统一时区，不能依赖实例 ID 跨时区不变。",
+    "english": "All-day series retain date strings and calendar-day lengths. Timed series repeat in the runtime local calendar while retaining their original clock time and elapsed duration. JavaScript Date normalizes nonexistent daylight-saving times; later dates recover the starting clock time. Arbitrary IANA zones and full RRULE are not supported. Use a consistent frontend/backend timezone and do not assume instance IDs stay the same across zones.",
+    "englishBefore": "全天系列保留日期字符串与日历天数；定时系列在运行环境本地日历上重复，保持原始时分及实际经过时长。夏令时不存在的时刻遵循 JavaScript Date 的归一化，随后日期恢复起点时分。本轮不支持任意 IANA 时区或完整 RRULE；前后端须统一时区，不能依赖实例 ID 跨时区不变。"
+  },
+  {
+    "before": "Independent source copies in Cedar and Maple use identical behavior, installation and defaults.",
+    "englishBefore": "Independent source copies in Cedar and Maple use identical behavior, installation and defaults.",
+    "after": "Provides local CSS variable overrides for descendant components.",
+    "english": "Provides local CSS variable overrides for descendant components."
+  },
+  {
+    "before": "The former cross-component exemptions are closed. check:token-consumers checks 414 Badge/Tag declarations without exemptions and compiles InputTag to prevent legacy icon selectors/variables returning. Integration tests cover actual DOM, close interactions and custom colors. The 553 shared defaults are unchanged because removed shared variables previously registered names only. This does not claim complete InputTag token, browser-visual or keyboard governance.",
+    "englishBefore": "The former cross-component exemptions are closed. check:token-consumers checks 414 Badge/Tag declarations without exemptions and compiles InputTag to prevent legacy icon selectors/variables returning. Integration tests cover actual DOM, close interactions and custom colors. The 553 shared defaults are unchanged because removed shared variables previously registered names only. This does not claim complete InputTag token, browser-visual or keyboard governance.",
+    "after": "",
+    "english": ""
+  },
+  {
+    "before": "This 2.5-slide example exposes mouse dragging, controlled acceptance and looping. Current is the parent's accepted one-based slide number; Proposal records the request and Changes counts change events. Rejection can still emit a proposal and change event without updating the accepted model. Accept changes to drag both ways or wrap backward from the first item to the last. With looping off, dragging beyond the last item does not navigate or duplicate notifications. This mouse combination does not certify physical touch, centered or auto-width combinations.",
+    "englishBefore": "This 2.5-slide example exposes mouse dragging, controlled acceptance and looping. Current is the parent's accepted one-based slide number; Proposal records the request and Changes counts change events. Rejection can still emit a proposal and change event without updating the accepted model. Accept changes to drag both ways or wrap backward from the first item to the last. With looping off, dragging beyond the last item does not navigate or duplicate notifications. This mouse combination does not certify physical touch, centered or auto-width combinations.",
+    "after": "The demo shows 2.5 items and lets you drag or toggle acceptance and looping. Current is the parent-accepted page index starting at 1, Proposal records requests, and Changes counts change notifications. When updates are rejected, a request or change does not mean the model changed. Accepted updates allow dragging in either direction; disabling looping prevents crossing the ends.",
+    "english": "The demo shows 2.5 items and lets you drag or toggle acceptance and looping. Current is the parent-accepted page index starting at 1, Proposal records requests, and Changes counts change notifications. When updates are rejected, a request or change does not mean the model changed. Accepted updates allow dragging in either direction; disabling looping prevents crossing the ends."
+  },
+  {
+    "before": "The centered auto-width example uses four independent items (140/220/180/260px), with a 12px gap. Dragging advances one item at a time and wraps at either boundary. Current displays the accepted one-based model and Changes counts change events; the current item stays centered even when its width differs. This example does not certify physical touch, resizing during a gesture or dynamic item insertion.",
+    "englishBefore": "The centered auto-width example uses four independent items (140/220/180/260px), with a 12px gap. Dragging advances one item at a time and wraps at either boundary. Current displays the accepted one-based model and Changes counts change events; the current item stays centered even when its width differs. This example does not certify physical touch, resizing during a gesture or dynamic item insertion.",
+    "after": "Items have different widths. Dragging keeps the current item centered and can loop across either end. Current shows the accepted page index starting at 1; Changes counts change notifications.",
+    "english": "Items have different widths. Dragging keeps the current item centered and can loop across either end. Current shows the accepted page index starting at 1; Changes counts change notifications."
+  },
+  {
+    "before": "Loop nextTick waits for rendering; the settlement timer is visual-completion and two RAFs are state-settlement. Request/track/window checks and per-phase consumption prevent old timers clearing newer offsets, duplicate first-frame forks and old second frames releasing newer noMotion. Cancel held timers and RAF through their original frame window; already-dequeued callbacks still require ownership checks. Content/config render measurements are binding-generation scoped. Playback cadence and motion settlement are distinct, never a forced shared CSS duration.",
+    "englishBefore": "Loop nextTick waits for rendering; the settlement timer is visual-completion and two RAFs are state-settlement. Request/track/window checks and per-phase consumption prevent old timers clearing newer offsets, duplicate first-frame forks and old second frames releasing newer noMotion. Cancel held timers and RAF through their original frame window; already-dequeued callbacks still require ownership checks. Content/config render measurements are binding-generation scoped. Playback cadence and motion settlement are distinct, never a forced shared CSS duration.",
+    "after": "Changing content, restarting navigation or unmounting cancels pending slide movement. Autoplay timing is independent of CSS transitions.",
+    "english": "Changing content, restarting navigation or unmounting cancels pending slide movement. Autoplay timing is independent of CSS transitions."
+  },
+  {
+    "before": "Consumer11/private task4/existing9 pass (24). Final real IAB4/4 covers replacement, settlement, disposal and KeepAlive, nodes0/no warn-error. Scope is default/light parent document with native entry clicks and fixture-scripted commands/scroll events; native gestures, OS and other themes/windows remain separate. The helper records below are historical independent evidence.",
+    "englishBefore": "Consumer11/private task4/existing9 pass (24). Final real IAB4/4 covers replacement, settlement, disposal and KeepAlive, nodes0/no warn-error. Scope is default/light parent document with native entry clicks and fixture-scripted commands/scroll events; native gestures, OS and other themes/windows remain separate. The helper records below are historical independent evidence.",
+    "after": "",
+    "english": ""
+  },
+  {
+    "before": "Each long-press timer validates and consumes its generation before stepping. Old callbacks after stop, replacement, release, deactivation or disposal cannot change the value; a reentrant step that starts another hold cannot cancel that replacement through its return value. Inactive owners reject new holds; reactivation requires a new gesture rather than resuming the old one. Initial800ms/repeat150ms are interaction cadence, not CSS motion tokens. Eight controlled-timer/stale-callback tests pass per platform (seven fail before repair); full InputNumber Cedar45/Maple48 pass. This is not real browser or OS acceptance.",
+    "englishBefore": "Each long-press timer validates and consumes its generation before stepping. Old callbacks after stop, replacement, release, deactivation or disposal cannot change the value; a reentrant step that starts another hold cannot cancel that replacement through its return value. Inactive owners reject new holds; reactivation requires a new gesture rather than resuming the old one. Initial800ms/repeat150ms are interaction cadence, not CSS motion tokens. Eight controlled-timer/stale-callback tests pass per platform (seven fail before repair); full InputNumber Cedar45/Maple48 pass. This is not real browser or OS acceptance.",
+    "after": "Long-press stepping stops on release, cancellation, deactivation or unmounting. Starting a new hold replaces the previous one. Reactivation requires a new gesture instead of resuming an old hold. CSS motion variables do not control the repeat cadence.",
+    "english": "Long-press stepping stops on release, cancellation, deactivation or unmounting. Starting a new hold replaces the previous one. Reactivation requires a new gesture instead of resuming an old hold. CSS motion variables do not control the repeat cadence."
+  },
+  {
+    "before": "The implementation, Props, styles and tests are independently maintained copies. Only prefixes, local icons and theme tokens differ; no runtime core or instances are shared. Disabled/loading links remove href/target/rel, suppress click and leave the Tab order even with an explicit tabindex. Loading takes precedence over dynamic icon slots.",
+    "englishBefore": "The implementation, Props, styles and tests are independently maintained copies. Only prefixes, local icons and theme tokens differ; no runtime core or instances are shared. Disabled/loading links remove href/target/rel, suppress click and leave the Tab order even with an explicit tabindex. Loading takes precedence over dynamic icon slots.",
+    "after": "Disabled or loading links remove href / target / rel, block click and leave the Tab order, including explicit tabindex. Loading takes precedence over the icon slot, which updates dynamically.",
+    "english": "Disabled or loading links remove href / target / rel, block click and leave the Tab order, including explicit tabindex. Loading takes precedence over the icon slot, which updates dynamically."
+  },
+  {
+    "before": "Message provides lightweight, non-modal global feedback. Maple and Cedar share the same public contract, queue, timer, and imperative service while keeping separate source copies and platform-specific styling. Message never locks scrolling or blocks background interaction.",
+    "englishBefore": "Message provides lightweight, non-modal global feedback. Maple and Cedar share the same public contract, queue, timer, and imperative service while keeping separate source copies and platform-specific styling. Message never locks scrolling or blocks background interaction.",
+    "after": "Displays lightweight, nonmodal global feedback without locking scrolling or blocking page interaction.",
+    "english": "Displays lightweight, nonmodal global feedback without locking scrolling or blocking page interaction."
+  },
+  {
+    "before": "Supports touch, the primary mouse button, and Enter/Space on the host. Mouse waves start at the press position and release on mouseup in the owning document or window blur. Non-primary and touch-generated compatibility mouse events are ignored; an 800ms window after touch is the fallback when sourceCapabilities is unavailable. Keyboard waves start at the center; use native buttons. Simulator clicks do not certify real touch behavior.",
+    "englishBefore": "Supports touch, the primary mouse button, and Enter/Space on the host. Mouse waves start at the press position and release on mouseup in the owning document or window blur. Non-primary and touch-generated compatibility mouse events are ignored; an 800ms window after touch is the fallback when sourceCapabilities is unavailable. Keyboard waves start at the center; use native buttons. Simulator clicks do not certify real touch behavior.",
+    "after": "Supports touch, primary mouse clicks and host Enter / Space. Mouse ripples expand from the press location and end on release or window blur. Nonprimary buttons and compatibility mouse events after touch are ignored. Keyboard ripples expand from the center; use native buttons for interactive hosts.",
+    "english": "Supports touch, primary mouse clicks and host Enter / Space. Mouse ripples expand from the press location and end on release or window blur. Nonprimary buttons and compatibility mouse events after touch are ignored. Keyboard ripples expand from the center; use native buttons for interactive hosts."
+  },
+  {
+    "before": "Lifecycle availability gates retained native methods, thumb commands, scroll notifications and measurement. Suspension/disposal invalidate operation and binding epochs; activation remeasures current geometry and accepts only fresh binding deliveries. After geometry getters/reactive commits/thumb callbacks, operation/node/lifecycle checks reject reentrant disposal or newer measurement ownership. Logical cancellation cannot undo native scrolling already handed to the browser; native smooth interpolation/cancellation is not certified.",
+    "englishBefore": "Lifecycle availability gates retained native methods, thumb commands, scroll notifications and measurement. Suspension/disposal invalidate operation and binding epochs; activation remeasures current geometry and accepts only fresh binding deliveries. After geometry getters/reactive commits/thumb callbacks, operation/node/lifecycle checks reject reentrant disposal or newer measurement ownership. Logical cancellation cannot undo native scrolling already handed to the browser; native smooth interpolation/cancellation is not certified.",
+    "after": "Previously saved scroll commands do not affect deactivated or unmounted instances. Reactivation measures the current content. Changing direction or thumb geometry ends an active drag; use the current instance after remounting.",
+    "english": "Previously saved scroll commands do not affect deactivated or unmounted instances. Reactivation measures the current content. Changing direction or thumb geometry ends an active drag; use the current instance after remounting."
+  },
+  {
+    "before": "Render-settled active-option scrolling is not CSS animation completion. Close/reopen, newer navigation, deactivation or disposal invalidate old work; consumed callbacks never replay, including empty options. Inactive/disposed retained selection/keyboard/scroll entries are inert; activation accepts fresh commands. Late dropdown registration remains supported. Virtual callbacks are rechecked before DOM scrolling. Scoped14 each/shared consumer regression Cedar93/Maple96 pass with controlled queues, not native browser/OS or full downstream proof. No API/CSS token change.",
+    "englishBefore": "Render-settled active-option scrolling is not CSS animation completion. Close/reopen, newer navigation, deactivation or disposal invalidate old work; consumed callbacks never replay, including empty options. Inactive/disposed retained selection/keyboard/scroll entries are inert; activation accepts fresh commands. Late dropdown registration remains supported. Virtual callbacks are rechecked before DOM scrolling. Scoped14 each/shared consumer regression Cedar93/Maple96 pass with controlled queues, not native browser/OS or full downstream proof. No API/CSS token change.",
+    "after": "Active-option scrolling follows the latest keyboard navigation. Closing the menu or moving to another option cancels outdated scroll requests; reopening uses the current options.",
+    "english": "Active-option scrolling follows the latest keyboard navigation. Closing the menu or moving to another option cancels outdated scroll requests; reopening uses the current options."
+  },
+  {
+    "before": "The close button supports Space and Enter without bubbling into selection. Checkable tags support both keys; controlled checked values still require parent acceptance, while omitted checked uses local state. Loading blocks selection, rather than acting as a disabled API. Each library maintains independent state. These basic interactions do not certify held-key, asynchronous or physical-touch combinations.",
+    "englishBefore": "The close button supports Space and Enter without bubbling into selection. Checkable tags support both keys; controlled checked values still require parent acceptance, while omitted checked uses local state. Loading blocks selection, rather than acting as a disabled API. Each library maintains independent state. These basic interactions do not certify held-key, asynchronous or physical-touch combinations.",
+    "after": "Close buttons support Space / Enter without selecting the tag. Selectable tags also support Space / Enter. Controlled checked is accepted by the parent; otherwise the component stores its state. Loading blocks selection.",
+    "english": "Close buttons support Space / Enter without selecting the tag. Selectable tags also support Space / Enter. Controlled checked is accepted by the parent; otherwise the component stores its state. Loading blocks selection."
+  },
+  {
+    "before": "In the single-value Demo, tightening the minimum to 10:30:40 retains committed 10:30:38 and prevents confirmation. Moving the wheel to minute 31 aligns draft seconds to valid candidates. Explicitly select second 02 and confirm to commit the inclusive maximum 10:31:02. Changing the field popup draft to second 00 and canceling retains second 02. Candidate alignment is not an external model commit; mouse/keyboard evidence is not physical-touch inertia testing.",
+    "englishBefore": "In the single-value Demo, tightening the minimum to 10:30:40 retains committed 10:30:38 and prevents confirmation. Moving the wheel to minute 31 aligns draft seconds to valid candidates. Explicitly select second 02 and confirm to commit the inclusive maximum 10:31:02. Changing the field popup draft to second 00 and canceling retains second 02. Candidate alignment is not an external model commit; mouse/keyboard evidence is not physical-touch inertia testing.",
+    "after": "After tightening the minimum to 10:30:40, the field retains 10:30:38 but the panel cannot confirm it. Selecting and confirming the inclusive maximum 10:31:02 updates the model. Editing seconds to 00 and canceling keeps seconds 02.",
+    "english": "After tightening the minimum to 10:30:40, the field retains 10:30:38 but the panel cannot confirm it. Selecting and confirming the inclusive maximum 10:31:02 updates the model. Editing seconds to 00 and canceling keeps seconds 02."
+  },
+  {
+    "before": "Independent cross-platform source copies built on Input.",
+    "englishBefore": "Independent cross-platform source copies built on Input.",
+    "after": "Verification-code input supporting whole-code distribution, formatting and form inheritance.",
+    "english": "Verification-code input supporting whole-code distribution, formatting and form inheritance."
+  },
+  {
+    "before": "The image Demo uses only a synthetic SVG data URL. Fail local image selects an intentionally invalid data URL: native Image failure emits source=image and falls back to red FALLBACK 201 text. Enter on Restore image restores the original graphic, retains error history without appending, keeps one layer, and disables Restore again. This does not test external networking, CORS, Canvas faults, or image-load races.",
+    "englishBefore": "The image Demo uses only a synthetic SVG data URL. Fail local image selects an intentionally invalid data URL: native Image failure emits source=image and falls back to red FALLBACK 201 text. Enter on Restore image restores the original graphic, retains error history without appending, keeps one layer, and disables Restore again. This does not test external networking, CORS, Canvas faults, or image-load races.",
+    "after": "Local image failure uses an invalid data URL, emits a source=image error and falls back to FALLBACK 201 text. Activate Restore image with Enter to restore the image. Error history remains, with one watermark layer.",
+    "english": "Local image failure uses an invalid data URL, emits a source=image error and falls back to FALLBACK 201 text. Activate Restore image with Enter to restore the image. Error history remains, with one watermark layer."
+  },
+  {
+    "before": "For the total-size combination, start with an empty queue, choose “600B each, 1024B total”, add two generated 62B images, prepare and resolve both. Each 600B replacement meets the per-file limit, but both exceed the total limit. Only one local request starts; the other item remains ready with its original file and reports max-total-size. Remove the successful item and prepare the remaining item again to free capacity and succeed. Reset clears the queue, pending preparations and request count. This tests local before-upload replacement, not native file selection or real network uploading.",
+    "englishBefore": "For the total-size combination, start with an empty queue, choose “600B each, 1024B total”, add two generated 62B images, prepare and resolve both. Each 600B replacement meets the per-file limit, but both exceed the total limit. Only one local request starts; the other item remains ready with its original file and reports max-total-size. Remove the successful item and prepare the remaining item again to free capacity and succeed. Reset clears the queue, pending preparations and request count. This tests local before-upload replacement, not native file selection or real network uploading.",
+    "after": "In the total-size example, a 600B replacement fits the individual limit, but two replacements exceed the 1024B total limit. One request starts; the other item retains its original file and reports max-total-size. Remove the successful item, then prepare the remaining item again to free capacity. Reset clears the queue and pending preparations. This example uses local generated files and simulated requests.",
+    "english": "In the total-size example, a 600B replacement fits the individual limit, but two replacements exceed the 1024B total limit. One request starts; the other item retains its original file and reports max-total-size. Remove the successful item, then prepare the remaining item again to free capacity. Reset clears the queue and pending preparations. This example uses local generated files and simulated requests."
+  },
+  {
+    "before": "input uses combobox, while textarea retains a multiline textbox. Both link to the actual listbox and active candidate with aria-autocomplete, aria-controls and aria-activedescendant. Closing suggestions or making the field readonly removes active references; arrow navigation keeps DOM focus in the native input. These checks cover DOM relationships and keyboard behavior, not certification across all screen-reader and native-device combinations.",
+    "englishBefore": "input uses combobox, while textarea retains a multiline textbox. Both link to the actual listbox and active candidate with aria-autocomplete, aria-controls and aria-activedescendant. Closing suggestions or making the field readonly removes active references; arrow navigation keeps DOM focus in the native input. These checks cover DOM relationships and keyboard behavior, not certification across all screen-reader and native-device combinations.",
+    "after": "input uses combobox, while textarea retains a multiline textbox. Both link to the actual listbox and active candidate with aria-autocomplete, aria-controls and aria-activedescendant. Closing suggestions or making the field readonly removes active references; arrow navigation keeps DOM focus in the native input.",
+    "english": "input uses combobox, while textarea retains a multiline textbox. Both link to the actual listbox and active candidate with aria-autocomplete, aria-controls and aria-activedescendant. Closing suggestions or making the field readonly removes active references; arrow navigation keeps DOM focus in the native input."
+  },
+  {
+    "before": "现有 triggerProps 在部分内部 Trigger 配置之后展开，嵌套 disabled 等字段目前可以覆盖内部传值。F07 兼容阶段保留该顺序和类型，不套用 AutoComplete 的托管字段规则；不新增安全子集承诺，也不自动禁止这些旧能力。",
+    "after": "嵌套 triggerProps 中的 disabled 等字段可覆盖 ColorPicker 传入弹层的对应配置。需要禁用整个组件时，应同时检查顶层属性和嵌套配置。",
+    "english": "Nested triggerProps fields such as disabled can override the corresponding popup settings supplied by ColorPicker. To disable the entire component, check both top-level props and nested configuration."
+  },
+  {
+    "before": "Maple Table 保持原生表格插槽展示 API，不提供 data/columns。Cedar 的 `defineTableConfig<Row>` 用于其数据表格，不适用于本组件。本次 F08-A 不给 Maple 新增数据列、排序或筛选 API；原插槽和尺寸/滚动/海拔配置保持。",
+    "after": "Maple Table 使用原生表格插槽 API，不提供 data、columns、排序或筛选配置。Cedar 的 `defineTableConfig<Row>` 仅用于 Cedar 数据表格。",
+    "english": "Maple Table uses native-table slots and does not provide data, columns, sorting or filtering configuration. Cedar `defineTableConfig<Row>` applies only to the Cedar data table."
+  },
+  {
+    "before": "样式从当前 textarea 所属窗口读取，旧观察器不能跨停用／激活提交；几何及样式读取返回后再次核对，防止重入卸载。停用／卸载的保留输入、弹层事件和 focus／blur 命令无效；禁用时不接受输入或 focus，活动实例仍允许 blur。公开方法签名、颜色和 CSS 变量不变。Maple 无对应 Mention 运行时，不新增移动端副本。",
+    "after": "停用或卸载 Mention 后，保留的输入、弹层事件及 focus / blur 调用不再生效；重新激活后会重新测量输入位置。禁用时不接受输入或 focus，活动实例仍允许调用 blur。",
+    "english": "After Mention is deactivated or unmounted, retained input and popup events and focus / blur calls have no effect. Reactivation measures the input position again. When disabled, input and focus are ignored; an active instance still allows blur."
+  },
+  {
+    "before": "私有视觉滚动保留 300ms／quartOut；它不是 CSS transition 完成计时，不新增时长 Token。帧由目标所属窗口创建／取消，每帧检查当前减少动效偏好；已开启时直接定位，运行中开启则下一帧完成。取消停在当前位置，不跳到目标、不发完成通知。nextTick 通知只能逻辑失效，不能物理撤销已排队续体或回滚已执行滚动。",
+    "after": "锚点滚动持续 300ms；启用减少动态效果时直接定位，滚动过程中启用则在下一帧完成。取消滚动时停留在当前位置，不跳到目标，也不触发完成通知。",
+    "english": "Anchor scrolling lasts 300ms. Reduced motion positions the target immediately; enabling it during scrolling completes on the next frame. Cancellation leaves the current position without jumping to the target or emitting a completion notification."
+  },
+  {
+    "before": "AnchorLink 卸载及 href 变化会注销原节点；旧节点清理不会删除同 hash 的新注册。测量／几何读取后再次核对归属，防止停用、卸载或新请求重入后提交旧结果。公开 Props／Events、颜色和 CSS 变量保持不变；Maple 没有对应 Anchor 运行时。",
+    "after": "AnchorLink 卸载或 href 改变后会停止跟踪旧链接；停用、卸载或新的定位请求会使旧的测量结果失效。",
+    "english": "Unmounting AnchorLink or changing href stops tracking the old link. Deactivation, unmounting or a new positioning request invalidates earlier measurements."
+  },
+  {
+    "before": "现有 TimePopupPresentationProps 与运行时过滤保持；open/defaultOpen、disabled、trigger、closeOnClickReference、preventFocus 和对应展开更新归字段管理。顶层 popup-container 明确设置时优先，否则嵌套回退，popupClass 合并内部类。inline 展示层固定 popupOffset=4；Maple 还固定 unmountOnClose=true，这些旧类型中的字段不保证能控制最终值。",
+    "after": "open/defaultOpen、disabled、trigger、closeOnClickReference、preventFocus 和对应展开更新由时间字段管理。顶层 popup-container 明确设置时优先，否则使用嵌套配置；popupClass 会合并。inline 展示层固定 popupOffset=4；Maple 还固定 unmountOnClose=true，因此嵌套配置中的这些字段不保证能控制最终值。",
+    "english": "The time field manages open/defaultOpen, disabled, trigger, closeOnClickReference, preventFocus and visibility updates. An explicit top-level popup-container takes precedence over nested configuration; popupClass is merged. Inline presentation fixes popupOffset=4, and Maple also fixes unmountOnClose=true, so those nested fields may not control the final values."
+  },
+  {
+    "before": "现有 TimePopupPresentationProps 与运行时过滤保持；open/defaultOpen、disabled、trigger、closeOnClickReference、preventFocus 和对应展开更新归字段管理。顶层 popup-container 明确设置时优先，否则嵌套回退，popupClass 合并内部类。inline 展示层固定 popupOffset=4；Maple 还固定 unmountOnClose=true，这些旧类型中的字段不保证能控制最终值。",
+    "after": "open/defaultOpen、disabled、trigger、closeOnClickReference、preventFocus 和对应展开更新由时间字段管理。顶层 popup-container 明确设置时优先，否则使用嵌套配置；popupClass 会合并。inline 展示层固定 popupOffset=4；Maple 还固定 unmountOnClose=true，因此嵌套配置中的这些字段不保证能控制最终值。",
+    "english": "The time field manages open/defaultOpen, disabled, trigger, closeOnClickReference, preventFocus and visibility updates. An explicit top-level popup-container takes precedence over nested configuration; popupClass is merged. Inline presentation fixes popupOffset=4, and Maple also fixes unmountOnClose=true, so those nested fields may not control the final values."
+  },
+  {
+    "before": "现有 TimePopupPresentationProps 与运行时过滤保持；open/defaultOpen、disabled、trigger、closeOnClickReference、preventFocus 和对应展开更新归字段管理。顶层 popup-container 明确设置时优先，否则嵌套回退，popupClass 合并内部类。inline 展示层固定 popupOffset=4；Maple 还固定 unmountOnClose=true，这些旧类型中的字段不保证能控制最终值。",
+    "after": "open/defaultOpen、disabled、trigger、closeOnClickReference、preventFocus 和对应展开更新由时间字段管理。顶层 popup-container 明确设置时优先，否则使用嵌套配置；popupClass 会合并。inline 展示层固定 popupOffset=4；Maple 还固定 unmountOnClose=true，因此嵌套配置中的这些字段不保证能控制最终值。",
+    "english": "The time field manages open/defaultOpen, disabled, trigger, closeOnClickReference, preventFocus and visibility updates. An explicit top-level popup-container takes precedence over nested configuration; popupClass is merged. Inline presentation fixes popupOffset=4, and Maple also fixes unmountOnClose=true, so those nested fields may not control the final values."
+  },
+  {
+    "before": "现有 TimePopupPresentationProps 与运行时过滤保持；open/defaultOpen、disabled、trigger、closeOnClickReference、preventFocus 和对应展开更新归字段管理。顶层 popup-container 明确设置时优先，否则嵌套回退，popupClass 合并内部类。inline 展示层固定 popupOffset=4；Maple 还固定 unmountOnClose=true，这些旧类型中的字段不保证能控制最终值。",
+    "after": "open/defaultOpen、disabled、trigger、closeOnClickReference、preventFocus 和对应展开更新由时间字段管理。顶层 popup-container 明确设置时优先，否则使用嵌套配置；popupClass 会合并。inline 展示层固定 popupOffset=4；Maple 还固定 unmountOnClose=true，因此嵌套配置中的这些字段不保证能控制最终值。",
+    "english": "The time field manages open/defaultOpen, disabled, trigger, closeOnClickReference, preventFocus and visibility updates. An explicit top-level popup-container takes precedence over nested configuration; popupClass is merged. Inline presentation fixes popupOffset=4, and Maple also fixes unmountOnClose=true, so those nested fields may not control the final values."
+  },
+  {
+    "before": "英文旧版 Trigger 测量调度过程说明",
+    "after": "",
+    "englishBefore": "Observer bindings and measurement RAF batches use separate generations. Old entries and dequeued frames after replacement/deactivation cannot consume new measurement tasks; necessary geometry work remains independent of CSS motion duration.",
+    "english": ""
+  },
+  {
+    "before": "英文旧版 Trigger 滚动任务审计说明",
+    "after": "",
+    "englishBefore": "Positioning / scroll-close RAF uses the event element or popup owner window and is canceled on its original scheduling window. Dequeued frames after close/unbind cannot consume replacement scrolling work. RAF is measurement scheduling, not CSS duration; original listener-window cleanup is verified by the subsequent simulated audit; same-node document adoption and real browser visuals remain separate.",
+    "english": "After closing or unbinding, pending positioning and scroll-close tasks do not affect a popup opened later."
+  }
+]

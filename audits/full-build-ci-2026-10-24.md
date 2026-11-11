@@ -13,7 +13,7 @@
 5. **陈旧 demo / 交互测试**：SplitButton 现为四种静态变体目录，测试改为逐一验证两个按钮的中性状态、变体及主操作 / 菜单回调。Cedar 日期测试改用现行 inline 原生面板和 compact 原生编辑器，保留完整范围、倒序选择、高亮、取消恢复、Form、单次提交和 Now 草稿断言；双击测试新增“单击不打开”断言。
 6. **时间范围说明冲突**：最近的 Maple 文档、顺序验证与两库运行时均为“端点不交换，未开启次日时拒绝倒序”。Cedar 早期说明和一项文本测试仍写自动排序。按现行协议对齐 Cedar 文档及测试；运行时最终未改。两库补充禁用小时、步长不能被次日开关绕过的断言。规范澄清见 Cedar OpenSpec `reconcile-ci-time-range-contract`。
 7. **文档构建资源**：Cedar 一次重跑达到 Node 默认约 4 GiB 堆上限并中止，还发现大量逐样式启动的 Sass 子进程。生产文档命令显式提供 6144 MiB 堆，样式预处理限制 2 个 worker，Sass 使用 modern-compiler 复用编译器；不关闭 sourcemap / 插件 / 页面或错误检查来绕开构建。资源配置纳入 CI 契约回归。
-8. **Maple 首次安装的 CLI 入口**：包 bin 原来指向尚未生成的 lib，干净安装无法创建命令链接。改用随源码存在、随 npm 包发布的 `bin/maple-cli.mjs` 转入构建后的 CLI。新增真实临时 workspace 回归：没有 lib 时先 frozen 安装并断言 bin 已存在，随后生成模拟 lib 并通过已安装命令执行；实际 CLI `--version` 也验证通过。
+8. **Maple 首次安装的 CLI 入口**：包 bin 原来指向尚未生成的 lib，干净安装无法创建命令链接。改用随源码存在、随 npm 包发布的 `bin/cli.mjs` 转入构建后的 CLI。新增真实临时 workspace 回归：没有 lib 时先 frozen 安装并断言 bin 已存在，随后生成模拟 lib 并通过已安装命令执行；实际 CLI `--version` 也验证通过。
 9. **CountTo 结束事件偶发失败**：原测试只睡眠 duration+20ms，在机器负载较大时不保证最后一帧已调度。两库改为可控 performance / RAF 时钟，验证结束前零通知、到达时刻终值正确且恰好通知一次、后续帧不重复通知；没有延长等待或放宽断言。
 10. **主、子进程工具链漂移**：仅在入口调用 Corepack 不足以隔离系统 Volta；嵌套 `pnpm` 曾切换为全局 Node 23。本次使用临时工具目录固定 Node 20.18.3 / pnpm 9.6.0，并复查原门禁。两库 CI 新增 `ci-toolchain-check.mjs`，验证主进程 Node 20、pnpm 9.6.0 和 pnpm 子进程的 Node 版本完全一致；4 项正反测试覆盖入口版本、包管理器版本和子进程偷换。临时 PATH 不改用户全局 Volta 设置。
 11. **真实发布产物的环境分支**：Maple CLI 原先设置 `NODE_ENV=compile`，与生产构建语义不符；共享构建器还会过早折叠模块中的开发期校验。两库 CLI 统一生产构建，共享 ui-build 在清理输出前拒绝非标准环境；ESM/CJS 保留消费方环境判断，UMD 固定生产模式、不依赖 Node 全局。新增真实构建回归与两库 `check:published-environment`，分别验证开发和生产消费 ESM/CJS，以及真实 Vue + JSDOM 浏览器中的完整 UMD 启动。规范固化于 [build-and-ci.md](../standards/build-and-ci.md)。

@@ -5,8 +5,8 @@ import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = fileURLToPath(new URL('../../', import.meta.url))
-const c = resolve(root, 'cedar-design-web/packages/cedar-ui/src')
-const m = resolve(root, 'maple-design-mobile/packages/maple-ui/src')
+const c = resolve(root, 'cedar-design-web/packages/ui/src')
+const m = resolve(root, 'maple-design-mobile/packages/ui/src')
 const require = createRequire(resolve(c, '../package.json'))
 const prettier = require('prettier')
 const less = require('less')
@@ -31,7 +31,7 @@ for (const file of pairs) {
   const format = async path => prettier.format(normalize(readFileSync(path, 'utf8')), { parser })
   assert.equal(await format(resolve(c, file)), await format(resolve(m, file)), file)
 }
-for (const name of ['size', 'status', 'step', 'loop', 'advanced']) {
+for (const name of ['appearance-comparison', 'step', 'loop', 'advanced']) {
   assert.equal(await prettier.format(normalize(readFileSync(resolve(c, 'progress/__demos__', name + '.vue'), 'utf8')), { parser: 'vue' }), await prettier.format(normalize(readFileSync(resolve(m, 'progress/example/demos', name + '.vue'), 'utf8')), { parser: 'vue' }), name)
 }
 for (const dir of [c, m]) for (const component of ['progress', 'progress-group']) {
@@ -40,5 +40,5 @@ for (const dir of [c, m]) for (const component of ['progress', 'progress-group']
   assert.ok(css.includes('prefers-reduced-motion'), component + ' reduced motion')
   if (component === 'progress-group') assert.ok(css.includes(':focus-visible'), 'group focus')
 }
-console.log('Progress family: 14 source/test/style pairs, 5 demos and both compiled styles verified. Only installation and local ConfigProvider size wiring remain library-specific.')
+console.log('Progress family: 14 source/test/style pairs, 4 demos (size/status are composed in appearance-comparison) and both compiled styles verified. Only installation and local ConfigProvider size wiring remain library-specific.')
 

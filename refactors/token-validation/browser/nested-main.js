@@ -1,12 +1,12 @@
 import { createApp, h, ref, watchEffect } from 'vue'
-import CedarDrawer from '/cedar-design-web/packages/cedar-ui/src/drawer/index.ts'
-import MaplePopup from '/maple-design-mobile/packages/maple-ui/src/popup/index.ts'
-import '/cedar-design-web/packages/cedar-ui/src/drawer/style/index.ts'
-import '/maple-design-mobile/packages/maple-ui/src/popup/style/index.ts'
-import CedarThemes from '/cedar-design-web/packages/cedar-ui/src/themes/index.ts'
-import MapleThemes from '/maple-design-mobile/packages/maple-ui/src/themes/index.ts'
-import CedarStyleProvider from '/cedar-design-web/packages/cedar-ui/src/style-provider/index.ts'
-import MapleStyleProvider from '/maple-design-mobile/packages/maple-ui/src/style-provider/index.ts'
+import CedarDrawer from '/cedar-design-web/packages/ui/src/drawer/index.ts'
+import MaplePopup from '/maple-design-mobile/packages/ui/src/popup/index.ts'
+import '/cedar-design-web/packages/ui/src/drawer/style/index.ts'
+import '/maple-design-mobile/packages/ui/src/popup/style/index.ts'
+import CedarThemes from '/cedar-design-web/packages/ui/src/themes/index.ts'
+import MapleThemes from '/maple-design-mobile/packages/ui/src/themes/index.ts'
+import CedarStyleProvider from '/cedar-design-web/packages/ui/src/style-provider/index.ts'
+import MapleStyleProvider from '/maple-design-mobile/packages/ui/src/style-provider/index.ts'
 
 const platform = ref('Cedar'), theme = ref('default/light'), parent = ref(false), child = ref(false)
 const escapes = { parent: ref(0), child: ref(0) }

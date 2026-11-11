@@ -53,8 +53,9 @@ for (const pointerMode of ['fine', 'coarse']) for (const component of ['checkbox
         for (const error of [false, true]) for (const hover of [false, true]) {
           const parent = node(p + '-radio-group ' + p + '-radio-group--button')
           const root = node([p + '-radio', p + '-radio--button', checked && p + '-radio--checked', disabled && p + '-radio--disabled', error && p + '-radio--error', hover && 'audit-hover'].filter(Boolean).join(' '), parent)
-          const token = disabled ? 'radio-label-text-color-disabled' : error ? 'radio-control-color-error' : checked ? 'radio-control-color-checked' : 'radio-label-text-color'
+          const token = disabled ? 'radio-label-text-color-disabled' : 'radio-label-text-color'
           consume(root, 'color', token)
+          if (error && !disabled) assert.equal(expand(cascade(root)['box-shadow']), `inset 0 0 0 ${read('internal-radio-focus-width')} ${read('radio-control-color-error')}`, context + '/button error indicator')
           if (checked) assert.equal(expand(cascade(root).background), read('internal-radio-segment-bg'), context + '/button background')
           if (!disabled) contrast(read(token), read(checked ? 'internal-radio-segment-bg' : 'internal-radio-segment-group-bg'), 4.5)
           states++

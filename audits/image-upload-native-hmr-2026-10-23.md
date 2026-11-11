@@ -83,11 +83,11 @@ node bin/upload-core-check.mjs
 
 # maple-design-mobile
 node --test scripts/quality/site-resolver.test.mjs scripts/quality/library-entry-cycle.test.mjs
-pnpm --dir packages/maple-ui exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js src/image src/upload --maxWorkers=1 --minWorkers=1
-pnpm --filter @maplejs/maple-ui typecheck
+pnpm --dir packages/ui exec vitest run --config ../cli/lib/node/config/vitest.config.js src/image src/upload --maxWorkers=1 --minWorkers=1
+pnpm --filter @maplejs/ui typecheck
 pnpm lint:check
 
-# cedar-design-web/packages/cedar-ui
+# cedar-design-web/packages/ui
 VITEST_MAX_THREADS=1 VITEST_MIN_THREADS=1 pnpm exec vitest run src/image src/upload
 pnpm exec vitest run --config site-imports.vitest.config.ts --threads=false
 pnpm typecheck

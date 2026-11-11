@@ -7,7 +7,7 @@ import { readMapleExamples, groupMapleExamples } from './group-maple-examples.mj
 import { composeDemoComparison } from './compose-demo-comparison.mjs';
 import { enhanceConfigurationComparison } from './demo-config-comparison.mjs';
 const root = fileURLToPath(new URL('../../', import.meta.url));
-const require = createRequire(new URL('../../cedar-design-web/packages/cedar-ui/package.json', import.meta.url));
+const require = createRequire(new URL('../../cedar-design-web/packages/ui/package.json', import.meta.url));
 const { parse, compileScript, compileTemplate } = require('@vue/compiler-sfc');
 const write = process.argv.includes('--write');
 const planFile = path.join(root, 'design-ui/configs/demo-content-consolidation.json');
@@ -17,7 +17,7 @@ const read = file => updated.get(file) ?? snapshots.get(file) ?? (() => { const 
 const set = (file, source) => updated.set(file, source);
 const originals = JSON.parse(read(path.join(root, 'design-ui/audits/demo-content-before-2026-10-28.json')));
 const configs = Object.fromEntries(['cedar','maple'].map(platform => [platform, JSON.parse(read(path.join(root, `design-ui/configs/demo-groups${platform==='maple'?'.maple':''}.json`)))]));
-const familyRoot = (platform,family) => path.join(root, `${platform==='cedar'?'cedar-design-web/packages/cedar-ui':'maple-design-mobile/packages/maple-ui'}/src`, family);
+const familyRoot = (platform,family) => path.join(root, `${platform==='cedar'?'cedar-design-web/packages/ui':'maple-design-mobile/packages/ui'}/src`, family);
 const stem = ref => path.basename(ref,'.vue').replace(/\.en-US$/,'');
 const label = source => /^###\s+(.+)$/m.exec(source)?.[1] ?? '';
 function validate(source,file) {
@@ -81,7 +81,7 @@ function transformEntry(file,plan,newGroups,newFile,enFile) {
    imports+=`import ${local}En from '${enRef}'\n`;
    const languageModel = /\b(?:const|let)\s+english\b/.test(source) ? 'english' : 'contentComparisonEnglish';
    body=`<component :is="${languageModel} ? ${local}En : ${local}" />`;
-   if(languageModel === 'contentComparisonEnglish' && !source.includes('const contentComparisonEnglish'))imports+=`import { ref as contentComparisonRef } from 'vue'\nimport { watchLang as contentComparisonWatchLang } from '@maple-design/cli/client'\nconst contentComparisonEnglish = contentComparisonRef(false)\ncontentComparisonWatchLang(lang => { contentComparisonEnglish.value = lang === 'en-US' })\n`;
+   if(languageModel === 'contentComparisonEnglish' && !source.includes('const contentComparisonEnglish'))imports+=`import { ref as contentComparisonRef } from 'vue'\nimport { watchLang as contentComparisonWatchLang } from '@maple-design/cli-vue/client'\nconst contentComparisonEnglish = contentComparisonRef(false)\ncontentComparisonWatchLang(lang => { contentComparisonEnglish.value = lang === 'en-US' })\n`;
   }
   component=`<section data-demo="${plan.into}">\n${bilingual}\n${body}\n</section>`;
  }
@@ -148,7 +148,7 @@ if(errors.length){process.exitCode=1;}else if(write){
  // Retire only sources whose documentation/phone references were migrated. Leave
  // reusable source dependencies intact; no public duplicate remains in either case.
  const allSources=[];
- for(const platform of ['cedar','maple']){const base=path.join(root,`${platform==='cedar'?'cedar-design-web/packages/cedar-ui':'maple-design-mobile/packages/maple-ui'}/src`);for(const relative of fs.readdirSync(base,{recursive:true}))if(/\.(?:vue|tsx?|mjs|md)$/.test(relative)){const file=path.join(base,relative);if(!retired.has(file))allSources.push([file,fs.readFileSync(file,'utf8')]);}}
+ for(const platform of ['cedar','maple']){const base=path.join(root,`${platform==='cedar'?'cedar-design-web/packages/ui':'maple-design-mobile/packages/ui'}/src`);for(const relative of fs.readdirSync(base,{recursive:true}))if(/\.(?:vue|tsx?|mjs|md)$/.test(relative)){const file=path.join(base,relative);if(!retired.has(file))allSources.push([file,fs.readFileSync(file,'utf8')]);}}
  for(const [file,into]of retired){if(!fs.existsSync(file))continue;const needed=allSources.some(([owner,source])=>(owner.endsWith('.md') && demoRefs(source).some(ref=>path.resolve(path.dirname(owner),ref)===file)) || [...source.matchAll(/(?:from\s*|import\s*\()(['"])(\.[^'"]+)\1/g)].some(match=>path.resolve(path.dirname(owner),match[2])===file));if(!needed)fs.unlinkSync(file);}
  // Generated API review manifests point at the actual consolidated source.
  for(const row of originals){const directory=path.join(familyRoot(row.platform,row.family.replace(/\/picker$/,'')),row.platform==='cedar'?'__demos__':'example/demos');if(!fs.existsSync(directory))continue;for(const name of fs.readdirSync(directory).filter(name=>name.endsWith('.config.json'))){const file=path.join(directory,name);const json=JSON.parse(fs.readFileSync(file));function migrate(value){if(Array.isArray(value)){const mapped=value.map(item=>typeof item==='string'&&retired.has(path.resolve(directory,item))?retired.get(path.resolve(directory,item))+'.vue':migrate(item));return mapped.every(item=>typeof item==='string'&&item.endsWith('.vue'))?[...new Set(mapped)]:mapped;}if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).map(([key,item])=>[key,migrate(item)]));return value;}const source=JSON.stringify(migrate(json),null,2)+'\n';if(fs.readFileSync(file,'utf8')!==source)fs.writeFileSync(file,source);}}

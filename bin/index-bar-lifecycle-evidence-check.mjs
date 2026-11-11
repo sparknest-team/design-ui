@@ -13,7 +13,7 @@ export function checkIndexBarEvidence(r, read = readFileSync) {
   assert.equal(r.fixture.file, 'refactors/token-validation/browser/index-bar-lifecycle-main.js'); assert.equal(r.fixture.frozen, true);
   assert.equal(hash(read(resolve(root, r.fixture.file))), r.fixture.sha256, 'fixture drift');
   assert.deepEqual(r.sources.map(s => s.file), ['index-bar/IndexBar.vue', 'index-bar/scroll-task.ts']);
-  for (const s of r.sources) assert.equal(hash(read(resolve(root, '../maple-design-mobile/packages/maple-ui/src', s.file))), s.sha256, 'source drift');
+  for (const s of r.sources) assert.equal(hash(read(resolve(root, '../maple-design-mobile/packages/ui/src', s.file))), s.sha256, 'source drift');
   assert.deepEqual(r.consoleWarningsErrors, []);
   assert.equal(r.screenshot.file, 'native.jpg'); assert.equal(r.screenshot.viewed, true);
   const jpeg = read(resolve(directory, 'native.jpg'));

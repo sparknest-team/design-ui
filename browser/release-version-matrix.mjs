@@ -23,7 +23,7 @@ for (const library of ['maple', 'cedar']) {
   const root = resolve(config.roots[library]), provenance = accepted.repositories.find(row => row.library === library)
   assert.ok(provenance && provenance.fullQualityExitCode === 0)
   assert.equal(await artifactHash(root, library), provenance.publishedJsCssSha256, 'Accepted published artifact mismatch')
-  assert.equal(digest(await readFile(resolve(root, `packages/${library}-ui/${library === 'cedar' ? 'dist' : 'site'}/index.html`))), provenance.buildIndexHash)
+  assert.equal(digest(await readFile(resolve(root, `packages/ui/${library === 'cedar' ? 'dist' : 'site'}/index.html`))), provenance.buildIndexHash)
   for (const binary of config.browsers) {
     const line = binary.version.split('.')[0]
     assert.ok(['chrome-current', 'chrome-previous'].some(id => targetCatalog.cedar[id].releaseLine === line), 'Only the officially locked Stable release lines are accepted')

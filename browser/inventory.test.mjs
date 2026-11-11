@@ -28,8 +28,8 @@ test('production snapshots preserve nested files independently of later builds',
 test('production acceptance detects compiler, theme client and lockfile edits, excluding generated caches and tests', () => {
   const directory = mkdtempSync(resolve(tmpdir(), 'docs-production-inventory-'))
   try {
-    mkdirSync(resolve(directory, 'packages/cedar-ui/src'), { recursive: true })
-    const docs = resolve(directory, 'packages/cedar-ui/docs/.vuepress')
+    mkdirSync(resolve(directory, 'packages/ui/src'), { recursive: true })
+    const docs = resolve(directory, 'packages/ui/docs/.vuepress')
     mkdirSync(docs, { recursive: true })
     writeFileSync(resolve(docs, 'client.ts'), 'export const theme = "light"')
     const initial = productionFingerprint(directory, 'cedar')
@@ -53,8 +53,8 @@ test('production acceptance detects compiler, theme client and lockfile edits, e
     assert.equal(productionFingerprint(directory, 'cedar'), initial)
     writeFileSync(resolve(directory, 'pnpm-lock.yaml'), 'lockfileVersion: 9')
     assert.notEqual(productionFingerprint(directory, 'cedar'), initial)
-    mkdirSync(resolve(directory, 'packages/maple-ui/src'), { recursive: true })
-    const cli = resolve(directory, 'packages/maple-cli/src/node')
+    mkdirSync(resolve(directory, 'packages/ui/src'), { recursive: true })
+    const cli = resolve(directory, 'packages/cli/src/node')
     mkdirSync(cli, { recursive: true })
     writeFileSync(resolve(cli, 'build.ts'), 'export const version = 1')
     const originalCompiler = productionFingerprint(directory, 'maple')
@@ -66,9 +66,9 @@ test('production acceptance detects compiler, theme client and lockfile edits, e
 test('Maple production fingerprint includes HTML templates, site runtime and mjs configuration', () => {
   const directory = mkdtempSync(resolve(tmpdir(), 'docs-html-inventory-'))
   try {
-    mkdirSync(resolve(directory, 'packages/maple-ui/src'), { recursive: true })
-    mkdirSync(resolve(directory, 'packages/maple-cli/site/pc'), { recursive: true })
-    for (const file of ['packages/maple-cli/site/index.html', 'packages/maple-cli/site/mobile.html', 'packages/maple-cli/site/pc/App.vue', 'packages/maple-ui/maple.config.mjs']) {
+    mkdirSync(resolve(directory, 'packages/ui/src'), { recursive: true })
+    mkdirSync(resolve(directory, 'packages/cli/site/pc'), { recursive: true })
+    for (const file of ['packages/cli/site/index.html', 'packages/cli/site/mobile.html', 'packages/cli/site/pc/App.vue', 'packages/ui/maple.config.mjs']) {
       const before = productionFingerprint(directory, 'maple')
       writeFileSync(resolve(directory, file), 'changed production input')
       assert.notEqual(productionFingerprint(directory, 'maple'), before, file)
@@ -76,14 +76,14 @@ test('Maple production fingerprint includes HTML templates, site runtime and mjs
       assert.equal(productionFingerprint(directory, 'maple'), before)
     }
     const before = productionFingerprint(directory, 'maple')
-    writeFileSync(resolve(directory, 'packages/maple-cli/site/pc/App.spec.ts'), 'test only')
+    writeFileSync(resolve(directory, 'packages/cli/site/pc/App.spec.ts'), 'test only')
     assert.equal(productionFingerprint(directory, 'maple'), before)
   } finally { rmSync(directory, { recursive: true, force: true }) }
 })
 
 test('acceptance fingerprint detects implementation/style edits but not unrelated test formatting', () => {
   const directory = mkdtempSync(resolve(tmpdir(), 'docs-browser-inventory-'))
-  const source = resolve(directory, 'packages/cedar-ui/src/button')
+  const source = resolve(directory, 'packages/ui/src/button')
   mkdirSync(source, { recursive: true })
   const file = resolve(source, 'Button.vue')
   try {
@@ -130,6 +130,6 @@ test('all source syntaxes and every Maple guide remain accounted for', () => {
   assert.ok(form.demos.some((demo) => demo.name === 'field-presentation.vue'), 'HTML-style demo references count alongside fenced demos')
   for (const guide of mapleGuides) {
     assert.ok(!pages.some((page) => page.component === guide))
-    assert.ok(readFileSync(resolve(root, `packages/maple-ui/src/${guide}/docs/zh-CN.md`), 'utf8').trim())
+    assert.ok(readFileSync(resolve(root, `packages/ui/src/${guide}/docs/zh-CN.md`), 'utf8').trim())
   }
 })

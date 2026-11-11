@@ -1,6 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { scanMotionSource } from './motion-source-inventory.mjs';
 import { checkClassification, checkSavedClassification } from './runtime-motion-classification.mjs';
 
 const source = 'setTimeout(callback, delay)';
@@ -23,4 +25,64 @@ for (const category of ['interaction-dispatch', 'test-support', 'business-clock'
     assert.deepEqual(check(report), { classifiedHints: 1, unclassifiedHints: 1, categories: { [category]: 1 } });
   });
 }
-test('current reviewed sources and candidate identities match', () => { const result = checkSavedClassification(); assert.equal(result.classifiedHints, 184); assert.equal(result.unclassifiedHints, 0); assert.equal(result.categories['interaction-repeat'], 8); assert.equal(result.categories['task-dispatch'], 4); assert.equal(result.categories['measurement-scheduling'], 14); assert.equal(result.categories['visual-scroll'], 35); assert.equal(result.categories['interaction-dispatch'], 4); assert.equal(result.categories['native-scroll'], 27); assert.equal(result.categories['interaction-delay'], 20); assert.equal(result.categories['declaration-only'], 18); assert.equal(result.categories['state-settlement'], 20); assert.equal(result.categories['visual-completion'], 11); assert.equal(result.categories['delegated-scroll'], 5); assert.equal(result.categories['business-clock'], 8); });
+test('Maple Picker geometry and column reconciliation scrolls are classified with lifecycle ownership', () => {
+  const repo = 'maple-design-mobile', file = 'picker/Picker.vue';
+  const source = readFileSync(new URL('../../maple-design-mobile/packages/ui/src/' + file, import.meta.url), 'utf8');
+  const report = JSON.parse(readFileSync(new URL('../audits/runtime-motion-classification.json', import.meta.url), 'utf8'));
+  const row = report.rows.find(item => item.repo === repo && item.file === file);
+  const current = { file, ...scanMotionSource(file, source) };
+  const result = checkClassification({ ...report, rows: [row] }, { platforms: [{ repo, candidates: [current], runtimeCallCandidates: current.runtime.length }] }, () => source);
+  assert.equal(result.classifiedHints, 11);
+  assert.equal(result.unclassifiedHints, 0);
+  assert.deepEqual(result.categories, { 'visual-scroll': 10, 'declaration-only': 1 });
+});
+
+test('Cedar TimeColumn scroll retains its reviewed ownership classification', () => {
+  const repo = 'cedar-design-web', file = 'time/picker/TimeColumn.vue';
+  const source = readFileSync(new URL('../../cedar-design-web/packages/ui/src/' + file, import.meta.url), 'utf8');
+  const report = JSON.parse(readFileSync(new URL('../audits/runtime-motion-classification.json', import.meta.url), 'utf8'));
+  const row = report.rows.find(item => item.repo === repo && item.file === file);
+  const current = { file, ...scanMotionSource(file, source) };
+  const result = checkClassification({ ...report, rows: [row] }, { platforms: [{ repo, candidates: [current], runtimeCallCandidates: current.runtime.length }] }, () => source);
+  assert.deepEqual(result, { classifiedHints: 1, unclassifiedHints: 0, categories: { 'visual-scroll': 1 } });
+});
+
+for (const [file, count] of [
+  ['scheduler/components/SchedulerTimeGrid.vue', 2],
+  ['scheduler/components/SchedulerEvent.vue', 4],
+  ['scheduler/components/SchedulerTimelineRows.vue', 1],
+  ['scheduler/components/SchedulerDependencies.vue', 1],
+]) {
+  test('Cedar ' + file + ' retains its reviewed runtime classification', () => {
+    const repo = 'cedar-design-web';
+    const source = readFileSync(new URL('../../cedar-design-web/packages/ui/src/' + file, import.meta.url), 'utf8');
+    const report = JSON.parse(readFileSync(new URL('../audits/runtime-motion-classification.json', import.meta.url), 'utf8'));
+    const row = report.rows.find(item => item.repo === repo && item.file === file);
+    const current = { file, ...scanMotionSource(file, source) };
+    const result = checkClassification({ ...report, rows: [row] }, { platforms: [{ repo, candidates: [current], runtimeCallCandidates: current.runtime.length }] }, () => source);
+    assert.equal(result.classifiedHints, count);
+    assert.equal(result.unclassifiedHints, 0);
+  });
+}
+
+test('Cedar Map update guard owns its single interaction-delay timer', () => {
+  const repo = 'cedar-design-web', file = 'map/update-guard.ts';
+  const source = readFileSync(new URL('../../cedar-design-web/packages/ui/src/' + file, import.meta.url), 'utf8');
+  const report = JSON.parse(readFileSync(new URL('../audits/runtime-motion-classification.json', import.meta.url), 'utf8'));
+  const row = report.rows.find(item => item.repo === repo && item.file === file);
+  const current = { file, ...scanMotionSource(file, source) };
+  const result = checkClassification({ ...report, rows: [row] }, { platforms: [{ repo, candidates: [current], runtimeCallCandidates: current.runtime.length }] }, () => source);
+  assert.deepEqual(result, { classifiedHints: 1, unclassifiedHints: 0, categories: { 'interaction-delay': 1 } });
+});
+
+test('Cedar Tree distinguishes keyboard native scroll and VirtualList delegation', () => {
+  const repo = 'cedar-design-web', file = 'tree/Tree.vue';
+  const source = readFileSync(new URL('../../cedar-design-web/packages/ui/src/' + file, import.meta.url), 'utf8');
+  const report = JSON.parse(readFileSync(new URL('../audits/runtime-motion-classification.json', import.meta.url), 'utf8'));
+  const row = report.rows.find(item => item.repo === repo && item.file === file);
+  const current = { file, ...scanMotionSource(file, source) };
+  const result = checkClassification({ ...report, rows: [row] }, { platforms: [{ repo, candidates: [current], runtimeCallCandidates: current.runtime.length }] }, () => source);
+  assert.deepEqual(result, { classifiedHints: 4, unclassifiedHints: 0, categories: { 'delegated-scroll': 2, 'native-scroll': 1, 'declaration-only': 1 } });
+});
+
+test('current reviewed sources and candidate identities match', () => { const result = checkSavedClassification(); assert.equal(result.classifiedHints, 209); assert.equal(result.unclassifiedHints, 0); assert.equal(result.categories['interaction-repeat'], 4); assert.equal(result.categories['task-dispatch'], 7); assert.equal(result.categories['measurement-scheduling'], 17); assert.equal(result.categories['visual-scroll'], 40); assert.equal(result.categories['interaction-dispatch'], 4); assert.equal(result.categories['native-scroll'], 28); assert.equal(result.categories['interaction-delay'], 28); assert.equal(result.categories['declaration-only'], 18); assert.equal(result.categories['state-settlement'], 22); assert.equal(result.categories['visual-completion'], 11); assert.equal(result.categories['delegated-scroll'], 12); assert.equal(result.categories['business-clock'], 8); });

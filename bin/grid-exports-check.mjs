@@ -5,8 +5,8 @@ import { fileURLToPath } from 'node:url'
 import { resolve } from 'node:path'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
-const ts = createRequire(resolve(workspace, 'cedar-design-web/packages/cedar-ui/package.json'))('typescript')
-for (const library of ['cedar-design-web/packages/cedar-ui', 'maple-design-mobile/packages/maple-ui']) {
+const ts = createRequire(resolve(workspace, 'cedar-design-web/packages/ui/package.json'))('typescript')
+for (const library of ['cedar-design-web/packages/ui', 'maple-design-mobile/packages/ui']) {
   const paths = ['index.ts', 'grid/index.ts', 'row/index.ts', 'col/index.ts'].map(file => resolve(workspace, library, 'src', file))
   for (const oldFile of ['grid-row.vue', 'grid-col.vue', 'Row.vue', 'Col.vue', 'style/row.less', 'style/col.less']) {
     assert(!existsSync(resolve(workspace, library, 'src/grid', oldFile)), library + ': obsolete Grid wrapper ' + oldFile)

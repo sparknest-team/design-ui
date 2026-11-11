@@ -86,7 +86,7 @@ export async function createHandoff(destination, roots = {}, acceptedManifestPat
   await mkdir(resolve(destination, 'reports/evidence'), { recursive: true })
   for (const library of ['cedar', 'maple']) {
     const root = roots[library] ?? resolve(workspace, library === 'cedar' ? 'cedar-design-web' : 'maple-design-mobile')
-    const ui = resolve(root, `packages/${library}-ui`)
+    const ui = resolve(root, `packages/ui`)
     const output = resolve(ui, library === 'cedar' ? 'dist' : 'site')
     const sourceBefore = sourceFingerprint(root, library), inputsBefore = productionFingerprint(root, library)
     const report = await createNativeReport(root, library)

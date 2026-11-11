@@ -1,0 +1,662 @@
+[
+  {
+    "before": "本次仅新增可主动选用的专用类型，不收窄已发布的宽属性类型，不增加运行时过滤、不改变覆盖顺序；旧业务写法继续可编译。若直接使用旧宽属性，内部托管字段仍可能通过类型检查，但不代表能控制内部状态。",
+    "after": "建议使用本页列出的专用配置类型；展开状态、模型和事件由组件管理，不能通过嵌套配置接管。"
+  },
+  {
+    "before": "日期标签、标题和动作接入各库的全局 Locale 与既有 Provider。Cedar 删除日期组件级 `locale`，不保留覆盖字典或兼容别名。切换语言不会选择或提交日期。",
+    "after": "日期标签、标题和操作按钮的语言由全局 Locale 和 Provider 配置。切换语言不会选择或提交日期。"
+  },
+  {
+    "before": "可重排的数据项应提供稳定、唯一的 `value`，内部 Vue key 由业务值生成；数字 `0`、字符串 `'0'`、布尔值 `false` 保持不同身份。没有显式 value 的分组、分隔符或展示项按原始选项对象维持渲染身份，不新增公开 key 别名。点击另一个已经因 hover 打开的同级触发按钮，会关闭原先的菜单；点击子菜单内部不会误关父级。",
+    "after": "动态增删或调整选项顺序时，为每个命令设置稳定且唯一的 `value`。数字 `0`、字符串 `'0'` 和布尔值 `false` 是不同的选项值。\n\n点击另一个由悬停打开的同级触发元素时，会关闭原菜单；点击子菜单内部不会关闭父菜单。"
+  },
+  {
+    "before": "MenuPlacement 复用 TriggerPlacement 的十二方位值域；属性和类型均表达浮层相对触发器的首选方位。旧 MenuPosition 已删除。",
+    "after": "使用 `placement` 设置菜单相对触发元素的首选方位，可选值见 Menu Props。空间不足时允许自动调整，最终位置可能与首选方位不同。"
+  },
+  {
+    "before": "MenuPlacement uses the twelve-value TriggerPlacement domain. Both prop and type describe the preferred popup side relative to its trigger. The old MenuPosition export has been removed.",
+    "after": "Use `placement` to choose the preferred popup position relative to the trigger. See Menu Props for the available values. Automatic fitting can change the final position when space is limited."
+  },
+  {
+    "before": "Cedar InputTag 实际嵌入 Tag 的 close-btn，不渲染旧 c-icon-hover 伪元素。本次移除旧 mixin 导入、默认／focus 的伪元素背景规则，以及重复的自定义 Tag 文字规则（文字由 Tag 自身负责）。关闭按钮的现有外观、点击删除和 readonly / disabled 行为不变；没有新增 hover 背景效果。",
+    "after": "标签和关闭按钮的外观由 Tag 控制；禁用、只读及不可关闭的标签不能通过关闭按钮移除。"
+  },
+  {
+    "before": "InputTag 的 outline / filled / standard 外壳由 FieldDecorator 管理。Form 不应重新设置其背景、边框或焦点阴影；本次删除了 Form 对旧 InputTag 状态类的重绘规则，保留校验提示职责。filled 的默认／hover／focus 继续走 FieldDecorator 的 fill-1 / fill-2 / fill-3 规则。",
+    "after": "InputTag 的 outline / filled / standard 外观使用 FieldDecorator 的变量。filled 的默认、悬停和聚焦背景分别使用 fill-1、fill-2、fill-3。Form 负责校验提示。"
+  },
+  {
+    "before": "FieldDecorator owns InputTag outline / filled / standard wrappers. Form must not redraw backgrounds, borders or focus shadows; old Form overrides for obsolete InputTag state classes are removed, while validation messages remain. filled default/hover/focus still use FieldDecorator fill-1 / fill-2 / fill-3.",
+    "after": "InputTag uses FieldDecorator variables for its outline, filled and standard appearance. The filled backgrounds use fill-1, fill-2 and fill-3 for default, hover and focus. Form manages validation messages."
+  },
+  {
+    "before": "Cedar InputTag embeds Tag's actual close-btn and renders no old c-icon-hover pseudo-element. The old mixin import, default/focus pseudo-element backgrounds and duplicate custom Tag text rules are removed; Tag owns its text. Existing close-button appearance, click removal and readonly/disabled behavior remain, without a new hover background.",
+    "after": "Tag controls tag content and close-button appearance. Disabled, readonly and nonclosable tags cannot be removed with the close button."
+  },
+  {
+    "before": "字段旧 `presentation` 属性已移除，使用 `edit-mode` 配置编辑模式。`presentation=\"inline\"` 迁移为 `edit-mode=\"direct\"`，`layout=\"inline\"` 不变。",
+    "after": ""
+  },
+  {
+    "before": "The legacy field `presentation` prop has been removed; use `edit-mode` to configure editing behavior. Replace `presentation=\"inline\"` with `edit-mode=\"direct\"`; `layout=\"inline\"` is unchanged.",
+    "after": ""
+  },
+  {
+    "before": "DatePicker 与 DateRangePicker 只组合明确的面板能力和展示扩展，不整组公开内部渲染器参数。DatePicker 的 currentDate 是由面板内部计算的渲染参数，原先即使传入也会被当前日期覆盖，现已从公开 Props 和嵌套配置类型移除；没有新增替代的时钟属性。",
+    "after": "DatePicker 与 DateRangePicker 用于独立日期选择。通过 `show-current` 控制当前日期高亮，使用 `picker-value` 或 `default-picker-value` 设置面板显示的日期。"
+  },
+  {
+    "before": "DatePicker and DateRangePicker aggregate explicit panel capabilities and view extensions rather than all private renderer parameters. DatePicker currentDate was internal render data overridden by the current date even when supplied. It is removed from public Props and nested option types; no replacement clock property is added.",
+    "after": "DatePicker and DateRangePicker provide standalone date selection. Use `show-current` for current-date highlighting and `picker-value` or `default-picker-value` for the displayed date."
+  },
+  {
+    "before": "本次 API 调整：移除 Event/Template 的 `taskId`，改为 `metadata.taskId`；`createSchedulerTaskEvents`、`SchedulerTask`、`SchedulerTaskAssignment` 移至 Demo，不再从核心导出。`layoutGroupId` 不是任务 ID 的替代字段，只在需要分组布局时由应用映射。",
+    "after": "业务任务信息保存在日程的 `metadata` 中，例如 `metadata.taskId`。`layoutGroupId` 仅用于布局分组，应按业务需要设置。"
+  },
+  {
+    "before": "directions 指启用调整手柄的边，保留现有名称；默认仅右边，可组合多边。它不是 orientation 横纵轴，也不是 placement 弹层方位。从零设计时 edges 更直接，但本次未进行 API 改名。",
+    "after": "`directions` 指定显示调整手柄的边，默认只有右侧，可同时启用多边。"
+  },
+  {
+    "before": "数据模式的 `label` 和 `value` 插槽中的 `index` 是原始 `data` 数组的零起始索引，不随列数或布局变化。旧版本部分布局曾传递行号或行内索引；依赖旧值的调用需调整。",
+    "after": "数据模式的 `label` 和 `value` 插槽中，`index` 是原始 `data` 数组的零起始索引，不随列数或布局变化。"
+  },
+  {
+    "before": "本组件支持 `edit-mode`，字段 > FormItem > Form 逐层继承；未指定时为 `direct`，保留原有交互。",
+    "after": "通过 `edit-mode` 配置编辑方式；未指定时依次继承 FormItem、Form，默认 `direct`。"
+  },
+  {
+    "before": "本组件支持 `edit-mode`，字段 > FormItem > Form 逐层继承；未指定时为 `direct`，保留直接编辑。",
+    "after": "通过 `edit-mode` 配置编辑方式；未指定时依次继承 FormItem、Form，默认 `direct`。"
+  },
+  {
+    "before": "Cedar 不公开 `Date.pickerProps`、`DateRange.pickerProps` 或 `DateRange.datePickerProps`：PC 字段不渲染移动滚轮或范围内部的移动日历插件，原无效参数已删除且无兼容别名。",
+    "after": "Cedar 字段使用桌面日历，通过 `date-picker-props` 或 `date-range-picker-props` 配置面板。"
+  },
+  {
+    "before": "PC fields do not render mobile wheels/internal mobile range-calendar plugins; ineffective props are removed without aliases.",
+    "after": "PC fields use desktop calendar panels."
+  },
+  {
+    "before": "字段的 `DatePickerOptions` / `DateRangePickerOptions` 已移除由根拥有的 `presentation`，JS 运行时也过滤，不能通过嵌套对象覆盖根模式。",
+    "after": "`DatePickerOptions` / `DateRangePickerOptions` 不能覆盖根组件选择的面板模式。"
+  },
+  {
+    "before": "建议使用 `DatePopupOptions` 声明 popup-props；仅用于 inline 锚定弹层的允许展示/定位配置。",
+    "after": "使用 `DatePopupOptions` 配置 `popup-props`，调整锚定弹层的外观和定位。"
+  },
+  {
+    "before": "新类型为两端共同的安全子集，不能设置这些固定项；Cedar 旧配置可透传的 unmountOnClose 不受本次影响。",
+    "after": "这些固定项由字段管理；Cedar 的 `unmountOnClose` 可通过现有浮层配置设置。"
+  },
+  {
+    "before": "已有 datePresentationOptions 会过滤托管字段和 onXxx 监听。",
+    "after": "组件会过滤由字段管理的配置和通知监听器。"
+  },
+  {
+    "before": "Cedar 不承诺发出该信号。公开面板事件类型不包含它，业务不依赖此内部通知。",
+    "after": ""
+  },
+  {
+    "before": "Maple Table 使用原生表格插槽 API，不提供 data、columns、排序或筛选配置。Cedar 的 `defineTableConfig<Row>` 仅用于 Cedar 数据表格。",
+    "after": "通过表格插槽编排表头、表体和单元格。Table 不提供 `data`、`columns`、排序或筛选配置。"
+  },
+  {
+    "before": "Maple Table uses a native-table slot API, without data, columns, sorting or filtering configuration. Cedar defineTableConfig<Row> applies only to Cedar data tables.",
+    "after": "Use slots to compose the table header, body and cells. Table has no `data`, `columns`, sorting or filtering configuration."
+  },
+  {
+    "before": "旧 showNowBtn 名称已删除，不保留别名。",
+    "after": ""
+  },
+  {
+    "before": "Cedar 原 ConfigProvider.exchangeTime 全局覆盖已移除。",
+    "after": ""
+  },
+  {
+    "before": "旧 `beforeConfirm` / `beforeCancel` 已移除，统一使用 `beforeClose`；",
+    "after": ""
+  },
+  {
+    "before": "内部变量不是业务 API，已确认无消费的遗留内部声明直接删除，不提供别名。",
+    "after": ""
+  },
+  {
+    "before": "已删除无效的 multi-popup-option-padding-horizontal 与 popup-option-highlight-* 变量。",
+    "after": ""
+  },
+  {
+    "before": "原 `update-label` 已移除。",
+    "after": ""
+  },
+  {
+    "before": "新 Item 不兼容旧的子组件收集协议。",
+    "after": ""
+  },
+  {
+    "before": "placement 直接复用 TriggerPlacement / triggerPlacements；旧 TriggerPosition / TRIGGER_POSITIONS 别名已删除，方位值域不变。",
+    "after": ""
+  },
+  {
+    "before": "，已删除旧布尔 status / status 插槽",
+    "after": ""
+  },
+  {
+    "before": "Option.extra 已移除；",
+    "after": ""
+  },
+  {
+    "before": "已移除旧label-visible，直接使用show-tooltip，无兼容别名。",
+    "after": ""
+  },
+  {
+    "before": "完整可调变量见 style/token.less；旧版各端 Switch 几何 token 不保证保留。",
+    "after": ""
+  },
+  {
+    "before": "这是大版本破坏性调整，不再读取旧的 `keys`、`fixedMap`、`titleMap` 结构。",
+    "after": ""
+  },
+  {
+    "before": "删除旧 Cedar column-gap，使用 gutter。",
+    "after": ""
+  },
+  {
+    "before": "Old Cedar column-gap is removed; use gutter.",
+    "after": ""
+  },
+  {
+    "before": "字段通用外观继续使用 FieldDecorator 的 `--mp-field-*` Token。旧 step-layer-border-radius 已移除，不保留别名。",
+    "after": ""
+  },
+  {
+    "before": "已移除从未被消费的 close-icon-right 变量；关闭按钮位置由标题布局和 close-btn-margin-left 控制，不提供无效兼容别名。",
+    "after": ""
+  },
+  {
+    "before": "Time 旧 `use-seconds` 和 format 枚举已删除，不保留别名。",
+    "after": ""
+  },
+  {
+    "before": "字段 close 事件已移除，不保留别名。",
+    "after": ""
+  },
+  {
+    "before": "The removed showNowBtn name has no alias.",
+    "after": ""
+  },
+  {
+    "before": "The old Time `use-seconds` and format enum have been removed, without aliases.",
+    "after": ""
+  },
+  {
+    "before": "The field close event has been removed without an alias.",
+    "after": ""
+  },
+  {
+    "before": "Legacy TriggerPosition / TRIGGER_POSITIONS aliases have been removed; placement values are unchanged.",
+    "after": ""
+  },
+  {
+    "before": "Unused multi-popup-option-padding-horizontal and popup-option-highlight-* variables are removed.",
+    "after": ""
+  },
+  {
+    "before": "label-visible is removed; use show-tooltip without a compatibility alias.",
+    "after": ""
+  },
+  {
+    "before": "Removed isStaticItemHeight is unsupported; ",
+    "after": ""
+  },
+  {
+    "before": "Old step-layer-border-radius is removed without aliases.",
+    "after": ""
+  },
+  {
+    "before": "The unused close-icon-right variable is removed; title layout and close-btn-margin-left position the close button, without an ineffective compatibility alias.",
+    "after": ""
+  },
+  {
+    "before": "Ineffective mention-font-size, mention-line-height and mention-padding-* variables are removed.",
+    "after": ""
+  },
+  {
+    "before": "Internal variables are not business API; unused legacy declarations are removed without aliases.",
+    "after": ""
+  },
+  {
+    "before": "New `NavMenu.Item` is an independent top-level entry with different usage.",
+    "after": ""
+  },
+  {
+    "before": "；不保留旧别名。",
+    "after": ""
+  },
+  {
+    "before": "，不保留旧名称别名。",
+    "after": ""
+  },
+  {
+    "before": " No aliases remain.",
+    "after": ""
+  },
+  {
+    "before": "旧的 `--c-field-number-*` Token 已移除，统一为以上 `--c-input-number-*`；不保留旧别名。字段通用外观继续使用 FieldDecorator 的 `--c-field-*` Token。",
+    "after": "通过 `--c-input-number-*` 定制数字输入框，字段通用外观使用 FieldDecorator 的 `--c-field-*` 变量。"
+  },
+  {
+    "before": "Old `--c-field-number-*` tokens are removed in favor of `--c-input-number-*`, without aliases. Shared field appearance still uses FieldDecorator `--c-field-*` tokens.",
+    "after": "Use `--c-input-number-*` for number-input styling and FieldDecorator `--c-field-*` variables for shared field appearance."
+  },
+  {
+    "before": "旧 actions-item、trigger、scale-value 尺寸以及 simple toolbar 变量对应的 DOM 已不存在，已删除这些无效入口；预览工具栏使用 preview-color-action-* 与 preview-padding-action-content，底栏使用现有 footer 变量。",
+    "after": "使用 preview-color-action-*、preview-padding-action-content 定制预览工具栏，footer 变量定制底栏。"
+  },
+  {
+    "before": "The DOM for old actions-item, trigger, scale-value dimensions and simple-toolbar variables no longer exists; these ineffective entries are removed. The toolbar uses preview-color-action-* and preview-padding-action-content; the footer uses existing footer variables.",
+    "after": "Use preview-color-action-* and preview-padding-action-content to style the preview toolbar, and footer variables for the bottom bar."
+  },
+  {
+    "before": " 注意：以前返回 `Promise<void>` 却不调用 done 的异步钩子，现在会在 Promise 完成后放行。",
+    "after": "返回 `Promise<void>` 的异步钩子正常完成后放行。"
+  },
+  {
+    "before": "Maple change 补齐第二个原始事件参数；checked-color/unchecked-color 统一控制轨道，滑块颜色通过 token 定制。",
+    "after": "`checked-color` / `unchecked-color` 控制轨道颜色，滑块颜色通过样式变量定制。"
+  },
+  {
+    "before": "当前主题入口为 Themes.default.light / dark 与 Themes.maple.light / dark。Switch 的 tonal 是造型，不是主题；公开变体与八项专用变量统一使用 tonal 命名，不保留旧名称别名。",
+    "after": "通过 Themes.default.light / dark 和 Themes.maple.light / dark 设置主题；`tonal` 是 Switch 的外观变体。"
+  },
+  {
+    "before": "useUploader()` 新增只读 `guardPending`",
+    "after": "useUploader()` 提供只读 `guardPending`"
+  },
+  {
+    "before": "Reorderable items should provide stable unique values; internal Vue keys derive from business values. Numeric `0`, string `'0'` and boolean `false` remain distinct. Groups, separators and display items without values retain identity through their original option objects; no public key alias is added. Clicking another sibling trigger that is already hover-open closes the previous menu. Clicking inside a submenu does not incorrectly close its parent.",
+    "after": "Give each command a stable, unique `value` when adding, removing or reordering options. Numeric `0`, string `'0'` and boolean `false` are different values.\n\nClicking another hover-open sibling trigger closes the previous menu. Clicking inside a submenu keeps its parent open."
+  },
+  {
+    "before": "`MenuOption` 的 `key-arrow-x` 是子菜单键盘导航桥接事件；其 `root`、`isFocusing`、`optionSelected`、`handleClick` 和 `handleSelect` 暴露给内部适配器，不建议业务依赖。",
+    "after": ""
+  },
+  {
+    "before": "样式类、CSS 变量与内部 DOM 标记统一使用 `c-menu-*` / `--c-menu-*` / `data-menu-*`。",
+    "after": ""
+  },
+  {
+    "before": "Emits 为从运行时事件声明推导的参数元组映射；Expose 包含 focus/blur。",
+    "after": "可通过实例调用 `focus()`、`blur()`。"
+  },
+  {
+    "before": "This component supports `edit-mode` with field > FormItem > Form inheritance; when omitted it defaults to `direct`, preserving the original interaction.",
+    "after": "Use `edit-mode` to configure editing. An omitted value inherits from FormItem and Form, with `direct` as the default."
+  },
+  {
+    "before": "Mention 当前仅在 Cedar 提供。Maple 没有对应运行时，本次不新增组件、loading-mode 或额外错误菜单。",
+    "after": "Mention 仅在 Cedar 提供。"
+  },
+  {
+    "before": "保留给 SplitButton 和少量手写 `content` 场景。Props 包含 `label`、`value`、`disabled`、`ripple`、`highlight`；`option`、`childrenTrigger`、`uninjectContext` 用于内部适配；`label` 渲染函数及 `default`、`icon`、`suffix` 插槽统一接收 `{ option, active, level }`；点击时触发 `click`。`highlight` 只控制视觉强调，不提交选中值。分组和子菜单只通过 `options` 描述，不再导出 `MenuGroup`、`MenuSubmenu`。",
+    "after": "使用 MenuOption 编排 SplitButton 的附加操作，或在 `content` 中手写菜单项。通过 `label`、`value`、`disabled`、`ripple` 和 `highlight` 配置选项；`label` 渲染函数及 `default`、`icon`、`suffix` 插槽接收 `{ option, active, level }`，点击时触发 `click`。`highlight` 只控制视觉强调，不提交选中值。分组和子菜单通过 `options` 配置。"
+  },
+  {
+    "before": "；`menu`、`panel`、`computedOpen` 是内部引用，不建议作为业务接口。",
+    "after": "。"
+  },
+  {
+    "before": "水平测量使用水平比例（旧代码误用了垂直比例）。",
+    "after": "水平滚动按横向可滚动范围计算。"
+  },
+  {
+    "before": "；既有方法签名不变，不保留旧的混发行为。",
+    "after": "。"
+  },
+  {
+    "before": "。Maple 没有对应运行时，本次不新增组件、loading-mode 或额外错误菜单。",
+    "after": "。"
+  },
+  {
+    "before": "原有尺寸、圆角、阴影与水波 API 保留。",
+    "after": ""
+  },
+  {
+    "before": "只记录日志的同步钩子应显式 return true；同步 undefined 表示仍在等待回调。返回 `Promise<void>` 的异步钩子正常完成后放行。",
+    "after": "同步返回 `true` 放行，返回 `false` 拒绝；同步返回 `undefined` 时等待 `done()`。返回 `Promise<void>` 的异步钩子正常完成后放行。"
+  },
+  {
+    "before": "SelectValue 包含 undefined；默认单选清空发出空字符串，存在空字符串选项时发出 undefined。此已发布行为保持不变。",
+    "after": "默认单选清空发出空字符串；存在空字符串选项时，清空发出 `undefined`，以区分清空和选择该选项。"
+  },
+  {
+    "before": "此已发布行为保持不变，",
+    "after": ""
+  },
+  {
+    "before": "The released behavior remains unchanged; ",
+    "after": ""
+  },
+  {
+    "before": "info 不再引用品牌填充色，loading 使用 content-brand。",
+    "after": "info 使用信息状态色，loading 使用 content-brand。"
+  },
+  {
+    "before": "Ripple的时长与清理策略以Ripple组件文档为准，不将其历史250ms规则当作Icon的时长上限。",
+    "after": "自定义动画应遵循用户的减少动态效果偏好。"
+  },
+  {
+    "before": "内容与箭头共享背景／边框变量，不再受 Trigger 样式加载顺序影响。",
+    "after": "内容与箭头共用背景和边框变量。"
+  },
+  {
+    "before": "Title layout and close-btn-margin-left position the close button, without an ineffective compatibility alias.",
+    "after": "Use title layout and close-btn-margin-left to position the close button."
+  },
+  {
+    "before": "Option.extra has been removed; pass business data through object values or the original options data.",
+    "after": "Pass business data through object values or the original options data."
+  },
+  {
+    "before": "业务数据通过对象 value 或 options 原始数据传递。",
+    "after": "通过对象 `value` 或 `options` 传递业务数据。"
+  },
+  {
+    "before": "；旧的 disabled-time 已删除，不保留别名。",
+    "after": "。"
+  },
+  {
+    "before": "; the old disabled-time prop is removed.",
+    "after": "."
+  },
+  {
+    "before": "`format` now has the same meaning as Cedar:",
+    "after": "`format`"
+  },
+  {
+    "before": "Maple provides horizontal filter entries only.",
+    "after": "Maple provides horizontal filter entries."
+  },
+  {
+    "before": "Migrated from Cedar NavMenu.Item, retaining component names, key/label options, independent v-model selection, title fallback, named activation, slot contexts and controlled open state. Maple provides horizontal filter entries.",
+    "after": "NavMenu provides horizontal filter entries with key/label options, independent selection, title fallback, scoped slots and controlled open state."
+  },
+  {
+    "before": "No Pointer/touch protocol migration or rollback of native scrolling.",
+    "after": ""
+  },
+  {
+    "before": "旧的 `label-visible` 已移除，请使用 `show-tooltip`。",
+    "after": "通过 `show-tooltip` 控制值提示。"
+  },
+  {
+    "before": "删除旧变量，不提供别名。",
+    "after": ""
+  },
+  {
+    "before": "2026-10-16 消费核验：真实 Less 编译与挂载 DOM 确认上述 13 项分别进入容器、FormItem、操作区和折叠按钮规则；静态样式入口同时导入 Form 样式。多列操作项的 `padding-top` 消费 action-offset，单列 stacked 状态覆盖为 `0`。根级派生别名不会保证随局部 Form 依赖覆盖重新计算，需要调整操作区对齐时直接在实际 FilterForm 根覆盖 `--c-filter-form-action-offset`。",
+    "after": "多列布局的操作区对齐可在 FilterForm 根节点覆盖 `--c-filter-form-action-offset`；单列 stacked 布局不增加顶部偏移。"
+  },
+  {
+    "before": "Consumption verified on 2026-10-16: real Less compilation and mounted DOM confirm these 13 variables feed the container, FormItem, action-area and collapse-button rules. The static style entry also imports Form styles. Multi-column action `padding-top` consumes action-offset; stacked single-column mode overrides it to `0`. Root derived aliases do not necessarily recompute after locally overriding Form dependencies; adjust alignment by overriding `--c-filter-form-action-offset` on the actual FilterForm root.",
+    "after": "Override `--c-filter-form-action-offset` on the FilterForm root to adjust multi-column action alignment. The single-column stacked layout uses no additional top offset."
+  },
+  {
+    "before": "；show-confirm-btn is removed.",
+    "after": "."
+  },
+  {
+    "before": "show-confirm-btn is removed.",
+    "after": ""
+  },
+  {
+    "before": "DOM for old actions-item, trigger, scale-value dimensions and simple-toolbar variables no longer exists; these ineffective entries are removed. The toolbar uses preview-color-action-* and preview-padding-action-content; the footer uses existing footer variables.",
+    "after": "Use preview-color-action-* and preview-padding-action-content for the toolbar, and footer variables for the bottom bar."
+  },
+  {
+    "before": "Date labels, headers and actions use the library's global Locale/LocaleProvider. Cedar no longer accepts a component-level `locale`; no compatibility alias is retained. Changing language does not select or submit a value.",
+    "after": "Date labels, headers and actions use the global Locale and Provider settings. Changing language does not select or submit a value."
+  },
+  {
+    "before": "The old Grid.Row/Grid.Col, GridRowInstance and GridColInstance exports are no longer available.",
+    "after": ""
+  },
+  {
+    "before": "New Item does not support legacy child collection.",
+    "after": ""
+  },
+  {
+    "before": "This is a major breaking change: legacy `keys`, `fixedMap` and `titleMap` structures are no longer read.",
+    "after": ""
+  },
+  {
+    "before": "；其 show-confirm-btn 已移除",
+    "after": ""
+  },
+  {
+    "before": "Pure panels no longer emit `open-change`, `update:open` or `clear`.",
+    "after": "Use field `open-change` and `update:open` to manage the popup, and field `clear` for clearing the value."
+  },
+  {
+    "before": "This configuration no longer forwards arbitrary SelectProps/MenuProps.",
+    "after": "Use the documented page-size selector options."
+  },
+  {
+    "before": "DatePicker is a standalone date panel with no input anchor; placement in the legacy date/picker directory is not a current public DatePicker prop.",
+    "after": "DatePicker is a standalone date panel with no input anchor. Configure popup placement on the Date field."
+  },
+  {
+    "before": "DatePicker 是独立日期面板，没有输入框锚点，不能把旧 date/picker 目录中的 placement 当成当前 DatePicker 的公开属性。",
+    "after": "DatePicker 是独立日期面板，没有输入框锚点；弹层位置通过 Date 字段配置。"
+  },
+  {
+    "before": "Both libraries remove tag-custom-icon-bg-hover; Cedar also removes input-tag-tag-remove-icon-color-bg / input-tag-tag-remove-icon-color-bg-focus. Unused variables have no replacements; remove ineffective overrides. Maple has no InputTag component and only synchronizes shared Tag-variable cleanup.",
+    "after": ""
+  },
+  {
+    "before": "迁移时按职责选择实际入口：外壳背景用 field-variant-{variant}-background 系列，圆角用 field-border-radius，占位文字用 field-placeholder-text-color，清除图标用 field-clear-icon-color / field-clear-icon-size。几何优先使用 size 属性；不要覆盖 internal 变量。旧无消费变量不存在逐项等价替代；内容标签使用下列 InputTag 自身变量。",
+    "after": "外壳背景通过 field-variant-{variant}-background 定制，圆角使用 field-border-radius，占位文字使用 field-placeholder-text-color，清除图标使用 field-clear-icon-color 和 field-clear-icon-size。尺寸优先通过 `size` 设置，标签内容使用 InputTag 自身变量。"
+  },
+  {
+    "before": "内容选择器现在匹配实际的 c-field-decorator--size-* / --focus / --disabled 类名，而非不存在的旧 InputTag 状态类；disabled 优先于 focus。五档 xs / sm / md / lg / xl 内容规则均已覆盖；",
+    "after": "禁用样式优先于聚焦样式。支持 xs / sm / md / lg / xl 五档尺寸；"
+  },
+  {
+    "before": "Selectors match actual c-field-decorator--size-* / --focus / --disabled classes rather than nonexistent old InputTag classes; disabled overrides focus. All xs/sm/md/lg/xl sizes are covered.",
+    "after": "Disabled styles take precedence over focus. Sizes xs/sm/md/lg/xl are supported."
+  },
+  {
+    "before": "不新增 CSS duration Token 或公共取消方法。",
+    "after": ""
+  },
+  {
+    "before": "，不新增 CSS duration Token 或公共取消方法。",
+    "after": "。"
+  },
+  {
+    "before": "不新增第二个定位入口。",
+    "after": ""
+  },
+  {
+    "before": "**保存钩子约定：**设置 `before-transaction` 后，它统一接管单条、批量、撤销和重做，替代 `before-change`，避免同一操作保存两次。只有 `before-change` 的旧应用保持单条行为；执行多条事务会明确返回 `transaction-hook-required`，请迁移到一次性的原子保存接口。前端原子提交不能替代后端数据库事务。",
+    "after": "**保存钩子：**通过 `before-transaction` 原子保存单条、批量、撤销和重做操作。仅配置 `before-change` 时只能处理单条操作，批量事务会返回 `transaction-hook-required`。服务端仍需使用数据库事务保证保存的一致性。"
+  },
+  {
+    "before": "Input、Textarea、InputNumber 的实际原生控件使用 `caret-color: currentColor`，不再由 field-focus-color／field-error-color 染色。field-focus-color、field-error-color 和 field-border-width 仍有提示、边框或按钮 outline 消费，不能因移除 caret／外偏移路径而删除 Token。实例 focus-color 控制现有支持的变体／提示通道，不承诺改变 caret；没有新变量、默认值或业务 API 变更。",
+    "after": "通过 `--mp-field-caret-color` 设置输入光标颜色，默认 `currentColor`。Input、Textarea、InputNumber 也支持各自的 caret-color 变量，可独立覆盖。聚焦色和错误色用于对应的提示或边框。"
+  },
+  {
+    "before": "Native Input/Textarea/InputNumber controls use `caret-color: currentColor`, not field-focus-color/field-error-color. Those variables and field-border-width still serve hints/borders/button outlines and must not be removed just because caret/outer-offset paths are gone. Instance focus-color controls supported variant/hint channels without promising caret changes. No variables/defaults/business APIs are added.",
+    "after": "Use `--mp-field-caret-color` for the input caret; the default is `currentColor`. Input, Textarea and InputNumber also expose their own caret-color variables for individual overrides. Focus and error colors apply to the corresponding hints or borders."
+  },
+  {
+    "before": "“暂停跨字段校验”将确认规则挂起到“返回跨字段结果”，返回时比较本次确认值与当前源代码（不是远端接口或提交开始时的源快照）。匹配值提交后等待中修改源代码，旧字段校验仍可能返回依赖错误，但旧原生提交不再通知、计数保持0；修正确认值并重新提交后才通过。等待中原生重置会结清本地任务、清空模型与提交快照、保留历史计数，不产生迟到提交；停用/卸载也清理等待。不代表异步循环依赖或多请求顺序均已覆盖。",
+    "after": "“暂停跨字段校验”示例通过手动返回结果模拟异步校验。提交等待期间修改依赖字段、重置表单或卸载组件，会使该次提交失效；确认当前输入后可重新提交。"
+  },
+  {
+    "before": "“暂停跨字段校验”将确认规则挂起到“返回跨字段结果”，返回时比较本次确认值与当前源代码（不是远端接口或提交开始时的源快照）。匹配值提交后等待中修改源代码，旧字段校验仍可能返回依赖错误，但旧原生提交不再通知、计数保持0；修正确认值并重新提交后才通过。等待中原生重置会结清本地任务、清空模型与提交快照、保留历史计数，不产生迟到提交；停用/卸载也清理等待。不代表异步循环依赖或多请求顺序均已覆盖。",
+    "after": "“暂停跨字段校验”示例通过手动返回结果模拟异步校验。提交等待期间修改依赖字段、重置表单或卸载组件，会使该次提交失效；确认当前输入后可重新提交。"
+  },
+  {
+    "before": "`content-placement` 表示正文所在的物理侧，旧版本在交替模式下实际显示在相反侧；升级时如需保持旧布局，请交换 left/right 或 top/bottom。根级 `mode` 的含义不变。",
+    "after": "通过 `content-placement` 设置正文所在的物理侧：水平布局使用 top/bottom，垂直布局使用 left/right。排列方式由 `mode` 控制。"
+  },
+  {
+    "before": "弹出层基于无视觉样式的 [Trigger](#/zh-CN/trigger) 实现，使用统一十二方位和 `cover` 覆盖模式，默认 `bottom`。同宽、高度限制分别使用 `auto-fit-popup-width`、`popup-max-height`。",
+    "after": "使用 `placement` 设置弹出方向，默认 `bottom`；`cover` 控制是否覆盖触发元素。通过 `auto-fit-popup-width` 使菜单与触发元素同宽，`popup-max-height` 限制菜单高度。"
+  },
+  {
+    "before": "The popup is built on the unstyled [Trigger](#/en-US/trigger). It uses the shared twelve placements and the separate `cover` mode, defaulting to `bottom`. Use `auto-fit-popup-width` and `popup-max-height` for width matching and height limits.",
+    "after": "Use `placement` to choose the popup direction, defaulting to `bottom`; `cover` controls overlap with the trigger. Use `auto-fit-popup-width` to match trigger width and `popup-max-height` to limit menu height."
+  },
+  {
+    "before": "菜单方位通过内部 Menu 的 placement 传递给 Trigger，使用 MenuPlacement 类型，",
+    "after": "通过 `placement` 设置附加菜单的弹出方向，可选值见 `MenuPlacement`。"
+  },
+  {
+    "before": "The menu side passes through the internal Menu placement to Trigger and uses MenuPlacement, without a second positioning entry.",
+    "after": "Use `placement` to position the extra-actions menu. See `MenuPlacement` for the available values."
+  },
+  {
+    "before": "普通使用无需配置方位：默认 bottom-start，空间不足时底层 Trigger 自动翻转和约束。pageSizeProps.placement 仅是条数 Select 的受限覆盖入口，链路为 Pagination → Select.triggerProps.placement → Trigger；不是分页器自身位置。",
+    "after": "通过 `page-size-props.placement` 设置条数选择器的弹出方向，默认 `bottom-start`；空间不足时自动调整。这项配置不改变分页器自身的布局。"
+  },
+  {
+    "before": "No placement configuration is required for normal use: bottom-start is preferred and the underlying Trigger automatically flips/constrains the popup. pageSizeProps.placement is only a restricted override for the page-size Select: Pagination → Select.triggerProps.placement → Trigger. It does not position the pagination itself.",
+    "after": "Use `page-size-props.placement` for the page-size selector popup, defaulting to `bottom-start`. The position adjusts when space is limited. This option does not change pagination layout."
+  },
+  {
+    "before": "弹层 Teleport 到 body 时，应在实际弹层宿主设置覆盖，触发器祖先的局部变量不会自动复制。",
+    "after": "Teleport 后，普通 CSS 变量按实际挂载位置继承；使用 ThemeProvider 时，请遵循其局部主题与弹层配置规则。"
+  },
+  {
+    "before": "For a popup teleported to body, put overrides on its real popup host; variables on the trigger ancestor are not copied.",
+    "after": "After Teleport, ordinary CSS variables inherit from the actual mount location. When using ThemeProvider, follow its local-theme and popup configuration rules."
+  },
+  {
+    "before": "Retained for SplitButton and a few handwritten `content` cases. Props are `label`, `value`, `disabled`, `ripple` and `highlight`; `option`, `childrenTrigger` and `uninjectContext` are for internal adapters. The `label` render function and `default`/`icon`/`suffix` slots receive `{ option, active, level }`. Clicking emits `click`. `highlight` controls visual emphasis without committing selection. Groups/submenus are described only through `options`; `MenuGroup` and `MenuSubmenu` are no longer exported.",
+    "after": "Use MenuOption for SplitButton actions or handwritten items in `content`. Configure `label`, `value`, `disabled`, `ripple` and `highlight`. Label renderers and the `default`, `icon` and `suffix` slots receive `{ option, active, level }`. Activating an item emits `click`. `highlight` changes appearance without selecting the value. Configure groups and submenus through `options`."
+  },
+  {
+    "before": "`MenuOption` emits `key-arrow-x` as a submenu navigation bridge. Its exposed `root`, `isFocusing`, `optionSelected`, `handleClick`, and `handleSelect` are internal adapter details.",
+    "after": ""
+  },
+  {
+    "before": "`label` 渲染函数也接收同一对象，替代旧的双参数签名。",
+    "after": "`label` 渲染函数也接收同一对象。"
+  },
+  {
+    "before": "为统一入口，不新增另一套命名。",
+    "after": "用于拦截关闭操作。"
+  },
+  {
+    "before": "Card 不再提供 loading 属性；加载遮罩使用 Loading 指令组合。",
+    "after": "Card 通过 Loading 指令组合加载遮罩。"
+  },
+  {
+    "before": "周号和周比较不再依赖全局周起始设置",
+    "after": "周号和周比较使用各实例的周起始设置"
+  },
+  {
+    "before": "Maple 不再借用 Popup 的遮罩颜色",
+    "after": "Dialog 的遮罩颜色由自身变量控制"
+  },
+  {
+    "before": "，不再在窄屏强制放大（默认 36px）",
+    "after": ""
+  },
+  {
+    "before": "此配置不再透传任意 SelectProps/MenuProps。",
+    "after": "请使用下方列出的配置属性。"
+  },
+  {
+    "before": "分页不再盖住唯一可用的横向滚动入口",
+    "after": "横向滚动入口保持可见并可操作"
+  },
+  {
+    "before": "不再从未声明的 attrs 读取面板/浮层参数",
+    "after": "面板/浮层参数通过上述显式属性配置"
+  },
+  {
+    "before": "摘要下方不再重复显示提示和年份。",
+    "after": ""
+  },
+  {
+    "before": "浮动面板按可视视口限制高度，不再固定为半屏。",
+    "after": "浮动面板按可视视口限制高度。"
+  },
+  {
+    "before": "空默认对象不再覆盖嵌套设置",
+    "after": "空默认对象保留嵌套设置"
+  },
+  {
+    "before": "，不再使用 show-confirm-btn。",
+    "after": "。"
+  },
+  {
+    "before": "，不再使用 close。",
+    "after": "。"
+  },
+  {
+    "before": "默认视觉层级仍为 `1`，但属性默认值不再固定为 `1`。",
+    "after": "默认视觉层级为 `1`。"
+  },
+  {
+    "before": "但不再绑定 Cedar CSS 变量",
+    "after": "但与 Cedar CSS 变量相互独立"
+  },
+  {
+    "before": "状态图标改用可读的 content 状态色",
+    "after": "状态图标使用可读的 content 状态色"
+  },
+  {
+    "before": "Card no longer has a loading prop. Compose a loading overlay with the Loading directive.",
+    "after": "Use the Loading directive to compose a loading overlay on Card."
+  },
+  {
+    "before": "Week numbers/comparisons no longer depend on global week-start settings",
+    "after": "Week numbers and comparisons use each instance's week-start setting"
+  },
+  {
+    "before": "Maple no longer uses Popup colors for Dialog.",
+    "after": "Dialog uses its own backdrop variables."
+  },
+  {
+    "before": "Status icons use readable status content colors: info no longer uses brand fills, and loading uses content-brand.",
+    "after": "Status icons use readable status content colors; loading uses content-brand."
+  },
+  {
+    "before": "Previous/next sizes follow size without forced narrow-screen enlargement (formerly 36px).",
+    "after": "Previous and next buttons follow the configured size."
+  },
+  {
+    "before": "Pagination no longer obscures the only reachable horizontal scroll control.",
+    "after": "The horizontal rail remains reachable above sticky pagination."
+  },
+  {
+    "before": "Undeclared attrs no longer supply panel/popup configuration",
+    "after": "Panel and popup configuration uses the declared props"
+  },
+  {
+    "before": "The hint and selected year are no longer repeated below the summary. ",
+    "after": ""
+  },
+  {
+    "before": "Floating panels use the visual viewport instead of a half-screen cap.",
+    "after": "Floating panel height follows the visual viewport."
+  },
+  {
+    "before": "Empty default objects no longer override nested settings",
+    "after": "Empty default objects preserve nested settings"
+  },
+  {
+    "before": "The visual default remains `1`; the prop itself no longer defaults to `1`.",
+    "after": "The default visual stacking level is `1`."
+  },
+  {
+    "before": "but no longer bind Cedar variables",
+    "after": "but are independent of Cedar variables"
+  }
+]

@@ -43,7 +43,7 @@
 
 - 最后全量消费检查：140 个 token 文件、4007 项声明、81 个候选（54 跨组件 CSS、5 精确运行时、20 动态运行时、2 待审），编译错误 0。门禁因 2 项待审退出 1，不能记为通过：Cedar Rate 的 `--c-rate-transition-duration-scale`、`--c-rate-transition-timing-function`。这两项处于其他任务正在改动的组件，需在其实现稳定后核验真实消费；没有为了门禁删除声明。
 
-- Maple 桌面文档站 `.maple-site` 在 `packages/maple-cli/site/pc/Layout.vue` 设置 `min-width: 1200px`。960px 下可用宽度 945px、scrollWidth 1200px；参考表自身没有额外溢出，但整个站点不是窄屏通过。后续应单独设计侧栏／正文／模拟器的响应式布局，不能只移除 min-width 就宣称完成。
+- Maple 桌面文档站 `.maple-site` 在 `packages/cli/site/pc/Layout.vue` 设置 `min-width: 1200px`。960px 下可用宽度 945px、scrollWidth 1200px；参考表自身没有额外溢出，但整个站点不是窄屏通过。后续应单独设计侧栏／正文／模拟器的响应式布局，不能只移除 min-width 就宣称完成。
 - Safari、Firefox、iOS／Android 真机、输入法、安全区域、粗指针、屏幕阅读器、动态 reduced-motion、大字号／缩放仍未在本轮实测。
 - 这是 Input、Date、DropdownMenu 的代表性矩阵，不代表所有组件、所有变体、Teleport 宿主、自定义背景和按压中间帧通过。
 - 工作区同时存在 Radio、Rate、Progress 等其他任务改动。早期构建曾被 Radio 导出和 Progress 示例引用阻断，随后其来源任务更新解除；本轮未接管或覆盖这些组件实现。较早 inventory 的候选数也不应当作最新结论。

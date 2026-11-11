@@ -4,7 +4,7 @@ import { resolve } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
-for (const repo of ['cedar-design-web/packages/cedar-ui', 'maple-design-mobile/packages/maple-ui']) {
+for (const repo of ['cedar-design-web/packages/ui', 'maple-design-mobile/packages/ui']) {
   const root = resolve(workspace, repo)
   const require = createRequire(resolve(root, 'package.json'))
   const { createSSRApp, h } = require('vue')

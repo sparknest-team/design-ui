@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { createRequire } from 'node:module';
 
-const require = createRequire(new URL('../../maple-design-mobile/packages/maple-cli/package.json', import.meta.url));
+const require = createRequire(new URL('../../maple-design-mobile/packages/cli/package.json', import.meta.url));
 const { parse } = require('@vue/compiler-sfc');
 const attr = (node, name) => node.props?.find(prop => prop.type === 6 && prop.name === name)?.value?.content;
 

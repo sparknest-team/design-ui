@@ -35,7 +35,7 @@ test('Checkbox mark-color is shared by name and preserves both existing platform
     ['maple', 'maple-design-mobile', 'mp', 'content-on-bright'],
   ]) {
     const expected = `var(--PREFIX-sys-color-${role})`;
-    const source = readFileSync(new URL(`../../../../${repository}/packages/${platform}-ui/src/checkbox/style/token.less`, import.meta.url), 'utf8');
+    const source = readFileSync(new URL(`../../../../${repository}/packages/ui/src/checkbox/style/token.less`, import.meta.url), 'utf8');
     const value = source.match(new RegExp(`--${prefix}-checkbox-mark-color:\\s*([^;]+);`))?.[1];
     assert.ok(value, `${platform}: Checkbox mark-color must be declared`);
     assert.equal(normalizeTokenValue(value, prefix), expected);
@@ -48,9 +48,9 @@ test('Switch checked text has a public contract without changing platform foregr
   assert.equal(contract.componentTokenValues.switch['checked-text-color'], undefined);
   for (const [platform, repository, prefix, expected] of [
     ['cedar', 'cedar-design-web', 'c', 'var(--PREFIX-switch-text-color)'],
-    ['maple', 'maple-design-mobile', 'mp', 'var(--PREFIX-sys-color-content-on-bright)'],
+    ['maple', 'maple-design-mobile', 'mp', 'var(--PREFIX-switch-text-color)'],
   ]) {
-    const root = new URL(`../../../../${repository}/packages/${platform}-ui/src/`, import.meta.url);
+    const root = new URL(`../../../../${repository}/packages/ui/src/`, import.meta.url);
     const tokens = readFileSync(new URL('switch/style/token.less', root), 'utf8');
     const value = tokens.match(new RegExp(`--${prefix}-switch-checked-text-color:\\s*([^;]+);`))?.[1];
     assert.ok(value);

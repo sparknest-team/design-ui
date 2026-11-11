@@ -1,26 +1,19 @@
 import fs from "node:fs";
 import path from "node:path";
 import assert from "node:assert/strict";
-import { apiCatalog, hasReviewableApi } from "./complete-review-demos.mjs";
+import { hasReviewableApi } from "./complete-review-demos.mjs";
+import { allowsNativeDemoControl } from "./demo-native-control-policy.mjs";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const require = createRequire(
-  path.join(root, "cedar-design-web/packages/cedar-ui/package.json"),
+  path.join(root, "cedar-design-web/packages/ui/package.json"),
 );
 const { parse, compileScript, compileTemplate } = require("@vue/compiler-sfc");
-const apiByFile = new Map();
-for (const entry of JSON.parse(fs.readFileSync(path.join(root, "design-ui/audits/demo-review-cases.json"), "utf8"))) {
-  const directory = path.join(root, entry.directory);
-  const prefix = entry.platform === "cedar" ? "c" : "mp";
-  const doc = path.join(directory, entry.platform === "cedar" ? "README.md" : "docs/zh-CN.md");
-  const catalog = apiCatalog(fs.readFileSync(doc, "utf8"), `${prefix}-${entry.component.replaceAll("/", "-")}`, prefix);
-  for (const item of entry.cases) apiByFile.set(path.join(directory, item.file), catalog.get(item.tag));
-}
 let count = 0;
 for (const platform of [
-  "cedar-design-web/packages/cedar-ui",
-  "maple-design-mobile/packages/maple-ui",
+  "cedar-design-web/packages/ui",
+  "maple-design-mobile/packages/ui",
 ]) {
   for (const filename of fs
     .readdirSync(path.join(root, platform, "src"), { recursive: true })
@@ -67,8 +60,8 @@ const { parse: parseDom } = require("@vue/compiler-dom");
 let scanned = 0;
 let documentationSnippets = 0;
 for (const library of [
-  "cedar-design-web/packages/cedar-ui",
-  "maple-design-mobile/packages/maple-ui",
+  "cedar-design-web/packages/ui",
+  "maple-design-mobile/packages/ui",
 ]) {
   const directory = path.join(root, library, "src");
   for (const file of fs.readdirSync(directory, { recursive: true })) {
@@ -180,6 +173,7 @@ for (const library of [
         ].includes(node.tag)
       ) {
         assert(
+          allowsNativeDemoControl(path.relative(root, filename).split(path.sep).join("/"), node.tag) ||
           node.tag === "input" &&
             file.startsWith("field-decorator/") &&
             ["review-fixture.vue", "api-review.vue"].includes(

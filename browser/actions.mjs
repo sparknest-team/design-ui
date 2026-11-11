@@ -351,7 +351,7 @@ export async function exercise({ page, demo, component, library, contract, demos
       await poll(() => text(demo), (value) => value.includes('Production QA'), 'search output records the submitted query')
       break
     }
-    case 'style-provider': {
+    case 'theme-provider': {
       const paragraph = demo.getByText('局部颜色 / Local color', { exact: true })
       const before = await paragraph.evaluate((element) => getComputedStyle(element).color)
       const nested = demo.getByText('嵌套覆盖 / Nested override', { exact: true })

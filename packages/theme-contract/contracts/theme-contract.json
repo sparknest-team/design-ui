@@ -20,11 +20,11 @@
     "color-surface-muted": "var(--PREFIX-color-fill-1)",
     "color-content-primary": "var(--PREFIX-color-text-1)",
     "color-content-secondary": "var(--PREFIX-color-text-2)",
-    "color-content-brand": "rgb(var(--PREFIX-primary-6))",
-    "color-content-info": "rgb(var(--PREFIX-blue-6))",
-    "color-content-success": "rgb(var(--PREFIX-success-6))",
-    "color-content-warning": "rgb(var(--PREFIX-warning-6))",
-    "color-content-danger": "rgb(var(--PREFIX-danger-6))",
+    "color-content-brand": "rgb(var(--PREFIX-primary-9))",
+    "color-content-info": "rgb(var(--PREFIX-blue-8))",
+    "color-content-success": "rgb(var(--PREFIX-success-9))",
+    "color-content-warning": "rgb(var(--PREFIX-warning-8))",
+    "color-content-danger": "rgb(var(--PREFIX-danger-8))",
     "color-content-tertiary": "var(--PREFIX-color-text-3)",
     "color-content-decorative": "var(--PREFIX-color-text-4)",
     "color-content-disabled": "var(--PREFIX-color-text-disabled)",
@@ -152,7 +152,10 @@
       "item-border-color": "var(--PREFIX-sys-color-border-default)",
       "title-line-height": "24px",
       "expand-icon-transform": "rotate(0deg)",
-      "expand-icon-right-transform": "rotate(0deg)"
+      "expand-icon-right-transform": "rotate(0deg)",
+      "focus-color": "currentColor",
+      "focus-offset": "-2px",
+      "focus-width": "2px"
     },
     "dialog": {
       "background": "var(--PREFIX-sys-color-surface-raised)",
@@ -1741,6 +1744,9 @@
         "expand-icon-size",
         "expand-icon-spacing-text",
         "expand-icon-transform",
+        "focus-color",
+        "focus-offset",
+        "focus-width",
         "item-border-color",
         "item-border-width",
         "item-margin-top",
@@ -3244,7 +3250,7 @@
       },
       "people-select": {},
       "switch": {
-        "checked-text-color": "var(--PREFIX-sys-color-content-on-bright)"
+        "checked-text-color": "var(--PREFIX-switch-text-color)"
       }
     }
   },

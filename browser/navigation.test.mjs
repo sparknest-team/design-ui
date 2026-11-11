@@ -66,7 +66,7 @@ test('duplicate URLs retain distinct requests; completed and failed requests are
 })
 
 for (const entry of ['index.html', 'mobile.html']) {
-  const source = readFileSync(resolve(workspace, 'maple-design-mobile/packages/maple-cli/site', entry), 'utf8')
+  const source = readFileSync(resolve(workspace, 'maple-design-mobile/packages/cli/site', entry), 'utf8')
   const script = [...source.matchAll(/<script>([\s\S]*?)<\/script>/g)].find((match) => match[1].includes('baidu'))?.[1]
   assert.ok(script, `${entry} has the actual optional analytics bootstrap`)
   for (const state of ['loading', 'complete']) test(`${entry}: telemetry starts only after load, once, preserving its queue (${state})`, () => {
@@ -93,6 +93,6 @@ for (const entry of ['index.html', 'mobile.html']) {
 }
 
 test('Cedar does not enable an unused remote Font Awesome library', () => {
-  const theme = readFileSync(resolve(workspace, 'cedar-design-web/packages/cedar-ui/docs/.vuepress/theme.ts'), 'utf8')
+  const theme = readFileSync(resolve(workspace, 'cedar-design-web/packages/ui/docs/.vuepress/theme.ts'), 'utf8')
   assert.doesNotMatch(theme, /iconAssets\s*:\s*['"]fontawesome/)
 })

@@ -8,8 +8,8 @@ import { checkThemeContract, collectThemeContract } from '../src/checker.mjs'
 const packageRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const workspace = resolve(packageRoot, '../../..')
 const sources = {
-  cedarSource: resolve(workspace, 'cedar-design-web/packages/cedar-ui/src'),
-  mapleSource: resolve(workspace, 'maple-design-mobile/packages/maple-ui/src'),
+  cedarSource: resolve(workspace, 'cedar-design-web/packages/ui/src'),
+  mapleSource: resolve(workspace, 'maple-design-mobile/packages/ui/src'),
 }
 const command = process.argv[2] ?? 'check'
 

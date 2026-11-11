@@ -15,7 +15,7 @@ export function checkScrollEvidence(r, read = readFileSync) {
   assert.equal(hash(read(resolve(root, r.fixture.file))), r.fixture.sha256, 'fixture drift');
   assert.deepEqual(r.helperSources.map(s => [s.repo, s.file]), [['cedar-design-web', '_utils/maple/elements.ts'], ['maple-design-mobile', 'utils/elements.ts']]);
   for (const source of r.helperSources) {
-    const pkg = source.repo === 'cedar-design-web' ? 'cedar-ui' : 'maple-ui';
+    const pkg = 'ui';
     assert.equal(hash(read(resolve(workspace, source.repo, 'packages', pkg, 'src', source.file))), source.sha256, 'helper source drift');
   }
   assert.deepEqual(r.consoleWarningsErrors, []);

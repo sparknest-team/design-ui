@@ -22,7 +22,7 @@
 - node design-ui/bin/tabs-core-check.mjs：13 对源码/测试/样式一致，40 个 token 消费者通过，六组件类型出口通过。
 - 两端旧 node checks/tabs-same-source.mjs 已改为开发期薄入口并分别运行通过。新门禁保留原有六组件导出集合、主体/测试/结构样式、token 后缀检查，额外验证 token 默认值边界及编译后消费，不删减旧检查能力。
 - Cedar：pnpm exec vitest run src/tabs src/infinite-scroll，6 files / 57 tests 通过。退出码 0；测试结束后工具输出 fsevents teardown assertion 与 close timeout，未将其隐瞒为完全无诊断退出。
-- Maple：pnpm exec vitest run --config ../maple-cli/lib/node/config/vitest.config.js src/tabs src/infinite-scroll，6 files / 56 tests 通过。
+- Maple：pnpm exec vitest run --config ../cli/lib/node/config/vitest.config.js src/tabs src/infinite-scroll，6 files / 56 tests 通过。
 - 两端 pnpm exec eslint src/tabs --ext .vue,.js,.ts --fix 通过。
 - 新增受控拒绝与当前 key 删除、多个 SSR 实例稳定唯一 ID、ResizeObserver/window resize 清理、响应式全局配置和 Maple defaults setter 验证；既有测试覆盖键盘、touch、禁用、懒挂载、删除、溢出滚动和隐藏面板 InfiniteScroll。
 - 全库类型、构建和根入口聚合由主代理集成验证，本子任务未运行。

@@ -35,12 +35,39 @@ test('API translation keeps type signatures, real defaults and code fences',()=>
  assert.ok(output.includes('const value = 0'));
 });
 
+test('localization preserves intended inline code and event argument headers',()=>{
+ const output=translateFragment('从 `images` 中通过 `to` 方法跳转。\n\n| 事件 | 说明 | 参数 |','fixture',{
+  '从 `images` 中通过 `to` 方法跳转。':'Use `to` to select from `images`; no images means nowhere to go.'
+ });
+ assert.ok(output.includes('Use `to` to select from `images`; no images means nowhere to go.'));
+ assert.ok(output.includes('| Event | Description | Arguments |'));
+ assert.equal(translateFragment('| 方法名 | 说明 | 参数 |','fixture'),'| Method | Description | Arguments |');
+ assert.equal(translateFragment('| 方法 | 参数 | 返回值 |','fixture'),'| Method | Arguments | Returns |');
+ assert.match(translateFragment('| 事件名 | 说明 | 参数 |','fixture'), /\| Arguments \|$/);
+ const identifier=translateFragment('通过 `label` 插槽设置标题。','fixture',{'通过 `label` 插槽设置标题。':'Use the label slot; update-label is a separate identifier.'});
+ assert.equal(identifier,'Use the `label` slot; update-label is a separate identifier.');
+ const link=translateFragment('参考 `aria-busy` 文档。','fixture',{'参考 `aria-busy` 文档。':'See [the spec](https://example.test/#aria-busy) for aria-busy.'});
+ assert.ok(link.includes('](https://example.test/#aria-busy)'));
+ assert.ok(link.includes('for `aria-busy`'));
+ const punctuation=translateFragment('默认值为 `-`，非有限值归零。','fixture',{'默认值为 `-`，非有限值归零。':'Default is -; non-finite values use zero.'});
+ assert.equal(punctuation,'Default is `-`; non-finite values use zero.');
+});
+
+test('reviewed Image and Scheduler descriptions remain reproducible',()=>{
+ const input='| src | 缩略图地址 |\n| lock-scroll | 锁定背景滚动 |\n| before-transaction | 事务保存守卫，设置后替代 before-change |';
+ const output=translateFragment(input,'reviewed-contracts');
+ assert.match(output,/Thumbnail source/);
+ assert.match(output,/Lock background scrolling/);
+ assert.match(output,/Transaction guard; replaces before-change when provided/);
+});
+
 test('all registered bilingual component families retain every API member, type, default and comparison setting',()=>{
  let checked=0;
  for(const row of inventoryDemoContent()) {
   const zhPath=path.join(root,row.document),enPath=zhPath.replace(/README\.md$/,'README.en-US.md').replace(/PICKER\.md$/,'PICKER.en-US.md').replace(/zh-CN\.md$/,'en-US.md');
   const zh=fs.readFileSync(zhPath,'utf8'),en=fs.readFileSync(enPath,'utf8');
   assert.doesNotMatch(en,/complete component API reference in Chinese|\]\([^)]*(?:zh-CN(?:\/|\.md)|README\.md)/,row.family);
+  assert.doesNotMatch(en,/\]\([^\n)]*`[^\n)]*\)/,row.platform+'/'+row.family+': code markers in link destination');
   const primary=readDemoSections(zh),english=readDemoSections(en);
   const expected=contracts([...primary.preserved,primary.api].join('\n'));
   const actual=contracts([...english.preserved,english.api].join('\n'));
@@ -48,6 +75,27 @@ test('all registered bilingual component families retain every API member, type,
   assert.deepEqual(configKeys(zh),configKeys(en),row.platform+'/'+row.family+': configuration notes differ');
  }
  assert.ok(checked>2000,'Expected full API inventory, not a sample');
+});
+
+test('localization retains current usage, positioning and shared-style guidance',()=>{
+ const required = new Map([
+  ['cedar/alert', ['`type="default"`', '`#icon`']],
+  ['cedar/popconfirm', ['## Triggers and positioning', 'TriggerPlacement / triggerPlacements']],
+ ['cedar/nav-menu', ['Titles follow matching selected options', 'fixed titles']],
+  ['cedar/switch', ['Use the CSS Variables table below to customize dimensions and colors.', '### Track and handle colors']],
+  ['maple/switch', ['Use the CSS Variables table below to customize dimensions and colors.', '### Track and handle colors']],
+  ['maple/input-number', ['Shared field appearance still uses FieldDecorator `--mp-field-*` tokens.']],
+ ]);
+ localizeApiDocumentation({onGenerated:({platform,family,source})=>{
+  assert.doesNotMatch(source,/\]\([^\n)]*`[^\n)]*\)/,platform+'/'+family+': generated link contains code markers');
+  assert.doesNotMatch(source, /### Compatibility|Legacy platform-specific Switch geometry tokens/, platform+'/'+family);
+  if (platform === 'cedar' && family === 'nav-menu') assert.doesNotMatch(source, /update-label[^\n]*removed/i);
+  const key=platform+'/'+family, snippets=required.get(key);
+  if (!snippets) return;
+  for (const snippet of snippets) assert.ok(source.includes(snippet),key+': missing '+snippet);
+  required.delete(key);
+ }});
+ assert.equal(required.size,0,'All reviewed components must be generated');
 });
 
 test('complete English documentation is reproducible without a Chinese-reference fallback',()=>{

@@ -53,7 +53,7 @@ test('new or duplicate assignments fail explicitly instead of silently losing ca
 
 test('every authored Cedar component page has a basic group, grouped demos and a stable organization', () => {
   const root = fileURLToPath(new URL('../../', import.meta.url));
-  const directory = path.join(root, 'cedar-design-web/packages/cedar-ui/src');
+  const directory = path.join(root, 'cedar-design-web/packages/ui/src');
   const config = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/configs/demo-groups.json'), 'utf8'));
   for (const relative of fs.readdirSync(directory, { recursive: true }).filter(file => file.endsWith('.md'))) {
     const source = fs.readFileSync(path.join(directory, relative), 'utf8');

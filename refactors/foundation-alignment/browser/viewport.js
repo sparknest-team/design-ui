@@ -1,8 +1,8 @@
 import { createApp, h, nextTick } from 'vue'
-import Cedar from '/cedar-design-web/packages/cedar-ui/src/trigger/index.ts'
-import Maple from '/maple-design-mobile/packages/maple-ui/src/trigger/index.ts'
-import '/cedar-design-web/packages/cedar-ui/src/trigger/style/index.ts'
-import '/maple-design-mobile/packages/maple-ui/src/trigger/style/index.ts'
+import Cedar from '/cedar-design-web/packages/ui/src/trigger/index.ts'
+import Maple from '/maple-design-mobile/packages/ui/src/trigger/index.ts'
+import '/cedar-design-web/packages/ui/src/trigger/style/index.ts'
+import '/maple-design-mobile/packages/ui/src/trigger/style/index.ts'
 const results = [], host = document.querySelector('#fixture')
 const settle = async () => { await nextTick(); await new Promise(resolve => setTimeout(resolve, 180)); await nextTick() }
 for (const [name, Trigger] of [['Cedar', Cedar], ['Maple', Maple]]) {

@@ -1,8 +1,8 @@
 import { createApp, h, withDirectives, ref } from 'vue'
-import CedarRipple from '/cedar-design-web/packages/cedar-ui/src/ripple/index.ts'
-import MapleRipple from '/maple-design-mobile/packages/maple-ui/src/ripple/index.ts'
-import '/cedar-design-web/packages/cedar-ui/src/ripple/style/index.ts'
-import '/maple-design-mobile/packages/maple-ui/src/ripple/style/index.ts'
+import CedarRipple from '/cedar-design-web/packages/ui/src/ripple/index.ts'
+import MapleRipple from '/maple-design-mobile/packages/ui/src/ripple/index.ts'
+import '/cedar-design-web/packages/ui/src/ripple/style/index.ts'
+import '/maple-design-mobile/packages/ui/src/ripple/style/index.ts'
 
 const timing = ref('default'), records = ref([])
 const observed = new WeakMap()

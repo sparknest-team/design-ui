@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { composeDemoComparison, namespaceExpression } from './compose-demo-comparison.mjs';
-const require = createRequire(new URL('../../cedar-design-web/packages/cedar-ui/package.json', import.meta.url));
+const require = createRequire(new URL('../../cedar-design-web/packages/ui/package.json', import.meta.url));
 const { parse, compileScript, compileTemplate } = require('@vue/compiler-sfc');
 
 test('isolates model assignments and respects expression-local parameters', () => {

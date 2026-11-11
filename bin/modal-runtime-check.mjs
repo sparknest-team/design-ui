@@ -6,8 +6,8 @@ import { existsSync } from 'node:fs'
 const root = fileURLToPath(new URL('../../', import.meta.url))
 register(new URL('./ssr-style-loader.mjs', import.meta.url), import.meta.url)
 for (const [name, directory, components] of [
-  ['Cedar', 'cedar-design-web/packages/cedar-ui', ['dialog', 'drawer', 'overlay']],
-  ['Maple', 'maple-design-mobile/packages/maple-ui', ['dialog', 'popup', 'overlay']],
+  ['Cedar', 'cedar-design-web/packages/ui', ['dialog', 'drawer', 'overlay']],
+  ['Maple', 'maple-design-mobile/packages/ui', ['dialog', 'popup', 'overlay']],
 ]) {
   const require = createRequire(resolve(root, directory, 'package.json'))
   require.extensions['.css'] = () => {}
@@ -32,13 +32,13 @@ for (const [name, directory, components] of [
     const esBundle = resolve(root, directory, 'es/index.mjs')
     assert.ok(existsSync(esBundle))
     console.log('PASS Maple es: bundled ESM artifact exists; per-component SSR import is not emitted by this build')
-    const api = require(resolve(root, directory, 'lib/style-provider/index.js'))
-    const StyleProvider = api._StyleProviderComponent ?? api.StyleProvider ?? api.default
-    assert.ok(StyleProvider)
+    const api = require(resolve(root, directory, 'lib/theme-provider/index.js'))
+    const ThemeProvider = api._ThemeProviderComponent ?? api.ThemeProvider ?? api.default
+    assert.ok(ThemeProvider)
     const html = await renderToString(createSSRApp({
-      render: () => h(StyleProvider, { style: { '--mp-color-primary': '#123456' } }, { default: () => h('span', 'content') }),
+      render: () => h(ThemeProvider, { style: { '--mp-color-primary': '#123456' } }, { default: () => h('span', 'content') }),
     }))
     assert.match(html, /content/)
-    console.log('PASS Maple StyleProvider: no-DOM import and SSR render')
+    console.log('PASS Maple ThemeProvider: no-DOM import and SSR render')
   }
 }

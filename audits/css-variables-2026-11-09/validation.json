@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-09",
+  "checks": {
+    "componentDocumentation": "passed: 393 pages, no drift",
+    "publicTokenNames": "passed: no missing complete public names in either language",
+    "tokenCatalog": "passed: all three catalogs",
+    "tokenPlacement": "passed",
+    "sharedStyleContract": "passed: 50 component contracts and 1050 governed component defaults",
+    "tokenConsumers": "passed: no unreviewed consumers",
+    "cedarLint": "passed",
+    "mapleLint": "passed",
+    "affectedComponentTests": {
+      "cedar": 219,
+      "maple": 1453
+    },
+    "focusedNodeTests": 21,
+    "broadChecks": "not fully passing: historical inventory/source and selector drift; API translation backlog; NoticeBar phone-gallery pausable demo missing",
+    "focusedDocumentationTests": 29,
+    "apiTranslationBacklog": {
+      "families": 210,
+      "changed": 40,
+      "missing": 219
+    }
+  },
+  "inventory": {
+    "files": 177,
+    "declarations": 4681,
+    "candidates": 52,
+    "crossComponentCss": 22,
+    "literalRuntime": 9,
+    "dynamicRuntime": 21,
+    "needsManualReview": 0,
+    "errors": 0
+  },
+  "cssTerminalComparison": [
+    {
+      "family": "date",
+      "before": 521,
+      "after": 521,
+      "changes": []
+    },
+    {
+      "family": "date-range",
+      "before": 149,
+      "after": 149,
+      "changes": []
+    },
+    {
+      "family": "time",
+      "before": 88,
+      "after": 88,
+      "changes": [
+        {
+          "before": [
+            ".mp-time-picker",
+            "min-width",
+            "100%"
+          ],
+          "after": [
+            ".mp-time-picker",
+            "min-width",
+            "min(100%, var(--mp-time-picker-min-width))"
+          ]
+        }
+      ]
+    },
+    {
+      "family": "time-range",
+      "before": 78,
+      "after": 78,
+      "changes": []
+    },
+    {
+      "family": "form",
+      "before": 62,
+      "after": 62,
+      "changes": []
+    }
+  ],
+  "removedUnusedDeclarations": [
+    "--mp-date-picker-datetime-popover-width",
+    "--mp-date-picker-time-panel-min-width",
+    "--mp-date-range-picker-time-group-gap",
+    "--mp-date-range-picker-time-group-radius",
+    "--mp-date-range-picker-time-selection-background",
+    "--mp-date-range-picker-value-arrow-color",
+    "--mp-date-range-picker-value-arrow-size",
+    "--mp-date-range-picker-value-color",
+    "--mp-date-range-picker-value-time-font-size",
+    "--mp-date-range-picker-values-font-size",
+    "--mp-date-range-picker-values-height",
+    "--mp-form-label-padding-top",
+    "--mp-time-range-picker-value-active-color",
+    "--mp-time-range-picker-value-arrow-color",
+    "--mp-time-range-picker-value-arrow-size",
+    "--mp-time-range-picker-value-color",
+    "--mp-time-range-picker-values-font-size",
+    "--mp-time-range-picker-values-font-weight",
+    "--mp-time-range-picker-values-height"
+  ]
+}

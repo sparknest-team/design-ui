@@ -685,8 +685,7 @@
       "label": "主题切换与局部覆盖",
       "pattern": "theme|override|主题|覆盖",
       "components": [
-        "config-provider",
-        "style-provider",
+        "theme-provider",
         "field-decorator"
       ]
     },
@@ -696,7 +695,7 @@
       "pattern": "locale|default|config|全局|语言|默认",
       "components": [
         "config-provider",
-        "style-provider"
+        "theme-provider"
       ]
     },
     {

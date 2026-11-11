@@ -8,7 +8,7 @@ import { componentPages } from '../inventory.mjs'
 test('Cedar inventory counts runnable HTML demos with valid Markdown indentation', async () => {
   const root = await mkdtemp(join(tmpdir(), 'direction-inventory-'))
   try {
-    const directory = join(root, 'packages/cedar-ui/src/example')
+    const directory = join(root, 'packages/ui/src/example')
     await mkdir(directory, { recursive: true })
     await writeFile(join(directory, 'README.md'), '---\npermalink: /components/example/\n---\n<demo src="./one.vue"></demo>\n <demo src="./two.vue"></demo>\n')
     await writeFile(join(directory, 'one.vue'), '<template>One</template>')

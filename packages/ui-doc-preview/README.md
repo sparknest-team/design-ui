@@ -1,4 +1,4 @@
-# @sparknest/ui-doc-preview
+# @sparknest/ui-doc-preview-vue
 
 跨 Cedar 与 Maple 文档站复用的 Demo 展示外壳。它只负责预览容器、源码展开、复制、源码标签页和 Playground 入口，不包含任何组件库 Demo。
 

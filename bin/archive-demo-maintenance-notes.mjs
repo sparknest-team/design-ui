@@ -9,7 +9,7 @@ const changed = [];
 // Archive engineering history throughout the page, not only its introduction.
 // API tables, code, headings and authored usage instructions are not candidates.
 const internal = /JSDOM|非原生|证据[：:]|audits\/|本轮.*(?:验证|专项|最终|源码)|本批.*(?:专项|验收|接管)|限域授权|受控(?:回归|队列|时钟|测试|证据)|目录漂移|早期.*待|本端.*未接管|运行时审计待办|阶段[一二三].*(?:授权|专项|验证)|后续授权|最终分层结果|lint 补验|专项.*(?:通过|为受控)|回归.*通过|代次|旧续体|真实IAB.*通过|最终完整.*通过|当前源码重验|原生布局验收|native-layout acceptance|搜索.*退休|FieldPresentation searches|scoped style\/inventory review|Audit boundary|Completion-wait update|controlled tests|Evidence:/i;
-for (const library of ['cedar-design-web/packages/cedar-ui', 'maple-design-mobile/packages/maple-ui']) {
+for (const library of ['cedar-design-web/packages/ui', 'maple-design-mobile/packages/ui']) {
   const base = path.join(root, library, 'src');
   for (const file of fs.readdirSync(base, { recursive: true }).filter(file => /\/README\.md$|\/docs\/(?:zh-CN|en-US)\.md$/.test(file))) {
     const full = path.join(base, file), source = fs.readFileSync(full, 'utf8');

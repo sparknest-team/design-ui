@@ -39,7 +39,7 @@ test('shared platform order overrides filename heuristics without losing API', (
 });
 
 test('catalog covers every category exactly once and all demo and reference targets exist', () => {
-  const ui = path.join(root, 'cedar-design-web/packages/cedar-ui');
+  const ui = path.join(root, 'cedar-design-web/packages/ui');
   const catalog = JSON.parse(fs.readFileSync(path.join(ui, 'docs/.vuepress/configs/component-catalog.json'), 'utf8'));
   const unique = new Set(catalog.components.map(item => item.id));
   assert.equal(unique.size, catalog.components.length);
@@ -56,7 +56,7 @@ test('catalog covers every category exactly once and all demo and reference targ
 });
 
 test('public component documentation and mobile entries contain no review module', () => {
-  for (const library of ['cedar-design-web/packages/cedar-ui', 'maple-design-mobile/packages/maple-ui']) {
+  for (const library of ['cedar-design-web/packages/ui', 'maple-design-mobile/packages/ui']) {
     const directory = path.join(root, library, 'src');
     for (const relative of fs.readdirSync(directory, { recursive: true })) {
       if (!relative.endsWith('.md') && !relative.endsWith('/example/index.vue')) continue;
@@ -67,7 +67,7 @@ test('public component documentation and mobile entries contain no review module
 });
 
 test('every registered runtime component or directive is represented by a catalog family', () => {
-  const ui = path.join(root, 'cedar-design-web/packages/cedar-ui');
+  const ui = path.join(root, 'cedar-design-web/packages/ui');
   const entry = fs.readFileSync(path.join(ui, 'src/cedar-vue.ts'), 'utf8');
   const catalog = JSON.parse(fs.readFileSync(path.join(ui, 'docs/.vuepress/configs/component-catalog.json'), 'utf8'));
   const registered = new Set([

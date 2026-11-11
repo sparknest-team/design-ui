@@ -17,7 +17,7 @@ export function normalizeDemoLayout(source, prefix, wrapComparisons = false) {
 
 export function checkLayouts(write = false) {
   const changed = [];
-  for (const [library, prefix] of [['cedar-design-web/packages/cedar-ui', 'c'], ['maple-design-mobile/packages/maple-ui', 'mp']]) {
+  for (const [library, prefix] of [['cedar-design-web/packages/ui', 'c'], ['maple-design-mobile/packages/ui', 'mp']]) {
     const base = path.join(root, library, 'src');
     for (const relative of fs.readdirSync(base, { recursive: true })) {
       if (!relative.endsWith('.vue') || !/(?:__demos__|example\/demos)\//.test(relative)) continue;

@@ -1,19 +1,19 @@
 import { afterEach, beforeAll, expect, test, vi } from "vitest";
 import { mount, flushPromises } from "@vue/test-utils";
 import { createRouter, createMemoryHistory } from "vue-router";
-import Cedar from "../../../../cedar-design-web/packages/cedar-ui/src/cedar-vue";
-import Maple from "../../../../maple-design-mobile/packages/maple-ui/src/maple-vue";
-import * as CedarIcons from "../../../../cedar-design-web/packages/cedar-icons-vue/src/index";
-import * as MapleIcons from "../../../../maple-design-mobile/packages/maple-icons-vue/src/index";
+import Cedar from "../../../../cedar-design-web/packages/ui/src/cedar-vue";
+import Maple from "../../../../maple-design-mobile/packages/ui/src/maple-vue";
+import * as CedarIcons from "../../../../cedar-design-web/packages/icons/src/index";
+import * as MapleIcons from "../../../../maple-design-mobile/packages/icons/src/index";
 
 const demos = import.meta.glob(
-  "../../../../{cedar-design-web/packages/cedar-ui,maple-design-mobile/packages/maple-ui}/src/**/{appearance-lab,state-lab,layout-lab,feedback,field-choice,field-components,field-date,field-time,field-tree,field-rating,field-selection,field-upload,field-specialized,field-panel-actions,value-mapping,clearable,field-names,custom-icons}.vue",
+  "../../../../{cedar-design-web/packages/ui,maple-design-mobile/packages/ui}/src/**/{appearance-lab,state-lab,layout-lab,feedback,field-choice,field-components,field-date,field-time,field-tree,field-rating,field-selection,field-upload,field-specialized,field-panel-actions,value-mapping,clearable,field-names,custom-icons}.vue",
 );
 const buttonDemos = import.meta.glob(
-  "../../../../{cedar-design-web/packages/cedar-ui,maple-design-mobile/packages/maple-ui}/src/button/{__demos__,example/demos}/{variants,loading,button-group,button-group-layout,button-group-content}.vue",
+  "../../../../{cedar-design-web/packages/ui,maple-design-mobile/packages/ui}/src/button/{__demos__,example/demos}/{variants,loading,button-group,button-group-layout,button-group-content}.vue",
 );
 const formDemos = import.meta.glob(
-  "../../../../{cedar-design-web/packages/cedar-ui,maple-design-mobile/packages/maple-ui}/src/form/{__demos__,example/demos}/{field-range-boundaries,field-presentation,presentation-state}.vue",
+  "../../../../{cedar-design-web/packages/ui,maple-design-mobile/packages/ui}/src/form/{__demos__,example/demos}/{field-range-boundaries,field-presentation,presentation-state}.vue",
 );
 let wrapper: ReturnType<typeof mount> | undefined;
 beforeAll(() => {

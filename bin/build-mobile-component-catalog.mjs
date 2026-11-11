@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { libraries, reference, improvementsFor } from './build-component-catalog.mjs';
 import { featureRows } from './component-feature-analysis.mjs';
 const root = fileURLToPath(new URL('../../', import.meta.url));
-const base = path.join(root, 'maple-design-mobile/packages/maple-ui');
+const base = path.join(root, 'maple-design-mobile/packages/ui');
 const spec = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/configs/component-showcase.json'), 'utf8'));
 const coreStrengths = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/configs/core-strengths.json'), 'utf8'));
 const groups = spec.groups.map(({ components, ...group }) => group);

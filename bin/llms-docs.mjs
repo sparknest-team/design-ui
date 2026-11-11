@@ -104,7 +104,7 @@ export function generateDocs({ root, platform, output }) {
   if (!pages.length) throw new Error(`No public documentation found in ${root}`)
   const name = platform === 'cedar' ? 'Cedar Design Web' : 'Maple Design Mobile'
   const prefix = platform === 'cedar' ? 'C / c-' : 'Mp / mp-'
-  const intro = `# ${name}\n\n> Vue 3 component library. Package: @${platform}-design/ui. Component prefix: ${prefix}.\n\nRead the quick start and the relevant component page before generating code. Follow the documented props, events, slots, imports and styles. Do not substitute APIs from another component library.\n\n`
+  const intro = `# ${name}\n\n> Vue 3 component library. Package: @${platform}-design/ui-vue. Component prefix: ${prefix}.\n\nRead the quick start and the relevant component page before generating code. Follow the documented props, events, slots, imports and styles. Do not substitute APIs from another component library.\n\n`
   const artifacts = new Map()
   let index = `${intro}Links are relative to this file and work under a documentation deployment subpath. English pages are included only when an authored English source exists.\n\n- [Full documentation](./llms-full.txt): All pages and expanded Vue examples; large context required.\n`
   let full = intro

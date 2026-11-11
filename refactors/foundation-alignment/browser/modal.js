@@ -1,12 +1,12 @@
 import { createApp, h, KeepAlive, nextTick, ref } from 'vue'
-import CedarDialog from '/cedar-design-web/packages/cedar-ui/src/dialog/index.tsx'
-import CedarDrawer from '/cedar-design-web/packages/cedar-ui/src/drawer/index.ts'
-import MapleDialog from '/maple-design-mobile/packages/maple-ui/src/dialog/index.ts'
-import MaplePopup from '/maple-design-mobile/packages/maple-ui/src/popup/index.ts'
-import '/cedar-design-web/packages/cedar-ui/src/dialog/style/index.ts'
-import '/cedar-design-web/packages/cedar-ui/src/drawer/style/index.ts'
-import '/maple-design-mobile/packages/maple-ui/src/dialog/style/index.ts'
-import '/maple-design-mobile/packages/maple-ui/src/popup/style/index.ts'
+import CedarDialog from '/cedar-design-web/packages/ui/src/dialog/index.tsx'
+import CedarDrawer from '/cedar-design-web/packages/ui/src/drawer/index.ts'
+import MapleDialog from '/maple-design-mobile/packages/ui/src/dialog/index.ts'
+import MaplePopup from '/maple-design-mobile/packages/ui/src/popup/index.ts'
+import '/cedar-design-web/packages/ui/src/dialog/style/index.ts'
+import '/cedar-design-web/packages/ui/src/drawer/style/index.ts'
+import '/maple-design-mobile/packages/ui/src/dialog/style/index.ts'
+import '/maple-design-mobile/packages/ui/src/popup/style/index.ts'
 const container = document.querySelector('#fixture'), results = []
 const settle = async () => { await nextTick(); await new Promise(resolve => setTimeout(resolve, 420)); await nextTick() }
 const assert = (value, message) => { if (!value) throw new Error(message) }

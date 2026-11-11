@@ -28,7 +28,7 @@ export function defineProductionNavigationTests({ root, library }) {
     const evidence = evidenceDirectory(root, library)
     before(async () => {
       directory = await mkdtemp(resolve(tmpdir(), `${library}-navigation-outage-`))
-      await copyProductionSnapshot(resolve(root, `packages/${library}-ui/${library === 'cedar' ? 'dist' : 'site'}`), directory)
+      await copyProductionSnapshot(resolve(root, `packages/ui/${library === 'cedar' ? 'dist' : 'site'}`), directory)
       if (disposed) { await rm(directory, { recursive: true, force: true }); throw new Error('outage snapshot completed after setup cancellation') }
       buildIndexHash = createHash('sha256').update(await readFile(resolve(directory, 'index.html'))).digest('hex')
       server = createServer(async (request, response) => {

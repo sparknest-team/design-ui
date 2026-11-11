@@ -1,6 +1,6 @@
 # Cedar / Maple 统一构建方案
 
-统一采用 Maple 的“CLI + 项目配置文件”使用形态。把与品牌无关的构建内核放到 `design-ui` 的 `@sparknest/ui-build`；保留 `@maple-design/cli` 作为 Maple 的产品层，并新增很薄的 `@cedar-design/cli` 产品层。Cedar 与 Maple 源码、图标和文档配置仍在各自仓库。
+统一采用 Maple 的“CLI + 项目配置文件”使用形态。把与品牌无关的构建内核放到 `design-ui` 的 `@sparknest/ui-build-vue`；保留 `@maple-design/cli-vue` 作为 Maple 的产品层，并新增很薄的 `@cedar-design/cli-vue` 产品层。Cedar 与 Maple 源码、图标和文档配置仍在各自仓库。
 
 ## Maple CLI 保留边界
 
@@ -11,9 +11,9 @@
 - component create/gen 模板及 Maple namespace 默认值。
 - VSCode extension 开发构建。
 - Maple release/changelog/checklist 命令入口及 Maple 包清单、scope、registry 配置。
-- `client` 中依赖 Maple `StyleProvider`、Themes 和站点 config 的运行时代码。
+- `client` 中依赖 Maple `ThemeProvider`、Themes 和站点 config 的运行时代码。
 
-下沉到 `@sparknest/ui-build`：
+下沉到 `@sparknest/ui-build-vue`：
 
 - compile modules/bundle/style/types/metadata。
 - Vite/Rollup/Vitest 的基础配置。
@@ -55,6 +55,6 @@
 
 ## Resolver
 
-Cedar 新增与 Maple 完全同构的独立 `@cedar-design/resolver` 包：相同的 `autoImport`、`importStyle`、`directives` 选项，相同的 ESM/CJS/types exports，并解析到 `@cedar-design/ui/es/<component>/style/index.mjs`。Cedar UI 包内的 `resolver.ts` 删除，resolver 不再混入 UI 构建产物。
+Cedar 新增与 Maple 完全同构的独立 `@cedar-design/resolver-vue` 包：相同的 `autoImport`、`importStyle`、`directives` 选项，相同的 ESM/CJS/types exports，并解析到 `@cedar-design/ui-vue/es/<component>/style/index.mjs`。Cedar UI 包内的 `resolver.ts` 删除，resolver 不再混入 UI 构建产物。
 
 迁移先在 Cedar 落地并以 Maple 产物结构作为验收基线：`es/lib/umd/highlight/types/json`、文件扩展名、style entry、resolver 和 package exports 均一致。实现可先复用 Maple CLI，但应同步修复错误吞掉、正则改写 import 和类型生成问题；不能长期让 Cedar 对外暴露名为 `maple-cli` 的构建依赖。

@@ -1,0 +1,153 @@
+{
+  "changed": 34,
+  "changes": [
+    {
+      "file": "cedar-design-web/packages/ui/src/card/README.en-US.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/card/README.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/date/README.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/date/picker/README.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/date-range/PICKER.en-US.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/date-range/PICKER.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/date-range/README.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/dialog/README.en-US.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/dialog/README.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/notification/README.en-US.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/pagination/README.en-US.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/pagination/README.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/style/atomic-css/README.en-US.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/style/atomic-css/README.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/table/README.en-US.md",
+      "removed": [
+        "| isStaticItemHeight | Removed: use `fixedSize` instead of the old fixed-height flag | `boolean` | `false` |\n"
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/table/README.md",
+      "removed": [
+        "| isStaticItemHeight | （已废除）元素高度是否是固定的，请使用 `fixedSize`                 | `boolean`          | `false` |\n"
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/time/README.en-US.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/time/README.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/time-range/README.en-US.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/time-range/README.md",
+      "removed": []
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/card/docs/en-US.md",
+      "removed": []
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/card/docs/zh-CN.md",
+      "removed": []
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/date/docs/en-US.md",
+      "removed": [
+        "Shared style variables:\n\n| Token | Default |\n| -------------------------------------------- | ------------------------------------------------------------- |\n| `--mp-temporal-panel-inset` | `12px` |\n| `--mp-temporal-panel-column-label-height` | `36px` |\n| `--mp-temporal-panel-column-label-font-size` | `13px` |\n| `--mp-temporal-panel-radius` | `12px` |\n| `--mp-temporal-panel-group-gap` | `24px` |\n| `--mp-temporal-panel-touch-height` | `44px` |\n| `--mp-temporal-panel-summary-background` | `var(--mp-color-fill-1)` |\n| `--mp-temporal-panel-summary-height` | `56px` |\n| `--mp-temporal-panel-quick-time-width` | `84px` |\n| `--mp-temporal-panel-selection-background` | `var(--mp-color-fill-2)` |\n| `--mp-temporal-panel-active-background` | `color-mix(in srgb, var(--mp-color-primary) 8%, transparent)` |\n"
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/date/docs/zh-CN.md",
+      "removed": [
+        "共享样式变量：\n\n| Token                                        | Default                                                       |\n| -------------------------------------------- | ------------------------------------------------------------- |\n| `--mp-temporal-panel-inset`                  | `12px`                                                        |\n| `--mp-temporal-panel-column-label-height`    | `36px`                                                        |\n| `--mp-temporal-panel-column-label-font-size` | `13px`                                                        |\n| `--mp-temporal-panel-radius`                 | `12px`                                                        |\n| `--mp-temporal-panel-group-gap`              | `24px`                                                        |\n| `--mp-temporal-panel-touch-height`           | `44px`                                                        |\n| `--mp-temporal-panel-summary-background`     | `var(--mp-color-fill-1)`                                      |\n| `--mp-temporal-panel-summary-height`         | `56px`                                                        |\n| `--mp-temporal-panel-quick-time-width`       | `84px`                                                        |\n| `--mp-temporal-panel-selection-background`   | `var(--mp-color-fill-2)`                                      |\n| `--mp-temporal-panel-active-background`      | `color-mix(in srgb, var(--mp-color-primary) 8%, transparent)` |\n"
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/date-range/docs/en-US.md",
+      "removed": []
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/date-range/docs/zh-CN.md",
+      "removed": []
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/dialog/docs/en-US.md",
+      "removed": []
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/dialog/docs/zh-CN.md",
+      "removed": []
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/pagination/docs/en-US.md",
+      "removed": []
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/pagination/docs/zh-CN.md",
+      "removed": []
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/tab-bar/docs/en-US.md",
+      "removed": []
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/tab-bar/docs/zh-CN.md",
+      "removed": []
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/tree/README.md",
+      "removed": [
+        "| isStaticItemHeight | （已废除）元素高度是否是固定的。请使用 `fixedSize`                 | `boolean`          | `false` |\n"
+      ]
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/tree/README.en-US.md",
+      "removed": [
+        "| isStaticItemHeight | Removed fixed-height flag; use `fixedSize` | `boolean` | `false` |\n"
+      ]
+    }
+  ]
+}

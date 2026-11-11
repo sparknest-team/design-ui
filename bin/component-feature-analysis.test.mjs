@@ -27,14 +27,14 @@ test('every curated increment has a real reference file and belongs to an existi
  }
 });
 test('the mobile catalog references mobile demo files and maps no desktop-only scheduler', () => {
- const base = path.join(root, 'maple-design-mobile/packages/maple-ui');
+ const base = path.join(root, 'maple-design-mobile/packages/ui');
  const catalog = JSON.parse(fs.readFileSync(path.join(base, 'docs/components/component-catalog.json')));
  assert.ok(!catalog.components.some(item => item.id === 'scheduler'));
  assert.ok(catalog.components.some(item => item.id === 'pull-refresh'));
  for (const component of catalog.components) for (const demo of component.demos) assert.ok(fs.existsSync(path.join(base, demo.source)), demo.source);
 });
 test('each localized mobile showcase page resolves every referenced demo in a component directory', () => {
- const base = path.join(root, 'maple-design-mobile/packages/maple-ui');
+ const base = path.join(root, 'maple-design-mobile/packages/ui');
  for (const name of ['showcase','showcaseComponents','showcaseCrossPlatform','showcaseForms','showcaseThemes','showcaseAsync','showcaseData','showcaseTouch']) {
   for (const locale of ['zh-CN','en-US']) {
    const file = path.join(base, `docs/${name}.${locale}.md`);
@@ -58,7 +58,7 @@ test('core features have concrete demo sources on each supported platform', () =
   for (const platform of ['cedar','maple']) {
    const sample = item[platform];
    if (!sample) continue;
-   const base = path.join(root, platform === 'cedar' ? 'cedar-design-web/packages/cedar-ui' : 'maple-design-mobile/packages/maple-ui');
+   const base = path.join(root, platform === 'cedar' ? 'cedar-design-web/packages/ui' : 'maple-design-mobile/packages/ui');
    assert.ok(fs.existsSync(path.join(base, sample.source)), item.id);
    assert.ok(!sample.source.includes('api-review'), item.id);
   }
@@ -66,6 +66,6 @@ test('core features have concrete demo sources on each supported platform', () =
  const mobile = strengths.filter(item => item.maple);
  assert.ok(!mobile.some(item => item.maple.component === 'scheduler'));
  for (const item of mobile) assert.ok(!(item.mapleValue ?? item.value).includes('Scheduler'), item.id);
- const mobilePage = fs.readFileSync(path.join(root, 'maple-design-mobile/packages/maple-ui/docs/showcaseStrengths.zh-CN.md'), 'utf8');
+ const mobilePage = fs.readFileSync(path.join(root, 'maple-design-mobile/packages/ui/docs/showcaseStrengths.zh-CN.md'), 'utf8');
  assert.ok(!mobilePage.includes('Scheduler')); 
 });

@@ -6,8 +6,8 @@ import { fileURLToPath } from "node:url";
 
 const workspace = fileURLToPath(new URL("../../", import.meta.url));
 for (const [repo, declarations] of [
-  ["cedar-design-web/packages/cedar-ui", "types"],
-  ["maple-design-mobile/packages/maple-ui", "types-generated"],
+  ["cedar-design-web/packages/ui", "types"],
+  ["maple-design-mobile/packages/ui", "types-generated"],
 ]) {
   const root = resolve(workspace, repo);
   const require = createRequire(resolve(root, "package.json"));

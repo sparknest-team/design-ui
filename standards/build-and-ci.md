@@ -1,6 +1,6 @@
 # 构建与 CI 公共契约
 
-Cedar / Maple 的库构建都使用 `@sparknest/ui-build`。源码同源、单测通过和源码打包体积通过，不能替代真实发布产物的行为验证。
+Cedar / Maple 的库构建都使用 `@sparknest/ui-build-vue`。源码同源、单测通过和源码打包体积通过，不能替代真实发布产物的行为验证。
 
 ## 构建环境
 
@@ -16,6 +16,7 @@ Cedar / Maple 的库构建都使用 `@sparknest/ui-build`。源码同源、单�
 - 当前两端 Quality job 统一 Node 20 / pnpm 9.6.0。`ci-toolchain-check.mjs` 检查主 Node、pnpm 版本和 pnpm 子进程 Node；不能只在入口指定 Corepack，却让 Volta 或全局 pnpm 接管嵌套命令。
 - design-ui 自己按其 packageManager 安装；这不改变 Cedar / Maple job 的包管理器契约。
 - 工作区为同级的 cedar-design-web、maple-design-mobile、design-ui；link 依赖、横向契约与 CI checkout 布局必须一致，三仓均 frozen 安装。
+- 同一工作区内，同一个库的发布构建必须串行执行；需要并行时使用隔离的工作目录和产物目录。构建会清理旧产物，不能在另一个构建尚未结束时用同目录的缺失文件判定源码错误，也不能接受被重叠构建覆盖后的验收结果。
 - 路径必须同时匹配 Git 索引、磁盘实际大小写及相对 import 的拼写。Mac 上成功不能代替 Linux 检查；case-paths-check 检查全部已跟踪路径和可解析的源码相对导入（含类型、测试、Demo），保留既有缺失模块检查。记录仅大小写重命名时不得把用户尚未暂存的内容一并暂存。
 - 两端 CI 执行根 quality 入口，不另维护步骤子集。完整保留类型、lint、全部用例、源码契约、运行时依赖、发布构建、体积与包内容检查，以及两库生产文档浏览器回归。
 - 可以限制 worker 并发以控制资源，不得扩大超时、剔除用例、放宽体积上限、修改原基线或忽略失败。报告必须区分本机验证与真实远端 Actions，以及 Node 混用轮次与声明工具链轮次。

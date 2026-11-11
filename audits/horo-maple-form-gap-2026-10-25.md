@@ -126,7 +126,7 @@ CSS env() 与 App Bridge 解决不同的信息来源。普通浏览器的已知�
 | 上传/日期/时间/级联/弹层 | 沿上述语义及各组件 Token 继承 | 沿上述语义及各组件 Token 继承 | 已放入同一完整表单；结构及专用插画不宣称等价 |
 | 安全区 | 运行时宿主数据 | 运行时宿主数据 | SafeArea 四边协议，不写入品牌常量 |
 
-独立字体、光标、标签排版、滚轮样式、安全区等前次明确缺口已经补齐；这次新增 outline 背景和 Checkbox 圆角，Cedar 的同名契约也已同步。具体覆盖优先级及 App 入口见 [SafeArea 文档](../../maple-design-mobile/packages/maple-ui/src/safe-area/docs/zh-CN.md)。
+独立字体、光标、标签排版、滚轮样式、安全区等前次明确缺口已经补齐；这次新增 outline 背景和 Checkbox 圆角，Cedar 的同名契约也已同步。具体覆盖优先级及 App 入口见 [SafeArea 文档](../../maple-design-mobile/packages/ui/src/safe-area/docs/zh-CN.md)。
 
 ### Token 不能独自完成的内容
 
@@ -151,7 +151,7 @@ CSS env() 与 App Bridge 解决不同的信息来源。普通浏览器的已知�
 
 ## 6. 本地证据索引
 
-- 上传注册：maple-design-mobile/packages/maple-ui/src/maple-vue.ts、src/index.ts、src/upload/index.ts。
+- 上传注册：maple-design-mobile/packages/ui/src/maple-vue.ts、src/index.ts、src/upload/index.ts。
 - 上传 API：src/upload/props.ts、interfaces.ts、docs/zh-CN.md。
 - 密码与分组：src/input/index.ts、props.ts、InputPassword.vue。
 - 字段事务：src/_components/field-presentation/context.ts、with-field-presentation.ts、EditorPanel.vue。

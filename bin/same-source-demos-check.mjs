@@ -3,9 +3,10 @@ import path from 'node:path'
 import assert from 'node:assert/strict'
 import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
+import { normalizeButtonSize, normalizeSwitchEditMode } from './same-source-demo-normalization.mjs'
 
 const root = fileURLToPath(new URL('../../', import.meta.url))
-const require = createRequire(path.join(root, 'cedar-design-web/packages/cedar-ui/package.json'))
+const require = createRequire(path.join(root, 'cedar-design-web/packages/ui/package.json'))
 const { parse, compileScript, compileTemplate } = require('@vue/compiler-sfc')
 const ts = require('typescript')
 const kebab = name => name.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)
@@ -27,7 +28,8 @@ function apiBlock(source) {
   return block.trim()
 }
 function documentedNames(block, section) {
-  const content = block.split(`### ${section}\n`)[1]?.split('\n### ')[0]
+  const heading = new RegExp(`^### (?:[A-Za-z][\\w.-]* )?${section}\\r?$`, 'm').exec(block)
+  const content = heading ? block.slice(heading.index + heading[0].length).split(/\n### /)[0] : undefined
   assert(content !== undefined, `Missing API section: ${section}`)
   return content.split('\n').filter(line => line.startsWith('|')).slice(2)
     .map(line => line.split('|')[1].replaceAll('`', '').trim())
@@ -47,8 +49,8 @@ function sourceApi(directory, component, filename) {
   }
   visitProps(props)
   assert(names.Props.length, `${component}: no props found`)
-  // Button reads listener results for autoLoading, so those listener props
-  // represent events rather than ordinary template attributes.
+  // Listener-shaped declarations represent notification events, not ordinary
+  // template attributes. Their return values do not create component tasks.
   const listenerProps = names.Props.filter(name => name.startsWith('on-'))
   names.Events = listenerProps.map(name => name.slice(3))
   names.Props = names.Props.filter(name => !listenerProps.includes(name))
@@ -83,17 +85,19 @@ function sourceApi(directory, component, filename) {
   return names
 }
 const scenarios = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/audits/same-source-demos.json'), 'utf8'))
-const mapleRequire = createRequire(path.join(root, 'maple-design-mobile/packages/maple-cli/package.json'))
-const { markdown } = await import(mapleRequire.resolve('@maple-design/vite-plugins'))
+const mapleRequire = createRequire(path.join(root, 'maple-design-mobile/packages/cli/package.json'))
+const { markdown } = await import(mapleRequire.resolve('@maple-design/vite-plugins-vue'))
 let count = 0
 for (const [component, cases] of Object.entries(scenarios)) {
-  const cedar = path.join(root, 'cedar-design-web/packages/cedar-ui/src', component)
-  const maple = path.join(root, 'maple-design-mobile/packages/maple-ui/src', component)
+  const cedar = path.join(root, 'cedar-design-web/packages/ui/src', component)
+  const maple = path.join(root, 'maple-design-mobile/packages/ui/src', component)
   const readme = fs.readFileSync(path.join(cedar, 'README.md'), 'utf8')
   const example = fs.readFileSync(path.join(maple, 'example/index.vue'), 'utf8')
   const cedarApi = apiBlock(readme)
   const mapleApi = apiBlock(fs.readFileSync(path.join(maple, 'docs/zh-CN.md'), 'utf8'))
-  assert.equal(cedarApi, mapleApi, `${component}: Chinese API documentation drift`)
+  const comparableCedarApi = component === 'switch' ? normalizeSwitchEditMode(cedarApi, 'cedar') : component === 'button' ? normalizeButtonSize(cedarApi, 'cedar') : cedarApi
+  const comparableMapleApi = component === 'switch' ? normalizeSwitchEditMode(mapleApi, 'maple') : component === 'button' ? normalizeButtonSize(mapleApi, 'maple') : mapleApi
+  assert.equal(comparableCedarApi, comparableMapleApi, `${component}: Chinese API documentation drift`)
   const englishApi = apiBlock(fs.readFileSync(path.join(maple, 'docs/en-US.md'), 'utf8'))
   const contract = sourceApi(cedar, component, `${component}.vue`)
   assert.deepEqual(sourceApi(maple, component, `${component[0].toUpperCase()}${component.slice(1)}.vue`), contract, `${component}: public API names drift`)

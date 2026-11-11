@@ -1,13 +1,13 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import { scanMotionSource } from './motion-source-inventory.mjs';
 
 const workspace = new URL('../../', import.meta.url);
 const inventory = JSON.parse(readFileSync(new URL('../audits/motion-source-inventory.json', import.meta.url), 'utf8'));
-const cedar = createRequire(new URL('cedar-design-web/packages/cedar-ui/package.json', workspace));
+const cedar = createRequire(new URL('cedar-design-web/packages/ui/package.json', workspace));
 const postcss = cedar('postcss');
 const reviewed = [
   ["cedar-design-web", "select/hooks/use-select.ts"],
@@ -42,10 +42,6 @@ const reviewed = [
   [
     "maple-design-mobile",
     "checkbox/style/index.less"
-  ],
-  [
-    "maple-design-mobile",
-    "counter/style/counter.less"
   ],
   [
     "maple-design-mobile",
@@ -122,7 +118,7 @@ const reviewed = [
 ];
 const roots = new Map();
 for (const repo of ['cedar-design-web', 'maple-design-mobile']) {
-  const pkg = repo === 'cedar-design-web' ? 'cedar-ui' : 'maple-ui';
+  const pkg = 'ui';
   roots.set(repo, new URL(repo + '/packages/' + pkg + '/src/', workspace));
 }
 for (const [repo, file] of reviewed) {
@@ -130,7 +126,11 @@ for (const [repo, file] of reviewed) {
     const source = readFileSync(new URL(file, roots.get(repo)), 'utf8');
     const actual = { file, ...scanMotionSource(file, source) };
     const row = inventory.platforms.find(p => p.repo === repo).candidates.find(r => r.file === file);
-    assert.deepEqual(row, actual, 'Refresh only reviewed evidence, not unrelated parallel rows');
+    if (actual.css.length || actual.runtime.length) {
+      assert.deepEqual(row, actual, 'Refresh only reviewed evidence, not unrelated parallel rows');
+    } else {
+      assert.equal(row, undefined, 'A removed local motion candidate must not remain in the inventory');
+    }
     if (!file.endsWith('.less')) return;
     const entry = new URL(file.split('/')[0] + '/style/index.less', roots.get(repo));
     const compiler = repo === 'cedar-design-web' ? cedar('less') : less;
@@ -148,7 +148,43 @@ for (const [repo, file] of reviewed) {
   });
 }
 
-const less = createRequire(new URL('maple-design-mobile/packages/maple-cli/package.json', workspace))('less');
+test('removed Maple Counter style has no source file or retained motion candidate', () => {
+  const file = 'counter/style/counter.less';
+  assert.equal(existsSync(new URL(file, roots.get('maple-design-mobile'))), false);
+  assert.equal(inventory.platforms.find(p => p.repo === 'maple-design-mobile').candidates.some(row => row.file === file), false);
+});
+
+const less = createRequire(new URL('maple-design-mobile/packages/cli/package.json', workspace))('less');
+test('removed Maple Counter runtime has no source, public export or retained classification', () => {
+  const file = 'counter/Counter.vue';
+  assert.equal(existsSync(new URL(file, roots.get('maple-design-mobile'))), false);
+  assert.equal(inventory.platforms.find(p => p.repo === 'maple-design-mobile').candidates.some(row => row.file === file), false);
+  const classification = JSON.parse(readFileSync(new URL('../audits/runtime-motion-classification.json', import.meta.url), 'utf8'));
+  assert.equal(classification.rows.some(row => row.repo === 'maple-design-mobile' && row.file === file), false);
+  const entry = readFileSync(new URL('index.ts', roots.get('maple-design-mobile')), 'utf8');
+  assert.doesNotMatch(entry, /(?:from|export\s*\*)\s*['"]\.\/counter(?:\/|['"])/);
+});
+
+test('Maple NoticeBar stops scrolling and wraps both directions under reduced motion', async () => {
+  const entry = new URL('notice-bar/style/index.less', roots.get('maple-design-mobile'));
+  const css = postcss.parse((await less.render(readFileSync(entry, 'utf8'), { filename: fileURLToPath(entry), javascriptEnabled: true })).css);
+  const declarations = new Map();
+  css.walkRules(rule => {
+    if (!rule.parent || rule.parent.type !== 'atrule' || !/prefers-reduced-motion:\s*reduce/.test(rule.parent.params)) return;
+    for (const selector of rule.selectors) {
+      const values = declarations.get(selector) ?? {};
+      rule.walkDecls(decl => { values[decl.prop] = decl.value; });
+      declarations.set(selector, values);
+    }
+  });
+  for (const selector of ['.mp-notice-bar__text--scroll', '.mp-notice-bar__text--scroll:dir(rtl)']) {
+    assert.equal(declarations.get(selector)?.animation, 'none');
+    assert.equal(declarations.get(selector)?.['white-space'], 'normal');
+    assert.equal(declarations.get(selector)?.['overflow-wrap'], 'anywhere');
+  }
+  assert.equal(declarations.get('.mp-notice-bar__content')?.overflow, 'visible');
+});
+
 const routes = {
   checkbox: [
     ['.mp-checkbox__control', 'transition', '--mp-checkbox-animation-duration', '.mp-checkbox__control', 'transition', 'none'],

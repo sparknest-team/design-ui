@@ -7,7 +7,7 @@ import { createRequire } from 'node:module';
 import { collectStyleGraph, tokenStyleLayout } from './token-style-entries.mjs';
 import { renderCatalog } from './token-catalog.mjs';
 
-const ts = createRequire(new URL('../../cedar-design-web/packages/cedar-ui/package.json', import.meta.url))('typescript');
+const ts = createRequire(new URL('../../cedar-design-web/packages/ui/package.json', import.meta.url))('typescript');
 test('real static import graph follows private style.ts once, including cycles', () => {
   const root = '/fixture/src';
   const files = new Map([
@@ -108,7 +108,7 @@ test('real two-platform private entries compile and all four tokens have termina
       assert.equal(token.consumer, 'local-css');
       assert.ok(token.consumerProperties.includes(property));
     }
-    const repo = prefix === 'c' ? 'cedar-design-web/packages/cedar-ui' : 'maple-design-mobile/packages/maple-ui';
+    const repo = prefix === 'c' ? 'cedar-design-web/packages/ui' : 'maple-design-mobile/packages/ui';
     const source = readFileSync(new URL(`../../${repo}/src/select/style/index.ts`, import.meta.url), 'utf8');
     assert.match(source, /import ['"]\.\.\/\.\.\/_components\/field-presentation\/style['"]/);
   }

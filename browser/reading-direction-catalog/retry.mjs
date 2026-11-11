@@ -15,7 +15,7 @@ const summary = []
 for (const library of (process.env.DIRECTION_LIBRARIES ?? 'cedar,maple').split(',')) {
   const root = resolve(workspace, library === 'cedar' ? 'cedar-design-web' : 'maple-design-mobile')
   const source = sourceFingerprint(root, library), production = productionFingerprint(root, library)
-  const output = resolve(root, `packages/${library}-ui/${library === 'cedar' ? 'dist' : 'site'}`)
+  const output = resolve(root, `packages/ui/${library === 'cedar' ? 'dist' : 'site'}`)
   const build = createHash('sha256').update(await readFile(resolve(output, 'index.html'))).digest('hex')
   let snapshot
   try {

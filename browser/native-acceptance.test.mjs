@@ -9,8 +9,8 @@ import { nativeTargets, minimumVersion, acceptanceCases, createNativeReport, ver
 async function fixture(library = 'maple') {
   const root = await mkdtemp(resolve(tmpdir(), 'native-acceptance-unit-'))
   for (const format of ['es', 'lib', 'umd']) {
-    await mkdir(resolve(root, `packages/${library}-ui/${format}`), { recursive: true })
-    await writeFile(resolve(root, `packages/${library}-ui/${format}/index.js`), 'export const fixture = 1')
+    await mkdir(resolve(root, `packages/ui/${format}`), { recursive: true })
+    await writeFile(resolve(root, `packages/ui/${format}/index.js`), 'export const fixture = 1')
   }
   const data = 'UNIT TEST FIXTURE ONLY; not actual native browser evidence'
   await writeFile(resolve(root, 'evidence.txt'), data)
@@ -100,7 +100,7 @@ test('desktop acceptance requires all four minimum boundaries and rejects change
     targetCatalog.checkedAt = '2020-01-01'
     await assert.rejects(verifyNativeAcceptance(f.root, 'cedar', f.path), /Refresh official/)
     targetCatalog.checkedAt = checkedAt
-    await writeFile(resolve(f.root, 'packages/cedar-ui/umd/index.js'), 'changed artifact')
+    await writeFile(resolve(f.root, 'packages/ui/umd/index.js'), 'changed artifact')
     await assert.rejects(verifyNativeAcceptance(f.root, 'cedar', f.path), /published JS\/CSS artifact/)
   } finally { targetCatalog.checkedAt = checkedAt; await f.remove() }
 })

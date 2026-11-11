@@ -42,7 +42,7 @@ export function tokenStyleLayout(root, file, graph, exists) {
     component: relative(root, dirname(dirname(file))),
     declarationSource: relative(root, file),
     entry,
-    internal: false,
+    internal: owner.startsWith('_components/'),
     ...(!exists(entry) ? { error: 'No sibling style/index.less' } : {}),
   };
 }

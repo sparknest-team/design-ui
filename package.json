@@ -1,5 +1,5 @@
 {
-  "name": "@sparknest/design-system",
+  "name": "@sparknest/design-system-vue",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -10,10 +10,10 @@
     "check:ci": "node --test bin/ci-contract.test.mjs bin/ci-toolchain-check.test.mjs bin/shared-source-contract.test.mjs bin/case-paths-check.test.mjs packages/ui-build/test/environment.test.mjs browser/inventory.test.mjs browser/navigation.test.mjs bin/api-naming-check.test.mjs browser/compatibility.test.mjs browser/native-acceptance.test.mjs browser/native-handoff.test.mjs",
     "check:demo-controls": "node --test bin/demo-control-policy.test.mjs && node bin/demo-controls-check.mjs",
     "check:demo-design": "node bin/demo-design-check.mjs && node bin/demo-controls-check.mjs && node bin/organize-demo-pages.mjs",
-    "check:api": "node bin/api-exports-audit.mjs ../cedar-design-web/packages/cedar-ui/src --check && node bin/api-exports-audit.mjs ../maple-design-mobile/packages/maple-ui/src --check",
+    "check:api": "node bin/api-exports-audit.mjs ../cedar-design-web/packages/ui/src --check && node bin/api-exports-audit.mjs ../maple-design-mobile/packages/ui/src --check",
     "check:form-controls": "node bin/form-control-contract-check.mjs",
-    "check:copies": "node bin/copied-components-check.mjs",
-    "check:demos": "node bin/same-source-demos-check.mjs",
+    "check:copies": "node --test bin/copied-source-normalization.test.mjs && node bin/copied-components-check.mjs",
+    "check:demos": "node --test bin/same-source-demo-normalization.test.mjs && node bin/same-source-demos-check.mjs",
     "check:cedar": "node bin/spec-check.mjs --config configs/cedar.json",
     "check:maple": "node bin/spec-check.mjs --config configs/maple.json",
     "check:tokens": "node bin/token-diff.mjs && node bin/token-diff.mjs --component button --strict && node bin/token-diff.mjs --component alert --strict && node bin/token-diff.mjs --component tag --strict && node bin/token-diff.mjs --component badge --strict && node bin/token-diff.mjs --component input --strict && pnpm check:theme-contract",
@@ -21,7 +21,7 @@
     "check:alert-themes": "node bin/alert-theme-check.mjs",
     "check:button-themes": "node bin/button-primary-foreground-check.mjs && node bin/button-theme-check.mjs",
     "check:theme-contract": "pnpm --dir packages/theme-contract check && pnpm check:tag-themes && pnpm check:alert-themes && pnpm check:button-themes && pnpm check:floating-themes && pnpm check:modal-themes && pnpm check:feedback-themes && pnpm check:selection-themes && pnpm check:choice-themes && pnpm check:form-textarea-themes && pnpm check:switch-themes && pnpm check:navigation-themes && pnpm check:numeric-themes && pnpm check:foundation-themes && pnpm check:motion-themes && pnpm check:badge-themes && pnpm check:link-themes && pnpm check:token-consumers && pnpm check:input-tag-themes && pnpm check:field-themes && pnpm test:theme-contract && pnpm check:non-color-tokens && pnpm check:residual-tokens && pnpm check:token-resolution && pnpm check:all-token-consumers && pnpm check:token-reference && pnpm check:media-themes && pnpm check:token-placement && pnpm check:field-focus",
-    "check": "pnpm check:runtime-dependencies && pnpm check:cedar && pnpm check:maple && pnpm check:tokens && pnpm check:theme-contract && pnpm check:api && pnpm check:form-controls && pnpm check:copies && pnpm check:demos && pnpm check:grid-exports && pnpm check:foundations && pnpm check:input-family && pnpm check:tabs-core && pnpm check:media-core && pnpm check:api-naming && pnpm check:direction",
+    "check": "pnpm check:packages && pnpm check:runtime-dependencies && pnpm check:cedar && pnpm check:maple && pnpm check:tokens && pnpm check:theme-contract && pnpm check:api && pnpm check:form-controls && pnpm check:copies && pnpm check:demos && pnpm check:grid-exports && pnpm check:foundations && pnpm check:input-family && pnpm check:tabs-core && pnpm check:media-core && pnpm check:api-naming && pnpm check:direction",
     "check:runtime-dependencies": "node --test bin/runtime-dependency-check.test.mjs && node bin/runtime-dependency-check.mjs",
     "check:input-family": "node bin/input-textarea-body-check.mjs && node bin/slider-core-check.mjs && node bin/list-body-check.mjs && node bin/rate-core-check.mjs && node bin/verification-code-core-check.mjs && node bin/search-core-check.mjs",
     "check:input-ssr": "node bin/input-batch-ssr-check.mjs",
@@ -43,7 +43,7 @@
     "check:navigation-themes": "node bin/navigation-theme-check.mjs",
     "check:numeric-themes": "node bin/numeric-theme-check.mjs",
     "check:foundation-themes": "node bin/foundation-theme-check.mjs",
-    "check:motion-themes": "node --test bin/motion-source-inventory.test.mjs bin/reviewed-inventory-drift.test.mjs bin/remaining-style-consumers.test.mjs bin/select-catalog-closure.test.mjs bin/field-presentation-catalog.test.mjs bin/date-drift-closure.test.mjs bin/message-motion-contract.test.mjs bin/runtime-motion-classification.test.mjs && node bin/motion-source-inventory.mjs --check && node bin/runtime-motion-classification.mjs && node bin/motion-theme-check.mjs && node bin/loading-bar-motion-check.mjs && node bin/notification-motion-check.mjs && node bin/message-motion-check.mjs && node bin/preview-track-motion-check.mjs",
+    "check:motion-themes": "node --test bin/motion-source-inventory.test.mjs bin/reviewed-inventory-drift.test.mjs bin/reviewed-map-cascader-motion.test.mjs bin/remaining-style-consumers.test.mjs bin/select-catalog-closure.test.mjs bin/field-presentation-catalog.test.mjs bin/date-drift-closure.test.mjs bin/message-motion-contract.test.mjs bin/runtime-motion-classification.test.mjs && node bin/motion-source-inventory.mjs --check && node bin/runtime-motion-classification.mjs && node bin/motion-theme-check.mjs && node bin/loading-bar-motion-check.mjs && node bin/notification-motion-check.mjs && node bin/message-motion-check.mjs && node bin/preview-track-motion-check.mjs",
     "check:reviewed-motion-inventory": "node --test bin/motion-source-inventory.test.mjs bin/reviewed-inventory-drift.test.mjs bin/remaining-style-consumers.test.mjs",
     "check:badge-themes": "node bin/badge-theme-check.mjs",
     "check:token-consumers": "node --test bin/token-consumer-graph.test.mjs && node bin/token-consumers-check.mjs",
@@ -54,9 +54,9 @@
     "check:residual-tokens": "node bin/residual-token-check.mjs",
     "check:token-resolution": "node bin/token-consumer-resolution-check.mjs",
     "check:all-token-consumers": "node bin/token-inventory.mjs --check-consumers --summary",
-    "check:token-reference": "node --test bin/token-catalog.test.mjs bin/filter-form-catalog.test.mjs bin/field-focus-caret.test.mjs bin/select-catalog-closure.test.mjs bin/field-presentation-catalog.test.mjs bin/date-drift-closure.test.mjs && node bin/token-catalog.mjs --check",
+    "check:token-reference": "node --test bin/token-catalog.test.mjs bin/filter-form-catalog.test.mjs bin/field-focus-caret.test.mjs bin/select-catalog-closure.test.mjs bin/field-presentation-catalog.test.mjs bin/date-drift-closure.test.mjs && node bin/token-catalog.mjs --check && pnpm check:component-css-docs",
     "test:theme-contract": "node --test packages/theme-contract/src/*.test.mjs",
-    "check:media-core": "node --test bin/upload-core-check.test.mjs bin/media-runtime-graph.test.mjs && node bin/carousel-core-check.mjs && node bin/upload-core-check.mjs",
+    "check:media-core": "node --test bin/carousel-normalization.test.mjs bin/upload-core-check.test.mjs bin/media-runtime-graph.test.mjs && node bin/carousel-core-check.mjs && node bin/upload-core-check.mjs",
     "check:media-ssr": "node bin/media-batch-ssr-check.mjs",
     "check:media-types": "node bin/media-batch-types-check.mjs",
     "check:media-themes": "node bin/media-theme-check.mjs",
@@ -67,8 +67,8 @@
     "check:button-primary": "node bin/button-primary-foreground-check.mjs",
     "check:preview-track-motion": "node bin/preview-track-motion-check.mjs",
     "generate:demo-review": "node bin/generate-review-demos.mjs",
-    "check:demo-review": "node --test bin/generate-review-demos.test.mjs && node bin/review-demos-check.mjs",
-    "check:menu": "node bin/menu-naming-check.mjs",
+    "check:demo-review": "node --test bin/generate-review-demos.test.mjs bin/demo-native-control-policy.test.mjs && node bin/review-demos-check.mjs",
+    "check:menu": "node --test bin/menu-naming-catalog.test.mjs && node bin/menu-naming-check.mjs",
     "check:link-themes": "node bin/link-theme-check.mjs",
     "check:llms": "node --test bin/llms-docs.test.mjs",
     "generate:component-showcase": "node bin/organize-component-showcase.mjs --write && node bin/build-component-catalog.mjs && node bin/build-mobile-component-catalog.mjs && node bin/build-core-strengths.mjs",
@@ -87,10 +87,19 @@
     "check:direction:catalog": "node browser/reading-direction-catalog/gate.mjs",
     "check:direction:closeout": "node browser/reading-direction-closeout/check.mjs",
     "check:direction:all": "pnpm check:direction && pnpm check:direction:browser && pnpm check:direction:catalog",
-    "check:direction:catalog:retry": "node browser/reading-direction-catalog/retry.mjs"
+    "check:direction:catalog:retry": "node browser/reading-direction-catalog/retry.mjs",
+    "check:component-css-docs": "node --test bin/component-css-docs.test.mjs bin/css-variable-consumers.test.mjs && node bin/component-css-docs.mjs --check",
+    "check:component-css-docs:browser": "node browser/css-variables-check.mjs",
+    "check:public-docs": "node --test bin/public-documentation-policy.test.mjs && node bin/public-docs-check.mjs",
+    "check:public-docs:browser": "node browser/public-documentation-check.mjs",
+    "check:layout-nav-tokens:browser": "node browser/layout-nav-token-check.mjs",
+    "check:packages": "node --test bin/package-boundary-check.test.mjs && node bin/package-boundary-check.mjs"
   },
   "engines": {
     "node": ">=20"
   },
-  "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b"
+  "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b",
+  "devDependencies": {
+    "typescript": "5.6.3"
+  }
 }

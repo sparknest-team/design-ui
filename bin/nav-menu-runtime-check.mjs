@@ -3,7 +3,7 @@ import { createRequire, register } from 'node:module'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { resolve } from 'node:path'
 const root = fileURLToPath(new URL('../../', import.meta.url))
-const directory = resolve(root, 'cedar-design-web/packages/cedar-ui')
+const directory = resolve(root, 'cedar-design-web/packages/ui')
 const require = createRequire(resolve(directory, 'package.json'))
 register(new URL('./ssr-style-loader.mjs', import.meta.url), import.meta.url)
 require.extensions['.css'] = () => {}

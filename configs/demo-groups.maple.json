@@ -502,6 +502,7 @@
       "title": "异步加载与回显",
       "en": "Async loading and value resolution",
       "cases": [
+        "load-more",
         "async-devices"
       ]
     }
@@ -704,6 +705,15 @@
       "cases": [
         "manual-control"
       ]
+    },
+    {
+      "title": "数值与动画边界",
+      "en": "Numeric and animation boundaries",
+      "cases": [
+        "decimal-floor",
+        "zero-duration",
+        "easing-replay"
+      ]
     }
   ],
   "countdown": [
@@ -882,7 +892,8 @@
         "field-panel-tools",
         "entry-boundary",
         "passthrough-options",
-        "open-trigger-target"
+        "open-trigger-target",
+        "reference-clear"
       ]
     }
   ],
@@ -902,7 +913,8 @@
         "alert-dialog",
         "confirm-box",
         "type-icon",
-        "form-dialog"
+        "form-dialog",
+        "service-container"
       ]
     },
     {
@@ -916,6 +928,7 @@
       "title": "交互与定制",
       "en": "Interaction and customization",
       "cases": [
+        "draggable",
         "custom-footer",
         "custom-button-text",
         "advanced-props"
@@ -965,6 +978,13 @@
       "en": "Interaction and control",
       "cases": [
         "live-properties"
+      ]
+    },
+    {
+      "title": "内容与布局",
+      "en": "Content and layout",
+      "cases": [
+        "content-flow"
       ]
     }
   ],
@@ -1185,7 +1205,8 @@
         "empty-text",
         "presentation-status",
         "platform-presentation",
-        "field-panel-actions"
+        "field-panel-actions",
+        "change-source"
       ]
     },
     {
@@ -1195,7 +1216,9 @@
         "async-fields",
         "presentation-state",
         "async-race",
-        "field-range-boundaries"
+        "field-range-boundaries",
+        "submit-inputs",
+        "field-identity"
       ]
     },
     {
@@ -1731,7 +1754,8 @@
       "title": "基础示例",
       "en": "Basic examples",
       "cases": [
-        "basic"
+        "basic",
+        "pausable"
       ]
     }
   ],
@@ -2268,7 +2292,8 @@
       "en": "Interaction and control",
       "cases": [
         "state-lab",
-        "state"
+        "state",
+        "native-form"
       ]
     }
   ],
@@ -2364,6 +2389,13 @@
       "cases": [
         "custom-style"
       ]
+    },
+    {
+      "title": "书写会话",
+      "en": "Drawing sessions",
+      "cases": [
+        "session-lifecycle"
+      ]
     }
   ],
   "skeleton": [
@@ -2425,7 +2457,8 @@
         "step-size",
         "controlled-range",
         "dual-thumb",
-        "range"
+        "range",
+        "interaction-session"
       ]
     }
   ],
@@ -2461,6 +2494,13 @@
       "en": "Interaction and control",
       "cases": [
         "interactive-layout"
+      ]
+    },
+    {
+      "title": "分隔与换行",
+      "en": "Separators and wrapping",
+      "cases": [
+        "split-wrapping"
       ]
     }
   ],
@@ -2577,12 +2617,19 @@
       ]
     }
   ],
-  "style-provider": [
+  "theme-provider": [
     {
       "title": "基础示例",
       "en": "Basic examples",
       "cases": [
         "basic"
+      ]
+    },
+    {
+      "title": "局部主题",
+      "en": "Local themes",
+      "cases": [
+        "local-theme"
       ]
     }
   ],
@@ -2854,7 +2901,15 @@
       "en": "Interaction and control",
       "cases": [
         "state-lab",
+        "auto-size",
         "body-contract"
+      ]
+    },
+    {
+      "title": "值模型与交互",
+      "en": "Value model and interaction",
+      "cases": [
+        "empty-policy"
       ]
     }
   ],
@@ -2879,6 +2934,14 @@
       "cases": [
         "FireflyScenes",
         "ThemeDetails"
+      ]
+    },
+    {
+      "title": "ThemeProvider 示例",
+      "en": "ThemeProvider examples",
+      "cases": [
+        "basic",
+        "local-theme"
       ]
     }
   ],
@@ -3204,6 +3267,13 @@
       "en": "Data and state control",
       "cases": [
         "controlled"
+      ]
+    },
+    {
+      "title": "交互与控制",
+      "en": "Interaction and control",
+      "cases": [
+        "panel-state"
       ]
     }
   ]

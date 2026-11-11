@@ -1,6 +1,6 @@
 # Layout 与 Naive UI 对比
 
-依据本地 cedar-design-web/packages/cedar-ui/src/layout 与 naive-ui/src/layout 源码（2026-09-08）。Maple 当前没有 Layout 组件，不能标记为已同源。
+依据本地 cedar-design-web/packages/ui/src/layout 与 naive-ui/src/layout 源码（2026-09-08）。Maple 当前没有 Layout 组件，不能标记为已同源。
 
 ## 当前问题及修复
 

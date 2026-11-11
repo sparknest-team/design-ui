@@ -4,8 +4,8 @@
 
 ## 真实构建结果
 
-- Cedar根目录`pnpm build:doc`，exit 1。VuePress准备数据49.30s后进入Vite，5.44s失败。生成文件`packages/cedar-ui/docs/.vuepress/.temp-build/pages/guide/design-tokens/index.html.vue:69:198`报Element is missing end tag。
-- 对应原文`packages/cedar-ui/docs/guide/design-tokens.md:146`，普通段落中的`Promise<void>`未包代码标记，生成HTML中仍为裸泛型，被当成未闭合void标签。不是本批组件Vue语法错误或堆内存OOM。保留[完整日志](./evidence/cedar-doc-build-batch132.log)。
+- Cedar根目录`pnpm build:doc`，exit 1。VuePress准备数据49.30s后进入Vite，5.44s失败。生成文件`packages/ui/docs/.vuepress/.temp-build/pages/guide/design-tokens/index.html.vue:69:198`报Element is missing end tag。
+- 对应原文`packages/ui/docs/guide/design-tokens.md:146`，普通段落中的`Promise<void>`未包代码标记，生成HTML中仍为裸泛型，被当成未闭合void标签。不是本批组件Vue语法错误或堆内存OOM。保留[完整日志](./evidence/cedar-doc-build-batch132.log)。
 - Maple根目录`pnpm build:doc`，exit 1。前置maple-vite-plugins ESM/DTS构建、CLI tsc通过，1037个Demo SFC语法检查0失败；生产Vite转换343模块后4.71s失败。
 - Maple报`docs/designTokens.en-US.md (72:426): Element is missing end tag`，这是转换模板位置；对应原始英文文档第145行同样裸`Promise<void>`。保留[完整日志](./evidence/maple-doc-build-batch132.log)。未把前置语法检查通过写成完整文档通过。
 - 两端失败后均未有成功生产产物可复验；不启动旧dist冒充新构建，不更改开发站或用户其他终端进程。

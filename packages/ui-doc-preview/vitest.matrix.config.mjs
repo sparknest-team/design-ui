@@ -1,6 +1,6 @@
 import { createRequire } from "node:module";
 import base from "./vitest.config.mjs";
-const routerRequire=createRequire(new URL(process.env.DEMO_AUDIT_PLATFORM==='maple'?'../../../maple-design-mobile/packages/maple-ui/package.json':'../../../cedar-design-web/package.json',import.meta.url));
+const routerRequire=createRequire(new URL(process.env.DEMO_AUDIT_PLATFORM==='maple'?'../../../maple-design-mobile/packages/ui/package.json':'../../../cedar-design-web/package.json',import.meta.url));
 export default {
   ...base,
   resolve: {
@@ -14,17 +14,17 @@ export default {
       {
         find: "@config",
         replacement: new URL(
-          "../../../maple-design-mobile/packages/maple-cli/lib/node/config/maple.default.config.js",
+          "../../../maple-design-mobile/packages/cli/lib/node/config/maple.default.config.js",
           import.meta.url,
         ).pathname,
       },
       ...["cedar", "maple"].flatMap((platform) => {
         const library =
-          platform === "cedar" ? "@cedar-design/ui" : "@maple-design/ui";
+          platform === "cedar" ? "@cedar-design/ui-vue" : "@maple-design/ui-vue";
         const directory = new URL(
           platform === "cedar"
-            ? "../../../cedar-design-web/packages/cedar-ui/src/"
-            : "../../../maple-design-mobile/packages/maple-ui/src/",
+            ? "../../../cedar-design-web/packages/ui/src/"
+            : "../../../maple-design-mobile/packages/ui/src/",
           import.meta.url,
         ).pathname;
         return [

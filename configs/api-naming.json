@@ -4,7 +4,7 @@
   "scope": "组件 props 声明；排除 CSS、示例、事件 payload 和下划线内部基础设施。类型语义和继承 API 仍需评审。",
   "entries": [
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/badge/props.ts",
+      "file": "cedar-design-web/packages/ui/src/badge/props.ts",
       "owner": "badgeProps",
       "name": "position",
       "meaning": "badge 元素在所属区域中的位置",
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/badge/props.ts",
+      "file": "cedar-design-web/packages/ui/src/badge/props.ts",
       "owner": "badgeProps",
       "name": "inlinePosition",
       "meaning": "内联徽标在内容逻辑起点或终点的位置",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/card/props.ts",
+      "file": "cedar-design-web/packages/ui/src/card/props.ts",
       "owner": "cardProps",
       "name": "direction",
       "meaning": "封面与正文的布局排列顺序",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/carousel/props.ts",
+      "file": "cedar-design-web/packages/ui/src/carousel/props.ts",
       "owner": "carouselProps",
       "name": "orientation",
       "meaning": "轮播内容滑动的横纵轴向",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/carousel/props.ts",
+      "file": "cedar-design-web/packages/ui/src/carousel/props.ts",
       "owner": "carouselProps",
       "name": "indicatorPosition",
       "meaning": "指示器在组件导航或轮播区域中的位置",
@@ -62,7 +62,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/checkbox/props.ts",
+      "file": "cedar-design-web/packages/ui/src/checkbox/props.ts",
       "owner": "checkboxGroupProps",
       "name": "orientation",
       "meaning": "选项组的横纵排列轴向",
@@ -72,7 +72,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/collapse/platform.ts",
+      "file": "cedar-design-web/packages/ui/src/collapse/platform.ts",
       "owner": "defineComponent.props",
       "name": "position",
       "meaning": "collapse 元素在所属区域中的位置",
@@ -82,7 +82,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/collapse/props.ts",
+      "file": "cedar-design-web/packages/ui/src/collapse/props.ts",
       "owner": "collapseProps",
       "name": "expandIconPosition",
       "meaning": "展开图标在标题区域中的位置",
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/date/DateShortcuts.vue",
+      "file": "cedar-design-web/packages/ui/src/date/DateShortcuts.vue",
       "owner": "defineProps",
       "name": "position",
       "meaning": "date 元素在所属区域中的位置",
@@ -103,7 +103,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/date/panel-tools-props.ts",
+      "file": "cedar-design-web/packages/ui/src/date/panel-tools-props.ts",
       "owner": "datePanelToolsProps",
       "name": "shortcutsPosition",
       "meaning": "快捷选项区在日期面板内部的位置",
@@ -114,7 +114,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/date/picker/DateRangePickerPanel.vue",
+      "file": "cedar-design-web/packages/ui/src/date/picker/DateRangePickerPanel.vue",
       "owner": "defineComponent.props",
       "name": "shortcutsPosition",
       "meaning": "快捷选项区在日期面板内部的位置",
@@ -125,7 +125,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/date/picker/PickerPanel.vue",
+      "file": "cedar-design-web/packages/ui/src/date/picker/PickerPanel.vue",
       "owner": "defineComponent.props",
       "name": "shortcutsPosition",
       "meaning": "快捷选项区在日期面板内部的位置",
@@ -136,7 +136,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/date/picker/props.ts",
+      "file": "cedar-design-web/packages/ui/src/date/picker/props.ts",
       "owner": "pickerProps",
       "name": "shortcutsPosition",
       "meaning": "快捷选项区在日期面板内部的位置",
@@ -147,7 +147,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/date/picker/props.ts",
+      "file": "cedar-design-web/packages/ui/src/date/picker/props.ts",
       "owner": "pickerProps",
       "name": "placement",
       "meaning": "旧 picker 目录遗留声明；并非现行 Date/DatePicker 导出 API，禁止据此新增字段级 placement",
@@ -161,7 +161,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/date/picker/props.ts",
+      "file": "cedar-design-web/packages/ui/src/date/picker/props.ts",
       "owner": "dateRangePickerProps",
       "name": "shortcutsPosition",
       "meaning": "快捷选项区在日期面板内部的位置",
@@ -172,7 +172,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/date/picker/props.ts",
+      "file": "cedar-design-web/packages/ui/src/date/picker/props.ts",
       "owner": "dateRangePickerProps",
       "name": "placement",
       "meaning": "旧 picker 目录遗留声明；并非现行 Date/DatePicker 导出 API，禁止据此新增字段级 placement",
@@ -186,7 +186,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/divider/props.ts",
+      "file": "cedar-design-web/packages/ui/src/divider/props.ts",
       "owner": "dividerProps",
       "name": "orientation",
       "meaning": "分割线自身的横纵朝向",
@@ -196,7 +196,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/drawer/props.ts",
+      "file": "cedar-design-web/packages/ui/src/drawer/props.ts",
       "owner": "drawerProps",
       "name": "placement",
       "meaning": "drawer 面板相对触发元素或容器边缘的放置方位",
@@ -208,7 +208,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/form/FormItemLabel.vue",
+      "file": "cedar-design-web/packages/ui/src/form/FormItemLabel.vue",
       "owner": "defineProps",
       "name": "asteriskPosition",
       "meaning": "必填星号在字段标签起点或终点的位置",
@@ -218,7 +218,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/form/item-decoration.ts",
+      "file": "cedar-design-web/packages/ui/src/form/item-decoration.ts",
       "owner": "formItemDecorationProps",
       "name": "asteriskPosition",
       "meaning": "必填星号在字段标签起点或终点的位置",
@@ -228,7 +228,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/image/props.ts",
+      "file": "cedar-design-web/packages/ui/src/image/props.ts",
       "owner": "imageProps",
       "name": "objectPosition",
       "meaning": "沿用 CSS object-position，图像内容在图像盒内的对齐位置",
@@ -238,7 +238,7 @@
       "freeform": true
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/image/props.ts",
+      "file": "cedar-design-web/packages/ui/src/image/props.ts",
       "owner": "imageProps",
       "name": "footerPosition",
       "meaning": "底部说明区位于图片内部或外部",
@@ -248,7 +248,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/layout/Sider.vue",
+      "file": "cedar-design-web/packages/ui/src/layout/Sider.vue",
       "owner": "defineComponent.props",
       "name": "placement",
       "meaning": "layout 面板相对触发元素或容器边缘的放置方位",
@@ -258,7 +258,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/menu/props.ts",
+      "file": "cedar-design-web/packages/ui/src/menu/props.ts",
       "owner": "menuProps",
       "name": "placement",
       "meaning": "menu 面板相对触发元素或容器边缘的放置方位",
@@ -278,7 +278,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/message/props.ts",
+      "file": "cedar-design-web/packages/ui/src/message/props.ts",
       "owner": "messageProps",
       "name": "position",
       "meaning": "message 元素在所属区域中的位置",
@@ -289,7 +289,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/nav-menu/arrow.tsx",
+      "file": "cedar-design-web/packages/ui/src/nav-menu/arrow.tsx",
       "owner": "defineComponent.props",
       "name": "placement",
       "meaning": "nav-menu 面板相对触发元素或容器边缘的放置方位",
@@ -309,7 +309,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/nav-menu/item-props.ts",
+      "file": "cedar-design-web/packages/ui/src/nav-menu/item-props.ts",
       "owner": "navMenuItemProps",
       "name": "placement",
       "meaning": "nav-menu 面板相对触发元素或容器边缘的放置方位",
@@ -329,7 +329,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/notification/notification-list.tsx",
+      "file": "cedar-design-web/packages/ui/src/notification/notification-list.tsx",
       "owner": "defineComponent.props",
       "name": "position",
       "meaning": "notification 元素在所属区域中的位置",
@@ -341,7 +341,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/popconfirm/props.ts",
+      "file": "cedar-design-web/packages/ui/src/popconfirm/props.ts",
       "owner": "popconfirmProps",
       "name": "placement",
       "meaning": "popconfirm 面板相对触发元素或容器边缘的放置方位",
@@ -361,7 +361,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/popover/props.ts",
+      "file": "cedar-design-web/packages/ui/src/popover/props.ts",
       "owner": "popoverProps",
       "name": "placement",
       "meaning": "popover 面板相对触发元素或容器边缘的放置方位",
@@ -381,7 +381,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/progress-group/props.ts",
+      "file": "cedar-design-web/packages/ui/src/progress-group/props.ts",
       "owner": "progressGroupProps",
       "name": "orientation",
       "meaning": "线形进度轨的横纵朝向，环形模式不使用",
@@ -391,7 +391,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/radio/props.ts",
+      "file": "cedar-design-web/packages/ui/src/radio/props.ts",
       "owner": "radioGroupProps",
       "name": "orientation",
       "meaning": "选项组的横纵排列轴向",
@@ -401,7 +401,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/scrollbar/Thumb.vue",
+      "file": "cedar-design-web/packages/ui/src/scrollbar/Thumb.vue",
       "owner": "defineComponent.props",
       "name": "orientation",
       "meaning": "选项组的横纵排列轴向",
@@ -411,7 +411,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/scrollbar/src/Thumb.vue",
+      "file": "cedar-design-web/packages/ui/src/scrollbar/src/Thumb.vue",
       "owner": "defineComponent.props",
       "name": "orientation",
       "meaning": "选项组的横纵排列轴向",
@@ -421,7 +421,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/segmented/props.ts",
+      "file": "cedar-design-web/packages/ui/src/segmented/props.ts",
       "owner": "segmentedProps",
       "name": "orientation",
       "meaning": "选项组的横纵排列轴向",
@@ -431,7 +431,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/slider/props.ts",
+      "file": "cedar-design-web/packages/ui/src/slider/props.ts",
       "owner": "sliderProps",
       "name": "orientation",
       "meaning": "滑块轨道和操作的横纵轴向",
@@ -441,7 +441,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/space/props.ts",
+      "file": "cedar-design-web/packages/ui/src/space/props.ts",
       "owner": "spaceProps",
       "name": "direction",
       "meaning": "子元素的行列排列顺序",
@@ -451,7 +451,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/split/props.ts",
+      "file": "cedar-design-web/packages/ui/src/split/props.ts",
       "owner": "splitProps",
       "name": "orientation",
       "meaning": "分割面板的排列轴向，不是分割手柄朝向",
@@ -461,7 +461,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/split-button/props.ts",
+      "file": "cedar-design-web/packages/ui/src/split-button/props.ts",
       "owner": "splitButtonProps",
       "name": "placement",
       "meaning": "split-button 面板相对触发元素或容器边缘的放置方位",
@@ -481,7 +481,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/steps/props.ts",
+      "file": "cedar-design-web/packages/ui/src/steps/props.ts",
       "owner": "stepsProps",
       "name": "orientation",
       "meaning": "步骤流程的横纵轴向",
@@ -491,7 +491,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/steps/props.ts",
+      "file": "cedar-design-web/packages/ui/src/steps/props.ts",
       "owner": "stepsProps",
       "name": "contentPlacement",
       "meaning": "正文相对步骤节点的方位",
@@ -501,7 +501,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/table/props.ts",
+      "file": "cedar-design-web/packages/ui/src/table/props.ts",
       "owner": "tableProps",
       "name": "pagePosition",
       "meaning": "分页器在表格内部的区域",
@@ -515,7 +515,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/tabs/props.ts",
+      "file": "cedar-design-web/packages/ui/src/tabs/props.ts",
       "owner": "tabsProps",
       "name": "orientation",
       "meaning": "标签导航的横纵轴向",
@@ -525,7 +525,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/tabs/props.ts",
+      "file": "cedar-design-web/packages/ui/src/tabs/props.ts",
       "owner": "tabsProps",
       "name": "indicatorPosition",
       "meaning": "指示器在组件导航或轮播区域中的位置",
@@ -535,7 +535,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/tabs/props.ts",
+      "file": "cedar-design-web/packages/ui/src/tabs/props.ts",
       "owner": "tabsProps",
       "name": "scrollPosition",
       "meaning": "选中标签在导航滚动视口中的目标位置或偏移",
@@ -549,7 +549,7 @@
       "freeform": true
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/timeline/Item.vue",
+      "file": "cedar-design-web/packages/ui/src/timeline/Item.vue",
       "owner": "defineComponent.props",
       "name": "contentPlacement",
       "meaning": "正文相对时间轴主线和节点的方位",
@@ -561,7 +561,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/timeline/props.ts",
+      "file": "cedar-design-web/packages/ui/src/timeline/props.ts",
       "owner": "timelineProps",
       "name": "orientation",
       "meaning": "时间轴主线的横纵轴向",
@@ -571,7 +571,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/timeline/props.ts",
+      "file": "cedar-design-web/packages/ui/src/timeline/props.ts",
       "owner": "timelineProps",
       "name": "labelPosition",
       "meaning": "时间轴标签与正文位于相同区域或相对区域",
@@ -581,7 +581,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/tooltip/props.ts",
+      "file": "cedar-design-web/packages/ui/src/tooltip/props.ts",
       "owner": "tooltipProps",
       "name": "placement",
       "meaning": "tooltip 面板相对触发元素或容器边缘的放置方位",
@@ -601,7 +601,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/trigger/props.ts",
+      "file": "cedar-design-web/packages/ui/src/trigger/props.ts",
       "owner": "triggerProps",
       "name": "placement",
       "meaning": "trigger 面板相对触发元素或容器边缘的放置方位",
@@ -621,7 +621,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/badge/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/badge/props.ts",
       "owner": "badgeProps",
       "name": "position",
       "meaning": "badge 元素在所属区域中的位置",
@@ -635,7 +635,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/badge/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/badge/props.ts",
       "owner": "badgeProps",
       "name": "inlinePosition",
       "meaning": "内联徽标在内容逻辑起点或终点的位置",
@@ -645,7 +645,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/card/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/card/props.ts",
       "owner": "cardProps",
       "name": "direction",
       "meaning": "封面与正文的布局排列顺序",
@@ -656,7 +656,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/carousel/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/carousel/props.ts",
       "owner": "carouselProps",
       "name": "orientation",
       "meaning": "轮播内容滑动的横纵轴向",
@@ -666,7 +666,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/carousel/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/carousel/props.ts",
       "owner": "carouselProps",
       "name": "indicatorPosition",
       "meaning": "指示器在组件导航或轮播区域中的位置",
@@ -679,7 +679,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/checkbox/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/checkbox/props.ts",
       "owner": "checkboxGroupProps",
       "name": "orientation",
       "meaning": "选项组的横纵排列轴向",
@@ -689,7 +689,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/collapse/platform.ts",
+      "file": "maple-design-mobile/packages/ui/src/collapse/platform.ts",
       "owner": "defineComponent.props",
       "name": "position",
       "meaning": "collapse 元素在所属区域中的位置",
@@ -699,7 +699,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/collapse/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/collapse/props.ts",
       "owner": "collapseProps",
       "name": "expandIconPosition",
       "meaning": "展开图标在标题区域中的位置",
@@ -709,7 +709,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/date/DateShortcuts.vue",
+      "file": "maple-design-mobile/packages/ui/src/date/DateShortcuts.vue",
       "owner": "defineProps",
       "name": "position",
       "meaning": "date 元素在所属区域中的位置",
@@ -720,7 +720,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/date/panel-tools-props.ts",
+      "file": "maple-design-mobile/packages/ui/src/date/panel-tools-props.ts",
       "owner": "datePanelToolsProps",
       "name": "shortcutsPosition",
       "meaning": "快捷选项区在日期面板内部的位置",
@@ -731,7 +731,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/divider/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/divider/props.ts",
       "owner": "dividerProps",
       "name": "orientation",
       "meaning": "分割线自身的横纵朝向",
@@ -741,7 +741,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/drag/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/drag/props.ts",
       "owner": "props",
       "name": "axis",
       "meaning": "允许拖动的坐标轴",
@@ -752,7 +752,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/fab/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/fab/props.ts",
       "owner": "props",
       "name": "position",
       "meaning": "fab 元素在所属区域中的位置",
@@ -764,7 +764,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/fab/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/fab/props.ts",
       "owner": "props",
       "name": "placement",
       "meaning": "Fab 动作菜单相对按钮的方位",
@@ -776,7 +776,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/form/FormItemLabel.vue",
+      "file": "maple-design-mobile/packages/ui/src/form/FormItemLabel.vue",
       "owner": "defineProps",
       "name": "asteriskPosition",
       "meaning": "必填星号在字段标签起点或终点的位置",
@@ -786,7 +786,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/form/item-decoration.ts",
+      "file": "maple-design-mobile/packages/ui/src/form/item-decoration.ts",
       "owner": "formItemDecorationProps",
       "name": "asteriskPosition",
       "meaning": "必填星号在字段标签起点或终点的位置",
@@ -796,7 +796,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/image/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/image/props.ts",
       "owner": "imageProps",
       "name": "objectPosition",
       "meaning": "沿用 CSS object-position，图像内容在图像盒内的对齐位置",
@@ -806,7 +806,7 @@
       "freeform": true
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/image/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/image/props.ts",
       "owner": "imageProps",
       "name": "footerPosition",
       "meaning": "底部说明区位于图片内部或外部",
@@ -816,7 +816,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/menu/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/menu/props.ts",
       "owner": "menuProps",
       "name": "placement",
       "meaning": "menu 面板相对触发元素或容器边缘的放置方位",
@@ -836,7 +836,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/message/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/message/props.ts",
       "owner": "messageProps",
       "name": "position",
       "meaning": "message 元素在所属区域中的位置",
@@ -847,7 +847,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/popover/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/popover/props.ts",
       "owner": "popoverProps",
       "name": "placement",
       "meaning": "popover 面板相对触发元素或容器边缘的放置方位",
@@ -867,7 +867,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/popup/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/popup/props.ts",
       "owner": "popupProps",
       "name": "placement",
       "meaning": "popup 面板相对触发元素或容器边缘的放置方位",
@@ -880,7 +880,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/progress-group/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/progress-group/props.ts",
       "owner": "progressGroupProps",
       "name": "orientation",
       "meaning": "线形进度轨的横纵朝向，环形模式不使用",
@@ -890,7 +890,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/radio/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/radio/props.ts",
       "owner": "radioGroupProps",
       "name": "orientation",
       "meaning": "选项组的横纵排列轴向",
@@ -900,7 +900,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/slider/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/slider/props.ts",
       "owner": "sliderProps",
       "name": "orientation",
       "meaning": "滑块轨道和操作的横纵轴向",
@@ -910,7 +910,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/space/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/space/props.ts",
       "owner": "spaceProps",
       "name": "direction",
       "meaning": "子元素的行列排列顺序",
@@ -920,7 +920,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/split-button/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/split-button/props.ts",
       "owner": "splitButtonProps",
       "name": "placement",
       "meaning": "split-button 面板相对触发元素或容器边缘的放置方位",
@@ -940,7 +940,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/steps/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/steps/props.ts",
       "owner": "stepsProps",
       "name": "orientation",
       "meaning": "步骤流程的横纵轴向",
@@ -950,7 +950,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/steps/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/steps/props.ts",
       "owner": "stepsProps",
       "name": "contentPlacement",
       "meaning": "正文相对步骤节点的方位",
@@ -960,7 +960,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/tab-bar/TabBarItem.vue",
+      "file": "maple-design-mobile/packages/ui/src/tab-bar/TabBarItem.vue",
       "owner": "defaultBadgeProps",
       "name": "position",
       "meaning": "tab-bar 元素在所属区域中的位置",
@@ -974,7 +974,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/tabs/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/tabs/props.ts",
       "owner": "tabsProps",
       "name": "orientation",
       "meaning": "标签导航的横纵轴向",
@@ -984,7 +984,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/tabs/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/tabs/props.ts",
       "owner": "tabsProps",
       "name": "indicatorPosition",
       "meaning": "指示器在组件导航或轮播区域中的位置",
@@ -994,7 +994,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/tabs/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/tabs/props.ts",
       "owner": "tabsProps",
       "name": "scrollPosition",
       "meaning": "选中标签在导航滚动视口中的目标位置或偏移",
@@ -1008,7 +1008,7 @@
       "freeform": true
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/tooltip/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/tooltip/props.ts",
       "owner": "tooltipProps",
       "name": "placement",
       "meaning": "tooltip 面板相对触发元素或容器边缘的放置方位",
@@ -1028,7 +1028,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/trigger/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/trigger/props.ts",
       "owner": "triggerProps",
       "name": "placement",
       "meaning": "trigger 面板相对触发元素或容器边缘的放置方位",
@@ -1048,7 +1048,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/config-provider/props.ts",
+      "file": "cedar-design-web/packages/ui/src/config-provider/props.ts",
       "owner": "configProviderProps",
       "name": "dir",
       "meaning": "阅读方向，未指定时继承父级作用域或原生 DOM",
@@ -1058,7 +1058,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/locale-provider/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/locale-provider/props.ts",
       "owner": "props",
       "name": "dir",
       "meaning": "阅读方向，未指定时继承父级作用域或原生 DOM",
@@ -1068,7 +1068,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/trigger/props.ts",
+      "file": "cedar-design-web/packages/ui/src/trigger/props.ts",
       "owner": "triggerProps",
       "name": "dir",
       "meaning": "弹层阅读方向，省略时继承来源作用域，物理方位不反转",
@@ -1078,7 +1078,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/trigger/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/trigger/props.ts",
       "owner": "triggerProps",
       "name": "dir",
       "meaning": "弹层阅读方向，省略时继承来源作用域，物理方位不反转",
@@ -1088,7 +1088,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/dialog/props.ts",
+      "file": "cedar-design-web/packages/ui/src/dialog/props.ts",
       "owner": "dialogProps",
       "name": "dir",
       "meaning": "弹层阅读方向，省略时继承来源作用域，物理方位不反转",
@@ -1098,7 +1098,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/dialog/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/dialog/props.ts",
       "owner": "dialogProps",
       "name": "dir",
       "meaning": "弹层阅读方向，省略时继承来源作用域，物理方位不反转",
@@ -1108,7 +1108,7 @@
       ]
     },
     {
-      "file": "cedar-design-web/packages/cedar-ui/src/drawer/props.ts",
+      "file": "cedar-design-web/packages/ui/src/drawer/props.ts",
       "owner": "drawerProps",
       "name": "dir",
       "meaning": "弹层阅读方向，省略时继承来源作用域，物理方位不反转",
@@ -1118,7 +1118,7 @@
       ]
     },
     {
-      "file": "maple-design-mobile/packages/maple-ui/src/popup/props.ts",
+      "file": "maple-design-mobile/packages/ui/src/popup/props.ts",
       "owner": "popupProps",
       "name": "dir",
       "meaning": "弹层阅读方向，省略时继承来源作用域，物理方位不反转",

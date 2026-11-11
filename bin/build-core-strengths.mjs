@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 const root = fileURLToPath(new URL('../../', import.meta.url));
-const mobileRequire = createRequire(path.join(root, 'maple-design-mobile/packages/maple-vite-plugins/package.json'));
+const mobileRequire = createRequire(path.join(root, 'maple-design-mobile/packages/vite-plugins/package.json'));
 const { pinyin } = mobileRequire('pinyin-pro');
 const items = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/configs/core-strengths.json'), 'utf8'));
 const check = process.argv.includes('--check');
@@ -14,7 +14,7 @@ function save(file, text) {
  fs.writeFileSync(file + '.tmp', text); fs.renameSync(file + '.tmp', file);
 }
 for (const platform of ['cedar', 'maple']) {
- const base = path.join(root, platform === 'cedar' ? 'cedar-design-web/packages/cedar-ui' : 'maple-design-mobile/packages/maple-ui');
+ const base = path.join(root, platform === 'cedar' ? 'cedar-design-web/packages/ui' : 'maple-design-mobile/packages/ui');
  const selected = items.filter(item => item[platform]);
  const catalog = JSON.parse(fs.readFileSync(path.join(base, platform === 'cedar' ? 'docs/.vuepress/configs/component-catalog.json' : 'docs/components/component-catalog.json'), 'utf8'));
  for (const locale of platform === 'cedar' ? ['zh-CN'] : ['zh-CN','en-US']) {

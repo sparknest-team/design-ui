@@ -8,7 +8,7 @@ import { liveTokens } from './token-consumer-graph.mjs';
 import { collectStyleGraph, tokenStyleLayout } from './token-style-entries.mjs';
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url));
-const require = createRequire(resolve(workspace, 'cedar-design-web/packages/cedar-ui/package.json'));
+const require = createRequire(resolve(workspace, 'cedar-design-web/packages/ui/package.json'));
 const postcss = require('postcss');
 const ts = require('typescript');
 const withoutComments = source => {
@@ -29,9 +29,9 @@ const contract = JSON.parse(readFileSync(new URL('../packages/theme-contract/con
 const walk = dir => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(resolve(dir, e.name)) : [resolve(dir, e.name)]);
 const report = [];
 const entryErrors = [];
-for (const [repo, pkg, prefix] of [['cedar-design-web', 'cedar-ui', 'c'], ['maple-design-mobile', 'maple-ui', 'mp']]) {
+for (const [repo, pkg, prefix] of [['cedar-design-web', 'ui', 'c'], ['maple-design-mobile', 'ui', 'mp']]) {
   const root = resolve(workspace, repo, 'packages', pkg, 'src');
-  const less = prefix === 'c' ? require('less') : createRequire(resolve(root, '../../maple-cli/package.json'))('less');
+  const less = prefix === 'c' ? require('less') : createRequire(resolve(root, '../../cli/package.json'))('less');
   const allDeclarations = [];
   const compiledEntries = new Set();
   const platformRows = [];
@@ -131,8 +131,8 @@ for (const [repo, pkg, prefix] of [['cedar-design-web', 'cedar-ui', 'c'], ['mapl
       [`--${prefix}-watermark-content-color`, 'watermark/watermark.tsx', ['getPropertyValue(TOKEN_NAME)', 'const options =', 'color,', 'renderWatermark(options)']],
       ['--mp-floating-panel-transition-timing-function', 'floating-panel/FloatingPanel.vue', [':style="{', 'transition: touching', 'var(--mp-floating-panel-transition-timing-function)']],
       ['--mp-time-picker-clock-item-disable-background', 'time/Clock.vue', [':style="getStyle(', "backgroundColor: 'var(--mp-time-picker-clock-item-disable-background)'"]],
-      [`--${prefix}-switch-shadow-color`, 'switch/Switch.vue', ['return { boxShadow:', ':style="handleStyle"']],
-      ['--c-nav-menu-panel-width', 'nav-menu/item.tsx', ["width: 'var(--c-nav-menu-panel-width)'", 'style: [props.popupLayout']],
+      [`--${prefix}-switch-shadow-color`, 'switch/Switch.vue', ['const handleStyle = computed<CSSProperties>', 'boxShadow: level ?', ':style="handleStyle"']],
+      ['--c-nav-menu-panel-width', 'nav-menu/item.tsx', ["width: 'var(--c-nav-menu-panel-width)'", "props.popupLayout === 'full-height'", 'props.popupStyle']],
       ['--c-scheduler-editor-width', 'scheduler/components/SchedulerEditor.vue', ['<CDrawer', 'width="var(--c-scheduler-editor-width)"']],
       ['--c-scheduler-virtual-height', 'scheduler/components/SchedulerTimelineRows.vue', [':height="options.height ??', "'var(--c-scheduler-virtual-height)'"]],
     ];
@@ -146,6 +146,17 @@ for (const [repo, pkg, prefix] of [['cedar-design-web', 'cedar-ui', 'c'], ['mapl
     // Reviewed finite expansion: both Space implementations render these values
     // through gapStyle -> style.gap. Require the source expression to remain.
     row.dynamicRuntimeReferences = {};
+    // The private field editor resolves its width from the anchor's computed
+    // custom property before assigning the measured popup position.
+    const fieldPresentation = runtimeSources.find(([file]) => file === '_components/field-presentation/FieldPresentation.vue');
+    if (prefix === 'c' && row.component === '_components/field-presentation' &&
+        fieldPresentation?.[1].includes('getPropertyValue(`--c-field-presentation-${name}`)') &&
+        fieldPresentation[1].includes("metric('editor-action-width', 88)") &&
+        fieldPresentation[1].includes('position.value = {')) {
+      row.dynamicRuntimeReferences['--c-field-presentation-editor-action-width'] = [
+        '_components/field-presentation/FieldPresentation.vue: metric -> place -> position',
+      ];
+    }
     const space = runtimeSources.find(([file]) => file === (prefix === 'c' ? 'space/space.tsx' : 'space/Space.tsx'));
     if (row.component === 'space' && space?.[1].includes('gap: gapStyle.value')) {
       for (const axis of ['row', 'column']) {

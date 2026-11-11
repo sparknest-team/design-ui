@@ -67,7 +67,7 @@ Menu / Scheduler 的额外模块环已拆除，两库统一加入全库依赖、
 - Maple 最终全库 lint、Cedar / Maple 最终类型检查通过。期间 Breadcrumb 原生指针事件和 picker-field 测试类型声明由当前工作区同步调整后重新检查通过；没有通过忽略类型错误收尾。三个仓库最终 diff 空白检查通过。
 - 文档整理器、布局契约均 changed=0；2,851 个 SFC、2,883 个引用、121 对共享案例重跑通过。后续并行更新曾再次产生 Base / ImagePreviewGroup 初始化错误，原始日志保留在 fixes/final-console.json，不能把此前无错误窗口描述为全晚无错误。
 - 22:28 后最终组合策略实测：冷启动 Upload 正常；再次修改 Upload.vue 实现触发整页刷新后恢复，未再出现初始化错误；亮暗分别打开／关闭本地 SVG 图片预览，Image 页面正常渲染。见 fixes/final-runtime-recheck.json；旧错误不抹除。
-- Cedar 采用同样的内部组件自动解析隔离与 Image/Upload 完整刷新策略；独立站点测试命令为 `pnpm --dir packages/cedar-ui exec vitest run --config site-imports.vitest.config.ts --threads=false`。显式 include 隐藏配置目录，避免默认运行时漏掉这组测试。
+- Cedar 采用同样的内部组件自动解析隔离与 Image/Upload 完整刷新策略；独立站点测试命令为 `pnpm --dir packages/ui exec vitest run --config site-imports.vitest.config.ts --threads=false`。显式 include 隐藏配置目录，避免默认运行时漏掉这组测试。
 - **22:52 最终实页收口**：Cedar / Maple 的最终配置已分别加载，两端 Upload 亮暗图片预览打开与 Enter 关闭通过；两端 Menu 亮暗选择、收起、无整页溢出及首例源码一致再次通过。最新验收窗口 error 均为 0，历史初始化错误仍完整保留于 `final-runtime-recheck.json`；最新两库类型检查和修改组件 lint 通过。不是据旧截图宣称新配置已通过。
 - 未在浏览器巡检期间执行会删除 es/lib 产物的全库构建。没有把更早批次的 550 场景结果当作本轮重跑结果。
 
@@ -251,7 +251,7 @@ Maple 移动预览中账号 / 密码自动填充后，浮动提示与浏览器�
 
 ### 环境中断和未完成项
 
-- Maple 巡检期间反复重建 `maple-cli/lib`、`maple-use/lib`、`maple-icons-vue/es`。日志有明确的缺文件预转换错误及大量整页 reload。8082 检查服务重启恢复后，已继续补齐 Maple 页面；没有停止其他进程或覆盖并行代码。
+- Maple 巡检期间反复重建 `cli/lib`、`use/lib`、`icons/es`。日志有明确的缺文件预转换错误及大量整页 reload。8082 检查服务重启恢复后，已继续补齐 Maple 页面；没有停止其他进程或覆盖并行代码。
 - Cedar 本轮检查服务重启准备数据耗时约 445 秒。之后曾出现案例外框可见、内容只有 `<!---->` 的空占位；最新 Dialog、Scheduler 记录因此撤销“完成”，不是按卡片数量通过。Map 抛错后再导航出现空占位，因果关系未证实。
 - 刷新进行干净复验时 9991 已无监听，检查用的 Cedar 进程已退出，退出原因未确认。没有把浏览器“拒绝连接”误记成组件 API 失败，也未反复启动重复实例。**需恢复单一稳定的 9991 服务后，重验 Dialog、Scheduler，以及 Time、DropdownMenu 的源码。**
 - SwipeCell 的暗色代表性操作未完成；拖拽、签名、下拉刷新、悬停、无限滚动、上传实际网络链路、地图 SDK 等仍需专项交互验收。多数简单表单控件执行了代表性的输入／点击／键盘操作，状态变化和未断言结果分别记录，未统一标成“交互通过”。

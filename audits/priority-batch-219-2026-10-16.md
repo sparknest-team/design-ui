@@ -28,7 +28,7 @@
 
 ## 最新生产产物真实复验
 
-- 仅本机127.0.0.1静态服务：Cedar4191指向packages/cedar-ui/dist，Maple4192指向packages/maple-ui/site。初次沙箱绑定权限失败，获准本机监听后启动；失败页不计验收。静态站脚本为/assets/app-CIOSHyml.js及./assets/main-xaVm-Tqe.js，不是源码开发站。
+- 仅本机127.0.0.1静态服务：Cedar4191指向packages/ui/dist，Maple4192指向packages/ui/site。初次沙箱绑定权限失败，获准本机监听后启动；失败页不计验收。静态站脚本为/assets/app-CIOSHyml.js及./assets/main-xaVm-Tqe.js，不是源码开发站。
 - 两端Upload实际手动删除、reset、旧确认后均文件0/等待0/钩子1/remove0；恢复合成文件再删除、异常拒绝后文件1/等待0/钩子2/remove0。
 - 两端Time新产物开启5小时与禁用15点，PM03 aria-disabled=true，显式08并确定/确认后模型20:30:00、提议1。Cedar中文异步文案最终为“确定”，不以中间未就绪点击计成功。
 - Cedar TimeRange新产物收紧下限后旧模型不变、确认禁用；显式选40后确定写10:30:40–10:31:02。Maple范围边界记录来自8080开发站，严格区分。

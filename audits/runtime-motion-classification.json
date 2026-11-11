@@ -6,16 +6,16 @@
     {
       "repo": "cedar-design-web",
       "file": "form/Form.vue",
-      "sha256": "3e443d9dca49515a39fd781b9819df98be6705cff5f02666b00302ab2ca2b0d1",
-      "rationale": "Current native-scroll helper dispatch and guarded native offset action batch,not owned smooth interpolation. Human runtime-only takeover preserves parallel submitEpoch/validation/layout/API/Tokens. Effective11case baseline7fail/4controls;separate candidate one-shot and duplicate-registration failures reproduced before repair. Mounted/active/disposed and validation/request context reject retained commands,body fallback and stale invalid result;original registered member/name/root/target checks plus per-action reentry and one-shot consumption. Duplicate register preserves original disposer.15new cases within64affected Form tests/14files pass;configured types/scoped lint pass. Preserve DOM order/offset/default smooth;already-issued browser-owned smooth scrolling is not claimed cancellable or native reduce/layout/OS/adoption acceptance.",
+      "sha256": "f180f5635746d0d1426f99b8ca400a9657b31d34c77b99233a013b199bee3861",
+      "rationale": "Current native-scroll helper dispatch and guarded native offset action batch,not owned smooth interpolation. Human runtime-only takeover preserves parallel submitEpoch/validation/layout/API/Tokens. Effective11case baseline7fail/4controls;separate candidate one-shot and duplicate-registration failures reproduced before repair. Mounted/active/disposed and validation/request context reject retained commands,body fallback and stale invalid result;original registered member/name/root/target checks plus per-action reentry and one-shot consumption. Duplicate register preserves original disposer.15new cases within64affected Form tests/14files pass;configured types/scoped lint pass. Preserve DOM order/offset/default smooth;already-issued browser-owned smooth scrolling is not claimed cancellable or native reduce/layout/OS/adoption acceptance. Re-reviewed current form: both native scroll calls and one-shot action, epoch, DOM containment, unmount/deactivation guards remain; pending submit input changes now also invalidate stale scroll.",
       "hints": [
         {
-          "line": 154,
+          "line": 178,
           "category": "native-scroll",
           "snippet": "        scrollIntoView("
         },
         {
-          "line": 168,
+          "line": 192,
           "category": "native-scroll",
           "snippet": "                        el.scrollTo({"
         }
@@ -24,26 +24,26 @@
     {
       "repo": "maple-design-mobile",
       "file": "form/Form.vue",
-      "sha256": "2519b17da237f51004acdfa4647f002d7b8cb1dbbe4360467994e9f44f86c4a7",
-      "rationale": "Form-private300ms linear visual-scroll interpolation with original-window RAF cancellation and current request/field/lifetime checks;current media preference controls initial immediate/dynamic next-frame completion. Previous valid wait/interpolation/eligibility baselines remain evidence,not new defects. Parallel submission/controller/FormItem/API/Tokens preserved. Fixed completion wait now delegates to private rendered FormDetails helper;40previous controls migrate to explicit computed300ms CSS/render settlement rather than assuming unconditional delay. This does not certify native layout/OS/adoption or every parallel business protocol.",
+      "sha256": "0843ac54c0bbbebfba41f66760398561ffc643d3843a0291ddf345234c607741",
+      "rationale": "Form-private300ms linear visual-scroll interpolation with original-window RAF cancellation and current request/field/lifetime checks;current media preference controls initial immediate/dynamic next-frame completion. Previous valid wait/interpolation/eligibility baselines remain evidence,not new defects. Parallel submission/controller/FormItem/API/Tokens preserved. Fixed completion wait now delegates to private rendered FormDetails helper;40previous controls migrate to explicit computed300ms CSS/render settlement rather than assuming unconditional delay. This does not certify native layout/OS/adoption or every parallel business protocol. Re-reviewed all four current runtime statements, frame ownership, reduced-motion checks, and cancellation on deactivation and unmount.",
       "hints": [
         {
-          "line": 107,
+          "line": 117,
           "category": "visual-scroll",
           "snippet": "        typeof view?.matchMedia === 'function' && view.matchMedia('(prefers-reduced-motion: reduce)').matches"
         },
         {
-          "line": 110,
+          "line": 120,
           "category": "visual-scroll",
           "snippet": "          scroller.scrollTo(0, top)"
         },
         {
-          "line": 121,
+          "line": 131,
           "category": "visual-scroll",
           "snippet": "        ticket.id = view!.requestAnimationFrame(() => {"
         },
         {
-          "line": 138,
+          "line": 148,
           "category": "visual-scroll",
           "snippet": "          scroller.scrollTo(fromLeft * (1 - position), fromTop + (top - fromTop) * position)"
         }
@@ -70,66 +70,63 @@
     {
       "repo": "maple-design-mobile",
       "file": "picker/Picker.vue",
-      "sha256": "ab6df72d5c6169d8be2e8912abbcdc17a702e765f0be409d2eb72d38df22936f",
-      "rationale": "Private CSS translate visual-scroll commands/declaration and media preference observation,not DOM native scroll calls or business timers. Human limited takeover preserves parallel disabled/ARIA,field mapping,cascade/momentum/API/Tokens and200/1000ms/reduce policies. Effective7case original baseline5fail/2controls after correcting nested-wrapper misuse. Original query/listener identity detaches on suspension/disposal/hidden dynamic popup;fresh activation rebinds. Original current-column/scroller own-transform ticket consumes once;retained clicks,old columns,child/property mismatch and stale media callbacks rejected. Separate candidate change-callback reentry reproduced before motion epoch prevents stale model write.10targeted cases plus existing component/function/keyboard regressions;not trusted native touch/OS or arbitrary same-element old transition event identity acceptance.",
+      "sha256": "8bd954083340ad9a4e40fa00b8ca23a0ade29b66021b47141f858b541851163d",
+      "rationale": "Private CSS translate visual-scroll commands/declaration and media preference observation,not DOM native scroll calls or business timers. Human limited takeover preserves parallel disabled/ARIA,field mapping,cascade/momentum/API/Tokens and200/1000ms/reduce policies. Effective7case original baseline5fail/2controls after correcting nested-wrapper misuse. Original query/listener identity detaches on suspension/disposal/hidden dynamic popup;fresh activation rebinds. Original current-column/scroller own-transform ticket consumes once;retained clicks,old columns,child/property mismatch and stale media callbacks rejected. Separate candidate change-callback reentry reproduced before motion epoch prevents stale model write.10targeted cases plus existing component/function/keyboard regressions;not trusted native touch/OS or arbitrary same-element old transition event identity acceptance. Re-reviewed 11 current hints: option geometry changes reset touches/epochs and scroll instantly, column-count reconciliation preserves compatible columns and resets scrolling, while dynamic close/deactivation/unmount retire completion and motion listeners. Reduced-motion and stale transition guards remain. Current source re-reviewed: geometry and column reconciliation reset touch and scroll state; deactivation, disposal and dynamic close retire pending completions and media listeners; completion checks active column and element, and change reentry checks motion epoch. Current lifecycle, keyboard and dynamic-layout tests pass (23 tests). This is not native touch, OS preference or arbitrary same-element old transition event acceptance.",
       "hints": [
         {
-          "line": 237,
+          "line": 248,
           "category": "visual-scroll",
           "snippet": "        const query = window.matchMedia('(prefers-reduced-motion: reduce)')"
         },
         {
-          "line": 375,
+          "line": 325,
+          "category": "visual-scroll",
+          "snippet": "        scrollTo(column)"
+        },
+        {
+          "line": 406,
           "category": "visual-scroll",
           "snippet": "        scrollTo(scrollColumn)"
         },
         {
-          "line": 417,
+          "line": 449,
           "category": "visual-scroll",
           "snippet": "        scrollTo(scrollColumn)"
         },
         {
-          "line": 502,
+          "line": 488,
+          "category": "visual-scroll",
+          "snippet": "        scrollTo(retained)"
+        },
+        {
+          "line": 562,
           "category": "declaration-only",
           "snippet": "    function scrollTo(scrollColumn: ScrollColumn, duration = 0) {"
         },
         {
-          "line": 529,
+          "line": 589,
           "category": "visual-scroll",
           "snippet": "      scrollTo(scrollColumn, TRANSITION_DURATION)"
         },
         {
-          "line": 562,
+          "line": 629,
           "category": "visual-scroll",
           "snippet": "      scrollTo(column)"
         },
         {
-          "line": 624,
+          "line": 691,
           "category": "visual-scroll",
           "snippet": "      scrollTo(scrollColumn, shouldMomentum ? MOMENTUM_TRANSITION_DURATION : TRANSITION_DURATION)"
         },
         {
-          "line": 692,
+          "line": 759,
           "category": "visual-scroll",
           "snippet": "          scrollTo(currentScrollColumn)"
         },
         {
-          "line": 698,
+          "line": 765,
           "category": "visual-scroll",
           "snippet": "          scrollTo(scrollColumn)"
-        }
-      ]
-    },
-    {
-      "repo": "maple-design-mobile",
-      "file": "date/picker-panels/YearPickerPanel.vue",
-      "sha256": "96cf7dce99d7eab495509d4f1af01ab887c64b9e2282985992ade0f69f40b63d",
-      "rationale": "Synchronous native-scroll alignment on mount and fresh activation;selected real Button has priority over current-year outline,no marker means no call. Actual onSmartMounted source and resolved built helper agree:initial activation is suppressed and nextTick only sets bookkeeping,not deferred scrolling. Seven unchanged-source controlled cases cover primary/outline/no-marker/empty-preview,mounted tick,immediate disposal and current-node reactivation after suspension. No owned RAF/timer/listener/interpolation to cancel,no reproduced product defect and no source/API/Token change. Original block:center and browser-owned scrolling policy preserved;not native layout/smooth/reduced-motion/OS/adoption or all retained date commands/parallel presentation integration acceptance. Date runtime-candidate classification closes with prior two Cedar preview rows;not whole Date stability. 2026-10-20 bounded revalidation preserves parallel range-preview/highlight/confirmation business. Range mouse/touch previews do not reschedule scroll. onSmartMounted aligns synchronously on mount/fresh activation;nextTick is bookkeeping only. Preserve selected-primary/current-outline lookup and block:center;no owned interpolation or cancellation promise.",
-      "hints": [
-        {
-          "line": 262,
-          "category": "native-scroll",
-          "snippet": "      activeEl?.scrollIntoView({"
         }
       ]
     },
@@ -149,11 +146,11 @@
     {
       "repo": "cedar-design-web",
       "file": "date/picker/Picker.vue",
-      "sha256": "8fe8c874bf85b5cf70bf93877e0c06e95ce80770921150ce32e58eb11424527d",
-      "rationale": "100ms shortcut hover-leave preview grace is interaction-delay,not CSS animation completion or a reduced-motion duration. Previously clean source;valid11-case baseline9fail/two controls reproduces cancelled/consumed old clears erasing new preview,configuration/model/visibility changes leaving timers and cross-activation work. Normal100ms noncommitting clear and ordinary unmount cancellation already pass. Private generation plus one-shot consumption rejects stale delivery;sync current panelVisible/disabled/readonly/previewShortcut/modelValue changes cancel and clear preview. Suspension/disposal cancel;fresh activation accepts new hover only. Retained hover commands require current eligibility and preview-setter reentry rechecks generation before input clearing. Final16 targeted cases include four eligibility commands and reentry. Positive100ms/global timer ownership/public API/CSS Tokens unchanged. Stub PickerPanel isolates parallel panel edits;not native hover/OS,range preview or all other retained date select/confirm/input commands. Date family remains partial.",
+      "sha256": "f58962985b6732cf5061c38f7109a5497e3443d4c9ff82e17f8186a50cc79d31",
+      "rationale": "100ms shortcut hover-leave preview grace is interaction-delay,not CSS animation completion or a reduced-motion duration. Previously clean source;valid11-case baseline9fail/two controls reproduces cancelled/consumed old clears erasing new preview,configuration/model/visibility changes leaving timers and cross-activation work. Normal100ms noncommitting clear and ordinary unmount cancellation already pass. Private generation plus one-shot consumption rejects stale delivery;sync current panelVisible/disabled/readonly/previewShortcut/modelValue changes cancel and clear preview. Suspension/disposal cancel;fresh activation accepts new hover only. Retained hover commands require current eligibility and preview-setter reentry rechecks generation before input clearing. Final16 targeted cases include four eligibility commands and reentry. Positive100ms/global timer ownership/public API/CSS Tokens unchanged. Stub PickerPanel isolates parallel panel edits;not native hover/OS,range preview or all other retained date select/confirm/input commands. Date family remains partial. Re-reviewed current shortcut preview timer: generation and eligibility guard, synchronous invalidation, deactivation and unmount cleanup remain.",
       "hints": [
         {
-          "line": 453,
+          "line": 452,
           "category": "interaction-delay",
           "snippet": "      clearPreviewTimer = setTimeout(() => {"
         }
@@ -162,11 +159,11 @@
     {
       "repo": "cedar-design-web",
       "file": "time/picker/TimeColumn.vue",
-      "sha256": "66f5407016ed16e900684c8c10970d9745bd69f75346a809469d602e8e347d96",
-      "rationale": "Visual-scroll consumer delegates0/100ms linear positioning to its private owned helper,not CSS completion or a new duration Token. Valid11-case old component baseline9fail/two controls:hide/suspension/disposal still scroll,old/replayed nextTick overrides current value task,inactive/removed/disabled retained clicks and geometry disposal writes. Normal100ms linear/selection and Vue-disposed emit control already pass. Lifecycle availability and sync generation invalidation cancel private task;post-render visibility continuation consumes once and rechecks original root/value/element after offsetTop. Activation aligns current value without reviving interpolation. Item membership/disabled/visibility guards and original-item registration cleanup preserve replacement. Final16 component cases plus14 helper cases;149 affected Time tests/30files includes two parallel step-demo cases,not extra new defects. Time runtime-candidate family now classified,not whole Time panel/Maple wheel/native/OS/adoption or arbitrary same-item ref-callback ordering acceptance. Parallel date/form/time panels/Picker untouched.",
+      "sha256": "107e4e801af4f9104d57181ca35f72bd3728f1c602fdb729c1be551b4211cdaf",
+      "rationale": "Visual-scroll consumer delegates0/100ms linear positioning to its private owned helper,not CSS completion or a new duration Token. Valid11-case old component baseline9fail/two controls:hide/suspension/disposal still scroll,old/replayed nextTick overrides current value task,inactive/removed/disabled retained clicks and geometry disposal writes. Normal100ms linear/selection and Vue-disposed emit control already pass. Lifecycle availability and sync generation invalidation cancel private task;post-render visibility continuation consumes once and rechecks original root/value/element after offsetTop. Activation aligns current value without reviving interpolation. Item membership/disabled/visibility guards and original-item registration cleanup preserve replacement. Final16 component cases plus14 helper cases;149 affected Time tests/30files includes two parallel step-demo cases,not extra new defects. Time runtime-candidate family now classified,not whole Time panel/Maple wheel/native/OS/adoption or arbitrary same-item ref-callback ordering acceptance. Parallel date/form/time panels/Picker untouched. Re-reviewed selection and node ownership, generation invalidation, visibility, observer disconnection, deactivation and unmount cancellation.",
       "hints": [
         {
-          "line": 89,
+          "line": 91,
           "category": "visual-scroll",
           "snippet": "      const cancel = scrollTo(root, top, easing ? 100 : 0)"
         }
@@ -176,12 +173,17 @@
       "repo": "cedar-design-web",
       "file": "time/picker/utils/index.ts",
       "sha256": "deb755dde332ea635db5aba06a0c2a5a37eea8a37425da7667147f360c485e80",
-      "rationale": "Private TimeColumn scrolling: declaration-only entry and owner-window RAF visual-scroll. Valid real b-tween baseline ten cases nine failures/one normal100ms linear control. WeakMap task identity, consumed per-frame ticket and private idempotent disposer reject replaced/replayed callbacks and getter/setter reentry. Nonpositive/nonfinite duration or initial reduce targets immediately without RAF; dynamic owner reduce finishes next frame. Positive caller duration/linear interpolation preserved; no CSS Token/public API change. Four supplementary cancellation/reentry cases; component watch/nextTick, deactivation/unmount cancellation and retained command eligibility are NOT certified by helper tests. Phase one left TimeColumn unclassified; phase-two consumer evidence time-column-lifecycle-2026-10-16 now registers its remaining hint, closing runtime-candidate classification only. Controlled JSDOM owner iframe/media/RAF is not native browser, trusted scrolling, same-node adoption or OS acceptance.",
+      "rationale": "Private TimeColumn scrolling: declaration-only entry and owner-window RAF visual-scroll. Valid real b-tween baseline ten cases nine failures/one normal100ms linear control. WeakMap task identity, consumed per-frame ticket and private idempotent disposer reject replaced/replayed callbacks and getter/setter reentry. Nonpositive/nonfinite duration or initial reduce targets immediately without RAF; dynamic owner reduce finishes next frame. Positive caller duration/linear interpolation preserved; no CSS Token/public API change. Four supplementary cancellation/reentry cases; component watch/nextTick, deactivation/unmount cancellation and retained command eligibility are NOT certified by helper tests. Phase one left TimeColumn unclassified; phase-two consumer evidence time-column-lifecycle-2026-10-16 now registers its remaining hint, closing runtime-candidate classification only. Controlled JSDOM owner iframe/media/RAF is not native browser, trusted scrolling, same-node adoption or OS acceptance. Optional preference query is now separately scanned and classified; initial and each-frame owner-window checks share current task ownership, while replacement and cancellation invalidate old work. Native browser and OS acceptance remain outside this classification.",
       "hints": [
         {
           "line": 12,
           "category": "declaration-only",
           "snippet": "export function scrollTo(element: HTMLElement, to: number, duration: number) {"
+        },
+        {
+          "line": 25,
+          "category": "visual-scroll",
+          "snippet": "  const reduced = () => view?.matchMedia?.('(prefers-reduced-motion: reduce)').matches === true"
         },
         {
           "line": 42,
@@ -193,23 +195,47 @@
     {
       "repo": "cedar-design-web",
       "file": "scheduler/components/SchedulerTimeGrid.vue",
-      "sha256": "ca22990ffea78595b751d7c77464ff8b097a93917a93055bf06f09fead214610",
-      "rationale": "350ms touch arming is interaction-delay; zero-delay range-click unlock is state-settlement, not CSS duration. Valid ten-case baseline eight failures/two controls covers stale move/up/cancel/hold, unrelated pointercancel, suspension, step changes, geometry disposal and old unlock. Per-session live/version/original-root/columns/config eligibility isolates stale deliveries; local cleanup removes original listeners before clearing selection and never clears a replacement. Match pointerId, recheck after hit testing/geometry; sync configuration invalidation includes step/snap/hours/disabled. Activation accepts fresh gestures only. Original global document/window,350ms/8px/5px/snap/end-hour policies/API/CSS unchanged. Controlled actual TimeGrid/KeepAlive/geometry/fake timers are not trusted Pointer/native click/OS/cross-document acceptance. All-day/overlap/focus/retained non-range commands remain separate from these two timer responsibilities. Scheduler runtime-candidate classification is complete, not whole-component/library/full-suite acceptance; prior full-suite timeout/serial failures and four unrelated stale hashes remain.",
+      "sha256": "76f82bbcca0b8aa81969d355f1899dac3a349d46184eede5dc0a04999145aab1",
+      "rationale": "350ms touch arming is interaction-delay; zero-delay range-click unlock is state-settlement, not CSS duration. Valid ten-case baseline eight failures/two controls covers stale move/up/cancel/hold, unrelated pointercancel, suspension, step changes, geometry disposal and old unlock. Per-session live/version/original-root/columns/config eligibility isolates stale deliveries; local cleanup removes original listeners before clearing selection and never clears a replacement. Match pointerId, recheck after hit testing/geometry; sync configuration invalidation includes step/snap/hours/disabled. Activation accepts fresh gestures only. Original global document/window,350ms/8px/5px/snap/end-hour policies/API/CSS unchanged. Controlled actual TimeGrid/KeepAlive/geometry/fake timers are not trusted Pointer/native click/OS/cross-document acceptance. All-day/overlap/focus/retained non-range commands remain separate from these two timer responsibilities. Scheduler runtime-candidate classification is complete, not whole-component/library/full-suite acceptance; prior full-suite timeout/serial failures and four unrelated stale hashes remain. Re-reviewed two unchanged timers: interaction version and resource/geometry ownership, listener cleanup, timeout cancellation, deactivation and unmount guards remain.",
       "hints": [
-        { "line": 524, "category": "state-settlement", "snippet": "      clickTimer = setTimeout(() => {" },
-        { "line": 549, "category": "interaction-delay", "snippet": "    holdTimer = setTimeout(() => {" }
+        {
+          "line": 526,
+          "category": "state-settlement",
+          "snippet": "      clickTimer = setTimeout(() => {"
+        },
+        {
+          "line": 551,
+          "category": "interaction-delay",
+          "snippet": "    holdTimer = setTimeout(() => {"
+        }
       ]
     },
     {
       "repo": "cedar-design-web",
       "file": "scheduler/components/SchedulerEvent.vue",
-      "sha256": "f98dffe0bd0390cf5b2867deb4f9fc8f83b5d098c58b0c2a8405d6fdb8c92123",
-      "rationale": "Two350ms touch holds are interaction-delay; two0ms click unlocks are state-settlement, not CSS duration. Phase-one managed wait/finished ownership13 tests; phase-two standalone local live/session/event/root ownership14 tests, valid baseline subset excludes undelivered parent-disabled-prop probe. Phase-three synthetic drag protocol baseline ten cases seven failures/three controls: inactive start, duplicate/orphan end, transfer reentry and retained resize eligibility plus native cleanup. Fresh end callback captures native request; consume before notify, cancel on configuration/lifecycle, recheck after transfer callbacks. Actual Button already rejects inactive ordinary click, so no duplicate parent repair. Resizing shares current resizable/non-milestone eligibility across handlers and cancellation. Preserve350ms/8px/5px/ghost/global-window/API/Token policies. Controlled JSDOM events/transfer spies are not trusted native drag/Pointer/OS/cross-document acceptance. Earlier full-suite timeout/serial timer failures and four unrelated stale hashes remain separate; this registration does not claim a passing full suite. Scheduler family remains partial pending TimeGrid.",
+      "sha256": "3471567c8d2e20c2642ee7765b3c35f52b4f372c92132ed00a5a2409b3c708c0",
+      "rationale": "Two350ms touch holds are interaction-delay; two0ms click unlocks are state-settlement, not CSS duration. Phase-one managed wait/finished ownership13 tests; phase-two standalone local live/session/event/root ownership14 tests, valid baseline subset excludes undelivered parent-disabled-prop probe. Phase-three synthetic drag protocol baseline ten cases seven failures/three controls: inactive start, duplicate/orphan end, transfer reentry and retained resize eligibility plus native cleanup. Fresh end callback captures native request; consume before notify, cancel on configuration/lifecycle, recheck after transfer callbacks. Actual Button already rejects inactive ordinary click, so no duplicate parent repair. Resizing shares current resizable/non-milestone eligibility across handlers and cancellation. Preserve350ms/8px/5px/ghost/global-window/API/Token policies. Controlled JSDOM events/transfer spies are not trusted native drag/Pointer/OS/cross-document acceptance. Earlier full-suite timeout/serial timer failures and four unrelated stale hashes remain separate; this registration does not claim a passing full suite. Scheduler family remains partial pending TimeGrid. Re-reviewed both managed and local gesture paths: all four timer statements remain, with version/ownership checks and timer/listener cleanup on invalidation and suspension. Re-reviewed after theme-scope propagation to the teleported ghost; the four timer sites and their ownership/cleanup paths are unchanged.",
       "hints": [
-        { "line": 246, "category": "state-settlement", "snippet": "        resetClick = setTimeout(() => {" },
-        { "line": 259, "category": "interaction-delay", "snippet": "    const timer = setTimeout(() => {" },
-        { "line": 384, "category": "state-settlement", "snippet": "    resetClick = setTimeout(() => {" },
-        { "line": 404, "category": "interaction-delay", "snippet": "    holdTimer = setTimeout(() => {" }
+        {
+          "line": 253,
+          "category": "state-settlement",
+          "snippet": "        resetClick = setTimeout(() => {"
+        },
+        {
+          "line": 266,
+          "category": "interaction-delay",
+          "snippet": "    const timer = setTimeout(() => {"
+        },
+        {
+          "line": 391,
+          "category": "state-settlement",
+          "snippet": "    resetClick = setTimeout(() => {"
+        },
+        {
+          "line": 411,
+          "category": "interaction-delay",
+          "snippet": "    holdTimer = setTimeout(() => {"
+        }
       ]
     },
     {
@@ -217,155 +243,236 @@
       "file": "scheduler/use-timeline-pointer.ts",
       "sha256": "31d9f74bf3ad0075d0f2fa17b83a5454d0a5b55ccd476f64bda158d448887fc4",
       "rationale": "Gesture-owned edge auto-scroll uses a unified visual-scroll RAF dispatcher, not CSS duration. Preserve40px edge/12px-per-frame and5px drag start policies. Valid eight-case baseline seven failures/one positive edge-scroll control: replayed frame forks/writes, cancelled old frame cancels replacement, inactive frame/begin, geometry cancellation, start reentry and disposed begin. Frame identity is consumed before delivery; session generation and availability reject stale frame/listener/nextTick, recheck after geometry/user callbacks/reactive writes. Suspension/disposal cancel; activation accepts only fresh gestures. Cleanup detaches before finished callback so reentrant replacement retains ownership. Original global document/window/RAF retained; owner-window/cross-document/native reduced-motion policy remain separate. Actual helper/KeepAlive with controlled JSDOM geometry/RAF is not native input/OS or all Scheduler acceptance. No API/Token/default change; family remains partial.",
-      "hints": [{ "line": 56, "category": "visual-scroll", "snippet": "      frame = requestAnimationFrame(() => {" }]
+      "hints": [
+        {
+          "line": 56,
+          "category": "visual-scroll",
+          "snippet": "      frame = requestAnimationFrame(() => {"
+        }
+      ]
     },
     {
       "repo": "cedar-design-web",
       "file": "scheduler/components/SchedulerTimelineRows.vue",
-      "sha256": "cc4d83fb32c426146f59bd82f122a0507840a5baf899e38629b9abeda1d60957",
-      "rationale": "Two Vue nextTick phases settle virtual row cache rebuild/anchor restoration, including a child VirtualList scrollTo command, not DOM native scrolling or CSS duration. Valid seven-case baseline four failures/three controls after correcting prefixed VirtualList stub matching and moving destructive geometry probe out of active render/watcher flush. Availability, request/data/layout/options identity and restored-list/viewport identity reject stale continuation; fresh scroll binding epochs reject inactive/cross-activation/replaced-list events. Dirty activation starts a fresh current-data rebuild rather than replaying an old offset. Three supplementary activation/fresh-scroll/replaced-source cases. Controlled VirtualList stub isolates this parent from parallel downstream changes, not downstream lifecycle acceptance. Parent fixture defers inactive props until activation; direct cached-child prop delivery and native variable-size/OS behavior remain separate. No API/Token/default geometry changes; Scheduler family remains partial.",
-      "hints": [{ "line": 136, "category": "state-settlement", "snippet": "    if (target) restoredList.scrollTo({ key: target });" }]
+      "sha256": "ecddd8bbb31ff3fd5257f0205697fe4da956b80421752f9ccec9e2061bff1e0c",
+      "rationale": "Two Vue nextTick phases settle virtual row cache rebuild/anchor restoration, including a child VirtualList scrollTo command, not DOM native scrolling or CSS duration. Valid seven-case baseline four failures/three controls after correcting prefixed VirtualList stub matching and moving destructive geometry probe out of active render/watcher flush. Availability, request/data/layout/options identity and restored-list/viewport identity reject stale continuation; fresh scroll binding epochs reject inactive/cross-activation/replaced-list events. Dirty activation starts a fresh current-data rebuild rather than replaying an old offset. Three supplementary activation/fresh-scroll/replaced-source cases. Controlled VirtualList stub isolates this parent from parallel downstream changes, not downstream lifecycle acceptance. Parent fixture defers inactive props until activation; direct cached-child prop delivery and native variable-size/OS behavior remain separate. No API/Token/default geometry changes; Scheduler family remains partial. Re-reviewed virtual-list restoration: entries/options/layout identity, version, viewport ownership and deactivation/unmount guards remain around delegated and residual scroll.",
+      "hints": [
+        {
+          "line": 144,
+          "category": "state-settlement",
+          "snippet": "    if (target) restoredList.scrollTo({ key: target });"
+        }
+      ]
     },
     {
       "repo": "cedar-design-web",
       "file": "scheduler/components/SchedulerDependencies.vue",
-      "sha256": "2298e36af6a1ec14e47699dae216c19cf79fcfa5743895db0a9686709c185b84",
-      "rationale": "Owner-window RAF coalesces dependency connector geometry, not CSS duration or optional reduced-motion animation. Valid nine-case baseline eight failures/one normal drawing/coalescing control: stale disposed/consumed/replaced frames, inactive resources, old observer/scroll bindings, removed host paths and iframe owner scheduling. Separate binding/frame/render generations reject stale nextTick/listener/observer/frame delivery; consume frame before measuring, recheck lifetime after geometry, commit only current host/data work. Clear paths when host is absent; activation binds fresh original-host listeners/owner observer. Twelve controlled Vue/KeepAlive/DOM geometry cases include reentrant disposal, fresh activation and dependency replacement. Runner global window differs from actual document.defaultView; fixture correction covers the real owner rather than changing product back to global RAF. JSDOM iframe is not native browser/OS, arbitrary font geometry, same-node document adoption or all Scheduler acceptance. Public API/CSS/default path geometry unchanged; family remains partial.",
-      "hints": [{ "line": 144, "category": "measurement-scheduling", "snippet": "    const id = view.requestAnimationFrame(() => {" }]
+      "sha256": "e5ce5641cfc86c0da06675782e17976547c20d24825e11bbf126d9a8d4b5c184",
+      "rationale": "Owner-window RAF coalesces dependency connector geometry, not CSS duration or optional reduced-motion animation. Valid nine-case baseline eight failures/one normal drawing/coalescing control: stale disposed/consumed/replaced frames, inactive resources, old observer/scroll bindings, removed host paths and iframe owner scheduling. Separate binding/frame/render generations reject stale nextTick/listener/observer/frame delivery; consume frame before measuring, recheck lifetime after geometry, commit only current host/data work. Clear paths when host is absent; activation binds fresh original-host listeners/owner observer. Twelve controlled Vue/KeepAlive/DOM geometry cases include reentrant disposal, fresh activation and dependency replacement. Runner global window differs from actual document.defaultView; fixture correction covers the real owner rather than changing product back to global RAF. JSDOM iframe is not native browser/OS, arbitrary font geometry, same-node document adoption or all Scheduler acceptance. Public API/CSS/default path geometry unchanged; family remains partial. Re-reviewed frame generation, binding/host identity, observer and scroll-listener cleanup, deactivation and unmount cancellation.",
+      "hints": [
+        {
+          "line": 148,
+          "category": "measurement-scheduling",
+          "snippet": "    const id = view.requestAnimationFrame(() => {"
+        }
+      ]
     },
     {
       "repo": "cedar-design-web",
       "file": "scheduler/use-now.ts",
       "sha256": "00518559d26485f60d086f1fef7ae1441f3b3acf207be5db5ce458452ddcd4a9",
       "rationale": "Thirty-second current-time business clock, not a CSS motion duration or reduced-motion policy. Non-overlapping helper reviewed independently of parallel Scheduler resource-core changes. Valid seven-case baseline six failures/one cadence control: inactive background intervals/config restart, disposed/disabled/stale cross-activation deliveries and old visibility binding. Active/mounted/disposed and interval generation isolate old work; fresh visibility-binding identity is removed from the original document on suspension/disposal. Activation refreshes current wall time without replaying missed ticks; interval callback remains legitimately periodic, not consumed after its first tick. Additional resource/reentry/hidden-page probes and existing SSR/indicator cases are separate verification. No public API/Token/default cadence change or native browser/OS/cross-document certification. Scheduler family remains partially classified.",
-      "hints": [{ "line": 34, "category": "business-clock", "snippet": "      timer = setInterval(() => {" }]
+      "hints": [
+        {
+          "line": 34,
+          "category": "business-clock",
+          "snippet": "      timer = setInterval(() => {"
+        }
+      ]
     },
     {
       "repo": "cedar-design-web",
-      "file": "map/map.tsx",
-      "sha256": "dc5de08224d414533cc8c415bd5f35d80f2283e4af53df850a7a9680ee354c76",
-      "rationale": "300ms model-center and500ms selected-place cooldowns release isUpdating to suppress programmatic moveend reverse geocoding: interaction-delay, not CSS visual completion or Token duration. Source classification only, no product repair or SDK lifecycle acceptance. The map-core runtime import is commented for migration and MapService/SearchService/LngLat are ambient declarations, not installed runtime providers. Existing initMap missing-dependency guard exits before SDK creation/watch/listener/timer setup. Missing-dependency, model replacement/disposal and KeepAlive fallback probes cannot certify active SDK timer cancellation, old callbacks, async request identity, listener disposal, geolocation or actual map motion. Do not invent SDK off/destroy contracts or replace the provider in this audit. Maple has no matching runtime.",
+      "file": "map/update-guard.ts",
+      "sha256": "46bb5aa40e4f3eadd651e9449caec50bf13439c55d68d02509efa57e7166437d",
+      "rationale": "Programmatic map move suppression is an interaction delay; one latest-owner timer is canceled on replacement and disposal. Controlled SDK substitutes verify overlapping cooldowns and place lookup races. This classification does not establish real SDK behavior or lifecycle acceptance. Re-reviewed cancel(): it increments the generation and clears the existing timer when a selection is retired or the map is deactivated; it does not add a visual duration.",
       "hints": [
-        { "line": 276, "category": "interaction-delay", "snippet": "              setTimeout(() => {" },
-        { "line": 454, "category": "interaction-delay", "snippet": "      setTimeout(() => {" }
+        {
+          "line": 33,
+          "category": "interaction-delay",
+          "snippet": "      timer = setTimeout(() => {"
+        }
       ]
     },
     {
       "repo": "cedar-design-web",
       "file": "tree/Tree.vue",
-      "sha256": "21cc8b62ac2ddae39817efb7a4576c495510d448e0d53b86bef6d7f807bb01ef",
-      "rationale": "Public scrollIntoView declaration and synchronous delegation of unchanged options to the actual VirtualList component, not DOM native scrolling or a local RAF/timer/CSS duration. No product repair: seven actual Tree/VirtualList integration cases pass on unchanged sources (index/top, key/bottom, replacement, inactive, reactivation, disposal/queued correction and nonvirtual). Existing child availability/request guards reject inactive/disposed/stale correction work; Tree adds no local pending resource. Actual Tree and actual VirtualList with stub TreeNode, fixed-size data and mocked viewport in JSDOM are not native layout/scroll/smooth/reduced-motion/OS or all Tree retained-method/loadMore acceptance. Maple has no corresponding runtime candidate.",
+      "sha256": "06e00beae06f61450ca7687a573dab238601a99d18f9f7758c285e866d3ae328",
+      "rationale": "Public scrollIntoView declaration and synchronous delegation of unchanged options to the actual VirtualList component, not DOM native scrolling or a local RAF/timer/CSS duration. No product repair: seven actual Tree/VirtualList integration cases pass on unchanged sources (index/top, key/bottom, replacement, inactive, reactivation, disposal/queued correction and nonvirtual). Existing child availability/request guards reject inactive/disposed/stale correction work; Tree adds no local pending resource. Actual Tree and actual VirtualList with stub TreeNode, fixed-size data and mocked viewport in JSDOM are not native layout/scroll/smooth/reduced-motion/OS or all Tree retained-method/loadMore acceptance. Maple has no corresponding runtime candidate. Re-reviewed the public value-to-key delegation and keyboard focus path. VirtualList owns delegated scroll; the nextTick native scroll checks latest focused key and active root. JSDOM tests cover keyboard replacement, blur and unmount plus retained virtual commands; they do not establish browser layout, reduced-motion, OS or cross-document acceptance. Re-reviewed current keyboard focus and delegated public scroll: active root and latest key guard queued native scroll; the virtual child owns command cancellation. Current focused keyboard, blur, unmount, retained command and direction regressions pass (12 tests); browser and assistive-technology acceptance remain separate.",
       "hints": [
-        { "line": 701, "category": "declaration-only", "snippet": "    scrollIntoView(options: ScrollIntoViewOptions) {" },
-        { "line": 702, "category": "delegated-scroll", "snippet": "      this.virtualListRef && this.virtualListRef.scrollTo(options)" }
+        {
+          "line": 353,
+          "category": "delegated-scroll",
+          "snippet": "      virtualListRef.value?.scrollTo({ key, align: 'auto' })"
+        },
+        {
+          "line": 357,
+          "category": "native-scroll",
+          "snippet": "        root.value.ownerDocument.getElementById(nodeId(key))?.scrollIntoView?.({ block: 'nearest', inline: 'nearest' })"
+        },
+        {
+          "line": 816,
+          "category": "declaration-only",
+          "snippet": "    scrollIntoView(options: Omit<ScrollIntoViewOptions, 'key'> & { value?: TreeNodeValue }) {"
+        },
+        {
+          "line": 818,
+          "category": "delegated-scroll",
+          "snippet": "      this.virtualListRef && this.virtualListRef.scrollTo({ ...rest, key: value })"
+        }
       ]
     },
     {
       "repo": "maple-design-mobile",
       "file": "pull-refresh/PullRefresh.vue",
-      "sha256": "6b72737119db5a9ed672abd78e45a9f58446f2c70f25386be5e7b8684b641861",
-      "rationale": "Unified task-dispatch owns pending timer membership and original generation; callers retain success2000ms business display, animationDuration300ms rebound/reset and150ms icon-parameter wait. Phase-one17 controlled cases cover cancellation/replacement/disposal/acknowledgement and cancelled Promise settlement. Phase-two gesture epoch and fresh root binding callbacks reject old activation/target work; cancellation stops without refresh, geometry reentry rechecks identity, private per-element/class leases preserve another live holder and external pre-existing lock. Valid10-case phase-two baseline6fail/four controls; final15 gesture cases/full37 tests. Initial candidate post-watch cancelled the first synchronous gesture, fixed with synchronous root binding and existing regressions unchanged. Helper has no runtime scan hint and separate hash evidence. No new public API/Token/default duration; JSDOM synthetic touch/geometry/timers are not native input, complete CSS/reduced-motion/initial-true model/shared useTouch RAF/default iframe-scroller adoption or OS acceptance.",
-      "hints": [{ "line": 96, "category": "task-dispatch", "snippet": "      const timer = window.setTimeout(() => {" }]
+      "sha256": "240e0bb9c106b8a7126d7486d507f26eaba326fcb0400ff90907d0d3c2a0d579",
+      "rationale": "Unified task-dispatch owns pending timer membership and original generation; callers retain success2000ms business display, animationDuration300ms rebound/reset and150ms icon-parameter wait. Phase-one17 controlled cases cover cancellation/replacement/disposal/acknowledgement and cancelled Promise settlement. Phase-two gesture epoch and fresh root binding callbacks reject old activation/target work; cancellation stops without refresh, geometry reentry rechecks identity, private per-element/class leases preserve another live holder and external pre-existing lock. Valid10-case phase-two baseline6fail/four controls; final15 gesture cases/full37 tests. Initial candidate post-watch cancelled the first synchronous gesture, fixed with synchronous root binding and existing regressions unchanged. Helper has no runtime scan hint and separate hash evidence. No new public API/Token/default duration; JSDOM synthetic touch/geometry/timers are not native input, complete CSS/reduced-motion/initial-true model/shared useTouch RAF/default iframe-scroller adoption or OS acceptance. Re-reviewed task membership and generation cancellation, gesture invalidation, and the control ResizeObserver (callback checks availability; observer disconnects on unmount). Timer classification is not native gesture, browser/OS or reduced-motion acceptance.",
+      "hints": [
+        {
+          "line": 105,
+          "category": "task-dispatch",
+          "snippet": "      const timer = window.setTimeout(() => {"
+        }
+      ]
     },
     {
       "repo": "maple-design-mobile",
       "file": "swipe-cell/SwipeCell.vue",
-      "sha256": "eb9b450d05f5012299f14d6ebcdd1e4da3d90c0b0c3ee66a5ee465f158cda4f6",
-      "rationale": "Zero-delay click unlock is state-settlement across the release event turn, not CSS motion duration. Unlock generation consumes once and physical cancellation on new gesture/disabled/suspension/disposal rejects old delivery; drag generation isolates reentry, cancel restores starting offset without opening, inactive handlers are inert. Listener-binding generation and original root/document cleanup reject cross-activation old move/outside delivery. Phase-one close confirmation remains business Promise ownership. Valid14-case phase-two baseline12fail/two controls; final21 drag cases plus18 close cases, full48 tests. Actual component/KeepAlive with synthetic DOM touch and controlled timers is not native touch/click ordering, full measurement, same-node adoption, shared useTouch RAF or OS acceptance; public CSS/API/threshold unchanged.",
-      "hints": [{ "line": 351, "category": "state-settlement", "snippet": "      unlockTimer = window.setTimeout(() => {" }]
-    },
-    {
-      "repo": "maple-design-mobile",
-      "file": "counter/Counter.vue",
-      "sha256": "1a23540c1f00b7849a30d2e48910556858e9c3a863e3c863fe3907272c9c3388",
-      "rationale": "600ms initial hold then100ms repetition are interaction-repeat policy, first step at700ms; not CSS duration and not InputNumber800/150ms. Per-direction generations and one-shot delivery reject released/replaced/consumed/inactive/disposed callbacks; step reentry is checked before continuation. Deactivation/disposal cancel both directions, activation accepts new requests only; eligibility watcher cancels on disabled/readonly/press/lazy/controls/directional-bound state. Valid24-case baseline20fail/4controls, final32 controlled hold tests and full55 Counter tests. Existing input parsing and deferred beforeChange request identity are separate consumers; no new API/Token or native gesture/OS/cross-document acceptance.",
+      "sha256": "1de465e012a36445994fd0b4811ef9608ab9505cc33546ee1c5027c16c410388",
+      "rationale": "Zero-delay click unlock is state-settlement across the release event turn, not CSS motion duration. Unlock generation consumes once and physical cancellation on new gesture/disabled/suspension/disposal rejects old delivery; drag generation isolates reentry, cancel restores starting offset without opening, inactive handlers are inert. Listener-binding generation and original root/document cleanup reject cross-activation old move/outside delivery. Phase-one close confirmation remains business Promise ownership. Valid14-case phase-two baseline12fail/two controls; final21 drag cases plus18 close cases, full48 tests. Actual component/KeepAlive with synthetic DOM touch and controlled timers is not native touch/click ordering, full measurement, same-node adoption, shared useTouch RAF or OS acceptance; public CSS/API/threshold unchanged. Re-reviewed gesture cancellation and zero-delay click unlock generation after side sizing and visibility changes; ResizeObserver disconnects on deactivation/unmount and reconciliation checks availability. Browser-native touch and OS acceptance remain outside this classification.",
       "hints": [
-        { "line": 373, "category": "interaction-repeat", "snippet": "      decrementDelayTimer = window.setTimeout(() => {" },
-        { "line": 390, "category": "interaction-repeat", "snippet": "      incrementDelayTimer = window.setTimeout(() => {" },
-        { "line": 427, "category": "interaction-repeat", "snippet": "      incrementTimer = window.setTimeout(() => {" },
-        { "line": 445, "category": "interaction-repeat", "snippet": "      decrementTimer = window.setTimeout(() => {" }
+        {
+          "line": 459,
+          "category": "state-settlement",
+          "snippet": "      unlockTimer = window.setTimeout(() => {"
+        }
       ]
     },
     {
       "repo": "maple-design-mobile",
       "file": "loading-bar/index.ts",
-      "sha256": "66f1b943c77feab1b4aa191a6b9d12ed67b2bd47a16fadcc60b0168856fd3618",
-      "rationale": "Unified task-dispatch serves show/progress cadence200ms, public finishDelay, error policy300ms and computed visual cleanup floors300/250ms, not one CSS duration. Generation plus pending membership consumes callbacks once; render continuations are one-shot and old version is passed explicitly when scheduling after computed-style reads so a reentrant restart cannot attach old hide/disposal to new load. Valid7-case baseline5fail/2controls; final controlled10 scheduler cases plus existing service/SSR regressions. Maple-only service, no Cedar counterpart. Original timer window/CSS/API/defaults unchanged; real browser/OS, arbitrary mid-flight styles and cleanup-hook reentrant start remain separate boundaries.",
-      "hints": [{ "line": 79, "category": "task-dispatch", "snippet": "  const timer = window.setTimeout(() => {" }]
+      "sha256": "33b427f038d9a82ca6aa81a96dc153d2afabe54cff7bb3a48844275c859ab9be",
+      "rationale": "Unified task-dispatch serves show/progress cadence200ms, public finishDelay, error policy300ms and computed visual cleanup floors300/250ms, not one CSS duration. Generation plus pending membership consumes callbacks once; render continuations are one-shot and old version is passed explicitly when scheduling after computed-style reads so a reentrant restart cannot attach old hide/disposal to new load. Valid7-case baseline5fail/2controls; final controlled10 scheduler cases plus existing service/SSR regressions. Maple-only service, no Cedar counterpart. Original timer window/CSS/API/defaults unchanged; real browser/OS, arbitrary mid-flight styles and cleanup-hook reentrant start remain separate boundaries. Re-reviewed current timer set membership, generation checks, render continuations and finite finish-delay normalization. Cleanup-hook reentrancy and native browser/OS remain separate acceptance boundaries. Cleanup now releases old instance ownership before unmount; a controlled reentrant-start regression verifies new instance survival and completion. Real browser/OS remains unverified.",
+      "hints": [
+        {
+          "line": 83,
+          "category": "task-dispatch",
+          "snippet": "  const timer = window.setTimeout(() => {"
+        }
+      ]
     },
     {
       "repo": "cedar-design-web",
       "file": "ripple/index.ts",
-      "sha256": "ca5b40a73fc89eeb68e61df879e54180040e09bc4b7483541361617bcfa658a3",
-      "rationale": "Unified timer dispatch serves creation30ms,activation20ms and computed completion with250ms policy floors:task-dispatch,not a single CSS duration. Existing pending membership/state identity guards and geometry/style reentry cleanup remain. Manual2026-10-16 reread/revalidation includes parallel mouse input,800ms touch-compatibility suppression,document mouseup/view blur and paired unmount cleanup without product edits. Suppression is a Date.now comparison,not a new timer or CSS duration. Existing11 scheduler cases,12 motion cases and three new mouse cases pass; full Cedar Ripple31 and related List/Tree regressions pass on identical pre/post hashes. No new defect/fix or trusted input/KeepAlive/adoption/OS acceptance; arbitrary intermediate styles and same-node document migration remain separate. Evidence:classification-revalidation-2026-10-16.",
-      "hints": [{ "line": 66, "category": "task-dispatch", "snippet": "  const timer = window.setTimeout(() => {" }]
+      "sha256": "4b756cec657a7e74dd5e7c9a575e985b28df0366565afa4f1826b945796e2b08",
+      "rationale": "Unified timer dispatch serves creation30ms,activation20ms and computed completion with250ms policy floors:task-dispatch,not a single CSS duration. Existing pending membership/state identity guards and geometry/style reentry cleanup remain. Manual2026-10-16 reread/revalidation includes parallel mouse input,800ms touch-compatibility suppression,document mouseup/view blur and paired unmount cleanup without product edits. Suppression is a Date.now comparison,not a new timer or CSS duration. Existing11 scheduler cases,12 motion cases and three new mouse cases pass; full Cedar Ripple31 and related List/Tree regressions pass on identical pre/post hashes. No new defect/fix or trusted input/KeepAlive/adoption/OS acceptance; arbitrary intermediate styles and same-node document migration remain separate. Evidence:classification-revalidation-2026-10-16. Re-reviewed current shared document release listener registration and last-host teardown, keyboard listeners, timer ownership and disabled/unmount cleanup. Native input, document adoption and browser/OS acceptance remain outside classification.",
+      "hints": [
+        {
+          "line": 71,
+          "category": "task-dispatch",
+          "snippet": "  const timer = window.setTimeout(() => {"
+        }
+      ]
     },
     {
       "repo": "maple-design-mobile",
       "file": "ripple/index.ts",
-      "sha256": "9462a7b264949cdf11baa565fbd813833bab69c85f2c6d7f043d2ac078927f0e",
-      "rationale": "Independent Maple unified dispatch remains task-dispatch for30ms creation,20ms activation and computed completion/250ms floors,not one CSS duration. Pending membership/state identity and creation/activation geometry/style cleanup remain. Manual2026-10-16 reread/revalidation includes unchanged parallel mouse input,800ms touch-compatibility Date.now gate and document mouseup/view blur cleanup; no new timer hint. Existing11 scheduler/12 motion plus three mouse cases and full Maple Ripple36 pass on identical pre/post hashes. No product edit,new defect/fix or trusted input/KeepAlive/adoption/OS acceptance; arbitrary intermediate styles and same-node migration remain separate. Evidence:classification-revalidation-2026-10-16.",
-      "hints": [{ "line": 66, "category": "task-dispatch", "snippet": "  const timer = window.setTimeout(() => {" }]
+      "sha256": "536a6c287c000224167a27686ba7ceb0cf77ffcc39346a4048daf5620c6b5b49",
+      "rationale": "Independent Maple unified dispatch remains task-dispatch for30ms creation,20ms activation and computed completion/250ms floors,not one CSS duration. Pending membership/state identity and creation/activation geometry/style cleanup remain. Manual2026-10-16 reread/revalidation includes unchanged parallel mouse input,800ms touch-compatibility Date.now gate and document mouseup/view blur cleanup; no new timer hint. Existing11 scheduler/12 motion plus three mouse cases and full Maple Ripple36 pass on identical pre/post hashes. No product edit,new defect/fix or trusted input/KeepAlive/adoption/OS acceptance; arbitrary intermediate styles and same-node migration remain separate. Evidence:classification-revalidation-2026-10-16. Re-reviewed current shared document release listener registration and last-host teardown, keyboard listeners, timer ownership and disabled/unmount cleanup. Native input, document adoption and browser/OS acceptance remain outside classification.",
+      "hints": [
+        {
+          "line": 71,
+          "category": "task-dispatch",
+          "snippet": "  const timer = window.setTimeout(() => {"
+        }
+      ]
     },
     {
       "repo": "cedar-design-web",
       "file": "message/use-message-timer.ts",
       "sha256": "c98122de716b691beacb5cda769ed4292a83f3a833ed57626fd200ab6527532b",
       "rationale": "Business display deadline, not CSS transition duration. Finite positive duration schedules; zero/nonfinite stays persistent. Generation/active/open checks reject cancelled, consumed and disposed callbacks; hover resumes remaining time, exhausted positive deadline closes once, activation restarts full current duration. Current hash matches audited timer-boundary evidence. Classification reconciles existing controlled lifecycle/service and separately recorded IAB evidence, adds no new product repair or native acceptance. Cross-document adoption and service nextTick update-identity remain separate consumers.",
-      "hints": [{ "line": 44, "category": "business-clock", "snippet": "    timer = setTimeout(() => {" }]
+      "hints": [
+        {
+          "line": 44,
+          "category": "business-clock",
+          "snippet": "    timer = setTimeout(() => {"
+        }
+      ]
     },
     {
       "repo": "maple-design-mobile",
       "file": "message/use-message-timer.ts",
       "sha256": "532e457c12f2a6c4cef2ca9f0b00295a7195723ca5441d9b3d7eb79aa23e949f",
       "rationale": "Business display deadline, not CSS transition duration. Finite positive duration schedules; zero/nonfinite stays persistent. Generation/active/open checks reject cancelled, consumed and disposed callbacks; hover resumes remaining time, exhausted positive deadline closes once, activation restarts full current duration. Independent Maple source hash matches audited timer-boundary evidence. Classification reconciles existing controlled lifecycle/service and separately recorded IAB evidence, adds no new product repair or native acceptance. Cross-document adoption and service nextTick update-identity remain separate consumers.",
-      "hints": [{ "line": 37, "category": "business-clock", "snippet": "    timer = setTimeout(() => {" }]
+      "hints": [
+        {
+          "line": 37,
+          "category": "business-clock",
+          "snippet": "    timer = setTimeout(() => {"
+        }
+      ]
     },
     {
       "repo": "cedar-design-web",
       "file": "notification/Notification.vue",
-      "sha256": "810b2dc6d16449833ee5940c50d0c8ccb26d4fd5fe218ae976d88dd884a61e34",
-      "rationale": "Business notification display deadline (default3000ms, zero persistent), not CSS enter/leave time. Finite positive duration only; active/closed/generation guards, close deduplication, deactivation/disposal clear timer, activation restarts full duration. Hash matches prior runtime evidence; service ID ownership, compiled CSS and six IAB groups have separate records, not newly executed browser acceptance. Maple has no Notification counterpart; actual cross-document/OS behavior remains unverified.",
-      "hints": [{ "line": 103, "category": "business-clock", "snippet": "  timer = window.setTimeout(() => {" }]
+      "sha256": "96c34bf8b8e727531736bcb8dc4fd49e6788390fa51d89f6bc4c056f42762ca0",
+      "rationale": "Business notification display deadline (default3000ms, zero persistent), not CSS enter/leave time. Finite positive duration only; active/closed/generation guards, close deduplication, deactivation/disposal clear timer, activation restarts full duration. Hash matches prior runtime evidence; service ID ownership, compiled CSS and six IAB groups have separate records, not newly executed browser acceptance. Maple has no Notification counterpart; actual cross-document/OS behavior remains unverified. Re-reviewed current alert role and business timer: lifecycle/closed/generation guards prevent stale delivery, and resetOnUpdate deliberately restarts the deadline. No browser, assistive-technology or OS acceptance is implied.",
+      "hints": [
+        {
+          "line": 103,
+          "category": "business-clock",
+          "snippet": "  timer = window.setTimeout(() => {"
+        }
+      ]
     },
     {
       "repo": "maple-design-mobile",
       "file": "_components/selection-scrollbar/Scrollbar.vue",
-      "sha256": "e9ab220f1afddfc8ba68094706b8ddeb43e2f504100126ba2520d19e474754b9",
-      "rationale": "Synchronous geometry and native DOM scrolling, no RAF/timer/CSS duration. Six scrollTo calls are native-scroll; function declaration is declaration-only. Lifecycle availability, activation-binding epochs and reentrant operation/node ownership reject stale measurements/events/retained commands. Zero origin, zero viewport, zero thumb reset and axis ratio corrected. Scoped16 per copy (three independent copies); downstream Cedar126/Maple112 controlled tests, not native smooth-scroll/Thumb-drag/observer/OS acceptance.",
+      "sha256": "703ee247f6658b593edfeedcae417baffb8c43a25cddb1aceab5c7363a12bfe0",
+      "rationale": "Seven hints are six native scrollTo calls and one declaration. Thumb commands use lifecycle binding epochs and visibility checks; after RTL coordinate conversion the horizontal command checks operation and element ownership before scrolling. Geometry and scroll updates check operation and node ownership, while deactivation and disposal invalidate retained work. Public commands forward native options, including caller-requested smooth behavior. Classification does not establish native browser, drag, observer or OS acceptance.",
       "hints": [
         {
-          "line": 192,
+          "line": 205,
           "category": "native-scroll",
-          "snippet": "          containerRef.value?.scrollTo({ left: offset * (horizontalData.value?.ratio ?? 1) })"
+          "snippet": "            element.scrollTo({ left })"
         },
         {
-          "line": 201,
+          "line": 215,
           "category": "native-scroll",
           "snippet": "          containerRef.value?.scrollTo({ top: offset * (verticalData.value?.ratio ?? 1) })"
         },
         {
-          "line": 205,
+          "line": 219,
           "category": "declaration-only",
           "snippet": "    function scrollTo(options?: number | { left?: number; top?: number }, y?: number) {"
         },
         {
-          "line": 211,
+          "line": 225,
           "category": "native-scroll",
           "snippet": "        containerRef.value?.scrollTo(options)"
         },
         {
-          "line": 213,
+          "line": 227,
           "category": "native-scroll",
           "snippet": "        containerRef.value?.scrollTo(options ?? 0, y ?? 0)"
         },
         {
-          "line": 219,
+          "line": 233,
           "category": "native-scroll",
           "snippet": "        containerRef.value?.scrollTo({ top })"
         },
         {
-          "line": 225,
+          "line": 239,
           "category": "native-scroll",
           "snippet": "        containerRef.value?.scrollTo({ left })"
         }
@@ -374,41 +481,41 @@
     {
       "repo": "cedar-design-web",
       "file": "scrollbar/src/Scrollbar.vue",
-      "sha256": "2ec91f7b53ebd9e5e9d06fb2806ecde216177811eb75f66799106b2d72d1c69b",
-      "rationale": "Synchronous geometry and native DOM scrolling, no RAF/timer/CSS duration. Six scrollTo calls are native-scroll; function declaration is declaration-only. Lifecycle availability, activation-binding epochs and reentrant operation/node ownership reject stale measurements/events/retained commands. Zero origin, zero viewport, zero thumb reset and axis ratio corrected. Scoped16 per copy (three independent copies); downstream Cedar126/Maple112 controlled tests, not native smooth-scroll/Thumb-drag/observer/OS acceptance.",
+      "sha256": "417c4c7116e8e7c47b832ad2e8674d0f21f11e6b29576814e67c9377d484f3f3",
+      "rationale": "Seven hints are six native scrollTo calls and one declaration. Thumb commands use lifecycle binding epochs and visibility checks; after RTL coordinate conversion the horizontal command checks operation and element ownership before scrolling. Geometry and scroll updates check operation and node ownership, while deactivation and disposal invalidate retained work. Public commands forward native options, including caller-requested smooth behavior. Classification does not establish native browser, drag, observer or OS acceptance.",
       "hints": [
         {
-          "line": 178,
+          "line": 218,
           "category": "native-scroll",
-          "snippet": "          containerRef.value?.scrollTo({ left: offset * (horizontalData.value?.ratio ?? 1) })"
+          "snippet": "          if (current(token, element)) { element.scrollTo({ left }) }"
         },
         {
-          "line": 187,
+          "line": 227,
           "category": "native-scroll",
           "snippet": "          containerRef.value?.scrollTo({ top: offset * (verticalData.value?.ratio ?? 1) })"
         },
         {
-          "line": 191,
+          "line": 231,
           "category": "declaration-only",
-          "snippet": "    function scrollTo(options?: number | { left?: number; top?: number }, y?: number) {"
+          "snippet": "    function scrollTo(options?: number | ScrollToOptions, y?: number) {"
         },
         {
-          "line": 195,
+          "line": 235,
           "category": "native-scroll",
           "snippet": "        containerRef.value?.scrollTo(options)"
         },
         {
-          "line": 197,
+          "line": 237,
           "category": "native-scroll",
           "snippet": "        containerRef.value?.scrollTo(options ?? 0, y ?? 0)"
         },
         {
-          "line": 201,
+          "line": 241,
           "category": "native-scroll",
           "snippet": "      if (available()) { operation++; containerRef.value?.scrollTo({ top }) }"
         },
         {
-          "line": 204,
+          "line": 244,
           "category": "native-scroll",
           "snippet": "      if (available()) { operation++; containerRef.value?.scrollTo({ left }) }"
         }
@@ -417,41 +524,41 @@
     {
       "repo": "cedar-design-web",
       "file": "scrollbar/Scrollbar.vue",
-      "sha256": "489fffcbee4564045b98ab9970be5e57da0f10edad8423738d997389df215f09",
-      "rationale": "Synchronous geometry and native DOM scrolling, no RAF/timer/CSS duration. Six scrollTo calls are native-scroll; function declaration is declaration-only. Lifecycle availability, activation-binding epochs and reentrant operation/node ownership reject stale measurements/events/retained commands. Zero origin, zero viewport, zero thumb reset and axis ratio corrected. Scoped16 per copy (three independent copies); downstream Cedar126/Maple112 controlled tests, not native smooth-scroll/Thumb-drag/observer/OS acceptance.",
+      "sha256": "5ecfbe927fb0bd1c8e71baf518d669e6266face2cd7310edb7e192ada76024ea",
+      "rationale": "Six native scroll calls and one declaration. Thumb handlers gate inactive, hidden and stale bindings; horizontal RTL conversion checks current operation and owning element before scroll. Geometry, events, retained commands and cleanup are lifecycle guarded. Native smooth options are caller-controlled; controlled tests do not establish browser or OS acceptance.",
       "hints": [
         {
-          "line": 145,
+          "line": 182,
           "category": "native-scroll",
-          "snippet": "          containerRef.value?.scrollTo({ left: offset * (horizontalData.value?.ratio ?? 1) })"
+          "snippet": "          if (current(token, element)) { element.scrollTo({ left }) }"
         },
         {
-          "line": 154,
+          "line": 191,
           "category": "native-scroll",
           "snippet": "          containerRef.value?.scrollTo({ top: offset * (verticalData.value?.ratio ?? 1) })"
         },
         {
-          "line": 158,
+          "line": 195,
           "category": "declaration-only",
-          "snippet": "    function scrollTo(options?: number | { left?: number; top?: number }, y?: number) {"
+          "snippet": "    function scrollTo(options?: number | ScrollToOptions, y?: number) {"
         },
         {
-          "line": 162,
+          "line": 199,
           "category": "native-scroll",
           "snippet": "        containerRef.value?.scrollTo(options)"
         },
         {
-          "line": 164,
+          "line": 201,
           "category": "native-scroll",
           "snippet": "        containerRef.value?.scrollTo(options ?? 0, y ?? 0)"
         },
         {
-          "line": 168,
+          "line": 205,
           "category": "native-scroll",
           "snippet": "      if (available()) { operation++; containerRef.value?.scrollTo({ top }) }"
         },
         {
-          "line": 171,
+          "line": 208,
           "category": "native-scroll",
           "snippet": "      if (available()) { operation++; containerRef.value?.scrollTo({ left }) }"
         }
@@ -460,26 +567,26 @@
     {
       "repo": "maple-design-mobile",
       "file": "carousel/Carousel.vue",
-      "sha256": "c13cd96b9948b1302b7324c7a47b7a0d0b636bbe4dd2495b42c7b17133a1f21b",
-      "rationale": "Autoplay is business-clock playback cadence (default enabled interval3000ms), not CSS transition duration. Motion settlement timer is visual-completion; two RAF calls are state-settlement. Independent autoplay/motion/binding/render ownership rejects canceled/consumed/inactive/disposed work and detached observer deliveries. Frame cancellation uses original window. Scoped18 each/full Carousel Cedar44/Maple45; controlled timer/observer/RAF evidence, not native browser/OS/paint acceptance.",
+      "sha256": "dae565d8a386824f711939386ee5bd5add3706122cc0e49eec073ea773f53fd6",
+      "rationale": "Autoplay timer controls playback cadence; settlement timer and two owner-window frames complete wrap transitions. Generations and one-shot guards retire canceled, consumed or inactive work. Resize now validates its generation and owning host, viewport and track after external measurements, including reentrant unmount and replacement. Controlled tests and Chromium layout checks do not establish native timing, OS or paint acceptance.",
       "hints": [
         {
-          "line": 142,
+          "line": 150,
           "category": "business-clock",
           "snippet": "  timer = setTimeout(() => {"
         },
         {
-          "line": 523,
+          "line": 595,
           "category": "visual-completion",
           "snippet": "      settleTimer = setTimeout("
         },
         {
-          "line": 536,
+          "line": 608,
           "category": "state-settlement",
           "snippet": "            animationFrame = view.requestAnimationFrame(() => {"
         },
         {
-          "line": 543,
+          "line": 615,
           "category": "state-settlement",
           "snippet": "              animationFrame = view.requestAnimationFrame(() => {"
         }
@@ -488,26 +595,26 @@
     {
       "repo": "cedar-design-web",
       "file": "carousel/carousel.vue",
-      "sha256": "b33426c7ea7141c2c0a994e7293c0cf4f1d8bba52eb2a00ea02be20aae2cc38b",
-      "rationale": "Autoplay is business-clock playback cadence (default enabled interval3000ms), not CSS transition duration. Motion settlement timer is visual-completion; two RAF calls are state-settlement. Independent autoplay/motion/binding/render ownership rejects canceled/consumed/inactive/disposed work and detached observer deliveries. Frame cancellation uses original window. Scoped18 each/full Carousel Cedar44/Maple45; controlled timer/observer/RAF evidence, not native browser/OS/paint acceptance.",
+      "sha256": "678c7621a3145c14f156b8b665aa3828199f509c52bb09dfd87602782c034eb3",
+      "rationale": "Autoplay timer controls playback cadence; settlement timer and two owner-window frames complete wrap transitions. Generations and one-shot guards retire canceled, consumed or inactive work. Resize now validates its generation and owning host, viewport and track after external measurements, including reentrant unmount and replacement. Controlled tests and Chromium layout checks do not establish native timing, OS or paint acceptance.",
       "hints": [
         {
-          "line": 142,
+          "line": 150,
           "category": "business-clock",
           "snippet": "  timer = setTimeout(() => {"
         },
         {
-          "line": 498,
+          "line": 558,
           "category": "visual-completion",
           "snippet": "      settleTimer = setTimeout("
         },
         {
-          "line": 509,
+          "line": 571,
           "category": "state-settlement",
           "snippet": "            animationFrame = view.requestAnimationFrame(() => {"
         },
         {
-          "line": 514,
+          "line": 578,
           "category": "state-settlement",
           "snippet": "              animationFrame = view.requestAnimationFrame(() => {"
         }
@@ -516,16 +623,16 @@
     {
       "repo": "maple-design-mobile",
       "file": "card/Card.vue",
-      "sha256": "c517b8b2163b401ffb7ad3c2703b5f75eb30789e14417942cf079af38380e38e",
-      "rationale": "500ms ripple-enabled wait is interaction policy before geometry measurement, not Ripple CSS duration. Collapse timer follows public floatingDuration (default250ms), a visual-completion parameter. Render/timer delivery consumes once and generation/node/lifecycle guards reject canceled/replaced/inactive/disposed work, including geometry reentrant disposal. Existing non-abortable doubleRaf continuation is logically invalidated, not physical RAF cancellation. Scoped15 each/full Card Cedar21/Maple44, controlled evidence not native/cross-document/OS proof.",
+      "sha256": "d90fe6adc7d90818a9a53a5e0707db6eb15bf081e68ac4dcc34a0ff86392743e",
+      "rationale": "The first timer delays geometry measurement for ripple interaction; the second follows the finite nonnegative floatingDuration for return settlement. Render callbacks and timer deliveries are one-shot and guarded by generation, owning element, current floating mode and lifecycle. Geometry is rechecked after measurement; doubleRaf completion is logically invalidated rather than physically canceled. Escape requests controlled close and participates in existing invalidation. Component tests are controlled evidence, not browser animation or OS acceptance. Re-reviewed current generation, element ownership, double-RAF continuation and deactivation/disposal cancellation; current scheduler lifecycle and contract suites pass on this platform (24 tests). Native animation and assistive-technology acceptance remain separate.",
       "hints": [
         {
-          "line": 208,
+          "line": 238,
           "category": "interaction-delay",
           "snippet": "  floater.value = setTimeout("
         },
         {
-          "line": 266,
+          "line": 306,
           "category": "visual-completion",
           "snippet": "  dropper = setTimeout(() => {"
         }
@@ -534,16 +641,16 @@
     {
       "repo": "cedar-design-web",
       "file": "card/Card.vue",
-      "sha256": "b219e3ede09a6f7f54078fa2a9feac3767137660f23ee46d46c196607bd9f663",
-      "rationale": "500ms ripple-enabled wait is interaction policy before geometry measurement, not Ripple CSS duration. Collapse timer follows public floatingDuration (default250ms), a visual-completion parameter. Render/timer delivery consumes once and generation/node/lifecycle guards reject canceled/replaced/inactive/disposed work, including geometry reentrant disposal. Existing non-abortable doubleRaf continuation is logically invalidated, not physical RAF cancellation. Scoped15 each/full Card Cedar21/Maple44, controlled evidence not native/cross-document/OS proof.",
+      "sha256": "1a7bcd35b130b1186e4f36fdc6a28d499b34e3e6bcc917e305c2bd6e24915b8c",
+      "rationale": "The first timer delays geometry measurement for ripple interaction; the second follows the finite nonnegative floatingDuration for return settlement. Render callbacks and timer deliveries are one-shot and guarded by generation, owning element, current floating mode and lifecycle. Geometry is rechecked after measurement; doubleRaf completion is logically invalidated rather than physically canceled. Escape requests controlled close and participates in existing invalidation. Component tests are controlled evidence, not browser animation or OS acceptance. Re-reviewed current generation, element ownership, double-RAF continuation and deactivation/disposal cancellation; current scheduler lifecycle and contract suites pass on this platform (24 tests). Native animation and assistive-technology acceptance remain separate.",
       "hints": [
         {
-          "line": 204,
+          "line": 229,
           "category": "interaction-delay",
           "snippet": "  floater.value = setTimeout("
         },
         {
-          "line": 262,
+          "line": 297,
           "category": "visual-completion",
           "snippet": "  dropper = setTimeout(() => {"
         }
@@ -552,44 +659,44 @@
     {
       "repo": "maple-design-mobile",
       "file": "image/ImagePreviewGroup.vue",
-      "sha256": "b4f3d4eb58b1c45b4e3b857a51052c53821d80e496a6f0b002dfb18811de5c4b",
-      "rationale": "Two owner-window RAF calls settle canonical coordinates before restoring transition; not CSS duration. Recenter fallback reads actual computed transform/all duration/delay after render, with400ms only for unresolved style. Generations/lifecycle/ref-owner checks and one-shot consumption reject canceled, replaced or duplicate work; reentrant navigation owns its new phase. Post content settlement preserves registered-child mode. Scoped27 each/full Image Cedar62/Maple114 plus32 compiled cases, not native browser/OS acceptance.",
+      "sha256": "dd2135fd176a45c95bb4ca9f718822f240a18966fe4451e19d23bcf0e8e75e02",
+      "rationale": "Two owner-window RAF calls settle canonical coordinates; the timer completes recenter after the measured transform duration, with 400ms only as an unresolved-style fallback. Generation, lifecycle, open state and track/window identity guards reject stale work, including reentrant disposal while measuring transition duration. Controlled scheduler tests and browser keyboard checks do not establish native transition timing or OS acceptance.",
       "hints": [
         {
-          "line": 232,
+          "line": 249,
           "category": "state-settlement",
           "snippet": "        releaseFrame = view.requestAnimationFrame(() => {"
         },
         {
-          "line": 239,
+          "line": 256,
           "category": "state-settlement",
           "snippet": "          paintFrame = view.requestAnimationFrame(() => {"
         },
         {
-          "line": 320,
+          "line": 359,
           "category": "visual-completion",
-          "snippet": "        recenterTimer = view.setTimeout("
+          "snippet": "        recenterTimer = view.setTimeout(() => {"
         }
       ]
     },
     {
       "repo": "cedar-design-web",
       "file": "image/PreviewGroup.vue",
-      "sha256": "897b0a4342ce9006c95e219dabb79f24fc6c6a92cedd4b753e5d7708072f2bf3",
-      "rationale": "Two owner-window RAF calls settle canonical coordinates before restoring transition; not CSS duration. Recenter fallback reads actual computed transform/all duration/delay after render, with400ms only for unresolved style. Generations/lifecycle/ref-owner checks and one-shot consumption reject canceled, replaced or duplicate work; reentrant navigation owns its new phase. Post content settlement preserves registered-child mode. Scoped27 each/full Image Cedar62/Maple114 plus32 compiled cases, not native browser/OS acceptance.",
+      "sha256": "61df8e0893b5ef3c154f68dcaf023daf547938985bc22fb60f3b42e74bafad81",
+      "rationale": "Two owner-window RAF calls settle canonical coordinates; the timer completes recenter after the measured transform duration, with 400ms only as an unresolved-style fallback. Generation, lifecycle, open state and track/window identity guards reject stale work, including reentrant disposal while measuring transition duration. Controlled scheduler tests and browser keyboard checks do not establish native transition timing or OS acceptance.",
       "hints": [
         {
-          "line": 277,
+          "line": 289,
           "category": "state-settlement",
           "snippet": "        releaseFrame = view.requestAnimationFrame(() => {"
         },
         {
-          "line": 282,
+          "line": 294,
           "category": "state-settlement",
           "snippet": "          paintFrame = view.requestAnimationFrame(() => {"
         },
         {
-          "line": 356,
+          "line": 374,
           "category": "visual-completion",
           "snippet": "        recenterTimer = view.setTimeout("
         }
@@ -598,16 +705,16 @@
     {
       "repo": "cedar-design-web",
       "file": "image/composables/usePreviewController.ts",
-      "sha256": "8b6c5f390886d37970d730c2782f0252a5779e8b700f18d21398508248bd1e27",
-      "rationale": "500ms touch long-press notification and320ms double-tap recognition expiry are interaction policy, not CSS completion. Timer generations reject canceled/consumed/replaced deliveries; deactivation/disposal suspend keyboard/gesture work and release capture. Dependent coarse-pointer listener lifecycle is covered by3 of17 scoped tests but has no inventory runtime hint. Full image Cedar35/Maple87 pass; not native touch/OS/cross-document acceptance.",
+      "sha256": "dd3f115953b720c53c7a3b5aacb0e97286fba3272cf67278c1683abd0029b15d",
+      "rationale": "500ms long press and 320ms double-tap expiry are input interaction windows, not CSS completion. Generation, active/open/source/pointer checks reject stale callbacks; deactivation and unmount cancel tasks and capture. Pointer capture now rechecks gesture identity before and after external capture calls to prevent stale timer scheduling after unmount or same-pointer replacement. Controlled tests and browser keyboard checks do not establish native touch or OS acceptance. Current gesture ownership, cancellation on source/close/deactivation/disposal and pointer-capture reentry guards re-reviewed. Current controller and preview lifecycle suites pass (24 tests per platform); native touch and OS behavior remain external acceptance.",
       "hints": [
         {
-          "line": 170,
+          "line": 183,
           "category": "interaction-delay",
           "snippet": "      longPressTimer = setTimeout(() => {"
         },
         {
-          "line": 242,
+          "line": 255,
           "category": "interaction-delay",
           "snippet": "        tapTimer = setTimeout(() => {"
         }
@@ -616,16 +723,16 @@
     {
       "repo": "maple-design-mobile",
       "file": "image/composables/usePreviewController.ts",
-      "sha256": "09bf89128f115265ec531bead58d70360286b598cc5c9e98a9b7eda9265dee17",
-      "rationale": "500ms touch long-press notification and320ms double-tap recognition expiry are interaction policy, not CSS completion. Timer generations reject canceled/consumed/replaced deliveries; deactivation/disposal suspend keyboard/gesture work and release capture. Dependent coarse-pointer listener lifecycle is covered by3 of17 scoped tests but has no inventory runtime hint. Full image Cedar35/Maple87 pass; not native touch/OS/cross-document acceptance.",
+      "sha256": "54b19535f39a70a91a0ef1897f9be26703851a1dd6fad3b359e8fe68332aa5a2",
+      "rationale": "500ms long press and 320ms double-tap expiry are input interaction windows, not CSS completion. Generation, active/open/source/pointer checks reject stale callbacks; deactivation and unmount cancel tasks and capture. Pointer capture now rechecks gesture identity before and after external capture calls to prevent stale timer scheduling after unmount or same-pointer replacement. Controlled tests and browser keyboard checks do not establish native touch or OS acceptance. Current gesture ownership, cancellation on source/close/deactivation/disposal and pointer-capture reentry guards re-reviewed. Current controller and preview lifecycle suites pass (24 tests per platform); native touch and OS behavior remain external acceptance.",
       "hints": [
         {
-          "line": 192,
+          "line": 214,
           "category": "interaction-delay",
           "snippet": "      longPressTimer = setTimeout(() => {"
         },
         {
-          "line": 281,
+          "line": 307,
           "category": "interaction-delay",
           "snippet": "        tapTimer = setTimeout(() => {"
         }
@@ -634,36 +741,36 @@
     {
       "repo": "cedar-design-web",
       "file": "select/hooks/use-select.ts",
-      "sha256": "65113c567fd1441974d4d30593deb305e60101bb5f5bedb074d57ab8aeef4972",
-      "rationale": "Select shared hook: virtual component delegation, immediate native DOM scrolling, nextTick render settlement and synchronous keyboard dispatch have distinct responsibilities, not CSS animation completion. Open/close request generations and lifecycle availability reject superseded/consumed/inactive/disposed work; reentrant virtual callback cannot write a closed/replaced wrapper. Shared AutoComplete and Cedar Mention regressions included; controlled queue not native browser acceptance.",
+      "sha256": "b6984588f89706347467019509fac9521190043c3d821ef0e73b233eda2ff708",
+      "rationale": "Virtual delegation, immediate DOM scrolling, render settlement and keyboard dispatch are distinct from CSS animation. Open/close generations and lifecycle checks retire stale work; after delegated scrolling and native geometry measurement the current request, option, dropdown, virtual list and element ownership are checked before scrolling. Controlled reentrant-close tests and browser keyboard checks do not establish native scroll timing or OS acceptance. Re-reviewed all six current call sites, request generation and close/deactivation/unmount guards; 15 focused ownership regressions passed on this platform.",
       "hints": [
         {
-          "line": 139,
+          "line": 151,
           "category": "delegated-scroll",
           "snippet": "      virtualListRef.value.scrollTo({ key })"
         },
         {
-          "line": 166,
+          "line": 185,
           "category": "native-scroll",
           "snippet": "      wrapperEle.scrollTo(0, wrapperScrollTop + optionRect.top)"
         },
         {
-          "line": 168,
+          "line": 187,
           "category": "native-scroll",
           "snippet": "      wrapperEle.scrollTo(0, wrapperScrollTop - optionRect.bottom)"
         },
         {
-          "line": 204,
+          "line": 223,
           "category": "state-settlement",
           "snippet": "            scrollIntoView(activeKey.value)"
         },
         {
-          "line": 246,
+          "line": 265,
           "category": "interaction-dispatch",
           "snippet": "              scrollIntoView(next)"
         },
         {
-          "line": 259,
+          "line": 278,
           "category": "interaction-dispatch",
           "snippet": "              scrollIntoView(next)"
         }
@@ -672,36 +779,36 @@
     {
       "repo": "maple-design-mobile",
       "file": "select/hooks/use-select.ts",
-      "sha256": "65113c567fd1441974d4d30593deb305e60101bb5f5bedb074d57ab8aeef4972",
-      "rationale": "Select shared hook: virtual component delegation, immediate native DOM scrolling, nextTick render settlement and synchronous keyboard dispatch have distinct responsibilities, not CSS animation completion. Open/close request generations and lifecycle availability reject superseded/consumed/inactive/disposed work; reentrant virtual callback cannot write a closed/replaced wrapper. Shared AutoComplete and Cedar Mention regressions included; controlled queue not native browser acceptance.",
+      "sha256": "5bc883070ec55bb7a2446547b0ca4828a1d5757fef43ef6a5958ffdbf87654ed",
+      "rationale": "Virtual delegation, immediate DOM scrolling, render settlement and keyboard dispatch are distinct from CSS animation. Open/close generations and lifecycle checks retire stale work; after delegated scrolling and native geometry measurement the current request, option, dropdown, virtual list and element ownership are checked before scrolling. Controlled reentrant-close tests and browser keyboard checks do not establish native scroll timing or OS acceptance. Re-reviewed all six current call sites, request generation and close/deactivation/unmount guards; 15 focused ownership regressions passed on this platform.",
       "hints": [
         {
-          "line": 139,
+          "line": 162,
           "category": "delegated-scroll",
           "snippet": "      virtualListRef.value.scrollTo({ key })"
         },
         {
-          "line": 166,
+          "line": 202,
           "category": "native-scroll",
           "snippet": "      wrapperEle.scrollTo(0, wrapperScrollTop + optionRect.top)"
         },
         {
-          "line": 168,
+          "line": 204,
           "category": "native-scroll",
           "snippet": "      wrapperEle.scrollTo(0, wrapperScrollTop - optionRect.bottom)"
         },
         {
-          "line": 204,
+          "line": 240,
           "category": "state-settlement",
           "snippet": "            scrollIntoView(activeKey.value)"
         },
         {
-          "line": 246,
+          "line": 282,
           "category": "interaction-dispatch",
           "snippet": "              scrollIntoView(next)"
         },
         {
-          "line": 259,
+          "line": 295,
           "category": "interaction-dispatch",
           "snippet": "              scrollIntoView(next)"
         }
@@ -710,62 +817,72 @@
     {
       "repo": "cedar-design-web",
       "file": "back-top/use-back-top.ts",
-      "sha256": "ef6699a0e7acf9c7d48c1ee54f0538cd691117d1b4fbe66188a4a410ca94f8b2",
-      "rationale": "Visibility measurement RAF is separate from JS scroll interpolation and preference reads. Binding/task/frame generations isolate stale/consumed callbacks; actual target owner requests/cancels RAF and supplies performance origin. Custom easing reentrancy is guarded before writes/rescheduling. Final14 controlled cases each/full30 each pass; simulated iframe is not native browser/OS proof.",
+      "sha256": "604c55f6516d1e1ac91174e0f84369d4d1fb56e20c70397c412b18b775a37023",
+      "rationale": "Visibility measurement RAF is separate from JS scroll interpolation and preference reads. Binding/task/frame generations isolate stale/consumed callbacks; actual target owner requests/cancels RAF and supplies performance origin. Custom easing reentrancy is guarded before writes/rescheduling. Final14 controlled cases each/full30 each pass; simulated iframe is not native browser/OS proof. Re-reviewed the owner-window preference read and optional global fallback; custom easing output is now finite and clamped. This classification does not establish real browser or OS acceptance.",
       "hints": [
         {
-          "line": 40,
+          "line": 41,
           "category": "measurement-scheduling",
           "snippet": "    scrollFrame = view.requestAnimationFrame(() => {"
         },
         {
-          "line": 116,
+          "line": 117,
           "category": "visual-scroll",
           "snippet": "      animationFrame = view.requestAnimationFrame((now) => {"
         },
         {
-          "line": 174,
+          "line": 175,
           "category": "visual-scroll",
           "snippet": "      ? view.matchMedia('(prefers-reduced-motion: reduce)')"
+        },
+        {
+          "line": 176,
+          "category": "visual-scroll",
+          "snippet": "      : window.matchMedia?.('(prefers-reduced-motion: reduce)')"
         }
       ]
     },
     {
       "repo": "maple-design-mobile",
       "file": "back-top/use-back-top.ts",
-      "sha256": "88cac625efc490a073f5a29d193d667b6ff2cb1a487c0993839a247e587c6f38",
-      "rationale": "Visibility measurement RAF is separate from JS scroll interpolation and preference reads. Binding/task/frame generations isolate stale/consumed callbacks; actual target owner requests/cancels RAF and supplies performance origin. Custom easing reentrancy is guarded before writes/rescheduling. Final14 controlled cases each/full30 each pass; simulated iframe is not native browser/OS proof.",
+      "sha256": "2ba670dd3174e04589960b641d8b34aa1652cdcb75ab7b2f2c5eb15396e2d9d6",
+      "rationale": "Visibility measurement RAF is separate from JS scroll interpolation and preference reads. Binding/task/frame generations isolate stale/consumed callbacks; actual target owner requests/cancels RAF and supplies performance origin. Custom easing reentrancy is guarded before writes/rescheduling. Final14 controlled cases each/full30 each pass; simulated iframe is not native browser/OS proof. Re-reviewed the owner-window preference read and optional global fallback; custom easing output is now finite and clamped. This classification does not establish real browser or OS acceptance.",
       "hints": [
         {
-          "line": 44,
+          "line": 45,
           "category": "measurement-scheduling",
           "snippet": "    scrollFrame = view.requestAnimationFrame(() => {"
         },
         {
-          "line": 134,
+          "line": 135,
           "category": "visual-scroll",
           "snippet": "      animationFrame = view.requestAnimationFrame((now) => {"
         },
         {
-          "line": 205,
+          "line": 206,
           "category": "visual-scroll",
           "snippet": "      ? view.matchMedia('(prefers-reduced-motion: reduce)')"
+        },
+        {
+          "line": 207,
+          "category": "visual-scroll",
+          "snippet": "      : window.matchMedia?.('(prefers-reduced-motion: reduce)')"
         }
       ]
     },
     {
       "repo": "cedar-design-web",
       "file": "infinite-scroll/infinite-scroll.vue",
-      "sha256": "82e52ab85274307fede3f58c2d084be7efdf03d24e0f1a6c05a8eb9f01098c8f",
-      "rationale": "RAF/zero-delay fallback coalesces bottom geometry checks, not visual interpolation or CSS completion. Binding/task generations reject canceled, consumed and disconnected observer deliveries across target replacement or KeepAlive. Controlled scheduler10 cases per copy: baseline7 failures/3 controls, final10 pass; native browser/OS and cross-document ownership not certified.",
+      "sha256": "f0a5ed1ae28d27373ae5e5c3add8c3ecc956073e9f122cebc508130e55d0e47c",
+      "rationale": "RAF and zero-delay fallback coalesce bottom measurements rather than visual interpolation. Binding epochs and task generations reject retained scroll/observer callbacks and canceled work after target replacement, deactivation and unmount. The measured scroller is captured and binding/state rechecked before load to reject reentrant disposal or replacement. Controlled scheduler tests and browser geometry checks do not establish native event ordering or OS acceptance. Current scheduling, target identity, invalidation on inactive/disposal and List delegation re-reviewed against current code. Numeric virtual scrolling now synchronizes the visible range on both platforms without relying on native scroll delivery. Targeted lifecycle and InfiniteScroll suites pass; these controlled tests do not establish native scroll ordering or OS acceptance.",
       "hints": [
         {
-          "line": 239,
+          "line": 248,
           "category": "measurement-scheduling",
           "snippet": "    frameId = window.requestAnimationFrame(run)"
         },
         {
-          "line": 241,
+          "line": 250,
           "category": "measurement-scheduling",
           "snippet": "    timeoutId = window.setTimeout(run, 0)"
         }
@@ -774,16 +891,16 @@
     {
       "repo": "maple-design-mobile",
       "file": "infinite-scroll/InfiniteScroll.vue",
-      "sha256": "6f2de21878b29da83ca75d001ce3d85cec61cbf1d1a8de79dbc065413f539c04",
-      "rationale": "RAF/zero-delay fallback coalesces bottom geometry checks, not visual interpolation or CSS completion. Binding/task generations reject canceled, consumed and disconnected observer deliveries across target replacement or KeepAlive. Controlled scheduler10 cases per copy: baseline7 failures/3 controls, final10 pass; native browser/OS and cross-document ownership not certified.",
+      "sha256": "87991bad2f0f283905f8dc683f7b7ae65ae47c05ceb56d227d6f4878292f08c9",
+      "rationale": "RAF and zero-delay fallback coalesce bottom measurements rather than visual interpolation. Binding epochs and task generations reject retained scroll/observer callbacks and canceled work after target replacement, deactivation and unmount. The measured scroller is captured and binding/state rechecked before load to reject reentrant disposal or replacement. Controlled scheduler tests and browser geometry checks do not establish native event ordering or OS acceptance. Current scheduling, target identity, invalidation on inactive/disposal and List delegation re-reviewed against current code. Numeric virtual scrolling now synchronizes the visible range on both platforms without relying on native scroll delivery. Targeted lifecycle and InfiniteScroll suites pass; these controlled tests do not establish native scroll ordering or OS acceptance.",
       "hints": [
         {
-          "line": 245,
+          "line": 250,
           "category": "measurement-scheduling",
           "snippet": "    frameId = window.requestAnimationFrame(run)"
         },
         {
-          "line": 247,
+          "line": 252,
           "category": "measurement-scheduling",
           "snippet": "    timeoutId = window.setTimeout(run, 0)"
         }
@@ -805,11 +922,11 @@
     {
       "repo": "cedar-design-web",
       "file": "_utils/resize-observer.ts",
-      "sha256": "9e96ba7fc4653892208aeecfdc3602255bbaf28e7dffa630492660f02de665d4",
-      "rationale": "Coalesced geometry reads, not visual interpolation. Binding/frame generations isolate disconnected observer entries and dequeued RAF across replacement/reactivation. Trigger Cedar63 / Maple76 pass with 3 new resize regressions each. Other consumers and native browser/OS remain scoped separately.",
+      "sha256": "c130ef4df80875cb7acc75f68414bde82c31406ca2a58bf8e9f1e6e26cc82df6",
+      "rationale": "RAF coalesces layout measurement, not visual interpolation. Binding and frame generations reject stale observer deliveries, window/viewport listeners and canceled frames; listeners are detached from the original view and visualViewport. Target replacement and retained listeners have controlled regressions. Native resize timing and OS behavior are not established.",
       "hints": [
         {
-          "line": 46,
+          "line": 31,
           "category": "measurement-scheduling",
           "snippet": "    frame = view.requestAnimationFrame(() => {"
         }
@@ -818,24 +935,24 @@
     {
       "repo": "cedar-design-web",
       "file": "field-decorator/use-field-geometry.ts",
-      "sha256": "6d8fa2d68490b80d2aba12dc1f86ce798062836088e9988f012d705fd38e75fc",
-      "rationale": "Measures content offset/width and writes internal geometry variables; RAF batches reads, not a motion-duration token.",
+      "sha256": "a25e724880258e059106696fa84332c599e975fc00c1bb7c3f97bcf63f51a677",
+      "rationale": "RAF coalesces content geometry measurement, not a motion duration. Frame tickets and one-shot guards prevent old deliveries from releasing newer work. Measurement validates lifecycle, generation and the owning root/content nodes after geometry reads, so reentrant disposal or replacement cannot publish stale offsets or width. Controlled tests and browser resize checks do not establish OS acceptance.",
       "hints": [
         {
-          "line": 24,
+          "line": 42,
           "category": "measurement-scheduling",
-          "snippet": "      frame = requestAnimationFrame(measure)"
+          "snippet": "      frame = requestAnimationFrame(() => {"
         }
       ]
     },
     {
       "repo": "cedar-design-web",
       "file": "trigger/positioner.ts",
-      "sha256": "dc7f3a1da8cbe1bdbe321f2281817365750c8403fb295d2e24404b4c0589e913",
-      "rationale": "Geometry/scroll-close RAF throttle, not visual completion. RAF owner/dequeued isolation and original scroll-window listener cleanup tested (Cedar60 / Maple73 full Trigger, 7 scoped RAF/listener tests each). Real browser/OS and same-node document adoption remain separate.",
+      "sha256": "21fe83c048afd89d7209f5bb32d204226266f724d2c9fab54041c47cf642de7f",
+      "rationale": "RAF throttles scroll-driven positioning and close checks, not visual completion. The owning window cancels frames, and generations reject replay. Position updates and deferred arrow calculations now check visibility, lifecycle, document and node identity and generation after geometry reads, preventing stale writes on closure or reentrant updates. Controlled tests and cross-document Chromium checks do not establish all native OS timing.",
       "hints": [
         {
-          "line": 83,
+          "line": 85,
           "category": "measurement-scheduling",
           "snippet": "    frame = view.requestAnimationFrame(() => {"
         }
@@ -883,11 +1000,11 @@
     {
       "repo": "maple-design-mobile",
       "file": "utils/resize-observer.ts",
-      "sha256": "099c4c80928bc58bdaee9325691d5ec282d84b0343e149635784d4bf0500a58b",
-      "rationale": "Coalesced geometry reads, not visual interpolation. Binding/frame generations isolate disconnected observer entries and dequeued RAF across replacement/reactivation. Trigger Cedar63 / Maple76 pass with 3 new resize regressions each. Other consumers and native browser/OS remain scoped separately.",
+      "sha256": "9684543ca1ecbf2598c13b8ae44c742a9c368b01eb7ed0ecde19b3505b1634b3",
+      "rationale": "RAF coalesces layout measurement, not visual interpolation. Binding and frame generations reject stale observer deliveries, window/viewport listeners and canceled frames; listeners are detached from the original view and visualViewport. Target replacement and retained listeners have controlled regressions. Native resize timing and OS behavior are not established.",
       "hints": [
         {
-          "line": 30,
+          "line": 31,
           "category": "measurement-scheduling",
           "snippet": "    frame = view.requestAnimationFrame(() => {"
         }
@@ -896,24 +1013,24 @@
     {
       "repo": "maple-design-mobile",
       "file": "field-decorator/use-field-geometry.ts",
-      "sha256": "40293745c9641106a250ee851437464606badbb1d57efa3c7e6f6daddf9cedbc",
-      "rationale": "Measures content offset/width and writes internal geometry variables; RAF batches reads, not a motion-duration token.",
+      "sha256": "50fab17e76332897e48a52f8fccffde90ec1df8556b172435bbdd75fd6d46fd1",
+      "rationale": "RAF coalesces content geometry measurement, not a motion duration. Frame tickets and one-shot guards prevent old deliveries from releasing newer work. Measurement validates lifecycle, generation and the owning root/content nodes after geometry reads, so reentrant disposal or replacement cannot publish stale offsets or width. Controlled tests and browser resize checks do not establish OS acceptance.",
       "hints": [
         {
-          "line": 24,
+          "line": 60,
           "category": "measurement-scheduling",
-          "snippet": "      frame = requestAnimationFrame(measure)"
+          "snippet": "      frame = requestAnimationFrame(() => {"
         }
       ]
     },
     {
       "repo": "maple-design-mobile",
       "file": "trigger/positioner.ts",
-      "sha256": "bc278af088fec4e79ca6652fb8b665acb3dd1aef09867dccde7e7bfbdfd59c97",
-      "rationale": "Geometry/scroll-close RAF throttle, not visual completion. RAF owner/dequeued isolation and original scroll-window listener cleanup tested (Cedar60 / Maple73 full Trigger, 7 scoped RAF/listener tests each). Real browser/OS and same-node document adoption remain separate.",
+      "sha256": "6a7cf227484112fc9028c8586dabe809d658ade4ed7c570b5b4cff26115a094e",
+      "rationale": "RAF throttles scroll-driven positioning and close checks, not visual completion. The owning window cancels frames, and generations reject replay. Position updates and deferred arrow calculations now check visibility, lifecycle, document and node identity and generation after geometry reads, preventing stale writes on closure or reentrant updates. Controlled tests and cross-document Chromium checks do not establish all native OS timing.",
       "hints": [
         {
-          "line": 75,
+          "line": 76,
           "category": "measurement-scheduling",
           "snippet": "    frame = view.requestAnimationFrame(() => {"
         }
@@ -948,24 +1065,29 @@
     {
       "repo": "cedar-design-web",
       "file": "nav-menu/menu.tsx",
-      "sha256": "0ee646dcb929fe14b98d2be2037ca115b83186fb76a818534e0bc42845ce691b",
-      "rationale": "Scanner hit is the scrollTo function declaration, not an executable call. Underlying optional native scrollIntoView is separately reviewed and tested after nextTick. Six audit phases cover cancellation/suspension/disposal/replacement, root measurement and focus, Node and independent Item continuations/listeners, retained root commands, registration identity and callback reentrancy. Final103 NavMenu tests pass, including17 root-command cases and16 measurement/focus cases. Root closer iteration uses a snapshot and generation, release maps on disposal, stale node cleanup cannot delete replacement. No CSS duration Token/public API change; JSDOM/controlled queue evidence, not native keyboard/layout/cross-document/OS acceptance. Maple has no equivalent runtime.",
+      "sha256": "6c8410d221ff158cbf11ee64a916bf09d4dda0652a9b389de031bb7c5961b8c7",
+      "rationale": "Scanner hit is the scrollTo function declaration, not an executable call. Underlying optional native scrollIntoView is separately reviewed and tested after nextTick. Six audit phases cover cancellation/suspension/disposal/replacement, root measurement and focus, Node and independent Item continuations/listeners, retained root commands, registration identity and callback reentrancy. Final103 NavMenu tests pass, including17 root-command cases and16 measurement/focus cases. Root closer iteration uses a snapshot and generation, release maps on disposal, stale node cleanup cannot delete replacement. No CSS duration Token/public API change; JSDOM/controlled queue evidence, not native keyboard/layout/cross-document/OS acceptance. Maple has no equivalent runtime. Optional native scroll is now explicitly scanned: current request generation, availability and disabled state are rechecked after nextTick; option changes, deactivation and disposal invalidate it. Theme and overflow-label changes were also reviewed; actual browser scrolling and reduced-motion behavior remain outside this classification.",
       "hints": [
         {
-          "line": 147,
+          "line": 157,
           "category": "declaration-only",
           "snippet": "    async function scrollTo(key: NavMenuKey | null = selected.value) {"
+        },
+        {
+          "line": 164,
+          "category": "native-scroll",
+          "snippet": "      if (current() && key != null) elements.get(key)?.scrollIntoView?.({ block: 'nearest', inline: 'nearest' })"
         }
       ]
     },
     {
       "repo": "cedar-design-web",
       "file": "nav-menu/types.ts",
-      "sha256": "8c0edfdd6b4b75e6db58c0cd6c6a4688e282029606d10575b718c7803649da05",
-      "rationale": "Public method type signature only; not an executable scrolling operation.",
+      "sha256": "c98ccb071d5c995b7d44b47fb9ad9dd3edab0daf35b820573f5734933f536067",
+      "rationale": "NavMenuExposed TypeScript method signature only; it does not call scroll or schedule motion. Its actual async implementation is classified separately in nav-menu/menu.tsx.",
       "hints": [
         {
-          "line": 25,
+          "line": 32,
           "category": "declaration-only",
           "snippet": "  scrollTo(key?: NavMenuKey | null): Promise<void>"
         }
@@ -1007,8 +1129,8 @@
     {
       "repo": "cedar-design-web",
       "file": "_utils/maple/test.ts",
-      "sha256": "bef133371f4f74bae46168bd4bce1f04caec429b4190e985f0210918a78e1e0d",
-      "rationale": "Test delay/flush helpers and mock RAF/scroll method definitions, not product motion timings. Source search excluding __tests__ found no imports of these helper paths in src; this is not a bundle reachability certification. Method declarations are scanner hints, not executed browser evidence. Test helper cleanup remains separate.",
+      "sha256": "0163525fc188a4ee34765aefbf9c6aea08afd3b186e1f04846439a8720e736cd",
+      "rationale": "Test utility imports Vue Test Utils and exposes delay, mock RAF and mock scroll methods; scanner hints are test support, not product motion. Source search found no non-test consumer imports; this is not a complete bundle-reachability audit.",
       "hints": [
         {
           "line": 7,
@@ -1035,11 +1157,11 @@
     {
       "repo": "cedar-design-web",
       "file": "countdown/use-countdown.ts",
-      "sha256": "50963e071c977d142bf6f340f57c96d5e5609a1edd8b0934fb6a68c36cb3f4ca",
-      "rationale": "Business deadline clock, not CSS motion. Frame generation rejects stale/consumed/reentrant work; inactive reset updates data without RAF and defers auto-start until activation, explicit pause cancels resume. Disposed controls do not notify. Six baseline ownership failures and two controls; eight tests pass per independent source, full Countdown Cedar18/Maple20. Controlled clock/RAF only; no native browser/OS or owner-window certification.",
+      "sha256": "99da52fb51e262042258f7a70fb8141d25b572850edd291f179ab00e687ba859",
+      "rationale": "RAF advances a business deadline, not CSS motion. Frame generations reject stale, consumed and reentrant work; lifecycle pause and reset preserve deadline semantics. The time read is followed by a lifecycle and generation check so disposal during measurement cannot emit a stale change. Controlled clock tests and Chromium format verification do not establish native timing or OS acceptance.",
       "hints": [
         {
-          "line": 111,
+          "line": 109,
           "category": "business-clock",
           "snippet": "      handle = requestAnimationFrame(() => tick(currentGeneration));"
         }
@@ -1066,8 +1188,8 @@
     {
       "repo": "cedar-design-web",
       "file": "_utils/maple/elements.ts",
-      "sha256": "48739191fbaca3e326ec78340575a1418a437bab731c3123e3c12c9d6aebba01",
-      "rationale": "JS visual scroll: default300ms/caller easing preserved; zero/nonpositive/nonfinite duration targets immediately. Actual target owner Window owns RAF and current reduced-motion query; preference change finishes next frame. Per-frame generation rejects consumed/completed replay. Baseline9 failures/1 default control; final10 tests per copy, Maple IndexBar9 pass. No cancellation API or consumer-lifecycle/browser/OS certification; overlapping Form work and IndexBar async-state remain separate.",
+      "sha256": "c0dbc70ca6f29ba4070b066abf35e1b069d440d2f52c0af5fec3b1a9eb6014b0",
+      "rationale": "Owner-window visual scroll with reduced-motion handling and per-frame generation. Each frame shares one easing result across axes; asynchronous frame errors reject the returned Promise and retire the task. No cancellation API or native OS acceptance is implied.",
       "hints": [
         {
           "line": 210,
@@ -1087,10 +1209,10 @@
         {
           "line": 240,
           "category": "visual-scroll",
-          "snippet": "      view!.requestAnimationFrame(() => frame(currentGeneration))"
+          "snippet": "      view!.requestAnimationFrame(() => {"
         },
         {
-          "line": 254,
+          "line": 263,
           "category": "visual-scroll",
           "snippet": "      element.scrollTo(nextLeft, nextTop)"
         }
@@ -1099,7 +1221,7 @@
     {
       "repo": "maple-design-mobile",
       "file": "utils/test.ts",
-      "sha256": "30ebfa6dd76fe1924a0042ba7181c0ef81883c35762473488774f1f98baf1486",
+      "sha256": "9f738fb86cef32d1d2d43a6980495167d480dfbd33c14312fbd48f376aa95efa",
       "rationale": "Test delay/flush helpers and mock RAF/scroll method definitions, not product motion timings. Source search excluding __tests__ found no imports of these helper paths in src; this is not a bundle reachability certification. Method declarations are scanner hints, not executed browser evidence. Test helper cleanup remains separate.",
       "hints": [
         {
@@ -1137,11 +1259,11 @@
     {
       "repo": "maple-design-mobile",
       "file": "countdown/use-countdown.ts",
-      "sha256": "03a3ff1925672c8b5118f541edeb3fa50cb3ab64118165b86d90e36ea4f2e39f",
-      "rationale": "Business deadline clock, not CSS motion. Frame generation rejects stale/consumed/reentrant work; inactive reset updates data without RAF and defers auto-start until activation, explicit pause cancels resume. Disposed controls do not notify. Six baseline ownership failures and two controls; eight tests pass per independent source, full Countdown Cedar18/Maple20. Controlled clock/RAF only; no native browser/OS or owner-window certification.",
+      "sha256": "153db2140497383fb6c6f971d99461e1689d33e1fe25b5d14e4fde8516918d92",
+      "rationale": "RAF advances a business deadline, not CSS motion. Frame generations reject stale, consumed and reentrant work; lifecycle pause and reset preserve deadline semantics. The time read is followed by a lifecycle and generation check so disposal during measurement cannot emit a stale change. Controlled clock tests and Chromium format verification do not establish native timing or OS acceptance.",
       "hints": [
         {
-          "line": 105,
+          "line": 103,
           "category": "business-clock",
           "snippet": "      handle = requestAnimationFrame(() => tick(currentGeneration))"
         }
@@ -1168,31 +1290,31 @@
     {
       "repo": "maple-design-mobile",
       "file": "utils/elements.ts",
-      "sha256": "cdb1c340e2d14ff713c430d7b93438fb351310daaff79b501afd367b7d998107",
-      "rationale": "JS visual scroll: default300ms/caller easing preserved; zero/nonpositive/nonfinite duration targets immediately. Actual target owner Window owns RAF and current reduced-motion query; preference change finishes next frame. Per-frame generation rejects consumed/completed replay. Baseline9 failures/1 default control; final10 tests per copy, Maple IndexBar9 pass. No cancellation API or consumer-lifecycle/browser/OS certification; overlapping Form work and IndexBar async-state remain separate.",
+      "sha256": "0edacfc7fc3575498d7e5f22cc18d52c3732dffaf4b25636d0e77eddd0c958ff",
+      "rationale": "Owner-window visual scroll with reduced-motion handling and per-frame generation. Each frame shares one easing result across axes; asynchronous frame errors reject the returned Promise and retire the task. No cancellation API or native OS acceptance is implied.",
       "hints": [
         {
-          "line": 208,
+          "line": 200,
           "category": "declaration-only",
           "snippet": "export function scrollTo("
         },
         {
-          "line": 218,
+          "line": 210,
           "category": "visual-scroll",
           "snippet": "    return view.matchMedia('(prefers-reduced-motion: reduce)').matches"
         },
         {
-          "line": 233,
+          "line": 225,
           "category": "visual-scroll",
           "snippet": "      element.scrollTo(left, top)"
         },
         {
-          "line": 238,
+          "line": 230,
           "category": "visual-scroll",
-          "snippet": "      view!.requestAnimationFrame(() => frame(currentGeneration))"
+          "snippet": "      view!.requestAnimationFrame(() => {"
         },
         {
-          "line": 252,
+          "line": 253,
           "category": "visual-scroll",
           "snippet": "      element.scrollTo(nextLeft, nextTop)"
         }
@@ -1201,11 +1323,11 @@
     {
       "repo": "maple-design-mobile",
       "file": "index-bar/IndexBar.vue",
-      "sha256": "8d90bd116da95f332b9ca9712299efcc2b00120980ff0e9fb8c42e9229213dee",
-      "rationale": "Public void method declaration, not a runtime call. Consumer now owns cancellable private entry/interpolation/two-frame settlement tasks. Eleven consumer/four task/nine existing tests pass; four real IAB cases pass. Form and OS remain separate.",
+      "sha256": "b883dc8a51ae6a877244061632b0e7c3676e5aaa8e3234a9332a4347882505a2",
+      "rationale": "Public scrollTo declaration delegates to the separately owned scroll task; it is not itself a browser motion call. Replacement, deactivation and unmount cancel outstanding tasks. Controlled lifecycle and keyboard tests are not native OS acceptance.",
       "hints": [
         {
-          "line": 249,
+          "line": 311,
           "category": "declaration-only",
           "snippet": "    function scrollTo(index: number | string, options?: IndexBarScrollToOptions) {"
         }
@@ -1214,7 +1336,7 @@
     {
       "repo": "maple-design-mobile",
       "file": "index-bar/scroll-task.ts",
-      "sha256": "40de7d98ced6bf3c8775470ae67f71b3f15ccc03e798a043d8ff972671e15390",
+      "sha256": "e9300d255f183031e5faa5ec6c9fd495b38c7fa2514f22003606709fced30113",
       "rationale": "Private owner-window task frames serve entry, list/state two-frame settlement and visual interpolation. Settlement is sequencing, not a CSS duration token and not skipped for reduced motion. Visual branch retains caller duration/cubic easing, current owner preference and zero/nonfinite behavior; cancel stops without jumping and resolves pending waits false. Controlled callbacks and four parent-document real IAB cases only, no native gestures/OS/cross-document proof.",
       "hints": [
         {
@@ -1247,16 +1369,16 @@
     {
       "repo": "cedar-design-web",
       "file": "icon/Icon.vue",
-      "sha256": "7d208d71657569c07de3fea87fb0d1ad14669d1ee3c13f5dfdc75e4d9ed49210",
-      "rationale": "Visual name-swap completion follows normalized public transition parameter (default0), not a fixed CSS token. Timer generation rejects stale/consumed work; inactive owners commit latest names without delays, unmount/deactivation remove owner-document media listener and bind-generation rejects old delivery. Duration changes cancel pending phase. Nine controlled tests per copy: six baseline failures/three controls; final Cedar20/Maple21 Icon tests. No native browser/OS certification, same-node document adoption remains separate.",
+      "sha256": "c7c4285eaecfed7964edc9cad892645233af77b6370f0f63851338abdd32d349",
+      "rationale": "Name transition uses the public positive duration and owner-window reduced-motion setting; the default zero value no longer overrides consumer CSS transitions. Timer generation and lifecycle invalidate stale deliveries. Native OS timing remains separately scoped.",
       "hints": [
         {
-          "line": 71,
+          "line": 81,
           "category": "visual-completion",
           "snippet": "  const media = view.matchMedia(\"(prefers-reduced-motion: reduce)\");"
         },
         {
-          "line": 156,
+          "line": 167,
           "category": "visual-completion",
           "snippet": "    timer = setTimeout(() => {"
         }
@@ -1265,16 +1387,16 @@
     {
       "repo": "maple-design-mobile",
       "file": "icon/Icon.vue",
-      "sha256": "a2ee3b479e0ee6aa4bff1f4126703cea3d2b0010bb1105f14455a718a8d87003",
-      "rationale": "Visual name-swap completion follows normalized public transition parameter (default0), not a fixed CSS token. Timer generation rejects stale/consumed work; inactive owners commit latest names without delays, unmount/deactivation remove owner-document media listener and bind-generation rejects old delivery. Duration changes cancel pending phase. Nine controlled tests per copy: six baseline failures/three controls; final Cedar20/Maple21 Icon tests. No native browser/OS certification, same-node document adoption remains separate.",
+      "sha256": "6c14a88f401d524441a486edab7f91a44e6aeac763df8c60c09a25bf7a313d86",
+      "rationale": "Name transition uses the public positive duration and owner-window reduced-motion setting; the default zero value no longer overrides consumer CSS transitions. Timer generation and lifecycle invalidate stale deliveries. Native OS timing remains separately scoped.",
       "hints": [
         {
-          "line": 57,
+          "line": 76,
           "category": "visual-completion",
           "snippet": "  const media = view.matchMedia('(prefers-reduced-motion: reduce)')"
         },
         {
-          "line": 140,
+          "line": 161,
           "category": "visual-completion",
           "snippet": "    timer = setTimeout(() => {"
         }
@@ -1283,8 +1405,8 @@
     {
       "repo": "cedar-design-web",
       "file": "list/list.vue",
-      "sha256": "4273de2c0a69401a97cb5bd43108c01a2204485bdbb96b46e519650f94d4eb03",
-      "rationale": "Public method declaration plus gated delegation to VirtualList component scrollTo, not DOM native scrolling or a local timer. Preserve options; downstream VirtualList RAF/retained commands and preference behavior need separate audit. No product changes or native acceptance granted by this classification.",
+      "sha256": "9efcb07eeb3009aba8972de21a8ac6aa227743967571b97daf768d201d999a2b",
+      "rationale": "Public method declaration plus gated delegation to VirtualList component scrollTo, not DOM native scrolling or a local timer. Preserve options; downstream VirtualList RAF/retained commands and preference behavior need separate audit. No product changes or native acceptance granted by this classification. Current scheduling, target identity, invalidation on inactive/disposal and List delegation re-reviewed against current code. Numeric virtual scrolling now synchronizes the visible range on both platforms without relying on native scroll delivery. Targeted lifecycle and InfiniteScroll suites pass; these controlled tests do not establish native scroll ordering or OS acceptance.",
       "hints": [
         {
           "line": 29,
@@ -1301,8 +1423,8 @@
     {
       "repo": "maple-design-mobile",
       "file": "list/List.vue",
-      "sha256": "84f7afdd0a646560c888ed1bc60d14a6a7aaa9e4428c7f7b50b3851a37a77039",
-      "rationale": "Public method declaration plus gated delegation to VirtualList component scrollTo, not DOM native scrolling or a local timer. Preserve options; downstream VirtualList RAF/retained commands and preference behavior need separate audit. No product changes or native acceptance granted by this classification.",
+      "sha256": "3f17f1e11ba67ff41966f95090fe1a7d76e0800c4c0bf6d572f7cf69123ce60d",
+      "rationale": "Public method declaration plus gated delegation to VirtualList component scrollTo, not DOM native scrolling or a local timer. Preserve options; downstream VirtualList RAF/retained commands and preference behavior need separate audit. No product changes or native acceptance granted by this classification. Current scheduling, target identity, invalidation on inactive/disposal and List delegation re-reviewed against current code. Numeric virtual scrolling now synchronizes the visible range on both platforms without relying on native scroll delivery. Targeted lifecycle and InfiniteScroll suites pass; these controlled tests do not establish native scroll ordering or OS acceptance.",
       "hints": [
         {
           "line": 31,
@@ -1319,11 +1441,11 @@
     {
       "repo": "cedar-design-web",
       "file": "_components/virtual-list-v2/VirtualList.vue",
-      "sha256": "09dd92432cfcfcdc66684e440c23bde0c115b09c7299801ff0e85620f33d5bff",
-      "rationale": "Post-render correction is Vue nextTick state settlement,not RAF interpolation/CSS duration. Manual2026-10-16 reread/revalidation covers unchanged parallel source with measured-row bounds,commandedScroll self-event alignment,reactive sizeMap and row indices. Existing15 lifecycle and two measurement cases pass per platform; List and Cedar Tree consumer regressions also pass. New native positions invalidate old alignment; unavailable/data-change paths clear pending command identity. Two new measurement cases cover normal bounds/visible-auto and late padding invalidation,not arbitrary destructive geometry reentry or every event/OS path. Classification hash is current source responsibility only,not whole-component/native/cross-document acceptance. No product edits or new runtime hint count in revalidation; evidence:classification-revalidation-2026-10-16.",
+      "sha256": "e8b094bbb94db0faab683aa16d742fa56ed9fc9659dd3509fac9e95567d508a4",
+      "rationale": "Post-render scroll correction is guarded by request generation, element ownership and lifecycle; data changes and new scroll positions invalidate old commands. It is Vue nextTick state settlement, not animation. Controlled tests do not establish arbitrary geometry reentry or native OS behavior. Current scheduling, target identity, invalidation on inactive/disposal and List delegation re-reviewed against current code. Numeric virtual scrolling now synchronizes the visible range on both platforms without relying on native scroll delivery. Targeted lifecycle and InfiniteScroll suites pass; these controlled tests do not establish native scroll ordering or OS acceptance.",
       "hints": [
         {
-          "line": 200,
+          "line": 243,
           "category": "state-settlement",
           "snippet": "          else scrollTo(scrollTop)"
         }
@@ -1332,11 +1454,11 @@
     {
       "repo": "maple-design-mobile",
       "file": "_components/virtual-list-v2/VirtualList.vue",
-      "sha256": "bf650a0ba75fbf3c7ab38b3679b956cfad45fe53c159e5d8de863359597ec23a",
-      "rationale": "Independent Maple post-render correction is Vue nextTick state settlement,not RAF/CSS duration. Manual2026-10-16 reread/revalidation covers unchanged parallel measured-row bounds,commandedScroll self-event alignment,reactive sizeMap and row indices. Existing15 lifecycle and two measurement cases pass; actual List regressions included. New native positions invalidate old alignment; unavailable/data-change paths clear pending command identity. Measurement cases certify normal bounds/visible-auto/late padding invalidation only,not arbitrary destructive geometry reentry or every event/native/cross-document/OS path. Current source responsibility registration,not blanket acceptance; no product edits or new runtime hints in revalidation. Evidence:classification-revalidation-2026-10-16.",
+      "sha256": "cbd99b74822eb9505c066e3a73a32dbe5c338450870ee194615757b73f6ae425",
+      "rationale": "Post-render scroll correction is guarded by request generation, element ownership and lifecycle; data changes and new scroll positions invalidate old commands. It is Vue nextTick state settlement, not animation. Controlled tests do not establish arbitrary geometry reentry or native OS behavior. Current scheduling, target identity, invalidation on inactive/disposal and List delegation re-reviewed against current code. Numeric virtual scrolling now synchronizes the visible range on both platforms without relying on native scroll delivery. Targeted lifecycle and InfiniteScroll suites pass; these controlled tests do not establish native scroll ordering or OS acceptance.",
       "hints": [
         {
-          "line": 232,
+          "line": 301,
           "category": "state-settlement",
           "snippet": "            scrollTo(scrollTop)"
         }
@@ -1345,47 +1467,52 @@
     {
       "repo": "cedar-design-web",
       "file": "typography/base.tsx",
-      "sha256": "ccbee824ef10c02bd0d54068a37cdba21d6bcad82be94a1e218cf29376ce75f3",
+      "sha256": "6b748fc2db94b447d553660acf5f6b6e8ec232fe64d1361487287bc5e39e7419",
       "hints": [
         {
-          "line": 242,
+          "line": 234,
+          "category": "task-dispatch",
+          "snippet": "          timer = setTimeout(() => {"
+        },
+        {
+          "line": 279,
           "category": "interaction-delay",
           "snippet": "      copyTimer = setTimeout(() => {"
         }
       ],
-      "rationale": "Copy feedback delay (public copy-delay default3000ms), not CSS motion completion. Replacement/config/availability cancels timers; generation consumes each completion once and rejects stale/reentrant writes. Aliased raf/caf measurement is additionally audited but has no scanner hit: cancel on replacement/ellipsis/expansion/editing/deactivation/disposal, old bindings rejected after activation and measurement reentry checked. Maple has a tool guide, no equivalent runtime. Controlled Vue/JSDOM only; native clipboard/font/frames remain separate."
+      "rationale": "Enter focus restoration uses a zero-delay task after keyup, with cancellation guarding queued or replayed callbacks. Copy feedback uses the public copy-delay and generation guards. Measurement RAF is reviewed separately; controlled tests do not certify every native clipboard, font or OS timing path."
     },
     {
       "repo": "cedar-design-web",
       "file": "mention/mention.tsx",
-      "sha256": "fadbf85ed79be4ac991d4128b2e33740d2b3c633f290d65f2869c00685d8562d",
-      "rationale": "Post-render textarea mirror synchronization, not CSS motion completion. nextTick cannot be physically cancelled: generation/node pair/availability invalidate and consume the continuation once, including zero scroll origin and open-content updates. Original textarea owner-window styles are read afresh; old resize bindings cannot cross activation and geometry/style reentry is checked. Existing focus/blur signatures stay but unavailable retained input/commands are inert. Controlled21 cases and real-textarea contract only; no native font/IME/scroll/OS or cross-document acceptance. Maple has no corresponding Mention runtime.",
+      "sha256": "3ee09b5056b073c097d7d60d5ea5b5878f8fdef74cd7fe74877c27ec25cca972",
+      "rationale": "Post-render textarea mirror synchronization, not animation. Generation, lifecycle and textarea/mirror identity invalidate stale or replayed work, including reentrant scroll reads. Controlled integration does not establish native font, IME, scrolling, OS or cross-document acceptance; Maple has no Mention runtime.",
       "hints": [
         {
-          "line": 292,
+          "line": 331,
           "category": "state-settlement",
-          "snippet": "        if (Number.isFinite(top)) mirror.scrollTo(0, Math.max(0, top))"
+          "snippet": "          if (Number.isFinite(top)) mirror.scrollTo(0, Math.max(0, top))"
         }
       ]
     },
     {
       "repo": "cedar-design-web",
       "file": "anchor/Anchor.vue",
-      "sha256": "35a6a9ddf45f91e2b11bd83add6905f1f16ce2039fdf373f5eaa15abb8366d14",
-      "rationale": "Local visual-scroll dispatches delegate only to the private owned slide task, while owner-window RAF coalesces viewport measurement. Binding/task/change generations and consumed callbacks reject superseded, inactive, disposed and reentrant work; same-hash replacement preserves one pending change. Cancel original listener/frame/task on configuration/lifecycle changes. Controlled18 consumer tests plus actual reduced-completion composition; native geometry/OS/cross-document remain separate. Link registry cleanup is independently evidenced.",
+      "sha256": "6df0e42255592de351ed5d4a036bea9e5a3abaf7d543d7a4ac8554756f6bbc52",
+      "rationale": "Scroll dispatch uses a private owned slide task; owner-window RAF coalesces viewport measurement. Generation, binding, lifecycle and cancellation guard stale work. Malformed initial URL fragments retain their literal value rather than aborting mount. Controlled tests do not establish all native geometry or OS timing.",
       "hints": [
         {
-          "line": 124,
+          "line": 144,
           "category": "visual-scroll",
           "snippet": "        scrollIntoView(hash)"
         },
         {
-          "line": 184,
+          "line": 209,
           "category": "measurement-scheduling",
           "snippet": "          frame = view.requestAnimationFrame(() => {"
         },
         {
-          "line": 207,
+          "line": 234,
           "category": "visual-scroll",
           "snippet": "      if (hash) { scrollIntoView(hash); handleAnchorChange(hash) }"
         }
@@ -1432,6 +1559,260 @@
           "line": 33,
           "category": "interaction-delay",
           "snippet": "    ticket.id = setTimeout(() => {"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "auto-complete/auto-complete.tsx",
+      "sha256": "a140d91da4abec32777ea1b119554fd3674a33edc097cbc2c92a333e81ab64e3",
+      "rationale": "Keyboard reopen schedules the current active key for Select scroll; Select validates open state, enabled key and lifecycle before touching the dropdown. Controlled tests do not prove every native keyboard timing path. Current keyboard reopen queues only an enabled active key and checks open/current key before delegation to Select; Select validates current lifecycle and option membership. Keyboard reopen suite passes 10 tests per platform; actual native keyboard timing remains separate.",
+      "hints": [
+        {
+          "line": 281,
+          "category": "delegated-scroll",
+          "snippet": "                scrollIntoView(key)"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "cascader/cascader-column.tsx",
+      "sha256": "be44333baea6acab48d106b545b2b213e5adaf07d470a94765dc6c9d6070cea4",
+      "rationale": "After rendering, the active virtual column delegates alignment to VirtualList, checking the current key, column and virtual mode. VirtualList owns scroll lifecycle. This classification does not certify every rapid replacement timing. Re-reviewed current active-key, column and virtual-mode checks after the child-menu association change.",
+      "hints": [
+        {
+          "line": 55,
+          "category": "delegated-scroll",
+          "snippet": "          virtualListRef.value?.scrollTo({ index, align: 'auto' })"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "cascader/use-cascader-focus.ts",
+      "sha256": "931c6847c68fd06559a261a720ad8da862981fe9c91715122f5429884fb332b0",
+      "rationale": "The owner-window timeout bounds virtual keyboard focus observation; cancellation on focus, pointer, active-key changes, deactivation or unmount disconnects the observer and invalidates callbacks. It is not a CSS motion duration. The existing owner-window deadline moved to the shared helper, now used by the standalone panel and editor; focus, pointer, active-key, deactivation and unmount cancel observation.",
+      "hints": [
+        {
+          "line": 47,
+          "category": "interaction-delay",
+          "snippet": "    timer.id = view.setTimeout(cleanup, 1000)"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "auto-complete/auto-complete.tsx",
+      "sha256": "3d2dc9eaf2d15105db6cd27d1f06d237f930706f33c74edbb4567747789c0fa9",
+      "rationale": "Keyboard reopen schedules the current active key for Select scroll; Select validates open state, enabled key and lifecycle before touching the dropdown. Controlled tests do not prove every native keyboard timing path. Current keyboard reopen queues only an enabled active key and checks open/current key before delegation to Select; Select validates current lifecycle and option membership. Keyboard reopen suite passes 10 tests per platform; actual native keyboard timing remains separate.",
+      "hints": [
+        {
+          "line": 281,
+          "category": "delegated-scroll",
+          "snippet": "                scrollIntoView(key)"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "cascader/cascader-column.tsx",
+      "sha256": "78f8c6e206b249c113be1cd699c4337dbd5064342f98a800b185449c2cb7283d",
+      "rationale": "After rendering, the active virtual column delegates alignment to VirtualList, checking the current key, column and virtual mode. VirtualList owns scroll lifecycle. This classification does not certify every rapid replacement timing. Re-reviewed current active-key, column and virtual-mode checks after the child-menu association change.",
+      "hints": [
+        {
+          "line": 57,
+          "category": "delegated-scroll",
+          "snippet": "          virtualListRef.value?.scrollTo({ index, align: 'auto' })"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "cascader/use-cascader-focus.ts",
+      "sha256": "a8a61818318419ced6c63f926c5f7e34ac84b574aac5d4aab45281a1f42c24a1",
+      "rationale": "The owner-window timeout bounds virtual keyboard focus observation; cancellation on focus, pointer, active-key changes, deactivation or unmount disconnects the observer and invalidates callbacks. It is not a CSS motion duration. The existing owner-window deadline moved to the shared helper, now used by the standalone panel and editor; focus, pointer, active-key, deactivation and unmount cancel observation.",
+      "hints": [
+        {
+          "line": 69,
+          "category": "interaction-delay",
+          "snippet": "    timer.id = view.setTimeout(cleanup, 1000)"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "progress-group/ProgressGroup.vue",
+      "sha256": "6c808edf9da3369690f1b76e030f9869644fb8c98e8bd9c0f1ceb81ae82587ad",
+      "rationale": "Hover leave uses a 250ms interaction grace period. Generation invalidates cancelled or replayed callbacks; lifecycle cleanup clears pending work. It is not a CSS animation duration.",
+      "hints": [
+        {
+          "line": 180,
+          "category": "interaction-delay",
+          "snippet": "  hoverTimer = setTimeout(() => {"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "upload/use-trigger.ts",
+      "sha256": "43dd9bcd4b96e464c3e3a74a5ab08513f53c0a4509ac62a52e1026f64145a2e0",
+      "rationale": "Zero-delay task clears the captured click after event propagation; claim tracks event identity and deactivation clears timer and invalidates chooser lifetime. Native event ordering remains separately scoped.",
+      "hints": [
+        {
+          "line": 50,
+          "category": "task-dispatch",
+          "snippet": "    clearClick = setTimeout(() => { if (currentClick === event) currentClick = undefined })"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "upload/utils/video-duration.ts",
+      "sha256": "cfdda9a3f72830996f7e995746b099e841005a6c7715a60ef0c11812d555403c",
+      "rationale": "Five-second bound for local video metadata acquisition, not visual motion. Completion, error, abort or timeout settle once and remove listeners, timer and temporary object URL; real browser codec coverage is separate.",
+      "hints": [
+        {
+          "line": 50,
+          "category": "interaction-delay",
+          "snippet": "    const timer = setTimeout(abort, 5000)"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "progress-group/ProgressGroup.vue",
+      "sha256": "a74609eb76cd2acc0ec607120c91824a6b8cc037787a832024aa414a3ffa9af6",
+      "rationale": "Hover leave uses a 250ms interaction grace period. Generation invalidates cancelled or replayed callbacks; lifecycle cleanup clears pending work. It is not a CSS animation duration.",
+      "hints": [
+        {
+          "line": 180,
+          "category": "interaction-delay",
+          "snippet": "  hoverTimer = setTimeout(() => {"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "upload/use-trigger.ts",
+      "sha256": "59ef72d7c256e0d5f715ecc68f94b45b45fb9f51048c4d00b29d952c0fce0e43",
+      "rationale": "Zero-delay task clears the captured click after event propagation; claim tracks event identity and deactivation clears timer and invalidates chooser lifetime. Native event ordering remains separately scoped.",
+      "hints": [
+        {
+          "line": 64,
+          "category": "task-dispatch",
+          "snippet": "    clearClick = setTimeout(() => {"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "upload/utils/video-duration.ts",
+      "sha256": "1f7f9696a2ccc810c0d6a42debade2b417e498039ce86e030bf83615cd89c010",
+      "rationale": "Five-second bound for local video metadata acquisition, not visual motion. Completion, error, abort or timeout settle once and remove listeners, timer and temporary object URL; real browser codec coverage is separate.",
+      "hints": [
+        {
+          "line": 55,
+          "category": "interaction-delay",
+          "snippet": "    const timer = setTimeout(abort, 5000)"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "filter-form/FilterForm.vue",
+      "sha256": "d350e6094c021660dbdfb0d8b0dd191657f8aea2c5f977f37e2e3698659575dd",
+      "rationale": "User-configured change debounce owns the latest snapshot; replacement and lifecycle cancellation reject stale callbacks. This is business notification timing, not CSS motion.",
+      "hints": [
+        {
+          "line": 121,
+          "category": "interaction-delay",
+          "snippet": "  else changeTimer = setTimeout(publish, delay)"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "tree-select/hooks/use-filter-tree-node.ts",
+      "sha256": "772b204777cb63440608d530745022591dfc49f154ea74a0a87e56f55287d442",
+      "rationale": "Search filtering is delayed 100ms; each task is invalidated on source change or scope disposal, and checks after user filter callbacks prevent reentrant stale publication.",
+      "hints": [
+        {
+          "line": 63,
+          "category": "interaction-delay",
+          "snippet": "      const timer = setTimeout(() => {"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "tree-select/panel.tsx",
+      "sha256": "6cde6019ec6133448aa2bda95c3d973306780ebb5ea75368ca7d5c477e6051b2",
+      "rationale": "Keyboard navigation delegates visibility to Tree; the latter owns virtual scroll and lifecycle. This classification does not certify every native keyboard or option-replacement timing.",
+      "hints": [
+        {
+          "line": 101,
+          "category": "delegated-scroll",
+          "snippet": "      if (key !== undefined) refTree.value?.scrollIntoView({ key, align: 'auto' })"
+        },
+        {
+          "line": 139,
+          "category": "delegated-scroll",
+          "snippet": "        if (activeKey.value !== undefined) refTree.value?.scrollIntoView({ value: activeKey.value, align: 'auto' })"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "_components/resize-observer.tsx",
+      "sha256": "4d5838f6d800cbfd857b5b485914dd24e50bc782442188095dcaa82a2523be49",
+      "rationale": "Resize notification is deferred and coalesced to an owner-window frame, with binding and one-shot callback guards. Native ResizeObserver delivery timing remains separate.",
+      "hints": [
+        {
+          "line": 45,
+          "category": "measurement-scheduling",
+          "snippet": "        frame = view.requestAnimationFrame(() => {"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "scheduler/Scheduler.vue",
+      "sha256": "955fa98dbe1c106b9acff916e3435d1e879647dc13a637adffb0478615fee86e",
+      "rationale": "Timeline zoom anchor restoration and timeline focus position wait for layout via owner-window frames. Replacement, deactivation and unmount cancel them; focus frames have a one-shot generation guard. Controlled cases do not certify all native geometry.",
+      "hints": [
+        {
+          "line": 974,
+          "category": "state-settlement",
+          "snippet": "  frame = view.requestAnimationFrame(() => {"
+        },
+        {
+          "line": 1207,
+          "category": "state-settlement",
+          "snippet": "  timelineFocusFrame = { view, id: view.requestAnimationFrame(() => {"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "lazy/index.ts",
+      "sha256": "b0e015fa7f18d98cc6635e8b17612b1bdf214c515a72f22cbad555ab71b1dac2",
+      "rationale": "Throttled viewport checks are interaction scheduling; two owner-window frames defer geometry checks. Generation and one-shot guards reject obsolete or replayed deliveries; image and directive ownership protect replacement/unmount. Native codec and browser timing remain separate.",
+      "hints": [
+        {
+          "line": 74,
+          "category": "interaction-delay",
+          "snippet": "    timer = setTimeout(() => {"
+        },
+        {
+          "line": 195,
+          "category": "measurement-scheduling",
+          "snippet": "  job.frame = view.requestAnimationFrame(() => {"
+        },
+        {
+          "line": 201,
+          "category": "measurement-scheduling",
+          "snippet": "    job.frame = view.requestAnimationFrame(() => {"
         }
       ]
     }

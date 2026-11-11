@@ -33,10 +33,10 @@ NavMenu 的 selectedOption 是选项对象，autoExpandSelected 是现有自动�
 
 ## 源码入口
 
-- [Cedar Menu 上下文](../../cedar-design-web/packages/cedar-ui/src/menu/types.ts)、[Maple Menu 上下文](../../maple-design-mobile/packages/maple-ui/src/menu/types.ts)
-- [Cedar NavMenu 数据上下文](../../cedar-design-web/packages/cedar-ui/src/nav-menu/types.ts)、[NavMenuItem](../../cedar-design-web/packages/cedar-ui/src/nav-menu/item.tsx)
-- [Cedar Collapse 插槽类型](../../cedar-design-web/packages/cedar-ui/src/collapse/props.ts)、[Maple Collapse 插槽类型](../../maple-design-mobile/packages/maple-ui/src/collapse/props.ts)
-- [Maple TabBarItem](../../maple-design-mobile/packages/maple-ui/src/tab-bar/TabBarItem.vue)、[Cedar Step](../../cedar-design-web/packages/cedar-ui/src/steps/Step.vue)、[Maple Step](../../maple-design-mobile/packages/maple-ui/src/steps/Step.vue)
+- [Cedar Menu 上下文](../../cedar-design-web/packages/ui/src/menu/types.ts)、[Maple Menu 上下文](../../maple-design-mobile/packages/ui/src/menu/types.ts)
+- [Cedar NavMenu 数据上下文](../../cedar-design-web/packages/ui/src/nav-menu/types.ts)、[NavMenuItem](../../cedar-design-web/packages/ui/src/nav-menu/item.tsx)
+- [Cedar Collapse 插槽类型](../../cedar-design-web/packages/ui/src/collapse/props.ts)、[Maple Collapse 插槽类型](../../maple-design-mobile/packages/ui/src/collapse/props.ts)
+- [Maple TabBarItem](../../maple-design-mobile/packages/ui/src/tab-bar/TabBarItem.vue)、[Cedar Step](../../cedar-design-web/packages/ui/src/steps/Step.vue)、[Maple Step](../../maple-design-mobile/packages/ui/src/steps/Step.vue)
 
 ## 后续真实浏览器验收
 

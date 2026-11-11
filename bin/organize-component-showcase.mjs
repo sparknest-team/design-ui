@@ -87,7 +87,7 @@ export function organizeLibraryDocs({ write = false } = {}) {
   }
   const pairedFile = path.join(root, 'design-ui/audits/same-source-demos.json');
   const paired = JSON.parse(read(pairedFile));
-  const cedarRoot = path.join(root, 'cedar-design-web/packages/cedar-ui/src');
+  const cedarRoot = path.join(root, 'cedar-design-web/packages/ui/src');
   const demoGroups = JSON.parse(read(path.join(root, 'design-ui/configs/demo-groups.json')));
   const cedarOrders = {};
   for (const relative of fs.readdirSync(cedarRoot, { recursive: true }).filter(f => f.endsWith('.md'))) {
@@ -115,7 +115,7 @@ export function organizeLibraryDocs({ write = false } = {}) {
     paired[component] = cases.filter(c => c.name !== 'api-review').sort((a, b) => order.indexOf(a.name) - order.indexOf(b.name));
   }
   update(pairedFile, JSON.stringify(paired, null, 2) + '\n');
-  const mapleRoot = path.join(root, 'maple-design-mobile/packages/maple-ui/src');
+  const mapleRoot = path.join(root, 'maple-design-mobile/packages/ui/src');
   const mapleGroups = JSON.parse(read(path.join(root, 'design-ui/configs/demo-groups.maple.json')));
   let maplePages = 0, mapleExamples = 0;
   for (const relative of fs.readdirSync(mapleRoot, { recursive: true })) {

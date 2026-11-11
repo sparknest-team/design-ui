@@ -11,8 +11,8 @@ const require = createRequire(resolve(workspace, 'design-ui/packages/ui-build/pa
 const less = require('less')
 const built = process.argv.includes('--built')
 for (const [repo, library, prefix] of [
-  ['cedar-design-web', 'cedar-ui', 'c'],
-  ['maple-design-mobile', 'maple-ui', 'mp'],
+  ['cedar-design-web', 'ui', 'c'],
+  ['maple-design-mobile', 'ui', 'mp'],
 ]) {
   const root = resolve(workspace, repo, 'packages', library)
   const src = resolve(root, 'src')

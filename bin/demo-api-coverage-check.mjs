@@ -6,7 +6,7 @@ import { apiCatalog } from "./complete-review-demos.mjs";
 import { readApi } from "./generate-review-demos.mjs";
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const require = createRequire(
-  path.join(root, "cedar-design-web/packages/cedar-ui/package.json"),
+  path.join(root, "cedar-design-web/packages/ui/package.json"),
 );
 const { parse } = require("@vue/compiler-sfc");
 const { parse: parseDom } = require("@vue/compiler-dom");
@@ -17,8 +17,8 @@ const records = [];
 const caseManifest = JSON.parse(fs.readFileSync(path.join(root,"design-ui/audits/demo-review-cases.json"),"utf8"));
 const caseRuntime = JSON.parse(fs.readFileSync(path.join(root,"design-ui/audits/evidence/demo-recheck-2026-10-21/runtime.json"),"utf8"));
 for (const [platform, library] of [
-  ["cedar", "cedar-design-web/packages/cedar-ui"],
-  ["maple", "maple-design-mobile/packages/maple-ui"],
+  ["cedar", "cedar-design-web/packages/ui"],
+  ["maple", "maple-design-mobile/packages/ui"],
 ]) {
   const base = path.join(root, library, "src");
   const components = [

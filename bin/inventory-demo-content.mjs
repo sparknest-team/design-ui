@@ -5,7 +5,7 @@ import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import { demoRefs } from './group-demo-sections.mjs';
 const root=fileURLToPath(new URL('../../',import.meta.url));
-const require=createRequire(new URL('../../cedar-design-web/packages/cedar-ui/package.json',import.meta.url));
+const require=createRequire(new URL('../../cedar-design-web/packages/ui/package.json',import.meta.url));
 const {parse}=require('@vue/compiler-sfc');
 const {parse:parseDom}=require('@vue/compiler-dom');
 export function inventoryDemoContent() {
@@ -13,9 +13,9 @@ export function inventoryDemoContent() {
  for(const platform of ['cedar','maple']) {
   const manifest=JSON.parse(fs.readFileSync(path.join(root,`design-ui/configs/demo-groups${platform==='maple'?'.maple':''}.json`)));
   for(const [family,groups] of Object.entries(manifest)) {
-   const base=path.join(root,`${platform==='cedar'?'cedar-design-web/packages/cedar-ui':'maple-design-mobile/packages/maple-ui'}/src`,family.replace(/\/picker$/,''));
+   const base=path.join(root,`${platform==='cedar'?'cedar-design-web/packages/ui':'maple-design-mobile/packages/ui'}/src`,family.replace(/\/picker$/,''));
    let doc=path.join(base,platform==='maple'?'docs/zh-CN.md':family.endsWith('/picker')?'PICKER.md':'README.md');
-   const nested=path.join(root,'cedar-design-web/packages/cedar-ui/src',family,'README.md');
+   const nested=path.join(root,'cedar-design-web/packages/ui/src',family,'README.md');
    if(platform==='cedar' && family.endsWith('/picker') && fs.existsSync(nested))doc=nested;
    const entries=[];
    if(!fs.existsSync(doc))throw new Error('Missing authored family documentation: '+doc);

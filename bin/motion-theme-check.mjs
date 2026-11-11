@@ -34,9 +34,13 @@ for (const component of ['hover', 'icon', 'paper', 'ripple', 'skeleton']) for (c
       root.className += ` ${p}-icon--spin ${p}-icon--shrinking`
       if (reducedMotion) {
         assert.equal(cascade(root).animation, 'none', context)
-        assert.equal(cascade(root).transform, 'none', context)
+        assert.equal(cascade(root).scale, 'none', context)
         assert.equal(cascade(root).transition, 'none', context)
-      } else consume(root, 'animation', 'spin-duration')
+      } else {
+        assert.equal(cascade(root).scale, '0', context)
+        assert.equal(cascade(root)['transition-property'], 'scale', context)
+        consume(root, 'animation', 'spin-duration')
+      }
     }
     if (component === 'ripple') {
       if (reducedMotion) {

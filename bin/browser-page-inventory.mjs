@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const pages = [];
-for (const [library, relative] of [['cedar', 'cedar-design-web/packages/cedar-ui'], ['maple', 'maple-design-mobile/packages/maple-ui']]) {
+for (const [library, relative] of [['cedar', 'cedar-design-web/packages/ui'], ['maple', 'maple-design-mobile/packages/ui']]) {
   const base = path.join(root, relative, 'src');
   for (const relativeFile of fs.readdirSync(base, { recursive: true }).filter(file => library === 'cedar' ? file.endsWith('.md') : file.endsWith('/docs/zh-CN.md'))) {
     const file = path.join(base, relativeFile);

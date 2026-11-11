@@ -1,0 +1,45 @@
+[
+  {
+    "family": "date",
+    "before": 521,
+    "after": 521,
+    "changes": []
+  },
+  {
+    "family": "date-range",
+    "before": 149,
+    "after": 149,
+    "changes": []
+  },
+  {
+    "family": "time",
+    "before": 88,
+    "after": 88,
+    "changes": [
+      {
+        "before": [
+          ".mp-time-picker",
+          "min-width",
+          "100%"
+        ],
+        "after": [
+          ".mp-time-picker",
+          "min-width",
+          "min(100%, var(--mp-time-picker-min-width))"
+        ]
+      }
+    ]
+  },
+  {
+    "family": "time-range",
+    "before": 78,
+    "after": 78,
+    "changes": []
+  },
+  {
+    "family": "form",
+    "before": 62,
+    "after": 62,
+    "changes": []
+  }
+]

@@ -1,13 +1,13 @@
 import assert from 'node:assert/strict'
-import { readFileSync, existsSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { resolve } from 'node:path'
 import { pathToFileURL, fileURLToPath } from 'node:url'
 import vm from 'node:vm'
 
 export async function checkPublishedEnvironment(root) {
-  const cedar = existsSync(resolve(root, 'packages/cedar-ui/package.json'))
-  const ui = resolve(root, 'packages', cedar ? 'cedar-ui' : 'maple-ui')
+  const cedar = JSON.parse(readFileSync(resolve(root, 'packages/ui/package.json'), 'utf8')).name.startsWith('@cedar-design/')
+  const ui = resolve(root, 'packages/ui')
   const brand = cedar ? 'Cedar' : 'Maple'
   const bundle = cedar ? 'cedar' : 'maple'
   const require = createRequire(resolve(ui, 'package.json'))

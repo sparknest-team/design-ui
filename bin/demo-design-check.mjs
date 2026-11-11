@@ -4,11 +4,11 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../../', import.meta.url));
-const require = createRequire(path.join(root, 'cedar-design-web/packages/cedar-ui/package.json'));
+const require = createRequire(path.join(root, 'cedar-design-web/packages/ui/package.json'));
 const { parse, compileScript, compileTemplate } = require('@vue/compiler-sfc');
 let demos = 0, references = 0;
 const failures = [];
-for (const library of ['cedar-design-web/packages/cedar-ui', 'maple-design-mobile/packages/maple-ui']) {
+for (const library of ['cedar-design-web/packages/ui', 'maple-design-mobile/packages/ui']) {
   const base = path.join(root, library, 'src');
   for (const file of fs.readdirSync(base, { recursive: true })) {
     const full = path.join(base, file);
@@ -38,7 +38,7 @@ for (const library of ['cedar-design-web/packages/cedar-ui', 'maple-design-mobil
 const enrichment = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/audits/demo-enrichment-2026-10-23.json'), 'utf8'));
 for (const item of enrichment) {
   assert(item.dimensions.length <= 3, `${item.component}: more than three dimensions`);
-  for (const [library, directory] of [['cedar-design-web/packages/cedar-ui', '__demos__'], ['maple-design-mobile/packages/maple-ui', 'example/demos']]) {
+  for (const [library, directory] of [['cedar-design-web/packages/ui', '__demos__'], ['maple-design-mobile/packages/ui', 'example/demos']]) {
     assert(fs.existsSync(path.join(root, library, 'src', item.component, directory, `${item.name}.vue`)), `${item.component}: missing paired demo`);
   }
 }

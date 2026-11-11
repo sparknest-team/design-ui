@@ -11,8 +11,8 @@ register(new URL('./ssr-style-loader.mjs', import.meta.url), import.meta.url)
 require.extensions['.css'] = () => {}
 
 for (const [name, directory, componentName] of [
-  ['Cedar', 'cedar-design-web/packages/cedar-ui', 'CMenu'],
-  ['Maple', 'maple-design-mobile/packages/maple-ui', 'MpMenu'],
+  ['Cedar', 'cedar-design-web/packages/ui', 'CMenu'],
+  ['Maple', 'maple-design-mobile/packages/ui', 'MpMenu'],
 ]) {
   for (const format of ['es', 'lib']) {
     const file = resolve(root, directory, format, `menu/index.${format === 'es' ? 'mjs' : 'js'}`)

@@ -170,7 +170,7 @@
       "en": "Configuration and interaction",
       "components": [
         "config-provider",
-        "style-provider",
+        "theme-provider",
         "field-decorator",
         "trigger",
         "watermark",
@@ -273,8 +273,8 @@
     "dialog": "组件与函数调用、异步确认、关闭控制及焦点。",
     "drawer": "方向、尺寸、嵌套、关闭控制与内容保留。",
     "overlay": "遮罩显示、点击与层级组合。",
-    "config-provider": "全局尺寸、语言、主题与组件默认配置。",
-    "style-provider": "全局主题变量、默认值与主题包切换。",
+    "config-provider": "语言、尺寸、方向与组件公共内容配置。",
+    "theme-provider": "应用根部与局部主题、嵌套、品牌预设、变量覆盖和弹层继承。",
     "field-decorator": "字段共同外壳，统一尺寸、变体、提示与清除入口。",
     "trigger": "浮层方位、箭头、偏移和受控开合。",
     "watermark": "文字图片、多行、全屏与重绘。",
@@ -284,7 +284,7 @@
   },
   "publicReviewDemos": false,
   "labels": {
-    "style-provider": "StyleProvider",
+    "theme-provider": "ThemeProvider",
     "palette": "色板 Palette",
     "style": "常用写法",
     "button": "Button 按钮",

@@ -14,14 +14,14 @@
 
 仓库内命名按所属产品保持清晰：
 
-- Cedar：`@cedar-design/shared`、`@cedar-design/use`
-- Maple：`@maple-design/shared`、`@maple-design/use`
+- Cedar：`@cedar-design/shared-vue`、`@cedar-design/use-vue`
+- Maple：`@maple-design/shared-vue`、`@maple-design/use-vue`
 
 两端只统一工程契约：目录职责、导出方式、测试门禁、SSR 安全和 API 命名。具体代码允许不同；只有某个纯函数经过长期验证确实完全一致时，才考虑复制规范或单独提案，不预先建立跨仓库运行时依赖。
 
 ### 文档工具不属于组件运行时
 
-`@sparknest/ui-doc-preview` 是文档构建与展示工具，可以由 Cedar、Maple 文档站共同依赖。它不进入任一组件库的公开运行时，也不提供跨端组件实现，因此不违反组件“同源复制、独立维护”的约束。
+`@sparknest/ui-doc-preview-vue` 是文档构建与展示工具，可以由 Cedar、Maple 文档站共同依赖。它不进入任一组件库的公开运行时，也不提供跨端组件实现，因此不违反组件“同源复制、独立维护”的约束。
 
 公共包只包含预览外壳和 `DocPreviewSource` 协议；VuePress/Markdown 解析、路由、移动端 iframe、主题和 Playground 地址仍由各站点适配。Demo 源码继续放在各组件目录中。
 

@@ -45,3 +45,14 @@ test("excludes demos, tests and docs from the current inventory", () => {
     );
   }
 });
+
+test("includes optional calls without treating similarly named identifiers as calls", () => {
+  const result = scanMotionSource("tree/Tree.vue", [
+    "node?.scrollIntoView?.({ block: 'nearest' })",
+    "list?.scrollTo?.({ key })",
+    "window.requestAnimationFrame?.(step)",
+    "window.matchMedia?.('(prefers-reduced-motion: reduce)')",
+    "const scrollToLabel = 'scrollTo'",
+  ].join("\n"));
+  assert.deepEqual(result.runtime, [1, 2, 3, 4]);
+});

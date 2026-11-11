@@ -44,7 +44,7 @@ await auditThemes('switch', ({ prefix: p, repo, brand, mode, document, tag, vari
           consume(track, 'background', trackToken)
           consume(handle, 'background', tonal ? 'tonal-border-color' : 'handle-background')
           consume(handle, 'color', tonal ? 'tonal-handle-color' : 'handle-color')
-          if (text) consume(text, 'color', tonal ? 'tonal-text-color' : 'text-color')
+          if (text) consume(text, 'color', tonal ? 'tonal-text-color' : checked && !enabledError ? 'checked-text-color' : 'text-color')
           // Custom checked/unchecked colors keep ordinary track precedence; error is explicit.
           variables[`--${p}-switch-current-track`] = '#345678'
           assert.equal(resolve(cascade(track).background), enabledError ? read('track-error-background') : '#345678', context)

@@ -15,8 +15,8 @@
       "level": "same",
       "reason": "现有 copied-components-check 已验证主体、Props、样式及契约测试的规范化一致性；保留各库 platform、命名空间及安装入口。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/affix",
-        "maple": "maple-design-mobile/packages/maple-ui/src/affix"
+        "cedar": "cedar-design-web/packages/ui/src/affix",
+        "maple": "maple-design-mobile/packages/ui/src/affix"
       }
     },
     {
@@ -25,8 +25,8 @@
       "level": "same",
       "reason": "现有 copied-components-check 已验证主体、Props、样式及契约测试的规范化一致性；保留各库 platform、命名空间及安装入口。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/badge",
-        "maple": "maple-design-mobile/packages/maple-ui/src/badge"
+        "cedar": "cedar-design-web/packages/ui/src/badge",
+        "maple": "maple-design-mobile/packages/ui/src/badge"
       }
     },
     {
@@ -35,8 +35,8 @@
       "level": "same",
       "reason": "现有 copied-components-check 已验证主体、Props、样式及契约测试的规范化一致性；保留各库 platform、命名空间及安装入口。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/card",
-        "maple": "maple-design-mobile/packages/maple-ui/src/card"
+        "cedar": "cedar-design-web/packages/ui/src/card",
+        "maple": "maple-design-mobile/packages/ui/src/card"
       }
     },
     {
@@ -45,8 +45,8 @@
       "level": "same",
       "reason": "现有 copied-components-check 已验证主体、Props、样式及契约测试的规范化一致性；保留各库 platform、命名空间及安装入口。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/switch",
-        "maple": "maple-design-mobile/packages/maple-ui/src/switch"
+        "cedar": "cedar-design-web/packages/ui/src/switch",
+        "maple": "maple-design-mobile/packages/ui/src/switch"
       }
     },
     {
@@ -55,8 +55,8 @@
       "level": "same",
       "reason": "独立同源复制已复核：主体、Props、子节点展开、主样式、五档尺寸 token 与配对测试一致。两端默认 wrap=false、size=md、block=true；Maple 内置主题同步 Cedar 间距。不共享核心或实例，仅保留本地安装和命名空间适配。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/space",
-        "maple": "maple-design-mobile/packages/maple-ui/src/space"
+        "cedar": "cedar-design-web/packages/ui/src/space",
+        "maple": "maple-design-mobile/packages/ui/src/space"
       }
     },
     {
@@ -65,8 +65,8 @@
       "level": "same",
       "reason": "2026-09-08 完成独立源码复制；主体、Props、关键样式和配对测试纳入一致性检查，双端组件测试及 SSR 通过。动态增删默认插槽会同步更新带文字样式；opacity=0 生效；hairline 优先于 thickness，并输出 aria-orientation。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/divider",
-        "maple": "maple-design-mobile/packages/maple-ui/src/divider"
+        "cedar": "cedar-design-web/packages/ui/src/divider",
+        "maple": "maple-design-mobile/packages/ui/src/divider"
       }
     },
     {
@@ -75,8 +75,8 @@
       "level": "same",
       "reason": "2026-09-08 完成独立源码复制；主体、Props、关键样式和配对测试纳入一致性检查，双端组件测试及 SSR 通过。关闭按钮支持键盘操作，close 只触发一次，closed 在离场动画完成后触发。Maple 内部关闭类由 __close-icon 调整为 __close-btn；默认图标资源由各库本地适配。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/alert",
-        "maple": "maple-design-mobile/packages/maple-ui/src/alert"
+        "cedar": "cedar-design-web/packages/ui/src/alert",
+        "maple": "maple-design-mobile/packages/ui/src/alert"
       }
     },
     {
@@ -85,8 +85,8 @@
       "level": "same",
       "reason": "2026-09-08 完成独立源码复制；主体、Props、关键样式和配对测试纳入一致性检查，双端组件测试及 SSR 通过。两端保留独立的 show/checked 状态，受控值由调用方更新；保留淡出效果，class/style 显式透传给实际标签。尺寸配置、RTL 上下文及图标资源由各库本地适配，移动端触控尺寸保留在 token 中。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/tag",
-        "maple": "maple-design-mobile/packages/maple-ui/src/tag"
+        "cedar": "cedar-design-web/packages/ui/src/tag",
+        "maple": "maple-design-mobile/packages/ui/src/tag"
       }
     },
     {
@@ -95,8 +95,8 @@
       "level": "same",
       "reason": "2026-09-08 完成独立源码复制；主体、Props、关键样式和配对测试纳入一致性检查，双端组件测试及 SSR 通过。动画在卸载及 KeepAlive 停用时暂停，重新激活后恢复；各实例的数值和动画状态独立。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/count-to",
-        "maple": "maple-design-mobile/packages/maple-ui/src/count-to"
+        "cedar": "cedar-design-web/packages/ui/src/count-to",
+        "maple": "maple-design-mobile/packages/ui/src/count-to"
       }
     },
     {
@@ -105,8 +105,8 @@
       "level": "same",
       "reason": "2026-09-08 完成独立源码复制；主体、Props、关键样式和配对测试纳入一致性检查，双端组件测试及 SSR 通过。SSR 输出初始格式化时间。暂停时修改 format 会更新显示；结束事件每轮只触发一次，reset 后可开始新一轮；卸载清理动画帧。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/countdown",
-        "maple": "maple-design-mobile/packages/maple-ui/src/countdown"
+        "cedar": "cedar-design-web/packages/ui/src/countdown",
+        "maple": "maple-design-mobile/packages/ui/src/countdown"
       }
     },
     {
@@ -115,8 +115,8 @@
       "level": "same",
       "reason": "2026-09-08 完成独立源码复制；主体、Props、关键样式和配对测试纳入一致性检查，双端组件测试及 SSR 通过。默认插槽动态出现/消失时同步切换占位文字；动画在卸载及 KeepAlive 停用时暂停。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/statistic",
-        "maple": "maple-design-mobile/packages/maple-ui/src/statistic"
+        "cedar": "cedar-design-web/packages/ui/src/statistic",
+        "maple": "maple-design-mobile/packages/ui/src/statistic"
       }
     },
     {
@@ -125,8 +125,8 @@
       "level": "same",
       "reason": "2026-09-08 完成独立源码复制；主体、Props、关键样式和配对测试纳入一致性检查，双端组件测试及 SSR 通过。Skeleton、SkeletonLine、SkeletonShape 均采用独立复制的源码；各库骨架主题和尺寸 token 独立维护。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/skeleton",
-        "maple": "maple-design-mobile/packages/maple-ui/src/skeleton"
+        "cedar": "cedar-design-web/packages/ui/src/skeleton",
+        "maple": "maple-design-mobile/packages/ui/src/skeleton"
       }
     },
     {
@@ -135,8 +135,8 @@
       "level": "same",
       "reason": "2026-09-08 完成独立源码复制；主体、Props、关键样式和配对测试纳入一致性检查，双端组件测试及 SSR 通过。Steps 和 Step 的主体、Props、上下文协议与样式同源复制；注入 Symbol 分别定义在各库，不跨库共享。保留四种 type 和原有状态/事件契约。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/steps",
-        "maple": "maple-design-mobile/packages/maple-ui/src/steps"
+        "cedar": "cedar-design-web/packages/ui/src/steps",
+        "maple": "maple-design-mobile/packages/ui/src/steps"
       }
     },
     {
@@ -145,8 +145,8 @@
       "level": "same",
       "reason": "2026-09-08 完成独立源码复制；主体、Props、关键样式和配对测试纳入一致性检查，双端组件测试及 SSR 通过。返回按钮统一使用原生 button，支持键盘触发并派发 back(MouseEvent)。Cedar 内部类名由 c-page-header-xxx 调整为 c-page-header__xxx；图标资源仍由本库提供。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/page-header",
-        "maple": "maple-design-mobile/packages/maple-ui/src/page-header"
+        "cedar": "cedar-design-web/packages/ui/src/page-header",
+        "maple": "maple-design-mobile/packages/ui/src/page-header"
       }
     },
     {
@@ -155,8 +155,8 @@
       "level": "same",
       "reason": "2026-09-08 完成独立源码复制；主体、Props、关键样式和配对测试纳入一致性检查，双端组件测试及 SSR 通过。只解析本应用已注册的图标；连续切换 name 会取消过期定时器，卸载后不再执行切换。各库注册前缀和历史 spin 类由本地适配保留，图标资源不跨库引用。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/icon",
-        "maple": "maple-design-mobile/packages/maple-ui/src/icon"
+        "cedar": "cedar-design-web/packages/ui/src/icon",
+        "maple": "maple-design-mobile/packages/ui/src/icon"
       }
     },
     {
@@ -165,8 +165,8 @@
       "level": "same",
       "reason": "2026-09-11 完成独立源码复制；Avatar/AvatarGroup 主体、Props、图片 load/error、文字缩放与分组折叠纳入一致性检查。size 支持 CSS 长度；ObjectFit 更名为 AvatarObjectFit。图标、Popover、安装入口与 token 前缀由各库适配。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/avatar",
-        "maple": "maple-design-mobile/packages/maple-ui/src/avatar"
+        "cedar": "cedar-design-web/packages/ui/src/avatar",
+        "maple": "maple-design-mobile/packages/ui/src/avatar"
       }
     },
     {
@@ -175,8 +175,8 @@
       "level": "same",
       "reason": "共同契约补齐后选择 Maple：Button/ButtonGroup、Props、交互逻辑、样式和 12 组 demo 已复制对齐并纳入检查；注册入口和命名空间各自保留。竞赛证据见 button-race.json。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/button",
-        "maple": "maple-design-mobile/packages/maple-ui/src/button"
+        "cedar": "cedar-design-web/packages/ui/src/button",
+        "maple": "maple-design-mobile/packages/ui/src/button"
       }
     },
     {
@@ -185,8 +185,8 @@
       "level": "same",
       "reason": "2026-09-08 完成 Breadcrumb / BreadcrumbItem 独立源码复制；主体、Props、上下文、类型、关键样式及配对测试纳入一致性检查。双端组件测试与 SSR 通过；图标、安装入口、Menu 和主题 token 本地适配。统一非空 routes 优先、分隔符优先级与 select(route, event)，修复空 routes 和省略项菜单行为。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/breadcrumb",
-        "maple": "maple-design-mobile/packages/maple-ui/src/breadcrumb"
+        "cedar": "cedar-design-web/packages/ui/src/breadcrumb",
+        "maple": "maple-design-mobile/packages/ui/src/breadcrumb"
       }
     },
     {
@@ -195,8 +195,8 @@
       "level": "same",
       "reason": "2026-09-15 完成独立源码复制；Collapse/CollapseItem 主体 SFC、9 项公共 Props、change/toggleAll、键盘与 destroyOnHide 纳入一致性检查。去掉 Maple elevation；默认图标与尺寸 token 由各库 platform 适配。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/collapse",
-        "maple": "maple-design-mobile/packages/maple-ui/src/collapse"
+        "cedar": "cedar-design-web/packages/ui/src/collapse",
+        "maple": "maple-design-mobile/packages/ui/src/collapse"
       }
     },
     {
@@ -205,8 +205,8 @@
       "level": "same",
       "reason": "统一主体 SFC、23 项 Props、4 个事件、6 个插槽、分页状态与按钮和布局；12 组 demo 对齐。Locale、Input、Select 使用显式平台适配，480px 容器自动简洁模式；同源检查覆盖 13 个实现文件。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/pagination",
-        "maple": "maple-design-mobile/packages/maple-ui/src/pagination"
+        "cedar": "cedar-design-web/packages/ui/src/pagination",
+        "maple": "maple-design-mobile/packages/ui/src/pagination"
       }
     },
     {
@@ -215,8 +215,8 @@
       "level": "same",
       "reason": "2026-09-15 完成独立源码复制；主体 SFC、6 项 Props、click、image/default/extra 插槽与尺寸档位纳入一致性检查。去掉 icon/inConfigProvider；ConfigProvider 空状态、默认图标、locale 与尺寸 token 由各库 platform 适配。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/empty",
-        "maple": "maple-design-mobile/packages/maple-ui/src/empty"
+        "cedar": "cedar-design-web/packages/ui/src/empty",
+        "maple": "maple-design-mobile/packages/ui/src/empty"
       }
     },
     {
@@ -225,8 +225,8 @@
       "level": "same",
       "reason": "2026-09-20 完成独立源码复制：Result 主体渲染、公共 Props、状态图形、animation/imageSize、插槽与关键 token 已统一，并由 lightweight-feedback-same-source 门禁验证。两端仅保留图标资源和本地入口适配。 第二十五批：主体格式、图形及规范 Token 门禁复验，所有状态、imageSize/动画/插槽与 SSR 验证通过。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/result",
-        "maple": "maple-design-mobile/packages/maple-ui/src/result"
+        "cedar": "cedar-design-web/packages/ui/src/result",
+        "maple": "maple-design-mobile/packages/ui/src/result"
       }
     },
     {
@@ -235,8 +235,8 @@
       "level": "same",
       "reason": "以 Cedar 原生链接与 hoverable 为基础，补齐键盘焦点、加载动画、动态图标插槽及禁用属性透传；主体、Props、主样式和配对测试独立复制并验证，保留本地图标和主题 token。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/link",
-        "maple": "maple-design-mobile/packages/maple-ui/src/link"
+        "cedar": "cedar-design-web/packages/ui/src/link",
+        "maple": "maple-design-mobile/packages/ui/src/link"
       }
     },
     {
@@ -245,8 +245,8 @@
       "level": "same",
       "reason": "2026-09-20 完成独立源码复制：Loading 主体渲染、公共 Props、五类动画、数值尺寸、hideIcon、内容遮罩、插槽与关键 token 已统一，并由 lightweight-feedback-same-source 门禁验证。 第二十五批：统一格式并改为从规范 style/token.less 验证 Token，动画、数值尺寸、SSR 回归复验。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/loading",
-        "maple": "maple-design-mobile/packages/maple-ui/src/loading"
+        "cedar": "cedar-design-web/packages/ui/src/loading",
+        "maple": "maple-design-mobile/packages/ui/src/loading"
       }
     },
     {
@@ -255,8 +255,8 @@
       "level": "same",
       "reason": "Grid/GridItem/Row/Col 主体、Props、响应式逻辑、样式和契约测试已按包内复制统一；Row/Col 有独立源码、安装和样式入口，两端 demo 配对。 入口职责已分离：Grid 仅包含 Grid.Item；Row/Col 独立入口、注册、文档与 Demo，不再通过 Grid 转导出。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/grid",
-        "maple": "maple-design-mobile/packages/maple-ui/src/grid"
+        "cedar": "cedar-design-web/packages/ui/src/grid",
+        "maple": "maple-design-mobile/packages/ui/src/grid"
       }
     },
     {
@@ -265,8 +265,8 @@
       "level": "same",
       "reason": "主体、19 项 Props、数值编辑/提交控制器、独立 Decimal 运算、触控长按、样式及 Token 已独立复制；14 对核心/视图/样式/测试文件和 7 对 Demo 纳入一致性门禁。两端分别接入本库表单与全局多语言，77 项测试及双端类型检查和包构建通过；Checkbox / Radio 另批处理。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/input-number",
-        "maple": "maple-design-mobile/packages/maple-ui/src/input-number"
+        "cedar": "cedar-design-web/packages/ui/src/input-number",
+        "maple": "maple-design-mobile/packages/ui/src/input-number"
       }
     },
     {
@@ -275,8 +275,8 @@
       "level": "same",
       "reason": "主体、Props、样式/Token 与配对测试独立复制；统一受控 expand/defaultExpand、键盘展开、Tooltip 配置与内容回退，移除多余外壳。与 BackTop 共 12 对文件门禁，仅前缀/本地导入不同。 第二十五批：主体、样式和配对测试复验；模板与副作用导入仍严格比较，受控展开/键盘与 Tooltip 接入不漂移。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/ellipsis",
-        "maple": "maple-design-mobile/packages/maple-ui/src/ellipsis"
+        "cedar": "cedar-design-web/packages/ui/src/ellipsis",
+        "maple": "maple-design-mobile/packages/ui/src/ellipsis"
       }
     },
     {
@@ -285,8 +285,8 @@
       "level": "same",
       "reason": "2026-10-09 主体/Props/样式/Token 独立复制，家族双端136项测试及14源/样式/测试对和5Demo门禁通过。Progress 保留 number|string size、0–100 percent，补齐 steps/buffer/track/rotate/渐变/未知进度与圆形状态图标；Group 统一 showText/#text、超额裁剪、键盘 Tooltip 和 SSR。本地安装/ConfigProvider 尺寸接线独立，真实浏览器视觉仍单列待验收。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/progress",
-        "maple": "maple-design-mobile/packages/maple-ui/src/progress"
+        "cedar": "cedar-design-web/packages/ui/src/progress",
+        "maple": "maple-design-mobile/packages/ui/src/progress"
       }
     },
     {
@@ -295,8 +295,8 @@
       "level": "same",
       "reason": "2026-10-09 主体/Props/样式/Token 独立复制，家族双端136项测试及14源/样式/测试对和5Demo门禁通过。Progress 保留 number|string size、0–100 percent，补齐 steps/buffer/track/rotate/渐变/未知进度与圆形状态图标；Group 统一 showText/#text、超额裁剪、键盘 Tooltip 和 SSR。本地安装/ConfigProvider 尺寸接线独立，真实浏览器视觉仍单列待验收。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/progress-group",
-        "maple": "maple-design-mobile/packages/maple-ui/src/progress-group"
+        "cedar": "cedar-design-web/packages/ui/src/progress-group",
+        "maple": "maple-design-mobile/packages/ui/src/progress-group"
       }
     },
     {
@@ -305,8 +305,8 @@
       "level": "same",
       "reason": "主体、Props、滚动控制器、样式/Token 和配对测试独立复制；默认监听页面，200ms/quartOut，支持动态目标、原生键盘、KeepAlive/卸载取消及 SSR。与 Ellipsis 共 12 对文件门禁，不共享运行时。 第二十五批：复制样式与规范格式，保留严格滚动/取消/SSR 契约；绑定导入排序与本地别名规范化不忽略主体。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/back-top",
-        "maple": "maple-design-mobile/packages/maple-ui/src/back-top"
+        "cedar": "cedar-design-web/packages/ui/src/back-top",
+        "maple": "maple-design-mobile/packages/ui/src/back-top"
       }
     },
     {
@@ -315,8 +315,8 @@
       "level": "same",
       "reason": "2026-09-20 已完成独立同源：统一 Canvas renderer、Props/types、文字与图片、多行/自动测量、repeat/staggered、grayscale、antiTamper、fullscreen、error/redraw、SSR 和生命周期；Maple 已删除 foreignObject content 插槽及 resize 旧方法。两端主体仅保留前缀、本地 import 和主题标识差异，并纳入源码门禁。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/watermark",
-        "maple": "maple-design-mobile/packages/maple-ui/src/watermark"
+        "cedar": "cedar-design-web/packages/ui/src/watermark",
+        "maple": "maple-design-mobile/packages/ui/src/watermark"
       }
     },
     {
@@ -325,8 +325,8 @@
       "level": "same",
       "reason": "2026-10-09 主体已独立复制：原生 input/label、Group、Props、Context、BEM 样式及图标/实例外观/原生属性补齐；15 对主体/公开类型/测试/样式门禁及既有组核心门禁通过。本库 Form/安装接线、契约登记的 PC/触控密度默认值独立保留；无共享运行时。逐组件行为/SSR/主题通过，真实浏览器视觉仍单列待验收。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/checkbox",
-        "maple": "maple-design-mobile/packages/maple-ui/src/checkbox"
+        "cedar": "cedar-design-web/packages/ui/src/checkbox",
+        "maple": "maple-design-mobile/packages/ui/src/checkbox"
       }
     },
     {
@@ -335,8 +335,8 @@
       "level": "same",
       "reason": "2026-10-09 主体已独立复制：原生 input/label、Group、Props、Context、BEM 样式及图标/实例外观/原生属性补齐；15 对主体/公开类型/测试/样式门禁及既有组核心门禁通过。本库 Form/安装接线、契约登记的 PC/触控密度默认值独立保留；无共享运行时。逐组件行为/SSR/主题通过，真实浏览器视觉仍单列待验收。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/radio",
-        "maple": "maple-design-mobile/packages/maple-ui/src/radio"
+        "cedar": "cedar-design-web/packages/ui/src/radio",
+        "maple": "maple-design-mobile/packages/ui/src/radio"
       }
     },
     {
@@ -345,8 +345,8 @@
       "level": "same",
       "reason": "2026-10-09 已完成主体、Props/公开类型、交互、样式规则及15公共Token后缀独立复制同源；错误/禁用/焦点使用系统角色，私有映射在组件根支持局部覆盖。金色/主色与几何默认差异纳入主题契约，仅Form/安装/图标接线本地维护；源码/类型/实际Less门禁与两端交互测试通过。 第二十五批：修复门禁失效起始标记，必须比较真实 rate-core 主体；Props/主体/交互测试重新验证，图标与 Form 本地接线保留。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/rate",
-        "maple": "maple-design-mobile/packages/maple-ui/src/rate"
+        "cedar": "cedar-design-web/packages/ui/src/rate",
+        "maple": "maple-design-mobile/packages/ui/src/rate"
       }
     },
     {
@@ -355,8 +355,8 @@
       "level": "same",
       "reason": "2026-10-09 完成主体、Props/公开类型、值归一化、Pointer/键盘、范围/小数步长、marks/ticks/InputNumber、标签/颜色与样式Token独立复制同源；showTooltip统一false/true/always并移除labelVisible。Form/provider/安装接线留本库；成对交互测试、3组Demo与实际Less编译门禁覆盖。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/slider",
-        "maple": "maple-design-mobile/packages/maple-ui/src/slider"
+        "cedar": "cedar-design-web/packages/ui/src/slider",
+        "maple": "maple-design-mobile/packages/ui/src/slider"
       }
     },
     {
@@ -365,8 +365,8 @@
       "level": "same",
       "reason": "2026-10-09 完成主体复核：Input/InputGroup/Password、Props/公开类型、值模型、原生属性和样式规则独立复制同源；输入及清空管线、受控拒绝、IME、表单/键盘回归已补齐，24对Input/Textarea门禁防漂移。保留本库Form/安装接线与FieldDecorator已登记的PC hover/移动常驻清空表现。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/input",
-        "maple": "maple-design-mobile/packages/maple-ui/src/input"
+        "cedar": "cedar-design-web/packages/ui/src/input",
+        "maple": "maple-design-mobile/packages/ui/src/input"
       }
     },
     {
@@ -375,8 +375,8 @@
       "level": "same",
       "reason": "2026-10-09 以完善后的Cedar SFC独立复制至Maple；hint/line/实例颜色、原生attrs、清空/计数、IME/长度、自动高度及KeepAlive清理一致，公开Emits/Slots/Expose与Demo补齐。resize默认Cedar开启/Maple关闭及尺寸密度登记为平台差异；没有共享运行时。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/textarea",
-        "maple": "maple-design-mobile/packages/maple-ui/src/textarea"
+        "cedar": "cedar-design-web/packages/ui/src/textarea",
+        "maple": "maple-design-mobile/packages/ui/src/textarea"
       }
     },
     {
@@ -385,8 +385,8 @@
       "level": "same",
       "reason": "2026-10-09：验证码主体、Props/Emits/Slots/Expose、四项Token、样式与四组Demo独立复制同源，11对保留类型声明的门禁通过。Cedar22/Maple27专项测试通过，覆盖受控拒绝、IME/Unicode、短信填入、粘贴、单格替换、Form单通知及KeepAlive取消；仅各库Form/安装接线保留独立。未宣称浏览器视觉全验。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/verification-code",
-        "maple": "maple-design-mobile/packages/maple-ui/src/verification-code"
+        "cedar": "cedar-design-web/packages/ui/src/verification-code",
+        "maple": "maple-design-mobile/packages/ui/src/verification-code"
       }
     },
     {
@@ -395,8 +395,8 @@
       "level": "logicSame",
       "reason": "2026-10-09：Search控制器、Props/Emits/Slots/Expose、历史内容及配对Demo独立复制，9对源码和25项公共Token门禁通过；Cedar30/Maple36测试通过。不可变model、受控拒绝、Form单通知、弹窗内外取消/焦点、全局语言、inputAttrs/error及实际variant效果已补齐；仅保留PC InputGroup/移动条、Drawer/Popup、本地接线和登记的默认密度/historyPopup/shape差异。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/search",
-        "maple": "maple-design-mobile/packages/maple-ui/src/search"
+        "cedar": "cedar-design-web/packages/ui/src/search",
+        "maple": "maple-design-mobile/packages/ui/src/search"
       }
     },
     {
@@ -405,8 +405,8 @@
       "level": "same",
       "reason": "2026-09-21 完成独立源码复制：主体 SFC、Props 与关键样式纳入同源门禁，统一分页状态机、CSS length 阈值、滚动容器、可见性恢复、KeepAlive 与清理行为。两端 locale.ts 仅桥接各自的全局语言系统，不持有独立语言状态，也不共享运行时。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/infinite-scroll",
-        "maple": "maple-design-mobile/packages/maple-ui/src/infinite-scroll"
+        "cedar": "cedar-design-web/packages/ui/src/infinite-scroll",
+        "maple": "maple-design-mobile/packages/ui/src/infinite-scroll"
       }
     },
     {
@@ -415,8 +415,8 @@
       "level": "same",
       "reason": "2026-10-09 完成List/ListItem SFC、Props/类型、样式规则及34公共Token后缀独立复制同源；Maple补maxHeight/scrollbar/virtualListProps/scrollIntoView。两端VirtualList修复align/数据缩小/threshold。render-adapter仅接本库Scrollbar与ConfigProvider空态，默认密度登记为平台差异；9对主体/API/样式/测试/Demo门禁覆盖。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/list",
-        "maple": "maple-design-mobile/packages/maple-ui/src/list"
+        "cedar": "cedar-design-web/packages/ui/src/list",
+        "maple": "maple-design-mobile/packages/ui/src/list"
       }
     },
     {
@@ -425,8 +425,8 @@
       "level": "same",
       "reason": "2026-09-15 完成独立源码复制；Image/Preview/PreviewGroup 主体 SFC、加载回退、预览控制器与命令式 API 纳入一致性检查。去掉 platform.config；懒加载用原生 loading、图标/默认加载器/默认值由各库 platform 与 setPropsDefaults 适配。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/image",
-        "maple": "maple-design-mobile/packages/maple-ui/src/image"
+        "cedar": "cedar-design-web/packages/ui/src/image",
+        "maple": "maple-design-mobile/packages/ui/src/image"
       }
     },
     {
@@ -435,8 +435,8 @@
       "level": "same",
       "reason": "2026-09-21 完成独立同源：主体 SFC、Props 和结构样式已复制并纳入门禁；统一 popup-layer/z-index、容器滚动锁、真实 Teleport Document、背景 pointer 序列、最上层 ESC、受控状态、KeepAlive 和过渡生命周期。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/overlay",
-        "maple": "maple-design-mobile/packages/maple-ui/src/overlay"
+        "cedar": "cedar-design-web/packages/ui/src/overlay",
+        "maple": "maple-design-mobile/packages/ui/src/overlay"
       }
     },
     {
@@ -445,8 +445,8 @@
       "level": "logicSame",
       "reason": "2026-09-21 完成逻辑同源。两端 Dialog 直接消费同源 modal-surface，不再嵌套 Popup 或维护端侧弹层状态机；use-dialog、use-dialog-drag、service 三份核心均为独立复制并纳入门禁，统一 beforeClose 竞态、拖拽、Promise/update/close、默认配置、宿主销毁及 app context。PC 与移动端保留各自 DOM、图标和样式。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/dialog",
-        "maple": "maple-design-mobile/packages/maple-ui/src/dialog"
+        "cedar": "cedar-design-web/packages/ui/src/dialog",
+        "maple": "maple-design-mobile/packages/ui/src/dialog"
       }
     },
     {
@@ -455,8 +455,8 @@
       "level": "same",
       "reason": "主体、Props、函数注入、安装、默认值设置及配对测试已独立同源；仅前缀与本地导入不同，不共享运行时代码或状态。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/style-provider",
-        "maple": "maple-design-mobile/packages/maple-ui/src/style-provider"
+        "cedar": "cedar-design-web/packages/ui/src/style-provider",
+        "maple": "maple-design-mobile/packages/ui/src/style-provider"
       }
     },
     {
@@ -465,8 +465,8 @@
       "level": "same",
       "reason": "主体、控制器、选项与搜索/虚拟列表算法、Menu 及语义样式已独立复制并纳入 check:selection-presentations；Cedar 仅 menu，Maple 通过静态扩展文件提供 list/picker 和移动触摸样式。公共 API 以 Cedar 为准；本地 Form/空状态接入独立，无跨库运行时、共享实例或 platform 配置。 第二十五批：公共源码保留严格主体比较，仅规范本地绑定导入的排序；Select/Checkbox BEM 同步原生同源控件，移动 presentation 扩展独立。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/select",
-        "maple": "maple-design-mobile/packages/maple-ui/src/select"
+        "cedar": "cedar-design-web/packages/ui/src/select",
+        "maple": "maple-design-mobile/packages/ui/src/select"
       }
     },
     {
@@ -475,8 +475,8 @@
       "level": "same",
       "reason": "主体、控制器、树/路径/搜索/懒加载算法、CascaderPanel、Menu 与语义样式已独立复制；草稿会话由控制器统一持有。Cedar 仅 menu，Maple 的 list/picker 位于独立静态扩展文件；公共源码纳入 check:selection-presentations，保留本地系统接入与移动触摸样式差异，不共享运行时代码。 第二十五批：公共源码、路径算法与样式完成复制收口，移除旧 Checkbox/Radio hover 类名，使用 --状态与 __control；list/picker 仍为本地扩展。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/cascader",
-        "maple": "maple-design-mobile/packages/maple-ui/src/cascader"
+        "cedar": "cedar-design-web/packages/ui/src/cascader",
+        "maple": "maple-design-mobile/packages/ui/src/cascader"
       }
     },
     {
@@ -485,8 +485,8 @@
       "level": "same",
       "reason": "2026-09-23 主体、Props、类型出口、Menu 样式和配对交互/SSR 测试完成独立同源复制；两端直接消费本地 Input、Trigger、Select 选项算法。统一 shouldOpen/过滤、分组、异步候选、虚拟列表、长度规则、Form 继承及焦点事件，补齐 hint/颜色/键盘提示；无跨库运行时或 platform 配置，AutoComplete 不提供滚轮 presentation。 第二十五批：主体、Props、配对44项交互测试及样式复制收口；绑定导入按本地路径排序，不忽略主体、模板或副作用导入顺序。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/auto-complete",
-        "maple": "maple-design-mobile/packages/maple-ui/src/auto-complete"
+        "cedar": "cedar-design-web/packages/ui/src/auto-complete",
+        "maple": "maple-design-mobile/packages/ui/src/auto-complete"
       }
     },
     {
@@ -495,8 +495,8 @@
       "level": "logicSame",
       "reason": "2026-09-30：日期族模型/严格解析、Date 禁用回调、包含边界、时分秒分级约束、范围提交、字段与纯面板主体和事件已独立复制；42 对源码/测试门禁覆盖；第十一批对齐 showCurrent、showNowButton 与 exchangeTime，当前动作复用统一校验/确认，删除旧按钮名和 Cedar 全局时间交换覆盖；第十批统一快捷项、视口控制/通知、预览与确认校验，保留独立复制源码。第九批拆清字段/纯面板 API，复制公共面板 Props/事件协议并补齐入口与展示 Options 类型；Cedar 纯面板移除字段/浮层 Prop 泄漏，Maple dayStartOfWeek 改为整数 0–6 并修复范围日历转发，旧 firstDayOfWeek 不保留。两端默认秒精度，format/valueFormat、defaultValue/defaultOpen、type、select/change/confirm/open-change/clear 对齐。桌面日历/Trigger 与移动滚轮/时钟/Popup 保留本地 presentation，Form 与全局多语言各自接入；Maple 多选和 Cedar 周/季度为明确展示能力差异，无共享运行时或 platform 配置。第十二批两端独立复制月份标签函数，补齐 abbreviation（仅日历月份网格），保留标题/星期/滚轮不变；第十三批删除 Cedar 日期级 locale 覆盖，Maple 范围内嵌日历仅接外观白名单，字段空默认不覆盖嵌套外观；修复范围日历误用滚轮默认展示。第十四批时间展示类型/白名单独立复制，Maple 单值/范围日期时间滚轮只接尺寸与外观，calendarClock 明确时钟；Cedar 内嵌时间精度服从日期根。第十五批删除 Cedar 字段无效 pickerProps/范围 datePickerProps，Maple 保留真实插件；旧 Demo 初始时间迁移到日期顶层。第十六批语言/周起始改为本库命名空间内的实例元数据，不覆盖宿主 Dayjs 默认或基础语言；模型字符串固定英文协议，展示/手输走全局界面语言，多实例更新/卸载和跨年周比较已回归。第十七批默认周文本按实例语言/周起始严格反解析并复用禁用/范围提交；季度由当前 Dayjs 原生支持，追加回归。第十八批两端公共所有者统一可编辑条件，单值/范围真实手输测试独立复制；Maple 原生输入与日历按钮/Popup 分离，Enter/blur、IME、拒绝回写、禁用和范围顺序已验证，multiple/函数格式保留面板选择。移动按钮 Token 登记为明确本地扩展；浏览器软键盘/触控验收未做。第十九批补齐 Maple 日期字段视口/快捷项事件转发，单值/范围完整所有者链路及真实日历导航回归；拒绝嵌套受控视口不改选择值，默认快捷项仍走确认。第二十批 Maple 字段嵌套 Options 删除无效 presentation，根字段/纯面板模式保留；两端复制过滤器阻止嵌套选择器，根模式动态切换不改模型，发布类型根正例/嵌套反例验证。 第二十一批补齐 Maple 周起始日动态更新的真实日期列回归（单值/范围及字段），本地格子改为响应式派生，与 Cedar 原有响应式行为一致；切换不提交模型。 第二十二批修复 Maple 日/月/年导航移除 min/max 后遗留禁用状态；十二个实际单值/范围及字段回归验证按端恢复，不改模型。导航禁用属于本地展示，日期候选约束仍使用两库独立同源规则。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/date",
-        "maple": "maple-design-mobile/packages/maple-ui/src/date"
+        "cedar": "cedar-design-web/packages/ui/src/date",
+        "maple": "maple-design-mobile/packages/ui/src/date"
       }
     },
     {
@@ -505,8 +505,8 @@
       "level": "logicSame",
       "reason": "2026-09-30：日期族模型/严格解析、Date 禁用回调、包含边界、时分秒分级约束、范围提交、字段与纯面板主体和事件已独立复制；42 对源码/测试门禁覆盖；第十一批对齐 showCurrent、showNowButton 与 exchangeTime，当前动作复用统一校验/确认，删除旧按钮名和 Cedar 全局时间交换覆盖；第十批统一快捷项、视口控制/通知、预览与确认校验，保留独立复制源码。第九批拆清字段/纯面板 API，复制公共面板 Props/事件协议并补齐入口与展示 Options 类型；Cedar 纯面板移除字段/浮层 Prop 泄漏，Maple dayStartOfWeek 改为整数 0–6 并修复范围日历转发，旧 firstDayOfWeek 不保留。两端默认秒精度，format/valueFormat、defaultValue/defaultOpen、type、select/change/confirm/open-change/clear 对齐。桌面日历/Trigger 与移动滚轮/时钟/Popup 保留本地 presentation，Form 与全局多语言各自接入；Maple 多选和 Cedar 周/季度为明确展示能力差异，无共享运行时或 platform 配置。第十二批两端独立复制月份标签函数，补齐 abbreviation（仅日历月份网格），保留标题/星期/滚轮不变；第十三批删除 Cedar 日期级 locale 覆盖，Maple 范围内嵌日历仅接外观白名单，字段空默认不覆盖嵌套外观；修复范围日历误用滚轮默认展示。第十四批时间展示类型/白名单独立复制，Maple 单值/范围日期时间滚轮只接尺寸与外观，calendarClock 明确时钟；Cedar 内嵌时间精度服从日期根。第十五批删除 Cedar 字段无效 pickerProps/范围 datePickerProps，Maple 保留真实插件；旧 Demo 初始时间迁移到日期顶层。第十六批语言/周起始改为本库命名空间内的实例元数据，不覆盖宿主 Dayjs 默认或基础语言；模型字符串固定英文协议，展示/手输走全局界面语言，多实例更新/卸载和跨年周比较已回归。第十七批默认周文本按实例语言/周起始严格反解析并复用禁用/范围提交；季度由当前 Dayjs 原生支持，追加回归。第十八批两端公共所有者统一可编辑条件，单值/范围真实手输测试独立复制；Maple 原生输入与日历按钮/Popup 分离，Enter/blur、IME、拒绝回写、禁用和范围顺序已验证，multiple/函数格式保留面板选择。移动按钮 Token 登记为明确本地扩展；浏览器软键盘/触控验收未做。第十九批补齐 Maple 日期字段视口/快捷项事件转发，单值/范围完整所有者链路及真实日历导航回归；拒绝嵌套受控视口不改选择值，默认快捷项仍走确认。第二十批 Maple 字段嵌套 Options 删除无效 presentation，根字段/纯面板模式保留；两端复制过滤器阻止嵌套选择器，根模式动态切换不改模型，发布类型根正例/嵌套反例验证。 第二十一批补齐 Maple 周起始日动态更新的真实日期列回归（单值/范围及字段），本地格子改为响应式派生，与 Cedar 原有响应式行为一致；切换不提交模型。 第二十二批修复 Maple 日/月/年导航移除 min/max 后遗留禁用状态；十二个实际单值/范围及字段回归验证按端恢复，不改模型。导航禁用属于本地展示，日期候选约束仍使用两库独立同源规则。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/date-range",
-        "maple": "maple-design-mobile/packages/maple-ui/src/date-range"
+        "cedar": "cedar-design-web/packages/ui/src/date-range",
+        "maple": "maple-design-mobile/packages/ui/src/date-range"
       }
     },
     {
@@ -515,8 +515,8 @@
       "level": "logicSame",
       "reason": "2026-09-23：Time/TimeRange 入口、TimeField 主体及字段状态协议已从 Cedar 独立复制到 Maple，值、草稿、确认/取消、清除、焦点和通知控制器同源。两库各自维护源码及实例，无共享运行时或 platform 配置；桌面 Trigger/列表与移动 Popup/滚轮/时钟，以及本地 Form、全局多语言接入和候选初始化保留在独立 presentation 文件。34 对时间源码/测试门禁覆盖；外观和纯时间面板仍单独验收。 2026-10-12：两端 inputEditable 已消费同源 PickerField/时间解析与提交链；Cedar 默认 true、Maple 默认 false。移动端可手输，时钟按钮/ArrowDown 打开原有面板，未增加共享运行时。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/time",
-        "maple": "maple-design-mobile/packages/maple-ui/src/time"
+        "cedar": "cedar-design-web/packages/ui/src/time",
+        "maple": "maple-design-mobile/packages/ui/src/time"
       }
     },
     {
@@ -525,8 +525,8 @@
       "level": "logicSame",
       "reason": "2026-09-23：Time/TimeRange 入口、TimeField 主体及字段状态协议已从 Cedar 独立复制到 Maple，值、草稿、确认/取消、清除、焦点和通知控制器同源。两库各自维护源码及实例，无共享运行时或 platform 配置；桌面 Trigger/列表与移动 Popup/滚轮/时钟，以及本地 Form、全局多语言接入和候选初始化保留在独立 presentation 文件。34 对时间源码/测试门禁覆盖；外观和纯时间面板仍单独验收。 2026-10-12：两端 inputEditable 已消费同源 PickerField/时间解析与提交链；Cedar 默认 true、Maple 默认 false。移动端可手输，时钟按钮/ArrowDown 打开原有面板，未增加共享运行时。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/time-range",
-        "maple": "maple-design-mobile/packages/maple-ui/src/time-range"
+        "cedar": "cedar-design-web/packages/ui/src/time-range",
+        "maple": "maple-design-mobile/packages/ui/src/time-range"
       }
     },
     {
@@ -535,8 +535,8 @@
       "level": "logicSame",
       "reason": "2026-09-30：日期族模型/严格解析、Date 禁用回调、包含边界、时分秒分级约束、范围提交、字段与纯面板主体和事件已独立复制；42 对源码/测试门禁覆盖；第十一批对齐 showCurrent、showNowButton 与 exchangeTime，当前动作复用统一校验/确认，删除旧按钮名和 Cedar 全局时间交换覆盖；第十批统一快捷项、视口控制/通知、预览与确认校验，保留独立复制源码。第九批拆清字段/纯面板 API，复制公共面板 Props/事件协议并补齐入口与展示 Options 类型；Cedar 纯面板移除字段/浮层 Prop 泄漏，Maple dayStartOfWeek 改为整数 0–6 并修复范围日历转发，旧 firstDayOfWeek 不保留。两端默认秒精度，format/valueFormat、defaultValue/defaultOpen、type、select/change/confirm/open-change/clear 对齐。桌面日历/Trigger 与移动滚轮/时钟/Popup 保留本地 presentation，Form 与全局多语言各自接入；Maple 多选和 Cedar 周/季度为明确展示能力差异，无共享运行时或 platform 配置。第十二批两端独立复制月份标签函数，补齐 abbreviation（仅日历月份网格），保留标题/星期/滚轮不变；第十三批删除 Cedar 日期级 locale 覆盖，Maple 范围内嵌日历仅接外观白名单，字段空默认不覆盖嵌套外观；修复范围日历误用滚轮默认展示。第十四批时间展示类型/白名单独立复制，Maple 单值/范围日期时间滚轮只接尺寸与外观，calendarClock 明确时钟；Cedar 内嵌时间精度服从日期根。第十五批删除 Cedar 字段无效 pickerProps/范围 datePickerProps，Maple 保留真实插件；旧 Demo 初始时间迁移到日期顶层。第十六批语言/周起始改为本库命名空间内的实例元数据，不覆盖宿主 Dayjs 默认或基础语言；模型字符串固定英文协议，展示/手输走全局界面语言，多实例更新/卸载和跨年周比较已回归。第十七批默认周文本按实例语言/周起始严格反解析并复用禁用/范围提交；季度由当前 Dayjs 原生支持，追加回归。第十八批两端公共所有者统一可编辑条件，单值/范围真实手输测试独立复制；Maple 原生输入与日历按钮/Popup 分离，Enter/blur、IME、拒绝回写、禁用和范围顺序已验证，multiple/函数格式保留面板选择。移动按钮 Token 登记为明确本地扩展；浏览器软键盘/触控验收未做。第十九批补齐 Maple 日期字段视口/快捷项事件转发，单值/范围完整所有者链路及真实日历导航回归；拒绝嵌套受控视口不改选择值，默认快捷项仍走确认。纯面板保留面板 API，不新增字段手输或浮层状态；外观仍按各端 presentation 单独验收。第二十批 Maple 字段嵌套 Options 删除无效 presentation，根字段/纯面板模式保留；两端复制过滤器阻止嵌套选择器，根模式动态切换不改模型，发布类型根正例/嵌套反例验证。 第二十一批补齐 Maple 周起始日动态更新的真实日期列回归（单值/范围及字段），本地格子改为响应式派生，与 Cedar 原有响应式行为一致；切换不提交模型。 第二十二批修复 Maple 日/月/年导航移除 min/max 后遗留禁用状态；十二个实际单值/范围及字段回归验证按端恢复，不改模型。导航禁用属于本地展示，日期候选约束仍使用两库独立同源规则。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/date",
-        "maple": "maple-design-mobile/packages/maple-ui/src/date"
+        "cedar": "cedar-design-web/packages/ui/src/date",
+        "maple": "maple-design-mobile/packages/ui/src/date"
       }
     },
     {
@@ -545,8 +545,8 @@
       "level": "logicSame",
       "reason": "2026-09-30：日期族模型/严格解析、Date 禁用回调、包含边界、时分秒分级约束、范围提交、字段与纯面板主体和事件已独立复制；42 对源码/测试门禁覆盖；第十一批对齐 showCurrent、showNowButton 与 exchangeTime，当前动作复用统一校验/确认，删除旧按钮名和 Cedar 全局时间交换覆盖；第十批统一快捷项、视口控制/通知、预览与确认校验，保留独立复制源码。第九批拆清字段/纯面板 API，复制公共面板 Props/事件协议并补齐入口与展示 Options 类型；Cedar 纯面板移除字段/浮层 Prop 泄漏，Maple dayStartOfWeek 改为整数 0–6 并修复范围日历转发，旧 firstDayOfWeek 不保留。两端默认秒精度，format/valueFormat、defaultValue/defaultOpen、type、select/change/confirm/open-change/clear 对齐。桌面日历/Trigger 与移动滚轮/时钟/Popup 保留本地 presentation，Form 与全局多语言各自接入；Maple 多选和 Cedar 周/季度为明确展示能力差异，无共享运行时或 platform 配置。第十二批两端独立复制月份标签函数，补齐 abbreviation（仅日历月份网格），保留标题/星期/滚轮不变；第十三批删除 Cedar 日期级 locale 覆盖，Maple 范围内嵌日历仅接外观白名单，字段空默认不覆盖嵌套外观；修复范围日历误用滚轮默认展示。第十四批时间展示类型/白名单独立复制，Maple 单值/范围日期时间滚轮只接尺寸与外观，calendarClock 明确时钟；Cedar 内嵌时间精度服从日期根。第十五批删除 Cedar 字段无效 pickerProps/范围 datePickerProps，Maple 保留真实插件；旧 Demo 初始时间迁移到日期顶层。第十六批语言/周起始改为本库命名空间内的实例元数据，不覆盖宿主 Dayjs 默认或基础语言；模型字符串固定英文协议，展示/手输走全局界面语言，多实例更新/卸载和跨年周比较已回归。第十七批默认周文本按实例语言/周起始严格反解析并复用禁用/范围提交；季度由当前 Dayjs 原生支持，追加回归。第十八批两端公共所有者统一可编辑条件，单值/范围真实手输测试独立复制；Maple 原生输入与日历按钮/Popup 分离，Enter/blur、IME、拒绝回写、禁用和范围顺序已验证，multiple/函数格式保留面板选择。移动按钮 Token 登记为明确本地扩展；浏览器软键盘/触控验收未做。第十九批补齐 Maple 日期字段视口/快捷项事件转发，单值/范围完整所有者链路及真实日历导航回归；拒绝嵌套受控视口不改选择值，默认快捷项仍走确认。纯面板保留面板 API，不新增字段手输或浮层状态；外观仍按各端 presentation 单独验收。第二十批 Maple 字段嵌套 Options 删除无效 presentation，根字段/纯面板模式保留；两端复制过滤器阻止嵌套选择器，根模式动态切换不改模型，发布类型根正例/嵌套反例验证。 第二十一批补齐 Maple 周起始日动态更新的真实日期列回归（单值/范围及字段），本地格子改为响应式派生，与 Cedar 原有响应式行为一致；切换不提交模型。 第二十二批修复 Maple 日/月/年导航移除 min/max 后遗留禁用状态；十二个实际单值/范围及字段回归验证按端恢复，不改模型。导航禁用属于本地展示，日期候选约束仍使用两库独立同源规则。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/date-range",
-        "maple": "maple-design-mobile/packages/maple-ui/src/date-range"
+        "cedar": "cedar-design-web/packages/ui/src/date-range",
+        "maple": "maple-design-mobile/packages/ui/src/date-range"
       }
     },
     {
@@ -555,8 +555,8 @@
       "level": "logicSame",
       "reason": "2026-09-30：纯时间面板的值、草稿、校验和选择/确认事务已独立复制；两端范围入口均直接持有范围状态，Cedar 不再经单值面板转调。类型化事件声明和范围事件编排同源，脚本入口收口为 script setup。列表与滚轮/时钟内容及手势留在独立 presentation 文件，两库各有源码及实例，无共享运行时。33 对源码/测试与 4 个面板展示边界门禁覆盖；端侧外观保持差异，浏览器视觉验收另行进行。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/time/picker",
-        "maple": "maple-design-mobile/packages/maple-ui/src/time"
+        "cedar": "cedar-design-web/packages/ui/src/time/picker",
+        "maple": "maple-design-mobile/packages/ui/src/time"
       }
     },
     {
@@ -565,8 +565,8 @@
       "level": "logicSame",
       "reason": "2026-09-30：纯时间面板的值、草稿、校验和选择/确认事务已独立复制；两端范围入口均直接持有范围状态，Cedar 不再经单值面板转调。类型化事件声明和范围事件编排同源，脚本入口收口为 script setup。列表与滚轮/时钟内容及手势留在独立 presentation 文件，两库各有源码及实例，无共享运行时。33 对源码/测试与 4 个面板展示边界门禁覆盖；端侧外观保持差异，浏览器视觉验收另行进行。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/time/picker",
-        "maple": "maple-design-mobile/packages/maple-ui/src/time-range"
+        "cedar": "cedar-design-web/packages/ui/src/time/picker",
+        "maple": "maple-design-mobile/packages/ui/src/time-range"
       }
     },
     {
@@ -575,8 +575,8 @@
       "level": "logicSame",
       "reason": "2026-10-09 复核：Props、selection/level/keyboard/options 与公共定位选项独立复制；strategy 响应式传递到所有子菜单，公开定位/子菜单类型补齐。两端保留 Scrollbar/原生列表、hover/click、动画、触控涟漪等视图差异，因此纠正旧“已同源”为“逻辑已同源”，不宣称整个主体一致。移除 platform 聚合层，差异留在 appearance.ts；无共享运行时或旧 API 别名。Menu 与 SplitButton 配对交互回归通过。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/menu",
-        "maple": "maple-design-mobile/packages/maple-ui/src/menu"
+        "cedar": "cedar-design-web/packages/ui/src/menu",
+        "maple": "maple-design-mobile/packages/ui/src/menu"
       }
     },
     {
@@ -585,8 +585,8 @@
       "level": "same",
       "reason": "2026-09-20 完成独立同源复制：主体、Props、platform 外观映射、title/body DOM、结构样式及语义契约纳入门禁。双端统一 click、bottom、箭头、10px 间距和关闭缓存默认值，删除 defaultStyle、popoverClass、elevation；通过 Trigger referenceAttrs 关联 aria-controls/expanded。仅前缀、本地导入和主题 token 值不同。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/popover",
-        "maple": "maple-design-mobile/packages/maple-ui/src/popover"
+        "cedar": "cedar-design-web/packages/ui/src/popover",
+        "maple": "maple-design-mobile/packages/ui/src/popover"
       }
     },
     {
@@ -595,8 +595,8 @@
       "level": "same",
       "reason": "2026-09-20 完成独立同源复制：主体、Props、platform 外观映射、结构样式与语义契约纳入门禁。双端统一 hover+focus、top、箭头、10px 间距、关闭卸载、xs/md、status、color/textColor，删除 backgroundColor 和布尔 xs；通过 Trigger referenceAttrs 关联 role=tooltip 与 aria-describedby。仅前缀、本地导入和主题 token 值不同。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/tooltip",
-        "maple": "maple-design-mobile/packages/maple-ui/src/tooltip"
+        "cedar": "cedar-design-web/packages/ui/src/tooltip",
+        "maple": "maple-design-mobile/packages/ui/src/tooltip"
       }
     },
     {
@@ -605,8 +605,8 @@
       "level": "same",
       "reason": "2026-09-20 完成独立同源复制：Trigger 主体、最终 Props/types、无依赖定位器、结构样式、token 职责和定位契约测试已纳入 copied-components-check。两端统一十二方位、absolute/fixed、popupOffset、popupTranslate、cover、翻转避让、滚动与尺寸更新；Maple 删除 @popperjs/core、offsetX/offsetY 与 cascadeOptimization。仅 platform.ts 保留各库容器、层级、全局配置及 ResizeObserver 接线，不共享运行时核心或实例。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/trigger",
-        "maple": "maple-design-mobile/packages/maple-ui/src/trigger"
+        "cedar": "cedar-design-web/packages/ui/src/trigger",
+        "maple": "maple-design-mobile/packages/ui/src/trigger"
       }
     },
     {
@@ -615,8 +615,8 @@
       "level": "same",
       "reason": "2026-09-08 完成独立同源复制：主体、21 项 Props、样式依赖入口和契约测试纳入一致性检查；统一异步点击、受控状态、禁用优先级、向下箭头及 open/close/resize。Cedar Menu 补齐浮层类名和屏幕轴偏移适配；两端 Menu 保留独立平台实现，无跨库运行时或实例共享。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/split-button",
-        "maple": "maple-design-mobile/packages/maple-ui/src/split-button"
+        "cedar": "cedar-design-web/packages/ui/src/split-button",
+        "maple": "maple-design-mobile/packages/ui/src/split-button"
       }
     },
     {
@@ -625,8 +625,8 @@
       "level": "logicSame",
       "reason": "2026-10-12：表单字段登记、校验调度、reset/clear 与异步竞态，以及标签/内容栅格 Props、布局继承、自然标签宽度登记/测量和生命周期逻辑均独立复制；12 对源码/行为测试门禁覆盖。Form/Item 支持响应式 Col、固定标签 flex、动态自动宽度和局部覆盖。Cedar 默认横向、Maple 默认纵向；本地规则引擎、表单注入、错误滚动与 FormDetails/标签外观保留独立展示，没有共享运行时、实例或 platform 配置。 补齐显式 Form.id 字段容器前缀与 Cedar formItemProps/严格 FormItemProps 入口导出。 Cedar 已移除无效 mergeProps 并补齐 Item.size；第八批补齐 Maple 六项普通装饰 API，FormItem Props 31/31 差集为零。装饰 Props、标签渲染、状态优先规则与配对测试独立复制；显式状态只覆盖展示，真实校验结果不变，自动状态 validating → success/error，清空恢复未校验。规则类型、默认布局与本地消息视图保留差异，不将 Props 名称相同算作全部主体一致。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/form",
-        "maple": "maple-design-mobile/packages/maple-ui/src/form"
+        "cedar": "cedar-design-web/packages/ui/src/form",
+        "maple": "maple-design-mobile/packages/ui/src/form"
       }
     },
     {
@@ -635,8 +635,8 @@
       "level": "same",
       "reason": "2026-10-09：Tabs/TabPane/TabsNavs/TabNav/TabsItems/TabItem六件套主体、Props、事件、插槽及TabsNavs.resize已同源；13对源码和40项Token消费门禁、Cedar57/Maple56含InfiniteScroll专项通过。删除platform与无消费者绑定，仅本库配置/安装和四项已登记外观默认值独立，未扩建Maple全局Provider。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/tabs",
-        "maple": "maple-design-mobile/packages/maple-ui/src/tabs"
+        "cedar": "cedar-design-web/packages/ui/src/tabs",
+        "maple": "maple-design-mobile/packages/ui/src/tabs"
       }
     },
     {
@@ -645,8 +645,8 @@
       "level": "same",
       "reason": "2026-10-09：Carousel / CarouselItem 主体、Props、布局、Pointer、受控状态、生命周期、样式与配对测试独立复制；12 对源码及 26 项 token 门禁，Cedar 25 / Maple 26 项测试通过。仅前缀、本地安装、图标及全局 Locale 接入不同。不复制子组件实例；无法连续覆盖的跨页跳转直接定位。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/carousel",
-        "maple": "maple-design-mobile/packages/maple-ui/src/carousel"
+        "cedar": "cedar-design-web/packages/ui/src/carousel",
+        "maple": "maple-design-mobile/packages/ui/src/carousel"
       }
     },
     {
@@ -655,8 +655,8 @@
       "level": "logicSame",
       "reason": "2026-09-21 完成逻辑同源：两端独立复制相同的可调用服务、按容器与位置隔离的队列、剩余时间计时、id 更新、幂等关闭和宿主销毁逻辑，并纳入轻量反馈一致性门禁。API 已统一为 default/info/success/warning/danger/loading、top/center/bottom、action、pauseOnHover、resetOnUpdate 与完整生命周期；删除 normal、模态阻断及端侧外观 Props。PC 紧凑提示与移动卡片样式各自维护。 第二十五批：默认 variant 两端统一 neutral，组件/函数/默认重置一致；补齐独立复制的计时器暂停/恢复/更新/卸载和默认变体回归，不保留旧默认兼容。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/message",
-        "maple": "maple-design-mobile/packages/maple-ui/src/message"
+        "cedar": "cedar-design-web/packages/ui/src/message",
+        "maple": "maple-design-mobile/packages/ui/src/message"
       }
     },
     {
@@ -665,8 +665,8 @@
       "level": "logicSame",
       "reason": "2026-10-09：Upload 主体、Props、读取/队列/请求/取消/URL 所有权/useUploader 与样式独立复制，20 对源码门禁、Cedar 41 / Maple 68 项测试通过；Form 与全局 Locale 本地接入，视频预览保留 Cedar Drawer / Maple Popup。中英 Demo 各 21 项，能力补齐；无共享运行时或兼容旧 API。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/upload",
-        "maple": "maple-design-mobile/packages/maple-ui/src/upload"
+        "cedar": "cedar-design-web/packages/ui/src/upload",
+        "maple": "maple-design-mobile/packages/ui/src/upload"
       }
     },
     {
@@ -675,8 +675,8 @@
       "level": "separate",
       "reason": "Cedar 42 个 Props（列、选择、树、分页、虚拟滚动等），Maple 仅 3 个容器 Props；语义层级不同，不建议对齐整个 Table。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/table",
-        "maple": "maple-design-mobile/packages/maple-ui/src/table"
+        "cedar": "cedar-design-web/packages/ui/src/table",
+        "maple": "maple-design-mobile/packages/ui/src/table"
       }
     },
     {
@@ -685,8 +685,8 @@
       "level": "logicSame",
       "reason": "2026-09-21 完成逻辑同源改造。两端各自保存字节级一致的 modal-surface 控制器，并由同源门禁约束；已统一 open/defaultOpen、unmountOnClose、遮罩 pointer 序列、层级、焦点、容器锁滚动、ESC、显式路由关闭和生命周期。Cedar Drawer 保留标题/页脚/宽高及 beforeClose，Maple Popup 保留 center、安全区和移动转场。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/drawer",
-        "maple": "maple-design-mobile/packages/maple-ui/src/popup"
+        "cedar": "cedar-design-web/packages/ui/src/drawer",
+        "maple": "maple-design-mobile/packages/ui/src/popup"
       }
     },
     {
@@ -695,8 +695,8 @@
       "level": "same",
       "reason": "Grid/GridItem/Row/Col 主体、Props、响应式逻辑、样式和契约测试已按包内复制统一；Row/Col 有独立源码、安装和样式入口，两端 demo 配对。 入口职责已分离：Grid 仅包含 Grid.Item；Row/Col 独立入口、注册、文档与 Demo，不再通过 Grid 转导出。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/row",
-        "maple": "maple-design-mobile/packages/maple-ui/src/row"
+        "cedar": "cedar-design-web/packages/ui/src/row",
+        "maple": "maple-design-mobile/packages/ui/src/row"
       }
     },
     {
@@ -705,8 +705,8 @@
       "level": "same",
       "reason": "Grid/GridItem/Row/Col 主体、Props、响应式逻辑、样式和契约测试已按包内复制统一；Row/Col 有独立源码、安装和样式入口，两端 demo 配对。 入口职责已分离：Grid 仅包含 Grid.Item；Row/Col 独立入口、注册、文档与 Demo，不再通过 Grid 转导出。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/col",
-        "maple": "maple-design-mobile/packages/maple-ui/src/col"
+        "cedar": "cedar-design-web/packages/ui/src/col",
+        "maple": "maple-design-mobile/packages/ui/src/col"
       }
     },
     {
@@ -715,8 +715,8 @@
       "level": "same",
       "reason": "Cedar 新增 Paper；两端底层表面主体、Props、样式、token 和契约测试独立复制并验证。bordered 与 elevation 独立，无 variant、无默认 padding；保留尺寸、圆角与可选水波，不共享核心或实例。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/paper",
-        "maple": "maple-design-mobile/packages/maple-ui/src/paper"
+        "cedar": "cedar-design-web/packages/ui/src/paper",
+        "maple": "maple-design-mobile/packages/ui/src/paper"
       }
     },
     {
@@ -725,8 +725,8 @@
       "level": "same",
       "reason": "第二十五批补录指令：主体、动画、键盘、禁用/卸载清理规则独立复制；两端真实样式入口编译与生命周期测试验证，Token 默认值和包/命名空间接线本地维护，无共享运行时。",
       "sources": {
-        "cedar": "cedar-design-web/packages/cedar-ui/src/ripple",
-        "maple": "maple-design-mobile/packages/maple-ui/src/ripple"
+        "cedar": "cedar-design-web/packages/ui/src/ripple",
+        "maple": "maple-design-mobile/packages/ui/src/ripple"
       }
     }
   ]

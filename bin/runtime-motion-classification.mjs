@@ -35,7 +35,7 @@ export function checkClassification(report, inventory, readSource) {
 export function checkSavedClassification() {
   const report = JSON.parse(readFileSync(new URL('../audits/runtime-motion-classification.json', import.meta.url), 'utf8'));
   return checkClassification(report, collectMotionInventory(), (repo, file) => {
-    const pkg = repo === 'cedar-design-web' ? 'cedar-ui' : 'maple-ui';
+    const pkg = 'ui';
     return readFileSync(resolve(workspace, repo, 'packages', pkg, 'src', file), 'utf8');
   });
 }

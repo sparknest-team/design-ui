@@ -6,7 +6,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { renderCatalog } from './token-catalog.mjs';
 
-const root = new URL('../../cedar-design-web/packages/cedar-ui/', import.meta.url);
+const root = new URL('../../cedar-design-web/packages/ui/', import.meta.url);
 const require = createRequire(new URL('package.json', root));
 const less = require('less');
 const postcss = require('postcss');

@@ -1,4 +1,4 @@
-import { normalizeCopiedSource as normalize, normalizeSwitchErrorText, normalizeSwitchTokenDefaults, normalizeCopiedTypeScript } from './copied-source-normalization.mjs'
+import { normalizeCopiedSource as normalize, normalizeSwitchErrorText, normalizeSwitchTokenDefaults, normalizeCopiedTypeScript, normalizeCopiedSfcScript, stripCopiedSfcScript } from './copied-source-normalization.mjs'
 import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { createRequire } from 'node:module'
@@ -12,17 +12,19 @@ const { transformSync } = requireFromMaple('esbuild')
 
 // Read-only: each library owns its source and runtime; never import across libraries.
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
-const cedar = resolve(workspace, 'cedar-design-web/packages/cedar-ui/src')
-const maple = resolve(workspace, 'maple-design-mobile/packages/maple-ui/src')
+const cedar = resolve(workspace, 'cedar-design-web/packages/ui/src')
+const maple = resolve(workspace, 'maple-design-mobile/packages/ui/src')
 const componentFilter = process.argv[2]
 const pairs = [
+  ['message/context-root.ts', 'message/context-root.ts'],
   ['infinite-scroll/infinite-scroll.vue', 'infinite-scroll/InfiniteScroll.vue'],
   ['textarea/utils.ts', 'textarea/utils.ts'],
   ['input/use-input-value.ts', 'input/use-input-value.ts'],
   ['infinite-scroll/props.ts', 'infinite-scroll/props.ts'],
   ['infinite-scroll/style/implementation.less', 'infinite-scroll/style/implementation.less'],
-  ['style-provider/StyleProvider.vue', 'style-provider/StyleProvider.vue'],
-  ['style-provider/props.ts', 'style-provider/props.ts'],
+  ['theme-provider/ThemeProvider.vue', 'theme-provider/ThemeProvider.vue'],
+  ['theme-provider/props.ts', 'theme-provider/props.ts'],
+  ['theme-provider/context.ts', 'theme-provider/context.ts'],
   ['split-button/SplitButton.vue', 'split-button/SplitButton.vue'],
   ['split-button/props.ts', 'split-button/props.ts'],
   ['split-button/style/index.ts', 'split-button/style/index.ts'],
@@ -45,6 +47,7 @@ const pairs = [
   ["paper/style/implementation.less","paper/style/implementation.less"],
   ["paper/style/token.less","paper/style/token.less"],
   ["paper/__tests__/same-source.spec.js","paper/__tests__/same-source.spec.js"],
+  ["paper/__tests__/numeric-contract.spec.js","paper/__tests__/numeric-contract.spec.js"],
   ["grid/grid.vue", "grid/Grid.vue"],
   ["grid/GridItem.vue", "grid/GridItem.vue"],
   ["row/row.vue", "row/Row.vue"],
@@ -165,8 +168,11 @@ const pairs = [
   ['card/__tests__/contract.spec.js', 'card/__tests__/contract.spec.js'],
   ['affix/affix.vue', 'affix/Affix.vue'],
   ['affix/props.ts', 'affix/props.ts'],
+  ['affix/offset.ts', 'affix/offset.ts'],
+  ['affix/__tests__/numeric-contract.spec.js', 'affix/__tests__/numeric-contract.spec.js'],
   ['affix/style/index.less', 'affix/style/affix.less'],
   ['affix/__tests__/contract.spec.js', 'affix/__tests__/contract.spec.js'],
+  ['affix/__tests__/entry-contract.spec.js', 'affix/__tests__/entry-contract.spec.js'],
   ['progress/size.ts', 'progress/size.ts'],
   ['_utils/size-length.ts', 'utils/size-length.ts'],
   ['progress/__tests__/size-contract.spec.js', 'progress/__tests__/size-contract.spec.js'],
@@ -301,7 +307,9 @@ for (const [cedarPath, maplePath] of pairs) {
   }
   if (cedarPath === 'switch/style/index.less') {
     const tokens = await readFile(resolve(maple, 'switch/style/token.less'), 'utf8')
-    assert.match(tokens, /--mp-internal-switch-error-text-color:\s*var\(--mp-sys-color-content-on-bright\);/)
+    const contract = JSON.parse(await readFile(resolve(workspace, 'design-ui/packages/theme-contract/contracts/theme-contract.json'), 'utf8'))
+    const expected = contract.platformComponentTokenValues.maple.switch['checked-text-color'].replaceAll('--PREFIX-', '--mp-')
+    assert.equal(tokens.match(/--mp-internal-switch-error-text-color:\s*([^;]+);/)?.[1].trim(), expected, 'Maple Switch error foreground must match its registered default')
     left = normalizeSwitchErrorText(left, 'c', 'var(--c-switch-text-color)')
     right = normalizeSwitchErrorText(right, 'mp', 'var(--mp-internal-switch-error-text-color)')
   }
@@ -318,28 +326,38 @@ for (const [cedarPath, maplePath] of pairs) {
     }
     return value.replace(/\s+/g, '').replaceAll(';', '').replaceAll('"', "'").replace(/(^|[^\d])\.(\d)/g, '$10.$2')
   }
-  assert.equal(normalizePair(left), normalizePair(right), `Copied implementation drift: ${cedarPath} / ${maplePath}`)
+  // Compare the InfiniteScroll SFC script using the syntax-aware check below.
+  // The surrounding template remains independently compared by the legacy
+  // SFC check; formatting braces in the script must not cause false drift.
+  const templateOnly = cedarPath === 'infinite-scroll/infinite-scroll.vue'
+  assert.equal(normalizePair(templateOnly ? stripCopiedSfcScript(left) : left), normalizePair(templateOnly ? stripCopiedSfcScript(right) : right), `Copied implementation drift: ${cedarPath} / ${maplePath}`)
+  if (cedarPath.endsWith('.vue')) {
+    // The legacy SFC comparison removes all whitespace, including whitespace
+    // inside string literals. Compare script semantics separately so e.g.
+    // join(' ') cannot silently drift to join('').
+    assert.equal(normalizeCopiedSfcScript(left, transformSync), normalizeCopiedSfcScript(right, transformSync), `Copied script semantics drift: ${cedarPath} / ${maplePath}`)
+  }
   console.log(`PASS ${cedarPath}`)
 }
 
 // Demo source copies differ only in product imports, component prefixes and locale adapters.
 for (const [leftPath, rightPath] of [
   ['index.ts', 'index.ts'],
-  ['__tests__/style-provider.test.tsx', '__tests__/parity.spec.js'],
+  ['__tests__/theme-provider.test.tsx', '__tests__/parity.spec.js'],
 ]) {
-  if (componentFilter && componentFilter !== 'style-provider') continue
-  const left = await readFile(resolve(cedar, 'style-provider', leftPath), 'utf8')
-  const right = await readFile(resolve(maple, 'style-provider', rightPath), 'utf8')
+  if (componentFilter && componentFilter !== 'theme-provider') continue
+  const left = await readFile(resolve(cedar, 'theme-provider', leftPath), 'utf8')
+  const right = await readFile(resolve(maple, 'theme-provider', rightPath), 'utf8')
   const expected = left
     .replaceAll('../_utils/maple/elements', '../utils/elements')
     .replaceAll('../_utils/maple/components', '../utils/components')
     .replaceAll('../_utils/cedar/components', '../utils/components')
-    .replaceAll('./StyleProvider.vue', './StyleProvider.vue')
+    .replaceAll('./ThemeProvider.vue', './ThemeProvider.vue')
     .replaceAll('maple', '__other_library__')
     .replaceAll('cedar', 'maple')
     .replaceAll('__other_library__', 'cedar')
     .replaceAll('cColorScheme', 'mpColorScheme')
     .replaceAll('c-', 'mp-')
-  assert.equal(expected, right, 'StyleProvider source drift: ' + leftPath)
-  console.log('PASS style-provider/' + leftPath)
+  assert.equal(normalizeCopiedTypeScript(expected, transformSync, 'tsx'), normalizeCopiedTypeScript(right, transformSync, 'tsx'), 'ThemeProvider source drift: ' + leftPath)
+  console.log('PASS theme-provider/' + leftPath)
 }

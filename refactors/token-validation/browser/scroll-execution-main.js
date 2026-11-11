@@ -1,5 +1,5 @@
-import { scrollTo as cedarScroll } from '/cedar-design-web/packages/cedar-ui/src/_utils/maple/elements.ts'
-import { scrollTo as mapleScroll } from '/maple-design-mobile/packages/maple-ui/src/utils/elements.ts'
+import { scrollTo as cedarScroll } from '/cedar-design-web/packages/ui/src/_utils/maple/elements.ts'
+import { scrollTo as mapleScroll } from '/maple-design-mobile/packages/ui/src/utils/elements.ts'
 
 const results = [], resources = new Set(), jobs = new Map()
 let busy = false, alive = true

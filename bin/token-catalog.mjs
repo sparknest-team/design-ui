@@ -1,3 +1,4 @@
+import { tokenSelectorCondition } from './token-selector-condition.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -6,11 +7,11 @@ import { spawnSync } from 'node:child_process';
 import { createRequire } from 'node:module';
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url));
-const require = createRequire(resolve(workspace, 'cedar-design-web/packages/cedar-ui/package.json'));
+const require = createRequire(resolve(workspace, 'cedar-design-web/packages/ui/package.json'));
 const destinations = [
-  ['c', 'zh', 'cedar-design-web/packages/cedar-ui/docs/guide/design-token-reference.md'],
-  ['mp', 'zh', 'maple-design-mobile/packages/maple-ui/docs/designTokenReference.zh-CN.md'],
-  ['mp', 'en', 'maple-design-mobile/packages/maple-ui/docs/designTokenReference.en-US.md'],
+  ['c', 'zh', 'cedar-design-web/packages/ui/docs/guide/design-token-reference.md'],
+  ['mp', 'zh', 'maple-design-mobile/packages/ui/docs/designTokenReference.zh-CN.md'],
+  ['mp', 'en', 'maple-design-mobile/packages/ui/docs/designTokenReference.en-US.md'],
 ];
 const code = value => {
   const text = String(value).replaceAll('\n', ' ');
@@ -54,7 +55,7 @@ export function renderCatalog(report, platform, language) {
     text += en ? '| Variable | Layer | Declaration / condition | Consumer / CSS properties |\n| --- | --- | --- | --- |\n' : '| 变量 | 层级 | 声明值／条件 | 消费路径／CSS 属性 |\n| --- | --- | --- | --- |\n';
     for (const [token, info] of Object.entries(row.tokens ?? {}).sort(([a], [b]) => a.localeCompare(b, 'en'))) {
       const definitions = info.definitions?.length ? info.definitions : info.values.map(value => ({ value, selector: '' }));
-      const value = definitions.map(({ value, selector }) => code(value) + (selector && selector !== ':root' ? ` (${code(selector)})` : '')).join('<br>');
+      const value = definitions.map(({ value, selector }) => { const condition = tokenSelectorCondition(selector); return code(value) + (condition && condition !== ':root' ? ` (${code(condition)})` : ''); }).join('<br>');
       const label = consumerLabels[info.consumer]?.[en ? 1 : 0] ?? info.consumer;
       const properties = [...new Set(info.consumerProperties ?? [])].sort().map(code).join(', ');
       const runtime = [...(row.literalRuntimeReferences?.[token] ?? []), ...(row.dynamicRuntimeReferences?.[token] ?? [])].map(code).join(', ');

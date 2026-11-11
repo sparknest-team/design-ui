@@ -26,5 +26,5 @@
 - 定向运行基础归一化、Unicode Input/Textarea 集成，以及 Input/文本管线/Textarea/AutoComplete 现有测试：Cedar 9 文件 99 项、Maple 10 文件 116 项全部通过。新回归验证半对边界、整对边界、容量 1/2、errorOnly、自定义裁剪和组件 update:modelValue 的安全值。
 - 两端 typecheck、Cedar 本批文件 scoped ESLint、Maple 全量 lint:check 通过；两仓 git diff --check 通过。
 - 76 份基础复制门禁及 Input/Textarea 24 对主体/API/样式/测试/Demo 门禁通过。菜单/调研检查通过，72 族（56 已同源、15 逻辑已同源、1 独立），分类不变。
-- 两端完整 build:doc **失败**：Cedar 编译 `docs/.vuepress/.temp-build/pages/guide/design-tokens/index.html.vue (6:198)` 提示 Element is missing end tag；来源 `packages/cedar-ui/docs/guide/design-tokens.md`。Maple `packages/maple-ui/docs/designTokens.en-US.md (8:426)` 同样缺结束标签。两者均在并行 Token 工作改动范围，未修改、回退或接管。Maple Demo SFC 预检仍为 1036 个、0 失败。待 Token 文档工作完成后必须重跑完整构建及新产物浏览器复验。
+- 两端完整 build:doc **失败**：Cedar 编译 `docs/.vuepress/.temp-build/pages/guide/design-tokens/index.html.vue (6:198)` 提示 Element is missing end tag；来源 `packages/ui/docs/guide/design-tokens.md`。Maple `packages/ui/docs/designTokens.en-US.md (8:426)` 同样缺结束标签。两者均在并行 Token 工作改动范围，未修改、回退或接管。Maple Demo SFC 预检仍为 1036 个、0 失败。待 Token 文档工作完成后必须重跑完整构建及新产物浏览器复验。
 - 真实 IME、ZWJ/组合符自定义字素簇、手动 resize、触屏和 Maple errorOnly 浏览器仍未覆盖。保留脏仓库和其他聊天变更，未提交、推送或发布。

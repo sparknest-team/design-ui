@@ -56,9 +56,9 @@ test('axis domain is distinct from layout and uses reviewed x/y/xy values', () =
 test('both lint paths enforce the checker and the real registry covers current declarations', () => {
   const workspace=fileURLToPath(new URL('../../',import.meta.url))
   const registry=JSON.parse(readFileSync(resolve(workspace,'design-ui/configs/api-naming.json'),'utf8'))
-  const files=['cedar-design-web/packages/cedar-ui/src','maple-design-mobile/packages/maple-ui/src'].flatMap(p=>inventory(resolve(workspace,p)))
+  const files=['cedar-design-web/packages/ui/src','maple-design-mobile/packages/ui/src'].flatMap(p=>inventory(resolve(workspace,p)))
   assert.deepEqual(runCheck(registry,files),[])
-  const c=JSON.parse(readFileSync(resolve(workspace,'cedar-design-web/packages/cedar-ui/package.json'),'utf8'))
+  const c=JSON.parse(readFileSync(resolve(workspace,'cedar-design-web/packages/ui/package.json'),'utf8'))
   const m=JSON.parse(readFileSync(resolve(workspace,'maple-design-mobile/package.json'),'utf8'))
   assert.match(c.scripts.lint,/api-naming-check\.mjs/)
   assert.match(m.scripts['lint:check'],/check:api-naming/)

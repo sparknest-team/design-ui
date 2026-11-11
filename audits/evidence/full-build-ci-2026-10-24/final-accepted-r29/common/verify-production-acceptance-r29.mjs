@@ -24,7 +24,7 @@ for (const [library, expected, checkedSources, componentLog, themeCount] of [
   assert.deepEqual(before, after)
   assert.equal(before.source, coverage.sourceFingerprint)
   assert.equal(before.production, coverage.productionFingerprint)
-  const index = `${root}/packages/${library}-ui/${library === 'cedar' ? 'dist' : 'site'}/index.html`
+  const index = `${root}/packages/ui/${library === 'cedar' ? 'dist' : 'site'}/index.html`
   assert.equal(coverage.buildIndexHash, createHash('sha256').update(readFileSync(index)).digest('hex'))
   assert.equal(coverage.results.reduce((sum, result) => sum + (result.checkedSources ?? 0), 0), checkedSources)
   for (const [logName, count] of [[componentLog, expected], [`${library}-theme-final-r29.log`, themeCount]]) {

@@ -5,8 +5,8 @@ import { resolve } from 'node:path'
 const root = fileURLToPath(new URL('../../', import.meta.url))
 const require = createRequire(import.meta.url)
 for (const [name, directory, prefix] of [
-  ['Cedar', 'cedar-design-web/packages/cedar-ui', 'C'],
-  ['Maple', 'maple-design-mobile/packages/maple-ui', 'Mp'],
+  ['Cedar', 'cedar-design-web/packages/ui', 'C'],
+  ['Maple', 'maple-design-mobile/packages/ui', 'Mp'],
 ]) for (const component of ['tooltip', 'popover']) for (const format of ['es', 'lib']) {
   const file = resolve(root, directory, format, `${component}/index.${format === 'es' ? 'mjs' : 'js'}`)
   const api = format === 'es' ? await import(pathToFileURL(file)) : require(file)

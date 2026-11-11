@@ -37,7 +37,7 @@
 
 ## 文档入口与限制
 
-[SafeArea 安全区与 App 适配](../../maple-design-mobile/packages/maple-ui/src/safe-area/docs/zh-CN.md) 包含覆盖优先级、单位、初始化/订阅/清理归属、已避让容器、四边消费、Teleport/iframe、键盘边界和真机矩阵。
+[SafeArea 安全区与 App 适配](../../maple-design-mobile/packages/ui/src/safe-area/docs/zh-CN.md) 包含覆盖优先级、单位、初始化/订阅/清理归属、已避让容器、四边消费、Teleport/iframe、键盘边界和真机矩阵。
 
 软键盘不是安全区；没有自动将键盘高度计入 bottom，也没有承诺解决所有 WebView 键盘模式。视口固定后代必须使用合适的独立宿主或显式边距，不能假设普通流祖先已为其避让。
 

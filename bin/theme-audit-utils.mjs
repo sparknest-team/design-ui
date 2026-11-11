@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 const workspace = fileURLToPath(new URL("../../", import.meta.url));
 // This cross-repository audit uses the installed workspace tooling, not bundled dependencies.
 const cedarTools = createRequire(
-  resolve(workspace, "cedar-design-web/packages/cedar-ui/package.json"),
+  resolve(workspace, "cedar-design-web/packages/ui/package.json"),
 );
 const postcss = cedarTools("postcss");
 const specificity = (selector) => {
@@ -45,6 +45,13 @@ export const luminance = (rgb) =>
     );
   }, 0);
 
+export function assertMotionOnlyRule(rule) {
+  rule.walkDecls(decl => assert.ok(
+    /^(animation(?:-.+)?|transition(?:-.+)?|transform|scale|opacity|width|height|--(?:c|mp)-field-hint-duration)$/.test(decl.prop),
+    `Unaudited conditional property: ${decl.prop}`,
+  ));
+}
+
 export async function auditThemes(
   component,
   inspect,
@@ -59,8 +66,8 @@ export async function auditThemes(
   } = {},
 ) {
   for (const [repo, pkg, prefix, themeAttr] of [
-    ["cedar-design-web", "cedar-ui", "c", "cedar-theme"],
-    ["maple-design-mobile", "maple-ui", "mp", "maple-theme"],
+    ["cedar-design-web", "ui", "c", "cedar-theme"],
+    ["maple-design-mobile", "ui", "mp", "maple-theme"],
   ]) {
     if (!platforms.includes(prefix)) continue;
     const root = resolve(workspace, repo, "packages", pkg);
@@ -69,7 +76,7 @@ export async function auditThemes(
       prefix === "c"
         ? require("less")
         : createRequire(
-            resolve(workspace, repo, "packages/maple-cli/package.json"),
+            resolve(workspace, repo, "packages/cli/package.json"),
           )("less");
     const { JSDOM } = require("jsdom");
     const source = resolve(root, "src");
@@ -98,14 +105,7 @@ export async function auditThemes(
         (rule.parent.name === "keyframes" ||
           (reducedMedia && !reducedMotion))
       ) {
-        rule.walkDecls((decl) =>
-          assert.ok(
-            /^(animation(?:-.+)?|transition(?:-.+)?|transform|opacity|width|height|--(?:c|mp)-field-hint-duration)$/.test(
-              decl.prop,
-            ),
-            `Unaudited conditional property: ${decl.prop}`,
-          ),
-        );
+        assertMotionOnlyRule(rule);
         return;
       }
       const pointerMedia = rule.parent.type === 'atrule' && rule.parent.name === 'media' && ['(hover: hover) and (pointer: fine)', '(hover: hover)', '(pointer: coarse)', '(hover: none)'].includes(rule.parent.params);

@@ -1,8 +1,8 @@
 import { createApp, h, nextTick, ref } from 'vue'
-import CedarMenu from '/cedar-design-web/packages/cedar-ui/src/menu/index.ts'
-import MapleMenu from '/maple-design-mobile/packages/maple-ui/src/menu/index.ts'
-import '/cedar-design-web/packages/cedar-ui/src/menu/style/index.ts'
-import '/maple-design-mobile/packages/maple-ui/src/menu/style/index.ts'
+import CedarMenu from '/cedar-design-web/packages/ui/src/menu/index.ts'
+import MapleMenu from '/maple-design-mobile/packages/ui/src/menu/index.ts'
+import '/cedar-design-web/packages/ui/src/menu/style/index.ts'
+import '/maple-design-mobile/packages/ui/src/menu/style/index.ts'
 
 const container = document.querySelector('#fixture')
 const results = []

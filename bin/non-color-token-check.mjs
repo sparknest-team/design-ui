@@ -8,7 +8,7 @@ const components = ['badge', 'tag', 'button', 'alert', 'hover', 'paper', 'ripple
 let cases = 0, overrides = 0
 for (const component of components) {
   const name = component === 'hover' ? 'hoverOverlay' : component.replace(/-([a-z])/g, (_, c) => c.toUpperCase())
-  const themeFileName = existsSync(new URL(`../../maple-design-mobile/packages/maple-ui/src/themes/dark/${name}.ts`, import.meta.url)) ? name : null
+  const themeFileName = existsSync(new URL(`../../maple-design-mobile/packages/ui/src/themes/dark/${name}.ts`, import.meta.url)) ? name : null
   await auditThemes(component, ({ prefix: p, variables, expand }) => {
     const root = `--${p}-${component}-`
     for (const [key, value] of Object.entries(variables)) {
@@ -32,7 +32,7 @@ for (const component of ['tag', 'alert', 'button', 'switch']) for (const reduced
     const property = component === 'switch' ? 'animation' : 'transition'
     if (reducedMotion) assert.equal(cascade(el)[property], 'none', `${component} reduced motion`)
     else {
-      const key = `--${p}-${component}-${suffix}`
+      const key = component === 'button' ? `--${p}-sys-motion-duration-standard` : `--${p}-${component}-${suffix}`
       assert.ok(cascade(el)[property].includes(`var(${key})`), key)
       variables[key] = '777ms'
       assert.ok(expand(cascade(el)[property]).includes('777ms'), `${key} override`)

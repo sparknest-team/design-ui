@@ -1,5 +1,5 @@
 import { createApp, h, ref } from 'vue'
-import LoadingBar from '/maple-design-mobile/packages/maple-ui/src/loading-bar/index.ts'
+import LoadingBar from '/maple-design-mobile/packages/ui/src/loading-bar/index.ts'
 
 const cases = ref([]), busy = ref(false)
 let current

@@ -712,6 +712,14 @@
       "cases": [
         "basic"
       ]
+    },
+    {
+      "title": "公共内容",
+      "en": "Shared content",
+      "cases": [
+        "content-overrides",
+        "content-overrides.en-US"
+      ]
     }
   ],
   "count-to": [
@@ -741,6 +749,15 @@
       "en": "Interaction and control",
       "cases": [
         "manual"
+      ]
+    },
+    {
+      "title": "数值与动画边界",
+      "en": "Numeric and animation boundaries",
+      "cases": [
+        "decimal-floor",
+        "zero-duration",
+        "easing-replay"
       ]
     }
   ],
@@ -909,7 +926,8 @@
         "confirm",
         "message",
         "form",
-        "simple"
+        "simple",
+        "service-container"
       ]
     },
     {
@@ -975,6 +993,13 @@
       "en": "Interaction and control",
       "cases": [
         "live-properties"
+      ]
+    },
+    {
+      "title": "内容与布局",
+      "en": "Content and layout",
+      "cases": [
+        "content-flow"
       ]
     }
   ],
@@ -1161,7 +1186,8 @@
         "presentation-status",
         "platform-presentation",
         "field-panel-actions",
-        "scroll-assign"
+        "scroll-assign",
+        "change-source"
       ]
     },
     {
@@ -1173,7 +1199,9 @@
         "async-fields",
         "presentation-state",
         "async-race",
-        "field-range-boundaries"
+        "field-range-boundaries",
+        "submit-inputs",
+        "field-identity"
       ]
     },
     {
@@ -2366,7 +2394,8 @@
       "cases": [
         "state-lab",
         "loading",
-        "controlled-fields"
+        "controlled-fields",
+        "native-form"
       ]
     }
   ],
@@ -2535,7 +2564,8 @@
       "cases": [
         "state-lab",
         "keyboard-input",
-        "controlled-range"
+        "controlled-range",
+        "interaction-session"
       ]
     }
   ],
@@ -2570,6 +2600,13 @@
       "en": "Interaction and control",
       "cases": [
         "interactive-layout"
+      ]
+    },
+    {
+      "title": "分隔与换行",
+      "en": "Separators and wrapping",
+      "cases": [
+        "split-wrapping"
       ]
     }
   ],
@@ -2709,12 +2746,19 @@
       ]
     }
   ],
-  "style-provider": [
+  "theme-provider": [
     {
       "title": "基础示例",
       "en": "Basic examples",
       "cases": [
         "basic"
+      ]
+    },
+    {
+      "title": "局部主题",
+      "en": "Local themes",
+      "cases": [
+        "local-theme"
       ]
     }
   ],
@@ -2843,6 +2887,13 @@
         "typed-config",
         "task-workbench",
         "form-attribute"
+      ]
+    },
+    {
+      "title": "加载与等待",
+      "en": "Loading and waiting",
+      "cases": [
+        "loading"
       ]
     }
   ],
@@ -2997,6 +3048,13 @@
         "interaction",
         "body-contract"
       ]
+    },
+    {
+      "title": "值模型与交互",
+      "en": "Value model and interaction",
+      "cases": [
+        "empty-policy"
+      ]
     }
   ],
   "themes": [
@@ -3004,7 +3062,15 @@
       "title": "基础示例",
       "en": "Basic examples",
       "cases": [
-        "toggle"
+        "toggle",
+        "basic"
+      ]
+    },
+    {
+      "title": "局部主题",
+      "en": "Local themes",
+      "cases": [
+        "local-theme"
       ]
     }
   ],

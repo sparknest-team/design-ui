@@ -9,7 +9,7 @@ import test from 'node:test';
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const require = createRequire(path.join(root, 'maple-design-mobile/package.json'));
 const { chromium } = require('playwright');
-const cli = createRequire(path.join(root, 'maple-design-mobile/packages/maple-cli/package.json'));
+const cli = createRequire(path.join(root, 'maple-design-mobile/packages/cli/package.json'));
 const { createServer } = await import(cli.resolve('vite'));
 const vue = (await import(cli.resolve('@vitejs/plugin-vue'))).default;
 const jsx = (await import(cli.resolve('@vitejs/plugin-vue-jsx'))).default;
@@ -18,14 +18,13 @@ function fixture(cases, prefix, styles) {
   return `import {createApp,h} from 'vue'
 import * as UI from '/src/index.ts'
 import * as Icons from '@${prefix === 'mp' ? 'maple' : 'cedar'}-design/icons-vue'
-import StyleProvider from '/src/style-provider/index.ts'
+import ThemeProvider from '/src/theme-provider/index.ts'
 import Themes from '/src/themes/index.ts'
 ${styles.map(name => `import '/src/${name}/style/index.ts'`).join('\n')}
 ${cases.map((name, index) => `import Demo${index} from '/src/${name}'`).join('\n')}
 const mode=new URLSearchParams(location.search).get('mode')||'light'
-StyleProvider.setStyleVars(Themes.default[mode])
 const demos=[${cases.map((name, i) => `{name:${JSON.stringify(name)},component:Demo${i}}`).join(',')}]
-const app=createApp({render:()=>demos.map(demo=>h('section',{'data-case':demo.name},[h('h2',demo.name),h(demo.component)]))})
+const app=createApp({render:()=>h(ThemeProvider,{theme:Themes.default[mode]},()=>demos.map(demo=>h('section',{'data-case':demo.name},[h('h2',demo.name),h(demo.component)])))})
 app.use(UI.default)
 for(const [name,value] of Object.entries(Icons))if(name.startsWith('Icon'))app.component('${prefix === 'mp' ? 'M' : 'C'}'+name,value)
 app.mount('#app')
@@ -33,8 +32,8 @@ app.mount('#app')
 }
 
 for (const [platform, repo, pkg, prefix, directory] of [
-  ['maple', 'maple-design-mobile', 'maple-ui', 'mp', 'example/demos'],
-  ['cedar', 'cedar-design-web', 'cedar-ui', 'c', '__demos__'],
+  ['maple', 'maple-design-mobile', 'ui', 'mp', 'example/demos'],
+  ['cedar', 'cedar-design-web', 'ui', 'c', '__demos__'],
 ]) {
   test(`${platform}: standard demo controls keep values and readable widths at 346px in both themes`, { timeout: 360000 }, async () => {
     const sourceRoot = path.join(root, repo, 'packages', pkg, 'src');
@@ -55,7 +54,7 @@ for (const [platform, repo, pkg, prefix, directory] of [
         enforce: 'pre',
         resolveId(id) {
           if (id === '/__demo-controls-entry.js') return '\0demo-controls-entry';
-          if (id === '@maple-design/cli/client') return '\0demo-controls-client';
+          if (id === '@maple-design/cli-vue/client') return '\0demo-controls-client';
         },
         load(id) {
           if (id === '\0demo-controls-entry') return entry;

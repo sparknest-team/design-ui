@@ -1,6 +1,6 @@
 import { createApp, createSSRApp, h, nextTick, ref } from 'vue'
-import CedarTrigger from '/cedar-design-web/packages/cedar-ui/src/trigger/index.ts'
-import MapleTrigger from '/maple-design-mobile/packages/maple-ui/src/trigger/index.ts'
+import CedarTrigger from '/cedar-design-web/packages/ui/src/trigger/index.ts'
+import MapleTrigger from '/maple-design-mobile/packages/ui/src/trigger/index.ts'
 
 const results = []
 const container = document.querySelector('#fixture')

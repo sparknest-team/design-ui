@@ -4,8 +4,8 @@ import { fileURLToPath } from 'node:url'
 
 const here = dirname(fileURLToPath(import.meta.url))
 const workspace = resolve(here, '../../../..')
-const mapleRoot = resolve(workspace, 'maple-design-mobile/packages/maple-icons-vue/svg')
-const cedarRoot = resolve(workspace, 'cedar-design-web/packages/cedar-icons-vue/svg')
+const mapleRoot = resolve(workspace, 'maple-design-mobile/packages/icons/svg')
+const cedarRoot = resolve(workspace, 'cedar-design-web/packages/icons/svg')
 
 const sharedRenames = new Map([
   ['bg-colors', 'background-color'],

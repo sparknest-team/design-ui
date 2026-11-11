@@ -7,7 +7,7 @@ test('viewport messages keep one live instance and use presets instead of overla
 
 test('compiled language selectors hide labels without hiding the document root', async()=>{
   const {createRequire}=await import('node:module');
-  const require=createRequire(new URL('../../cedar-design-web/packages/cedar-ui/package.json',import.meta.url));
+  const require=createRequire(new URL('../../cedar-design-web/packages/ui/package.json',import.meta.url));
   const {parse,compileStyle}=require('@vue/compiler-sfc');
   const postcss=require('postcss');
   const descriptor=parse(enhanceConfigurationComparison(fixture('c-input'))).descriptor;
@@ -24,7 +24,7 @@ test('positioned presets reveal the bound message instead of only changing hidde
 
 test('message click handlers remain valid after Vue formatting without semicolons', async () => {
  const {createRequire}=await import('node:module');
- const require=createRequire(new URL('../../maple-design-mobile/packages/maple-cli/package.json',import.meta.url));
+ const require=createRequire(new URL('../../maple-design-mobile/packages/cli/package.json',import.meta.url));
  const prettier=require('prettier');
  const {parse,compileTemplate}=require('@vue/compiler-sfc');
  const output=enhanceConfigurationComparison(fixture('c-message').replace('<c-message ', '<c-message v-model:open="open" '));

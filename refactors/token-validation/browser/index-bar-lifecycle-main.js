@@ -1,7 +1,7 @@
 import { createApp, h, KeepAlive, nextTick, ref } from 'vue'
-import IndexBar from '/maple-design-mobile/packages/maple-ui/src/index-bar/IndexBar.vue'
-import IndexAnchor from '/maple-design-mobile/packages/maple-ui/src/index-bar/IndexAnchor.vue'
-import '/maple-design-mobile/packages/maple-ui/src/index-bar/style/index.ts'
+import IndexBar from '/maple-design-mobile/packages/ui/src/index-bar/IndexBar.vue'
+import IndexAnchor from '/maple-design-mobile/packages/ui/src/index-bar/IndexAnchor.vue'
+import '/maple-design-mobile/packages/ui/src/index-bar/style/index.ts'
 
 const mounted = ref(false), active = ref(true), instance = ref(), surface = ref(), duration = ref(0)
 const results = ref([]), busy = ref(false), jobs = new Map(), frames = new Map()

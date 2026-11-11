@@ -1,0 +1,28 @@
+{
+  "zh-CN": {
+    "shared": {
+      "props": "| 属性名 | 描述 | 类型 | 默认值 |\n| --- | --- | --- | :---: |\n| status | 文本语义状态 | `SemanticStatus`<br>`'default' \\| 'primary' \\| 'secondary' \\| 'tertiary' \\| 'info' \\| 'success' \\| 'warning' \\| 'danger'` | `-` |\n| bold | 粗体 | `boolean` | `false` |\n| mark | 添加标记样式 | `boolean \\| { color: string }` | `false` |\n| underline | 下划线样式 | `boolean` | `false` |\n| delete | 删除线样式 | `boolean` | `false` |\n| code | 代码块样式 | `boolean` | `false` |\n| disabled | 禁用状态 | `boolean` | `false` |\n| editable | 开启可编辑功能 | `boolean` | `false` |\n| editing **(v-model)** | 是否在编辑状态 | `boolean` | `-` |\n| default-editing | 默认的编辑状态 | `boolean` | `false` |\n| edit-text **(v-model)** | 编辑的文字 | `string` | `-` |\n| copyable | 开启复制功能 | `boolean` | `false` |\n| copy-text | 复制的文字 | `string` | `-` |\n| copy-delay | 复制成功后，复制按钮恢复到可点击状态的延迟时间，单位是毫秒 | `number` | `3000` |\n| ellipsis | 自动溢出省略，具体参数配置看 [EllipsisConfig](#ellipsisconfig) | `boolean \\| EllipsisConfig` | `false` |\n| edit-tooltip-props | 编辑按钮 Tooltip 配置 | `object` | `-` |\n| copy-tooltip-props | 拷贝按钮 Tooltip 配置 | `object` | `-` |",
+      "events": "| 事件名 | 描述 | 参数 |\n| --- | --- | --- |\n| edit-start | 开始编辑 | `-` |\n| change | 编辑内容变化 | `text: string` |\n| edit-end | 编辑结束 | `-` |\n| copy | 复制 | `text: string` |\n| ellipsis | 省略变化事件 | `isEllipsis: boolean` |\n| expand | 展开收起事件 | `expanded: boolean` |",
+      "slots": "| 插槽名 | 描述 | 参数 |\n| --- | --- | --- |\n| expand-node | 自定义展开和折叠按钮 | `expanded: boolean` |\n| copy-icon | 自定义复制按钮图标 | `copied: boolean` |\n| copy-tooltip | 自定义复制按钮的 tooltip 内容 | `copied: boolean` |"
+    },
+    "specific": {
+      "TypographyText": "",
+      "TypographyTitle": "| 属性名 | 描述 | 类型 | 默认值 |\n| --- | --- | --- | :---: |\n| heading | 标题级别，相当于 `h1` `h2` `h3` `h4` `h5` `h6` | `1 \\| 2 \\| 3 \\| 4 \\| 5 \\| 6` | `1` |",
+      "TypographyParagraph": "| 属性名 | 描述 | 类型 | 默认值 |\n| --- | --- | --- | :---: |\n| blockquote | 长引用 | `boolean` | `false` |\n| spacing | 段落行高；长文本推荐默认行高，短文本推荐 `close` | `'default' \\| 'close'` | `'default'` |"
+    },
+    "ellipsis": "| 属性名 | 描述 | 类型 | 默认值 |\n| --- | --- | --- | :---: |\n| rows | 显示省略的行数 | `number` | `1` |\n| expandable | 是否支持展开/折叠 | `boolean` | `false` |\n| ellipsisStr | 省略号 | `string` | `'...'` |\n| suffix | 后缀 | `string` | `-` |\n| showTooltip | 配置省略时的弹出框 | `boolean \\| { type: 'tooltip' \\| 'popover'; props: Record<string, any> }` | `false` |\n| css | 是否使用 CSS 省略（此模式暂不支持展开、自定义省略号和后缀） | `boolean` | `false` |"
+  },
+  "en-US": {
+    "shared": {
+      "props": "| Prop | Description | Type | Default |\n| --- | --- | --- | :---: |\n| status | Semantic text status | `SemanticStatus`<br>`'default' \\| 'primary' \\| 'secondary' \\| 'tertiary' \\| 'info' \\| 'success' \\| 'warning' \\| 'danger'` | `-` |\n| bold | Bold | `boolean` | `false` |\n| mark | Mark styling | `boolean \\| { color: string }` | `false` |\n| underline | Underline styling | `boolean` | `false` |\n| delete | Strikethrough styling | `boolean` | `false` |\n| code | Code-block styling | `boolean` | `false` |\n| disabled | Whether to disable link | `boolean` | `false` |\n| editable | Enable editing | `boolean` | `false` |\n| editing **(v-model)** | Whether currently editing | `boolean` | `-` |\n| default-editing | Default editing state | `boolean` | `false` |\n| edit-text **(v-model)** | Edited text | `string` | `-` |\n| copyable | Enable copying | `boolean` | `false` |\n| copy-text | Text to copy | `string` | `-` |\n| copy-delay | Delay in ms before the copy button becomes clickable again after successful copying | `number` | `3000` |\n| ellipsis | Automatic truncation; see EllipsisConfig | `boolean \\| EllipsisConfig` | `false` |\n| edit-tooltip-props | Edit-button Tooltip options | `object` | `-` |\n| copy-tooltip-props | Copy-button Tooltip options | `object` | `-` |",
+      "events": "| Event | Description | Prop |\n| --- | --- | --- |\n| edit-start | Editing starts | `-` |\n| change | Edited content changes | `text: string` |\n| edit-end | Editing ends | `-` |\n| copy | Copy | `text: string` |\n| ellipsis | Ellipsis-state change | `isEllipsis: boolean` |\n| expand | Expand/collapse event | `expanded: boolean` |",
+      "slots": "| Slot | Description | Prop |\n| --- | --- | --- |\n| expand-node | Custom expand/collapse buttons | `expanded: boolean` |\n| copy-icon | Custom copy-button icon | `copied: boolean` |\n| copy-tooltip | Custom copy-button tooltip content | `copied: boolean` |"
+    },
+    "specific": {
+      "TypographyText": "",
+      "TypographyTitle": "| Prop | Description | Type | Default |\n| --- | --- | --- | :---: |\n| heading | Heading level, equivalent to `h1`/`h2`/`h3`/`h4`/`h5`/`h6` | `1 \\| 2 \\| 3 \\| 4 \\| 5 \\| 6` | `1` |",
+      "TypographyParagraph": "| Prop | Description | Type | Default |\n| --- | --- | --- | :---: |\n| blockquote | Block quotation | `boolean` | `false` |\n| spacing | Paragraph line height; use the default for long text and `close` for short text | `'default' \\| 'close'` | `'default'` |"
+    },
+    "ellipsis": "| Prop | Description | Type | Default |\n| --- | --- | --- | :---: |\n| rows | Number of displayed lines before truncation | `number` | `1` |\n| expandable | Whether expand/collapse is supported | `boolean` | `false` |\n| ellipsisStr | Ellipsis | `string` | `'...'` |\n| suffix | Suffix | `string` | `-` |\n| showTooltip | Popup options for truncated content | `boolean \\| { type: 'tooltip' \\| 'popover'; props: Record<string, any> }` | `false` |\n| css | Use CSS truncation; currently does not support expansion, custom ellipsis or suffix | `boolean` | `false` |"
+  }
+}

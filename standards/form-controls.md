@@ -43,7 +43,7 @@
 - 公共 token 后缀必须一致并表达同一 CSS 功效；前缀仅为 `--c-` / `--mp-`。
 - 组件源码只读取已定义 token。公共 token 放 `style/token.less`，实现样式放组件样式文件；禁止在实现体重复写品牌色和系统常量。
 - 桌面与移动实现结构不同的复杂面板，只统一语义层 token；面板内部 token 作为明确的平台扩展，不强求伪一致。
-- 新增、删除或改名 token 时，组件代码、文档、`@sparknest/theme-contract` 与检查用例必须在同一变更中更新。
+- 新增、删除或改名 token 时，组件代码、文档、`@sparknest/theme-contract-vue` 与检查用例必须在同一变更中更新。
 
 ## 6. 必要测试矩阵
 
@@ -81,6 +81,7 @@
 - `edit-mode`：Cedar 为 `direct | click | dblclick`；Maple 为 `direct | popup`。Cedar 默认 `direct`；Maple 的 Select、Cascader、AutoComplete、Date/DateRange、Time/TimeRange 默认 `popup`，其他字段默认 `direct`。Form/FormItem 未指定时保留各字段默认值，显式设置才统一覆盖；字段 > FormItem > Form。显式 `direct` 保留直接编辑。旧编辑属性 `presentation`、类型别名与编辑值 `inline` 直接移除，不保留兼容层。
 - Search 的 `edit-mode` 两端统一为 `direct | popup`，默认 `direct`；分别使用历史菜单与本地全屏搜索弹层，不再提供 `historyPopup`。
 - `readPretty?: boolean` 独立于 `readonly`、`disabled`；字段 > FormItem > Form 继承，显式 `false` 覆盖父级。仅展示格式化值和 read 插槽，不挂载编辑器或请求搜索。
+- 异步选项字段的 `readonly` 禁止改值，但允许请求展示所需选项；`disabled` 和 `readPretty` 暂停候选请求，解除状态后可恢复。
 - Cedar 的 click/dblclick 使用 Teleport 固定定位覆盖字段原位并复用原控件，保留占位，可扩宽但不得超出视口；Enter/F2 也能进入。没有模态遮罩或 presentation=popover/dialog；悬浮/聚焦显示编辑图标及单击/双击提示，点击图标可直接编辑。
 - Maple popup 点击值区域进入，左侧默认“请输入/请选择”、右侧关闭，底部确认；inline 保留直接编辑。
 - inline 即时更新；其他编辑方式隔离草稿。候选校验通过后调用 beforeCommit，成功只写回一次；拒绝/失败保留草稿。异步期间禁用编辑、确认和取消；重置、外部替换或状态变化取消事务并作废迟到结果。
@@ -106,3 +107,10 @@ fieldPresentationProps 不声明 loading。带输入外壳的字段按需复用 
 beforeCommit 的确认等待继续由字段提交会话管理，输入框/选择框将 pending 合并到原有指示器，其他字段在编辑面板确认按钮展示等待；不会因此将直接编辑的 change 改为可等待任务。
 
 纯阅读模式不主动触发异步任务；支持 loading 的字段在业务显式传入时仍展示共享反馈，不挂载编辑器。
+
+## 12. 字段实例与延迟编辑
+
+- 已有 focus/blur 以及明确声明的编辑方法由公共包装提供稳定代理，兼容 Options methods、setup 返回和 expose；每次调用读取当前实例，不绑定已卸载的编辑器。原生元素引用随实际挂载变化，不保留关闭后的旧节点。
+- 通用字段包装的 focus 打开可编辑的延迟面板，等编辑器就绪及初始焦点安排完成后转发参数；直接只读编辑器保留聚焦，禁用/只读/纯阅读的延迟字段不因此打开。Select 的独立选择控制器在关闭时聚焦引用，打开后定位编辑器；各组件 API 明确这个边界。blur 只失焦当前目标，不打开面板。关闭、模式切换、停用或卸载取消排队调用。
+- VerificationCode reset 在 direct 模式按原契约提出空值；延迟模式打开空草稿，最终确认和 before-commit 审批之前不发布业务模型，取消保留原值。文本 select 在允许的延迟编辑器打开后执行。
+- 有独立数据/任务生命周期的方法需要单独定义闭合态策略；例如 Upload 队列读取、提交、替换由 UP02 跟踪，不将一般焦点代理视为队列生命周期已经解决。

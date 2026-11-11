@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { createRequire } from "node:module";
 const require = createRequire(
   new URL(
-    "../../../cedar-design-web/packages/cedar-ui/package.json",
+    "../../../cedar-design-web/packages/ui/package.json",
     import.meta.url,
   ),
 );
@@ -24,7 +24,7 @@ export default {
   css: { preprocessorOptions: { less: { javascriptEnabled: true } } },
   resolve: {
     alias: {
-      "@sparknest/ui-doc-preview": new URL(
+      "@sparknest/ui-doc-preview-vue": new URL(
         "./src/index.ts",
         import.meta.url,
       ).pathname,

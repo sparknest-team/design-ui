@@ -5,7 +5,7 @@ import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = fileURLToPath(new URL('../../', import.meta.url))
-const require = createRequire(resolve(root, 'cedar-design-web/packages/cedar-ui/package.json'))
+const require = createRequire(resolve(root, 'cedar-design-web/packages/ui/package.json'))
 const ts = require('typescript')
 const less = require('less')
 const { parse, compileTemplate } = require('@vue/compiler-sfc')
@@ -76,7 +76,7 @@ function canonical(source, file) {
   if (file.endsWith('.less')) return source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/[^\n]*/g, '').replace(/\s+/g, '').replaceAll('"', "'")
   return script(source)
 }
-for (const repo of ['cedar-design-web/packages/cedar-ui', 'maple-design-mobile/packages/maple-ui']) {
+for (const repo of ['cedar-design-web/packages/ui', 'maple-design-mobile/packages/ui']) {
   const filename = resolve(root, repo, 'src/list/style/index.less')
   const { css } = await less.render(readFileSync(filename, 'utf8'), { filename })
   assert.ok(css.includes('list__content'), 'Compiled list content selectors')
@@ -84,8 +84,8 @@ for (const repo of ['cedar-design-web/packages/cedar-ui', 'maple-design-mobile/p
 }
 const errors = []
 for (const [cedar, maple] of pairs) {
-  const left = canonical(readFileSync(resolve(root, 'cedar-design-web/packages/cedar-ui/src', cedar), 'utf8'), cedar)
-  const right = canonical(readFileSync(resolve(root, 'maple-design-mobile/packages/maple-ui/src', maple), 'utf8'), maple)
+  const left = canonical(readFileSync(resolve(root, 'cedar-design-web/packages/ui/src', cedar), 'utf8'), cedar)
+  const right = canonical(readFileSync(resolve(root, 'maple-design-mobile/packages/ui/src', maple), 'utf8'), maple)
   if (left !== right) {
     const index = [...left].findIndex((char, i) => char !== right[i])
     errors.push(cedar + ' <> ' + maple + '\n  Cedar: ' + left.slice(Math.max(0, index - 80), index + 160) + '\n  Maple: ' + right.slice(Math.max(0, index - 80), index + 160))
@@ -97,7 +97,7 @@ if (errors.length) {
 } else {
   console.log('List body: ' + pairs.length + ' independent SFC/Props/style/test/Demo pairs verified, including public TypeScript declarations.')
   const keys = dir => [...readFileSync(resolve(root, dir, 'src/list/style/token.less'), 'utf8').matchAll(/--(?:c|mp)-list-([a-z0-9-]+):/g)].map(match => match[1]).sort()
-  assert.deepEqual(keys('cedar-design-web/packages/cedar-ui'), keys('maple-design-mobile/packages/maple-ui'), 'Public List token suffixes')
-  console.log('Public List tokens: ' + keys('cedar-design-web/packages/cedar-ui').length + ' identical suffixes with independent platform defaults.')
+  assert.deepEqual(keys('cedar-design-web/packages/ui'), keys('maple-design-mobile/packages/ui'), 'Public List token suffixes')
+  console.log('Public List tokens: ' + keys('cedar-design-web/packages/ui').length + ' identical suffixes with independent platform defaults.')
   console.log('Explicit exclusions: local rendering/scrollbar adapters, public Token defaults and install/index entry protocols. These remain independent and do not imply whole-directory same source.')
 }

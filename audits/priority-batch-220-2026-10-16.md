@@ -7,7 +7,7 @@
 - 原门禁重跑确有四组差异：use-uploader停用清理顺序、Token .56/0.56、queue-request和replacement-validation的本地包导入；修复首层后又显露两个Demo文本周围的换行空格差异。
 - Cedar停用清理统一为inactive/generation失效→adding新Promise链→removals.clear，保留两端并行增加的队列解锁、取消请求等全部逻辑；不复制覆盖文件，不移除并行新增内容。
 - Cedar disabled-opacity仅从.56改写为0.56，Token名、值、角色、引用关系和主题语义不变。Maple Token未改。
-- 门禁只在TS ImportDeclaration的精确模块名中映射@cedarjs/ui至@maplejs/maple-ui；Demo继续导入各自本地包。其他包/子路径、业务字符串、语句顺序、Token值和回调行为仍严格比较，未跳过配对或忽略运行时差异。
+- 门禁只在TS ImportDeclaration的精确模块名中映射@cedarjs/ui至@maplejs/ui；Demo继续导入各自本地包。其他包/子路径、业务字符串、语句顺序、Token值和回调行为仍严格比较，未跳过配对或忽略运行时差异。
 - Cedar两个Demo局部对齐模板文本的排版空格，保留本地请求模拟、队列/缩略图Promise、清理和所有并行状态控制。不改Maple既有Upload源码。
 - node bin/upload-core-check.mjs：20对SFC/Props/Types/样式/测试/Demo全部通过；不是整个目录及全部配置行为的完成声明。新增3项门禁正反向测试通过，覆盖根包映射、拒绝未知包/子路径/业务字符串、清理顺序或解锁缺失、Token数值改变及成功/失败回调交换仍失败。新增门禁回归接入check:media-core，防止未来只跑正向源码比较。
 - 两端Upload各4文件回归通过：Cedar45项、Maple48项，覆盖core-contract、queue-demo、validation-demo、remove-demo；未以单测冒充浏览器验收。此前中途口头“各45项”由本条更正。

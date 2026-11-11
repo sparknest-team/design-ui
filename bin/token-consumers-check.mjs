@@ -5,12 +5,12 @@ import { resolve } from 'node:path';
 import { liveTokens } from './token-consumer-graph.mjs';
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url));
-const require = createRequire(resolve(workspace, 'cedar-design-web/packages/cedar-ui/package.json'));
+const require = createRequire(resolve(workspace, 'cedar-design-web/packages/ui/package.json'));
 const postcss = require('postcss');
 let checked = 0;
-for (const [repo, pkg, prefix] of [['cedar-design-web', 'cedar-ui', 'c'], ['maple-design-mobile', 'maple-ui', 'mp']]) {
+for (const [repo, pkg, prefix] of [['cedar-design-web', 'ui', 'c'], ['maple-design-mobile', 'ui', 'mp']]) {
   const root = resolve(workspace, repo, 'packages', pkg, 'src');
-  const less = prefix === 'c' ? require('less') : createRequire(resolve(root, '../../maple-cli/package.json'))('less');
+  const less = prefix === 'c' ? require('less') : createRequire(resolve(root, '../../cli/package.json'))('less');
   for (const component of prefix === 'c' ? ['badge', 'tag', 'input-tag'] : ['badge', 'tag']) {
     const { css } = await less.render(`@import "${component}/style/index.less";`, { paths: [root], javascriptEnabled: true });
     const declarations = [];
@@ -25,7 +25,7 @@ for (const [repo, pkg, prefix] of [['cedar-design-web', 'cedar-ui', 'c'], ['mapl
 }
 // InputTag is Cedar-only. Guard the removed integration in compiled output.
 const { css: inputTagCss } = await require('less').render('@import "input-tag/style/index.less";', {
-  paths: [resolve(workspace, 'cedar-design-web/packages/cedar-ui/src')], javascriptEnabled: true,
+  paths: [resolve(workspace, 'cedar-design-web/packages/ui/src')], javascriptEnabled: true,
 });
 assert.doesNotMatch(inputTagCss, /c-icon-hover|tag-custom-icon-bg-hover|input-tag-tag-remove-icon-color-bg/);
 console.log(`Token consumers passed: ${checked} Badge/Tag and Cedar InputTag declarations, no exceptions; InputTag legacy CSS absent. CSS reachability only, not DOM/visual proof.`);

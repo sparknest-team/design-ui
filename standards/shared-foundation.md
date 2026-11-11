@@ -1,6 +1,6 @@
 # Shared 工具公共契约
 
-Cedar 的 `@cedar-design/shared` 与 Maple 的 `@maple-design/shared` 保持独立源码、独立构建和实例，不互相引用。工具运行时、泛型、类型收窄、导出清单和边界行为必须一致，只有诊断消息中的 Cedar / Maple 品牌前缀允许不同。
+Cedar 的 `@cedar-design/shared-vue` 与 Maple 的 `@maple-design/shared-vue` 保持独立源码、独立构建和实例，不互相引用。工具运行时、泛型、类型收窄、导出清单和边界行为必须一致，只有诊断消息中的 Cedar / Maple 品牌前缀允许不同。
 
 采用本地细粒度模块：array、dom、function、motion、namespace、number、object、predicates、string；index 只显式导出约定工具和 `MotionState` 类型。禁止重新整包转出 rattail、引入未使用的 mitt，或增加只为旧入口保留的 alias。保留适用的第三方许可说明。
 

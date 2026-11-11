@@ -1,696 +1,21 @@
 {
   "families": 210,
-  "changed": 5,
+  "changed": 0,
   "missing": 0,
   "records": [
     {
       "platform": "cedar",
       "family": "affix",
-      "file": "cedar-design-web/packages/cedar-ui/src/affix/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/affix/README.en-US.md",
       "changed": false,
-      "apiLines": 32,
+      "apiLines": 46,
       "preservedSections": 0,
       "examples": 4
     },
     {
       "platform": "cedar",
       "family": "alert",
-      "file": "cedar-design-web/packages/cedar-ui/src/alert/README.en-US.md",
-      "changed": false,
-      "apiLines": 147,
-      "preservedSections": 0,
-      "examples": 7
-    },
-    {
-      "platform": "cedar",
-      "family": "anchor",
-      "file": "cedar-design-web/packages/cedar-ui/src/anchor/README.en-US.md",
-      "changed": false,
-      "apiLines": 24,
-      "preservedSections": 0,
-      "examples": 6
-    },
-    {
-      "platform": "cedar",
-      "family": "auto-complete",
-      "file": "cedar-design-web/packages/cedar-ui/src/auto-complete/README.en-US.md",
-      "changed": false,
-      "apiLines": 110,
-      "preservedSections": 0,
-      "examples": 12
-    },
-    {
-      "platform": "cedar",
-      "family": "avatar",
-      "file": "cedar-design-web/packages/cedar-ui/src/avatar/README.en-US.md",
-      "changed": false,
-      "apiLines": 101,
-      "preservedSections": 0,
-      "examples": 10
-    },
-    {
-      "platform": "cedar",
-      "family": "back-top",
-      "file": "cedar-design-web/packages/cedar-ui/src/back-top/README.en-US.md",
-      "changed": false,
-      "apiLines": 40,
-      "preservedSections": 0,
-      "examples": 5
-    },
-    {
-      "platform": "cedar",
-      "family": "badge",
-      "file": "cedar-design-web/packages/cedar-ui/src/badge/README.en-US.md",
-      "changed": false,
-      "apiLines": 124,
-      "preservedSections": 0,
-      "examples": 9
-    },
-    {
-      "platform": "cedar",
-      "family": "breadcrumb",
-      "file": "cedar-design-web/packages/cedar-ui/src/breadcrumb/README.en-US.md",
-      "changed": false,
-      "apiLines": 48,
-      "preservedSections": 0,
-      "examples": 7
-    },
-    {
-      "platform": "cedar",
-      "family": "button",
-      "file": "cedar-design-web/packages/cedar-ui/src/button/README.en-US.md",
-      "changed": false,
-      "apiLines": 107,
-      "preservedSections": 0,
-      "examples": 16
-    },
-    {
-      "platform": "cedar",
-      "family": "calendar",
-      "file": "cedar-design-web/packages/cedar-ui/src/calendar/README.en-US.md",
-      "changed": false,
-      "apiLines": 26,
-      "preservedSections": 0,
-      "examples": 6
-    },
-    {
-      "platform": "cedar",
-      "family": "card",
-      "file": "cedar-design-web/packages/cedar-ui/src/card/README.en-US.md",
-      "changed": false,
-      "apiLines": 106,
-      "preservedSections": 0,
-      "examples": 10
-    },
-    {
-      "platform": "cedar",
-      "family": "carousel",
-      "file": "cedar-design-web/packages/cedar-ui/src/carousel/README.en-US.md",
-      "changed": false,
-      "apiLines": 87,
-      "preservedSections": 0,
-      "examples": 19
-    },
-    {
-      "platform": "cedar",
-      "family": "cascader",
-      "file": "cedar-design-web/packages/cedar-ui/src/cascader/README.en-US.md",
-      "changed": false,
-      "apiLines": 104,
-      "preservedSections": 0,
-      "examples": 16
-    },
-    {
-      "platform": "cedar",
-      "family": "checkbox",
-      "file": "cedar-design-web/packages/cedar-ui/src/checkbox/README.en-US.md",
-      "changed": false,
-      "apiLines": 112,
-      "preservedSections": 0,
-      "examples": 15
-    },
-    {
-      "platform": "cedar",
-      "family": "col",
-      "file": "cedar-design-web/packages/cedar-ui/src/col/README.en-US.md",
-      "changed": false,
-      "apiLines": 32,
-      "preservedSections": 0,
-      "examples": 4
-    },
-    {
-      "platform": "cedar",
-      "family": "collapse",
-      "file": "cedar-design-web/packages/cedar-ui/src/collapse/README.en-US.md",
-      "changed": false,
-      "apiLines": 72,
-      "preservedSections": 0,
-      "examples": 12
-    },
-    {
-      "platform": "cedar",
-      "family": "color",
-      "file": "cedar-design-web/packages/cedar-ui/src/color/README.en-US.md",
-      "changed": false,
-      "apiLines": 18,
-      "preservedSections": 0,
-      "examples": 2
-    },
-    {
-      "platform": "cedar",
-      "family": "color-picker",
-      "file": "cedar-design-web/packages/cedar-ui/src/color-picker/README.en-US.md",
-      "changed": false,
-      "apiLines": 18,
-      "preservedSections": 0,
-      "examples": 4
-    },
-    {
-      "platform": "cedar",
-      "family": "config-provider",
-      "file": "cedar-design-web/packages/cedar-ui/src/config-provider/README.en-US.md",
-      "changed": false,
-      "apiLines": 21,
-      "preservedSections": 0,
-      "examples": 1
-    },
-    {
-      "platform": "cedar",
-      "family": "count-to",
-      "file": "cedar-design-web/packages/cedar-ui/src/count-to/README.en-US.md",
-      "changed": false,
-      "apiLines": 37,
-      "preservedSections": 0,
-      "examples": 4
-    },
-    {
-      "platform": "cedar",
-      "family": "countdown",
-      "file": "cedar-design-web/packages/cedar-ui/src/countdown/README.en-US.md",
-      "changed": false,
-      "apiLines": 53,
-      "preservedSections": 0,
-      "examples": 4
-    },
-    {
-      "platform": "cedar",
-      "family": "date",
-      "file": "cedar-design-web/packages/cedar-ui/src/date/README.en-US.md",
-      "changed": false,
-      "apiLines": 52,
-      "preservedSections": 0,
-      "examples": 19
-    },
-    {
-      "platform": "cedar",
-      "family": "date-range",
-      "file": "cedar-design-web/packages/cedar-ui/src/date-range/README.en-US.md",
-      "changed": false,
-      "apiLines": 50,
-      "preservedSections": 0,
-      "examples": 14
-    },
-    {
-      "platform": "cedar",
-      "family": "descriptions",
-      "file": "cedar-design-web/packages/cedar-ui/src/descriptions/README.en-US.md",
-      "changed": false,
-      "apiLines": 42,
-      "preservedSections": 0,
-      "examples": 5
-    },
-    {
-      "platform": "cedar",
-      "family": "dialog",
-      "file": "cedar-design-web/packages/cedar-ui/src/dialog/README.en-US.md",
-      "changed": true,
-      "apiLines": 154,
-      "preservedSections": 0,
-      "examples": 16
-    },
-    {
-      "platform": "cedar",
-      "family": "divider",
-      "file": "cedar-design-web/packages/cedar-ui/src/divider/README.en-US.md",
-      "changed": false,
-      "apiLines": 59,
-      "preservedSections": 0,
-      "examples": 6
-    },
-    {
-      "platform": "cedar",
-      "family": "drawer",
-      "file": "cedar-design-web/packages/cedar-ui/src/drawer/README.en-US.md",
-      "changed": true,
-      "apiLines": 69,
-      "preservedSections": 0,
-      "examples": 7
-    },
-    {
-      "platform": "cedar",
-      "family": "ellipsis",
-      "file": "cedar-design-web/packages/cedar-ui/src/ellipsis/README.en-US.md",
-      "changed": false,
-      "apiLines": 25,
-      "preservedSections": 0,
-      "examples": 5
-    },
-    {
-      "platform": "cedar",
-      "family": "empty",
-      "file": "cedar-design-web/packages/cedar-ui/src/empty/README.en-US.md",
-      "changed": false,
-      "apiLines": 38,
-      "preservedSections": 0,
-      "examples": 4
-    },
-    {
-      "platform": "cedar",
-      "family": "field-decorator",
-      "file": "cedar-design-web/packages/cedar-ui/src/field-decorator/README.en-US.md",
-      "changed": false,
-      "apiLines": 30,
-      "preservedSections": 0,
-      "examples": 1
-    },
-    {
-      "platform": "cedar",
-      "family": "filter-form",
-      "file": "cedar-design-web/packages/cedar-ui/src/filter-form/README.en-US.md",
-      "changed": false,
-      "apiLines": 72,
-      "preservedSections": 0,
-      "examples": 3
-    },
-    {
-      "platform": "cedar",
-      "family": "form",
-      "file": "cedar-design-web/packages/cedar-ui/src/form/README.en-US.md",
-      "changed": false,
-      "apiLines": 158,
-      "preservedSections": 0,
-      "examples": 33
-    },
-    {
-      "platform": "cedar",
-      "family": "grid",
-      "file": "cedar-design-web/packages/cedar-ui/src/grid/README.en-US.md",
-      "changed": false,
-      "apiLines": 32,
-      "preservedSections": 0,
-      "examples": 4
-    },
-    {
-      "platform": "cedar",
-      "family": "hover",
-      "file": "cedar-design-web/packages/cedar-ui/src/hover/README.en-US.md",
-      "changed": false,
-      "apiLines": 13,
-      "preservedSections": 0,
-      "examples": 1
-    },
-    {
-      "platform": "cedar",
-      "family": "icon",
-      "file": "cedar-design-web/packages/cedar-ui/src/icon/README.en-US.md",
-      "changed": false,
-      "apiLines": 44,
-      "preservedSections": 0,
-      "examples": 8
-    },
-    {
-      "platform": "cedar",
-      "family": "image",
-      "file": "cedar-design-web/packages/cedar-ui/src/image/README.en-US.md",
-      "changed": false,
-      "apiLines": 112,
-      "preservedSections": 0,
-      "examples": 20
-    },
-    {
-      "platform": "cedar",
-      "family": "infinite-scroll",
-      "file": "cedar-design-web/packages/cedar-ui/src/infinite-scroll/README.en-US.md",
-      "changed": false,
-      "apiLines": 47,
-      "preservedSections": 0,
-      "examples": 4
-    },
-    {
-      "platform": "cedar",
-      "family": "input",
-      "file": "cedar-design-web/packages/cedar-ui/src/input/README.en-US.md",
-      "changed": false,
-      "apiLines": 81,
-      "preservedSections": 0,
-      "examples": 14
-    },
-    {
-      "platform": "cedar",
-      "family": "input-number",
-      "file": "cedar-design-web/packages/cedar-ui/src/input-number/README.en-US.md",
-      "changed": false,
-      "apiLines": 92,
-      "preservedSections": 0,
-      "examples": 11
-    },
-    {
-      "platform": "cedar",
-      "family": "input-tag",
-      "file": "cedar-design-web/packages/cedar-ui/src/input-tag/README.en-US.md",
-      "changed": false,
-      "apiLines": 102,
-      "preservedSections": 0,
-      "examples": 3
-    },
-    {
-      "platform": "cedar",
-      "family": "layout",
-      "file": "cedar-design-web/packages/cedar-ui/src/layout/README.en-US.md",
-      "changed": false,
-      "apiLines": 54,
-      "preservedSections": 0,
-      "examples": 5
-    },
-    {
-      "platform": "cedar",
-      "family": "link",
-      "file": "cedar-design-web/packages/cedar-ui/src/link/README.en-US.md",
-      "changed": false,
-      "apiLines": 32,
-      "preservedSections": 0,
-      "examples": 8
-    },
-    {
-      "platform": "cedar",
-      "family": "list",
-      "file": "cedar-design-web/packages/cedar-ui/src/list/README.en-US.md",
-      "changed": false,
-      "apiLines": 60,
-      "preservedSections": 0,
-      "examples": 8
-    },
-    {
-      "platform": "cedar",
-      "family": "loading",
-      "file": "cedar-design-web/packages/cedar-ui/src/loading/README.en-US.md",
-      "changed": false,
-      "apiLines": 47,
-      "preservedSections": 0,
-      "examples": 4
-    },
-    {
-      "platform": "cedar",
-      "family": "map",
-      "file": "cedar-design-web/packages/cedar-ui/src/map/README.en-US.md",
-      "changed": false,
-      "apiLines": 65,
-      "preservedSections": 0,
-      "examples": 4
-    },
-    {
-      "platform": "cedar",
-      "family": "mention",
-      "file": "cedar-design-web/packages/cedar-ui/src/mention/README.en-US.md",
-      "changed": false,
-      "apiLines": 43,
-      "preservedSections": 0,
-      "examples": 3
-    },
-    {
-      "platform": "cedar",
-      "family": "menu",
-      "file": "cedar-design-web/packages/cedar-ui/src/menu/README.en-US.md",
-      "changed": false,
-      "apiLines": 64,
-      "preservedSections": 0,
-      "examples": 12
-    },
-    {
-      "platform": "cedar",
-      "family": "message",
-      "file": "cedar-design-web/packages/cedar-ui/src/message/README.en-US.md",
-      "changed": false,
-      "apiLines": 152,
-      "preservedSections": 0,
-      "examples": 13
-    },
-    {
-      "platform": "cedar",
-      "family": "nav-menu",
-      "file": "cedar-design-web/packages/cedar-ui/src/nav-menu/README.en-US.md",
-      "changed": false,
-      "apiLines": 0,
-      "preservedSections": 5,
-      "examples": 14
-    },
-    {
-      "platform": "cedar",
-      "family": "notification",
-      "file": "cedar-design-web/packages/cedar-ui/src/notification/README.en-US.md",
-      "changed": false,
-      "apiLines": 115,
-      "preservedSections": 0,
-      "examples": 1
-    },
-    {
-      "platform": "cedar",
-      "family": "overflow-list",
-      "file": "cedar-design-web/packages/cedar-ui/src/overflow-list/README.en-US.md",
-      "changed": false,
-      "apiLines": 20,
-      "preservedSections": 0,
-      "examples": 2
-    },
-    {
-      "platform": "cedar",
-      "family": "overlay",
-      "file": "cedar-design-web/packages/cedar-ui/src/overlay/README.en-US.md",
-      "changed": false,
-      "apiLines": 35,
-      "preservedSections": 0,
-      "examples": 1
-    },
-    {
-      "platform": "cedar",
-      "family": "page-header",
-      "file": "cedar-design-web/packages/cedar-ui/src/page-header/README.en-US.md",
-      "changed": false,
-      "apiLines": 32,
-      "preservedSections": 0,
-      "examples": 3
-    },
-    {
-      "platform": "cedar",
-      "family": "pagination",
-      "file": "cedar-design-web/packages/cedar-ui/src/pagination/README.en-US.md",
-      "changed": false,
-      "apiLines": 93,
-      "preservedSections": 0,
-      "examples": 10
-    },
-    {
-      "platform": "cedar",
-      "family": "paper",
-      "file": "cedar-design-web/packages/cedar-ui/src/paper/README.en-US.md",
-      "changed": false,
-      "apiLines": 37,
-      "preservedSections": 0,
-      "examples": 2
-    },
-    {
-      "platform": "cedar",
-      "family": "people-select",
-      "file": "cedar-design-web/packages/cedar-ui/src/people-select/README.en-US.md",
-      "changed": false,
-      "apiLines": 36,
-      "preservedSections": 0,
-      "examples": 1
-    },
-    {
-      "platform": "cedar",
-      "family": "popconfirm",
-      "file": "cedar-design-web/packages/cedar-ui/src/popconfirm/README.en-US.md",
-      "changed": false,
-      "apiLines": 39,
-      "preservedSections": 0,
-      "examples": 5
-    },
-    {
-      "platform": "cedar",
-      "family": "popover",
-      "file": "cedar-design-web/packages/cedar-ui/src/popover/README.en-US.md",
-      "changed": false,
-      "apiLines": 38,
-      "preservedSections": 0,
-      "examples": 2
-    },
-    {
-      "platform": "cedar",
-      "family": "progress",
-      "file": "cedar-design-web/packages/cedar-ui/src/progress/README.en-US.md",
-      "changed": false,
-      "apiLines": 53,
-      "preservedSections": 0,
-      "examples": 6
-    },
-    {
-      "platform": "cedar",
-      "family": "progress-group",
-      "file": "cedar-design-web/packages/cedar-ui/src/progress-group/README.en-US.md",
-      "changed": false,
-      "apiLines": 62,
-      "preservedSections": 0,
-      "examples": 6
-    },
-    {
-      "platform": "cedar",
-      "family": "radio",
-      "file": "cedar-design-web/packages/cedar-ui/src/radio/README.en-US.md",
-      "changed": false,
-      "apiLines": 86,
-      "preservedSections": 0,
-      "examples": 15
-    },
-    {
-      "platform": "cedar",
-      "family": "rate",
-      "file": "cedar-design-web/packages/cedar-ui/src/rate/README.en-US.md",
-      "changed": false,
-      "apiLines": 66,
-      "preservedSections": 0,
-      "examples": 10
-    },
-    {
-      "platform": "cedar",
-      "family": "resize-box",
-      "file": "cedar-design-web/packages/cedar-ui/src/resize-box/README.en-US.md",
-      "changed": false,
-      "apiLines": 26,
-      "preservedSections": 0,
-      "examples": 4
-    },
-    {
-      "platform": "cedar",
-      "family": "result",
-      "file": "cedar-design-web/packages/cedar-ui/src/result/README.en-US.md",
-      "changed": false,
-      "apiLines": 22,
-      "preservedSections": 0,
-      "examples": 5
-    },
-    {
-      "platform": "cedar",
-      "family": "ripple",
-      "file": "cedar-design-web/packages/cedar-ui/src/ripple/README.en-US.md",
-      "changed": false,
-      "apiLines": 0,
-      "preservedSections": 2,
-      "examples": 1
-    },
-    {
-      "platform": "cedar",
-      "family": "row",
-      "file": "cedar-design-web/packages/cedar-ui/src/row/README.en-US.md",
-      "changed": false,
-      "apiLines": 27,
-      "preservedSections": 0,
-      "examples": 6
-    },
-    {
-      "platform": "cedar",
-      "family": "scheduler",
-      "file": "cedar-design-web/packages/cedar-ui/src/scheduler/README.en-US.md",
-      "changed": false,
-      "apiLines": 215,
-      "preservedSections": 0,
-      "examples": 42
-    },
-    {
-      "platform": "cedar",
-      "family": "scrollbar",
-      "file": "cedar-design-web/packages/cedar-ui/src/scrollbar/README.en-US.md",
-      "changed": false,
-      "apiLines": 22,
-      "preservedSections": 0,
-      "examples": 4
-    },
-    {
-      "platform": "cedar",
-      "family": "search",
-      "file": "cedar-design-web/packages/cedar-ui/src/search/README.en-US.md",
-      "changed": false,
-      "apiLines": 91,
-      "preservedSections": 0,
-      "examples": 8
-    },
-    {
-      "platform": "cedar",
-      "family": "segmented",
-      "file": "cedar-design-web/packages/cedar-ui/src/segmented/README.en-US.md",
-      "changed": false,
-      "apiLines": 27,
-      "preservedSections": 1,
-      "examples": 4
-    },
-    {
-      "platform": "cedar",
-      "family": "select",
-      "file": "cedar-design-web/packages/cedar-ui/src/select/README.en-US.md",
-      "changed": false,
-      "apiLines": 144,
-      "preservedSections": 0,
-      "examples": 31
-    },
-    {
-      "platform": "cedar",
-      "family": "skeleton",
-      "file": "cedar-design-web/packages/cedar-ui/src/skeleton/README.en-US.md",
-      "changed": false,
-      "apiLines": 71,
-      "preservedSections": 0,
-      "examples": 5
-    },
-    {
-      "platform": "cedar",
-      "family": "slider",
-      "file": "cedar-design-web/packages/cedar-ui/src/slider/README.en-US.md",
-      "changed": false,
-      "apiLines": 60,
-      "preservedSections": 0,
-      "examples": 6
-    },
-    {
-      "platform": "cedar",
-      "family": "space",
-      "file": "cedar-design-web/packages/cedar-ui/src/space/README.en-US.md",
-      "changed": false,
-      "apiLines": 33,
-      "preservedSections": 0,
-      "examples": 8
-    },
-    {
-      "platform": "cedar",
-      "family": "split",
-      "file": "cedar-design-web/packages/cedar-ui/src/split/README.en-US.md",
-      "changed": false,
-      "apiLines": 30,
-      "preservedSections": 0,
-      "examples": 2
-    },
-    {
-      "platform": "cedar",
-      "family": "split-button",
-      "file": "cedar-design-web/packages/cedar-ui/src/split-button/README.en-US.md",
-      "changed": false,
-      "apiLines": 52,
-      "preservedSections": 0,
-      "examples": 8
-    },
-    {
-      "platform": "cedar",
-      "family": "statistic",
-      "file": "cedar-design-web/packages/cedar-ui/src/statistic/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/alert/README.en-US.md",
       "changed": false,
       "apiLines": 55,
       "preservedSections": 0,
@@ -698,152 +23,260 @@
     },
     {
       "platform": "cedar",
-      "family": "steps",
-      "file": "cedar-design-web/packages/cedar-ui/src/steps/README.en-US.md",
+      "family": "anchor",
+      "file": "cedar-design-web/packages/ui/src/anchor/README.en-US.md",
       "changed": false,
-      "apiLines": 60,
+      "apiLines": 29,
+      "preservedSections": 1,
+      "examples": 6
+    },
+    {
+      "platform": "cedar",
+      "family": "auto-complete",
+      "file": "cedar-design-web/packages/ui/src/auto-complete/README.en-US.md",
+      "changed": false,
+      "apiLines": 112,
+      "preservedSections": 1,
+      "examples": 12
+    },
+    {
+      "platform": "cedar",
+      "family": "avatar",
+      "file": "cedar-design-web/packages/ui/src/avatar/README.en-US.md",
+      "changed": false,
+      "apiLines": 72,
+      "preservedSections": 0,
+      "examples": 10
+    },
+    {
+      "platform": "cedar",
+      "family": "back-top",
+      "file": "cedar-design-web/packages/ui/src/back-top/README.en-US.md",
+      "changed": false,
+      "apiLines": 34,
+      "preservedSections": 1,
+      "examples": 5
+    },
+    {
+      "platform": "cedar",
+      "family": "badge",
+      "file": "cedar-design-web/packages/ui/src/badge/README.en-US.md",
+      "changed": false,
+      "apiLines": 46,
       "preservedSections": 0,
       "examples": 9
     },
     {
       "platform": "cedar",
-      "family": "style-provider",
-      "file": "cedar-design-web/packages/cedar-ui/src/style-provider/README.en-US.md",
+      "family": "breadcrumb",
+      "file": "cedar-design-web/packages/ui/src/breadcrumb/README.en-US.md",
       "changed": false,
-      "apiLines": 9,
-      "preservedSections": 2,
-      "examples": 1
-    },
-    {
-      "platform": "cedar",
-      "family": "switch",
-      "file": "cedar-design-web/packages/cedar-ui/src/switch/README.en-US.md",
-      "changed": false,
-      "apiLines": 117,
+      "apiLines": 56,
       "preservedSections": 0,
-      "examples": 11
+      "examples": 7
     },
     {
       "platform": "cedar",
-      "family": "table",
-      "file": "cedar-design-web/packages/cedar-ui/src/table/README.en-US.md",
+      "family": "button",
+      "file": "cedar-design-web/packages/ui/src/button/README.en-US.md",
       "changed": false,
-      "apiLines": 277,
+      "apiLines": 70,
+      "preservedSections": 1,
+      "examples": 16
+    },
+    {
+      "platform": "cedar",
+      "family": "calendar",
+      "file": "cedar-design-web/packages/ui/src/calendar/README.en-US.md",
+      "changed": false,
+      "apiLines": 33,
       "preservedSections": 0,
-      "examples": 35
+      "examples": 6
     },
     {
       "platform": "cedar",
-      "family": "table-column-manager",
-      "file": "cedar-design-web/packages/cedar-ui/src/table-column-manager/README.en-US.md",
+      "family": "card",
+      "file": "cedar-design-web/packages/ui/src/card/README.en-US.md",
       "changed": false,
-      "apiLines": 133,
-      "preservedSections": 0,
-      "examples": 5
-    },
-    {
-      "platform": "cedar",
-      "family": "tabs",
-      "file": "cedar-design-web/packages/cedar-ui/src/tabs/README.en-US.md",
-      "changed": false,
-      "apiLines": 129,
-      "preservedSections": 0,
-      "examples": 13
-    },
-    {
-      "platform": "cedar",
-      "family": "tag",
-      "file": "cedar-design-web/packages/cedar-ui/src/tag/README.en-US.md",
-      "changed": false,
-      "apiLines": 181,
-      "preservedSections": 0,
-      "examples": 8
-    },
-    {
-      "platform": "cedar",
-      "family": "textarea",
-      "file": "cedar-design-web/packages/cedar-ui/src/textarea/README.en-US.md",
-      "changed": false,
-      "apiLines": 89,
+      "apiLines": 64,
       "preservedSections": 1,
       "examples": 10
     },
     {
       "platform": "cedar",
-      "family": "themes",
-      "file": "cedar-design-web/packages/cedar-ui/src/themes/README.en-US.md",
+      "family": "carousel",
+      "file": "cedar-design-web/packages/ui/src/carousel/README.en-US.md",
       "changed": false,
-      "apiLines": 0,
-      "preservedSections": 0,
-      "examples": 1
+      "apiLines": 58,
+      "preservedSections": 1,
+      "examples": 19
     },
     {
       "platform": "cedar",
-      "family": "time",
-      "file": "cedar-design-web/packages/cedar-ui/src/time/README.en-US.md",
+      "family": "cascader",
+      "file": "cedar-design-web/packages/ui/src/cascader/README.en-US.md",
       "changed": false,
-      "apiLines": 36,
+      "apiLines": 127,
       "preservedSections": 0,
+      "examples": 16
+    },
+    {
+      "platform": "cedar",
+      "family": "checkbox",
+      "file": "cedar-design-web/packages/ui/src/checkbox/README.en-US.md",
+      "changed": false,
+      "apiLines": 131,
+      "preservedSections": 2,
       "examples": 15
     },
     {
       "platform": "cedar",
-      "family": "time-range",
-      "file": "cedar-design-web/packages/cedar-ui/src/time-range/README.en-US.md",
+      "family": "col",
+      "file": "cedar-design-web/packages/ui/src/col/README.en-US.md",
       "changed": false,
-      "apiLines": 37,
+      "apiLines": 36,
       "preservedSections": 0,
-      "examples": 14
+      "examples": 4
     },
     {
       "platform": "cedar",
-      "family": "timeline",
-      "file": "cedar-design-web/packages/cedar-ui/src/timeline/README.en-US.md",
+      "family": "collapse",
+      "file": "cedar-design-web/packages/ui/src/collapse/README.en-US.md",
+      "changed": false,
+      "apiLines": 78,
+      "preservedSections": 1,
+      "examples": 12
+    },
+    {
+      "platform": "cedar",
+      "family": "color",
+      "file": "cedar-design-web/packages/ui/src/color/README.en-US.md",
+      "changed": false,
+      "apiLines": 44,
+      "preservedSections": 0,
+      "examples": 2
+    },
+    {
+      "platform": "cedar",
+      "family": "color-picker",
+      "file": "cedar-design-web/packages/ui/src/color-picker/README.en-US.md",
+      "changed": false,
+      "apiLines": 21,
+      "preservedSections": 0,
+      "examples": 4
+    },
+    {
+      "platform": "cedar",
+      "family": "config-provider",
+      "file": "cedar-design-web/packages/ui/src/config-provider/README.en-US.md",
       "changed": false,
       "apiLines": 32,
       "preservedSections": 0,
-      "examples": 8
+      "examples": 2
     },
     {
       "platform": "cedar",
-      "family": "tooltip",
-      "file": "cedar-design-web/packages/cedar-ui/src/tooltip/README.en-US.md",
+      "family": "count-to",
+      "file": "cedar-design-web/packages/ui/src/count-to/README.en-US.md",
       "changed": false,
-      "apiLines": 47,
-      "preservedSections": 0,
+      "apiLines": 34,
+      "preservedSections": 1,
       "examples": 7
     },
     {
       "platform": "cedar",
-      "family": "transfer",
-      "file": "cedar-design-web/packages/cedar-ui/src/transfer/README.en-US.md",
+      "family": "countdown",
+      "file": "cedar-design-web/packages/ui/src/countdown/README.en-US.md",
       "changed": false,
-      "apiLines": 72,
+      "apiLines": 50,
       "preservedSections": 0,
-      "examples": 7
+      "examples": 4
     },
     {
       "platform": "cedar",
-      "family": "tree",
-      "file": "cedar-design-web/packages/cedar-ui/src/tree/README.en-US.md",
+      "family": "date",
+      "file": "cedar-design-web/packages/ui/src/date/README.en-US.md",
       "changed": false,
-      "apiLines": 118,
-      "preservedSections": 0,
+      "apiLines": 153,
+      "preservedSections": 2,
+      "examples": 19
+    },
+    {
+      "platform": "cedar",
+      "family": "date-range",
+      "file": "cedar-design-web/packages/ui/src/date-range/README.en-US.md",
+      "changed": false,
+      "apiLines": 158,
+      "preservedSections": 1,
       "examples": 14
     },
     {
       "platform": "cedar",
-      "family": "tree-select",
-      "file": "cedar-design-web/packages/cedar-ui/src/tree-select/README.en-US.md",
+      "family": "descriptions",
+      "file": "cedar-design-web/packages/ui/src/descriptions/README.en-US.md",
       "changed": false,
       "apiLines": 48,
-      "preservedSections": 0,
+      "preservedSections": 1,
       "examples": 5
     },
     {
       "platform": "cedar",
-      "family": "trigger",
-      "file": "cedar-design-web/packages/cedar-ui/src/trigger/README.en-US.md",
+      "family": "dialog",
+      "file": "cedar-design-web/packages/ui/src/dialog/README.en-US.md",
+      "changed": false,
+      "apiLines": 115,
+      "preservedSections": 2,
+      "examples": 17
+    },
+    {
+      "platform": "cedar",
+      "family": "divider",
+      "file": "cedar-design-web/packages/ui/src/divider/README.en-US.md",
+      "changed": false,
+      "apiLines": 33,
+      "preservedSections": 1,
+      "examples": 7
+    },
+    {
+      "platform": "cedar",
+      "family": "drawer",
+      "file": "cedar-design-web/packages/ui/src/drawer/README.en-US.md",
+      "changed": false,
+      "apiLines": 55,
+      "preservedSections": 2,
+      "examples": 7
+    },
+    {
+      "platform": "cedar",
+      "family": "ellipsis",
+      "file": "cedar-design-web/packages/ui/src/ellipsis/README.en-US.md",
+      "changed": false,
+      "apiLines": 30,
+      "preservedSections": 1,
+      "examples": 5
+    },
+    {
+      "platform": "cedar",
+      "family": "empty",
+      "file": "cedar-design-web/packages/ui/src/empty/README.en-US.md",
+      "changed": false,
+      "apiLines": 30,
+      "preservedSections": 0,
+      "examples": 4
+    },
+    {
+      "platform": "cedar",
+      "family": "field-decorator",
+      "file": "cedar-design-web/packages/ui/src/field-decorator/README.en-US.md",
+      "changed": false,
+      "apiLines": 32,
+      "preservedSections": 1,
+      "examples": 2
+    },
+    {
+      "platform": "cedar",
+      "family": "filter-form",
+      "file": "cedar-design-web/packages/ui/src/filter-form/README.en-US.md",
       "changed": false,
       "apiLines": 76,
       "preservedSections": 0,
@@ -851,62 +284,629 @@
     },
     {
       "platform": "cedar",
-      "family": "typography",
-      "file": "cedar-design-web/packages/cedar-ui/src/typography/README.en-US.md",
+      "family": "form",
+      "file": "cedar-design-web/packages/ui/src/form/README.en-US.md",
       "changed": false,
-      "apiLines": 66,
+      "apiLines": 180,
+      "preservedSections": 0,
+      "examples": 38
+    },
+    {
+      "platform": "cedar",
+      "family": "grid",
+      "file": "cedar-design-web/packages/ui/src/grid/README.en-US.md",
+      "changed": false,
+      "apiLines": 37,
+      "preservedSections": 0,
+      "examples": 4
+    },
+    {
+      "platform": "cedar",
+      "family": "hover",
+      "file": "cedar-design-web/packages/ui/src/hover/README.en-US.md",
+      "changed": false,
+      "apiLines": 16,
+      "preservedSections": 0,
+      "examples": 1
+    },
+    {
+      "platform": "cedar",
+      "family": "icon",
+      "file": "cedar-design-web/packages/ui/src/icon/README.en-US.md",
+      "changed": false,
+      "apiLines": 50,
+      "preservedSections": 0,
+      "examples": 8
+    },
+    {
+      "platform": "cedar",
+      "family": "image",
+      "file": "cedar-design-web/packages/ui/src/image/README.en-US.md",
+      "changed": false,
+      "apiLines": 200,
+      "preservedSections": 1,
+      "examples": 20
+    },
+    {
+      "platform": "cedar",
+      "family": "infinite-scroll",
+      "file": "cedar-design-web/packages/ui/src/infinite-scroll/README.en-US.md",
+      "changed": false,
+      "apiLines": 40,
+      "preservedSections": 0,
+      "examples": 4
+    },
+    {
+      "platform": "cedar",
+      "family": "input",
+      "file": "cedar-design-web/packages/ui/src/input/README.en-US.md",
+      "changed": false,
+      "apiLines": 110,
+      "preservedSections": 1,
+      "examples": 16
+    },
+    {
+      "platform": "cedar",
+      "family": "input-number",
+      "file": "cedar-design-web/packages/ui/src/input-number/README.en-US.md",
+      "changed": false,
+      "apiLines": 105,
+      "preservedSections": 2,
+      "examples": 12
+    },
+    {
+      "platform": "cedar",
+      "family": "input-tag",
+      "file": "cedar-design-web/packages/ui/src/input-tag/README.en-US.md",
+      "changed": false,
+      "apiLines": 99,
+      "preservedSections": 0,
+      "examples": 4
+    },
+    {
+      "platform": "cedar",
+      "family": "layout",
+      "file": "cedar-design-web/packages/ui/src/layout/README.en-US.md",
+      "changed": false,
+      "apiLines": 75,
+      "preservedSections": 1,
+      "examples": 5
+    },
+    {
+      "platform": "cedar",
+      "family": "link",
+      "file": "cedar-design-web/packages/ui/src/link/README.en-US.md",
+      "changed": false,
+      "apiLines": 37,
+      "preservedSections": 0,
+      "examples": 8
+    },
+    {
+      "platform": "cedar",
+      "family": "list",
+      "file": "cedar-design-web/packages/ui/src/list/README.en-US.md",
+      "changed": false,
+      "apiLines": 26,
+      "preservedSections": 0,
+      "examples": 8
+    },
+    {
+      "platform": "cedar",
+      "family": "loading",
+      "file": "cedar-design-web/packages/ui/src/loading/README.en-US.md",
+      "changed": false,
+      "apiLines": 55,
+      "preservedSections": 0,
+      "examples": 4
+    },
+    {
+      "platform": "cedar",
+      "family": "map",
+      "file": "cedar-design-web/packages/ui/src/map/README.en-US.md",
+      "changed": false,
+      "apiLines": 85,
+      "preservedSections": 0,
+      "examples": 4
+    },
+    {
+      "platform": "cedar",
+      "family": "mention",
+      "file": "cedar-design-web/packages/ui/src/mention/README.en-US.md",
+      "changed": false,
+      "apiLines": 80,
+      "preservedSections": 0,
+      "examples": 4
+    },
+    {
+      "platform": "cedar",
+      "family": "menu",
+      "file": "cedar-design-web/packages/ui/src/menu/README.en-US.md",
+      "changed": false,
+      "apiLines": 73,
+      "preservedSections": 3,
+      "examples": 12
+    },
+    {
+      "platform": "cedar",
+      "family": "message",
+      "file": "cedar-design-web/packages/ui/src/message/README.en-US.md",
+      "changed": false,
+      "apiLines": 43,
+      "preservedSections": 2,
+      "examples": 13
+    },
+    {
+      "platform": "cedar",
+      "family": "nav-menu",
+      "file": "cedar-design-web/packages/ui/src/nav-menu/README.en-US.md",
+      "changed": false,
+      "apiLines": 117,
+      "preservedSections": 1,
+      "examples": 16
+    },
+    {
+      "platform": "cedar",
+      "family": "notification",
+      "file": "cedar-design-web/packages/ui/src/notification/README.en-US.md",
+      "changed": false,
+      "apiLines": 58,
+      "preservedSections": 2,
+      "examples": 1
+    },
+    {
+      "platform": "cedar",
+      "family": "overflow-list",
+      "file": "cedar-design-web/packages/ui/src/overflow-list/README.en-US.md",
+      "changed": false,
+      "apiLines": 28,
+      "preservedSections": 0,
+      "examples": 2
+    },
+    {
+      "platform": "cedar",
+      "family": "overlay",
+      "file": "cedar-design-web/packages/ui/src/overlay/README.en-US.md",
+      "changed": false,
+      "apiLines": 30,
+      "preservedSections": 1,
+      "examples": 1
+    },
+    {
+      "platform": "cedar",
+      "family": "page-header",
+      "file": "cedar-design-web/packages/ui/src/page-header/README.en-US.md",
+      "changed": false,
+      "apiLines": 31,
+      "preservedSections": 2,
+      "examples": 3
+    },
+    {
+      "platform": "cedar",
+      "family": "pagination",
+      "file": "cedar-design-web/packages/ui/src/pagination/README.en-US.md",
+      "changed": false,
+      "apiLines": 69,
+      "preservedSections": 2,
+      "examples": 10
+    },
+    {
+      "platform": "cedar",
+      "family": "paper",
+      "file": "cedar-design-web/packages/ui/src/paper/README.en-US.md",
+      "changed": false,
+      "apiLines": 35,
+      "preservedSections": 0,
+      "examples": 2
+    },
+    {
+      "platform": "cedar",
+      "family": "people-select",
+      "file": "cedar-design-web/packages/ui/src/people-select/README.en-US.md",
+      "changed": false,
+      "apiLines": 109,
+      "preservedSections": 0,
+      "examples": 1
+    },
+    {
+      "platform": "cedar",
+      "family": "popconfirm",
+      "file": "cedar-design-web/packages/ui/src/popconfirm/README.en-US.md",
+      "changed": false,
+      "apiLines": 45,
+      "preservedSections": 3,
+      "examples": 5
+    },
+    {
+      "platform": "cedar",
+      "family": "popover",
+      "file": "cedar-design-web/packages/ui/src/popover/README.en-US.md",
+      "changed": false,
+      "apiLines": 23,
+      "preservedSections": 2,
+      "examples": 2
+    },
+    {
+      "platform": "cedar",
+      "family": "progress",
+      "file": "cedar-design-web/packages/ui/src/progress/README.en-US.md",
+      "changed": false,
+      "apiLines": 36,
+      "preservedSections": 2,
+      "examples": 6
+    },
+    {
+      "platform": "cedar",
+      "family": "progress-group",
+      "file": "cedar-design-web/packages/ui/src/progress-group/README.en-US.md",
+      "changed": false,
+      "apiLines": 35,
+      "preservedSections": 2,
+      "examples": 6
+    },
+    {
+      "platform": "cedar",
+      "family": "radio",
+      "file": "cedar-design-web/packages/ui/src/radio/README.en-US.md",
+      "changed": false,
+      "apiLines": 143,
+      "preservedSections": 1,
+      "examples": 15
+    },
+    {
+      "platform": "cedar",
+      "family": "rate",
+      "file": "cedar-design-web/packages/ui/src/rate/README.en-US.md",
+      "changed": false,
+      "apiLines": 57,
+      "preservedSections": 1,
+      "examples": 10
+    },
+    {
+      "platform": "cedar",
+      "family": "resize-box",
+      "file": "cedar-design-web/packages/ui/src/resize-box/README.en-US.md",
+      "changed": false,
+      "apiLines": 43,
+      "preservedSections": 1,
+      "examples": 4
+    },
+    {
+      "platform": "cedar",
+      "family": "result",
+      "file": "cedar-design-web/packages/ui/src/result/README.en-US.md",
+      "changed": false,
+      "apiLines": 24,
+      "preservedSections": 0,
+      "examples": 5
+    },
+    {
+      "platform": "cedar",
+      "family": "ripple",
+      "file": "cedar-design-web/packages/ui/src/ripple/README.en-US.md",
+      "changed": false,
+      "apiLines": 0,
+      "preservedSections": 3,
+      "examples": 1
+    },
+    {
+      "platform": "cedar",
+      "family": "row",
+      "file": "cedar-design-web/packages/ui/src/row/README.en-US.md",
+      "changed": false,
+      "apiLines": 30,
+      "preservedSections": 0,
+      "examples": 6
+    },
+    {
+      "platform": "cedar",
+      "family": "scheduler",
+      "file": "cedar-design-web/packages/ui/src/scheduler/README.en-US.md",
+      "changed": false,
+      "apiLines": 222,
+      "preservedSections": 2,
+      "examples": 42
+    },
+    {
+      "platform": "cedar",
+      "family": "scrollbar",
+      "file": "cedar-design-web/packages/ui/src/scrollbar/README.en-US.md",
+      "changed": false,
+      "apiLines": 39,
+      "preservedSections": 0,
+      "examples": 4
+    },
+    {
+      "platform": "cedar",
+      "family": "search",
+      "file": "cedar-design-web/packages/ui/src/search/README.en-US.md",
+      "changed": false,
+      "apiLines": 111,
+      "preservedSections": 0,
+      "examples": 9
+    },
+    {
+      "platform": "cedar",
+      "family": "segmented",
+      "file": "cedar-design-web/packages/ui/src/segmented/README.en-US.md",
+      "changed": false,
+      "apiLines": 33,
+      "preservedSections": 1,
+      "examples": 4
+    },
+    {
+      "platform": "cedar",
+      "family": "select",
+      "file": "cedar-design-web/packages/ui/src/select/README.en-US.md",
+      "changed": false,
+      "apiLines": 157,
+      "preservedSections": 0,
+      "examples": 31
+    },
+    {
+      "platform": "cedar",
+      "family": "skeleton",
+      "file": "cedar-design-web/packages/ui/src/skeleton/README.en-US.md",
+      "changed": false,
+      "apiLines": 52,
+      "preservedSections": 0,
+      "examples": 5
+    },
+    {
+      "platform": "cedar",
+      "family": "slider",
+      "file": "cedar-design-web/packages/ui/src/slider/README.en-US.md",
+      "changed": false,
+      "apiLines": 60,
+      "preservedSections": 1,
+      "examples": 7
+    },
+    {
+      "platform": "cedar",
+      "family": "space",
+      "file": "cedar-design-web/packages/ui/src/space/README.en-US.md",
+      "changed": false,
+      "apiLines": 29,
+      "preservedSections": 1,
+      "examples": 9
+    },
+    {
+      "platform": "cedar",
+      "family": "split",
+      "file": "cedar-design-web/packages/ui/src/split/README.en-US.md",
+      "changed": false,
+      "apiLines": 44,
+      "preservedSections": 1,
+      "examples": 2
+    },
+    {
+      "platform": "cedar",
+      "family": "split-button",
+      "file": "cedar-design-web/packages/ui/src/split-button/README.en-US.md",
+      "changed": false,
+      "apiLines": 50,
+      "preservedSections": 3,
+      "examples": 8
+    },
+    {
+      "platform": "cedar",
+      "family": "statistic",
+      "file": "cedar-design-web/packages/ui/src/statistic/README.en-US.md",
+      "changed": false,
+      "apiLines": 40,
+      "preservedSections": 1,
+      "examples": 7
+    },
+    {
+      "platform": "cedar",
+      "family": "steps",
+      "file": "cedar-design-web/packages/ui/src/steps/README.en-US.md",
+      "changed": false,
+      "apiLines": 62,
+      "preservedSections": 1,
+      "examples": 9
+    },
+    {
+      "platform": "cedar",
+      "family": "theme-provider",
+      "file": "cedar-design-web/packages/ui/src/theme-provider/README.en-US.md",
+      "changed": false,
+      "apiLines": 12,
+      "preservedSections": 2,
+      "examples": 2
+    },
+    {
+      "platform": "cedar",
+      "family": "switch",
+      "file": "cedar-design-web/packages/ui/src/switch/README.en-US.md",
+      "changed": false,
+      "apiLines": 103,
+      "preservedSections": 1,
+      "examples": 11
+    },
+    {
+      "platform": "cedar",
+      "family": "table",
+      "file": "cedar-design-web/packages/ui/src/table/README.en-US.md",
+      "changed": false,
+      "apiLines": 306,
+      "preservedSections": 0,
+      "examples": 36
+    },
+    {
+      "platform": "cedar",
+      "family": "table-column-manager",
+      "file": "cedar-design-web/packages/ui/src/table-column-manager/README.en-US.md",
+      "changed": false,
+      "apiLines": 155,
+      "preservedSections": 0,
+      "examples": 5
+    },
+    {
+      "platform": "cedar",
+      "family": "tabs",
+      "file": "cedar-design-web/packages/ui/src/tabs/README.en-US.md",
+      "changed": false,
+      "apiLines": 92,
+      "preservedSections": 0,
+      "examples": 13
+    },
+    {
+      "platform": "cedar",
+      "family": "tag",
+      "file": "cedar-design-web/packages/ui/src/tag/README.en-US.md",
+      "changed": false,
+      "apiLines": 50,
+      "preservedSections": 0,
+      "examples": 8
+    },
+    {
+      "platform": "cedar",
+      "family": "textarea",
+      "file": "cedar-design-web/packages/ui/src/textarea/README.en-US.md",
+      "changed": false,
+      "apiLines": 98,
+      "preservedSections": 3,
+      "examples": 11
+    },
+    {
+      "platform": "cedar",
+      "family": "themes",
+      "file": "cedar-design-web/packages/ui/src/themes/README.en-US.md",
+      "changed": false,
+      "apiLines": 0,
+      "preservedSections": 2,
+      "examples": 1
+    },
+    {
+      "platform": "cedar",
+      "family": "time",
+      "file": "cedar-design-web/packages/ui/src/time/README.en-US.md",
+      "changed": false,
+      "apiLines": 134,
+      "preservedSections": 1,
+      "examples": 15
+    },
+    {
+      "platform": "cedar",
+      "family": "time-range",
+      "file": "cedar-design-web/packages/ui/src/time-range/README.en-US.md",
+      "changed": false,
+      "apiLines": 136,
+      "preservedSections": 1,
+      "examples": 14
+    },
+    {
+      "platform": "cedar",
+      "family": "timeline",
+      "file": "cedar-design-web/packages/ui/src/timeline/README.en-US.md",
+      "changed": false,
+      "apiLines": 41,
+      "preservedSections": 0,
+      "examples": 8
+    },
+    {
+      "platform": "cedar",
+      "family": "tooltip",
+      "file": "cedar-design-web/packages/ui/src/tooltip/README.en-US.md",
+      "changed": false,
+      "apiLines": 25,
+      "preservedSections": 1,
+      "examples": 7
+    },
+    {
+      "platform": "cedar",
+      "family": "transfer",
+      "file": "cedar-design-web/packages/ui/src/transfer/README.en-US.md",
+      "changed": false,
+      "apiLines": 86,
+      "preservedSections": 0,
+      "examples": 7
+    },
+    {
+      "platform": "cedar",
+      "family": "tree",
+      "file": "cedar-design-web/packages/ui/src/tree/README.en-US.md",
+      "changed": false,
+      "apiLines": 137,
+      "preservedSections": 0,
+      "examples": 14
+    },
+    {
+      "platform": "cedar",
+      "family": "tree-select",
+      "file": "cedar-design-web/packages/ui/src/tree-select/README.en-US.md",
+      "changed": false,
+      "apiLines": 113,
+      "preservedSections": 0,
+      "examples": 5
+    },
+    {
+      "platform": "cedar",
+      "family": "trigger",
+      "file": "cedar-design-web/packages/ui/src/trigger/README.en-US.md",
+      "changed": false,
+      "apiLines": 71,
+      "preservedSections": 2,
+      "examples": 3
+    },
+    {
+      "platform": "cedar",
+      "family": "typography",
+      "file": "cedar-design-web/packages/ui/src/typography/README.en-US.md",
+      "changed": false,
+      "apiLines": 151,
       "preservedSections": 0,
       "examples": 7
     },
     {
       "platform": "cedar",
       "family": "upload",
-      "file": "cedar-design-web/packages/cedar-ui/src/upload/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/upload/README.en-US.md",
       "changed": false,
-      "apiLines": 84,
-      "preservedSections": 0,
+      "apiLines": 73,
+      "preservedSections": 1,
       "examples": 13
     },
     {
       "platform": "cedar",
       "family": "verification-code",
-      "file": "cedar-design-web/packages/cedar-ui/src/verification-code/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/verification-code/README.en-US.md",
       "changed": false,
-      "apiLines": 60,
-      "preservedSections": 0,
+      "apiLines": 72,
+      "preservedSections": 2,
       "examples": 6
     },
     {
       "platform": "cedar",
       "family": "watermark",
-      "file": "cedar-design-web/packages/cedar-ui/src/watermark/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/watermark/README.en-US.md",
       "changed": false,
       "apiLines": 45,
-      "preservedSections": 0,
+      "preservedSections": 1,
       "examples": 5
     },
     {
       "platform": "cedar",
       "family": "date/picker",
-      "file": "cedar-design-web/packages/cedar-ui/src/date/picker/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/date/picker/README.en-US.md",
       "changed": false,
-      "apiLines": 36,
-      "preservedSections": 0,
+      "apiLines": 64,
+      "preservedSections": 1,
       "examples": 13
     },
     {
       "platform": "cedar",
       "family": "time/picker",
-      "file": "cedar-design-web/packages/cedar-ui/src/time/picker/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/time/picker/README.en-US.md",
       "changed": false,
-      "apiLines": 20,
-      "preservedSections": 0,
+      "apiLines": 47,
+      "preservedSections": 1,
       "examples": 8
     },
     {
       "platform": "cedar",
       "family": "style/atomic-css",
-      "file": "cedar-design-web/packages/cedar-ui/src/style/atomic-css/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/style/atomic-css/README.en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 5,
@@ -915,7 +915,7 @@
     {
       "platform": "cedar",
       "family": "style/atomic-usage",
-      "file": "cedar-design-web/packages/cedar-ui/src/style/atomic-usage/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/style/atomic-usage/README.en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 0,
@@ -924,7 +924,7 @@
     {
       "platform": "cedar",
       "family": "style/color",
-      "file": "cedar-design-web/packages/cedar-ui/src/style/color/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/style/color/README.en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 0,
@@ -933,7 +933,7 @@
     {
       "platform": "cedar",
       "family": "style/elevation",
-      "file": "cedar-design-web/packages/cedar-ui/src/style/elevation/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/style/elevation/README.en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 0,
@@ -942,7 +942,7 @@
     {
       "platform": "cedar",
       "family": "style/palette",
-      "file": "cedar-design-web/packages/cedar-ui/src/style/palette/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/style/palette/README.en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 0,
@@ -951,7 +951,7 @@
     {
       "platform": "cedar",
       "family": "style/typography",
-      "file": "cedar-design-web/packages/cedar-ui/src/style/typography/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/style/typography/README.en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 0,
@@ -960,7 +960,7 @@
     {
       "platform": "cedar",
       "family": "style/utilities",
-      "file": "cedar-design-web/packages/cedar-ui/src/style/utilities/README.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/style/utilities/README.en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 0,
@@ -969,52 +969,52 @@
     {
       "platform": "cedar",
       "family": "date-range/picker",
-      "file": "cedar-design-web/packages/cedar-ui/src/date-range/PICKER.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/date-range/PICKER.en-US.md",
       "changed": false,
-      "apiLines": 52,
-      "preservedSections": 0,
+      "apiLines": 54,
+      "preservedSections": 1,
       "examples": 7
     },
     {
       "platform": "cedar",
       "family": "time-range/picker",
-      "file": "cedar-design-web/packages/cedar-ui/src/time-range/PICKER.en-US.md",
+      "file": "cedar-design-web/packages/ui/src/time-range/PICKER.en-US.md",
       "changed": false,
-      "apiLines": 21,
-      "preservedSections": 0,
+      "apiLines": 23,
+      "preservedSections": 1,
       "examples": 9
     },
     {
       "platform": "maple",
       "family": "action-sheet",
-      "file": "maple-design-mobile/packages/maple-ui/src/action-sheet/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/action-sheet/docs/en-US.md",
       "changed": false,
-      "apiLines": 94,
-      "preservedSections": 2,
+      "apiLines": 91,
+      "preservedSections": 5,
       "examples": 2
     },
     {
       "platform": "maple",
       "family": "affix",
-      "file": "maple-design-mobile/packages/maple-ui/src/affix/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/affix/docs/en-US.md",
       "changed": false,
-      "apiLines": 27,
+      "apiLines": 41,
       "preservedSections": 0,
       "examples": 4
     },
     {
       "platform": "maple",
       "family": "alert",
-      "file": "maple-design-mobile/packages/maple-ui/src/alert/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/alert/docs/en-US.md",
       "changed": false,
-      "apiLines": 130,
+      "apiLines": 46,
       "preservedSections": 0,
       "examples": 8
     },
     {
       "platform": "maple",
       "family": "atomic-css",
-      "file": "maple-design-mobile/packages/maple-ui/src/atomic-css/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/atomic-css/docs/en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 0,
@@ -1023,7 +1023,7 @@
     {
       "platform": "maple",
       "family": "atomic-usage",
-      "file": "maple-design-mobile/packages/maple-ui/src/atomic-usage/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/atomic-usage/docs/en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 0,
@@ -1032,475 +1032,475 @@
     {
       "platform": "maple",
       "family": "auto-complete",
-      "file": "maple-design-mobile/packages/maple-ui/src/auto-complete/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/auto-complete/docs/en-US.md",
       "changed": false,
-      "apiLines": 111,
-      "preservedSections": 0,
+      "apiLines": 112,
+      "preservedSections": 1,
       "examples": 12
     },
     {
       "platform": "maple",
       "family": "avatar",
-      "file": "maple-design-mobile/packages/maple-ui/src/avatar/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/avatar/docs/en-US.md",
       "changed": false,
-      "apiLines": 101,
+      "apiLines": 72,
       "preservedSections": 0,
       "examples": 10
     },
     {
       "platform": "maple",
       "family": "back-top",
-      "file": "maple-design-mobile/packages/maple-ui/src/back-top/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/back-top/docs/en-US.md",
       "changed": false,
-      "apiLines": 40,
-      "preservedSections": 0,
+      "apiLines": 34,
+      "preservedSections": 1,
       "examples": 5
     },
     {
       "platform": "maple",
       "family": "badge",
-      "file": "maple-design-mobile/packages/maple-ui/src/badge/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/badge/docs/en-US.md",
       "changed": false,
-      "apiLines": 128,
-      "preservedSections": 0,
+      "apiLines": 49,
+      "preservedSections": 1,
       "examples": 9
     },
     {
       "platform": "maple",
       "family": "breadcrumb",
-      "file": "maple-design-mobile/packages/maple-ui/src/breadcrumb/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/breadcrumb/docs/en-US.md",
       "changed": false,
-      "apiLines": 81,
+      "apiLines": 54,
       "preservedSections": 0,
       "examples": 7
     },
     {
       "platform": "maple",
       "family": "button",
-      "file": "maple-design-mobile/packages/maple-ui/src/button/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/button/docs/en-US.md",
       "changed": false,
-      "apiLines": 107,
-      "preservedSections": 0,
+      "apiLines": 70,
+      "preservedSections": 1,
       "examples": 16
     },
     {
       "platform": "maple",
       "family": "card",
-      "file": "maple-design-mobile/packages/maple-ui/src/card/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/card/docs/en-US.md",
       "changed": false,
-      "apiLines": 100,
-      "preservedSections": 0,
+      "apiLines": 58,
+      "preservedSections": 1,
       "examples": 10
     },
     {
       "platform": "maple",
       "family": "carousel",
-      "file": "maple-design-mobile/packages/maple-ui/src/carousel/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/carousel/docs/en-US.md",
       "changed": false,
-      "apiLines": 87,
-      "preservedSections": 0,
+      "apiLines": 58,
+      "preservedSections": 1,
       "examples": 19
     },
     {
       "platform": "maple",
       "family": "cascader",
-      "file": "maple-design-mobile/packages/maple-ui/src/cascader/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/cascader/docs/en-US.md",
       "changed": false,
-      "apiLines": 125,
-      "preservedSections": 0,
-      "examples": 15
+      "apiLines": 92,
+      "preservedSections": 1,
+      "examples": 16
     },
     {
       "platform": "maple",
       "family": "cell",
-      "file": "maple-design-mobile/packages/maple-ui/src/cell/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/cell/docs/en-US.md",
       "changed": false,
-      "apiLines": 40,
-      "preservedSections": 0,
+      "apiLines": 31,
+      "preservedSections": 1,
       "examples": 3
     },
     {
       "platform": "maple",
       "family": "checkbox",
-      "file": "maple-design-mobile/packages/maple-ui/src/checkbox/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/checkbox/docs/en-US.md",
       "changed": false,
-      "apiLines": 111,
-      "preservedSections": 0,
+      "apiLines": 127,
+      "preservedSections": 2,
       "examples": 16
     },
     {
       "platform": "maple",
       "family": "code",
-      "file": "maple-design-mobile/packages/maple-ui/src/code/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/code/docs/en-US.md",
       "changed": false,
-      "apiLines": 31,
-      "preservedSections": 0,
+      "apiLines": 28,
+      "preservedSections": 1,
       "examples": 2
     },
     {
       "platform": "maple",
       "family": "col",
-      "file": "maple-design-mobile/packages/maple-ui/src/col/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/col/docs/en-US.md",
       "changed": false,
-      "apiLines": 32,
+      "apiLines": 36,
       "preservedSections": 0,
       "examples": 4
     },
     {
       "platform": "maple",
       "family": "collapse",
-      "file": "maple-design-mobile/packages/maple-ui/src/collapse/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/collapse/docs/en-US.md",
       "changed": false,
-      "apiLines": 72,
-      "preservedSections": 0,
+      "apiLines": 78,
+      "preservedSections": 1,
       "examples": 12
     },
     {
       "platform": "maple",
       "family": "color",
-      "file": "maple-design-mobile/packages/maple-ui/src/color/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/color/docs/en-US.md",
       "changed": false,
       "apiLines": 0,
-      "preservedSections": 0,
+      "preservedSections": 1,
       "examples": 1
     },
     {
       "platform": "maple",
       "family": "count-to",
-      "file": "maple-design-mobile/packages/maple-ui/src/count-to/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/count-to/docs/en-US.md",
       "changed": false,
-      "apiLines": 33,
-      "preservedSections": 0,
-      "examples": 4
+      "apiLines": 30,
+      "preservedSections": 1,
+      "examples": 7
     },
     {
       "platform": "maple",
       "family": "countdown",
-      "file": "maple-design-mobile/packages/maple-ui/src/countdown/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/countdown/docs/en-US.md",
       "changed": false,
-      "apiLines": 50,
+      "apiLines": 47,
       "preservedSections": 0,
       "examples": 4
     },
     {
       "platform": "maple",
       "family": "date",
-      "file": "maple-design-mobile/packages/maple-ui/src/date/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/date/docs/en-US.md",
       "changed": false,
-      "apiLines": 159,
-      "preservedSections": 0,
+      "apiLines": 176,
+      "preservedSections": 3,
       "examples": 32
     },
     {
       "platform": "maple",
       "family": "date-range",
-      "file": "maple-design-mobile/packages/maple-ui/src/date-range/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/date-range/docs/en-US.md",
       "changed": false,
-      "apiLines": 134,
-      "preservedSections": 0,
-      "examples": 24
+      "apiLines": 179,
+      "preservedSections": 1,
+      "examples": 25
     },
     {
       "platform": "maple",
       "family": "dialog",
-      "file": "maple-design-mobile/packages/maple-ui/src/dialog/docs/en-US.md",
-      "changed": true,
-      "apiLines": 123,
-      "preservedSections": 0,
-      "examples": 12
+      "file": "maple-design-mobile/packages/ui/src/dialog/docs/en-US.md",
+      "changed": false,
+      "apiLines": 84,
+      "preservedSections": 2,
+      "examples": 14
     },
     {
       "platform": "maple",
       "family": "divider",
-      "file": "maple-design-mobile/packages/maple-ui/src/divider/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/divider/docs/en-US.md",
       "changed": false,
-      "apiLines": 59,
-      "preservedSections": 0,
-      "examples": 6
+      "apiLines": 33,
+      "preservedSections": 1,
+      "examples": 7
     },
     {
       "platform": "maple",
       "family": "drag",
-      "file": "maple-design-mobile/packages/maple-ui/src/drag/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/drag/docs/en-US.md",
       "changed": false,
-      "apiLines": 24,
+      "apiLines": 34,
       "preservedSections": 0,
       "examples": 6
     },
     {
       "platform": "maple",
       "family": "ellipsis",
-      "file": "maple-design-mobile/packages/maple-ui/src/ellipsis/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/ellipsis/docs/en-US.md",
       "changed": false,
-      "apiLines": 25,
-      "preservedSections": 0,
+      "apiLines": 30,
+      "preservedSections": 1,
       "examples": 5
     },
     {
       "platform": "maple",
       "family": "empty",
-      "file": "maple-design-mobile/packages/maple-ui/src/empty/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/empty/docs/en-US.md",
       "changed": false,
-      "apiLines": 40,
+      "apiLines": 27,
       "preservedSections": 0,
       "examples": 4
     },
     {
       "platform": "maple",
       "family": "fab",
-      "file": "maple-design-mobile/packages/maple-ui/src/fab/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/fab/docs/en-US.md",
       "changed": false,
-      "apiLines": 58,
-      "preservedSections": 0,
+      "apiLines": 44,
+      "preservedSections": 1,
       "examples": 10
     },
     {
       "platform": "maple",
       "family": "field-decorator",
-      "file": "maple-design-mobile/packages/maple-ui/src/field-decorator/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/field-decorator/docs/en-US.md",
       "changed": false,
-      "apiLines": 30,
-      "preservedSections": 0,
-      "examples": 1
+      "apiLines": 38,
+      "preservedSections": 1,
+      "examples": 2
     },
     {
       "platform": "maple",
       "family": "floating-panel",
-      "file": "maple-design-mobile/packages/maple-ui/src/floating-panel/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/floating-panel/docs/en-US.md",
       "changed": false,
-      "apiLines": 38,
-      "preservedSections": 0,
+      "apiLines": 36,
+      "preservedSections": 1,
       "examples": 1
     },
     {
       "platform": "maple",
       "family": "form",
-      "file": "maple-design-mobile/packages/maple-ui/src/form/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/form/docs/en-US.md",
       "changed": false,
-      "apiLines": 120,
-      "preservedSections": 1,
-      "examples": 32
+      "apiLines": 138,
+      "preservedSections": 2,
+      "examples": 37
     },
     {
       "platform": "maple",
       "family": "form-details",
-      "file": "maple-design-mobile/packages/maple-ui/src/form-details/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/form-details/docs/en-US.md",
       "changed": false,
-      "apiLines": 10,
+      "apiLines": 12,
       "preservedSections": 0,
       "examples": 2
     },
     {
       "platform": "maple",
       "family": "grid",
-      "file": "maple-design-mobile/packages/maple-ui/src/grid/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/grid/docs/en-US.md",
       "changed": false,
-      "apiLines": 32,
+      "apiLines": 37,
       "preservedSections": 0,
       "examples": 4
     },
     {
       "platform": "maple",
       "family": "highlighter-provider",
-      "file": "maple-design-mobile/packages/maple-ui/src/highlighter-provider/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/highlighter-provider/docs/en-US.md",
       "changed": false,
-      "apiLines": 11,
+      "apiLines": 14,
       "preservedSections": 0,
       "examples": 1
     },
     {
       "platform": "maple",
       "family": "hover",
-      "file": "maple-design-mobile/packages/maple-ui/src/hover/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/hover/docs/en-US.md",
       "changed": false,
       "apiLines": 0,
-      "preservedSections": 0,
+      "preservedSections": 3,
       "examples": 2
     },
     {
       "platform": "maple",
       "family": "icon",
-      "file": "maple-design-mobile/packages/maple-ui/src/icon/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/icon/docs/en-US.md",
       "changed": false,
-      "apiLines": 40,
+      "apiLines": 50,
       "preservedSections": 0,
       "examples": 8
     },
     {
       "platform": "maple",
       "family": "image",
-      "file": "maple-design-mobile/packages/maple-ui/src/image/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/image/docs/en-US.md",
       "changed": false,
-      "apiLines": 139,
-      "preservedSections": 0,
+      "apiLines": 194,
+      "preservedSections": 2,
       "examples": 20
     },
     {
       "platform": "maple",
       "family": "index-bar",
-      "file": "maple-design-mobile/packages/maple-ui/src/index-bar/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/index-bar/docs/en-US.md",
       "changed": false,
-      "apiLines": 64,
-      "preservedSections": 0,
+      "apiLines": 42,
+      "preservedSections": 1,
       "examples": 2
     },
     {
       "platform": "maple",
       "family": "infinite-scroll",
-      "file": "maple-design-mobile/packages/maple-ui/src/infinite-scroll/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/infinite-scroll/docs/en-US.md",
       "changed": false,
-      "apiLines": 36,
+      "apiLines": 29,
       "preservedSections": 4,
       "examples": 4
     },
     {
       "platform": "maple",
       "family": "input",
-      "file": "maple-design-mobile/packages/maple-ui/src/input/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/input/docs/en-US.md",
       "changed": false,
-      "apiLines": 83,
-      "preservedSections": 0,
-      "examples": 18
+      "apiLines": 84,
+      "preservedSections": 2,
+      "examples": 20
     },
     {
       "platform": "maple",
       "family": "input-number",
-      "file": "maple-design-mobile/packages/maple-ui/src/input-number/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/input-number/docs/en-US.md",
       "changed": false,
-      "apiLines": 92,
-      "preservedSections": 0,
-      "examples": 11
+      "apiLines": 105,
+      "preservedSections": 2,
+      "examples": 12
     },
     {
       "platform": "maple",
       "family": "lazy",
-      "file": "maple-design-mobile/packages/maple-ui/src/lazy/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/lazy/docs/en-US.md",
       "changed": false,
-      "apiLines": 10,
+      "apiLines": 15,
       "preservedSections": 0,
       "examples": 2
     },
     {
       "platform": "maple",
       "family": "link",
-      "file": "maple-design-mobile/packages/maple-ui/src/link/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/link/docs/en-US.md",
       "changed": false,
-      "apiLines": 53,
+      "apiLines": 37,
       "preservedSections": 0,
       "examples": 9
     },
     {
       "platform": "maple",
       "family": "list",
-      "file": "maple-design-mobile/packages/maple-ui/src/list/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/list/docs/en-US.md",
       "changed": false,
-      "apiLines": 60,
+      "apiLines": 26,
       "preservedSections": 0,
       "examples": 6
     },
     {
       "platform": "maple",
       "family": "loading",
-      "file": "maple-design-mobile/packages/maple-ui/src/loading/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/loading/docs/en-US.md",
       "changed": false,
-      "apiLines": 31,
-      "preservedSections": 0,
+      "apiLines": 25,
+      "preservedSections": 1,
       "examples": 4
     },
     {
       "platform": "maple",
       "family": "loading-bar",
-      "file": "maple-design-mobile/packages/maple-ui/src/loading-bar/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/loading-bar/docs/en-US.md",
       "changed": false,
-      "apiLines": 29,
-      "preservedSections": 0,
+      "apiLines": 22,
+      "preservedSections": 2,
       "examples": 1
     },
     {
       "platform": "maple",
       "family": "locale",
-      "file": "maple-design-mobile/packages/maple-ui/src/locale/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/locale/docs/en-US.md",
       "changed": false,
-      "apiLines": 13,
+      "apiLines": 16,
       "preservedSections": 0,
       "examples": 1
     },
     {
       "platform": "maple",
       "family": "locale-provider",
-      "file": "maple-design-mobile/packages/maple-ui/src/locale-provider/docs/en-US.md",
-      "changed": true,
-      "apiLines": 13,
+      "file": "maple-design-mobile/packages/ui/src/locale-provider/docs/en-US.md",
+      "changed": false,
+      "apiLines": 19,
       "preservedSections": 0,
       "examples": 1
     },
     {
       "platform": "maple",
       "family": "menu",
-      "file": "maple-design-mobile/packages/maple-ui/src/menu/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/menu/docs/en-US.md",
       "changed": false,
-      "apiLines": 145,
-      "preservedSections": 0,
+      "apiLines": 105,
+      "preservedSections": 2,
       "examples": 12
     },
     {
       "platform": "maple",
       "family": "message",
-      "file": "maple-design-mobile/packages/maple-ui/src/message/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/message/docs/en-US.md",
       "changed": false,
-      "apiLines": 149,
-      "preservedSections": 1,
+      "apiLines": 43,
+      "preservedSections": 3,
       "examples": 5
     },
     {
       "platform": "maple",
       "family": "notice-bar",
-      "file": "maple-design-mobile/packages/maple-ui/src/notice-bar/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/notice-bar/docs/en-US.md",
       "changed": false,
-      "apiLines": 24,
-      "preservedSections": 0,
-      "examples": 1
+      "apiLines": 27,
+      "preservedSections": 1,
+      "examples": 2
     },
     {
       "platform": "maple",
       "family": "number-keyboard",
-      "file": "maple-design-mobile/packages/maple-ui/src/number-keyboard/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/number-keyboard/docs/en-US.md",
       "changed": false,
-      "apiLines": 37,
-      "preservedSections": 0,
+      "apiLines": 44,
+      "preservedSections": 1,
       "examples": 1
     },
     {
       "platform": "maple",
       "family": "overlay",
-      "file": "maple-design-mobile/packages/maple-ui/src/overlay/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/overlay/docs/en-US.md",
       "changed": false,
-      "apiLines": 35,
-      "preservedSections": 0,
+      "apiLines": 30,
+      "preservedSections": 1,
       "examples": 3
     },
     {
       "platform": "maple",
       "family": "page-header",
-      "file": "maple-design-mobile/packages/maple-ui/src/page-header/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/page-header/docs/en-US.md",
       "changed": false,
-      "apiLines": 28,
-      "preservedSections": 0,
+      "apiLines": 27,
+      "preservedSections": 2,
       "examples": 3
     },
     {
       "platform": "maple",
       "family": "pagination",
-      "file": "maple-design-mobile/packages/maple-ui/src/pagination/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/pagination/docs/en-US.md",
       "changed": false,
-      "apiLines": 93,
-      "preservedSections": 0,
+      "apiLines": 69,
+      "preservedSections": 2,
       "examples": 10
     },
     {
       "platform": "maple",
       "family": "palette",
-      "file": "maple-design-mobile/packages/maple-ui/src/palette/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/palette/docs/en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 0,
@@ -1509,124 +1509,124 @@
     {
       "platform": "maple",
       "family": "paper",
-      "file": "maple-design-mobile/packages/maple-ui/src/paper/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/paper/docs/en-US.md",
       "changed": false,
-      "apiLines": 38,
+      "apiLines": 36,
       "preservedSections": 0,
       "examples": 5
     },
     {
       "platform": "maple",
       "family": "people-select",
-      "file": "maple-design-mobile/packages/maple-ui/src/people-select/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/people-select/docs/en-US.md",
       "changed": false,
-      "apiLines": 36,
+      "apiLines": 102,
       "preservedSections": 0,
       "examples": 1
     },
     {
       "platform": "maple",
       "family": "picker",
-      "file": "maple-design-mobile/packages/maple-ui/src/picker/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/picker/docs/en-US.md",
       "changed": false,
-      "apiLines": 105,
-      "preservedSections": 2,
+      "apiLines": 111,
+      "preservedSections": 4,
       "examples": 9
     },
     {
       "platform": "maple",
       "family": "popover",
-      "file": "maple-design-mobile/packages/maple-ui/src/popover/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/popover/docs/en-US.md",
       "changed": false,
-      "apiLines": 60,
-      "preservedSections": 0,
+      "apiLines": 41,
+      "preservedSections": 3,
       "examples": 7
     },
     {
       "platform": "maple",
       "family": "popup",
-      "file": "maple-design-mobile/packages/maple-ui/src/popup/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/popup/docs/en-US.md",
       "changed": false,
-      "apiLines": 53,
-      "preservedSections": 0,
-      "examples": 5
+      "apiLines": 61,
+      "preservedSections": 1,
+      "examples": 6
     },
     {
       "platform": "maple",
       "family": "progress",
-      "file": "maple-design-mobile/packages/maple-ui/src/progress/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/progress/docs/en-US.md",
       "changed": false,
-      "apiLines": 53,
-      "preservedSections": 0,
+      "apiLines": 36,
+      "preservedSections": 2,
       "examples": 8
     },
     {
       "platform": "maple",
       "family": "progress-group",
-      "file": "maple-design-mobile/packages/maple-ui/src/progress-group/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/progress-group/docs/en-US.md",
       "changed": false,
-      "apiLines": 53,
-      "preservedSections": 0,
+      "apiLines": 34,
+      "preservedSections": 2,
       "examples": 6
     },
     {
       "platform": "maple",
       "family": "pull-refresh",
-      "file": "maple-design-mobile/packages/maple-ui/src/pull-refresh/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/pull-refresh/docs/en-US.md",
       "changed": false,
-      "apiLines": 32,
+      "apiLines": 27,
       "preservedSections": 0,
       "examples": 1
     },
     {
       "platform": "maple",
       "family": "radio",
-      "file": "maple-design-mobile/packages/maple-ui/src/radio/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/radio/docs/en-US.md",
       "changed": false,
-      "apiLines": 102,
-      "preservedSections": 0,
+      "apiLines": 120,
+      "preservedSections": 2,
       "examples": 16
     },
     {
       "platform": "maple",
       "family": "rate",
-      "file": "maple-design-mobile/packages/maple-ui/src/rate/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/rate/docs/en-US.md",
       "changed": false,
-      "apiLines": 66,
-      "preservedSections": 0,
+      "apiLines": 57,
+      "preservedSections": 1,
       "examples": 10
     },
     {
       "platform": "maple",
       "family": "result",
-      "file": "maple-design-mobile/packages/maple-ui/src/result/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/result/docs/en-US.md",
       "changed": false,
-      "apiLines": 47,
+      "apiLines": 19,
       "preservedSections": 0,
       "examples": 2
     },
     {
       "platform": "maple",
       "family": "ripple",
-      "file": "maple-design-mobile/packages/maple-ui/src/ripple/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/ripple/docs/en-US.md",
       "changed": false,
-      "apiLines": 26,
-      "preservedSections": 0,
+      "apiLines": 13,
+      "preservedSections": 1,
       "examples": 4
     },
     {
       "platform": "maple",
       "family": "row",
-      "file": "maple-design-mobile/packages/maple-ui/src/row/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/row/docs/en-US.md",
       "changed": false,
-      "apiLines": 27,
+      "apiLines": 30,
       "preservedSections": 0,
       "examples": 6
     },
     {
       "platform": "maple",
       "family": "safe-area",
-      "file": "maple-design-mobile/packages/maple-ui/src/safe-area/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/safe-area/docs/en-US.md",
       "changed": false,
       "apiLines": 22,
       "preservedSections": 3,
@@ -1635,88 +1635,88 @@
     {
       "platform": "maple",
       "family": "search",
-      "file": "maple-design-mobile/packages/maple-ui/src/search/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/search/docs/en-US.md",
       "changed": false,
-      "apiLines": 91,
+      "apiLines": 111,
       "preservedSections": 0,
-      "examples": 9
+      "examples": 10
     },
     {
       "platform": "maple",
       "family": "select",
-      "file": "maple-design-mobile/packages/maple-ui/src/select/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/select/docs/en-US.md",
       "changed": false,
-      "apiLines": 175,
-      "preservedSections": 0,
-      "examples": 27
+      "apiLines": 154,
+      "preservedSections": 1,
+      "examples": 28
     },
     {
       "platform": "maple",
       "family": "signature",
-      "file": "maple-design-mobile/packages/maple-ui/src/signature/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/signature/docs/en-US.md",
       "changed": false,
-      "apiLines": 26,
-      "preservedSections": 0,
-      "examples": 2
+      "apiLines": 21,
+      "preservedSections": 1,
+      "examples": 3
     },
     {
       "platform": "maple",
       "family": "skeleton",
-      "file": "maple-design-mobile/packages/maple-ui/src/skeleton/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/skeleton/docs/en-US.md",
       "changed": false,
-      "apiLines": 70,
+      "apiLines": 44,
       "preservedSections": 0,
       "examples": 5
     },
     {
       "platform": "maple",
       "family": "slider",
-      "file": "maple-design-mobile/packages/maple-ui/src/slider/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/slider/docs/en-US.md",
       "changed": false,
       "apiLines": 60,
-      "preservedSections": 0,
-      "examples": 12
+      "preservedSections": 1,
+      "examples": 13
     },
     {
       "platform": "maple",
       "family": "space",
-      "file": "maple-design-mobile/packages/maple-ui/src/space/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/space/docs/en-US.md",
       "changed": false,
-      "apiLines": 28,
-      "preservedSections": 0,
-      "examples": 9
+      "apiLines": 26,
+      "preservedSections": 1,
+      "examples": 10
     },
     {
       "platform": "maple",
       "family": "split-button",
-      "file": "maple-design-mobile/packages/maple-ui/src/split-button/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/split-button/docs/en-US.md",
       "changed": false,
-      "apiLines": 63,
-      "preservedSections": 0,
+      "apiLines": 66,
+      "preservedSections": 3,
       "examples": 8
     },
     {
       "platform": "maple",
       "family": "statistic",
-      "file": "maple-design-mobile/packages/maple-ui/src/statistic/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/statistic/docs/en-US.md",
       "changed": false,
-      "apiLines": 51,
-      "preservedSections": 0,
+      "apiLines": 36,
+      "preservedSections": 1,
       "examples": 7
     },
     {
       "platform": "maple",
       "family": "steps",
-      "file": "maple-design-mobile/packages/maple-ui/src/steps/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/steps/docs/en-US.md",
       "changed": false,
-      "apiLines": 168,
-      "preservedSections": 0,
+      "apiLines": 50,
+      "preservedSections": 1,
       "examples": 5
     },
     {
       "platform": "maple",
       "family": "style",
-      "file": "maple-design-mobile/packages/maple-ui/src/style/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/style/docs/en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 0,
@@ -1724,125 +1724,125 @@
     },
     {
       "platform": "maple",
-      "family": "style-provider",
-      "file": "maple-design-mobile/packages/maple-ui/src/style-provider/docs/en-US.md",
+      "family": "theme-provider",
+      "file": "maple-design-mobile/packages/ui/src/theme-provider/docs/en-US.md",
       "changed": false,
-      "apiLines": 9,
+      "apiLines": 12,
       "preservedSections": 2,
-      "examples": 1
+      "examples": 2
     },
     {
       "platform": "maple",
       "family": "swipe-cell",
-      "file": "maple-design-mobile/packages/maple-ui/src/swipe-cell/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/swipe-cell/docs/en-US.md",
       "changed": false,
-      "apiLines": 27,
-      "preservedSections": 1,
-      "examples": 3
-    },
-    {
-      "platform": "maple",
-      "family": "switch",
-      "file": "maple-design-mobile/packages/maple-ui/src/switch/docs/en-US.md",
-      "changed": false,
-      "apiLines": 117,
-      "preservedSections": 0,
-      "examples": 11
-    },
-    {
-      "platform": "maple",
-      "family": "tab-bar",
-      "file": "maple-design-mobile/packages/maple-ui/src/tab-bar/docs/en-US.md",
-      "changed": false,
-      "apiLines": 77,
-      "preservedSections": 0,
-      "examples": 11
-    },
-    {
-      "platform": "maple",
-      "family": "table",
-      "file": "maple-design-mobile/packages/maple-ui/src/table/docs/en-US.md",
-      "changed": false,
-      "apiLines": 33,
+      "apiLines": 34,
       "preservedSections": 0,
       "examples": 4
     },
     {
       "platform": "maple",
-      "family": "tabs",
-      "file": "maple-design-mobile/packages/maple-ui/src/tabs/docs/en-US.md",
+      "family": "switch",
+      "file": "maple-design-mobile/packages/ui/src/switch/docs/en-US.md",
       "changed": false,
-      "apiLines": 128,
+      "apiLines": 102,
+      "preservedSections": 1,
+      "examples": 11
+    },
+    {
+      "platform": "maple",
+      "family": "tab-bar",
+      "file": "maple-design-mobile/packages/ui/src/tab-bar/docs/en-US.md",
+      "changed": false,
+      "apiLines": 58,
+      "preservedSections": 1,
+      "examples": 12
+    },
+    {
+      "platform": "maple",
+      "family": "table",
+      "file": "maple-design-mobile/packages/ui/src/table/docs/en-US.md",
+      "changed": false,
+      "apiLines": 19,
+      "preservedSections": 1,
+      "examples": 5
+    },
+    {
+      "platform": "maple",
+      "family": "tabs",
+      "file": "maple-design-mobile/packages/ui/src/tabs/docs/en-US.md",
+      "changed": false,
+      "apiLines": 91,
       "preservedSections": 0,
       "examples": 12
     },
     {
       "platform": "maple",
       "family": "tag",
-      "file": "maple-design-mobile/packages/maple-ui/src/tag/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/tag/docs/en-US.md",
       "changed": false,
-      "apiLines": 187,
+      "apiLines": 52,
       "preservedSections": 0,
       "examples": 8
     },
     {
       "platform": "maple",
       "family": "textarea",
-      "file": "maple-design-mobile/packages/maple-ui/src/textarea/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/textarea/docs/en-US.md",
       "changed": false,
-      "apiLines": 89,
-      "preservedSections": 0,
-      "examples": 8
+      "apiLines": 98,
+      "preservedSections": 2,
+      "examples": 10
     },
     {
       "platform": "maple",
       "family": "themes",
-      "file": "maple-design-mobile/packages/maple-ui/src/themes/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/themes/docs/en-US.md",
       "changed": false,
       "apiLines": 0,
-      "preservedSections": 2,
+      "preservedSections": 4,
       "examples": 4
     },
     {
       "platform": "maple",
       "family": "time",
-      "file": "maple-design-mobile/packages/maple-ui/src/time/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/time/docs/en-US.md",
       "changed": false,
-      "apiLines": 125,
-      "preservedSections": 0,
+      "apiLines": 141,
+      "preservedSections": 2,
       "examples": 24
     },
     {
       "platform": "maple",
       "family": "time-range",
-      "file": "maple-design-mobile/packages/maple-ui/src/time-range/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/time-range/docs/en-US.md",
       "changed": false,
-      "apiLines": 213,
-      "preservedSections": 0,
+      "apiLines": 231,
+      "preservedSections": 2,
       "examples": 18
     },
     {
       "platform": "maple",
       "family": "tooltip",
-      "file": "maple-design-mobile/packages/maple-ui/src/tooltip/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/tooltip/docs/en-US.md",
       "changed": false,
-      "apiLines": 68,
-      "preservedSections": 0,
+      "apiLines": 42,
+      "preservedSections": 1,
       "examples": 9
     },
     {
       "platform": "maple",
       "family": "trigger",
-      "file": "maple-design-mobile/packages/maple-ui/src/trigger/docs/en-US.md",
-      "changed": true,
-      "apiLines": 56,
-      "preservedSections": 0,
+      "file": "maple-design-mobile/packages/ui/src/trigger/docs/en-US.md",
+      "changed": false,
+      "apiLines": 51,
+      "preservedSections": 2,
       "examples": 3
     },
     {
       "platform": "maple",
       "family": "typography",
-      "file": "maple-design-mobile/packages/maple-ui/src/typography/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/typography/docs/en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 0,
@@ -1851,16 +1851,16 @@
     {
       "platform": "maple",
       "family": "upload",
-      "file": "maple-design-mobile/packages/maple-ui/src/upload/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/upload/docs/en-US.md",
       "changed": false,
-      "apiLines": 99,
-      "preservedSections": 0,
+      "apiLines": 64,
+      "preservedSections": 1,
       "examples": 25
     },
     {
       "platform": "maple",
       "family": "utilities",
-      "file": "maple-design-mobile/packages/maple-ui/src/utilities/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/utilities/docs/en-US.md",
       "changed": false,
       "apiLines": 0,
       "preservedSections": 0,
@@ -1869,29 +1869,29 @@
     {
       "platform": "maple",
       "family": "verification-code",
-      "file": "maple-design-mobile/packages/maple-ui/src/verification-code/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/verification-code/docs/en-US.md",
       "changed": false,
-      "apiLines": 60,
-      "preservedSections": 0,
+      "apiLines": 72,
+      "preservedSections": 2,
       "examples": 6
     },
     {
       "platform": "maple",
       "family": "watermark",
-      "file": "maple-design-mobile/packages/maple-ui/src/watermark/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/watermark/docs/en-US.md",
       "changed": false,
       "apiLines": 45,
-      "preservedSections": 0,
+      "preservedSections": 1,
       "examples": 5
     },
     {
       "platform": "maple",
       "family": "nav-menu",
-      "file": "maple-design-mobile/packages/maple-ui/src/nav-menu/docs/en-US.md",
+      "file": "maple-design-mobile/packages/ui/src/nav-menu/docs/en-US.md",
       "changed": false,
-      "apiLines": 51,
+      "apiLines": 41,
       "preservedSections": 0,
-      "examples": 3
+      "examples": 4
     }
   ]
 }

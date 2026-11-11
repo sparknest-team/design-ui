@@ -25,7 +25,7 @@ export function scanMotionSource(file, source) {
       css.push(index + 1);
     if (
       !file.endsWith(".less") &&
-      /requestAnimationFrame\(|setTimeout\(|setInterval\(|scrollIntoView\(|scrollTo\(|matchMedia\([^\n]*prefers-reduced-motion/.test(
+      /(?:requestAnimationFrame|setTimeout|setInterval|scrollIntoView|scrollTo)(?:\?\.)?\(|matchMedia(?:\?\.)?\([^\n]*prefers-reduced-motion/.test(
         line,
       )
     )
@@ -42,8 +42,8 @@ export function scanMotionSource(file, source) {
 export function collectMotionInventory() {
   const platforms = [];
   for (const [repo, pkg] of [
-    ["cedar-design-web", "cedar-ui"],
-    ["maple-design-mobile", "maple-ui"],
+    ["cedar-design-web", "ui"],
+    ["maple-design-mobile", "ui"],
   ]) {
     const root = resolve(workspace, repo, "packages", pkg, "src");
     const candidates = [];

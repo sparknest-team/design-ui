@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { renderCatalog } from './token-catalog.mjs';
 
 const workspace = new URL('../../', import.meta.url);
-const cedarRequire = createRequire(new URL('cedar-design-web/packages/cedar-ui/package.json', workspace));
+const cedarRequire = createRequire(new URL('cedar-design-web/packages/ui/package.json', workspace));
 const postcss = cedarRequire('postcss');
 const scan = spawnSync(process.execPath, [fileURLToPath(new URL('./token-inventory.mjs', import.meta.url))], {
   encoding: 'utf8', maxBuffer: 32 * 1024 * 1024,
@@ -16,10 +16,10 @@ assert.equal(scan.status, 0, scan.stderr);
 const report = JSON.parse(scan.stdout);
 const section = text => text.split('## field-decorator\n\n')[1]?.split('\n## ')[0].trim();
 
-for (const [repo, pkg, p] of [['cedar-design-web', 'cedar-ui', 'c'], ['maple-design-mobile', 'maple-ui', 'mp']]) {
+for (const [repo, pkg, p] of [['cedar-design-web', 'ui', 'c'], ['maple-design-mobile', 'ui', 'mp']]) {
   const root = new URL(repo + '/packages/' + pkg + '/', workspace);
   const less = p === 'c' ? cedarRequire('less')
-    : createRequire(new URL(repo + '/packages/maple-cli/package.json', workspace))('less');
+    : createRequire(new URL(repo + '/packages/cli/package.json', workspace))('less');
   const compile = async component => {
     const entry = new URL('src/' + component + '/style/index.less', root);
     return postcss.parse((await less.render(readFileSync(entry, 'utf8'), {
@@ -59,10 +59,14 @@ for (const [repo, pkg, p] of [['cedar-design-web', 'cedar-ui', 'c'], ['maple-des
       const selector = '.' + p + '-' + component + (component === 'input-number' ? '__input' : '__inner');
       let found = false;
       leaf.walkDecls('caret-color', decl => {
-        assert.equal(decl.value, 'currentColor', component + '/' + decl.parent.selector);
+        assert.equal(decl.value, `var(--${p}-${component}-caret-color)`, component + '/' + decl.parent.selector);
         if (decl.parent.selectors.includes(selector)) found = true;
       });
       assert.ok(found, component + ': real native-control class');
+      const aliases = [];
+      leaf.walkDecls(`--${p}-${component}-caret-color`, decl => aliases.push(decl.value));
+      assert.ok(aliases.includes(`var(--${p}-field-caret-color)`), component + ': shared caret alias');
+      assert.ok(declarations(':root', `--${p}-field-caret-color`).includes('currentColor'), 'shared caret default');
       const entry = readFileSync(new URL('src/' + component + '/style/index.ts', root), 'utf8');
       if (!entry.includes('field-decorator/style')) {
         assert.match(entry, /import '\.\.\/\.\.\/input\/style'/);
@@ -72,12 +76,25 @@ for (const [repo, pkg, p] of [['cedar-design-web', 'cedar-ui', 'c'], ['maple-des
     }
   });
 
-  test(p + ': removed properties are absent from inventory, live focus/error consumers remain', () => {
+  test(p + ': outline offsets belong to actual focus-visible inner controls', async () => {
+    for (const [component, selector] of [
+      ['_components/selection-field', `.${p}-selection-field__tag-label--truncated:focus-visible`],
+      ['input-number', `.${p}-input-number__step-button:focus-visible`],
+    ]) {
+      const actual = await compile(component);
+      let found = false;
+      actual.walkRules(selector, rule => rule.walkDecls('outline-offset', decl => { if (decl.value.includes('border-width')) found = true; }));
+      assert.ok(found, component + ': focus-visible outline offset');
+    }
+  });
+
+  test(p + ': field focus/error tokens have consumers without controlling the caret', () => {
     const row = report.components.find(row => row.platform === p && row.component === 'field-decorator');
     for (const token of ['border-width', 'focus-color', 'error-color']) {
       const properties = row.tokens['--' + p + '-field-' + token].consumerProperties;
       assert.ok(!properties.includes('caret-color'), token);
-      if (token === 'border-width') assert.ok(!properties.includes('outline-offset'));
+      // Global consumer data also includes legitimate inner :focus-visible controls.
+      if (token === 'border-width') assert.ok(properties.includes('outline-offset'));
       assert.ok(properties.includes(token === 'error-color' ? 'color' : 'outline'), token);
     }
   });

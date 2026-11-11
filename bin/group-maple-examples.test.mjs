@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
-const require = createRequire(new URL('../../maple-design-mobile/packages/maple-cli/package.json', import.meta.url));
+const require = createRequire(new URL('../../maple-design-mobile/packages/cli/package.json', import.meta.url));
 const { parse, compileScript, compileTemplate } = require('@vue/compiler-sfc');
 import { groupMapleExamples, readMapleExamples, groupId } from './group-maple-examples.mjs';
 import { demoRefs, groupDemoSections, readDemoSections } from './group-demo-sections.mjs';
@@ -35,7 +35,7 @@ test('keeps layout guidance in the basic group and rejects unclassified inline c
   assert.throws(() => groupMapleExamples('<template><div>未分类</div></template>', groups), /inline content/);
 });
 test('every Maple family has grouped documents and a matching source-backed phone gallery', () => {
-  const directory = path.join(root, 'maple-design-mobile/packages/maple-ui/src');
+  const directory = path.join(root, 'maple-design-mobile/packages/ui/src');
   const config = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/configs/demo-groups.maple.json'), 'utf8'));
   const report = [];
   for (const relative of fs.readdirSync(directory, { recursive: true }).filter(file => /\/docs\/zh-CN\.md$/.test(file))) {

@@ -52,7 +52,7 @@ export function resolveRelativeCase(source, specifier, base, cache = new Map()) 
 
 export function auditCasePaths(root) {
   const drift = trackedCaseDrift(root)
-  const pkg = existsSync(join(root, 'packages/cedar-ui/package.json')) ? 'cedar-ui' : 'maple-ui'
+  const pkg = 'ui'
   const require = createRequire(join(root, 'packages', pkg, 'package.json'))
   const ts = require('typescript')
   const vue = require('vue/compiler-sfc')
@@ -70,7 +70,7 @@ export function auditCasePaths(root) {
   for (const item of readdirSync(join(root, 'packages'), { withFileTypes: true })) {
     if (item.isDirectory()) walk(join(root, 'packages', item.name, 'src'))
   }
-  walk(join(root, 'packages/maple-cli/site'))
+  walk(join(root, 'packages/cli/site'))
   walk(join(root, 'scripts'))
   walk(join(root, 'checks'))
   walk(join(root, 'packages', pkg, 'docs/.vuepress'))

@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 const fixture = fileURLToPath(new URL('.', import.meta.url))
 const workspace = resolve(fixture, '../../..')
-const require = createRequire(resolve(workspace, 'cedar-design-web/packages/cedar-ui/package.json'))
+const require = createRequire(resolve(workspace, 'cedar-design-web/packages/ui/package.json'))
 const { build, preview } = await import(new URL('./dist/node/index.js', `file://${require.resolve('vite')}`).href)
 const vue = (await import(require.resolve('@vitejs/plugin-vue'))).default
 const jsx = (await import(require.resolve('@vitejs/plugin-vue-jsx'))).default
@@ -16,7 +16,7 @@ const evidence = process.env.DIRECTION_EVIDENCE_DIR ? resolve(process.env.DIRECT
 await mkdir(evidence, { recursive: true })
 const config = {
   configFile: false, root: fixture, logLevel: 'warn', plugins: [vue(), jsx()],
-  resolve: { dedupe: ['vue'], alias: { vue: require.resolve('vue/dist/vue.runtime.esm-bundler.js'), '@cedar-design/use': resolve(workspace, 'cedar-design-web/packages/cedar-use/src/index.ts'), '@maple-design/use': resolve(workspace, 'maple-design-mobile/packages/maple-use/src/index.ts') } },
+  resolve: { dedupe: ['vue'], alias: { vue: require.resolve('vue/dist/vue.runtime.esm-bundler.js'), '@cedar-design/use-vue': resolve(workspace, 'cedar-design-web/packages/use/src/index.ts'), '@maple-design/use-vue': resolve(workspace, 'maple-design-mobile/packages/use/src/index.ts') } },
   css: { preprocessorOptions: { less: { javascriptEnabled: true } } },
   build: { outDir: output, emptyOutDir: true, minify: false },
 }

@@ -1,0 +1,730 @@
+{
+  "date": "2026-11-06",
+  "builds": [
+    {
+      "library": "cedar",
+      "command": "pnpm build:doc",
+      "passed": true,
+      "renderedPages": 308,
+      "log": "/tmp/cedar-doc-build-20261106-verified.log"
+    },
+    {
+      "library": "maple",
+      "command": "pnpm build:doc",
+      "passed": true,
+      "demoSfcChecked": 1468,
+      "log": "/tmp/maple-doc-build-20261106-final.log"
+    }
+  ],
+  "generatedCedarTemplates": {
+    "checked": 309,
+    "errors": 0
+  },
+  "tests": {
+    "markdownRendering": 12,
+    "apiStructure": 7,
+    "localizationAndPublicContent": 9,
+    "failed": 0
+  },
+  "browser": {
+    "engine": "Chromium",
+    "version": "151.0.7922.34",
+    "uniquePages": 46,
+    "cedar": 24,
+    "maple": 22,
+    "checks": [
+      "Vue application mounted",
+      "API categories match authored documentation",
+      "API TOC entries have the correct nested level",
+      "TOC targets exist",
+      "API links scroll to the actual heading",
+      "No page errors"
+    ],
+    "networkRetry": {
+      "cause": "ERR_NETWORK_CHANGED on local JS requests",
+      "route": "/components/page-header/",
+      "recheckedLocales": [
+        "zh-CN",
+        "en-US"
+      ],
+      "passed": true,
+      "originalLog": "/tmp/cedar-render-network-interruption.log"
+    },
+    "pages": [
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/auto-complete/README.en-US.md",
+        "route": "/en/components/auto-complete/",
+        "passed": true,
+        "headingCount": 23,
+        "tocCount": 35,
+        "api": [
+          "Empty values and reading placeholders",
+          "AutoComplete Props",
+          "AutoComplete Events",
+          "AutoComplete Slots",
+          "AutoComplete Methods"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/auto-complete/README.md",
+        "route": "/components/auto-complete/",
+        "passed": true,
+        "headingCount": 33,
+        "tocCount": 33,
+        "api": [
+          "空值识别与阅读空文案",
+          "AutoComplete Props",
+          "AutoComplete Events",
+          "AutoComplete Slots",
+          "AutoComplete Methods"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/button/README.en-US.md",
+        "route": "/en/components/button/",
+        "passed": true,
+        "headingCount": 34,
+        "tocCount": 34,
+        "api": [
+          "Button Props",
+          "Button Events",
+          "Button Slots",
+          "Button Methods",
+          "ButtonGroup Props",
+          "ButtonGroup Events",
+          "ButtonGroup Slots",
+          "ButtonGroup Methods"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/button/README.md",
+        "route": "/components/button/",
+        "passed": true,
+        "headingCount": 34,
+        "tocCount": 34,
+        "api": [
+          "Button Props",
+          "Button Events",
+          "Button Slots",
+          "Button Methods",
+          "ButtonGroup Props",
+          "ButtonGroup Events",
+          "ButtonGroup Slots",
+          "ButtonGroup Methods"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/dialog/README.en-US.md",
+        "route": "/en/components/dialog/",
+        "passed": true,
+        "headingCount": 40,
+        "tocCount": 40,
+        "api": [
+          "Dialog Props",
+          "Dialog Events",
+          "Dialog Slots",
+          "Dialog Methods"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/dialog/README.md",
+        "route": "/components/dialog/",
+        "passed": true,
+        "headingCount": 35,
+        "tocCount": 35,
+        "api": [
+          "Dialog Props",
+          "Dialog Events",
+          "Dialog Slots",
+          "Dialog Methods"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/drawer/README.en-US.md",
+        "route": "/en/components/drawer/",
+        "passed": true,
+        "headingCount": 21,
+        "tocCount": 21,
+        "api": [
+          "Drawer Props",
+          "Drawer Events",
+          "Drawer Slots",
+          "Imperative calls"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/drawer/README.md",
+        "route": "/components/drawer/",
+        "passed": true,
+        "headingCount": 19,
+        "tocCount": 19,
+        "api": [
+          "Drawer Props",
+          "Drawer Events",
+          "Drawer Slots",
+          "命令式调用"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/hover/README.en-US.md",
+        "route": "/en/components/hover/",
+        "passed": true,
+        "headingCount": 6,
+        "tocCount": 6,
+        "api": [
+          "HoverOverlay Props"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/hover/README.md",
+        "route": "/components/hover/",
+        "passed": true,
+        "headingCount": 5,
+        "tocCount": 5,
+        "api": [
+          "指令",
+          "HoverOverlay Props"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/mention/README.en-US.md",
+        "route": "/en/components/mention/",
+        "passed": true,
+        "headingCount": 20,
+        "tocCount": 20,
+        "api": [
+          "Empty values and reading placeholders",
+          "Mention Props",
+          "Mention Events",
+          "Mention Methods",
+          "Mention Slots"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/mention/README.md",
+        "route": "/components/mention/",
+        "passed": true,
+        "headingCount": 20,
+        "tocCount": 20,
+        "api": [
+          "空值识别与阅读空文案",
+          "Mention Props",
+          "Mention Events",
+          "Mention Methods",
+          "Mention Slots"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/page-header/README.en-US.md",
+        "route": "/en/components/page-header/",
+        "passed": true,
+        "headingCount": 12,
+        "tocCount": 12,
+        "api": [
+          "PageHeader Props",
+          "PageHeader Events",
+          "PageHeader Slots"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/page-header/README.md",
+        "route": "/components/page-header/",
+        "passed": true,
+        "headingCount": 12,
+        "tocCount": 12,
+        "api": [
+          "PageHeader Props",
+          "PageHeader Events",
+          "PageHeader Slots"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/people-select/README.en-US.md",
+        "route": "/en/components/people-select/",
+        "passed": true,
+        "headingCount": 12,
+        "tocCount": 12,
+        "api": [
+          "Empty values and reading placeholders",
+          "PeopleSelect Props",
+          "PeopleSelect Events",
+          "PeopleSelect Slots",
+          "PeopleSelect Methods",
+          "Receiving cancellation signals in business requests",
+          "Shared field loading"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/people-select/README.md",
+        "route": "/components/people-select/",
+        "passed": true,
+        "headingCount": 12,
+        "tocCount": 12,
+        "api": [
+          "空值识别与阅读空文案",
+          "PeopleSelect Props",
+          "PeopleSelect Events",
+          "PeopleSelect Slots",
+          "PeopleSelect Methods",
+          "业务请求如何接收取消信号",
+          "共享字段加载"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/select/README.en-US.md",
+        "route": "/en/components/select/",
+        "passed": true,
+        "headingCount": 61,
+        "tocCount": 61,
+        "api": [
+          "Empty values and reading placeholders",
+          "Cleared values and 1.x compatibility",
+          "Select Props",
+          "Select Events / Methods",
+          "Slots and option data",
+          "Option Props",
+          "Option Slots",
+          "Optgroup Props",
+          "Optgroup Slots",
+          "Select Slots",
+          "Select Events",
+          "Select Methods",
+          "Selected-checkmark style variables",
+          "Public type exports",
+          "Built-in search fields"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/select/README.md",
+        "route": "/components/select/",
+        "passed": true,
+        "headingCount": 61,
+        "tocCount": 61,
+        "api": [
+          "空值识别与阅读空文案",
+          "清空值与 1.x 兼容性",
+          "Select Props",
+          "Select Events / Methods",
+          "插槽与选项数据",
+          "Option Props",
+          "Option Slots",
+          "Optgroup Props",
+          "Optgroup Slots",
+          "Select Slots",
+          "Select Events",
+          "Select Methods",
+          "选中对勾样式变量",
+          "公开类型入口",
+          "内置搜索字段配置"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/table/README.en-US.md",
+        "route": "/en/components/table/",
+        "passed": true,
+        "headingCount": 74,
+        "tocCount": 74,
+        "api": [
+          "Table Props",
+          "Table Events",
+          "Table Methods",
+          "Table Slots",
+          "TableColumn Props",
+          "TableColumn Slots",
+          "Table structure components",
+          "TableComponents",
+          "TableOperationColumn Props",
+          "Pagination configuration type",
+          "Forwarded configuration precedence"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/table/README.md",
+        "route": "/components/table/",
+        "passed": true,
+        "headingCount": 74,
+        "tocCount": 74,
+        "api": [
+          "Table Props",
+          "Table Events",
+          "Table Methods",
+          "Table Slots",
+          "TableColumn Props",
+          "TableColumn Slots",
+          "表格结构子组件",
+          "TableComponents",
+          "TableOperationColumn Props",
+          "分页配置类型",
+          "透传配置优先级"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/tree-select/README.en-US.md",
+        "route": "/en/components/tree-select/",
+        "passed": true,
+        "headingCount": 26,
+        "tocCount": 26,
+        "api": [
+          "Empty values and reading placeholders",
+          "TreeSelect Props",
+          "TreeSelect Events",
+          "TreeSelect Slots",
+          "TreeSelect Methods",
+          "Public types",
+          "Form field presentation and confirmation",
+          "In-place editing and keyboard precedence",
+          "Node fields and business values",
+          "Search configuration",
+          "Built-in search fields"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/tree-select/README.md",
+        "route": "/components/tree-select/",
+        "passed": true,
+        "headingCount": 25,
+        "tocCount": 25,
+        "api": [
+          "空值识别与阅读空文案",
+          "TreeSelect Props",
+          "TreeSelect Events",
+          "TreeSelect Slots",
+          "TreeSelect Methods",
+          "公开类型",
+          "Form 字段展示与确认",
+          "原位编辑与键盘优先级",
+          "节点字段与业务值",
+          "搜索开关",
+          "内置搜索字段配置"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/typography/README.en-US.md",
+        "route": "/en/components/typography/",
+        "passed": true,
+        "headingCount": 23,
+        "tocCount": 23,
+        "api": [
+          "TypographyText Props",
+          "TypographyText Events",
+          "TypographyText Slots",
+          "TypographyTitle Props",
+          "TypographyTitle Events",
+          "TypographyTitle Slots",
+          "TypographyParagraph Props",
+          "TypographyParagraph Events",
+          "TypographyParagraph Slots"
+        ]
+      },
+      {
+        "file": "cedar-design-web/packages/cedar-ui/src/typography/README.md",
+        "route": "/components/typography/",
+        "passed": true,
+        "headingCount": 23,
+        "tocCount": 23,
+        "api": [
+          "TypographyText Props",
+          "TypographyText Events",
+          "TypographyText Slots",
+          "TypographyTitle Props",
+          "TypographyTitle Events",
+          "TypographyTitle Slots",
+          "TypographyParagraph Props",
+          "TypographyParagraph Events",
+          "TypographyParagraph Slots"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/auto-complete/docs/en-US.md",
+        "route": "/#/en-US/auto-complete",
+        "passed": true,
+        "headingCount": 33,
+        "tocCount": 33,
+        "api": [
+          "Empty values and reading placeholders",
+          "AutoComplete Props",
+          "AutoComplete Events",
+          "AutoComplete Slots",
+          "AutoComplete Methods"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/auto-complete/docs/zh-CN.md",
+        "route": "/#/zh-CN/auto-complete",
+        "passed": true,
+        "headingCount": 33,
+        "tocCount": 33,
+        "api": [
+          "空值识别与阅读空文案",
+          "AutoComplete Props",
+          "AutoComplete Events",
+          "AutoComplete Slots",
+          "AutoComplete Methods"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/button/docs/en-US.md",
+        "route": "/#/en-US/button",
+        "passed": true,
+        "headingCount": 34,
+        "tocCount": 34,
+        "api": [
+          "Button Props",
+          "Button Events",
+          "Button Slots",
+          "Button Methods",
+          "ButtonGroup Props",
+          "ButtonGroup Events",
+          "ButtonGroup Slots",
+          "ButtonGroup Methods"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/button/docs/zh-CN.md",
+        "route": "/#/zh-CN/button",
+        "passed": true,
+        "headingCount": 34,
+        "tocCount": 34,
+        "api": [
+          "Button Props",
+          "Button Events",
+          "Button Slots",
+          "Button Methods",
+          "ButtonGroup Props",
+          "ButtonGroup Events",
+          "ButtonGroup Slots",
+          "ButtonGroup Methods"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/dialog/docs/en-US.md",
+        "route": "/#/en-US/dialog",
+        "passed": true,
+        "headingCount": 30,
+        "tocCount": 30,
+        "api": [
+          "Dialog Props",
+          "Dialog Events",
+          "Dialog Slots / Methods",
+          "Dialog Methods"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/dialog/docs/zh-CN.md",
+        "route": "/#/zh-CN/dialog",
+        "passed": true,
+        "headingCount": 28,
+        "tocCount": 28,
+        "api": [
+          "Dialog Props",
+          "Dialog Events",
+          "Dialog Slots / Methods",
+          "Dialog Methods"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/hover/docs/en-US.md",
+        "route": "/#/en-US/hover",
+        "passed": true,
+        "headingCount": 12,
+        "tocCount": 12,
+        "api": []
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/hover/docs/zh-CN.md",
+        "route": "/#/zh-CN/hover",
+        "passed": true,
+        "headingCount": 10,
+        "tocCount": 10,
+        "api": []
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/locale-provider/docs/en-US.md",
+        "route": "/#/en-US/locale-provider",
+        "passed": true,
+        "headingCount": 7,
+        "tocCount": 7,
+        "api": [
+          "LocaleProvider Props",
+          "LocaleProvider Slots"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/locale-provider/docs/zh-CN.md",
+        "route": "/#/zh-CN/locale-provider",
+        "passed": true,
+        "headingCount": 7,
+        "tocCount": 7,
+        "api": [
+          "LocaleProvider Props",
+          "LocaleProvider Slots"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/page-header/docs/en-US.md",
+        "route": "/#/en-US/page-header",
+        "passed": true,
+        "headingCount": 11,
+        "tocCount": 11,
+        "api": [
+          "PageHeader Props",
+          "PageHeader Events",
+          "PageHeader Slots"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/page-header/docs/zh-CN.md",
+        "route": "/#/zh-CN/page-header",
+        "passed": true,
+        "headingCount": 11,
+        "tocCount": 11,
+        "api": [
+          "PageHeader Props",
+          "PageHeader Events",
+          "PageHeader Slots"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/people-select/docs/en-US.md",
+        "route": "/#/en-US/people-select",
+        "passed": true,
+        "headingCount": 12,
+        "tocCount": 12,
+        "api": [
+          "Empty values and reading placeholders",
+          "PeopleSelect Props",
+          "PeopleSelect Events",
+          "PeopleSelect Slots",
+          "PeopleSelect Methods",
+          "Receiving cancellation signals in business requests",
+          "Shared field loading"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/people-select/docs/zh-CN.md",
+        "route": "/#/zh-CN/people-select",
+        "passed": true,
+        "headingCount": 12,
+        "tocCount": 12,
+        "api": [
+          "空值识别与阅读空文案",
+          "PeopleSelect Props",
+          "PeopleSelect Events",
+          "PeopleSelect Slots",
+          "PeopleSelect Methods",
+          "业务请求如何接收取消信号",
+          "共享字段加载"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/popup/docs/en-US.md",
+        "route": "/#/en-US/popup",
+        "passed": true,
+        "headingCount": 21,
+        "tocCount": 21,
+        "api": [
+          "Popup Props",
+          "Popup Events",
+          "Popup Slots",
+          "Popup Methods"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/popup/docs/zh-CN.md",
+        "route": "/#/zh-CN/popup",
+        "passed": true,
+        "headingCount": 21,
+        "tocCount": 21,
+        "api": [
+          "Popup Props",
+          "Popup Events",
+          "Popup Slots",
+          "Popup Methods"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/select/docs/en-US.md",
+        "route": "/#/en-US/select",
+        "passed": true,
+        "headingCount": 61,
+        "tocCount": 61,
+        "api": [
+          "Empty values and reading placeholders",
+          "Cleared values and 1.x compatibility",
+          "Select Props",
+          "Select Events / Methods",
+          "Slots and option data",
+          "Option Props",
+          "Option Slots",
+          "Optgroup Props",
+          "Optgroup Slots",
+          "Select Slots",
+          "Select Events",
+          "Select Methods"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/select/docs/zh-CN.md",
+        "route": "/#/zh-CN/select",
+        "passed": true,
+        "headingCount": 60,
+        "tocCount": 60,
+        "api": [
+          "空值识别与阅读空文案",
+          "清空值与 1.x 兼容性",
+          "Select Props",
+          "Select Events / Methods",
+          "插槽与选项数据",
+          "Option Props",
+          "Option Slots",
+          "Optgroup Props",
+          "Optgroup Slots",
+          "Select Slots",
+          "Select Events",
+          "Select Methods"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/table/docs/en-US.md",
+        "route": "/#/en-US/table",
+        "passed": true,
+        "headingCount": 17,
+        "tocCount": 17,
+        "api": [
+          "Table Props",
+          "Table Slots"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/table/docs/zh-CN.md",
+        "route": "/#/zh-CN/table",
+        "passed": true,
+        "headingCount": 17,
+        "tocCount": 17,
+        "api": [
+          "Table Props",
+          "Table Slots"
+        ]
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/typography/docs/en-US.md",
+        "route": "/#/en-US/typography",
+        "passed": true,
+        "headingCount": 4,
+        "tocCount": 4,
+        "api": []
+      },
+      {
+        "file": "maple-design-mobile/packages/maple-ui/src/typography/docs/zh-CN.md",
+        "route": "/#/zh-CN/typography",
+        "passed": true,
+        "headingCount": 4,
+        "tocCount": 4,
+        "api": []
+      }
+    ]
+  },
+  "remainingWarnings": [
+    "Bundled chunks exceed the configured size warning thresholds."
+  ]
+}

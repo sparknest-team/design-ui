@@ -27,7 +27,7 @@ for (const profile of profiles) {
   try {
     const [coverage, navigation, capabilities] = await Promise.all(['coverage.json', 'navigation-outage.json', 'engine-capabilities.json']
       .map(async (name) => JSON.parse(await readFile(resolve(evidence, name), 'utf8'))))
-    const output = resolve(root, `packages/${library}-ui/${library === 'cedar' ? 'dist' : 'site'}/index.html`)
+    const output = resolve(root, `packages/ui/${library === 'cedar' ? 'dist' : 'site'}/index.html`)
     verified = validateEngineEvidence({ coverage, navigation, capabilities }, {
       library, name: profile.name, buildIndexHash: createHash('sha256').update(await readFile(output)).digest('hex'),
       sourceFingerprint: sourceFingerprint(root, library), productionFingerprint: productionFingerprint(root, library),

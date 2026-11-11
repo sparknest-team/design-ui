@@ -5,7 +5,7 @@ import { join, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
-const require = createRequire(resolve(workspace, 'cedar-design-web/packages/cedar-ui/package.json'))
+const require = createRequire(resolve(workspace, 'cedar-design-web/packages/ui/package.json'))
 const ts = require('typescript')
 const relevant = /^(dir|orientation|direction|axis|position|placement)$|(?:Position|Placement|Direction)$/
 const excluded = new Set(['__tests__', '__demos__', 'example', 'docs', 'style', 'node_modules'])
@@ -119,7 +119,7 @@ export function runCheck(registry, inventories) {
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const registry = JSON.parse(readFileSync(resolve(workspace, 'design-ui/configs/api-naming.json'), 'utf8'))
-  const files = [inventory(resolve(workspace, 'cedar-design-web/packages/cedar-ui/src')), inventory(resolve(workspace, 'maple-design-mobile/packages/maple-ui/src'))].flat()
+  const files = [inventory(resolve(workspace, 'cedar-design-web/packages/ui/src')), inventory(resolve(workspace, 'maple-design-mobile/packages/ui/src'))].flat()
   const issues = runCheck(registry, files)
   for (const issue of issues) console.error(issue)
   const pending = registry.entries.filter(e => e.target || e.pendingType || e.targetValues).length

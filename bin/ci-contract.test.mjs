@@ -52,9 +52,9 @@ for (const repo of repositories) {
       assert.ok(scripts.quality.indexOf('pnpm build:lib') < scripts.quality.indexOf('pnpm typecheck'))
       assert.ok(scripts.quality.indexOf('pnpm build:lib') < scripts.quality.indexOf('pnpm test &&'))
       assert.ok(scripts['build:lib'].includes('pnpm build:presets &&'))
-      const ui = JSON.parse(readFileSync(resolve(root, 'packages/cedar-ui/package.json'), 'utf8'))
+      const ui = JSON.parse(readFileSync(resolve(root, 'packages/ui/package.json'), 'utf8'))
       assert.match(ui.scripts['build:doc'], /node --max-old-space-size=6144 .*vuepress.* build docs --dest dist/)
-      const docsConfig = readFileSync(resolve(root, 'packages/cedar-ui/docs/.vuepress/config.ts'), 'utf8')
+      const docsConfig = readFileSync(resolve(root, 'packages/ui/docs/.vuepress/config.ts'), 'utf8')
       assert.match(docsConfig, /preprocessorMaxWorkers:\s*2\s*,/)
       assert.match(docsConfig, /api:\s*'modern-compiler'/)
     } else {

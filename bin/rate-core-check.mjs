@@ -7,13 +7,13 @@ import { fileURLToPath } from 'node:url'
 const root = fileURLToPath(new URL('../../', import.meta.url))
 const require = createRequire(resolve(root, 'maple-design-mobile/node_modules/.pnpm/node_modules/esbuild/package.json'))
 const { transformSync } = require('esbuild')
-const uiRequire = createRequire(resolve(root, 'cedar-design-web/packages/cedar-ui/package.json'))
+const uiRequire = createRequire(resolve(root, 'cedar-design-web/packages/ui/package.json'))
 const less = uiRequire('less')
 const ts = uiRequire('typescript')
-const c = resolve(root, 'cedar-design-web/packages/cedar-ui/src/rate')
-const m = resolve(root, 'maple-design-mobile/packages/maple-ui/src/rate')
+const c = resolve(root, 'cedar-design-web/packages/ui/src/rate')
+const m = resolve(root, 'maple-design-mobile/packages/ui/src/rate')
 function normalize(source) {
-  return source.replaceAll('../_utils/global-config', '../utils/components')
+  return source.replaceAll('../_utils/empty-value', '../utils/empty-value').replaceAll('../_utils/global-config', '../utils/components')
     .replaceAll('../_utils/size-length', '../utils/size-length')
     .replace(/@cedar-design\/icons-vue\/[^'"]+/g, '@maple-design/icons-vue')
     .replaceAll('c-rate', 'mp-rate').replaceAll('--c-', '--mp-')
@@ -40,7 +40,7 @@ function typedContract(source) {
   return JSON.stringify(visit(ast))
 }
 assert.equal(typedContract(readFileSync(resolve(c, 'props.ts'), 'utf8')), typedContract(readFileSync(resolve(m, 'props.ts'), 'utf8')), 'public TypeScript contracts')
-for (const file of ['props.ts', 'rate-core.tsx', '__tests__/interaction.spec.js']) {
+for (const file of ['props.ts', 'count.ts', 'rate-core.tsx', '__tests__/interaction.spec.js', '__tests__/preview-gap.spec.js', '__tests__/public-slots-count.spec.js']) {
   assert.equal(script(readFileSync(resolve(c, file), 'utf8')), script(readFileSync(resolve(m, file), 'utf8')), file)
 }
 for (const file of ['style/index.less', 'style/rate.less', 'style/index.ts', 'style/appearance.less']) {
@@ -67,4 +67,4 @@ for (const [dir, prefix] of [[c, 'c'], [m, 'mp']]) {
     assert.ok(css.includes('--c-internal-rate-timing-function: var(--c-rate-transition-timing-function)'), 'public timing function remains customizable')
   }
 }
-console.log('Rate: 3 core/test pairs, 4 style-entry/rule pairs, 2 demo pairs and both compiled styles verified. Only local Form integration and registered public token defaults remain platform-specific.')
+console.log('Rate: 6 core/test pairs, 4 style-entry/rule pairs, 2 demo pairs and both compiled styles verified. Only local Form integration and registered public token defaults remain platform-specific.')
