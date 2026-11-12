@@ -1,0 +1,625 @@
+{
+  "run": {
+    "busy": false,
+    "results": [
+      {
+        "name": "Cedar",
+        "kind": "number",
+        "passed": true,
+        "samples": [
+          {
+            "phase": "mounted",
+            "time": 15.800000011920929,
+            "nodes": 1,
+            "value": 0,
+            "changes": 0,
+            "updates": 0,
+            "ends": 0
+          },
+          {
+            "phase": "immediate-step",
+            "time": 22.5,
+            "nodes": 1,
+            "value": 1,
+            "changes": 0,
+            "updates": 1,
+            "ends": 0
+          },
+          {
+            "phase": "before-first-repeat",
+            "time": 724.1000000089407,
+            "nodes": 1,
+            "value": 1,
+            "changes": 0,
+            "updates": 1,
+            "ends": 0
+          },
+          {
+            "phase": "first-repeat",
+            "time": 905.2000000029802,
+            "nodes": 1,
+            "value": 2,
+            "changes": 0,
+            "updates": 2,
+            "ends": 0
+          },
+          {
+            "phase": "second-repeat",
+            "time": 1068,
+            "nodes": 1,
+            "value": 3,
+            "changes": 0,
+            "updates": 3,
+            "ends": 0
+          },
+          {
+            "phase": "cancelled",
+            "time": 1068.1000000089407,
+            "nodes": 1,
+            "value": 3,
+            "changes": 0,
+            "updates": 3,
+            "ends": 0
+          },
+          {
+            "phase": "after-cancel",
+            "time": 1288.9000000059605,
+            "nodes": 1,
+            "value": 3,
+            "changes": 0,
+            "updates": 3,
+            "ends": 0
+          },
+          {
+            "phase": "replacement-hold",
+            "time": 1290.7000000029802,
+            "nodes": 1,
+            "value": 4,
+            "changes": 0,
+            "updates": 4,
+            "ends": 0
+          },
+          {
+            "phase": "unmounted-pending",
+            "time": 1395.9000000059605,
+            "nodes": 0,
+            "value": 4,
+            "changes": 0,
+            "updates": 4,
+            "ends": 0
+          },
+          {
+            "phase": "after-unmounted-deadline",
+            "time": 2248.1000000089407,
+            "nodes": 0,
+            "value": 4,
+            "changes": 0,
+            "updates": 4,
+            "ends": 0
+          }
+        ],
+        "events": [
+          {
+            "event": "update:modelValue",
+            "value": 1,
+            "time": 21
+          },
+          {
+            "event": "update:modelValue",
+            "value": 2,
+            "time": 822.6000000089407
+          },
+          {
+            "event": "update:modelValue",
+            "value": 3,
+            "time": 974.4000000059605
+          },
+          {
+            "event": "update:modelValue",
+            "value": 4,
+            "time": 1289.300000011921
+          }
+        ],
+        "finalNodes": 0
+      },
+      {
+        "name": "Cedar",
+        "kind": "countdown",
+        "passed": true,
+        "samples": [
+          {
+            "phase": "mounted",
+            "time": 2.0999999940395355,
+            "nodes": 1,
+            "value": 0,
+            "changes": 2,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1600
+          },
+          {
+            "phase": "running",
+            "time": 198.3999999910593,
+            "nodes": 1,
+            "value": 0,
+            "changes": 9,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1403
+          },
+          {
+            "phase": "paused",
+            "time": 199.09999999403954,
+            "nodes": 1,
+            "value": 0,
+            "changes": 9,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1403
+          },
+          {
+            "phase": "paused-stable",
+            "time": 420.5,
+            "nodes": 1,
+            "value": 0,
+            "changes": 9,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1403
+          },
+          {
+            "phase": "resumed",
+            "time": 1232,
+            "nodes": 1,
+            "value": 0,
+            "changes": 11,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 592
+          },
+          {
+            "phase": "deactivated",
+            "time": 1232.5999999940395,
+            "nodes": 0,
+            "value": 0,
+            "changes": 11,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 592
+          },
+          {
+            "phase": "inactive-stable",
+            "time": 1433.8999999910593,
+            "nodes": 0,
+            "value": 0,
+            "changes": 11,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 592
+          },
+          {
+            "phase": "inactive-reset",
+            "time": 1434.3999999910593,
+            "nodes": 0,
+            "value": 0,
+            "changes": 12,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 900
+          },
+          {
+            "phase": "inactive-reset-stable",
+            "time": 1616,
+            "nodes": 0,
+            "value": 0,
+            "changes": 12,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 900
+          },
+          {
+            "phase": "reactivated",
+            "time": 2249.5,
+            "nodes": 1,
+            "value": 0,
+            "changes": 14,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 267
+          },
+          {
+            "phase": "unmounted",
+            "time": 2250.2999999970198,
+            "nodes": 0,
+            "value": 0,
+            "changes": 14,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 267
+          },
+          {
+            "phase": "after-unmount",
+            "time": 2472.2999999970198,
+            "nodes": 0,
+            "value": 0,
+            "changes": 14,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 267
+          }
+        ],
+        "events": [
+          {
+            "event": "change",
+            "value": 1600,
+            "time": 1.8999999910593033
+          },
+          {
+            "event": "change",
+            "value": 1600,
+            "time": 1.8999999910593033
+          },
+          {
+            "event": "change",
+            "value": 1579,
+            "time": 22.399999991059303
+          },
+          {
+            "event": "change",
+            "value": 1570,
+            "time": 31.099999994039536
+          },
+          {
+            "event": "change",
+            "value": 1537,
+            "time": 65
+          },
+          {
+            "event": "change",
+            "value": 1505,
+            "time": 97
+          },
+          {
+            "event": "change",
+            "value": 1470,
+            "time": 131.29999999701977
+          },
+          {
+            "event": "change",
+            "value": 1437,
+            "time": 164.59999999403954
+          },
+          {
+            "event": "change",
+            "value": 1403,
+            "time": 198.29999999701977
+          },
+          {
+            "event": "change",
+            "value": 1403,
+            "time": 420.70000000298023
+          },
+          {
+            "event": "change",
+            "value": 592,
+            "time": 1231.7999999970198
+          },
+          {
+            "event": "change",
+            "value": 900,
+            "time": 1434.2999999970198
+          },
+          {
+            "event": "change",
+            "value": 900,
+            "time": 1616.5999999940395
+          },
+          {
+            "event": "change",
+            "value": 267,
+            "time": 2249.2999999970198
+          }
+        ],
+        "finalNodes": 0
+      },
+      {
+        "name": "Maple",
+        "kind": "number",
+        "passed": true,
+        "samples": [
+          {
+            "phase": "mounted",
+            "time": 6.9000000059604645,
+            "nodes": 1,
+            "value": 0,
+            "changes": 0,
+            "updates": 0,
+            "ends": 0
+          },
+          {
+            "phase": "immediate-step",
+            "time": 8.799999997019768,
+            "nodes": 1,
+            "value": 1,
+            "changes": 0,
+            "updates": 1,
+            "ends": 0
+          },
+          {
+            "phase": "before-first-repeat",
+            "time": 712.4000000059605,
+            "nodes": 1,
+            "value": 1,
+            "changes": 0,
+            "updates": 1,
+            "ends": 0
+          },
+          {
+            "phase": "first-repeat",
+            "time": 893.5999999940395,
+            "nodes": 1,
+            "value": 2,
+            "changes": 0,
+            "updates": 2,
+            "ends": 0
+          },
+          {
+            "phase": "second-repeat",
+            "time": 1055.7000000029802,
+            "nodes": 1,
+            "value": 3,
+            "changes": 0,
+            "updates": 3,
+            "ends": 0
+          },
+          {
+            "phase": "cancelled",
+            "time": 1055.7999999970198,
+            "nodes": 1,
+            "value": 3,
+            "changes": 0,
+            "updates": 3,
+            "ends": 0
+          },
+          {
+            "phase": "after-cancel",
+            "time": 1277.7999999970198,
+            "nodes": 1,
+            "value": 3,
+            "changes": 0,
+            "updates": 3,
+            "ends": 0
+          },
+          {
+            "phase": "replacement-hold",
+            "time": 1279.9000000059605,
+            "nodes": 1,
+            "value": 4,
+            "changes": 0,
+            "updates": 4,
+            "ends": 0
+          },
+          {
+            "phase": "unmounted-pending",
+            "time": 1383.7000000029802,
+            "nodes": 0,
+            "value": 4,
+            "changes": 0,
+            "updates": 4,
+            "ends": 0
+          },
+          {
+            "phase": "after-unmounted-deadline",
+            "time": 2236.5,
+            "nodes": 0,
+            "value": 4,
+            "changes": 0,
+            "updates": 4,
+            "ends": 0
+          }
+        ],
+        "events": [
+          {
+            "event": "update:modelValue",
+            "value": 1,
+            "time": 7.5
+          },
+          {
+            "event": "update:modelValue",
+            "value": 2,
+            "time": 809.7000000029802
+          },
+          {
+            "event": "update:modelValue",
+            "value": 3,
+            "time": 971.4000000059605
+          },
+          {
+            "event": "update:modelValue",
+            "value": 4,
+            "time": 1278.0999999940395
+          }
+        ],
+        "finalNodes": 0
+      },
+      {
+        "name": "Maple",
+        "kind": "countdown",
+        "passed": false,
+        "samples": [
+          {
+            "phase": "mounted",
+            "time": 1.2999999970197678,
+            "nodes": 1,
+            "value": 0,
+            "changes": 2,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1599
+          },
+          {
+            "phase": "running",
+            "time": 940.5,
+            "nodes": 1,
+            "value": 0,
+            "changes": 3,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 661
+          },
+          {
+            "phase": "paused",
+            "time": 940.7000000029802,
+            "nodes": 1,
+            "value": 0,
+            "changes": 3,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 661
+          },
+          {
+            "phase": "paused-stable",
+            "time": 1161.9000000059605,
+            "nodes": 1,
+            "value": 0,
+            "changes": 3,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 661
+          },
+          {
+            "phase": "resumed",
+            "time": 1973.5999999940395,
+            "nodes": 1,
+            "value": 0,
+            "changes": 5,
+            "updates": 0,
+            "ends": 1,
+            "remaining": 0
+          },
+          {
+            "phase": "deactivated",
+            "time": 1973.9000000059605,
+            "nodes": 0,
+            "value": 0,
+            "changes": 5,
+            "updates": 0,
+            "ends": 1,
+            "remaining": 0
+          },
+          {
+            "phase": "inactive-stable",
+            "time": 2175.2000000029802,
+            "nodes": 0,
+            "value": 0,
+            "changes": 5,
+            "updates": 0,
+            "ends": 1,
+            "remaining": 0
+          },
+          {
+            "phase": "inactive-reset",
+            "time": 2175.7000000029802,
+            "nodes": 0,
+            "value": 0,
+            "changes": 6,
+            "updates": 0,
+            "ends": 1,
+            "remaining": 900
+          },
+          {
+            "phase": "inactive-reset-stable",
+            "time": 2356.2000000029802,
+            "nodes": 0,
+            "value": 0,
+            "changes": 6,
+            "updates": 0,
+            "ends": 1,
+            "remaining": 900
+          },
+          {
+            "phase": "reactivated",
+            "time": 2992.2999999970198,
+            "nodes": 1,
+            "value": 0,
+            "changes": 8,
+            "updates": 0,
+            "ends": 1,
+            "remaining": 264
+          },
+          {
+            "phase": "unmounted",
+            "time": 2993.5999999940395,
+            "nodes": 0,
+            "value": 0,
+            "changes": 8,
+            "updates": 0,
+            "ends": 1,
+            "remaining": 264
+          },
+          {
+            "phase": "after-unmount",
+            "time": 3214.7000000029802,
+            "nodes": 0,
+            "value": 0,
+            "changes": 8,
+            "updates": 0,
+            "ends": 1,
+            "remaining": 264
+          }
+        ],
+        "events": [
+          {
+            "event": "change",
+            "value": 1600,
+            "time": 1.2000000029802322
+          },
+          {
+            "event": "change",
+            "value": 1599,
+            "time": 1.2999999970197678
+          },
+          {
+            "event": "change",
+            "value": 661,
+            "time": 940.2999999970198
+          },
+          {
+            "event": "change",
+            "value": 660,
+            "time": 1162.0999999940395
+          },
+          {
+            "event": "change",
+            "value": 0,
+            "time": 1973.2999999970198
+          },
+          {
+            "event": "end",
+            "time": 1973.4000000059605
+          },
+          {
+            "event": "change",
+            "value": 900,
+            "time": 2175.5
+          },
+          {
+            "event": "change",
+            "value": 900,
+            "time": 2356.4000000059605
+          },
+          {
+            "event": "change",
+            "value": 264,
+            "time": 2991.7999999970198
+          }
+        ],
+        "finalNodes": 0
+      }
+    ]
+  },
+  "diagnostics": [],
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "visibility": "visible",
+  "hasFocus": true
+}
