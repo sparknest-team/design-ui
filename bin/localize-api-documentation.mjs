@@ -60,7 +60,7 @@ export function localizeDemoReferences(source, englishFile) {
   });
 }
 const notes = /\n?<!-- demo-config-notes:start -->[\s\S]*?<!-- demo-config-notes:end -->\n*/g;
-function configurationNotes(chinese, english, owner) {
+export function configurationNotes(chinese, english, owner) {
   const titles = new Map(chinese.cases.map(item => [item.title,english.cases.find(candidate => caseId(candidate.refs[0])===caseId(item.refs[0]))?.title]));
   const extra = {};
   for (const item of chinese.cases) for (const match of item.text.matchAll(/<!-- demo-config-notes:start -->([\s\S]*?)<!-- demo-config-notes:end -->/g)) {
@@ -75,8 +75,12 @@ function configurationNotes(chinese, english, owner) {
   return english.cases.map(item=>{
     const primary=chinese.cases.find(candidate=>caseId(candidate.refs[0])===caseId(item.refs[0]));
     const block=primary?.text.match(/<!-- demo-config-notes:start -->[\s\S]*?<!-- demo-config-notes:end -->/)?.[0];
+    const translatedBlock=block?translateFragment(block,owner,extra):undefined;
+    const existingBlock=item.text.match(/<!-- demo-config-notes:start -->[\s\S]*?<!-- demo-config-notes:end -->/)?.[0];
+    if (translatedBlock && existingBlock === translatedBlock) return translateFragment(item.text,owner,extra);
     const clean=item.text.replace(notes,'\n\n');
-    const enriched=block?clean.replace(/^(###[^\n]*\n\n)/, '$1'+translateFragment(block,owner,extra)+'\n\n'):clean;
+    const normalized=translatedBlock?clean.replace(/^(###[^\n]*)\n{3,}/, '$1\n\n'):clean;
+    const enriched=translatedBlock?normalized.replace(/^(###[^\n]*\n\n)/, '$1'+translatedBlock+'\n\n'):normalized;
     return translateFragment(enriched,owner,extra);
   });
 }

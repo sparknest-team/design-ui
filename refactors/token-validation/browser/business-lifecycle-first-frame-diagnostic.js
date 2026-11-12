@@ -56,10 +56,10 @@ async function run(name, kind) {
         && p['unmounted-pending'].updates === p['after-unmounted-deadline'].updates && nodes(name) === 0
       results.value.push({ name, kind, passed, samples, events: s.events.map(e => ({ ...e, time: e.time - start })), finalNodes: nodes(name) })
     } else {
-      await wait(180); snapshot('running')
+      await wait(180); await new Promise(resolve => requestAnimationFrame(resolve)); await nextTick(); snapshot('running')
       s.instance.value.pause(); snapshot('paused')
       await wait(220); snapshot('paused-stable')
-      s.instance.value.start(); await wait(180); snapshot('resumed')
+      s.instance.value.start(); await wait(180); await new Promise(resolve => requestAnimationFrame(resolve)); await nextTick(); snapshot('resumed')
       s.active.value = false; await nextTick(); snapshot('deactivated')
       await wait(200); snapshot('inactive-stable')
       s.duration.value = 900; await nextTick(); snapshot('inactive-reset')
@@ -68,7 +68,7 @@ async function run(name, kind) {
       s.mounted.value = false; await nextTick(); snapshot('unmounted')
       await wait(220); snapshot('after-unmount')
       const p = Object.fromEntries(samples.map(x => [x.phase, x]))
-      const passed = p.running.remaining < 1600 && p['paused-stable'].changes === p.paused.changes
+      const passed = p.running.remaining < 1600 && p.running.changes > p.mounted.changes && p['paused-stable'].changes === p.paused.changes
         && p.resumed.remaining < p.paused.remaining && p['inactive-stable'].changes === p.deactivated.changes
         && p['inactive-reset'].remaining === 900 && p['inactive-reset-stable'].changes === p['inactive-reset'].changes
         && p.reactivated.remaining > 0 && p.reactivated.remaining < 900 && p.reactivated.nodes === 1

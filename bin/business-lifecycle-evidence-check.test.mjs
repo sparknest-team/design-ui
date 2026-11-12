@@ -8,6 +8,16 @@ const positive = () => structuredClone(readEvidence());
 const currentFixtureHash = () => createHash('sha256').update(readFileSync(fileURLToPath(new URL('../refactors/token-validation/browser/business-lifecycle-main.js', import.meta.url)))).digest('hex');
 const sample = (r, i, phase) => r.cases[i].samples.find(s => s.phase === phase);
 test('historical behavioral data satisfies behavior assertions independently', () => assert.deepEqual(checkBusinessCases(positive().cases), { accepted: 4, os: 0, blocked: 144 }));
+test('nondefault diagnostic durations are explicit and do not alter the historical contract', () => {
+  const cases = positive().cases;
+  for (const row of cases.filter(row => row.kind === 'countdown')) {
+    row.samples.find(s => s.phase === 'inactive-reset').remaining = 5000;
+    row.samples.find(s => s.phase === 'reactivated').remaining = 4500;
+  }
+  assert.throws(() => checkBusinessCases(cases));
+  assert.deepEqual(checkBusinessCases(cases, { initialDuration: 10000, resetDuration: 5000 }), { accepted: 4, os: 0, blocked: 144 });
+  assert.throws(() => checkBusinessCases(cases, { initialDuration: 0, resetDuration: 5000 }), /invalid countdown duration/);
+});
 for (const [name, mutate] of [
   ['missing case', r => r.cases.pop()],
   ['duplicate case', r => r.cases[1] = structuredClone(r.cases[0])],
@@ -17,6 +27,8 @@ for (const [name, mutate] of [
   ['post-cancel update', r => sample(r, 0, 'after-cancel').updates++],
   ['unmount after pending deadline', r => sample(r, 0, 'unmounted-pending').time = sample(r, 0, 'replacement-hold').time + 800],
   ['short deadline observation', r => sample(r, 0, 'after-unmounted-deadline').time = sample(r, 0, 'unmounted-pending').time + 10],
+  ['no post-mount countdown change despite initial value below duration', r => { sample(r, 2, 'mounted').remaining = 1599; sample(r, 2, 'running').remaining = 1599; sample(r, 2, 'running').changes = sample(r, 2, 'mounted').changes; }],
+  ['short initial countdown observation', r => { sample(r, 2, 'running').time = sample(r, 2, 'mounted').time + 177; }],
   ['paused ticking', r => sample(r, 2, 'paused-stable').changes++],
   ['inactive ticking', r => sample(r, 2, 'inactive-stable').changes++],
   ['inactive reset not delivered', r => sample(r, 2, 'inactive-reset').remaining = 1600],
@@ -36,6 +48,18 @@ for (const [name, mutate] of [
 import { checkFirstFrameEvidence, readFirstFrameEvidence } from './business-lifecycle-first-frame-evidence-check.mjs';
 const supplemental = () => structuredClone(readFirstFrameEvidence());
 test('Ego first-frame diagnostic satisfies the same behavior assertions', () => assert.deepEqual(checkFirstFrameEvidence(supplemental()), { accepted: 4, os: 0, blocked: 144 }));
+// Rebase only the test copy so each mutation reaches its intended assertion
+// even when the real capture no longer matches the current source tree.
+const supplementalMutationControl = () => {
+  const report = supplemental();
+  const workspace = fileURLToPath(new URL('../../', import.meta.url));
+  for (const file of Object.keys(report.hashesBefore)) {
+    const current = createHash('sha256').update(readFileSync(`${workspace}/${file}`)).digest('hex');
+    report.hashesBefore[file] = current;
+    report.hashesAfter[file] = current;
+  }
+  return report;
+};
 for (const [name, mutate] of [
   ['missing source', r => delete r.hashesBefore[Object.keys(r.hashesBefore)[0]]],
   ['source changed during capture', r => r.hashesAfter[Object.keys(r.hashesAfter)[0]] = 'changed'],
@@ -46,4 +70,4 @@ for (const [name, mutate] of [
   ['unfinished run', r => r.run.busy = true],
   ['missing case', r => r.run.results.pop()],
   ['unmounted notification', r => r.run.results[2].samples.find(s => s.phase === 'after-unmount').changes++],
-]) test(`Ego first-frame rejects ${name}`, () => { const r = supplemental(); checkFirstFrameEvidence(r); mutate(r); assert.throws(() => checkFirstFrameEvidence(r)); });
+]) test(`Ego first-frame rejects ${name}`, () => { const r = supplementalMutationControl(); checkFirstFrameEvidence(r); mutate(r); assert.throws(() => checkFirstFrameEvidence(r)); });

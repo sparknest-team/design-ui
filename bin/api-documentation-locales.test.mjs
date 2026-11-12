@@ -5,7 +5,7 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { inventoryDemoContent } from './inventory-demo-content.mjs';
 import { readDemoSections } from './group-demo-sections.mjs';
-import { localizeApiDocumentation, translateFragment, localizeDemoReferences } from './localize-api-documentation.mjs';
+import { configurationNotes, localizeApiDocumentation, translateFragment, localizeDemoReferences } from './localize-api-documentation.mjs';
 const root=fileURLToPath(new URL('../../',import.meta.url));
 const cn=s=>/[\u4e00-\u9fff]/.test(s);
 const normalize=s=>(s??'').replace(/[`*_\s]/g,'');
@@ -25,6 +25,16 @@ function contracts(source) {
   return result;
 }
 const configKeys=source=>[...source.matchAll(/<!-- demo-config-notes:start -->([\s\S]*?)<!-- demo-config-notes:end -->/g)].flatMap(match=>match[1].split('\n').filter(line=>/^\|\s*`/.test(line)).map(line=>line.split('|')[1].trim())).sort();
+
+test('repeated localization does not add blank lines after configuration notes', () => {
+ const block='<!-- demo-config-notes:start -->\n| `value` | Purpose | Related examples |\n<!-- demo-config-notes:end -->';
+ const item={title:'Lifecycle',refs:['./lifecycle.vue'],text:`### Lifecycle\n\n${block}\n\nExplanation.\n\n<demo src="./lifecycle.vue"></demo>`};
+ const chinese={cases:[item]};
+ const first=configurationNotes(chinese,{cases:[{...item,text:item.text.replace(block+'\n\n','')}]},'fixture')[0];
+ const second=configurationNotes(chinese,{cases:[{...item,text:first}]},'fixture')[0];
+ assert.equal(second,first);
+ assert.ok(first.includes('Explanation.'));
+});
 
 test('API translation keeps type signatures, real defaults and code fences',()=>{
  const input='| width | 列宽度 | `number \\| string` | `80` |\n\n```ts\nconst value = 0\n```';

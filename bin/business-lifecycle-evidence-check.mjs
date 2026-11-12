@@ -26,7 +26,8 @@ export function checkBusinessEvidence(report, read = readFileSync) {
   assert.equal(hash(jpeg), report.screenshot.sha256, 'image changed');
   return checkBusinessCases(report.cases);
 }
-export function checkBusinessCases(cases) {
+export function checkBusinessCases(cases, { initialDuration = 1600, resetDuration = 900 } = {}) {
+  assert.ok(Number.isFinite(initialDuration) && initialDuration > 0 && Number.isFinite(resetDuration) && resetDuration > 0, 'invalid countdown duration');
   assert.deepEqual(cases.map(r => [r.name, r.kind]), [['Cedar', 'number'], ['Maple', 'number'], ['Cedar', 'countdown'], ['Maple', 'countdown']], 'four unique cases required');
   for (const row of cases) {
     assert.equal(row.passed, true); assert.equal(row.finalNodes, 0, 'residual nodes');
@@ -53,17 +54,19 @@ export function checkBusinessCases(cases) {
       assert.equal(p['after-unmounted-deadline'].nodes, 0);
     } else {
       for (const phase of ['deactivated', 'inactive-stable', 'inactive-reset', 'inactive-reset-stable']) assert.equal(p[phase].nodes, 0, 'inactive component must leave the document');
-      assert.ok(p.running.remaining > 0 && p.running.remaining < 1600);
+      assert.ok(p.running.remaining > 0 && p.running.remaining < initialDuration);
+      assert.ok(p.running.time - p.mounted.time >= 178, 'short running observation');
+      assert.ok(p.running.changes > p.mounted.changes, 'no countdown change after mount');
       assert.equal(p['paused-stable'].changes, p.paused.changes, 'paused ticking');
       assert.ok(p['paused-stable'].time - p.paused.time >= 218);
       assert.ok(p.resumed.remaining < p.paused.remaining);
       assert.equal(p['inactive-stable'].changes, p.deactivated.changes, 'inactive ticking');
       assert.ok(p['inactive-stable'].time - p.deactivated.time >= 198);
-      assert.equal(p['inactive-reset'].remaining, 900, 'inactive reset not delivered');
+      assert.equal(p['inactive-reset'].remaining, resetDuration, 'inactive reset not delivered');
       assert.equal(p['inactive-reset'].changes, p['inactive-stable'].changes + 1);
       assert.equal(p['inactive-reset-stable'].changes, p['inactive-reset'].changes, 'inactive reset ticking');
       assert.ok(p['inactive-reset-stable'].time - p['inactive-reset'].time >= 178);
-      assert.ok(p.reactivated.changes > p['inactive-reset'].changes && p.reactivated.remaining > 0 && p.reactivated.remaining < 900, 'no resumed business clock');
+      assert.ok(p.reactivated.changes > p['inactive-reset'].changes && p.reactivated.remaining > 0 && p.reactivated.remaining < resetDuration, 'no resumed business clock');
       assert.equal(p.reactivated.nodes, 1);
       assert.equal(p['after-unmount'].changes, p.unmounted.changes, 'unmounted ticking');
       assert.ok(p['after-unmount'].time - p.unmounted.time >= 218);
