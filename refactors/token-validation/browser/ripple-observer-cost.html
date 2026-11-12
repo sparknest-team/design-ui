@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Ripple observer cost</title>
+<style>body{font:16px system-ui;margin:24px}#hosts{display:flex;flex-wrap:wrap;gap:4px}output{display:block;white-space:pre-wrap}</style>
+<h1>Ripple observer instrumentation</h1><p>20 concurrent scripted gestures and 20 unrelated DOM mutation batches; timing is an instrumented local sample.</p>
+<button id="run">Run cases</button><div id="hosts"></div><div id="mutations"></div><output id="results">Waiting</output>
+<script>window.__observerStats={created:0,active:0,callbacks:0,callbackMs:0};const NativeObserver=window.MutationObserver;window.MutationObserver=class extends NativeObserver{constructor(callback){const s=window.__observerStats;s.created++;super((records,observer)=>{const t=performance.now();try{callback(records,observer)}finally{s.callbacks++;s.callbackMs+=performance.now()-t}});this.tracked=false}observe(...args){if(!this.tracked){this.tracked=true;window.__observerStats.active++}return super.observe(...args)}disconnect(){if(this.tracked){this.tracked=false;window.__observerStats.active--}return super.disconnect()}};</script>
+<script type="module" src="./ripple-observer-cost.js"></script></html>

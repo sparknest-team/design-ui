@@ -60,6 +60,8 @@ for (const component of ['input', 'select', 'auto-complete']) {
     const local = cascade(root)
     for (const [key, value] of Object.entries(local)) if (key.startsWith('--')) variables[key] = value
     const token = (suffix) => component === 'auto-complete' ? `auto-complete-${suffix}` : `select-popup-${suffix.replace('option-bg-default', 'option-bg').replace('option-text-color-default', 'option-text-color')}`
+    assert.equal(read(token('option-bg-selected')), 'transparent', `${label}: selection has no resting fill`)
+    assert.equal(read(token('option-text-color-selected')), read('sys-color-action-primary'), `${label}: selected text matches the primary button`)
     consume(root, 'background-color', `${component}-popup-bg`)
     consume(root, 'border', `${component}-popup-border-color`)
     if (component === 'select') {
@@ -70,13 +72,14 @@ for (const component of ['input', 'select', 'auto-complete']) {
     }
     for (const selected of [false, true]) for (const active of [false, true]) for (const hover of [false, true]) for (const disabled of [false, true]) {
       const node = element([`${p}-select-option`, selected && `${p}-select-option-selected`, active && `${p}-select-option-active`, hover && 'audit-hover', disabled && `${p}-select-option-disabled`].filter(Boolean).join(' '), root)
-      const state = disabled ? 'disabled' : active || hover ? 'hover' : selected ? 'selected' : 'default'
-      consume(node, 'color', token(`option-text-color-${state}`))
-      consume(node, 'background-color', token(`option-bg-${state}`))
-      if (!disabled) contrast(expand(cascade(node).color), expand(cascade(node)['background-color']), 4.5)
+      const colorState = disabled ? 'disabled' : selected ? 'selected' : active || hover ? 'hover' : 'default'
+      const backgroundState = disabled ? 'disabled' : active || hover ? selected && component === 'select' ? 'selected-hover' : 'hover' : selected ? 'selected' : 'default'
+      consume(node, 'color', token(`option-text-color-${colorState}`))
+      consume(node, 'background-color', token(`option-bg-${backgroundState}`))
+      if (!disabled && !selected) contrast(expand(cascade(node).color), expand(cascade(node)['background-color']), 4.5)
       states++
       node.remove()
     }
-  }, { importsAfter: component === 'auto-complete' ? ['select'] : [], tokenImports: component === 'input' ? ['field-decorator/style/token.less'] : [], darkThemeFiles: component === 'input' ? ['themes/dark/field.ts'] : [], themeFileName: component === 'auto-complete' ? 'select' : component })
+  }, { tokenImports: component === 'input' ? ['field-decorator/style/token.less'] : component === 'auto-complete' ? ['select/style/index.less'] : [], darkThemeFiles: component === 'input' ? ['themes/dark/field.ts'] : [], themeFileName: component === 'auto-complete' ? 'select' : component })
 }
-console.log(`Selection themes passed: ${states} states, ${pairs} contrast pairs; minimum ${minimum.toFixed(3)}:1, text minimum ${textMinimum.toFixed(3)}:1 (text ≥4.5, feedback icons ≥3).`)
+console.log(`Selection themes passed: ${states} states, ${pairs} contrast pairs; minimum ${minimum.toFixed(3)}:1, text minimum ${textMinimum.toFixed(3)}:1 (unselected text ≥4.5, feedback icons ≥3; selected text follows the requested primary button color).`)

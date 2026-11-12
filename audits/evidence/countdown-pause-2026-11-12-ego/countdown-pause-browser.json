@@ -1,0 +1,47 @@
+{
+  "result": {
+    "busy": false,
+    "rows": [
+      {
+        "name": "Cedar",
+        "passed": true,
+        "initial": 3000,
+        "text": 2696,
+        "slot": 2696,
+        "elapsed": 303.8999999910593,
+        "eventsBeforePause": 4,
+        "eventsAfterPause": 4,
+        "pendingFrames": 1
+      },
+      {
+        "name": "Maple",
+        "passed": true,
+        "initial": 3000,
+        "text": 2698,
+        "slot": 2697,
+        "elapsed": 302.5,
+        "eventsBeforePause": 4,
+        "eventsAfterPause": 4,
+        "pendingFrames": 2
+      }
+    ]
+  },
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "hashesBefore": {
+    "design-ui/refactors/token-validation/browser/countdown-pause-diagnostic.html": "2d6279afce8f853dffa9b0e5b65255764c3d0289fb3a1ed9d22e783c2367b58f",
+    "design-ui/refactors/token-validation/browser/countdown-pause-diagnostic.js": "e5afd577f11134291fbc9a9c0bf0cb0aea32be155c5f3ad752435b01c49180e9",
+    "cedar-design-web/packages/ui/src/countdown/Countdown.vue": "9b8770c1f8a8620f4681c9efe5d4f45bec2470649047ccc2fedef08f2cb2caf7",
+    "maple-design-mobile/packages/ui/src/countdown/Countdown.vue": "75074ce302279567d3be70ff35e4de958cf2cec80586772e0c468aa4ae1831fb",
+    "cedar-design-web/packages/ui/src/countdown/use-countdown.ts": "cb60c032a8098996ff65883c7df4998c5ee5eb0afc1f9a97415bea108cfd4a04",
+    "maple-design-mobile/packages/ui/src/countdown/use-countdown.ts": "458412047251856e41ecc41fa7870e4113d0b0b9aa7de025c4af7feec234c6ea"
+  },
+  "hashesAfter": {
+    "design-ui/refactors/token-validation/browser/countdown-pause-diagnostic.html": "2d6279afce8f853dffa9b0e5b65255764c3d0289fb3a1ed9d22e783c2367b58f",
+    "design-ui/refactors/token-validation/browser/countdown-pause-diagnostic.js": "e5afd577f11134291fbc9a9c0bf0cb0aea32be155c5f3ad752435b01c49180e9",
+    "cedar-design-web/packages/ui/src/countdown/Countdown.vue": "9b8770c1f8a8620f4681c9efe5d4f45bec2470649047ccc2fedef08f2cb2caf7",
+    "maple-design-mobile/packages/ui/src/countdown/Countdown.vue": "75074ce302279567d3be70ff35e4de958cf2cec80586772e0c468aa4ae1831fb",
+    "cedar-design-web/packages/ui/src/countdown/use-countdown.ts": "cb60c032a8098996ff65883c7df4998c5ee5eb0afc1f9a97415bea108cfd4a04",
+    "maple-design-mobile/packages/ui/src/countdown/use-countdown.ts": "458412047251856e41ecc41fa7870e4113d0b0b9aa7de025c4af7feec234c6ea"
+  },
+  "screenshotSha256": "d548a19fcbf2b8f771f4a8898c6ffe7d7d2e54872141c5b35e139a01c77dccdd"
+}

@@ -4,20 +4,45 @@ import { createHash } from 'node:crypto';
 import { resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url));
-const directory = resolve(root, 'audits/evidence/index-bar-lifecycle-2026-10-14');
+const legacyDirectory = resolve(root, 'audits/evidence/index-bar-lifecycle-2026-10-14');
+const egoDirectory = resolve(root, 'audits/evidence/index-bar-lifecycle-2026-11-12-ego');
 const hash = data => createHash('sha256').update(data).digest('hex');
-export const readEvidence = () => JSON.parse(readFileSync(resolve(directory, 'results.json'), 'utf8'));
+export const readEvidence = () => JSON.parse(readFileSync(resolve(legacyDirectory, 'results.json'), 'utf8'));
+export const readEgoEvidence = () => JSON.parse(readFileSync(resolve(egoDirectory, 'results.json'), 'utf8'));
 export function checkIndexBarEvidence(r, read = readFileSync) {
+  const ego = r.mode === 'ego-lite-frame-aware';
+  const directory = ego ? egoDirectory : legacyDirectory;
+  let rawCases;
+  if (ego) {
+    assert.match(r.browserUserAgent, /Chrome\//);
+    assert.equal(r.fixture.hostFile, 'refactors/token-validation/browser/index-bar-lifecycle-ego.html');
+    assert.equal(hash(read(resolve(root, r.fixture.hostFile))), r.fixture.hostSha256, 'host fixture drift');
+    assert.equal(r.fixture.interpolationDurationMs, 3000);
+    assert.equal(r.raw.file, 'raw.json');
+    const rawBytes = read(resolve(directory, r.raw.file));
+    assert.equal(hash(rawBytes), r.raw.sha256, 'raw evidence drift');
+    const raw = JSON.parse(rawBytes);
+    assert.deepEqual(raw.hashesBefore, raw.hashesAfter, 'sources changed during capture');
+    assert.equal(raw.userAgent, r.browserUserAgent);
+    assert.deepEqual(raw.diagnostics, r.consoleWarningsErrors);
+    assert.equal(raw.screenshotSha256, r.screenshot.sha256);
+    rawCases = raw.cases;
+    assert.equal(raw.hashesBefore['design-ui/' + r.fixture.file], r.fixture.sha256);
+    assert.equal(raw.hashesBefore['design-ui/' + r.fixture.hostFile], r.fixture.hostSha256);
+    for (const s of r.sources) assert.equal(raw.hashesBefore[`maple-design-mobile/packages/ui/src/${s.file}`], s.sha256);
+  } else {
+    assert.equal(r.mode, undefined);
+  }
   assert.equal(r.newAcceptedCases, 4); assert.equal(r.newOsCases, 0); assert.equal(r.blockedNativeCases, 144);
   assert.equal(r.input, 'native fixture-entry clicks; public commands and scroll events are fixture-scripted; native RAF and clock unchanged');
-  assert.equal(r.fixture.file, 'refactors/token-validation/browser/index-bar-lifecycle-main.js'); assert.equal(r.fixture.frozen, true);
+  assert.equal(r.fixture.file, ego ? 'refactors/token-validation/browser/index-bar-lifecycle-ego.js' : 'refactors/token-validation/browser/index-bar-lifecycle-main.js'); assert.equal(r.fixture.frozen, true);
   assert.equal(hash(read(resolve(root, r.fixture.file))), r.fixture.sha256, 'fixture drift');
   assert.deepEqual(r.sources.map(s => s.file), ['index-bar/IndexBar.vue', 'index-bar/scroll-task.ts']);
   for (const s of r.sources) assert.equal(hash(read(resolve(root, '../maple-design-mobile/packages/ui/src', s.file))), s.sha256, 'source drift');
   assert.deepEqual(r.consoleWarningsErrors, []);
-  assert.equal(r.screenshot.file, 'native.jpg'); assert.equal(r.screenshot.viewed, true);
-  const jpeg = read(resolve(directory, 'native.jpg'));
-  assert.equal(jpeg.length, r.screenshot.bytes); assert.equal(hash(jpeg), r.screenshot.sha256, 'image drift');
+  assert.equal(r.screenshot.file, ego ? 'native.png' : 'native.jpg'); assert.equal(r.screenshot.viewed, true);
+  const screenshot = read(resolve(directory, r.screenshot.file));
+  assert.equal(screenshot.length, r.screenshot.bytes); assert.equal(hash(screenshot), r.screenshot.sha256, 'image drift');
   assert.deepEqual(r.cases.map(c => c.kind), ['replacement', 'settlement', 'unmount', 'keepalive'], 'four unique cases');
   for (const c of r.cases) {
     assert.equal(c.passed, true); assert.equal(c.finalNodes, 0);
@@ -60,6 +85,7 @@ export function checkIndexBarEvidence(r, read = readFileSync) {
       }
     }
   }
+  if (ego) assert.deepEqual(rawCases, r.cases, 'case data differs from raw capture');
   return { accepted: 4, os: 0, blocked: 144 };
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) console.log(checkIndexBarEvidence(readEvidence()));

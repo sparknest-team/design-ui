@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { checkScrollEvidence, readEvidence } from './shared-scroll-native-evidence-check.mjs';
 const positive = () => structuredClone(readEvidence());
-test('eight native scroll records, sources, fixture and original image pass', () => assert.deepEqual(checkScrollEvidence(positive()), { accepted: 8, os: 0, blocked: 144 }));
+test('eight Ego Lite scroll records, sources, fixtures and screenshot pass', () => assert.deepEqual(checkScrollEvidence(positive()), { accepted: 8, os: 0, blocked: 144 }));
 for (const [name, mutate] of [
   ['missing case', r => r.cases.pop()],
   ['duplicate case', r => r.cases[1] = structuredClone(r.cases[0])],
@@ -21,4 +21,9 @@ for (const [name, mutate] of [
   ['changed source', r => r.helperSources[0].sha256 = 'changed'],
   ['changed fixture', r => r.fixture.sha256 = 'changed'],
   ['changed image', r => r.screenshot.sha256 = 'changed'],
+  ['changed host fixture', r => r.fixture.hostSha256 = 'changed'],
+  ['console warning', r => r.consoleWarningsErrors.push({ kind: 'warn', text: 'warning' })],
+  ['bad browser', r => r.browserUserAgent = 'unknown'],
+  ['invalid unsampled frame', r => r.cases[0].frames[1].top = 999],
+  ['raw capture drift', r => r.raw.sha256 = 'changed'],
 ]) test(`rejects ${name}`, () => { const r = positive(); mutate(r); assert.throws(() => checkScrollEvidence(r)); });

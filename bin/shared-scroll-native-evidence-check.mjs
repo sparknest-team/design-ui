@@ -5,10 +5,37 @@ import { resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const workspace = resolve(root, '..');
-const directory = resolve(root, 'audits/evidence/shared-scroll-native-2026-10-13');
+const legacyDirectory = resolve(root, 'audits/evidence/shared-scroll-native-2026-10-13');
+const egoDirectory = resolve(root, 'audits/evidence/shared-scroll-2026-11-12-ego');
 const hash = data => createHash('sha256').update(data).digest('hex');
-export const readEvidence = () => JSON.parse(readFileSync(resolve(directory, 'results.json'), 'utf8'));
+export const readEvidence = () => JSON.parse(readFileSync(resolve(egoDirectory, 'results.json'), 'utf8'));
 export function checkScrollEvidence(r, read = readFileSync) {
+  const ego = r.mode === 'ego-lite';
+  const directory = ego ? egoDirectory : legacyDirectory;
+  let rawCases;
+  if (ego) {
+    assert.match(r.browserUserAgent, /Chrome\//);
+    assert.equal(r.fixture.hostFile, 'refactors/token-validation/browser/scroll-execution-ego.html');
+    assert.equal(hash(read(resolve(root, r.fixture.hostFile))), r.fixture.hostSha256, 'host fixture drift');
+    assert.equal(r.raw.file, 'raw.json');
+    const rawBytes = read(resolve(directory, r.raw.file));
+    assert.equal(hash(rawBytes), r.raw.sha256, 'raw evidence drift');
+    const raw = JSON.parse(rawBytes);
+    assert.deepEqual(raw.hashesBefore, raw.hashesAfter, 'sources changed during capture');
+    assert.equal(raw.userAgent, r.browserUserAgent);
+    assert.deepEqual(raw.diagnostics, r.consoleWarningsErrors);
+    assert.equal(raw.screenshotSha256, r.screenshot.sha256);
+    assert.equal(raw.run.busy, false);
+    rawCases = raw.run.results.map(({ frames, ...c }) => ({
+      ...c, frames, frameCount: frames.length,
+      frameExcerpts: frames.length ? [frames[0], frames[Math.floor(frames.length / 2)], frames.at(-1)] : [],
+    }));
+    assert.equal(raw.hashesBefore['design-ui/' + r.fixture.file], r.fixture.sha256);
+    assert.equal(raw.hashesBefore['design-ui/' + r.fixture.hostFile], r.fixture.hostSha256);
+    for (const s of r.helperSources) assert.equal(raw.hashesBefore[`${s.repo}/packages/ui/src/${s.file}`], s.sha256);
+  } else {
+    assert.equal(r.mode, undefined);
+  }
   assert.equal(r.newAcceptedCases, 8); assert.equal(r.newOsCases, 0, 'OS not certified'); assert.equal(r.blockedNativeCases, 144);
   assert.equal(r.input, 'native fixture-entry clicks; fixture-owned forwarding wrappers delegate unchanged to native RAF', 'native RAF must not be simulated');
   assert.equal(r.fixture.file, 'refactors/token-validation/browser/scroll-execution-main.js'); assert.equal(r.fixture.frozen, true);
@@ -19,12 +46,26 @@ export function checkScrollEvidence(r, read = readFileSync) {
     assert.equal(hash(read(resolve(workspace, source.repo, 'packages', pkg, 'src', source.file))), source.sha256, 'helper source drift');
   }
   assert.deepEqual(r.consoleWarningsErrors, []);
-  assert.equal(r.screenshot.file, 'native.jpg'); assert.equal(r.screenshot.viewed, true);
-  const jpeg = read(resolve(directory, 'native.jpg'));
-  assert.equal(jpeg.length, r.screenshot.bytes); assert.equal(hash(jpeg), r.screenshot.sha256, 'image drift');
+  assert.equal(r.screenshot.file, ego ? 'native.png' : 'native.jpg'); assert.equal(r.screenshot.viewed, true);
+  const screenshot = read(resolve(directory, r.screenshot.file));
+  assert.equal(screenshot.length, r.screenshot.bytes); assert.equal(hash(screenshot), r.screenshot.sha256, 'image drift');
+  if (ego) {
+    for (const c of r.cases) {
+      assert.equal(c.frames.length, c.frameCount, 'full frame count drift');
+      for (const frame of c.frames) {
+        assert.ok(Math.abs(frame.top - Math.min(frame.time / c.duration, 1) * 220) <= 1.5, 'full-frame vertical interpolation');
+        assert.ok(Math.abs(frame.left - Math.min(frame.time / c.duration, 1) * 80) <= 1.5, 'full-frame horizontal interpolation');
+      }
+    }
+  }
+  const result = checkScrollCases(r.cases);
+  if (ego) assert.deepEqual(rawCases, r.cases, 'case data differs from raw capture');
+  return result;
+}
+export function checkScrollCases(cases) {
   const kinds = ['main-default', 'main-zero', 'iframe-element', 'iframe-window'];
-  assert.deepEqual(r.cases.map(c => [c.name, c.kind]), ['Cedar', 'Maple'].flatMap(name => kinds.map(kind => [name, kind])), 'eight unique cases required');
-  for (const c of r.cases) {
+  assert.deepEqual(cases.map(c => [c.name, c.kind]), ['Cedar', 'Maple'].flatMap(name => kinds.map(kind => [name, kind])), 'eight unique cases required');
+  for (const c of cases) {
     assert.equal(c.passed, true); assert.equal(c.finalTargets, 0, 'residual targets');
     assert.equal(c.reducedQueryObserved, false, 'this suite observed no reduce, not OS switching');
     assert.equal(c.sameOriginIframe, c.kind.startsWith('iframe'));
@@ -55,5 +96,5 @@ export function checkScrollEvidence(r, read = readFileSync) {
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   console.log(checkScrollEvidence(readEvidence()));
-  console.log('Real IAB scroll/iframe/forwarded native RAF only; no consumer cancellation, OS or full-frame pixel certification.');
+  console.log('Ego Lite scroll/iframe/forwarded native RAF only; no consumer cancellation, OS or full-frame pixel certification.');
 }

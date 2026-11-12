@@ -14,6 +14,39 @@ const groups = [
   { title: '基础示例', en: 'Basic examples', cases: ['basic-usage'] },
   { title: '交互与控制', en: 'Interaction and control', cases: ['controlled'] },
 ];
+function readDocument(directory, family, lang, visited = new Set()) {
+  assert.ok(!visited.has(family), `${family}: documentation redirect cycle`);
+  visited.add(family);
+  const file = path.join(directory, family, 'docs', `${lang}.md`);
+  assert.ok(fs.existsSync(file), `${family}: missing ${lang} documentation`);
+  const source = fs.readFileSync(file, 'utf8');
+  const redirect = /^---\s*\n[\s\S]*?^redirectTo:\s*\/([^/\s]+)\/([\w-]+)\s*$/m.exec(source);
+  if (!redirect) return { file, source, family };
+  assert.equal(redirect[1], lang, `${family}: redirect changes language`);
+  const target = redirect[2].replace(/[A-Z]/g, letter => '-' + letter.toLowerCase());
+  return readDocument(directory, target, lang, visited);
+}
+test('redirected guides preserve locale and reject broken targets and cycles', () => {
+  const directory = fs.mkdtempSync('/tmp/maple-guide-redirect-');
+  const write = (family, source) => {
+    const folder = path.join(directory, family, 'docs');
+    fs.mkdirSync(folder, { recursive: true });
+    fs.writeFileSync(path.join(folder, 'zh-CN.md'), source);
+  };
+  try {
+    write('provider', '---\nredirectTo: /zh-CN/themes\n---\n');
+    write('themes', '# Themes\n');
+    assert.equal(readDocument(directory, 'provider', 'zh-CN').family, 'themes');
+    write('themes', '---\nredirectTo: /zh-CN/provider\n---\n');
+    assert.throws(() => readDocument(directory, 'provider', 'zh-CN'), /redirect cycle/);
+    write('provider', '---\nredirectTo: /en-US/themes\n---\n');
+    assert.throws(() => readDocument(directory, 'provider', 'zh-CN'), /changes language/);
+    write('provider', '---\nredirectTo: /zh-CN/missing\n---\n');
+    assert.throws(() => readDocument(directory, 'provider', 'zh-CN'), /missing zh-CN documentation/);
+  } finally {
+    fs.rmSync(directory, { recursive: true, force: true });
+  }
+});
 test('phone entries follow source-backed cases, preserve bindings and styles, and stay idempotent', () => {
   const script = `<script setup>\nimport Basic from './demos/basic-usage.vue'\nimport Controlled from './demos/controlled.vue'\nconst value = 'unchanged'\n</script>`;
   const style = '<style scoped>section { min-width: 0; }</style>';
@@ -58,21 +91,30 @@ test('every Maple family has grouped documents and a matching source-backed phon
     const expectedGroups = groups.filter(group => parsed.cases.some(item => group.cases.includes(item.name))).map(groupId);
     assert.deepEqual([...source.matchAll(/data-demo-group="([^"]+)"/g)].map(match => match[1]), expectedGroups, family);
     const phoneNames = new Set(parsed.cases.flatMap(item => item.refs.map(ref => path.basename(ref, '.vue').replace(/\.en-US$/, ''))));
-    const zhFile = path.join(directory, relative);
-    const zh = fs.readFileSync(zhFile, 'utf8');
+    const { source: zh, file: zhFile, family: documentFamily } = readDocument(directory, family, 'zh-CN');
     const zhNames = new Set(demoRefs(zh).map(ref => path.basename(ref, '.vue').replace(/\.en-US$/, '')));
     for (const name of phoneNames) assert.ok(zhNames.has(name), `${family}: phone demo not documented: ${name}`);
-    for (const name of zhNames) assert.ok(phoneNames.has(name), `${family}: documented demo missing from phone: ${name}`);
+    if (documentFamily === family) {
+      for (const name of zhNames) assert.ok(phoneNames.has(name), `${family}: documented demo missing from phone: ${name}`);
+    } else {
+      // Redirected families share a canonical guide. Verify actual source paths,
+      // while that guide's own gallery is checked in its inventory iteration.
+      const documented = new Set(demoRefs(zh).map(ref => path.resolve(path.dirname(zhFile), ref)));
+      for (const item of parsed.cases) for (const ref of item.refs) {
+        assert.ok(documented.has(path.resolve(path.dirname(entry), ref)), `${family}: redirected guide omits ${ref}`);
+      }
+    }
     for (const lang of ['zh-CN', 'en-US']) {
-      const file = path.join(directory, family, 'docs', `${lang}.md`);
-      assert.ok(fs.existsSync(file), `${family}: missing ${lang} documentation`);
-      const doc = fs.readFileSync(file, 'utf8');
+      const { file, source: doc, family: targetFamily } = readDocument(directory, family, lang);
+      assert.equal(targetFamily, documentFamily, `${family}: locale redirects disagree`);
+      const documentGroups = config[targetFamily];
+      assert.ok(documentGroups?.length, `${family}: missing canonical guide groups`);
       assert.ok(demoRefs(doc).length, `${family}: empty ${lang} examples`);
-      assert.equal(groupDemoSections(doc, groups, lang === 'en-US'), doc, file);
+      assert.equal(groupDemoSections(doc, documentGroups, lang === 'en-US'), doc, file);
       assert.doesNotMatch(doc, /^## (案例|Examples|Demos|示例)$/m, file);
       for (const ref of demoRefs(doc)) assert.ok(fs.existsSync(path.resolve(path.dirname(file), ref)), `${family}: missing source ${ref}`);
       const first = readDemoSections(doc).cases[0];
-      assert.ok(groups[0].cases.includes(path.basename(first.refs[0], '.vue')), `${family}: first ${lang} example is not basic`);
+      assert.ok(documentGroups[0].cases.includes(path.basename(first.refs[0], '.vue')), `${family}: first ${lang} example is not basic`);
     }
     report.push({ family, groups: groups.length, scenarios: parsed.cases.length });
   }

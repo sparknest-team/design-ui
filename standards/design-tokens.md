@@ -803,6 +803,13 @@ internal              组件实现细节，不构成外部 API
 
 ### System
 
+#### Primary 交互色与 Button 对齐（2026-11-11）
+
+组件的 primary 激活、选中、勾选、步骤进度和焦点强调统一引用 `action-primary`，与实心 Button 的 primary 填充使用同一角色。适用于 Cedar、Maple 及其独立维护的 React 产品线；额外品牌主题的显式激活态覆盖也遵循这条规则。主题切换或局部覆盖 primary 时，组件状态随同更新。
+
+`content-brand` 继续承担需要深色前景的品牌正文／图标，不再用于上述交互状态。Button 的 text／outline 前景、普通文字及 info／success／warning／danger 角色保持各自用途。日期选中底色使用 primary 时，选中文字与 Button 的实心前景配对。下文历史阶段中要求这些激活态使用深色 `content-brand` 的说明由本条替代；不沿用旧色阶下的对比度结论。
+
+
 格式为 `--{prefix}-sys-{category}-{role}`，例如 `--c-sys-color-content-primary`。System Token 是跨组件、跨平台的稳定语义，适合主题作者覆盖，但影响范围较大。组件作者应使用它来定义组件默认值。
 
 颜色角色按下列用途分组：

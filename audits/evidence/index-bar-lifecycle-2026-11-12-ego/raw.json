@@ -1,0 +1,623 @@
+{
+  "cases": [
+    {
+      "kind": "replacement",
+      "passed": true,
+      "samples": [
+        {
+          "phase": "ready",
+          "time": 136.89999999850988,
+          "writes": 0,
+          "changes": [],
+          "active": "",
+          "top": 0,
+          "nodes": 1
+        },
+        {
+          "phase": "latest-settled",
+          "time": 1187.6000000014901,
+          "writes": 1,
+          "changes": [
+            "C"
+          ],
+          "active": "C",
+          "top": 481,
+          "nodes": 1
+        },
+        {
+          "phase": "final-unmounted",
+          "time": 1189,
+          "writes": 1,
+          "changes": [
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "change",
+          "value": "C",
+          "time": 1065.8999999985099
+        }
+      ],
+      "writes": [
+        {
+          "left": 0,
+          "top": 481,
+          "time": 1066
+        }
+      ],
+      "finalNodes": 0
+    },
+    {
+      "kind": "settlement",
+      "passed": true,
+      "samples": [
+        {
+          "phase": "ready",
+          "time": 134.19999999552965,
+          "writes": 0,
+          "changes": [],
+          "active": "",
+          "top": 0,
+          "nodes": 1
+        },
+        {
+          "phase": "first-settlement-frame",
+          "time": 1117.0999999940395,
+          "writes": 2,
+          "changes": [
+            "A",
+            "B"
+          ],
+          "active": "B",
+          "top": 482,
+          "nodes": 1
+        },
+        {
+          "phase": "settlement-complete",
+          "time": 2132.0999999940395,
+          "writes": 2,
+          "changes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "active": "C",
+          "top": 482,
+          "nodes": 1
+        },
+        {
+          "phase": "final-unmounted",
+          "time": 2133.2999999970198,
+          "writes": 2,
+          "changes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "change",
+          "value": "A",
+          "time": 134.29999999701977
+        },
+        {
+          "event": "change",
+          "value": "B",
+          "time": 134.79999999701977
+        },
+        {
+          "event": "change",
+          "value": "C",
+          "time": 2131.39999999851
+        }
+      ],
+      "writes": [
+        {
+          "left": 0,
+          "top": 1,
+          "time": 134.39999999850988
+        },
+        {
+          "left": 0,
+          "top": 241,
+          "time": 134.79999999701977
+        }
+      ],
+      "finalNodes": 0
+    },
+    {
+      "kind": "unmount",
+      "passed": true,
+      "samples": [
+        {
+          "phase": "ready",
+          "time": 134.79999999701977,
+          "writes": 0,
+          "changes": [],
+          "active": "",
+          "top": 0,
+          "nodes": 1
+        },
+        {
+          "phase": "interpolating",
+          "time": 2157.7999999970198,
+          "writes": 2,
+          "changes": [
+            "C"
+          ],
+          "active": "C",
+          "top": 79,
+          "nodes": 1
+        },
+        {
+          "phase": "cancelled",
+          "time": 2159.1999999955297,
+          "writes": 2,
+          "changes": [
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        },
+        {
+          "phase": "retained-inert",
+          "time": 2861.89999999851,
+          "writes": 2,
+          "changes": [
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        },
+        {
+          "phase": "final-unmounted",
+          "time": 2862,
+          "writes": 2,
+          "changes": [
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "change",
+          "value": "C",
+          "time": 1099.0999999940395
+        }
+      ],
+      "writes": [
+        {
+          "left": 0,
+          "top": 0.0028007739259259265,
+          "time": 1132.5999999940395
+        },
+        {
+          "left": 0,
+          "top": 78.77763158874075,
+          "time": 2133.0999999940395
+        }
+      ],
+      "finalNodes": 0
+    },
+    {
+      "kind": "keepalive",
+      "passed": true,
+      "samples": [
+        {
+          "phase": "ready",
+          "time": 136.30000000447035,
+          "writes": 0,
+          "changes": [],
+          "active": "",
+          "top": 0,
+          "nodes": 1
+        },
+        {
+          "phase": "interpolating",
+          "time": 2141.5,
+          "writes": 2,
+          "changes": [
+            "C"
+          ],
+          "active": "C",
+          "top": 78.5,
+          "nodes": 1
+        },
+        {
+          "phase": "cancelled",
+          "time": 2142.7000000029802,
+          "writes": 2,
+          "changes": [
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        },
+        {
+          "phase": "retained-inert",
+          "time": 2364.89999999851,
+          "writes": 2,
+          "changes": [
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        },
+        {
+          "phase": "reactivated-settled",
+          "time": 9085.39999999851,
+          "writes": 57,
+          "changes": [
+            "C"
+          ],
+          "active": "C",
+          "top": 481,
+          "nodes": 1
+        },
+        {
+          "phase": "listener-restored",
+          "time": 9086.70000000298,
+          "writes": 57,
+          "changes": [
+            "C",
+            "A"
+          ],
+          "active": "A",
+          "top": 2,
+          "nodes": 1
+        },
+        {
+          "phase": "final-unmounted",
+          "time": 9088.70000000298,
+          "writes": 57,
+          "changes": [
+            "C",
+            "A"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "change",
+          "value": "C",
+          "time": 1099.8999999985099
+        },
+        {
+          "event": "change",
+          "value": "A",
+          "time": 9085.70000000298
+        }
+      ],
+      "writes": [
+        {
+          "left": 0,
+          "top": 0.002122884592592593,
+          "time": 1131.5
+        },
+        {
+          "left": 0,
+          "top": 78.54929076992593,
+          "time": 2133.3000000044703
+        },
+        {
+          "left": 0,
+          "top": 0.0025608439999999996,
+          "time": 3234.39999999851
+        },
+        {
+          "left": 0,
+          "top": 78.54929076992593,
+          "time": 4233.89999999851
+        },
+        {
+          "left": 0,
+          "top": 86.56345096340742,
+          "time": 4267.89999999851
+        },
+        {
+          "left": 0,
+          "top": 94.58763804725928,
+          "time": 4300.70000000298
+        },
+        {
+          "left": 0,
+          "top": 108.093950588,
+          "time": 4350.70000000298
+        },
+        {
+          "left": 0,
+          "top": 117.97650803659258,
+          "time": 4384.10000000149
+        },
+        {
+          "left": 0,
+          "top": 127.81156050000001,
+          "time": 4416.39999999851
+        },
+        {
+          "left": 0,
+          "top": 138.84448011392593,
+          "time": 4450.60000000149
+        },
+        {
+          "left": 0,
+          "top": 150.49472325140738,
+          "time": 4484.10000000149
+        },
+        {
+          "left": 0,
+          "top": 161.669240928,
+          "time": 4515.60000000149
+        },
+        {
+          "left": 0,
+          "top": 175.32450000000003,
+          "time": 4550.89999999851
+        },
+        {
+          "left": 0,
+          "top": 188.49847624400005,
+          "time": 4584.10000000149
+        },
+        {
+          "left": 0,
+          "top": 202.31638835199996,
+          "time": 4617.39999999851
+        },
+        {
+          "left": 0,
+          "top": 217.24275925925926,
+          "time": 4650.80000000447
+        },
+        {
+          "left": 0,
+          "top": 231.47627189940738,
+          "time": 4682.20000000298
+        },
+        {
+          "left": 0,
+          "top": 248.11420121125923,
+          "time": 4717.5
+        },
+        {
+          "left": 0,
+          "top": 263.7572407407408,
+          "time": 4750.89999999851
+        },
+        {
+          "left": 0,
+          "top": 278.2546724514073,
+          "time": 4784.30000000447
+        },
+        {
+          "left": 0,
+          "top": 298.1682366327407,
+          "time": 4832.5
+        },
+        {
+          "left": 0,
+          "top": 311.0736699354074,
+          "time": 4865.70000000298
+        },
+        {
+          "left": 0,
+          "top": 323.71972630399995,
+          "time": 4899.39999999851
+        },
+        {
+          "left": 0,
+          "top": 336.06570971807406,
+          "time": 4934.30000000447
+        },
+        {
+          "left": 0,
+          "top": 346.44596812799995,
+          "time": 4965.70000000298
+        },
+        {
+          "left": 0,
+          "top": 357.864,
+          "time": 5000.89999999851
+        },
+        {
+          "left": 0,
+          "top": 367.16263435125927,
+          "time": 5032.39999999851
+        },
+        {
+          "left": 0,
+          "top": 377.084467552,
+          "time": 5067.20000000298
+        },
+        {
+          "left": 0,
+          "top": 386.1539259259259,
+          "time": 5101
+        },
+        {
+          "left": 0,
+          "top": 394.43654903659257,
+          "time": 5134.39999999851
+        },
+        {
+          "left": 0,
+          "top": 401.9935855,
+          "time": 5165.89999999851
+        },
+        {
+          "left": 0,
+          "top": 409.312329504,
+          "time": 5199.20000000298
+        },
+        {
+          "left": 0,
+          "top": 416.3650562085926,
+          "time": 5233
+        },
+        {
+          "left": 0,
+          "top": 422.75265475925926,
+          "time": 5265.80000000447
+        },
+        {
+          "left": 0,
+          "top": 428.70490982992595,
+          "time": 5299.60000000149
+        },
+        {
+          "left": 0,
+          "top": 434.3984374234074,
+          "time": 5333.60000000149
+        },
+        {
+          "left": 0,
+          "top": 439.51407957407406,
+          "time": 5366.30000000447
+        },
+        {
+          "left": 0,
+          "top": 446.52928642592593,
+          "time": 5416.5
+        },
+        {
+          "left": 0,
+          "top": 450.6963580965926,
+          "time": 5449.10000000149
+        },
+        {
+          "left": 0,
+          "top": 454.51329255125927,
+          "time": 5482.60000000149
+        },
+        {
+          "left": 0,
+          "top": 458.19607475199996,
+          "time": 5517.70000000298
+        },
+        {
+          "left": 0,
+          "top": 461.339965788,
+          "time": 5550.39999999851
+        },
+        {
+          "left": 0,
+          "top": 464.2622608365926,
+          "time": 5584.60000000149
+        },
+        {
+          "left": 0,
+          "top": 466.80681561125925,
+          "time": 5617.60000000149
+        },
+        {
+          "left": 0,
+          "top": 469.014434304,
+          "time": 5649.20000000298
+        },
+        {
+          "left": 0,
+          "top": 471.1527960514074,
+          "time": 5683.89999999851
+        },
+        {
+          "left": 0,
+          "top": 472.9206320260741,
+          "time": 5717.70000000298
+        },
+        {
+          "left": 0,
+          "top": 474.4631137287407,
+          "time": 5749.80000000447
+        },
+        {
+          "left": 0,
+          "top": 476.370655904,
+          "time": 5799
+        },
+        {
+          "left": 0,
+          "top": 477.47759331807407,
+          "time": 5833.89999999851
+        },
+        {
+          "left": 0,
+          "top": 478.3449010927407,
+          "time": 5867.30000000447
+        },
+        {
+          "left": 0,
+          "top": 479.076,
+          "time": 5901.10000000149
+        },
+        {
+          "left": 0,
+          "top": 479.643639644,
+          "time": 5934.5
+        },
+        {
+          "left": 0,
+          "top": 480.09861761525923,
+          "time": 5967.89999999851
+        },
+        {
+          "left": 0,
+          "top": 480.2617375419259,
+          "time": 5983.5
+        },
+        {
+          "left": 0,
+          "top": 480.5488130925926,
+          "time": 6016
+        },
+        {
+          "left": 0,
+          "top": 481,
+          "time": 7018
+        }
+      ],
+      "finalNodes": 0
+    }
+  ],
+  "diagnostics": [],
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "visibility": "visible",
+  "hasFocus": true,
+  "devicePixelRatio": 2,
+  "viewport": {
+    "width": 1672,
+    "height": 1351
+  },
+  "hashesBefore": {
+    "design-ui/refactors/token-validation/browser/index-bar-lifecycle-ego.html": "e5dda01cd17754e8ec810066cb71ecf2c779e3189b62d8cc26fee2a35130edc8",
+    "design-ui/refactors/token-validation/browser/index-bar-lifecycle-ego.js": "a0fb174a614c662e5fda29468aaeb25ba1c6d049037d7d8a66de68c215ba0513",
+    "maple-design-mobile/packages/ui/src/index-bar/IndexBar.vue": "75ce54b7244705b75e41b9b1b5c1b5571ac4170f59a4da67f944381f364e5601",
+    "maple-design-mobile/packages/ui/src/index-bar/scroll-task.ts": "d44325857079844f753c07deb2b496fc1a76c5e77b19398e0887cad43ec43383"
+  },
+  "hashesAfter": {
+    "design-ui/refactors/token-validation/browser/index-bar-lifecycle-ego.html": "e5dda01cd17754e8ec810066cb71ecf2c779e3189b62d8cc26fee2a35130edc8",
+    "design-ui/refactors/token-validation/browser/index-bar-lifecycle-ego.js": "a0fb174a614c662e5fda29468aaeb25ba1c6d049037d7d8a66de68c215ba0513",
+    "maple-design-mobile/packages/ui/src/index-bar/IndexBar.vue": "75ce54b7244705b75e41b9b1b5c1b5571ac4170f59a4da67f944381f364e5601",
+    "maple-design-mobile/packages/ui/src/index-bar/scroll-task.ts": "d44325857079844f753c07deb2b496fc1a76c5e77b19398e0887cad43ec43383"
+  },
+  "screenshotSha256": "71eda5032e30d3bb9da756325926effb05c7453612e5f23da93cccce79e44983"
+}

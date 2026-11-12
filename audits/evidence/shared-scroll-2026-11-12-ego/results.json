@@ -1,0 +1,676 @@
+{
+  "mode": "ego-lite",
+  "date": "2026-11-12",
+  "browserUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "input": "native fixture-entry clicks; fixture-owned forwarding wrappers delegate unchanged to native RAF",
+  "newAcceptedCases": 8,
+  "newOsCases": 0,
+  "blockedNativeCases": 144,
+  "fixture": {
+    "file": "refactors/token-validation/browser/scroll-execution-main.js",
+    "sha256": "86d4c1d62708c4c12b3286138d56cd2bc34b95e89a2daf3746c280a4ae845024",
+    "frozen": true,
+    "hostFile": "refactors/token-validation/browser/scroll-execution-ego.html",
+    "hostSha256": "d66f98ccf8e6f44265c3fe786bfb95cd8ea3317b5254dfc0f46761dc188f535f"
+  },
+  "helperSources": [
+    {
+      "repo": "cedar-design-web",
+      "file": "_utils/maple/elements.ts",
+      "sha256": "a826c271758edb880290c91d0a19451312a1e0d497d227450b481a682086672e"
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "utils/elements.ts",
+      "sha256": "299bc02c39e4c060767aee61abfb0193bfdd286942d524f0aef15f618c6b55e6"
+    }
+  ],
+  "consoleWarningsErrors": [],
+  "screenshot": {
+    "file": "native.png",
+    "bytes": 123620,
+    "sha256": "ffa68544f6a9e5ab359d8593af7d5000de9a20e226164e64290c00853c3303ea",
+    "viewed": true
+  },
+  "cases": [
+    {
+      "name": "Cedar",
+      "kind": "main-default",
+      "passed": true,
+      "reducedQueryObserved": false,
+      "targetWindow": false,
+      "sameOriginIframe": false,
+      "duration": 300,
+      "elapsed": 329.2,
+      "immediate": {
+        "top": 0,
+        "left": 0
+      },
+      "immediateOwnerRequests": 1,
+      "ownerRequests": 10,
+      "hostRequests": 0,
+      "final": {
+        "top": 220,
+        "left": 80
+      },
+      "stable": {
+        "top": 220,
+        "left": 80
+      },
+      "finalTargets": 0,
+      "frames": [
+        {
+          "time": 29.9,
+          "top": 22,
+          "left": 8
+        },
+        {
+          "time": 64,
+          "top": 47,
+          "left": 17
+        },
+        {
+          "time": 97.3,
+          "top": 71,
+          "left": 26
+        },
+        {
+          "time": 130.7,
+          "top": 95.5,
+          "left": 34.5
+        },
+        {
+          "time": 163.8,
+          "top": 120.5,
+          "left": 43.5
+        },
+        {
+          "time": 197.3,
+          "top": 144.5,
+          "left": 52.5
+        },
+        {
+          "time": 230.7,
+          "top": 168.5,
+          "left": 61.5
+        },
+        {
+          "time": 262.1,
+          "top": 192,
+          "left": 70
+        },
+        {
+          "time": 297.5,
+          "top": 218,
+          "left": 79
+        },
+        {
+          "time": 329.2,
+          "top": 220,
+          "left": 80
+        }
+      ],
+      "frameCount": 10,
+      "frameExcerpts": [
+        {
+          "time": 29.9,
+          "top": 22,
+          "left": 8
+        },
+        {
+          "time": 197.3,
+          "top": 144.5,
+          "left": 52.5
+        },
+        {
+          "time": 329.2,
+          "top": 220,
+          "left": 80
+        }
+      ]
+    },
+    {
+      "name": "Cedar",
+      "kind": "main-zero",
+      "passed": true,
+      "reducedQueryObserved": false,
+      "targetWindow": false,
+      "sameOriginIframe": false,
+      "duration": 0,
+      "elapsed": 0.1,
+      "immediate": {
+        "top": 220,
+        "left": 80
+      },
+      "immediateOwnerRequests": 0,
+      "ownerRequests": 0,
+      "hostRequests": 0,
+      "final": {
+        "top": 220,
+        "left": 80
+      },
+      "stable": {
+        "top": 220,
+        "left": 80
+      },
+      "finalTargets": 0,
+      "frames": [],
+      "frameCount": 0,
+      "frameExcerpts": []
+    },
+    {
+      "name": "Cedar",
+      "kind": "iframe-element",
+      "passed": true,
+      "reducedQueryObserved": false,
+      "targetWindow": false,
+      "sameOriginIframe": true,
+      "duration": 300,
+      "elapsed": 330,
+      "immediate": {
+        "top": 0,
+        "left": 0
+      },
+      "immediateOwnerRequests": 1,
+      "ownerRequests": 10,
+      "hostRequests": 0,
+      "final": {
+        "top": 220,
+        "left": 80
+      },
+      "stable": {
+        "top": 220,
+        "left": 80
+      },
+      "finalTargets": 0,
+      "frames": [
+        {
+          "time": 13.1,
+          "top": 9.5,
+          "left": 3.5
+        },
+        {
+          "time": 46.1,
+          "top": 33.5,
+          "left": 12.5
+        },
+        {
+          "time": 79.5,
+          "top": 58.5,
+          "left": 21.5
+        },
+        {
+          "time": 112.9,
+          "top": 83,
+          "left": 30
+        },
+        {
+          "time": 146.3,
+          "top": 107,
+          "left": 39
+        },
+        {
+          "time": 179.7,
+          "top": 132,
+          "left": 48
+        },
+        {
+          "time": 211.5,
+          "top": 155.5,
+          "left": 56.5
+        },
+        {
+          "time": 246.2,
+          "top": 180.5,
+          "left": 65.5
+        },
+        {
+          "time": 279.9,
+          "top": 205.5,
+          "left": 74.5
+        },
+        {
+          "time": 329.9,
+          "top": 220,
+          "left": 80
+        }
+      ],
+      "frameCount": 10,
+      "frameExcerpts": [
+        {
+          "time": 13.1,
+          "top": 9.5,
+          "left": 3.5
+        },
+        {
+          "time": 179.7,
+          "top": 132,
+          "left": 48
+        },
+        {
+          "time": 329.9,
+          "top": 220,
+          "left": 80
+        }
+      ]
+    },
+    {
+      "name": "Cedar",
+      "kind": "iframe-window",
+      "passed": true,
+      "reducedQueryObserved": false,
+      "targetWindow": true,
+      "sameOriginIframe": true,
+      "duration": 300,
+      "elapsed": 346.3,
+      "immediate": {
+        "top": 0,
+        "left": 0
+      },
+      "immediateOwnerRequests": 1,
+      "ownerRequests": 10,
+      "hostRequests": 0,
+      "final": {
+        "top": 220,
+        "left": 80
+      },
+      "stable": {
+        "top": 220,
+        "left": 80
+      },
+      "finalTargets": 0,
+      "frames": [
+        {
+          "time": 30.3,
+          "top": 22,
+          "left": 8
+        },
+        {
+          "time": 62.8,
+          "top": 46,
+          "left": 17
+        },
+        {
+          "time": 96.2,
+          "top": 70.5,
+          "left": 25.5
+        },
+        {
+          "time": 129.6,
+          "top": 95.5,
+          "left": 34.5
+        },
+        {
+          "time": 162.9,
+          "top": 119.5,
+          "left": 43.5
+        },
+        {
+          "time": 194.6,
+          "top": 143,
+          "left": 52
+        },
+        {
+          "time": 229.6,
+          "top": 168.5,
+          "left": 61.5
+        },
+        {
+          "time": 262.4,
+          "top": 192,
+          "left": 70
+        },
+        {
+          "time": 294.4,
+          "top": 215.5,
+          "left": 78.5
+        },
+        {
+          "time": 346.3,
+          "top": 220,
+          "left": 80
+        }
+      ],
+      "frameCount": 10,
+      "frameExcerpts": [
+        {
+          "time": 30.3,
+          "top": 22,
+          "left": 8
+        },
+        {
+          "time": 194.6,
+          "top": 143,
+          "left": 52
+        },
+        {
+          "time": 346.3,
+          "top": 220,
+          "left": 80
+        }
+      ]
+    },
+    {
+      "name": "Maple",
+      "kind": "main-default",
+      "passed": true,
+      "reducedQueryObserved": false,
+      "targetWindow": false,
+      "sameOriginIframe": false,
+      "duration": 300,
+      "elapsed": 311.6,
+      "immediate": {
+        "top": 0,
+        "left": 0
+      },
+      "immediateOwnerRequests": 1,
+      "ownerRequests": 10,
+      "hostRequests": 0,
+      "final": {
+        "top": 220,
+        "left": 80
+      },
+      "stable": {
+        "top": 220,
+        "left": 80
+      },
+      "finalTargets": 0,
+      "frames": [
+        {
+          "time": 11.5,
+          "top": 8,
+          "left": 3
+        },
+        {
+          "time": 44.6,
+          "top": 33,
+          "left": 12
+        },
+        {
+          "time": 77.9,
+          "top": 57,
+          "left": 21
+        },
+        {
+          "time": 111.3,
+          "top": 81.5,
+          "left": 29.5
+        },
+        {
+          "time": 144.6,
+          "top": 106.5,
+          "left": 38.5
+        },
+        {
+          "time": 178.1,
+          "top": 130.5,
+          "left": 47.5
+        },
+        {
+          "time": 210.9,
+          "top": 154.5,
+          "left": 56.5
+        },
+        {
+          "time": 244.2,
+          "top": 179,
+          "left": 65
+        },
+        {
+          "time": 277.6,
+          "top": 204,
+          "left": 74
+        },
+        {
+          "time": 311.6,
+          "top": 220,
+          "left": 80
+        }
+      ],
+      "frameCount": 10,
+      "frameExcerpts": [
+        {
+          "time": 11.5,
+          "top": 8,
+          "left": 3
+        },
+        {
+          "time": 178.1,
+          "top": 130.5,
+          "left": 47.5
+        },
+        {
+          "time": 311.6,
+          "top": 220,
+          "left": 80
+        }
+      ]
+    },
+    {
+      "name": "Maple",
+      "kind": "main-zero",
+      "passed": true,
+      "reducedQueryObserved": false,
+      "targetWindow": false,
+      "sameOriginIframe": false,
+      "duration": 0,
+      "elapsed": 0,
+      "immediate": {
+        "top": 220,
+        "left": 80
+      },
+      "immediateOwnerRequests": 0,
+      "ownerRequests": 0,
+      "hostRequests": 0,
+      "final": {
+        "top": 220,
+        "left": 80
+      },
+      "stable": {
+        "top": 220,
+        "left": 80
+      },
+      "finalTargets": 0,
+      "frames": [],
+      "frameCount": 0,
+      "frameExcerpts": []
+    },
+    {
+      "name": "Maple",
+      "kind": "iframe-element",
+      "passed": true,
+      "reducedQueryObserved": false,
+      "targetWindow": false,
+      "sameOriginIframe": true,
+      "duration": 300,
+      "elapsed": 312.6,
+      "immediate": {
+        "top": 0,
+        "left": 0
+      },
+      "immediateOwnerRequests": 1,
+      "ownerRequests": 10,
+      "hostRequests": 0,
+      "final": {
+        "top": 220,
+        "left": 80
+      },
+      "stable": {
+        "top": 220,
+        "left": 80
+      },
+      "finalTargets": 0,
+      "frames": [
+        {
+          "time": 12.4,
+          "top": 9,
+          "left": 3
+        },
+        {
+          "time": 45.5,
+          "top": 33,
+          "left": 12
+        },
+        {
+          "time": 79,
+          "top": 57,
+          "left": 21
+        },
+        {
+          "time": 112.3,
+          "top": 82,
+          "left": 30
+        },
+        {
+          "time": 145.6,
+          "top": 106.5,
+          "left": 38.5
+        },
+        {
+          "time": 179,
+          "top": 130.5,
+          "left": 47.5
+        },
+        {
+          "time": 212.6,
+          "top": 155.5,
+          "left": 56.5
+        },
+        {
+          "time": 246,
+          "top": 179.5,
+          "left": 65.5
+        },
+        {
+          "time": 279.1,
+          "top": 204.5,
+          "left": 74.5
+        },
+        {
+          "time": 312.6,
+          "top": 220,
+          "left": 80
+        }
+      ],
+      "frameCount": 10,
+      "frameExcerpts": [
+        {
+          "time": 12.4,
+          "top": 9,
+          "left": 3
+        },
+        {
+          "time": 179,
+          "top": 130.5,
+          "left": 47.5
+        },
+        {
+          "time": 312.6,
+          "top": 220,
+          "left": 80
+        }
+      ]
+    },
+    {
+      "name": "Maple",
+      "kind": "iframe-window",
+      "passed": true,
+      "reducedQueryObserved": false,
+      "targetWindow": true,
+      "sameOriginIframe": true,
+      "duration": 300,
+      "elapsed": 330.4,
+      "immediate": {
+        "top": 0,
+        "left": 0
+      },
+      "immediateOwnerRequests": 1,
+      "ownerRequests": 10,
+      "hostRequests": 0,
+      "final": {
+        "top": 220,
+        "left": 80
+      },
+      "stable": {
+        "top": 220,
+        "left": 80
+      },
+      "finalTargets": 0,
+      "frames": [
+        {
+          "time": 29.9,
+          "top": 22,
+          "left": 8
+        },
+        {
+          "time": 63.2,
+          "top": 46,
+          "left": 17
+        },
+        {
+          "time": 96.5,
+          "top": 70.5,
+          "left": 25.5
+        },
+        {
+          "time": 129.9,
+          "top": 95.5,
+          "left": 34.5
+        },
+        {
+          "time": 163.3,
+          "top": 119.5,
+          "left": 43.5
+        },
+        {
+          "time": 197,
+          "top": 144.5,
+          "left": 52.5
+        },
+        {
+          "time": 228.4,
+          "top": 167,
+          "left": 61
+        },
+        {
+          "time": 262.8,
+          "top": 192,
+          "left": 70
+        },
+        {
+          "time": 295.2,
+          "top": 216.5,
+          "left": 78.5
+        },
+        {
+          "time": 330.3,
+          "top": 220,
+          "left": 80
+        }
+      ],
+      "frameCount": 10,
+      "frameExcerpts": [
+        {
+          "time": 29.9,
+          "top": 22,
+          "left": 8
+        },
+        {
+          "time": 197,
+          "top": 144.5,
+          "left": 52.5
+        },
+        {
+          "time": 330.3,
+          "top": 220,
+          "left": 80
+        }
+      ]
+    }
+  ],
+  "scope": "Ego Lite Chromium, real same-origin iframe, native RAF; no OS, physical gestures or other engine certification.",
+  "raw": {
+    "file": "raw.json",
+    "sha256": "987aa879ca4371195ee2540fe6dafaec8e4a91572075090ddda34f1637a535b9"
+  }
+}

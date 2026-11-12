@@ -24,8 +24,11 @@ export function checkBusinessEvidence(report, read = readFileSync) {
   const jpeg = read(resolve(directory, 'native.jpg'));
   assert.equal(jpeg.length, report.screenshot.bytes);
   assert.equal(hash(jpeg), report.screenshot.sha256, 'image changed');
-  assert.deepEqual(report.cases.map(r => [r.name, r.kind]), [['Cedar', 'number'], ['Maple', 'number'], ['Cedar', 'countdown'], ['Maple', 'countdown']], 'four unique cases required');
-  for (const row of report.cases) {
+  return checkBusinessCases(report.cases);
+}
+export function checkBusinessCases(cases) {
+  assert.deepEqual(cases.map(r => [r.name, r.kind]), [['Cedar', 'number'], ['Maple', 'number'], ['Cedar', 'countdown'], ['Maple', 'countdown']], 'four unique cases required');
+  for (const row of cases) {
     assert.equal(row.passed, true); assert.equal(row.finalNodes, 0, 'residual nodes');
     assert.deepEqual(row.samples.map(s => s.phase), row.kind === 'number' ? numberPhases : clockPhases);
     row.samples.forEach((s, i) => { assert.ok(Number.isFinite(s.time) && s.time >= 0); if (i) assert.ok(s.time >= row.samples[i - 1].time); assert.equal(s.ends, 0); });

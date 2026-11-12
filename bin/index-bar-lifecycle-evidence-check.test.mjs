@@ -1,8 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { checkIndexBarEvidence, readEvidence } from './index-bar-lifecycle-evidence-check.mjs';
-const positive = () => structuredClone(readEvidence());
-test('four real IndexBar lifecycle cases and original evidence pass', () => assert.deepEqual(checkIndexBarEvidence(positive()), { accepted: 4, os: 0, blocked: 144 }));
+import { checkIndexBarEvidence, readEvidence, readEgoEvidence } from './index-bar-lifecycle-evidence-check.mjs';
+const positive = () => structuredClone(readEgoEvidence());
+test('original 600ms IndexBar evidence remains valid for current sources', () => assert.deepEqual(checkIndexBarEvidence(readEvidence()), { accepted: 4, os: 0, blocked: 144 }));
+test('four Ego Lite frame-aware IndexBar lifecycle cases and evidence pass', () => assert.deepEqual(checkIndexBarEvidence(positive()), { accepted: 4, os: 0, blocked: 144 }));
 for (const [name, mutate] of [
   ['missing case', r => r.cases.pop()],
   ['duplicate case', r => r.cases[1] = structuredClone(r.cases[0])],
@@ -20,4 +21,9 @@ for (const [name, mutate] of [
   ['source drift', r => r.sources[0].sha256 = 'changed'],
   ['fixture drift', r => r.fixture.sha256 = 'changed'],
   ['image drift', r => r.screenshot.sha256 = 'changed'],
+  ['host fixture drift', r => r.fixture.hostSha256 = 'changed'],
+  ['incorrect duration claim', r => r.fixture.interpolationDurationMs = 600],
+  ['console warning', r => r.consoleWarningsErrors.push({ kind: 'warn', text: 'warning' })],
+  ['bad browser', r => r.browserUserAgent = 'unknown'],
+  ['raw capture drift', r => r.raw.sha256 = 'changed'],
 ]) test(`rejects ${name}`, () => { const r = positive(); mutate(r); assert.throws(() => checkIndexBarEvidence(r)); });

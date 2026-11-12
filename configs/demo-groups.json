@@ -99,7 +99,8 @@
       "title": "基础示例",
       "en": "Basic examples",
       "cases": [
-        "basic"
+        "basic",
+        "custom-draft"
       ]
     },
     {
@@ -1498,7 +1499,8 @@
       "title": "加载与等待",
       "en": "Loading and waiting",
       "cases": [
-        "loading"
+        "loading",
+        "link-title"
       ]
     }
   ],
@@ -1946,6 +1948,20 @@
     {
       "title": "基础示例",
       "en": "Basic examples",
+      "cases": [
+        "multiple"
+      ]
+    },
+    {
+      "title": "异步数据",
+      "en": "Async data",
+      "cases": [
+        "options-loader"
+      ]
+    },
+    {
+      "title": "业务组合",
+      "en": "Business composition",
       "cases": [
         "injected-services"
       ]
@@ -2450,6 +2466,7 @@
       "en": "Selection modes and options",
       "cases": [
         "multiple",
+        "confirmation",
         "same-label",
         "optgroup",
         "group-spacing",
@@ -3334,7 +3351,8 @@
       "title": "基础示例",
       "en": "Basic examples",
       "cases": [
-        "basic"
+        "basic",
+        "multiple"
       ]
     },
     {
