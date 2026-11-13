@@ -1,0 +1,46 @@
+{
+  "api": {
+    "name": "trigger-position",
+    "scriptName": "triggerPosition",
+    "type": "UploadTriggerPosition",
+    "values": [
+      "before",
+      "after"
+    ],
+    "default": "before",
+    "meaning": "Upload entry order relative to the file list; DOM order also defines keyboard browsing order; no RTL value rewrite.",
+    "platforms": [
+      "Cedar",
+      "Maple"
+    ]
+  },
+  "implementation": "Keyed trigger/list sections move existing DOM and slot instances; callback ref keeps the native trigger ref scalar inside the section loop.",
+  "verification": {
+    "uploadTests": {
+      "cedar": 207,
+      "maple": 246
+    },
+    "rootTypecheck": {
+      "cedar": "passed (declaration + public API contracts)",
+      "maple": "passed (source + public API contracts)"
+    },
+    "apiNaming": "passed; 95 reviewed properties; 0 errors",
+    "specCheck": {
+      "cedar": "95 components; 0 errors/warnings",
+      "maple": "93 components; 0 errors/warnings"
+    },
+    "demoGroupingAndParity": "18 passed",
+    "sfcAndReferenceCheck": "2971 demo SFCs; 3455 references; no failures",
+    "mapleDocsCheck": "1520 demo SFCs; no failures",
+    "lint": {
+      "cedar": "affected source, demo and test files passed",
+      "maple": "root lint:check passed"
+    },
+    "browser": {
+      "engine": "Ego Lite / Chromium development sites",
+      "desktop": "All 3 list types x both positions; native Enter chooser; files and native input preserved",
+      "mobile": "346px embedded mobile route; all 6 combinations; no horizontal overflow; native Enter chooser; English position control verified",
+      "scope": "Emulated mobile view, not physical-device or production-build acceptance"
+    }
+  }
+}

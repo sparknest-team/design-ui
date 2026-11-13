@@ -448,14 +448,15 @@
   },
   {
     "component": "upload",
-    "name": "state-lab",
+    "name": "states",
     "dimensions": [
+      "readonly",
       "disabled",
-      "readonly"
+      "read-pretty"
     ],
     "fixtures": [
-      "cedar-design-web/packages/ui/src/upload/__demos__/basic.vue",
-      "maple-design-mobile/packages/ui/src/upload/example/demos/basic.vue"
+      "cedar-design-web/packages/ui/src/upload/__demos__/states.vue",
+      "maple-design-mobile/packages/ui/src/upload/example/demos/states.vue"
     ]
   },
   {

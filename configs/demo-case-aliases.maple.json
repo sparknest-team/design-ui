@@ -261,23 +261,7 @@
     "events": "directive",
     "disabled": "directive"
   },
-  "upload": {
-    "basic-usage": "read-only",
-    "disabled": "state-controls",
-    "readonly": "state-controls",
-    "state": "state-controls",
-    "before-add": "replacement-validation",
-    "before-read": "replacement-validation",
-    "click-action": "directory",
-    "custom-render": "custom-surface",
-    "max-file-size": "replacement-validation",
-    "max-files": "replacement-validation",
-    "remove-button-slot": "custom-surface",
-    "style": "custom-surface",
-    "use-progress": "external-state",
-    "custom-preview": "custom-surface",
-    "preview": "custom-surface"
-  },
+  "upload": {},
   "watermark": {
     "text-watermark": "basic",
     "image-watermark": "image",

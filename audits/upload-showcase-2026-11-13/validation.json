@@ -1,0 +1,70 @@
+{
+  "referenceSources": [
+    "element-plus/docs/en-US/component/upload.md",
+    "element-plus/docs/examples/upload/manual.vue",
+    "naive-ui/src/upload/demos/zhCN/index.demo-entry.md"
+  ],
+  "unitTests": {
+    "existingUploadTests": {
+      "cedar": 191,
+      "maple": 230
+    },
+    "finalFocusedShowcaseTests": {
+      "cedar": 6,
+      "maple": 6
+    },
+    "coverage": "Real component mounts for list/model retention, interaction and reading states, stable external chooser instance, actual Dialog cancel/confirm handlers, custom preview and local upload failure/retry/cancel. Existing suites and final focused reruns were executed separately."
+  },
+  "checks": {
+    "demoGroupingAndContentParity": "18 passed",
+    "demoDesignAndReferences": "2964 SFCs; 3445 references; no failures",
+    "mapleDocsCheck": "1517 demo SFCs; no failures",
+    "mapleLint": "passed",
+    "cedarChangedDemoAndTestLint": "passed",
+    "uploadEnglishGeneration": "no missing Upload translations",
+    "diffCheck": "passed"
+  },
+  "browser": {
+    "engine": "Ego Lite / Chromium",
+    "surfaces": [
+      "Cedar desktop documentation",
+      "Maple mobile.html#/upload?language=zh-CN embedded preview",
+      "Maple mobile.html#/upload?language=en-US embedded preview"
+    ],
+    "viewports": [
+      {
+        "width": 346,
+        "height": 780
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "publicCasesPerPlatform": 15,
+    "horizontalOverflow": false,
+    "verifiedBehaviors": [
+      "list-type switching",
+      "editable/readonly/disabled/read-pretty and restoration",
+      "custom image preview Dialog",
+      "manual upload first failure and successful retry",
+      "cancel and confirm file removal",
+      "native file chooser before and after the file list",
+      "language switching and complete English scenario titles",
+      "light and dark theme layouts",
+      "drop-zone title and helper use matching secondary text color",
+      "desktop expanded source matches the current read-pretty example"
+    ],
+    "scope": "Emulated mobile browser; no physical-device or release-build acceptance claimed."
+  },
+  "styleChange": {
+    "elements": [
+      "draggable-picture title",
+      "dialog-upload drop-zone title"
+    ],
+    "tokens": [
+      "--c-sys-color-content-secondary",
+      "--mp-sys-color-content-secondary"
+    ]
+  }
+}

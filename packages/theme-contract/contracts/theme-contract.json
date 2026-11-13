@@ -1795,6 +1795,7 @@
         "fullscreen-height",
         "fullscreen-width",
         "margin-top",
+        "max-height",
         "overlay-background",
         "simple-actions-gap",
         "simple-border-radius",
@@ -2861,6 +2862,7 @@
       "textarea"
     ],
     "maple": [
+      "dialog",
       "form",
       "select",
       "message",
@@ -3050,6 +3052,10 @@
       }
     },
     "maple": {
+      "dialog": {
+        "divider-color": "var(--PREFIX-sys-color-border-default)",
+        "divider-width": "1px"
+      },
       "loading-bar": {
         "transition-duration": "250ms",
         "transition-timing-function": "ease"

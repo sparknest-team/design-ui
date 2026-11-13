@@ -931,6 +931,7 @@
       "cases": [
         "draggable",
         "custom-footer",
+        "dividers",
         "custom-button-text",
         "advanced-props"
       ]
@@ -3220,54 +3221,45 @@
       "en": "Basic examples",
       "cases": [
         "read-only",
-        "basic-usage"
+        "list-type",
+        "trigger-position"
       ]
     },
     {
-      "title": "外观与状态",
-      "en": "Appearance and states",
+      "title": "选择与校验",
+      "en": "Selection and validation",
       "cases": [
-        "state-controls",
-        "state",
-        "state-lab",
-        "custom-surface",
-        "custom-render",
-        "remove-button-slot",
-        "style",
-        "custom-preview",
-        "preview"
+        "draggable-picture",
+        "picture-limits",
+        "replacement",
+        "directory"
       ]
     },
     {
-      "title": "文件来源与约束",
-      "en": "File sources and validation",
+      "title": "预览与状态",
+      "en": "Preview and states",
       "cases": [
-        "directory",
-        "click-action",
-        "clipboard",
-        "replacement-validation",
-        "before-add",
-        "before-read",
-        "selection-limits-comparison"
+        "preview",
+        "states",
+        "custom-surface"
       ]
     },
     {
-      "title": "队列与进度",
-      "en": "Queues and progress",
+      "title": "上传流程",
+      "en": "Upload workflow",
       "cases": [
-        "external-state",
-        "use-progress",
-        "queue-request"
+        "manual-upload",
+        "remove-confirm",
+        "external-state"
       ]
     },
     {
-      "title": "异步钩子与请求",
-      "en": "Async hooks and requests",
+      "title": "业务组合",
+      "en": "Composed examples",
       "cases": [
-        "before-remove",
-        "prepare-request",
-        "metadata-request",
-        "late-request"
+        "external-trigger",
+        "dialog-upload",
+        "clipboard"
       ]
     }
   ],

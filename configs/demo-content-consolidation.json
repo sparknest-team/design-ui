@@ -507,13 +507,13 @@
     "platform": "maple",
     "family": "upload",
     "mode": "covered",
-    "into": "state-lab",
+    "into": "states",
     "cases": [
       "disabled",
       "readonly"
     ],
-    "title": "交互状态对比",
-    "en": "Interaction state comparison"
+    "title": "只读、禁用与纯阅读",
+    "en": "Readonly, disabled and reading mode"
   },
   {
     "platform": "cedar",
@@ -1573,9 +1573,9 @@
       "max-file-size",
       "max-files"
     ],
-    "into": "selection-limits-comparison",
-    "title": "文件大小与数量限制",
-    "en": "File size and count limits",
+    "into": "picture-limits",
+    "title": "文件类型、数量与大小",
+    "en": "File validation",
     "explanation": "分别选择超出大小和数量限制的本地文件，观察拒绝反馈；选择限制与请求前处理、上传队列是独立阶段。",
     "english": "Choose local files exceeding the size or count limits and inspect the rejection feedback. Selection limits are separate from request preparation and upload queues.",
     "mode": "compose"

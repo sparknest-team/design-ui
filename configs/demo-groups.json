@@ -946,6 +946,7 @@
       "cases": [
         "draggable",
         "custom-footer",
+        "dividers",
         "custom-text",
         "advanced"
       ]
@@ -1026,6 +1027,7 @@
       "cases": [
         "nest-drawer",
         "custom-node",
+        "dividers",
         "function-call"
       ]
     },
@@ -3440,43 +3442,46 @@
       "title": "基础示例",
       "en": "Basic examples",
       "cases": [
-        "read-only"
+        "read-only",
+        "list-type",
+        "trigger-position"
       ]
     },
     {
-      "title": "外观与状态",
-      "en": "Appearance and states",
+      "title": "选择与校验",
+      "en": "Selection and validation",
       "cases": [
-        "state-controls",
-        "state-lab",
+        "draggable-picture",
+        "picture-limits",
+        "replacement",
+        "directory"
+      ]
+    },
+    {
+      "title": "预览与状态",
+      "en": "Preview and states",
+      "cases": [
+        "preview",
+        "states",
         "custom-surface"
       ]
     },
     {
-      "title": "文件来源与约束",
-      "en": "File sources and validation",
+      "title": "上传流程",
+      "en": "Upload workflow",
       "cases": [
-        "directory",
-        "clipboard",
-        "replacement-validation"
+        "manual-upload",
+        "remove-confirm",
+        "external-state"
       ]
     },
     {
-      "title": "队列与进度",
-      "en": "Queues and progress",
+      "title": "业务组合",
+      "en": "Composed examples",
       "cases": [
-        "external-state",
-        "queue-request"
-      ]
-    },
-    {
-      "title": "异步钩子与请求",
-      "en": "Async hooks and requests",
-      "cases": [
-        "before-remove",
-        "prepare-request",
-        "metadata-request",
-        "late-request"
+        "external-trigger",
+        "dialog-upload",
+        "clipboard"
       ]
     }
   ],

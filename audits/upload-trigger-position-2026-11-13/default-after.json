@@ -1,0 +1,30 @@
+{
+  "default": "after",
+  "platforms": [
+    "Cedar",
+    "Maple"
+  ],
+  "browser": {
+    "desktopDefault": [
+      "list",
+      "trigger"
+    ],
+    "mobileWidth": 346,
+    "mobileDefault": [
+      "list",
+      "trigger"
+    ],
+    "mobileOverflow": false,
+    "beforeAfterSwitch": "passed on both platforms"
+  },
+  "docs": [
+    "zh-CN",
+    "en-US"
+  ],
+  "tests": {
+    "cedarUpload": 207,
+    "mapleUploadExcludingUpdatedSnapshots": 218,
+    "mapleSnapshotSuiteUpdated": 28,
+    "ssr": "omitted/before/after covered"
+  }
+}

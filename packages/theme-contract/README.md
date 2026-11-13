@@ -26,3 +26,5 @@ CSS 变量的分层、公开边界和选用规则见 [Design Token 规范](../..
 检查同时覆盖主题覆盖合法性、`internal` 隔离、旧变量 denylist，以及受管组件文档中的变量引用。
 
 `node ../../bin/token-inventory.mjs --check-consumers --summary` 审计全部组件声明消费；`node ../../bin/token-catalog.mjs --check` 校验两端菜单参考页。二者与名称／值契约是独立门禁，不代替真实浏览器状态验收。默认值规范化仅消除前缀、Less var 引号和等价 rgb alpha 写法，不把不同的语义变量或单位归并成“同值”。
+
+Maple Dialog 的标题／正文分隔线独立消费 `divider-color`、`divider-width`，与 Cedar 使用面板 `border-*` 的结构不同；登记为 Maple 平台扩展并治理默认值。`max-height` 属于两端共享的公开布局 token。

@@ -1126,6 +1126,26 @@
         "ltr",
         "rtl"
       ]
+    },
+    {
+      "file": "cedar-design-web/packages/ui/src/upload/props.ts",
+      "owner": "uploadProps",
+      "name": "triggerPosition",
+      "meaning": "上传入口在 Upload 内容区域中相对文件列表的前后顺序；before/after 是 DOM 顺序，不因 RTL 改写；不控制外部按钮",
+      "values": [
+        "before",
+        "after"
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/upload/props.ts",
+      "owner": "uploadProps",
+      "name": "triggerPosition",
+      "meaning": "上传入口在 Upload 内容区域中相对文件列表的前后顺序；before/after 是 DOM 顺序，不因 RTL 改写；不控制外部按钮",
+      "values": [
+        "before",
+        "after"
+      ]
     }
   ]
 }

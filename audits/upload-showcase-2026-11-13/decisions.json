@@ -1,0 +1,59 @@
+{
+  "references": [
+    "element-plus/docs/en-US/component/upload.md",
+    "element-plus/docs/examples/upload/manual.vue",
+    "naive-ui/src/upload/demos/zhCN/index.demo-entry.md"
+  ],
+  "publicCases": [
+    "read-only",
+    "list-type",
+    "draggable-picture",
+    "picture-limits",
+    "replacement",
+    "directory",
+    "preview",
+    "states",
+    "custom-surface",
+    "manual-upload",
+    "remove-confirm",
+    "external-state",
+    "external-trigger",
+    "dialog-upload",
+    "clipboard"
+  ],
+  "decisions": {
+    "merge": [
+      "basic-usage/read-only -> read-only",
+      "picture/picture-card/list-type -> list-type",
+      "state-controls/state-lab/state/disabled/readonly -> states",
+      "selection-limits-comparison/before-read/max-files/max-file-size -> picture-limits",
+      "custom-render/remove-button-slot/style/custom-preview -> custom-surface",
+      "queue-request -> manual-upload"
+    ],
+    "regressionOnly": [
+      "replacement-validation",
+      "prepare-request",
+      "metadata-request",
+      "late-request",
+      "before-remove",
+      "state-controls",
+      "state-lab",
+      "queue-request"
+    ],
+    "retainedIntegrations": [
+      "directory",
+      "clipboard",
+      "external-state"
+    ],
+    "notes": "Regression-only files and existing tests remain available; only public references and the phone gallery change."
+  },
+  "beforePublicCaseCounts": {
+    "cedar": 18,
+    "maple": 30
+  },
+  "afterPublicCaseCounts": {
+    "cedar": 15,
+    "maple": 15
+  },
+  "mapleRegressionDirectory": "maple-design-mobile/packages/ui/src/upload/example/regressions"
+}

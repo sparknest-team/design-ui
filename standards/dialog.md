@@ -38,3 +38,10 @@ Cedar 与 Maple 的 Dialog 共享相同的 Props、Emits、Slots、实例方法�
 - `beforeClose` 完成并调用 `done()` 后，才发送 action、更新 open 并 resolve 函数式 Promise。
 - Dialog 管理初始焦点、焦点循环、ESC、关闭后的焦点恢复以及最上层实例。
 - 两端必须有契约测试覆盖按需样式、SSR、事件顺序、函数方法与无障碍行为。
+
+## 高度与滚动
+
+- 普通与简洁模式默认最大高度 90dvh，兼容回退 90vh，由两端 dialog-max-height CSS token 控制，不新增 Props。
+- 标题与操作区不收缩，仅正文在高度不足时滚动；自定义 footer 也必须置于操作区容器内。
+- Cedar 默认非居中顶部偏移不超过 5dvh（回退 5vh），显式 top 保持可覆盖。
+- 全屏模式解除普通最大高度限制，使用 100dvh（回退 100vh）；局部 dialogStyle.maxHeight 可覆盖普通模式。
