@@ -61,8 +61,10 @@ await auditThemes('switch', ({ prefix: p, repo, brand, mode, document, tag, vari
               if (text) contrast(resolve(cascade(text).color), trackPaint, 4.5, 'text/track')
               contrast(tonal ? over(rgba(read('tonal-border-color')), trackPaint) : trackPaint, host, 3, 'boundary/host')
               if (focus) {
-                assert.equal(resolve(cascade(root).outline), `${read('focus-width')} solid ${read('track-active-background')}`, context)
-                contrast(read('track-active-background'), host, 3, 'focus/host')
+                assert.equal(resolve(cascade(track)['box-shadow']), `inset 0 0 0 1px #fff, inset 0 0 0 ${read('focus-width')} #000`, context)
+                assert.equal(cascade(root).outline, undefined, context + '/no outer focus ring')
+                const l = luminance(trackPaint)
+                assert.ok(Math.max((l + .05) / .05, 1.05 / (l + .05)) >= 3, context + '/dual-tone focus contrast')
               }
             }
           }

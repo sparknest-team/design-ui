@@ -28,6 +28,18 @@ for (const component of ['select', 'auto-complete', 'cascader']) {
         if (!selected && !hover && !active) continue
         const node = element([`${p}-${kind}`, selected && `${p}-${kind}-selected`, hover && 'audit-hover', hover && kind === 'cascader-search-option' && `${p}-${kind}-hover`, active && `${p}-${kind}-active`, disabled && `${p}-${kind}-disabled`].filter(Boolean).join(' '), root)
         const styles = cascade(node)
+        if (kind === 'select-option' || kind === 'cascader-option' && editor) {
+          const radius = styles['border-radius'] ? expand(styles['border-radius']) : '0'
+          const expected = brand === 'default' ? '0' : editor && !(editor === 'mobile' && kind === 'select-option') ? '8px' : kind === 'select-option' ? expand(variables[`--${p}-sys-radius-lg`]) : '0'
+          assert.equal(radius, expected, `${context}/${editor}: option radius matches the theme`)
+          if (kind === 'select-option') {
+            const key = `--${p}-${editor === 'desktop' ? 'selection-editor-option-radius' : 'select-popup-option-border-radius'}`
+            const previous = variables[key]
+            variables[key] = '7px'
+            assert.equal(expand(styles['border-radius']), '7px', `${context}/${editor}: explicit radius override works`)
+            variables[key] = previous
+          }
+        }
         const tokenPrefix = component === 'cascader' ? 'cascader-item' : component === 'auto-complete' ? 'auto-complete-option' : 'select-popup-option'
         const color = expand(styles.color)
         if (disabled) {
@@ -56,13 +68,15 @@ for (const component of ['select', 'auto-complete', 'cascader']) {
 }
 console.log(`Selection option styles passed: ${states} direct/editor states; selected text minimum contrast ${minimum.toFixed(3)}:1.`)
 
-await auditThemes('tree-select', ({ prefix: p, document, tag, variables, cascade, expand }) => {
+await auditThemes('tree-select', ({ prefix: p, brand, document, tag, variables, cascade, expand }) => {
   for (const hover of [false, true]) {
     const popup = document.createElement('div')
     popup.className = `${p}-tree-select-popup`
     popup.innerHTML = `<div class="${p}-tree"><div class="${p}-tree-node ${p}-tree-node-selected"><span class="${p}-tree-node-title${hover ? ' audit-hover' : ''}">Selected</span></div></div>`
     tag.append(popup)
     const title = popup.querySelector(`.${p}-tree-node-title`)
+    const node = popup.querySelector(`.${p}-tree-node`)
+    assert.equal(expand(cascade(node)['border-radius']), brand === 'default' ? '0' : expand(variables[`--${p}-sys-radius-lg`]), 'TreeSelect option radius matches the theme')
     assert.equal(expand(cascade(title).color), expand(variables[`--${p}-sys-color-action-primary`]), 'TreeSelect selected text matches the primary button, including hover')
     popup.remove()
   }

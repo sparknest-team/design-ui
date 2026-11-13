@@ -1446,6 +1446,39 @@
       ]
     }
   ],
+  "input-tag": [
+    {
+      "title": "基础示例",
+      "en": "Basic examples",
+      "cases": [
+        "basic"
+      ]
+    },
+    {
+      "title": "外观与状态",
+      "en": "Appearance and states",
+      "cases": [
+        "appearance-state-comparison"
+      ]
+    },
+    {
+      "title": "内容与展示",
+      "en": "Content and presentation",
+      "cases": [
+        "max"
+      ]
+    },
+    {
+      "title": "加载与等待",
+      "en": "Loading and waiting",
+      "cases": [
+        "loading",
+        "link-title",
+        "fallback-option",
+        "async-fallback-restore"
+      ]
+    }
+  ],
   "input": [
     {
       "title": "基础示例",
@@ -1679,6 +1712,46 @@
       "en": "Basic examples",
       "cases": [
         "basic"
+      ]
+    }
+  ],
+  "mention": [
+    {
+      "title": "基础示例",
+      "en": "Basic examples",
+      "cases": [
+        "basic",
+        "atomic-mention"
+      ]
+    },
+    {
+      "title": "数据与选项",
+      "en": "Data and options",
+      "cases": [
+        "search-options",
+        "async-read-pretty",
+        "async-fallback-restore"
+      ]
+    },
+    {
+      "title": "自定义与插槽",
+      "en": "Customization and slots",
+      "cases": [
+        "prefix"
+      ]
+    },
+    {
+      "title": "生命周期与边界",
+      "en": "Lifecycle and edge cases",
+      "cases": [
+        "mirror-lifecycle"
+      ]
+    },
+    {
+      "title": "加载与等待",
+      "en": "Loading and waiting",
+      "cases": [
+        "loading"
       ]
     }
   ],

@@ -17,7 +17,7 @@ function componentSource({ classPrefix, runtimeName, svg }) {
 }
 
 function componentIndex({ componentName, fileName }) {
-  return `import type { App } from 'vue'\nimport _${componentName} from './${fileName}.vue'\n\nexport const ${componentName} = Object.assign(_${componentName}, {\n  install(app: App) { app.component(_${componentName}.name, _${componentName}) },\n})\n`
+  return `import type { App } from 'vue'\nimport type { IconComponent } from '../_utils/icon-component'\nimport _${componentName} from './${fileName}.vue'\n\nexport const ${componentName}: IconComponent = Object.assign(_${componentName}, {\n  install(app: App) { app.component(_${componentName}.name, _${componentName}) },\n})\n`
 }
 
 export async function generateVueIcons({
@@ -29,6 +29,33 @@ export async function generateVueIcons({
   check = false,
 }) {
   const expected = new Map()
+  expected.set('_utils/icon-component.ts', `import type { AllowedComponentProps, App, ComponentCustomProps, ComponentOptionsMixin, DefineComponent, VNodeProps } from 'vue'
+
+export interface IconProps {
+  size?: string | number
+  color?: string
+  title?: string
+  strokeWidth?: number
+  strokeLinecap?: 'butt' | 'round' | 'square'
+  strokeLinejoin?: 'bevel' | 'inherit' | 'miter' | 'round'
+  rotate?: number
+  spin?: boolean
+}
+
+type IconEmits = { click: (event: MouseEvent) => any }
+type IconDefaults = {
+  strokeWidth: number
+  strokeLinecap: NonNullable<IconProps['strokeLinecap']>
+  strokeLinejoin: NonNullable<IconProps['strokeLinejoin']>
+}
+
+export type IconComponent = DefineComponent<
+  IconProps, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, IconEmits, string,
+  VNodeProps & AllowedComponentProps & ComponentCustomProps,
+  Readonly<IconProps> & Readonly<{ onClick?: (event: MouseEvent) => any }>,
+  IconDefaults
+> & { install(app: App): void }
+`)
   expected.set('../style.css', `svg.${classPrefix}--spin {
   animation: ${classPrefix}-spin var(--${classPrefix.replace(/-svg-icon$/, '')}-icon-spin-duration, 1s) infinite linear;
 }
@@ -84,7 +111,7 @@ export async function generateVueIcons({
     expected.set(`${fileName}/index.ts`, componentIndex({ componentName, fileName }))
   }
 
-  expected.set('index.ts', `export const iconNames = ${JSON.stringify(icons.map(({ fileName }) => fileName.slice(5)))} as const\n${icons.map(({ fileName, componentName }) => `export { ${componentName} } from './${fileName}'`).join('\n')}\n`)
+  expected.set('index.ts', `export type { IconComponent, IconProps } from './_utils/icon-component'\nexport const iconNames = ${JSON.stringify(icons.map(({ fileName }) => fileName.slice(5)))} as const\n${icons.map(({ fileName, componentName }) => `export { ${componentName} } from './${fileName}'`).join('\n')}\n`)
   expected.set('icons.json', `${JSON.stringify(icons, null, 2)}\n`)
   const stale = []
   for (const [target, content] of expected) {

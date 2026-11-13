@@ -910,11 +910,11 @@ Token 重命名必须同步源码、主题、文档和测试，并生成迁移�
 | `surface-muted` | `color-fill-1` | filled 默认态或弱化填充；不是禁用态的统称。 |
 | `content-primary` | `color-text-1` | 标题、主要正文及普通表面上的主要图标。 |
 | `content-secondary` | `color-text-2` | 辅助文字、次要操作与 Divider 标签。 |
-| `content-brand` | `primary-9`，经 `rgb(var(...))` 转换 | 普通中性表面上的品牌文字、图标及同色描边；区别于主内容层级 `content-primary` 和填充强调色 `action-primary`。 |
-| `content-info` | `blue-8`，经 `rgb(var(...))` 转换 | 普通中性表面上的信息文字、图标及同色描边。 |
-| `content-success` | `success-9`，经 `rgb(var(...))` 转换 | 普通中性表面上的成功文字、图标及同色描边。 |
-| `content-warning` | `warning-8`，经 `rgb(var(...))` 转换 | 普通中性表面上的警告文字、图标及同色描边。 |
-| `content-danger` | `danger-8`，经 `rgb(var(...))` 转换 | 普通中性表面上的危险文字、图标及同色描边。 |
+| `content-brand` | `sys-color-action-primary` | 品牌文字、图标及同色描边，默认与主操作填充色一致；普通正文使用 `content-primary`。 |
+| `content-info` | `sys-color-status-info` | 普通中性表面上的信息文字、图标及同色描边。 |
+| `content-success` | `sys-color-status-success` | 普通中性表面上的成功文字、图标及同色描边。 |
+| `content-warning` | `sys-color-status-warning` | 普通中性表面上的警告文字、图标及同色描边。 |
+| `content-danger` | `sys-color-status-danger` | 普通中性表面上的危险文字、图标及同色描边。 |
 | `content-tertiary` | `color-text-3` | 占位、低强调说明；必要时检查文字对比度。 |
 | `content-decorative` | `color-text-4` | 空状态等非文字装饰图形；不可用于需要阅读的文字。 |
 | `content-disabled` | `color-text-disabled` | 真正不可交互的内容；不能拿来表示装饰。 |
