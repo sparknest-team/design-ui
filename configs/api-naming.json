@@ -1146,6 +1146,38 @@
         "before",
         "after"
       ]
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/timeline/Item.vue",
+      "owner": "defineComponent.props",
+      "name": "contentPlacement",
+      "meaning": "正文相对时间轴主线和节点的方位",
+      "values": [
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/timeline/props.ts",
+      "owner": "timelineProps",
+      "name": "orientation",
+      "meaning": "时间轴主线的横纵轴向",
+      "values": [
+        "horizontal",
+        "vertical"
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/timeline/props.ts",
+      "owner": "timelineProps",
+      "name": "labelPosition",
+      "meaning": "时间轴标签与正文位于相同区域或相对区域",
+      "values": [
+        "relative",
+        "same"
+      ]
     }
   ]
 }
