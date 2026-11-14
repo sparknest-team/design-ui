@@ -21,16 +21,16 @@ const { direction, toggle } = useDocsDirection()
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 64px;
-  min-height: 40px;
+  min-width: 48px;
+  min-height: 32px;
   padding: 0 8px;
   margin-inline: 4px;
   color: inherit;
   background: transparent;
-  border: 1px solid currentColor;
-  border-radius: 6px;
+  border: 0;
+  border-radius: 4px;
   font: inherit;
-  font-size: 13px;
+  font-size: 12px;
   white-space: nowrap;
   cursor: pointer;
 }
