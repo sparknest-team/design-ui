@@ -22,16 +22,23 @@ export function documentationPages(root, library) {
   for (const document of documents.sort()) {
     const directory = relative(src, library === 'cedar' ? dirname(document) : dirname(dirname(document)))
     const markdown = readFileSync(document, 'utf8').replace(/<!--[\s\S]*?-->/g, '')
-    const route = library === 'cedar' ? /^permalink:\s*(\/components\/\S+)/m.exec(markdown)?.[1] : `/#/zh-CN/${directory}`
+    const themeAlias = directory === 'theme-provider' && markdown.includes(library === 'cedar' ? '](/themes/)' : '](#/zh-CN/themes)')
+    const demoDocument = themeAlias
+      ? resolve(src, library === 'cedar' ? 'themes/README.md' : 'themes/docs/zh-CN.md')
+      : document
+    const demoMarkdown = themeAlias ? readFileSync(demoDocument, 'utf8').replace(/<!--[\s\S]*?-->/g, '') : markdown
+    const route = themeAlias
+      ? library === 'cedar' ? '/themes/' : '/#/zh-CN/themes'
+      : library === 'cedar' ? /^permalink:\s*(\/components\/\S+)/m.exec(markdown)?.[1] : `/#/zh-CN/${directory}`
     if (!route) continue
     const guide = (library === 'cedar' ? cedarGuides : mapleGuides).includes(directory)
-    const component = guide ? directory : library === 'cedar' ? basename(route.replace(/\/$/, '')) : directory
-    const references = [...markdown.matchAll(library === 'cedar'
+    const component = themeAlias ? directory : guide ? directory : library === 'cedar' ? basename(route.replace(/\/$/, '')) : directory
+    const references = [...demoMarkdown.matchAll(library === 'cedar'
       ? /^[ \t]{0,3}<demo\b[^>]*\bsrc="([^"]+\.vue)"/gm
       : /```demo\s*\n([^\n]+\.vue)\s*\n```|<demo\b[^>]*\bsrc="([^"]+\.vue)"/g)]
     assert.ok(guide || references.length, `${library}/${component}: component documentation must have a runnable demo`)
     const demos = references.map((match) => {
-      const file = resolve(dirname(document), (match[1] ?? match[2]).trim())
+      const file = resolve(dirname(demoDocument), (match[1] ?? match[2]).trim())
       return { file, name: basename(file), source: readFileSync(file, 'utf8') }
     })
     // The Maple compiler mounts example/index.vue when a guide has no explicit

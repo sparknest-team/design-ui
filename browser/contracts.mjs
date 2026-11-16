@@ -41,6 +41,7 @@ const presentation = {
 
 const overrides = {
   cedar: {
+    'theme-provider': { demo: 'basic.vue' },
     paper: { kind: 'interaction', action: 'paper', demo: 'live-properties.vue' },
     'field-decorator': { root: 'field-decorator', minimum: 5 },
     'date-picker': { demo: 'entry-boundary.vue' },
@@ -50,6 +51,7 @@ const overrides = {
     'nav-menu': { demo: 'basic.vue' }, tag: { demo: 'closable.vue' },
   },
   maple: {
+    'theme-provider': { demo: 'basic.vue' },
     picker: { demo: 'disabled.vue' },
     alert: { demo: 'dismiss-comparison.vue' },
     'nav-menu': { demo: 'basic.vue', action: 'nav-menu-filter' },

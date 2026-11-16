@@ -8,7 +8,7 @@ const root = fileURLToPath(new URL('../../', import.meta.url))
 // Use real Teleport, not a stub. These DOM/lifecycle checks are deliberately
 // separate from browser computed styles, iframe focus and responsive layout.
 for (const [repo, pkg, config, workerArgs] of [
-  ['cedar-design-web', 'ui', 'vitest.choice-validation.config.ts', []],
+  ['cedar-design-web', 'ui', 'vitest.choice-validation.config.mts', []],
   ['maple-design-mobile', 'ui', '../cli/lib/node/config/vitest.config.js', ['--maxWorkers=1', '--minWorkers=1']],
 ]) {
   const cwd = resolve(root, repo, 'packages', pkg)

@@ -135,12 +135,22 @@ for (const [repo, pkg, prefix] of [['cedar-design-web', 'ui', 'c'], ['maple-desi
       ['--c-nav-menu-panel-width', 'nav-menu/item.tsx', ["width: 'var(--c-nav-menu-panel-width)'", "props.popupLayout === 'full-height'", 'props.popupStyle']],
       ['--c-scheduler-editor-width', 'scheduler/components/SchedulerEditor.vue', ['<CDrawer', 'width="var(--c-scheduler-editor-width)"']],
       ['--c-scheduler-virtual-height', 'scheduler/components/SchedulerTimelineRows.vue', [':height="options.height ??', "'var(--c-scheduler-virtual-height)'"]],
+      ['--c-table-empty-image-size', 'table/table.tsx', ['<Empty imageSize={compact ?', '"var(--c-table-empty-image-size)"', 'renderEmptyContent(true)'], ['width', 'height', 'font-size'], [
+        ['empty/Empty.vue', [':style="imageStyle"', 'return { width: size, height: size, fontSize: size }']],
+      ]],
     ];
     row.reviewedRuntimeReferences = {};
-    for (const [name, path, expressions] of reviewedRuntime) {
+    for (const [name, path, expressions, properties = [], dependencies = []] of reviewedRuntime) {
       const source = runtimeSources.find(([file]) => file === path)?.[1];
-      if (row.literalRuntimeReferences[name]?.includes(path) && expressions.every(expression => source.includes(expression))) {
+      const dependenciesMatch = dependencies.every(([path, expressions]) => {
+        const source = runtimeSources.find(([file]) => file === path)?.[1];
+        return source && expressions.every(expression => source.includes(expression));
+      });
+      if (row.literalRuntimeReferences[name]?.includes(path) && expressions.every(expression => source.includes(expression)) && dependenciesMatch) {
         row.reviewedRuntimeReferences[name] = [path];
+        const consumers = consumerProperties.get(name) ?? new Set();
+        properties.forEach(property => consumers.add(property));
+        consumerProperties.set(name, consumers);
       }
     }
     // Reviewed finite expansion: both Space implementations render these values

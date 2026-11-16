@@ -10,7 +10,9 @@ import { build } from 'vite'
 import { collectModuleEntries } from './module-entries.mjs'
 import { libraryDefines } from './environment.mjs'
 import { browserTargets } from './browser-targets.mjs'
+import { downlevelVueDeclarations } from './vue-declarations.mjs'
 export { browserTargets } from './browser-targets.mjs'
+export { downlevelVueDeclarations } from './vue-declarations.mjs'
 
 export function defineConfig(config) {
   return config
@@ -412,6 +414,9 @@ export async function buildLibrary(userConfig) {
   await compileStyles({ ...config, outputs: ['es', 'lib', 'umd'] })
   if (config.emitTypes !== false) {
     await run('vue-tsc', ['-p', config.tsconfig], config.root)
+    if (existsSync(resolve(config.root, '../../node_modules/vue-compat-min/package.json'))) {
+      downlevelVueDeclarations(config.root, 'types', createRequire(resolve(config.root, 'package.json'))('typescript'))
+    }
   }
 
   await assertOutputs(config)

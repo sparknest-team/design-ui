@@ -13,7 +13,7 @@ Cedar / Maple 的库构建都使用 `@sparknest/ui-build-vue`。源码同源、�
 
 ## CI 工具链与检查入口
 
-- 当前两端 Quality job 统一 Node 20 / pnpm 9.6.0。`ci-toolchain-check.mjs` 检查主 Node、pnpm 版本和 pnpm 子进程 Node；不能只在入口指定 Corepack，却让 Volta 或全局 pnpm 接管嵌套命令。
+- Cedar Quality / Release 使用 `.nvmrc` 固定的 Node 26.13.1（与 `.node-version`、Volta、`.npmrc` 的 pnpm 运行时一致），Maple Quality 使用 Node 20；两端 pnpm 均为 9.6.0。`ci-toolchain-check.mjs` 检查主 Node、pnpm 版本和 pnpm 子进程 Node；不能只在入口指定 Corepack，却让 Volta 或全局 pnpm 接管嵌套命令。
 - design-ui 自己按其 packageManager 安装；这不改变 Cedar / Maple job 的包管理器契约。
 - 工作区为同级的 cedar-design-web、maple-design-mobile、design-ui；link 依赖、横向契约与 CI checkout 布局必须一致，三仓均 frozen 安装。
 - 同一工作区内，同一个库的发布构建必须串行执行；需要并行时使用隔离的工作目录和产物目录。构建会清理旧产物，不能在另一个构建尚未结束时用同目录的缺失文件判定源码错误，也不能接受被重叠构建覆盖后的验收结果。
@@ -44,7 +44,7 @@ Cedar / Maple 的库构建都使用 `@sparknest/ui-build-vue`。源码同源、�
 
 ## 面向 LLM 的文档产物
 
-Cedar 与 Maple 的文档菜单都提供「LLM 文档」入口（中英文）。两端包内 `pnpm docs:llms` 调用共享生成器 `design-ui/bin/llms-docs.mjs`，输出 `llms.txt`、`llms-full.txt` 与 `llms/<locale>/**/*.md` 到各自静态资源目录；两端 `build:doc` 都先重新生成。Cedar 的 `dev` 不自动生成，本地预览最新文本文件时在 UI 包内手动运行 `pnpm docs:llms`；Maple 的 `dev` 仍先重新生成。生成文件不提交，随站点构建发布，适用于站点子路径部署。
+Cedar 与 Maple 的文档菜单都提供「LLM 文档」入口（中英文）。两端包内 `pnpm docs:llms` 调用共享生成器 `design-ui/bin/llms-docs.mjs`，输出 `llms.txt`、`llms-full.txt` 与 `llms/<locale>/**/*.md` 到各自静态资源目录；两端仅在 `build:doc` 时自动重新生成，`dev` 启动时不生成。本地预览最新文本文件时，可在 UI 包内手动运行 `pnpm docs:llms`。生成文件不提交，随站点构建发布，适用于站点子路径部署。
 
 索引按语言列出当前公共文档，不伪造英文翻译；全文保留 API 表格并展开真实 Demo 源码，代码围栏中的演示语法保持字面值。组件和指南的本地文档链接转换为对应 Markdown 链接；示例代码中的模块导入仍以标注的源码路径为基准。缺失或越界的 Demo 引用必须使生成失败，删除文档后不得残留旧单页文件。全文较大，使用说明应优先引导索引和单页读取。
 
@@ -53,3 +53,15 @@ Cedar 与 Maple 的文档菜单都提供「LLM 文档」入口（中英文）。
 ## 浏览器兼容性
 
 两端 `quality` 追加完整三引擎 `check:compatibility`，CI 安装 Chromium、Firefox、WebKit 并归档独立证据。原有 Chromium 门禁不减少。构建目标、Maple 移动端及原生发布证据遵循 [浏览器兼容性与验收](./browser-compatibility.md)。
+
+## Vue 开发版本与消费兼容性
+
+- Cedar / Maple 开发环境使用 npm `latest` 的稳定 Vue（本次为 3.5.45），catalog 精确固定；`vue`、`@vue/compiler-sfc`、`@vue/runtime-core` 和 SSR renderer 保持同版本。升级通过更新 catalog、current 消费夹具和锁文件完成，不使用浮动 `latest`。
+- 发布 UI、icons、use 的 peer 范围统一为 `^3.2.47`，Vue 保持外部依赖。最低版本为 3.2 系列最后的补丁版，3.2.0 的原始声明与当前 TypeScript 存在上游错误，不将其列为受支持类型环境。
+- 允许能编译成兼容产物的新语法，例如 `defineOptions`、响应式 Props 解构和类型宏。不能假定所有宏都会完全消失；`defineModel`、新版运行时 API 和 `watch` 的 `once` / 数值 `deep`、单参数 `toRef` 与 computed previous-value getter 由源码门禁拒绝。静态规则不能穷尽所有版本行为差异；新增运行时行为需补实际消费回归。
+- 组件生成 ID 统一通过 UI 的 `vue-compat` 辅助函数。3.5+ 使用原生 `useId`；旧版使用独立 app 计数器。SSR 每请求创建独立 app，客户端使用相同组件树和 setup 次序；异步树的特殊 ID / hydration 行为需要单独测试。
+- 新版工具生成的声明通过共享 `vue-declarations.mjs` 降级到真实 3.2.47 声明的泛型形状，并保留显式插槽类型；未知 Vue 类型必须报错，不用 `any` 或 `skipLibCheck` 掩盖不兼容。测试验证必填 Props、无效 Props、Ref 和插槽参数类型。
+- 独立使用共享构建工具时，若项目未提供 `vue-compat-min`，声明转换使用构建工具内固定的 Vue 3.2.0 基线，不依赖组件库工作区；工作区显式配置的最低版本基线优先。该基线仅用于生成类型，不替代消费端 Vue，也不消除 Vue 3.2.0 自身在部分 TypeScript 版本下的声明错误。
+- 根目录 `pnpm check:vue-compat:source` 进行源码 API、peer 范围和开发 runtime/compiler 一致性检查。`pnpm build:lib` 后运行 `pnpm check:vue-compat`，对 `pnpm pack` 的 shared/use/icons/ui 发布内容扫描 ESM/CJS API，并在独立进程中消费 3.2.47、3.3.13、3.4.38、3.5.45。
+- 每个矩阵单元执行完整导出入口加载、代表性 Button/Input/Switch 的 SSR、客户端点击与双向绑定、重复 SSR 与 hydration，以及 `skipLibCheck: false` 的发布类型检查。它不等于所有组件和所有交互都经过旧运行时验证。
+- 两边 `quality` 在库构建前运行源码门禁、构建后运行完整消费门禁，CI 复用 quality。release 在构建前后执行相同 Vue 检查，失败时不能发布；原有浏览器兼容性门禁保留。

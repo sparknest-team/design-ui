@@ -16,10 +16,19 @@ for (const repo of repositories) {
       assert.match(workflow, new RegExp(`path: ${directory}\\s`), `${directory} must be a sibling checkout`)
     }
     assert.match(workflow, new RegExp(`working-directory: ${repo}\\s`))
-    assert.match(workflow, /node-version: 20\s/)
+    if (repo === 'cedar-design-web') {
+      assert.match(workflow, /node-version-file: cedar-design-web\/\.nvmrc\s/)
+      const version = readFileSync(resolve(root, '.nvmrc'), 'utf8').trim()
+      assert.equal(version, '26.13.1')
+      assert.equal(readFileSync(resolve(root, '.node-version'), 'utf8').trim(), version)
+      const manifest = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8'))
+      assert.equal(manifest.volta.node, version)
+      assert.equal(manifest.engines.node, `>=${version}`)
+      assert.ok(readFileSync(resolve(root, '.npmrc'), 'utf8').split('\n').includes(`use-node-version=${version}`))
+    } else assert.match(workflow, /node-version: 20\s/)
     assert.match(workflow, /version: 9\.6\.0\s/)
     assert.equal((workflow.match(/install --frozen-lockfile/g) ?? []).length, 3)
-    assert.match(workflow, /corepack pnpm install --frozen-lockfile\s+working-directory: design-ui/)
+    assert.match(workflow, repo === 'cedar-design-web' ? /npm exec --yes --package=.*packageManager\.split.* -- pnpm install --frozen-lockfile\s+working-directory: design-ui/ : /corepack pnpm install --frozen-lockfile\s+working-directory: design-ui/)
     assert.match(workflow, /- run: pnpm quality\s/)
     assert.match(workflow, /shared-source-contract\.test\.mjs/)
     assert.match(workflow, /ci-contract\.test\.mjs/)
@@ -29,9 +38,11 @@ for (const repo of repositories) {
     assert.match(workflow, /- run: node \.\.\/design-ui\/bin\/case-paths-check\.mjs/)
     assert.match(workflow, /case-paths-check\.test\.mjs/)
     assert.doesNotMatch(workflow, /continue-on-error|--no-frozen-lockfile|\|\| true/)
-    for (const gate of ['check:runtime-dependencies', 'check:shared', 'spec:check', 'check:style-vars', 'typecheck', 'test', 'check:cli', 'package:check', 'check:published-environment', 'check:doc-pipeline', 'check:docs-theme', 'check:docs-components', 'check:compatibility']) {
+    for (const gate of ['check:runtime-dependencies', 'check:shared', 'check:vue-compat:source', 'check:vue-compat', 'spec:check', 'check:style-vars', 'typecheck', 'test', 'check:cli', 'package:check', 'check:published-environment', 'check:doc-pipeline', 'check:docs-theme', 'check:docs-components', 'check:compatibility']) {
       assert.ok(scripts.quality.split(' && ').includes(`pnpm ${gate}`), `${gate} must run in quality`)
     }
+    assert.ok(scripts.quality.indexOf('pnpm check:vue-compat:source') < scripts.quality.indexOf('pnpm build:lib'))
+    assert.ok(scripts.quality.indexOf('pnpm build:lib') < scripts.quality.indexOf('pnpm check:vue-compat &&'))
     assert.match(workflow, /- run: pnpm exec playwright install --with-deps chromium firefox webkit/)
     assert.ok(workflow.indexOf('playwright install --with-deps chromium') < workflow.indexOf('- run: pnpm quality'))
     assert.ok(scripts.quality.indexOf('pnpm build:doc') < scripts.quality.indexOf('pnpm check:docs-theme'))

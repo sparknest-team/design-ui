@@ -529,7 +529,6 @@ it("does not edit callback arguments as nested configuration or mutate the origi
   wrapper.unmount();
 });
 
-import ReviewSuite from "../src/ReviewSuite.vue";
 import { ref as vueRef } from "vue";
 it("resets the authored fixture owner as well as its controlled preview value", async () => {
   const Fixture = defineComponent({

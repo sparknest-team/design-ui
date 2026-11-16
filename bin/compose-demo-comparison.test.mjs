@@ -33,3 +33,14 @@ test('keeps scoped-slot variables and rejects global effects/macro components', 
   assert.throws(()=>composeDemoComparison([scene,{...scene,source:'<script setup>defineProps({})</script><template><div /></template>'}]), /macro/);
   assert.throws(()=>composeDemoComparison([scene,{...scene,source:'<template><div /></template><style>:root {color:red}</style>'}]), /global/);
 });
+
+test('Cedar comparisons read headings from the shared global dictionary', () => {
+  const scenes = ['size', 'line-type'].map(name => ({ name, title: '中文', en: 'English', file: name + '.vue', source: '<template><c-button>Sample</c-button></template>' }));
+  const output = composeDemoComparison(scenes, { localeImport: '../../__demos__/locale', localeScope: 'dividerLineAppearanceComparison' });
+  assert.match(output, /useComparisonLocale\("dividerLineAppearanceComparison"\)/);
+  assert.match(output, /demoCopy\["lineType"\]/);
+  assert.doesNotMatch(output, /span lang=|html.*\[lang|defineProps/);
+  const { descriptor } = parse(output);
+  const script = compileScript(descriptor, { id: 'localized-comparison' });
+  assert.deepEqual(compileTemplate({ source: descriptor.template.content, filename: 'localized.vue', id: 'localized', compilerOptions: { bindingMetadata: script.bindings } }).errors, []);
+});

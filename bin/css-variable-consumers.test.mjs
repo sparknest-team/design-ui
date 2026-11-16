@@ -59,6 +59,8 @@ test('every current declaration has CSS or reviewed runtime consumption', () => 
   const row = (name) => report.components.find((item) => item.platform === 'c' && item.component === name);
   assert.ok(row('switch').reviewedRuntimeReferences['--c-switch-shadow-color']);
   assert.ok(row('nav-menu').reviewedRuntimeReferences['--c-nav-menu-panel-width']);
+  assert.deepEqual(row('table').reviewedRuntimeReferences['--c-table-empty-image-size'], ['table/table.tsx']);
+  assert.deepEqual(row('table').tokens['--c-table-empty-image-size'].consumerProperties, ['font-size', 'height', 'width']);
   assert.ok(
     row('_components/field-presentation').dynamicRuntimeReferences['--c-field-presentation-editor-action-width'],
   );

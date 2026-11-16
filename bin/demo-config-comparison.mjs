@@ -9,7 +9,7 @@ function literal(node) {
   if (['StringLiteral','NumericLiteral','BooleanLiteral'].includes(node.type)) return node.value;
   throw new Error(`Comparison options must be literal values: ${node.type}`);
 }
-export function enhanceConfigurationComparison(source) {
+export function enhanceConfigurationComparison(source, { localeImport = '../../__demos__/locale' } = {}) {
   if (source.includes('demo-config-comparison')) return source;
   if (!source.includes('__demoAppearance') && /const appearance\s*=/.test(source)) source = source.replace(/\bappearance\b/g, '__demoAppearance');
   const { descriptor } = parse(source);
@@ -40,7 +40,9 @@ export function enhanceConfigurationComparison(source) {
   const comparison = singleton
     ? `<${prefix}-space wrap><${prefix}-button v-for="sample in demoComparedOptions" :key="String(sample)" @click="${presetAction}">{{ demoCompareAxis }}={{ sample }}</${prefix}-button></${prefix}-space>\n${target.loc.source}`
     : `<div class="demo-config-comparison">\n<section v-for="sample in demoComparedOptions" :key="String(sample)">\n<p><code>{{ demoCompareAxis }}={{ sample }}</code></p>\n${target.loc.source.replace('v-bind="__demoAppearance"','v-bind="{ ...__demoAppearance, [demoCompareAxis]: sample }"')}\n</section>\n</div>`;
-  const block = `<p class="demo-config-comparison-hint"><span lang="zh-CN">选择一个对比维度；其他配置和内容保持一致。输入类示例共享同一个值，便于比较外观。</span><span lang="en-US">Compare one dimension while keeping the other settings and content identical. Input specimens share the same value.</span></p>\n<${prefix}-radio-group v-model="demoCompareAxis" aria-label="Compare configuration" :options="demoCompareFields.map(field => ({ label: field.name, value: field.name }))" />\n${comparison}`;
+  const hint = prefix === 'c' ? '{{ demoCopy.hint }}' : '<span lang="zh-CN">选择一个对比维度；其他配置和内容保持一致。输入类示例共享同一个值，便于比较外观。</span><span lang="en-US">Compare one dimension while keeping the other settings and content identical. Input specimens share the same value.</span>';
+  const label = prefix === 'c' ? ':aria-label="demoCopy.configuration"' : 'aria-label="Compare configuration"';
+  const block = `<p class="demo-config-comparison-hint">${hint}</p>\n<${prefix}-radio-group v-model="demoCompareAxis" ${label} :options="demoCompareFields.map(field => ({ label: field.name, value: field.name }))" />\n${comparison}`;
   const start = descriptor.template.loc.start.offset + target.loc.start.offset;
   const end = descriptor.template.loc.start.offset + target.loc.end.offset;
   source = source.slice(0, start) + block + source.slice(end);
@@ -48,7 +50,7 @@ export function enhanceConfigurationComparison(source) {
     const control = `<${prefix}-form-item label="elevation"><${prefix}-radio-group v-model="__demoAppearance['elevation']" aria-label="elevation" :options="[{ label: '0', value: 0 }, { label: '2', value: 2 }, { label: '6', value: 6 }]" /></${prefix}-form-item>`;
     source = source.replace(`</${prefix}-form>`, control + `</${prefix}-form>`);
   }
-  const script = `\nimport { computed as demoComputed, ref as demoRef } from 'vue'\n${shadow ? "__demoAppearance['elevation'] = 2" : ''}\nconst demoCompareFields = ${JSON.stringify(fields)}\nconst demoCompareAxis = demoRef(${JSON.stringify(fields[0].name)})\nconst demoComparedOptions = demoComputed(() => demoCompareFields.find(field => field.name === demoCompareAxis.value)?.values ?? [])\n`;
+  const script = `\n${prefix === 'c' ? `import { useDemoLocale } from ${JSON.stringify(localeImport)}\nconst demoCopy = useDemoLocale('comparison')` : ''}\nimport { computed as demoComputed, ref as demoRef } from 'vue'\n${shadow ? "__demoAppearance['elevation'] = 2" : ''}\nconst demoCompareFields = ${JSON.stringify(fields)}\nconst demoCompareAxis = demoRef(${JSON.stringify(fields[0].name)})\nconst demoComparedOptions = demoComputed(() => demoCompareFields.find(field => field.name === demoCompareAxis.value)?.values ?? [])\n`;
   source = source.slice(0, descriptor.scriptSetup.loc.end.offset) + script + source.slice(descriptor.scriptSetup.loc.end.offset);
-  return source + `\n<style scoped>\n.demo-config-comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 20px; min-width: 0; max-width: 100%; }\n.demo-config-comparison > section { min-width: 0; }\n.demo-config-comparison p { margin: 0 0 8px; }\nhtml:not([lang='en-US']) .demo-config-comparison-hint > [lang='en-US'],\nhtml[lang='en-US'] .demo-config-comparison-hint > [lang='zh-CN'] { display: none; }\n</style>\n`;
+  return source + `\n<style scoped>\n.demo-config-comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 20px; min-width: 0; max-width: 100%; }\n.demo-config-comparison > section { min-width: 0; }\n.demo-config-comparison p { margin: 0 0 8px; }\n${prefix === 'c' ? '' : "html:not([lang='en-US']) .demo-config-comparison-hint > [lang='en-US'],\nhtml[lang='en-US'] .demo-config-comparison-hint > [lang='zh-CN'] { display: none; }\n"}</style>\n`;
 }

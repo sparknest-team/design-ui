@@ -32,7 +32,7 @@ test('Checkbox mark-color is shared by name and preserves both existing platform
   assert.equal(contract.componentTokenValues.checkbox['mark-color'], undefined);
   for (const [platform, repository, prefix, role] of [
     ['cedar', 'cedar-design-web', 'c', 'surface-default'],
-    ['maple', 'maple-design-mobile', 'mp', 'content-on-bright'],
+    ['maple', 'maple-design-mobile', 'mp', 'content-on-dark'],
   ]) {
     const expected = `var(--PREFIX-sys-color-${role})`;
     const source = readFileSync(new URL(`../../../../${repository}/packages/ui/src/checkbox/style/token.less`, import.meta.url), 'utf8');
@@ -59,4 +59,30 @@ test('Switch checked text has a public contract without changing platform foregr
     const style = readFileSync(new URL(`switch/style/${platform === 'maple' ? 'switch' : 'index'}.less`, root), 'utf8');
     assert.match(style, new RegExp(`&--checked &__text\\s*\\{[^}]*color: var\\(--${prefix}-switch-checked-text-color\\)`));
   }
+});
+
+
+test('FormSection registers consumed tokens with shared semantic colors and specified spacing', () => {
+  const names = contract.tokens.components.form.filter((name) => name.startsWith('section-'));
+  assert.ok(names.length > 0);
+  for (const [repository, prefix] of [['cedar-design-web', 'c'], ['maple-design-mobile', 'mp']]) {
+    const root = new URL(`../../../../${repository}/packages/ui/src/form/style/`, import.meta.url);
+    const tokens = readFileSync(new URL('token.less', root), 'utf8');
+    const style = readFileSync(new URL('section.less', root), 'utf8');
+    for (const name of names) {
+      const value = tokens.match(new RegExp(`--${prefix}-form-${name}:\\s*([^;]+);`))?.[1];
+      assert.ok(value, `${repository}: missing ${name}`);
+      assert.equal(normalizeTokenValue(value, prefix), contract.componentTokenValues.form[name]);
+      assert.ok(style.includes(`var(--${prefix}-form-${name})`), `${repository}: ${name} must affect section styling`);
+    }
+  }
+  for (const [name, expected] of Object.entries({
+    'section-before-gap': '32px',
+    'section-header-gap': '20px',
+    'section-end-divider-gap': '24px',
+    'section-after-gap': '24px',
+    'section-accent-color': 'var(--PREFIX-sys-color-action-primary)',
+    'section-title-color': 'var(--PREFIX-sys-color-content-primary)',
+    'section-description-color': 'var(--PREFIX-sys-color-content-secondary)',
+  })) assert.equal(contract.componentTokenValues.form[name], expected);
 });

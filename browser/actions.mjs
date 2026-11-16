@@ -352,9 +352,9 @@ export async function exercise({ page, demo, component, library, contract, demos
       break
     }
     case 'theme-provider': {
-      const paragraph = demo.getByText('局部颜色 / Local color', { exact: true })
+      const paragraph = demo.getByText(library === 'cedar' ? '局部颜色' : '局部颜色 / Local color', { exact: true })
       const before = await paragraph.evaluate((element) => getComputedStyle(element).color)
-      const nested = demo.getByText('嵌套覆盖 / Nested override', { exact: true })
+      const nested = demo.getByText(library === 'cedar' ? '嵌套覆盖' : '嵌套覆盖 / Nested override', { exact: true })
       const nestedColor = await nested.evaluate((element) => getComputedStyle(element).color)
       await demo.getByRole('button').first().click()
       assert.notEqual(await paragraph.evaluate((element) => getComputedStyle(element).color), before)

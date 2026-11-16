@@ -123,6 +123,21 @@ for (const [library, repo, minimum] of [['cedar', 'cedar-design-web', 97], ['map
   })
 }
 
+test('ThemeProvider contracts use the canonical themes page and its real basic demo', () => {
+  for (const [library, repo, route] of [
+    ['cedar', 'cedar-design-web', '/themes/'],
+    ['maple', 'maple-design-mobile', '/#/zh-CN/themes'],
+  ]) {
+    const page = componentPages(resolve(workspace, repo), library).find((item) => item.component === 'theme-provider')
+    assert.ok(page)
+    assert.equal(page.route, route)
+    const demo = page.demos[demoIndex(page, contractFor(library, page.component).demo)]
+    assert.ok(demo.file.includes('/theme-provider/'))
+    assert.equal(demo.name, 'basic.vue')
+    if (library === 'maple') assert.ok(mobileSection(page, demo))
+  }
+})
+
 test('all source syntaxes and every Maple guide remain accounted for', () => {
   const root = resolve(workspace, 'maple-design-mobile')
   const pages = componentPages(root, 'maple')

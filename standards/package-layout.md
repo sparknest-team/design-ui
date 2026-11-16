@@ -23,6 +23,10 @@ Vue 和 React 独立维护源码、CSS、token、hooks、工具函数、构建�
 | 仓库 | 相对目录 | 包名 | 私有 |
 | --- | --- | --- | --- |
 | cedar-design-web | `.` | `@cedar-design/workspace-vue` | 是 |
+| cedar-design-web | `tests/vue-compat/minimum` | `@cedar-design/vue-compat-minimum-vue` | 是 |
+| cedar-design-web | `tests/vue-compat/3-3` | `@cedar-design/vue-compat-3-3-vue` | 是 |
+| cedar-design-web | `tests/vue-compat/3-4` | `@cedar-design/vue-compat-3-4-vue` | 是 |
+| cedar-design-web | `tests/vue-compat/current` | `@cedar-design/vue-compat-current-vue` | 是 |
 | cedar-design-web | `packages/cli` | `@cedar-design/cli-vue` | 否 |
 | cedar-design-web | `packages/icons` | `@cedar-design/icons-vue` | 否 |
 | cedar-design-web | `packages/preset-tailwindcss` | `@cedar-design/preset-tailwindcss-vue` | 否 |
@@ -32,6 +36,10 @@ Vue 和 React 独立维护源码、CSS、token、hooks、工具函数、构建�
 | cedar-design-web | `packages/ui` | `@cedar-design/ui-vue` | 否 |
 | cedar-design-web | `packages/use` | `@cedar-design/use-vue` | 否 |
 | maple-design-mobile | `.` | `@maple-design/workspace-vue` | 是 |
+| maple-design-mobile | `tests/vue-compat/minimum` | `@maple-design/vue-compat-minimum-vue` | 是 |
+| maple-design-mobile | `tests/vue-compat/3-3` | `@maple-design/vue-compat-3-3-vue` | 是 |
+| maple-design-mobile | `tests/vue-compat/3-4` | `@maple-design/vue-compat-3-4-vue` | 是 |
+| maple-design-mobile | `tests/vue-compat/current` | `@maple-design/vue-compat-current-vue` | 是 |
 | maple-design-mobile | `packages/cli` | `@maple-design/cli-vue` | 否 |
 | maple-design-mobile | `packages/icons` | `@maple-design/icons-vue` | 否 |
 | maple-design-mobile | `packages/preset-tailwindcss` | `@maple-design/preset-tailwindcss-vue` | 否 |
@@ -79,10 +87,12 @@ React 本地安装顺序：先在同级 design-ui-react 运行 pnpm install，�
 
 ## 递归包检查（2026-11-11）
 
-六仓库的 check:packages 递归识别根包、packages/* 工作区包和两个明确登记的 Maple 项目模板。内部源码目录不允许额外 package.json；新增模板必须显式登记用途和名称。下载应用模板必须 private，不能泄漏 workspace/catalog 本地依赖。
+check:packages 按各仓库 pnpm-workspace.yaml 的 packages glob（含排除模式）递归识别根包、工作区包和两个明确登记的 Maple 项目模板。内部源码目录不允许额外 package.json；新增模板必须显式登记用途和名称。下载应用模板必须 private，不能泄漏 workspace/catalog 本地依赖。
 
 门禁同时检查重复包名、自依赖、缺失工作区依赖、npm alias 框架边界、本地 link/override 目标、CLI 入口及占位仓库链接；使用各仓库自己的 TypeScript 解析器读取真实导入、类型导入和动态导入，并拒绝脚本语法错误。注释、普通字符串和原始历史证据不作为运行时依赖。
 
 组件库模板必须同时提供 ui-build.config.mjs 和 tsconfig.declaration.json，生成项目的所有依赖字段都不能保留本地协议；运行时依赖与 types-generated 必须进入最终发布清单。
 
 Maple 的 check:cli 包含真实模板生成、SFC/TSX 与国际化开关四种组合的编译打包、公开入口解析回归，typecheck:playground 使用 vue-tsc 检查编辑器应用，两个入口都已接入 quality。固定工具类通过 @maple-design/ui-vue/utilities/style 导入；区域 JSON 与编辑器元数据分别使用公开的 json/*、highlight/* 子路径。
+
+Cedar / Maple 的 `tests/vue-compat/{minimum,3-3,3-4,current}` 是显式声明的私有工作区，用于不同 Vue 版本的真实消费验证。它们参加包名、重复名称、依赖与源码边界检查，必须 private；未声明或被排除的 fixture package.json 仍会失败。

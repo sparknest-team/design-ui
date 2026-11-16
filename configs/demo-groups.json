@@ -386,7 +386,8 @@
       "title": "布局与排列",
       "en": "Layout and arrangement",
       "cases": [
-        "image"
+        "image",
+        "nested-tabs"
       ]
     },
     {
@@ -1149,6 +1150,8 @@
         "layout",
         "decoration",
         "extra",
+        "section",
+        "section-actions",
         "label-width-comparison"
       ]
     },
@@ -1494,7 +1497,9 @@
       "title": "数据与选项",
       "en": "Data and options",
       "cases": [
-        "empty-value"
+        "empty-value",
+        "search-options",
+        "format-label"
       ]
     },
     {
@@ -3124,7 +3129,9 @@
         "format-model",
         "step",
         "bounds",
-        "no-confirm"
+        "no-confirm",
+        "disabled-parts",
+        "panel-behavior"
       ]
     },
     {

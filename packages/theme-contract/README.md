@@ -10,11 +10,11 @@ Cedar 与 Maple 的中立主题契约事实来源。
 - `systemTokenValues` 使用 `--PREFIX-` 作为中立占位符，登记跨端同义同值的颜色、间距、圆角、文字、动效与层级角色；其余显式平台默认共同覆盖所有 system 名称。
 - `componentTokenValues` 分批登记完成治理的公开组件 Token 默认值；未登记不表示允许漂移，而是尚待迁移。
 - `platformSystemTokenValues` 登记控件密度、浮层层级等有依据的平台差异；每个 system 名称必须在共享值或该端平台值中且只出现一次。
-- `platformComponentTokenValues` 按 cedar/maple 登记几何、密度及明确的平台语义默认差异；与共享 componentTokenValues 不得重叠。它不豁免名称、消费路径或主题检查。Checkbox 的 `mark-color` 是共享公开名称，但保留现有默认语义：Cedar 为 `surface-default`，Maple 为 `content-on-bright`，不通过统一登记来改变任一主题的实际配色。
+- `platformComponentTokenValues` 按 cedar/maple 登记几何、密度及明确的平台语义默认差异；与共享 componentTokenValues 不得重叠。它不豁免名称、消费路径或主题检查。Checkbox 的 `mark-color` 是共享公开名称，但保留现有默认语义：Cedar 为 `surface-default`，Maple 为 `content-on-dark`，不通过统一登记来改变任一主题的实际配色。
 - `schema/theme-contract.schema.json` 约束契约文件结构。
 - 两端检查器必须从本包读取契约，禁止各自维护组件白名单。
 - 公共组件 token 使用相同逻辑名；`c` 与 `mp` 只作为平台前缀。
-- Switch 的 `checked-text-color` 是公开选中态前景：Cedar 默认跟随 `switch-text-color`，Maple 默认使用 `content-on-bright`。主题通过公开 token 覆盖，不能直接覆盖 `internal` token；Maple 浅色主题迁移后仍使用原有 `content-on-dark`。
+- Switch 的 `checked-text-color` 是公开选中态前景：Cedar 与 Maple 默认均跟随各自的 `switch-text-color`。主题通过公开 token 覆盖，不能直接覆盖 `internal` token；Maple 浅色主题迁移后仍使用原有 `content-on-dark`。
 - 不允许兼容别名，品牌主题不得覆盖 `internal` token。
 
 新增或修改公共主题能力时，先修改本包契约，再同时修改 Cedar 与 Maple。

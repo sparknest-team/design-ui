@@ -30,7 +30,7 @@ export default {
       ).pathname,
       vitest: require
         .resolve("vitest/package.json")
-        .replace("package.json", "dist/index.mjs"),
+        .replace("package.json", "dist/index.js"),
       "@vue/test-utils": require.resolve("@vue/test-utils"),
       vue: require.resolve("vue"),
     },
@@ -38,6 +38,5 @@ export default {
   test: {
     include: ["test/review-panel.test.ts"],
     environment: "jsdom",
-    transformMode: { web: [/\.[jt]sx$/] },
   },
 };

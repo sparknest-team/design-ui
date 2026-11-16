@@ -66,7 +66,7 @@ function templateFor(source, names, scope) {
 const html = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 
 /** Inline source scenes with isolated setup state; never mount demo SFCs inside a wrapper. */
-export function composeDemoComparison(scenes) {
+export function composeDemoComparison(scenes, { localeImport, localeScope } = {}) {
   if (scenes.length < 2 || scenes.length > 3) throw new Error('Compare two or three related configuration scenes');
   const imports = new Map(), importBindings = new Map(), functions = [], templates = [], styles = [];
   for (const [index, scene] of scenes.entries()) {
@@ -113,12 +113,19 @@ export function composeDemoComparison(scenes) {
     if (names.size) functions.push(`const ${scope} = demoProxyRefs((() => {\n${body.join('\n')}\nreturn { ${[...names].join(', ')} }\n})())`);
     else if (body.join('').trim()) functions.push(body.join('\n'));
     const template = templateFor(descriptor.template?.content ?? '', names, scope).trim();
-    templates.push(`  <section class="demo-comparison-case demo-comparison-case--${index + 1}" data-comparison-scene="${html(scene.name)}">\n    <h4><span lang="zh-CN">${html(scene.title)}</span><span lang="en-US">${html(scene.en)}</span></h4>\n${template.split('\n').map(line => '    ' + line).join('\n')}\n  </section>`);
+    const key = scene.name.replace(/[^a-zA-Z0-9]+(.)/g, (_, char) => char.toUpperCase());
+    const heading = localeScope ? `{{ demoCopy[${JSON.stringify(key)}] }}` : `<span lang="zh-CN">${html(scene.title)}</span><span lang="en-US">${html(scene.en)}</span>`;
+    templates.push(`  <section class="demo-comparison-case demo-comparison-case--${index + 1}" data-comparison-scene="${html(scene.name)}">\n    <h4>${heading}</h4>\n${template.split('\n').map(line => '    ' + line).join('\n')}\n  </section>`);
     for (const style of descriptor.styles) {
       if (style.module || /@import|:root|:global|@(?:-webkit-)?keyframes/.test(style.content)) throw new Error(`${scene.file}: global/module styles require an independent scene`);
       styles.push(`.demo-comparison-case--${index + 1} {\n${style.content}\n}`);
     }
   }
+  if (localeScope) {
+    if (!localeImport) throw new Error('A localized comparison needs its shared locale import');
+    imports.set('useComparisonLocale', `import { useDemoLocale as useComparisonLocale } from ${JSON.stringify(localeImport)}`);
+    functions.unshift(`const demoCopy = useComparisonLocale(${JSON.stringify(localeScope)})`);
+  }
   if (functions.some(source => /^const scene\d+ = demoProxyRefs/.test(source))) imports.set('demoProxyRefs', "import { proxyRefs as demoProxyRefs } from 'vue'");
-  return `<script setup lang="ts">\n${[...imports.values()].join('\n')}\n\n${functions.join('\n\n')}\n</script>\n\n<template>\n<div class="demo-comparison">\n${templates.join('\n\n')}\n</div>\n</template>\n\n<style scoped lang="less">\n.demo-comparison { display: grid; gap: 24px; min-width: 0; max-width: 100%; }\n.demo-comparison-case { min-width: 0; max-width: 100%; }\n.demo-comparison-case > h4 { margin: 0 0 12px; font-size: 14px; }\nhtml:not([lang='en-US']) .demo-comparison-case > h4 > [lang='en-US'],\nhtml[lang='en-US'] .demo-comparison-case > h4 > [lang='zh-CN'] { display: none; }\n${styles.join('\n')}\n</style>\n`;
+  return `<script setup lang="ts">\n${[...imports.values()].join('\n')}\n\n${functions.join('\n\n')}\n</script>\n\n<template>\n<div class="demo-comparison">\n${templates.join('\n\n')}\n</div>\n</template>\n\n<style scoped lang="less">\n.demo-comparison { display: grid; gap: 24px; min-width: 0; max-width: 100%; }\n.demo-comparison-case { min-width: 0; max-width: 100%; }\n.demo-comparison-case > h4 { margin: 0 0 12px; font-size: 14px; }\n${localeScope ? '' : "html:not([lang='en-US']) .demo-comparison-case > h4 > [lang='en-US'],\nhtml[lang='en-US'] .demo-comparison-case > h4 > [lang='zh-CN'] { display: none; }\n"}${styles.join('\n')}\n</style>\n`;
 }
