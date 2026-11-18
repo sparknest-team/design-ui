@@ -111,15 +111,16 @@ function walk(directory) {
     return entry.isDirectory() ? walk(filename) : [filename];
   });
 }
-export function documentationFiles() {
+export function documentationFiles(workspace = root) {
   const files = [];
-  for (const [repo, pkg] of [['cedar-design-web', 'ui'], ['maple-design-mobile', 'ui']]) {
-    const base = path.join(root, repo, 'packages', pkg, 'src');
-    for (const filename of walk(base)) {
-      if (!/(?:\/(?:README|PICKER)(?:\.en-US)?\.md|\/docs\/(?:zh-CN|en-US)\.md)$/.test(filename)) continue;
-      let family = path.relative(base, filename).replace(/\/(?:docs\/)?[^/]+\.md$/, '');
-      if (/\/PICKER(?:\.en-US)?\.md$/.test(filename)) family += '/picker';
-      files.push({ filename, primary: componentName(family) });
+  for (const [repo, platform] of [['cedar-design-web', 'cedar'], ['maple-design-mobile', 'maple']]) {
+    const sourceRoot = path.join(workspace, repo, 'packages', 'ui', 'src');
+    for (const filename of walk(sourceRoot)) {
+      const relative = path.relative(sourceRoot, filename).split(path.sep).join('/');
+      if (!/(?:\/(?:README|PICKER)(?:\.en-US)?\.md|\/docs\/(?:zh-CN|en-US)\.md)$/.test(relative)) continue;
+      let family = relative.replace(/\/(?:docs\/)?[^/]+\.md$/, '');
+      if (/\/PICKER(?:\.en-US)?\.md$/.test(relative)) family += '/picker';
+      files.push({ filename, platform, sourceRoot, relative, primary: componentName(family) });
     }
   }
   return files;

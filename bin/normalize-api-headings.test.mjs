@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { componentName, normalizeHeadingLabels, normalizeApiHeadings, checkApiHeadings } from './normalize-api-headings.mjs';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { documentationFiles, componentName, normalizeHeadingLabels, normalizeApiHeadings, checkApiHeadings } from './normalize-api-headings.mjs';
 
 test('API headings use named PascalCase categories across languages and levels', () => {
   const input = '## API\n### 属性\n### `<c-button>` Events\n#### button-group Expose\n### Slots 与实例方法\n### Props / MessageOptions\n## 类型定义 / Types\n### Style variables\n';
@@ -36,4 +39,21 @@ test('feature captions and embedded Options API examples remain outside API norm
 
 test('all component pages follow the API heading standard', () => {
   assert.deepEqual(checkApiHeadings(), []);
+});
+
+test('documents retain their checkout owner and source-relative path inside nested CI workspaces', (t) => {
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'docs-inventory-'));
+  t.after(() => fs.rmSync(temp, { recursive: true, force: true }));
+  const workspace = path.join(temp, 'cedar-design-web', 'src', 'cedar-design-web');
+  const expected = [
+    ['cedar-design-web', 'cedar', 'button/README.md'],
+    ['maple-design-mobile', 'maple', 'button/docs/zh-CN.md'],
+  ].map(([repo, platform, relative]) => {
+    const sourceRoot = path.join(workspace, repo, 'packages', 'ui', 'src');
+    const filename = path.join(sourceRoot, relative);
+    fs.mkdirSync(path.dirname(filename), { recursive: true });
+    fs.writeFileSync(filename, '# Button');
+    return { filename, platform, sourceRoot, relative, primary: 'Button' };
+  });
+  assert.deepEqual(documentationFiles(workspace), expected);
 });
