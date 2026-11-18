@@ -99,8 +99,8 @@ for (const repo of repos) {
         writeFileSync(join(directory, 'linked-prs.json'), JSON.stringify({ testedSha: tested, links: [{ repo: 'maple-design-mobile', number: 2, sha: sibling }] }))
         return ''
       }
-      if (args[0] === 'pr') return ''
       const route = args[1]
+      if (route.endsWith('/pulls/1/merge')) return JSON.stringify({ merged: true })
       if (route.endsWith('/pulls/1')) return JSON.stringify({ state: 'open', draft: false, base: { ref: 'main' }, head: { sha: head }, merge_commit_sha: tested })
       if (route.endsWith('/pulls/2')) return JSON.stringify({ state: 'open', head: { sha: sibling } })
       if (route.includes('/check-runs?')) return JSON.stringify({ check_runs: [{ id: 1, name: 'quality', status: 'completed', conclusion: 'success', app: { slug: 'github-actions' }, details_url: 'https://github.com/loca-spirit/' + repo + '/actions/runs/42/job/5' }] })
@@ -109,15 +109,15 @@ for (const repo of repos) {
       throw new Error('Unexpected API route ' + route)
     }
     helper.merge('1', fake)
-    const merge = calls.find(args => args[0] === 'pr')
-    assert.ok(merge.includes('--squash'))
-    assert.equal(merge[merge.indexOf('--match-head-commit') + 1], head)
+    const merge = calls.find(args => args[0] === 'api' && args[1].endsWith('/pulls/1/merge'))
+    assert.ok(merge.includes('merge_method=squash'))
+    assert.ok(merge.includes('sha=' + head))
     calls.length = 0
     assert.throws(() => helper.merge('1', args => {
       if (args[0] === 'api' && args[1].endsWith('/pulls/2')) return JSON.stringify({ state: 'open', head: { sha: 'new' } })
       return fake(args)
     }), /changed after CI/)
-    assert.equal(calls.some(args => args[0] === 'pr'), false)
+    assert.equal(calls.some(args => args[0] === 'api' && args[1].endsWith('/pulls/1/merge')), false)
   })
   test(`${repo}: PR CI retains full quality, validates bot PRs and emits merge snapshots`, () => {
     const source = readFileSync(join(root, '.github/workflows/quality.yml'), 'utf8')
