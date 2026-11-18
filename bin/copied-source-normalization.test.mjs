@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { createRequire } from 'node:module'
 import test from 'node:test'
-import { normalizeCopiedSource, normalizeSwitchErrorText, normalizeSwitchTokenDefaults, normalizeCopiedTypeScript, normalizeCopiedSfcScript, stripCopiedSfcScript } from './copied-source-normalization.mjs'
+import { normalizeCopiedSource, normalizeSwitchErrorText, normalizeSwitchTokenDefaults, normalizeButtonOutline, normalizeCopiedTypeScript, normalizeCopiedSfcScript, stripCopiedSfcScript, assertCopiedVueCompat } from './copied-source-normalization.mjs'
 
 test('only the known platform empty-value path is equivalent', () => {
   const cedar = "import { useEmptyValues } from '../_utils/empty-value'"
@@ -10,9 +10,39 @@ test('only the known platform empty-value path is equivalent', () => {
   assert.notEqual(normalizeCopiedSource(cedar), normalizeCopiedSource(maple.replace('empty-value', 'other-value')))
 })
 
+test('only the exact vue-compat import path is normalized', () => {
+  const cedar = "import { useId } from '../_utils/vue-compat'"
+  const maple = "import { useId } from '../utils/vue-compat'"
+  assert.equal(normalizeCopiedSource(cedar), normalizeCopiedSource(maple))
+  assert.notEqual(normalizeCopiedSource(cedar.replace('vue-compat', 'vue-compat-other')), normalizeCopiedSource(maple))
+  const literal = "const path = '../_utils/vue-compat'"
+  assert.equal(normalizeCopiedSource(literal), literal)
+  const compat = (platform, prefix) => `// duplicate ${platform} module formats\nconst key = '@${platform.toLowerCase()}-design/vue-id-counter/v1'\nreturn \`${prefix}-v-\${count}\``
+  assert.doesNotThrow(() => assertCopiedVueCompat(compat('Cedar', 'c'), compat('Maple', 'mp')))
+  assert.throws(() => assertCopiedVueCompat(compat('Cedar', 'c'), compat('Maple', 'c')), /namespace/)
+  assert.throws(() => assertCopiedVueCompat(compat('Cedar', 'c'), `${compat('Maple', 'mp')}\nextra()`), /implementations differ/)
+})
+
 test('runtime differences remain observable after platform normalization', () => {
   const source = "import { useEmptyValues } from '../_utils/empty-value'; const value = 1"
   assert.notEqual(normalizeCopiedSource(source), normalizeCopiedSource(source.replace('value = 1', 'value = 2')))
+})
+
+test('Button outline platform exception requires both exact reviewed rules', () => {
+  const cedar = `&--variant-outline { border: thin solid currentColor;
+    &.c-button--status-default:not(.c-button--disabled),
+    &.c-button--status-secondary:not(.c-button--disabled),
+    &.c-button--status-tertiary:not(.c-button--disabled) {
+      border-color: var(--c-sys-color-border-default);
+    }
+  }`
+  const maple = '&--variant-outline { border: thin solid currentColor; }'
+  assert.equal(...normalizeButtonOutline(cedar, maple))
+  assert.throws(() => normalizeButtonOutline(cedar.replace('border-default', 'content-primary'), maple), /Cedar Button/)
+  assert.throws(() => normalizeButtonOutline(cedar.replace('--status-tertiary', '--status-primary'), maple), /Cedar Button/)
+  assert.throws(() => normalizeButtonOutline(cedar.replace(':not(.c-button--disabled)', ''), maple), /Cedar Button/)
+  assert.throws(() => normalizeButtonOutline(cedar + cedar, maple), /Cedar Button/)
+  assert.throws(() => normalizeButtonOutline(cedar, maple.replace('currentColor', 'red')), /Maple Button/)
 })
 
 test('Switch foreground exception checks the exact reviewed declaration', () => {

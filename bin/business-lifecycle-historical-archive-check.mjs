@@ -13,15 +13,18 @@ export function checkArchivedBusinessEvidence(report, read = readFileSync) {
 }
 
 /** Compare fixture text only; equality does not certify behavior on current sources. */
-export function compareFixtureAfterPackageMove(archived, current) {
+export function compareCurrentFixtureWithArchive(archived, current) {
+  const oldMount = "]) }).mount('#app')";
+  if (archived.split(oldMount).length !== 2) return false;
   const migrated = archived
     .replaceAll('/cedar-design-web/packages/cedar-ui/', '/cedar-design-web/packages/ui/')
-    .replaceAll('/maple-design-mobile/packages/maple-ui/', '/maple-design-mobile/packages/ui/');
+    .replaceAll('/maple-design-mobile/packages/maple-ui/', '/maple-design-mobile/packages/ui/')
+    .replace(oldMount, "]) })\napp.mount('#app')");
   return migrated === current;
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   console.log(checkArchivedBusinessEvidence(readEvidence()));
-  console.log('Only package-path migration in fixture:', compareFixtureAfterPackageMove(readFileSync(archivedFixture, 'utf8'), readFileSync(liveFixture, 'utf8')));
+  console.log('Only package-path migration and teardown fix in fixture:', compareCurrentFixtureWithArchive(readFileSync(archivedFixture, 'utf8'), readFileSync(liveFixture, 'utf8')));
   console.log('Historical fixture and screenshot verified; current source and current timing remain separate checks.');
 }

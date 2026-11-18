@@ -1,0 +1,31 @@
+{
+  "errors": [],
+  "warnings": [
+    "asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).\nThis can impact web performance.\nAssets: \n  bundle.js (1.06 MiB)",
+    "entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.\nEntrypoints:\n  main (1.06 MiB)\n      bundle.js\n",
+    "webpack performance recommendations: \nYou can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.\nFor more info visit https://webpack.js.org/guides/code-splitting/"
+  ],
+  "version": "4.47.0",
+  "hash": "e2f9bbafae6ee3bc2055",
+  "time": 7329,
+  "assetsByChunkName": {
+    "main": "bundle.js"
+  },
+  "assets": [
+    {
+      "name": "bundle.js",
+      "size": 1113344,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {},
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "node": "v20.19.0",
+  "configurationSha256": "55b2881b4b7c6f4150135960f576888b5af1fdd83fd73c00b9952b2ca08f6a96"
+}

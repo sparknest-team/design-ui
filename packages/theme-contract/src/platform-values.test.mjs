@@ -62,19 +62,20 @@ test('Switch checked text has a public contract without changing platform foregr
 });
 
 
-test('FormSection registers consumed tokens with shared semantic colors and specified spacing', () => {
-  const names = contract.tokens.components.form.filter((name) => name.startsWith('section-'));
-  assert.ok(names.length > 0);
-  for (const [repository, prefix] of [['cedar-design-web', 'c'], ['maple-design-mobile', 'mp']]) {
-    const root = new URL(`../../../../${repository}/packages/ui/src/form/style/`, import.meta.url);
-    const tokens = readFileSync(new URL('token.less', root), 'utf8');
-    const style = readFileSync(new URL('section.less', root), 'utf8');
-    for (const name of names) {
-      const value = tokens.match(new RegExp(`--${prefix}-form-${name}:\\s*([^;]+);`))?.[1];
-      assert.ok(value, `${repository}: missing ${name}`);
-      assert.equal(normalizeTokenValue(value, prefix), contract.componentTokenValues.form[name]);
-      assert.ok(style.includes(`var(--${prefix}-form-${name})`), `${repository}: ${name} must affect section styling`);
-    }
+test('section defaults and consumers follow the owning component on each platform', () => {
+  const cedar = platformComponentTokenValues.cedar.section;
+  const maple = platformComponentTokenValues.maple.form;
+  assert.deepEqual(
+    Object.fromEntries(Object.entries(cedar).map(([key, value]) => [`section-${key}`, value])),
+    Object.fromEntries(Object.entries(maple).filter(([key]) => key.startsWith('section-'))),
+  );
+  for (const [repository, path, prefix] of [
+    ['cedar-design-web', 'section/style/index.less', 'c-section'],
+    ['maple-design-mobile', 'form/style/section.less', 'mp-form-section'],
+  ]) {
+    const style = readFileSync(new URL(`../../../../${repository}/packages/ui/src/${path}`, import.meta.url), 'utf8');
+    for (const name of Object.keys(cedar))
+      assert.ok(style.includes(`var(--${prefix}-${name})`), `${repository}: ${name} must affect section styling`);
   }
   for (const [name, expected] of Object.entries({
     'section-before-gap': '32px',
@@ -84,5 +85,5 @@ test('FormSection registers consumed tokens with shared semantic colors and spec
     'section-accent-color': 'var(--PREFIX-sys-color-action-primary)',
     'section-title-color': 'var(--PREFIX-sys-color-content-primary)',
     'section-description-color': 'var(--PREFIX-sys-color-content-secondary)',
-  })) assert.equal(contract.componentTokenValues.form[name], expected);
+  })) assert.equal(maple[name], expected);
 });

@@ -48,20 +48,26 @@ Cedar 与 Maple 的文档菜单都提供「LLM 文档」入口（中英文）。
 
 索引按语言列出当前公共文档，不伪造英文翻译；全文保留 API 表格并展开真实 Demo 源码，代码围栏中的演示语法保持字面值。组件和指南的本地文档链接转换为对应 Markdown 链接；示例代码中的模块导入仍以标注的源码路径为基准。缺失或越界的 Demo 引用必须使生成失败，删除文档后不得残留旧单页文件。全文较大，使用说明应优先引导索引和单页读取。
 
+所有 LLM 文本与单页 Markdown 使用带 BOM 的 UTF-8 编码，避免静态服务器未声明字符集时被浏览器误判为 GBK 等编码。部署服务器应同时为 `.txt` / `.md` 响应声明 `charset=utf-8`；BOM 作为文件自身的编码标识随站点产物保留，复制、压缩和发布时不得移除。
+
 `node --test design-ui/bin/llms-docs.test.mjs`（工作区根目录）覆盖语言、引用、代码围栏、链接、确定性输出和旧产物清理；两端 `check:doc-pipeline` 都执行这组测试。部署时同时发布整个静态目录，不单独更新入口页面或文本文件。
 
 ## 浏览器兼容性
 
 两端 `quality` 追加完整三引擎 `check:compatibility`，CI 安装 Chromium、Firefox、WebKit 并归档独立证据。原有 Chromium 门禁不减少。构建目标、Maple 移动端及原生发布证据遵循 [浏览器兼容性与验收](./browser-compatibility.md)。
 
+## 消费端构建工具兼容范围
+
+Cedar / Maple 暂不承诺兼容 Webpack 4，不将其列为持续验收工具链。ESM 产物允许保留 `?.` / `??` 等现代语法；保留 ESM 模块格式不等于将语法降级到 ES5。需要使用 Webpack 4 的业务由使用方配置 Babel 转译并自行验证；两端公开「平台选择与兼容性」中英文页面提供 Babel 7 / babel-loader 8 的显式语法转换示例。该示例不构成完整工具链兼容承诺，也不替代浏览器、运行时 API 或 CSS 的验收。
+
 ## Vue 开发版本与消费兼容性
 
 - Cedar / Maple 开发环境使用 npm `latest` 的稳定 Vue（本次为 3.5.45），catalog 精确固定；`vue`、`@vue/compiler-sfc`、`@vue/runtime-core` 和 SSR renderer 保持同版本。升级通过更新 catalog、current 消费夹具和锁文件完成，不使用浮动 `latest`。
-- 发布 UI、icons、use 的 peer 范围统一为 `^3.2.47`，Vue 保持外部依赖。最低版本为 3.2 系列最后的补丁版，3.2.0 的原始声明与当前 TypeScript 存在上游错误，不将其列为受支持类型环境。
+- UI 的 Vue peer 范围为 `3`，icons 和 use 为 `^3.2.47`，Vue 保持外部依赖。Vue 3.3 起作为持续兼容验证目标；3.2 不在完整消费门禁范围内，其部分 SSR 场景不保证兼容，使用前应针对实际应用验证。3.0 和 3.1 未经验证。
 - 允许能编译成兼容产物的新语法，例如 `defineOptions`、响应式 Props 解构和类型宏。不能假定所有宏都会完全消失；`defineModel`、新版运行时 API 和 `watch` 的 `once` / 数值 `deep`、单参数 `toRef` 与 computed previous-value getter 由源码门禁拒绝。静态规则不能穷尽所有版本行为差异；新增运行时行为需补实际消费回归。
 - 组件生成 ID 统一通过 UI 的 `vue-compat` 辅助函数。3.5+ 使用原生 `useId`；旧版使用独立 app 计数器。SSR 每请求创建独立 app，客户端使用相同组件树和 setup 次序；异步树的特殊 ID / hydration 行为需要单独测试。
 - 新版工具生成的声明通过共享 `vue-declarations.mjs` 降级到真实 3.2.47 声明的泛型形状，并保留显式插槽类型；未知 Vue 类型必须报错，不用 `any` 或 `skipLibCheck` 掩盖不兼容。测试验证必填 Props、无效 Props、Ref 和插槽参数类型。
 - 独立使用共享构建工具时，若项目未提供 `vue-compat-min`，声明转换使用构建工具内固定的 Vue 3.2.0 基线，不依赖组件库工作区；工作区显式配置的最低版本基线优先。该基线仅用于生成类型，不替代消费端 Vue，也不消除 Vue 3.2.0 自身在部分 TypeScript 版本下的声明错误。
-- 根目录 `pnpm check:vue-compat:source` 进行源码 API、peer 范围和开发 runtime/compiler 一致性检查。`pnpm build:lib` 后运行 `pnpm check:vue-compat`，对 `pnpm pack` 的 shared/use/icons/ui 发布内容扫描 ESM/CJS API，并在独立进程中消费 3.2.47、3.3.13、3.4.38、3.5.45。
+- 根目录 `pnpm check:vue-compat:source` 进行源码 API、peer 范围和开发 runtime/compiler 一致性检查；当前仍以 3.2.47 检查运行时 API，作为额外的静态约束，不代表 3.2 的全部行为受支持。`pnpm build:lib` 后运行 `pnpm check:vue-compat`，对 `pnpm pack` 的 shared/use/icons/ui 发布内容扫描 ESM/CJS API，并在独立进程中消费 3.3.13、3.4.38、3.5.45。
 - 每个矩阵单元执行完整导出入口加载、代表性 Button/Input/Switch 的 SSR、客户端点击与双向绑定、重复 SSR 与 hydration，以及 `skipLibCheck: false` 的发布类型检查。它不等于所有组件和所有交互都经过旧运行时验证。
 - 两边 `quality` 在库构建前运行源码门禁、构建后运行完整消费门禁，CI 复用 quality。release 在构建前后执行相同 Vue 检查，失败时不能发布；原有浏览器兼容性门禁保留。

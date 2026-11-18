@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { checkArchivedBusinessEvidence, compareFixtureAfterPackageMove } from './business-lifecycle-historical-archive-check.mjs';
+import { checkArchivedBusinessEvidence, compareCurrentFixtureWithArchive } from './business-lifecycle-historical-archive-check.mjs';
 import { readEvidence } from './business-lifecycle-evidence-check.mjs';
 import { checkFirstFrameEvidence, readFirstFrameEvidence } from './business-lifecycle-first-frame-evidence-check.mjs';
 
@@ -32,7 +32,7 @@ export function checkCurrentBusinessEvidence(read = readFileSync) {
   const original = read(resolve(root, 'audits/evidence/business-native-lifecycle-2026-10-13/frozen-fixture.js'), 'utf8');
   const current = read(resolve(root, 'refactors/token-validation/browser/business-lifecycle-main.js'), 'utf8');
   const frame = read(resolve(root, 'refactors/token-validation/browser/business-lifecycle-first-frame-diagnostic.js'), 'utf8');
-  assert.ok(compareFixtureAfterPackageMove(original, current), 'current fixture differs from archived fixture beyond package paths');
+  assert.ok(compareCurrentFixtureWithArchive(original, current), 'current fixture differs from archived fixture beyond package paths and teardown fix');
   checkFrameFixture(current, frame);
   const currentEvidence = checkFirstFrameEvidence(readFirstFrameEvidence(), read);
   return { historical, currentEvidence };

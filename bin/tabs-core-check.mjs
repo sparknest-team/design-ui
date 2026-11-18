@@ -4,15 +4,14 @@ import { createRequire } from 'node:module'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { normalizeVueSource, normalizeTypeScript, normalizeLessSource } from '../../maple-design-mobile/checks/normalize-source.mjs'
+import { assertCopiedVueCompat } from './copied-source-normalization.mjs'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
 const roots = ['cedar-design-web/packages/ui', 'maple-design-mobile/packages/ui'].map((path) => resolve(workspace, path))
 const read = (root, file) => readFileSync(resolve(root, 'src/tabs', file), 'utf8')
-assert.equal(
-  readFileSync(resolve(roots[0], 'src/_utils/vue-compat.ts'), 'utf8'),
-  readFileSync(resolve(roots[1], 'src/utils/vue-compat.ts'), 'utf8'),
-  'Vue compatibility helpers differ',
-)
+const cedarCompat = readFileSync(resolve(roots[0], 'src/_utils/vue-compat.ts'), 'utf8')
+const mapleCompat = readFileSync(resolve(roots[1], 'src/utils/vue-compat.ts'), 'utf8')
+assertCopiedVueCompat(cedarCompat, mapleCompat)
 const platformSource = (source) => source
   .replaceAll('../_utils/global-config', '../utils/components')
   .replaceAll('../_utils/constant', '../utils/constants')

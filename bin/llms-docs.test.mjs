@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, existsSync, rmSync } from 'node:fs'
+import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, readdirSync, existsSync, rmSync } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import { collectPages, generateDocs, renderPage } from './llms-docs.mjs'
@@ -13,6 +13,45 @@ function fixture(t) {
     mkdirSync(path.dirname(destination), { recursive: true })
     writeFileSync(destination, content)
   } }
+}
+
+for (const platform of ['cedar', 'maple']) {
+  test(`${platform} marks every text and Markdown artifact as UTF-8 and preserves Chinese examples`, t => {
+    const { root, put } = fixture(t)
+    const chinese = '中文文档：自动补全、头像、日期范围 🙂'
+    if (platform === 'cedar') {
+      put('docs/guide/start.md', `---\npermalink: /guide/start/\n---\n# ${chinese}\n<demo src="./example.vue" />`)
+      put('docs/guide/start.en-US.md', '---\npermalink: /en/guide/start/\n---\n# English guide\nEnglish content')
+    } else {
+      put('docs/start.zh-CN.md', `# ${chinese}\n<demo src="./example.vue" />`)
+      put('docs/start.en-US.md', '# English guide\nEnglish content')
+    }
+    put(platform === 'cedar' ? 'docs/guide/example.vue' : 'docs/example.vue', `<template><div>${chinese}</div></template>`)
+    const output = path.join(root, 'public')
+    const result = generateDocs({ root, platform, output })
+    function verify(directory) {
+      let files = 0
+      for (const entry of readdirSync(directory, { withFileTypes: true })) {
+        const file = path.join(directory, entry.name)
+        if (entry.isDirectory()) files += verify(file)
+        else {
+          const bytes = readFileSync(file)
+          assert.deepEqual([...bytes.subarray(0, 3)], [0xef, 0xbb, 0xbf], file)
+          const decoded = new TextDecoder('utf-8', { fatal: true }).decode(bytes)
+          assert.ok(!decoded.startsWith('\uFEFF'), 'standard UTF-8 decoding consumes the signature')
+          assert.ok(!decoded.includes('\uFFFD'), file)
+          if (file.endsWith('llms.txt') || file.endsWith('llms.zh-CN.txt') || file.endsWith('llms-full.txt') || file.endsWith('llms-full.zh-CN.txt') || file.includes(`${path.sep}zh-CN${path.sep}`)) assert.ok(decoded.includes(chinese), file)
+          if (file.endsWith('llms-full.txt')) assert.ok(decoded.includes(`<div>${chinese}</div>`))
+          files++
+        }
+      }
+      return files
+    }
+    assert.equal(verify(output), result.files)
+    const first = readFileSync(path.join(output, 'llms.txt'))
+    generateDocs({ root, platform, output })
+    assert.deepEqual(readFileSync(path.join(output, 'llms.txt')), first)
+  })
 }
 
 test('Cedar includes public permalinks and expands demos while preserving literal code', t => {

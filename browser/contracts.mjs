@@ -35,7 +35,7 @@ const presentation = {
   'page-header': ['page-header', 1], paper: ['paper', 1], progress: ['progress', 1],
   'progress-group': ['progress-group', 1], result: ['result', 1], row: ['row', 1],
   'safe-area': ['safe-area', 2],
-  skeleton: ['skeleton', 1], space: ['space', 1], statistic: ['statistic', 1],
+  section: ['section', 1], skeleton: ['skeleton', 1], space: ['space', 1], statistic: ['statistic', 1],
   table: ['table', 1], timeline: ['timeline', 1], typography: ['typography', 1],
 }
 

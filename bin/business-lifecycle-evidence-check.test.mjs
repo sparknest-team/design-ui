@@ -30,6 +30,8 @@ for (const [name, mutate] of [
   ['no post-mount countdown change despite initial value below duration', r => { sample(r, 2, 'mounted').remaining = 1599; sample(r, 2, 'running').remaining = 1599; sample(r, 2, 'running').changes = sample(r, 2, 'mounted').changes; }],
   ['short initial countdown observation', r => { sample(r, 2, 'running').time = sample(r, 2, 'mounted').time + 177; }],
   ['paused ticking', r => sample(r, 2, 'paused-stable').changes++],
+  ['resume emits only its synchronous change', r => { sample(r, 2, 'resumed').changes = sample(r, 2, 'paused-stable').changes + 1; }],
+  ['reactivation emits only its synchronous change', r => { sample(r, 2, 'reactivated').changes = sample(r, 2, 'inactive-reset-stable').changes + 1; }],
   ['inactive ticking', r => sample(r, 2, 'inactive-stable').changes++],
   ['inactive reset not delivered', r => sample(r, 2, 'inactive-reset').remaining = 1600],
   ['inactive reset ticking', r => sample(r, 2, 'inactive-reset-stable').changes++],
