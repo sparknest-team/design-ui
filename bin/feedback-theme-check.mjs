@@ -63,7 +63,8 @@ for (const component of ["message", "notification", "loading-bar"]) {
           const suffix = `loading-bar-${error ? "error-" : ""}color`;
           role(
             suffix,
-            `var(--mp-sys-color-content-${error ? "danger" : "brand"})`,
+            // LoadingBar is a filled progress indicator, not brand text.
+            `var(--mp-sys-color-${error ? "content-danger" : "action-primary"})`,
           );
           consume(el, "background-color", suffix);
           for (const surface of [
