@@ -51,6 +51,33 @@ for (const repo of repos) {
     assert.throws(() => refs.related('Related-PR: https://github.com/attacker/untrusted/pull/2', repo))
     assert.throws(() => refs.related(`Related-PR: https://github.com/loca-spirit/${repo}/pull/1`, repo))
   })
+  test(`${repo}: resolver records exact sibling and tested commits and explains token permission failures`, async () => {
+    const temporary = mkdtempSync(join(tmpdir(), 'ci-related-'))
+    const saved = { PR_NUMBER: process.env.PR_NUMBER, RUNNER_TEMP: process.env.RUNNER_TEMP, GITHUB_WORKSPACE: process.env.GITHUB_WORKSPACE, CI_LINKS: process.env.CI_LINKS }
+    const sibling = repos.find(value => value !== repo), sha = 'c'.repeat(40), outputs = {}
+    let changed = false
+    const github = { rest: { pulls: { get: async args => ({ data: args.repo === repo
+      ? { base: { ref: 'main' }, head: { ref: 'feature' }, body: `Related-PR: https://github.com/loca-spirit/${sibling}/pull/42` }
+      : { state: 'open', head: { sha: changed ? 'd'.repeat(40) : sha } } }) } } }
+    try {
+      process.env.PR_NUMBER = '1'
+      process.env.RUNNER_TEMP = temporary
+      process.env.GITHUB_WORKSPACE = workspace
+      await refs.resolve({ github, context: { repo: { owner: 'loca-spirit', repo }, payload: {} }, core: { setOutput: (key, value) => { outputs[key] = value }, info() {} } })
+      assert.equal(outputs.refs[sibling], sha)
+      const snapshot = JSON.parse(readFileSync(join(temporary, 'linked-prs.json'), 'utf8'))
+      assert.match(snapshot.testedSha, /^[a-f0-9]{40}$/)
+      assert.deepEqual(snapshot.links, [{ repo: sibling, number: 42, sha }])
+      process.env.CI_LINKS = JSON.stringify(snapshot.links)
+      await refs.validate({ github })
+      changed = true
+      await assert.rejects(refs.validate({ github }), /changed during CI/)
+      await assert.rejects(refs.resolve({ github: { rest: { pulls: { get: async () => { throw Object.assign(new Error('forbidden'), { status: 403 }) } } } }, context: { repo: { owner: 'loca-spirit', repo }, payload: {} }, core: {} }), /grant Contents: Read-only and Pull requests: Read-only/)
+    } finally {
+      for (const [key, value] of Object.entries(saved)) { if (value === undefined) delete process.env[key]; else process.env[key] = value }
+      rmSync(temporary, { recursive: true, force: true })
+    }
+  })
   test(`${repo}: merges fail closed on missing, skipped, pending, failed or stale quality`, () => {
     for (const checks of [[], [{ id: 1, name: 'quality', status: 'completed', conclusion: 'skipped', app: { slug: 'github-actions' } }], [{ id: 1, name: 'quality', status: 'in_progress', app: { slug: 'github-actions' } }]]) assert.throws(() => helper.requirePassingQuality(checks))
     const pass = { id: 1, name: 'quality', status: 'completed', conclusion: 'success', app: { slug: 'github-actions' } }
