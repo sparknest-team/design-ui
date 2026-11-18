@@ -7,7 +7,7 @@
     "design-system-check": "./bin/spec-check.mjs"
   },
   "scripts": {
-    "check:ci": "node --test bin/ci-contract.test.mjs bin/ci-toolchain-check.test.mjs bin/shared-source-contract.test.mjs bin/case-paths-check.test.mjs packages/ui-build/test/environment.test.mjs packages/ui-build/test/dual-declarations.test.mjs packages/ui-build/test/vue-declarations.test.mjs bin/style-entry-types.test.mjs bin/style-module-assertions.test.mjs browser/inventory.test.mjs browser/navigation.test.mjs bin/api-naming-check.test.mjs browser/compatibility.test.mjs browser/native-acceptance.test.mjs browser/native-handoff.test.mjs bin/pr-workflow.test.mjs bin/contrast-report.test.mjs",
+    "check:ci": "node --test bin/ci-contract.test.mjs bin/ci-toolchain-check.test.mjs bin/shared-source-contract.test.mjs bin/case-paths-check.test.mjs packages/ui-build/test/environment.test.mjs packages/ui-build/test/dual-declarations.test.mjs packages/ui-build/test/vue-declarations.test.mjs bin/style-entry-types.test.mjs bin/style-module-assertions.test.mjs browser/inventory.test.mjs browser/navigation.test.mjs bin/api-naming-check.test.mjs browser/compatibility.test.mjs browser/native-acceptance.test.mjs browser/native-handoff.test.mjs bin/pr-workflow.test.mjs bin/contrast-report.test.mjs bin/theme-audit-utils.test.mjs",
     "check:demo-controls": "node --test bin/demo-control-policy.test.mjs && node bin/demo-controls-check.mjs",
     "check:demo-design": "node bin/demo-design-check.mjs && node bin/demo-controls-check.mjs && node bin/organize-demo-pages.mjs",
     "check:api": "node bin/api-exports-audit.mjs ../cedar-design-web/packages/ui/src --check && node bin/api-exports-audit.mjs ../maple-design-mobile/packages/ui/src --check",

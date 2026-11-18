@@ -52,6 +52,18 @@ export function assertMotionOnlyRule(rule) {
   ));
 }
 
+// Dynamic viewport fallbacks change layout only; keep color checks unconditional.
+export function excludeViewportGeometryRule(rule) {
+  if (rule.parent.type !== 'atrule' || rule.parent.name !== 'supports' || rule.parent.params !== '(height: 100dvh)') return false;
+  assert.equal(rule.parent.parent.type, 'root', 'Nested viewport conditions need explicit auditing');
+  rule.walkDecls(decl => assert.match(
+    decl.prop,
+    /^--(?:c|mp)-dialog-(?:margin-top|max-height|fullscreen-height)$/,
+    `Unaudited viewport conditional property: ${decl.prop}`,
+  ));
+  return true;
+}
+
 export async function auditThemes(
   component,
   inspect,
@@ -98,6 +110,7 @@ export async function auditThemes(
     );
     const rules = [];
     postcss.parse(css).walkRules((rule) => {
+      if (excludeViewportGeometryRule(rule)) return;
       // Only motion and geometry rules are excluded from steady-state color checks.
       const reducedMedia = rule.parent.type === 'atrule' && rule.parent.name === 'media' && rule.parent.params === '(prefers-reduced-motion: reduce)';
       if (
