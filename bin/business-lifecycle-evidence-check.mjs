@@ -60,6 +60,7 @@ export function checkBusinessCases(cases, { initialDuration = 1600, resetDuratio
       assert.equal(p['paused-stable'].changes, p.paused.changes, 'paused ticking');
       assert.ok(p['paused-stable'].time - p.paused.time >= 218);
       assert.ok(p.resumed.remaining < p.paused.remaining);
+      assert.ok(p.resumed.changes > p['paused-stable'].changes + 1, 'no frame after synchronous resume');
       assert.equal(p['inactive-stable'].changes, p.deactivated.changes, 'inactive ticking');
       assert.ok(p['inactive-stable'].time - p.deactivated.time >= 198);
       assert.equal(p['inactive-reset'].remaining, resetDuration, 'inactive reset not delivered');
@@ -67,6 +68,7 @@ export function checkBusinessCases(cases, { initialDuration = 1600, resetDuratio
       assert.equal(p['inactive-reset-stable'].changes, p['inactive-reset'].changes, 'inactive reset ticking');
       assert.ok(p['inactive-reset-stable'].time - p['inactive-reset'].time >= 178);
       assert.ok(p.reactivated.changes > p['inactive-reset'].changes && p.reactivated.remaining > 0 && p.reactivated.remaining < resetDuration, 'no resumed business clock');
+      assert.ok(p.reactivated.changes > p['inactive-reset-stable'].changes + 1, 'no frame after synchronous reactivation');
       assert.equal(p.reactivated.nodes, 1);
       assert.equal(p['after-unmount'].changes, p.unmounted.changes, 'unmounted ticking');
       assert.ok(p['after-unmount'].time - p.unmounted.time >= 218);

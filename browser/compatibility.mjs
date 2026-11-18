@@ -52,6 +52,6 @@ export async function waitForThemeAnimations(page) {
   await page.evaluate(() => Promise.all(document.getAnimations().filter((animation) =>
     animation.playState === 'running' &&
     animation.effect?.getComputedTiming().iterations !== Infinity &&
-    [document.body, document.documentElement].includes(animation.effect?.target),
+    [document.body, document.documentElement, document.querySelector('#app > .mp-theme-provider')].includes(animation.effect?.target),
   ).map((animation) => animation.finished.catch(() => {}))))
 }

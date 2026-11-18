@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict'
-import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdtempSync, mkdirSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { join, resolve } from 'node:path'
 import { test } from 'node:test'
 import { fileURLToPath } from 'node:url'
-import { inspectVueCode } from './vue-compat-check.mjs'
+import { checkVuePeerRanges, clearVueRuntimeLinks, inspectVueCode, inspectVueTemplate } from './vue-compat-check.mjs'
 import { downlevelVueDeclarations } from '../packages/ui-build/src/vue-declarations.mjs'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
@@ -12,6 +12,66 @@ const root = resolve(workspace, 'cedar-design-web')
 const require = createRequire(join(root, 'packages/ui/package.json'))
 const ts = require('typescript')
 const exportsFor = (module) => module === 'vue' ? new Set(['ref', 'watch', 'defineComponent']) : undefined
+
+test('UI and auxiliary packages use their declared Vue peer ranges', () => {
+  const temp = mkdtempSync(join(root, '.vue-peer-ranges-test-'))
+  try {
+    for (const pkg of ['ui', 'icons', 'use']) {
+      const directory = join(temp, 'packages', pkg)
+      mkdirSync(directory, { recursive: true })
+      writeFileSync(join(directory, 'package.json'), JSON.stringify({ peerDependencies: { vue: pkg === 'ui' ? '3' : '^3.2.47' } }))
+    }
+    assert.doesNotThrow(() => checkVuePeerRanges(temp))
+    writeFileSync(join(temp, 'packages/ui/package.json'), JSON.stringify({ peerDependencies: { vue: '^3.2.47' } }))
+    assert.throws(() => checkVuePeerRanges(temp))
+  } finally { rmSync(temp, { recursive: true, force: true }) }
+})
+
+test('switching runtime versions removes only consumer links', () => {
+  const temp = mkdtempSync(join(root, '.vue-runtime-links-test-'))
+  try {
+    const target = join(temp, 'runtime')
+    const modules = join(temp, 'node_modules')
+    mkdirSync(target); mkdirSync(modules)
+    symlinkSync(target, join(modules, 'vue'), 'dir')
+    clearVueRuntimeLinks(temp)
+    assert.equal(existsSync(join(modules, 'vue')), false)
+    assert.equal(existsSync(target), true)
+    mkdirSync(join(modules, 'vue'))
+    assert.throws(() => clearVueRuntimeLinks(temp))
+    assert.equal(existsSync(join(modules, 'vue')), true)
+  } finally { rmSync(temp, { recursive: true, force: true }) }
+})
+
+test('legacy IDs share counters per platform across independently loaded modules', () => {
+  let context = {}
+  const vue = { getCurrentInstance: () => ({ appContext: context }) }
+  const load = (file) => {
+    const code = ts.transpileModule(readFileSync(file, 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 } }).outputText
+    const exports = {}
+    new Function('exports', 'require', code)(exports, (name) => {
+      assert.equal(name, 'vue')
+      return vue
+    })
+    return exports.useId
+  }
+  const cedar = resolve(workspace, 'cedar-design-web/packages/ui/src/_utils/vue-compat.ts')
+  const maple = resolve(workspace, 'maple-design-mobile/packages/ui/src/utils/vue-compat.ts')
+  const helpers = [load(cedar), load(cedar), load(maple), load(maple)]
+  assert.deepEqual(helpers.map((useId) => useId()), ['c-v-0', 'c-v-1', 'mp-v-0', 'mp-v-1'])
+  context = {}
+  assert.deepEqual(helpers.map((useId) => useId()), ['c-v-0', 'c-v-1', 'mp-v-0', 'mp-v-1'])
+  context = {}
+  const server = { cedar: helpers[0](), maple: helpers[2]() }
+  context = {}
+  const mapleClient = helpers[2]()
+  const cedarClient = helpers[0]()
+  assert.deepEqual({ cedar: cedarClient, maple: mapleClient }, server)
+  context = Object.preventExtensions({})
+  assert.deepEqual([helpers[0](), helpers[0]()], ['c-v-0', 'c-v-1'])
+  vue.useId = () => 'native-id'
+  assert.equal(helpers[1](), 'native-id')
+})
 
 test('allows compiler-only syntax and erases type-only uses, including implicit type imports', () => {
   const code = `import { ref, PropType } from 'vue';
@@ -36,6 +96,23 @@ test('rejects macros and watch options whose runtime semantics cannot target 3.2
   assert.equal(inspectVueCode(ts, `import { watch as observe } from 'vue'; observe(() => 1, () => {}, { once: true });`, 'component.ts', exportsFor, true).length, 1)
   assert.equal(inspectVueCode(ts, `import * as Vue from 'vue'; Vue.watch(() => 1, () => {}, { deep: 2 });`, 'component.ts', exportsFor, true).length, 1)
   assert.equal(inspectVueCode(ts, `toRef(() => 1); computed(previous => previous || 1);`, 'component.ts', exportsFor, true).length, 2)
+})
+
+test('rejects Teleport defer in templates and render functions without rejecting ordinary Teleport', () => {
+  const sfc = require('@vue/compiler-sfc')
+  for (const template of ['<Teleport defer to="body" />', '<teleport :defer="ready" to="body" />']) {
+    assert.equal(inspectVueTemplate(sfc, `<template>${template}</template>`, 'component.vue').length, 1)
+  }
+  assert.deepEqual(inspectVueTemplate(sfc, '<template><!-- <Teleport defer /> --><Teleport to="body" /></template>', 'component.vue'), [])
+  const available = (module) => module === 'vue' ? new Set(['h', 'Teleport']) : undefined
+  for (const code of [
+    `import { h, Teleport } from 'vue'; h(Teleport, { defer: true }, []);`,
+    `import { h, Teleport as Portal } from 'vue'; h(Portal, { 'defer': true }, []);`,
+    `import * as V from 'vue'; V.h(V.Teleport, { defer: true }, []);`,
+    `import { Teleport } from 'vue'; const node = <Teleport defer to="body" />;`,
+    `import * as V from 'vue'; const node = <V.Teleport defer to="body" />;`,
+  ]) assert.equal(inspectVueCode(ts, code, 'component.tsx', available, true).length, 1, code)
+  assert.deepEqual(inspectVueCode(ts, `import { h, Teleport } from 'vue'; h(Teleport, { to: 'body' }, []);`, 'component.ts', available, true), [])
 })
 
 test('declaration lowering preserves typed props, slots and ref values on the actual 3.2.47 types', () => {

@@ -24,40 +24,33 @@ const dark = (color) => {
 
 export async function chooseTheme(page, library, surface, theme) {
   const label = theme === 'darkTheme' ? '默认暗色' : '默认亮色'
+  const menu = page.locator('details.docs-select').filter({ has: page.locator('summary[aria-label="主题"]') })
+  await menu.locator('summary').click()
+  await menu.getByRole('button', { name: label, exact: true }).click()
   if (library === 'cedar') {
-    await page.getByRole('button', { name: '切换主题', exact: true }).click()
-    await page.getByRole('menuitemradio', { name: label, exact: true }).click()
     await page.waitForFunction((value) => document.documentElement.dataset.cedarDocsTheme === value, theme)
-  } else if (surface === 'mobile') {
-    await page.locator('.theme-button').click()
-    await page.locator('.mobile-theme-cell').filter({ hasText: label }).click()
-    await page.waitForFunction((value) => localStorage.getItem('MAPLE_V3_THEME_DEMO') === value, theme)
   } else {
-    const menu = page.locator('.maple-site-header__theme')
-    await menu.hover()
-    await menu.locator('.mp-cell').filter({ hasText: label }).click()
-    await page.mouse.move(1, 1)
-    await page.waitForFunction((value) => localStorage.getItem('MAPLE_V3_THEME') === value, theme)
+    const scope = surface === 'mobile' ? 'MAPLE_V3_THEME_DEMO' : 'MAPLE_V3_THEME'
+    await page.waitForFunction(({ key, value }) => localStorage.getItem(key) === value, { key: scope, value: theme })
   }
   await waitForThemeAnimations(page)
-  if (library === 'maple' && surface === 'mobile') {
-    await page.waitForFunction((wantDark) => {
-      const style = getComputedStyle(document.body)
-      const sample = document.createElement('div')
-      sample.style.backgroundColor = style.getPropertyValue('--site-config-color-mobile-body')
-      sample.style.display = 'none'
-      document.body.appendChild(sample)
-      const expected = getComputedStyle(sample).backgroundColor
-      sample.remove()
-      const rgb = expected.match(/[\d.]+/g)?.map(Number)
-      return rgb?.length === 3 && (rgb.reduce((sum, value) => sum + value, 0) < 384) === wantDark && style.backgroundColor === expected
-    }, theme === 'darkTheme')
-  }
-  assert.equal(dark(await page.locator('body').evaluate((element) => getComputedStyle(element).backgroundColor)), theme === 'darkTheme', 'real page background follows the selected theme')
+  const surfaceSelector = library === 'maple' ? '#app > .mp-theme-provider' : 'body'
+  await page.waitForFunction(({ selector, wantDark }) => {
+    const element = document.querySelector(selector)
+    const color = element && getComputedStyle(element).backgroundColor
+    const rgb = color?.match(/[\d.]+/g)?.map(Number)
+    return rgb?.length >= 3 && (rgb.length < 4 || rgb[3] === 1) && (rgb.slice(0, 3).reduce((a, b) => a + b, 0) < 384) === wantDark
+  }, { selector: surfaceSelector, wantDark: theme === 'darkTheme' })
+  assert.equal(dark(await page.locator(surfaceSelector).evaluate((element) => getComputedStyle(element).backgroundColor)), theme === 'darkTheme', 'real page background follows the selected theme')
 }
 
 export async function checkSource(page, library, index, expected) {
   const preview = page.locator(library === 'cedar' ? '.vmi-previewer' : '.loca-doc-preview').nth(index)
+  await preview.evaluate((element) => {
+    for (let parent = element.parentElement; parent; parent = parent.parentElement) {
+      if (parent instanceof HTMLDetailsElement) parent.open = true
+    }
+  })
   const source = preview.locator(library === 'cedar' ? '.vmi-previewer-sources pre' : '.loca-doc-preview__sources pre').first()
   if (!await source.isVisible()) {
     await (library === 'cedar' ? preview.locator('[title="展开或收起源码"]') : preview.getByRole('button', { name: '展开源码', exact: true })).click()
@@ -116,6 +109,7 @@ export function defineProductionComponentTests({ root, library }) {
       return browser.newContext(options)
     }
     const results = []
+    const extraSources = new Map()
     const evidence = evidenceDirectory(root, library)
     before(async () => {
       const output = resolve(root, `packages/ui/${library === 'cedar' ? 'dist' : 'site'}`)
@@ -159,6 +153,13 @@ export function defineProductionComponentTests({ root, library }) {
       try {
         await mkdir(evidence, { recursive: true })
         const current = componentPages(root, library).filter(page => !requestedComponents || requestedComponents.includes(page.component))
+        for (const { item, checked } of extraSources.values()) {
+          const result = results.find(entry => entry.component === item.component && entry.surface === 'documentation' && entry.theme === 'lightTheme')
+          if (result?.passed) {
+            result.checkedSources += checked.size
+            assert.equal(result.checkedSources, item.demos.length, `Incomplete source coverage for ${item.component}`)
+          }
+        }
         const sourcesStable = sourceFingerprint(root, library) === inputs && JSON.stringify(current.map((item) => item.demos)) === JSON.stringify(pages.map((item) => item.demos))
         const productionInputsStable = productionFingerprint(root, library) === productionInputs
         await writeFile(resolve(evidence, 'coverage.json'), JSON.stringify({
@@ -185,6 +186,35 @@ export function defineProductionComponentTests({ root, library }) {
         for (const item of pages) {
           const contract = contractFor(library, item.component)
           const index = demoIndex(item, contract.demo)
+          const splitSources = library === 'cedar' && !readingDirection && !directionCore && surface === 'documentation' && theme === 'lightTheme' && item.demos.length > 24
+          if (splitSources) {
+            const checked = new Set()
+            extraSources.set(item.component, { item, checked })
+            const remaining = item.demos.map((_, i) => i).filter(i => i !== index)
+            for (let start = 0; start < remaining.length; start += 8) {
+              const batch = remaining.slice(start, start + 8)
+              it(`${item.component}: source panels ${batch[0] + 1}–${batch.at(-1) + 1}`, { timeout: 30_000 }, async (t) => {
+                const context = await openContext({ ...contextOptions(profile, surface, devices, browser.version()), colorScheme: 'light' })
+                t.signal.addEventListener('abort', () => { void context.close().catch(() => {}) }, { once: true })
+                try {
+                  await context.route('https://hm.baidu.com/**', route => route.fulfill({ contentType: 'text/javascript', body: '' }))
+                  const page = await context.newPage()
+                  const errors = []
+                  page.on('pageerror', error => errors.push(error.message))
+                  page.on('requestfailed', request => { if (request.url().startsWith(origin)) errors.push(request.url()) })
+                  page.on('response', response => { if (response.url().startsWith(origin) && response.status() >= 400) errors.push(response.url()) })
+                  page.setDefaultTimeout(5000)
+                  await navigateWithDiagnostics(page, origin + item.route)
+                  await chooseTheme(page, library, surface, theme)
+                  for (const sourceIndex of batch) {
+                    await checkSource(page, library, sourceIndex, item.demos[sourceIndex])
+                    checked.add(sourceIndex)
+                  }
+                  assert.deepEqual(errors, [])
+                } finally { await context.close() }
+              })
+            }
+          }
           it(`${surface} ${theme} ${item.component}: ${contract.kind}, exact source`, { timeout: directionCore ? 60_000 : 30_000 }, async (t) => {
             const context = await openContext({ ...contextOptions(profile, surface, devices, browser.version()), colorScheme: 'light' })
             t.signal.addEventListener('abort', () => { void context.close().catch(() => {}) }, { once: true })
@@ -221,7 +251,7 @@ export function defineProductionComponentTests({ root, library }) {
                 await demo.waitFor({ state: 'visible' })
                 // Read every source panel once, not just the interacted demo.
                 // Other matrix cells recheck the representative source/theme.
-                for (const sourceIndex of directionCore ? [index] : theme === 'lightTheme' ? item.demos.map((_, i) => i) : [...new Set([0, index])]) {
+                for (const sourceIndex of directionCore || splitSources ? [index] : theme === 'lightTheme' ? item.demos.map((_, i) => i) : [...new Set([0, index])]) {
                   await checkSource(page, library, sourceIndex, item.demos[sourceIndex])
                 }
               } else {
@@ -255,6 +285,7 @@ export function defineProductionComponentTests({ root, library }) {
                 await demo.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
                 assert.equal(await demo.evaluate(element => getComputedStyle(element).direction), beforeDirection.direction, 'restoring the authored scope restores its reading direction')
               }
+              await demo.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
               const layout = await demo.evaluate((element) => ({
                 width: innerWidth, scrollWidth: document.documentElement.scrollWidth,
                 background: getComputedStyle(element).backgroundColor,
@@ -280,10 +311,13 @@ export function defineProductionComponentTests({ root, library }) {
                       const computed = getComputedStyle(parent), box = parent.getBoundingClientRect()
                       ancestors.push({ tag: parent.tagName, class: parent.className, display: computed.display, overflow: computed.overflow, width: box.width })
                     }
-                    return { tag: element.tagName, class: String(element.className), left: rect.left, right: rect.right, position: style.position, overflow: style.overflow, ancestors }
+                    return { tag: element.tagName, class: String(element.className), section: element.closest('section[data-demo]')?.getAttribute('data-demo'), left: rect.left, right: rect.right, position: style.position, overflow: style.overflow, ancestors }
                   }))
+                layout.scrollContainers = await page.evaluate(() => [...document.querySelectorAll('body *')]
+                  .filter(element => element.scrollWidth > element.clientWidth)
+                  .slice(0, 50).map(element => ({ tag: element.tagName, class: String(element.className), section: element.closest('section[data-demo]')?.getAttribute('data-demo'), clientWidth: element.clientWidth, scrollWidth: element.scrollWidth })))
               }
-              assert.equal(layout.scrollWidth, layout.width, `component demo cannot widen the page${layout.overflow ? ': ' + JSON.stringify(layout.overflow) : ''}`)
+              assert.equal(layout.scrollWidth, layout.width, `component demo cannot widen the page${layout.overflow ? ': ' + JSON.stringify({ elements: layout.overflow, scrollContainers: layout.scrollContainers }) : ''}`)
               assert.ok(layout.children > 0 || layout.text, 'demo must not render an empty placeholder')
               assert.ok(layout.box.width > 0 && layout.box.height > 0)
               if (surface === 'documentation') assert.equal(dark(layout.background), theme === 'darkTheme', 'demo card background follows the selected theme')
@@ -311,7 +345,7 @@ export function defineProductionComponentTests({ root, library }) {
                 await mkdir(evidence, { recursive: true })
                 await page.screenshot({ path: resolve(evidence, `${surface}-${theme}-${item.component}-passed.png`) })
               }
-              results.push({ readingDirection: readingDirection ?? 'ltr', component: item.component, surface, theme, kind: contract.kind, source: item.demos[index].file, directionGeometry, checkedSources: surface === 'documentation' ? directionCore ? 1 : theme === 'lightTheme' ? item.demos.length : new Set([0, index]).size : 0, result, passed: true })
+              results.push({ readingDirection: readingDirection ?? 'ltr', component: item.component, surface, theme, kind: contract.kind, source: item.demos[index].file, directionGeometry, checkedSources: surface === 'documentation' ? directionCore || splitSources ? 1 : theme === 'lightTheme' ? item.demos.length : new Set([0, index]).size : 0, result, passed: true })
               t.diagnostic(JSON.stringify({ component: item.component, library, surface, theme, source: item.demos[index].file, result }))
             } catch (error) {
               results.push({ readingDirection: readingDirection ?? 'ltr', component: item.component, surface, theme, kind: contract.kind, passed: false, error: String(error) })

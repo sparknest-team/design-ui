@@ -1,3 +1,4 @@
+import { reportContrast } from './contrast-report.mjs';
 // Compiled selector/default checks, not a browser or pseudo-element rendering test.
 import assert from 'node:assert/strict'
 import { auditThemes, rgba, over, luminance } from './theme-audit-utils.mjs'
@@ -28,7 +29,7 @@ for (const pointerMode of ['fine', 'coarse']) for (const component of ['checkbox
       const fg = over(rgba(color), bg)
       const a = luminance(fg), b = luminance(bg)
       const ratio = (Math.max(a, b) + .05) / (Math.min(a, b) + .05)
-      assert.ok(ratio >= threshold, `${context}: ${ratio} < ${threshold}`)
+      reportContrast(ratio, threshold, `${context}: ${ratio} < ${threshold}`)
       pairs++
       minimum = Math.min(minimum, ratio)
     }

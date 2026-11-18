@@ -14,6 +14,7 @@ export const normalizeCopiedSource = (source) => source
   .replaceAll('../_utils/popup-transition', '../utils/popup-transition')
   .replaceAll('../_utils/text-input-value', '../utils/text-input-value')
   .replaceAll('../_utils/empty-value', '../utils/empty-value')
+  .replace(/^([ \t]*import[^\n]*?\bfrom[ \t]*['"])\.\.\/_utils\/vue-compat(?=['"])/gm, '$1../utils/vue-compat')
   .replaceAll('../_utils/scroll-lock', '../utils/scroll-lock')
   .replaceAll('../_utils/global-config', '../utils/components')
   .replaceAll('../_utils/components', '../utils/components')
@@ -53,6 +54,34 @@ export const normalizeCopiedSource = (source) => source
   .replaceAll('import("vue")', "import('vue')")
   .replace(/\n[ \t]*\n/g, '\n')
   .trim()
+
+export function assertCopiedVueCompat(cedarSource, mapleSource) {
+  const normalize = (source, platform, prefix) => {
+    const replacements = [
+      [`duplicate ${platform} module formats`, 'duplicate platform module formats'],
+      [`@${platform.toLowerCase()}-design/vue-id-counter/v1`, '@platform-design/vue-id-counter/v1'],
+      [`@${platform.toLowerCase()}-design/vue-id-fallback-registry/v1`, '@platform-design/vue-id-fallback-registry/v1'],
+      [`return \`${prefix}-v-\${count}\``, 'return `platform-v-${count}`'],
+    ]
+    for (const [expected, canonical] of replacements) {
+      assert.equal(source.split(expected).length - 1, 1, `Expected one ${platform} vue-compat namespace`)
+      source = source.replace(expected, canonical)
+    }
+    return source
+  }
+  assert.equal(normalize(cedarSource, 'Cedar', 'c'), normalize(mapleSource, 'Maple', 'mp'), 'Copied vue-compat implementations differ')
+}
+
+// Preserve the reviewed platform-specific outline border colors.
+// Compare the complete declaration and its containing variant, then remove only
+// Cedar's exact override so the remaining implementations stay strictly compared.
+export function normalizeButtonOutline(cedarSource, mapleSource) {
+  const cedar = /&--variant-outline\s*\{\s*border:\s*thin\s+solid\s+currentColor;\s*&\.c-button--status-default:not\(\.c-button--disabled\),\s*&\.c-button--status-secondary:not\(\.c-button--disabled\),\s*&\.c-button--status-tertiary:not\(\.c-button--disabled\)\s*\{\s*border-color:\s*var\(--c-sys-color-border-default\);\s*\}\s*\}/g
+  const maple = /&--variant-outline\s*\{\s*border:\s*thin\s+solid\s+currentColor;\s*\}/g
+  assert.equal([...cedarSource.matchAll(cedar)].length, 1, 'Cedar Button outline platform rule changed')
+  assert.equal([...mapleSource.matchAll(maple)].length, 1, 'Maple Button outline platform rule changed')
+  return [cedarSource.replace(cedar, '&--variant-outline { border: thin solid currentColor; }'), mapleSource]
+}
 
 // Switch error foregrounds are intentionally platform-specific. Limit the
 // exception to this exact declaration and assert each reviewed expression.

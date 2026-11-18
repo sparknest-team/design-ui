@@ -11,7 +11,8 @@ const dictionary = JSON.parse(fs.readFileSync(dictionaryFile, 'utf8'));
 Object.assign(dictionary, { '本组配置对照': 'Configuration reference for this comparison', '#### 本组配置对照': '#### Configuration reference for this comparison', '配置': 'Configuration', '作用': 'Purpose', '相关示例': 'Related examples' });
 const hasChinese = value => /[\u4e00-\u9fff]/.test(value);
 const normalize = value => value.trim().replace(/\s+/g, ' ');
-const caseId = ref => path.basename(ref, '.vue').replace(/\.en-US$/, '');
+// Keep same-named demos in different component directories distinct across locales.
+const demoIdentity = ref => path.posix.normalize(ref.replaceAll('\\', '/').replace(/(^|\/)(?:en-US|zh-CN)\//g, '$1').replace(/\.en-US\.vue$/, '.vue'));
 const unknown = new Map();
 function protectInlineCode(source, translated) {
   const literals = [...new Set([...source.matchAll(/`([^`]+)`/g)].map(match => match[1]))].sort((a,b) => b.length-a.length);
@@ -61,7 +62,7 @@ export function localizeDemoReferences(source, englishFile) {
 }
 const notes = /\n?<!-- demo-config-notes:start -->[\s\S]*?<!-- demo-config-notes:end -->\n*/g;
 export function configurationNotes(chinese, english, owner) {
-  const titles = new Map(chinese.cases.map(item => [item.title,english.cases.find(candidate => caseId(candidate.refs[0])===caseId(item.refs[0]))?.title]));
+  const titles = new Map(chinese.cases.map(item => [item.title,english.cases.find(candidate => demoIdentity(candidate.refs[0])===demoIdentity(item.refs[0]))?.title]));
   const extra = {};
   for (const item of chinese.cases) for (const match of item.text.matchAll(/<!-- demo-config-notes:start -->([\s\S]*?)<!-- demo-config-notes:end -->/g)) {
     for (const line of match[1].split('\n').filter(line=>line.startsWith('|'))) {
@@ -73,7 +74,7 @@ export function configurationNotes(chinese, english, owner) {
     }
   }
   return english.cases.map(item=>{
-    const primary=chinese.cases.find(candidate=>caseId(candidate.refs[0])===caseId(item.refs[0]));
+    const primary=chinese.cases.find(candidate=>demoIdentity(candidate.refs[0])===demoIdentity(item.refs[0]));
     const block=primary?.text.match(/<!-- demo-config-notes:start -->[\s\S]*?<!-- demo-config-notes:end -->/)?.[0];
     const translatedBlock=block?translateFragment(block,owner,extra):undefined;
     const existingBlock=item.text.match(/<!-- demo-config-notes:start -->[\s\S]*?<!-- demo-config-notes:end -->/)?.[0];
@@ -100,7 +101,7 @@ export function localizeApiDocumentation({write=false, onGenerated}={}) {
     // compiled source. API translation must not retranslate its generated table.
     const zh=readDemoSections(chineseSource.replace(generated,placeholder)),en=readDemoSections(before.replace(generated,placeholder));
     const seen=new Set();
-    en.cases=en.cases.filter(item=>{const id=caseId(item.refs[0]);if(seen.has(id))return false;seen.add(id);return true;}).map(item=>{
+    en.cases=en.cases.filter(item=>{const id=demoIdentity(item.refs[0]);if(seen.has(id))return false;seen.add(id);return true;}).map(item=>{
       if(hasChinese(item.title) && dictionary[item.title])return {...item,title:dictionary[item.title],text:item.text.replace(/^(###)[^\n]+/,'$1 '+dictionary[item.title])};
       if(hasChinese(item.title) && item.title.includes(' / ')) {
         const translated=item.title.split(' / ').find(part=>!hasChinese(part));
@@ -114,7 +115,7 @@ export function localizeApiDocumentation({write=false, onGenerated}={}) {
     const grouped=groupDemoSections([translateFragment(en.prefix.trimEnd(),row.platform+'/'+row.family),'## Cases\n\n'+cases.join('\n\n'),...preserved,api.trimEnd()].filter(Boolean).join('\n\n')+'\n',manifests[row.platform][row.family],true);
     const primary=componentName(row.family);
     const next=normalizeApiHeadings(cleanPublicDocumentation(localizeDemoReferences(grouped,enFile),{primary}).text,primary).replace(placeholder,englishVariables ?? '');
-    const ids=source=>[...new Set(demoRefs(source).map(caseId))].sort();
+    const ids=source=>[...new Set(demoRefs(source).map(demoIdentity))].sort();
     if(JSON.stringify(ids(next))!==JSON.stringify(ids(fs.readFileSync(zhFile,'utf8'))))throw new Error('Example parity failed: '+enFile);
     if(/complete component API reference in Chinese/.test(next))throw new Error('Chinese API fallback retained: '+enFile);
     if(process.argv.includes('--debug') && next!==before){const debug=path.join('/tmp/api-documentation-debug',row.platform,row.family.replaceAll('/','-')+'.md');fs.mkdirSync(path.dirname(debug),{recursive:true});fs.writeFileSync(debug,next);}

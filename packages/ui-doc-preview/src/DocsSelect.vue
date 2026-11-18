@@ -20,7 +20,7 @@ onBeforeUnmount(() => document.removeEventListener('pointerdown', outside))
       <svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" aria-hidden="true"><path d="m3 4.5 3 3 3-3" /></svg>
     </summary>
     <div class="docs-select__options">
-      <button v-for="option in options" :key="option.value" type="button" :aria-pressed="value === option.value" @click="choose(option.value)"><span>{{ option.label }}</span><span aria-hidden="true">{{ value === option.value ? '✓' : '' }}</span></button>
+      <button v-for="option in options" :key="option.value" type="button" :aria-pressed="value === option.value" @mousedown.prevent @click="choose(option.value)"><span>{{ option.label }}</span><span aria-hidden="true">{{ value === option.value ? '✓' : '' }}</span></button>
     </div>
   </details>
 </template>

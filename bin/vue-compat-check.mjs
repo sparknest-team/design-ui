@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
-import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, renameSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
+import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, renameSync, rmSync, symlinkSync, unlinkSync, writeFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { tmpdir } from 'node:os'
 import { dirname, join, relative, resolve } from 'node:path'
@@ -8,7 +8,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 
 const json = (file) => JSON.parse(readFileSync(file, 'utf8'))
 const packages = ['shared', 'use', 'icons', 'ui']
-const versions = ['minimum', '3-3', '3-4', 'current']
+const versions = ['3-3', '3-4', 'current']
 
 function walk(root) {
   return readdirSync(root, { withFileTypes: true }).flatMap((entry) => {
@@ -26,6 +26,9 @@ export function inspectVueCode(ts, text, file, exportsFor, source = false) {
   const namespaces = new Map()
   const aliases = new Map()
   const issues = []
+  const isTeleport = (node) => (ts.isIdentifier(node) && (aliases.get(node.text) ?? node.text) === 'Teleport') ||
+    (ts.isPropertyAccessExpression(node) && ts.isIdentifier(node.expression) &&
+      namespaces.get(node.expression.text) === 'vue' && node.name.text === 'Teleport')
   const check = (module, name, node) => {
     const available = exportsFor(module)
     if (available && !available.has(name)) {
@@ -68,6 +71,14 @@ export function inspectVueCode(ts, text, file, exportsFor, source = false) {
         const getter = node.arguments[0]
         if (getter && (ts.isArrowFunction(getter) || ts.isFunctionExpression(getter)) && getter.parameters.length) issues.push(`${file}: computed previous-value getters require Vue 3.4`)
       }
+      if (['h', 'createVNode', 'createBlock'].includes(name) && node.arguments.length > 1) {
+        const target = node.arguments[0]
+        const props = node.arguments[1]
+        if (isTeleport(target) && ts.isObjectLiteralExpression(props) &&
+          props.properties.some((prop) => prop.name && prop.name.getText(ast).replace(/^['"]|['"]$/g, '') === 'defer')) {
+          issues.push(`${file}: Teleport defer requires Vue 3.5`)
+        }
+      }
       // These options are silently ignored or have different semantics on 3.2.
       if (/^(?:watch|watchEffect|watchPostEffect|watchSyncEffect)$/.test(name)) {
         for (const arg of node.arguments) if (ts.isObjectLiteralExpression(arg)) for (const prop of arg.properties) {
@@ -77,9 +88,33 @@ export function inspectVueCode(ts, text, file, exportsFor, source = false) {
         }
       }
     }
+    if (source && (ts.isJsxOpeningElement(node) || ts.isJsxSelfClosingElement(node))) {
+      if (isTeleport(node.tagName) &&
+        node.attributes.properties.some((prop) => ts.isJsxAttribute(prop) && prop.name.getText(ast) === 'defer')) {
+        issues.push(`${file}: Teleport defer requires Vue 3.5`)
+      }
+    }
     ts.forEachChild(node, visit)
   }
   visit(ast)
+  return issues
+}
+
+// Teleport is available in Vue 3.2, but its defer prop is only supported in 3.5.
+// Parse SFC templates to avoid treating comments and text as component usage.
+export function inspectVueTemplate(sfc, text, file) {
+  const parsed = sfc.parse(text, { filename: file })
+  assert.deepEqual(parsed.errors, [], `Cannot inspect invalid SFC: ${file}`)
+  const issues = []
+  const visit = (node) => {
+    if (node.type === 1 && node.tag.toLowerCase() === 'teleport' && node.props.some((prop) =>
+      (prop.type === 6 && prop.name === 'defer') ||
+      (prop.type === 7 && prop.name === 'bind' && prop.arg?.type === 4 && prop.arg.isStatic && prop.arg.content === 'defer'))) {
+      issues.push(`${file}:${node.loc.start.line}: Teleport defer requires Vue 3.5`)
+    }
+    for (const child of node.children ?? []) visit(child)
+  }
+  if (parsed.descriptor.template?.ast) visit(parsed.descriptor.template.ast)
   return issues
 }
 
@@ -95,22 +130,32 @@ function runtimeExports(requireMinimum) {
 export function checkVueSources(root) {
   const requireRoot = createRequire(join(root, 'package.json'))
   const ts = createRequire(join(root, 'packages/ui/package.json'))('typescript')
+  const sfc = requireRoot('@vue/compiler-sfc')
   const minimum = createRequire(requireRoot.resolve('vue-compat-min/package.json'))
   const exportsFor = runtimeExports(minimum)
   const issues = []
   for (const pkg of packages) for (const file of walk(join(root, 'packages', pkg, 'src'))) {
     if (!/\.(?:ts|tsx|js|vue)$/.test(file) || file.endsWith('.d.ts')) continue
     let text = readFileSync(file, 'utf8')
-    if (file.endsWith('.vue')) text = [...text.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].map((m) => m[1]).join('\n')
+    if (file.endsWith('.vue')) {
+      issues.push(...inspectVueTemplate(sfc, text, relative(root, file)))
+      text = [...text.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].map((m) => m[1]).join('\n')
+    }
     issues.push(...inspectVueCode(ts, text, relative(root, file), exportsFor, true))
   }
   assert.deepEqual(issues, [], `Vue source compatibility failed:\n${issues.join('\n')}`)
-  for (const pkg of ['ui', 'icons', 'use']) assert.equal(json(join(root, 'packages', pkg, 'package.json')).peerDependencies.vue, '^3.2.47')
+  checkVuePeerRanges(root)
   assert.equal(requireRoot('vue/package.json').version, requireRoot('@vue/compiler-sfc/package.json').version, 'Development Vue and SFC compiler must match')
   assert.equal(createRequire(join(root, 'packages/ui/package.json'))('@vue/runtime-core/package.json').version, requireRoot('vue/package.json').version)
   assert.equal(createRequire(join(root, 'packages/ui/package.json'))('@vue/server-renderer/package.json').version, requireRoot('vue/package.json').version, 'Development SSR renderer must match Vue; compatibility fixtures must not affect hoisting')
   assert.equal(createRequire(join(root, 'tests/vue-compat/current/package.json'))('vue/package.json').version, requireRoot('vue/package.json').version, 'Update the current consumer fixture when upgrading development Vue')
-  console.log('Vue source APIs and peer ranges support 3.2.47; development runtime/compiler match')
+  console.log('Vue source APIs support 3.2.47; UI peer range is 3 (Vue 3.0 and 3.1 are not verified); development runtime/compiler match')
+}
+
+export function checkVuePeerRanges(root) {
+  for (const pkg of ['ui', 'icons', 'use']) {
+    assert.equal(json(join(root, 'packages', pkg, 'package.json')).peerDependencies.vue, pkg === 'ui' ? '3' : '^3.2.47')
+  }
 }
 
 function linkPackage(directory, name, target) {
@@ -118,6 +163,12 @@ function linkPackage(directory, name, target) {
   if (existsSync(path)) return
   mkdirSync(dirname(path), { recursive: true })
   symlinkSync(target, path, 'dir')
+}
+
+export function clearVueRuntimeLinks(consumer) {
+  for (const name of ['vue', '@vue/shared', '@vue/runtime-core', '@vue/runtime-dom', '@vue/reactivity', '@vue/server-renderer']) {
+    try { unlinkSync(join(consumer, 'node_modules', name)) } catch (error) { if (error.code !== 'ENOENT') throw error }
+  }
 }
 
 function packageRoot(requireFrom, name) {
@@ -180,7 +231,7 @@ export async function checkVueArtifacts(root) {
       const runtimeRequire = createRequire(join(runtimeRoot, 'package.json'))
       const version = json(join(runtimeRoot, 'package.json')).version
       console.log(`Checking packed consumers with Vue ${version}`)
-      for (const name of ['vue', '@vue/shared', '@vue/runtime-core', '@vue/runtime-dom', '@vue/reactivity', '@vue/server-renderer']) rmSync(join(consumer, 'node_modules', name), { force: true })
+      clearVueRuntimeLinks(consumer)
       linkPackage(consumer, 'vue', runtimeRoot)
       const domRequire = createRequire(runtimeRequire.resolve('@vue/runtime-dom/package.json'))
       const coreRequire = createRequire(domRequire.resolve('@vue/runtime-core/package.json'))

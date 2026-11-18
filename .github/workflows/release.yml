@@ -1,0 +1,68 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: changesets-${{ github.repository }}-main
+  cancel-in-progress: false
+
+jobs:
+  version:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: design-ui
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: design-ui
+          ref: main
+          fetch-depth: 0
+      - uses: actions/checkout@v4
+        with:
+          repository: loca-spirit/cedar-design-web
+          path: cedar-design-web
+          token: ${{ secrets.DESIGN_SYSTEM_CI_TOKEN || github.token }}
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: loca-spirit/maple-design-mobile
+          path: maple-design-mobile
+          token: ${{ secrets.DESIGN_SYSTEM_CI_TOKEN || github.token }}
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.6.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: corepack pnpm install --frozen-lockfile
+      - name: Create or update version and changelog PR
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          cwd: design-ui
+          version: pnpm version-packages
+          title: 'chore(release): version packages and update changelogs'
+          commit: 'chore(release): version packages and update changelogs'
+          commitMode: github-api
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run Quality for the bot-created release PR
+        if: steps.changesets.outputs.pullRequestNumber != ''
+        uses: actions/github-script@v7
+        env:
+          PR_NUMBER: ${{ steps.changesets.outputs.pullRequestNumber }}
+        with:
+          script: |
+            const { data: pr } = await github.rest.pulls.get({ ...context.repo, pull_number: Number(process.env.PR_NUMBER) });
+            await github.rest.actions.createWorkflowDispatch({ ...context.repo, workflow_id: 'quality.yml', ref: pr.head.ref, inputs: { pull_request_number: String(pr.number) } });

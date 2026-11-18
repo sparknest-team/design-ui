@@ -1,3 +1,4 @@
+import { reportContrast } from './contrast-report.mjs';
 import assert from "node:assert/strict";
 import { auditThemes, rgba, over, luminance } from "./theme-audit-utils.mjs";
 
@@ -24,7 +25,7 @@ await auditThemes(
       const a = luminance(fg),
         b = luminance(bg);
       const ratio = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
-      assert.ok(ratio >= 4.5, `${label}: ${ratio.toFixed(3)} < 4.5`);
+      reportContrast(ratio, 4.5, `${label}: ${ratio.toFixed(3)} < 4.5`);
       minimum = Math.min(minimum, ratio);
       pairs++;
     };

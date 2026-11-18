@@ -215,12 +215,17 @@ export async function exercise({ page, demo, component, library, contract, demos
       if (action === 'auto-complete') await firstInput().fill('Bei')
       else if (!editor) await reference.click()
       const role = action === 'tree-select' ? 'treeitem' : 'option'
-      const option = visible(page.getByRole(role)).filter({ hasNot: page.locator('[aria-disabled="true"]') }).first()
+      const option = action === 'tree-select' && library === 'cedar'
+        ? visible(page.getByRole(role, { name: '设计部', exact: true })).first()
+        : action === 'people-select' && library === 'maple'
+          ? visible(page.locator('[role="option"]:not([aria-selected="true"]):not([aria-disabled="true"])')).first()
+        : visible(page.getByRole(role)).filter({ hasNot: page.locator('[aria-disabled="true"]') }).first()
       await option.waitFor({ state: 'visible' })
       const chosen = (await text(option)).trim()
       await option.click()
       if (editor) {
-        await editor.locator('footer').getByRole('button', { name: '确认', exact: true }).click()
+        const confirm = editor.locator('footer').getByRole('button', { name: '确认', exact: true })
+        if (await confirm.isVisible()) await confirm.click()
         await editor.waitFor({ state: 'hidden' })
         await poll(() => text(fieldReference), (value) => value.includes(chosen), 'confirmed item appears in the committed field reference')
         editor = undefined
@@ -236,7 +241,8 @@ export async function exercise({ page, demo, component, library, contract, demos
         await visible(page.getByText(name, { exact: true })).last().click()
       }
       if (editor) {
-        await editor.locator('footer').getByRole('button', { name: '确认', exact: true }).click()
+        const confirm = editor.locator('footer').getByRole('button', { name: '确认', exact: true })
+        if (await confirm.isVisible()) await confirm.click()
         await editor.waitFor({ state: 'hidden' })
         await poll(() => text(fieldReference), (value) => /南京市/.test(value), 'cascader confirms its committed leaf/path label')
         editor = undefined
@@ -528,7 +534,7 @@ export async function exercise({ page, demo, component, library, contract, demos
       const input = firstInput()
       const reference = demo.locator('.mp-field-presentation__reference').first()
       const deferred = library === 'maple' && await reference.count() > 0
-      const initial = deferred ? await text(reference) : ''
+      const initial = deferred ? await text(reference) : await input.inputValue()
       if (deferred) await reference.click()
       else if (library === 'maple' && (component === 'date' || component === 'date-range')) await demo.locator('[data-field-open-trigger]').first().click()
       else await input.click()
@@ -591,12 +597,13 @@ export async function exercise({ page, demo, component, library, contract, demos
       break
     }
     case 'color': case 'color-picker': {
-      const field = firstInput(), initial = await field.inputValue()
+      const field = component === 'color' ? demo.locator('.c-color-picker-value').first() : firstInput()
+      const initial = component === 'color' ? await text(field) : await field.inputValue()
       if (component === 'color') await demo.locator('.c-color-picker').click()
       const input = component === 'color-picker' ? demo.locator(`.${p}-color-picker-input-hex input`).first() : visible(page.locator(`.${p}-color-picker-input-hex input`)).last()
       await input.fill('FF0000')
       await input.press('Tab')
-      if (component === 'color') await poll(() => field.inputValue(), (value) => value !== initial && /ff0000|255/i.test(value), 'hex edit updates the actual color field model')
+      if (component === 'color') await poll(() => text(field), (value) => value !== initial && /ff0000|255/i.test(value), 'hex edit updates the actual color field model')
       else await poll(() => demo.locator('.c-color-picker-preview').first().evaluate((element) => getComputedStyle(element).backgroundColor), (value) => value === 'rgb(255, 0, 0)', 'standalone color panel renders the edited red color')
       await page.keyboard.press('Escape')
       break

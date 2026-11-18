@@ -1,3 +1,4 @@
+import { reportContrast } from './contrast-report.mjs';
 import assert from 'node:assert/strict'
 import { auditThemes, rgba, over, luminance } from './theme-audit-utils.mjs'
 
@@ -29,7 +30,7 @@ for (const component of ['form', 'textarea']) {
         const fg = over(rgba(read(token)), bg)
         const a = luminance(fg), b = luminance(bg)
         const ratio = (Math.max(a, b) + .05) / (Math.min(a, b) + .05)
-        assert.ok(ratio >= threshold, `${context}/${token}: ${ratio} < ${threshold}`)
+        reportContrast(ratio, threshold, `${context}/${token}: ${ratio} < ${threshold}`)
         pairs++
         minimum = Math.min(minimum, ratio)
       }

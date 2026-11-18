@@ -131,3 +131,24 @@ test('translated preserved chapters select available English demos without chang
   fs.rmSync(directory,{recursive:true,force:true});
  }
 });
+
+
+test('same-named demos in different directories retain their own configuration notes', () => {
+ const item = (ref, key) => ({title:key, refs:[ref], text:`### ${key}\n\n<!-- demo-config-notes:start -->\n| \`${key}\` | Purpose | Related examples |\n<!-- demo-config-notes:end -->\n\n<demo src="${ref}"></demo>`});
+ const field=item('./__demos__/basic.vue','field-prop');
+ const panel=item('./picker/__demos__/basic.vue','panel-prop');
+ const english=[field,panel].map(row=>({...row,refs:row.refs.map(ref=>ref.replace('.vue','.en-US.vue')),text:`### ${row.title}\n\n<demo src="${row.refs[0]}"></demo>`}));
+ const output=configurationNotes({cases:[field,panel]},{cases:english},'fixture');
+ assert.match(output[0], /field-prop/);
+ assert.doesNotMatch(output[0], /panel-prop/);
+ assert.match(output[1], /panel-prop/);
+ assert.doesNotMatch(output[1], /field-prop/);
+});
+
+test('English Time documentation retains both field and standalone panel basic demos', () => {
+ let source;
+ localizeApiDocumentation({onGenerated: row => {if(row.platform==='cedar' && row.family==='time') source=row.source;}});
+ assert.ok(source);
+ assert.match(source, /src="\.\/__demos__\/basic\.vue"/);
+ assert.match(source, /src="\.\/picker\/__demos__\/basic\.vue"/);
+});

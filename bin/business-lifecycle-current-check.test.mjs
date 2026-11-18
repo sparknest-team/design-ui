@@ -4,11 +4,12 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { checkCurrentBusinessEvidence, checkFrameFixture } from './business-lifecycle-current-check.mjs';
 
-test('current first-frame fixture differs only in the documented observation and running checks', () => {
+test('current first-frame fixture differs only in the documented observation, running and teardown changes', () => {
   const directory = fileURLToPath(new URL('../refactors/token-validation/browser/', import.meta.url));
   const original = readFileSync(`${directory}business-lifecycle-main.js`, 'utf8');
   const frame = readFileSync(`${directory}business-lifecycle-first-frame-diagnostic.js`, 'utf8');
   checkFrameFixture(original, frame);
+  assert.throws(() => checkFrameFixture(original, frame.replace("]) })\napp.mount('#app')", "]) }).mount('#app')")));
   assert.throws(() => checkFrameFixture(original, frame.replace('p.running.changes > p.mounted.changes && ', '')));
   assert.throws(() => checkFrameFixture(original, frame.replace("await wait(180); await new Promise(resolve => requestAnimationFrame(resolve)); await nextTick(); snapshot('running')", "await wait(180); snapshot('running')")));
   assert.throws(() => checkFrameFixture(original, frame.replace("s.instance.value.start(); await wait(180); await new Promise(resolve => requestAnimationFrame(resolve)); await nextTick(); snapshot('resumed')", "s.instance.value.start(); await wait(180); snapshot('resumed')")));

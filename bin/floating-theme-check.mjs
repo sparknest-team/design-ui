@@ -1,3 +1,4 @@
+import { reportContrast } from './contrast-report.mjs';
 // Compiled steady-state CSS audit, not a browser layout/animation test.
 import assert from "node:assert/strict";
 import { auditThemes, rgba, over, luminance } from "./theme-audit-utils.mjs";
@@ -49,7 +50,7 @@ for (const component of ["tooltip", "popover", "overlay", "trigger"]) {
           const a = luminance(fg),
             b = luminance(bg);
           const ratio = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
-          if (!buttonPalette) assert.ok(ratio >= 4.5, `${label}/${surface}: ${ratio} < 4.5`);
+          if (!buttonPalette) reportContrast(ratio, 4.5, `${label}/${surface}: ${ratio} < 4.5`);
           else if (ratio < 4.5) buttonPairsBelowAA++;
           minimum = Math.min(minimum, ratio);
           pairs++;

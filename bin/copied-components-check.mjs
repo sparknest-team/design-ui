@@ -1,4 +1,4 @@
-import { normalizeCopiedSource as normalize, normalizeSwitchErrorText, normalizeSwitchTokenDefaults, normalizeCopiedTypeScript, normalizeCopiedSfcScript, stripCopiedSfcScript } from './copied-source-normalization.mjs'
+import { normalizeCopiedSource as normalize, normalizeSwitchErrorText, normalizeSwitchTokenDefaults, normalizeButtonOutline, normalizeCopiedTypeScript, normalizeCopiedSfcScript, stripCopiedSfcScript, assertCopiedVueCompat } from './copied-source-normalization.mjs'
 import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { createRequire } from 'node:module'
@@ -264,6 +264,13 @@ for (const [cedarPath, maplePath] of pairs) {
     readFile(resolve(cedar, cedarPath), 'utf8'),
     readFile(resolve(maple, maplePath), 'utf8'),
   ])
+  if (left.includes('../_utils/vue-compat') && right.includes('../utils/vue-compat')) {
+    const [cedarCompat, mapleCompat] = await Promise.all([
+      readFile(resolve(cedar, '_utils/vue-compat.ts'), 'utf8'),
+      readFile(resolve(maple, 'utils/vue-compat.ts'), 'utf8'),
+    ])
+    assertCopiedVueCompat(cedarCompat, mapleCompat)
+  }
   if (cedarPath === 'badge/style/token.less') {
     // Cedar declares its dark override in Less; Maple supplies the same value
     // through ThemeProvider. Verify that adapter before comparing base tokens.
@@ -298,6 +305,9 @@ for (const [cedarPath, maplePath] of pairs) {
     }
     left = await normalizeButtonDensity(left, cedar, 'c', 'cedar')
     right = await normalizeButtonDensity(right, maple, 'mp', 'maple')
+  }
+  if (cedarPath === 'button/style/button.less') {
+    ;[left, right] = normalizeButtonOutline(left, right)
   }
   if (cedarPath === 'switch/style/token.less') {
     const contract = JSON.parse(await readFile(resolve(workspace, 'design-ui/packages/theme-contract/contracts/theme-contract.json'), 'utf8'))

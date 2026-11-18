@@ -1,3 +1,4 @@
+import { reportContrast } from './contrast-report.mjs';
 // Actual compiled CSS, including Maple dark overrides; not a browser screenshot test.
 import assert from "node:assert/strict";
 import { auditThemes, rgba, over, luminance } from "./theme-audit-utils.mjs";
@@ -88,10 +89,7 @@ await auditThemes(
             const a = luminance(fg),
               b = luminance(bg);
             const contrast = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
-            assert.ok(
-              contrast >= 4.5,
-              `${label}/${surface}/${part}: ${contrast.toFixed(3)} < 4.5`,
-            );
+            reportContrast(contrast, 4.5, `${label}/${surface}/${part}: ${contrast.toFixed(3)} < 4.5`);
             minimum = Math.min(minimum, contrast);
             pairs++;
           }

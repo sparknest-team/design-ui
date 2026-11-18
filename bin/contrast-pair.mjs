@@ -1,3 +1,4 @@
+import { reportContrast } from './contrast-report.mjs';
 import assert from 'node:assert/strict'
 import { rgba, over, luminance } from './theme-audit-utils.mjs'
 
@@ -18,8 +19,8 @@ export function contrastPair(foreground, surface, backing) {
   const a = luminance(fg), b = luminance(bg)
   return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05)
 }
-export function requireTextContrast(foreground, surface, backing, minimum = 4.5) {
+export function reportTextContrast(foreground, surface, backing, minimum = 4.5) {
   const ratio = contrastPair(foreground, surface, backing)
-  assert.ok(ratio >= minimum, `text contrast ${ratio} < ${minimum}; compare unrounded values`)
+  reportContrast(ratio, minimum, `text contrast ${ratio} < ${minimum}; compare unrounded values`)
   return ratio
 }

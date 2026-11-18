@@ -132,7 +132,9 @@ export function generateDocs({ root, platform, output }) {
   for (const [file, content] of artifacts) {
     const destination = path.join(output, file)
     mkdirSync(path.dirname(destination), { recursive: true })
-    writeFileSync(destination, content)
+    // Standalone text/Markdown responses may have no HTTP charset. The UTF-8
+    // signature prevents browsers from guessing a legacy encoding such as GBK.
+    writeFileSync(destination, '\uFEFF' + content, 'utf8')
   }
   return { pages: pages.length, files: artifacts.size }
 }

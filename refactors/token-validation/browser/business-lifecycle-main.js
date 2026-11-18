@@ -108,7 +108,8 @@ app = createApp({ setup: () => () => h('main', [
   })),
   h('ul', results.value.map(r => h('li', `${r.name} ${r.kind}: ${r.passed ? 'PASS' : 'FAIL'}; final nodes ${r.finalNodes}`))),
   h('output', { 'aria-label': 'Business lifecycle results' }, JSON.stringify({ busy: busy.value, results: results.value }, null, 2)),
-]) }).mount('#app')
+]) })
+app.mount('#app')
 window.addEventListener('pagehide', () => {
   alive = false
   for (const [id, resolve] of jobs) { clearTimeout(id); resolve() }

@@ -19,6 +19,38 @@ if (process.argv[4] === 'ssr') {
     assert.match(html, /SSR compatibility/)
     assert.match(html, /server/)
     assert.equal(await render(), html)
+    if (name.includes('cedar')) {
+      const app = Vue.createSSRApp({
+        render: () => Vue.h(library.Table, {
+          columns: [{ title: 'Name', dataIndex: 'name' }],
+          data: [{ key: 1, name: 'Table SSR compatibility' }],
+          pagination: false,
+        }),
+      })
+      app.config.errorHandler = (error) => { throw error }
+      assert.match(await renderToString(app), /Table SSR compatibility/)
+
+      for (const matches of [true, false]) {
+        const data = [
+          { key: 'a', name: 'keep', keep: true, children: [{ key: 'child', name: 'child', keep: true }] },
+          { key: 'b', name: 'filtered', keep: false },
+        ]
+        const column = {
+          title: 'Name', dataIndex: 'name',
+          filterable: {
+            defaultFilteredValue: ['keep'], filters: [{ text: 'Keep', value: 'keep' }],
+            filter: (_values, record) => matches && record.keep,
+          },
+        }
+        const props = { data, pagination: false, rowSelection: {}, defaultSelectedKeys: ['a'], defaultExpandedKeys: ['a'] }
+        const table = Vue.createSSRApp({ render: () => Vue.h(library.Table, { ...props, columns: [column] }) })
+        const markup = await renderToString(table, {})
+        const document = new JSDOM(markup).window.document
+        const cells = [...document.querySelectorAll('tbody [data-column-key="name"] .c-table-td-content')].map((cell) => cell.textContent)
+        assert.deepEqual(cells, matches ? ['keep', 'child'] : [], `Vue ${version}: array columns must apply the default filter in SSR`)
+        if (!matches) assert.ok(document.querySelector('.c-table-empty'), `Vue ${version}: array columns must render the empty state in SSR`)
+      }
+    }
   }
   process.exit(0)
 }
@@ -88,6 +120,39 @@ try {
     const ids = [...host.querySelectorAll('[id]')].map((node) => node.id)
     assert.equal(new Set(ids).size, ids.length, 'Generated editor and SVG IDs must be unique')
     hydrated.unmount()
+  }
+  if (name.includes('cedar')) {
+    for (const library of libraries) {
+      const current = Vue.ref(1)
+      const host = document.getElementById('app')
+      const warnings = []
+      const app = Vue.createApp({
+        render: () => Vue.h('main', [
+          Vue.h(library.Table, {
+            columns: [{ title: 'Name', dataIndex: 'name' }],
+            data: [{ key: 1, name: 'First row' }, { key: 2, name: 'Second row' }],
+            pagination: { container: '#compat-late-pager', pageSize: 1, modelValue: current.value },
+            onPageChange: (page) => { current.value = page },
+          }, {
+            pagination: (scope) => Vue.h('button', { 'data-page-next': '', onClick: () => scope.onChange(scope.page + 1) }, 'Next'),
+          }),
+          Vue.h('div', { id: 'compat-late-pager' }),
+        ]),
+      })
+      app.config.warnHandler = (warning) => warnings.push(warning)
+      try {
+        app.mount(host)
+        await Vue.nextTick()
+        await Vue.nextTick()
+        const button = host.querySelector('#compat-late-pager [data-page-next]')
+        assert.ok(button, `Vue ${version}: pagination target rendered later must receive the pager`)
+        button.dispatchEvent(new MouseEvent('click', { bubbles: true }))
+        await Vue.nextTick()
+        assert.equal(current.value, 2)
+        assert.match(host.textContent, /Second row/)
+        assert.deepEqual(warnings, [], `Vue ${version}: late pagination target emitted warnings`)
+      } finally { app.unmount() }
+    }
   }
   const context = dom.getInternalVMContext()
   vm.runInContext(readFileSync(require.resolve('vue/dist/vue.global.prod.js'), 'utf8'), context)

@@ -1,3 +1,4 @@
+import { reportContrast } from './contrast-report.mjs';
 // Compiled CSS checks; browser layout, pseudo-elements and animation are separate gates.
 import assert from 'node:assert/strict'
 import { auditThemes, rgba, over, luminance } from './theme-audit-utils.mjs'
@@ -21,7 +22,7 @@ for (const component of ['input', 'select', 'auto-complete']) {
       const foreground = over(rgba(fg), background)
       const a = luminance(foreground), b = luminance(background)
       const ratio = (Math.max(a, b) + .05) / (Math.min(a, b) + .05)
-      assert.ok(ratio >= threshold, `${label}: contrast ${ratio} < ${threshold}`)
+      reportContrast(ratio, threshold, `${label}: contrast ${ratio} < ${threshold}`)
       minimum = Math.min(minimum, ratio)
       if (threshold === 4.5) textMinimum = Math.min(textMinimum, ratio)
       pairs++

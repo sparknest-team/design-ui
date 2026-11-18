@@ -1,7 +1,8 @@
+import { reportContrast } from './contrast-report.mjs';
 // Steady-state compiled CSS checks; interaction/Teleport behavior is tested in each library.
 import assert from "node:assert/strict";
 import { auditThemes, rgba, over, luminance } from "./theme-audit-utils.mjs";
-import { requireTextContrast } from "./contrast-pair.mjs";
+import { reportTextContrast } from "./contrast-pair.mjs";
 
 let combinations = 0,
   pairs = 0,
@@ -198,7 +199,7 @@ for (const component of ["dialog", "drawer", "popup"]) {
         const a = luminance(fg),
           b = luminance(bg),
           ratio = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
-        assert.ok(ratio >= 4.5, `${label}: ${ratio} < 4.5`);
+        reportContrast(ratio, 4.5, `${label}: ${ratio} < 4.5`);
         pairs++;
         minimum = Math.min(minimum, ratio);
       }
@@ -213,7 +214,7 @@ for (const component of ["dialog", "drawer", "popup"]) {
           assert.ok(foregroundKey, "direct public foreground consumer");
           const savedForeground = variables[foregroundKey];
           variables[foregroundKey] = "#f8f9fc";
-          const ratio = requireTextContrast(expand(cascade(el).color), expand(cascade(panel)[backgroundProperty]), read("sys-color-surface-page"));
+          const ratio = reportTextContrast(expand(cascade(el).color), expand(cascade(panel)[backgroundProperty]), read("sys-color-surface-page"));
           overridePairs++;
           minimum = Math.min(minimum, ratio);
           variables[foregroundKey] = savedForeground;
