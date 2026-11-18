@@ -7,7 +7,7 @@
     "design-system-check": "./bin/spec-check.mjs"
   },
   "scripts": {
-    "check:ci": "node --test bin/ci-contract.test.mjs bin/ci-toolchain-check.test.mjs bin/shared-source-contract.test.mjs bin/case-paths-check.test.mjs packages/ui-build/test/environment.test.mjs packages/ui-build/test/dual-declarations.test.mjs packages/ui-build/test/vue-declarations.test.mjs bin/style-entry-types.test.mjs bin/style-module-assertions.test.mjs browser/inventory.test.mjs browser/navigation.test.mjs bin/api-naming-check.test.mjs browser/compatibility.test.mjs browser/native-acceptance.test.mjs browser/native-handoff.test.mjs",
+    "check:ci": "node --test bin/ci-contract.test.mjs bin/ci-toolchain-check.test.mjs bin/shared-source-contract.test.mjs bin/case-paths-check.test.mjs packages/ui-build/test/environment.test.mjs packages/ui-build/test/dual-declarations.test.mjs packages/ui-build/test/vue-declarations.test.mjs bin/style-entry-types.test.mjs bin/style-module-assertions.test.mjs browser/inventory.test.mjs browser/navigation.test.mjs bin/api-naming-check.test.mjs browser/compatibility.test.mjs browser/native-acceptance.test.mjs browser/native-handoff.test.mjs bin/pr-workflow.test.mjs",
     "check:demo-controls": "node --test bin/demo-control-policy.test.mjs && node bin/demo-controls-check.mjs",
     "check:demo-design": "node bin/demo-design-check.mjs && node bin/demo-controls-check.mjs && node bin/organize-demo-pages.mjs",
     "check:api": "node bin/api-exports-audit.mjs ../cedar-design-web/packages/ui/src --check && node bin/api-exports-audit.mjs ../maple-design-mobile/packages/ui/src --check",
@@ -93,13 +93,22 @@
     "check:public-docs": "node --test bin/public-documentation-policy.test.mjs && node bin/public-docs-check.mjs",
     "check:public-docs:browser": "node browser/public-documentation-check.mjs",
     "check:layout-nav-tokens:browser": "node browser/layout-nav-token-check.mjs",
-    "check:packages": "node --test bin/package-boundary-check.test.mjs && node bin/package-boundary-check.mjs"
+    "check:packages": "node --test bin/package-boundary-check.test.mjs && node bin/package-boundary-check.mjs",
+    "hooks:install": "node scripts/git-hooks.mjs install",
+    "changeset": "changeset",
+    "version-packages": "changeset version && pnpm install --lockfile-only --ignore-scripts",
+    "prepare": "node scripts/git-hooks.mjs install",
+    "quality": "pnpm check:ci && pnpm check && pnpm check:demo-controls && pnpm check:public-docs && pnpm check:llms && node --test bin/api-documentation-locales.test.mjs bin/demo-content-parity.test.mjs",
+    "pr:merge": "node scripts/pr-merge.mjs",
+    "check:pr-workflow": "node --test bin/pr-workflow.test.mjs"
   },
   "engines": {
     "node": ">=20"
   },
   "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b",
   "devDependencies": {
-    "typescript": "5.6.3"
+    "typescript": "5.6.3",
+    "@changesets/cli": "^2.29.7",
+    "@changesets/changelog-github": "^0.5.1"
   }
 }
