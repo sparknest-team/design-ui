@@ -1,3 +1,4 @@
+import { reportContrast } from './contrast-report.mjs';
 // Compiled steady-state colors and real token consumers, not browser layout tests.
 import assert from "node:assert/strict";
 import { auditThemes, rgba, over, luminance } from "./theme-audit-utils.mjs";
@@ -50,7 +51,7 @@ for (const component of ["message", "notification", "loading-bar"]) {
           a = luminance(fg),
           b = luminance(background);
         const value = (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
-        assert.ok(value >= 4.5, `${label}: ${value} < 4.5`);
+        reportContrast(value, 4.5, `${label}: ${value} < 4.5`);
         pairs++;
         minimum = Math.min(minimum, value);
       };

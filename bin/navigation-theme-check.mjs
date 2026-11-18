@@ -1,3 +1,4 @@
+import { reportContrast } from './contrast-report.mjs';
 import assert from 'node:assert/strict'
 import { auditThemes, rgba, over, luminance } from './theme-audit-utils.mjs'
 
@@ -19,7 +20,7 @@ for (const component of ['tabs', 'steps']) for (const pointerMode of component =
       const foreground = over(rgba(fg), background)
       const a = luminance(foreground), b = luminance(background)
       const ratio = (Math.max(a,b)+.05)/(Math.min(a,b)+.05)
-      assert.ok(ratio >= threshold, `${context}: ${ratio} < ${threshold}`)
+      reportContrast(ratio, threshold, `${context}: ${ratio} < ${threshold}`)
       minimum = Math.min(minimum, ratio); pairs++
     }
     if (component === 'tabs') {

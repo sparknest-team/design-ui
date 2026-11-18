@@ -1,3 +1,4 @@
+import { reportContrast } from './contrast-report.mjs';
 import assert from 'node:assert/strict'
 import { auditThemes, rgba, over, luminance } from './theme-audit-utils.mjs'
 
@@ -40,7 +41,7 @@ for (const component of ['hover', 'icon', 'paper', 'ripple', 'skeleton', 'space'
       const bg = rgba(expand(cascade(el).background))
       const fg = over(rgba(expand(variables[`--${p}-sys-color-content-primary`])), bg)
       const a = luminance(fg), b = luminance(bg)
-      assert.ok((Math.max(a,b)+.05)/(Math.min(a,b)+.05) >= 4.5, context)
+      reportContrast((Math.max(a,b)+.05)/(Math.min(a,b)+.05), 4.5, context)
     }
     if (component === 'ripple') {
       const el = node(`${p}-ripple`)

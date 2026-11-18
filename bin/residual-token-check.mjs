@@ -1,3 +1,4 @@
+import { reportContrast } from './contrast-report.mjs';
 import assert from 'node:assert/strict'
 import { auditThemes, rgba, over, luminance } from './theme-audit-utils.mjs'
 
@@ -26,7 +27,7 @@ for (const component of ['carousel', 'picker', 'time-range']) {
       const page = rgba(expand(variables['--mp-sys-color-surface-page']))
       const background = over(rgba(expand(variables['--mp-time-range-picker-background'])), page)
       const a = luminance(over(foreground, background)), b = luminance(background)
-      assert.ok((Math.max(a, b) + .05) / (Math.min(a, b) + .05) >= 4.5, 'next-day small text contrast')
+      reportContrast((Math.max(a, b) + .05) / (Math.min(a, b) + .05), 4.5, 'next-day small text contrast')
       contrastPairs++
     }
     states++

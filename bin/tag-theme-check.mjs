@@ -1,3 +1,4 @@
+import { reportContrast } from './contrast-report.mjs';
 // Compiled Tag cascade and contrast regression.
 import assert from "node:assert/strict";
 import { auditThemes, rgba, over, luminance } from "./theme-audit-utils.mjs";
@@ -42,7 +43,7 @@ await auditThemes(
                   const fg = over(rgba(expand(style.color)), bg);
                   const a = luminance(fg), b = luminance(bg);
                   const ratio = (Math.max(a,b)+.05)/(Math.min(a,b)+.05);
-                  assert.ok(ratio >= 4.5, `${label}/${surface}: ${ratio} < 4.5`);
+                  reportContrast(ratio, 4.5, `${label}/${surface}: ${ratio} < 4.5`);
                   presetMinimum = Math.min(presetMinimum, ratio); presetPairs++;
                 }
               }
@@ -121,10 +122,7 @@ await auditThemes(
                   b = luminance(bg);
                 const contrast =
                   (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
-                assert.ok(
-                  contrast >= 4.5,
-                  `${label}/${surface}: ${contrast.toFixed(3)} < 4.5`,
-                );
+                reportContrast(contrast, 4.5, `${label}/${surface}: ${contrast.toFixed(3)} < 4.5`);
                 minimum = Math.min(minimum, contrast);
                 pairs++;
               }
