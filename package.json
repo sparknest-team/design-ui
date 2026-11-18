@@ -96,7 +96,7 @@
     "check:packages": "node --test bin/package-boundary-check.test.mjs && node bin/package-boundary-check.mjs",
     "hooks:install": "node scripts/git-hooks.mjs install",
     "changeset": "changeset",
-    "version-packages": "changeset version && pnpm install --lockfile-only --ignore-scripts",
+    "version-packages": "node bin/check-major-release.mjs && changeset version && pnpm install --lockfile-only --ignore-scripts",
     "prepare": "node scripts/git-hooks.mjs install",
     "quality": "pnpm check:ci && pnpm check && pnpm check:demo-controls && pnpm check:public-docs && pnpm check:llms && node --test bin/api-documentation-locales.test.mjs bin/demo-content-parity.test.mjs",
     "pr:merge": "node scripts/pr-merge.mjs",

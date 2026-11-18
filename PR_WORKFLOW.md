@@ -27,6 +27,8 @@ gh pr create --base main
 
 合并 main 后，Release workflow 自动创建或更新 `changeset-release/main` 版本 PR，更新包版本、`CHANGELOG.md` 和锁文件；不修改 main 的版本，不自动合并，也不自动发布 npm。版本 PR 同样需要 Quality 通过；工作流通过 workflow_dispatch 显式触发机器人 PR 的校验，避免默认 GITHUB_TOKEN 不能触发 pull_request 工作流的问题。
 
+版本 PR 使用 Changesets 的最终计划检查主版本，包括因包依赖联动产生的升级。只有 patch 和 minor 时按现有流程处理。计划包含跨主版本升级时，自动流程会列出相关包并停止。维护者核对计划后，在 GitHub Actions 的 Release 页面选择 main，勾选 “Confirm major release for this main commit” 再运行。确认仅对本次手动运行的提交生效。
+
 版本 PR 合并后，按需运行 Publish workflow。Cedar/Maple 的发布仍为显式 workflow_dispatch 或联合发版 dispatch；只有该 main 提交的 Quality 已通过才能发布。npm 凭据与跨仓库只读 token 分开管理。design-ui 共享包需要发包时也使用显式 Publish，不在生成日志时发包。
 
 ## 配套仓库 PR

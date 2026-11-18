@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import { checkMajorRelease } from './check-major-release.mjs'
 import { execFileSync, spawnSync } from 'node:child_process'
 import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync, existsSync } from 'node:fs'
 import { tmpdir } from 'node:os'
@@ -135,6 +136,15 @@ for (const repo of repos) {
     const action = release.jobs.version.steps.find(step => step.uses === 'changesets/action@v1')
     assert.ok(action)
     assert.equal(action.with.publish, undefined, 'main push must only prepare a version PR')
+    if (repo === 'cedar-design-web' || repo === 'design-ui') {
+      const confirm = release.on.workflow_dispatch.inputs.confirm_major
+      assert.equal(confirm.type, 'boolean')
+      assert.equal(confirm.default, false)
+      assert.equal(action.env.CONFIRMED_MAJOR_COMMIT, "${{ github.event_name == 'workflow_dispatch' && inputs.confirm_major && github.sha || '' }}")
+      assert.equal(action.with.version, 'pnpm version-packages')
+      const command = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8')).scripts['version-packages']
+      assert.match(command, /check-major-release\.mjs && changeset version/)
+    }
     assert.ok(JSON.stringify(release).includes('createWorkflowDispatch'))
     const config = JSON.parse(readFileSync(join(root, '.changeset/config.json'), 'utf8'))
     assert.equal(config.changelog[1].repo, 'loca-spirit/' + repo)
@@ -159,4 +169,15 @@ test('Changesets really consumes a patch description and writes its version and 
     assert.match(readFileSync(join(fixture, 'packages/example/CHANGELOG.md'), 'utf8'), /Restore focus after closing/)
     assert.equal(existsSync(join(fixture, '.changeset/focus-fix.md')), false)
   } finally { rmSync(fixture, { recursive: true, force: true }) }
+})
+
+test('only a confirmation for the planned commit permits crossing a major version', () => {
+  const routine = [{ name: 'ui', oldVersion: '1.1.10', newVersion: '1.2.0' },
+    { name: 'theme', oldVersion: '1.1.10', newVersion: '1.1.11' }]
+  checkMajorRelease(routine, undefined, 'current')
+  const mixed = [...routine, { name: 'resolver', oldVersion: '1.1.10', newVersion: '2.0.0', changesets: [] }]
+  for (const approval of [undefined, '', 'previous']) {
+    assert.throws(() => checkMajorRelease(mixed, approval, 'current'), /resolver 1\.1\.10 → 2\.0\.0/)
+  }
+  checkMajorRelease(mixed, 'current', 'current')
 })
