@@ -185,6 +185,7 @@ const pairs = [
   ['trigger/types.ts', 'trigger/types.ts'],
   ['trigger/position.ts', 'trigger/position.ts'],
   ['trigger/positioner.ts', 'trigger/positioner.ts'],
+  ['trigger/reference-motion.ts', 'trigger/reference-motion.ts'],
   ['trigger/style/index.less', 'trigger/style/index.less'],
   ['trigger/style/token.less', 'trigger/style/token.less'],
   ['trigger/__tests__/position.spec.js', 'trigger/__tests__/position.spec.js'],
