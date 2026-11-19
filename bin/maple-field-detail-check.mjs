@@ -21,6 +21,8 @@ await auditThemes('textarea', ({ prefix: p, document, tag, variables, cascade, e
   assert.equal(expand(cascade(input)['margin-inline-end']), 'calc(-1 * 16px)', 'Native resize edge extends to the field boundary')
   assert.equal(expand(cascade(input)['padding-inline-end']), 'calc(0px + 16px)', 'Text keeps its horizontal inset')
   assert.equal(cascade(counter)['text-align'], 'end', 'Counter stays aligned to the logical end')
+  field.classList.add(`${p}-field-decorator--variant-standard`)
+  assert.equal(cascade(input).width, '100%', 'Standard fields without a suffix keep the textarea within the field')
   const suffix = document.createElement('span')
   suffix.className = `${p}-field-decorator__suffix`
   field.append(suffix)
@@ -31,6 +33,6 @@ await auditThemes('textarea', ({ prefix: p, document, tag, variables, cascade, e
   const button = document.createElement('button')
   suffix.append(button)
   assert.equal(cascade(button)['pointer-events'], 'auto', 'Suffix controls remain interactive')
-  checks += 9
+  checks += 10
 }, { platforms: ['mp'], pointerMode: 'fine', tokenImports: ['field-decorator/style/token.less', 'textarea/style/mobile.less'] })
 console.log(`Maple field details passed: ${checks} theme/layout checks.`)

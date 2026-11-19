@@ -1,3 +1,4 @@
+import { DOMSelector } from "@asamuzakjp/dom-selector";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";
@@ -134,8 +135,6 @@ export async function auditThemes(
       for (const selector of rule.selectors)
         rules.push({
           selector: selector
-            // Equivalent form avoids nwsapi's nested :not(:nth-child()) parser bug.
-            .replaceAll(":not(:nth-child(1))", ":nth-child(n+2)")
             .replaceAll(":hover", ".audit-hover")
             .replaceAll(":active", ".audit-active")
             .replaceAll(":focus-visible", ".audit-focus-visible"),
@@ -146,13 +145,14 @@ export async function auditThemes(
     for (const brand of ["default", "maple"])
       for (const mode of ["light", "dark"]) {
         const dom = new JSDOM("<html><body><span></span></body></html>");
+        const { matches } = new DOMSelector(dom.window);
         const document = dom.window.document;
         document.documentElement.setAttribute(themeAttr, mode);
         const tag = document.querySelector("span");
         const cascade = (element, pseudo = '') => {
           const result = new Map();
           for (const rule of rules)
-            if ((pseudo ? rule.selector.endsWith(pseudo) : !rule.selector.includes('::')) && element.matches(pseudo ? rule.selector.slice(0, -pseudo.length) : rule.selector)) {
+            if ((pseudo ? rule.selector.endsWith(pseudo) : !rule.selector.includes('::')) && matches(pseudo ? rule.selector.slice(0, -pseudo.length) : rule.selector, element)) {
               for (const decl of rule.declarations) {
                 const weight = rule.weight + (decl.important ? 1000000 : 0);
                 if (
