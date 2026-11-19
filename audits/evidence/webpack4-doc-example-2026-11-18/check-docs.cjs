@@ -1,7 +1,7 @@
 const assert = require('node:assert/strict')
 const fs = require('fs')
 const path = require('path')
-const workspace = path.resolve(__dirname, '../../..')
+const workspace = path.resolve(__dirname, '../../../..')
 for (const [brand, repo, files] of [
   ['maple', 'maple-design-mobile', ['platform.zh-CN.md', 'platform.en-US.md']],
   ['cedar', 'cedar-design-web', ['guide/platform.md', 'guide/platform.en-US.md']],
