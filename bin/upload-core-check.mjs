@@ -13,7 +13,7 @@ const { transformSync } = esRequire('esbuild')
 const pairs = [
   ['upload/upload.vue', 'upload/Upload.vue'],
   ...['use-trigger.ts','__tests__/trigger-ownership.spec.js','props.ts','interfaces.ts','form-adapter.ts','composables/use-uploader.ts','composables/use-upload-queue.ts','composables/use-file-picker.ts','utils/request.ts','utils/thumbnail.ts','utils/accept.ts','utils/uid.ts','style/index.less','style/token.less','__tests__/body-contract.spec.js','__tests__/core-contract.spec.ts'].map(file => ['upload/' + file, 'upload/' + file]),
-  ...['read-only','queue-request','replacement-validation','custom-surface','external-state'].map(file => ['upload/__demos__/' + file + '.vue','upload/example/demos/' + file + '.vue']),
+  ...['read-only','manual-upload','replacement','custom-surface','external-state'].map(file => ['upload/__demos__/' + file + '.vue','upload/example/demos/' + file + '.vue']),
 ]
 function normalize(source) {
   return source.replaceAll('@cedar-design/icons-vue', '@maple-design/icons-vue').replaceAll('imagePreview as previewImage', 'previewImage').replaceAll('../image/preview-api', '../image/preview').replaceAll('../_utils/global-config', '../utils/components')
@@ -86,7 +86,7 @@ export function canonical(source, file) {
       }],
     } })
     assert.equal(result.errors.length, 0, file)
-    return script(descriptor.scriptSetup?.content || descriptor.script?.content || '') + transformSync(result.code, { loader: 'js', minify: true }).code + descriptor.styles.map(style => style.content.replace(/\s+/g, '')).join('')
+    return script(descriptor.scriptSetup?.content || descriptor.script?.content || '') + transformSync(result.code, { loader: 'ts', minify: true }).code + descriptor.styles.map(style => style.content.replace(/\s+/g, '')).join('')
   }
   if (file.endsWith('.less')) return source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/[^\n]*/g, '').replace(/\s+/g, '').replaceAll('"', "'")
   return script(source)

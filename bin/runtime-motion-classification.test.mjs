@@ -85,4 +85,23 @@ test('Cedar Tree distinguishes keyboard native scroll and VirtualList delegation
   assert.deepEqual(result, { classifiedHints: 4, unclassifiedHints: 0, categories: { 'delegated-scroll': 2, 'native-scroll': 1, 'declaration-only': 1 } });
 });
 
-test('current reviewed sources and candidate identities match', () => { const result = checkSavedClassification(); assert.equal(result.classifiedHints, 209); assert.equal(result.unclassifiedHints, 0); assert.equal(result.categories['interaction-repeat'], 4); assert.equal(result.categories['task-dispatch'], 7); assert.equal(result.categories['measurement-scheduling'], 17); assert.equal(result.categories['visual-scroll'], 40); assert.equal(result.categories['interaction-dispatch'], 4); assert.equal(result.categories['native-scroll'], 28); assert.equal(result.categories['interaction-delay'], 28); assert.equal(result.categories['declaration-only'], 18); assert.equal(result.categories['state-settlement'], 22); assert.equal(result.categories['visual-completion'], 11); assert.equal(result.categories['delegated-scroll'], 12); assert.equal(result.categories['business-clock'], 8); });
+test('current reviewed sources and candidate identities match', () => {
+  const result = checkSavedClassification();
+  assert.equal(result.classifiedHints, 240);
+  assert.equal(result.unclassifiedHints, 0);
+  assert.deepEqual(result.categories, {
+    'business-clock': 8,
+    'declaration-only': 18,
+    'delegated-scroll': 17,
+    'interaction-delay': 28,
+    'interaction-dispatch': 4,
+    'interaction-repeat': 4,
+    'measurement-scheduling': 19,
+    'native-scroll': 29,
+    'state-settlement': 36,
+    'task-dispatch': 14,
+    'test-support': 10,
+    'visual-completion': 13,
+    'visual-scroll': 40,
+  });
+});

@@ -210,7 +210,24 @@ export async function exercise({ page, demo, component, library, contract, demos
       await poll(() => demo.locator(`.${p}-tab-bar-item--active`).innerText(), (value) => value.includes('发现'), 'tab bar selects discovery')
       break
     }
-    case 'select': case 'auto-complete': case 'people-select': case 'tree-select': {
+    case 'auto-complete': {
+      if (library === 'cedar') {
+        const input = demo.getByRole('combobox').first()
+        await hoverAfterScroll(input)
+        await input.click()
+        await input.fill('Bei')
+        const listId = await poll(() => attr(input, 'aria-controls'), Boolean, 'the active combobox owns its suggestion list')
+        const list = page.getByRole('listbox').and(page.locator(`[id=${JSON.stringify(listId)}]`))
+        const city = list.getByRole('option', { name: 'Beijing', exact: true })
+        await hoverAfterScroll(city)
+        await city.click()
+        await poll(() => input.inputValue(), (value) => value === 'Beijing', 'the field accepts the selected city')
+        await poll(() => text(demo), (value) => value.includes('当前值：Beijing'), 'the example commits the selected city')
+        break
+      }
+      // Maple uses the shared selection flow in its field editor.
+    }
+    case 'select': case 'people-select': case 'tree-select': {
       const reference = demo.getByRole('combobox').first()
       if (action === 'auto-complete') await firstInput().fill('Bei')
       else if (!editor) await reference.click()

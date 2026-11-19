@@ -12,6 +12,7 @@ const prettier = require('prettier')
 const less = require('less')
 function normalize(s) {
   return s.replaceAll('../_utils/empty-value', '../utils/empty-value').replaceAll('../_utils/global-config', '../utils/components')
+    .replaceAll("from '../_utils/vue-compat'", "from '../utils/vue-compat'")
     .replaceAll('../_utils/size-length', '../utils/size-length')
     .replaceAll('../_utils/constant', '../utils/constants')
     .replaceAll('Direction as Orientation', 'Orientation')

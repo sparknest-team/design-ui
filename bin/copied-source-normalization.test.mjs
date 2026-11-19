@@ -17,7 +17,7 @@ test('only the exact vue-compat import path is normalized', () => {
   assert.notEqual(normalizeCopiedSource(cedar.replace('vue-compat', 'vue-compat-other')), normalizeCopiedSource(maple))
   const literal = "const path = '../_utils/vue-compat'"
   assert.equal(normalizeCopiedSource(literal), literal)
-  const compat = (platform, prefix) => `// duplicate ${platform} module formats\nconst key = '@${platform.toLowerCase()}-design/vue-id-counter/v1'\nreturn \`${prefix}-v-\${count}\``
+  const compat = (platform, prefix) => `// duplicate ${platform} module formats\nconst key = '@${platform.toLowerCase()}-design/vue-id-counter/v1'\nconst fallback = '@${platform.toLowerCase()}-design/vue-id-fallback-registry/v1'\nreturn \`${prefix}-v-\${count}\``
   assert.doesNotThrow(() => assertCopiedVueCompat(compat('Cedar', 'c'), compat('Maple', 'mp')))
   assert.throws(() => assertCopiedVueCompat(compat('Cedar', 'c'), compat('Maple', 'c')), /namespace/)
   assert.throws(() => assertCopiedVueCompat(compat('Cedar', 'c'), `${compat('Maple', 'mp')}\nextra()`), /implementations differ/)

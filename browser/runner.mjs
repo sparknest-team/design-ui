@@ -51,9 +51,29 @@ export async function checkSource(page, library, index, expected) {
       if (parent instanceof HTMLDetailsElement) parent.open = true
     }
   })
-  const source = preview.locator(library === 'cedar' ? '.vmi-previewer-sources pre' : '.loca-doc-preview__sources pre').first()
-  if (!await source.isVisible()) {
-    await (library === 'cedar' ? preview.locator('[title="展开或收起源码"]') : preview.getByRole('button', { name: '展开源码', exact: true })).click()
+  if (library === 'cedar') {
+    // Entering the viewport mounts deferred demos and moves the toolbar below them.
+    const pending = preview.locator('.vmi-example-pending')
+    if (await pending.count()) {
+      // Adjacent deferred examples can mount during the scroll and push this one
+      // out of view again. Keep it in view until its own observer has fired.
+      await page.waitForFunction((element) => {
+        const placeholder = element.querySelector('.vmi-example-pending')
+        if (!placeholder) return true
+        const rect = placeholder.getBoundingClientRect()
+        if (rect.bottom <= 0 || rect.top >= innerHeight) {
+          placeholder.scrollIntoView({ block: 'center', behavior: 'instant' })
+        }
+        return false
+      }, await preview.elementHandle())
+    }
+  }
+  const panel = preview.locator(library === 'cedar' ? '.vmi-previewer-sources' : '.loca-doc-preview__sources')
+  const source = panel.locator('pre').first()
+  if (!await panel.isVisible()) {
+    const expand = library === 'cedar' ? preview.locator('[title="展开或收起源码"]') : preview.getByRole('button', { name: '展开源码', exact: true })
+    await expand.scrollIntoViewIfNeeded()
+    await expand.click()
   }
   await source.waitFor({ state: 'visible' })
   assert.equal(normalize(await source.textContent()), normalize(expected.source), `expanded source matches ${expected.file} exactly`)
