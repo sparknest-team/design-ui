@@ -79,9 +79,8 @@ function transformEntry(file,plan,newGroups,newFile,enFile) {
   if(enFile!==newFile) {
    const enRef=path.relative(path.dirname(file),enFile).replace(/^(?!\.)/,'./');
    imports+=`import ${local}En from '${enRef}'\n`;
-   const languageModel = /\b(?:const|let)\s+english\b/.test(source) ? 'english' : 'contentComparisonEnglish';
-   body=`<component :is="${languageModel} ? ${local}En : ${local}" />`;
-   if(languageModel === 'contentComparisonEnglish' && !source.includes('const contentComparisonEnglish'))imports+=`import { ref as contentComparisonRef } from 'vue'\nimport { watchLang as contentComparisonWatchLang } from '@maple-design/cli-vue/client'\nconst contentComparisonEnglish = contentComparisonRef(false)\ncontentComparisonWatchLang(lang => { contentComparisonEnglish.value = lang === 'en-US' })\n`;
+   if (!source.includes("import { demoEnglish as english }")) imports+=`import { demoEnglish as english } from '@maple-design/cli-vue/demo-language'\n`;
+   body=`<component :is="english ? ${local}En : ${local}" />`;
   }
   component=`<section data-demo="${plan.into}">\n${bilingual}\n${body}\n</section>`;
  }

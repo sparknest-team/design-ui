@@ -12,7 +12,7 @@ API 变更必须同步中英文文档；暂未提供英文时应在组件元数�
 
 - 统一语言标识为 `zh-CN`、`en-US`。URL 是当前语言的依据；切换保留当前组件，刷新和浏览器前进后退应保持 URL 对应语言。
 - Cedar 使用 VuePress 原生 `locales`：中文 `/`、英文 `/en/`；英文组件文档放在同目录 `README.en-US.md`，显式声明英文 permalink 和 lang。两份文档引用同一份 `__demos__/*.vue`。
-- Maple 保留 CLI 的 `/#/<language>/<component>` 路由。标题类 demo 文案使用组件级 `example/messages.json`，通过站点 `createDemoMessages` 读取；无需每个 demo 创建语言 TS 模块。组件的英文/中文正文仍分别放在 `docs/en-US.md`、`docs/zh-CN.md`。
+- Maple 保留 CLI 的 `/#/<language>/<component>` 路由。站点入口根据路由统一更新全局 Locale。需要按语言选择文案或示例的手机入口和子示例，从 `@maple-design/cli-vue/demo-language` 导入只读的 `demoEnglish`。禁止在示例中复制语言到 ref、调用 watchLang、解析路由或逐级传递 english prop。组件内可复用 `example/messages.ts`，参考 Section。组件的英文/中文正文仍分别放在 `docs/en-US.md`、`docs/zh-CN.md`。
 - 示例 SFC 默认保持可独立复制，简单控件使用固定、易理解的文案；演示本身需要本地化时，才使用局部消息目录。既有复杂示例逐步迁移，不用运行时 DOM 替换或自动翻译源码。
 - 平铺双语示例允许 `name.vue` 搭配 `name.en-US.vue`（或显式 `name.zh-CN.vue`）。文档检查按当前语言优先选择对应后缀，再回退无后缀文件；不能要求同一语言正文同时引用两份翻译。既有 `zh-CN/`、`en-US/` 目录形式保持原有优先级。
 - 组件内置语言包与站点文案分离，由站点入口根据路由统一切换；iframe 使用显式 language 参数，单独打开也保持语言。
