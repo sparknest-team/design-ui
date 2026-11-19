@@ -623,7 +623,7 @@
     {
       "repo": "maple-design-mobile",
       "file": "card/Card.vue",
-      "sha256": "59f0e6aebddecac5a35400f21308c599b784f5083ef19395fec66064883b3a8a",
+      "sha256": "5c4d9f6a4d61ae3859daa207e198b540472d0112a5dc0c65cc3b843ba9bf3c7a",
       "rationale": "Two owner-window frames settle the opening layout. The reduced-motion media query controls opening and return timing. The timers defer ripple measurement and settle the floating return.",
       "hints": [
         {
@@ -1677,11 +1677,11 @@
     {
       "repo": "maple-design-mobile",
       "file": "cascader/cascader-column.tsx",
-      "sha256": "417b2e24c251f36532281ffb6a8c51269d7bbdd6f78b07f0aa855adbeccf6107",
+      "sha256": "3ea44d353d7a6c0f6715f64f40b72ac146f71be45d37ce3d6461c606abfba112",
       "rationale": "After rendering, the active virtual column delegates alignment to VirtualList, checking the current key, column and virtual mode. VirtualList owns scroll lifecycle. This classification does not certify every rapid replacement timing. Re-reviewed current active-key, column and virtual-mode checks after the child-menu association change.",
       "hints": [
         {
-          "line": 77,
+          "line": 79,
           "category": "delegated-scroll",
           "snippet": "          virtualListRef.value?.scrollTo({ index, align: 'auto' })"
         }
@@ -1755,7 +1755,7 @@
     {
       "repo": "maple-design-mobile",
       "file": "upload/use-trigger.ts",
-      "sha256": "d560d4a52cf6b647e52fdd0db59d736bce39c3a4da3daab4a8c7077459a38da9",
+      "sha256": "be207139bf1565c1066282e5ec7a49feab5b07d5401bef9843c30f18dd5edd27",
       "rationale": "Zero-delay task clears the captured click after event propagation; claim tracks event identity and deactivation clears timer and invalidates chooser lifetime. Native event ordering remains separately scoped.",
       "hints": [
         {
@@ -1999,10 +1999,10 @@
       "repo": "maple-design-mobile",
       "file": "cascader/Cascader.vue",
       "rationale": "For checkbox Escape events, focus restoration runs after the trigger has processed document-level dismissal.",
-      "sha256": "cf005135619cce22a0ae4b6801a50ff6d1598198492c37b73286fbe53f2a9cb7",
+      "sha256": "c483cd29a629713a6efead471cd792f12033843c36429d99a176481c385a9ae8",
       "hints": [
         {
-          "line": 375,
+          "line": 384,
           "category": "task-dispatch",
           "snippet": "        target.ownerDocument.defaultView.setTimeout(restoreFocus, 0)"
         }
