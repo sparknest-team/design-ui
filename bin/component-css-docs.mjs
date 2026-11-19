@@ -164,12 +164,10 @@ export function synchronizeComponentCssDocs(report, { write = false } = {}) {
     ]),
   );
   let checked = 0;
-  for (const { filename } of documentationFiles()) {
-    const [src, relative] = filename.split('/src/');
-    const root = src + '/src';
+  for (const { filename, sourceRoot, relative, platform: library } of documentationFiles()) {
     const family = relative.split('/')[0];
-    const platform = filename.includes('/cedar-design-web/') ? 'c' : 'mp';
-    if (!fs.existsSync(path.join(root, family, 'index.ts')) && !fs.existsSync(path.join(root, family, 'props.ts')))
+    const platform = library === 'cedar' ? 'c' : 'mp';
+    if (!fs.existsSync(path.join(sourceRoot, family, 'index.ts')) && !fs.existsSync(path.join(sourceRoot, family, 'props.ts')))
       continue;
     const ownerPath = relative.replace(/\/(?:docs\/)?[^/]+\.md$/, '');
     const owner = report.components.some((row) => row.platform === platform && row.component === ownerPath)
@@ -178,7 +176,7 @@ export function synchronizeComponentCssDocs(report, { write = false } = {}) {
     const tokens = publicTokens(report, platform, owner);
     const block = renderComponentVariables(tokens, {
       en: /en-US/.test(filename),
-      dependencies: dependenciesFor(root, family, report, platform),
+      dependencies: dependenciesFor(sourceRoot, family, report, platform),
     });
     const previous = fs.readFileSync(filename, 'utf8');
     const demoFamily =

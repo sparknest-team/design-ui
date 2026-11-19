@@ -22,10 +22,8 @@ export function reviewPublicDocuments({ write = false } = {}) {
   const changes = [],
     issues = [];
   let checked = 0;
-  for (const { filename, primary } of documentationFiles()) {
+  for (const { filename, primary, relative, platform } of documentationFiles()) {
     const before = fs.readFileSync(filename, 'utf8');
-    const relative = filename.split('/src/')[1];
-    const platform = filename.includes('/cedar-design-web/') ? 'cedar' : 'maple';
     const family =
       platform === 'cedar' ? cedarDemoFamily(relative) : relative.replace(/\/docs\/(?:zh-CN|en-US)\.md$/, '');
     let next = cleanPublicDocumentation(before, { primary }).text;
