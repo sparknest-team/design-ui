@@ -115,7 +115,7 @@
       "variant-filled-background-hover": "var(--PREFIX-sys-color-state-hover)",
       "variant-filled-background-focus": "var(--PREFIX-color-fill-3)",
       "variant-outline-border-color": "var(--PREFIX-sys-color-border-default)",
-      "variant-outline-border-color-hover": "var(--PREFIX-sys-color-border-strong)",
+      "variant-outline-border-color-hover": "color-mix(in srgb, var(--PREFIX-field-variant-outline-border-color) 80%, var(--PREFIX-sys-color-border-strong))",
       "variant-outline-border-color-focus": "var(--PREFIX-sys-color-action-primary)",
       "variant-outline-border-color-disabled": "var(--PREFIX-sys-color-border-subtle)",
       "variant-outline-border-color-error": "var(--PREFIX-sys-color-status-danger)",
@@ -684,7 +684,7 @@
       "popup-group-title-text-color": "var(--PREFIX-sys-color-content-secondary)"
     },
     "checkbox": {
-      "control-color": "var(--PREFIX-sys-color-content-secondary)",
+      "control-color": "var(--PREFIX-sys-color-border-default)",
       "control-color-checked": "var(--PREFIX-sys-color-action-primary)",
       "control-color-disabled": "var(--PREFIX-sys-color-content-disabled)",
       "control-color-error": "var(--PREFIX-sys-color-content-danger)",
@@ -693,7 +693,7 @@
       "control-border-radius": "2px"
     },
     "radio": {
-      "control-color": "var(--PREFIX-sys-color-content-secondary)",
+      "control-color": "var(--PREFIX-sys-color-border-default)",
       "control-color-checked": "var(--PREFIX-sys-color-action-primary)",
       "control-color-disabled": "var(--PREFIX-sys-color-content-disabled)",
       "control-color-error": "var(--PREFIX-sys-color-content-danger)",
