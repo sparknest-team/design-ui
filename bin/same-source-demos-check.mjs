@@ -99,8 +99,9 @@ for (const [component, cases] of Object.entries(scenarios)) {
   const comparableMapleApi = component === 'switch' ? normalizeSwitchEditMode(mapleApi, 'maple') : component === 'button' ? normalizeButtonSize(mapleApi, 'maple') : mapleApi
   assert.equal(comparableCedarApi, comparableMapleApi, `${component}: Chinese API documentation drift`)
   const englishApi = apiBlock(fs.readFileSync(path.join(maple, 'docs/en-US.md'), 'utf8'))
-  const contract = sourceApi(cedar, component, `${component}.vue`)
-  assert.deepEqual(sourceApi(maple, component, `${component[0].toUpperCase()}${component.slice(1)}.vue`), contract, `${component}: public API names drift`)
+  const filename = `${component[0].toUpperCase()}${component.slice(1)}.vue`
+  const contract = sourceApi(cedar, component, filename)
+  assert.deepEqual(sourceApi(maple, component, filename), contract, `${component}: public API names drift`)
   for (const section of ['Props', 'Events', 'Slots', 'Methods']) {
     assert.deepEqual(sorted(documentedNames(cedarApi, section)), sorted(contract[section]), `${component}: Chinese ${section} coverage`)
     assert.deepEqual(sorted(documentedNames(englishApi, section)), sorted(contract[section]), `${component}: English ${section} coverage`)
