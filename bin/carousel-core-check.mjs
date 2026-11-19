@@ -14,6 +14,7 @@ function normalize(s) {
  return s.replaceAll('../_utils/global-config', '../utils/components').replaceAll('../_utils/namespace', '../utils/namespace')
  .replaceAll('../_utils/constant', '../utils/constants').replaceAll('Direction as Orientation', 'Orientation')
  .replaceAll('--c-', '--mp-').replaceAll('c-carousel','mp-carousel').replaceAll('CCarousel','MpCarousel')
+ .replaceAll("import('../utils/components').CedarComponentWithInstall", "import('../utils/components').ComponentWithInstall")
  .replaceAll('./carousel.vue','./Carousel.vue').replaceAll('../carousel.vue','../Carousel.vue').replaceAll("').Direction", "').Orientation")
 }
 const pairs = [['carousel.vue','Carousel.vue'], ...['CarouselItem.vue','props.ts','types.ts','context.ts','layout.ts','index.ts','style/index.ts','style/index.less','style/token.less','__tests__/body-contract.spec.js'].map(f=>[f,f])]

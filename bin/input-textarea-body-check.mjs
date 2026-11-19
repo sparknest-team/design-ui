@@ -33,7 +33,11 @@ assert.notEqual(typed('export interface Value { value: number }'), typed('export
 assert.notEqual(typed('export interface Expose { focus(): void }'), typed('export interface Expose { blur(): void }'), 'Type-only API drift must remain visible')
 function canonical(s, file) {
   s = normalize(s)
+  s = s.replaceAll("from '../_utils/vue-compat'", "from '../utils/vue-compat'")
   s = s.replaceAll('../_utils/popup-container', '../utils/popup-container')
+  if (file === 'textarea/__demos__/auto-size.vue') {
+    s = s.replace('from "../../__demos__/locale"', 'from "../../../__demos__/locale"')
+  }
   if (file.endsWith('.vue')) {
     const { descriptor, errors } = parse(s, { filename: 'paired.vue' })
     assert.equal(errors.length, 0, file)
