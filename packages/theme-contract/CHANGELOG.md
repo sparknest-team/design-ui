@@ -2,6 +2,8 @@
 
 ## 1.2.0
 
+- Use the same 23 Section theme variables in Cedar and Maple. In Maple, replace the `--mp-form-section-*` prefix with `--mp-section-*`.
+
 - Align the shared field hover border and unchecked checkbox and radio colors with Cedar and Maple.
 
 ### Minor Changes

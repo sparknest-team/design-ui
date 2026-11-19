@@ -62,28 +62,17 @@ test('Switch checked text has a public contract without changing platform foregr
 });
 
 
-test('section defaults and consumers follow the owning component on each platform', () => {
-  const cedar = platformComponentTokenValues.cedar.section;
-  const maple = platformComponentTokenValues.maple.form;
-  assert.deepEqual(
-    Object.fromEntries(Object.entries(cedar).map(([key, value]) => [`section-${key}`, value])),
-    Object.fromEntries(Object.entries(maple).filter(([key]) => key.startsWith('section-'))),
-  );
-  for (const [repository, path, prefix] of [
-    ['cedar-design-web', 'section/style/index.less', 'c-section'],
-    ['maple-design-mobile', 'form/style/section.less', 'mp-form-section'],
-  ]) {
-    const style = readFileSync(new URL(`../../../../${repository}/packages/ui/src/${path}`, import.meta.url), 'utf8');
-    for (const name of Object.keys(cedar))
-      assert.ok(style.includes(`var(--${prefix}-${name})`), `${repository}: ${name} must affect section styling`);
+test('both platforms consume the shared Section tokens', () => {
+  const values = contract.componentTokenValues.section;
+  assert.deepEqual(contract.tokens.components.section, Object.keys(values));
+  for (const [repository, prefix] of [['cedar-design-web', 'c'], ['maple-design-mobile', 'mp']]) {
+    const directory = new URL(`../../../../${repository}/packages/ui/src/section/style/`, import.meta.url);
+    const style = readFileSync(new URL('index.less', directory), 'utf8');
+    const tokens = readFileSync(new URL('token.less', directory), 'utf8');
+    for (const [name, expected] of Object.entries(values)) {
+      const variable = `--${prefix}-section-${name}`;
+      assert.ok(style.includes(`var(${variable})`), `${repository}: ${name} must affect section styling`);
+      assert.ok(tokens.includes(`${variable}: ${expected.replaceAll('PREFIX', prefix)};`), variable);
+    }
   }
-  for (const [name, expected] of Object.entries({
-    'section-before-gap': '32px',
-    'section-header-gap': '20px',
-    'section-end-divider-gap': '24px',
-    'section-after-gap': '24px',
-    'section-accent-color': 'var(--PREFIX-sys-color-action-primary)',
-    'section-title-color': 'var(--PREFIX-sys-color-content-primary)',
-    'section-description-color': 'var(--PREFIX-sys-color-content-secondary)',
-  })) assert.equal(maple[name], expected);
 });
