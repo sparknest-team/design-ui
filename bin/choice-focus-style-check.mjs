@@ -7,7 +7,11 @@ for (const component of ['checkbox', 'radio']) {
     for (const selected of [false, true]) {
       const root = document.createElement('label')
       root.className = `${p}-${component}${selected ? ` ${p}-${component}--checked` : ''}`
-      root.innerHTML = `<input class="${p}-${component}__input audit-focus-visible"><span class="${p}-${component}__control"><span class="${p}-${component}__icon"></span></span>`
+      const input = `<input class="${p}-${component}__input audit-focus-visible">`
+      const iconMarkup = `<span class="${p}-${component}__icon"></span>`
+      root.innerHTML = component === 'checkbox'
+        ? `<span class="${p}-checkbox__control">${input}<span class="${p}-checkbox__visual">${iconMarkup}</span></span>`
+        : `${input}<span class="${p}-radio__control">${iconMarkup}</span>`
       tag.append(root)
       const control = root.querySelector(`.${p}-${component}__control`)
       const icon = root.querySelector(`.${p}-${component}__icon`)

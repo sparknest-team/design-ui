@@ -99,7 +99,7 @@ placement 不要求存在外部锚点，也不承诺碰撞检测或自动翻转�
 | Image | 两端 | footerPosition / objectPosition | 说明区位于图片内外 / 图像在盒内的 CSS 对齐位置 | 保留 |
 | Upload 上传入口 | 两端 | triggerPosition | 上传入口在组件内容区域中位于文件列表之前或之后；before / after 表示 DOM 顺序，默认 after，不因 RTL 改写；适用于内置入口及 trigger 插槽 | 新增 |
 | Form 星号 | 两端 | asteriskPosition | 必填星号位于标签逻辑起点或终点 | 保留 |
-| Table 分页 | Cedar | pagePosition | 分页器在表格容器中的区域 | 保留既有值域，不把 tl/tr 等当作新组件角落规范 |
+| Section 色条 | 两端 | markerPlacement | 色条标记标题或整个分区 | title / section，默认 title |
 | SafeArea | Maple | edges | 哪些边需要留出安全区 | 保留，不机械改为 position/placement |
 | ResizeBox | Cedar | directions | 哪些边允许调整尺寸 | 保留领域用语，不机械改为 position/placement |
 
