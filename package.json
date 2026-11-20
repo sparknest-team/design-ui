@@ -13,7 +13,7 @@
     "check:api": "node bin/api-exports-audit.mjs ../cedar-design-web/packages/ui/src --check && node bin/api-exports-audit.mjs ../maple-design-mobile/packages/ui/src --check",
     "check:form-controls": "node bin/form-control-contract-check.mjs",
     "check:copies": "node --test bin/copied-source-normalization.test.mjs && node bin/copied-components-check.mjs",
-    "check:demos": "node --test bin/same-source-demo-normalization.test.mjs && node bin/same-source-demos-check.mjs",
+    "check:demos": "pnpm --dir ../maple-design-mobile --filter @maple-design/shared-vue --filter @maple-design/vite-plugins-vue run build && node --test bin/same-source-demo-normalization.test.mjs && node bin/same-source-demos-check.mjs",
     "check:cedar": "node bin/spec-check.mjs --config configs/cedar.json",
     "check:maple": "node bin/spec-check.mjs --config configs/maple.json",
     "check:tokens": "node bin/token-diff.mjs && node bin/token-diff.mjs --component button --strict && node bin/token-diff.mjs --component alert --strict && node bin/token-diff.mjs --component tag --strict && node bin/token-diff.mjs --component badge --strict && node bin/token-diff.mjs --component input --strict && pnpm check:theme-contract",
@@ -62,7 +62,8 @@
     "check:media-themes": "node bin/media-theme-check.mjs",
     "check:token-placement": "node --test bin/token-placement.test.mjs && node bin/token-placement-check.mjs",
     "check:field-focus": "node bin/field-focus-check.mjs",
-    "check:portal-scope": "node bin/portal-scope-check.mjs",
+    "build:maple-test-tools": "pnpm --dir ../maple-design-mobile --filter @maple-design/shared-vue --filter @maple-design/vite-plugins-vue --filter @maple-design/icons-vue --filter @maple-design/resolver-vue --filter @maple-design/use-vue run build && pnpm --dir ../maple-design-mobile/packages/cli build:node",
+    "check:portal-scope": "pnpm build:maple-test-tools && node bin/portal-scope-check.mjs",
     "check:browser-evidence": "node --test bin/browser-evidence-check.test.mjs bin/ripple-motion-evidence-check.test.mjs bin/loading-bar-motion-evidence-check.test.mjs bin/notification-motion-evidence-check.test.mjs bin/message-motion-evidence-check.test.mjs bin/trigger-lifecycle-evidence-check.test.mjs bin/business-lifecycle-evidence-check.test.mjs bin/business-lifecycle-historical-archive-check.test.mjs bin/business-lifecycle-current-check.test.mjs bin/shared-scroll-native-evidence-check.test.mjs bin/index-bar-lifecycle-evidence-check.test.mjs bin/index-bar-historical-archive-check.test.mjs && node bin/browser-evidence-check.mjs && node bin/popup-motion-evidence-check.mjs && node bin/ripple-motion-evidence-check.mjs && node bin/loading-bar-motion-evidence-check.mjs && node bin/notification-motion-evidence-check.mjs && node bin/message-motion-evidence-check.mjs && node bin/trigger-lifecycle-evidence-check.mjs && node bin/business-lifecycle-current-check.mjs && node bin/shared-scroll-native-evidence-check.mjs && node bin/index-bar-lifecycle-evidence-check.mjs",
     "check:button-primary": "node bin/button-primary-foreground-check.mjs",
     "check:preview-track-motion": "node bin/preview-track-motion-check.mjs",
@@ -74,7 +75,7 @@
     "generate:component-showcase": "node bin/organize-component-showcase.mjs --write && node bin/build-component-catalog.mjs && node bin/build-mobile-component-catalog.mjs && node bin/build-core-strengths.mjs",
     "check:component-showcase": "node --test bin/organize-component-showcase.test.mjs bin/component-feature-analysis.test.mjs && node bin/organize-component-showcase.mjs && node bin/build-component-catalog.mjs --check && node bin/build-mobile-component-catalog.mjs --check && node bin/build-core-strengths.mjs --check",
     "check:api-naming": "node --test bin/api-naming-check.test.mjs && node bin/api-naming-check.mjs",
-    "check:direction": "node bin/reading-direction-check.mjs",
+    "check:direction": "pnpm build:maple-test-tools && node bin/reading-direction-check.mjs",
     "check:direction:browser": "node browser/reading-direction-batch/check.mjs && node browser/reading-direction-batch-b/check.mjs && node browser/reading-direction-batch-c/check.mjs && node browser/reading-direction-batch-d/check.mjs && node browser/reading-direction-batch-e/check.mjs && node browser/reading-direction-batch-f/check.mjs && node browser/reading-direction-batch-g/check.mjs && node browser/reading-direction-batch-h/check.mjs && node browser/reading-direction-closeout/check.mjs",
     "compatibility:handoff": "node browser/native-handoff.mjs",
     "check:direction:browser:b": "node browser/reading-direction-batch-b/check.mjs",
@@ -107,8 +108,9 @@
   },
   "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b",
   "devDependencies": {
-    "typescript": "5.6.3",
+    "@asamuzakjp/dom-selector": "^6.8.1",
+    "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.29.7",
-    "@changesets/changelog-github": "^0.5.1"
+    "typescript": "5.6.3"
   }
 }

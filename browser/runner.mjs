@@ -51,6 +51,23 @@ export async function checkSource(page, library, index, expected) {
       if (parent instanceof HTMLDetailsElement) parent.open = true
     }
   })
+  if (library === 'cedar') {
+    // Entering the viewport mounts deferred demos and moves the toolbar below them.
+    const pending = preview.locator('.vmi-example-pending')
+    if (await pending.count()) {
+      // Adjacent deferred examples can mount during the scroll and push this one
+      // out of view again. Keep it in view until its own observer has fired.
+      await page.waitForFunction((element) => {
+        const placeholder = element.querySelector('.vmi-example-pending')
+        if (!placeholder) return true
+        const rect = placeholder.getBoundingClientRect()
+        if (rect.bottom <= 0 || rect.top >= innerHeight) {
+          placeholder.scrollIntoView({ block: 'center', behavior: 'instant' })
+        }
+        return false
+      }, await preview.elementHandle())
+    }
+  }
   const source = preview.locator(library === 'cedar' ? '.vmi-previewer-sources pre' : '.loca-doc-preview__sources pre').first()
   const toggle = expanded => library === 'cedar' ? preview.locator('[title="展开或收起源码"]') : preview.getByRole('button', { name: expanded ? '收起源码' : '展开源码', exact: true })
   if (!await source.isVisible()) {

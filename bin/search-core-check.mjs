@@ -49,7 +49,7 @@ function script(source) {
   const statements = []
   for (const node of ast.statements) {
     if (ts.isImportDeclaration(node)) {
-      const path = node.moduleSpecifier.text
+      const path = node.moduleSpecifier.text === '../_utils/vue-compat' ? '../utils/vue-compat' : node.moduleSpecifier.text
       const clause = node.importClause
       if (!clause) imports.push([path, 'side-effect'])
       else {
@@ -66,6 +66,9 @@ function script(source) {
 }
 function canonical(source, file) {
   source = normalize(source)
+  if (file === 'search/__demos__/native-form.vue') {
+    source = source.replace('from "../../__demos__/locale"', 'from "../../../__demos__/locale"')
+  }
   if (file.endsWith('.vue')) {
     const { descriptor, errors } = parse(source, { filename: 'contract.vue' })
     assert.equal(errors.length, 0, file)
@@ -81,7 +84,7 @@ const roots = ['cedar-design-web/packages/ui', 'maple-design-mobile/packages/ui'
 for (const [cedar, maple] of pairs) {
   const left = canonical(readFileSync(resolve(root, roots[0], 'src', cedar), 'utf8'), cedar)
   const right = canonical(readFileSync(resolve(root, roots[1], 'src', maple), 'utf8'), maple)
-  if (left !== right) { const index = [...left].findIndex((char, i) => char !== right[i]); throw new Error('Search drift: ' + cedar + '\nCedar: ' + left.slice(index - 90, index + 140) + '\nMaple: ' + right.slice(index - 90, index + 140)) }
+  if (left !== right) { const index = [...left].findIndex((char, i) => char !== right[i]); throw new Error('Search drift: ' + cedar + '\nCedar: ' + left.slice(Math.max(0, index - 90), index + 140) + '\nMaple: ' + right.slice(Math.max(0, index - 90), index + 140)) }
 }
 // History presentation is platform-specific. Keep comparing the shared model and action logic.
 const sharedMethods = ['updateValue', 'getRecentSearches', 'getResult', 'handleHistorySelect', 'handleFieldChange', 'handleAction']

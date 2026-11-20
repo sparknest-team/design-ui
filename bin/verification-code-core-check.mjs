@@ -46,7 +46,7 @@ function script(source) {
   const statements = []
   for (const node of ast.statements) {
     if (ts.isImportDeclaration(node)) {
-      const path = node.moduleSpecifier.text
+      const path = node.moduleSpecifier.text === '../_utils/vue-compat' ? '../utils/vue-compat' : node.moduleSpecifier.text
       const clause = node.importClause
       if (!clause) imports.push([path, 'side-effect'])
       else {
@@ -77,7 +77,7 @@ function canonical(source, file) {
     if (!file.includes('__demos__') && !file.includes('/demos/')) assert.equal(descriptor.styles.length, 0, 'Component styles must stay in style entries')
     const result = compileTemplate({ source: descriptor.template?.content || '', filename: 'contract.vue', id: 'contract', compilerOptions: { comments: false } })
     assert.equal(result.errors.length, 0, file)
-    return script(descriptor.scriptSetup?.content || descriptor.script?.content || '') + transformSync(result.code, { loader: 'js', minify: true }).code + descriptor.styles.map(style => style.content.replace(/\s+/g, '')).join('')
+    return script(descriptor.scriptSetup?.content || descriptor.script?.content || '') + transformSync(result.code, { loader: 'ts', minify: true }).code + descriptor.styles.map(style => style.content.replace(/\s+/g, '')).join('')
   }
   if (file.endsWith('.less')) return source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/[^\n]*/g, '').replace(/\s+/g, '').replaceAll('"', "'")
   return script(source)

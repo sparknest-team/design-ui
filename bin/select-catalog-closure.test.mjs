@@ -25,7 +25,7 @@ function values(css, selector, property) {
   });
   return found;
 }
-test('Cedar Select current source hash and all six classified call sites are independently checked', () => {
+test('Cedar Select current source hash and all nine classified call sites are independently checked', () => {
   const classification = JSON.parse(readFileSync(new URL('../audits/runtime-motion-classification.json', import.meta.url)));
   const inventory = JSON.parse(readFileSync(new URL('../audits/motion-source-inventory.json', import.meta.url)));
   const row = classification.rows.find(r => r.repo === 'cedar-design-web' && r.file === 'select/hooks/use-select.ts');
@@ -34,9 +34,9 @@ test('Cedar Select current source hash and all six classified call sites are ind
   const result = checkClassification({ ...classification, rows: [row] }, {
     platforms: [{ repo: row.repo, runtimeCallCandidates: candidate.runtime.length, candidates: [candidate] }],
   }, () => source);
-  assert.equal(result.classifiedHints, 6);
+  assert.equal(result.classifiedHints, 9);
   assert.equal(result.unclassifiedHints, 0);
-  assert.deepEqual(result.categories, { 'delegated-scroll': 1, 'native-scroll': 2, 'state-settlement': 1, 'interaction-dispatch': 2 });
+  assert.deepEqual(result.categories, { 'delegated-scroll': 3, 'native-scroll': 2, 'state-settlement': 2, 'interaction-dispatch': 2 });
 });
 for (const [repo, prefix] of [['cedar-design-web', 'c'], ['maple-design-mobile', 'mp']]) {
   test(repo + ': grouped headings consume vertical/horizontal padding and the first group has no top margin', async () => {
