@@ -13,10 +13,8 @@ const { parse, compileTemplate } = require('@vue/compiler-sfc')
 const esRequire = createRequire(resolve(root, 'maple-design-mobile/node_modules/.pnpm/node_modules/esbuild/package.json'))
 const { transformSync } = esRequire('esbuild')
 const pairs = [
-  ...['use-search-control.ts', 'use-search-input.ts', 'props.ts', 'types.ts', 'result.ts', 'HistoryContent.vue', 'FieldSelect.vue', '__tests__/control.spec.js', '__tests__/native-ownership.spec.ts'].map(file => ['search/' + file, 'search/' + file]),
+  ...['types.ts', 'result.ts', 'FieldSelect.vue'].map(file => ['search/' + file, 'search/' + file]),
   ['search/__demos__/controlled-fields.vue', 'search/example/demos/fields.vue'],
-  ['search/__demos__/presentation.vue', 'search/example/demos/presentation.vue'],
-  ['search/__demos__/native-form.vue', 'search/example/demos/native-form.vue'],
 ]
 function normalize(source) {
   return source.replaceAll('../_utils/empty-value', '../utils/empty-value').replaceAll('@cedar-design/ui-vue', '@maple-design/ui-vue').replaceAll('c-input__', 'mp-input__')
@@ -88,12 +86,40 @@ for (const [cedar, maple] of pairs) {
   const right = canonical(readFileSync(resolve(root, roots[1], 'src', maple), 'utf8'), maple)
   if (left !== right) { const index = [...left].findIndex((char, i) => char !== right[i]); throw new Error('Search drift: ' + cedar + '\nCedar: ' + left.slice(Math.max(0, index - 90), index + 140) + '\nMaple: ' + right.slice(Math.max(0, index - 90), index + 140)) }
 }
+// History presentation is platform-specific. Keep comparing the shared model and action logic.
+const sharedMethods = ['updateValue', 'getRecentSearches', 'getResult', 'handleHistorySelect', 'handleFieldChange', 'handleAction']
+function sharedControl(repo) {
+  const path = resolve(root, repo, 'src/search/use-search-control.ts')
+  const ast = ts.createSourceFile(path, readFileSync(path, 'utf8'), ts.ScriptTarget.Latest, true)
+  const control = ast.statements.find(node => ts.isFunctionDeclaration(node) && node.name?.text === 'useSearchControl')
+  return sharedMethods.map(name => {
+    const method = control?.body.statements.find(node => ts.isFunctionDeclaration(node) && node.name?.text === name)
+    assert.ok(method, name)
+    return tokens(method.getText(ast))
+  })
+}
+assert.deepEqual(sharedControl(roots[0]), sharedControl(roots[1]), 'Shared keyword, field model and action logic')
+function sharedProps(repo) {
+  const path = resolve(root, repo, 'src/search/props.ts')
+  const ast = ts.createSourceFile(path, normalize(readFileSync(path, 'utf8')), ts.ScriptTarget.Latest, true)
+  const declaration = ast.statements.filter(ts.isVariableStatement)
+    .flatMap(statement => [...statement.declarationList.declarations])
+    .find(node => node.name.getText(ast) === 'searchProps')
+  return declaration.initializer.properties
+    .filter(property => !['editMode', 'shape'].includes(property.name?.getText(ast)))
+    .map(property => tokens('const props = {' + property.getText(ast) + '}'))
+}
+assert.deepEqual(sharedProps(roots[0]), sharedProps(roots[1]), 'Shared Search props')
 const suffixes = []
 for (const [index, repo] of roots.entries()) {
   const props = readFileSync(resolve(root, repo, 'src/search/props.ts'), 'utf8')
   const presentation = props.match(/editMode:\s*\{\s*type: String as PropType<SearchEditMode>,\s*default: ['"](direct|popup)['"]/)?.[1]
   const shape = props.match(/shape:\s*\{[\s\S]*?default: ['"](square|round)['"]/ )?.[1]
-  assert.equal(presentation, 'direct', 'Search defaults to direct editing on both platforms')
+  if (index === 0) {
+    assert.match(props, /editMode:\s*inputProps\.editMode\b/, 'Cedar Search shares Input editing modes')
+  } else {
+    assert.equal(presentation, 'direct', 'Maple Search defaults to direct editing')
+  }
   assert.doesNotMatch(props, /\b(?:presentation|historyPopup)\s*:/, 'Removed boolean presentation API must not return')
   assert.equal(shape, index === 0 ? 'square' : 'round', 'Declared platform shape default')
 }
@@ -109,5 +135,4 @@ for (const repo of roots) {
   assert.ok(source.includes('useSearchControl(props, emit,'), 'Main component consumes the local control')
 }
 assert.deepEqual(suffixes[0], suffixes[1], 'Public token suffixes')
-console.log('Search: ' + pairs.length + ' independent controller/Props/types/history/test/demo pairs verified; ' + suffixes[0].length + ' common public token suffixes; both Less entries compile.')
-console.log('Explicit boundaries: local InputGroup/mobile bar layout, Drawer/Popup history presentation, global locale adapters, token default density, installation. Search edit-mode is direct/popup with a shared direct default; shape is the only differing declared Props default. Platform-local border assertions remain in presentation-local.spec.js and are run separately.')
+console.log('Search shared types, field selector, controlled model, actions and tokens verified. Cedar uses Input editing modes; Maple supports direct and popup.')

@@ -54,6 +54,8 @@ test('localization preserves intended inline code and event argument headers',()
  assert.equal(translateFragment('| 方法名 | 说明 | 参数 |','fixture'),'| Method | Description | Arguments |');
  assert.equal(translateFragment('| 方法 | 参数 | 返回值 |','fixture'),'| Method | Arguments | Returns |');
  assert.match(translateFragment('| 事件名 | 说明 | 参数 |','fixture'), /\| Arguments \|$/);
+ assert.equal(translateFragment('| 名称 | 参数 | 说明 |','fixture'),'| Name | Arguments | Description |');
+ assert.equal(translateFragment('| 插槽 | 参数 | 说明 |','fixture'),'| Slot | Arguments | Description |');
  const identifier=translateFragment('通过 `label` 插槽设置标题。','fixture',{'通过 `label` 插槽设置标题。':'Use the label slot; update-label is a separate identifier.'});
  assert.equal(identifier,'Use the `label` slot; update-label is a separate identifier.');
  const link=translateFragment('参考 `aria-busy` 文档。','fixture',{'参考 `aria-busy` 文档。':'See [the spec](https://example.test/#aria-busy) for aria-busy.'});

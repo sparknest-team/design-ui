@@ -69,7 +69,8 @@ test('every authored Cedar component page has a basic group, grouped demos and a
     assert.deepEqual(demoRefs(output).sort(), demoRefs(source).sort(), relative);
     assert.equal(output, source, relative);
     const first = readDemoSections(source).cases[0];
-    assert.ok(groups[0].cases.includes(path.basename(first.refs[0], '.vue')), `${relative}: first example is not basic`);
+    const firstName = path.basename(first.refs[0], '.vue');
+    assert.ok(groups[0].cases.includes(firstName) || groups[0].cases.includes(firstName.replace(/\.en-US$/, '')), `${relative}: first example is not basic`);
     assert.doesNotMatch(output, /^## (案例|Examples|Demos|示例)$/m, relative);
   }
 });

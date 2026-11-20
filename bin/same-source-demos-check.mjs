@@ -116,7 +116,11 @@ for (const [component, cases] of Object.entries(scenarios)) {
   assert.deepEqual([...example.matchAll(/data-demo="([^"]+)"/g)].map(m => m[1]).filter(name => !externalDemos.has(name)), cases.map(c => c.name), `${component}: Maple scenario order`)
   // Generated review scenarios have their own manifest and compiler gate.
   const authored = f => f.endsWith('.vue') && !/^api-review(?:-|\.)/.test(f)
-  assert.deepEqual(fs.readdirSync(path.join(cedar, '__demos__')).filter(authored).sort(), cases.map(c => `${c.name}.vue`).sort(), `${component}: untracked Cedar demo`)
+  const cedarCases = fs.readdirSync(path.join(cedar, '__demos__')).filter(authored);
+  for (const file of cedarCases.filter(file => file.endsWith('.en-US.vue'))) {
+    assert(cedarCases.includes(file.replace(/\.en-US\.vue$/, '.vue')), file + ': missing default-language case');
+  }
+  assert.deepEqual(cedarCases.filter(file => !file.endsWith('.en-US.vue')).sort(), cases.map(c => `${c.name}.vue`).sort(), `${component}: untracked Cedar demo`)
   assert.deepEqual(fs.readdirSync(path.join(maple, 'example/demos')).filter(authored).sort(), cases.map(c => `${c.name}.vue`).sort(), `${component}: untracked Maple demo`)
   // Maple reserves vue fences for preview imports, not complete example SFCs.
   // Validate the document after the real site transform, not only its snippets.

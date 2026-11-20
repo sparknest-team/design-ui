@@ -34,10 +34,8 @@ test('message click handlers remain valid after Vue formatting without semicolon
  assert.deepEqual(compileTemplate({source:descriptor.template.content,filename:'message-preset.vue',id:'preset'}).errors,[]);
 });
 
-test('Cedar appearance controls use the global demo dictionary without CSS language branches', () => {
+test('Cedar comparison controls use the public prop names in either language', () => {
  const output=enhanceConfigurationComparison(fixture('c-input'));
- assert.match(output,/useDemoLocale\('comparison'\)/);
- assert.match(output,/demoCopy.hint/);
- assert.match(output,/:aria-label="demoCopy.configuration"/);
- assert.doesNotMatch(output,/span lang=|html.*\[lang|defineProps/);
+ assert.match(output,/aria-label="size"/);
+ assert.doesNotMatch(output,/__demos__\/locale|span lang=|html.*\[lang|defineProps/);
 });

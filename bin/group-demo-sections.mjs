@@ -128,10 +128,15 @@ export function groupDemoSections(source, groups, english = false) {
   const { prefix, cases, preserved, api } = readDemoSections(source);
   if (!cases.length) return source;
   const assigned = new Set();
+  const configured = new Set(groups.flatMap(group => group.cases));
+  const caseName = item => {
+    const name = basename(item.refs[0]);
+    return configured.has(name) ? name : name.replace(/\.en-US$/, '');
+  };
   const chapters = groups.flatMap(group => {
     // A case may compare several demos; keep its prose and references together.
-    const matches = cases.filter(item => group.cases.includes(basename(item.refs[0])));
-    matches.sort((a, b) => group.cases.indexOf(basename(a.refs[0])) - group.cases.indexOf(basename(b.refs[0])));
+    const matches = cases.filter(item => group.cases.includes(caseName(item)));
+    matches.sort((a, b) => group.cases.indexOf(caseName(a)) - group.cases.indexOf(caseName(b)));
     for (const item of matches) {
       if (assigned.has(item)) throw new Error(`Demo assigned to multiple groups: ${item.refs.join(', ')}`);
       assigned.add(item);

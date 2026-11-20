@@ -1,5 +1,13 @@
 # API 设计
 
+## 原生 ARIA 属性
+
+先确定使用者聚焦或浏览的语义节点，以及名称、描述、状态各自的来源。按组件分别决定属性传递方式和文档位置。
+
+- 单一目标可定向透传适用的原生属性。目标在内部、随模式变化或涉及多个子控件时，可以显式声明 prop，并在 API 中描述目标、类型、默认命名及覆盖关系。Vue 调用层的扩展值须与最终 DOM 的标准值区分说明。
+- 优先关联可见标签。缺少可见文本的操作仍需可访问名称。控件根据实际交互更新自身维护的状态和 ID 关系；透传时检查冲突。Demo 按场景展示，保留读屏和键盘操作所需的语义。
+- 定时巡检与文档生成只报告待评估项。未经单项迁移授权，不得按 `aria-*` 名称批量删除、改写或隐藏既有 props、类型、API 表、Demo 配置及示例属性。评估建议本身不授权迁移。
+
 ## status 与 variant
 
 `status` 表示组件状态，包括语义意图和业务过程状态；各组件导出自己的适用集合。`variant` 表示同一组件的视觉方案，例如 `filled`、`outline`、`text`。两者正交，但不要求所有组件都提供。
@@ -91,7 +99,7 @@ placement 不要求存在外部锚点，也不承诺碰撞检测或自动翻转�
 | Image | 两端 | footerPosition / objectPosition | 说明区位于图片内外 / 图像在盒内的 CSS 对齐位置 | 保留 |
 | Upload 上传入口 | 两端 | triggerPosition | 上传入口在组件内容区域中位于文件列表之前或之后；before / after 表示 DOM 顺序，默认 after，不因 RTL 改写；适用于内置入口及 trigger 插槽 | 新增 |
 | Form 星号 | 两端 | asteriskPosition | 必填星号位于标签逻辑起点或终点 | 保留 |
-| Table 分页 | Cedar | pagePosition | 分页器在表格容器中的区域 | 保留既有值域，不把 tl/tr 等当作新组件角落规范 |
+| Section 色条 | 两端 | markerPlacement | 色条标记标题或整个分区 | title / section，默认 title |
 | SafeArea | Maple | edges | 哪些边需要留出安全区 | 保留，不机械改为 position/placement |
 | ResizeBox | Cedar | directions | 哪些边允许调整尺寸 | 保留领域用语，不机械改为 position/placement |
 

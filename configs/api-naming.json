@@ -421,6 +421,16 @@
       ]
     },
     {
+      "file": "cedar-design-web/packages/ui/src/section/props.ts",
+      "owner": "sectionProps",
+      "name": "markerPlacement",
+      "meaning": "色条标记标题或整个分区",
+      "values": [
+        "title",
+        "section"
+      ]
+    },
+    {
       "file": "cedar-design-web/packages/ui/src/segmented/props.ts",
       "owner": "segmentedProps",
       "name": "orientation",
@@ -498,20 +508,6 @@
       "values": [
         "right",
         "bottom"
-      ]
-    },
-    {
-      "file": "cedar-design-web/packages/ui/src/table/props.ts",
-      "owner": "tableProps",
-      "name": "pagePosition",
-      "meaning": "分页器在表格内部的区域",
-      "values": [
-        "tl",
-        "top",
-        "tr",
-        "bl",
-        "bottom",
-        "br"
       ]
     },
     {
@@ -897,6 +893,16 @@
       "values": [
         "horizontal",
         "vertical"
+      ]
+    },
+    {
+      "file": "maple-design-mobile/packages/ui/src/section/props.ts",
+      "owner": "sectionProps",
+      "name": "markerPlacement",
+      "meaning": "色条标记标题或整个分区",
+      "values": [
+        "title",
+        "section"
       ]
     },
     {

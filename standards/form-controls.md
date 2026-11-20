@@ -26,7 +26,7 @@
 - 文本输入顺序：用户输入 → `input` → `update:modelValue`；确认/失焦后的语义变化发 `change`。IME composition 期间不得提前裁剪或重复发 change。
 - 清空必须发 `clear`，同时遵守同一套 `input`、`update:modelValue`、`change` 顺序。
 - 选择类统一发 `update:modelValue`、`change`；弹层统一发 `update:open`、`popup-visible-change`（如保留该事件）。
-- 原生属性通过 `inputAttrs` / `textareaAttrs` 透传；公共无障碍属性可直接暴露。内部状态开关不得进入公开 Props 导出。
+- 原生属性通过 `inputAttrs` / `textareaAttrs` 等入口传给真实输入元素。组件标签上的无障碍属性可定向透传或显式声明，按目标节点和各模式的命名行为遵循[原生 ARIA 属性约定](api-design.md#原生-aria-属性)。内部状态开关不得进入公开 Props 导出。
 - Radio / Checkbox 的原生 `input.checked`、ARIA 状态与模型必须一致；受控拒绝更新后需恢复原生属性。RadioGroup 同时恢复被点击项及被原生同名互斥取消的原选中项。
 - 同一次原生激活产生的 `click` / `change` 只提出一次值更新。允许的 Radio 激活不取消默认行为后再抢先回写状态；只读和禁用按状态契约拦截。浏览器回归必须读取原生属性，不能仅凭选中样式或 `aria-checked` 判定通过。
 - `expose()` 的 `focus`、`blur`、原生元素引用和 FormItem 方法需在两端同名同义。
@@ -79,7 +79,7 @@
 ## 字段编辑与纯阅读（2026-10-21）
 
 - `edit-mode`：Cedar 为 `direct | click | dblclick`；Maple 为 `direct | popup`。Cedar 默认 `direct`；Maple 的 Select、Cascader、AutoComplete、Date/DateRange、Time/TimeRange 默认 `popup`，其他字段默认 `direct`。Form/FormItem 未指定时保留各字段默认值，显式设置才统一覆盖；字段 > FormItem > Form。显式 `direct` 保留直接编辑。旧编辑属性 `presentation`、类型别名与编辑值 `inline` 直接移除，不保留兼容层。
-- Search 的 `edit-mode` 两端统一为 `direct | popup`，默认 `direct`；分别使用历史菜单与本地全屏搜索弹层，不再提供 `historyPopup`。
+- Cedar Search 关键词沿用 Input 的编辑模式与表单继承规则，直接编辑时支持行内历史菜单。Maple Search 保留 `direct | popup`，默认 `direct`。
 - `readPretty?: boolean` 独立于 `readonly`、`disabled`；字段 > FormItem > Form 继承，显式 `false` 覆盖父级。仅展示格式化值和 read 插槽，不挂载编辑器或请求搜索。
 - 异步选项字段的 `readonly` 禁止改值，但允许请求展示所需选项；`disabled` 和 `readPretty` 暂停候选请求，解除状态后可恢复。
 - Cedar 的 click/dblclick 使用 Teleport 固定定位覆盖字段原位并复用原控件，保留占位，可扩宽但不得超出视口；Enter/F2 也能进入。没有模态遮罩或 presentation=popover/dialog；悬浮/聚焦显示编辑图标及单击/双击提示，点击图标可直接编辑。
