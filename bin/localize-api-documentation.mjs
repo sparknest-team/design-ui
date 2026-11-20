@@ -46,7 +46,7 @@ export function translateFragment(source, owner, extra = {}) {
     if (/^\s*```/.test(line)) { fence = !fence; return line; }
     if (!fence && line.startsWith('|')) {
       const cells = line.split(/(?<!\\)\|/).slice(1,-1);
-      const argumentHeader = /^(?:事件(?:名|名称)?|方法(?:名|名称)?)$/.test(cells[0]?.trim() ?? '');
+      const argumentHeader = /^(?:事件(?:名|名称)?|方法(?:名|名称)?|名称|插槽)$/.test(cells[0]?.trim() ?? '');
       return '| ' + cells.map(cell => (argumentHeader && cell.trim() === '参数' ? 'Arguments' : translateText(cell.trim(),owner,false,extra)).replace(/(?<!\\)\|/g,'\\|')).join(' | ') + ' |';
     }
     return translateText(line, owner, fence, extra);

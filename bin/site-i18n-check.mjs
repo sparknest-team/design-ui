@@ -33,6 +33,18 @@ assert.equal(en[0].text, 'Button [Shared]')
 assert.equal(en[0].link, '/en/components/button/')
 assert.equal(en[0].children[0].link, 'https://example.com')
 assert.equal(source[0].text, 'Button 按钮 [已同源]')
+const sectionDocs = path.join(root, 'maple-design-mobile/packages/ui/src/section/docs')
+for (const locale of ['zh-CN', 'en-US']) {
+  const markdown = fs.readFileSync(path.join(sectionDocs, locale + '.md'), 'utf8')
+  const examples = [...markdown.matchAll(/^```demo\n([^\n]+)\n```/gm)].map(match => match[1])
+  const directory = locale === 'en-US' ? '../example/demos/en-US' : '../example/demos'
+  assert(examples.length > 0, 'Maple Section examples in ' + locale)
+  for (const filename of examples) {
+    assert.equal(path.dirname(filename), directory, filename)
+    const example = fs.readFileSync(path.join(sectionDocs, filename), 'utf8')
+    assert.doesNotMatch(example, /\b(?:useDemoLocale|demoEnglish|copy\.\w+)\b|from ['"][^'"]*\/(?:demo-language|messages)['"]/, filename)
+  }
+}
 const cases = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/audits/same-source-demos.json')))
 for (const [component, demos] of Object.entries(cases)) {
   const base = path.join(root, 'cedar-design-web/packages/ui/src', component)
@@ -41,7 +53,9 @@ for (const [component, demos] of Object.entries(cases)) {
   assert(english.includes('lang: en-US'))
   for (const demo of demos) {
     assert(english.includes(`### ${demo.en}`), `${component}/${demo.name} English heading`)
-    assert(english.includes(`<demo src="./__demos__/${demo.name}.vue">`))
+    const localized = `${demo.name}.en-US.vue`
+    const filename = fs.existsSync(path.join(base, '__demos__', localized)) ? localized : `${demo.name}.vue`
+    assert(english.includes(`<demo src="./__demos__/${filename}">`), `${component}/${filename}: English demo reference`)
   }
 }
 console.log(`PASS site language normalization, SSR fallback, reactive demo messages, navigation mapping and ${Object.keys(cases).length} native English component pages`)

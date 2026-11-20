@@ -41,6 +41,7 @@ const presentation = {
 
 const overrides = {
   cedar: {
+    table: { kind: 'interaction', action: 'table-capabilities', demo: 'capability-composition.vue' },
     'theme-provider': { demo: 'basic.vue' },
     paper: { kind: 'interaction', action: 'paper', demo: 'live-properties.vue' },
     'field-decorator': { root: 'field-decorator', minimum: 5 },

@@ -1,5 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import { checkIndexBarEvidence, readEvidence, readEgoEvidence } from './index-bar-lifecycle-evidence-check.mjs';
 const positive = () => structuredClone(readEgoEvidence());
 test('original 600ms IndexBar evidence remains valid for current sources', () => assert.deepEqual(checkIndexBarEvidence(readEvidence()), { accepted: 4, os: 0, blocked: 144 }));
@@ -27,3 +29,20 @@ for (const [name, mutate] of [
   ['bad browser', r => r.browserUserAgent = 'unknown'],
   ['raw capture drift', r => r.raw.sha256 = 'changed'],
 ]) test(`rejects ${name}`, () => { const r = positive(); mutate(r); assert.throws(() => checkIndexBarEvidence(r)); });
+
+for (const [name, mutate, reason] of [
+  ['missing write trace entry', c => c.writes.pop(), /final write count/],
+  ['non-finite coordinate', c => { c.writes[0].top = null; }, /invalid scroll coordinates/],
+  ['write dated after cancellation', c => { c.writes.at(-1).time = c.samples[2].time + 1; }, /sample includes a later entry/],
+  ['premature change sample', c => { c.events[0].time = c.samples[1].time + 1; }, /sample includes a later entry/],
+  ['out-of-order writes', c => c.writes.reverse(), /ordered timeline/],
+]) test(`rejects matching raw and summarized evidence with ${name}`, () => {
+  const report = positive();
+  const rawUrl = new URL('../audits/evidence/index-bar-lifecycle-2026-11-12-ego/raw.json', import.meta.url);
+  const raw = JSON.parse(readFileSync(rawUrl, 'utf8'));
+  mutate(report.cases.find(c => c.kind === 'unmount'));
+  raw.cases = report.cases;
+  const bytes = Buffer.from(JSON.stringify(raw));
+  report.raw.sha256 = createHash('sha256').update(bytes).digest('hex');
+  assert.throws(() => checkIndexBarEvidence(report, path => path.endsWith('/raw.json') ? bytes : readFileSync(path)), reason);
+});

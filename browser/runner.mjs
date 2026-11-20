@@ -9,9 +9,9 @@ import { extname, resolve, sep } from 'node:path'
 import { after, before, describe, it } from 'node:test'
 import { componentPages, demoIndex, mobileSection, mobileComponent, guidePages, sourceFingerprint, productionFingerprint } from './inventory.mjs'
 import { contractFor } from './contracts.mjs'
-import { exercise } from './actions.mjs'
+import { exercise, hoverAfterScroll, settleScroll } from './actions.mjs'
 import { assertDirectionGeometry } from './reading-direction-catalog/geometry.mjs'
-import { copyProductionSnapshot } from './snapshot.mjs'
+import { copyProductionSnapshot, readProductionSnapshot } from './snapshot.mjs'
 import { navigateWithDiagnostics } from './navigation.mjs'
 
 const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.wasm': 'application/wasm', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.woff2': 'font/woff2' }
@@ -52,10 +52,22 @@ export async function checkSource(page, library, index, expected) {
     }
   })
   const source = preview.locator(library === 'cedar' ? '.vmi-previewer-sources pre' : '.loca-doc-preview__sources pre').first()
+  const toggle = expanded => library === 'cedar' ? preview.locator('[title="展开或收起源码"]') : preview.getByRole('button', { name: expanded ? '收起源码' : '展开源码', exact: true })
   if (!await source.isVisible()) {
-    await (library === 'cedar' ? preview.locator('[title="展开或收起源码"]') : preview.getByRole('button', { name: '展开源码', exact: true })).click()
+    const control = toggle(false)
+    await hoverAfterScroll(control, { center: true })
+    await control.click()
   }
-  await source.waitFor({ state: 'visible' })
+  try {
+    await source.waitFor({ state: 'visible' })
+  } catch (error) {
+    error.sourceDiagnostics = { file: expected.file, preview: await preview.evaluate(element => ({
+      sourcePanels: element.querySelectorAll('.vmi-previewer-sources,.loca-doc-preview__sources').length,
+      alerts: [...element.querySelectorAll('[role="alert"]')].map(node => node.textContent),
+      controls: [...element.querySelectorAll('[title]')].map(node => ({ title: node.getAttribute('title'), rect: node.getBoundingClientRect().toJSON() })),
+    })).catch(() => undefined) }
+    throw error
+  }
   assert.equal(normalize(await source.textContent()), normalize(expected.source), `expanded source matches ${expected.file} exactly`)
   const colors = await source.evaluate((element) => {
     const values = new Set()
@@ -69,7 +81,9 @@ export async function checkSource(page, library, index, expected) {
   })
   assert.ok(library === 'cedar' ? colors.length >= 2 : colors.length >= 1 && await source.locator('span[class*="hljs-"]').count() > 0, 'actual source retains highlighted syntax tokens (markup-only demos may use one token color)')
   // Source expansion/collapse itself must work on every component page.
-  await (library === 'cedar' ? preview.locator('[title="展开或收起源码"]') : preview.getByRole('button', { name: '收起源码', exact: true })).click()
+  const control = toggle(true)
+  await hoverAfterScroll(control, { center: true })
+  await control.click()
   await source.waitFor({ state: 'hidden' })
 }
 
@@ -124,16 +138,15 @@ export function defineProductionComponentTests({ root, library }) {
       }
       buildIndexHash = createHash('sha256').update(await readFile(resolve(directory, 'index.html'))).digest('hex')
       assert.ok(!disposed, 'setup must remain active before starting the snapshot server')
-      // The copied production snapshot is immutable. Cache its bytes for the
-      // direction matrix; every component still gets an isolated browser context.
-      const assetCache = directionCore ? new Map() : undefined
+      // Serve exactly the accepted build without per-request disk contention.
+      const assetCache = await readProductionSnapshot(directory)
       server = createServer(async (request, response) => {
         try {
           const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname)
           const file = resolve(directory, `.${pathname.endsWith('/') ? `${pathname}index.html` : pathname}`)
           if (!file.startsWith(`${directory}${sep}`)) { response.writeHead(403).end(); return }
-          const body = assetCache?.get(file) ?? await readFile(file)
-          assetCache?.set(file, body)
+          const body = assetCache.get(file)
+          if (!body) { response.writeHead(404).end(); return }
           response.writeHead(200, { 'content-type': types[extname(file)] ?? 'application/octet-stream' })
           response.end(body)
         } catch { if (!response.headersSent) response.writeHead(404); response.end() }
@@ -204,6 +217,7 @@ export function defineProductionComponentTests({ root, library }) {
                   page.on('requestfailed', request => { if (request.url().startsWith(origin)) errors.push(request.url()) })
                   page.on('response', response => { if (response.url().startsWith(origin) && response.status() >= 400) errors.push(response.url()) })
                   page.setDefaultTimeout(5000)
+                  page.setDefaultNavigationTimeout(15_000)
                   await navigateWithDiagnostics(page, origin + item.route)
                   await chooseTheme(page, library, surface, theme)
                   for (const sourceIndex of batch) {
@@ -229,7 +243,7 @@ export function defineProductionComponentTests({ root, library }) {
               page = await context.newPage()
               page.setDefaultTimeout(5000)
               // Resource loading has its own budget; component actions retain 5s.
-              if (directionCore) page.setDefaultNavigationTimeout(30_000)
+              page.setDefaultNavigationTimeout(directionCore ? 30_000 : 15_000)
               page.on('pageerror', (error) => failures.push(error.message))
               page.on('requestfailed', (request) => { if (request.url().startsWith(origin)) failures.push(`${request.url()}: ${request.failure()?.errorText}`) })
               page.on('response', (response) => { if (response.url().startsWith(origin) && response.status() >= 400) failures.push(`${response.status()}: ${response.url()}`) })
@@ -264,6 +278,7 @@ export function defineProductionComponentTests({ root, library }) {
               }
               // Source-panel collapse belongs to documentation setup. Finish it
               // before testing component positions, focus and pointer targets.
+              if (library === 'cedar') await settleScroll(demo, { start: true })
               if (directionCore) await waitForThemeAnimations(page)
               if (readingDirection) {
                 await page.waitForFunction(direction => document.documentElement.dir === direction, readingDirection)
@@ -370,7 +385,7 @@ export function defineProductionComponentTests({ root, library }) {
                   await mkdir(destination, { recursive: true })
                   const name = `${surface}-${theme}-${item.component}`
                   await page.screenshot({ path: resolve(destination, `${name}-failure.png`) }).catch(() => {})
-                  await writeFile(resolve(destination, `${name}-failure.json`), JSON.stringify({ failures, diagnostic, navigation: error.navigationDiagnostics, error: String(error) }, null, 2))
+                  await writeFile(resolve(destination, `${name}-failure.json`), JSON.stringify({ failures, diagnostic, source: error.sourceDiagnostics, navigation: error.navigationDiagnostics, error: String(error) }, null, 2))
                 }
               }
               throw error

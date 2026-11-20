@@ -34,13 +34,13 @@ test('keeps scoped-slot variables and rejects global effects/macro components', 
   assert.throws(()=>composeDemoComparison([scene,{...scene,source:'<template><div /></template><style>:root {color:red}</style>'}]), /global/);
 });
 
-test('Cedar comparisons read headings from the shared global dictionary', () => {
-  const scenes = ['size', 'line-type'].map(name => ({ name, title: '中文', en: 'English', file: name + '.vue', source: '<template><c-button>Sample</c-button></template>' }));
-  const output = composeDemoComparison(scenes, { localeImport: '../../__demos__/locale', localeScope: 'dividerLineAppearanceComparison' });
-  assert.match(output, /useComparisonLocale\("dividerLineAppearanceComparison"\)/);
-  assert.match(output, /demoCopy\["lineType"\]/);
-  assert.doesNotMatch(output, /span lang=|html.*\[lang|defineProps/);
-  const { descriptor } = parse(output);
-  const script = compileScript(descriptor, { id: 'localized-comparison' });
-  assert.deepEqual(compileTemplate({ source: descriptor.template.content, filename: 'localized.vue', id: 'localized', compilerOptions: { bindingMetadata: script.bindings } }).errors, []);
+test('Cedar comparison headings follow the document language at generation time', () => {
+  const scenes = ['size', 'shape'].map(name => ({ name, title: '尺寸', en: 'Size', file: name + '.vue', source: '<template><c-button /></template>' }));
+  for (const [language, heading] of [['zh-CN', '尺寸'], ['en-US', 'Size']]) {
+    const output = composeDemoComparison(scenes, { language });
+    assert.ok(output.includes(`<h4>${heading}</h4>`));
+    assert.doesNotMatch(output, /__demos__\/locale|span lang=/);
+    const { descriptor } = parse(output);
+    assert.deepEqual(compileTemplate({ source: descriptor.template.content, filename: 'size.vue', id: 'size' }).errors, []);
+  }
 });

@@ -114,15 +114,14 @@ for(const plan of plans) {
     const originalFile=path.resolve(path.dirname(zhFile),item.refs[0]);
     return{name,file:originalFile,source:redirectImports(read(originalFile),originalFile,file),title:label(item.text),en:english?label(english.text):name.replaceAll('-',' ')};
    });
-   const localeOptions=plan.platform==='cedar'?{localeImport:path.relative(path.dirname(file),path.join(root,'cedar-design-web/packages/ui/src/__demos__/locale')).split(path.sep).join('/'),localeScope:(plan.family+'-'+plan.into).replace(/[^a-zA-Z0-9]+(.)/g,(_,char)=>char.toUpperCase())}:{};
-   const source=composeDemoComparison(scenes,localeOptions);validate(source,file);set(file,source);
-   if(enCases.length===plan.cases.length&&enCases.some(item=>path.resolve(path.dirname(enDoc),item.refs[0])!==scenes.find(scene=>scene.name===stem(item.refs[0])).file)) {
+   const source=composeDemoComparison(scenes,{language:'zh-CN'});validate(source,file);set(file,source);
+   if(enCases.length===plan.cases.length) {
     enFile=path.join(directory,'en-US',plan.into+'.vue');
     const englishScenes=plan.cases.map(name=>{
      const item=enCases.find(item=>stem(item.refs[0])===name),originalFile=path.resolve(path.dirname(enDoc),item.refs[0]),zh=scenes.find(scene=>scene.name===name);
      return{name,file:originalFile,source:redirectImports(read(originalFile),originalFile,enFile),title:zh.title,en:label(item.text)};
     });
-    const source=composeDemoComparison(englishScenes,plan.platform==='cedar'?{...localeOptions,localeImport:path.relative(path.dirname(enFile),path.join(root,'cedar-design-web/packages/ui/src/__demos__/locale')).split(path.sep).join('/')}:{});validate(source,enFile);set(enFile,source);
+    const source=composeDemoComparison(englishScenes,{language:'en-US'});validate(source,enFile);set(enFile,source);
    }
   } else if(plan.into==='appearance-lab') {const source=enhanceConfigurationComparison(read(file));validate(source,file);set(file,source);}
   let inserted=false;

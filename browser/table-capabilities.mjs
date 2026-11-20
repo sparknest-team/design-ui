@@ -1,0 +1,65 @@
+import assert from 'node:assert/strict'
+
+/** Native geometry and state assertions for the public Table/Core composition. */
+export async function exerciseTableCapabilities({ demo, poll }) {
+  const core = demo.locator('[data-table-case="core"] .c-table-core')
+  const viewport = core.locator('.c-table-core-viewport')
+  const paged = demo.locator('[data-table-case="paged"]')
+  const virtual = demo.locator('[data-table-case="virtual"]')
+  const total = target => target.locator('tfoot td[data-column-key="amount"]').innerText()
+  assert.equal(await viewport.getAttribute('role'), 'region')
+  assert.equal(await viewport.getAttribute('aria-label'), await demo.locator('[data-table-case="core"] h4').innerText(), 'Native accessible name reaches the actual viewport')
+  assert.equal(await core.locator('tbody tr').count(), 100)
+  assert.equal(await total(paged), '10')
+  assert.equal(await total(virtual), '4950')
+  const frozenOffset = () => viewport.evaluate(element => element.querySelector('tbody td[data-column-key="name"]').getBoundingClientRect().left - element.getBoundingClientRect().left)
+  const beforeLeft = await frozenOffset()
+  await viewport.focus()
+  await viewport.press('End')
+  await poll(() => viewport.evaluate(element => Math.abs(element.scrollLeft)), value => value > 0, 'Core keyboard scroll reaches its reading end')
+  assert.ok(Math.abs(await frozenOffset() - beforeLeft) <= 1, 'Core frozen column stays at its physical side')
+  const headerOffset = () => viewport.evaluate(element => element.querySelector('thead th[data-column-key="name"]').getBoundingClientRect().top - element.getBoundingClientRect().top)
+  const headerTop = await headerOffset()
+  await viewport.evaluate(element => { element.scrollTop = 300 })
+  await poll(headerOffset, value => Math.abs(value - headerTop) <= 1, 'Core grouped sticky header retains its measured offset')
+  await demo.locator('[data-table-action="layout"]').click()
+  await poll(() => core.locator('table').evaluate(element => element.style.tableLayout), value => value === 'auto', 'Core switches to native content layout')
+  assert.equal(await core.locator('tbody tr').count(), 100)
+  await demo.locator('[data-table-action="layout"]').click()
+  await poll(() => core.locator('table').evaluate(element => element.style.tableLayout), value => value === 'fixed', 'Core restores fixed layout')
+
+  const state = () => virtual.evaluate(element => {
+    const body = element.querySelector('.c-table-body')
+    const header = element.querySelector('.c-table-header')
+    const footer = element.querySelector('.c-table-tfoot')
+    const row = body.querySelector('tbody tr[aria-rowindex]')
+    return { top: body.scrollTop, left: body.scrollLeft, header: header.scrollLeft, footer: footer.scrollLeft,
+      index: Number(row?.getAttribute('aria-rowindex')), count: body.querySelector('table').getAttribute('aria-rowcount') }
+  })
+  const body = virtual.locator('.c-table-body')
+  await body.scrollIntoViewIfNeeded()
+  const bodyHandle = await body.elementHandle()
+  await body.evaluate(element => {
+    element.scrollTop = 900
+    element.scrollLeft = getComputedStyle(element).direction === 'rtl' ? -140 : 140
+    element.dispatchEvent(new Event('scroll'))
+  })
+  const scrolled = await poll(state, value => value.index > 20 && Math.abs(value.left) > 0 && value.left === value.header && value.left === value.footer, 'Virtual body, header and summary scroll together')
+  assert.equal(scrolled.count, '102')
+  await demo.locator('[data-table-action="page"]').click()
+  await poll(() => total(paged), value => value === '35', 'Summary uses the new current page')
+  assert.equal(await total(virtual), '4950')
+  assert.equal(await body.evaluate((element, previous) => element === previous, bodyHandle), true, 'Paging retains the VirtualList DOM instance')
+  assert.equal((await state()).top, scrolled.top, 'Paging preserves virtual scroll position')
+  const originalDirection = await viewport.evaluate(element => getComputedStyle(element).direction)
+  await demo.locator('[data-table-action="direction"]').click()
+  await poll(() => viewport.evaluate(element => getComputedStyle(element).direction), value => value !== originalDirection, 'Reading direction updates without replacing the table')
+  await demo.locator('[data-table-action="direction"]').click()
+  await poll(() => viewport.evaluate(element => getComputedStyle(element).direction), value => value === originalDirection, 'Reading direction restores the inherited direction')
+  await demo.locator('[data-table-action="data"]').click()
+  await poll(() => total(virtual), value => value === '7', 'Virtual summary follows replacement data')
+  assert.equal(await total(paged), '7')
+  assert.equal(await core.locator('tbody tr').count(), 1)
+  assert.equal(await body.evaluate((element, previous) => element === previous, bodyHandle), true, 'Replacement rows retain the VirtualList DOM instance')
+  await bodyHandle.dispose()
+}

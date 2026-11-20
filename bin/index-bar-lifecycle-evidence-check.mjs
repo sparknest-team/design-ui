@@ -9,6 +9,40 @@ const egoDirectory = resolve(root, 'audits/evidence/index-bar-lifecycle-2026-11-
 const hash = data => createHash('sha256').update(data).digest('hex');
 export const readEvidence = () => JSON.parse(readFileSync(resolve(legacyDirectory, 'results.json'), 'utf8'));
 export const readEgoEvidence = () => JSON.parse(readFileSync(resolve(egoDirectory, 'results.json'), 'utf8'));
+
+function checkSampleBoundary(entries, count, time) {
+  assert.ok(count <= entries.length, 'sample exceeds recorded entries');
+  if (count > 0) assert.ok(entries[count - 1].time <= time, 'sample includes a later entry');
+  if (count < entries.length) assert.ok(entries[count].time >= time, 'sample omits an earlier entry');
+}
+
+function checkIndexBarTimeline(c, requireWrites) {
+  const final = c.samples.at(-1);
+  assert.ok(final, 'missing final sample');
+  const start = c.samples[0].time;
+  const streams = [c.events];
+  if (requireWrites) {
+    assert.ok(Array.isArray(c.writes), 'missing scroll writes');
+    assert.equal(c.writes.length, final.writes, 'final write count differs from trace');
+    for (const write of c.writes) {
+      assert.ok(Number.isFinite(write.left) && Number.isFinite(write.top), 'invalid scroll coordinates');
+    }
+    streams.push(c.writes);
+  }
+  for (const stream of streams) {
+    let previous = start;
+    for (const entry of stream) {
+      assert.ok(Number.isFinite(entry.time) && entry.time >= previous && entry.time <= final.time, 'entry outside ordered timeline');
+      previous = entry.time;
+    }
+  }
+  for (const sample of c.samples) {
+    checkSampleBoundary(c.events, sample.changes.length, sample.time);
+    assert.deepEqual(sample.changes, c.events.slice(0, sample.changes.length).map(e => e.value), 'sampled changes differ from trace');
+    if (requireWrites) checkSampleBoundary(c.writes, sample.writes, sample.time);
+  }
+}
+
 export function checkIndexBarEvidence(r, read = readFileSync) {
   const ego = r.mode === 'ego-lite-frame-aware';
   const directory = ego ? egoDirectory : legacyDirectory;
@@ -56,6 +90,7 @@ export function checkIndexBarEvidence(r, read = readFileSync) {
       : c.kind === 'settlement' ? ['ready', 'first-settlement-frame', 'settlement-complete', 'final-unmounted']
         : ['ready', 'interpolating', 'cancelled', 'retained-inert', ...(c.kind === 'keepalive' ? ['reactivated-settled', 'listener-restored'] : []), 'final-unmounted'];
     assert.deepEqual(c.samples.map(s => s.phase), phases);
+    checkIndexBarTimeline(c, ego);
     assert.equal(p.ready.nodes, 1); assert.equal(p.ready.writes, 0); assert.deepEqual(p.ready.changes, []);
     assert.equal(p['final-unmounted'].nodes, 0);
     assert.deepEqual(c.events.map(e => e.value), p['final-unmounted'].changes);

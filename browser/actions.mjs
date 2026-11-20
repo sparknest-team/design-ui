@@ -1,3 +1,4 @@
+import { exerciseTableCapabilities } from './table-capabilities.mjs'
 import { touchDrag } from './touch.mjs'
 import { assertDirectionGeometry } from './reading-direction-catalog/geometry.mjs'
 import { chooseDemoOption } from './demo-control.mjs'
@@ -19,10 +20,18 @@ const attr = (locator, name) => locator.getAttribute(name)
 const text = (locator) => locator.innerText()
 const dimensions = (locator) => locator.evaluate((element) => ({ width: element.getBoundingClientRect().width, height: element.getBoundingClientRect().height }))
 
-export async function hoverAfterScroll(locator) {
-  // Chromium's scroll-into-view can continue a smooth document scroll after
-  // returning. A stationary pointer must not be swept off a 100ms hover target.
-  await locator.scrollIntoViewIfNeeded()
+export async function settleScroll(locator, { center = false, start = false } = {}) {
+  // Scroll can continue after returning; source controls also need to clear
+  // fixed documentation headers before the real pointer action.
+  if (center || start) await locator.evaluate((element, alignStart) => {
+    element.scrollIntoView({ block: alignStart ? 'start' : 'center', inline: 'nearest', behavior: 'instant' })
+    if (alignStart) {
+      const header = document.querySelector('#navbar')
+      const offset = (header?.getBoundingClientRect().height ?? 0) + 16
+      scrollBy({ top: element.getBoundingClientRect().top - offset, behavior: 'instant' })
+    }
+  }, start)
+  else await locator.scrollIntoViewIfNeeded()
   let previous, stable = 0
   await poll(async () => {
     const position = await locator.evaluate((element) => {
@@ -33,6 +42,10 @@ export async function hoverAfterScroll(locator) {
     previous = position
     return stable
   }, (count) => count >= 3, 'hover target and document scroll settle before pointer entry')
+}
+
+export async function hoverAfterScroll(locator, options) {
+  await settleScroll(locator, options)
   await locator.hover()
 }
 
@@ -114,6 +127,7 @@ export async function exercise({ page, demo, component, library, contract, demos
   }
 
   switch (action) {
+    case 'table-capabilities': return exerciseTableCapabilities({ page, demo, poll })
     case 'date-panel': {
       const panel = demo.locator('.c-picker-container').last()
       await panel.getByText('15', { exact: true }).click()
@@ -215,12 +229,18 @@ export async function exercise({ page, demo, component, library, contract, demos
       if (action === 'auto-complete') await firstInput().fill('Bei')
       else if (!editor) await reference.click()
       const role = action === 'tree-select' ? 'treeitem' : 'option'
+      const popupId = library === 'cedar' && action === 'select'
+        ? await poll(() => reference.getAttribute('aria-controls'), Boolean, 'combobox identifies its own popup')
+        : await reference.getAttribute('aria-controls')
+      // Other mounted demos can own visible teleported options on the same page.
+      const popup = popupId ? page.locator(`[id=${JSON.stringify(popupId)}]`) : page
       const option = action === 'tree-select' && library === 'cedar'
-        ? visible(page.getByRole(role, { name: '设计部', exact: true })).first()
+        ? visible(popup.getByRole(role, { name: '设计部', exact: true, disabled: false })).first()
         : action === 'people-select' && library === 'maple'
-          ? visible(page.locator('[role="option"]:not([aria-selected="true"]):not([aria-disabled="true"])')).first()
-        : visible(page.getByRole(role)).filter({ hasNot: page.locator('[aria-disabled="true"]') }).first()
+          ? visible(popup.locator('[role="option"]:not([aria-selected="true"]):not([aria-disabled="true"])')).first()
+        : visible(popup.getByRole(role, { disabled: false })).first()
       await option.waitFor({ state: 'visible' })
+      await settleScroll(option)
       const chosen = (await text(option)).trim()
       await option.click()
       if (editor) {
@@ -230,15 +250,20 @@ export async function exercise({ page, demo, component, library, contract, demos
         await poll(() => text(fieldReference), (value) => value.includes(chosen), 'confirmed item appears in the committed field reference')
         editor = undefined
       } else {
-        await poll(async () => `${await text(demo)} ${await reference.evaluate((element) => 'value' in element ? String(element.value) : element.textContent ?? '')}`, (value) => value.includes(chosen), 'chosen item appears in the actual field')
+        await poll(async () => `${await text(demo)} ${await reference.evaluate((element) => 'value' in element ? String(element.value) : element.textContent ?? '')}`, (value) => value.includes(chosen), `chosen item ${JSON.stringify(chosen)} from ${popupId ?? 'visible popup'} appears in the actual field`)
         await page.keyboard.press('Escape')
       }
       break
     }
     case 'cascader': {
-      if (!editor) await demo.getByRole('combobox').first().click()
+      const reference = demo.getByRole('combobox').first()
+      if (!editor) await reference.click()
+      const popupId = library === 'cedar' ? await poll(() => reference.getAttribute('aria-controls'), Boolean, 'cascader identifies its own popup') : undefined
+      const owner = popupId ? page.locator(`[id=${JSON.stringify(popupId)}]`) : page
       for (const name of library === 'cedar' ? ['Shanghai', 'Huangpu'] : ['江苏省', '南京市']) {
-        await visible(page.getByText(name, { exact: true })).last().click()
+        const option = visible(owner.getByText(name, { exact: true })).last()
+        await settleScroll(option)
+        await option.click()
       }
       if (editor) {
         const confirm = editor.locator('footer').getByRole('button', { name: '确认', exact: true })
@@ -770,7 +795,7 @@ export async function exercise({ page, demo, component, library, contract, demos
     }
     case 'pull-refresh': {
       const firstRow = root().locator(`.${p}-cell`).first()
-      await firstRow.evaluate((element) => element.scrollIntoView({ block: 'center', inline: 'nearest' }))
+      await firstRow.evaluate((element) => element.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'instant' }))
       await demo.locator('.pull-refresh-demo__scroller').evaluate((element) => { element.scrollTop = 0 })
       await touchDrag(page, firstRow, 0, 240)
       await poll(() => text(root()), (value) => value.includes('新的列表项'), 'pull gesture completes the local asynchronous refresh')
