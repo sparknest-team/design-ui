@@ -20,9 +20,9 @@ jobs:
         if: inputs.cedar
         env:
           GH_TOKEN: ${{ secrets.DESIGN_SYSTEM_RELEASE_TOKEN }}
-        run: gh api repos/loca-spirit/cedar-design-web/dispatches -f event_type=design-system-release
+        run: gh api repos/sparknest-team/cedar-design-web/dispatches -f event_type=design-system-release
       - name: Dispatch Maple
         if: inputs.maple
         env:
           GH_TOKEN: ${{ secrets.DESIGN_SYSTEM_RELEASE_TOKEN }}
-        run: gh api repos/loca-spirit/maple-design-mobile/dispatches -f event_type=design-system-release
+        run: gh api repos/sparknest-team/maple-design-mobile/dispatches -f event_type=design-system-release

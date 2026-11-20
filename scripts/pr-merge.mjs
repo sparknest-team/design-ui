@@ -40,7 +40,7 @@ export function merge(number, run = args => execFileSync('gh', args, { encoding:
       if (!file) throw new Error('Missing linked-PR snapshot')
       const snapshot = JSON.parse(readFileSync(join(target, file), 'utf8'))
       if (!pr.merge_commit_sha || snapshot.testedSha !== pr.merge_commit_sha) throw new Error('The current PR merge commit was not tested; update or rerun Quality')
-      for (const link of snapshot.links) verifyLinked(link, api(`repos/loca-spirit/${link.repo}/pulls/${link.number}`))
+      for (const link of snapshot.links) verifyLinked(link, api(`repos/sparknest-team/${link.repo}/pulls/${link.number}`))
     }
     // GitHub rejects a changed head between validation and the merge request.
     const result = JSON.parse(run(['api', `repos/${repo}/pulls/${number}/merge`, '--method', 'PUT', '-f', 'merge_method=squash', '-f', `sha=${pr.head.sha}`]))

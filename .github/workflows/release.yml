@@ -34,13 +34,13 @@ jobs:
           fetch-depth: 0
       - uses: actions/checkout@v4
         with:
-          repository: loca-spirit/cedar-design-web
+          repository: sparknest-team/cedar-design-web
           path: cedar-design-web
           token: ${{ secrets.DESIGN_SYSTEM_CI_TOKEN || github.token }}
           persist-credentials: false
       - uses: actions/checkout@v4
         with:
-          repository: loca-spirit/maple-design-mobile
+          repository: sparknest-team/maple-design-mobile
           path: maple-design-mobile
           token: ${{ secrets.DESIGN_SYSTEM_CI_TOKEN || github.token }}
           persist-credentials: false

@@ -4,7 +4,7 @@ function related(body, own) {
   const links = []
   for (const line of (body || '').split(/\r?\n/)) {
     if (!line.startsWith('Related-PR:')) continue
-    const match = /^Related-PR:\s*https:\/\/github\.com\/loca-spirit\/([a-z-]+)\/pull\/(\d+)\s*$/.exec(line)
+    const match = /^Related-PR:\s*https:\/\/github\.com\/(?:sparknest-team|loca-spirit)\/([a-z-]+)\/pull\/(\d+)\s*$/.exec(line)
     if (!match || !repositories.includes(match[1])) throw new Error('Invalid Related-PR URL; use a Cedar, Maple, or design-ui PR URL on its own line')
     if (match[1] === own) throw new Error('Related-PR must refer to a sibling repository')
     if (links.some(link => link.repo === match[1])) throw new Error('Only one Related-PR per sibling repository is allowed')
@@ -28,7 +28,7 @@ async function resolve({ github, context, core }) {
   const refs = Object.fromEntries(repositories.map(repo => [repo, 'main']))
   const links = related(pr?.body, context.repo.repo)
   for (const link of links) {
-    const { data } = await getPull(github, 'loca-spirit', link.repo, link.number)
+    const { data } = await getPull(github, 'sparknest-team', link.repo, link.number)
     if (data.state === 'closed' && !data.merged) throw new Error(`Related PR ${link.repo}#${link.number} is closed without merging`)
     link.sha = data.merged ? data.merge_commit_sha : data.head.sha
     if (!/^[a-f0-9]{40}$/.test(link.sha)) throw new Error('Related PR did not resolve to a commit SHA')
@@ -44,7 +44,7 @@ async function resolve({ github, context, core }) {
 
 async function validate({ github }) {
   for (const link of JSON.parse(process.env.CI_LINKS || '[]')) {
-    const { data } = await getPull(github, 'loca-spirit', link.repo, link.number)
+    const { data } = await getPull(github, 'sparknest-team', link.repo, link.number)
     const sha = data.merged ? data.merge_commit_sha : data.head.sha
     if ((data.state === 'closed' && !data.merged) || sha !== link.sha) throw new Error(`Related PR ${link.repo}#${link.number} changed during CI; rerun Quality`)
   }
