@@ -7,7 +7,7 @@
 完整包名清单见 [包目录与框架边界](../standards/package-layout.md)。
 
 - Cedar Vue、Maple Vue 使用 design-ui 的 -vue 工具。
-- Cedar React、Maple React 使用新独立私有仓库 [design-ui-react](https://github.com/loca-spirit/design-ui-react) 的 -react 工具。
+- Cedar React、Maple React 使用新独立私有仓库 [design-ui-react](https://github.com/sparknest-team/design-ui-react) 的 -react 工具。
 - React 构建与文档预览已实际接入新工具；React 图标生成与主题契约提供独立实现，未复制 Vue 的运行时依赖。
 - 组件、CSS、token、preset、工具与文档站不建立 Vue / React 跨框架依赖。各仓库加入命名与依赖边界门禁。
 
@@ -39,7 +39,7 @@
 | Vue 全量组件测试 | 未完成；全量并行运行已停止，没有宣称全部通过 |
 | Cedar Vue 文档站完整构建 | 长时间未完成后停止本轮复验，不作为通过项 |
 
-新私有仓库初始提交 `a7676a8` 已通过 SSH 上传，云端 [Quality 检查](https://github.com/loca-spirit/design-ui-react/actions/runs/42801979570) 已成功；不需要补充本机 OAuth workflow 权限。
+新私有仓库初始提交 `a7676a8` 已通过 SSH 上传，云端 [Quality 检查](https://github.com/sparknest-team/design-ui-react/actions/runs/42801979570) 已成功；不需要补充本机 OAuth workflow 权限。
 
 ## 保留与发布前事项
 

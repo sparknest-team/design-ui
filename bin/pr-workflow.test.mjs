@@ -46,11 +46,12 @@ for (const repo of repos) {
   })
   test(`${repo}: related PR parser refuses unknown repositories and duplicate sibling refs`, () => {
     const sibling = repos.find(value => value !== repo)
-    const line = `Related-PR: https://github.com/loca-spirit/${sibling}/pull/42`
+    const line = `Related-PR: https://github.com/sparknest-team/${sibling}/pull/42`
     assert.deepEqual(refs.related(line, repo), [{ repo: sibling, number: 42 }])
+    assert.deepEqual(refs.related(line.replace('sparknest-team', 'loca-spirit'), repo), [{ repo: sibling, number: 42 }])
     assert.throws(() => refs.related(line + '\n' + line, repo))
     assert.throws(() => refs.related('Related-PR: https://github.com/attacker/untrusted/pull/2', repo))
-    assert.throws(() => refs.related(`Related-PR: https://github.com/loca-spirit/${repo}/pull/1`, repo))
+    assert.throws(() => refs.related(`Related-PR: https://github.com/sparknest-team/${repo}/pull/1`, repo))
   })
   test(`${repo}: resolver records exact sibling and tested commits and explains token permission failures`, async () => {
     const temporary = mkdtempSync(join(tmpdir(), 'ci-related-'))
@@ -58,13 +59,13 @@ for (const repo of repos) {
     const sibling = repos.find(value => value !== repo), sha = 'c'.repeat(40), outputs = {}
     let changed = false
     const github = { rest: { pulls: { get: async args => ({ data: args.repo === repo
-      ? { base: { ref: 'main' }, head: { ref: 'feature' }, body: `Related-PR: https://github.com/loca-spirit/${sibling}/pull/42` }
+      ? { base: { ref: 'main' }, head: { ref: 'feature' }, body: `Related-PR: https://github.com/sparknest-team/${sibling}/pull/42` }
       : { state: 'open', head: { sha: changed ? 'd'.repeat(40) : sha } } }) } } }
     try {
       process.env.PR_NUMBER = '1'
       process.env.RUNNER_TEMP = temporary
       process.env.GITHUB_WORKSPACE = workspace
-      await refs.resolve({ github, context: { repo: { owner: 'loca-spirit', repo }, payload: {} }, core: { setOutput: (key, value) => { outputs[key] = value }, info() {} } })
+      await refs.resolve({ github, context: { repo: { owner: 'sparknest-team', repo }, payload: {} }, core: { setOutput: (key, value) => { outputs[key] = value }, info() {} } })
       assert.equal(outputs.refs[sibling], sha)
       const snapshot = JSON.parse(readFileSync(join(temporary, 'linked-prs.json'), 'utf8'))
       assert.match(snapshot.testedSha, /^[a-f0-9]{40}$/)
@@ -73,7 +74,7 @@ for (const repo of repos) {
       await refs.validate({ github })
       changed = true
       await assert.rejects(refs.validate({ github }), /changed during CI/)
-      await assert.rejects(refs.resolve({ github: { rest: { pulls: { get: async () => { throw Object.assign(new Error('forbidden'), { status: 403 }) } } } }, context: { repo: { owner: 'loca-spirit', repo }, payload: {} }, core: {} }), /grant Contents: Read-only and Pull requests: Read-only/)
+      await assert.rejects(refs.resolve({ github: { rest: { pulls: { get: async () => { throw Object.assign(new Error('forbidden'), { status: 403 }) } } } }, context: { repo: { owner: 'sparknest-team', repo }, payload: {} }, core: {} }), /grant Contents: Read-only and Pull requests: Read-only/)
     } finally {
       for (const [key, value] of Object.entries(saved)) { if (value === undefined) delete process.env[key]; else process.env[key] = value }
       rmSync(temporary, { recursive: true, force: true })
@@ -93,7 +94,7 @@ for (const repo of repos) {
     const calls = []
     const fake = args => {
       calls.push(args)
-      if (args[0] === 'repo') return JSON.stringify({ nameWithOwner: 'loca-spirit/' + repo })
+      if (args[0] === 'repo') return JSON.stringify({ nameWithOwner: 'sparknest-team/' + repo })
       if (args[0] === 'run') {
         const directory = args[args.indexOf('--dir') + 1]
         mkdirSync(directory, { recursive: true })
@@ -104,7 +105,7 @@ for (const repo of repos) {
       if (route.endsWith('/pulls/1/merge')) return JSON.stringify({ merged: true })
       if (route.endsWith('/pulls/1')) return JSON.stringify({ state: 'open', draft: false, base: { ref: 'main' }, head: { sha: head }, merge_commit_sha: tested })
       if (route.endsWith('/pulls/2')) return JSON.stringify({ state: 'open', head: { sha: sibling } })
-      if (route.includes('/check-runs?')) return JSON.stringify({ check_runs: [{ id: 1, name: 'quality', status: 'completed', conclusion: 'success', app: { slug: 'github-actions' }, details_url: 'https://github.com/loca-spirit/' + repo + '/actions/runs/42/job/5' }] })
+      if (route.includes('/check-runs?')) return JSON.stringify({ check_runs: [{ id: 1, name: 'quality', status: 'completed', conclusion: 'success', app: { slug: 'github-actions' }, details_url: 'https://github.com/sparknest-team/' + repo + '/actions/runs/42/job/5' }] })
       if (route.includes('/artifacts?')) return JSON.stringify({ artifacts: [{ name: 'ci-linked-prs-fixture', expired: false }] })
       if (route.endsWith('/actions/runs/42')) return JSON.stringify({ path: '.github/workflows/quality.yml@main', conclusion: 'success' })
       throw new Error('Unexpected API route ' + route)
@@ -147,7 +148,7 @@ for (const repo of repos) {
     }
     assert.ok(JSON.stringify(release).includes('createWorkflowDispatch'))
     const config = JSON.parse(readFileSync(join(root, '.changeset/config.json'), 'utf8'))
-    assert.equal(config.changelog[1].repo, 'loca-spirit/' + repo)
+    assert.equal(config.changelog[1].repo, 'sparknest-team/' + repo)
   })
 }
 
