@@ -110,10 +110,6 @@ const reviewed = [
   [
     "maple-design-mobile",
     "tab-bar/style/tab-bar.less"
-  ],
-  [
-    "maple-design-mobile",
-    "table/style/table.less"
   ]
 ];
 const roots = new Map();
