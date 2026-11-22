@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { existsSync, mkdtempSync, mkdirSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
+import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { test } from 'node:test'
 import { fileURLToPath } from 'node:url'
@@ -14,7 +15,7 @@ const ts = require('typescript')
 const exportsFor = (module) => module === 'vue' ? new Set(['ref', 'watch', 'defineComponent']) : undefined
 
 test('UI and auxiliary packages use their declared Vue peer ranges', () => {
-  const temp = mkdtempSync(join(root, '.vue-peer-ranges-test-'))
+  const temp = mkdtempSync(join(tmpdir(), 'vue-peer-ranges-test-'))
   try {
     for (const pkg of ['ui', 'icons', 'use']) {
       const directory = join(temp, 'packages', pkg)
@@ -28,7 +29,7 @@ test('UI and auxiliary packages use their declared Vue peer ranges', () => {
 })
 
 test('switching runtime versions removes only consumer links', () => {
-  const temp = mkdtempSync(join(root, '.vue-runtime-links-test-'))
+  const temp = mkdtempSync(join(tmpdir(), 'vue-runtime-links-test-'))
   try {
     const target = join(temp, 'runtime')
     const modules = join(temp, 'node_modules')
@@ -98,6 +99,48 @@ test('rejects macros and watch options whose runtime semantics cannot target 3.2
   assert.equal(inspectVueCode(ts, `toRef(() => 1); computed(previous => previous || 1);`, 'component.ts', exportsFor, true).length, 2)
 })
 
+test('checks Vue namespace members only where the namespace binding is visible', () => {
+  for (const [code, name] of [
+    ["var vue = require('vue'); function A(){ var vue = new Map(); vue.has(1) }"],
+    ["var vue = require('vue'); function B(vue){ return vue.offsetHeight }"],
+    ["var vue = require('vue'); function C(){ return vue.useTemplateRef }", 'useTemplateRef'],
+    ["import * as Vue from 'vue'; Vue.offsetHeight", 'offsetHeight'],
+    ["var c=require('vue'); function f(d){ let c=d.value; c.add(1); c.length }"],
+    ["var vue=require('vue'); function g(){ { let vue={}; vue.x } return vue.useTemplateRef }", 'useTemplateRef'],
+    ["var vue=require('vue'); function f(){ vue.x; if (true) { var vue } }"],
+    ["var vue=require('vue'); { vue.x; class vue {} } { vue.x; function vue() {} }"],
+    ["var vue=require('vue'); try {} catch ({ vue }) { vue.x } for (const vue of []) { vue.x }"],
+    ["var vue=require('vue'); const f = (vue) => vue.x; vue['useTemplateRef']", 'useTemplateRef'],
+  ]) {
+    assert.deepEqual(inspectVueCode(ts, code, 'output.js', exportsFor),
+      name ? [`output.js:1: vue.${name} is unavailable in Vue 3.2.47`] : [], code)
+  }
+  const code = "var c=require('vue'); function f(d){ let c=d.value; c.add(1); c.length } c.h('div')"
+  const available = (module) => module === 'vue' ? new Set([...exportsFor(module), 'h']) : undefined
+  assert.deepEqual(inspectVueCode(ts, code, 'output.js', available), [])
+})
+
+test('resolves aliased Vue calls and Teleport through their lexical bindings', () => {
+  const code = `import { watch as observe, h, Teleport as Portal, toRef as convert } from 'vue';
+    import { defineModel, watch } from 'other';
+    function f(observe, Portal, convert) {
+      observe(() => 1, () => {}, { once: true });
+      h(Portal, { defer: true });
+      convert(1);
+      defineModel();
+      watch(() => 1, () => {}, { deep: 1 });
+    }
+    observe(() => 1, () => {}, { once: true });
+    h(Portal, { defer: true });
+    convert(1);`
+  const available = (module) => module === 'vue' ? new Set([...exportsFor(module), 'h', 'Teleport', 'toRef']) : undefined
+  assert.deepEqual(inspectVueCode(ts, code, 'component.ts', available, true), [
+    'component.ts: watch option once: true requires a newer Vue runtime',
+    'component.ts: Teleport defer requires Vue 3.5',
+    'component.ts: the single-argument toRef overload requires Vue 3.3; use ref/computed or toRef(object, key)',
+  ])
+})
+
 test('rejects Teleport defer in templates and render functions without rejecting ordinary Teleport', () => {
   const sfc = require('@vue/compiler-sfc')
   for (const template of ['<Teleport defer to="body" />', '<teleport :defer="ready" to="body" />']) {
@@ -116,8 +159,9 @@ test('rejects Teleport defer in templates and render functions without rejecting
 })
 
 test('declaration lowering preserves typed props, slots and ref values on the actual 3.2.47 types', () => {
-  const temp = mkdtempSync(join(root, '.vue-declarations-test-'))
+  const temp = mkdtempSync(join(tmpdir(), 'vue-declarations-test-'))
   try {
+    symlinkSync(join(root, 'node_modules'), join(temp, 'node_modules'), 'dir')
     const output = join(temp, 'types')
     mkdirSync(output)
     // Emit with the development runtime first; then verify the resulting public

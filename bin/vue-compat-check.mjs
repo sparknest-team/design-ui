@@ -23,12 +23,56 @@ function walk(root) {
 export function inspectVueCode(ts, text, file, exportsFor, source = false) {
   if (source) text = ts.transpileModule(text, { fileName: file.replace(/\.vue$/, '.ts'), compilerOptions: { target: ts.ScriptTarget.ESNext, module: ts.ModuleKind.ESNext, jsx: ts.JsxEmit.Preserve } }).outputText
   const ast = ts.createSourceFile(file, text, ts.ScriptTarget.Latest, true, file.endsWith('.tsx') ? ts.ScriptKind.TSX : ts.ScriptKind.TS)
-  const namespaces = new Map()
-  const aliases = new Map()
+  // Bind the single in-memory file so hoisting and shadowing follow TypeScript's
+  // lexical resolution without loading dependencies or type definitions.
+  const program = ts.createProgram([file], { allowJs: true, alwaysStrict: true, noLib: true, noResolve: true, types: [] }, {
+    getSourceFile: (name) => name === file ? ast : undefined,
+    getDefaultLibFileName: () => '',
+    getCurrentDirectory: () => '',
+    getCanonicalFileName: (name) => name,
+    useCaseSensitiveFileNames: () => true,
+    getNewLine: () => '\n',
+    fileExists: (name) => name === file,
+    readFile: (name) => name === file ? text : undefined,
+  })
+  const checker = program.getTypeChecker()
+  const symbolFor = (node) => checker.resolveName(node.text, node, ts.SymbolFlags.Value | ts.SymbolFlags.Alias, false)
+  const requireModule = (node) => {
+    const call = node.initializer
+    if (call && ts.isCallExpression(call) && ts.isIdentifier(call.expression) &&
+      call.expression.text === 'require' && !symbolFor(call.expression) &&
+      call.arguments[0] && ts.isStringLiteral(call.arguments[0])) return call.arguments[0].text
+  }
+  const namespaceModule = (node) => {
+    if (!ts.isIdentifier(node)) return
+    for (const declaration of symbolFor(node)?.declarations ?? []) {
+      if (ts.isNamespaceImport(declaration) && !declaration.parent.isTypeOnly) {
+        const specifier = declaration.parent.parent.moduleSpecifier
+        if (ts.isStringLiteral(specifier)) return specifier.text
+      }
+      if (ts.isVariableDeclaration(declaration) && ts.isIdentifier(declaration.name)) {
+        const module = requireModule(declaration)
+        if (module !== undefined) return module
+      }
+    }
+  }
+  const vueName = (node) => {
+    if (ts.isIdentifier(node)) {
+      const symbol = symbolFor(node)
+      // Preserve checks for unbound compiler macros and auto-imports.
+      if (!symbol) return node.text
+      const declaration = symbol.declarations?.[0]
+      if (declaration && ts.isImportSpecifier(declaration) && !declaration.isTypeOnly) {
+        const clause = declaration.parent.parent
+        const specifier = clause.parent.moduleSpecifier
+        if (!clause.isTypeOnly && ts.isStringLiteral(specifier) && specifier.text === 'vue') {
+          return (declaration.propertyName ?? declaration.name).text
+        }
+      }
+    }
+    if (ts.isPropertyAccessExpression(node) && namespaceModule(node.expression) === 'vue') return node.name.text
+  }
   const issues = []
-  const isTeleport = (node) => (ts.isIdentifier(node) && (aliases.get(node.text) ?? node.text) === 'Teleport') ||
-    (ts.isPropertyAccessExpression(node) && ts.isIdentifier(node.expression) &&
-      namespaces.get(node.expression.text) === 'vue' && node.name.text === 'Teleport')
   const check = (module, name, node) => {
     const available = exportsFor(module)
     if (available && !available.has(name)) {
@@ -46,25 +90,26 @@ export function inspectVueCode(ts, text, file, exportsFor, source = false) {
           for (const item of bindings.elements) if (!item.isTypeOnly) {
             const name = (item.propertyName ?? item.name).text
             check(module, name, item)
-            if (module === 'vue') aliases.set(item.name.text, name)
           }
-        } else if (bindings && ts.isNamespaceImport(bindings)) namespaces.set(bindings.name.text, module)
+        }
       }
     }
     if (ts.isExportDeclaration(node) && node.moduleSpecifier && ts.isStringLiteral(node.moduleSpecifier) && !node.isTypeOnly && node.exportClause && ts.isNamedExports(node.exportClause)) {
       for (const item of node.exportClause.elements) if (!item.isTypeOnly) check(node.moduleSpecifier.text, (item.propertyName ?? item.name).text, item)
     }
-    if (ts.isVariableDeclaration(node) && node.initializer && ts.isCallExpression(node.initializer) && node.initializer.expression.getText(ast) === 'require' && ts.isStringLiteral(node.initializer.arguments[0])) {
-      const module = node.initializer.arguments[0].text
-      if (ts.isIdentifier(node.name)) namespaces.set(node.name.text, module)
-      else if (ts.isObjectBindingPattern(node.name)) for (const item of node.name.elements) check(module, (item.propertyName ?? item.name).getText(ast), item)
+    if (ts.isVariableDeclaration(node) && ts.isObjectBindingPattern(node.name)) {
+      const module = requireModule(node)
+      if (module !== undefined) for (const item of node.name.elements) check(module, (item.propertyName ?? item.name).getText(ast), item)
     }
-    if (ts.isPropertyAccessExpression(node) && ts.isIdentifier(node.expression) && namespaces.has(node.expression.text)) check(namespaces.get(node.expression.text), node.name.text, node)
-    if (ts.isElementAccessExpression(node) && ts.isIdentifier(node.expression) && namespaces.has(node.expression.text) && node.argumentExpression && ts.isStringLiteral(node.argumentExpression)) check(namespaces.get(node.expression.text), node.argumentExpression.text, node)
+    if (ts.isPropertyAccessExpression(node) || ts.isElementAccessExpression(node)) {
+      const module = namespaceModule(node.expression)
+      if (module !== undefined) {
+        if (ts.isPropertyAccessExpression(node)) check(module, node.name.text, node)
+        else if (ts.isStringLiteral(node.argumentExpression)) check(module, node.argumentExpression.text, node)
+      }
+    }
     if (source && ts.isCallExpression(node)) {
-      let name = node.expression.getText(ast)
-      if (ts.isIdentifier(node.expression)) name = aliases.get(name) ?? name
-      if (ts.isPropertyAccessExpression(node.expression) && namespaces.get(node.expression.expression.getText(ast)) === 'vue') name = node.expression.name.text
+      const name = vueName(node.expression)
       if (name === 'defineModel') issues.push(`${file}: defineModel requires a newer runtime; use props + emits`)
       if (name === 'toRef' && node.arguments.length === 1) issues.push(`${file}: the single-argument toRef overload requires Vue 3.3; use ref/computed or toRef(object, key)`)
       if (name === 'computed') {
@@ -74,7 +119,7 @@ export function inspectVueCode(ts, text, file, exportsFor, source = false) {
       if (['h', 'createVNode', 'createBlock'].includes(name) && node.arguments.length > 1) {
         const target = node.arguments[0]
         const props = node.arguments[1]
-        if (isTeleport(target) && ts.isObjectLiteralExpression(props) &&
+        if (vueName(target) === 'Teleport' && ts.isObjectLiteralExpression(props) &&
           props.properties.some((prop) => prop.name && prop.name.getText(ast).replace(/^['"]|['"]$/g, '') === 'defer')) {
           issues.push(`${file}: Teleport defer requires Vue 3.5`)
         }
@@ -89,7 +134,7 @@ export function inspectVueCode(ts, text, file, exportsFor, source = false) {
       }
     }
     if (source && (ts.isJsxOpeningElement(node) || ts.isJsxSelfClosingElement(node))) {
-      if (isTeleport(node.tagName) &&
+      if (vueName(node.tagName) === 'Teleport' &&
         node.attributes.properties.some((prop) => ts.isJsxAttribute(prop) && prop.name.getText(ast) === 'defer')) {
         issues.push(`${file}: Teleport defer requires Vue 3.5`)
       }
