@@ -1008,8 +1008,8 @@
     {
       "repo": "cedar-design-web",
       "file": "trigger/positioner.ts",
-      "sha256": "e8896ef8b71cb05bba052aaeb018006a08fe1c5ebcd962fbf0fab88e43c481ab",
-      "rationale": "RAF throttles scroll-driven positioning and close checks, not visual completion. The owning window cancels frames, and generations reject replay. Position updates and deferred arrow calculations now check visibility, lifecycle, document and node identity and generation after geometry reads, preventing stale writes on closure or reentrant updates. Controlled tests and cross-document Chromium checks do not establish all native OS timing.",
+      "sha256": "d6019575c99ce64e4f0fe8f3de507c9eb2becbdcdbe4761c57b71780996292a6",
+      "rationale": "RAF throttles scroll-driven positioning and close checks, not visual completion. The owning window cancels frames, and generations reject replay. Position updates and deferred arrow calculations now check visibility, lifecycle, document and node identity and generation after geometry reads, preventing stale writes on closure or reentrant updates. Controlled tests and cross-document Chromium checks do not establish all native OS timing. 2026-11-22 re-review: added maple-parity trackPopupAnchor — while a popup is visible it measures the reference/panel offset per frame and re-positions only when that offset changes (keyboard-driven viewport panning fires no scroll/resize/transition); frames are cancelled in unbindScroll and on unmount.",
       "hints": [
         {
           "line": 89,
@@ -2114,6 +2114,24 @@
       "file": "trigger/reference-motion.ts",
       "sha256": "228a1f386159010691f0ad74460a0e52bce2e3922d237eb2df3cdfd55dee81ef",
       "rationale": "Popup anchoring follows the reference element per animation frame because keyboard page panning keeps moving after the last viewport event; measurement stops when the returned disposer clears active and cancels the frame. Visual tracking of scroll, not native smooth scrolling.",
+      "hints": [
+        {
+          "line": 18,
+          "category": "visual-scroll",
+          "snippet": "    frame = view.requestAnimationFrame(measure)"
+        },
+        {
+          "line": 29,
+          "category": "visual-scroll",
+          "snippet": "  let frame = view.requestAnimationFrame(measure)"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "trigger/reference-motion.ts",
+      "sha256": "228a1f386159010691f0ad74460a0e52bce2e3922d237eb2df3cdfd55dee81ef",
+      "rationale": "Popup anchoring follows the reference element per animation frame because keyboard page panning keeps moving after the last viewport event; measurement stops when the returned disposer clears active and cancels the frame. Visual tracking of scroll, not native smooth scrolling. 2026-11-22 re-review: source is byte-identical to the reviewed Maple implementation (same sha256) after the PC-side port; frames are additionally cancelled from unbindScroll and on unmount.",
       "hints": [
         {
           "line": 18,
