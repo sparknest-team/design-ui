@@ -326,6 +326,39 @@ async function buildModules(config, format, outDir, extension) {
   })
 }
 
+// A published library must not ship bundler-private helpers. Vite's module
+// preload injection is the known offender: it emits `_virtual/preload-helper`
+// and rewrites every dynamic `import()` into `__vitePreload(...)`. When a
+// consumer bundles the library with rolldown (vite 8), rolldown injects its own
+// helper into the same module -> `PARSE_ERROR: Identifier __vitePreload has
+// already been declared`. `build.modulePreload: false` does NOT prevent this on
+// vite 5 (insertPreload only checks ssr / build.lib / isWorker), so the fix has
+// to happen in the library source: ship a static import (externalized) instead
+// of a dynamic one.
+async function assertNoBundlerHelpers(config) {
+  const root = resolve(config.root)
+  const markers = ['_virtual/preload-helper', '__vitePreload']
+  const offenders = []
+  for (const output of ['es', 'lib']) {
+    const dir = resolve(root, output)
+    if (!existsSync(dir)) continue
+    for (const path of await walk(dir)) {
+      if (!/\.[cm]?js$/.test(path)) continue
+      const code = await readFile(path, 'utf8')
+      if (markers.some((marker) => code.includes(marker))) {
+        offenders.push(relative(root, path))
+      }
+    }
+  }
+  if (offenders.length) {
+    throw new Error([
+      'Library output contains bundler-private preload helpers; consumers bundling with rolldown/vite 8 cannot parse them:',
+      ...offenders.map((path) => `  ${path}`),
+      'Replace the dynamic import() in the matching source file with a static import and mark the module external.',
+    ].join('\n'))
+  }
+}
+
 async function buildBundle(config, format, outDir, fileName) {
   const root = resolve(config.root)
   await build({
@@ -408,6 +441,7 @@ export async function buildLibrary(userConfig) {
 
   await buildModules(config, 'es', 'es', 'mjs')
   await buildModules(config, 'cjs', 'lib', 'js')
+  await assertNoBundlerHelpers(config)
   await buildBundle(config, 'es', 'es', `${config.bundleName}.esm.js`)
   await buildBundle(config, 'cjs', 'lib', `${config.bundleName}.cjs.js`)
   await buildBundle(config, 'umd', 'umd', `${config.bundleName}.js`)
