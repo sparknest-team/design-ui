@@ -3,9 +3,9 @@
   "platforms": [
     {
       "repo": "cedar-design-web",
-      "files": 123,
+      "files": 124,
       "cssDeclarationCandidates": 212,
-      "runtimeCallCandidates": 133,
+      "runtimeCallCandidates": 135,
       "candidates": [
         {
           "file": "_components/field-presentation/FieldPresentation.vue",
@@ -1160,6 +1160,15 @@
           "css": [],
           "runtime": [
             89
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "trigger/reference-motion.ts",
+          "css": [],
+          "runtime": [
+            18,
+            29
           ],
           "hasLocalReducedQuery": false
         },
