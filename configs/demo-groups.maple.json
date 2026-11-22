@@ -1149,6 +1149,13 @@
       ]
     },
     {
+      "title": "阅读方向",
+      "en": "Reading direction",
+      "cases": [
+        "compact-account"
+      ]
+    },
+    {
       "title": "表单外观与布局",
       "en": "Form appearance and layout",
       "cases": [
@@ -2858,34 +2865,29 @@
       "title": "基础示例",
       "en": "Basic examples",
       "cases": [
-        "basic-usage"
+        "basic",
+        "column-sizing",
+        "columns-children"
       ]
     },
     {
-      "title": "滚动与粘性定位",
-      "en": "Scrolling and sticky positioning",
+      "title": "冻结与滚动",
+      "en": "Fixed columns and scrolling",
       "cases": [
-        "fixed-header"
+        "tabs-frozen",
+        "fixed-column-and-header",
+        "virtual-list-props",
+        "virtual-details"
       ]
     },
     {
-      "title": "内容与插槽",
-      "en": "Content and slots",
+      "title": "数据操作与状态",
+      "en": "Data and states",
       "cases": [
-        "slot"
-      ]
-    },
-    {
-      "title": "业务组合",
-      "en": "Business workflows",
-      "cases": [
-        "task-workbench"
-      ]
-    },
-    {
-      "title": "加载与等待",
-      "en": "Loading and waiting",
-      "cases": [
+        "sort-pagination",
+        "paged-selection",
+        "order-summary",
+        "empty-state",
         "loading"
       ]
     }
@@ -3418,7 +3420,8 @@
       "cases": [
         "plain",
         "line",
-        "card",
+        "outline",
+        "sizes",
         "heading-options",
         "inline-form"
       ]

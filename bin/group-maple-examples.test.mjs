@@ -125,8 +125,11 @@ test('shared scenarios use the same feature groups and relative order on Cedar a
   const cedar = JSON.parse(fs.readFileSync(path.join(configs, 'demo-groups.json'), 'utf8'));
   const maple = JSON.parse(fs.readFileSync(path.join(configs, 'demo-groups.maple.json'), 'utf8'));
   const aliases = JSON.parse(fs.readFileSync(path.join(configs, 'demo-case-aliases.maple.json'), 'utf8'));
+  // Maple 的 table 已跨端分离，按移动端自己的三章分类演进（基础展示 / 冻结与滚动 /
+  // 数据操作与状态），不再跟随 Cedar 桌面端的九章；其余家族仍要求章节名与相对顺序一致。
+  const mapleOwnedFamilies = ['color', 'typography', 'themes', 'table'];
   for (const [family, groups] of Object.entries(maple)) {
-    if (!cedar[family] || ['color', 'typography', 'themes'].includes(family)) continue;
+    if (!cedar[family] || mapleOwnedFamilies.includes(family)) continue;
     const canonical = name => aliases[family]?.[name] ?? (name === 'basic-usage' ? 'basic' : name);
     for (const group of groups) {
       const shared = [...new Set(group.cases.map(canonical).filter(name => cedar[family].some(g => g.cases.includes(name))))];
