@@ -3,15 +3,15 @@
   "platforms": [
     {
       "repo": "cedar-design-web",
-      "files": 122,
+      "files": 123,
       "cssDeclarationCandidates": 212,
-      "runtimeCallCandidates": 132,
+      "runtimeCallCandidates": 133,
       "candidates": [
         {
           "file": "_components/field-presentation/FieldPresentation.vue",
           "css": [],
           "runtime": [
-            250
+            253
           ],
           "hasLocalReducedQuery": false
         },
@@ -46,7 +46,7 @@
           "file": "_components/virtual-list-v2/VirtualList.vue",
           "css": [],
           "runtime": [
-            280
+            292
           ],
           "hasLocalReducedQuery": false
         },
@@ -178,11 +178,11 @@
           "file": "card/Card.vue",
           "css": [],
           "runtime": [
-            335,
-            337,
-            351,
-            425,
-            507
+            366,
+            368,
+            382,
+            457,
+            561
           ],
           "hasLocalReducedQuery": true
         },
@@ -197,16 +197,16 @@
         {
           "file": "card/style/index.less",
           "css": [
-            30,
-            33,
-            55,
-            70,
-            86,
-            106,
-            127,
-            138,
-            150,
-            185
+            76,
+            79,
+            101,
+            116,
+            132,
+            161,
+            182,
+            197,
+            226,
+            261
           ],
           "runtime": [],
           "hasLocalReducedQuery": true
@@ -235,7 +235,7 @@
           "file": "cascader/Cascader.vue",
           "css": [],
           "runtime": [
-            256
+            258
           ],
           "hasLocalReducedQuery": false
         },
@@ -391,15 +391,15 @@
           "file": "filter-form/FilterForm.vue",
           "css": [],
           "runtime": [
-            165
+            173
           ],
           "hasLocalReducedQuery": false
         },
         {
           "file": "filter-form/style/index.less",
           "css": [
-            16,
-            22
+            15,
+            21
           ],
           "runtime": [],
           "hasLocalReducedQuery": false
@@ -578,7 +578,7 @@
           "css": [
             15,
             25,
-            186
+            191
           ],
           "runtime": [],
           "hasLocalReducedQuery": true
@@ -587,8 +587,8 @@
           "file": "list/list.vue",
           "css": [],
           "runtime": [
-            29,
-            30
+            51,
+            52
           ],
           "hasLocalReducedQuery": false
         },
@@ -665,10 +665,10 @@
             47,
             77,
             128,
-            142,
-            147,
-            428,
-            431
+            145,
+            150,
+            431,
+            434
           ],
           "runtime": [],
           "hasLocalReducedQuery": true
@@ -1039,6 +1039,14 @@
           "hasLocalReducedQuery": true
         },
         {
+          "file": "table/core/TableCore.vue",
+          "css": [],
+          "runtime": [
+            29
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
           "file": "table/style/index.less",
           "css": [
             22,
@@ -1049,7 +1057,7 @@
             558,
             569,
             643,
-            1075
+            1076
           ],
           "runtime": [],
           "hasLocalReducedQuery": true
@@ -1193,9 +1201,9 @@
           "file": "upload/use-trigger.ts",
           "css": [],
           "runtime": [
-            87
+            108
           ],
-          "hasLocalReducedQuery": false
+          "hasLocalReducedQuery": true
         },
         {
           "file": "upload/utils/video-duration.ts",
@@ -1209,9 +1217,9 @@
     },
     {
       "repo": "maple-design-mobile",
-      "files": 104,
-      "cssDeclarationCandidates": 221,
-      "runtimeCallCandidates": 108,
+      "files": 106,
+      "cssDeclarationCandidates": 228,
+      "runtimeCallCandidates": 111,
       "candidates": [
         {
           "file": "_components/field-presentation/use-field-search.ts",
@@ -1249,7 +1257,7 @@
         {
           "file": "_components/selection-scrollbar/style/index.less",
           "css": [
-            78
+            79
           ],
           "runtime": [],
           "hasLocalReducedQuery": false
@@ -1258,7 +1266,7 @@
           "file": "_components/virtual-list-v2/VirtualList.vue",
           "css": [],
           "runtime": [
-            347
+            362
           ],
           "hasLocalReducedQuery": false
         },
@@ -1267,6 +1275,14 @@
           "css": [],
           "runtime": [
             9
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
+          "file": "_utils/resize-observer.ts",
+          "css": [],
+          "runtime": [
+            31
           ],
           "hasLocalReducedQuery": false
         },
@@ -1321,9 +1337,9 @@
           "file": "button/style/button.less",
           "css": [
             18,
-            211,
-            224,
-            226
+            217,
+            230,
+            232
           ],
           "runtime": [],
           "hasLocalReducedQuery": true
@@ -1332,11 +1348,11 @@
           "file": "card/Card.vue",
           "css": [],
           "runtime": [
-            419,
-            423,
-            439,
-            539,
-            628
+            443,
+            447,
+            463,
+            566,
+            679
           ],
           "hasLocalReducedQuery": true
         },
@@ -1351,16 +1367,16 @@
         {
           "file": "card/style/card.less",
           "css": [
-            42,
-            45,
-            67,
-            82,
-            98,
-            118,
-            139,
-            150,
-            162,
-            203
+            86,
+            89,
+            111,
+            126,
+            142,
+            171,
+            192,
+            207,
+            236,
+            277
           ],
           "runtime": [],
           "hasLocalReducedQuery": true
@@ -1391,7 +1407,7 @@
           "file": "cascader/Cascader.vue",
           "css": [],
           "runtime": [
-            384
+            379
           ],
           "hasLocalReducedQuery": false
         },
@@ -1442,8 +1458,8 @@
           "file": "checkbox/style/index.less",
           "css": [
             30,
-            62,
-            117
+            70,
+            127
           ],
           "runtime": [],
           "hasLocalReducedQuery": true
@@ -1735,9 +1751,9 @@
           "css": [
             15,
             25,
-            196,
-            205,
-            208
+            201,
+            210,
+            213
           ],
           "runtime": [],
           "hasLocalReducedQuery": true
@@ -1746,8 +1762,8 @@
           "file": "list/List.vue",
           "css": [],
           "runtime": [
-            31,
-            33
+            59,
+            61
           ],
           "hasLocalReducedQuery": false
         },
@@ -1831,7 +1847,7 @@
         {
           "file": "message/style/message.less",
           "css": [
-            106
+            113
           ],
           "runtime": [],
           "hasLocalReducedQuery": false
@@ -2150,10 +2166,17 @@
           "hasLocalReducedQuery": false
         },
         {
-          "file": "table/style/table.less",
+          "file": "table/style/index.less",
           "css": [
-            49,
-            90
+            27,
+            347,
+            373,
+            479,
+            533,
+            567,
+            578,
+            652,
+            1085
           ],
           "runtime": [],
           "hasLocalReducedQuery": true
@@ -2205,6 +2228,15 @@
           "hasLocalReducedQuery": false
         },
         {
+          "file": "trigger/reference-motion.ts",
+          "css": [],
+          "runtime": [
+            18,
+            29
+          ],
+          "hasLocalReducedQuery": false
+        },
+        {
           "file": "trigger/state.ts",
           "css": [],
           "runtime": [
@@ -2225,9 +2257,9 @@
           "file": "upload/use-trigger.ts",
           "css": [],
           "runtime": [
-            123
+            153
           ],
-          "hasLocalReducedQuery": false
+          "hasLocalReducedQuery": true
         },
         {
           "file": "upload/utils/video-duration.ts",

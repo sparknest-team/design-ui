@@ -1,7 +1,7 @@
 {
   "version": 1,
   "scope": "classification-only",
-  "date": "2026-11-19",
+  "date": "2026-11-22",
   "rows": [
     {
       "repo": "cedar-design-web",
@@ -623,31 +623,31 @@
     {
       "repo": "maple-design-mobile",
       "file": "card/Card.vue",
-      "sha256": "5c4d9f6a4d61ae3859daa207e198b540472d0112a5dc0c65cc3b843ba9bf3c7a",
+      "sha256": "dd7aae27d04bdba86f1f20bb9526066d51920a4a9b6a5e47975b92372dde0263",
       "rationale": "Two owner-window frames settle the opening layout. The reduced-motion media query controls opening and return timing. The timers defer ripple measurement and settle the floating return.",
       "hints": [
         {
-          "line": 419,
+          "line": 443,
           "category": "state-settlement",
           "snippet": "    handle = view.requestAnimationFrame(() => {"
         },
         {
-          "line": 423,
+          "line": 447,
           "category": "state-settlement",
           "snippet": "      handle = view.requestAnimationFrame(() => finish(true))"
         },
         {
-          "line": 439,
+          "line": 463,
           "category": "visual-completion",
           "snippet": "  const query = view.matchMedia('(prefers-reduced-motion: reduce)')"
         },
         {
-          "line": 539,
+          "line": 566,
           "category": "interaction-delay",
           "snippet": "  floater.value = setTimeout("
         },
         {
-          "line": 628,
+          "line": 679,
           "category": "visual-completion",
           "snippet": "  dropper = setTimeout("
         }
@@ -656,31 +656,31 @@
     {
       "repo": "cedar-design-web",
       "file": "card/Card.vue",
-      "sha256": "a670fcbd60da741f5f3d250b6569be801664ca1871d39bd42380dcf6066993ba",
+      "sha256": "f3c13dd6058d8ef16e09234a54dd404eef4951326062439940255cc2d3481ea5",
       "rationale": "Two owner-window frames settle the opening layout. The reduced-motion media query controls opening and return timing. The timers defer ripple measurement and settle the floating return.",
       "hints": [
         {
-          "line": 335,
+          "line": 366,
           "category": "state-settlement",
           "snippet": "    handle = view.requestAnimationFrame(() => {"
         },
         {
-          "line": 337,
+          "line": 368,
           "category": "state-settlement",
           "snippet": "      handle = view.requestAnimationFrame(() => finish(true))"
         },
         {
-          "line": 351,
+          "line": 382,
           "category": "visual-completion",
           "snippet": "  const query = view.matchMedia('(prefers-reduced-motion: reduce)')"
         },
         {
-          "line": 425,
+          "line": 457,
           "category": "interaction-delay",
           "snippet": "  floater.value = setTimeout("
         },
         {
-          "line": 507,
+          "line": 561,
           "category": "visual-completion",
           "snippet": "  dropper = setTimeout(() => {"
         }
@@ -1086,7 +1086,7 @@
     {
       "repo": "maple-design-mobile",
       "file": "trigger/positioner.ts",
-      "sha256": "ee44e39ca9bbef32bd1cc30aaf80225d12fb5c187719c41d2e5bb8319eadc727",
+      "sha256": "28abd033218836e5b7dfff4554dbde38d81933b75e848f4d0c4840b0c71b5a27",
       "rationale": "RAF throttles scroll-driven positioning and close checks, not visual completion. The owning window cancels frames, and generations reject replay. Position updates and deferred arrow calculations now check visibility, lifecycle, document and node identity and generation after geometry reads, preventing stale writes on closure or reentrant updates. Controlled tests and cross-document Chromium checks do not establish all native OS timing.",
       "hints": [
         {
@@ -1465,16 +1465,16 @@
     {
       "repo": "cedar-design-web",
       "file": "list/list.vue",
-      "sha256": "9efcb07eeb3009aba8972de21a8ac6aa227743967571b97daf768d201d999a2b",
+      "sha256": "7615bdda36ab86bd446574f08eca668c16410f6f93c8aab0d8d99d2ed2727827",
       "rationale": "Public method declaration plus gated delegation to VirtualList component scrollTo, not DOM native scrolling or a local timer. Preserve options; downstream VirtualList RAF/retained commands and preference behavior need separate audit. No product changes or native acceptance granted by this classification. Current scheduling, target identity, invalidation on inactive/disposal and List delegation re-reviewed against current code. Numeric virtual scrolling now synchronizes the visible range on both platforms without relying on native scroll delivery. Targeted lifecycle and InfiniteScroll suites pass; these controlled tests do not establish native scroll ordering or OS acceptance.",
       "hints": [
         {
-          "line": 29,
+          "line": 51,
           "category": "declaration-only",
           "snippet": "function scrollIntoView(options: ScrollIntoViewOptions) {"
         },
         {
-          "line": 30,
+          "line": 52,
           "category": "delegated-scroll",
           "snippet": "  if (virtual.value) virtualRef.value?.scrollTo(options)"
         }
@@ -1483,16 +1483,16 @@
     {
       "repo": "maple-design-mobile",
       "file": "list/List.vue",
-      "sha256": "3f17f1e11ba67ff41966f95090fe1a7d76e0800c4c0bf6d572f7cf69123ce60d",
+      "sha256": "25d4d67e1ccf3603ff61d93de8721fe902596fb7e120459823412ea305a41d75",
       "rationale": "Public method declaration plus gated delegation to VirtualList component scrollTo, not DOM native scrolling or a local timer. Preserve options; downstream VirtualList RAF/retained commands and preference behavior need separate audit. No product changes or native acceptance granted by this classification. Current scheduling, target identity, invalidation on inactive/disposal and List delegation re-reviewed against current code. Numeric virtual scrolling now synchronizes the visible range on both platforms without relying on native scroll delivery. Targeted lifecycle and InfiniteScroll suites pass; these controlled tests do not establish native scroll ordering or OS acceptance.",
       "hints": [
         {
-          "line": 31,
+          "line": 59,
           "category": "declaration-only",
           "snippet": "function scrollIntoView(options: ScrollIntoViewOptions) {"
         },
         {
-          "line": 33,
+          "line": 61,
           "category": "delegated-scroll",
           "snippet": "    virtualRef.value?.scrollTo(options)"
         }
@@ -1501,11 +1501,11 @@
     {
       "repo": "cedar-design-web",
       "file": "_components/virtual-list-v2/VirtualList.vue",
-      "sha256": "8dcbe9e077fe3030ca90f9fd076685a0c1835bb068a24e1417adbea869442698",
+      "sha256": "e8688439b8a0ec7fbd663610981ee4eb45deb8c26e6cc18687bf7cd242f75784",
       "rationale": "Post-render scroll correction is guarded by request generation, element ownership and lifecycle; data changes and new scroll positions invalidate old commands. It is Vue nextTick state settlement, not animation. Controlled tests do not establish arbitrary geometry reentry or native OS behavior. Current scheduling, target identity, invalidation on inactive/disposal and List delegation re-reviewed against current code. Numeric virtual scrolling now synchronizes the visible range on both platforms without relying on native scroll delivery. Targeted lifecycle and InfiniteScroll suites pass; these controlled tests do not establish native scroll ordering or OS acceptance.",
       "hints": [
         {
-          "line": 280,
+          "line": 292,
           "category": "state-settlement",
           "snippet": "          else scrollTo(scrollTop)"
         }
@@ -1514,11 +1514,11 @@
     {
       "repo": "maple-design-mobile",
       "file": "_components/virtual-list-v2/VirtualList.vue",
-      "sha256": "10d8dd508ba1caf32d6d4d7972f26c470246cf3caae75b9c8da700ad411a9d37",
+      "sha256": "715a3159cf5bfc4b14d3ea80716dbb13e0b154e05d7e5c1eac622eba02ac44d1",
       "rationale": "Post-render scroll correction is guarded by request generation, element ownership and lifecycle; data changes and new scroll positions invalidate old commands. It is Vue nextTick state settlement, not animation. Controlled tests do not establish arbitrary geometry reentry or native OS behavior. Current scheduling, target identity, invalidation on inactive/disposal and List delegation re-reviewed against current code. Numeric virtual scrolling now synchronizes the visible range on both platforms without relying on native scroll delivery. Targeted lifecycle and InfiniteScroll suites pass; these controlled tests do not establish native scroll ordering or OS acceptance.",
       "hints": [
         {
-          "line": 347,
+          "line": 362,
           "category": "state-settlement",
           "snippet": "            scrollTo(scrollTop)"
         }
@@ -1625,7 +1625,7 @@
     {
       "repo": "cedar-design-web",
       "file": "auto-complete/auto-complete.tsx",
-      "sha256": "ad22b07befdb6552166df8ec52e3fbd80d0dbd43b54d0f6e5b053ab6e63e5ea0",
+      "sha256": "f8d1ef81c7cfacf5021d36e2d29cab74d4c0e4363e6d837f329ca92da3e73f69",
       "rationale": "Keyboard reopen schedules the current active key for Select scroll; Select validates open state, enabled key and lifecycle before touching the dropdown. Controlled tests do not prove every native keyboard timing path. Current keyboard reopen queues only an enabled active key and checks open/current key before delegation to Select; Select validates current lifecycle and option membership. Keyboard reopen suite passes 10 tests per platform; actual native keyboard timing remains separate.",
       "hints": [
         {
@@ -1664,7 +1664,7 @@
     {
       "repo": "maple-design-mobile",
       "file": "auto-complete/auto-complete.tsx",
-      "sha256": "badd2218062e3b92dc2e3e608b46bd820a4c1cb5ae7105968569af53e89efe21",
+      "sha256": "cb01796042db8b5dca5218dab436abc95ae50e73049f27340a751ae391b6a3f3",
       "rationale": "Keyboard reopen schedules the current active key for Select scroll; Select validates open state, enabled key and lifecycle before touching the dropdown. Controlled tests do not prove every native keyboard timing path. Current keyboard reopen queues only an enabled active key and checks open/current key before delegation to Select; Select validates current lifecycle and option membership. Keyboard reopen suite passes 10 tests per platform; actual native keyboard timing remains separate.",
       "hints": [
         {
@@ -1716,11 +1716,11 @@
     {
       "repo": "cedar-design-web",
       "file": "upload/use-trigger.ts",
-      "sha256": "2e0809a769f29a5866dd041f8b8857371e4dd2dc027d6fdd013c04ab2b1fd0cd",
+      "sha256": "9fdbb4628abdde69ab1c07f48fdfeb6c1a03a6e1af9b216066cb5eec217af86b",
       "rationale": "Zero-delay task clears the captured click after event propagation; claim tracks event identity and deactivation clears timer and invalidates chooser lifetime. Native event ordering remains separately scoped.",
       "hints": [
         {
-          "line": 87,
+          "line": 108,
           "category": "task-dispatch",
           "snippet": "    clearClick = setTimeout(() => { if (currentClick === event) currentClick = undefined })"
         }
@@ -1755,11 +1755,11 @@
     {
       "repo": "maple-design-mobile",
       "file": "upload/use-trigger.ts",
-      "sha256": "be207139bf1565c1066282e5ec7a49feab5b07d5401bef9843c30f18dd5edd27",
+      "sha256": "3a9581f1c1e0c294187dd0ab4ff0b52be4d2feff7cbf089f3f8387e76f03e405",
       "rationale": "Zero-delay task clears the captured click after event propagation; claim tracks event identity and deactivation clears timer and invalidates chooser lifetime. Native event ordering remains separately scoped.",
       "hints": [
         {
-          "line": 123,
+          "line": 153,
           "category": "task-dispatch",
           "snippet": "    clearClick = setTimeout(() => {"
         }
@@ -1781,11 +1781,11 @@
     {
       "repo": "cedar-design-web",
       "file": "filter-form/FilterForm.vue",
-      "sha256": "b1be17496b66e91f01a926b2452771679ff201ff222c83616fe5b9b504f0dfbf",
+      "sha256": "5748bf70174fdaf8f6450ad06c361608a8b7c9480541e30a6b3b6c62a0505408",
       "rationale": "User-configured change debounce owns the latest snapshot; replacement and lifecycle cancellation reject stale callbacks. This is business notification timing, not CSS motion.",
       "hints": [
         {
-          "line": 165,
+          "line": 173,
           "category": "interaction-delay",
           "snippet": "  else changeTimer = setTimeout(publish, delay)"
         }
@@ -1861,7 +1861,7 @@
     {
       "repo": "maple-design-mobile",
       "file": "lazy/index.ts",
-      "sha256": "1997d00a7c737e42501113893343c276fa6295245c0901feff1bb470a89658c5",
+      "sha256": "4dea9c68acc27d0e5e017b10c342940cb9e8fac1a46d0b638cc43717480fa194",
       "rationale": "Throttled viewport checks are interaction scheduling; two owner-window frames defer geometry checks. Generation and one-shot guards reject obsolete or replayed deliveries; image and directive ownership protect replacement/unmount. Native codec and browser timing remain separate.",
       "hints": [
         {
@@ -1885,10 +1885,10 @@
       "repo": "cedar-design-web",
       "file": "_components/field-presentation/FieldPresentation.vue",
       "rationale": "Outside-save waits for closed shadow-root capture, then checks the captured generation and layer state.",
-      "sha256": "590f381aed1614d5cbd4c5b89f12dbba82b06d536ef9a25a2a2dbc0eee4a251c",
+      "sha256": "d86ac74a747c9ed93a4c4a97af7d357cba091abf471ab437cdd21b326a413d39",
       "hints": [
         {
-          "line": 250,
+          "line": 253,
           "category": "task-dispatch",
           "snippet": "    setTimeout(() => {"
         }
@@ -1911,10 +1911,10 @@
       "repo": "cedar-design-web",
       "file": "cascader/Cascader.vue",
       "rationale": "For checkbox Escape events, focus restoration runs after the trigger has processed document-level dismissal.",
-      "sha256": "8cb9772516176cbcf010e35345575a297db142cc1f6ad325685e4753cffa8783",
+      "sha256": "a2b798edd7314fd57e9607cfddbb92dfa1942e71cc80e5100bfa4f0e8649062d",
       "hints": [
         {
-          "line": 256,
+          "line": 258,
           "category": "task-dispatch",
           "snippet": "      if (internalCheckbox && target.ownerDocument.defaultView) target.ownerDocument.defaultView.setTimeout(restoreFocus, 0)"
         }
@@ -1963,7 +1963,7 @@
       "repo": "cedar-design-web",
       "file": "trigger/interaction.ts",
       "rationale": "Two timers expire pointer-release and forwarded-label state. The third defers outside dismissal until closed shadow-root listeners classify the event.",
-      "sha256": "c1ed4a57317acc844320a6d829e50781378901bb302c5193948e5143c1d761cc",
+      "sha256": "63d0fb58eb3ad1fa355377793aa27adbf70af98afa30a400201eab447cbbf7c3",
       "hints": [
         {
           "line": 144,
@@ -1999,10 +1999,10 @@
       "repo": "maple-design-mobile",
       "file": "cascader/Cascader.vue",
       "rationale": "For checkbox Escape events, focus restoration runs after the trigger has processed document-level dismissal.",
-      "sha256": "c483cd29a629713a6efead471cd792f12033843c36429d99a176481c385a9ae8",
+      "sha256": "d350b64b9969bedf49e9f6b4c62fd2d1efe111a1ebd9026d4e1d0ec1af0e54c6",
       "hints": [
         {
-          "line": 384,
+          "line": 379,
           "category": "task-dispatch",
           "snippet": "        target.ownerDocument.defaultView.setTimeout(restoreFocus, 0)"
         }
@@ -2051,7 +2051,7 @@
       "repo": "maple-design-mobile",
       "file": "mention/mention.tsx",
       "rationale": "The hidden caret mirror follows the native editor scroll position before measuring the caret.",
-      "sha256": "9112616987658ba6b7349fea3b02afe7ab59db6d3d2551d91a939d406c517423",
+      "sha256": "8928509c16ca41e9029cef3d002f3069b27db3fb063783918694513cc7d6077a",
       "hints": [
         {
           "line": 879,
@@ -2064,7 +2064,7 @@
       "repo": "maple-design-mobile",
       "file": "trigger/interaction.ts",
       "rationale": "Two timers expire pointer-release and forwarded-label state. The third defers outside dismissal until closed shadow-root listeners classify the event.",
-      "sha256": "2f314ddee9d9c8f808d2119f096845335ab6662b3faabe2d2fbdbe7629ef40f1",
+      "sha256": "74feb79e23246f7f307869562be8f424c83dea0c7e59bb426ff09fb9ec65d2b9",
       "hints": [
         {
           "line": 165,
@@ -2080,6 +2080,50 @@
           "line": 490,
           "category": "task-dispatch",
           "snippet": "      setTimeout(() => {"
+        }
+      ]
+    },
+    {
+      "repo": "cedar-design-web",
+      "file": "table/core/TableCore.vue",
+      "sha256": "06fc5d5fea5703d3ec64c71dee35b2d4c422ebd1a5302c9fa92800de5f7decc9",
+      "rationale": "Table core scrollTo delegates to the native viewport scroller and only falls back to direct offset assignment when scrollTo is unavailable; no timer, no interpolation and no lifecycle ownership taken from the browser.",
+      "hints": [
+        {
+          "line": 29,
+          "category": "native-scroll",
+          "snippet": "  if (typeof element.scrollTo === 'function') element.scrollTo(options)"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "_utils/resize-observer.ts",
+      "sha256": "9684543ca1ecbf2598c13b8ae44c742a9c368b01eb7ed0ecde19b3505b1634b3",
+      "rationale": "ResizeObserver entries are coalesced into a single animation frame so layout reads happen once per frame; the frame is generation-guarded and dropped while unmounted, suspended or disabled. Measurement scheduling only, no visual completion claim.",
+      "hints": [
+        {
+          "line": 31,
+          "category": "measurement-scheduling",
+          "snippet": "    frame = view.requestAnimationFrame(() => {"
+        }
+      ]
+    },
+    {
+      "repo": "maple-design-mobile",
+      "file": "trigger/reference-motion.ts",
+      "sha256": "228a1f386159010691f0ad74460a0e52bce2e3922d237eb2df3cdfd55dee81ef",
+      "rationale": "Popup anchoring follows the reference element per animation frame because keyboard page panning keeps moving after the last viewport event; measurement stops when the returned disposer clears active and cancels the frame. Visual tracking of scroll, not native smooth scrolling.",
+      "hints": [
+        {
+          "line": 18,
+          "category": "visual-scroll",
+          "snippet": "    frame = view.requestAnimationFrame(measure)"
+        },
+        {
+          "line": 29,
+          "category": "visual-scroll",
+          "snippet": "  let frame = view.requestAnimationFrame(measure)"
         }
       ]
     }
