@@ -28,7 +28,7 @@ test('runtime differences remain observable after platform normalization', () =>
   assert.notEqual(normalizeCopiedSource(source), normalizeCopiedSource(source.replace('value = 1', 'value = 2')))
 })
 
-test('Button outline platform exception requires both exact reviewed rules', () => {
+test('Button outline normalization requires both exact reviewed rules', () => {
   const cedar = `&--variant-outline { border: thin solid currentColor;
     &.c-button--status-default:not(.c-button--disabled),
     &.c-button--status-secondary:not(.c-button--disabled),
@@ -36,12 +36,23 @@ test('Button outline platform exception requires both exact reviewed rules', () 
       border-color: var(--c-sys-color-border-default);
     }
   }`
-  const maple = '&--variant-outline { border: thin solid currentColor; }'
+  const maple = `&--variant-outline {
+    border: thin solid currentColor;
+    &.mp-button--status-default:not(.mp-button--disabled),
+    &.mp-button--status-secondary:not(.mp-button--disabled),
+    &.mp-button--status-tertiary:not(.mp-button--disabled) {
+      border-color: var(--mp-sys-color-border-default);
+    }
+  }`
   assert.equal(...normalizeButtonOutline(cedar, maple))
   assert.throws(() => normalizeButtonOutline(cedar.replace('border-default', 'content-primary'), maple), /Cedar Button/)
   assert.throws(() => normalizeButtonOutline(cedar.replace('--status-tertiary', '--status-primary'), maple), /Cedar Button/)
   assert.throws(() => normalizeButtonOutline(cedar.replace(':not(.c-button--disabled)', ''), maple), /Cedar Button/)
   assert.throws(() => normalizeButtonOutline(cedar + cedar, maple), /Cedar Button/)
+  assert.throws(() => normalizeButtonOutline(cedar, maple.replace('border-default', 'content-primary')), /Maple Button/)
+  assert.throws(() => normalizeButtonOutline(cedar, maple.replace('--status-tertiary', '--status-primary')), /Maple Button/)
+  assert.throws(() => normalizeButtonOutline(cedar, maple.replace(':not(.mp-button--disabled)', '')), /Maple Button/)
+  assert.throws(() => normalizeButtonOutline(cedar, maple + maple), /Maple Button/)
   assert.throws(() => normalizeButtonOutline(cedar, maple.replace('currentColor', 'red')), /Maple Button/)
 })
 

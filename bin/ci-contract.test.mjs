@@ -24,7 +24,12 @@ for (const repo of repositories) {
     assert.equal(manifest.volta.node, version)
     assert.equal(manifest.engines.node, `>=${version}`)
     assert.ok(readFileSync(resolve(root, '.npmrc'), 'utf8').split('\n').includes(`use-node-version=${version}`))
-    assert.match(workflow, /version: 9\.6\.0\s/)
+    // Derive the package manager version from the repository's own pin instead of hardcoding it:
+    // the three declarations (packageManager / volta / engines) must agree with the workflow.
+    const pnpmVersion = manifest.packageManager.split('@')[1].split('+')[0]
+    assert.match(workflow, new RegExp(`version: ${pnpmVersion.replace(/\./g, '\\.')}\\s`))
+    assert.equal(manifest.volta.pnpm, pnpmVersion)
+    assert.equal(manifest.engines.pnpm, `>=${pnpmVersion}`)
     assert.equal((workflow.match(/install --frozen-lockfile/g) ?? []).length, 3)
     assert.match(workflow, repo === 'cedar-design-web' ? /npm exec --yes --package=.*packageManager\.split.* -- pnpm install --frozen-lockfile\s+working-directory: design-ui/ : /corepack pnpm install --frozen-lockfile\s+working-directory: design-ui/)
     assert.match(workflow, /- run: pnpm quality\s/)

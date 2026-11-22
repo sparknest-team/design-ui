@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { test } from 'node:test';
-import { assertMotionOnlyRule, excludeViewportGeometryRule } from './theme-audit-utils.mjs';
+import { assertForcedColorsRule, assertMotionOnlyRule, excludeViewportGeometryRule } from './theme-audit-utils.mjs';
 const require = createRequire(new URL('../../cedar-design-web/packages/ui/package.json', import.meta.url));
 const postcss = require('postcss');
 test('motion auditing accepts scale geometry without excluding color declarations', () => {
@@ -25,4 +25,22 @@ test('dynamic viewport support excludes only known Dialog geometry tokens', () =
   }
   postcss.parse('@supports (display: grid) { :root { color: red } }').walkRules(rule => assert.equal(excludeViewportGeometryRule(rule), false));
   postcss.parse('@media print { @supports (height: 100dvh) { :root { --c-dialog-max-height: 90dvh } } }').walkRules(rule => assert.throws(() => excludeViewportGeometryRule(rule), /Nested viewport/));
+});
+
+test('forced colors auditing accepts system palette overrides only', () => {
+  const accepted = postcss.parse('@media (forced-colors: active) { .mp-checkbox__icon { outline: var(--mp-internal-checkbox-focus-width) solid Highlight; forced-color-adjust: none } }');
+  accepted.walkRules(rule => assert.doesNotThrow(() => assertForcedColorsRule(rule)));
+  for (const [declaration, pattern] of [
+    ['color: #123456', /hardcode design colors/],
+    ['background-color: rgba(0, 0, 0, .5)', /hardcode design colors/],
+    ['border-color: var(--mp-sys-color-content-danger)', /hardcode design colors/],
+    ['transition: outline-color .2s', /Unaudited forced-colors property/],
+  ]) {
+    postcss.parse(`@media (forced-colors: active) { .icon { ${declaration} } }`).walkRules(rule => {
+      assert.throws(() => assertForcedColorsRule(rule), pattern);
+    });
+  }
+  postcss.parse('@media print { @media (forced-colors: active) { .icon { outline: 1px solid Highlight } } }').walkRules(rule => {
+    assert.throws(() => assertForcedColorsRule(rule), /Nested forced-colors/);
+  });
 });

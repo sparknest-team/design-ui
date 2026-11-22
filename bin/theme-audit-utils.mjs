@@ -65,6 +65,44 @@ export function excludeViewportGeometryRule(rule) {
   return true;
 }
 
+// Forced colors replaces colors with the user agent palette, so these overrides
+// never consume design tokens. Only system colors and geometry may appear here.
+const forcedColorsProperties = new Set([
+  'background',
+  'background-color',
+  'border',
+  'border-color',
+  'border-style',
+  'border-width',
+  'box-shadow',
+  'color',
+  'fill',
+  'forced-color-adjust',
+  'outline',
+  'outline-color',
+  'outline-offset',
+  'outline-style',
+  'outline-width',
+  'stroke',
+  'text-decoration-color',
+  'text-emphasis-color',
+]);
+
+export function assertForcedColorsRule(rule) {
+  assert.equal(rule.parent.parent.type, 'root', 'Nested forced-colors conditions need explicit auditing');
+  rule.walkDecls(decl => {
+    assert.ok(
+      forcedColorsProperties.has(decl.prop),
+      `Unaudited forced-colors property: ${decl.prop}`,
+    );
+    assert.doesNotMatch(
+      decl.value,
+      /#[0-9a-f]{3,8}\b|\b(?:rgba?|hsla?|lab|lch|oklab|oklch|color-mix)\(|var\(--(?:c|mp)-[\w-]*color/i,
+      `Forced-colors declarations must not hardcode design colors: ${decl.prop}: ${decl.value}`,
+    );
+  });
+}
+
 export async function auditThemes(
   component,
   inspect,
@@ -112,6 +150,13 @@ export async function auditThemes(
     const rules = [];
     postcss.parse(css).walkRules((rule) => {
       if (excludeViewportGeometryRule(rule)) return;
+      // Forced colors replaces design colors with the user agent palette; audit it
+      // as system-color-only instead of token consumption.
+      const forcedColorsMedia = rule.parent.type === 'atrule' && rule.parent.name === 'media' && rule.parent.params === '(forced-colors: active)';
+      if (forcedColorsMedia) {
+        assertForcedColorsRule(rule);
+        return;
+      }
       // Only motion and geometry rules are excluded from steady-state color checks.
       const reducedMedia = rule.parent.type === 'atrule' && rule.parent.name === 'media' && rule.parent.params === '(prefers-reduced-motion: reduce)';
       if (

@@ -87,7 +87,7 @@ test('Cedar Tree distinguishes keyboard native scroll and VirtualList delegation
 
 test('current reviewed sources and candidate identities match', () => {
   const result = checkSavedClassification();
-  assert.equal(result.classifiedHints, 240);
+  assert.equal(result.classifiedHints, 246);
   assert.equal(result.unclassifiedHints, 0);
   assert.deepEqual(result.categories, {
     'business-clock': 8,
@@ -96,12 +96,12 @@ test('current reviewed sources and candidate identities match', () => {
     'interaction-delay': 28,
     'interaction-dispatch': 4,
     'interaction-repeat': 4,
-    'measurement-scheduling': 19,
-    'native-scroll': 29,
+    'measurement-scheduling': 20,
+    'native-scroll': 30,
     'state-settlement': 36,
     'task-dispatch': 14,
     'test-support': 10,
     'visual-completion': 13,
-    'visual-scroll': 40,
+    'visual-scroll': 44,
   });
 });
