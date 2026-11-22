@@ -72,15 +72,15 @@ export function assertCopiedVueCompat(cedarSource, mapleSource) {
   assert.equal(normalize(cedarSource, 'Cedar', 'c'), normalize(mapleSource, 'Maple', 'mp'), 'Copied vue-compat implementations differ')
 }
 
-// Preserve the reviewed platform-specific outline border colors.
-// Compare the complete declaration and its containing variant, then remove only
-// Cedar's exact override so the remaining implementations stay strictly compared.
+// Cedar and Maple now share the outline border and border-color rules for all three statuses.
+// Validate both complete rules before normalizing their form for comparison.
 export function normalizeButtonOutline(cedarSource, mapleSource) {
   const cedar = /&--variant-outline\s*\{\s*border:\s*thin\s+solid\s+currentColor;\s*&\.c-button--status-default:not\(\.c-button--disabled\),\s*&\.c-button--status-secondary:not\(\.c-button--disabled\),\s*&\.c-button--status-tertiary:not\(\.c-button--disabled\)\s*\{\s*border-color:\s*var\(--c-sys-color-border-default\);\s*\}\s*\}/g
-  const maple = /&--variant-outline\s*\{\s*border:\s*thin\s+solid\s+currentColor;\s*\}/g
+  const maple = /&--variant-outline\s*\{\s*border:\s*thin\s+solid\s+currentColor;\s*&\.mp-button--status-default:not\(\.mp-button--disabled\),\s*&\.mp-button--status-secondary:not\(\.mp-button--disabled\),\s*&\.mp-button--status-tertiary:not\(\.mp-button--disabled\)\s*\{\s*border-color:\s*var\(--mp-sys-color-border-default\);\s*\}\s*\}/g
   assert.equal([...cedarSource.matchAll(cedar)].length, 1, 'Cedar Button outline platform rule changed')
   assert.equal([...mapleSource.matchAll(maple)].length, 1, 'Maple Button outline platform rule changed')
-  return [cedarSource.replace(cedar, '&--variant-outline { border: thin solid currentColor; }'), mapleSource]
+  const outline = '&--variant-outline { border: thin solid currentColor; }'
+  return [cedarSource.replace(cedar, outline), mapleSource.replace(maple, outline)]
 }
 
 // Switch error foregrounds are intentionally platform-specific. Limit the
