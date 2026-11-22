@@ -41,10 +41,10 @@ jobs:
           persist-credentials: false
       - uses: pnpm/action-setup@v4
         with:
-          version: 9.6.0
+          version: 10.23.0
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 26.13.1
           registry-url: https://registry.npmjs.org
       - run: corepack pnpm install --frozen-lockfile
       - run: pnpm exec changeset publish

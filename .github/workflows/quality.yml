@@ -32,7 +32,7 @@ jobs:
           - library: cedar-design-web
             node: '26.13.1'
           - library: maple-design-mobile
-            node: '20'
+            node: '26.13.1'
     defaults:
       run:
         working-directory: design-ui
@@ -69,7 +69,7 @@ jobs:
           persist-credentials: false
       - uses: pnpm/action-setup@v4
         with:
-          version: 9.6.0
+          version: 10.23.0
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}

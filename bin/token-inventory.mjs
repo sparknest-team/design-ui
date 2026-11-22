@@ -138,6 +138,9 @@ for (const [repo, pkg, prefix] of [['cedar-design-web', 'ui', 'c'], ['maple-desi
       ['--c-table-empty-image-size', 'table/table.tsx', ['<Empty imageSize={compact ?', '"var(--c-table-empty-image-size)"', 'renderEmptyContent(true)'], ['width', 'height', 'font-size'], [
         ['empty/Empty.vue', [':style="imageStyle"', 'return { width: size, height: size, fontSize: size }']],
       ]],
+      ['--mp-table-empty-image-size', 'table/table-impl.tsx', ['<Empty imageSize={compact ?', "'var(--mp-table-empty-image-size)'", 'renderEmptyContent(true)'], ['width', 'height', 'font-size'], [
+        ['empty/Empty.vue', [':style="imageStyle"', 'return { width: size, height: size, fontSize: size }']],
+      ]],
     ];
     row.reviewedRuntimeReferences = {};
     for (const [name, path, expressions, properties = [], dependencies = []] of reviewedRuntime) {

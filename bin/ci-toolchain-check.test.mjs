@@ -2,15 +2,15 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { validateCIToolchain } from './ci-toolchain-check.mjs'
 
-const versions = { node: 'v20.18.3', pnpm: '9.6.0', childNode: 'v20.18.3' }
+const versions = { node: 'v26.13.1', pnpm: '10.23.0', childNode: 'v26.13.1' }
 test('accepts the declared CI runtime and package manager', () => {
   validateCIToolchain(versions)
 })
 test('rejects an incorrect entry runtime', () => {
-  assert.throws(() => validateCIToolchain({ ...versions, node: 'v23.2.0' }), /Node 20/)
+  assert.throws(() => validateCIToolchain({ ...versions, node: 'v20.18.3' }), /Node 26\.13\.1/)
 })
 test('rejects a global package manager overriding the declared one', () => {
-  assert.throws(() => validateCIToolchain({ ...versions, pnpm: '10.14.0' }), /pnpm 9\.6\.0/)
+  assert.throws(() => validateCIToolchain({ ...versions, pnpm: '9.6.0' }), /pnpm 10\.23\.0/)
 })
 test('rejects nested pnpm switching to a different Node', () => {
   assert.throws(() => validateCIToolchain({ ...versions, childNode: 'v23.2.0' }), /Nested pnpm/)

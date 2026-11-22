@@ -33,7 +33,13 @@ API 变更必须同步中英文文档；暂未提供英文时应在组件元数�
 
 组件英文页必须直接包含与中文对应的属性、事件、插槽、方法、类型和配置边界，不用中文 API 链接代替译文。中英文成员名、类型、真实默认值、示例集合及配置对照项必须一致；真实的平台差异保留，不给 Maple 补空的 Cedar-only API。示例中的业务数据及真实默认字符串可以保留原值。
 
-公共译文维护在 `configs/api-documentation.en-US.json`，运行 `node bin/localize-api-documentation.mjs --write` 同步组件英文 API、补充配置章节和配置对照；缺少译文时先报错，不写入半成品。运行 `node --test bin/api-documentation-locales.test.mjs` 检查全部已登记组件族，结合现有示例分组和手机入口门禁；不得把非组件指南的语言回退用于替代组件 API。
+公共译文维护在 `configs/api-documentation.en-US.json`：键是中文原句，值是人工审校过的英文。改了中文文档后按三步走：
+
+1. 运行 `node bin/localize-api-documentation.mjs`（只检查不写文件）。缺译文时会向 stderr 列出每个缺失句子的归属组件族、它在 `cedar-design-web` / `maple-design-mobile` 里所在文档的相对路径与行号，以及中文原句；`--skeleton` 会在 stdout 打印一份只含缺失键、值为空字符串的 JSON，填完即可合并进字典。
+2. 把英文写进字典后运行 `node bin/localize-api-documentation.mjs --write` 同步组件英文 API、补充配置章节和配置对照；缺少译文时先报错，不写入半成品。英文页不允许回退引用中文，组件文档里也不手改英文正文——下一次生成会覆盖。
+3. 运行 `node --test bin/api-documentation-locales.test.mjs` 检查全部已登记组件族，结合现有示例分组和手机入口门禁；不得把非组件指南的语言回退用于替代组件 API。
+
+该测试同时断言「重新生成必须零改动」，因此中文改了而英文没跟着改，`check:doc-pipeline` 会直接失败，不会把漂移带上主线。
 
 ## 组件 CSS Variables 参考
 

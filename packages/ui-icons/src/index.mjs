@@ -17,7 +17,7 @@ function componentSource({ classPrefix, runtimeName, svg }) {
 }
 
 function componentIndex({ componentName, fileName }) {
-  return `import type { App } from 'vue'\nimport type { IconComponent } from '../_utils/icon-component'\nimport _${componentName} from './${fileName}.vue'\n\nexport const ${componentName}: IconComponent = Object.assign(_${componentName}, {\n  install(app: App) { app.component(_${componentName}.name, _${componentName}) },\n})\n`
+  return `import type { App } from 'vue'\nimport type { IconComponent } from '../_utils/icon-component'\nimport _${componentName} from './${fileName}.vue'\n\nexport const ${componentName}: IconComponent = Object.assign(_${componentName}, {\n  install(app: App) { app.component(_${componentName}.name!, _${componentName}) },\n})\n`
 }
 
 export async function generateVueIcons({
