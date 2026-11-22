@@ -31,18 +31,35 @@ const section = (text, name) => text.split(`## ${name}\n\n`)[1]?.split('\n## ')[
 
 test('compiled FilterForm declarations reach real terminal selectors/properties', () => {
   const pairs = [
-    ['.c-filter-form', 'padding', '--c-filter-form-padding'],
-    ['.c-filter-form', 'border', '--c-filter-form-border-color'],
-    ['.c-filter-form', 'border', '--c-filter-form-border-width'],
     ['.c-filter-form__actions', 'gap', '--c-filter-form-actions-gap'],
     ['.c-filter-form__action-slot', 'gap', '--c-filter-form-actions-gap'],
     ['.c-filter-form__action-item', 'padding-top', '--c-filter-form-action-offset'],
-    ['.c-filter-form__collapse:hover', 'color', '--c-filter-form-collapse-hover-color'],
-    ['.c-filter-form__collapse:focus-visible', 'outline', '--c-filter-form-focus-width'],
-    ['.c-filter-form__collapse:focus-visible', 'outline-offset', '--c-filter-form-focus-offset'],
   ];
   for (const [selector, property, token] of pairs) assert.ok(declaration(selector, property)?.includes(`var(${token})`), `${selector}/${property}/${token}`);
   assert.equal(declaration('.c-filter-form--stacked .c-filter-form__action-item', 'padding-top'), '0');
+});
+
+// Cedar #8 让折叠按钮改用 Link（焦点/悬停由 Link 承担），并清掉外层 padding/border。
+// 这些 token 不再有任何声明或消费，必须同时从编译产物与 token 清单里消失，
+// 而不是从断言里悄悄删掉。
+const retiredTokens = [
+  '--c-filter-form-padding',
+  '--c-filter-form-border-color',
+  '--c-filter-form-border-width',
+  '--c-filter-form-focus-width',
+  '--c-filter-form-focus-offset',
+  '--c-filter-form-collapse-hover-color',
+];
+
+test('retired FilterForm outer padding, border and focus tokens stay retired', () => {
+  const css = compiled.toString();
+  const row = cedar.find(item => item.component === 'filter-form');
+  for (const token of retiredTokens) {
+    assert.equal(css.includes(token), false, `${token} must not survive in compiled CSS`);
+    assert.equal(row.tokens[token], undefined, `${token} must not stay in the token inventory`);
+  }
+  assert.equal(declaration('.c-filter-form', 'padding'), '0');
+  assert.equal(declaration('.c-filter-form', 'border'), '0');
 });
 
 test('Form aliases have transitive padding-top consumption without becoming FilterForm declarations', () => {

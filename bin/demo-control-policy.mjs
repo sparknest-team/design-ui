@@ -63,9 +63,20 @@ function labelOf(node, parent, model) {
   const name = model?.match(/\[['"]([^'"]+)['"]\]$/)?.[1] ?? model;
   return name ? { value: name, bound: false } : undefined;
 }
-function formItem(prefix, inner, label, small) {
+function formItem(prefix, inner, label, small, indent = '') {
   const attributes = label ? `${label.bound ? ':label' : 'label'}="${attribute(label.value)}"` : 'hide-label';
-  return `<${prefix}-form-item layout="vertical"${small ? ' size="sm"' : ''} ${attributes}>\n${inner}\n</${prefix}-form-item>`;
+  // Keep the wrapped control aligned one level below its new form-item instead of
+  // starting at column 0, so generated demos stay readable after normalization.
+  const pad = indent + '  ';
+  const body = inner
+    .split('\n')
+    .map((line, index) => {
+      if (!line.trim()) return line;
+      if (index === 0) return pad + line;
+      return pad + (line.startsWith(indent) ? line.slice(indent.length) : line.trimStart());
+    })
+    .join('\n');
+  return `<${prefix}-form-item layout="vertical"${small ? ' size="sm"' : ''} ${attributes}>\n${body}\n${indent}</${prefix}-form-item>`;
 }
 function isConfiguration(model, owner, filename, form) {
   if (!model) return false;
@@ -108,6 +119,14 @@ export function normalizeDemoControls(source, prefix, filename = 'demo.vue') {
   const evaluate = evaluateStatic(descriptor.scriptSetup?.content ?? descriptor.script?.content ?? '');
   const owner = filename.match(/\/src\/([^/]+)/)?.[1] ?? '';
   const edits = [], controls = [];
+  // True leading whitespace of the node's line: loc.start.column is relative to the
+  // template content string, so it drifts by the tag prefix.
+  const indentOf = (node) => {
+    const content = descriptor.template.content;
+    const lineStart = content.lastIndexOf('\n', node.loc.start.offset) + 1;
+    const prefix = content.slice(lineStart, node.loc.start.offset);
+    return /^\s*$/.test(prefix) ? prefix : ' '.repeat(node.loc.start.column);
+  };
   function replace(node, text) { edits.push({ start: offset + node.loc.start.offset, end: offset + node.loc.end.offset, text }); }
   function visit(node, parents = []) {
     if (node.type === 1 && [prefix + '-select', 'select'].includes(node.tag)) {
@@ -147,8 +166,8 @@ export function normalizeDemoControls(source, prefix, filename = 'demo.vue') {
       if (config || !bounded) {
         const label = config ? labelOf(node, parent, model) : undefined;
         if (form) { if (inner !== node.loc.source) replace(node, inner); }
-        else if (simpleParent) replace(parent, formItem(prefix, inner, labelOf(node, parent, model), config));
-        else replace(node, formItem(prefix, inner, label, config));
+        else if (simpleParent) replace(parent, formItem(prefix, inner, labelOf(node, parent, model), config, indentOf(parent)));
+        else replace(node, formItem(prefix, inner, label, config, indentOf(node)));
       } else if (small) replace(node, inner);
       controls.push({ model, count: options.count ?? null, kind: small ? 'radio' : 'select', reason, width: form ? 'form-item' : config || !bounded ? 'standard-form-item' : 'existing-container' });
       return;
