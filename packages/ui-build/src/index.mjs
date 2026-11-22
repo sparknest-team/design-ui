@@ -372,7 +372,10 @@ async function buildBundle(config, format, outDir, fileName) {
       cssTarget: [...browserTargets],
       copyPublicDir: false,
       emptyOutDir: false,
-      minify: format === 'cjs' ? false : 'esbuild',
+      // vite 8 (rolldown) dropped esbuild from its own dependencies; naming the
+      // `'esbuild'` minifier requires installing esbuild separately. `true` selects
+      // the bundler's default minifier (oxc on vite 8).
+      minify: format === 'cjs',
       outDir,
       lib: {
         entry: resolve(root, config.entry),
