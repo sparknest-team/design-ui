@@ -1,5 +1,12 @@
 # @sparknest/ui-build-vue
 
+## 1.4.1
+
+### Patch Changes
+
+- chore(release): 全仓版本号统一（fixed 组），未变更包同步升版
+
+
 ## 1.4.0
 
 ### Minor Changes
