@@ -85,9 +85,77 @@ export function configurationNotes(chinese, english, owner) {
     return translateFragment(enriched,owner,extra);
   });
 }
-export function localizeApiDocumentation({write=false, onGenerated}={}) {
+function findMissingLocations(missing, sourceDocuments) {
+  const preferredLocations = new Map();
+  const unresolved = new Set();
+  for (const {text, owners} of missing) {
+    for (const owner of owners) {
+      const documents = sourceDocuments.get(owner) ?? [];
+      for (const {file, source} of documents) {
+        const index = source.split('\n').findIndex(line =>
+          normalize(line) === text ||
+          (line.startsWith('|') && line.split(/(?<!\\)\|/).slice(1, -1).some(cell => normalize(cell) === text))
+        );
+        if (index < 0) continue;
+        if (!preferredLocations.has(owner)) preferredLocations.set(owner, new Map());
+        preferredLocations.get(owner).set(text, `${path.relative(root, file)}:${index + 1}`);
+        break;
+      }
+      if (!preferredLocations.get(owner)?.has(text)) unresolved.add(text);
+    }
+  }
+  if (!unresolved.size) return {preferredLocations, locations: new Map()};
+
+  const locations = new Map();
+  for (const project of ['cedar-design-web', 'maple-design-mobile']) {
+    const sourceDir = path.join(root, project, 'packages/ui/src');
+    const documents = fs.readdirSync(sourceDir, {recursive: true, withFileTypes: true})
+      .filter(entry => entry.isFile() && entry.name.endsWith('.md'))
+      .map(entry => path.join(entry.parentPath ?? entry.path, entry.name))
+      .sort();
+    for (const file of documents) {
+      const lines = fs.readFileSync(file, 'utf8').split('\n');
+      for (const [index, line] of lines.entries()) {
+        const normalized = normalize(line);
+        for (const key of unresolved) {
+          if (!normalized.includes(key)) continue;
+          locations.set(key, `${path.relative(root, file)}:${index + 1}`);
+          unresolved.delete(key);
+        }
+        if (!unresolved.size) return {preferredLocations, locations};
+      }
+    }
+  }
+  return {preferredLocations, locations};
+}
+
+function reportMissingTranslations(missing, sourceDocuments) {
+  const {preferredLocations, locations} = findMissingLocations(missing, sourceDocuments);
+  const groups = new Map();
+  for (const row of missing) {
+    for (const owner of row.owners) {
+      if (!groups.has(owner)) groups.set(owner, []);
+      groups.get(owner).push(row.text);
+    }
+  }
+  const report = [`缺少 ${missing.length} 条英译`];
+  for (const [owner, keys] of groups) {
+    report.push(`\n${owner}`);
+    for (const key of keys) {
+      const characters = [...key];
+      const preview = characters.length > 160 ? characters.slice(0, 160).join('') + '…' : key;
+      const location = preferredLocations.get(owner)?.get(key) ?? locations.get(key);
+      report.push(`  ${location ?? '未找到源文档位置'}  ${preview}`);
+    }
+  }
+  report.push('\n请把译文加到 design-ui/configs/api-documentation.en-US.json（键为中文原句原文，值为此处英文），再运行 node bin/localize-api-documentation.mjs --write。');
+  console.error(report.join('\n'));
+}
+
+export function localizeApiDocumentation({write=false, onGenerated, skeleton=false}={}) {
   unknown.clear();
-  const writes=[],records=[];
+  const writes=[],records=[],debugWrites=[];
+  const sourceDocuments = new Map();
   const manifests=Object.fromEntries(['cedar','maple'].map(platform=>[platform,JSON.parse(fs.readFileSync(path.join(root,`design-ui/configs/demo-groups${platform==='maple'?'.maple':''}.json`)))]));
   for (const row of inventoryDemoContent()) {
     const zhFile=path.join(root,row.document),enFile=zhFile.replace(/README\.md$/,'README.en-US.md').replace(/PICKER\.md$/,'PICKER.en-US.md').replace(/zh-CN\.md$/,'en-US.md');
@@ -96,6 +164,7 @@ export function localizeApiDocumentation({write=false, onGenerated}={}) {
     const before=fs.readFileSync(enFile,'utf8');
     const englishVariables=before.match(generated)?.[0];
     const chineseSource=fs.readFileSync(zhFile,'utf8');
+    sourceDocuments.set(row.platform+'/'+row.family, [{file: zhFile, source: chineseSource}, {file: enFile, source: before}]);
     if (generated.test(chineseSource) && !englishVariables) throw new Error('Generate bilingual CSS variable documentation first: '+enFile);
     // The component CSS generator owns both languages and checks them against
     // compiled source. API translation must not retranslate its generated table.
@@ -118,19 +187,34 @@ export function localizeApiDocumentation({write=false, onGenerated}={}) {
     const ids=source=>[...new Set(demoRefs(source).map(demoIdentity))].sort();
     if(JSON.stringify(ids(next))!==JSON.stringify(ids(fs.readFileSync(zhFile,'utf8'))))throw new Error('Example parity failed: '+enFile);
     if(/complete component API reference in Chinese/.test(next))throw new Error('Chinese API fallback retained: '+enFile);
-    if(process.argv.includes('--debug') && next!==before){const debug=path.join('/tmp/api-documentation-debug',row.platform,row.family.replaceAll('/','-')+'.md');fs.mkdirSync(path.dirname(debug),{recursive:true});fs.writeFileSync(debug,next);}
+    if(!skeleton && process.argv.includes('--debug') && next!==before)debugWrites.push([path.join('/tmp/api-documentation-debug',row.platform,row.family.replaceAll('/','-')+'.md'),next]);
     onGenerated?.({platform:row.platform,family:row.family,source:next});
     writes.push([enFile,next]);
     records.push({platform:row.platform,family:row.family,file:path.relative(root,enFile),changed:next!==before,apiLines:api.split('\n').filter(Boolean).length,preservedSections:preserved.length,examples:ids(next).length});
   }
   const missing=[...unknown].map(([text,owners],id)=>({id,text,owners:[...owners]}));
+  const result = {families:records.length,changed:records.filter(row=>row.changed).length,missing:missing.length};
+  if (missing.length) reportMissingTranslations(missing, sourceDocuments);
+  if (skeleton) {
+    console.log(JSON.stringify(Object.fromEntries(missing.map(row => [row.text, ''])), null, 2));
+    if (missing.length) process.exitCode = 1;
+    return result;
+  }
+  if(write&&missing.length)throw new Error(`Missing ${missing.length} authored translations; no documents written`);
+  for (const [file, source] of debugWrites) {
+    fs.mkdirSync(path.dirname(file), {recursive: true});
+    fs.writeFileSync(file, source);
+  }
   fs.writeFileSync('/tmp/api-documentation-missing.json',JSON.stringify(missing,null,2)+'\n');
   fs.writeFileSync('/tmp/api-documentation-missing.tsv',missing.map(row=>row.id+'\t'+row.text).join('\n'));
-  if(write&&missing.length)throw new Error(`Missing ${missing.length} authored translations; no documents written`);
   if(write) {
     for(const [file,source] of writes)if(fs.readFileSync(file,'utf8')!==source)fs.writeFileSync(file,source);
     fs.writeFileSync(path.join(root,'design-ui/audits/api-documentation-locales-2026-10-28.json'),JSON.stringify({families:records.length,changed:records.filter(row=>row.changed).length,missing:0,records},null,2)+'\n');
   }
-  return {families:records.length,changed:records.filter(row=>row.changed).length,missing:missing.length};
+  return result;
 }
-if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))console.log(JSON.stringify(localizeApiDocumentation({write:process.argv.includes('--write')}),null,2));
+if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
+  const skeleton = process.argv.includes('--skeleton');
+  const result = localizeApiDocumentation({write:process.argv.includes('--write'), skeleton});
+  if (!skeleton) console.log(JSON.stringify(result,null,2));
+}

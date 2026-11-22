@@ -13,7 +13,7 @@ Cedar / Maple 的库构建都使用 `@sparknest/ui-build-vue`。源码同源、�
 
 ## CI 工具链与检查入口
 
-- Cedar Quality / Release 使用 `.nvmrc` 固定的 Node 26.13.1（与 `.node-version`、Volta、`.npmrc` 的 pnpm 运行时一致），Maple Quality 使用 Node 20；两端 pnpm 均为 9.6.0。`ci-toolchain-check.mjs` 检查主 Node、pnpm 版本和 pnpm 子进程 Node；不能只在入口指定 Corepack，却让 Volta 或全局 pnpm 接管嵌套命令。
+- 两端（Cedar 与 Maple）的 Quality / Release 都使用各自仓库 `.nvmrc` 固定的 Node 26.13.1，并与 `.node-version`、Volta、`.npmrc` 的 `use-node-version` 保持一致；两端 pnpm 均为 10.23.0。`ci-toolchain-check.mjs` 检查主 Node、pnpm 版本和 pnpm 子进程 Node；不能只在入口指定 Corepack，却让 Volta 或全局 pnpm 接管嵌套命令。
 - design-ui 自己按其 packageManager 安装；这不改变 Cedar / Maple job 的包管理器契约。
 - 工作区为同级的 cedar-design-web、maple-design-mobile、design-ui；link 依赖、横向契约与 CI checkout 布局必须一致，三仓均 frozen 安装。
 - 同一工作区内，同一个库的发布构建必须串行执行；需要并行时使用隔离的工作目录和产物目录。构建会清理旧产物，不能在另一个构建尚未结束时用同目录的缺失文件判定源码错误，也不能接受被重叠构建覆盖后的验收结果。
