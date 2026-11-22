@@ -1,5 +1,12 @@
 # @sparknest/theme-contract-vue
 
+## 1.4.1
+
+### Patch Changes
+
+- chore(release): 全仓版本号统一（fixed 组），未变更包同步升版
+
+
 ## 1.2.0
 
 - Use the same 23 Section theme variables in Cedar and Maple. In Maple, replace the `--mp-form-section-*` prefix with `--mp-section-*`.

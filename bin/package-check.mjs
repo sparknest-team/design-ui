@@ -45,6 +45,7 @@ for (const field of ["main", "module", "types", "typings", "style"]) {
 
 function walk(path) {
   if (!existsSync(path)) return [];
+  if (!statSync(path).isDirectory()) return [path];
   return readdirSync(path).flatMap((name) => {
     const child = join(path, name);
     return statSync(child).isDirectory() ? walk(child) : [child];
