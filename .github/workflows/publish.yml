@@ -7,6 +7,7 @@ permissions:
   contents: write
   checks: read
   actions: read
+  id-token: write
 
 jobs:
   publish:
@@ -45,8 +46,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 26.13.1
-          registry-url: https://registry.npmjs.org
       - run: corepack pnpm install --frozen-lockfile
       - run: pnpm exec changeset publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
