@@ -1086,7 +1086,7 @@
     {
       "repo": "maple-design-mobile",
       "file": "trigger/positioner.ts",
-      "sha256": "28abd033218836e5b7dfff4554dbde38d81933b75e848f4d0c4840b0c71b5a27",
+      "sha256": "386dbf13dad10c6bc82b68b79a0fb95b53157db60dda2db53a4309009fd792a0",
       "rationale": "RAF throttles scroll-driven positioning and close checks, not visual completion. The owning window cancels frames, and generations reject replay. Position updates and deferred arrow calculations now check visibility, lifecycle, document and node identity and generation after geometry reads, preventing stale writes on closure or reentrant updates. Controlled tests and cross-document Chromium checks do not establish all native OS timing.",
       "hints": [
         {
