@@ -4,9 +4,7 @@
       "id": "size",
       "label": "尺寸与密度",
       "pattern": "(?:^|[\\W_-])sizes?(?=[\\W_.-]|$)|density|尺寸|密度",
-      "excludeComponents": [
-        "upload"
-      ]
+      "excludeComponents": ["upload"]
     },
     {
       "id": "variant",
@@ -39,387 +37,235 @@
       "id": "loading",
       "label": "加载状态与重复操作",
       "pattern": "loading|加载",
-      "groups": [
-        "general",
-        "text",
-        "selection",
-        "forms",
-        "feedback"
-      ]
+      "groups": ["general", "text", "selection", "forms", "feedback"]
     },
     {
       "id": "icons",
       "label": "图标与图文组合",
       "pattern": "icon|图标|图文",
-      "groups": [
-        "general",
-        "navigation",
-        "text",
-        "selection",
-        "data",
-        "feedback"
-      ]
+      "groups": ["general", "navigation", "text", "selection", "data", "feedback"]
     },
     {
       "id": "button-async",
       "label": "异步操作与失败恢复",
       "pattern": "auto-loading|async|promise|异步|失败恢复",
-      "components": [
-        "button",
-        "split-button"
-      ]
+      "components": ["button", "split-button"]
     },
     {
       "id": "button-groups",
       "label": "组配置继承与覆盖",
       "pattern": "group|按钮组|分组",
-      "components": [
-        "button",
-        "split-button"
-      ]
+      "components": ["button", "split-button"]
     },
     {
       "id": "copy-edit",
       "label": "复制、编辑与省略",
       "pattern": "copy|clipboard|editable|ellipsis|复制|编辑|省略",
-      "components": [
-        "typography",
-        "ellipsis"
-      ]
+      "components": ["typography", "ellipsis"]
     },
     {
       "id": "responsive",
       "label": "响应式布局与换行",
       "pattern": "responsive|wrap|breakpoint|响应式|换行|窄屏",
-      "groups": [
-        "layout",
-        "navigation"
-      ]
+      "groups": ["layout", "navigation"]
     },
     {
       "id": "alignment",
       "label": "对齐、间距与嵌套",
       "pattern": "align|gutter|gap|nested|spacing|对齐|间距|嵌套",
-      "groups": [
-        "layout"
-      ]
+      "groups": ["layout"]
     },
     {
       "id": "resize",
       "label": "拖动调整与受控尺寸",
       "pattern": "resiz|split|伸缩|拖动|调整|分割",
-      "components": [
-        "layout",
-        "resize-box",
-        "split"
-      ]
+      "components": ["layout", "resize-box", "split"]
     },
     {
       "id": "collapse-layout",
       "label": "侧栏折叠与恢复",
       "pattern": "collapse|sider|drawer|折叠|侧栏",
-      "components": [
-        "layout"
-      ]
+      "components": ["layout"]
     },
     {
       "id": "scroll-container",
       "label": "独立滚动与定位",
       "pattern": "scroll|container|滚动|容器",
-      "components": [
-        "layout",
-        "scrollbar",
-        "anchor",
-        "affix",
-        "back-top"
-      ]
+      "components": ["layout", "scrollbar", "anchor", "affix", "back-top"]
     },
     {
       "id": "overflow",
       "label": "空间不足与内容收纳",
       "pattern": "overflow|collapse|折叠|溢出|收纳",
-      "components": [
-        "overflow-list",
-        "nav-menu",
-        "grid",
-        "avatar"
-      ]
+      "components": ["overflow-list", "nav-menu", "grid", "avatar"]
     },
     {
       "id": "navigation-hierarchy",
       "label": "层级、面包屑与路径",
       "pattern": "nested|submenu|hierarch|route|层级|嵌套|路径|参数化|配置",
-      "components": [
-        "nav-menu",
-        "menu",
-        "breadcrumb"
-      ]
+      "components": ["nav-menu", "menu", "breadcrumb"]
     },
     {
       "id": "context-menu",
       "label": "右键与上下文操作",
       "pattern": "context|右键",
-      "components": [
-        "menu"
-      ]
+      "components": ["menu"]
     },
     {
       "id": "tabs-dynamic",
       "label": "动态页签与内容保留",
       "pattern": "dynamic|closable|lazy|keep|destroy|动态|关闭|保留|懒",
-      "components": [
-        "tabs",
-        "collapse"
-      ]
+      "components": ["tabs", "collapse"]
     },
     {
       "id": "pagination",
       "label": "分页条数与简洁模式",
       "pattern": "page-size|simple|responsive|条数|简洁|响应式",
-      "components": [
-        "pagination"
-      ]
+      "components": ["pagination"]
     },
     {
       "id": "input-clear",
       "label": "清空、前后缀与计数",
       "pattern": "clear|prefix|suffix|count|清空|清除|前缀|后缀|计数|字数",
-      "groups": [
-        "text",
-        "selection",
-        "datetime"
-      ]
+      "groups": ["text", "selection", "datetime"]
     },
     {
       "id": "input-format",
       "label": "格式化与数值解析",
       "pattern": "formatter|parser|format|precision|step|格式|精度|步长",
-      "components": [
-        "input-number",
-        "input",
-        "textarea"
-      ]
+      "components": ["input-number", "input", "textarea"]
     },
     {
       "id": "input-compose",
       "label": "输入法与原生事件",
       "pattern": "ime|composition|native-event|原生|输入法|事件语义",
-      "groups": [
-        "text"
-      ]
+      "groups": ["text"]
     },
     {
       "id": "otp",
       "label": "验证码粘贴与自动填入",
       "pattern": "paste|autofill|otp|粘贴|自动填|格式化|掩码",
-      "components": [
-        "verification-code"
-      ]
+      "components": ["verification-code"]
     },
     {
       "id": "search",
       "label": "搜索、匹配与过滤",
       "pattern": "search|filter|match|搜索|匹配|过滤",
-      "groups": [
-        "text",
-        "selection",
-        "data"
-      ]
+      "groups": ["text", "selection", "data"]
     },
     {
       "id": "remote",
       "label": "远程候选与请求状态",
       "pattern": "remote|async|request|远程|异步|请求",
-      "components": [
-        "select",
-        "auto-complete",
-        "people-select",
-        "cascader",
-        "tree-select",
-        "transfer"
-      ]
+      "components": ["select", "auto-complete", "people-select", "cascader", "tree-select", "transfer"]
     },
     {
       "id": "resolve",
       "label": "已选 ID 与标签回显",
       "pattern": "resolve|fallback|id-|label|回显|回退|同名",
-      "components": [
-        "select",
-        "people-select",
-        "tree-select",
-        "cascader",
-        "auto-complete"
-      ]
+      "components": ["select", "people-select", "tree-select", "cascader", "auto-complete"]
     },
     {
       "id": "multiple",
       "label": "多选、标签与数量限制",
       "pattern": "multiple|limit|tag|多选|标签|数量",
-      "components": [
-        "select",
-        "cascader",
-        "tree-select",
-        "transfer",
-        "input-tag"
-      ]
+      "components": ["select", "cascader", "tree-select", "transfer", "input-tag"]
     },
     {
       "id": "creation",
       "label": "创建候选与自定义值",
       "pattern": "creat|allow-add|创建|新增选项",
-      "components": [
-        "select",
-        "auto-complete",
-        "input-tag"
-      ]
+      "components": ["select", "auto-complete", "input-tag"]
     },
     {
       "id": "field-map",
       "label": "业务字段映射",
       "pattern": "field-name|fieldnames|fields|字段名|字段映射|节点字段",
-      "components": [
-        "select",
-        "tree-select",
-        "cascader",
-        "tree",
-        "transfer"
-      ]
+      "components": ["select", "tree-select", "cascader", "tree", "transfer"]
     },
     {
       "id": "virtual",
       "label": "虚拟列表与大数据",
       "pattern": "virtual|large|虚拟|大数据|无限长",
-      "components": [
-        "select",
-        "auto-complete",
-        "tree",
-        "tree-select",
-        "transfer",
-        "table",
-        "list"
-      ]
+      "components": ["select", "auto-complete", "tree", "tree-select", "transfer", "table", "list"]
     },
     {
       "id": "lazy",
       "label": "懒加载与分页加载",
       "pattern": "lazy|load-more|loadmore|dynamic-load|懒加载|动态加载|分页加载",
-      "components": [
-        "tree",
-        "cascader",
-        "tree-select",
-        "infinite-scroll",
-        "list"
-      ]
+      "components": ["tree", "cascader", "tree-select", "infinite-scroll", "list"]
     },
     {
       "id": "selection-group",
       "label": "选项组与组状态",
       "pattern": "group|分组|选项组|框组",
-      "components": [
-        "checkbox",
-        "radio",
-        "segmented",
-        "select"
-      ]
+      "components": ["checkbox", "radio", "segmented", "select"]
     },
     {
       "id": "range",
       "label": "范围、刻度与边界",
       "pattern": "range|marks|ticks|step|范围|刻度|边界|步长",
-      "components": [
-        "slider",
-        "rate"
-      ]
+      "components": ["slider", "rate"]
     },
     {
       "id": "date-format",
       "label": "日期时间格式与模型",
       "pattern": "format|model|timestamp|格式|模型|时间戳",
-      "groups": [
-        "datetime"
-      ]
+      "groups": ["datetime"]
     },
     {
       "id": "date-limits",
       "label": "禁用时段与范围限制",
       "pattern": "disabled|limit|boundary|boundaries|禁用|限制|边界",
-      "groups": [
-        "datetime"
-      ]
+      "groups": ["datetime"]
     },
     {
       "id": "date-shortcut",
       "label": "快捷项与预设",
       "pattern": "shortcut|preset|快捷|预设",
-      "groups": [
-        "datetime"
-      ]
+      "groups": ["datetime"]
     },
     {
       "id": "date-input",
       "label": "手输与面板联动",
       "pattern": "input|manual|手输|输入|字段与",
-      "components": [
-        "date",
-        "date-range",
-        "time",
-        "time-range",
-        "color"
-      ]
+      "components": ["date", "date-range", "time", "time-range", "color"]
     },
     {
       "id": "date-confirm",
       "label": "选择、确认与取消",
       "pattern": "confirm|commit|immediate|确认|提交|取消|选择与",
-      "groups": [
-        "datetime"
-      ]
+      "groups": ["datetime"]
     },
     {
       "id": "date-calendar",
       "label": "周起始、周数与视图",
       "pattern": "week|first-day|view|周|视图",
-      "components": [
-        "calendar",
-        "date-picker",
-        "date-range-picker"
-      ]
+      "components": ["calendar", "date-picker", "date-range-picker"]
     },
     {
       "id": "color-model",
       "label": "色值格式与颜色历史",
       "pattern": "format|history|preset|颜色格式|历史|预设",
-      "components": [
-        "color",
-        "color-picker"
-      ]
+      "components": ["color", "color-picker"]
     },
     {
       "id": "validation",
       "label": "字段校验与反馈",
       "pattern": "valid|error|feedback|rules|校验|错误|反馈",
-      "components": [
-        "form",
-        "filter-form"
-      ]
+      "components": ["form", "filter-form"]
     },
     {
       "id": "dynamic-form",
       "label": "动态字段与联动",
       "pattern": "dynamic|dependent|cross-field|nested|动态|联动|嵌套",
-      "components": [
-        "form",
-        "filter-form"
-      ]
+      "components": ["form", "filter-form"]
     },
     {
       "id": "form-layout",
       "label": "表单布局与标签宽度",
       "pattern": "layout|label|布局|标签宽",
-      "components": [
-        "form",
-        "filter-form"
-      ]
+      "components": ["form", "filter-form"]
     },
     {
       "id": "read-edit",
@@ -445,340 +291,231 @@
       "id": "upload-drop",
       "label": "拖放与多文件选择",
       "pattern": "drag|drop|multiple|拖拽|拖放|多文件",
-      "components": [
-        "upload"
-      ],
+      "components": ["upload"],
       "apiPattern": "\\|[^\\n]*(?:directory|draggable)[^\\n]*\\|"
     },
     {
       "id": "upload-directory",
       "label": "目录上传",
       "pattern": "directory|folder|目录上传|文件夹",
-      "components": [
-        "upload"
-      ],
+      "components": ["upload"],
       "apiPattern": "\\|[^\\n]*\\bdirectory\\b[^\\n]*\\|"
     },
     {
       "id": "upload-paste",
       "label": "剪贴板文件粘贴",
       "pattern": "paste|粘贴",
-      "components": [
-        "upload"
-      ]
+      "components": ["upload"]
     },
     {
       "id": "upload-limits",
       "label": "文件类型、数量与大小",
       "pattern": "accept|limit|size|validation|文件类型|数量|大小|约束校验",
-      "components": [
-        "upload"
-      ],
+      "components": ["upload"],
       "apiPattern": "\\|\\s*[^|]*(?:accept|max-size|max-count|max-total-size)"
     },
     {
       "id": "upload-request",
       "label": "手动请求、取消与重试",
       "pattern": "request|manual|queue|cancel|abort|retry|请求|队列|取消|重试",
-      "components": [
-        "upload"
-      ]
+      "components": ["upload"]
     },
     {
       "id": "upload-preview",
       "label": "文件预览与展示定制",
       "pattern": "preview|picture|image|custom|预览|图卡|插槽",
-      "components": [
-        "upload"
-      ]
+      "components": ["upload"]
     },
     {
       "id": "table-select",
       "label": "行选择与批量操作",
       "pattern": "selection|selectable|batch|行选择|批量",
-      "components": [
-        "table"
-      ]
+      "components": ["table"]
     },
     {
       "id": "table-sort-filter",
       "label": "排序、筛选与服务端数据",
       "pattern": "sort|filter|lazy|remote|排序|筛选|服务端|远程",
-      "components": [
-        "table"
-      ]
+      "components": ["table"]
     },
     {
       "id": "table-columns",
       "label": "列宽、固定列与列管理",
       "pattern": "column|fixed|frozen|resiz|列宽|固定列|列管理|冻结",
-      "components": [
-        "table",
-        "table-column-manager"
-      ]
+      "components": ["table", "table-column-manager"]
     },
     {
       "id": "table-edit",
       "label": "单元格编辑与校验",
       "pattern": "edit|cell.*valid|编辑|校验",
-      "components": [
-        "table"
-      ]
+      "components": ["table"]
     },
     {
       "id": "table-expand",
       "label": "展开行、树数据与懒加载",
       "pattern": "expand|tree|load-more|展开|树形|懒加载",
-      "components": [
-        "table"
-      ]
+      "components": ["table"]
     },
     {
       "id": "table-span",
       "label": "分组表头、合并与汇总",
       "pattern": "group|span|summary|footer|分组表头|合并|总结|汇总",
-      "components": [
-        "table"
-      ]
+      "components": ["table"]
     },
     {
       "id": "tree-drag",
       "label": "树节点拖动与放置限制",
       "pattern": "drag|drop|拖拽|拖动",
-      "components": [
-        "tree"
-      ]
+      "components": ["tree"]
     },
     {
       "id": "tree-check",
       "label": "勾选、半选与级联策略",
       "pattern": "check|cascade|strategy|勾选|复选|回填|半选",
-      "components": [
-        "tree",
-        "tree-select",
-        "cascader"
-      ]
+      "components": ["tree", "tree-select", "cascader"]
     },
     {
       "id": "media-fallback",
       "label": "加载错误与图片回退",
       "pattern": "error|fallback|错误|回退|失败",
-      "components": [
-        "image",
-        "avatar"
-      ]
+      "components": ["image", "avatar"]
     },
     {
       "id": "image-preview",
       "label": "图片预览、缩放与旋转",
       "pattern": "preview|zoom|rotate|预览|缩放|旋转",
-      "components": [
-        "image"
-      ]
+      "components": ["image"]
     },
     {
       "id": "schedule-edit",
       "label": "创建、拖动与拉伸",
       "pattern": "drag|resiz|creat|拖拽|拉伸|创建|基础",
-      "components": [
-        "scheduler"
-      ]
+      "components": ["scheduler"]
     },
     {
       "id": "schedule-resource",
       "label": "资源视图与分配",
       "pattern": "resource|equipment|timeline|资源|设备|分配",
-      "components": [
-        "scheduler"
-      ]
+      "components": ["scheduler"]
     },
     {
       "id": "schedule-rule",
       "label": "重复、工作时间与容量",
       "pattern": "recurr|working|capacity|availability|重复|工作时间|容量|可用时间",
-      "components": [
-        "scheduler"
-      ]
+      "components": ["scheduler"]
     },
     {
       "id": "schedule-save",
       "label": "远程加载与保存恢复",
       "pattern": "remote|save|transaction|external-editor|远程|保存|事务|编辑器",
-      "components": [
-        "scheduler"
-      ]
+      "components": ["scheduler"]
     },
     {
       "id": "overlay-placement",
       "label": "浮层方位、箭头与偏移",
       "pattern": "placement|position|offset|arrow|方位|位置|偏移|箭头",
-      "components": [
-        "tooltip",
-        "popover",
-        "popconfirm",
-        "trigger",
-        "dialog",
-        "drawer",
-        "popup",
-        "floating-panel"
-      ]
+      "components": ["tooltip", "popover", "popconfirm", "trigger", "dialog", "drawer", "popup", "floating-panel"]
     },
     {
       "id": "overlay-focus",
       "label": "焦点管理与嵌套关闭",
       "pattern": "focus|nested|escape|keyboard|焦点|嵌套|键盘",
-      "components": [
-        "dialog",
-        "drawer",
-        "popover",
-        "tooltip",
-        "trigger",
-        "popup",
-        "floating-panel"
-      ]
+      "components": ["dialog", "drawer", "popover", "tooltip", "trigger", "popup", "floating-panel"]
     },
     {
       "id": "overlay-async",
       "label": "异步确认与关闭拦截",
       "pattern": "async|promise|before-close|before-change|异步|关闭控制|拦截",
-      "components": [
-        "dialog",
-        "drawer",
-        "popconfirm",
-        "popup",
-        "floating-panel"
-      ]
+      "components": ["dialog", "drawer", "popconfirm", "popup", "floating-panel"]
     },
     {
       "id": "feedback-programmatic",
       "label": "函数调用与返回句柄",
       "pattern": "programmatic|function|service|函数|全局|返回句柄",
-      "components": [
-        "dialog",
-        "message",
-        "notification",
-        "loading"
-      ]
+      "components": ["dialog", "message", "notification", "loading"]
     },
     {
       "id": "feedback-status",
       "label": "状态、时长与关闭",
       "pattern": "status|duration|close|状态|时长|关闭",
-      "components": [
-        "message",
-        "notification",
-        "alert",
-        "result"
-      ]
+      "components": ["message", "notification", "alert", "result"]
     },
     {
       "id": "progress-modes",
       "label": "缓冲、分段与未知进度",
       "pattern": "buffer|step|indeterminate|segment|缓冲|分段|未知",
-      "components": [
-        "progress",
-        "progress-group"
-      ]
+      "components": ["progress", "progress-group"]
     },
     {
       "id": "theme",
       "label": "主题切换与局部覆盖",
       "pattern": "theme|override|主题|覆盖",
-      "components": [
-        "theme-provider",
-        "field-decorator"
-      ]
+      "components": ["theme-provider", "field-decorator"]
     },
     {
       "id": "global-config",
       "label": "语言、尺寸与默认配置",
       "pattern": "locale|default|config|全局|语言|默认",
-      "components": [
-        "config-provider",
-        "theme-provider"
-      ]
+      "components": ["config-provider", "theme-provider"]
     },
     {
       "id": "motion",
       "label": "动效、触发与清理",
       "pattern": "motion|lifecycle|cancel|animation|动效|生命周期|清理|水波",
-      "components": [
-        "ripple",
-        "hover",
-        "watermark",
-        "trigger"
-      ]
+      "components": ["ripple", "hover", "watermark", "trigger"]
     },
     {
       "id": "touch-refresh",
       "label": "下拉刷新与状态反馈",
-      "components": [
-        "pull-refresh"
-      ],
+      "components": ["pull-refresh"],
       "pattern": "basic|state|基础|基本|状态"
     },
     {
       "id": "touch-swipe",
       "label": "滑动操作与关闭确认",
-      "components": [
-        "swipe-cell"
-      ],
+      "components": ["swipe-cell"],
       "pattern": "basic|both|before-close|基本|两侧|关闭"
     },
     {
       "id": "touch-safe-area",
       "label": "安全区留白与嵌套",
-      "components": [
-        "safe-area"
-      ],
+      "components": ["safe-area"],
       "pattern": "nested|inset|safe|留白|嵌套|联动"
     },
     {
       "id": "touch-drag",
       "label": "触控拖动、吸附与区域",
-      "components": [
-        "drag"
-      ],
+      "components": ["drag"],
       "pattern": "basic|direction|area|snap|基本|方向|区域|吸附"
     },
     {
       "id": "touch-keyboard",
       "label": "触控数字键盘与值绑定",
-      "components": [
-        "number-keyboard"
-      ],
+      "components": ["number-keyboard"],
       "pattern": "basic|value|基本|绑定"
     },
     {
       "id": "touch-signature",
       "label": "签名绘制与样式",
-      "components": [
-        "signature"
-      ],
+      "components": ["signature"],
       "pattern": "basic|style|基本|样式"
     },
     {
       "id": "touch-picker",
       "label": "滚动选择、级联与确认",
-      "components": [
-        "picker"
-      ],
+      "components": ["picker"],
       "pattern": "single|multiple|cascade|confirm|单列|多列|级联|确认"
     },
     {
       "id": "touch-actions",
       "label": "底部操作与禁用项",
-      "components": [
-        "action-sheet"
-      ],
+      "components": ["action-sheet"],
       "pattern": "basic|disabled|function|基本|禁用|函数"
     },
     {
       "id": "touch-floating",
       "label": "浮动面板与高度",
-      "components": [
-        "floating-panel"
-      ],
+      "components": ["floating-panel"],
       "pattern": "basic|height|基本|高度"
     }
   ]

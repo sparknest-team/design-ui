@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict'
-import { readFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
-import { pathToFileURL } from 'node:url'
+import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { pathToFileURL } from 'node:url'
 
 export const evidenceURL = new URL('../audits/evidence/loading-bar-native-2026-10-13/results.json', import.meta.url)
 export function validateLoadingBarEvidence(report, jpeg) {
@@ -12,7 +12,10 @@ export function validateLoadingBarEvidence(report, jpeg) {
   assert.equal(report.toleranceMs, 2)
   assert.equal(report.properties, 'width, opacity, background-color')
   assert.deepEqual(report.consoleErrorsWarnings, [])
-  assert.deepEqual(report.cases.map(row => row.id), ['default', 'long', 'zero', 'repeated', 'restart', 'error'])
+  assert.deepEqual(
+    report.cases.map((row) => row.id),
+    ['default', 'long', 'zero', 'repeated', 'restart', 'error'],
+  )
   for (const row of report.cases) {
     const long = row.id === 'long' || row.id === 'restart'
     assert.equal(row.timing, long ? 'long' : row.id === 'zero' ? 'zero' : 'default')
@@ -22,7 +25,8 @@ export function validateLoadingBarEvidence(report, jpeg) {
     assert.equal(row.finalNodes, 0)
     assert.equal(row.hiddenTimes.length, 1)
     assert.equal(row.completionTimes.length, row.id === 'restart' ? 2 : 1)
-    for (const time of [row.start, row.created, row.shown, row.removed, ...row.hiddenTimes, ...row.completionTimes]) assert.ok(Number.isFinite(time))
+    for (const time of [row.start, row.created, row.shown, row.removed, ...row.hiddenTimes, ...row.completionTimes])
+      assert.ok(Number.isFinite(time))
     assert.ok(row.created >= row.start)
     assert.ok(row.shown >= row.created)
     assert.ok(row.completionTimes[0] >= row.shown)
@@ -32,8 +36,18 @@ export function validateLoadingBarEvidence(report, jpeg) {
       assert.ok(Number.isFinite(time))
       return name
     })
-    assert.deepEqual(names, row.id === 'error' ? ['error'] : row.id === 'repeated' ? ['start', 'finish', 'finish', 'finish'] : row.id === 'restart' ? ['start', 'finish', 'start', 'finish'] : ['start', 'finish'])
-    if (row.id === 'restart') assert.ok(row.restartReset > row.completionTimes[0] && row.restartReset < row.completionTimes[1])
+    assert.deepEqual(
+      names,
+      row.id === 'error'
+        ? ['error']
+        : row.id === 'repeated'
+          ? ['start', 'finish', 'finish', 'finish']
+          : row.id === 'restart'
+            ? ['start', 'finish', 'start', 'finish']
+            : ['start', 'finish'],
+    )
+    if (row.id === 'restart')
+      assert.ok(row.restartReset > row.completionTimes[0] && row.restartReset < row.completionTimes[1])
     if (row.id === 'error') assert.equal(row.errorVisible, true)
   }
   assert.equal(report.screenshot.file, 'native.jpg')

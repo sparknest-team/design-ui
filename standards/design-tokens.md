@@ -54,7 +54,6 @@ motion 首段 92/96 通过、4 失败，未执行后续串行全量编译链；�
 
 最终严格门禁结果及快照见 design-ui/audits/evidence/field-presentation-form-closure-2026-10-19/results.json。Less／受控计时器／JSDOM 与真实浏览器／OS 分层，新增原生验收 0；Map SDK 及 144 组原生环境恢复条件见 token-closure-recheck-2026-10-19.md，Button 白字 on-dark 2.305:1 非 AA 例外保留，自动化仍 PAUSED。下文“6 处／2 hash／目录入口待交接”为授权前历史。
 
-
 ### 全量收尾复核（2026-10-19；当前状态）
 
 本轮发现新变化，不能沿用 10-16 的全量通过结论：当前实际库存 198 文件／418 CSS／184 runtime，6 处文件键漂移；两端 Form 共 2 份登记 hash 过期。原 33 族中 32 族的登记源身份匹配（97.0%），Form 1 族需重验（3.0%）；新私有 FieldPresentation 搜索任务归属待登记，不先扩大族分母。当前 176/184 提示有匹配身份的既有登记（95.7%），8 条需审／重验（4.3%，Form 6＋新增搜索 2）；182→184 是新增实现提示，不是新增缺陷数。
@@ -309,7 +308,6 @@ Tree.scrollIntoView(options)只向当前VirtualList转发原options；701行为�
 
 新增1候选文件／2提示（declaration-only16、delegated-scroll5）：27/33族81.8%，剩6族18.2%；62分类文件，147/179提示82.1%，32待审17.9%，分母／库存不变。JSDOM属性滚动与模拟视口不是原生布局／smooth／CSS减少动效／OS，浏览器新增0；Tree其他保留方法、loadMore异步及任意行高仍独立待验。Maple无对应Tree运行时，只同步指南，不造组件。其他并行／26处漂移、144环境阻塞和Button白字例外保持。证据：design-ui/audits/evidence/tree-scroll-consumer-2026-10-15/results.json。
 
-
 ### Maple PullRefresh：手势、监听与滚动锁（2026-10-15，阶段二）
 
 touchcancel是取消，不走刷新释放路径；新手势、target／根节点切换、禁用、停用／卸载终止当前手势，释放原锁和旧监听。touching／手势代次及原root／control／scroller身份在几何／滚动读取后复核；geometry getter中卸载不继续读旧事件目标。每次绑定保存原节点和独立代次，旧move／end不能跨激活；根ref同步绑定，不让初始post任务取消用户第一段同步手势。保留既有下拉比例、阈值和第一阶段计时／受控ack规则。
@@ -319,7 +317,6 @@ touchcancel是取消，不走刷新释放路径；新手势、target／根节点
 有效10项基线6失败／4对照；修复中post-watch曾使两个原有立即操作用例回归，改同步根绑定后未修改原断言即恢复。最终15手势专项＋17计时专项，完整37项通过。Vue技能用于停用／卸载、原监听全组释放与锁租约／夹具清理。实际组件／KeepAlive、stub图标、模拟touch／几何及timer为JSDOM，非可信输入／真实CSS或OS；浏览器新增0。初始modelValue=true显示、动态时长／真实reduce、共享useTouch RAF及跨文档默认查找仍独立待验。
 
 新增1文件／1条task-dispatch（4），26/33族78.8%，剩7族21.2%；61分类文件，145/179提示81.0%，34待审19.0%，分母未变。无扫描命中的私有scroll-lock helper单列hash，不虚增分类文件。仅更新本源码库存81→96及hash，193文件／392CSS／179runtime保持；其他26处漂移与并行改造、144环境阻塞和Button白字例外保留，不称全局motion-themes通过。证据：design-ui/audits/evidence/pull-refresh-gesture-lifecycle-2026-10-15/results.json。
-
 
 ### Maple PullRefresh：计时与刷新续体（2026-10-15，阶段一）
 
@@ -331,7 +328,6 @@ touchcancel是取消，不走刷新释放路径；新手势、target／根节点
 
 分类仍25/33族75.8%，剩8族24.2%；60分类文件／144提示不变。四处timer合为一处，库存runtime182→179（Maple84→81），当前144/179提示80.4%，35待审19.6%；分母减3不是额外三项验收或缺陷删除。仅刷新本文件四行→81，193文件／392CSS不变，其余26处漂移及并行／144环境阻塞／Button白字例外保留，不称全局motion-themes通过。证据：design-ui/audits/evidence/pull-refresh-timer-lifecycle-2026-10-15/results.json。
 
-
 ### Maple SwipeCell：拖动会话与点击解锁（2026-10-15，阶段二）
 
 拖动结束的0ms解锁是state-settlement事件顺序，不是CSS动效时长，不能跟随reduced-motion删除点击抑制。unlock独立代次且消费一次，新手势／disabled／停用／卸载物理取消计时；旧回调不能解锁新拖动或清新句柄。手势代次在回调和几何读取后复核；touchcancel及停用恢复手势前偏移、不触发打开，激活只接受新触摸。拖动标记为响应式，夹到同一偏移后释放也恢复既有CSS过渡。
@@ -341,7 +337,6 @@ touchcancel是取消，不走刷新释放路径；新手势、target／根节点
 有效14项基线12失败／2对照，最终21拖动专项＋18关闭专项、完整48项通过。补充监听探针初轮误取VTU通用eventListener，已排除包装并验证实际move／outside注册与移除；timer类型初轮编译错误已改明确DOM number，未放宽配置。Vue技能用于停用／卸载取消与测试清理。实际组件／KeepAlive、模拟touch和受控timer不等于可信触摸／原生click顺序／OS；真实浏览器新增0。共享useTouch RAF、完整测量续体、同节点跨文档adopt和事件触发的hook拒绝策略仍独立待验。
 
 分类新增1文件／1条state-settlement：25/33族75.8%，剩8族24.2%；60文件，144/182提示79.1%，38待审20.9%，分母不变。仅更新已审SwipeCell库存248→351及hash，不刷新其他26处漂移，不称全局motion-themes通过。保留Form／日期／关联Time、Picker／Scheduler／并行样式、144环境阻塞与Button白字例外。证据：design-ui/audits/evidence/swipe-cell-drag-lifecycle-2026-10-15/results.json。
-
 
 ### Maple SwipeCell：关闭确认请求（2026-10-15，阶段一）
 
@@ -621,14 +616,14 @@ Countdown 的 RAF 刷新业务剩余时间，不是视觉插值；CSS duration�
 
 不能按“出现 RAF／setTimeout”就统一替换为动效 Token。本批核对两端8个文件／26条源码提示；累计22文件／44条已分类，133条未分类。提示数量包括方法声明，不是组件数量、缺陷数量或验收通过数；未分类也包含此前已有专项验收的组件。
 
-| 职责 | 当前例子与使用场景 | Token／验收边界 |
-| --- | --- | --- |
-| business-clock | Countdown 用 deadline 与 performance.now 更新业务剩余时间 | 不消费 CSS 动效时长；减少视觉动效不能缩短业务时间 |
-| interaction-repeat | InputNumber 长按首次800ms、重复150ms | 交互节奏不是 CSS 过渡；取消、旧回调与停用需生命周期专项 |
-| test-support | delay／flushRaf、RAF与scroll mock | 保留原始扫描提示但不当产品动效；模拟方法声明也不证明浏览器调用 |
-| visual-scroll | elements.scrollTo 的 JS 插值，默认300ms、调用方 easing | 与直接 native-scroll 转发区分；须按实际消费者核对窗口、取消、零时长及减少动效，不盲目接全局 CSS Token |
+| 职责               | 当前例子与使用场景                                        | Token／验收边界                                                                                       |
+| ------------------ | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| business-clock     | Countdown 用 deadline 与 performance.now 更新业务剩余时间 | 不消费 CSS 动效时长；减少视觉动效不能缩短业务时间                                                     |
+| interaction-repeat | InputNumber 长按首次800ms、重复150ms                      | 交互节奏不是 CSS 过渡；取消、旧回调与停用需生命周期专项                                               |
+| test-support       | delay／flushRaf、RAF与scroll mock                         | 保留原始扫描提示但不当产品动效；模拟方法声明也不证明浏览器调用                                        |
+| visual-scroll      | elements.scrollTo 的 JS 插值，默认300ms、调用方 easing    | 与直接 native-scroll 转发区分；须按实际消费者核对窗口、取消、零时长及减少动效，不盲目接全局 CSS Token |
 
-Maple Form 的滚动到校验项调用默认时长／linear；IndexBar 使用公开 duration／easeInOutCubic。Picker 的同名局部方法不是此工具；Cedar 未找到此工具的具名生产调用，不能据此宣称产物不可达。src 排除 __tests__ 后未发现上述 test.ts 路径导入，也不替代打包依赖图认证。
+Maple Form 的滚动到校验项调用默认时长／linear；IndexBar 使用公开 duration／easeInOutCubic。Picker 的同名局部方法不是此工具；Cedar 未找到此工具的具名生产调用，不能据此宣称产物不可达。src 排除 **tests** 后未发现上述 test.ts 路径导入，也不替代打包依赖图认证。
 
 分类批次历史候选包含长按先 step 后验代次；该项已由后续 InputNumber 受控回归复现并修复，见长按回调归属小节。Countdown 暂停／重启及停用更新已由后续受控业务时钟回归复现并修复，见对应小节；滚动工具执行／当前偏好已在后续受控回归修复，但消费者取消和真实减少动效仍待专项，不外推生命周期通过。分类记录逐文件绑定完整源码哈希、当前候选行与原文，变化必须重新审阅，不自动刷新哈希。本批无产品源码／API／CSS变量变化，无新增真实浏览器或OS通过；144组环境阻塞保持。
 
@@ -638,18 +633,15 @@ default/light，两端各延迟取消／KeepAlive尺寸测量，共4组真实浏
 
 真实浏览器计时／ResizeObserver／公开回调与DOM阶段保存相对performance.now摘要，截图原始JPEG已查看并校验哈希，控制台无warn/error。没有新增产品修复或Token/API；此前模拟旧回调验证仍独立，144组原生200%／Safari／Firefox阻塞保持，其他主题／位置和原生hover仍待验。
 
-
 ### ResizeObserver 测量批次的归属
 
 ResizeObserver通知与RAF测量分别保存绑定代次／帧代次。换目标、关闭、停用或卸载使旧绑定和旧帧失效；已断开的observer不能把旧entries混入新批次，旧RAF不能清空／提前消费新任务。帧执行前验证代次并消费一次；保留当前窗口取消和必要测量，不新增动效Token、不把测量减少成视觉零时长。绑定代次不因正常一帧完成而失效，当前observer后续通知仍能调度。
 
 两端模拟回归各新增3项先失败后通过，Trigger完整Cedar63／Maple76项通过，resize专项各8项。范围是工具及Trigger模拟生命周期，不等于所有消费者／真实浏览器或OS已通过；同节点跨document adopt与未刷新目标边界仍需专项验证。
 
-
 ### Trigger 已绑定监听窗口的清理
 
 scroll监听记录实际绑定窗口，解绑不从当前popup ref反查。更换窗口、ref被清空或watcher尚未刷新就卸载，都在原窗口移除原处理器；RAF取消仍使用原申请窗口。两端新增模拟回归各3项先失败后通过，完整Trigger Cedar60／Maple73项通过；初轮Window spy不一致及初始化remove记录污染均属探针问题，不记产品失败。内部窗口引用不是CSS变量或API，不新增Token；同一DOM节点不换ref直接跨document adopt、真实浏览器视觉／OS仍需独立验收。
-
 
 ### Trigger 测量 RAF 的窗口归属
 
@@ -657,13 +649,11 @@ scroll监听记录实际绑定窗口，解绑不从当前popup ref反查。更�
 
 两端 iframe 模拟回归各4项：正确绑定夹具后先3失败／1通过，修复后完整 Trigger Cedar57／Maple70项通过。初轮夹具未触发绑定 watcher、不作产品证据。此为模拟窗口／回调验证；真实跨文档视觉和OS偏好仍独立。旧scroll监听原窗口解绑已在后续专项完成模拟回归；同节点跨document adopt和真实浏览器／OS仍不在此证明范围。
 
-
 ### Trigger 交互延迟的归属
 
 mouse-enter-delay／mouse-leave-delay 是交互请求延迟，不是 CSS 视觉时长。取消、替换请求、停用或卸载使已出队旧回调失效；当前回调只提交一次，不能清理新任务。停用仍发原有关闭请求，随后拒绝保留方法启动任务；重新激活只接受新请求，不重放旧 hover 延迟。卸载后保留方法永久不调度。内部代次／活动状态不公开、不成为 Token；受控 open 仍由调用方决定，不新增 API 或修改延迟默认值。
 
 两端新增模拟回调归属各6项先失败后通过，完整 Trigger Cedar53／Maple66项通过；这不是浏览器帧／真实OS证明。RAF owner-window取消及跨文档定位仍需下一批独立验证；职责分类中的旧“尚待回归”说明属于首批分类时点，不把延迟回归扩大为整个 Trigger 验收。
-
 
 ### 运行时调度不等于动效 Token
 
@@ -671,11 +661,9 @@ mouse-enter-delay／mouse-leave-delay 是交互请求延迟，不是 CSS 视觉�
 
 首批人工分类 14 文件／18 条线索：6 声明、6 测量调度、4 交互延迟、2 原生滚动调用。Layout 原生 scrollTo 保留调用者 options，不等于已验证 smooth 或减少动效；Trigger RAF 的 owner-window 取消、已出队回调归属，交互延迟的失效回调，仍需独立生命周期回归。分类保存源码哈希／原行，变更时重新审阅，不能自动刷新哈希冒充复核。剩余159条尚未录入此分类表，包含已有专项审计，不等于159个未修问题。分类新增浏览器／OS通过均为0，不改变变量层级、默认值或公开API。
 
-
 历史第 6 阶验证：80 项主题前景／实心背景角色检查及 64 组 primary 白字检查通过；当时200组文字／中性表面对比度中94组低于4.5:1。后续内容角色对比度修复以本文“内容色默认对比度”为准。
 
 action/status实心填充保留第6阶与既有Button白字例外；content内容角色按可读性采用独立色阶。既有第6/7阶对比度统计为历史记录，不能作为修复后所有内容角色的结论。
-
 
 ### Button 配色、7 阶与对比度边界
 
@@ -711,7 +699,6 @@ Notification 真实证据见 design-ui/audits/evidence/notification-native-2026-
 
 clear 同步释放逻辑 ID；clear 后重加相同 ID 使用新的内部条目／组件身份及完整展示计时，更新仍活动的 ID 则保持实例。WeakMap 实例键仅是实现细节，不作为业务 API 或 CSS 变量。clear 保持静默，指定位置清理不影响其他位置。
 
-
 全组件品牌与 info/success/warning/danger 的前景色、实心操作／状态背景统一使用第 7 阶；原先直接引用色板的前景声明已接入共享 content 角色。浅色表面、禁用淡色与显式预设色板保留各自职责。此前第 6／8 阶的对比度结果不能作为本次第 7 阶调整的通过结论。
 
 Cedar 与 Maple 使用同一套逻辑 Token 语义，只允许品牌前缀不同：Cedar 为 `--c-`，Maple 为 `--mp-`。共享不是要求所有像素值都相同，而是要求同名 Token 表达同一职责；确需不同的触控尺寸、密度和平台结构必须显式登记。
@@ -746,10 +733,10 @@ VerificationCode 的公开变量 `--{p}-verification-code-cell-height`、`cell-m
 
 以下后缀属于 `--c-field-` / `--mp-field-`，两端职责相同：
 
-| 变量后缀 | 默认值与消费场景 |
-| --- | --- |
-| variant-outline-border-color-error | system status-danger；outline 错误态的边框和焦点边框。 |
-| variant-standard-line-color-error | field-error-color；standard 错误态的底线及焦点底线。 |
+| 变量后缀                             | 默认值与消费场景                                                      |
+| ------------------------------------ | --------------------------------------------------------------------- |
+| variant-outline-border-color-error   | system status-danger；outline 错误态的边框和焦点边框。                |
+| variant-standard-line-color-error    | field-error-color；standard 错误态的底线及焦点底线。                  |
 | variant-standard-line-color-disabled | system border-subtle；standard 禁用底线，优先于 error、focus、hover。 |
 
 这些入口此前有声明但没有真实消费；现在局部覆盖会生效。普通错误提示文字仍使用 field-error-color，不因某个变体边框定制而跟着变化。禁用底线从错误的“文字禁用色”定义改为“弱边框”语义，默认渲染延续原有禁用边框颜色。公开 Token 的有效性必须同时验证声明、选择器消费和覆盖结果，不能只对齐名字。
@@ -774,11 +761,11 @@ VerificationCode 的公开变量 `--{p}-verification-code-cell-height`、`cell-m
 
 ### Message 的三个强调层级
 
-| variant | 场景与颜色职责 | 默认 |
-| --- | --- | --- |
-| neutral | 中性 overlay 面板，正文 primary，状态由图标表达，关闭按钮 secondary。适用于常规操作反馈。 | Cedar |
-| tonal | 低强调状态底色，正文保持可读内容色，图标表达状态。适用于需要轻量区分状态的反馈。 | 两端显式选择 |
-| solid | 高强调状态实色底，使用对应明亮／深色表面的前景；default/loading 保留专属深色面板。适用于强调提示。 | Maple |
+| variant | 场景与颜色职责                                                                                     | 默认         |
+| ------- | -------------------------------------------------------------------------------------------------- | ------------ |
+| neutral | 中性 overlay 面板，正文 primary，状态由图标表达，关闭按钮 secondary。适用于常规操作反馈。          | Cedar        |
+| tonal   | 低强调状态底色，正文保持可读内容色，图标表达状态。适用于需要轻量区分状态的反馈。                   | 两端显式选择 |
+| solid   | 高强调状态实色底，使用对应明亮／深色表面的前景；default/loading 保留专属深色面板。适用于强调提示。 | Maple        |
 
 两端统一 message-{variant}-{status}-{bg|content-color|icon-color|border-color|close-color}。status 为 default/info/success/warning/danger/loading。默认外观和平台密度保留，不把原移动端实色错误命名为 tonal；原隐式颜色变量直接迁移到明确变体，无别名。边框颜色的语义一致不代表必须给移动端新增边宽。
 
@@ -809,21 +796,20 @@ internal              组件实现细节，不构成外部 API
 
 `content-brand` 继续承担需要深色前景的品牌正文／图标，不再用于上述交互状态。Button 的 text／outline 前景、普通文字及 info／success／warning／danger 角色保持各自用途。日期选中底色使用 primary 时，选中文字与 Button 的实心前景配对。下文历史阶段中要求这些激活态使用深色 `content-brand` 的说明由本条替代；不沿用旧色阶下的对比度结论。
 
-
 格式为 `--{prefix}-sys-{category}-{role}`，例如 `--c-sys-color-content-primary`。System Token 是跨组件、跨平台的稳定语义，适合主题作者覆盖，但影响范围较大。组件作者应使用它来定义组件默认值。
 
 颜色角色按下列用途分组：
 
-| 组 | Token | 场景 |
-| --- | --- | --- |
-| surface | `page / default / raised / overlay / muted / tooltip` | 页面、普通容器、浮层、覆盖层、弱化填充表面 |
-| scrim | `sys-color-scrim` | 半透明遮罩；与承载内容的 surface 分开。 |
-| content | `primary / secondary / tertiary / decorative / disabled / on-dark / on-bright` | 普通表面上的内容层级，以及已确认的深色／亮色底上的对比前景；后两者必须按前景与背景成对选择 |
-| content（语义色） | `brand / info / success / warning / danger` | 普通中性表面上的可读彩色文字、图标及同色描边；默认分别使用primary-9、blue-8、success-9、warning-8、danger-8；填充角色独立 |
-| border | `subtle / default / strong` | 弱分隔、常规边框、强调边框 |
-| action | `primary` | 主操作及品牌交互强调 |
-| status | `info / success / warning / danger` | 状态填充和强调色；普通表面上的可读彩色文字选对应 `content-*` |
-| state | `hover / selected` | 与组件无关的通用交互状态表面 |
+| 组                | Token                                                                          | 场景                                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| surface           | `page / default / raised / overlay / muted / tooltip`                          | 页面、普通容器、浮层、覆盖层、弱化填充表面                                                                                |
+| scrim             | `sys-color-scrim`                                                              | 半透明遮罩；与承载内容的 surface 分开。                                                                                   |
+| content           | `primary / secondary / tertiary / decorative / disabled / on-dark / on-bright` | 普通表面上的内容层级，以及已确认的深色／亮色底上的对比前景；后两者必须按前景与背景成对选择                                |
+| content（语义色） | `brand / info / success / warning / danger`                                    | 普通中性表面上的可读彩色文字、图标及同色描边；默认分别使用primary-9、blue-8、success-9、warning-8、danger-8；填充角色独立 |
+| border            | `subtle / default / strong`                                                    | 弱分隔、常规边框、强调边框                                                                                                |
+| action            | `primary`                                                                      | 主操作及品牌交互强调                                                                                                      |
+| status            | `info / success / warning / danger`                                            | 状态填充和强调色；普通表面上的可读彩色文字选对应 `content-*`                                                              |
+| state             | `hover / selected`                                                             | 与组件无关的通用交互状态表面                                                                                              |
 
 同一个 system 颜色角色在 Cedar 与 Maple 必须映射到相同逻辑基础值。`theme-contract.json#systemTokenValues` 是标准值来源，使用 `--PREFIX-` 代替平台前缀。控件高度、触摸目标和 z-index 等平台量由独立的平台默认值契约管理，不混入同值颜色约束。
 
@@ -899,63 +885,62 @@ Token 重命名必须同步源码、主题、文档和测试，并生成迁移�
 
 以下用 `--{p}-` 表示平台前缀：Cedar 的 `p=c`，Maple 的 `p=mp`。颜色映射是跨端契约，不应因组件或主题作者的个人判断改变角色；主题可以改变基础色板的具体色值。完整机器可校验清单在 `theme-contract.json#tokens.system`，下表说明每个角色的职责。
 
-| System 颜色后缀 | 默认基础值后缀 | 应用场景与边界 |
-| --- | --- | --- |
-| `surface-page` | `color-bg-1` | 应用页面底色；不用于弹窗。 |
-| `surface-default` | `color-bg-2` | 卡片、普通容器及展开后的内容表面。 |
-| `surface-raised` | `color-bg-3` | 高于普通内容的浮层，如 Dialog。 |
-| `surface-overlay` | `color-bg-5` | 更高层的弹出内容表面；不是半透明遮罩。 |
-| `surface-tooltip` | `#373739` | 明暗主题均保持深色的提示表面，搭配 on-dark。 |
-| `scrim` | `rgba(0, 0, 0, 0.6)` | 半透明遮罩，不是正文表面。 |
-| `surface-muted` | `color-fill-1` | filled 默认态或弱化填充；不是禁用态的统称。 |
-| `content-primary` | `color-text-1` | 标题、主要正文及普通表面上的主要图标。 |
-| `content-secondary` | `color-text-2` | 辅助文字、次要操作与 Divider 标签。 |
-| `content-brand` | `sys-color-action-primary` | 品牌文字、图标及同色描边，默认与主操作填充色一致；普通正文使用 `content-primary`。 |
-| `content-info` | `sys-color-status-info` | 普通中性表面上的信息文字、图标及同色描边。 |
-| `content-success` | `sys-color-status-success` | 普通中性表面上的成功文字、图标及同色描边。 |
-| `content-warning` | `sys-color-status-warning` | 普通中性表面上的警告文字、图标及同色描边。 |
-| `content-danger` | `sys-color-status-danger` | 普通中性表面上的危险文字、图标及同色描边。 |
-| `content-tertiary` | `color-text-3` | 占位、低强调说明；必要时检查文字对比度。 |
-| `content-decorative` | `color-text-4` | 空状态等非文字装饰图形；不可用于需要阅读的文字。 |
-| `content-disabled` | `color-text-disabled` | 真正不可交互的内容；不能拿来表示装饰。 |
-| `content-on-dark` | `color-white` | **已确认深色表面**上的文字与图标；背景可变时不能盲用。 |
-| `content-on-bright` | `color-black` | **已确认亮色表面**上的文字与图标；不随暗色主题翻成白色，仍须逐配色验证。 |
-| `border-subtle` | `color-border-1` | 弱分隔、低强调边界。 |
-| `border-default` | `color-border-2` | 普通控件描边与 Divider 线条。 |
-| `border-strong` | `color-border-4` | hover 等需要更明确边界的状态。 |
-| `action-primary` | `color-primary` | 品牌主操作及焦点强调；不是“颜色深”的同义词。 |
-| `status-info` | `color-info` | 信息填充和强调色；普通表面上的可读信息文字使用 `content-info`。 |
-| `status-success` | `color-success` | 成功填充和强调色；普通表面上的可读文字使用 `content-success`。 |
-| `status-warning` | `color-warning` | 警告填充和强调色；普通表面上的可读文字使用 `content-warning`。 |
-| `status-danger` | `color-danger` | 危险填充和强调色；普通表面上的可读文字使用 `content-danger`。 |
-| `state-hover` | `color-fill-2` | 中性组件的 hover 表面；仅在可 hover 的设备上使用。 |
-| `state-selected` | `color-primary-light-1` | 选中项的品牌浅色表面；不等于按下态。 |
-
+| System 颜色后缀      | 默认基础值后缀             | 应用场景与边界                                                                     |
+| -------------------- | -------------------------- | ---------------------------------------------------------------------------------- |
+| `surface-page`       | `color-bg-1`               | 应用页面底色；不用于弹窗。                                                         |
+| `surface-default`    | `color-bg-2`               | 卡片、普通容器及展开后的内容表面。                                                 |
+| `surface-raised`     | `color-bg-3`               | 高于普通内容的浮层，如 Dialog。                                                    |
+| `surface-overlay`    | `color-bg-5`               | 更高层的弹出内容表面；不是半透明遮罩。                                             |
+| `surface-tooltip`    | `#373739`                  | 明暗主题均保持深色的提示表面，搭配 on-dark。                                       |
+| `scrim`              | `rgba(0, 0, 0, 0.6)`       | 半透明遮罩，不是正文表面。                                                         |
+| `surface-muted`      | `color-fill-1`             | filled 默认态或弱化填充；不是禁用态的统称。                                        |
+| `content-primary`    | `color-text-1`             | 标题、主要正文及普通表面上的主要图标。                                             |
+| `content-secondary`  | `color-text-2`             | 辅助文字、次要操作与 Divider 标签。                                                |
+| `content-brand`      | `sys-color-action-primary` | 品牌文字、图标及同色描边，默认与主操作填充色一致；普通正文使用 `content-primary`。 |
+| `content-info`       | `sys-color-status-info`    | 普通中性表面上的信息文字、图标及同色描边。                                         |
+| `content-success`    | `sys-color-status-success` | 普通中性表面上的成功文字、图标及同色描边。                                         |
+| `content-warning`    | `sys-color-status-warning` | 普通中性表面上的警告文字、图标及同色描边。                                         |
+| `content-danger`     | `sys-color-status-danger`  | 普通中性表面上的危险文字、图标及同色描边。                                         |
+| `content-tertiary`   | `color-text-3`             | 占位、低强调说明；必要时检查文字对比度。                                           |
+| `content-decorative` | `color-text-4`             | 空状态等非文字装饰图形；不可用于需要阅读的文字。                                   |
+| `content-disabled`   | `color-text-disabled`      | 真正不可交互的内容；不能拿来表示装饰。                                             |
+| `content-on-dark`    | `color-white`              | **已确认深色表面**上的文字与图标；背景可变时不能盲用。                             |
+| `content-on-bright`  | `color-black`              | **已确认亮色表面**上的文字与图标；不随暗色主题翻成白色，仍须逐配色验证。           |
+| `border-subtle`      | `color-border-1`           | 弱分隔、低强调边界。                                                               |
+| `border-default`     | `color-border-2`           | 普通控件描边与 Divider 线条。                                                      |
+| `border-strong`      | `color-border-4`           | hover 等需要更明确边界的状态。                                                     |
+| `action-primary`     | `color-primary`            | 品牌主操作及焦点强调；不是“颜色深”的同义词。                                       |
+| `status-info`        | `color-info`               | 信息填充和强调色；普通表面上的可读信息文字使用 `content-info`。                    |
+| `status-success`     | `color-success`            | 成功填充和强调色；普通表面上的可读文字使用 `content-success`。                     |
+| `status-warning`     | `color-warning`            | 警告填充和强调色；普通表面上的可读文字使用 `content-warning`。                     |
+| `status-danger`      | `color-danger`             | 危险填充和强调色；普通表面上的可读文字使用 `content-danger`。                      |
+| `state-hover`        | `color-fill-2`             | 中性组件的 hover 表面；仅在可 hover 的设备上使用。                                 |
+| `state-selected`     | `color-primary-light-1`    | 选中项的品牌浅色表面；不等于按下态。                                               |
 
 非颜色 system Token 是跨组件可复用的基础节奏，名称相同但可允许平台密度不同。当前完整类别如下：
 
-| 类别 | Token 后缀与标准值 | 设计用途 |
-| --- | --- | --- |
-| 间距 | `space-1…8` = `2 / 4 / 6 / 8 / 12 / 16 / 20 / 24px` | 内边距、元素间距与组合间距；新增刻度前优先复用现有八档。 |
-| 圆角 | `radius-sm/md/lg/pill` = `2 / 4 / 8 / 999px` | 常规控件、容器和胶囊形状；圆形头像的 `50%` 属于组件几何，不必强套。 |
-| 字号 | `font-size-xs/sm/md/lg/xl` = `12 / 13 / 14 / 16 / 18px` | 组件文字层级；超出刻度的大标题仍可作为组件专属值。 |
-| 字重 | `font-weight-regular/medium/semibold` = `400 / 500 / 600` | 常规、强调和强强调；避免每个组件另造一套数字。 |
-| 动效 | `motion-duration-fast/standard/slow` = `120 / 180 / 240ms`；`motion-easing-standard` = `cubic-bezier(0.4, 0, 0.2, 1)` | 普通交互时长；动效应尊重 `prefers-reduced-motion`。 |
-| 层级 | `layer-behind/base/raised` = `-1 / 0 / 1`；`layer-popup/modal` 映射平台层级 | 组件堆叠关系；不要把某端的绝对 z-index 值当作跨端语义。 |
-| 控件 | `control-height-xs/sm/md/lg/xl`；`control-touch-target` | 高度按平台密度确定：Cedar `28/32/36/40/44px`，Maple `44/48/52/56/60px`；触控目标两端均为 `44px`。 |
+| 类别 | Token 后缀与标准值                                                                                                    | 设计用途                                                                                          |
+| ---- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| 间距 | `space-1…8` = `2 / 4 / 6 / 8 / 12 / 16 / 20 / 24px`                                                                   | 内边距、元素间距与组合间距；新增刻度前优先复用现有八档。                                          |
+| 圆角 | `radius-sm/md/lg/pill` = `2 / 4 / 8 / 999px`                                                                          | 常规控件、容器和胶囊形状；圆形头像的 `50%` 属于组件几何，不必强套。                               |
+| 字号 | `font-size-xs/sm/md/lg/xl` = `12 / 13 / 14 / 16 / 18px`                                                               | 组件文字层级；超出刻度的大标题仍可作为组件专属值。                                                |
+| 字重 | `font-weight-regular/medium/semibold` = `400 / 500 / 600`                                                             | 常规、强调和强强调；避免每个组件另造一套数字。                                                    |
+| 动效 | `motion-duration-fast/standard/slow` = `120 / 180 / 240ms`；`motion-easing-standard` = `cubic-bezier(0.4, 0, 0.2, 1)` | 普通交互时长；动效应尊重 `prefers-reduced-motion`。                                               |
+| 层级 | `layer-behind/base/raised` = `-1 / 0 / 1`；`layer-popup/modal` 映射平台层级                                           | 组件堆叠关系；不要把某端的绝对 z-index 值当作跨端语义。                                           |
+| 控件 | `control-height-xs/sm/md/lg/xl`；`control-touch-target`                                                               | 高度按平台密度确定：Cedar `28/32/36/40/44px`，Maple `44/48/52/56/60px`；触控目标两端均为 `44px`。 |
 
 ## 组件 Token 的设计维度
 
 组件 Token 名应回答“哪个组件、哪个部位、什么视觉分支、什么状态、控制哪个 CSS 属性”。推荐顺序是 `--{p}-{component}-{part?}-{variant/status/size?}-{state?}-{property}`；可省略无关维度，不为对称而制造空变量。属性名要对应实际消费属性：控制背景用 `background`，控制文字用 `text-color`，不能用模糊的 `primary-color` 指代深色背景。现存历史名称可分批迁移，迁移必须同步契约与文档。
 
-| 维度 | 何时需要 | 示例 |
-| --- | --- | --- |
-| part | 同一组件有多个独立可定制部位 | `dialog-title-text-color`、`card-close-button-background` |
-| variant | 视觉结构互斥 | `field-decorator-variant-filled-background` |
-| status | 信息或操作语义 | `dialog-status-danger-color` |
-| size | 几何档位 | `card-size-sm-title-font-size` |
-| state | 交互／可用性变化 | `field-decorator-variant-filled-background-hover` |
-| property | 对应实际 CSS 职责 | `background`、`border-color`、`text-color`、`padding` |
+| 维度     | 何时需要                     | 示例                                                      |
+| -------- | ---------------------------- | --------------------------------------------------------- |
+| part     | 同一组件有多个独立可定制部位 | `dialog-title-text-color`、`card-close-button-background` |
+| variant  | 视觉结构互斥                 | `field-decorator-variant-filled-background`               |
+| status   | 信息或操作语义               | `dialog-status-danger-color`                              |
+| size     | 几何档位                     | `card-size-sm-title-font-size`                            |
+| state    | 交互／可用性变化             | `field-decorator-variant-filled-background-hover`         |
+| property | 对应实际 CSS 职责            | `background`、`border-color`、`text-color`、`padding`     |
 
 状态 Token 只在需要不同值时创建；默认态、hover、focus-visible、active、disabled 的优先级由组件交互定义，不能仅依赖 Less/CSS 规则的书写先后。特别是 filled 输入框：默认 `fill-1`、hover `fill-2`、focus `fill-3`；同时 hover 与 focus 时 focus 必须胜出。`focus` 表示实际焦点样式，`focus-visible` 专指键盘可见焦点，不可混名。禁用态不应继续显示 hover/focus 强调。
 
@@ -967,10 +952,14 @@ Token 重命名必须同步源码、主题、文档和测试，并生成迁移�
 
 ```css
 /* 只改变某个对话框，不影响其他浮层 */
-.my-dialog { --c-dialog-background: #fff8ef; }
+.my-dialog {
+  --c-dialog-background: #fff8ef;
+}
 
 /* 改变整套主题的浮层表面 */
-[data-theme='custom'] { --c-sys-color-surface-raised: #fff8ef; }
+[data-theme='custom'] {
+  --c-sys-color-surface-raised: #fff8ef;
+}
 ```
 
 覆写组件背景时，应同时检查其文字、图标、边框和交互态的对比度；system Token 表达的是职责，不保证任意前景／背景组合都满足对比度。Avatar 的 `color` 属性可逐实例改变背景，因此使用者须检查文字对比度，必要时覆盖 `--{p}-avatar-text-color`。其默认 `fill-4` 背景、触发按钮 `fill-2 → fill-3` hover 阶梯、黑色半透明遮罩属于组件视觉值；Maple 暗色背景 `#303030` 属于主题专属组件值，不强行映射到通用 system 角色。`content-on-dark` 只适合背景确实保持深色的场景。`var()` 的 fallback 仅用于明确的外部兼容边界或已记录的可选覆盖（如 VerificationCode 的实例 size 回退），不应掩盖缺失的内部 system Token。颜色混合和透明度属于需要解释的组件行为，不应靠孤立的硬编码颜色掩盖。
@@ -991,17 +980,17 @@ Token 重命名必须同步源码、主题、文档和测试，并生成迁移�
 
 Tag 的 default 是浅色填充，不是 Badge 的高强调实心背景。primary / info / success / warning / danger 的文字及 outline 同色描边分别使用 content-brand / info / success / warning / danger；secondary 与 tertiary 使用 content-secondary。彩色填充背景使用对应 primary / blue / success / warning / danger 色板第 1 阶，secondary 使用 gray-2，tertiary 使用 gray-1。这些背景是 Tag 专属配对表面，不新增含糊的通用 system 角色；不能仅因历史颜色相似就把 success / warning / danger 固定到 green / orange / red。
 
-| 变量族（省略平台前缀） | 职责与使用场景 |
-| --- | --- |
-| tag-status-*-text-color / bg-color | 已选中 default 变体的成对前景与背景；修改背景须同时验证文字。 |
-| tag-variant-outline-status-*-color | 已选中 outline 的文字与边框共用色；背景透明，不复用实心填充色。 |
-| tag-variant-outline-default-color / default-border-color | 默认及未选中 outline 的中性文字、边框。 |
-| tag-default-bg / default-bg-hover | 中性已选中 default 背景：fill-2 → fill-3；不是输入框的 fill-1 → fill-2 → fill-3 规则。 |
-| tag-bg-not-checked-hover | 未选中可交互 Tag 的中性 hover 背景，使用 state-hover。 |
-| tag-default-text-color / default-icon-color | 默认文字 content-primary、默认前缀图标 content-secondary。 |
-| tag-custom-text-color | 自定义 default 背景且未传 text-color 时的前景；默认 content-on-dark，调用方必须保证背景够深。 |
-| tag-{色名}-* | color 预设色板入口，不表达成功、警告等业务语义；彩色前景使用色板第 9 阶、灰色使用 content-secondary；默认配色的非 loading、已选中状态纳入预设对比度检查。 |
-| tag-size-* / padding-* / icon-* / close-* | 密度与部位几何；保留桌面紧凑、移动较大的尺寸，不机械统一像素。 |
+| 变量族（省略平台前缀）                                   | 职责与使用场景                                                                                                                                            |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| tag-status-*-text-color / bg-color                       | 已选中 default 变体的成对前景与背景；修改背景须同时验证文字。                                                                                             |
+| tag-variant-outline-status-*-color                       | 已选中 outline 的文字与边框共用色；背景透明，不复用实心填充色。                                                                                           |
+| tag-variant-outline-default-color / default-border-color | 默认及未选中 outline 的中性文字、边框。                                                                                                                   |
+| tag-default-bg / default-bg-hover                        | 中性已选中 default 背景：fill-2 → fill-3；不是输入框的 fill-1 → fill-2 → fill-3 规则。                                                                    |
+| tag-bg-not-checked-hover                                 | 未选中可交互 Tag 的中性 hover 背景，使用 state-hover。                                                                                                    |
+| tag-default-text-color / default-icon-color              | 默认文字 content-primary、默认前缀图标 content-secondary。                                                                                                |
+| tag-custom-text-color                                    | 自定义 default 背景且未传 text-color 时的前景；默认 content-on-dark，调用方必须保证背景够深。                                                             |
+| tag-{色名}-*                                             | color 预设色板入口，不表达成功、警告等业务语义；彩色前景使用色板第 9 阶、灰色使用 content-secondary；默认配色的非 loading、已选中状态纳入预设对比度检查。 |
+| tag-size-* / padding-* / icon-* / close-*                | 密度与部位几何；保留桌面紧凑、移动较大的尺寸，不机械统一像素。                                                                                            |
 
 交互规则：非 checkable 的 Tag 按已选中呈现；checkable 未选中时状态配色不生效，hover 只显示中性提示；已选中状态配色不能被通用 hover 覆盖。中性已选中 default 支持独立 hover；已选中 outline 保持透明。loading 不参与本批中性／状态 hover 强调。此规则不改变 checked 的受控事件协议。
 
@@ -1013,15 +1002,15 @@ Tag 的 default 是浅色填充，不是 Badge 的高强调实心背景。primar
 
 Alert 使用 status=info/success/warning/danger/default 和 standard/tonal/outline 三种变体。彩色标题、正文、图标及 outline 描边使用对应 sys-color-content-info/success/warning/danger，而不是 status 填充色；默认标题使用 content-primary，正文和图标使用 content-secondary，默认描边使用 border-default。
 
-| 公开变量族（省略平台前缀） | 默认来源与场景 |
-| --- | --- |
-| alert-standard-{status}-bg / border | 彩色背景取 blue/success/warning/danger 第 1 阶，弱描边取第 3 阶；用于信息容器，不是交互按钮边界。 |
-| alert-tonal-{status}-bg | 与 standard 同浅底，仅去掉描边，不再描述为“加深一档”。 |
-| alert-outline-{status}-border | 彩色描边与可读 content 同色；背景透明，依赖外层表面。 |
-| alert-{variant}-{status}-title / content / icon | 分别控制标题、正文、状态图标；彩色三者使用同一语义角色，但保留独立定制入口。 |
-| alert-{standard/tonal}-default-bg | 中性 fill-2 配对表面，属于组件静态背景，不借用名称含 hover 的交互角色。 |
-| alert-{variant}-{status}-content | 同时作为根容器继承色，保证关闭图标及未显式设色的 action/正文插槽跟随信息语义；自带颜色的业务组件不被强制覆盖。 |
-| alert-padding-* / icon-size / *-margin-* / font-* / line-height* | 布局、图标及文字几何，独立于颜色；Maple 暗色仍保留现有较大图标和内边距，未在本批强行统一。 |
+| 公开变量族（省略平台前缀）                                       | 默认来源与场景                                                                                                 |
+| ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| alert-standard-{status}-bg / border                              | 彩色背景取 blue/success/warning/danger 第 1 阶，弱描边取第 3 阶；用于信息容器，不是交互按钮边界。              |
+| alert-tonal-{status}-bg                                          | 与 standard 同浅底，仅去掉描边，不再描述为“加深一档”。                                                         |
+| alert-outline-{status}-border                                    | 彩色描边与可读 content 同色；背景透明，依赖外层表面。                                                          |
+| alert-{variant}-{status}-title / content / icon                  | 分别控制标题、正文、状态图标；彩色三者使用同一语义角色，但保留独立定制入口。                                   |
+| alert-{standard/tonal}-default-bg                                | 中性 fill-2 配对表面，属于组件静态背景，不借用名称含 hover 的交互角色。                                        |
+| alert-{variant}-{status}-content                                 | 同时作为根容器继承色，保证关闭图标及未显式设色的 action/正文插槽跟随信息语义；自带颜色的业务组件不被强制覆盖。 |
+| alert-padding-* / icon-size / _-margin-_ / font-* / line-height* | 布局、图标及文字几何，独立于颜色；Maple 暗色仍保留现有较大图标和内边距，未在本批强行统一。                     |
 
 颜色链路为 foundation → system content / component-specific paired surface → component → CSS。标准变体的第 3 阶边框是弱分隔，不承诺作为控件边界的 3:1 对比度；不能把这项检查误认为所有边框都已满足非文本对比度要求。未增加新的 system Token，也未更名公开变量。
 
@@ -1039,7 +1028,6 @@ Button 提供 58 项公共变量，两端 suffix 和默认值一致，以 theme-
 
 移除仅复述系统值或内部结构的独立配置：字号使用 system font-size，过渡时长使用 system motion-duration-standard，焦点宽度和偏移使用 system space-1，堆叠按钮按内容撑高，最小高度根据按钮高度、字号和 system space 推导，上下至少保留 8px 内边距，按钮组圆角复用 Button border-radius。固定 line-height、进度线宽度和减少动效透明度视为结构实现，不再开放为公共变量。此收敛对 Button 适用，不要求给所有结构常量增加 Token。
 
-
 交互优先级保持 disabled/loading 阻止反馈、active 高于 hover、focus-visible 独立。状态层在内容后方；彩色实心禁用使用淡色背景及对比文字，text/outline 保持透明，tonal 保持浅色底。自定义 color/text-color 在禁用时暂停覆盖。Maple 默认暗色继承共享颜色，Maple 品牌浅色 primary 保留白字与深色状态层。
 
 运行 node bin/button-theme-check.mjs，编译实际 Less 并验证两端、两品牌、明暗主题、八种状态、四种变体及交互组合。默认可用与 loading 配色检查前景对比度；disabled 配色/交互单独断言，不将禁用、业务自定义配色和瞬时 ripple 纳入默认对比度承诺。原生语义、图标插槽推断、组合示例和尺寸继承由组件测试与浏览器检查覆盖。
@@ -1048,10 +1036,10 @@ Button 提供 58 项公共变量，两端 suffix 和默认值一致，以 theme-
 
 本阶段治理 Tooltip、Popover、Overlay、Trigger，新增两个 system 颜色：
 
-| 角色 | 默认值 | 意义与场景 |
-| --- | --- | --- |
-| `sys-color-surface-tooltip` | `#373739` | 明暗主题都保持深色的紧凑提示表面，搭配 `content-on-dark`；不是随模式反转的 inverse surface。主题改变它时须成对验证文字。 |
-| `sys-color-scrim` | `rgba(0, 0, 0, 0.6)` | 压暗被遮挡内容的半透明黑色遮罩；不承担正文背景，不通过父节点 opacity 实现。 |
+| 角色                        | 默认值               | 意义与场景                                                                                                               |
+| --------------------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `sys-color-surface-tooltip` | `#373739`            | 明暗主题都保持深色的紧凑提示表面，搭配 `content-on-dark`；不是随模式反转的 inverse surface。主题改变它时须成对验证文字。 |
+| `sys-color-scrim`           | `rgba(0, 0, 0, 0.6)` | 压暗被遮挡内容的半透明黑色遮罩；不承担正文背景，不通过父节点 opacity 实现。                                              |
 
 `surface-overlay` 仍是 Popover 等弹出内容的实体表面，映射 `color-bg-5`，不能用于替代 scrim。Tooltip 中性提示采用固定深灰，使两端提示外观一致；彩色 status 背景继续使用 `action-primary/status-*`，不是浅色文字专用背景。彩色实心状态文字以手动确定的 Button 为准，primary / info / success / warning / danger 统一使用 `content-on-dark`，两品牌明暗模式不再维护单独文字覆盖。
 
@@ -1079,15 +1067,15 @@ Popover 阴影保留 Cedar shadow2-down 与 Maple 三段阴影的平台差异；
 
 本阶段把两端 Dialog、Cedar Drawer、Maple Popup 接入上一阶段定义的 scrim。Drawer 与 Popup 是平台组件，不为凑齐名称而在另一端创建无人消费的变量。
 
-| 消费者 | 公开组件变量（省略平台前缀） | System 默认语义 |
-| --- | --- | --- |
-| Dialog（两端） | `dialog-overlay-background` | `color-scrim` |
-| Dialog（两端） | `dialog-background` | `color-surface-raised` |
-| Drawer（Cedar） | `drawer-overlay-bg / drawer-bg` | `color-scrim / color-surface-raised` |
-| Drawer（Cedar） | `drawer-header-text-color / drawer-content-text-color` | `color-content-primary`；关闭按钮也用标题颜色 |
-| Drawer（Cedar） | `drawer-border-color` | `color-border-default` |
-| Popup（Maple） | `popup-overlay-background-color` | `color-scrim` |
-| Popup（Maple） | `popup-content-background-color / popup-content-text-color` | `color-surface-raised / color-content-primary` |
+| 消费者          | 公开组件变量（省略平台前缀）                                | System 默认语义                                |
+| --------------- | ----------------------------------------------------------- | ---------------------------------------------- |
+| Dialog（两端）  | `dialog-overlay-background`                                 | `color-scrim`                                  |
+| Dialog（两端）  | `dialog-background`                                         | `color-surface-raised`                         |
+| Drawer（Cedar） | `drawer-overlay-bg / drawer-bg`                             | `color-scrim / color-surface-raised`           |
+| Drawer（Cedar） | `drawer-header-text-color / drawer-content-text-color`      | `color-content-primary`；关闭按钮也用标题颜色  |
+| Drawer（Cedar） | `drawer-border-color`                                       | `color-border-default`                         |
+| Popup（Maple）  | `popup-overlay-background-color`                            | `color-scrim`                                  |
+| Popup（Maple）  | `popup-content-background-color / popup-content-text-color` | `color-surface-raised / color-content-primary` |
 
 ### 变量必须连接实际节点
 
@@ -1120,13 +1108,13 @@ Popup 新增公开 `--mp-popup-content-text-color`，与面板背景成对定制
 
 本阶段处理两端 Message、Cedar Notification 和 Maple LoadingBar 的颜色角色、暗色覆盖和实际消费者。统一的是语义职责，不在没有变体设计的情况下把移动端彩色提示强行改成桌面端中性面板。
 
-| 消费者 | 表面／色块 | 前景／指示色 | 说明 |
-| --- | --- | --- | --- |
-| Cedar Message | 所有状态使用 surface-overlay；边框 border-default | 正文 content-primary，关闭 content-secondary；图标按 content 状态色 | default 图标 primary；loading 图标 brand；info 使用 info 而非品牌填充色 |
-| Cedar Notification | 所有状态使用 surface-overlay；边框 border-default | 标题／正文 content-primary，关闭 content-secondary；图标按 content 状态色 | normal 图标 primary；现有 error 名称映射 content-danger，不新增危险色别名 |
-| Maple Message：default／loading | 组件专属深色 #333 | content-on-dark | 保留现有移动提示外观，不冒用 surface-overlay 或 scrim |
-| Maple Message：彩色状态 | status-info/success/warning/danger | content-on-bright | 浅色文字不能默认适配所有状态填充；必须成对设置前景和背景 |
-| Maple LoadingBar | 细线本身为可辨识的内容标记 | content-brand／content-danger | 普通／失败状态，不使用 action／status 填充阶；背景由宿主页面决定 |
+| 消费者                          | 表面／色块                                        | 前景／指示色                                                              | 说明                                                                      |
+| ------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Cedar Message                   | 所有状态使用 surface-overlay；边框 border-default | 正文 content-primary，关闭 content-secondary；图标按 content 状态色       | default 图标 primary；loading 图标 brand；info 使用 info 而非品牌填充色   |
+| Cedar Notification              | 所有状态使用 surface-overlay；边框 border-default | 标题／正文 content-primary，关闭 content-secondary；图标按 content 状态色 | normal 图标 primary；现有 error 名称映射 content-danger，不新增危险色别名 |
+| Maple Message：default／loading | 组件专属深色 #333                                 | content-on-dark                                                           | 保留现有移动提示外观，不冒用 surface-overlay 或 scrim                     |
+| Maple Message：彩色状态         | status-info/success/warning/danger                | content-on-bright                                                         | 浅色文字不能默认适配所有状态填充；必须成对设置前景和背景                  |
+| Maple LoadingBar                | 细线本身为可辨识的内容标记                        | content-brand／content-danger                                             | 普通／失败状态，不使用 action／status 填充阶；背景由宿主页面决定          |
 
 ### 实际消费与外部定制
 
@@ -1153,13 +1141,13 @@ Popup 新增公开 `--mp-popup-content-text-color`，与面板背景成对定制
 
 以下逻辑变量名省略 `--c-`／`--mp-` 前缀；表中的 system 名也需补上对应前缀。
 
-| 变量 | 默认引用 | 职责与定制场景 |
-| --- | --- | --- |
-| input-counter-color | field-suffix-text-color | 字数统计；跟随字段辅助内容色，可单独覆盖 |
-| input-feedback-success-color | sys-color-content-success | 成功反馈 SVG 的 currentColor |
-| input-feedback-warning-color | sys-color-content-warning | 警告反馈 SVG 的 currentColor |
-| input-feedback-error-color | sys-color-content-danger | 错误反馈图标，不复用填充型 field-error-color |
-| input-feedback-validating-color | sys-color-content-brand | 校验中图标；转动时仍需与字段背景可辨识 |
+| 变量                            | 默认引用                  | 职责与定制场景                               |
+| ------------------------------- | ------------------------- | -------------------------------------------- |
+| input-counter-color             | field-suffix-text-color   | 字数统计；跟随字段辅助内容色，可单独覆盖     |
+| input-feedback-success-color    | sys-color-content-success | 成功反馈 SVG 的 currentColor                 |
+| input-feedback-warning-color    | sys-color-content-warning | 警告反馈 SVG 的 currentColor                 |
+| input-feedback-error-color      | sys-color-content-danger  | 错误反馈图标，不复用填充型 field-error-color |
+| input-feedback-validating-color | sys-color-content-brand   | 校验中图标；转动时仍需与字段背景可辨识       |
 
 输入背景、边框、光标和焦点环仍属于 FieldDecorator／原生输入样式；Input 的反馈变量不负责这些部位。覆盖 field-error-color 或 field-focus-color 不再连带改变反馈图标，需覆盖对应 input-feedback 变量。filled 的 fill1 → fill2 → fill3 规则没有改变。禁用、只读、校验状态的业务行为也没有修改。
 
@@ -1169,19 +1157,19 @@ Maple 暗色 Field 的历史覆盖会把 filled 改回 fill2／fill3／普通背
 
 下表为完整的本阶段菜单颜色契约。AutoComplete 保留已有 option 名称，并在自己的 dropdown 根节点映射到 Select 变量；不新增另一套菜单规则。公开覆盖应使用所属组件的变量，不依赖这层内部适配。
 
-| AutoComplete 后缀 | Select 后缀 | 默认 system 角色 |
-| --- | --- | --- |
-| popup-bg | popup-bg | surface-overlay |
-| popup-border-color | popup-border-color | border-default |
-| option-bg-default | popup-option-bg | surface-overlay |
-| option-bg-hover | popup-option-bg-hover | state-hover |
-| option-bg-selected | popup-option-bg-selected | surface-overlay |
-| option-bg-disabled | popup-option-bg-disabled | surface-overlay |
-| option-text-color-default | popup-option-text-color | content-primary |
-| option-text-color-hover | popup-option-text-color-hover | content-primary |
-| option-text-color-selected | popup-option-text-color-selected | content-primary |
-| option-text-color-disabled | popup-option-text-color-disabled | content-disabled |
-| 无独立分组标题变量 | popup-group-title-text-color | content-secondary |
+| AutoComplete 后缀          | Select 后缀                      | 默认 system 角色  |
+| -------------------------- | -------------------------------- | ----------------- |
+| popup-bg                   | popup-bg                         | surface-overlay   |
+| popup-border-color         | popup-border-color               | border-default    |
+| option-bg-default          | popup-option-bg                  | surface-overlay   |
+| option-bg-hover            | popup-option-bg-hover            | state-hover       |
+| option-bg-selected         | popup-option-bg-selected         | surface-overlay   |
+| option-bg-disabled         | popup-option-bg-disabled         | surface-overlay   |
+| option-text-color-default  | popup-option-text-color          | content-primary   |
+| option-text-color-hover    | popup-option-text-color-hover    | content-primary   |
+| option-text-color-selected | popup-option-text-color-selected | content-primary   |
+| option-text-color-disabled | popup-option-text-color-disabled | content-disabled  |
+| 无独立分组标题变量         | popup-group-title-text-color     | content-secondary |
 
 完整名称例如 `--c-auto-complete-option-bg-hover` 与 `--mp-select-popup-option-bg-hover`。Select 的分组标题使用 secondary 而不是 tertiary：它是可读的小字号标题，不是禁用信息。Maple 暗色不再单独覆写 selected 为品牌文字和 selected 背景；两端都从相同默认角色解析暗色值。
 
@@ -1199,14 +1187,14 @@ Maple 暗色 Field 的历史覆盖会把 filled 改回 fill2／fill3／普通背
 
 本批为 Checkbox、Radio 各登记 6 项颜色默认值，共新增 12 项；变量名称和尺寸 API 不变。Maple 的默认值移入各组件的 token.less，暗色主题仅保留移动端几何，不再重新写死颜色。
 
-| 公开变量后缀（checkbox / radio） | 两端相同的 system 角色 | 意义与使用场景 |
-| --- | --- | --- |
-| control-color | content-secondary | 未选中轮廓／图标；这是识别控件的非文字内容，不是装饰性边框 |
-| control-color-checked | content-brand | 选中与半选标记；需要与所在表面保持辨识度，不直接等同于 action-primary 按钮填充 |
-| control-color-error | content-danger | 可交互控件的校验错误轮廓／标记，不改变标签正文色 |
-| control-color-disabled | content-disabled | 禁用标记；禁用优先于错误、选中颜色和 hover |
-| label-text-color | content-primary | 标签正文；错误说明由表单反馈承担 |
-| label-text-color-disabled | content-disabled | 禁用标签；移动端标签自身的 disabled 类必须消费此变量 |
+| 公开变量后缀（checkbox / radio） | 两端相同的 system 角色 | 意义与使用场景                                                                 |
+| -------------------------------- | ---------------------- | ------------------------------------------------------------------------------ |
+| control-color                    | content-secondary      | 未选中轮廓／图标；这是识别控件的非文字内容，不是装饰性边框                     |
+| control-color-checked            | content-brand          | 选中与半选标记；需要与所在表面保持辨识度，不直接等同于 action-primary 按钮填充 |
+| control-color-error              | content-danger         | 可交互控件的校验错误轮廓／标记，不改变标签正文色                               |
+| control-color-disabled           | content-disabled       | 禁用标记；禁用优先于错误、选中颜色和 hover                                     |
+| label-text-color                 | content-primary        | 标签正文；错误说明由表单反馈承担                                               |
+| label-text-color-disabled        | content-disabled       | 禁用标签；移动端标签自身的 disabled 类必须消费此变量                           |
 
 以上后缀分别加 --c-checkbox- / --mp-checkbox- 或 --c-radio- / --mp-radio-。局部覆盖放在组件真实 DOM 祖先上。Maple 已有 checked-color / unchecked-color 属性仍是内联颜色覆盖，优先于 CSS 变量；需要系统状态色时不要同时传这些自定义颜色。自定义插槽、任意业务背景与属性颜色需自行验证对比度。
 
@@ -1222,13 +1210,13 @@ Switch 本批仅修复状态优先级：可交互 error 轨道高于 tonal 未�
 
 本批新增 5 项共享颜色默认值：Form 3 项、Textarea 2 项；不新增或重命名公开变量。默认值集中到 token.less，Maple FormDetails 暗色主题不再用 #888 或 action 填充色覆盖文字语义。
 
-| 变量后缀 | 默认角色 | 消费者与场景 |
-| --- | --- | --- |
-| form-label-text-color | content-primary | 表单标签正文，不随校验错误染色 |
-| form-extra-text-color | content-secondary | Cedar 的 extra / 普通 help，Maple 的 help；辅助说明仍需可读 |
-| form-required-symbol-color | content-danger | 必填标记，不是错误背景填充 |
+| 变量后缀                   | 默认角色          | 消费者与场景                                                                         |
+| -------------------------- | ----------------- | ------------------------------------------------------------------------------------ |
+| form-label-text-color      | content-primary   | 表单标签正文，不随校验错误染色                                                       |
+| form-extra-text-color      | content-secondary | Cedar 的 extra / 普通 help，Maple 的 help；辅助说明仍需可读                          |
+| form-required-symbol-color | content-danger    | 必填标记，不是错误背景填充                                                           |
 | textarea-placeholder-color | content-secondary | 原生 textarea 的 placeholder；两端均实际消费，默认焦点／错误不会把它改成品牌／错误色 |
-| textarea-counter-color | content-secondary | 字数统计；Cedar 位于输入区内，Maple 位于输入区外，因此同时按 filled 各级背景校验 |
+| textarea-counter-color     | content-secondary | 字数统计；Cedar 位于输入区内，Maple 位于输入区外，因此同时按 filled 各级背景校验     |
 
 上表分别添加 --c- / --mp- 前缀。Cedar 的 form-tooltip-text-color 使用 content-secondary；status-success / warning / error / validating 的 tip-text-color 与 tip-icon-color 分别使用 content-success / warning / danger / brand。它们是桌面扩展，不伪造移动端同名变量。Maple FormDetails 使用自己的 error-message-color（content-danger）和 extra-message-color（content-secondary）；Form 的 extra 属性由 FormDetails 展示，因此定制该段应覆盖 --mp-form-details-extra-message-color，而不是 --mp-form-extra-text-color。组件组合不意味着所有子组件变量自动别名化。
 
@@ -1244,18 +1232,18 @@ Textarea 的 disabled 优先于 error，placeholder 及原生禁用文字使用 
 
 本阶段登记 10 项共享颜色默认值，其中 8 项为既有变量，新增 tonal-text-color / tonal-handle-color 两项。两端只差 --c-switch- / --mp-switch- 前缀。规范变更记录位于 Cedar openspec/changes/govern-switch-colors；Maple 暗色主题不再单独写死轨道及文字颜色。
 
-| Switch 变量后缀 | system 默认角色 | 职责 |
-| --- | --- | --- |
-| track-background | content-secondary | 普通未选中实心轨道 |
-| track-active-background | content-brand | 选中轨道及键盘焦点环 |
-| track-error-background | content-danger | 可交互错误轨道及 tonal 错误边框 |
-| handle-background | surface-default | 普通／选中／错误滑块底色 |
-| handle-color | content-brand | 普通／选中／错误滑块图标色 |
-| text-color | surface-default | 实心轨道上的文字色 |
-| tonal-track-background | surface-muted | tonal 未选中轨道底色 |
-| tonal-border-color | content-secondary | tonal 未选中边框及滑块底色 |
-| tonal-text-color | content-secondary | 新增：tonal 未选中轨道文字 |
-| tonal-handle-color | surface-default | 新增：tonal 未选中滑块图标 |
+| Switch 变量后缀         | system 默认角色   | 职责                            |
+| ----------------------- | ----------------- | ------------------------------- |
+| track-background        | content-secondary | 普通未选中实心轨道              |
+| track-active-background | content-brand     | 选中轨道及键盘焦点环            |
+| track-error-background  | content-danger    | 可交互错误轨道及 tonal 错误边框 |
+| handle-background       | surface-default   | 普通／选中／错误滑块底色        |
+| handle-color            | content-brand     | 普通／选中／错误滑块图标色      |
+| text-color              | surface-default   | 实心轨道上的文字色              |
+| tonal-track-background  | surface-muted     | tonal 未选中轨道底色            |
+| tonal-border-color      | content-secondary | tonal 未选中边框及滑块底色      |
+| tonal-text-color        | content-secondary | 新增：tonal 未选中轨道文字      |
+| tonal-handle-color      | surface-default   | 新增：tonal 未选中滑块图标      |
 
 轨道是用于识别开关状态的控件标记，采用 content-secondary / brand / danger，与 Checkbox / Radio 的标记语义一致，不直接沿用按钮 action 填充色。surface-default 在实心轨道中表示镂空式前景，与所在主题的轨道色成对设计，不是任意彩色背景的通用文字色。暗色 surface-muted 带透明度，只适合叠加表面，不能充当深色滑块上的反差图标色。
 
@@ -1273,15 +1261,15 @@ tonal 未选中采用独立前景组合；选中或可交互错误状态切回�
 
 ### Tabs 颜色职责
 
-| 后缀（添加 --c-tabs- / --mp-tabs-） | system 角色 | 场景 |
-| --- | --- | --- |
-| background | surface-default | card / capsule / enclosed 选中表面 |
-| title-text-color | content-secondary | 普通标题 |
-| title-text-color-active | content-brand | 选中标题、焦点环与指示条，不使用 action 填充色 |
-| title-text-color-disabled | content-disabled | 禁用标题 |
-| muted-background | surface-muted | 分组或未选中表面 |
-| border-color | border-default | 装饰性分隔线和边框 |
-| hover-background | state-hover | fine pointer 下可交互且未选中项 |
+| 后缀（添加 --c-tabs- / --mp-tabs-） | system 角色       | 场景                                           |
+| ----------------------------------- | ----------------- | ---------------------------------------------- |
+| background                          | surface-default   | card / capsule / enclosed 选中表面             |
+| title-text-color                    | content-secondary | 普通标题                                       |
+| title-text-color-active             | content-brand     | 选中标题、焦点环与指示条，不使用 action 填充色 |
+| title-text-color-disabled           | content-disabled  | 禁用标题                                       |
+| muted-background                    | surface-muted     | 分组或未选中表面                               |
+| border-color                        | border-default    | 装饰性分隔线和边框                             |
+| hover-background                    | state-hover       | fine pointer 下可交互且未选中项                |
 
 hover 不覆盖选中项背景；line / outline 的 hover 只改变可交互文字。coarse pointer 不应用桌面 hover 规则。禁用优先于选中／hover 文字色，但保留选中位置。
 
@@ -1289,17 +1277,17 @@ hover 不覆盖选中项背景；line / outline 的 hover 只改变可交互文�
 
 所有后缀加 --c-steps- / --mp-steps-。状态为 wait / process / finish / error，disabled 只禁止交互，保留进度身份；circle 同时供 navigation 使用。
 
-| 变量组 | wait | process | finish | error |
-| --- | --- | --- | --- | --- |
-| circle-item-bg-* | surface-muted | content-brand | state-selected | content-danger |
-| circle-item-border-color-* | transparent | transparent | transparent | transparent |
-| circle-item-icon-text-color-* | content-secondary | surface-default | content-brand | surface-default |
-| circle-item-title-color-*、dot-item-title-color-* | content-secondary | content-primary | content-primary | content-primary |
-| circle-item-description-color-*、dot-item-description-color-* | content-secondary | content-secondary | content-secondary | content-secondary |
-| dot-item-bg-*、dot-item-border-color-* | content-secondary | content-brand | content-brand | content-danger |
-| arrow-item-bg-* | surface-muted | content-brand | state-selected | content-danger |
-| arrow-item-title-color-* | content-secondary | surface-default | content-primary | surface-default |
-| arrow-item-description-color-* | content-secondary | surface-default | content-secondary | surface-default |
+| 变量组                                                        | wait              | process           | finish            | error             |
+| ------------------------------------------------------------- | ----------------- | ----------------- | ----------------- | ----------------- |
+| circle-item-bg-*                                              | surface-muted     | content-brand     | state-selected    | content-danger    |
+| circle-item-border-color-*                                    | transparent       | transparent       | transparent       | transparent       |
+| circle-item-icon-text-color-*                                 | content-secondary | surface-default   | content-brand     | surface-default   |
+| circle-item-title-color-_、dot-item-title-color-_             | content-secondary | content-primary   | content-primary   | content-primary   |
+| circle-item-description-color-_、dot-item-description-color-_ | content-secondary | content-secondary | content-secondary | content-secondary |
+| dot-item-bg-_、dot-item-border-color-_                        | content-secondary | content-brand     | content-brand     | content-danger    |
+| arrow-item-bg-*                                               | surface-muted     | content-brand     | state-selected    | content-danger    |
+| arrow-item-title-color-*                                      | content-secondary | surface-default   | content-primary   | surface-default   |
+| arrow-item-description-color-*                                | content-secondary | surface-default   | content-secondary | surface-default   |
 
 circle / dot 的 item-tail-color-wait 为 border-default，item-tail-color-process 为 content-brand，item-tail-color-error 为 content-danger；没有虚构 finish 尾线变量，已完成连线使用 process 色。连接线为辅助提示，不作为唯一状态信息。navigation-arrow-color 使用 content-secondary；navigation-ink-bg 与 changeable-hover-text-color 使用 content-brand。
 
@@ -1313,15 +1301,15 @@ bg 是节点／箭头表面，icon-text-color 是编号或图标，title / descr
 
 本批登记 12 项共享颜色默认值；两端仅前缀不同。颜色角色描述职责，不依据组件所在平台或品牌改变意义。
 
-| 组件与变量后缀 | system 角色 | 意义与场景 |
-| --- | --- | --- |
-| count-to / countdown：text-color | content-primary | 独立数值、计时文字；计时结束不自动表示错误或成功 |
-| statistic：value-color | content-primary | 主要读数；内部 CountTo 动画继承此色，不抢占父组件颜色 |
-| statistic：title-color / prefix-color / suffix-color / extra-color | content-secondary | 标题、单位、前后缀和补充说明；不能因为字号小就降低到装饰文字对比 |
-| progress-group：text-color | content-primary | 主内容与环形中心文字 |
-| progress-group：muted-color | content-secondary | 数值、百分比等辅助信息，仍须满足正文可读性 |
-| progress-group：track-color | state-hover | 中性 fill2 轨道底色；这里只复用填充层级，不意味着发生 hover |
-| progress-group：tooltip-bg / tooltip-color | surface-tooltip / content-on-dark | 固定深色提示表面及其反差文字，明暗主题都使用此配对 |
+| 组件与变量后缀                                                     | system 角色                       | 意义与场景                                                       |
+| ------------------------------------------------------------------ | --------------------------------- | ---------------------------------------------------------------- |
+| count-to / countdown：text-color                                   | content-primary                   | 独立数值、计时文字；计时结束不自动表示错误或成功                 |
+| statistic：value-color                                             | content-primary                   | 主要读数；内部 CountTo 动画继承此色，不抢占父组件颜色            |
+| statistic：title-color / prefix-color / suffix-color / extra-color | content-secondary                 | 标题、单位、前后缀和补充说明；不能因为字号小就降低到装饰文字对比 |
+| progress-group：text-color                                         | content-primary                   | 主内容与环形中心文字                                             |
+| progress-group：muted-color                                        | content-secondary                 | 数值、百分比等辅助信息，仍须满足正文可读性                       |
+| progress-group：track-color                                        | state-hover                       | 中性 fill2 轨道底色；这里只复用填充层级，不意味着发生 hover      |
+| progress-group：tooltip-bg / tooltip-color                         | surface-tooltip / content-on-dark | 固定深色提示表面及其反差文字，明暗主题都使用此配对               |
 
 ProgressGroup 默认分段、图例图标引用 content-brand，作为需要辨识的图形标记而非按钮背景。运行时优先级为 item.color → 组件 color → system content-brand；用户自定义颜色不保证对比度，需要自行验收。当前未新增组件颜色别名。不要使用百分比或正负数猜测业务上的成功／危险；业务状态由调用方明确指定。
 
@@ -1333,15 +1321,15 @@ ProgressGroup 默认分段、图例图标引用 content-brand，作为需要辨�
 
 本批登记 Hover 2、Icon 1、Paper 5、Ripple 2、Skeleton 20、Space 10，共 40 项完整 root 默认值。共享变量名只差 c / mp 前缀，没有新增别名。Space 依赖的 system space-1…8 同时登记为受管默认值：2 / 4 / 6 / 8 / 12 / 16 / 20 / 24px。
 
-| 组件／变量后缀 | 默认职责与使用场景 |
-| --- | --- |
-| hover：overlay-opacity / overlay-focusing-opacity | 0.04 / 0.12；用宿主 currentColor 作覆盖层，以 opacity 表示强度，不是独立文字色或实心填充色。无状态为 0；focus 高于 hover，不累加。显式 focusing 不因设备类别被隐藏，焦点触发策略由宿主负责。 |
-| icon：size | inherit；随宿主字号缩放，图形为 1em，颜色继承。显式 size 属性覆盖 CSS 变量；需要旧移动端 20px 外观时显式设置 size="20" 或 icon-size:20px，不恢复全局固定大小。独立 SVG 图标不自动消费 Icon 包装器变量。 |
-| paper：background / border-color | surface-default / border-default；普通承载表面不是浮层，也不因暗色而跳到 bg4。内容颜色由宿主继承，调用方需提供适配表面的文字色。 |
-| paper：border-radius / border-width / transition-duration | 4px / 1px / system slow（240ms）；bordered 才消费边框宽度和颜色，round 使用圆形形状，radius 属性覆盖默认圆角。背景变化时长通过组件变量引用 system slow。 |
-| ripple：color / cubic-bezier | currentColor / cubic-bezier(0.68,0.01,0.62,0.6)；波纹继承宿主颜色，曲线控制扩散，不控制文字、宿主背景或整个指令生命周期。自定义波纹颜色由指令参数优先提供。 |
-| skeleton：card / avatar / title-background-color | 均引用 state-hover，即中性 fill2；这里是占位填充层级，不表示发生 hover。title 色同时用于行、Shape 和 fullscreen 占位，不是 scrim 或真实内容背景。 |
-| skeleton：animation-background | transparent → surface-default → transparent 的横向渐变；shimmer 层以 0.3 opacity 混合，避免硬编码白色导致暗色不同。仅 animation 开启时消费；覆盖渐变后仍受此层透明度影响。 |
+| 组件／变量后缀                                            | 默认职责与使用场景                                                                                                                                                                                      |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hover：overlay-opacity / overlay-focusing-opacity         | 0.04 / 0.12；用宿主 currentColor 作覆盖层，以 opacity 表示强度，不是独立文字色或实心填充色。无状态为 0；focus 高于 hover，不累加。显式 focusing 不因设备类别被隐藏，焦点触发策略由宿主负责。            |
+| icon：size                                                | inherit；随宿主字号缩放，图形为 1em，颜色继承。显式 size 属性覆盖 CSS 变量；需要旧移动端 20px 外观时显式设置 size="20" 或 icon-size:20px，不恢复全局固定大小。独立 SVG 图标不自动消费 Icon 包装器变量。 |
+| paper：background / border-color                          | surface-default / border-default；普通承载表面不是浮层，也不因暗色而跳到 bg4。内容颜色由宿主继承，调用方需提供适配表面的文字色。                                                                        |
+| paper：border-radius / border-width / transition-duration | 4px / 1px / system slow（240ms）；bordered 才消费边框宽度和颜色，round 使用圆形形状，radius 属性覆盖默认圆角。背景变化时长通过组件变量引用 system slow。                                                |
+| ripple：color / cubic-bezier                              | currentColor / cubic-bezier(0.68,0.01,0.62,0.6)；波纹继承宿主颜色，曲线控制扩散，不控制文字、宿主背景或整个指令生命周期。自定义波纹颜色由指令参数优先提供。                                             |
+| skeleton：card / avatar / title-background-color          | 均引用 state-hover，即中性 fill2；这里是占位填充层级，不表示发生 hover。title 色同时用于行、Shape 和 fullscreen 占位，不是 scrim 或真实内容背景。                                                       |
+| skeleton：animation-background                            | transparent → surface-default → transparent 的横向渐变；shimmer 层以 0.3 opacity 混合，避免硬编码白色导致暗色不同。仅 animation 开启时消费；覆盖渐变后仍受此层透明度影响。                              |
 
 Skeleton 几何变量保持两端一致：content-padding 16px；card 高 160px、圆角 4px、下间距 16px；avatar 大小 34px、圆角 50%、右间距 16px；title 宽 50%、圆角 10px；row 高 12px、圆角 10px、上间距 10px；Shape 的 sm/md/lg 为 36/48/60px，圆角 4px。这些是组件形态，不为追求数量而全部映射到 spacing；圆形覆盖形状圆角，不覆盖颜色。
 
@@ -1353,15 +1341,15 @@ Space 使用物理 CSS row-gap / column-gap，与 flex direction 不交换：xs 
 
 本阶段新增 6 项组件变量、登记 2 项既有 system 时长默认值。不把所有动效压成同一个时长，也不使用颜色主题切换来改变动效策略。
 
-| 变量后缀（两端只差 c / mp 前缀） | 默认值与职责 |
-| --- | --- |
-| sys-motion-duration-fast | 120ms；轻量状态反馈过渡，不是所有动画的最快档替代品 |
-| sys-motion-duration-slow | 240ms；此批用于承载表面、占位表面的颜色变化 |
-| hover-transition-duration | 引用 system fast；hover / focus 覆盖层透明度过渡，两端一致，focus 仍优先 |
-| paper-transition-duration | 既有变量改为引用 system slow；仅背景色过渡，不影响点击、尺寸或业务时序 |
-| skeleton-transition-duration | 引用 system slow；card、avatar、title、row、fullscreen 占位色变化 |
-| skeleton-animation-duration | 1s；横向扫光单周期，不等同于表面过渡时长 |
-| icon-spin-duration | 1s；内置旋转单周期，不控制名称替换的等待时间 |
+| 变量后缀（两端只差 c / mp 前缀）              | 默认值与职责                                                                                       |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| sys-motion-duration-fast                      | 120ms；轻量状态反馈过渡，不是所有动画的最快档替代品                                                |
+| sys-motion-duration-slow                      | 240ms；此批用于承载表面、占位表面的颜色变化                                                        |
+| hover-transition-duration                     | 引用 system fast；hover / focus 覆盖层透明度过渡，两端一致，focus 仍优先                           |
+| paper-transition-duration                     | 既有变量改为引用 system slow；仅背景色过渡，不影响点击、尺寸或业务时序                             |
+| skeleton-transition-duration                  | 引用 system slow；card、avatar、title、row、fullscreen 占位色变化                                  |
+| skeleton-animation-duration                   | 1s；横向扫光单周期，不等同于表面过渡时长                                                           |
+| icon-spin-duration                            | 1s；内置旋转单周期，不控制名称替换的等待时间                                                       |
 | ripple-expand-duration / ripple-fade-duration | 200ms / 140ms；分别控制 CSS transform 扩散与 opacity 变化，保留 ripple-cubic-bezier 的扩散曲线职责 |
 
 所有 CSS 时长需要有效、非负的时间值。Icon 的 transition 属性依然表示毫秒数的名称切换等待，不能通过 spin-duration 改变。Ripple 的 expand-duration（200ms）控制 transform 扩散，fade-duration（140ms）控制 opacity 显现／消退，cubic-bezier 仅控制扩散曲线；两端默认值与消费者一致。运行时从实际波纹节点所属文档读取计算后的 transform／opacity transition 时长与 delay（支持 s/ms、列表重复与 all），不直接解析未解析的 var()。250ms 分别是从节点创建起的最小展示时间和开始淡出后的最小移除等待，不是视觉 duration、总生命周期或 CSS Token。创建 30ms／激活 20ms 是内部调度；快速释放仍走最小展示流程。
@@ -1409,13 +1397,13 @@ Badge 的默认 status 是 danger，默认通知样式统一为红底白字；bg
 
 Tag 的 color 预设色表示色板选择，不是业务 status。13 种预设色在两端遵循同一规则：
 
-| 状态／变量 | 职责 |
-| --- | --- |
-| 已选中 default：{色名}-bg / bg-hover | 正常／可交互 hover 背景；loading 不消费 hover 值。暗色默认分别为该色第 6 阶的 20% / 35% 透明混合，通过 Token 声明而非选择器写死。 |
-| 已选中 outline：{色名}-text-color | 文字及描边共用，背景始终透明，hover 不套用填充背景。 |
-| {色名}-icon-color | 已选中的前缀、关闭和加载图标颜色，与显式 text-color 的文字覆盖分开。 |
-| {色名}-border-color / border-color-hover | default 变体边框，默认透明；不控制 outline 的同色描边。 |
-| 未选中 checkable | 预设颜色不生效，维持中性；仅非 loading 的 hover 使用 bg-not-checked-hover。 |
+| 状态／变量                               | 职责                                                                                                                              |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 已选中 default：{色名}-bg / bg-hover     | 正常／可交互 hover 背景；loading 不消费 hover 值。暗色默认分别为该色第 6 阶的 20% / 35% 透明混合，通过 Token 声明而非选择器写死。 |
+| 已选中 outline：{色名}-text-color        | 文字及描边共用，背景始终透明，hover 不套用填充背景。                                                                              |
+| {色名}-icon-color                        | 已选中的前缀、关闭和加载图标颜色，与显式 text-color 的文字覆盖分开。                                                              |
+| {色名}-border-color / border-color-hover | default 变体边框，默认透明；不控制 outline 的同色描边。                                                                           |
+| 未选中 checkable                         | 预设颜色不生效，维持中性；仅非 loading 的 hover 使用 bg-not-checked-hover。                                                       |
 
 背景变量可在实例根元素覆盖，在暗色同样生效；根级自定义声明需注意与主题 :root 属性选择器的优先级。color（预设／自定义）优先于 status。自定义 default 的背景与边框由 color 属性内联设置，text-color 可覆盖前景；自定义 outline 的 color 控制描边和默认文字，背景透明。自定义色当前不随 checked 自动回到中性，这与预设色不同，不应假定两条路径完全一致。业务负责自定义颜色、透明混合后的文字可读性。
 
@@ -1450,6 +1438,7 @@ InputTag 的内容密度、默认标签底色和禁用文字由 input-tag-* 控�
 迁移时按职责选择实际入口：外壳背景用 field-variant-{variant}-background 系列，圆角用 field-border-radius，占位文字用 field-placeholder-text-color，清除图标用 field-clear-icon-color / field-clear-icon-size。几何优先使用 size 属性；不要覆盖 internal 变量。旧无消费变量不存在逐项等价替代；内容标签使用下列 InputTag 自身变量。
 
 InputTag 保留 27 项内容变量，已加入无消费检查；两端 Badge / Tag 加 Cedar InputTag 共检查 441 项声明，内容 size / focus / disabled 级联覆盖 80 组。共享默认值契约仍为 553 项；Cedar-only InputTag 不冒充跨端共享组件。默认文字、禁用文字、标签底色与焦点底色分别引用 content-primary、content-disabled、surface-default、state-hover。禁用状态只重绘中性标签，不覆盖显式 color / status；业务自定义颜色的可读性由业务负责。父级 disabled / readonly 优先于 tagProps.closable / checkable，loading 或显式不可关闭的标签也不能用 Backspace 删除。已完成 Cedar 浏览器五档布局、xl 输入与键盘删除、明暗模式以及禁用自定义色的抽验，不代表全组件视觉验收。
+
 ## 字段键盘焦点与错误状态
 
 FieldDecorator 聚焦时不额外绘制外圈 outline；沿用各变体的边框、底线和背景反馈。Input、Textarea、Date、Time 等消费者共用此规则。内部清除、密码切换等按钮保留自身键盘焦点指示。
@@ -1462,7 +1451,6 @@ Input、Textarea、InputNumber 的实际原生控件使用 `caret-color: current
 
 检查 `node bin/field-focus-check.mjs` 与 `node --test bin/field-focus-caret.test.mjs` 核对实际 Less 产物、静态导入链、保留消费和三页生成目录；DOM 回归连接真实 Input／Textarea／InputNumber。Less／JSDOM 不替代原生键盘、焦点对比、绘制或浏览器验收。
 错误／禁用颜色继续按既定优先级覆盖；移除外环不等于错误态键盘焦点可辨识性已通过验收，原生环境条件仍保留。
-
 
 ## 声明归档与真实消费路径（2026-10-12）
 
@@ -1494,19 +1482,18 @@ Input、Textarea、InputNumber 的实际原生控件使用 `caret-color: current
 
 原生缩放与跨浏览器验收必须分别记录浏览器／版本、浏览器自身显示的缩放百分比、实际 DOM 挂载祖先和截图。DPR、缩窄 viewport、CSS zoom／transform 只能提供其他类型的证据，不能单独证明原生 200% 页面缩放。Safari／Firefox 需要对应产品的实际浏览器结果；连接超时、缺少安装或缺少控制入口标为环境阻塞，不作为组件失败，也不能沿用 Chromium 结果记为通过。
 
-
 局部主题有两道边界：真实 DOM 祖先，以及变量的声明位置。自定义属性中的 `var()` 在继承前解析；子节点改 system 变量，不会自动重新计算从根节点继承的组件别名。[CSS 变量规范](https://www.w3.org/TR/css-variables-1/#cycles)
 
-| 场景 | 正确入口 |
-| --- | --- |
-| 全局切换主题 | 在应用根部放置 ThemeProvider，响应式更新 theme；不修改文档根节点 |
-| 局部亮暗主题 | 使用 ThemeProvider 的 theme="light/dark"；显式边界重新声明 palette/system/component 别名，支持嵌套 |
-| 定制局部组件 | style-vars 覆盖主题默认值；未指定 theme 时，只改 palette/system 不等于完整的局部主题重建 |
-| 局部 system 到 component 映射 | 在同一局部宿主显式重新声明需要的组件别名，不依赖根层旧映射 |
-| Teleport 到 body | 库内声明式弹层通过 Vue 上下文继承所属 ThemeProvider；第三方 Teleport 和脱离 Provider 的命令式服务需要显式设置宿主 |
-| 指定 popup-container | 宿主必须已经存在；变量放在目标宿主或真正面板上 |
-| popup-container=false | 保留调用位置的 DOM 继承；同时承担祖先 overflow、transform、定位和层叠的约束 |
-| iframe 宿主元素 | 允许来自另一文档的 HTMLElement；对方文档必须自行加载样式并提供变量，字符串选择器只查调用方文档 |
+| 场景                          | 正确入口                                                                                                          |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| 全局切换主题                  | 在应用根部放置 ThemeProvider，响应式更新 theme；不修改文档根节点                                                  |
+| 局部亮暗主题                  | 使用 ThemeProvider 的 theme="light/dark"；显式边界重新声明 palette/system/component 别名，支持嵌套                |
+| 定制局部组件                  | style-vars 覆盖主题默认值；未指定 theme 时，只改 palette/system 不等于完整的局部主题重建                          |
+| 局部 system 到 component 映射 | 在同一局部宿主显式重新声明需要的组件别名，不依赖根层旧映射                                                        |
+| Teleport 到 body              | 库内声明式弹层通过 Vue 上下文继承所属 ThemeProvider；第三方 Teleport 和脱离 Provider 的命令式服务需要显式设置宿主 |
+| 指定 popup-container          | 宿主必须已经存在；变量放在目标宿主或真正面板上                                                                    |
+| popup-container=false         | 保留调用位置的 DOM 继承；同时承担祖先 overflow、transform、定位和层叠的约束                                       |
+| iframe 宿主元素               | 允许来自另一文档的 HTMLElement；对方文档必须自行加载样式并提供变量，字符串选择器只查调用方文档                    |
 
 从自定义宿主经 inline 切回 body 时，必须真正迁出旧宿主，恢复 body/html 的变量继承；“仍属于 body 的后代”不是有效断言，因为旧宿主也可能位于 body 内。打开中切换和关闭后重新打开都遵守此规则。inline 状态的滚动锁按实际面板文档的 body 归属，不沿用之前的宿主锁。
 
@@ -1537,7 +1524,6 @@ ThemeProvider 的显式 theme 边界通过按需 CSS 重建主题依赖链，库
 公共 `--PREFIX-sys-font-family` 以 `initial` 使 var() 回退生效，未配置时保留既有字体来源；品牌字体文件由业务显式加载。`--PREFIX-field-caret-color` 默认 currentColor，Input、InputNumber、Textarea 各自的 caret-color Token 默认引用它，允许分组件覆盖。根品牌切换仍由 ThemeProvider 所有。
 
 Maple 的 `--mp-safe-area-top/right/bottom/left` 属于运行宿主值，不写入品牌主题。SafeArea.setInsets 独立管理目标 DOM 上四边覆盖，0 有效、null 清除，不修改品牌样式节点。SafeArea 与贴边容器只为所选边增加留白并在实际 DOM 后代建立消费边界；Teleport 按目标 DOM 继承，不能由 Vue inject 猜测原生可用区。App 单一适配器管理初始化、变更订阅和清理；键盘几何独立验证。完整入口见 Maple safe-area 文档。
-
 
 ### 内容色默认对比度
 

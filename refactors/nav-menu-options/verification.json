@@ -5,15 +5,8 @@
     "structure": "options/children only",
     "selection": "modelValue/defaultValue",
     "expansion": "expandedKeys/defaultExpandedKeys",
-    "modes": [
-      "vertical",
-      "horizontal"
-    ],
-    "content": [
-      "VNode",
-      "render function",
-      "label/icon/extra scoped slots"
-    ],
+    "modes": ["vertical", "horizontal"],
+    "content": ["VNode", "render function", "label/icon/extra scoped slots"],
     "removed": [
       "NavMenuItem",
       "NavMenuSubMenu",
@@ -67,10 +60,7 @@
     "browserTests": 10,
     "build": "passed",
     "publicTypes": "passed",
-    "ssr": [
-      "es",
-      "lib"
-    ],
+    "ssr": ["es", "lib"],
     "triggerConsumers": 24
   }
 }

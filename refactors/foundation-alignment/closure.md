@@ -6,18 +6,18 @@
 
 ## 收敛结果与适配边界
 
-| 范围 | 共同实现及真实消费者 | 保留的适配与原因 |
-| --- | --- | --- |
-| Menu | 五个 SFC 主体、props/types/context/level/options/render/selection/keyboard 独立同源副本 | platform 仅原生组件、外观、Trigger 参数与默认值；两端公开 Submenu，options/插槽使用同一控制器 |
-| 模态 | modal-focus、popup-transition、popup-layer、scroll-lock；Dialog/Drawer/Popup/Overlay | Dialog/Drawer 的按钮、拖动、业务 beforeClose 与布局保留；Popup 的 safe-area 和位置动画保留 |
-| Trigger | 共同状态、交互、引用、渲染、几何、尺寸观察；补齐 visualViewport 事件及视口避让 | Cedar 定位计算与 Maple Popper 适配保留；偏移、cover、strategy 等原有扩展不机械改名或删除 |
-| 选项 | option-data 字段/身份/搜索；Menu、Select、AutoComplete、Cascader 接入 | Cedar 注册信息含 render/tagProps/分组，Maple 注册信息来自原生 Option/provider。两端数据适配器继续存在，不宣称整个 Select 控制器逐行相同 |
-| 树选择 | tree-data 的节点路径查找、叶子遍历；Cascader 接入，禁用子树不参与级联 | Cedar 的懒加载/selectionDisabled 与 Maple 的 list/picker 草稿面板独立适配；Cedar TreeSelect 无 Maple 同职责组件，不创建空壳副本 |
-| Form/Input | async-request、field-path、input-composition；真实 FormItem、useValidation、Input/useInput 接入 | b-validate 与函数/Zod 的规则表达、各端表单上下文继续适配。未改显式 disabled 覆盖/继承的原有端侧 API |
-| Date/Time/Range | picker-data 的闰年/月天数、时钟秒数、12 小时换算、跨夜、有限步长；日期/时间/范围面板接入；Maple 范围复用 datetime 列与拼接 | Cedar Dayjs 格式/周/季度及输入面板，Maple 字符串、时钟/滚轮、草稿确认保留。这些 UI 和模型不是同一个公开接口 |
-| 生命周期工具 | useChildren/useParent/useTouch/useId 独立复制；组件顺序、KeepAlive、卸载清理修复；原包入口不变 | Vue 3.5 使用原生 SSR ID；较老 Vue 延迟到 mounted 分配 ID，避免把进程 uid 渲染进服务端 HTML。useClientId 仍用于仅客户端 ID |
-| 观察器 | resize-observer、responsive-observe 独立复制；Trigger、Carousel、ResizeObserver 包装器与响应式布局接入 | 原生 ResizeObserver/polyfill 为平台依赖；Cedar 两套虚拟列表及其消费者保留单端实现，Maple 没有对应虚拟列表 API |
-| 配置/Locale/主题 | 两端继续使用独立 provide/inject 与主题入口；Maple StyleProvider 补齐无 DOM 调用保护 | 前缀、语言字典结构、主题注入范围不同，不合并全局单例。响应式断点和监听清理已共同化 |
+| 范围             | 共同实现及真实消费者                                                                                                       | 保留的适配与原因                                                                                                                        |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Menu             | 五个 SFC 主体、props/types/context/level/options/render/selection/keyboard 独立同源副本                                    | platform 仅原生组件、外观、Trigger 参数与默认值；两端公开 Submenu，options/插槽使用同一控制器                                           |
+| 模态             | modal-focus、popup-transition、popup-layer、scroll-lock；Dialog/Drawer/Popup/Overlay                                       | Dialog/Drawer 的按钮、拖动、业务 beforeClose 与布局保留；Popup 的 safe-area 和位置动画保留                                              |
+| Trigger          | 共同状态、交互、引用、渲染、几何、尺寸观察；补齐 visualViewport 事件及视口避让                                             | Cedar 定位计算与 Maple Popper 适配保留；偏移、cover、strategy 等原有扩展不机械改名或删除                                                |
+| 选项             | option-data 字段/身份/搜索；Menu、Select、AutoComplete、Cascader 接入                                                      | Cedar 注册信息含 render/tagProps/分组，Maple 注册信息来自原生 Option/provider。两端数据适配器继续存在，不宣称整个 Select 控制器逐行相同 |
+| 树选择           | tree-data 的节点路径查找、叶子遍历；Cascader 接入，禁用子树不参与级联                                                      | Cedar 的懒加载/selectionDisabled 与 Maple 的 list/picker 草稿面板独立适配；Cedar TreeSelect 无 Maple 同职责组件，不创建空壳副本         |
+| Form/Input       | async-request、field-path、input-composition；真实 FormItem、useValidation、Input/useInput 接入                            | b-validate 与函数/Zod 的规则表达、各端表单上下文继续适配。未改显式 disabled 覆盖/继承的原有端侧 API                                     |
+| Date/Time/Range  | picker-data 的闰年/月天数、时钟秒数、12 小时换算、跨夜、有限步长；日期/时间/范围面板接入；Maple 范围复用 datetime 列与拼接 | Cedar Dayjs 格式/周/季度及输入面板，Maple 字符串、时钟/滚轮、草稿确认保留。这些 UI 和模型不是同一个公开接口                             |
+| 生命周期工具     | useChildren/useParent/useTouch/useId 独立复制；组件顺序、KeepAlive、卸载清理修复；原包入口不变                             | Vue 3.5 使用原生 SSR ID；较老 Vue 延迟到 mounted 分配 ID，避免把进程 uid 渲染进服务端 HTML。useClientId 仍用于仅客户端 ID               |
+| 观察器           | resize-observer、responsive-observe 独立复制；Trigger、Carousel、ResizeObserver 包装器与响应式布局接入                     | 原生 ResizeObserver/polyfill 为平台依赖；Cedar 两套虚拟列表及其消费者保留单端实现，Maple 没有对应虚拟列表 API                           |
+| 配置/Locale/主题 | 两端继续使用独立 provide/inject 与主题入口；Maple StyleProvider 补齐无 DOM 调用保护                                        | 前缀、语言字典结构、主题注入范围不同，不合并全局单例。响应式断点和监听清理已共同化                                                      |
 
 ## 修复的行为
 

@@ -52,10 +52,14 @@ const normalizeMapleBase = (name) => {
 
 async function walk(root) {
   const entries = await readdir(root, { withFileTypes: true })
-  return (await Promise.all(entries.map((entry) => {
-    const path = resolve(root, entry.name)
-    return entry.isDirectory() ? walk(path) : path.endsWith('.svg') ? [path] : []
-  }))).flat()
+  return (
+    await Promise.all(
+      entries.map((entry) => {
+        const path = resolve(root, entry.name)
+        return entry.isDirectory() ? walk(path) : path.endsWith('.svg') ? [path] : []
+      }),
+    )
+  ).flat()
 }
 
 async function collect(root, kind) {

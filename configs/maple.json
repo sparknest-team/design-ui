@@ -8,16 +8,7 @@
   "docs": "docs/zh-CN.md",
   "testGlobs": ["__tests__/*.test.*", "__tests__/*.spec.*"],
   "styleGlobs": ["*.less"],
-  "ignoreComponents": [
-    "atomic-css",
-    "context",
-    "lazy",
-    "locale",
-    "styles",
-    "themes",
-    "utilities",
-    "utils"
-  ],
+  "ignoreComponents": ["atomic-css", "context", "lazy", "locale", "styles", "themes", "utilities", "utils"],
   "subcomponents": [
     "avatar-group",
     "tab-bar-item",

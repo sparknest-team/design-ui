@@ -1,10 +1,27 @@
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { existsSync, readFileSync, readdirSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { basename, dirname, relative, resolve } from 'node:path'
 
-export const mapleGuides = ['atomic-css', 'atomic-usage', 'color', 'palette', 'style', 'themes', 'typography', 'utilities']
-export const cedarGuides = ['style/atomic-css', 'style/atomic-usage', 'style/color', 'style/elevation', 'style/palette', 'style/typography', 'style/utilities']
+export const mapleGuides = [
+  'atomic-css',
+  'atomic-usage',
+  'color',
+  'palette',
+  'style',
+  'themes',
+  'typography',
+  'utilities',
+]
+export const cedarGuides = [
+  'style/atomic-css',
+  'style/atomic-usage',
+  'style/color',
+  'style/elevation',
+  'style/palette',
+  'style/typography',
+  'style/utilities',
+]
 
 export function documentationPages(root, library) {
   const ui = resolve(root, `packages/ui`)
@@ -22,20 +39,35 @@ export function documentationPages(root, library) {
   for (const document of documents.sort()) {
     const directory = relative(src, library === 'cedar' ? dirname(document) : dirname(dirname(document)))
     const markdown = readFileSync(document, 'utf8').replace(/<!--[\s\S]*?-->/g, '')
-    const themeAlias = directory === 'theme-provider' && markdown.includes(library === 'cedar' ? '](/themes/)' : '](#/zh-CN/themes)')
+    const themeAlias =
+      directory === 'theme-provider' && markdown.includes(library === 'cedar' ? '](/themes/)' : '](#/zh-CN/themes)')
     const demoDocument = themeAlias
       ? resolve(src, library === 'cedar' ? 'themes/README.md' : 'themes/docs/zh-CN.md')
       : document
     const demoMarkdown = themeAlias ? readFileSync(demoDocument, 'utf8').replace(/<!--[\s\S]*?-->/g, '') : markdown
     const route = themeAlias
-      ? library === 'cedar' ? '/themes/' : '/#/zh-CN/themes'
-      : library === 'cedar' ? /^permalink:\s*(\/components\/\S+)/m.exec(markdown)?.[1] : `/#/zh-CN/${directory}`
+      ? library === 'cedar'
+        ? '/themes/'
+        : '/#/zh-CN/themes'
+      : library === 'cedar'
+        ? /^permalink:\s*(\/components\/\S+)/m.exec(markdown)?.[1]
+        : `/#/zh-CN/${directory}`
     if (!route) continue
     const guide = (library === 'cedar' ? cedarGuides : mapleGuides).includes(directory)
-    const component = themeAlias ? directory : guide ? directory : library === 'cedar' ? basename(route.replace(/\/$/, '')) : directory
-    const references = [...demoMarkdown.matchAll(library === 'cedar'
-      ? /^[ \t]{0,3}<demo\b[^>]*\bsrc="([^"]+\.vue)"/gm
-      : /```demo\s*\n([^\n]+\.vue)\s*\n```|<demo\b[^>]*\bsrc="([^"]+\.vue)"/g)]
+    const component = themeAlias
+      ? directory
+      : guide
+        ? directory
+        : library === 'cedar'
+          ? basename(route.replace(/\/$/, ''))
+          : directory
+    const references = [
+      ...demoMarkdown.matchAll(
+        library === 'cedar'
+          ? /^[ \t]{0,3}<demo\b[^>]*\bsrc="([^"]+\.vue)"/gm
+          : /```demo\s*\n([^\n]+\.vue)\s*\n```|<demo\b[^>]*\bsrc="([^"]+\.vue)"/g,
+      ),
+    ]
     assert.ok(guide || references.length, `${library}/${component}: component documentation must have a runnable demo`)
     const demos = references.map((match) => {
       const file = resolve(dirname(demoDocument), (match[1] ?? match[2]).trim())
@@ -62,8 +94,10 @@ export function sourceFingerprint(root, library) {
   function walk(directory) {
     for (const entry of readdirSync(directory, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
       const file = resolve(directory, entry.name)
-      if (entry.isDirectory()) { if (entry.name !== '__tests__') walk(file) }
-      else if (/\.(?:[cm]?[jt]sx?|vue|less|scss|css|md|json)$/.test(file)) hash.update(relative(source, file)).update('\0').update(readFileSync(file)).update('\0')
+      if (entry.isDirectory()) {
+        if (entry.name !== '__tests__') walk(file)
+      } else if (/\.(?:[cm]?[jt]sx?|vue|less|scss|css|md|json)$/.test(file))
+        hash.update(relative(source, file)).update('\0').update(readFileSync(file)).update('\0')
     }
   }
   walk(source)
@@ -80,17 +114,32 @@ export function productionFingerprint(root, library) {
       const file = resolve(directory, entry.name)
       if (entry.isDirectory()) {
         if (!entry.name.startsWith('.') && !['__tests__', 'node_modules'].includes(entry.name)) walk(file)
-      } else if (/\.(?:[cm]?[jt]sx?|vue|less|scss|css|md|json|html|svg)$/.test(file) && !/\.(?:test|spec)\./.test(file)) {
+      } else if (
+        /\.(?:[cm]?[jt]sx?|vue|less|scss|css|md|json|html|svg)$/.test(file) &&
+        !/\.(?:test|spec)\./.test(file)
+      ) {
         hash.update(relative(root, file)).update('\0').update(readFileSync(file)).update('\0')
       }
     }
   }
   for (const directory of library === 'cedar'
     ? ['packages/ui/docs', 'packages/ui/docs/.vuepress', 'packages/resolver/src']
-    : ['packages/cli/src', 'packages/cli/site', 'packages/resolver/src']) walk(resolve(root, directory))
+    : ['packages/cli/src', 'packages/cli/site', 'packages/resolver/src'])
+    walk(resolve(root, directory))
   walk(resolve(root, '../design-ui/packages/ui-doc-preview/src'))
   walk(resolve(root, '../design-ui/packages/ui-build/src'))
-  for (const name of ['package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', `packages/ui/package.json`, `packages/ui/maple.config.js`, `packages/ui/maple.config.ts`, `packages/ui/maple.config.mjs`, 'packages/cli/package.json', 'packages/ui/docs/.vuepress/public/logo.svg', '../design-ui/packages/ui-doc-preview/package.json']) {
+  for (const name of [
+    'package.json',
+    'pnpm-lock.yaml',
+    'pnpm-workspace.yaml',
+    `packages/ui/package.json`,
+    `packages/ui/maple.config.js`,
+    `packages/ui/maple.config.ts`,
+    `packages/ui/maple.config.mjs`,
+    'packages/cli/package.json',
+    'packages/ui/docs/.vuepress/public/logo.svg',
+    '../design-ui/packages/ui-doc-preview/package.json',
+  ]) {
     const file = resolve(root, name)
     if (existsSync(file)) hash.update(name).update('\0').update(readFileSync(file)).update('\0')
   }
@@ -105,7 +154,10 @@ export function demoIndex(page, requested) {
 }
 
 export function mobileSection(page, demo) {
-  const candidates = [resolve(page.ui, 'src', page.component, 'example/index.vue'), resolve(dirname(demo.file), '../index.vue')]
+  const candidates = [
+    resolve(page.ui, 'src', page.component, 'example/index.vue'),
+    resolve(dirname(demo.file), '../index.vue'),
+  ]
   for (const file of candidates) {
     if (!existsSync(file)) continue
     const source = readFileSync(file, 'utf8')

@@ -41,7 +41,8 @@ for (const { label, manifest, message } of [
   {
     label: 'repository URL for another repository',
     manifest: { repository: { ...repository, url: 'git+https://github.com/sparknest-team/maple-design-mobile.git' } },
-    message: 'repository.url "git+https://github.com/sparknest-team/maple-design-mobile.git" does not match sparknest-team/design-ui',
+    message:
+      'repository.url "git+https://github.com/sparknest-team/maple-design-mobile.git" does not match sparknest-team/design-ui',
   },
   {
     label: 'missing repository directory',

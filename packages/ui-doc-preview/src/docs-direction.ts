@@ -11,11 +11,17 @@ export function useDocsDirection() {
     try {
       const value = window.localStorage.getItem(docsDirectionStorageKey)
       if (isDirection(value)) return value
-    } catch { /* Browsers may disable persistent storage. */ }
+    } catch {
+      /* Browsers may disable persistent storage. */
+    }
     return 'ltr'
   }
   function frameOrigin(frame: HTMLIFrameElement) {
-    try { return new URL(frame.src, window.location.href).origin } catch { return undefined }
+    try {
+      return new URL(frame.src, window.location.href).origin
+    } catch {
+      return undefined
+    }
   }
   function send(frame: HTMLIFrameElement) {
     const origin = frameOrigin(frame)
@@ -26,7 +32,11 @@ export function useDocsDirection() {
   function apply(value: DocsDirection, broadcast = true) {
     direction.value = value
     document.documentElement.dir = value
-    try { window.localStorage.setItem(docsDirectionStorageKey, value) } catch { /* Keep the control usable without storage. */ }
+    try {
+      window.localStorage.setItem(docsDirectionStorageKey, value)
+    } catch {
+      /* Keep the control usable without storage. */
+    }
     const event = document.createEvent('CustomEvent')
     event.initCustomEvent('sparknest-docs-direction-change', false, false, value)
     window.dispatchEvent(event)
@@ -43,7 +53,11 @@ export function useDocsDirection() {
     if (event.target instanceof HTMLIFrameElement) send(event.target)
   }
   function parentOrigin() {
-    try { return document.referrer ? new URL(document.referrer).origin : undefined } catch { return undefined }
+    try {
+      return document.referrer ? new URL(document.referrer).origin : undefined
+    } catch {
+      return undefined
+    }
   }
   function message(event: MessageEvent) {
     if (event.data?.type === 'sparknest-docs-direction-ready') {
@@ -51,8 +65,10 @@ export function useDocsDirection() {
         if (frame.contentWindow === event.source && frameOrigin(frame) === event.origin) send(frame)
       }
     } else if (
-      event.data?.type === 'sparknest-docs-direction' && isDirection(event.data.direction) &&
-      window.parent !== window && event.source === window.parent &&
+      event.data?.type === 'sparknest-docs-direction' &&
+      isDirection(event.data.direction) &&
+      window.parent !== window &&
+      event.source === window.parent &&
       (event.origin === window.location.origin || event.origin === parentOrigin())
     ) {
       apply(event.data.direction)
@@ -65,7 +81,8 @@ export function useDocsDirection() {
     window.addEventListener('sparknest-docs-direction-change', sync)
     document.addEventListener('load', load, true)
     const origin = parentOrigin()
-    if (window.parent !== window && origin) window.parent.postMessage({ type: 'sparknest-docs-direction-ready' }, origin)
+    if (window.parent !== window && origin)
+      window.parent.postMessage({ type: 'sparknest-docs-direction-ready' }, origin)
   })
   onBeforeUnmount(() => {
     window.removeEventListener('storage', storage)

@@ -1,18 +1,20 @@
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const slash = value => value.split(path.sep).join('/')
-const read = file => readFileSync(file, 'utf8').replace(/\r\n/g, '\n')
-const stripFrontmatter = text => text.replace(/^---\n[\s\S]*?\n---\n*/, '')
+const slash = (value) => value.split(path.sep).join('/')
+const read = (file) => readFileSync(file, 'utf8').replace(/\r\n/g, '\n')
+const stripFrontmatter = (text) => text.replace(/^---\n[\s\S]*?\n---\n*/, '')
 
 function walk(dir) {
   if (!existsSync(dir)) return []
-  return readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name, 'en')).flatMap(entry => {
-    if (entry.name.startsWith('.') || entry.name === 'node_modules') return []
-    const file = path.join(dir, entry.name)
-    return entry.isDirectory() ? walk(file) : [file]
-  })
+  return readdirSync(dir, { withFileTypes: true })
+    .sort((a, b) => a.name.localeCompare(b.name, 'en'))
+    .flatMap((entry) => {
+      if (entry.name.startsWith('.') || entry.name === 'node_modules') return []
+      const file = path.join(dir, entry.name)
+      return entry.isDirectory() ? walk(file) : [file]
+    })
 }
 
 export function collectPages(root, platform) {
@@ -29,16 +31,24 @@ export function collectPages(root, platform) {
       if (!route) continue
       locale = route.startsWith('/en/') ? 'en-US' : 'zh-CN'
     } else {
-      const match = source.match(/^docs\/([^/]+)\.(zh-CN|en-US)\.md$/)
-        ?? source.match(/^src\/(.+)\/docs\/(zh-CN|en-US)\.md$/)
+      const match =
+        source.match(/^docs\/([^/]+)\.(zh-CN|en-US)\.md$/) ?? source.match(/^src\/(.+)\/docs\/(zh-CN|en-US)\.md$/)
       if (!match) continue
       const [, name, language] = match
       locale = language
       route = `/${locale}/${name}`
     }
     const content = stripFrontmatter(raw)
-    const slug = route.replace(/^\/en\//, '/').replace(/^\/(?:zh-CN|en-US)\//, '/').replace(/^\/|\/$/g, '') || 'index'
-    const title = content.match(/^#\s+(.+)$/m)?.[1] ?? raw.match(/^heroText:\s*(.+)$/m)?.[1] ?? route.split('/').filter(Boolean).at(-1) ?? 'Documentation'
+    const slug =
+      route
+        .replace(/^\/en\//, '/')
+        .replace(/^\/(?:zh-CN|en-US)\//, '/')
+        .replace(/^\/|\/$/g, '') || 'index'
+    const title =
+      content.match(/^#\s+(.+)$/m)?.[1] ??
+      raw.match(/^heroText:\s*(.+)$/m)?.[1] ??
+      route.split('/').filter(Boolean).at(-1) ??
+      'Documentation'
     const output = `llms/${locale}/${slug}.md`
     pages.push({ file, source, route, locale, title, output, content })
   }
@@ -52,49 +62,63 @@ export function collectPages(root, platform) {
 }
 
 export function renderPage(page, pages, root, bundled = false) {
-  const example = reference => {
+  const example = (reference) => {
     const file = path.resolve(path.dirname(page.file), reference.trim())
     if (!file.startsWith(`${path.resolve(root)}${path.sep}`) || !existsSync(file)) {
       throw new Error(`Missing or external demo in ${page.source}: ${reference}`)
     }
     const code = read(file).trimEnd()
-    const fence = '`'.repeat(Math.max(3, ...Array.from(code.matchAll(/`+/g), match => match[0].length + 1)))
+    const fence = '`'.repeat(Math.max(3, ...Array.from(code.matchAll(/`+/g), (match) => match[0].length + 1)))
     return `Example source: ${slash(path.relative(root, file))}\n\n${fence}vue\n${code}\n${fence}`
   }
   // Treat a demo fence as an include; all other fences remain literal code.
-  let content = page.content.replace(/^(`{3,}|~{3,})([^\n]*)\n[\s\S]*?^\1[ \t]*$|<demo\s+src=["']([^"']+)["'][^>]*?(?:\/>|>\s*<\/demo>)/gm, (block, fence, info, reference) => {
-    if (reference) return example(reference)
-    if (info.trim() === 'demo') return example(block.trimEnd().split('\n').slice(1, -1).join('\n'))
-    return block
-  })
+  let content = page.content.replace(
+    /^(`{3,}|~{3,})([^\n]*)\n[\s\S]*?^\1[ \t]*$|<demo\s+src=["']([^"']+)["'][^>]*?(?:\/>|>\s*<\/demo>)/gm,
+    (block, fence, info, reference) => {
+      if (reference) return example(reference)
+      if (info.trim() === 'demo') return example(block.trimEnd().split('\n').slice(1, -1).join('\n'))
+      return block
+    },
+  )
   // Rewrite documentation links to their standalone Markdown counterparts.
   // Leave fenced code untouched, including Vue templates and string literals.
-  let inFence = false, fence = ''
-  content = content.split('\n').map(line => {
-    const marker = line.match(/^\s*(`{3,}|~{3,})/)
-    if (marker) {
-      if (!inFence) { inFence = true; fence = marker[1] }
-      else if (marker[1][0] === fence[0] && marker[1].length >= fence.length) inFence = false
-      return line
-    }
-    if (inFence) return line
-    return line.replace(/(!?\[[^\]]*\]\()([^\s)]+)(\))/g, (all, start, href, end) => {
-      if (/^(?:[a-z]+:|#|\/\/)/i.test(href)) return all
-      const [target, hash] = href.split('#')
-      const resolved = path.resolve(path.dirname(page.file), target)
-      const linked = pages.find(candidate => candidate.file === resolved || candidate.route.replace(/\/$/, '') === target.replace(/\/$/, ''))
-      if (linked) {
-        const relative = slash(path.relative(bundled ? '.' : path.dirname(page.output), linked.output))
-        return `${start}${relative}${hash ? `#${hash}` : ''}${end}`
+  let inFence = false,
+    fence = ''
+  content = content
+    .split('\n')
+    .map((line) => {
+      const marker = line.match(/^\s*(`{3,}|~{3,})/)
+      if (marker) {
+        if (!inFence) {
+          inFence = true
+          fence = marker[1]
+        } else if (marker[1][0] === fence[0] && marker[1].length >= fence.length) inFence = false
+        return line
       }
-      // Public assets are still served by the documentation site.
-      if (target.startsWith('/') || /^(?:\.\.?\/)+llms(?:-full)?\.txt$/.test(target)) {
-        const relative = slash(path.relative(bundled ? '.' : path.dirname(page.output), target.replace(/^(?:\.\.?\/)+|^\//, '')))
-        return `${start}${relative}${hash ? `#${hash}` : ''}${end}`
-      }
-      return all
+      if (inFence) return line
+      return line.replace(/(!?\[[^\]]*\]\()([^\s)]+)(\))/g, (all, start, href, end) => {
+        if (/^(?:[a-z]+:|#|\/\/)/i.test(href)) return all
+        const [target, hash] = href.split('#')
+        const resolved = path.resolve(path.dirname(page.file), target)
+        const linked = pages.find(
+          (candidate) =>
+            candidate.file === resolved || candidate.route.replace(/\/$/, '') === target.replace(/\/$/, ''),
+        )
+        if (linked) {
+          const relative = slash(path.relative(bundled ? '.' : path.dirname(page.output), linked.output))
+          return `${start}${relative}${hash ? `#${hash}` : ''}${end}`
+        }
+        // Public assets are still served by the documentation site.
+        if (target.startsWith('/') || /^(?:\.\.?\/)+llms(?:-full)?\.txt$/.test(target)) {
+          const relative = slash(
+            path.relative(bundled ? '.' : path.dirname(page.output), target.replace(/^(?:\.\.?\/)+|^\//, '')),
+          )
+          return `${start}${relative}${hash ? `#${hash}` : ''}${end}`
+        }
+        return all
+      })
     })
-  }).join('\n')
+    .join('\n')
   return `<!-- Source: ${page.source}; locale: ${page.locale}; page: ${page.route} -->\n\n${content.trim()}\n`
 }
 
@@ -112,7 +136,7 @@ export function generateDocs({ root, platform, output }) {
     let localizedIndex = `${intro}Documentation language: ${locale}.\n\n- [Full documentation](./llms-full.${locale}.txt)\n`
     let localizedFull = `${intro}Documentation language: ${locale}.\n`
     index += `\n## ${locale}\n\n`
-    for (const page of pages.filter(page => page.locale === locale)) {
+    for (const page of pages.filter((page) => page.locale === locale)) {
       const content = renderPage(page, pages, root)
       artifacts.set(page.output, content)
       const entry = `- [${page.title.replace(/[\[\]]/g, '')}](./${page.output}): ${page.route}\n`

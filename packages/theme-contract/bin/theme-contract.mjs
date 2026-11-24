@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 import { readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -18,7 +17,9 @@ if (command === 'sync') {
   const contract = JSON.parse(readFileSync(path, 'utf8'))
   contract.tokens = collectThemeContract(sources)
   writeFileSync(path, `${JSON.stringify(contract, null, 2)}\n`)
-  console.log(`Theme contract synchronized: ${contract.tokens.system.length} system tokens, ${contract.components.length} components.`)
+  console.log(
+    `Theme contract synchronized: ${contract.tokens.system.length} system tokens, ${contract.components.length} components.`,
+  )
 } else if (command === 'check') {
   const result = checkThemeContract(sources)
   console.log(

@@ -40,12 +40,12 @@ Chromium 的滑动通过 CDP 注入；Firefox/WebKit 的滑动通过合成事件
 
 ## 移动组件库对照（2026-10-29 核对）
 
-| 组件库 / 来源 | 官方声明或配置 | 对 Maple 的含义 |
-| --- | --- | --- |
-| [Vant 3/4 官方 README](https://github.com/youzan/vant/blob/main/README.zh-CN.md#浏览器支持) | Chrome >= 51、iOS >= 10 | 移动库通常给最低版本；不等于 Maple 现有功能能运行在同一下限 |
-| [Varlet dev 的 browserslist](https://github.com/varletjs/varlet/blob/dev/.browserslistrc) | Chrome >= 54、iOS >= 10 | 这是构建配置，不应扩写成全部组件真机认证；本地 varlet 配置与其一致 |
-| [Ant Design Mobile 快速上手源码](https://github.com/ant-design/ant-design-mobile/blob/master/docs/guide/quick-start.zh.md) | 建议 Babel 覆盖 iOS Safari >= 10、Chrome >= 49，并编译 node_modules | 使用方构建也是兼容条件，不能只配置库自身 JS target |
-| [NutUI v4 当前 README](https://github.com/jd-opensource/nutui/blob/v4/README.md) | 当前阅读页未列数值浏览器下限 | 不采用第三方文章或旧版 NutUI 的数值冒充当前官方要求 |
+| 组件库 / 来源                                                                                                              | 官方声明或配置                                                      | 对 Maple 的含义                                                    |
+| -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [Vant 3/4 官方 README](https://github.com/youzan/vant/blob/main/README.zh-CN.md#浏览器支持)                                | Chrome >= 51、iOS >= 10                                             | 移动库通常给最低版本；不等于 Maple 现有功能能运行在同一下限        |
+| [Varlet dev 的 browserslist](https://github.com/varletjs/varlet/blob/dev/.browserslistrc)                                  | Chrome >= 54、iOS >= 10                                             | 这是构建配置，不应扩写成全部组件真机认证；本地 varlet 配置与其一致 |
+| [Ant Design Mobile 快速上手源码](https://github.com/ant-design/ant-design-mobile/blob/master/docs/guide/quick-start.zh.md) | 建议 Babel 覆盖 iOS Safari >= 10、Chrome >= 49，并编译 node_modules | 使用方构建也是兼容条件，不能只配置库自身 JS target                 |
+| [NutUI v4 当前 README](https://github.com/jd-opensource/nutui/blob/v4/README.md)                                           | 当前阅读页未列数值浏览器下限                                        | 不采用第三方文章或旧版 NutUI 的数值冒充当前官方要求                |
 
 结论：Maple 同时维护“候选最低版本 + 最新两个稳定版本重点保障 + 宿主 WebView 独立验收”。现阶段不直接承诺 iOS 10 / Chrome 51；源码依赖的 color-mix、:has、dvh 和原生 API 都需要另外降级与测试。最低版本原生验收项强制核对实际版本，不能拿更新浏览器的结果代替最低边界。
 

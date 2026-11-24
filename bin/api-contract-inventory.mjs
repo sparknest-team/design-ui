@@ -1,6 +1,6 @@
 import fs from 'node:fs'
-import path from 'node:path'
 import { createRequire } from 'node:module'
+import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 // Read-only inventory of actual public runtime Props exports, including child components.
@@ -25,15 +25,18 @@ function inventory(relative) {
     const symbol = exported.flags & ts.SymbolFlags.Alias ? checker.getAliasedSymbol(exported) : exported
     if (!symbol.valueDeclaration) continue
     const type = checker.getTypeOfSymbolAtLocation(symbol, symbol.valueDeclaration)
-    const props = checker.getPropertiesOfType(type).map(prop => prop.name).sort()
+    const props = checker
+      .getPropertiesOfType(type)
+      .map((prop) => prop.name)
+      .sort()
     result.set(exported.name, { props, source: path.relative(root, symbol.valueDeclaration.getSourceFile().fileName) })
   }
   return result
 }
 const cedar = inventory('cedar-design-web/packages/ui')
 const maple = inventory('maple-design-mobile/packages/ui')
-const shared = [...cedar.keys()].filter(name => maple.has(name)).sort()
-const cell = values => values.length ? values.map(value => '`' + value + '`').join(', ') : '—'
+const shared = [...cedar.keys()].filter((name) => maple.has(name)).sort()
+const cell = (values) => (values.length ? values.map((value) => '`' + value + '`').join(', ') : '—')
 const lines = [
   '# 公共 Props 导出集合复核',
   '',
@@ -47,11 +50,22 @@ const lines = [
   '| --- | --- | --- | --- |',
 ]
 for (const name of shared) {
-  const a = cedar.get(name).props, b = maple.get(name).props
-  lines.push(`| ${name} | ${a.length} / ${b.length} | ${cell(a.filter(key => !b.includes(key)))} | ${cell(b.filter(key => !a.includes(key)))} |`)
+  const a = cedar.get(name).props,
+    b = maple.get(name).props
+  lines.push(
+    `| ${name} | ${a.length} / ${b.length} | ${cell(a.filter((key) => !b.includes(key)))} | ${cell(b.filter((key) => !a.includes(key)))} |`,
+  )
 }
-for (const [name, own, other] of [['Cedar', cedar, maple], ['Maple', maple, cedar]]) {
-  lines.push('', `## 仅 ${name} 根入口存在的 Props 导出`, '', cell([...own.keys()].filter(key => !other.has(key)).sort()))
+for (const [name, own, other] of [
+  ['Cedar', cedar, maple],
+  ['Maple', maple, cedar],
+]) {
+  lines.push(
+    '',
+    `## 仅 ${name} 根入口存在的 Props 导出`,
+    '',
+    cell([...own.keys()].filter((key) => !other.has(key)).sort()),
+  )
 }
 const output = lines.join('\n') + '\n'
 if (process.argv.includes('--write')) {

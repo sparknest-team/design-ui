@@ -1,22 +1,25 @@
-import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, readdirSync, existsSync, rmSync } from 'node:fs'
+import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
+import { test } from 'node:test'
 import { collectPages, generateDocs, renderPage } from './llms-docs.mjs'
 
 function fixture(t) {
   const root = mkdtempSync(path.join(os.tmpdir(), 'llms-docs-'))
   t.after(() => rmSync(root, { recursive: true, force: true }))
-  return { root, put(file, content) {
-    const destination = path.join(root, file)
-    mkdirSync(path.dirname(destination), { recursive: true })
-    writeFileSync(destination, content)
-  } }
+  return {
+    root,
+    put(file, content) {
+      const destination = path.join(root, file)
+      mkdirSync(path.dirname(destination), { recursive: true })
+      writeFileSync(destination, content)
+    },
+  }
 }
 
 for (const platform of ['cedar', 'maple']) {
-  test(`${platform} marks every text and Markdown artifact as UTF-8 and preserves Chinese examples`, t => {
+  test(`${platform} marks every text and Markdown artifact as UTF-8 and preserves Chinese examples`, (t) => {
     const { root, put } = fixture(t)
     const chinese = '中文文档：自动补全、头像、日期范围 🙂'
     if (platform === 'cedar') {
@@ -26,7 +29,10 @@ for (const platform of ['cedar', 'maple']) {
       put('docs/start.zh-CN.md', `# ${chinese}\n<demo src="./example.vue" />`)
       put('docs/start.en-US.md', '# English guide\nEnglish content')
     }
-    put(platform === 'cedar' ? 'docs/guide/example.vue' : 'docs/example.vue', `<template><div>${chinese}</div></template>`)
+    put(
+      platform === 'cedar' ? 'docs/guide/example.vue' : 'docs/example.vue',
+      `<template><div>${chinese}</div></template>`,
+    )
     const output = path.join(root, 'public')
     const result = generateDocs({ root, platform, output })
     function verify(directory) {
@@ -40,7 +46,14 @@ for (const platform of ['cedar', 'maple']) {
           const decoded = new TextDecoder('utf-8', { fatal: true }).decode(bytes)
           assert.ok(!decoded.startsWith('\uFEFF'), 'standard UTF-8 decoding consumes the signature')
           assert.ok(!decoded.includes('\uFFFD'), file)
-          if (file.endsWith('llms.txt') || file.endsWith('llms.zh-CN.txt') || file.endsWith('llms-full.txt') || file.endsWith('llms-full.zh-CN.txt') || file.includes(`${path.sep}zh-CN${path.sep}`)) assert.ok(decoded.includes(chinese), file)
+          if (
+            file.endsWith('llms.txt') ||
+            file.endsWith('llms.zh-CN.txt') ||
+            file.endsWith('llms-full.txt') ||
+            file.endsWith('llms-full.zh-CN.txt') ||
+            file.includes(`${path.sep}zh-CN${path.sep}`)
+          )
+            assert.ok(decoded.includes(chinese), file)
           if (file.endsWith('llms-full.txt')) assert.ok(decoded.includes(`<div>${chinese}</div>`))
           files++
         }
@@ -54,11 +67,17 @@ for (const platform of ['cedar', 'maple']) {
   })
 }
 
-test('Cedar includes public permalinks and expands demos while preserving literal code', t => {
+test('Cedar includes public permalinks and expands demos while preserving literal code', (t) => {
   const { root, put } = fixture(t)
-  put('docs/guide/start.md', '---\npermalink: /guide/start/\n---\n# Start\n[Button](/components/button/)\n```html\n<demo src="./missing.vue"></demo>\n```\n')
+  put(
+    'docs/guide/start.md',
+    '---\npermalink: /guide/start/\n---\n# Start\n[Button](/components/button/)\n```html\n<demo src="./missing.vue"></demo>\n```\n',
+  )
   put('docs/practices/internal.md', '# Internal\n```yaml\npermalink: /internal/\n```')
-  put('src/button/README.md', '---\npermalink: /components/button/\n---\n# Button\n<demo src="./__demos__/basic.vue"></demo>\n\n## API\n| prop | type |\n| --- | --- |\n| size | string |')
+  put(
+    'src/button/README.md',
+    '---\npermalink: /components/button/\n---\n# Button\n<demo src="./__demos__/basic.vue"></demo>\n\n## API\n| prop | type |\n| --- | --- |\n| size | string |',
+  )
   put('src/button/__demos__/basic.vue', '<template><c-button>Save</c-button></template>')
   const output = path.join(root, 'public')
   assert.equal(generateDocs({ root, platform: 'cedar', output }).pages, 2)
@@ -73,7 +92,7 @@ test('Cedar includes public permalinks and expands demos while preserving litera
   assert.match(full, /\[Button\]\(llms\/zh-CN\/components\/button.md\)/)
 })
 
-test('Maple retains locales, excludes drafts, expands demo fences, and cleans removed pages', t => {
+test('Maple retains locales, excludes drafts, expands demo fences, and cleans removed pages', (t) => {
   const { root, put } = fixture(t)
   put('docs/llms.en-US.md', '# LLM docs\n[Index](./llms.txt)')
   put('src/button/docs/zh-CN.md', '# Button\n```demo\n../example/basic.vue\n```\n\n')
@@ -99,22 +118,25 @@ test('Maple retains locales, excludes drafts, expands demo fences, and cleans re
   assert.ok(!existsSync(path.join(output, 'llms/en-US/button.md')))
 })
 
-test('missing demos fail without replacing previous assets', t => {
+test('missing demos fail without replacing previous assets', (t) => {
   const { root, put } = fixture(t)
   put('docs/start.zh-CN.md', '# Start\n```demo\nmissing.vue\n```')
   put('public/llms.txt', 'previous index')
-  assert.throws(() => generateDocs({ root, platform: 'maple', output: path.join(root, 'public') }), /Missing or external demo/)
+  assert.throws(
+    () => generateDocs({ root, platform: 'maple', output: path.join(root, 'public') }),
+    /Missing or external demo/,
+  )
   assert.equal(readFileSync(path.join(root, 'public/llms.txt'), 'utf8'), 'previous index')
 })
 
-test('demo includes cannot read outside the package', t => {
+test('demo includes cannot read outside the package', (t) => {
   const { root, put } = fixture(t)
   put('docs/start.zh-CN.md', '# Start\n```demo\n../../secret.vue\n```')
   const pages = collectPages(root, 'maple')
   assert.throws(() => renderPage(pages[0], pages, root), /external demo/)
 })
 
-test('self-closing demos expand without executing demo-like strings in code', t => {
+test('self-closing demos expand without executing demo-like strings in code', (t) => {
   const { root, put } = fixture(t)
   put('docs/start.zh-CN.md', '# Start\n<demo src="./basic.vue" />\n\n```html\n<demo src="missing.vue" />\n```')
   put('docs/basic.vue', '<template>Example</template>')
@@ -124,7 +146,7 @@ test('self-closing demos expand without executing demo-like strings in code', t 
   assert.match(rendered, /<demo src="missing.vue" \/>/)
 })
 
-test('language indexes and bundles contain only their authored locale', t => {
+test('language indexes and bundles contain only their authored locale', (t) => {
   const { root, put } = fixture(t)
   put('docs/start.zh-CN.md', '# 中文指南\n中文内容')
   put('docs/start.en-US.md', '# English guide\nEnglish content')
@@ -139,8 +161,7 @@ test('language indexes and bundles contain only their authored locale', t => {
   for (const [, href] of english.matchAll(/\]\(([^)]+)\)/g)) assert.ok(existsSync(path.resolve(output, href)))
 })
 
-
-test('Cedar locale home pages have named files and their authored hero title', t => {
+test('Cedar locale home pages have named files and their authored hero title', (t) => {
   const { root, put } = fixture(t)
   put('docs/en/README.md', '---\npermalink: /en/\nheroText: Cedar Design Web\n---\n## Start\nEnglish introduction')
   const output = path.join(root, 'public')

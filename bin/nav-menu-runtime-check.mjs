@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict'
 import { createRequire, register } from 'node:module'
-import { fileURLToPath, pathToFileURL } from 'node:url'
 import { resolve } from 'node:path'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+
 const root = fileURLToPath(new URL('../../', import.meta.url))
 const directory = resolve(root, 'cedar-design-web/packages/ui')
 const require = createRequire(resolve(directory, 'package.json'))
@@ -18,8 +19,12 @@ for (const format of ['es', 'lib']) {
   assert.equal(typeof api.default.install, 'function')
   for (const key of ['SubMenu', 'ItemGroup']) assert.equal(api.default[key], undefined)
   for (const key of ['NavMenuSubMenu', 'NavMenuItemGroup']) assert.equal(api[key], undefined)
-  for (const key of ['options', 'modelValue', 'expandedKeys', 'mode', 'fieldNames', 'collapsed']) assert.ok(api.navMenuProps[key])
-  const options = [{ key: 0, label: 'Home' }, { key: 'parent', label: 'Parent', children: [{ key: 'leaf', label: 'Leaf' }] }]
+  for (const key of ['options', 'modelValue', 'expandedKeys', 'mode', 'fieldNames', 'collapsed'])
+    assert.ok(api.navMenuProps[key])
+  const options = [
+    { key: 0, label: 'Home' },
+    { key: 'parent', label: 'Parent', children: [{ key: 'leaf', label: 'Leaf' }] },
+  ]
   const render = () => renderToString(createSSRApp({ render: () => h(api.default, { options, defaultValue: 'leaf' }) }))
   const html = await render()
   assert.ok(html.includes('Leaf') && html.includes('aria-current="page"'))

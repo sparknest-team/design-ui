@@ -52,17 +52,20 @@ for (const directory of [
   'maple-design-mobile/packages/vscode-extension/src',
   'maple-design-mobile/packages/ui-playground/src',
   'design-ui/refactors/token-validation/browser',
-]) scan(join(workspace, directory))
+])
+  scan(join(workspace, directory))
 for (const file of [
   'cedar-design-web/API-MIGRATION.md',
   'cedar-design-web/packages/ui/index.html',
   'design-ui/refactors/foundation-alignment/trigger-consumers.json',
   'design-ui/audits/non-color-token-contract-suggestions.json',
   'design-ui/audits/api-props-inventory.md',
-  ...(process.argv.includes('--built') ? [
-    'maple-design-mobile/packages/ui-playground/public/maple.esm.js',
-    'maple-design-mobile/packages/ui-playground/public/maple.css',
-  ] : []),
+  ...(process.argv.includes('--built')
+    ? [
+        'maple-design-mobile/packages/ui-playground/public/maple.esm.js',
+        'maple-design-mobile/packages/ui-playground/public/maple.css',
+      ]
+    : []),
 ]) {
   const path = join(workspace, file)
   checked += 1

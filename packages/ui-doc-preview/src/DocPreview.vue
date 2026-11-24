@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
-import type { DocPreviewSource } from "./types";
+import { computed, ref, watch } from 'vue'
+import type { DocPreviewSource } from './types'
 
 const props = withDefaults(
   defineProps<{
-    sources?: DocPreviewSource[];
-    defaultShowCode?: boolean;
-    showPlayground?: boolean;
+    sources?: DocPreviewSource[]
+    defaultShowCode?: boolean
+    showPlayground?: boolean
     labels?: Partial<{
-      playground: string;
-      copy: string;
-      copied: string;
-      showSource: string;
-      hideSource: string;
-      loadError: string;
-      retry: string;
-    }>;
+      playground: string
+      copy: string
+      copied: string
+      showSource: string
+      hideSource: string
+      loadError: string
+      retry: string
+    }>
   }>(),
   {
     sources: () => [],
@@ -23,73 +23,71 @@ const props = withDefaults(
     showPlayground: false,
     labels: () => ({}),
   },
-);
+)
 
 const emit = defineEmits<{
-  copied: [];
-  copyError: [error: unknown];
-  playground: [source: string];
-  toggle: [expanded: boolean];
-}>();
+  copied: []
+  copyError: [error: unknown]
+  playground: [source: string]
+  toggle: [expanded: boolean]
+}>()
 
 const fallbackLabels = {
-  playground: "Edit in Playground",
-  copy: "Copy source code",
-  copied: "Source copied",
-  showSource: "Show source",
-  hideSource: "Hide source",
-  loadError: "Unable to load source.",
-  retry: "Retry",
-};
-const label = computed(() => ({ ...fallbackLabels, ...props.labels }));
-const expanded = ref(props.defaultShowCode);
-const active = ref(0);
-const loaded = ref<Record<string, DocPreviewSource>>({});
-const failed = ref(false);
-const retry = ref(0);
-const selected = computed(() => props.sources[active.value]);
+  playground: 'Edit in Playground',
+  copy: 'Copy source code',
+  copied: 'Source copied',
+  showSource: 'Show source',
+  hideSource: 'Hide source',
+  loadError: 'Unable to load source.',
+  retry: 'Retry',
+}
+const label = computed(() => ({ ...fallbackLabels, ...props.labels }))
+const expanded = ref(props.defaultShowCode)
+const active = ref(0)
+const loaded = ref<Record<string, DocPreviewSource>>({})
+const failed = ref(false)
+const retry = ref(0)
+const selected = computed(() => props.sources[active.value])
 const resolvedSource = computed(() => {
-  const source = selected.value;
-  if (!source) return undefined;
-  return source.sourceUrl ? loaded.value[source.sourceUrl] : source;
-});
+  const source = selected.value
+  if (!source) return undefined
+  return source.sourceUrl ? loaded.value[source.sourceUrl] : source
+})
 
 watch(
   () => [selected.value?.sourceUrl, retry.value, expanded.value] as const,
   async ([sourceUrl, , isExpanded], _, onCleanup) => {
-    if (!sourceUrl || !isExpanded || typeof window === "undefined") return;
-    if (loaded.value[sourceUrl]) return;
-    let activeRequest = true;
+    if (!sourceUrl || !isExpanded || typeof window === 'undefined') return
+    if (loaded.value[sourceUrl]) return
+    let activeRequest = true
     onCleanup(() => {
-      activeRequest = false;
-    });
-    failed.value = false;
+      activeRequest = false
+    })
+    failed.value = false
     try {
-      const response = await fetch(sourceUrl);
-      if (!response.ok)
-        throw new Error(`Source request failed: ${response.status}`);
-      const source = (await response.json()) as DocPreviewSource;
-      if (activeRequest)
-        loaded.value = { ...loaded.value, [sourceUrl]: source };
+      const response = await fetch(sourceUrl)
+      if (!response.ok) throw new Error(`Source request failed: ${response.status}`)
+      const source = (await response.json()) as DocPreviewSource
+      if (activeRequest) loaded.value = { ...loaded.value, [sourceUrl]: source }
     } catch (error) {
-      if (activeRequest) failed.value = true;
+      if (activeRequest) failed.value = true
     }
   },
   { immediate: true },
-);
+)
 
 function toggle() {
-  expanded.value = !expanded.value;
-  emit("toggle", expanded.value);
+  expanded.value = !expanded.value
+  emit('toggle', expanded.value)
 }
 
 async function copySource() {
-  const source = resolvedSource.value?.rawCode ?? "";
+  const source = resolvedSource.value?.rawCode ?? ''
   try {
-    await navigator.clipboard.writeText(source);
-    emit("copied");
+    await navigator.clipboard.writeText(source)
+    emit('copied')
   } catch (error) {
-    emit("copyError", error);
+    emit('copyError', error)
   }
 }
 </script>
@@ -148,11 +146,7 @@ async function copySource() {
     </div>
 
     <div v-if="expanded" class="loca-doc-preview__sources">
-      <div
-        v-if="sources.length > 1"
-        class="loca-doc-preview__tabs"
-        role="tablist"
-      >
+      <div v-if="sources.length > 1" class="loca-doc-preview__tabs" role="tablist">
         <button
           v-for="(source, index) in sources"
           :key="source.name"
@@ -170,11 +164,7 @@ async function copySource() {
         {{ label.loadError }}
         <button type="button" @click="retry++">{{ label.retry }}</button>
       </div>
-      <div
-        v-else
-        class="loca-doc-preview__source"
-        v-html="resolvedSource?.highlightCode"
-      />
+      <div v-else class="loca-doc-preview__source" v-html="resolvedSource?.highlightCode" />
     </div>
   </div>
 </template>
@@ -264,7 +254,7 @@ async function copySource() {
   bottom: 0;
   left: 0;
   height: 2px;
-  content: "";
+  content: '';
   background: var(--loca-doc-preview-brand, currentColor);
 }
 

@@ -1441,11 +1441,7 @@
         "text-color",
         "z-index"
       ],
-      "ellipsis": [
-        "focus-color",
-        "focus-offset",
-        "focus-width"
-      ],
+      "ellipsis": ["focus-color", "focus-offset", "focus-width"],
       "alert": [
         "action-margin-left",
         "border-radius",
@@ -1836,14 +1832,8 @@
         "title-text-color",
         "title-text-color-disabled"
       ],
-      "count-to": [
-        "text-color",
-        "text-font-size"
-      ],
-      "countdown": [
-        "text-color",
-        "text-font-size"
-      ],
+      "count-to": ["text-color", "text-font-size"],
+      "countdown": ["text-color", "text-font-size"],
       "dialog": [
         "actions-button-gap",
         "actions-padding",
@@ -1994,15 +1984,8 @@
         "tooltip-text-color",
         "vertical-label-margin-bottom"
       ],
-      "hover": [
-        "overlay-focusing-opacity",
-        "overlay-opacity",
-        "transition-duration"
-      ],
-      "icon": [
-        "size",
-        "spin-duration"
-      ],
+      "hover": ["overlay-focusing-opacity", "overlay-opacity", "transition-duration"],
+      "icon": ["size", "spin-duration"],
       "input": [
         "caret-color",
         "control-font-size",
@@ -2017,18 +2000,8 @@
         "feedback-validating-color",
         "feedback-warning-color"
       ],
-      "overlay": [
-        "animation-duration",
-        "background-color",
-        "content-z-index"
-      ],
-      "paper": [
-        "background",
-        "border-color",
-        "border-radius",
-        "border-width",
-        "transition-duration"
-      ],
+      "overlay": ["animation-duration", "background-color", "content-z-index"],
+      "paper": ["background", "border-color", "border-radius", "border-width", "transition-duration"],
       "popover": [
         "animation-duration",
         "arrow-z-index",
@@ -2087,12 +2060,7 @@
         "label-text-color",
         "label-text-color-disabled"
       ],
-      "ripple": [
-        "color",
-        "cubic-bezier",
-        "expand-duration",
-        "fade-duration"
-      ],
+      "ripple": ["color", "cubic-bezier", "expand-duration", "fade-duration"],
       "section": [
         "accent-color",
         "after-gap",
@@ -2598,13 +2566,7 @@
         "status-warning-text-color",
         "text-color"
       ],
-      "trigger": [
-        "arrow-background",
-        "arrow-radius",
-        "arrow-size",
-        "transition-duration",
-        "transition-easing"
-      ],
+      "trigger": ["arrow-background", "arrow-radius", "arrow-size", "transition-duration", "transition-easing"],
       "input-number": [
         "addon-background",
         "addon-border-color",
@@ -2875,12 +2837,7 @@
         "track-height",
         "transition-duration"
       ],
-      "verification-code": [
-        "cell-height",
-        "cell-max-width",
-        "gutter",
-        "input-font-size"
-      ],
+      "verification-code": ["cell-height", "cell-max-width", "gutter", "input-font-size"],
       "search": [
         "action-color-text",
         "action-font-size",
@@ -2963,29 +2920,12 @@
         "transition-duration",
         "transition-timing-function"
       ],
-      "people-select": [
-        "avatar-radius",
-        "avatar-size",
-        "content-gap"
-      ]
+      "people-select": ["avatar-radius", "avatar-size", "content-gap"]
     }
   },
   "platformExtensions": {
-    "cedar": [
-      "form",
-      "select",
-      "message",
-      "link",
-      "textarea"
-    ],
-    "maple": [
-      "dialog",
-      "form",
-      "select",
-      "message",
-      "link",
-      "textarea"
-    ]
+    "cedar": ["form", "select", "message", "link", "textarea"],
+    "maple": ["dialog", "form", "select", "message", "link", "textarea"]
   },
   "platformComponentTokenValues": {
     "cedar": {

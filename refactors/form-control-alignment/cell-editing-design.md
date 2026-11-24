@@ -8,10 +8,10 @@
 
 公开展示配置只有 presentation：统一表达直接编辑、弹层编辑和阅读。不新增 mode。
 
-| API | Cedar | Maple | 默认 |
-| --- | --- | --- | --- |
-| presentation | inline/popover/dialog/read | inline/popup/dialog/read | inline |
-| editTrigger | content/action | content/action | Cedar action；Maple content |
+| API          | Cedar                      | Maple                    | 默认                        |
+| ------------ | -------------------------- | ------------------------ | --------------------------- |
+| presentation | inline/popover/dialog/read | inline/popup/dialog/read | inline                      |
+| editTrigger  | content/action             | content/action           | Cedar action；Maple content |
 
 editTrigger 只控制编辑入口，不改变编辑容器或提交时机。content 点击 label 之外的内容区域；action 只点击右侧按钮（PC 编辑，移动端箭头）。两者均按字段 > FormItem > Form 继承。read 隐藏入口，inline 不使用此配置。选择文字不触发编辑。
 
@@ -85,13 +85,13 @@ read 的 label、业务说明、复制/预览保留；编辑入口、清空、�
 
 ## 职责分配
 
-| 层级 | 唯一职责 | 不负责 |
-| --- | --- | --- |
-| Form | 模型、全局默认、整表校验与提交、reset、活动会话协调 | 遍历插槽改写子组件 v-model、请求选项接口 |
-| FormItem | 字段路径、标签、规则、错误、候选值校验、Cell 行布局 | 再创建一份字段模型、自己实现搜索和字段专属面板 |
-| 字段组件 | modelValue/defaultValue、编辑值、选项、搜索、格式化与专属编辑器 | 再渲染外层 label、复制 FormItem 规则引擎 |
-| 内部 FieldHost 和会话控制器 | 解析展示方式、阅读区、编辑容器、草稿与一次提交 | 对外增加必须学习的 Edit 组件 |
-| FieldDecorator | 正常输入外壳与视觉状态 | Cell 事务、网络保存和规则校验 |
+| 层级                        | 唯一职责                                                        | 不负责                                         |
+| --------------------------- | --------------------------------------------------------------- | ---------------------------------------------- |
+| Form                        | 模型、全局默认、整表校验与提交、reset、活动会话协调             | 遍历插槽改写子组件 v-model、请求选项接口       |
+| FormItem                    | 字段路径、标签、规则、错误、候选值校验、Cell 行布局             | 再创建一份字段模型、自己实现搜索和字段专属面板 |
+| 字段组件                    | modelValue/defaultValue、编辑值、选项、搜索、格式化与专属编辑器 | 再渲染外层 label、复制 FormItem 规则引擎       |
+| 内部 FieldHost 和会话控制器 | 解析展示方式、阅读区、编辑容器、草稿与一次提交                  | 对外增加必须学习的 Edit 组件                   |
+| FieldDecorator              | 正常输入外壳与视觉状态                                          | Cell 事务、网络保存和规则校验                  |
 
 内部 FieldHost 由内置字段接入并复用，维护状态机，不能每个字段复制一份。FormItem 提供上下文，FieldHost 注册当前字段编辑能力及活动会话；FormItem 在 Cell 布局中只显示一份 label，字段只显示值摘要/动作，内部宿主不再套一个带 label 的完整 Cell。
 
@@ -103,13 +103,13 @@ read 的 label、业务说明、复制/预览保留；编辑入口、清空、�
 
 ## 展示与默认行为
 
-| 模式 | 编辑器 | 入口 | 默认提交 |
-| --- | --- | --- | --- |
-| inline | 普通字段直接展示；Select 点击展开现有 menu | 字段本身 | 沿用字段原有即时/完成输入语义 |
-| Cedar popover | 锚定 Cell 的编辑面板 | PC 编辑按钮 | 确认后提交 |
-| Maple popup | 底部弹层编辑面板 | Cell 整行与箭头 | 确认后提交 |
-| dialog | 对话框编辑面板 | Cell 编辑动作 | 确认后提交 |
-| read | Cell 阅读，不挂载可交互编辑面板 | 无编辑入口 | 不提交 |
+| 模式          | 编辑器                                     | 入口            | 默认提交                      |
+| ------------- | ------------------------------------------ | --------------- | ----------------------------- |
+| inline        | 普通字段直接展示；Select 点击展开现有 menu | 字段本身        | 沿用字段原有即时/完成输入语义 |
+| Cedar popover | 锚定 Cell 的编辑面板                       | PC 编辑按钮     | 确认后提交                    |
+| Maple popup   | 底部弹层编辑面板                           | Cell 整行与箭头 | 确认后提交                    |
+| dialog        | 对话框编辑面板                             | Cell 编辑动作   | 确认后提交                    |
+| read          | Cell 阅读，不挂载可交互编辑面板            | 无编辑入口      | 不提交                        |
 
 PC 可编辑 Cell 默认右侧编辑按钮：hover 或 focus-within 显示，触屏始终显示，预留位置避免内容移动；按钮可以键盘到达。正文可选择复制。移动端显示箭头，整行点击打开。复杂编辑用显式 dialog，不根据数据量自动改变容器。
 
@@ -119,13 +119,13 @@ Maple 支持 inline；此前“移动不允许 inline”的建议取消。用户
 
 ## Select 编辑形式与阅读
 
-| 平台与形式 | 对现有实现的关系 | 搜索位置 |
-| --- | --- | --- |
-| 两端 inline | 复用现有 menu 字段与候选列表 | 字段内 |
-| Cedar popover | Cell 入口，面板直接展示候选列表 | 面板顶部 |
-| Maple popup | 复用现有 list 的列表内容和底部弹层 | 面板顶部 |
-| 两端 dialog | 对话框直接展示候选列表 | 面板顶部 |
-| 两端 read | Cell 显示已提交选项名称/摘要 | 无搜索 |
+| 平台与形式    | 对现有实现的关系                   | 搜索位置 |
+| ------------- | ---------------------------------- | -------- |
+| 两端 inline   | 复用现有 menu 字段与候选列表       | 字段内   |
+| Cedar popover | Cell 入口，面板直接展示候选列表    | 面板顶部 |
+| Maple popup   | 复用现有 list 的列表内容和底部弹层 | 面板顶部 |
+| 两端 dialog   | 对话框直接展示候选列表             | 面板顶部 |
+| 两端 read     | Cell 显示已提交选项名称/摘要       | 无搜索   |
 
 menu/list 不再同时作为一套额外公开模式；目标 presentation 使用上表的新名称。删除 Select presentation=picker，滚轮选择由独立 Picker 承担，现有调用方和示例完整迁移。此变更只针对 Select 的 picker 模式，不删除通用 Picker，也不直接决定日期/时间/Cascader 的专属模式去留。
 
@@ -230,20 +230,20 @@ Upload 草稿只描述待提交附件关系，不能承诺取消可以撤回远�
 
 ### 两端 API 复核结论
 
-| 现有或拟新增 API | 复核问题 | 目标处理 |
-| --- | --- | --- |
-| Form/FormItem | 目前没有本草案的展示继承 | 只新增 presentation，不新增 mode、editor 对象、editing 模型 |
-| Cedar Select.presentation=menu | 与公共枚举不同，现有默认会阻断继承 | menu 迁为 inline，字段缺省 undefined |
-| Maple Select.presentation=menu/list/picker | 位置与内容/提交耦合 | 迁为 inline/popup/dialog/read，删除 Select picker 模式 |
-| Maple Date/DateRange/Time/TimeRange 的 presentation | 已表示日历/时钟/滚轮等面板内容，直接复用会冲突 | 字段 presentation 专用于统一展示；原内容选择迁为字段专属 panelType，保持其原支持集合和默认内容 |
-| Cascader.presentation=menu/list/picker | 同样混合字段展示与面板内容 | 字段统一展示枚举；menu/list 迁为 inline/popup，现有滚轮能力如保留则使用 panelType 显式选择，不继续占用 presentation |
-| 日期的 type、Time 的 format | 已有数据精度/格式语义 | 保留原义，不拿 type 或 format 表示弹层容器 |
-| Date/DateRange/Time/TimeRange.disableConfirm | 原有 inline 面板策略 | 保留 inline 的既有行为；统一编辑弹层中隐藏纯面板工具栏，由外层固定确认一次，不新增 needConfirm |
-| Select.formatLabel、日期/时间.format | 新 formatValue 会重复 | 保留已有名称，只增加可选 read 插槽处理特殊内容 |
-| filterable、inputValue、filterOption、searchDelay | 已足够覆盖搜索 | 保留，不增加 searchable、query/searchValue、remote、searchPlacement |
-| Maple Time/TimeRange.readonly | 当前为普通 Boolean，缺省 false 可能截断继承 | 字段改为可继承的 undefined 缺省，统一状态解析；不修改 readonly 的既定语义 |
-| popupProps/triggerProps/pickerProps | 可以透传内部值、状态、工具栏，绕过唯一所有者 | 只允许窄展示配置；模型、确认、open、状态和控制监听器在类型与运行时都过滤 |
-| FormItem 的 field、Form.model、字段 v-model | 三者可能被用户绑定到不同数据 | 保留现有明确绑定；Cell 校验按 field 的候选快照，不猜测或改写 v-model。标准一项一字段；错配给诊断，不隐式写另一个值源 |
+| 现有或拟新增 API                                    | 复核问题                                       | 目标处理                                                                                                             |
+| --------------------------------------------------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Form/FormItem                                       | 目前没有本草案的展示继承                       | 只新增 presentation，不新增 mode、editor 对象、editing 模型                                                          |
+| Cedar Select.presentation=menu                      | 与公共枚举不同，现有默认会阻断继承             | menu 迁为 inline，字段缺省 undefined                                                                                 |
+| Maple Select.presentation=menu/list/picker          | 位置与内容/提交耦合                            | 迁为 inline/popup/dialog/read，删除 Select picker 模式                                                               |
+| Maple Date/DateRange/Time/TimeRange 的 presentation | 已表示日历/时钟/滚轮等面板内容，直接复用会冲突 | 字段 presentation 专用于统一展示；原内容选择迁为字段专属 panelType，保持其原支持集合和默认内容                       |
+| Cascader.presentation=menu/list/picker              | 同样混合字段展示与面板内容                     | 字段统一展示枚举；menu/list 迁为 inline/popup，现有滚轮能力如保留则使用 panelType 显式选择，不继续占用 presentation  |
+| 日期的 type、Time 的 format                         | 已有数据精度/格式语义                          | 保留原义，不拿 type 或 format 表示弹层容器                                                                           |
+| Date/DateRange/Time/TimeRange.disableConfirm        | 原有 inline 面板策略                           | 保留 inline 的既有行为；统一编辑弹层中隐藏纯面板工具栏，由外层固定确认一次，不新增 needConfirm                       |
+| Select.formatLabel、日期/时间.format                | 新 formatValue 会重复                          | 保留已有名称，只增加可选 read 插槽处理特殊内容                                                                       |
+| filterable、inputValue、filterOption、searchDelay   | 已足够覆盖搜索                                 | 保留，不增加 searchable、query/searchValue、remote、searchPlacement                                                  |
+| Maple Time/TimeRange.readonly                       | 当前为普通 Boolean，缺省 false 可能截断继承    | 字段改为可继承的 undefined 缺省，统一状态解析；不修改 readonly 的既定语义                                            |
+| popupProps/triggerProps/pickerProps                 | 可以透传内部值、状态、工具栏，绕过唯一所有者   | 只允许窄展示配置；模型、确认、open、状态和控制监听器在类型与运行时都过滤                                             |
+| FormItem 的 field、Form.model、字段 v-model         | 三者可能被用户绑定到不同数据                   | 保留现有明确绑定；Cell 校验按 field 的候选快照，不猜测或改写 v-model。标准一项一字段；错配给诊断，不隐式写另一个值源 |
 
 上述 Date/Time 迁移是统一 presentation 的必要依赖，不是直接删除独立 Picker 或日期/时间面板的滚轮能力。纯面板不继承 Form 的字段展示，也不接收 read；其内容类型由字段适配器转换。panelType 只在确实存在多种内容的字段暴露，不给 Input/Select 无意义地增加同名配置。
 
@@ -251,12 +251,12 @@ Upload 草稿只描述待提交附件关系，不能承诺取消可以撤回远�
 
 现有两端 FormItem 负责字段路径和校验，Maple Select 已有会话控制器，但当前提交策略由 menu/list/picker 决定。实施应先抽内部会话/编辑宿主，再替换公开配置，不能只是给 presentation 枚举重命名。
 
-| 阶段 | 工作 | 验收 |
-| --- | --- | --- |
-| 1 | 两端 presentation 继承与 Input/Select 内部宿主原型 | 普通 default 插槽和 v-model 不变；默认两端 inline；Maple popup、Cedar popover、两端 dialog |
-| 2 | 候选校验、一次确认、read 格式化与 Form 协调 | 草稿不污染模型；取消/失败/reset/外部变化正确；无双工具栏 |
-| 3 | 搜索、远程、分页、虚拟列表、ID 回显 | 全部编辑展示使用同一搜索协议；同名 ID 与数量上限正确 |
-| 4 | 日期/范围/时间/颜色/Cascader 等适配及迁移 | panelType 与容器分离、单一确认边界；各字段专属边界、类型/文档/Demo/Resolver/同源检查同步 |
+| 阶段 | 工作                                               | 验收                                                                                       |
+| ---- | -------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 1    | 两端 presentation 继承与 Input/Select 内部宿主原型 | 普通 default 插槽和 v-model 不变；默认两端 inline；Maple popup、Cedar popover、两端 dialog |
+| 2    | 候选校验、一次确认、read 格式化与 Form 协调        | 草稿不污染模型；取消/失败/reset/外部变化正确；无双工具栏                                   |
+| 3    | 搜索、远程、分页、虚拟列表、ID 回显                | 全部编辑展示使用同一搜索协议；同名 ID 与数量上限正确                                       |
+| 4    | 日期/范围/时间/颜色/Cascader 等适配及迁移          | panelType 与容器分离、单一确认边界；各字段专属边界、类型/文档/Demo/Resolver/同源检查同步   |
 
 Select menu→inline、Maple list→popup；picker 调用迁至 popup 或独立 Picker，新增 dialog。发布前按现行 API 收敛规范直接迁移，不保留旧 presentation 值别名。此前要求 editor 插槽、增加 FormItem 独立 modelValue、独立 EditableField、appearance 的方案全部撤回，字段独立使用仍由原字段 v-model 管理。
 

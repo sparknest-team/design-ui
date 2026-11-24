@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import test from 'node:test'
+import { fileURLToPath } from 'node:url'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
 const repositories = ['cedar-design-web', 'maple-design-mobile']
@@ -31,7 +31,12 @@ for (const repo of repositories) {
     assert.equal(manifest.volta.pnpm, pnpmVersion)
     assert.equal(manifest.engines.pnpm, `>=${pnpmVersion}`)
     assert.equal((workflow.match(/install --frozen-lockfile/g) ?? []).length, 3)
-    assert.match(workflow, repo === 'cedar-design-web' ? /npm exec --yes --package=.*packageManager\.split.* -- pnpm install --frozen-lockfile\s+working-directory: design-ui/ : /corepack pnpm install --frozen-lockfile\s+working-directory: design-ui/)
+    assert.match(
+      workflow,
+      repo === 'cedar-design-web'
+        ? /npm exec --yes --package=.*packageManager\.split.* -- pnpm install --frozen-lockfile\s+working-directory: design-ui/
+        : /corepack pnpm install --frozen-lockfile\s+working-directory: design-ui/,
+    )
     assert.match(workflow, /- run: pnpm quality\s/)
     assert.match(workflow, /shared-source-contract\.test\.mjs/)
     assert.match(workflow, /ci-contract\.test\.mjs/)
@@ -41,7 +46,23 @@ for (const repo of repositories) {
     assert.match(workflow, /- run: node \.\.\/design-ui\/bin\/case-paths-check\.mjs/)
     assert.match(workflow, /case-paths-check\.test\.mjs/)
     assert.doesNotMatch(workflow, /continue-on-error|--no-frozen-lockfile|\|\| true/)
-    for (const gate of ['check:runtime-dependencies', 'check:shared', 'check:vue-compat:source', 'check:vue-compat', 'spec:check', 'check:style-vars', 'typecheck', 'test', 'check:cli', 'package:check', 'check:published-environment', 'check:doc-pipeline', 'check:docs-theme', 'check:docs-components', 'check:compatibility']) {
+    for (const gate of [
+      'check:runtime-dependencies',
+      'check:shared',
+      'check:vue-compat:source',
+      'check:vue-compat',
+      'spec:check',
+      'check:style-vars',
+      'typecheck',
+      'test',
+      'check:cli',
+      'package:check',
+      'check:published-environment',
+      'check:doc-pipeline',
+      'check:docs-theme',
+      'check:docs-components',
+      'check:compatibility',
+    ]) {
       assert.ok(scripts.quality.split(' && ').includes(`pnpm ${gate}`), `${gate} must run in quality`)
     }
     assert.ok(scripts.quality.indexOf('pnpm check:vue-compat:source') < scripts.quality.indexOf('pnpm build:lib'))
@@ -72,7 +93,18 @@ for (const repo of repositories) {
       assert.match(docsConfig, /preprocessorMaxWorkers:\s*2\s*,/)
       assert.match(docsConfig, /api:\s*'modern-compiler'/)
     } else {
-      for (const gate of ['build:lib', 'build:doc', 'lint:check', 'check:dev-boundary', 'check:test-collection', 'check:doc-pipeline', 'check:source-normalization', 'check:icon-bundle', 'check:component-bundle', 'check:docs-theme']) {
+      for (const gate of [
+        'build:lib',
+        'build:doc',
+        'lint:check',
+        'check:dev-boundary',
+        'check:test-collection',
+        'check:doc-pipeline',
+        'check:source-normalization',
+        'check:icon-bundle',
+        'check:component-bundle',
+        'check:docs-theme',
+      ]) {
         assert.ok(scripts.quality.split(' && ').includes(`pnpm ${gate}`), `${gate} must run in quality`)
       }
       assert.ok(workflow.indexOf('playwright install --with-deps chromium') < workflow.indexOf('- run: pnpm quality'))

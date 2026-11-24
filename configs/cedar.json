@@ -8,15 +8,6 @@
   "docs": "README.md",
   "testGlobs": ["__tests__/*.test.*", "__tests__/*.spec.*"],
   "styleGlobs": ["style/*.less"],
-  "ignoreComponents": [
-    "_components",
-    "_hooks",
-    "_utils",
-    "context",
-    "icon",
-    "locale",
-    "themes",
-    "utils"
-  ],
+  "ignoreComponents": ["_components", "_hooks", "_utils", "context", "icon", "locale", "themes", "utils"],
   "subcomponents": ["field-decorator", "hover", "hover-overlay", "ripple"]
 }

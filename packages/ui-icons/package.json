@@ -1,23 +1,23 @@
 {
   "name": "@sparknest/ui-icons-vue",
   "version": "1.4.2",
+  "description": "Shared SVG-to-Vue icon source generator for Cedar and Maple",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sparknest-team/design-ui.git",
     "directory": "packages/ui-icons"
   },
-  "description": "Shared SVG-to-Vue icon source generator for Cedar and Maple",
   "license": "MIT",
   "type": "module",
-  "scripts": {
-    "sync:workspace-icons": "node scripts/sync-workspace-icons.mjs"
-  },
   "exports": {
     ".": "./src/index.mjs"
   },
   "files": [
     "src"
   ],
+  "scripts": {
+    "sync:workspace-icons": "node scripts/sync-workspace-icons.mjs"
+  },
   "dependencies": {
     "svgo": "^3.3.2"
   },

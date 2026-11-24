@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict'
-import { readFileSync, readdirSync } from 'node:fs'
+import { readdirSync, readFileSync } from 'node:fs'
 import { extname, resolve } from 'node:path'
-import contract from '../contracts/theme-contract.json' with { type: 'json' }
 import legacyDenylist from '../contracts/legacy-denylist.json' with { type: 'json' }
+import contract from '../contracts/theme-contract.json' with { type: 'json' }
 import { normalizeTokenValue } from './normalize-value.mjs'
 
 const sourceExtensions = new Set(['.less', '.css', '.scss', '.vue', '.ts', '.tsx', '.md'])
@@ -46,9 +46,7 @@ function checkThemeOverrides(name, source, prefix) {
   for (const file of walk(themesRoot)) {
     if (/\/(?:__tests__|__demos__|example|docs)\//.test(file)) continue
     const text = readFileSync(file, 'utf8')
-    const keys = [...text.matchAll(new RegExp(`['\"](--${prefix}-[a-z0-9-]+)['\"]\\s*:`, 'g'))].map(
-      (match) => match[1],
-    )
+    const keys = [...text.matchAll(new RegExp(`['\"](--${prefix}-[a-z0-9-]+)['\"]\\s*:`, 'g'))].map((match) => match[1])
     for (const key of keys) {
       if (key.startsWith(`--${prefix}-internal-`)) violations.push(`${key}: internal token in ${file}`)
       else if (!defined.has(key)) violations.push(`${key}: undefined theme override in ${file}`)
@@ -90,10 +88,7 @@ function checkComponentDocs(name, source, prefix) {
     }
     for (const file of files.filter((path) => path.endsWith('.md'))) {
       const text = readFileSync(file, 'utf8')
-      const pattern = new RegExp(
-        `--(?:${prefix}-)?${namespace}-([a-z0-9](?:[a-z0-9-]*[a-z0-9])?)(?![a-z0-9-])`,
-        'g',
-      )
+      const pattern = new RegExp(`--(?:${prefix}-)?${namespace}-([a-z0-9](?:[a-z0-9-]*[a-z0-9])?)(?![a-z0-9-])`, 'g')
       for (const match of text.matchAll(pattern)) {
         if (!allowed.has(match[1])) violations.push(`${match[0]} in ${file}`)
       }
@@ -128,8 +123,9 @@ function logicalComponentTokenValues(library, component, expected = contract.com
   const source = readFileSync(resolve(library.source, component, 'style/token.less'), 'utf8')
   // Naming examples in comments may contain braces (e.g. {variant}); they are not CSS blocks.
   // Preserve quoted strings so URLs and string-valued defaults are not treated as comments.
-  const uncommented = source.replace(/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\*[\s\S]*?\*\/|\/\/[^\n]*/g,
-    (match) => match.startsWith('//') || match.startsWith('/*') ? '' : match)
+  const uncommented = source.replace(/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\/\*[\s\S]*?\*\/|\/\/[^\n]*/g, (match) =>
+    match.startsWith('//') || match.startsWith('/*') ? '' : match,
+  )
   const defaults = [...uncommented.matchAll(/(?:^|\n)\s*:root\s*\{([^}]*)\}/g)].map((match) => match[1]).join('\n')
   const values = customPropertyValues(defaults, library.prefix)
   return Object.fromEntries(
@@ -177,7 +173,11 @@ export function collectThemeContract({ cedarSource, mapleSource }) {
 export function checkThemeContract(options) {
   const actual = collectThemeContract(options)
   assert.deepEqual(actual.system, contract.tokens.system, 'System tokens differ from @sparknest/theme-contract-vue')
-  assert.deepEqual(actual.components, contract.tokens.components, 'Component tokens differ from @sparknest/theme-contract-vue')
+  assert.deepEqual(
+    actual.components,
+    contract.tokens.components,
+    'Component tokens differ from @sparknest/theme-contract-vue',
+  )
 
   for (const library of [
     { name: 'Cedar', key: 'cedar', prefix: contract.prefixes.cedar, source: options.cedarSource },
@@ -189,9 +189,18 @@ export function checkThemeContract(options) {
       `${library.name}: system token values differ from @sparknest/theme-contract-vue`,
     )
     const platformSystem = contract.platformSystemTokenValues?.[library.key] ?? {}
-    for (const token of Object.keys(platformSystem)) assert.ok(!(token in contract.systemTokenValues), `${library.name}: duplicate system default ${token}`)
-    assert.deepEqual(logicalSystemTokenValues(library, platformSystem), platformSystem, `${library.name}: platform system defaults differ`)
-    assert.deepEqual([...Object.keys(contract.systemTokenValues), ...Object.keys(platformSystem)].sort(), actual.system, `${library.name}: every system default must be governed`)
+    for (const token of Object.keys(platformSystem))
+      assert.ok(!(token in contract.systemTokenValues), `${library.name}: duplicate system default ${token}`)
+    assert.deepEqual(
+      logicalSystemTokenValues(library, platformSystem),
+      platformSystem,
+      `${library.name}: platform system defaults differ`,
+    )
+    assert.deepEqual(
+      [...Object.keys(contract.systemTokenValues), ...Object.keys(platformSystem)].sort(),
+      actual.system,
+      `${library.name}: every system default must be governed`,
+    )
     for (const [component, expected] of Object.entries(contract.componentTokenValues)) {
       assert.deepEqual(
         logicalComponentTokenValues(library, component),
@@ -201,7 +210,10 @@ export function checkThemeContract(options) {
     }
     for (const [component, expected] of Object.entries(contract.platformComponentTokenValues?.[library.key] ?? {})) {
       for (const token of Object.keys(expected)) {
-        assert.ok(!(token in (contract.componentTokenValues[component] ?? {})), `${library.name} ${component}/${token}: duplicate shared and platform default`)
+        assert.ok(
+          !(token in (contract.componentTokenValues[component] ?? {})),
+          `${library.name} ${component}/${token}: duplicate shared and platform default`,
+        )
       }
       assert.deepEqual(
         logicalComponentTokenValues(library, component, expected),
@@ -244,14 +256,19 @@ export function checkThemeContract(options) {
   return {
     systemCount: actual.system.length,
     systemValueCount: Object.keys(contract.systemTokenValues).length,
-    platformSystemValueCount: Object.values(contract.platformSystemTokenValues ?? {}).reduce((count, values) => count + Object.keys(values).length, 0),
+    platformSystemValueCount: Object.values(contract.platformSystemTokenValues ?? {}).reduce(
+      (count, values) => count + Object.keys(values).length,
+      0,
+    ),
     componentValueCount: Object.values(contract.componentTokenValues).reduce(
       (count, values) => count + Object.keys(values).length,
       0,
     ),
     componentCount: contract.components.length,
     platformComponentValueCount: Object.values(contract.platformComponentTokenValues ?? {}).reduce(
-      (count, components) => count + Object.values(components).reduce((sum, values) => sum + Object.keys(values).length, 0), 0,
+      (count, components) =>
+        count + Object.values(components).reduce((sum, values) => sum + Object.keys(values).length, 0),
+      0,
     ),
   }
 }

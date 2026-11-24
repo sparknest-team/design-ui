@@ -1,5 +1,57 @@
 <!doctype html>
-<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>IndexBar consumer lifecycle</title>
-<style>body{font:14px system-ui;margin:20px}button{padding:8px;margin:4px}.surface{height:180px;overflow:auto;position:relative;width:400px;border:1px solid #aaa}.group{height:240px}.mp-index-anchor{height:30px}output{display:block;white-space:pre-wrap;max-height:300px;overflow:auto}.mp-index-bar__anchor-list-container{position:absolute;right:4px;top:0}</style>
-<script>window.__evidenceDiagnostics=[]; for(const name of ['warn','error']){const original=console[name];console[name]=(...args)=>{window.__evidenceDiagnostics.push({kind:name,text:args.map(String).join(' ')});original.apply(console,args)}}window.addEventListener('error',event=>window.__evidenceDiagnostics.push({kind:'error-event',text:String(event.message)}));window.addEventListener('unhandledrejection',event=>window.__evidenceDiagnostics.push({kind:'unhandledrejection',text:String(event.reason)}));</script><div id="app"></div><script type="module" src="./index-bar-lifecycle-ego.js"></script></html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IndexBar consumer lifecycle</title>
+  <style>
+    body {
+      font: 14px system-ui;
+      margin: 20px;
+    }
+    button {
+      padding: 8px;
+      margin: 4px;
+    }
+    .surface {
+      height: 180px;
+      overflow: auto;
+      position: relative;
+      width: 400px;
+      border: 1px solid #aaa;
+    }
+    .group {
+      height: 240px;
+    }
+    .mp-index-anchor {
+      height: 30px;
+    }
+    output {
+      display: block;
+      white-space: pre-wrap;
+      max-height: 300px;
+      overflow: auto;
+    }
+    .mp-index-bar__anchor-list-container {
+      position: absolute;
+      right: 4px;
+      top: 0;
+    }
+  </style>
+  <script>
+    window.__evidenceDiagnostics = []
+    for (const name of ['warn', 'error']) {
+      const original = console[name]
+      console[name] = (...args) => {
+        window.__evidenceDiagnostics.push({ kind: name, text: args.map(String).join(' ') })
+        original.apply(console, args)
+      }
+    }
+    window.addEventListener('error', (event) =>
+      window.__evidenceDiagnostics.push({ kind: 'error-event', text: String(event.message) }),
+    )
+    window.addEventListener('unhandledrejection', (event) =>
+      window.__evidenceDiagnostics.push({ kind: 'unhandledrejection', text: String(event.reason) }),
+    )
+  </script>
+  <div id="app"></div>
+  <script type="module" src="./index-bar-lifecycle-ego.js"></script>
+</html>

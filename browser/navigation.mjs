@@ -6,12 +6,18 @@ const observers = new WeakMap()
 // exact pending request, or hang again when the main thread itself is blocked.
 export function observeNavigation(page) {
   if (observers.has(page)) return observers.get(page)
-  let started = performance.now(), target, requests = new Map(), events = []
+  let started = performance.now(),
+    target,
+    requests = new Map(),
+    events = []
   const elapsed = () => Math.round(performance.now() - started)
   page.on('request', (request) => {
-    if (/^https?:/.test(request.url())) requests.set(request, {
-      url: request.url(), type: request.resourceType(), startedMs: elapsed(),
-    })
+    if (/^https?:/.test(request.url()))
+      requests.set(request, {
+        url: request.url(),
+        type: request.resourceType(),
+        startedMs: elapsed(),
+      })
   })
   page.on('response', (response) => {
     const item = requests.get(response.request())
@@ -36,7 +42,9 @@ export function observeNavigation(page) {
     snapshot() {
       const all = [...requests.values()].map((item) => ({ ...item }))
       return {
-        url: target, elapsedMs: elapsed(), events: events.map((item) => ({ ...item })),
+        url: target,
+        elapsedMs: elapsed(),
+        events: events.map((item) => ({ ...item })),
         requests: all,
         pending: all.filter((item) => item.finishedMs === undefined),
       }

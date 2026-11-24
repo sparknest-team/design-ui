@@ -352,32 +352,20 @@
     "resolvedBy": "Existing local npm login and interactive npm web 2FA; no supplied recovery code was used."
   },
   "validation": {
-    "builds": [
-      "cedar",
-      "maple"
-    ],
-    "typechecks": [
-      "cedar",
-      "maple"
-    ],
+    "builds": ["cedar", "maple"],
+    "typechecks": ["cedar", "maple"],
     "cliTests": "passed for cedar and maple",
     "sharedTests": 22,
     "previewTests": 28,
     "packageArchiveValidation": "all 22 passed; public registry, version and dependency protocols checked",
-    "privatePackagesExcluded": [
-      "@maple-design/maple-ui-playground",
-      "maple-vscode-extension"
-    ],
+    "privatePackagesExcluded": ["@maple-design/maple-ui-playground", "maple-vscode-extension"],
     "publicRegistryVersionsTagsAndIntegrity": "22/22 passed without authentication",
     "pendingRegistryPackages": [],
     "cleanPublicInstall": "passed: both main libraries and runtime dependencies installed from registry.npmjs.org in a clean temporary project",
     "productionSsr": "passed for both main libraries: ESM root exports, button subpaths, Vue SSR rendering through Vite production build",
     "ssrConfiguration": {
       "noExternal": true,
-      "external": [
-        "vue",
-        "@vue/server-renderer"
-      ]
+      "external": ["vue", "@vue/server-renderer"]
     },
     "ssrLimitations": [
       "Raw Node imports require CSS handling.",

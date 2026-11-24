@@ -15,11 +15,11 @@
 
 ## 引用与验证
 
-| 库 | 调用方 | 处理 |
-| --- | --- | --- |
+| 库    | 调用方                                                                                                                               | 处理                                                                                  |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
 | Cedar | Breadcrumb、AvatarGroup、Ellipsis、FormItemLabel、SliderButton、ImagePreviewAction、Typography、NavMenu、Transfer、Table/AutoTooltip | 保留原组件/插槽/事件，纳入扩大调用链回归；Popover 内部 trigger 断言改为验证直接转发值 |
-| Maple | Breadcrumb、AvatarGroup、Ellipsis | 保留调用方式；Ellipsis 旧 Trigger DOM 快照迁移至共同定位/动画/内容层 |
-| 两端 | Tooltip/Popover 公共子路径与安装入口 | 运行时 props、DTS、方法、事件、默认值和 ESM/CJS 无 DOM 导入检查 |
+| Maple | Breadcrumb、AvatarGroup、Ellipsis                                                                                                    | 保留调用方式；Ellipsis 旧 Trigger DOM 快照迁移至共同定位/动画/内容层                  |
+| 两端  | Tooltip/Popover 公共子路径与安装入口                                                                                                 | 运行时 props、DTS、方法、事件、默认值和 ESM/CJS 无 DOM 导入检查                       |
 
 配对 wrapper-contract 每端 16 项，覆盖受控拒绝与事件顺序、首次打开及方法幂等、参数转发、缓存/卸载、引用替换和重置、SVG、样式与插槽覆盖、Popover title/content 与 Tooltip role。
 

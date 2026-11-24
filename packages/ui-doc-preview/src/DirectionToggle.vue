@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useDocsDirection } from './docs-direction'
+
 const { direction, toggle } = useDocsDirection()
 </script>
 
@@ -34,6 +35,11 @@ const { direction, toggle } = useDocsDirection()
   white-space: nowrap;
   cursor: pointer;
 }
-.docs-direction-toggle:hover { opacity: .8; }
-.docs-direction-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.docs-direction-toggle:hover {
+  opacity: 0.8;
+}
+.docs-direction-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
 </style>

@@ -13,7 +13,10 @@ export function validateEngineEvidence({ coverage, navigation, capabilities }, e
   assert.equal(navigation.stable, true)
   assert.equal(coverage.completedComponentCases, coverage.expectedComponentCases)
   assert.equal(coverage.results.length, coverage.expectedComponentCases + coverage.expectedGuideCases)
-  assert.ok(coverage.results.length > 0 && coverage.results.every((item) => item.passed === true), 'component/guide failure')
+  assert.ok(
+    coverage.results.length > 0 && coverage.results.every((item) => item.passed === true),
+    'component/guide failure',
+  )
   assert.equal(navigation.completed, navigation.expected)
   assert.equal(navigation.passed, navigation.expected)
   assert.ok(navigation.expected > 0)
@@ -23,6 +26,11 @@ export function validateEngineEvidence({ coverage, navigation, capabilities }, e
   assert.equal(capabilities.browser.version, coverage.browser.version)
   assert.equal(navigation.browser.version, coverage.browser.version)
   assert.ok(coverage.browser.version)
-  return { browser: coverage.browser, componentCases: coverage.completedComponentCases,
-    guideCases: coverage.expectedGuideCases, navigationCases: navigation.completed, passed: true }
+  return {
+    browser: coverage.browser,
+    componentCases: coverage.completedComponentCases,
+    guideCases: coverage.expectedGuideCases,
+    navigationCases: navigation.completed,
+    passed: true,
+  }
 }

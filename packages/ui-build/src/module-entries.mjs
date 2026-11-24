@@ -13,7 +13,11 @@ export async function collectModuleEntries(root, sourceDir, entry) {
       const full = resolve(directory, item.name)
       if (item.isDirectory()) await visit(full)
       else if (/^index\.(?:ts|tsx|js|mjs)$/.test(item.name) && full !== entries.index) {
-        entries[relative(sourceRoot, full).replaceAll('\\', '/').replace(/\.[^.]+$/, '')] = full
+        entries[
+          relative(sourceRoot, full)
+            .replaceAll('\\', '/')
+            .replace(/\.[^.]+$/, '')
+        ] = full
       }
     }
   }

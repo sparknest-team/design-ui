@@ -1,16 +1,17 @@
 import { spawn } from 'node:child_process'
-import { createRequire } from 'node:module'
 import { existsSync } from 'node:fs'
-import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises'
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'
+import { createRequire } from 'node:module'
 import { basename, dirname, relative, resolve } from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import less from 'less'
 import { build } from 'vite'
-import { collectModuleEntries } from './module-entries.mjs'
-import { libraryDefines } from './environment.mjs'
 import { browserTargets } from './browser-targets.mjs'
+import { libraryDefines } from './environment.mjs'
+import { collectModuleEntries } from './module-entries.mjs'
 import { downlevelVueDeclarations } from './vue-declarations.mjs'
+
 export { browserTargets } from './browser-targets.mjs'
 export { downlevelVueDeclarations } from './vue-declarations.mjs'
 
@@ -20,19 +21,23 @@ export function defineConfig(config) {
 
 async function walk(root) {
   const entries = await readdir(root, { withFileTypes: true })
-  return (await Promise.all(entries.map(async (entry) => {
-    const path = resolve(root, entry.name)
-    return entry.isDirectory() ? walk(path) : [path]
-  }))).flat()
+  return (
+    await Promise.all(
+      entries.map(async (entry) => {
+        const path = resolve(root, entry.name)
+        return entry.isDirectory() ? walk(path) : [path]
+      }),
+    )
+  ).flat()
 }
 
 function run(binary, args, cwd) {
   return new Promise((resolvePromise, reject) => {
     const child = spawn(binary, args, { cwd, stdio: 'inherit' })
     child.on('error', reject)
-    child.on('exit', (code) => code === 0
-      ? resolvePromise()
-      : reject(new Error(`${binary} exited with code ${code}`)))
+    child.on('exit', (code) =>
+      code === 0 ? resolvePromise() : reject(new Error(`${binary} exited with code ${code}`)),
+    )
   })
 }
 
@@ -85,7 +90,9 @@ function extractVueStyleBlocks(source) {
 
 async function compileVueSfcStyles({ root, sourceDir, outputs, cssVariables }) {
   const sourceRoot = resolve(root, sourceDir)
-  const sourceFiles = (await walk(sourceRoot)).filter((path) => path.endsWith('.vue') && !isSkippedSource(relative(sourceRoot, path)))
+  const sourceFiles = (await walk(sourceRoot)).filter(
+    (path) => path.endsWith('.vue') && !isSkippedSource(relative(sourceRoot, path)),
+  )
 
   for (const sourcePath of sourceFiles) {
     const source = await readFile(sourcePath, 'utf8')
@@ -106,10 +113,12 @@ async function compileVueSfcStyles({ root, sourceDir, outputs, cssVariables }) {
         })
         css = rendered.css
       }
-      await Promise.all(outputs.map(async (output) => {
-        await mkdir(dirname(resolve(root, output, target)), { recursive: true })
-        await writeFile(resolve(root, output, target), css)
-      }))
+      await Promise.all(
+        outputs.map(async (output) => {
+          await mkdir(dirname(resolve(root, output, target)), { recursive: true })
+          await writeFile(resolve(root, output, target), css)
+        }),
+      )
     }
   }
 }
@@ -120,32 +129,35 @@ async function rewriteComponentStyleEntries({ root, cssVariables }) {
   if (!existsSync(esRoot)) {
     return
   }
-  const dirs = (await readdir(esRoot, { withFileTypes: true }))
-    .filter((entry) => entry.isDirectory() && !skip.has(entry.name))
+  const dirs = (await readdir(esRoot, { withFileTypes: true })).filter(
+    (entry) => entry.isDirectory() && !skip.has(entry.name),
+  )
 
-  await Promise.all(dirs.map(async (entry) => {
-    const dirRoot = resolve(esRoot, entry.name)
-    const cssFiles = (await walk(dirRoot)).filter((path) => {
-      const rel = relative(dirRoot, path).replaceAll('\\', '/')
-      return path.endsWith('.css') && !rel.startsWith('style/')
-    })
-    if (!cssFiles.length) {
-      return
-    }
-    const specs = cssFiles.map((path) => `../${relative(dirRoot, path).replaceAll('\\', '/')}`)
-    const lines = specs.map((spec) => `import '${spec}'`)
-    if (cssVariables) {
-      lines.unshift(`import '../../${cssVariables.replace(/\.less$/, '.css')}'`)
-    }
-    const esCode = `${lines.join('\n')}\n`
-    const cjsCode = esCode.replace(/^import '([^']+)'$/gm, "require('$1')")
-    await Promise.all([
-      mkdir(resolve(root, 'es', entry.name, 'style'), { recursive: true }),
-      mkdir(resolve(root, 'lib', entry.name, 'style'), { recursive: true }),
-    ])
-    await writeFile(resolve(root, 'es', entry.name, 'style', 'index.mjs'), esCode)
-    await writeFile(resolve(root, 'lib', entry.name, 'style', 'index.js'), cjsCode)
-  }))
+  await Promise.all(
+    dirs.map(async (entry) => {
+      const dirRoot = resolve(esRoot, entry.name)
+      const cssFiles = (await walk(dirRoot)).filter((path) => {
+        const rel = relative(dirRoot, path).replaceAll('\\', '/')
+        return path.endsWith('.css') && !rel.startsWith('style/')
+      })
+      if (!cssFiles.length) {
+        return
+      }
+      const specs = cssFiles.map((path) => `../${relative(dirRoot, path).replaceAll('\\', '/')}`)
+      const lines = specs.map((spec) => `import '${spec}'`)
+      if (cssVariables) {
+        lines.unshift(`import '../../${cssVariables.replace(/\.less$/, '.css')}'`)
+      }
+      const esCode = `${lines.join('\n')}\n`
+      const cjsCode = esCode.replace(/^import '([^']+)'$/gm, "require('$1')")
+      await Promise.all([
+        mkdir(resolve(root, 'es', entry.name, 'style'), { recursive: true }),
+        mkdir(resolve(root, 'lib', entry.name, 'style'), { recursive: true }),
+      ])
+      await writeFile(resolve(root, 'es', entry.name, 'style', 'index.mjs'), esCode)
+      await writeFile(resolve(root, 'lib', entry.name, 'style', 'index.js'), cjsCode)
+    }),
+  )
 }
 
 /**
@@ -180,9 +192,7 @@ async function renderAggregatedLibraryCss(sourceRoot) {
     const source = await readFile(path, 'utf8')
     for (const match of source.matchAll(/import\s+['"]([^'"]+)['"]/g)) {
       if (!match[1].startsWith('.') && !match[1].endsWith('.css')) continue
-      const target = match[1].startsWith('.')
-        ? resolve(dirname(path), match[1])
-        : createRequire(path).resolve(match[1])
+      const target = match[1].startsWith('.') ? resolve(dirname(path), match[1]) : createRequire(path).resolve(match[1])
       await collect(/\.(?:less|css|ts)$/.test(target) ? target : resolve(target, 'index.ts'))
     }
   }
@@ -190,7 +200,7 @@ async function renderAggregatedLibraryCss(sourceRoot) {
     await collect(foundationPath)
   }
   // Match on-demand dependency order in the full-library entry as well.
-  for (const entry of sourceFiles.filter(path => /\/style\/index\.ts$/.test(path.replaceAll('\\', '/'))).sort()) {
+  for (const entry of sourceFiles.filter((path) => /\/style\/index\.ts$/.test(path.replaceAll('\\', '/'))).sort()) {
     await collect(entry)
   }
   for (const rel of styleLess) {
@@ -225,49 +235,64 @@ async function compileStyles(config) {
   }
   const styleEntries = sourceFiles.filter((path) => /\/style\/index\.ts$/.test(path.replaceAll('\\', '/')))
 
-  for (const sourcePath of sourceFiles.filter((path) => /\.(?:[cm]?[jt]sx?|vue)$/.test(path) && !isSkippedSource(relative(sourceRoot, path)))) {
+  for (const sourcePath of sourceFiles.filter(
+    (path) => /\.(?:[cm]?[jt]sx?|vue)$/.test(path) && !isSkippedSource(relative(sourceRoot, path)),
+  )) {
     const source = await readFile(sourcePath, 'utf8')
     for (const match of source.matchAll(/(?:import|from)\s*['"]([^'"]+\.less)['"]/g)) {
       files.add(resolve(dirname(sourcePath), match[1]))
     }
   }
 
-  await Promise.all([...files].map(async (path) => {
-    if (!existsSync(path)) {
-      return
-    }
-    const css = await renderLessFile(path)
-    const target = relative(sourceRoot, path).replace(/\.less$/, '.css')
-    await Promise.all(outputs.map(async (output) => {
-      await mkdir(dirname(resolve(root, output, target)), { recursive: true })
-      await writeFile(resolve(root, output, target), css)
-    }))
-  }))
-
-  await Promise.all(styleEntries.map(async (entry) => {
-    const styleDir = dirname(entry)
-    const targetDir = relative(sourceRoot, styleDir)
-    // Keep the source side-effect graph: shared CSS must remain separate modules.
-    const source = await readFile(entry, 'utf8')
-    const imports = [...new Set([...source.matchAll(/import\s+['"]([^'"]+)['"]/g)]
-      .map((match) => match[1].replace(/\.less$/, '.css')))]
-    const resolveImport = (specifier, extension) => {
-      if (specifier.startsWith('.') && existsSync(resolve(styleDir, specifier, 'index.ts'))) {
-        return `${specifier}/index.${extension}`
+  await Promise.all(
+    [...files].map(async (path) => {
+      if (!existsSync(path)) {
+        return
       }
-      return specifier.replace(/\.ts$/, `.${extension}`)
-    }
-    const esCode = imports.length ? imports.map((s) => `import '${resolveImport(s, 'mjs')}'\n`).join('') : 'export {}\n'
-    const cjsCode = imports.length ? imports.map((s) => `require('${resolveImport(s, 'js')}')\n`).join('') : "'use strict'\n"
-    await Promise.all([
-      mkdir(resolve(root, 'es', targetDir), { recursive: true }),
-      mkdir(resolve(root, 'lib', targetDir), { recursive: true }),
-    ])
-    await Promise.all([
-      writeFile(resolve(root, 'es', targetDir, 'index.mjs'), esCode),
-      writeFile(resolve(root, 'lib', targetDir, 'index.js'), cjsCode),
-    ])
-  }))
+      const css = await renderLessFile(path)
+      const target = relative(sourceRoot, path).replace(/\.less$/, '.css')
+      await Promise.all(
+        outputs.map(async (output) => {
+          await mkdir(dirname(resolve(root, output, target)), { recursive: true })
+          await writeFile(resolve(root, output, target), css)
+        }),
+      )
+    }),
+  )
+
+  await Promise.all(
+    styleEntries.map(async (entry) => {
+      const styleDir = dirname(entry)
+      const targetDir = relative(sourceRoot, styleDir)
+      // Keep the source side-effect graph: shared CSS must remain separate modules.
+      const source = await readFile(entry, 'utf8')
+      const imports = [
+        ...new Set(
+          [...source.matchAll(/import\s+['"]([^'"]+)['"]/g)].map((match) => match[1].replace(/\.less$/, '.css')),
+        ),
+      ]
+      const resolveImport = (specifier, extension) => {
+        if (specifier.startsWith('.') && existsSync(resolve(styleDir, specifier, 'index.ts'))) {
+          return `${specifier}/index.${extension}`
+        }
+        return specifier.replace(/\.ts$/, `.${extension}`)
+      }
+      const esCode = imports.length
+        ? imports.map((s) => `import '${resolveImport(s, 'mjs')}'\n`).join('')
+        : 'export {}\n'
+      const cjsCode = imports.length
+        ? imports.map((s) => `require('${resolveImport(s, 'js')}')\n`).join('')
+        : "'use strict'\n"
+      await Promise.all([
+        mkdir(resolve(root, 'es', targetDir), { recursive: true }),
+        mkdir(resolve(root, 'lib', targetDir), { recursive: true }),
+      ])
+      await Promise.all([
+        writeFile(resolve(root, 'es', targetDir, 'index.mjs'), esCode),
+        writeFile(resolve(root, 'lib', targetDir, 'index.js'), cjsCode),
+      ])
+    }),
+  )
 
   if (vueSfcStyles) {
     await compileVueSfcStyles(config)
@@ -281,14 +306,18 @@ async function compileStyles(config) {
     bundleCss = await renderAggregatedLibraryCss(sourceRoot)
   }
   if (bundleCss == null) {
-    const cssFiles = (await walk(resolve(root, 'es'))).filter((path) => path.endsWith('.css') && !path.endsWith(`${bundleName}.css`))
+    const cssFiles = (await walk(resolve(root, 'es'))).filter(
+      (path) => path.endsWith('.css') && !path.endsWith(`${bundleName}.css`),
+    )
     bundleCss = (await Promise.all(cssFiles.map((path) => readFile(path, 'utf8')))).join('\n')
   }
 
-  await Promise.all(outputs.map(async (output) => {
-    await mkdir(resolve(root, output), { recursive: true })
-    await writeFile(resolve(root, output, `${bundleName}.css`), bundleCss)
-  }))
+  await Promise.all(
+    outputs.map(async (output) => {
+      await mkdir(resolve(root, output), { recursive: true })
+      await writeFile(resolve(root, output, `${bundleName}.css`), bundleCss)
+    }),
+  )
 }
 
 function vitePlugins(config) {
@@ -351,11 +380,13 @@ async function assertNoBundlerHelpers(config) {
     }
   }
   if (offenders.length) {
-    throw new Error([
-      'Library output contains bundler-private preload helpers; consumers bundling with rolldown/vite 8 cannot parse them:',
-      ...offenders.map((path) => `  ${path}`),
-      'Replace the dynamic import() in the matching source file with a static import and mark the module external.',
-    ].join('\n'))
+    throw new Error(
+      [
+        'Library output contains bundler-private preload helpers; consumers bundling with rolldown/vite 8 cannot parse them:',
+        ...offenders.map((path) => `  ${path}`),
+        'Replace the dynamic import() in the matching source file with a static import and mark the module external.',
+      ].join('\n'),
+    )
   }
 }
 
@@ -405,7 +436,11 @@ async function assertOutputs(config) {
   }
   const missing = []
   for (const path of required) {
-    try { await readFile(resolve(root, path)) } catch { missing.push(path) }
+    try {
+      await readFile(resolve(root, path))
+    } catch {
+      missing.push(path)
+    }
   }
   if (missing.length) throw new Error(`Missing build outputs:\n${missing.join('\n')}`)
 }
@@ -415,7 +450,9 @@ export async function buildLibrary(userConfig) {
   // release. Reject it before cleaning any existing output, rather than silently
   // mutating the environment of another build in the same process.
   if (process.env.NODE_ENV && process.env.NODE_ENV !== 'production') {
-    throw new Error('buildLibrary requires NODE_ENV=production (or unset); custom compile/test modes are not release builds')
+    throw new Error(
+      'buildLibrary requires NODE_ENV=production (or unset); custom compile/test modes are not release builds',
+    )
   }
   const config = {
     sourceDir: 'src',
