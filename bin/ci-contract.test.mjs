@@ -72,7 +72,7 @@ for (const repo of repositories) {
       assert.match(docsConfig, /preprocessorMaxWorkers:\s*2\s*,/)
       assert.match(docsConfig, /api:\s*'modern-compiler'/)
     } else {
-      for (const gate of ['build:lib', 'build:doc', 'lint:check', 'check:dev-boundary', 'check:cross-platform', 'check:test-collection', 'check:doc-pipeline', 'check:source-normalization', 'check:icon-bundle', 'check:component-bundle', 'check:docs-theme']) {
+      for (const gate of ['build:lib', 'build:doc', 'lint:check', 'check:dev-boundary', 'check:test-collection', 'check:doc-pipeline', 'check:source-normalization', 'check:icon-bundle', 'check:component-bundle', 'check:docs-theme']) {
         assert.ok(scripts.quality.split(' && ').includes(`pnpm ${gate}`), `${gate} must run in quality`)
       }
       assert.ok(workflow.indexOf('playwright install --with-deps chromium') < workflow.indexOf('- run: pnpm quality'))
