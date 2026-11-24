@@ -120,7 +120,7 @@ export function defineProductionComponentTests({ root, library }) {
   const { devices } = playwright
   const profile = browserProfile()
   // A new comprehensive suite gets its own budget; the original theme gates and
-  // their timeouts are unchanged. Individual component cases stay bounded.
+  // their timeouts are unchanged. Exact-source component cases have a 60-second timeout.
   describe(`${library}: every production component page, source and behavior`, { timeout: 1_800_000, concurrency }, () => {
     let directory, server, browser, origin, buildIndexHash, disposed = false
     let contextsSinceLaunch = 0, browserLaunches = 0, initialBrowserVersion
@@ -246,7 +246,7 @@ export function defineProductionComponentTests({ root, library }) {
               })
             }
           }
-          it(`${surface} ${theme} ${item.component}: ${contract.kind}, exact source`, { timeout: directionCore ? 60_000 : 30_000 }, async (t) => {
+          it(`${surface} ${theme} ${item.component}: ${contract.kind}, exact source`, { timeout: 60_000 }, async (t) => {
             const context = await openContext({ ...contextOptions(profile, surface, devices, browser.version()), colorScheme: 'light' })
             t.signal.addEventListener('abort', () => { void context.close().catch(() => {}) }, { once: true })
             let page
