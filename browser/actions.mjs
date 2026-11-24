@@ -246,11 +246,13 @@ export async function exercise({ page, demo, component, library, contract, demos
       if (action === 'auto-complete') await firstInput().fill('Bei')
       else if (!editor) await reference.click()
       const role = action === 'tree-select' ? 'treeitem' : 'option'
+      // A listbox-only field panel (maple select) exposes no combobox, so there
+      // is no aria-controls owner to query; its options live in that panel.
       const popupId = library === 'cedar' && action === 'select'
         ? await poll(() => reference.getAttribute('aria-controls'), Boolean, 'combobox identifies its own popup')
-        : await reference.getAttribute('aria-controls')
+        : (await reference.count()) ? await reference.getAttribute('aria-controls') : null
       // Other mounted demos can own visible teleported options on the same page.
-      const popup = popupId ? page.locator(`[id=${JSON.stringify(popupId)}]`) : page
+      const popup = popupId ? page.locator(`[id=${JSON.stringify(popupId)}]`) : editor ?? page
       const option = action === 'tree-select' && library === 'cedar'
         ? visible(popup.getByRole(role, { name: '设计部', exact: true, disabled: false })).first()
         : action === 'people-select' && library === 'maple'
