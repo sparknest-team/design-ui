@@ -1,11 +1,17 @@
 # @sparknest/ui-build-vue
 
+## 1.4.2
+
+### Patch Changes
+
+- [#23](https://github.com/sparknest-team/design-ui/pull/23) [`ca535e1`](https://github.com/sparknest-team/design-ui/commit/ca535e1c81a11f5261081e5e12e7be6a1a61b304) Thanks [@sparknest-team](https://github.com/sparknest-team)! - 验证 npm Trusted Publishing（OIDC）配置：通过 GitHub Actions 真实发布一次以完成 trusted publisher 绑定验证，无功能性变更。
+  （注意：该仓库 .changeset/config.json 的 fixed 分组会把 @sparknest/theme-contract-vue / ui-build-vue / ui-doc-preview-vue / ui-icons-vue 一起抬到同一 patch 版本，这是预期行为。）
+
 ## 1.4.1
 
 ### Patch Changes
 
 - chore(release): 全仓版本号统一（fixed 组），未变更包同步升版
-
 
 ## 1.4.0
 
