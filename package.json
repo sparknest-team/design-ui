@@ -94,11 +94,12 @@
     "check:public-docs:browser": "node browser/public-documentation-check.mjs",
     "check:layout-nav-tokens:browser": "node browser/layout-nav-token-check.mjs",
     "check:packages": "node --test bin/package-boundary-check.test.mjs && node bin/package-boundary-check.mjs",
+    "check:publish-metadata": "node --test bin/publish-metadata-check.test.mjs && node bin/publish-metadata-check.mjs --repo sparknest-team/design-ui",
     "hooks:install": "node scripts/git-hooks.mjs install",
     "changeset": "changeset",
     "version-packages": "node bin/check-major-release.mjs && changeset version && pnpm install --lockfile-only --ignore-scripts",
     "prepare": "node scripts/git-hooks.mjs install",
-    "quality": "pnpm check:ci && pnpm check && pnpm check:demo-controls && pnpm check:public-docs && pnpm check:llms && node --test bin/api-documentation-locales.test.mjs bin/demo-content-parity.test.mjs",
+    "quality": "pnpm check:ci && pnpm check:publish-metadata && pnpm check && pnpm check:demo-controls && pnpm check:public-docs && pnpm check:llms && node --test bin/api-documentation-locales.test.mjs bin/demo-content-parity.test.mjs",
     "pr:merge": "node scripts/pr-merge.mjs",
     "check:pr-workflow": "node --test bin/pr-workflow.test.mjs"
   },
