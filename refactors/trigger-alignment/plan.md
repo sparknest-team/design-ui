@@ -6,15 +6,15 @@
 
 Trigger 目前没有独立的 `platform.ts`。所谓“平台定位适配”实际散落在两套组件主体中：
 
-| 职责 | Cedar | Maple |
-| --- | --- | --- |
-| 组件编排 | `trigger/trigger.tsx` | `trigger/Trigger.vue` |
-| 定位引擎 | `trigger/utils.ts` 中的自研定位 | `trigger/useFloatingTrigger.ts` 中的 `@popperjs/core` |
-| 容器解析 | `useTeleportContainer` | `usePopupContainer` + `useTeleport` |
-| 层级 | `usePopupManager` | `useStack` + `useZIndex` |
-| 滚动处理 | Trigger 主体自行监听滚动容器 | Popper `eventListeners` 自动更新 |
-| 全局配置 | Cedar ConfigProvider 提供 scroll/update 默认值 | Maple 没有对应入口 |
-| 样式结构 | `c-trigger-popup` 等横线类名 | `mp-trigger__popup` 等 BEM 类名 |
+| 职责     | Cedar                                          | Maple                                                 |
+| -------- | ---------------------------------------------- | ----------------------------------------------------- |
+| 组件编排 | `trigger/trigger.tsx`                          | `trigger/Trigger.vue`                                 |
+| 定位引擎 | `trigger/utils.ts` 中的自研定位                | `trigger/useFloatingTrigger.ts` 中的 `@popperjs/core` |
+| 容器解析 | `useTeleportContainer`                         | `usePopupContainer` + `useTeleport`                   |
+| 层级     | `usePopupManager`                              | `useStack` + `useZIndex`                              |
+| 滚动处理 | Trigger 主体自行监听滚动容器                   | Popper `eventListeners` 自动更新                      |
+| 全局配置 | Cedar ConfigProvider 提供 scroll/update 默认值 | Maple 没有对应入口                                    |
+| 样式结构 | `c-trigger-popup` 等横线类名                   | `mp-trigger__popup` 等 BEM 类名                       |
 
 已经独立复制并被基础层门禁检查的文件包括：`contract`、`state`、`reference`、`interaction`、`interaction-props`、`render`、`render-props`、`popup`、`geometry`、`arrow`、`resize`、`wrapper`。尚未同源的核心恰好是 `props`、组件主体、定位编排、容器/层级接线和样式。
 

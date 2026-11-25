@@ -2,11 +2,13 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { resolve } from 'node:path'
-import { pathToFileURL, fileURLToPath } from 'node:url'
+import { fileURLToPath, pathToFileURL } from 'node:url'
 import vm from 'node:vm'
 
 export async function checkPublishedEnvironment(root) {
-  const cedar = JSON.parse(readFileSync(resolve(root, 'packages/ui/package.json'), 'utf8')).name.startsWith('@cedar-design/')
+  const cedar = JSON.parse(readFileSync(resolve(root, 'packages/ui/package.json'), 'utf8')).name.startsWith(
+    '@cedar-design/',
+  )
   const ui = resolve(root, 'packages/ui')
   const brand = cedar ? 'Cedar' : 'Maple'
   const bundle = cedar ? 'cedar' : 'maple'
@@ -36,12 +38,22 @@ export async function checkPublishedEnvironment(root) {
     const dom = new JSDOM('<!doctype html><body></body>', { runScripts: 'outside-only', pretendToBeVisual: true })
     try {
       assert.equal(typeof dom.window.process, 'undefined')
-      vm.runInContext(readFileSync(require.resolve('vue/dist/vue.global.prod.js'), 'utf8'), dom.getInternalVMContext(), { timeout: 5000 })
-      vm.runInContext(readFileSync(resolve(ui, `umd/${bundle}.js`), 'utf8'), dom.getInternalVMContext(), { timeout: 5000 })
+      vm.runInContext(
+        readFileSync(require.resolve('vue/dist/vue.global.prod.js'), 'utf8'),
+        dom.getInternalVMContext(),
+        { timeout: 5000 },
+      )
+      vm.runInContext(readFileSync(resolve(ui, `umd/${bundle}.js`), 'utf8'), dom.getInternalVMContext(), {
+        timeout: 5000,
+      })
       assert.ok(dom.window[brand].Link)
       for (const key of Object.keys(valid)) assert.equal(dom.window[brand].linkProps[key].validator, undefined)
-    } finally { dom.window.close() }
-    console.log(`${brand}: actual ESM/CJS development and production consumers, and browser UMD without Node globals passed`)
+    } finally {
+      dom.window.close()
+    }
+    console.log(
+      `${brand}: actual ESM/CJS development and production consumers, and browser UMD without Node globals passed`,
+    )
   } finally {
     if (previous === undefined) delete process.env.NODE_ENV
     else process.env.NODE_ENV = previous
@@ -49,6 +61,10 @@ export async function checkPublishedEnvironment(root) {
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  try { await checkPublishedEnvironment(resolve(process.argv[2] ?? process.cwd())) }
-  catch (error) { console.error(`${error.name}: ${error.message}`); process.exitCode = 1 }
+  try {
+    await checkPublishedEnvironment(resolve(process.argv[2] ?? process.cwd()))
+  } catch (error) {
+    console.error(`${error.name}: ${error.message}`)
+    process.exitCode = 1
+  }
 }

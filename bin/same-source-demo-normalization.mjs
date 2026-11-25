@@ -9,7 +9,7 @@ export function normalizeSwitchEditMode(block, platform) {
   const expected = variants[platform]
   assert(expected, `Unknown Switch platform: ${platform}`)
   const lines = block.split('\n')
-  const rows = lines.flatMap((line, index) => /^\|\s*edit-mode\s*\|/.test(line) ? [index] : [])
+  const rows = lines.flatMap((line, index) => (/^\|\s*edit-mode\s*\|/.test(line) ? [index] : []))
   assert.equal(rows.length, 1, `${platform}: expected one Switch edit-mode row`)
   const parts = lines[rows[0]].split(expected)
   assert.equal(parts.length, 2, `${platform}: Switch edit-mode must match its reviewed platform contract`)
@@ -26,10 +26,17 @@ export function normalizeButtonSize(block, platform) {
   const expected = descriptions[platform]
   assert(expected, `Unknown Button platform: ${platform}`)
   const lines = block.split('\n')
-  const rows = lines.flatMap((line, index) => /^\|\s*size\s*\|/.test(line) ? [index] : [])
+  const rows = lines.flatMap((line, index) => (/^\|\s*size\s*\|/.test(line) ? [index] : []))
   assert.equal(rows.length, 1, `${platform}: expected one Button size row`)
-  const cells = lines[rows[0]].split('|').slice(1, -1).map(value => value.trim())
-  assert.deepEqual(cells, ['size', expected, '`xs / sm / md / lg / xl`', '`undefined`'], `${platform}: unreviewed Button size contract`)
+  const cells = lines[rows[0]]
+    .split('|')
+    .slice(1, -1)
+    .map((value) => value.trim())
+  assert.deepEqual(
+    cells,
+    ['size', expected, '`xs / sm / md / lg / xl`', '`undefined`'],
+    `${platform}: unreviewed Button size contract`,
+  )
   lines[rows[0]] = '| size | PLATFORM_SIZE_INHERITANCE | `xs / sm / md / lg / xl` | `undefined` |'
   return lines.join('\n')
 }

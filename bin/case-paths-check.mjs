@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
-import { createRequire } from 'node:module'
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
+import { createRequire } from 'node:module'
 import { dirname, extname, isAbsolute, join, relative, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -14,8 +14,10 @@ export function actualCase(file, base, cache = new Map()) {
     try {
       names = cache.get(current) ?? readdirSync(current)
       cache.set(current, names)
-    } catch { return undefined }
-    const matches = names.filter(name => name.toLowerCase() === part.toLowerCase())
+    } catch {
+      return undefined
+    }
+    const matches = names.filter((name) => name.toLowerCase() === part.toLowerCase())
     const name = names.includes(part) ? part : matches.length === 1 ? matches[0] : undefined
     if (!name) return undefined
     current = join(current, name)
@@ -42,8 +44,18 @@ export function resolveRelativeCase(source, specifier, base, cache = new Map()) 
   if (!specifier.startsWith('.')) return undefined
   const request = resolve(dirname(source), specifier.split(/[?#]/)[0])
   const extensions = ['.ts', '.tsx', '.vue', '.js', '.jsx', '.mjs', '.cjs', '.json', '.d.ts']
-  const candidates = [request, ...extensions.map(extension => request + extension), ...extensions.map(extension => join(request, 'index' + extension))]
-  if (/\.[cm]?js$/.test(request)) candidates.push(request.replace(/\.js$/, '.ts'), request.replace(/\.js$/, '.tsx'), request.replace(/\.mjs$/, '.mts'), request.replace(/\.cjs$/, '.cts'))
+  const candidates = [
+    request,
+    ...extensions.map((extension) => request + extension),
+    ...extensions.map((extension) => join(request, 'index' + extension)),
+  ]
+  if (/\.[cm]?js$/.test(request))
+    candidates.push(
+      request.replace(/\.js$/, '.ts'),
+      request.replace(/\.js$/, '.tsx'),
+      request.replace(/\.mjs$/, '.mts'),
+      request.replace(/\.cjs$/, '.cts'),
+    )
   for (const candidate of candidates) {
     const actual = actualCase(candidate, base, cache)
     if (actual && statSync(actual).isFile()) return { candidate, actual, matches: candidate === actual }
@@ -60,7 +72,11 @@ export function auditCasePaths(root) {
   const skipped = /^(?:node_modules|\.git|\.maple|\.temp.*|\.cache|es|lib|umd|dist)$/
   function walk(directory) {
     let entries
-    try { entries = readdirSync(directory, { withFileTypes: true }) } catch { return }
+    try {
+      entries = readdirSync(directory, { withFileTypes: true })
+    } catch {
+      return
+    }
     for (const entry of entries) {
       const file = join(directory, entry.name)
       if (entry.isDirectory() && !skipped.test(entry.name)) walk(file)
@@ -80,11 +96,14 @@ export function auditCasePaths(root) {
     const text = readFileSync(file, 'utf8')
     const descriptor = extname(file) === '.vue' ? vue.parse(text).descriptor : undefined
     const scripts = descriptor ? [descriptor.script?.content ?? '', descriptor.scriptSetup?.content ?? ''] : [text]
-    const specifiers = scripts.flatMap(script => ts.preProcessFile(script, true, true).importedFiles.map(item => item.fileName))
+    const specifiers = scripts.flatMap((script) =>
+      ts.preProcessFile(script, true, true).importedFiles.map((item) => item.fileName),
+    )
     if (descriptor?.script?.src) specifiers.push(descriptor.script.src)
     for (const specifier of specifiers) {
       const match = resolveRelativeCase(file, specifier, dirname(root), cache)
-      if (match && !match.matches) imports.push({ source: relative(root, file), specifier, actual: relative(root, match.actual) })
+      if (match && !match.matches)
+        imports.push({ source: relative(root, file), specifier, actual: relative(root, match.actual) })
     }
   }
   return { files: files.length, drift, imports }

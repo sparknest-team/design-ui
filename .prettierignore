@@ -1,0 +1,21 @@
+# 审计与浏览器证据：历史快照，只读记录，不属于源码格式化范围。
+audits/
+artifacts/
+
+# 二进制资源，Prettier 不处理（显式列出，避免有人加 --ignore-unknown 时误判）。
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.gif
+**/*.webp
+**/*.ico
+**/*.woff
+**/*.woff2
+
+# 由包管理器维护，每次安装重写。
+pnpm-lock.yaml
+
+# 许可证与工具链元数据保持原样。
+LICENSE
+.node-version
+.nvmrc

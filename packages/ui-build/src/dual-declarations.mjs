@@ -1,4 +1,4 @@
-import { mkdirSync, readdirSync, readFileSync, statSync, existsSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'
 import { dirname, join, relative, resolve } from 'node:path'
 
 // Keep each module format's declaration graph in the corresponding TS module mode.
@@ -46,7 +46,10 @@ export function writeDualDeclarations(root, ts) {
     }
     visit(source)
     edits.sort((a, b) => b.start - a.start)
-    for (const [suffix, extension] of [['.d.ts', 'js'], ['.d.cts', 'cjs']]) {
+    for (const [suffix, extension] of [
+      ['.d.ts', 'js'],
+      ['.d.cts', 'cjs'],
+    ]) {
       let result = text
       for (const edit of edits) {
         result = result.slice(0, edit.start) + `${edit.specifier}.${extension}` + result.slice(edit.end)

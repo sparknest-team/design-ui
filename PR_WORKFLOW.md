@@ -18,7 +18,6 @@ gh pr create --base main
 
 完整校验在 PR Quality 执行。Cedar/Maple 保留原有 `pnpm quality` 完整入口；design-ui 执行自己的完整入口，并分别运行 Cedar 与 Maple 的完整 consumer quality。CI 不忽略失败。每个仓库最终必须有成功的 `quality` 检查。
 
-
 颜色对比度不足按用户约定仅输出 advisory，不自动改配色，也不阻断合并；CSS 解析、变量映射及其他质量检查仍为硬门禁。策略见 `standards/contrast-policy.md`。
 
 ## Changesets

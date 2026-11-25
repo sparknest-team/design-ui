@@ -1,6 +1,54 @@
 <!doctype html>
-<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shared scroll real IAB execution</title>
-<style>body{margin:20px;font:14px system-ui}button{margin:4px;padding:8px}#buttons{display:flex;gap:12px}section{border:1px solid #aaa;padding:8px}#targets iframe{width:340px;height:180px}.scroller{width:240px;height:120px;overflow:auto;scroll-behavior:auto}.content{width:800px;height:800px;background:linear-gradient(#fdb,#acf)}output{display:block;white-space:pre-wrap;max-height:230px;overflow:auto}</style>
-<h1>共享滚动真实 IAB 执行验收</h1><p>两端默认300ms／0ms／真实同源iframe元素与Window。原生入口点击；原生RAF转发计数、不替换时钟或系统偏好。不是组件取消、OS或其他引擎验收。</p>
-<p id="status" role="status"></p><div id="buttons"></div><div id="targets"></div><ul id="summary"></ul><output aria-label="Scroll execution results"></output><script type="module" src="./scroll-execution-main.js"></script></html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shared scroll real IAB execution</title>
+  <style>
+    body {
+      margin: 20px;
+      font: 14px system-ui;
+    }
+    button {
+      margin: 4px;
+      padding: 8px;
+    }
+    #buttons {
+      display: flex;
+      gap: 12px;
+    }
+    section {
+      border: 1px solid #aaa;
+      padding: 8px;
+    }
+    #targets iframe {
+      width: 340px;
+      height: 180px;
+    }
+    .scroller {
+      width: 240px;
+      height: 120px;
+      overflow: auto;
+      scroll-behavior: auto;
+    }
+    .content {
+      width: 800px;
+      height: 800px;
+      background: linear-gradient(#fdb, #acf);
+    }
+    output {
+      display: block;
+      white-space: pre-wrap;
+      max-height: 230px;
+      overflow: auto;
+    }
+  </style>
+  <h1>共享滚动真实 IAB 执行验收</h1>
+  <p>
+    两端默认300ms／0ms／真实同源iframe元素与Window。原生入口点击；原生RAF转发计数、不替换时钟或系统偏好。不是组件取消、OS或其他引擎验收。
+  </p>
+  <p id="status" role="status"></p>
+  <div id="buttons"></div>
+  <div id="targets"></div>
+  <ul id="summary"></ul>
+  <output aria-label="Scroll execution results"></output>
+  <script type="module" src="./scroll-execution-main.js"></script>
+</html>

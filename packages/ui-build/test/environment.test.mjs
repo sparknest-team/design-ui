@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict'
-import { mkdtemp, mkdir, writeFile, readFile, rm } from 'node:fs/promises'
+import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { createRequire } from 'node:module'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+import test from 'node:test'
 import { pathToFileURL } from 'node:url'
 import vm from 'node:vm'
-import test from 'node:test'
 import { buildLibrary } from '../src/index.mjs'
 
 test('published modules retain consumer diagnostics while UMD is standalone production', async () => {
@@ -16,17 +16,24 @@ test('published modules retain consumer diagnostics while UMD is standalone prod
     await writeFile(join(root, 'package.json'), '{"private":true}')
     await writeFile(join(root, 'src/index.ts'), "export * from './button/props'\n")
     await writeFile(join(root, 'src/button/index.ts'), "export * from './props'\n")
-    await writeFile(join(root, 'src/button/props.ts'), [
-      'export const productionBuild = import.meta.env.PROD',
-      "export const props = { validator: process.env.NODE_ENV !== 'production' ? (value: string) => value === 'valid' : undefined }",
-    ].join('\n'))
+    await writeFile(
+      join(root, 'src/button/props.ts'),
+      [
+        'export const productionBuild = import.meta.env.PROD',
+        "export const props = { validator: process.env.NODE_ENV !== 'production' ? (value: string) => value === 'valid' : undefined }",
+      ].join('\n'),
+    )
     await writeFile(join(root, 'src/index.less'), ':root { --fixture-color: red; }\n')
     const config = { root, name: 'fixture', bundleName: 'fixture', globalName: 'Fixture', emitTypes: false }
     await mkdir(join(root, 'es'))
     await writeFile(join(root, 'es/previous.txt'), 'previous build')
     process.env.NODE_ENV = 'compile'
     await assert.rejects(buildLibrary(config), /requires NODE_ENV=production/)
-    assert.equal(await readFile(join(root, 'es/previous.txt'), 'utf8'), 'previous build', 'preflight must not delete existing outputs')
+    assert.equal(
+      await readFile(join(root, 'es/previous.txt'), 'utf8'),
+      'previous build',
+      'preflight must not delete existing outputs',
+    )
     process.env.NODE_ENV = 'production'
     await buildLibrary(config)
     assert.equal(process.env.NODE_ENV, 'production')

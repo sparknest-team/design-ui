@@ -13,7 +13,10 @@ function sourceRecord(value, library, repository) {
   const result = { ...value }
   delete result.url
   if (result.file === source.path) {
-    const filename = source.path.split('/').at(-1).replace(/\.[^.]+$/, '')
+    const filename = source.path
+      .split('/')
+      .at(-1)
+      .replace(/\.[^.]+$/, '')
     delete result.file
     if (result.title === filename) delete result.title
   }
@@ -26,7 +29,9 @@ export function catalogNamingText(text) {
       const result = sourceRecord(reference, reference.library)
       const source = upstreamSource(reference, reference.library)
       if (source && result.samples) {
-        result.samples = result.samples.map((sample) => sourceRecord(sample, sample.library ?? reference.library, source.repository))
+        result.samples = result.samples.map((sample) =>
+          sourceRecord(sample, sample.library ?? reference.library, source.repository),
+        )
       }
       return result
     })

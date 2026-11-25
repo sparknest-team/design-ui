@@ -1,10 +1,43 @@
 <!doctype html>
-<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Message native lifecycle acceptance</title>
-<style>
-body{margin:24px;font:16px system-ui}button{padding:8px;margin:4px}
-table{border-collapse:collapse;margin:12px 0}th,td{padding:6px;border:1px solid #aaa}
-output{display:block;white-space:pre-wrap;font:11px monospace;max-height:320px;overflow:auto}
-body[data-motion="long"]{--c-message-transition-duration:600ms;--c-message-transition-timing-function:linear;--mp-message-transition-duration:600ms;--mp-message-transition-timing-function:linear}
-body[data-motion="zero"]{--c-message-transition-duration:0ms;--mp-message-transition-duration:0ms}
-</style><div id="app"></div><script type="module" src="./message-motion-main.js"></script></html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Message native lifecycle acceptance</title>
+  <style>
+    body {
+      margin: 24px;
+      font: 16px system-ui;
+    }
+    button {
+      padding: 8px;
+      margin: 4px;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 12px 0;
+    }
+    th,
+    td {
+      padding: 6px;
+      border: 1px solid #aaa;
+    }
+    output {
+      display: block;
+      white-space: pre-wrap;
+      font: 11px monospace;
+      max-height: 320px;
+      overflow: auto;
+    }
+    body[data-motion='long'] {
+      --c-message-transition-duration: 600ms;
+      --c-message-transition-timing-function: linear;
+      --mp-message-transition-duration: 600ms;
+      --mp-message-transition-timing-function: linear;
+    }
+    body[data-motion='zero'] {
+      --c-message-transition-duration: 0ms;
+      --mp-message-transition-duration: 0ms;
+    }
+  </style>
+  <div id="app"></div>
+  <script type="module" src="./message-motion-main.js"></script>
+</html>

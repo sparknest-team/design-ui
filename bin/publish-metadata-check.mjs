@@ -1,5 +1,5 @@
 import { execFileSync } from 'node:child_process'
-import { readFileSync, readdirSync } from 'node:fs'
+import { readdirSync, readFileSync } from 'node:fs'
 import { posix } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { parseArgs } from 'node:util'
@@ -11,7 +11,10 @@ function normalizeRepo(value) {
   } else {
     repo = repo.replace(/^(?:git@github\.com:|ssh:\/\/git@github\.com\/)/i, '')
   }
-  return repo.replace(/\/+$/, '').replace(/\.git$/i, '').toLowerCase()
+  return repo
+    .replace(/\/+$/, '')
+    .replace(/\.git$/i, '')
+    .toLowerCase()
 }
 
 export function evaluateManifests({ entries, expectedRepo }) {
@@ -95,7 +98,7 @@ function main() {
       continue
     }
 
-    const messages = problems.filter(problem => problem.dir === dir).map(problem => problem.message)
+    const messages = problems.filter((problem) => problem.dir === dir).map((problem) => problem.message)
     if (messages.length) {
       console.log(`  FAIL ${manifest.name} ${dir}: ${messages.join(' | ')}`)
     } else {

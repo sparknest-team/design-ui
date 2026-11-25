@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
-import { createRequire } from 'node:module'
 import { readFileSync } from 'node:fs'
+import { createRequire } from 'node:module'
 import { dirname, join } from 'node:path'
 import vm from 'node:vm'
 import { JSDOM } from 'jsdom'
@@ -10,24 +10,39 @@ if (process.argv[4] === 'ssr') {
   assert.equal(typeof globalThis.document, 'undefined')
   const require = createRequire(import.meta.url)
   const Vue = await import('vue')
-  for (const module of ['@vue/server-renderer', '@vue/runtime-core', '@vue/reactivity']) assert.equal(require(`${module}/package.json`).version, version)
+  for (const module of ['@vue/server-renderer', '@vue/runtime-core', '@vue/reactivity'])
+    assert.equal(require(`${module}/package.json`).version, version)
   const { renderToString } = await import('@vue/server-renderer')
   assert.equal(Vue.version, version)
   for (const library of [await import(name), require(name)]) {
-    const render = () => renderToString(Vue.createSSRApp({ render: () => Vue.h('section', [Vue.h(library.Button, null, { default: () => 'SSR compatibility' }), Vue.h(library.Input, { modelValue: 'server' }), Vue.h(library.Result, { status: '403' }), Vue.h(library.Result, { status: '500' })]) }))
+    const render = () =>
+      renderToString(
+        Vue.createSSRApp({
+          render: () =>
+            Vue.h('section', [
+              Vue.h(library.Button, null, { default: () => 'SSR compatibility' }),
+              Vue.h(library.Input, { modelValue: 'server' }),
+              Vue.h(library.Result, { status: '403' }),
+              Vue.h(library.Result, { status: '500' }),
+            ]),
+        }),
+      )
     const html = await render()
     assert.match(html, /SSR compatibility/)
     assert.match(html, /server/)
     assert.equal(await render(), html)
     if (name.includes('cedar')) {
       const app = Vue.createSSRApp({
-        render: () => Vue.h(library.Table, {
-          columns: [{ title: 'Name', dataIndex: 'name' }],
-          data: [{ key: 1, name: 'Table SSR compatibility' }],
-          pagination: false,
-        }),
+        render: () =>
+          Vue.h(library.Table, {
+            columns: [{ title: 'Name', dataIndex: 'name' }],
+            data: [{ key: 1, name: 'Table SSR compatibility' }],
+            pagination: false,
+          }),
       })
-      app.config.errorHandler = (error) => { throw error }
+      app.config.errorHandler = (error) => {
+        throw error
+      }
       assert.match(await renderToString(app), /Table SSR compatibility/)
 
       for (const matches of [true, false]) {
@@ -36,35 +51,74 @@ if (process.argv[4] === 'ssr') {
           { key: 'b', name: 'filtered', keep: false },
         ]
         const column = {
-          title: 'Name', dataIndex: 'name',
+          title: 'Name',
+          dataIndex: 'name',
           filterable: {
-            defaultFilteredValue: ['keep'], filters: [{ text: 'Keep', value: 'keep' }],
+            defaultFilteredValue: ['keep'],
+            filters: [{ text: 'Keep', value: 'keep' }],
             filter: (_values, record) => matches && record.keep,
           },
         }
-        const props = { data, pagination: false, rowSelection: {}, defaultSelectedKeys: ['a'], defaultExpandedKeys: ['a'] }
+        const props = {
+          data,
+          pagination: false,
+          rowSelection: {},
+          defaultSelectedKeys: ['a'],
+          defaultExpandedKeys: ['a'],
+        }
         const table = Vue.createSSRApp({ render: () => Vue.h(library.Table, { ...props, columns: [column] }) })
         const markup = await renderToString(table, {})
         const document = new JSDOM(markup).window.document
-        const cells = [...document.querySelectorAll('tbody [data-column-key="name"] .c-table-td-content')].map((cell) => cell.textContent)
-        assert.deepEqual(cells, matches ? ['keep', 'child'] : [], `Vue ${version}: array columns must apply the default filter in SSR`)
-        if (!matches) assert.ok(document.querySelector('.c-table-empty'), `Vue ${version}: array columns must render the empty state in SSR`)
+        const cells = [...document.querySelectorAll('tbody [data-column-key="name"] .c-table-td-content')].map(
+          (cell) => cell.textContent,
+        )
+        assert.deepEqual(
+          cells,
+          matches ? ['keep', 'child'] : [],
+          `Vue ${version}: array columns must apply the default filter in SSR`,
+        )
+        if (!matches)
+          assert.ok(
+            document.querySelector('.c-table-empty'),
+            `Vue ${version}: array columns must render the empty state in SSR`,
+          )
       }
     }
   }
   process.exit(0)
 }
-const dom = new JSDOM('<!doctype html><body><div id="app"></div></body>', { runScripts: 'outside-only', pretendToBeVisual: true, url: 'http://localhost' })
+const dom = new JSDOM('<!doctype html><body><div id="app"></div></body>', {
+  runScripts: 'outside-only',
+  pretendToBeVisual: true,
+  url: 'http://localhost',
+})
 Object.defineProperty(globalThis, 'navigator', { configurable: true, value: dom.window.navigator })
-for (const key of ['window', 'document', 'HTMLElement', 'HTMLInputElement', 'Element', 'Node', 'SVGElement', 'Event', 'MouseEvent', 'MutationObserver', 'getComputedStyle']) {
-  if (dom.window[key]) globalThis[key] = typeof dom.window[key] === 'function' && key === 'getComputedStyle' ? dom.window[key].bind(dom.window) : dom.window[key]
+for (const key of [
+  'window',
+  'document',
+  'HTMLElement',
+  'HTMLInputElement',
+  'Element',
+  'Node',
+  'SVGElement',
+  'Event',
+  'MouseEvent',
+  'MutationObserver',
+  'getComputedStyle',
+]) {
+  if (dom.window[key])
+    globalThis[key] =
+      typeof dom.window[key] === 'function' && key === 'getComputedStyle'
+        ? dom.window[key].bind(dom.window)
+        : dom.window[key]
 }
 globalThis.requestAnimationFrame = dom.window.requestAnimationFrame.bind(dom.window)
 globalThis.cancelAnimationFrame = dom.window.cancelAnimationFrame.bind(dom.window)
 const require = createRequire(import.meta.url)
 const Vue = await import('vue')
 assert.equal(Vue.version, version, 'Consumer must use the matrix runtime')
-for (const module of ['@vue/server-renderer', '@vue/runtime-core', '@vue/reactivity']) assert.equal(require(`${module}/package.json`).version, version)
+for (const module of ['@vue/server-renderer', '@vue/runtime-core', '@vue/reactivity'])
+  assert.equal(require(`${module}/package.json`).version, version)
 const { renderToString } = await import('@vue/server-renderer')
 const libraries = [await import(name), require(name)]
 try {
@@ -74,13 +128,24 @@ try {
     let clicks = 0
     const value = Vue.ref('initial')
     const checked = Vue.ref(false)
-    const tree = () => Vue.h('section', [
-      Vue.h(library.Button, { onClick: () => clicks++ }, { default: () => 'compat button' }),
-      Vue.h(library.Input, { modelValue: value.value, 'onUpdate:modelValue': (next) => { value.value = next } }),
-      Vue.h(library.Switch, { modelValue: checked.value, 'onUpdate:modelValue': (next) => { checked.value = next } }),
-      Vue.h(library.Result, { status: '403' }),
-      Vue.h(library.Result, { status: '500' }),
-    ])
+    const tree = () =>
+      Vue.h('section', [
+        Vue.h(library.Button, { onClick: () => clicks++ }, { default: () => 'compat button' }),
+        Vue.h(library.Input, {
+          modelValue: value.value,
+          'onUpdate:modelValue': (next) => {
+            value.value = next
+          },
+        }),
+        Vue.h(library.Switch, {
+          modelValue: checked.value,
+          'onUpdate:modelValue': (next) => {
+            checked.value = next
+          },
+        }),
+        Vue.h(library.Result, { status: '403' }),
+        Vue.h(library.Result, { status: '500' }),
+      ])
     const makeApp = (ssr = false) => {
       const app = (ssr ? Vue.createSSRApp : Vue.createApp)({ render: tree })
       app.config.warnHandler = (warning) => warnings.push(warning)
@@ -127,17 +192,28 @@ try {
       const host = document.getElementById('app')
       const warnings = []
       const app = Vue.createApp({
-        render: () => Vue.h('main', [
-          Vue.h(library.Table, {
-            columns: [{ title: 'Name', dataIndex: 'name' }],
-            data: [{ key: 1, name: 'First row' }, { key: 2, name: 'Second row' }],
-            pagination: { container: '#compat-late-pager', pageSize: 1, modelValue: current.value },
-            onPageChange: (page) => { current.value = page },
-          }, {
-            pagination: (scope) => Vue.h('button', { 'data-page-next': '', onClick: () => scope.onChange(scope.page + 1) }, 'Next'),
-          }),
-          Vue.h('div', { id: 'compat-late-pager' }),
-        ]),
+        render: () =>
+          Vue.h('main', [
+            Vue.h(
+              library.Table,
+              {
+                columns: [{ title: 'Name', dataIndex: 'name' }],
+                data: [
+                  { key: 1, name: 'First row' },
+                  { key: 2, name: 'Second row' },
+                ],
+                pagination: { container: '#compat-late-pager', pageSize: 1, modelValue: current.value },
+                onPageChange: (page) => {
+                  current.value = page
+                },
+              },
+              {
+                pagination: (scope) =>
+                  Vue.h('button', { 'data-page-next': '', onClick: () => scope.onChange(scope.page + 1) }, 'Next'),
+              },
+            ),
+            Vue.h('div', { id: 'compat-late-pager' }),
+          ]),
       })
       app.config.warnHandler = (warning) => warnings.push(warning)
       try {
@@ -151,7 +227,9 @@ try {
         assert.equal(current.value, 2)
         assert.match(host.textContent, /Second row/)
         assert.deepEqual(warnings, [], `Vue ${version}: late pagination target emitted warnings`)
-      } finally { app.unmount() }
+      } finally {
+        app.unmount()
+      }
     }
   }
   const context = dom.getInternalVMContext()
@@ -164,9 +242,14 @@ try {
   const globalVue = dom.window.Vue
   assert.equal(globalVue.version, version)
   let clicks = 0
-  const app = globalVue.createApp({ render: () => globalVue.h(dom.window[brand].Button, { onClick: () => clicks++ }, { default: () => 'UMD compatibility' }) })
+  const app = globalVue.createApp({
+    render: () =>
+      globalVue.h(dom.window[brand].Button, { onClick: () => clicks++ }, { default: () => 'UMD compatibility' }),
+  })
   app.mount(document.getElementById('app'))
   document.querySelector('#app button').dispatchEvent(new MouseEvent('click', { bubbles: true }))
   assert.equal(clicks, 1)
   app.unmount()
-} finally { dom.window.close() }
+} finally {
+  dom.window.close()
+}

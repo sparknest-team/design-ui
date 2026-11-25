@@ -253,6 +253,7 @@ Chrome native 200% and installed Safari/Firefox remain deferred: 144 planned cas
 3. **Motion and contrast preparation.** Audit existing reduced-motion rules and list actual animation consumers; distinguish rule/compiled-CSS tests from a real OS reduced-motion run. Check default/system and explicit component override foreground/background pairs, documenting responsibility for custom business slots instead of claiming arbitrary user palettes pass. Reuse existing token roles before adding any variable; API additions require the established specification workflow.
 
 Hardware/external-environment work remains separate: physical iOS/Android touch/keyboard, real OS reduced-motion, screen readers, installed Safari/Firefox and verified native page zoom. Preparation and static regressions must never increment native acceptance totals. Update the closure record and all menu guides whenever scope or token responsibilities change.
+
 # Popup motion lifecycle (2026-10-13)
 
 ## Ripple timing audit (2026-10-13)
@@ -300,4 +301,3 @@ Stable wrapper CSS has no transition: duration assertions use real active fade c
 ## IndexBar consumer lifecycle (2026-10-14)
 
 `index-bar-lifecycle.html` runs real Maple IndexBar/IndexAnchor/CSS, default/light with an element scroller. Four native entry clicks cover replacement, two-frame state protection, interpolation disposal/retained commands, and KeepAlive cancellation/reactivation. Internal commands and scroll events are fixture-scripted, not native gestures. No viewport/OS settings changed. Frozen service must restart and tab reload after source/fixture changes; read actual group offsets instead of fixed0/480. Initial geometry and activation-registration failures are retained in the audit, not overwritten as initial passes. Final evidence binds sources/fixture/original JPEG and records phase/count/position summaries, not full-frame pixels. Own timers/frames/scrollTo descriptors and app are cleaned up.
-

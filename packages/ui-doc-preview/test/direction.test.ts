@@ -1,14 +1,18 @@
-import { afterEach, expect, test, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { afterEach, expect, test, vi } from 'vitest'
 import DirectionToggle from '../src/DirectionToggle.vue'
 import { docsDirectionStorageKey } from '../src/docs-direction'
 
 const wrappers: ReturnType<typeof mount>[] = []
 const frames: HTMLIFrameElement[] = []
-const setup = () => { const wrapper = mount(DirectionToggle); wrappers.push(wrapper); return wrapper }
+const setup = () => {
+  const wrapper = mount(DirectionToggle)
+  wrappers.push(wrapper)
+  return wrapper
+}
 afterEach(() => {
-  wrappers.splice(0).forEach(wrapper => wrapper.unmount())
-  frames.splice(0).forEach(frame => frame.remove())
+  wrappers.splice(0).forEach((wrapper) => wrapper.unmount())
+  frames.splice(0).forEach((frame) => frame.remove())
   localStorage.clear()
   document.documentElement.removeAttribute('dir')
   vi.restoreAllMocks()
@@ -38,17 +42,25 @@ test('iframe handshake only responds to the matching frame and origin', async ()
   const send = vi.spyOn(frame.contentWindow!, 'postMessage')
   const wrapper = setup()
   send.mockClear()
-  window.dispatchEvent(new window.MessageEvent('message', {
-    data: { type: 'sparknest-docs-direction-ready' }, source: frame.contentWindow, origin: 'https://foreign.example',
-  }))
+  window.dispatchEvent(
+    new window.MessageEvent('message', {
+      data: { type: 'sparknest-docs-direction-ready' },
+      source: frame.contentWindow,
+      origin: 'https://foreign.example',
+    }),
+  )
   expect(send).not.toHaveBeenCalled()
   await wrapper.trigger('click')
   expect(send).toHaveBeenLastCalledWith({ type: 'sparknest-docs-direction', direction: 'rtl' }, window.location.origin)
 })
 
 test('the control remains usable when persistent storage is unavailable', async () => {
-  vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => { throw new Error('storage disabled') })
-  vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('storage disabled') })
+  vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
+    throw new Error('storage disabled')
+  })
+  vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+    throw new Error('storage disabled')
+  })
   const wrapper = setup()
   await wrapper.trigger('click')
   expect(document.documentElement.dir).toBe('rtl')

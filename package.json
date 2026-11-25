@@ -103,6 +103,8 @@
     "version-packages": "node bin/check-major-release.mjs && changeset version && pnpm install --lockfile-only --ignore-scripts",
     "prepare": "node scripts/git-hooks.mjs install",
     "quality": "pnpm check:ci && pnpm check:publish-metadata && pnpm check && pnpm check:demo-controls && pnpm check:public-docs && pnpm check:llms && node --test bin/api-documentation-locales.test.mjs bin/demo-content-parity.test.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "pr:merge": "node scripts/pr-merge.mjs",
     "check:pr-workflow": "node --test bin/pr-workflow.test.mjs"
   },
@@ -118,6 +120,11 @@
     "@asamuzakjp/dom-selector": "^6.8.1",
     "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.29.7",
+    "@configurajs/prettier": "^0.1.5",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+    "prettier": "^3.9.4",
+    "prettier-plugin-packagejson": "^2.5.22",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "typescript": "5.6.3"
   }
 }

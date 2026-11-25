@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict'
-import { assertNoEmbeddedComponentStyles } from './style-module-assertions.mjs'
-import { readFileSync, readdirSync, existsSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
-import { dirname, resolve, relative } from 'node:path'
+import { dirname, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { build } from '../packages/ui-build/node_modules/vite/dist/node/index.js'
+import { assertNoEmbeddedComponentStyles } from './style-module-assertions.mjs'
 
 const workspace = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
 const require = createRequire(resolve(workspace, 'design-ui/packages/ui-build/package.json'))
@@ -16,12 +16,17 @@ for (const [repo, library, prefix] of [
 ]) {
   const root = resolve(workspace, repo, 'packages', library)
   const src = resolve(root, 'src')
-  const walk = dir => readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(resolve(dir, e.name)) : [resolve(dir, e.name)])
-  const entries = walk(src).filter(file => file.endsWith('/style/index.ts'))
+  const walk = (dir) =>
+    readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+      e.isDirectory() ? walk(resolve(dir, e.name)) : [resolve(dir, e.name)],
+    )
+  const entries = walk(src).filter((file) => file.endsWith('/style/index.ts'))
   const externalCss = new Map()
-  const css = new Map(), visiting = new Set(), visited = new Set()
+  const css = new Map(),
+    visiting = new Set(),
+    visited = new Set()
   function dependencies(entry) {
-    return [...readFileSync(entry, 'utf8').matchAll(/import\s+['"]([^'"]+)['"]/g)].map(m => {
+    return [...readFileSync(entry, 'utf8').matchAll(/import\s+['"]([^'"]+)['"]/g)].map((m) => {
       const external = !m[1].startsWith('.')
       const target = external ? createRequire(entry).resolve(m[1]) : resolve(dirname(entry), m[1])
       if (external) externalCss.set(target, m[1])
@@ -40,17 +45,36 @@ for (const [repo, library, prefix] of [
     } else {
       for (const dependency of dependencies(entry)) await visit(dependency)
       if (built) {
-        for (const [out, ext] of [['es', 'mjs'], ['lib', 'js']]) {
+        for (const [out, ext] of [
+          ['es', 'mjs'],
+          ['lib', 'js'],
+        ]) {
           const target = resolve(root, out, relative(src, entry).replace(/\.ts$/, '.' + ext))
           const output = readFileSync(target, 'utf8')
           for (const dependency of dependencies(entry)) {
             if (externalCss.has(dependency)) {
-              assert(output.includes(externalCss.get(dependency)), `${target} lost external CSS dependency ${externalCss.get(dependency)}`)
+              assert(
+                output.includes(externalCss.get(dependency)),
+                `${target} lost external CSS dependency ${externalCss.get(dependency)}`,
+              )
               continue
             }
-            const spec = relative(dirname(entry), dependency).replace(/\.less$/, '.css').replace(/\.ts$/, '.' + ext)
+            const spec = relative(dirname(entry), dependency)
+              .replace(/\.less$/, '.css')
+              .replace(/\.ts$/, '.' + ext)
             assert(output.includes(spec), `${target} lost dependency ${spec}`)
-            assert(existsSync(resolve(root, out, relative(src, dependency).replace(/\.less$/, '.css').replace(/\.ts$/, '.' + ext))), `Missing emitted dependency: ${dependency}`)
+            assert(
+              existsSync(
+                resolve(
+                  root,
+                  out,
+                  relative(src, dependency)
+                    .replace(/\.less$/, '.css')
+                    .replace(/\.ts$/, '.' + ext),
+                ),
+              ),
+              `Missing emitted dependency: ${dependency}`,
+            )
           }
         }
       }
@@ -65,36 +89,77 @@ for (const [repo, library, prefix] of [
   }
   const button = css.get(resolve(src, 'button/style/index.less'))
   assertNoEmbeddedComponentStyles(button, prefix, ['loading', 'ripple'], `${library}: Button`)
-  console.log(`${library}: ${entries.length} style entries, ${css.size} unique CSS/Less modules compiled; no cycles, missing imports or embedded foundation${built ? '; ESM/CJS dependencies verified' : ''}`)
+  console.log(
+    `${library}: ${entries.length} style entries, ${css.size} unique CSS/Less modules compiled; no cycles, missing imports or embedded foundation${built ? '; ESM/CJS dependencies verified' : ''}`,
+  )
   for (const name of ['button', 'message', 'menu', 'split-button', 'radio']) {
     const output = css.get(resolve(src, name, 'style/index.less'))
     if (output !== undefined) console.log(`  ${name}: ${Buffer.byteLength(output)} bytes (own CSS)`)
   }
   if (built) {
-    const names = ['button', 'message', 'menu', 'split-button', 'radio', 'input', 'verification-code', 'search', 'carousel', 'upload']
-    for (const [dir, ext] of [['src', 'ts'], ['es', 'mjs']]) {
+    const names = [
+      'button',
+      'message',
+      'menu',
+      'split-button',
+      'radio',
+      'input',
+      'verification-code',
+      'search',
+      'carousel',
+      'upload',
+    ]
+    for (const [dir, ext] of [
+      ['src', 'ts'],
+      ['es', 'mjs'],
+    ]) {
       const result = await build({
-        configFile: false, root, logLevel: 'silent',
+        configFile: false,
+        root,
+        logLevel: 'silent',
         css: { preprocessorOptions: { less: { javascriptEnabled: true } } },
-        plugins: [{ name: 'style-consumer-fixture',
-          resolveId(id) { if (id === 'virtual:styles') return '\0styles' },
-          load(id) {
-            if (id === '\0styles') return names.map(name => `import ${JSON.stringify(resolve(root, dir, name, 'style/index.' + ext))}`).join('\n')
+        plugins: [
+          {
+            name: 'style-consumer-fixture',
+            resolveId(id) {
+              if (id === 'virtual:styles') return '\0styles'
+            },
+            load(id) {
+              if (id === '\0styles')
+                return names
+                  .map((name) => `import ${JSON.stringify(resolve(root, dir, name, 'style/index.' + ext))}`)
+                  .join('\n')
+            },
           },
-        }],
+        ],
         build: { write: false, minify: false, cssMinify: false, rollupOptions: { input: 'virtual:styles' } },
       })
-      const output = result.output.filter(x => x.type === 'asset' && x.fileName.endsWith('.css')).map(x => x.source).join('\n')
+      const output = result.output
+        .filter((x) => x.type === 'asset' && x.fileName.endsWith('.css'))
+        .map((x) => x.source)
+        .join('\n')
       // A foundation can contain light/dark variants: compare against one foundation module.
       const marker = `--${prefix}-font-size-xs:`
       const foundation = css.get(resolve(src, 'style/index.less'))
-      assert.equal(output.split(marker).length, foundation.split(marker).length, `${library}/${dir}: duplicated foundation`)
-      assert.equal((output.match(new RegExp('^\\.' + prefix + '-loading \\{', 'gm')) ?? []).length, 1, `${library}/${dir}: duplicated Loading`)
+      assert.equal(
+        output.split(marker).length,
+        foundation.split(marker).length,
+        `${library}/${dir}: duplicated foundation`,
+      )
+      assert.equal(
+        (output.match(new RegExp('^\\.' + prefix + '-loading \\{', 'gm')) ?? []).length,
+        1,
+        `${library}/${dir}: duplicated Loading`,
+      )
       for (const name of ['input', 'verification-code', 'search', 'carousel', 'upload']) {
         const own = css.get(resolve(src, name, 'style/index.less'))
         const token = own.match(new RegExp(`--${prefix}-${name}-[\\w-]+:`))?.[0]
         assert(token, `${library}/${name}: missing public token declaration`)
-        assert.equal(output.split(token).length, own.split(token).length, `${library}/${dir}: duplicated ${name} styles`)
+        assert.equal(
+          output.split(token).length,
+          own.split(token).length,
+          `${library}/${dir}: duplicated ${name} styles`,
+        )
       }
       console.log(`  ${dir} consumer: ${Buffer.byteLength(output)} bytes, foundation and Loading included once`)
     }

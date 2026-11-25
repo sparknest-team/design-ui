@@ -1,12 +1,12 @@
 {
   "name": "@sparknest/theme-contract-vue",
   "version": "1.4.2",
+  "description": "Shared Cedar and Maple theme token contract",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sparknest-team/design-ui.git",
     "directory": "packages/theme-contract"
   },
-  "description": "Shared Cedar and Maple theme token contract",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -18,10 +18,6 @@
   "bin": {
     "ui-theme-contract": "./bin/theme-contract.mjs"
   },
-  "scripts": {
-    "check": "node bin/theme-contract.mjs check",
-    "sync": "node bin/theme-contract.mjs sync"
-  },
   "files": [
     "bin",
     "contracts",
@@ -29,6 +25,10 @@
     "src",
     "README.md"
   ],
+  "scripts": {
+    "check": "node bin/theme-contract.mjs check",
+    "sync": "node bin/theme-contract.mjs sync"
+  },
   "engines": {
     "node": ">=20"
   },

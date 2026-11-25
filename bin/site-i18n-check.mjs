@@ -1,24 +1,34 @@
-import fs from 'node:fs'
-import path from 'node:path'
 import assert from 'node:assert/strict'
+import fs from 'node:fs'
 import { createRequire } from 'node:module'
+import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+
 const root = fileURLToPath(new URL('../../', import.meta.url))
 const req = createRequire(path.join(root, 'maple-design-mobile/package.json'))
 const ts = req('typescript')
 const uiRequire = createRequire(path.join(root, 'maple-design-mobile/packages/ui/package.json'))
 function evaluate(relative, overrides = {}) {
   const source = fs.readFileSync(path.join(root, relative), 'utf8')
-  const output = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText
+  const output = ts.transpileModule(source, {
+    compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
+  }).outputText
   const module = { exports: {} }
-  new Function('require', 'module', 'exports', output)(name => overrides[name] ?? uiRequire(name), module, module.exports)
+  new Function('require', 'module', 'exports', output)(
+    (name) => overrides[name] ?? uiRequire(name),
+    module,
+    module.exports,
+  )
   return module.exports
 }
 const language = evaluate('maple-design-mobile/packages/cli/src/client/language.ts')
 assert.equal(language.normalizeLanguage('en-US'), 'en-US')
 assert.equal(language.normalizeLanguage('invalid'), 'zh-CN')
 assert.equal(language.getSavedLanguage('en-US'), 'en-US') // SSR / unavailable storage
-const messages = language.createDemoMessages({ 'zh-CN': { title: '标题', fallback: '回退' }, 'en-US': { title: 'Title' } })
+const messages = language.createDemoMessages({
+  'zh-CN': { title: '标题', fallback: '回退' },
+  'en-US': { title: 'Title' },
+})
 assert.equal(messages.t('title'), '标题')
 messages.use('en-US')
 assert.equal(messages.t('title'), 'Title')
@@ -27,7 +37,13 @@ assert.equal(messages.t('missing'), 'missing')
 messages.use('unknown')
 assert.equal(messages.t('title'), '标题')
 const nav = evaluate('cedar-design-web/packages/ui/docs/.vuepress/i18n/navigation.ts')
-const source = [{ text: 'Button 按钮 [已同源]', link: '/components/button/', children: [{ text: '设计规范', link: 'https://example.com' }] }]
+const source = [
+  {
+    text: 'Button 按钮 [已同源]',
+    link: '/components/button/',
+    children: [{ text: '设计规范', link: 'https://example.com' }],
+  },
+]
 const en = nav.translateNavigation(source)
 assert.equal(en[0].text, 'Button [Shared]')
 assert.equal(en[0].link, '/en/components/button/')
@@ -36,13 +52,17 @@ assert.equal(source[0].text, 'Button 按钮 [已同源]')
 const sectionDocs = path.join(root, 'maple-design-mobile/packages/ui/src/section/docs')
 for (const locale of ['zh-CN', 'en-US']) {
   const markdown = fs.readFileSync(path.join(sectionDocs, locale + '.md'), 'utf8')
-  const examples = [...markdown.matchAll(/^```demo\n([^\n]+)\n```/gm)].map(match => match[1])
+  const examples = [...markdown.matchAll(/^```demo\n([^\n]+)\n```/gm)].map((match) => match[1])
   const directory = locale === 'en-US' ? '../example/demos/en-US' : '../example/demos'
   assert(examples.length > 0, 'Maple Section examples in ' + locale)
   for (const filename of examples) {
     assert.equal(path.dirname(filename), directory, filename)
     const example = fs.readFileSync(path.join(sectionDocs, filename), 'utf8')
-    assert.doesNotMatch(example, /\b(?:useDemoLocale|demoEnglish|copy\.\w+)\b|from ['"][^'"]*\/(?:demo-language|messages)['"]/, filename)
+    assert.doesNotMatch(
+      example,
+      /\b(?:useDemoLocale|demoEnglish|copy\.\w+)\b|from ['"][^'"]*\/(?:demo-language|messages)['"]/,
+      filename,
+    )
   }
 }
 const cases = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/audits/same-source-demos.json')))
@@ -58,15 +78,25 @@ for (const [component, demos] of Object.entries(cases)) {
     assert(english.includes(`<demo src="./__demos__/${filename}">`), `${component}/${filename}: English demo reference`)
   }
 }
-console.log(`PASS site language normalization, SSR fallback, reactive demo messages, navigation mapping and ${Object.keys(cases).length} native English component pages`)
+console.log(
+  `PASS site language normalization, SSR fallback, reactive demo messages, navigation mapping and ${Object.keys(cases).length} native English component pages`,
+)
 const changes = []
 const localeBridge = evaluate('cedar-design-web/packages/ui/docs/.vuepress/i18n/client.ts', {
-  '../../../src/locale': { addI18nMessages: packs => assert.deepEqual(Object.keys(packs), ['zh-CN', 'en-US']), useLocale: lang => changes.push(lang) },
+  '../../../src/locale': {
+    addI18nMessages: (packs) => assert.deepEqual(Object.keys(packs), ['zh-CN', 'en-US']),
+    useLocale: (lang) => changes.push(lang),
+  },
   '../../../src/locale/lang/en-us': { locale: 'en-US' },
   '../../../src/locale/lang/zh-cn': { locale: 'zh-CN' },
 })
 let onRoute
-localeBridge.connectComponentLanguage({ currentRoute: { value: { path: '/en/components/button/', query: {} } }, afterEach: callback => { onRoute = callback } })
+localeBridge.connectComponentLanguage({
+  currentRoute: { value: { path: '/en/components/button/', query: {} } },
+  afterEach: (callback) => {
+    onRoute = callback
+  },
+})
 onRoute({ path: '/components/button/', query: {} })
 onRoute({ path: '/demo-id', query: { language: 'en-US' } })
 assert.deepEqual(changes, ['en-US', 'zh-CN', 'en-US'])

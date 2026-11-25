@@ -1,11 +1,19 @@
 import assert from 'node:assert/strict'
-import { readFileSync, mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { fileURLToPath } from 'node:url'
 import { resolve } from 'node:path'
 import test from 'node:test'
-import { componentPages, demoIndex, mobileSection, guidePages, mapleGuides, sourceFingerprint, productionFingerprint } from './inventory.mjs'
+import { fileURLToPath } from 'node:url'
 import { contractFor } from './contracts.mjs'
+import {
+  componentPages,
+  demoIndex,
+  guidePages,
+  mapleGuides,
+  mobileSection,
+  productionFingerprint,
+  sourceFingerprint,
+} from './inventory.mjs'
 import { copyProductionSnapshot } from './snapshot.mjs'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
@@ -13,7 +21,8 @@ const workspace = fileURLToPath(new URL('../../', import.meta.url))
 test('production snapshots preserve nested files independently of later builds', async () => {
   const directory = mkdtempSync(resolve(tmpdir(), 'docs-snapshot-test-'))
   try {
-    const source = resolve(directory, 'source'), target = resolve(directory, 'snapshot')
+    const source = resolve(directory, 'source'),
+      target = resolve(directory, 'snapshot')
     mkdirSync(resolve(source, 'assets/empty'), { recursive: true })
     writeFileSync(resolve(source, 'index.html'), 'original')
     writeFileSync(resolve(source, 'assets/code.js'), 'code')
@@ -22,7 +31,9 @@ test('production snapshots preserve nested files independently of later builds',
     rmSync(resolve(source, 'assets/code.js'))
     assert.equal(readFileSync(resolve(target, 'index.html'), 'utf8'), 'original')
     assert.equal(readFileSync(resolve(target, 'assets/code.js'), 'utf8'), 'code')
-  } finally { rmSync(directory, { recursive: true, force: true }) }
+  } finally {
+    rmSync(directory, { recursive: true, force: true })
+  }
 })
 
 test('production acceptance detects compiler, theme client and lockfile edits, excluding generated caches and tests', () => {
@@ -60,7 +71,9 @@ test('production acceptance detects compiler, theme client and lockfile edits, e
     const originalCompiler = productionFingerprint(directory, 'maple')
     writeFileSync(resolve(cli, 'build.ts'), 'export const version = 2')
     assert.notEqual(productionFingerprint(directory, 'maple'), originalCompiler)
-  } finally { rmSync(directory, { recursive: true, force: true }) }
+  } finally {
+    rmSync(directory, { recursive: true, force: true })
+  }
 })
 
 test('Maple production fingerprint includes HTML templates, site runtime and mjs configuration', () => {
@@ -68,7 +81,12 @@ test('Maple production fingerprint includes HTML templates, site runtime and mjs
   try {
     mkdirSync(resolve(directory, 'packages/ui/src'), { recursive: true })
     mkdirSync(resolve(directory, 'packages/cli/site/pc'), { recursive: true })
-    for (const file of ['packages/cli/site/index.html', 'packages/cli/site/mobile.html', 'packages/cli/site/pc/App.vue', 'packages/ui/maple.config.mjs']) {
+    for (const file of [
+      'packages/cli/site/index.html',
+      'packages/cli/site/mobile.html',
+      'packages/cli/site/pc/App.vue',
+      'packages/ui/maple.config.mjs',
+    ]) {
       const before = productionFingerprint(directory, 'maple')
       writeFileSync(resolve(directory, file), 'changed production input')
       assert.notEqual(productionFingerprint(directory, 'maple'), before, file)
@@ -78,7 +96,9 @@ test('Maple production fingerprint includes HTML templates, site runtime and mjs
     const before = productionFingerprint(directory, 'maple')
     writeFileSync(resolve(directory, 'packages/cli/site/pc/App.spec.ts'), 'test only')
     assert.equal(productionFingerprint(directory, 'maple'), before)
-  } finally { rmSync(directory, { recursive: true, force: true }) }
+  } finally {
+    rmSync(directory, { recursive: true, force: true })
+  }
 })
 
 test('acceptance fingerprint detects implementation/style edits but not unrelated test formatting', () => {
@@ -97,10 +117,15 @@ test('acceptance fingerprint detects implementation/style edits but not unrelate
     assert.equal(sourceFingerprint(directory, 'cedar'), original)
     writeFileSync(resolve(source, 'style.less'), '.button { color: red }')
     assert.notEqual(sourceFingerprint(directory, 'cedar'), original)
-  } finally { rmSync(directory, { recursive: true, force: true }) }
+  } finally {
+    rmSync(directory, { recursive: true, force: true })
+  }
 })
 
-for (const [library, repo, minimum] of [['cedar', 'cedar-design-web', 97], ['maple', 'maple-design-mobile', 91]]) {
+for (const [library, repo, minimum] of [
+  ['cedar', 'cedar-design-web', 97],
+  ['maple', 'maple-design-mobile', 91],
+]) {
   test(`${library}: every actual documented component has an explicit executable browser contract`, () => {
     const pages = componentPages(resolve(workspace, repo), library)
     assert.ok(pages.length >= minimum, 'component coverage cannot silently shrink')
@@ -114,7 +139,8 @@ for (const [library, repo, minimum] of [['cedar', 'cedar-design-web', 97], ['map
       const contract = contractFor(library, page.component)
       const index = demoIndex(page, contract.demo)
       assert.ok(page.demos[index].source.trim(), 'contract uses real authored source')
-      if (contract.kind === 'interaction') assert.ok(actions.includes(`case '${contract.action}':`), `${page.component}: action must be implemented`)
+      if (contract.kind === 'interaction')
+        assert.ok(actions.includes(`case '${contract.action}':`), `${page.component}: action must be implemented`)
       else assert.ok(contract.minimum > 0 && contract.root)
       if (library === 'maple') assert.ok(mobileSection(page, page.demos[index]))
     }
@@ -142,7 +168,10 @@ test('all source syntaxes and every Maple guide remain accounted for', () => {
   const root = resolve(workspace, 'maple-design-mobile')
   const pages = componentPages(root, 'maple')
   const form = pages.find((page) => page.component === 'form')
-  assert.ok(form.demos.some((demo) => demo.name === 'field-presentation.vue'), 'HTML-style demo references count alongside fenced demos')
+  assert.ok(
+    form.demos.some((demo) => demo.name === 'field-presentation.vue'),
+    'HTML-style demo references count alongside fenced demos',
+  )
   for (const guide of mapleGuides) {
     assert.ok(!pages.some((page) => page.component === guide))
     assert.ok(readFileSync(resolve(root, `packages/ui/src/${guide}/docs/zh-CN.md`), 'utf8').trim())

@@ -1,15 +1,25 @@
-import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises'
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { basename, dirname, resolve } from 'node:path'
 import { optimize } from 'svgo'
 
-const pascalCase = (value) => value.split(/[-_\s]+/).map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join('')
+const pascalCase = (value) =>
+  value
+    .split(/[-_\s]+/)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join('')
 
 async function svgFiles(root) {
   const entries = await readdir(root, { withFileTypes: true })
-  return (await Promise.all(entries.map(async (entry) => {
-    const path = resolve(root, entry.name)
-    return entry.isDirectory() ? svgFiles(path) : path.endsWith('.svg') ? [path] : []
-  }))).flat().sort()
+  return (
+    await Promise.all(
+      entries.map(async (entry) => {
+        const path = resolve(root, entry.name)
+        return entry.isDirectory() ? svgFiles(path) : path.endsWith('.svg') ? [path] : []
+      }),
+    )
+  )
+    .flat()
+    .sort()
 }
 
 function componentSource({ classPrefix, runtimeName, svg }) {
@@ -29,7 +39,9 @@ export async function generateVueIcons({
   check = false,
 }) {
   const expected = new Map()
-  expected.set('_utils/icon-component.ts', `import type { AllowedComponentProps, App, ComponentCustomProps, ComponentOptionsMixin, DefineComponent, VNodeProps } from 'vue'
+  expected.set(
+    '_utils/icon-component.ts',
+    `import type { AllowedComponentProps, App, ComponentCustomProps, ComponentOptionsMixin, DefineComponent, VNodeProps } from 'vue'
 
 export interface IconProps {
   size?: string | number
@@ -55,8 +67,11 @@ export type IconComponent = DefineComponent<
   Readonly<IconProps> & Readonly<{ onClick?: (event: MouseEvent) => any }>,
   IconDefaults
 > & { install(app: App): void }
-`)
-  expected.set('../style.css', `svg.${classPrefix}--spin {
+`,
+  )
+  expected.set(
+    '../style.css',
+    `svg.${classPrefix}--spin {
   animation: ${classPrefix}-spin var(--${classPrefix.replace(/-svg-icon$/, '')}-icon-spin-duration, 1s) infinite linear;
 }
 
@@ -68,7 +83,8 @@ export type IconComponent = DefineComponent<
 @media (prefers-reduced-motion: reduce) {
   svg.${classPrefix}--spin { animation: none; }
 }
-`)
+`,
+  )
   const icons = []
   const names = new Map()
 
@@ -77,32 +93,45 @@ export type IconComponent = DefineComponent<
     const rawName = basename(path, '.svg')
     const preserveColor = rawName.endsWith('-color')
     const normalizedSource = source.replace(/<svg\b[^>]*>/i, (root) => {
-      const withoutStrokeDefaults = root.replace(
-        /\s+stroke-(?:width|linecap|linejoin)=(?:"[^"]*"|'[^']*')/gi,
-        '',
-      )
-      return preserveColor
-        ? withoutStrokeDefaults
-        : withoutStrokeDefaults.replace(/\s+fill=(?:"[^"]*"|'[^']*')/gi, '')
+      const withoutStrokeDefaults = root.replace(/\s+stroke-(?:width|linecap|linejoin)=(?:"[^"]*"|'[^']*')/gi, '')
+      return preserveColor ? withoutStrokeDefaults : withoutStrokeDefaults.replace(/\s+fill=(?:"[^"]*"|'[^']*')/gi, '')
     })
     const rootUsesNoFill = /<svg\b[^>]*\bfill=["']none["']/i.test(source)
     const fileName = `icon-${rawName}`
     const componentName = `${exportPrefix}${pascalCase(rawName)}`
     const runtimeName = `${runtimePrefix}${componentName}`
-    if (names.has(componentName)) throw new Error(`Duplicate icon ${componentName}: ${names.get(componentName)} and ${path}`)
+    if (names.has(componentName))
+      throw new Error(`Duplicate icon ${componentName}: ${names.get(componentName)} and ${path}`)
     names.set(componentName, path)
     const result = optimize(normalizedSource, {
       path,
       plugins: [
         { name: 'preset-default', params: { overrides: { removeViewBox: false } } },
         'removeDimensions',
-        { name: 'removeAttrs', params: { attrs: preserveColor ? ['class', 'style'] : ['class', 'style', 'stroke-width', 'stroke-linecap', 'stroke-linejoin'] } },
-        { name: 'addAttributesToSVGElement', params: { attributes: [
-          { ':class': `['${classPrefix}', { '${classPrefix}--spin': props.spin }]` },
-          { ':style': 'style' }, ...(preserveColor ? [] : [{ fill: rootUsesNoFill ? 'none' : 'currentColor' }]), { ':aria-hidden': '!props.title' },
-          { ':stroke-width': 'props.strokeWidth' }, { ':stroke-linecap': 'props.strokeLinecap' },
-          { ':stroke-linejoin': 'props.strokeLinejoin' }, { role: 'img' }, { '@click': `emit('click', $event)` },
-        ] } },
+        {
+          name: 'removeAttrs',
+          params: {
+            attrs: preserveColor
+              ? ['class', 'style']
+              : ['class', 'style', 'stroke-width', 'stroke-linecap', 'stroke-linejoin'],
+          },
+        },
+        {
+          name: 'addAttributesToSVGElement',
+          params: {
+            attributes: [
+              { ':class': `['${classPrefix}', { '${classPrefix}--spin': props.spin }]` },
+              { ':style': 'style' },
+              ...(preserveColor ? [] : [{ fill: rootUsesNoFill ? 'none' : 'currentColor' }]),
+              { ':aria-hidden': '!props.title' },
+              { ':stroke-width': 'props.strokeWidth' },
+              { ':stroke-linecap': 'props.strokeLinecap' },
+              { ':stroke-linejoin': 'props.strokeLinejoin' },
+              { role: 'img' },
+              { '@click': `emit('click', $event)` },
+            ],
+          },
+        },
       ],
     })
     const svg = result.data.replace(/<svg([^>]*)>/, `<svg$1><title v-if="props.title">{{ props.title }}</title>`)
@@ -111,13 +140,20 @@ export type IconComponent = DefineComponent<
     expected.set(`${fileName}/index.ts`, componentIndex({ componentName, fileName }))
   }
 
-  expected.set('index.ts', `export type { IconComponent, IconProps } from './_utils/icon-component'\nexport const iconNames = ${JSON.stringify(icons.map(({ fileName }) => fileName.slice(5)))} as const\n${icons.map(({ fileName, componentName }) => `export { ${componentName} } from './${fileName}'`).join('\n')}\n`)
+  expected.set(
+    'index.ts',
+    `export type { IconComponent, IconProps } from './_utils/icon-component'\nexport const iconNames = ${JSON.stringify(icons.map(({ fileName }) => fileName.slice(5)))} as const\n${icons.map(({ fileName, componentName }) => `export { ${componentName} } from './${fileName}'`).join('\n')}\n`,
+  )
   expected.set('icons.json', `${JSON.stringify(icons, null, 2)}\n`)
   const stale = []
   for (const [target, content] of expected) {
     const path = resolve(sourceRoot, target)
     if (check) {
-      try { if (await readFile(path, 'utf8') !== content) stale.push(target) } catch { stale.push(target) }
+      try {
+        if ((await readFile(path, 'utf8')) !== content) stale.push(target)
+      } catch {
+        stale.push(target)
+      }
     } else {
       await mkdir(dirname(path), { recursive: true })
       await writeFile(path, content)

@@ -8,10 +8,10 @@ const { parse } = createRequire(buildRequire.resolve('vite/package.json'))('post
 // implementation. Reject rules owned by the dependency itself, including parts
 // and modifiers, instead of rejecting every mention of its class name.
 export function assertNoEmbeddedComponentStyles(css, prefix, dependencies, label) {
-  const roots = dependencies.map(name => new RegExp(`^\\.${prefix}-${name}(?=$|[\\s.#:[>+~]|--|__)`))
-  parse(css).walkRules(rule => {
+  const roots = dependencies.map((name) => new RegExp(`^\\.${prefix}-${name}(?=$|[\\s.#:[>+~]|--|__)`))
+  parse(css).walkRules((rule) => {
     for (const selector of rule.selectors) {
-      assert(!roots.some(root => root.test(selector.trim())), `${label} embeds dependency styles: ${selector}`)
+      assert(!roots.some((root) => root.test(selector.trim())), `${label} embeds dependency styles: ${selector}`)
     }
   })
 }

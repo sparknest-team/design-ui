@@ -9,11 +9,15 @@ test('maps only the two reviewed Switch edit-mode contracts', () => {
   assert.throws(() => normalizeSwitchEditMode(cedar.replace('dblclick', 'hover'), 'cedar'), /reviewed/)
   assert.throws(() => normalizeSwitchEditMode(maple.replace('popup', 'click'), 'maple'), /reviewed/)
   assert.throws(() => normalizeSwitchEditMode(cedar + cedar, 'cedar'), /reviewed/)
-  assert.notEqual(normalizeSwitchEditMode(cedar, 'cedar'), normalizeSwitchEditMode(maple.replace('undefined', 'true'), 'maple'))
+  assert.notEqual(
+    normalizeSwitchEditMode(cedar, 'cedar'),
+    normalizeSwitchEditMode(maple.replace('undefined', 'true'), 'maple'),
+  )
 })
 
 test('Button size exception requires the exact platform descriptions, type and default', () => {
-  const cedar = '| size | 尺寸；依次采用自身、按钮组、ConfigProvider，最后为 md | `xs / sm / md / lg / xl` | `undefined` |'
+  const cedar =
+    '| size | 尺寸；依次采用自身、按钮组、ConfigProvider，最后为 md | `xs / sm / md / lg / xl` | `undefined` |'
   const maple = '| size | 尺寸；省略时继承按钮组，否则 md | `xs / sm / md / lg / xl` | `undefined` |'
   assert.equal(normalizeButtonSize(cedar, 'cedar'), normalizeButtonSize(maple, 'maple'))
   assert.throws(() => normalizeButtonSize(cedar.replace('ConfigProvider', 'Form'), 'cedar'), /unreviewed/)

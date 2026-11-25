@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, readdirSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { dirname, extname, resolve } from 'node:path'
 
@@ -11,14 +11,20 @@ export function implementationFiles(sourceDir) {
       const file = resolve(dir, entry.name)
       if (entry.isDirectory()) {
         if (!/^(?:__.*__|example|examples|docs|node_modules)$/.test(entry.name)) walk(file)
-      } else if (/\.(?:[cm]?[jt]sx?|vue)$/.test(entry.name) && !/\.d\.ts$|\.(?:test|spec)\./.test(entry.name)) files.push(file)
+      } else if (/\.(?:[cm]?[jt]sx?|vue)$/.test(entry.name) && !/\.d\.ts$|\.(?:test|spec)\./.test(entry.name))
+        files.push(file)
     }
   }
   walk(sourceDir)
   return files.sort()
 }
 
-export function runtimeGraph(sourceDir, packageName, roots = implementationFiles(sourceDir), { workspacePackages = {} } = {}) {
+export function runtimeGraph(
+  sourceDir,
+  packageName,
+  roots = implementationFiles(sourceDir),
+  { workspacePackages = {} } = {},
+) {
   const require = createRequire(resolve(sourceDir, '../package.json'))
   const ts = require('typescript')
   const { parse, compileScript } = require('vue/compiler-sfc')
@@ -27,8 +33,9 @@ export function runtimeGraph(sourceDir, packageName, roots = implementationFiles
   const externalPackages = new Set()
   function resolveFile(path) {
     const stem = path.replace(/\.js$/, '')
-    return [path, `${stem}.ts`, `${stem}.tsx`, `${stem}.vue`, `${path}/index.ts`, `${path}/index.tsx`]
-      .find(file => existsSync(file) && /\.(?:[cm]?[jt]sx?|vue|css|less|scss|sass|svg|png|jpe?g|gif|webp|json)$/.test(file))
+    return [path, `${stem}.ts`, `${stem}.tsx`, `${stem}.vue`, `${path}/index.ts`, `${path}/index.tsx`].find(
+      (file) => existsSync(file) && /\.(?:[cm]?[jt]sx?|vue|css|less|scss|sass|svg|png|jpe?g|gif|webp|json)$/.test(file),
+    )
   }
   function visit(file) {
     if (graph.has(file)) return
@@ -37,11 +44,13 @@ export function runtimeGraph(sourceDir, packageName, roots = implementationFiles
     if (file.endsWith('.vue')) {
       const { descriptor, errors } = parse(source, { filename: file })
       if (errors.length) throw errors[0]
-      source = descriptor.script || descriptor.scriptSetup
-        ? compileScript(descriptor, {
-          id: 'runtime-dependency-graph',
-          fs: { fileExists: existsSync, readFile: file => readFileSync(file, 'utf8') },
-        }).content : ''
+      source =
+        descriptor.script || descriptor.scriptSetup
+          ? compileScript(descriptor, {
+              id: 'runtime-dependency-graph',
+              fs: { fileExists: existsSync, readFile: (file) => readFileSync(file, 'utf8') },
+            }).content
+          : ''
     }
     const js = ts.transpileModule(source, {
       fileName: file.endsWith('.vue') ? `${file}.ts` : file,
@@ -50,9 +59,18 @@ export function runtimeGraph(sourceDir, packageName, roots = implementationFiles
     const ast = ts.createSourceFile(file, js, ts.ScriptTarget.Latest, true, ts.ScriptKind.JS)
     const imports = []
     function scan(node) {
-      if ((ts.isImportDeclaration(node) || ts.isExportDeclaration(node)) && node.moduleSpecifier && ts.isStringLiteral(node.moduleSpecifier)) {
+      if (
+        (ts.isImportDeclaration(node) || ts.isExportDeclaration(node)) &&
+        node.moduleSpecifier &&
+        ts.isStringLiteral(node.moduleSpecifier)
+      ) {
         imports.push(node.moduleSpecifier.text)
-      } else if (ts.isCallExpression(node) && node.expression.kind === ts.SyntaxKind.ImportKeyword && node.arguments.length === 1 && ts.isStringLiteral(node.arguments[0])) {
+      } else if (
+        ts.isCallExpression(node) &&
+        node.expression.kind === ts.SyntaxKind.ImportKeyword &&
+        node.arguments.length === 1 &&
+        ts.isStringLiteral(node.arguments[0])
+      ) {
         imports.push(node.arguments[0].text)
       }
       ts.forEachChild(node, scan)
@@ -72,7 +90,11 @@ export function runtimeGraph(sourceDir, packageName, roots = implementationFiles
       } else if (!specifier.startsWith('.')) {
         externalPackages.add(specifier)
       }
-      if (!target && specifier.startsWith('.') && !/\.(?:css|less|scss|sass|svg|png|jpe?g|gif|webp|json)$/.test(specifier)) {
+      if (
+        !target &&
+        specifier.startsWith('.') &&
+        !/\.(?:css|less|scss|sass|svg|png|jpe?g|gif|webp|json)$/.test(specifier)
+      ) {
         throw new Error(`Unresolved runtime dependency: ${file} -> ${specifier}`)
       }
       if (!target || !/\.(?:[cm]?[jt]sx?|vue)$/.test(target)) continue
@@ -87,7 +109,9 @@ export function runtimeGraph(sourceDir, packageName, roots = implementationFiles
 
 export function findRuntimeCycles(graph) {
   const cycles = []
-  const active = new Set(), complete = new Set(), stack = []
+  const active = new Set(),
+    complete = new Set(),
+    stack = []
   function inspect(file) {
     if (active.has(file)) {
       cycles.push([...stack.slice(stack.indexOf(file)), file])

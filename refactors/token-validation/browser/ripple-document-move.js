@@ -4,7 +4,7 @@ import '/cedar-design-web/packages/ui/src/ripple/style/index.ts'
 import '/maple-design-mobile/packages/ui/src/ripple/style/index.ts'
 
 const out = document.querySelector('#results')
-const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 async function run(name, directive, update) {
   const iframe = document.createElement('iframe')
   document.querySelector('#frames').append(iframe)
@@ -15,7 +15,10 @@ async function run(name, directive, update) {
   directive.mounted(button, { value: {} })
   let releases = 0
   const original = button._ripple.removeRipple
-  button._ripple.removeRipple = () => { releases++; original() }
+  button._ripple.removeRipple = () => {
+    releases++
+    original()
+  }
   target.body.append(button)
   if (update) directive.updated(button, { value: {} })
   const ownerAfterMove = button._ripple.document === target
@@ -31,15 +34,38 @@ async function run(name, directive, update) {
   const wavesAfter = button.querySelectorAll('div').length
   const owner = button._ripple.document === target
   directive.unmounted(button)
-  button.remove(); iframe.remove()
-  return { name, mode: update ? 'update' : 'activation', ownerAfterMove, owner, wavesBefore, wavesAfter, oldReleased, newReleased,
-    passed: ownerAfterMove === update && owner && wavesBefore === 1 && wavesAfter === 0 && oldReleased === 0 && newReleased === 1 }
+  button.remove()
+  iframe.remove()
+  return {
+    name,
+    mode: update ? 'update' : 'activation',
+    ownerAfterMove,
+    owner,
+    wavesBefore,
+    wavesAfter,
+    oldReleased,
+    newReleased,
+    passed:
+      ownerAfterMove === update &&
+      owner &&
+      wavesBefore === 1 &&
+      wavesAfter === 0 &&
+      oldReleased === 0 &&
+      newReleased === 1,
+  }
 }
-document.querySelector('#run').addEventListener('click', async event => {
+document.querySelector('#run').addEventListener('click', async (event) => {
   event.currentTarget.disabled = true
   const results = []
-  try { for (const [name, directive] of [['Cedar', Cedar], ['Maple', Maple]]) for (const update of [true, false]) results.push(await run(name, directive, update)) }
-  catch (error) { results.push({ passed: false, error: String(error), stack: error.stack }) }
+  try {
+    for (const [name, directive] of [
+      ['Cedar', Cedar],
+      ['Maple', Maple],
+    ])
+      for (const update of [true, false]) results.push(await run(name, directive, update))
+  } catch (error) {
+    results.push({ passed: false, error: String(error), stack: error.stack })
+  }
   out.textContent = JSON.stringify(results, null, 2)
   event.currentTarget.disabled = false
 })

@@ -1,22 +1,32 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import test from 'node:test'
+import { fileURLToPath } from 'node:url'
 import { findRuntimeCycles, mediaRuntimeGraph } from './media-runtime-graph.mjs'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
 test('runtime graph guard detects a public barrel back-edge rather than treating revisited nodes as safe', () => {
-  assert.deepEqual(findRuntimeCycles(new Map([
-    ['image/index', ['image/preview']],
-    ['image/preview', ['image/PreviewGroup']],
-    ['image/PreviewGroup', ['image/index']],
-  ])), [['image/index', 'image/preview', 'image/PreviewGroup', 'image/index']])
-  assert.deepEqual(findRuntimeCycles(new Map([
-    ['image/index', ['image/preview', 'image/PreviewGroup']],
-    ['image/preview', ['image/PreviewGroup']],
-    ['image/PreviewGroup', []],
-  ])), [])
+  assert.deepEqual(
+    findRuntimeCycles(
+      new Map([
+        ['image/index', ['image/preview']],
+        ['image/preview', ['image/PreviewGroup']],
+        ['image/PreviewGroup', ['image/index']],
+      ]),
+    ),
+    [['image/index', 'image/preview', 'image/PreviewGroup', 'image/index']],
+  )
+  assert.deepEqual(
+    findRuntimeCycles(
+      new Map([
+        ['image/index', ['image/preview', 'image/PreviewGroup']],
+        ['image/preview', ['image/PreviewGroup']],
+        ['image/PreviewGroup', []],
+      ]),
+    ),
+    [],
+  )
 })
 for (const [repository, directory, packageName, service] of [
   ['cedar-design-web', 'ui', '@cedar-design/ui-vue', 'preview-api.ts'],
@@ -25,8 +35,11 @@ for (const [repository, directory, packageName, service] of [
   test(`${directory}: Image / Upload runtime dependency closure is acyclic and never enters the package root`, () => {
     const sourceDir = resolve(workspace, repository, 'packages', directory, 'src')
     const { graph, cycles, bareRootImports } = mediaRuntimeGraph(sourceDir, packageName)
-    const relative = file => file.slice(sourceDir.length + 1)
-    assert.deepEqual(cycles.map(cycle => cycle.map(relative)), [])
+    const relative = (file) => file.slice(sourceDir.length + 1)
+    assert.deepEqual(
+      cycles.map((cycle) => cycle.map(relative)),
+      [],
+    )
     assert.deepEqual(bareRootImports.map(relative), [])
     const publicEntry = resolve(sourceDir, 'image/index.ts')
     const previewService = resolve(sourceDir, 'image', service)

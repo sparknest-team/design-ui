@@ -1,28 +1,52 @@
 import assert from 'node:assert/strict'
-import { existsSync, readFileSync, readdirSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { dirname, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { implementationFiles, runtimeGraph } from './runtime-dependency-graph.mjs'
 
 export const libraries = {
-  cedar: { repository: 'cedar-design-web', directory: 'ui', packageName: '@cedar-design/ui-vue', shared: 'shared', use: 'use' },
-  maple: { repository: 'maple-design-mobile', directory: 'ui', packageName: '@maple-design/ui-vue', shared: 'shared', use: 'use' },
+  cedar: {
+    repository: 'cedar-design-web',
+    directory: 'ui',
+    packageName: '@cedar-design/ui-vue',
+    shared: 'shared',
+    use: 'use',
+  },
+  maple: {
+    repository: 'maple-design-mobile',
+    directory: 'ui',
+    packageName: '@maple-design/ui-vue',
+    shared: 'shared',
+    use: 'use',
+  },
 }
 
 // Parse syntax rather than matching comments/documentation about prohibited workarounds.
 export function hmrPolicyViolations(source, file, ts) {
-  const ast = ts.createSourceFile(file, source, ts.ScriptTarget.Latest, true, file.endsWith('.tsx') ? ts.ScriptKind.TSX : ts.ScriptKind.TS)
+  const ast = ts.createSourceFile(
+    file,
+    source,
+    ts.ScriptTarget.Latest,
+    true,
+    file.endsWith('.tsx') ? ts.ScriptKind.TSX : ts.ScriptKind.TS,
+  )
   const violations = []
   function scan(node) {
     let reason
     if (ts.isStringLiteral(node) && node.text === 'full-reload') reason = 'forced full-reload'
     if (ts.isCallExpression(node)) {
       const callee = node.expression.getText(ast).replace(/\s/g, '')
-      if (/^(?:(?:window|globalThis|document)\.)?location(?:\.reload|\[['"]reload['"]\])$/.test(callee)) reason = 'location.reload'
+      if (/^(?:(?:window|globalThis|document)\.)?location(?:\.reload|\[['"]reload['"]\])$/.test(callee))
+        reason = 'location.reload'
       if (/\bhot\.(?:accept|invalidate)$/.test(callee)) reason = 'manual HMR acceptance/invalidation'
     }
-    if (ts.isPropertyAssignment(node) && node.name.getText(ast) === 'hmr' && node.initializer.kind === ts.SyntaxKind.FalseKeyword) reason = 'disabled HMR'
+    if (
+      ts.isPropertyAssignment(node) &&
+      node.name.getText(ast) === 'hmr' &&
+      node.initializer.kind === ts.SyntaxKind.FalseKeyword
+    )
+      reason = 'disabled HMR'
     if (reason) violations.push({ file, line: ast.getLineAndCharacterOfPosition(node.getStart(ast)).line + 1, reason })
     ts.forEachChild(node, scan)
   }
@@ -74,10 +98,13 @@ export function auditRuntimeDependencies(repositoryRoot, library) {
     violations.push(...hmrPolicyViolations(source, relative(repositoryRoot, file), ts))
   }
   const report = {
-    library, runtimeModules: result.graph.size, toolingModules: tooling.length,
-    cycles: result.cycles.map(chain => chain.map(file => relative(repositoryRoot, file))),
-    rootImports: result.bareRootImports.map(file => relative(repositoryRoot, file)),
-    hmrWorkarounds: violations, externalPackages: result.externalPackages,
+    library,
+    runtimeModules: result.graph.size,
+    toolingModules: tooling.length,
+    cycles: result.cycles.map((chain) => chain.map((file) => relative(repositoryRoot, file))),
+    rootImports: result.bareRootImports.map((file) => relative(repositoryRoot, file)),
+    hmrWorkarounds: violations,
+    externalPackages: result.externalPackages,
   }
   assert.deepEqual(report.cycles, [], `${library}: runtime cycles`)
   assert.deepEqual(report.rootImports, [], `${library}: implementation must not import package root`)
@@ -90,7 +117,9 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   const workspace = resolve(dirname(fileURLToPath(import.meta.url)), '../..')
   const selected = args.includes('--library') ? [args[args.indexOf('--library') + 1]] : Object.keys(libraries)
   for (const library of selected) {
-    const root = args.includes('--root') ? resolve(args[args.indexOf('--root') + 1]) : resolve(workspace, libraries[library].repository)
+    const root = args.includes('--root')
+      ? resolve(args[args.indexOf('--root') + 1])
+      : resolve(workspace, libraries[library].repository)
     console.log(JSON.stringify(auditRuntimeDependencies(root, library), null, 2))
   }
 }

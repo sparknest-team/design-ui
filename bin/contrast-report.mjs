@@ -20,7 +20,10 @@ export function reportContrast(ratio, target, context = 'color pair') {
 
 process.once('beforeExit', () => {
   if (!count) return
-  const escape = value => String(value).replaceAll('%', '%25').replaceAll('\r', '%0D').replaceAll('\n', '%0A')
-  console.warn(`::warning title=Color contrast advisory::${escape(`${count} color pairs are below suggested contrast targets; minimum ${minimum}:1. Custom colors are retained; this does not block merging.`)}`)
-  for (const { ratio, target, context } of examples) console.warn(`[contrast advisory] ${context}: ${ratio}:1; suggested ${target}:1`)
+  const escape = (value) => String(value).replaceAll('%', '%25').replaceAll('\r', '%0D').replaceAll('\n', '%0A')
+  console.warn(
+    `::warning title=Color contrast advisory::${escape(`${count} color pairs are below suggested contrast targets; minimum ${minimum}:1. Custom colors are retained; this does not block merging.`)}`,
+  )
+  for (const { ratio, target, context } of examples)
+    console.warn(`[contrast advisory] ${context}: ${ratio}:1; suggested ${target}:1`)
 })

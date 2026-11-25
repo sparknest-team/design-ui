@@ -1,18 +1,18 @@
 import assert from 'node:assert/strict'
-import { existsSync, mkdtempSync, mkdirSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { test } from 'node:test'
 import { fileURLToPath } from 'node:url'
-import { checkVuePeerRanges, clearVueRuntimeLinks, inspectVueCode, inspectVueTemplate } from './vue-compat-check.mjs'
 import { downlevelVueDeclarations } from '../packages/ui-build/src/vue-declarations.mjs'
+import { checkVuePeerRanges, clearVueRuntimeLinks, inspectVueCode, inspectVueTemplate } from './vue-compat-check.mjs'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
 const root = resolve(workspace, 'cedar-design-web')
 const require = createRequire(join(root, 'packages/ui/package.json'))
 const ts = require('typescript')
-const exportsFor = (module) => module === 'vue' ? new Set(['ref', 'watch', 'defineComponent']) : undefined
+const exportsFor = (module) => (module === 'vue' ? new Set(['ref', 'watch', 'defineComponent']) : undefined)
 
 test('UI and auxiliary packages use their declared Vue peer ranges', () => {
   const temp = mkdtempSync(join(tmpdir(), 'vue-peer-ranges-test-'))
@@ -20,12 +20,17 @@ test('UI and auxiliary packages use their declared Vue peer ranges', () => {
     for (const pkg of ['ui', 'icons', 'use']) {
       const directory = join(temp, 'packages', pkg)
       mkdirSync(directory, { recursive: true })
-      writeFileSync(join(directory, 'package.json'), JSON.stringify({ peerDependencies: { vue: pkg === 'ui' ? '3' : '^3.2.47' } }))
+      writeFileSync(
+        join(directory, 'package.json'),
+        JSON.stringify({ peerDependencies: { vue: pkg === 'ui' ? '3' : '^3.2.47' } }),
+      )
     }
     assert.doesNotThrow(() => checkVuePeerRanges(temp))
     writeFileSync(join(temp, 'packages/ui/package.json'), JSON.stringify({ peerDependencies: { vue: '^3.2.47' } }))
     assert.throws(() => checkVuePeerRanges(temp))
-  } finally { rmSync(temp, { recursive: true, force: true }) }
+  } finally {
+    rmSync(temp, { recursive: true, force: true })
+  }
 })
 
 test('switching runtime versions removes only consumer links', () => {
@@ -33,7 +38,8 @@ test('switching runtime versions removes only consumer links', () => {
   try {
     const target = join(temp, 'runtime')
     const modules = join(temp, 'node_modules')
-    mkdirSync(target); mkdirSync(modules)
+    mkdirSync(target)
+    mkdirSync(modules)
     symlinkSync(target, join(modules, 'vue'), 'dir')
     clearVueRuntimeLinks(temp)
     assert.equal(existsSync(join(modules, 'vue')), false)
@@ -41,14 +47,18 @@ test('switching runtime versions removes only consumer links', () => {
     mkdirSync(join(modules, 'vue'))
     assert.throws(() => clearVueRuntimeLinks(temp))
     assert.equal(existsSync(join(modules, 'vue')), true)
-  } finally { rmSync(temp, { recursive: true, force: true }) }
+  } finally {
+    rmSync(temp, { recursive: true, force: true })
+  }
 })
 
 test('legacy IDs share counters per platform across independently loaded modules', () => {
   let context = {}
   const vue = { getCurrentInstance: () => ({ appContext: context }) }
   const load = (file) => {
-    const code = ts.transpileModule(readFileSync(file, 'utf8'), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 } }).outputText
+    const code = ts.transpileModule(readFileSync(file, 'utf8'), {
+      compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 },
+    }).outputText
     const exports = {}
     new Function('exports', 'require', code)(exports, (name) => {
       assert.equal(name, 'vue')
@@ -59,9 +69,15 @@ test('legacy IDs share counters per platform across independently loaded modules
   const cedar = resolve(workspace, 'cedar-design-web/packages/ui/src/_utils/vue-compat.ts')
   const maple = resolve(workspace, 'maple-design-mobile/packages/ui/src/utils/vue-compat.ts')
   const helpers = [load(cedar), load(cedar), load(maple), load(maple)]
-  assert.deepEqual(helpers.map((useId) => useId()), ['c-v-0', 'c-v-1', 'mp-v-0', 'mp-v-1'])
+  assert.deepEqual(
+    helpers.map((useId) => useId()),
+    ['c-v-0', 'c-v-1', 'mp-v-0', 'mp-v-1'],
+  )
   context = {}
-  assert.deepEqual(helpers.map((useId) => useId()), ['c-v-0', 'c-v-1', 'mp-v-0', 'mp-v-1'])
+  assert.deepEqual(
+    helpers.map((useId) => useId()),
+    ['c-v-0', 'c-v-1', 'mp-v-0', 'mp-v-1'],
+  )
   context = {}
   const server = { cedar: helpers[0](), maple: helpers[2]() }
   context = {}
@@ -89,14 +105,45 @@ test('rejects named, aliased, namespace and generated CJS runtime dependencies',
     `const vue = require('vue'); vue.useTemplateRef('input');`,
     `const { useModel: model } = require('vue'); model();`,
     `export { onWatcherCleanup } from 'vue';`,
-  ]) assert.equal(inspectVueCode(ts, code, 'output.js', exportsFor).length, 1, code)
+  ])
+    assert.equal(inspectVueCode(ts, code, 'output.js', exportsFor).length, 1, code)
 })
 
 test('rejects macros and watch options whose runtime semantics cannot target 3.2', () => {
-  assert.equal(inspectVueCode(ts, `defineModel(); watch(() => 1, () => {}, { once: true, deep: 1 });`, 'component.ts', exportsFor, true).length, 3)
-  assert.equal(inspectVueCode(ts, `import { watch as observe } from 'vue'; observe(() => 1, () => {}, { once: true });`, 'component.ts', exportsFor, true).length, 1)
-  assert.equal(inspectVueCode(ts, `import * as Vue from 'vue'; Vue.watch(() => 1, () => {}, { deep: 2 });`, 'component.ts', exportsFor, true).length, 1)
-  assert.equal(inspectVueCode(ts, `toRef(() => 1); computed(previous => previous || 1);`, 'component.ts', exportsFor, true).length, 2)
+  assert.equal(
+    inspectVueCode(
+      ts,
+      `defineModel(); watch(() => 1, () => {}, { once: true, deep: 1 });`,
+      'component.ts',
+      exportsFor,
+      true,
+    ).length,
+    3,
+  )
+  assert.equal(
+    inspectVueCode(
+      ts,
+      `import { watch as observe } from 'vue'; observe(() => 1, () => {}, { once: true });`,
+      'component.ts',
+      exportsFor,
+      true,
+    ).length,
+    1,
+  )
+  assert.equal(
+    inspectVueCode(
+      ts,
+      `import * as Vue from 'vue'; Vue.watch(() => 1, () => {}, { deep: 2 });`,
+      'component.ts',
+      exportsFor,
+      true,
+    ).length,
+    1,
+  )
+  assert.equal(
+    inspectVueCode(ts, `toRef(() => 1); computed(previous => previous || 1);`, 'component.ts', exportsFor, true).length,
+    2,
+  )
 })
 
 test('checks Vue namespace members only where the namespace binding is visible', () => {
@@ -112,11 +159,14 @@ test('checks Vue namespace members only where the namespace binding is visible',
     ["var vue=require('vue'); try {} catch ({ vue }) { vue.x } for (const vue of []) { vue.x }"],
     ["var vue=require('vue'); const f = (vue) => vue.x; vue['useTemplateRef']", 'useTemplateRef'],
   ]) {
-    assert.deepEqual(inspectVueCode(ts, code, 'output.js', exportsFor),
-      name ? [`output.js:1: vue.${name} is unavailable in Vue 3.2.47`] : [], code)
+    assert.deepEqual(
+      inspectVueCode(ts, code, 'output.js', exportsFor),
+      name ? [`output.js:1: vue.${name} is unavailable in Vue 3.2.47`] : [],
+      code,
+    )
   }
   const code = "var c=require('vue'); function f(d){ let c=d.value; c.add(1); c.length } c.h('div')"
-  const available = (module) => module === 'vue' ? new Set([...exportsFor(module), 'h']) : undefined
+  const available = (module) => (module === 'vue' ? new Set([...exportsFor(module), 'h']) : undefined)
   assert.deepEqual(inspectVueCode(ts, code, 'output.js', available), [])
 })
 
@@ -133,7 +183,8 @@ test('resolves aliased Vue calls and Teleport through their lexical bindings', (
     observe(() => 1, () => {}, { once: true });
     h(Portal, { defer: true });
     convert(1);`
-  const available = (module) => module === 'vue' ? new Set([...exportsFor(module), 'h', 'Teleport', 'toRef']) : undefined
+  const available = (module) =>
+    module === 'vue' ? new Set([...exportsFor(module), 'h', 'Teleport', 'toRef']) : undefined
   assert.deepEqual(inspectVueCode(ts, code, 'component.ts', available, true), [
     'component.ts: watch option once: true requires a newer Vue runtime',
     'component.ts: Teleport defer requires Vue 3.5',
@@ -146,16 +197,29 @@ test('rejects Teleport defer in templates and render functions without rejecting
   for (const template of ['<Teleport defer to="body" />', '<teleport :defer="ready" to="body" />']) {
     assert.equal(inspectVueTemplate(sfc, `<template>${template}</template>`, 'component.vue').length, 1)
   }
-  assert.deepEqual(inspectVueTemplate(sfc, '<template><!-- <Teleport defer /> --><Teleport to="body" /></template>', 'component.vue'), [])
-  const available = (module) => module === 'vue' ? new Set(['h', 'Teleport']) : undefined
+  assert.deepEqual(
+    inspectVueTemplate(sfc, '<template><!-- <Teleport defer /> --><Teleport to="body" /></template>', 'component.vue'),
+    [],
+  )
+  const available = (module) => (module === 'vue' ? new Set(['h', 'Teleport']) : undefined)
   for (const code of [
     `import { h, Teleport } from 'vue'; h(Teleport, { defer: true }, []);`,
     `import { h, Teleport as Portal } from 'vue'; h(Portal, { 'defer': true }, []);`,
     `import * as V from 'vue'; V.h(V.Teleport, { defer: true }, []);`,
     `import { Teleport } from 'vue'; const node = <Teleport defer to="body" />;`,
     `import * as V from 'vue'; const node = <V.Teleport defer to="body" />;`,
-  ]) assert.equal(inspectVueCode(ts, code, 'component.tsx', available, true).length, 1, code)
-  assert.deepEqual(inspectVueCode(ts, `import { h, Teleport } from 'vue'; h(Teleport, { to: 'body' }, []);`, 'component.ts', available, true), [])
+  ])
+    assert.equal(inspectVueCode(ts, code, 'component.tsx', available, true).length, 1, code)
+  assert.deepEqual(
+    inspectVueCode(
+      ts,
+      `import { h, Teleport } from 'vue'; h(Teleport, { to: 'body' }, []);`,
+      'component.ts',
+      available,
+      true,
+    ),
+    [],
+  )
 })
 
 test('declaration lowering preserves typed props, slots and ref values on the actual 3.2.47 types', () => {
@@ -167,19 +231,37 @@ test('declaration lowering preserves typed props, slots and ref values on the ac
     // Emit with the development runtime first; then verify the resulting public
     // declarations against the real oldest runtime without skipLibCheck.
     const source = join(temp, 'source.ts')
-    writeFileSync(source, `import { defineComponent, reactive, ref, shallowRef } from 'vue';
+    writeFileSync(
+      source,
+      `import { defineComponent, reactive, ref, shallowRef } from 'vue';
       export const Component = defineComponent({ props: { label: { type: String, required: true } }, setup() { return { count: ref(1) } } });
       export const value = ref('hello');
       export const state = reactive({ count: ref(1) });
-      export const shallow = shallowRef('hello');`)
-    const options = { declaration: true, emitDeclarationOnly: true, strict: true, skipLibCheck: true, target: ts.ScriptTarget.ESNext, module: ts.ModuleKind.ESNext, moduleResolution: ts.ModuleResolutionKind.Bundler, outDir: output, types: [] }
+      export const shallow = shallowRef('hello');`,
+    )
+    const options = {
+      declaration: true,
+      emitDeclarationOnly: true,
+      strict: true,
+      skipLibCheck: true,
+      target: ts.ScriptTarget.ESNext,
+      module: ts.ModuleKind.ESNext,
+      moduleResolution: ts.ModuleResolutionKind.Bundler,
+      outDir: output,
+      types: [],
+    }
     const emitted = ts.createProgram([source], options).emit()
     assert.equal(emitted.emitSkipped, false)
-    writeFileSync(join(output, 'slots.d.ts'), `export declare const Component: import('vue').DefineComponent<{}, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, {}, {}, import('vue').SlotsType<{ default: (props: { id: number }) => any }>>;`)
+    writeFileSync(
+      join(output, 'slots.d.ts'),
+      `export declare const Component: import('vue').DefineComponent<{}, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, {}, {}, import('vue').SlotsType<{ default: (props: { id: number }) => any }>>;`,
+    )
     downlevelVueDeclarations(root, output, ts)
     assert.doesNotMatch(readFileSync(join(output, 'source.d.ts'), 'utf8'), /ComponentProvideOptions/)
     const consumer = join(temp, 'consumer.ts')
-    writeFileSync(consumer, `import { Component, value, state, shallow } from './types/source';
+    writeFileSync(
+      consumer,
+      `import { Component, value, state, shallow } from './types/source';
       import { Component as Slotted } from './types/slots';
       const props: InstanceType<typeof Component>['$props'] = { label: 'ok' };
       // @ts-expect-error missing required prop
@@ -197,9 +279,27 @@ test('declaration lowering preserves typed props, slots and ref values on the ac
       instance.$slots.default({ id: 1 });
       // @ts-expect-error slots must retain their parameter type
       instance.$slots.default({ id: 'invalid' });
-      void [props, missing, invalid, count, text];`)
-    const program = ts.createProgram([consumer], { ...options, emitDeclarationOnly: false, noEmit: true, skipLibCheck: false, baseUrl: root, paths: { vue: ['node_modules/vue-compat-min'] } })
+      void [props, missing, invalid, count, text];`,
+    )
+    const program = ts.createProgram([consumer], {
+      ...options,
+      emitDeclarationOnly: false,
+      noEmit: true,
+      skipLibCheck: false,
+      baseUrl: root,
+      paths: { vue: ['node_modules/vue-compat-min'] },
+    })
     const diagnostics = ts.getPreEmitDiagnostics(program)
-    assert.equal(diagnostics.length, 0, ts.formatDiagnosticsWithColorAndContext(diagnostics, { getCanonicalFileName: (file) => file, getCurrentDirectory: () => root, getNewLine: () => '\n' }))
-  } finally { rmSync(temp, { recursive: true, force: true }) }
+    assert.equal(
+      diagnostics.length,
+      0,
+      ts.formatDiagnosticsWithColorAndContext(diagnostics, {
+        getCanonicalFileName: (file) => file,
+        getCurrentDirectory: () => root,
+        getNewLine: () => '\n',
+      }),
+    )
+  } finally {
+    rmSync(temp, { recursive: true, force: true })
+  }
 })

@@ -22,14 +22,14 @@
 
 ## 调用方和兼容入口
 
-| 库 | 引用 | 本批处理 |
-| --- | --- | --- |
-| Cedar | BreadcrumbItem、Search、SplitButton | 保持 select(value, option, event) 和 open 更新请求；调用链回归通过 |
-| Cedar | TableColumnManager 及 Table 列操作 | 保留 MenuOption click 事件、无显式 value 时的标签回退及旧菜单 context 兼容 |
-| Cedar | MenuSubmenu、MenuPanel、MenuOption | 接入共同选择与每层键盘控制器；菜单样式入口增加 Checkbox 依赖 |
-| Maple | BreadcrumbItem、Search、SplitButton | 保留组件、插槽、事件参数和菜单公开方法；setReference 支持可选参数以恢复默认引用 |
-| Maple | AutoComplete | 使用同一选择与键盘控制器；可见性测试迁移到真实动画包装层，26 项通过 |
-| Maple | MenuChildren、MenuOption | 移除本地选中状态和旧 provider；复选框点击保留原生 Event；保留 hover/ripple/视觉组件 |
+| 库    | 引用                                | 本批处理                                                                            |
+| ----- | ----------------------------------- | ----------------------------------------------------------------------------------- |
+| Cedar | BreadcrumbItem、Search、SplitButton | 保持 select(value, option, event) 和 open 更新请求；调用链回归通过                  |
+| Cedar | TableColumnManager 及 Table 列操作  | 保留 MenuOption click 事件、无显式 value 时的标签回退及旧菜单 context 兼容          |
+| Cedar | MenuSubmenu、MenuPanel、MenuOption  | 接入共同选择与每层键盘控制器；菜单样式入口增加 Checkbox 依赖                        |
+| Maple | BreadcrumbItem、Search、SplitButton | 保留组件、插槽、事件参数和菜单公开方法；setReference 支持可选参数以恢复默认引用     |
+| Maple | AutoComplete                        | 使用同一选择与键盘控制器；可见性测试迁移到真实动画包装层，26 项通过                 |
+| Maple | MenuChildren、MenuOption            | 移除本地选中状态和旧 provider；复选框点击保留原生 Event；保留 hover/ripple/视觉组件 |
 
 Maple 的快照变化经审阅仅为 menu/item 标记、子菜单 role 及多选 aria-checked/menuitemcheckbox。未用快照更新替代行为断言。
 
@@ -46,7 +46,6 @@ Maple 的快照变化经审阅仅为 menu/item 标记、子菜单 role 及多选
 ## 连续收尾结果
 
 根、Option、Group、Submenu 与面板已接入共同 menu/render.ts，原生视觉与输入数据为适配参数；attrs 和监听器通过 mergeProps 合并。Cedar 保留 Scrollbar/Empty/slot options，Maple 保留 Ripple/HoverOverlay/MaybeVNode。公开 Menu 方法与外部消费方不变。禁止重新连接 Select provider。全库、构建、浏览器与门禁结果见 progress.md；上述第四批数字为历史证据。
-
 
 ## Menu 主体同源（2026-09-08）
 

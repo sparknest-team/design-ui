@@ -1,22 +1,31 @@
 import assert from 'node:assert/strict'
 import { EventEmitter } from 'node:events'
 import { readFileSync } from 'node:fs'
-import { fileURLToPath } from 'node:url'
 import { resolve } from 'node:path'
-import { runInNewContext } from 'node:vm'
 import test from 'node:test'
-import { navigateWithDiagnostics, observeNavigation } from './navigation.mjs'
+import { fileURLToPath } from 'node:url'
+import { runInNewContext } from 'node:vm'
 import { hoverAfterScroll } from './actions.mjs'
+import { navigateWithDiagnostics, observeNavigation } from './navigation.mjs'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
 
 test('hover waits for real scroll/geometry stability, then enters exactly once', async () => {
-  const calls = [], positions = ['a', 'b', 'c', 'c', 'c', 'c']
+  const calls = [],
+    positions = ['a', 'b', 'c', 'c', 'c', 'c']
   let reads = 0
   await hoverAfterScroll({
-    async scrollIntoViewIfNeeded() { calls.push('scroll') },
-    async evaluate() { reads++; return positions.shift() ?? 'c' },
-    async hover() { assert.ok(reads >= 6); calls.push('hover') },
+    async scrollIntoViewIfNeeded() {
+      calls.push('scroll')
+    },
+    async evaluate() {
+      reads++
+      return positions.shift() ?? 'c'
+    },
+    async hover() {
+      assert.ok(reads >= 6)
+      calls.push('hover')
+    },
   })
   assert.deepEqual(calls, ['scroll', 'hover'])
 })
@@ -69,25 +78,42 @@ for (const entry of ['index.html', 'mobile.html']) {
   const source = readFileSync(resolve(workspace, 'maple-design-mobile/packages/cli/site', entry), 'utf8')
   const script = [...source.matchAll(/<script>([\s\S]*?)<\/script>/g)].find((match) => match[1].includes('baidu'))?.[1]
   assert.ok(script, `${entry} has the actual optional analytics bootstrap`)
-  for (const state of ['loading', 'complete']) test(`${entry}: telemetry starts only after load, once, preserving its queue (${state})`, () => {
-    const events = new EventTarget(), appended = [], queue = [['before-load']]
-    const document = { readyState: state, createElement: () => ({}), head: { appendChild: (node) => appended.push(node) } }
-    runInNewContext(script.replaceAll('<%= baidu %>', 'https://telemetry.example.test/script.js'), {
-      document, window: { addEventListener: events.addEventListener.bind(events) }, _hmt: queue,
+  for (const state of ['loading', 'complete'])
+    test(`${entry}: telemetry starts only after load, once, preserving its queue (${state})`, () => {
+      const events = new EventTarget(),
+        appended = [],
+        queue = [['before-load']]
+      const document = {
+        readyState: state,
+        createElement: () => ({}),
+        head: { appendChild: (node) => appended.push(node) },
+      }
+      runInNewContext(script.replaceAll('<%= baidu %>', 'https://telemetry.example.test/script.js'), {
+        document,
+        window: { addEventListener: events.addEventListener.bind(events) },
+        _hmt: queue,
+      })
+      assert.equal(appended.length, state === 'loading' ? 0 : 1)
+      document.readyState = 'complete'
+      events.dispatchEvent(new Event('load'))
+      events.dispatchEvent(new Event('load'))
+      assert.equal(appended.length, 1)
+      assert.equal(appended[0].async, true)
+      assert.equal(appended[0].src, 'https://telemetry.example.test/script.js')
+      assert.deepEqual(queue, [['before-load']])
     })
-    assert.equal(appended.length, state === 'loading' ? 0 : 1)
-    document.readyState = 'complete'
-    events.dispatchEvent(new Event('load'))
-    events.dispatchEvent(new Event('load'))
-    assert.equal(appended.length, 1)
-    assert.equal(appended[0].async, true)
-    assert.equal(appended[0].src, 'https://telemetry.example.test/script.js')
-    assert.deepEqual(queue, [['before-load']])
-  })
   test(`${entry}: unconfigured analytics never inserts a script`, () => {
     runInNewContext(script.replaceAll('<%= baidu %>', ''), {
-      document: { createElement() { assert.fail('empty analytics must not insert scripts') } },
-      window: { addEventListener() { assert.fail('empty analytics must not register a loader') } },
+      document: {
+        createElement() {
+          assert.fail('empty analytics must not insert scripts')
+        },
+      },
+      window: {
+        addEventListener() {
+          assert.fail('empty analytics must not register a loader')
+        },
+      },
     })
   })
 }

@@ -20,58 +20,58 @@ Vue 和 React 独立维护源码、CSS、token、hooks、工具函数、构建�
 
 ## 全量清单
 
-| 仓库 | 相对目录 | 包名 | 私有 |
-| --- | --- | --- | --- |
-| cedar-design-web | `.` | `@cedar-design/workspace-vue` | 是 |
-| cedar-design-web | `tests/vue-compat/minimum` | `@cedar-design/vue-compat-minimum-vue` | 是 |
-| cedar-design-web | `tests/vue-compat/3-3` | `@cedar-design/vue-compat-3-3-vue` | 是 |
-| cedar-design-web | `tests/vue-compat/3-4` | `@cedar-design/vue-compat-3-4-vue` | 是 |
-| cedar-design-web | `tests/vue-compat/current` | `@cedar-design/vue-compat-current-vue` | 是 |
-| cedar-design-web | `packages/cli` | `@cedar-design/cli-vue` | 否 |
-| cedar-design-web | `packages/icons` | `@cedar-design/icons-vue` | 否 |
-| cedar-design-web | `packages/preset-tailwindcss` | `@cedar-design/preset-tailwindcss-vue` | 否 |
-| cedar-design-web | `packages/preset-unocss` | `@cedar-design/preset-unocss-vue` | 否 |
-| cedar-design-web | `packages/resolver` | `@cedar-design/resolver-vue` | 否 |
-| cedar-design-web | `packages/shared` | `@cedar-design/shared-vue` | 否 |
-| cedar-design-web | `packages/ui` | `@cedar-design/ui-vue` | 否 |
-| cedar-design-web | `packages/use` | `@cedar-design/use-vue` | 否 |
-| maple-design-mobile | `.` | `@maple-design/workspace-vue` | 是 |
-| maple-design-mobile | `tests/vue-compat/minimum` | `@maple-design/vue-compat-minimum-vue` | 是 |
-| maple-design-mobile | `tests/vue-compat/3-3` | `@maple-design/vue-compat-3-3-vue` | 是 |
-| maple-design-mobile | `tests/vue-compat/3-4` | `@maple-design/vue-compat-3-4-vue` | 是 |
-| maple-design-mobile | `tests/vue-compat/current` | `@maple-design/vue-compat-current-vue` | 是 |
-| maple-design-mobile | `packages/cli` | `@maple-design/cli-vue` | 否 |
-| maple-design-mobile | `packages/icons` | `@maple-design/icons-vue` | 否 |
-| maple-design-mobile | `packages/preset-tailwindcss` | `@maple-design/preset-tailwindcss-vue` | 否 |
-| maple-design-mobile | `packages/preset-unocss` | `@maple-design/preset-unocss-vue` | 否 |
-| maple-design-mobile | `packages/resolver` | `@maple-design/resolver-vue` | 否 |
-| maple-design-mobile | `packages/shared` | `@maple-design/shared-vue` | 否 |
-| maple-design-mobile | `packages/touch-emulator` | `@maple-design/touch-emulator-vue` | 否 |
-| maple-design-mobile | `packages/ui` | `@maple-design/ui-vue` | 否 |
-| maple-design-mobile | `packages/ui-playground` | `@maple-design/ui-playground-vue` | 是 |
-| maple-design-mobile | `packages/use` | `@maple-design/use-vue` | 否 |
-| maple-design-mobile | `packages/vite-plugins` | `@maple-design/vite-plugins-vue` | 否 |
-| maple-design-mobile | `packages/vscode-extension` | `maple-vscode-extension-vue` | 是 |
-| cedar-design-web-react | `.` | `@cedar-design/workspace-react` | 是 |
-| cedar-design-web-react | `packages/cli` | `@cedar-design/cli-react` | 是 |
-| cedar-design-web-react | `packages/shared` | `@cedar-design/shared-react` | 是 |
-| cedar-design-web-react | `packages/ui` | `@cedar-design/ui-react` | 否 |
-| cedar-design-web-react | `packages/use` | `@cedar-design/use-react` | 是 |
-| maple-design-mobile-react | `.` | `@maple-design/workspace-react` | 是 |
-| maple-design-mobile-react | `packages/cli` | `@maple-design/cli-react` | 是 |
-| maple-design-mobile-react | `packages/shared` | `@maple-design/shared-react` | 是 |
-| maple-design-mobile-react | `packages/ui` | `@maple-design/ui-react` | 否 |
-| maple-design-mobile-react | `packages/use` | `@maple-design/use-react` | 是 |
-| design-ui | `.` | `@sparknest/design-system-vue` | 是 |
-| design-ui | `packages/theme-contract` | `@sparknest/theme-contract-vue` | 否 |
-| design-ui | `packages/ui-build` | `@sparknest/ui-build-vue` | 否 |
-| design-ui | `packages/ui-doc-preview` | `@sparknest/ui-doc-preview-vue` | 否 |
-| design-ui | `packages/ui-icons` | `@sparknest/ui-icons-vue` | 否 |
-| design-ui-react | `.` | `@sparknest/design-system-react` | 是 |
-| design-ui-react | `packages/theme-contract` | `@sparknest/theme-contract-react` | 否 |
-| design-ui-react | `packages/ui-build` | `@sparknest/ui-build-react` | 否 |
-| design-ui-react | `packages/ui-doc-preview` | `@sparknest/ui-doc-preview-react` | 否 |
-| design-ui-react | `packages/ui-icons` | `@sparknest/ui-icons-react` | 否 |
+| 仓库                      | 相对目录                      | 包名                                   | 私有 |
+| ------------------------- | ----------------------------- | -------------------------------------- | ---- |
+| cedar-design-web          | `.`                           | `@cedar-design/workspace-vue`          | 是   |
+| cedar-design-web          | `tests/vue-compat/minimum`    | `@cedar-design/vue-compat-minimum-vue` | 是   |
+| cedar-design-web          | `tests/vue-compat/3-3`        | `@cedar-design/vue-compat-3-3-vue`     | 是   |
+| cedar-design-web          | `tests/vue-compat/3-4`        | `@cedar-design/vue-compat-3-4-vue`     | 是   |
+| cedar-design-web          | `tests/vue-compat/current`    | `@cedar-design/vue-compat-current-vue` | 是   |
+| cedar-design-web          | `packages/cli`                | `@cedar-design/cli-vue`                | 否   |
+| cedar-design-web          | `packages/icons`              | `@cedar-design/icons-vue`              | 否   |
+| cedar-design-web          | `packages/preset-tailwindcss` | `@cedar-design/preset-tailwindcss-vue` | 否   |
+| cedar-design-web          | `packages/preset-unocss`      | `@cedar-design/preset-unocss-vue`      | 否   |
+| cedar-design-web          | `packages/resolver`           | `@cedar-design/resolver-vue`           | 否   |
+| cedar-design-web          | `packages/shared`             | `@cedar-design/shared-vue`             | 否   |
+| cedar-design-web          | `packages/ui`                 | `@cedar-design/ui-vue`                 | 否   |
+| cedar-design-web          | `packages/use`                | `@cedar-design/use-vue`                | 否   |
+| maple-design-mobile       | `.`                           | `@maple-design/workspace-vue`          | 是   |
+| maple-design-mobile       | `tests/vue-compat/minimum`    | `@maple-design/vue-compat-minimum-vue` | 是   |
+| maple-design-mobile       | `tests/vue-compat/3-3`        | `@maple-design/vue-compat-3-3-vue`     | 是   |
+| maple-design-mobile       | `tests/vue-compat/3-4`        | `@maple-design/vue-compat-3-4-vue`     | 是   |
+| maple-design-mobile       | `tests/vue-compat/current`    | `@maple-design/vue-compat-current-vue` | 是   |
+| maple-design-mobile       | `packages/cli`                | `@maple-design/cli-vue`                | 否   |
+| maple-design-mobile       | `packages/icons`              | `@maple-design/icons-vue`              | 否   |
+| maple-design-mobile       | `packages/preset-tailwindcss` | `@maple-design/preset-tailwindcss-vue` | 否   |
+| maple-design-mobile       | `packages/preset-unocss`      | `@maple-design/preset-unocss-vue`      | 否   |
+| maple-design-mobile       | `packages/resolver`           | `@maple-design/resolver-vue`           | 否   |
+| maple-design-mobile       | `packages/shared`             | `@maple-design/shared-vue`             | 否   |
+| maple-design-mobile       | `packages/touch-emulator`     | `@maple-design/touch-emulator-vue`     | 否   |
+| maple-design-mobile       | `packages/ui`                 | `@maple-design/ui-vue`                 | 否   |
+| maple-design-mobile       | `packages/ui-playground`      | `@maple-design/ui-playground-vue`      | 是   |
+| maple-design-mobile       | `packages/use`                | `@maple-design/use-vue`                | 否   |
+| maple-design-mobile       | `packages/vite-plugins`       | `@maple-design/vite-plugins-vue`       | 否   |
+| maple-design-mobile       | `packages/vscode-extension`   | `maple-vscode-extension-vue`           | 是   |
+| cedar-design-web-react    | `.`                           | `@cedar-design/workspace-react`        | 是   |
+| cedar-design-web-react    | `packages/cli`                | `@cedar-design/cli-react`              | 是   |
+| cedar-design-web-react    | `packages/shared`             | `@cedar-design/shared-react`           | 是   |
+| cedar-design-web-react    | `packages/ui`                 | `@cedar-design/ui-react`               | 否   |
+| cedar-design-web-react    | `packages/use`                | `@cedar-design/use-react`              | 是   |
+| maple-design-mobile-react | `.`                           | `@maple-design/workspace-react`        | 是   |
+| maple-design-mobile-react | `packages/cli`                | `@maple-design/cli-react`              | 是   |
+| maple-design-mobile-react | `packages/shared`             | `@maple-design/shared-react`           | 是   |
+| maple-design-mobile-react | `packages/ui`                 | `@maple-design/ui-react`               | 否   |
+| maple-design-mobile-react | `packages/use`                | `@maple-design/use-react`              | 是   |
+| design-ui                 | `.`                           | `@sparknest/design-system-vue`         | 是   |
+| design-ui                 | `packages/theme-contract`     | `@sparknest/theme-contract-vue`        | 否   |
+| design-ui                 | `packages/ui-build`           | `@sparknest/ui-build-vue`              | 否   |
+| design-ui                 | `packages/ui-doc-preview`     | `@sparknest/ui-doc-preview-vue`        | 否   |
+| design-ui                 | `packages/ui-icons`           | `@sparknest/ui-icons-vue`              | 否   |
+| design-ui-react           | `.`                           | `@sparknest/design-system-react`       | 是   |
+| design-ui-react           | `packages/theme-contract`     | `@sparknest/theme-contract-react`      | 否   |
+| design-ui-react           | `packages/ui-build`           | `@sparknest/ui-build-react`            | 否   |
+| design-ui-react           | `packages/ui-doc-preview`     | `@sparknest/ui-doc-preview-react`      | 否   |
+| design-ui-react           | `packages/ui-icons`           | `@sparknest/ui-icons-react`            | 否   |
 
 Maple 另有 `maple-library-template-vue`（CLI 生成模板）和 `maple-playground-demo-vue`（Playground 下载模板），不属于 workspace 包。CLI 生成项目时会把模板名称替换为用户输入的项目包名，不再沿用正式 UI 包名。
 
@@ -93,6 +93,6 @@ check:packages 按各仓库 pnpm-workspace.yaml 的 packages glob（含排除模
 
 组件库模板必须同时提供 ui-build.config.mjs 和 tsconfig.declaration.json，生成项目的所有依赖字段都不能保留本地协议；运行时依赖与 types-generated 必须进入最终发布清单。
 
-Maple 的 check:cli 包含真实模板生成、SFC/TSX 与国际化开关四种组合的编译打包、公开入口解析回归，typecheck:playground 使用 vue-tsc 检查编辑器应用，两个入口都已接入 quality。固定工具类通过 @maple-design/ui-vue/utilities/style 导入；区域 JSON 与编辑器元数据分别使用公开的 json/*、highlight/* 子路径。
+Maple 的 check:cli 包含真实模板生成、SFC/TSX 与国际化开关四种组合的编译打包、公开入口解析回归，typecheck:playground 使用 vue-tsc 检查编辑器应用，两个入口都已接入 quality。固定工具类通过 @maple-design/ui-vue/utilities/style 导入；区域 JSON 与编辑器元数据分别使用公开的 json/_、highlight/_ 子路径。
 
 Cedar / Maple 的 `tests/vue-compat/{minimum,3-3,3-4,current}` 是显式声明的私有工作区，用于不同 Vue 版本的真实消费验证。它们参加包名、重复名称、依赖与源码边界检查，必须 private；未声明或被排除的 fixture package.json 仍会失败。

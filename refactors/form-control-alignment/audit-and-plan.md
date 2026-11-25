@@ -10,35 +10,35 @@ API 入口检查当前无缺失导出：Cedar 122 个运行时 Props 导出、Ma
 
 ## 已确认的问题
 
-| 优先级 | 范围 | 现状 | 目标 |
-| --- | --- | --- | --- |
-| P0 | 契约同步 | Cedar 新增公开 `field-size-xl-height` 后，主题契约未更新；检查直接失败 | 代码、文档、契约、测试同一提交更新 |
-| P0 | Form 公共上下文 | Cedar Form 有 size/rules/grid label，缺 readonly；Maple 有 readonly，缺 size/rules；model 必填性与 layout 集合也不同 | 建立共享 FormContext 逻辑接口，平台布局为扩展 |
-| P0 | 内部 API 泄漏 | Maple Input 的 `isForceFocusingEffect`、`isForceErrorEffect`、`autocomplete` 等以“internal”注释存在于公开 props 对象 | 内部开关移入内部组件/上下文；真正原生属性走 `inputAttrs` |
-| P0 | 继承逻辑 | 同类控件混用 `undefined`、`false` 默认值和 `??`、`||` 合并，难以判断显式 false 是否覆盖父级 | 为每个状态固定优先级并写跨端契约测试 |
-| P1 | Select | Cedar 偏桌面搜索/虚拟列表/创建能力；Maple 偏 picker/popup/presentation，公共核心被平台能力淹没 | 抽出同义核心 props/emits/slots，平台参数进入 adapter/presentation |
-| P1 | AutoComplete | Cedar 复用完整 Input 与 Trigger/VirtualList；Maple 缺 defaultValue/error/字数能力，同时携带颜色样式 props | 对齐输入核心，弹层渲染保留平台实现 |
-| P1 | Checkbox/Radio | Cedar 有 defaultChecked/error/group 状态，Maple 有 readonly/颜色/icon/ripple；值类型也过宽 | 统一值与 Group 契约，视觉能力转 CSS token 或平台扩展 |
-| P1 | Form 校验 | 两端规则、字段路径、触发器、reset/clear/expose 和异步竞态能力仍是两套 | 共享规则语义和测试夹具，不要求同一 SFC |
-| P1 | 样式职责 | Maple 多个输入组件公开 textColor/focusColor/blurColor；这与主题 CSS 变量重复 | 品牌定制走 token，逐实例动态样式才用 prop |
-| P2 | Date/Time | 同名组件的桌面面板与移动时钟/picker 架构差异大，API/token 全量求交没有意义 | 只统一 value/open/disabled/readonly/format 等语义壳层 |
+| 优先级 | 范围            | 现状                                                                                                                 | 目标                                                              |
+| ------ | --------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| P0     | 契约同步        | Cedar 新增公开 `field-size-xl-height` 后，主题契约未更新；检查直接失败                                               | 代码、文档、契约、测试同一提交更新                                |
+| P0     | Form 公共上下文 | Cedar Form 有 size/rules/grid label，缺 readonly；Maple 有 readonly，缺 size/rules；model 必填性与 layout 集合也不同 | 建立共享 FormContext 逻辑接口，平台布局为扩展                     |
+| P0     | 内部 API 泄漏   | Maple Input 的 `isForceFocusingEffect`、`isForceErrorEffect`、`autocomplete` 等以“internal”注释存在于公开 props 对象 | 内部开关移入内部组件/上下文；真正原生属性走 `inputAttrs`          |
+| P0     | 继承逻辑        | 同类控件混用 `undefined`、`false` 默认值和 `??`、`                                                                   |                                                                   | ` 合并，难以判断显式 false 是否覆盖父级 | 为每个状态固定优先级并写跨端契约测试 |
+| P1     | Select          | Cedar 偏桌面搜索/虚拟列表/创建能力；Maple 偏 picker/popup/presentation，公共核心被平台能力淹没                       | 抽出同义核心 props/emits/slots，平台参数进入 adapter/presentation |
+| P1     | AutoComplete    | Cedar 复用完整 Input 与 Trigger/VirtualList；Maple 缺 defaultValue/error/字数能力，同时携带颜色样式 props            | 对齐输入核心，弹层渲染保留平台实现                                |
+| P1     | Checkbox/Radio  | Cedar 有 defaultChecked/error/group 状态，Maple 有 readonly/颜色/icon/ripple；值类型也过宽                           | 统一值与 Group 契约，视觉能力转 CSS token 或平台扩展              |
+| P1     | Form 校验       | 两端规则、字段路径、触发器、reset/clear/expose 和异步竞态能力仍是两套                                                | 共享规则语义和测试夹具，不要求同一 SFC                            |
+| P1     | 样式职责        | Maple 多个输入组件公开 textColor/focusColor/blurColor；这与主题 CSS 变量重复                                         | 品牌定制走 token，逐实例动态样式才用 prop                         |
+| P2     | Date/Time       | 同名组件的桌面面板与移动时钟/picker 架构差异大，API/token 全量求交没有意义                                           | 只统一 value/open/disabled/readonly/format 等语义壳层             |
 
 ## CSS/Token 横向结果
 
-| 组件 | 共享 token | Cedar 独有 | Maple 独有 | 判断 |
-| --- | ---: | ---: | ---: | --- |
-| FieldDecorator | 35 | 0 | 0 | 审计发现的 xl 差异已修复为公共 token |
-| Input | 7 | 0 | 0 | 后缀已一致 |
-| Textarea | 13 | 0 | 0 | 后缀已一致 |
-| Checkbox | 12 | 0 | 0 | 后缀已一致 |
-| Radio | 12 | 0 | 0 | 后缀已一致 |
-| Switch | 34 | 0 | 0 | 后缀已一致 |
-| Form | 8 | 67 | 3 | Cedar 校验/桌面布局与 Maple item 布局尚未分层 |
-| Select | 11 | 18 | 6 | 公共触发框已接近，popup/picker 层差异未登记清楚 |
-| AutoComplete | 0 | 17 | 1 | 尚未建立公共视觉契约 |
-| InputNumber | 0 | 0 | 9 | Cedar 仍主要依赖 FieldDecorator；组件级 token 策略不一致 |
-| Search | 0 | 0 | 17 | Maple 是移动搜索容器，Cedar 是组合输入；应拆核心与 presentation |
-| VerificationCode | 0 | 1 | 4 | 需统一 cell/gap 基础 token |
+| 组件             | 共享 token | Cedar 独有 | Maple 独有 | 判断                                                            |
+| ---------------- | ---------: | ---------: | ---------: | --------------------------------------------------------------- |
+| FieldDecorator   |         35 |          0 |          0 | 审计发现的 xl 差异已修复为公共 token                            |
+| Input            |          7 |          0 |          0 | 后缀已一致                                                      |
+| Textarea         |         13 |          0 |          0 | 后缀已一致                                                      |
+| Checkbox         |         12 |          0 |          0 | 后缀已一致                                                      |
+| Radio            |         12 |          0 |          0 | 后缀已一致                                                      |
+| Switch           |         34 |          0 |          0 | 后缀已一致                                                      |
+| Form             |          8 |         67 |          3 | Cedar 校验/桌面布局与 Maple item 布局尚未分层                   |
+| Select           |         11 |         18 |          6 | 公共触发框已接近，popup/picker 层差异未登记清楚                 |
+| AutoComplete     |          0 |         17 |          1 | 尚未建立公共视觉契约                                            |
+| InputNumber      |          0 |          0 |          9 | Cedar 仍主要依赖 FieldDecorator；组件级 token 策略不一致        |
+| Search           |          0 |          0 |         17 | Maple 是移动搜索容器，Cedar 是组合输入；应拆核心与 presentation |
+| VerificationCode |          0 |          1 |          4 | 需统一 cell/gap 基础 token                                      |
 
 Date/Time 的面板 token 差异属于架构差异，不应直接把两边 token 合并成巨型公共集合。公共契约只覆盖输入壳层与状态色，桌面日历、移动时钟分别登记平台扩展。
 

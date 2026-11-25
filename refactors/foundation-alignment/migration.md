@@ -11,16 +11,16 @@
 
 ## Trigger 默认值与调用方
 
-| API | 统一默认 / 行为 |
-| --- | --- |
-| trigger | hover；接受 hover/click/focus/contextMenu/manual 或数组 |
-| mouseEnterDelay / mouseLeaveDelay | 100 ms / 100 ms |
-| focusDelay | 0 ms |
-| popupHoverStay / blurToClose | true / true |
-| closeOnClickReference / clickOutsideToClose | true / true |
-| escToClose / restoreFocus | true / true |
-| reference | selector 或 HTMLElement/SVGElement；不传时解析默认插槽 |
-| setReference(undefined) | 撤销方法设置的目标，恢复 reference prop 或默认插槽 |
+| API                                         | 统一默认 / 行为                                         |
+| ------------------------------------------- | ------------------------------------------------------- |
+| trigger                                     | hover；接受 hover/click/focus/contextMenu/manual 或数组 |
+| mouseEnterDelay / mouseLeaveDelay           | 100 ms / 100 ms                                         |
+| focusDelay                                  | 0 ms                                                    |
+| popupHoverStay / blurToClose                | true / true                                             |
+| closeOnClickReference / clickOutsideToClose | true / true                                             |
+| escToClose / restoreFocus                   | true / true                                             |
+| reference                                   | selector 或 HTMLElement/SVGElement；不传时解析默认插槽  |
+| setReference(undefined)                     | 撤销方法设置的目标，恢复 reference prop 或默认插槽      |
 
 Maple 直接使用 mp-trigger 的业务代码，若依赖原 click 默认，请显式设置 trigger="click"；若依赖悬停无延迟，显式设置两项 delay=0；若需要再次点击不关闭，设置 closeOnClickReference=false。
 

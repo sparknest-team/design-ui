@@ -10,17 +10,17 @@
 
 ## 实施批次与依赖
 
-| 批次 | 内容与交付物 | 前置依赖 | 出口检查 |
-| --- | --- | --- | --- |
-| F0 | 文件/调用者清单、原测试与类型基线、差异登记、只读检查工具 | 无 | 可重复生成清单，不能覆盖未知工作区改动 |
-| F1 | useVModel、事件监听生命周期、外部点击、节点/ref 解析、父子通信契约 | F0 | 双端配对测试；事件名/次数、动态目标、KeepAlive、SSR、独立实例 |
-| F2 | 弹层开关状态、挂载容器、层级/嵌套、焦点和 Escape 协议 | F1 | 受控拒绝更新、延迟取消、嵌套只关应关闭层、卸载无残留 |
-| F3 | Trigger API 对齐与共同交互实现；定位算法通过平台适配迁移 | F2 | 双端 Trigger/Tooltip/Popover/Menu/Breadcrumb 回归，12 方位、滚动/尺寸/容器、SVG、SSR/hydration |
-| F4 | Tooltip、Popover、Menu 主体与子菜单独立同源复制 | F3 | 单/多选、禁用、键盘、焦点恢复、事件顺序、递归子菜单、配对源码检查 |
-| F5 | 遮罩、滚动锁、Dialog/Drawer/Popup 与过渡生命周期 | F2、F3 | 多层锁计数、恢复原样式、KeepAlive、触屏滚动、关闭竞态 |
-| F6 | 选项归一化、字段映射、选择控制器、Form/Input 控制层 | F1、F4 | 对象值、单多选、父子关联、受控状态、异步校验竞态、IME |
-| F7 | Select/Cascader/AutoComplete、日期与时间选取逻辑迁移 | F6 | 保留端侧面板，逻辑与数据契约同步，相关组件和 Demo 回归 |
-| F8 | ResizeObserver、滚动/虚拟列表、配置/语言/主题与通用计算工具收尾 | 按依赖与 F1–F7 交错 | 各项单独判定同源/适配/独立，全量类型/构建/SSR/导出检查 |
+| 批次 | 内容与交付物                                                       | 前置依赖            | 出口检查                                                                                       |
+| ---- | ------------------------------------------------------------------ | ------------------- | ---------------------------------------------------------------------------------------------- |
+| F0   | 文件/调用者清单、原测试与类型基线、差异登记、只读检查工具          | 无                  | 可重复生成清单，不能覆盖未知工作区改动                                                         |
+| F1   | useVModel、事件监听生命周期、外部点击、节点/ref 解析、父子通信契约 | F0                  | 双端配对测试；事件名/次数、动态目标、KeepAlive、SSR、独立实例                                  |
+| F2   | 弹层开关状态、挂载容器、层级/嵌套、焦点和 Escape 协议              | F1                  | 受控拒绝更新、延迟取消、嵌套只关应关闭层、卸载无残留                                           |
+| F3   | Trigger API 对齐与共同交互实现；定位算法通过平台适配迁移           | F2                  | 双端 Trigger/Tooltip/Popover/Menu/Breadcrumb 回归，12 方位、滚动/尺寸/容器、SVG、SSR/hydration |
+| F4   | Tooltip、Popover、Menu 主体与子菜单独立同源复制                    | F3                  | 单/多选、禁用、键盘、焦点恢复、事件顺序、递归子菜单、配对源码检查                              |
+| F5   | 遮罩、滚动锁、Dialog/Drawer/Popup 与过渡生命周期                   | F2、F3              | 多层锁计数、恢复原样式、KeepAlive、触屏滚动、关闭竞态                                          |
+| F6   | 选项归一化、字段映射、选择控制器、Form/Input 控制层                | F1、F4              | 对象值、单多选、父子关联、受控状态、异步校验竞态、IME                                          |
+| F7   | Select/Cascader/AutoComplete、日期与时间选取逻辑迁移               | F6                  | 保留端侧面板，逻辑与数据契约同步，相关组件和 Demo 回归                                         |
+| F8   | ResizeObserver、滚动/虚拟列表、配置/语言/主题与通用计算工具收尾    | 按依赖与 F1–F7 交错 | 各项单独判定同源/适配/独立，全量类型/构建/SSR/导出检查                                         |
 
 ## 第一阶段决策
 
@@ -32,17 +32,17 @@
 
 ## Trigger 契约与迁移清单
 
-| 契约 | 迁移前差异 | 迁移要求 |
-| --- | --- | --- |
-| open/defaultOpen | Maple Trigger 缺 defaultOpen，使用 passive 镜像；Cedar 有严格受控模式 | 两端区分状态请求与实际变化；同步包装组件 |
-| trigger | Cedar 默认 hover、支持数组/focus；Maple 默认 click、支持 manual | 最终统一枚举和默认；在 Menu/Tooltip 等调用者显式写原行为后切换默认 |
-| 关闭 | Cedar 外部 mousedown、多个开关；Maple click、Escape | 定义统一事件阶段、嵌套关系、禁用、关闭原因，避免一击全关 |
-| 延迟 | Cedar enter/leave/focus 延迟；Maple doubleRaf | 统一计时取消与过期事件处理 |
-| 定位 | popupOffset/popupTranslate 与 offsetX/offsetY/strategy | 明确几何语义；迁移所有调用者，不能机械 alias 不同语义 |
-| 渲染 | Cedar 箭头/内容层/懒卸载；Maple 常驻隐藏面板 | 明确 DOM、样式和生命周期；主题/动画同步 |
-| 生命周期 | 两端 opened/closed 由动画驱动 | 动画与可见状态一致，切换中断不产生过期事件 |
-| Ref/Expose | Cedar resize；Maple open/close/resize/setReference/getReference | 统一公开方法类型；原入口可继续导入 |
-| SSR | 两端挂载策略不同 | 无 document/window 运行；真实 hydration 检查 |
+| 契约             | 迁移前差异                                                            | 迁移要求                                                           |
+| ---------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| open/defaultOpen | Maple Trigger 缺 defaultOpen，使用 passive 镜像；Cedar 有严格受控模式 | 两端区分状态请求与实际变化；同步包装组件                           |
+| trigger          | Cedar 默认 hover、支持数组/focus；Maple 默认 click、支持 manual       | 最终统一枚举和默认；在 Menu/Tooltip 等调用者显式写原行为后切换默认 |
+| 关闭             | Cedar 外部 mousedown、多个开关；Maple click、Escape                   | 定义统一事件阶段、嵌套关系、禁用、关闭原因，避免一击全关           |
+| 延迟             | Cedar enter/leave/focus 延迟；Maple doubleRaf                         | 统一计时取消与过期事件处理                                         |
+| 定位             | popupOffset/popupTranslate 与 offsetX/offsetY/strategy                | 明确几何语义；迁移所有调用者，不能机械 alias 不同语义              |
+| 渲染             | Cedar 箭头/内容层/懒卸载；Maple 常驻隐藏面板                          | 明确 DOM、样式和生命周期；主题/动画同步                            |
+| 生命周期         | 两端 opened/closed 由动画驱动                                         | 动画与可见状态一致，切换中断不产生过期事件                         |
+| Ref/Expose       | Cedar resize；Maple open/close/resize/setReference/getReference       | 统一公开方法类型；原入口可继续导入                                 |
+| SSR              | 两端挂载策略不同                                                      | 无 document/window 运行；真实 hydration 检查                       |
 
 ## 每批工作规则
 

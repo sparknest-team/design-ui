@@ -5,15 +5,10 @@
     "title": "目录选择与移动端多选回退",
     "kind": "本轮已补示例",
     "priority": "P1",
-    "components": [
-      "upload"
-    ],
+    "components": ["upload"],
     "reason": "已有 directory API，原先缺少独立使用路径。",
     "acceptance": "选择目录后列出文件；普通多选入口可替代；无网络请求。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "element-plus",
@@ -27,15 +22,10 @@
     "title": "剪贴板图片读取与限制",
     "kind": "本轮已补示例",
     "priority": "P1",
-    "components": [
-      "upload"
-    ],
+    "components": ["upload"],
     "reason": "复用 useUploader.addFiles，避免引入重复的上传状态机。",
     "acceptance": "仅拦截带文件的粘贴；校验类型、数量、大小；文本粘贴不受影响。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "chakra-ui",
@@ -49,16 +39,10 @@
     "title": "异步按钮与表单提交组合",
     "kind": "建议补组合示例",
     "priority": "P1",
-    "components": [
-      "button",
-      "form"
-    ],
+    "components": ["button", "form"],
     "reason": "单独加载动画不足以说明异步提交过程。",
     "acceptance": "演示校验失败、重复点击、请求失败后重新提交及加载结束。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "naive-ui",
@@ -72,17 +56,10 @@
     "title": "可调整布局的配置保存与恢复",
     "kind": "建议补组合示例",
     "priority": "P2",
-    "components": [
-      "split",
-      "resize-box",
-      "layout"
-    ],
+    "components": ["split", "resize-box", "layout"],
     "reason": "持久化属于应用职责，可以用完整示例展示受控尺寸的接入。",
     "acceptance": "调整后保存；重新进入恢复；窄屏时恢复入口仍可用。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "shadcn-vue",
@@ -96,17 +73,10 @@
     "title": "全局命令面板与快捷键",
     "kind": "新增能力候选",
     "priority": "P1",
-    "components": [
-      "menu",
-      "search",
-      "dialog"
-    ],
+    "components": ["menu", "search", "dialog"],
     "reason": "适合后台系统的页面跳转、操作检索和键盘优先工作流。",
     "acceptance": "先验证现有 Search、Menu、Dialog 的组合；再决定独立 API。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "shadcn-vue",
@@ -120,17 +90,10 @@
     "title": "产品操作引导 Tour",
     "kind": "新增能力候选",
     "priority": "P2",
-    "components": [
-      "trigger",
-      "overlay",
-      "steps"
-    ],
+    "components": ["trigger", "overlay", "steps"],
     "reason": "新用户引导需要目标定位、高亮遮罩与连续步骤。",
     "acceptance": "覆盖目标消失、滚动定位、跳过、完成与键盘退出。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "element-plus",
@@ -144,15 +107,10 @@
     "title": "货币和百分比的编辑与格式化",
     "kind": "建议补业务示例",
     "priority": "P1",
-    "components": [
-      "input-number"
-    ],
+    "components": ["input-number"],
     "reason": "已有 formatter / parser，应强调显示文本与业务数值的分工。",
     "acceptance": "覆盖空值、负数、小数、粘贴与光标编辑，不把格式化字符串写入数字模型。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "element-plus",
@@ -166,17 +124,10 @@
     "title": "远程搜索、虚拟列表与 ID 回显组合",
     "kind": "建议做组合验收",
     "priority": "P1",
-    "components": [
-      "select",
-      "people-select",
-      "auto-complete"
-    ],
+    "components": ["select", "people-select", "auto-complete"],
     "reason": "现有能力分别展示后，还需证明组合过程的值与请求不会互相覆盖。",
     "acceptance": "快速切词、慢请求后返回、切换只读及初始 ID 回显；检查请求与最终值。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "primeng",
@@ -190,16 +141,10 @@
     "title": "日期时间范围的业务约束",
     "kind": "建议补业务示例",
     "priority": "P1",
-    "components": [
-      "date-range",
-      "time-range"
-    ],
+    "components": ["date-range", "time-range"],
     "reason": "范围选择与业务保存规则需要在同一示例中被看见。",
     "acceptance": "展示最短时长、跨日、手输无效、取消后模型保持；只使用已有规则。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "element-plus",
@@ -213,16 +158,10 @@
     "title": "分步表单与异步校验",
     "kind": "建议补组合示例",
     "priority": "P1",
-    "components": [
-      "form",
-      "steps"
-    ],
+    "components": ["form", "steps"],
     "reason": "把表单校验、步骤状态与返回修改串成可重复操作的流程。",
     "acceptance": "校验通过才能继续，回退保留数据，最终提交失败可重试。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "primeng",
@@ -236,14 +175,10 @@
     "title": "动态行高与固定列、虚拟列表组合",
     "kind": "建议做组合验收",
     "priority": "P1",
-    "components": [
-      "table"
-    ],
+    "components": ["table"],
     "reason": "已有纵向虚拟列表不能直接推导出所有动态高度组合都通过。",
     "acceptance": "长文本换行、展开行、列宽调整后检查测量、滚动位置和固定列对齐。",
-    "platforms": [
-      "cedar"
-    ],
+    "platforms": ["cedar"],
     "evidence": [
       {
         "library": "element-plus",
@@ -257,16 +192,10 @@
     "title": "树搜索、懒加载与虚拟滚动组合",
     "kind": "建议做组合验收",
     "priority": "P1",
-    "components": [
-      "tree",
-      "tree-select"
-    ],
+    "components": ["tree", "tree-select"],
     "reason": "单功能 demo 之外，重点验证异步节点与可见列表的状态衔接。",
     "acceptance": "搜索时加载节点、清空搜索、按业务值定位，并核对勾选与展开。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "primeng",
@@ -280,14 +209,10 @@
     "title": "排期工作台的大数据与失败恢复",
     "kind": "建议做组合验收",
     "priority": "P1",
-    "components": [
-      "scheduler"
-    ],
+    "components": ["scheduler"],
     "reason": "已有容量与保存控制应在完整工作流中统一验证。",
     "acceptance": "远程加载、跨资源调整、容量拒绝、修正重试及撤销重做。",
-    "platforms": [
-      "cedar"
-    ],
+    "platforms": ["cedar"],
     "evidence": [
       {
         "library": "vuetify",
@@ -301,18 +226,10 @@
     "title": "嵌套浮层与异步关闭后的焦点恢复",
     "kind": "建议做组合验收",
     "priority": "P1",
-    "components": [
-      "dialog",
-      "drawer",
-      "popup",
-      "popover"
-    ],
+    "components": ["dialog", "drawer", "popup", "popover"],
     "reason": "业务表单常同时出现抽屉、选择面板和确认框。",
     "acceptance": "Esc 只关闭当前层，关闭被拒绝时继续编辑，最终回到触发入口。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "element-plus",
@@ -326,15 +243,10 @@
     "title": "品牌主题、局部覆盖与弹层一致性",
     "kind": "建议做组合验收",
     "priority": "P1",
-    "components": [
-      "theme-provider"
-    ],
+    "components": ["theme-provider"],
     "reason": "主题切换应连同移到其他容器的浮层一起展示。",
     "acceptance": "同时打开弹层并切换品牌和亮暗；检查局部覆盖、禁用和错误状态。",
-    "platforms": [
-      "cedar",
-      "maple"
-    ],
+    "platforms": ["cedar", "maple"],
     "evidence": [
       {
         "library": "naive-ui",

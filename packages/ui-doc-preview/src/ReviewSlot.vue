@@ -1,44 +1,37 @@
 <script setup lang="ts">
-import { computed, ref, type Component } from "vue";
-import { summarizeReviewEvent } from "./review-state";
+import { computed, ref, type Component } from 'vue'
+import { summarizeReviewEvent } from './review-state'
+
 const props = defineProps<{
-  name: string;
-  context?: unknown;
-  controls: Record<string, Component>;
-  record?: (name: string, args: unknown[]) => void;
-}>();
-const argsText = ref("[]");
-const source = ref(props.name === "clear-icon" ? "event" : "json");
-const result = ref("");
+  name: string
+  context?: unknown
+  controls: Record<string, Component>
+  record?: (name: string, args: unknown[]) => void
+}>()
+const argsText = ref('[]')
+const source = ref(props.name === 'clear-icon' ? 'event' : 'json')
+const result = ref('')
 const scope = computed<Record<string, any>>(() =>
-  props.context &&
-  typeof props.context === "object" &&
-  !Array.isArray(props.context)
+  props.context && typeof props.context === 'object' && !Array.isArray(props.context)
     ? (props.context as Record<string, any>)
     : props.context === undefined
       ? {}
       : { value: props.context },
-);
-const actions = computed(() =>
-  Object.keys(scope.value).filter(
-    (key) => typeof scope.value[key] === "function",
-  ),
-);
+)
+const actions = computed(() => Object.keys(scope.value).filter((key) => typeof scope.value[key] === 'function'))
 const sources = computed(() => [
-  { label: "JSON 参数 / Arguments", value: "json" },
-  { label: "当前按钮事件 / Button event", value: "event" },
+  { label: 'JSON 参数 / Arguments', value: 'json' },
+  { label: '当前按钮事件 / Button event', value: 'event' },
   ...Object.keys(scope.value)
-    .filter((key) => typeof scope.value[key] !== "function")
+    .filter((key) => typeof scope.value[key] !== 'function')
     .map((key) => ({ label: `上下文 / Scope: ${key}`, value: key })),
-]);
+])
 const label = computed(() => {
-  const columnKey = scope.value.column?.dataIndex;
+  const columnKey = scope.value.column?.dataIndex
   const cellValue =
-    props.name === "cell" && typeof columnKey === "string"
-      ? columnKey
-          .split(".")
-          .reduce((value: any, key: string) => value?.[key], scope.value.record)
-      : undefined;
+    props.name === 'cell' && typeof columnKey === 'string'
+      ? columnKey.split('.').reduce((value: any, key: string) => value?.[key], scope.value.record)
+      : undefined
   const value =
     scope.value.label ??
     scope.value.title ??
@@ -50,33 +43,26 @@ const label = computed(() => {
     scope.value.date ??
     scope.value.percent ??
     scope.value.current ??
-    props.name;
-  if (value instanceof Date) return String(value.getDate());
-  if (value && typeof value === "object")
-    return String(
-      value.label ??
-        value.title ??
-        value.name ??
-        value.value ??
-        summarizeReviewEvent([value]),
-    ).slice(0, 80);
-  return String(value);
-});
+    props.name
+  if (value instanceof Date) return String(value.getDate())
+  if (value && typeof value === 'object')
+    return String(value.label ?? value.title ?? value.name ?? value.value ?? summarizeReviewEvent([value])).slice(0, 80)
+  return String(value)
+})
 async function invoke(name: string, event?: Event) {
   try {
     const args =
-      source.value === "json"
+      source.value === 'json'
         ? JSON.parse(argsText.value)
-        : source.value === "event"
+        : source.value === 'event'
           ? [event]
-          : [scope.value[source.value]];
-    if (!Array.isArray(args))
-      throw new Error("参数必须为数组 / Expected an array");
-    props.record?.(`slot:${props.name}.${name}`, args);
-    const value = await scope.value[name](...args);
-    result.value = summarizeReviewEvent([value]);
+          : [scope.value[source.value]]
+    if (!Array.isArray(args)) throw new Error('参数必须为数组 / Expected an array')
+    props.record?.(`slot:${props.name}.${name}`, args)
+    const value = await scope.value[name](...args)
+    result.value = summarizeReviewEvent([value])
   } catch (error) {
-    result.value = String(error);
+    result.value = String(error)
   }
 }
 </script>
@@ -90,24 +76,10 @@ async function invoke(name: string, event?: Event) {
     @click.stop="invoke('clear', $event)"
     >清除</component
   >
-  <component
-    v-else
-    :is="controls.Space"
-    direction="column"
-    size="xs"
-    class="demo-review-slot"
-  >
+  <component v-else :is="controls.Space" direction="column" size="xs" class="demo-review-slot">
     <component :is="controls.Tag" size="sm">{{ label }}</component>
-    <component
-      :is="controls.Collapse"
-      @click.stop
-      v-if="Object.keys(scope).length"
-    >
-      <component
-        :is="controls.CollapseItem"
-        :name="name"
-        :title="`插槽参数 / Scope: ${name}`"
-      >
+    <component :is="controls.Collapse" @click.stop v-if="Object.keys(scope).length">
+      <component :is="controls.CollapseItem" :name="name" :title="`插槽参数 / Scope: ${name}`">
         <pre>{{ summarizeReviewEvent([scope]) }}</pre>
         <template v-if="actions.length">
           <component

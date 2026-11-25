@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
-import path from 'node:path'
 import { createRequire } from 'node:module'
+import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
@@ -23,7 +23,8 @@ function publicProps(relative, exportName) {
   const symbol = exported.flags & ts.SymbolFlags.Alias ? checker.getAliasedSymbol(exported) : exported
   assert(symbol.valueDeclaration, `${exportName} is not a runtime export`)
   return new Set(
-    checker.getPropertiesOfType(checker.getTypeOfSymbolAtLocation(symbol, symbol.valueDeclaration))
+    checker
+      .getPropertiesOfType(checker.getTypeOfSymbolAtLocation(symbol, symbol.valueDeclaration))
       .map((property) => property.name),
   )
 }
@@ -42,11 +43,7 @@ const requiredFormProps = [
   'scrollToError',
   'scrollToErrorOffsetY',
 ]
-const forbiddenInputProps = [
-  'isForceFocusingEffect',
-  'isForceErrorEffect',
-  'placeholderFocusColor',
-]
+const forbiddenInputProps = ['isForceFocusingEffect', 'isForceErrorEffect', 'placeholderFocusColor']
 const requiredInputProps = [
   'modelValue',
   'modelModifiers',

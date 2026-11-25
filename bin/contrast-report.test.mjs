@@ -1,8 +1,14 @@
 import assert from 'node:assert/strict'
 import { spawnSync } from 'node:child_process'
 import test from 'node:test'
+
 const reporter = new URL('./contrast-report.mjs', import.meta.url).href
-const run = script => spawnSync(process.execPath, ['--input-type=module', '-e', `import { reportContrast } from ${JSON.stringify(reporter)}; ${script}`], { encoding: 'utf8' })
+const run = (script) =>
+  spawnSync(
+    process.execPath,
+    ['--input-type=module', '-e', `import { reportContrast } from ${JSON.stringify(reporter)}; ${script}`],
+    { encoding: 'utf8' },
+  )
 
 test('low contrast emits a CI advisory while keeping custom colors non-blocking', () => {
   const result = run("reportContrast(3.25, 4.5, 'custom tag color')")

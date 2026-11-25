@@ -2,7 +2,16 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "UI Foundation theme contract",
   "type": "object",
-  "required": ["version", "prefixes", "rules", "systemTokenValues", "componentTokenValues", "components", "tokens", "platformExtensions"],
+  "required": [
+    "version",
+    "prefixes",
+    "rules",
+    "systemTokenValues",
+    "componentTokenValues",
+    "components",
+    "tokens",
+    "platformExtensions"
+  ],
   "properties": {
     "version": { "type": "integer", "minimum": 1 },
     "prefixes": {

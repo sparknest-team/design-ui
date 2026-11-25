@@ -5,7 +5,10 @@ import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 export function validateCIToolchain({ node, pnpm, childNode }, expectedNode = '26.13.1') {
-  assert.ok(node === `v${expectedNode}` || (!expectedNode.includes('.') && node.startsWith(`v${expectedNode}.`)), `Quality CI must use the declared Node ${expectedNode} runtime`)
+  assert.ok(
+    node === `v${expectedNode}` || (!expectedNode.includes('.') && node.startsWith(`v${expectedNode}.`)),
+    `Quality CI must use the declared Node ${expectedNode} runtime`,
+  )
   assert.equal(pnpm, '10.23.0', 'Quality CI must use the declared pnpm 10.23.0')
   assert.equal(childNode, node, 'Nested pnpm must not switch the Node runtime')
 }

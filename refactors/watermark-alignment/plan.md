@@ -4,17 +4,17 @@
 
 ## 现状判断
 
-| 维度 | Cedar | Maple | 结论 |
-| --- | --- | --- | --- |
-| 生成方式 | Canvas data URL | 隐藏 SVG + `foreignObject` + Blob URL | 统一为 Canvas；Maple 路线跨浏览器和 CSP 风险更高 |
-| 文字 | `string/string[]`、自动测量 | `string`、固定 100×100 | 采用多行与自动测量 |
-| 图片 | Canvas，支持灰阶 | 图片转 base64 再嵌 SVG | 保留 Canvas，补竞态、错误和跨域异常处理 |
-| 排列 | repeat + staggered | 永远 repeat | 统一 repeat/staggered，重写真实错列算法 |
-| 防篡改 | 有，默认 true | 无 | 统一保留，但重写观察范围和清理 |
-| 全屏 | 无 | 有 | 纳入公共 API，不作为移动端特例 |
-| 主题 | 观察 Cedar 根主题 | Demo 手动 `resize()` | 组件自动观察根主题、全局和局部 StyleProvider |
-| 自定义内容 | 无 | `content` slot / foreignObject | 删除不稳定插槽，复杂标记使用 image/Data URL |
-| SSR / KeepAlive | setup 直接访问 window/document | mounted 后访问，但无 deactivate 清理 | 两端统一 mounted 创建、完整清理 |
+| 维度            | Cedar                          | Maple                                 | 结论                                             |
+| --------------- | ------------------------------ | ------------------------------------- | ------------------------------------------------ |
+| 生成方式        | Canvas data URL                | 隐藏 SVG + `foreignObject` + Blob URL | 统一为 Canvas；Maple 路线跨浏览器和 CSP 风险更高 |
+| 文字            | `string/string[]`、自动测量    | `string`、固定 100×100                | 采用多行与自动测量                               |
+| 图片            | Canvas，支持灰阶               | 图片转 base64 再嵌 SVG                | 保留 Canvas，补竞态、错误和跨域异常处理          |
+| 排列            | repeat + staggered             | 永远 repeat                           | 统一 repeat/staggered，重写真实错列算法          |
+| 防篡改          | 有，默认 true                  | 无                                    | 统一保留，但重写观察范围和清理                   |
+| 全屏            | 无                             | 有                                    | 纳入公共 API，不作为移动端特例                   |
+| 主题            | 观察 Cedar 根主题              | Demo 手动 `resize()`                  | 组件自动观察根主题、全局和局部 StyleProvider     |
+| 自定义内容      | 无                             | `content` slot / foreignObject        | 删除不稳定插槽，复杂标记使用 image/Data URL      |
+| SSR / KeepAlive | setup 直接访问 window/document | mounted 后访问，但无 deactivate 清理  | 两端统一 mounted 创建、完整清理                  |
 
 ## 执行顺序
 
