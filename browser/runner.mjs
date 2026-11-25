@@ -16,6 +16,10 @@ import { navigateWithDiagnostics } from './navigation.mjs'
 
 const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.wasm': 'application/wasm', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.woff2': 'font/woff2' }
 const normalize = (source) => source.replace(/\r\n/g, '\n').trimEnd()
+const ignoredBrowserNoise = [
+  /ResizeObserver loop completed with undelivered notifications\.?/,
+  /ResizeObserver loop limit exceeded\.?/,
+]
 const dark = (color) => {
   const values = color.match(/[\d.]+/g)?.map(Number)
   assert.ok(values?.length >= 3 && (values.length < 4 || values[3] === 1), `surface must be opaque: ${color}`)
@@ -372,7 +376,8 @@ export function defineProductionComponentTests({ root, library }) {
                 assert.ok(await tables.count() > 0, 'navigation documentation includes real API tables')
                 await pollTableLayout(page, tables)
               }
-              assert.deepEqual(failures, [], 'no script exceptions or failed local assets')
+              const realFailures = failures.filter(failure => !ignoredBrowserNoise.some(pattern => pattern.test(String(failure))))
+              assert.deepEqual(realFailures, [], 'no script exceptions or failed local assets')
               if (['tabs', 'input-number', 'pull-refresh', 'code', 'table-column-manager', 'nav-menu'].includes(item.component)) {
                 await mkdir(evidence, { recursive: true })
                 await page.screenshot({ path: resolve(evidence, `${surface}-${theme}-${item.component}-passed.png`) })

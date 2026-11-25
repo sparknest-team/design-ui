@@ -9,7 +9,7 @@ const root = fileURLToPath(new URL('../../', import.meta.url))
 // separate from browser computed styles, iframe focus and responsive layout.
 for (const [repo, pkg, config, workerArgs] of [
   ['cedar-design-web', 'ui', 'vitest.choice-validation.config.mts', []],
-  ['maple-design-mobile', 'ui', '../cli/lib/node/config/vitest.config.js', ['--maxWorkers=1', '--minWorkers=1']],
+  ['maple-design-mobile', 'ui', '../cli/lib/node/config/vitest.config.js', ['--maxWorkers=1']],
 ]) {
   const cwd = resolve(root, repo, 'packages', pkg)
   const runner = resolve(cwd, 'node_modules/vitest/vitest.mjs')
