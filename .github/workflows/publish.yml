@@ -53,4 +53,25 @@ jobs:
         with:
           node-version: 26.13.1
       - run: corepack pnpm install --frozen-lockfile
+      - name: Snapshot existing git tags
+        run: git tag --list | sort > "$RUNNER_TEMP/tags-before.txt"
       - run: pnpm exec changeset publish
+      - name: Push release tags and create GitHub Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git tag --list | sort > "$RUNNER_TEMP/tags-after.txt"
+          comm -13 "$RUNNER_TEMP/tags-before.txt" "$RUNNER_TEMP/tags-after.txt" > "$RUNNER_TEMP/tags-new.txt"
+          if [ ! -s "$RUNNER_TEMP/tags-new.txt" ]; then
+            echo "No new tags; skipping tag push and GitHub Releases."
+            exit 0
+          fi
+          new_tags=()
+          while IFS= read -r tag; do
+            new_tags+=("$tag")
+          done < "$RUNNER_TEMP/tags-new.txt"
+          printf 'New tags: %s\n' "${new_tags[*]}"
+          # --tags 而不是逐个 tag：远端已存在的同名 tag 会被跳过，重复执行不会失败
+          git push origin --tags
+          node scripts/github-releases.mjs "${new_tags[@]}"
