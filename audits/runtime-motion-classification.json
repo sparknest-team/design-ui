@@ -982,7 +982,7 @@
     {
       "repo": "cedar-design-web",
       "file": "_utils/resize-observer.ts",
-      "sha256": "c130ef4df80875cb7acc75f68414bde82c31406ca2a58bf8e9f1e6e26cc82df6",
+      "sha256": "9684543ca1ecbf2598c13b8ae44c742a9c368b01eb7ed0ecde19b3505b1634b3",
       "rationale": "RAF coalesces layout measurement, not visual interpolation. Binding and frame generations reject stale observer deliveries, window/viewport listeners and canceled frames; listeners are detached from the original view and visualViewport. Target replacement and retained listeners have controlled regressions. Native resize timing and OS behavior are not established.",
       "hints": [
         {
