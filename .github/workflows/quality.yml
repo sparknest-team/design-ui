@@ -91,6 +91,14 @@ jobs:
       - run: pnpm quality
         if: matrix.library == 'maple'
       - name: Full consumer quality
+        # 🔴 消费方(cedar/maple)自己的完整 quality 不在 PR 上跑（2026-11-25 拍板）。
+        # 理由：这段跑的是消费方代码的全套自检（约 3632s / 占 67 分钟里的 60 分钟），
+        # 而消费方代码在 design-ui 的 PR 里根本没变（只读 checkout）。
+        # design-ui 视角的契约已由上面 pnpm quality 里的 check:cedar / check:maple
+        # （组件/class/token 前缀、docs/test/style 存在性）、copied-foundations-check、
+        # check:theme-contract(28 项) 静态覆盖。
+        # 保留在 merge_group / push main / workflow_dispatch 上跑，合并前/合并后仍有兜底。
+        if: github.event_name != 'pull_request'
         run: pnpm quality
         working-directory: ${{ matrix.library }}
       - name: Verify linked PRs stayed unchanged
