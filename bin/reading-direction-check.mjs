@@ -19,7 +19,7 @@ if (!process.argv.includes('--source-only')) {
     ['cedar-design-web', ['check:direction']],
     ['maple-design-mobile', ['check:direction']],
     ['cedar-design-web/packages/ui', ['exec', 'vitest', 'run', 'src/menu/__tests__/reading-direction.spec.ts', 'src/image/__tests__/reading-direction.spec.ts', 'src/verification-code/__tests__/reading-direction.spec.ts', 'src/carousel/__tests__/loop-direction.spec.ts', '--maxWorkers=1', '--no-file-parallelism']],
-    ['maple-design-mobile/packages/ui', ['exec', 'vitest', 'run', 'src/menu/__tests__/reading-direction.spec.ts', 'src/image/__tests__/reading-direction.spec.ts', 'src/verification-code/__tests__/reading-direction.spec.ts', 'src/carousel/__tests__/loop-direction.spec.ts', '--config', 'reading-direction.vitest.config.mjs', '--maxWorkers=1', '--minWorkers=1']],
+    ['maple-design-mobile/packages/ui', ['exec', 'vitest', 'run', 'src/menu/__tests__/reading-direction.spec.ts', 'src/image/__tests__/reading-direction.spec.ts', 'src/verification-code/__tests__/reading-direction.spec.ts', 'src/carousel/__tests__/loop-direction.spec.ts', '--config', 'reading-direction.vitest.config.mjs', '--maxWorkers=1']],
     ['cedar-design-web/packages/ui', [
       'exec', 'vitest', 'run', '--root', resolve(root, 'design-ui/packages/ui-doc-preview'),
       '--config', resolve(root, 'design-ui/packages/ui-doc-preview/vitest.direction.config.mjs'), '--maxWorkers=1', '--no-file-parallelism',
