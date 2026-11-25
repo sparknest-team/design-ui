@@ -1,5 +1,11 @@
 # @sparknest/theme-contract-vue
 
+## 1.4.3
+
+### Patch Changes
+
+- [#29](https://github.com/sparknest-team/design-ui/pull/29) [`8154d07`](https://github.com/sparknest-team/design-ui/commit/8154d07d1cdceb52dc731be57a98f4041a14d82a) Thanks [@sparknest-team](https://github.com/sparknest-team)! - 登记 Maple Tag 的移动端平台尺寸，与 maple 源码实际值对齐，修复跨仓契约校验失败。
+
 ## 1.4.2
 
 ## 1.4.1
