@@ -43,6 +43,9 @@ const normalize = source => source
   .replaceAll('Cedar [', 'Maple [')
   .replaceAll('cedar-design-web', 'maple-design-mobile')
   .trim()
+// 有意分叉：PC 端不绑定触摸监听，移动端保留；两端按端侧职责各自维护。
+const intentionalForks = new Set(['ui/src/_utils/modal-focus.ts'])
+
 let runtimePairs = 0
 for (const [left, right] of pairs) {
   // Test files use repository-specific runners and formatting. Runtime parity is
@@ -52,6 +55,10 @@ for (const [left, right] of pairs) {
     readFile(resolve(root, 'cedar-design-web/packages', left), 'utf8'),
     readFile(resolve(root, 'maple-design-mobile/packages', right), 'utf8'),
   ])
+  if (intentionalForks.has(left)) {
+    console.log(`SKIP (intentional fork) ${left}`)
+    continue
+  }
   const canonical = (source, path) => {
     let value = normalize(source).replace(/import\s*\{([^}]+)\}\s*from/g, (_match, names) => {
       const sorted = names.split(',').map(name => name.trim()).filter(Boolean).sort().join(', ')
