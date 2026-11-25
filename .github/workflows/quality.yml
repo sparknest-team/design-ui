@@ -89,6 +89,7 @@ jobs:
         if: steps.linked.outputs.pr != '' && steps.linked.outputs.release != 'true'
         run: pnpm exec changeset status --since=origin/main
       - run: pnpm quality
+        if: matrix.library == 'maple'
       - name: Full consumer quality
         run: pnpm quality
         working-directory: ${{ matrix.library }}
