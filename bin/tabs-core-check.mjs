@@ -18,8 +18,14 @@ const read = (root, file) => readFileSync(resolve(root, 'src/tabs', file), 'utf8
 const cedarCompat = readFileSync(resolve(roots[0], 'src/_utils/vue-compat.ts'), 'utf8')
 const mapleCompat = readFileSync(resolve(roots[1], 'src/utils/vue-compat.ts'), 'utf8')
 assertCopiedVueCompat(cedarCompat, mapleCompat)
+assert.equal(
+  readFileSync(resolve(roots[0], 'src/_utils/active-target.ts'), 'utf8'),
+  readFileSync(resolve(roots[1], 'src/utils/active-target.ts'), 'utf8'),
+  'Tabs active-target lifecycle',
+)
 const platformSource = (source) =>
   source
+    .replaceAll('../_utils/active-target', '../utils/active-target')
     .replaceAll('../_utils/global-config', '../utils/components')
     .replaceAll('../_utils/constant', '../utils/constants')
     .replaceAll('../_utils/vue-compat', '../utils/vue-compat')

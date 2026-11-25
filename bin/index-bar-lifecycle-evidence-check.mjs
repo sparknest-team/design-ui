@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
+import { readFixedCapture } from './fixed-lifecycle-capture.mjs'
 
 const root = fileURLToPath(new URL('../', import.meta.url))
 const legacyDirectory = resolve(root, 'audits/evidence/index-bar-lifecycle-2026-10-14')
@@ -102,12 +103,17 @@ export function checkIndexBarEvidence(r, read = readFileSync) {
   const screenshot = read(resolve(directory, r.screenshot.file))
   assert.equal(screenshot.length, r.screenshot.bytes)
   assert.equal(hash(screenshot), r.screenshot.sha256, 'image drift')
+  checkIndexBarCases(r.cases, ego)
+  if (ego) assert.deepEqual(rawCases, r.cases, 'case data differs from raw capture')
+  return { accepted: 4, os: 0, blocked: 144 }
+}
+export function checkIndexBarCases(cases, requireWrites) {
   assert.deepEqual(
-    r.cases.map((c) => c.kind),
+    cases.map((c) => c.kind),
     ['replacement', 'settlement', 'unmount', 'keepalive'],
     'four unique cases',
   )
-  for (const c of r.cases) {
+  for (const c of cases) {
     assert.equal(c.passed, true)
     assert.equal(c.finalNodes, 0)
     c.samples.forEach((s, i) => {
@@ -137,7 +143,7 @@ export function checkIndexBarEvidence(r, read = readFileSync) {
       c.samples.map((s) => s.phase),
       phases,
     )
-    checkIndexBarTimeline(c, ego)
+    checkIndexBarTimeline(c, requireWrites)
     assert.equal(p.ready.nodes, 1)
     assert.equal(p.ready.writes, 0)
     assert.deepEqual(p.ready.changes, [])
@@ -189,8 +195,18 @@ export function checkIndexBarEvidence(r, read = readFileSync) {
       }
     }
   }
-  if (ego) assert.deepEqual(rawCases, r.cases, 'case data differs from raw capture')
+}
+
+export function checkFixedIndexBarEvidence() {
+  const report = readFixedCapture('index-bar', [
+    'design-ui/refactors/token-validation/browser/index-bar-lifecycle.html',
+    'design-ui/refactors/token-validation/browser/index-bar-lifecycle-main.js',
+    'maple-design-mobile/packages/ui/src/index-bar/IndexBar.vue',
+    'maple-design-mobile/packages/ui/src/index-bar/scroll-task.ts',
+  ])
+  assert.deepEqual(report.cdpExceptions, [])
+  checkIndexBarCases(report.results, true)
   return { accepted: 4, os: 0, blocked: 144 }
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href)
-  console.log(checkIndexBarEvidence(readEvidence()))
+  console.log(checkFixedIndexBarEvidence())

@@ -1,0 +1,579 @@
+{
+  "results": [
+    {
+      "kind": "replacement",
+      "passed": true,
+      "samples": [
+        {
+          "phase": "ready",
+          "time": 139.60000002384186,
+          "writes": 0,
+          "changes": [],
+          "active": "",
+          "top": 0,
+          "nodes": 1
+        },
+        {
+          "phase": "latest-settled",
+          "time": 261.2000000178814,
+          "writes": 1,
+          "changes": [
+            "C"
+          ],
+          "active": "C",
+          "top": 481,
+          "nodes": 1
+        },
+        {
+          "phase": "final-unmounted",
+          "time": 262.10000002384186,
+          "writes": 1,
+          "changes": [
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "change",
+          "value": "C",
+          "time": 140.2000000178814
+        }
+      ],
+      "writes": [
+        {
+          "left": 0,
+          "top": 481,
+          "time": 140.30000001192093
+        }
+      ],
+      "finalNodes": 0
+    },
+    {
+      "kind": "settlement",
+      "passed": true,
+      "samples": [
+        {
+          "phase": "ready",
+          "time": 135.19999998807907,
+          "writes": 0,
+          "changes": [],
+          "active": "",
+          "top": 0,
+          "nodes": 1
+        },
+        {
+          "phase": "first-settlement-frame",
+          "time": 136.40000000596046,
+          "writes": 2,
+          "changes": [
+            "A",
+            "B"
+          ],
+          "active": "B",
+          "top": 482,
+          "nodes": 1
+        },
+        {
+          "phase": "settlement-complete",
+          "time": 166.19999998807907,
+          "writes": 2,
+          "changes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "active": "C",
+          "top": 482,
+          "nodes": 1
+        },
+        {
+          "phase": "final-unmounted",
+          "time": 166.7999999821186,
+          "writes": 2,
+          "changes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "change",
+          "value": "A",
+          "time": 135.40000000596046
+        },
+        {
+          "event": "change",
+          "value": "B",
+          "time": 135.7999999821186
+        },
+        {
+          "event": "change",
+          "value": "C",
+          "time": 165.7999999821186
+        }
+      ],
+      "writes": [
+        {
+          "left": 0,
+          "top": 1,
+          "time": 135.40000000596046
+        },
+        {
+          "left": 0,
+          "top": 241,
+          "time": 135.7999999821186
+        }
+      ],
+      "finalNodes": 0
+    },
+    {
+      "kind": "unmount",
+      "passed": true,
+      "samples": [
+        {
+          "phase": "ready",
+          "time": 134.09999999403954,
+          "writes": 0,
+          "changes": [],
+          "active": "",
+          "top": 0,
+          "nodes": 1
+        },
+        {
+          "phase": "interpolating",
+          "time": 255.2999999821186,
+          "writes": 7,
+          "changes": [
+            "C"
+          ],
+          "active": "C",
+          "top": 13,
+          "nodes": 1
+        },
+        {
+          "phase": "cancelled",
+          "time": 257.2999999821186,
+          "writes": 7,
+          "changes": [
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        },
+        {
+          "phase": "retained-inert",
+          "time": 960.8999999761581,
+          "writes": 7,
+          "changes": [
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        },
+        {
+          "phase": "final-unmounted",
+          "time": 961,
+          "writes": 7,
+          "changes": [
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "change",
+          "value": "C",
+          "time": 134.59999999403954
+        }
+      ],
+      "writes": [
+        {
+          "left": 0,
+          "top": 0.02444192592592593,
+          "time": 148.19999998807907
+        },
+        {
+          "left": 0,
+          "top": 0.2653605740740741,
+          "time": 165.09999999403954
+        },
+        {
+          "left": 0,
+          "top": 0.9850880000000002,
+          "time": 182.59999999403954
+        },
+        {
+          "left": 0,
+          "top": 2.335023407407408,
+          "time": 198.5
+        },
+        {
+          "left": 0,
+          "top": 4.733761500000001,
+          "time": 215.39999997615814
+        },
+        {
+          "left": 0,
+          "top": 9.452612000000002,
+          "time": 236.7999999821186
+        },
+        {
+          "left": 0,
+          "top": 13.196716,
+          "time": 248.69999998807907
+        }
+      ],
+      "finalNodes": 0
+    },
+    {
+      "kind": "keepalive",
+      "passed": true,
+      "samples": [
+        {
+          "phase": "ready",
+          "time": 134.89999997615814,
+          "writes": 0,
+          "changes": [],
+          "active": "",
+          "top": 0,
+          "nodes": 1
+        },
+        {
+          "phase": "interpolating",
+          "time": 257.09999999403954,
+          "writes": 7,
+          "changes": [
+            "C"
+          ],
+          "active": "C",
+          "top": 12,
+          "nodes": 1
+        },
+        {
+          "phase": "cancelled",
+          "time": 258.5,
+          "writes": 7,
+          "changes": [
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        },
+        {
+          "phase": "retained-inert",
+          "time": 480,
+          "writes": 7,
+          "changes": [
+            "C"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        },
+        {
+          "phase": "reactivated-settled",
+          "time": 1183.199999988079,
+          "writes": 44,
+          "changes": [
+            "C"
+          ],
+          "active": "C",
+          "top": 481,
+          "nodes": 1
+        },
+        {
+          "phase": "listener-restored",
+          "time": 1184.5,
+          "writes": 44,
+          "changes": [
+            "C",
+            "A"
+          ],
+          "active": "A",
+          "top": 2,
+          "nodes": 1
+        },
+        {
+          "phase": "final-unmounted",
+          "time": 1185.8999999761581,
+          "writes": 44,
+          "changes": [
+            "C",
+            "A"
+          ],
+          "active": "",
+          "top": 0,
+          "nodes": 0
+        }
+      ],
+      "events": [
+        {
+          "event": "change",
+          "value": "C",
+          "time": 136.19999998807907
+        },
+        {
+          "event": "change",
+          "value": "A",
+          "time": 1183.5999999940395
+        }
+      ],
+      "writes": [
+        {
+          "left": 0,
+          "top": 0.008907407407407407,
+          "time": 146.19999998807907
+        },
+        {
+          "left": 0,
+          "top": 0.1753245,
+          "time": 163.19999998807907
+        },
+        {
+          "left": 0,
+          "top": 0.7587685925925927,
+          "time": 179.59999999403954
+        },
+        {
+          "left": 0,
+          "top": 2.1228845925925928,
+          "time": 197.5
+        },
+        {
+          "left": 0,
+          "top": 4.066525425925925,
+          "time": 212.5
+        },
+        {
+          "left": 0,
+          "top": 7.1647355,
+          "time": 229.09999999403954
+        },
+        {
+          "left": 0,
+          "top": 12.182046499999998,
+          "time": 246.69999998807907
+        },
+        {
+          "left": 0,
+          "top": 0.03648474074074075,
+          "time": 500.09999999403954
+        },
+        {
+          "left": 0,
+          "top": 0.21724275925925926,
+          "time": 513.1999999880791
+        },
+        {
+          "left": 0,
+          "top": 0.8670114074074072,
+          "time": 530
+        },
+        {
+          "left": 0,
+          "top": 2.2272704999999995,
+          "time": 546.5999999940395
+        },
+        {
+          "left": 0,
+          "top": 4.5605925925925925,
+          "time": 563.8999999761581
+        },
+        {
+          "left": 0,
+          "top": 8.12955024074074,
+          "time": 580.3999999761581
+        },
+        {
+          "left": 0,
+          "top": 12.852471425925923,
+          "time": 596.8999999761581
+        },
+        {
+          "left": 0,
+          "top": 19.569574074074076,
+          "time": 613.3999999761581
+        },
+        {
+          "left": 0,
+          "top": 27.721063259259264,
+          "time": 630.1999999880791
+        },
+        {
+          "left": 0,
+          "top": 40.74511807407408,
+          "time": 649.5
+        },
+        {
+          "left": 0,
+          "top": 51.94799999999999,
+          "time": 664
+        },
+        {
+          "left": 0,
+          "top": 69.14278800000001,
+          "time": 681.5
+        },
+        {
+          "left": 0,
+          "top": 87.29565674074075,
+          "time": 697.5
+        },
+        {
+          "left": 0,
+          "top": 108.37642592592594,
+          "time": 713.7999999821186
+        },
+        {
+          "left": 0,
+          "top": 132.60400399999997,
+          "time": 730.0999999940395
+        },
+        {
+          "left": 0,
+          "top": 160.19729940740737,
+          "time": 745.8999999761581
+        },
+        {
+          "left": 0,
+          "top": 195.53540740740743,
+          "time": 763.5999999940395
+        },
+        {
+          "left": 0,
+          "top": 231.0076965925926,
+          "time": 779.3999999761581
+        },
+        {
+          "left": 0,
+          "top": 270.4297529074073,
+          "time": 797
+        },
+        {
+          "left": 0,
+          "top": 307.6163439074074,
+          "time": 814.3999999761581
+        },
+        {
+          "left": 0,
+          "top": 335.03374474074076,
+          "time": 830.0999999940395
+        },
+        {
+          "left": 0,
+          "top": 362.4241205,
+          "time": 846.6999999880791
+        },
+        {
+          "left": 0,
+          "top": 386.1539259259259,
+          "time": 864.0999999940395
+        },
+        {
+          "left": 0,
+          "top": 406.485733574074,
+          "time": 880.3999999761581
+        },
+        {
+          "left": 0,
+          "top": 422.75265475925926,
+          "time": 897.3999999761581
+        },
+        {
+          "left": 0,
+          "top": 437.2379074074074,
+          "time": 913.5999999940395
+        },
+        {
+          "left": 0,
+          "top": 450.3322327592593,
+          "time": 932.3999999761581
+        },
+        {
+          "left": 0,
+          "top": 459.5678514074074,
+          "time": 950.1999999880791
+        },
+        {
+          "left": 0,
+          "top": 465.608,
+          "time": 963.7999999821186
+        },
+        {
+          "left": 0,
+          "top": 471.547388,
+          "time": 981.5
+        },
+        {
+          "left": 0,
+          "top": 475.1344455,
+          "time": 997
+        },
+        {
+          "left": 0,
+          "top": 478.07383649999997,
+          "time": 1014.8999999761581
+        },
+        {
+          "left": 0,
+          "top": 479.6738919074074,
+          "time": 1030.2999999821186
+        },
+        {
+          "left": 0,
+          "top": 480.51123274074075,
+          "time": 1046
+        },
+        {
+          "left": 0,
+          "top": 480.92874074074075,
+          "time": 1063.699999988079
+        },
+        {
+          "left": 0,
+          "top": 480.99975950000004,
+          "time": 1080.2999999821186
+        },
+        {
+          "left": 0,
+          "top": 481,
+          "time": 1097.2999999821186
+        }
+      ],
+      "finalNodes": 0
+    }
+  ],
+  "diagnostics": [],
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "visibility": "visible",
+  "hasFocus": true,
+  "hashesBefore": {
+    "design-ui/refactors/token-validation/browser/index-bar-lifecycle.html": "e08240af0e0aa96c0084b05c3b11e63807e177111c5aa9859a63e1b70cd24d5f",
+    "design-ui/refactors/token-validation/browser/index-bar-lifecycle-main.js": "67d287a98e5a921bd66a7d6fb8df94fdf32fa415eed8254339c91d64abf9214c",
+    "maple-design-mobile/packages/ui/src/index-bar/IndexBar.vue": "75ce54b7244705b75e41b9b1b5c1b5571ac4170f59a4da67f944381f364e5601",
+    "maple-design-mobile/packages/ui/src/index-bar/scroll-task.ts": "d44325857079844f753c07deb2b496fc1a76c5e77b19398e0887cad43ec43383"
+  },
+  "hashesAfter": {
+    "design-ui/refactors/token-validation/browser/index-bar-lifecycle.html": "e08240af0e0aa96c0084b05c3b11e63807e177111c5aa9859a63e1b70cd24d5f",
+    "design-ui/refactors/token-validation/browser/index-bar-lifecycle-main.js": "67d287a98e5a921bd66a7d6fb8df94fdf32fa415eed8254339c91d64abf9214c",
+    "maple-design-mobile/packages/ui/src/index-bar/IndexBar.vue": "75ce54b7244705b75e41b9b1b5c1b5571ac4170f59a4da67f944381f364e5601",
+    "maple-design-mobile/packages/ui/src/index-bar/scroll-task.ts": "d44325857079844f753c07deb2b496fc1a76c5e77b19398e0887cad43ec43383"
+  },
+  "screenshotSha256": "d4f0d23c67a48f143c0e9410717d26568d0fb343ba110f36886ea8e7e091b14e",
+  "cdpExceptions": []
+}
