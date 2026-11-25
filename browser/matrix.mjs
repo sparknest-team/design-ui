@@ -12,8 +12,7 @@ if (!['cedar', 'maple'].includes(library)) throw new Error('Usage: node matrix.m
 const summarizeOnly = args[1] === '--summarize'
 const profiles = (summarizeOnly ? 'chromium,firefox,webkit' : args[1] ?? 'chromium,firefox,webkit').split(',').map(browserProfile)
 const root = process.cwd()
-const results = []
-for (const profile of profiles) {
+async function runProfile(profile) {
   const startedAt = new Date().toISOString()
   const code = summarizeOnly ? null : await new Promise((done, reject) => {
     const child = spawn(process.execPath, ['--test', '--test-concurrency=1', resolve(import.meta.dirname, 'engine-input.test.mjs'), 'scripts/browser/components.test.mjs'], {
@@ -33,8 +32,17 @@ for (const profile of profiles) {
       sourceFingerprint: sourceFingerprint(root, library), productionFingerprint: productionFingerprint(root, library),
     })
   } catch (failure) { error = String(failure) }
-  results.push({ name: profile.name, startedAt, completedAt: new Date().toISOString(),
-    passed: (summarizeOnly || code === 0) && !!verified, exitCode: code, evidence, verified, error })
+  return { name: profile.name, startedAt, completedAt: new Date().toISOString(),
+    passed: (summarizeOnly || code === 0) && !!verified, exitCode: code, evidence, verified, error }
+}
+// 🔴 DOCS_MATRIX_CONCURRENCY 非法值（如 'abc' → NaN）会让 slice(0, NaN) 返回空数组，
+//    三个引擎被静默跳过、results 为空、exitCode=0 造成假绿。必须回退到默认 3 而不是放行 NaN。
+const requestedConcurrency = Number(process.env.DOCS_MATRIX_CONCURRENCY ?? 3)
+const concurrency = Math.min(profiles.length,
+  Number.isFinite(requestedConcurrency) && requestedConcurrency >= 1 ? Math.floor(requestedConcurrency) : 3)
+const results = []
+for (let index = 0; index < profiles.length; index += concurrency) {
+  results.push(...await Promise.all(profiles.slice(index, index + concurrency).map(runProfile)))
 }
 const directory = resolve(process.env.DOCS_BROWSER_EVIDENCE_DIR ?? resolve(root, 'artifacts/docs-components'), library)
 await mkdir(directory, { recursive: true })
