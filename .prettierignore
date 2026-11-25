@@ -2,6 +2,12 @@
 audits/
 artifacts/
 
+# IndexBar 回归校验按字节核对这些采集页面和脚本的 SHA-256。
+refactors/token-validation/browser/index-bar-lifecycle-ego.html
+refactors/token-validation/browser/index-bar-lifecycle-ego.js
+refactors/token-validation/browser/index-bar-lifecycle-main.js
+refactors/token-validation/browser/index-bar-lifecycle.html
+
 # 二进制资源，Prettier 不处理（显式列出，避免有人加 --ignore-unknown 时误判）。
 **/*.png
 **/*.jpg
