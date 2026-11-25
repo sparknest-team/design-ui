@@ -1,0 +1,942 @@
+{
+  "visible": "visible",
+  "hasFocus": true,
+  "run": {
+    "busy": false,
+    "results": [
+      {
+        "name": "Cedar",
+        "kind": "number",
+        "passed": true,
+        "samples": [
+          {
+            "phase": "mounted",
+            "time": 11,
+            "nodes": 1,
+            "value": 0,
+            "changes": 0,
+            "updates": 0,
+            "ends": 0
+          },
+          {
+            "phase": "immediate-step",
+            "time": 16,
+            "nodes": 1,
+            "value": 1,
+            "changes": 0,
+            "updates": 1,
+            "ends": 0
+          },
+          {
+            "phase": "before-first-repeat",
+            "time": 717.4000000059605,
+            "nodes": 1,
+            "value": 1,
+            "changes": 0,
+            "updates": 1,
+            "ends": 0
+          },
+          {
+            "phase": "first-repeat",
+            "time": 899,
+            "nodes": 1,
+            "value": 2,
+            "changes": 0,
+            "updates": 2,
+            "ends": 0
+          },
+          {
+            "phase": "second-repeat",
+            "time": 1060.5999999940395,
+            "nodes": 1,
+            "value": 3,
+            "changes": 0,
+            "updates": 3,
+            "ends": 0
+          },
+          {
+            "phase": "cancelled",
+            "time": 1060.7999999821186,
+            "nodes": 1,
+            "value": 3,
+            "changes": 0,
+            "updates": 3,
+            "ends": 0
+          },
+          {
+            "phase": "after-cancel",
+            "time": 1282.4000000059605,
+            "nodes": 1,
+            "value": 3,
+            "changes": 0,
+            "updates": 3,
+            "ends": 0
+          },
+          {
+            "phase": "replacement-hold",
+            "time": 1284.9000000059605,
+            "nodes": 1,
+            "value": 4,
+            "changes": 0,
+            "updates": 4,
+            "ends": 0
+          },
+          {
+            "phase": "unmounted-pending",
+            "time": 1388.5999999940395,
+            "nodes": 0,
+            "value": 4,
+            "changes": 0,
+            "updates": 4,
+            "ends": 0
+          },
+          {
+            "phase": "after-unmounted-deadline",
+            "time": 2240.0999999940395,
+            "nodes": 0,
+            "value": 4,
+            "changes": 0,
+            "updates": 4,
+            "ends": 0
+          }
+        ],
+        "events": [
+          {
+            "event": "update:modelValue",
+            "value": 1,
+            "time": 13.400000005960464
+          },
+          {
+            "event": "update:modelValue",
+            "value": 2,
+            "time": 819.4000000059605
+          },
+          {
+            "event": "update:modelValue",
+            "value": 3,
+            "time": 972.5
+          },
+          {
+            "event": "update:modelValue",
+            "value": 4,
+            "time": 1282.9000000059605
+          }
+        ],
+        "finalNodes": 0
+      },
+      {
+        "name": "Maple",
+        "kind": "number",
+        "passed": true,
+        "samples": [
+          {
+            "phase": "mounted",
+            "time": 10.5,
+            "nodes": 1,
+            "value": 0,
+            "changes": 0,
+            "updates": 0,
+            "ends": 0
+          },
+          {
+            "phase": "immediate-step",
+            "time": 13.099999994039536,
+            "nodes": 1,
+            "value": 1,
+            "changes": 0,
+            "updates": 1,
+            "ends": 0
+          },
+          {
+            "phase": "before-first-repeat",
+            "time": 714.4000000059605,
+            "nodes": 1,
+            "value": 1,
+            "changes": 0,
+            "updates": 1,
+            "ends": 0
+          },
+          {
+            "phase": "first-repeat",
+            "time": 895.5999999940395,
+            "nodes": 1,
+            "value": 2,
+            "changes": 0,
+            "updates": 2,
+            "ends": 0
+          },
+          {
+            "phase": "second-repeat",
+            "time": 1057.300000011921,
+            "nodes": 1,
+            "value": 3,
+            "changes": 0,
+            "updates": 3,
+            "ends": 0
+          },
+          {
+            "phase": "cancelled",
+            "time": 1057.4000000059605,
+            "nodes": 1,
+            "value": 3,
+            "changes": 0,
+            "updates": 3,
+            "ends": 0
+          },
+          {
+            "phase": "after-cancel",
+            "time": 1279,
+            "nodes": 1,
+            "value": 3,
+            "changes": 0,
+            "updates": 3,
+            "ends": 0
+          },
+          {
+            "phase": "replacement-hold",
+            "time": 1281.9000000059605,
+            "nodes": 1,
+            "value": 4,
+            "changes": 0,
+            "updates": 4,
+            "ends": 0
+          },
+          {
+            "phase": "unmounted-pending",
+            "time": 1386.0999999940395,
+            "nodes": 0,
+            "value": 4,
+            "changes": 0,
+            "updates": 4,
+            "ends": 0
+          },
+          {
+            "phase": "after-unmounted-deadline",
+            "time": 2237.300000011921,
+            "nodes": 0,
+            "value": 4,
+            "changes": 0,
+            "updates": 4,
+            "ends": 0
+          }
+        ],
+        "events": [
+          {
+            "event": "update:modelValue",
+            "value": 1,
+            "time": 11.900000005960464
+          },
+          {
+            "event": "update:modelValue",
+            "value": 2,
+            "time": 814.1999999880791
+          },
+          {
+            "event": "update:modelValue",
+            "value": 3,
+            "time": 966.5
+          },
+          {
+            "event": "update:modelValue",
+            "value": 4,
+            "time": 1279.5
+          }
+        ],
+        "finalNodes": 0
+      },
+      {
+        "name": "Cedar",
+        "kind": "countdown",
+        "passed": true,
+        "samples": [
+          {
+            "phase": "mounted",
+            "time": 2.2999999821186066,
+            "nodes": 1,
+            "value": 0,
+            "changes": 2,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1600
+          },
+          {
+            "phase": "running",
+            "time": 183.7999999821186,
+            "nodes": 1,
+            "value": 0,
+            "changes": 13,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1422
+          },
+          {
+            "phase": "paused",
+            "time": 184.09999999403954,
+            "nodes": 1,
+            "value": 0,
+            "changes": 13,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1422
+          },
+          {
+            "phase": "paused-stable",
+            "time": 405.09999999403954,
+            "nodes": 1,
+            "value": 0,
+            "changes": 13,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1422
+          },
+          {
+            "phase": "resumed",
+            "time": 585.7999999821186,
+            "nodes": 1,
+            "value": 0,
+            "changes": 26,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1243
+          },
+          {
+            "phase": "deactivated",
+            "time": 586.5999999940395,
+            "nodes": 0,
+            "value": 0,
+            "changes": 26,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1243
+          },
+          {
+            "phase": "inactive-stable",
+            "time": 788.5999999940395,
+            "nodes": 0,
+            "value": 0,
+            "changes": 26,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1243
+          },
+          {
+            "phase": "inactive-reset",
+            "time": 789.1999999880791,
+            "nodes": 0,
+            "value": 0,
+            "changes": 27,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 900
+          },
+          {
+            "phase": "inactive-reset-stable",
+            "time": 970.0999999940395,
+            "nodes": 0,
+            "value": 0,
+            "changes": 27,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 900
+          },
+          {
+            "phase": "reactivated",
+            "time": 1172.3999999761581,
+            "nodes": 1,
+            "value": 0,
+            "changes": 41,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 706
+          },
+          {
+            "phase": "unmounted",
+            "time": 1176.199999988079,
+            "nodes": 0,
+            "value": 0,
+            "changes": 41,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 706
+          },
+          {
+            "phase": "after-unmount",
+            "time": 1398.3999999761581,
+            "nodes": 0,
+            "value": 0,
+            "changes": 41,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 706
+          }
+        ],
+        "events": [
+          {
+            "event": "change",
+            "value": 1600,
+            "time": 2.0999999940395355
+          },
+          {
+            "event": "change",
+            "value": 1600,
+            "time": 2.0999999940395355
+          },
+          {
+            "event": "change",
+            "value": 1589,
+            "time": 12.5
+          },
+          {
+            "event": "change",
+            "value": 1572,
+            "time": 30.099999994039536
+          },
+          {
+            "event": "change",
+            "value": 1555,
+            "time": 46.39999997615814
+          },
+          {
+            "event": "change",
+            "value": 1538,
+            "time": 63.5
+          },
+          {
+            "event": "change",
+            "value": 1522,
+            "time": 80.09999999403954
+          },
+          {
+            "event": "change",
+            "value": 1506,
+            "time": 95.89999997615814
+          },
+          {
+            "event": "change",
+            "value": 1488,
+            "time": 113.5
+          },
+          {
+            "event": "change",
+            "value": 1473,
+            "time": 129.19999998807907
+          },
+          {
+            "event": "change",
+            "value": 1455,
+            "time": 147
+          },
+          {
+            "event": "change",
+            "value": 1438,
+            "time": 163.5
+          },
+          {
+            "event": "change",
+            "value": 1422,
+            "time": 179.2999999821186
+          },
+          {
+            "event": "change",
+            "value": 1418,
+            "time": 405.2999999821186
+          },
+          {
+            "event": "change",
+            "value": 1417,
+            "time": 405.7999999821186
+          },
+          {
+            "event": "change",
+            "value": 1406,
+            "time": 418.39999997615814
+          },
+          {
+            "event": "change",
+            "value": 1392,
+            "time": 430.59999999403954
+          },
+          {
+            "event": "change",
+            "value": 1376,
+            "time": 447.09999999403954
+          },
+          {
+            "event": "change",
+            "value": 1360,
+            "time": 463
+          },
+          {
+            "event": "change",
+            "value": 1342,
+            "time": 481.09999999403954
+          },
+          {
+            "event": "change",
+            "value": 1327,
+            "time": 496.09999999403954
+          },
+          {
+            "event": "change",
+            "value": 1309,
+            "time": 514
+          },
+          {
+            "event": "change",
+            "value": 1293,
+            "time": 530.0999999940395
+          },
+          {
+            "event": "change",
+            "value": 1276,
+            "time": 547.1999999880791
+          },
+          {
+            "event": "change",
+            "value": 1259,
+            "time": 563.7999999821186
+          },
+          {
+            "event": "change",
+            "value": 1243,
+            "time": 580.5
+          },
+          {
+            "event": "change",
+            "value": 900,
+            "time": 789.0999999940395
+          },
+          {
+            "event": "change",
+            "value": 900,
+            "time": 970.5999999940395
+          },
+          {
+            "event": "change",
+            "value": 898,
+            "time": 971.6999999880791
+          },
+          {
+            "event": "change",
+            "value": 890,
+            "time": 980.6999999880791
+          },
+          {
+            "event": "change",
+            "value": 873,
+            "time": 997.2999999821186
+          },
+          {
+            "event": "change",
+            "value": 857,
+            "time": 1012.8999999761581
+          },
+          {
+            "event": "change",
+            "value": 841,
+            "time": 1029.5999999940395
+          },
+          {
+            "event": "change",
+            "value": 824,
+            "time": 1046.7999999821186
+          },
+          {
+            "event": "change",
+            "value": 806,
+            "time": 1063.7999999821186
+          },
+          {
+            "event": "change",
+            "value": 790,
+            "time": 1079.7999999821186
+          },
+          {
+            "event": "change",
+            "value": 773,
+            "time": 1097.0999999940395
+          },
+          {
+            "event": "change",
+            "value": 756,
+            "time": 1113.8999999761581
+          },
+          {
+            "event": "change",
+            "value": 740,
+            "time": 1130.5999999940395
+          },
+          {
+            "event": "change",
+            "value": 723,
+            "time": 1147.0999999940395
+          },
+          {
+            "event": "change",
+            "value": 706,
+            "time": 1164.699999988079
+          }
+        ],
+        "finalNodes": 0
+      },
+      {
+        "name": "Maple",
+        "kind": "countdown",
+        "passed": true,
+        "samples": [
+          {
+            "phase": "mounted",
+            "time": 2.4000000059604645,
+            "nodes": 1,
+            "value": 0,
+            "changes": 2,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1600
+          },
+          {
+            "phase": "running",
+            "time": 184.5,
+            "nodes": 1,
+            "value": 0,
+            "changes": 13,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1419
+          },
+          {
+            "phase": "paused",
+            "time": 184.7000000178814,
+            "nodes": 1,
+            "value": 0,
+            "changes": 13,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1419
+          },
+          {
+            "phase": "paused-stable",
+            "time": 405.90000000596046,
+            "nodes": 1,
+            "value": 0,
+            "changes": 13,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1419
+          },
+          {
+            "phase": "resumed",
+            "time": 586.8000000119209,
+            "nodes": 1,
+            "value": 0,
+            "changes": 25,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1242
+          },
+          {
+            "phase": "deactivated",
+            "time": 587.5,
+            "nodes": 0,
+            "value": 0,
+            "changes": 25,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1242
+          },
+          {
+            "phase": "inactive-stable",
+            "time": 788.9000000059605,
+            "nodes": 0,
+            "value": 0,
+            "changes": 25,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 1242
+          },
+          {
+            "phase": "inactive-reset",
+            "time": 789.4000000059605,
+            "nodes": 0,
+            "value": 0,
+            "changes": 26,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 900
+          },
+          {
+            "phase": "inactive-reset-stable",
+            "time": 970.5999999940395,
+            "nodes": 0,
+            "value": 0,
+            "changes": 26,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 900
+          },
+          {
+            "phase": "reactivated",
+            "time": 1171.9000000059605,
+            "nodes": 1,
+            "value": 0,
+            "changes": 40,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 705
+          },
+          {
+            "phase": "unmounted",
+            "time": 1173.300000011921,
+            "nodes": 0,
+            "value": 0,
+            "changes": 40,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 705
+          },
+          {
+            "phase": "after-unmount",
+            "time": 1395,
+            "nodes": 0,
+            "value": 0,
+            "changes": 40,
+            "updates": 0,
+            "ends": 0,
+            "remaining": 705
+          }
+        ],
+        "events": [
+          {
+            "event": "change",
+            "value": 1600,
+            "time": 2.300000011920929
+          },
+          {
+            "event": "change",
+            "value": 1600,
+            "time": 2.300000011920929
+          },
+          {
+            "event": "change",
+            "value": 1587,
+            "time": 14.5
+          },
+          {
+            "event": "change",
+            "value": 1557,
+            "time": 45.5
+          },
+          {
+            "event": "change",
+            "value": 1543,
+            "time": 59.099999994039536
+          },
+          {
+            "event": "change",
+            "value": 1537,
+            "time": 64.59999999403954
+          },
+          {
+            "event": "change",
+            "value": 1522,
+            "time": 80.40000000596046
+          },
+          {
+            "event": "change",
+            "value": 1504,
+            "time": 97.80000001192093
+          },
+          {
+            "event": "change",
+            "value": 1486,
+            "time": 116.09999999403954
+          },
+          {
+            "event": "change",
+            "value": 1470,
+            "time": 131.90000000596046
+          },
+          {
+            "event": "change",
+            "value": 1453,
+            "time": 149.2000000178814
+          },
+          {
+            "event": "change",
+            "value": 1438,
+            "time": 164.40000000596046
+          },
+          {
+            "event": "change",
+            "value": 1419,
+            "time": 182.90000000596046
+          },
+          {
+            "event": "change",
+            "value": 1417,
+            "time": 406
+          },
+          {
+            "event": "change",
+            "value": 1408,
+            "time": 414.90000000596046
+          },
+          {
+            "event": "change",
+            "value": 1392,
+            "time": 431
+          },
+          {
+            "event": "change",
+            "value": 1376,
+            "time": 447.09999999403954
+          },
+          {
+            "event": "change",
+            "value": 1359,
+            "time": 464.7000000178814
+          },
+          {
+            "event": "change",
+            "value": 1342,
+            "time": 481.5
+          },
+          {
+            "event": "change",
+            "value": 1325,
+            "time": 498.2000000178814
+          },
+          {
+            "event": "change",
+            "value": 1310,
+            "time": 513.8000000119209
+          },
+          {
+            "event": "change",
+            "value": 1292,
+            "time": 531.5999999940395
+          },
+          {
+            "event": "change",
+            "value": 1275,
+            "time": 548.3000000119209
+          },
+          {
+            "event": "change",
+            "value": 1259,
+            "time": 564.0999999940395
+          },
+          {
+            "event": "change",
+            "value": 1242,
+            "time": 581.0999999940395
+          },
+          {
+            "event": "change",
+            "value": 900,
+            "time": 789.3000000119209
+          },
+          {
+            "event": "change",
+            "value": 900,
+            "time": 971.0999999940395
+          },
+          {
+            "event": "change",
+            "value": 899,
+            "time": 972
+          },
+          {
+            "event": "change",
+            "value": 889,
+            "time": 981.5
+          },
+          {
+            "event": "change",
+            "value": 872,
+            "time": 998.2000000178814
+          },
+          {
+            "event": "change",
+            "value": 856,
+            "time": 1014.9000000059605
+          },
+          {
+            "event": "change",
+            "value": 840,
+            "time": 1030.7000000178814
+          },
+          {
+            "event": "change",
+            "value": 818,
+            "time": 1053.5
+          },
+          {
+            "event": "change",
+            "value": 804,
+            "time": 1066.800000011921
+          },
+          {
+            "event": "change",
+            "value": 787,
+            "time": 1083.5999999940395
+          },
+          {
+            "event": "change",
+            "value": 772,
+            "time": 1098.5999999940395
+          },
+          {
+            "event": "change",
+            "value": 752,
+            "time": 1118.5999999940395
+          },
+          {
+            "event": "change",
+            "value": 736,
+            "time": 1134.2000000178814
+          },
+          {
+            "event": "change",
+            "value": 721,
+            "time": 1149.9000000059605
+          },
+          {
+            "event": "change",
+            "value": 705,
+            "time": 1165.300000011921
+          }
+        ],
+        "finalNodes": 0
+      }
+    ]
+  },
+  "diagnostics": [],
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "diagnosticSources": [
+    "page-console-and-errors",
+    "cdp-exceptions"
+  ],
+  "hashesBefore": {
+    "design-ui/refactors/token-validation/browser/business-lifecycle-ego.html": "f35abf8d0fa1f5e82cfc5b8ecf1e90417543b1be53ad99ff062ee6e06a7a0b80",
+    "design-ui/refactors/token-validation/browser/business-lifecycle-main.js": "1fa47f2f8cf379f8b22112516d621225d22ec5f1ba739192b7d7fda4996cb11d",
+    "cedar-design-web/packages/ui/src/input-number/InputNumber.vue": "b980ae0459eedfb88586540be8f77c1c2f996ced478fc0d3ff9bc18eadd67f09",
+    "maple-design-mobile/packages/ui/src/input-number/InputNumber.vue": "23143d9bfe6e9f192e05abaaf317e8cf10bf382b081d0828a4e5abdd2a1394ba",
+    "cedar-design-web/packages/ui/src/countdown/Countdown.vue": "9b8770c1f8a8620f4681c9efe5d4f45bec2470649047ccc2fedef08f2cb2caf7",
+    "maple-design-mobile/packages/ui/src/countdown/Countdown.vue": "75074ce302279567d3be70ff35e4de958cf2cec80586772e0c468aa4ae1831fb",
+    "cedar-design-web/packages/ui/src/countdown/use-countdown.ts": "cb60c032a8098996ff65883c7df4998c5ee5eb0afc1f9a97415bea108cfd4a04",
+    "maple-design-mobile/packages/ui/src/countdown/use-countdown.ts": "7479d3dcfb42c7dc310f242920c8fea1fcdbd2aec472a893466260deb7225833"
+  },
+  "hashesAfter": {
+    "design-ui/refactors/token-validation/browser/business-lifecycle-ego.html": "f35abf8d0fa1f5e82cfc5b8ecf1e90417543b1be53ad99ff062ee6e06a7a0b80",
+    "design-ui/refactors/token-validation/browser/business-lifecycle-main.js": "1fa47f2f8cf379f8b22112516d621225d22ec5f1ba739192b7d7fda4996cb11d",
+    "cedar-design-web/packages/ui/src/input-number/InputNumber.vue": "b980ae0459eedfb88586540be8f77c1c2f996ced478fc0d3ff9bc18eadd67f09",
+    "maple-design-mobile/packages/ui/src/input-number/InputNumber.vue": "23143d9bfe6e9f192e05abaaf317e8cf10bf382b081d0828a4e5abdd2a1394ba",
+    "cedar-design-web/packages/ui/src/countdown/Countdown.vue": "9b8770c1f8a8620f4681c9efe5d4f45bec2470649047ccc2fedef08f2cb2caf7",
+    "maple-design-mobile/packages/ui/src/countdown/Countdown.vue": "75074ce302279567d3be70ff35e4de958cf2cec80586772e0c468aa4ae1831fb",
+    "cedar-design-web/packages/ui/src/countdown/use-countdown.ts": "cb60c032a8098996ff65883c7df4998c5ee5eb0afc1f9a97415bea108cfd4a04",
+    "maple-design-mobile/packages/ui/src/countdown/use-countdown.ts": "7479d3dcfb42c7dc310f242920c8fea1fcdbd2aec472a893466260deb7225833"
+  },
+  "screenshotSha256": "03a53de87803e98a0135697ccbcbb614343d2b305adc59f66dae4b70403a9d3c",
+  "cdpEvents": []
+}

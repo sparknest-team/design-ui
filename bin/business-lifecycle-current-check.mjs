@@ -2,12 +2,13 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
-import { readEvidence } from './business-lifecycle-evidence-check.mjs'
+import { checkBusinessCases, readEvidence } from './business-lifecycle-evidence-check.mjs'
 import { checkFirstFrameEvidence, readFirstFrameEvidence } from './business-lifecycle-first-frame-evidence-check.mjs'
 import {
   checkArchivedBusinessEvidence,
   compareCurrentFixtureWithArchive,
 } from './business-lifecycle-historical-archive-check.mjs'
+import { readFixedCapture } from './fixed-lifecycle-capture.mjs'
 
 const root = fileURLToPath(new URL('../', import.meta.url))
 const originalLine = "s.active.value = true; await nextTick(); await wait(200); snapshot('reactivated')"
@@ -57,12 +58,32 @@ export function checkCurrentBusinessEvidence(read = readFileSync) {
   )
   checkFrameFixture(current, frame)
   const currentEvidence = checkFirstFrameEvidence(readFirstFrameEvidence(), read)
-  return { historical, currentEvidence }
+  const fixed = readFixedCapture(
+    'business',
+    [
+      'design-ui/refactors/token-validation/browser/business-lifecycle-ego.html',
+      'design-ui/refactors/token-validation/browser/business-lifecycle-main.js',
+      ...['cedar-design-web', 'maple-design-mobile'].flatMap((repo) =>
+        ['input-number/InputNumber.vue', 'countdown/Countdown.vue', 'countdown/use-countdown.ts'].map(
+          (file) => repo + '/packages/ui/src/' + file,
+        ),
+      ),
+    ],
+    read,
+  )
+  assert.deepEqual(fixed.cdpEvents, [])
+  assert.equal(fixed.run.busy, false)
+  const cases = fixed.run.results.map((row) => {
+    if (row.kind !== 'countdown') return row
+    const changes = row.events.filter((event) => event.event === 'change')
+    return { ...row, eventSummary: { count: changes.length, last: changes.at(-1) } }
+  })
+  return { historical, currentEvidence, fixedWindow: checkBusinessCases(cases) }
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   console.log(checkCurrentBusinessEvidence())
   console.log(
-    'Historical 200ms fixture verified separately; current-source Ego evidence observes the first animation frame, not a 200ms guarantee. No OS or native long-press certification.',
+    'Historical 200ms fixture verified separately; current-source Ego evidence covers first-frame and fixed-window scenarios. No OS or native long-press certification.',
   )
 }

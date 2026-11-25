@@ -2,11 +2,15 @@ import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { test } from 'node:test'
-import { checkIndexBarEvidence, readEgoEvidence, readEvidence } from './index-bar-lifecycle-evidence-check.mjs'
+import {
+  checkFixedIndexBarEvidence,
+  checkIndexBarEvidence,
+  readEgoEvidence,
+} from './index-bar-lifecycle-evidence-check.mjs'
 
 const positive = () => structuredClone(readEgoEvidence())
 test('original 600ms IndexBar evidence remains valid for current sources', () =>
-  assert.deepEqual(checkIndexBarEvidence(readEvidence()), { accepted: 4, os: 0, blocked: 144 }))
+  assert.deepEqual(checkFixedIndexBarEvidence(), { accepted: 4, os: 0, blocked: 144 }))
 test('four Ego Lite frame-aware IndexBar lifecycle cases and evidence pass', () =>
   assert.deepEqual(checkIndexBarEvidence(positive()), { accepted: 4, os: 0, blocked: 144 }))
 for (const [name, mutate] of [
