@@ -38,6 +38,7 @@ const canonical = {
   'floating-panel': 'drawer',
   cell: 'list',
 }
+const mobileLibraries = libraries.filter(({ id }) => id !== 'varlet')
 const components = []
 const ignored = new Set(
   'atomic-css atomic-usage palette utilities themes style shadow rounded size spacing position'.split(' '),
@@ -54,7 +55,7 @@ for (const directory of fs.readdirSync(path.join(base, 'src')).sort()) {
     source: path.relative(base, path.resolve(path.dirname(file), match[1].trim())),
     anchor: '',
   }))
-  const fullRefs = libraries.map((lib) => reference(lib, canonical[directory] ?? directory)).filter(Boolean)
+  const fullRefs = mobileLibraries.map((lib) => reference(lib, canonical[directory] ?? directory)).filter(Boolean)
   components.push({
     coreStrengths: coreStrengths
       .filter((item) => item.maple && item.components.includes(directory))
@@ -86,7 +87,7 @@ const text =
     {
       improvements: improvementsFor('maple'),
       groups,
-      libraries: libraries.map(({ id, name, type }) => ({ id, name, type })),
+      libraries: mobileLibraries.map(({ id, name, type }) => ({ id, name, type })),
       components,
     },
     null,

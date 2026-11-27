@@ -7,7 +7,7 @@ import { test } from 'node:test'
 import { downlevelVueDeclarations } from '../src/vue-declarations.mjs'
 
 const require = createRequire(import.meta.url)
-const ts = require('typescript')
+const ts = require('typescript-js')
 
 function transformedArguments(root) {
   const output = join(root, 'types')

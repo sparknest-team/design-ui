@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
@@ -8,7 +9,6 @@ const root = fileURLToPath(new URL('../../', import.meta.url))
 const require = createRequire(resolve(root, 'cedar-design-web/packages/ui/package.json'))
 const { parse, compileTemplate } = require('@vue/compiler-sfc')
 const { transformSync } = require('esbuild')
-const ts = require('typescript')
 const c = resolve(root, 'cedar-design-web/packages/ui/src')
 const m = resolve(root, 'maple-design-mobile/packages/ui/src')
 const normalize = (s) =>

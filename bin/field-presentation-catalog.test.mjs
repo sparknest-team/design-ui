@@ -1,13 +1,12 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import { spawnSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
-import { createRequire } from 'node:module'
 import test from 'node:test'
 import { fileURLToPath } from 'node:url'
 import { renderCatalog } from './token-catalog.mjs'
 import { collectStyleGraph, tokenStyleLayout } from './token-style-entries.mjs'
 
-const ts = createRequire(new URL('../../cedar-design-web/packages/ui/package.json', import.meta.url))('typescript')
 test('real static import graph follows private style.ts once, including cycles', () => {
   const root = '/fixture/src'
   const files = new Map([

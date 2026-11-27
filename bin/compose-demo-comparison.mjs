@@ -1,10 +1,10 @@
+import ts from 'typescript-js'
 import { createRequire } from 'node:module'
 import path from 'node:path'
 
 const require = createRequire(new URL('../../cedar-design-web/packages/ui/package.json', import.meta.url))
 const { parse: parseSfc } = require('@vue/compiler-sfc')
 const { parse: parseDom } = require('@vue/compiler-dom')
-const ts = require('typescript')
 const babel = require('@babel/parser')
 const traverse = require('@babel/traverse').default
 const generate = require('@babel/generator').default

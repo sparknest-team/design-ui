@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
 import {
@@ -239,7 +240,6 @@ function runtimeExports(requireMinimum) {
 
 export function checkVueSources(root) {
   const requireRoot = createRequire(join(root, 'package.json'))
-  const ts = createRequire(join(root, 'packages/ui/package.json'))('typescript')
   const sfc = requireRoot('@vue/compiler-sfc')
   const minimum = createRequire(requireRoot.resolve('vue-compat-min/package.json'))
   const exportsFor = runtimeExports(minimum)
@@ -326,7 +326,6 @@ function packageRoot(requireFrom, name) {
 export async function checkVueArtifacts(root) {
   const requireRoot = createRequire(join(root, 'package.json'))
   const requireUI = createRequire(join(root, 'packages/ui/package.json'))
-  const ts = requireUI('typescript')
   const exportsFor = runtimeExports(createRequire(requireRoot.resolve('vue-compat-min/package.json')))
   const temp = mkdtempSync(join(tmpdir(), 'vue-library-compat-'))
   try {

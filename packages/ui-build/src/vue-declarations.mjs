@@ -46,6 +46,9 @@ const conveniences = new Set([
   'Reactive',
   'ClassValue',
   'Attrs',
+  'InputAutoCompleteAttribute',
+  'InputTypeHTMLAttribute',
+  'ReservedProps',
 ])
 const convenienceSource = `import type { AllowedComponentProps, ComponentCustomProps, HTMLAttributes, Ref, VNodeProps } from 'vue'
 export type PublicProps = VNodeProps & AllowedComponentProps & ComponentCustomProps
@@ -56,6 +59,9 @@ export type MaybeRef<T = any> = T | Ref<T>
 export type MaybeRefOrGetter<T = any> = MaybeRef<T> | (() => T)
 export type Reactive<T> = T extends object ? ReturnType<typeof import('vue').reactive<T>> : T
 export type ClassValue = false | null | undefined | string | Record<string, any> | Array<ClassValue>
+export type InputAutoCompleteAttribute = NonNullable<import('vue').InputHTMLAttributes['autocomplete']>
+export type InputTypeHTMLAttribute = NonNullable<import('vue').InputHTMLAttributes['type']>
+export type ReservedProps = Pick<VNodeProps, 'key' | 'ref'> & { ref_for?: boolean; ref_key?: string }
 export type Attrs = import('vue').ComponentPublicInstance['$attrs']
 export type ComponentProvideOptions = Record<string | symbol, unknown> | (() => Record<string | symbol, unknown>)
 export interface GlobalDirectives {}
@@ -78,6 +84,22 @@ export function downlevelVueDeclarations(packageDirectory, outputDirectory, ts) 
     const text = readFileSync(file, 'utf8')
     if (!/['"]vue['"]/.test(text)) continue
     const ast = ts.createSourceFile(file, text, ts.ScriptTarget.Latest, true)
+    // Vue language tools can append an empty synthetic component to a
+    // script-only SFC which already forwards its implementation's default.
+    // The forwarded declaration is the component's full public contract.
+    if (file.endsWith('.vue.d.ts') && ast.statements.length === 4) {
+      const [forward, component, alias, assignment] = ast.statements
+      if (
+        ts.isExportDeclaration(forward) && forward.moduleSpecifier && forward.exportClause &&
+        ts.isNamedExports(forward.exportClause) && forward.exportClause.elements.some(item => item.name.text === 'default') &&
+        ts.isVariableStatement(component) && component.declarationList.declarations[0]?.name.getText(ast) === '__VLS_export' &&
+        ts.isVariableStatement(alias) && alias.declarationList.declarations[0]?.type?.getText(ast) === 'typeof __VLS_export' &&
+        ts.isExportAssignment(assignment) && assignment.expression.getText(ast) === alias.declarationList.declarations[0].name.getText(ast)
+      ) {
+        writeFileSync(file, forward.getText(ast) + '\n')
+        continue
+      }
+    }
     const imports = new Map()
     const namespaces = new Set()
     for (const node of ast.statements)

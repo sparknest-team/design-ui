@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import fs from 'node:fs'
 import { createRequire } from 'node:module'
 import path from 'node:path'
@@ -9,7 +10,6 @@ const root = fileURLToPath(new URL('../../', import.meta.url))
 const require = createRequire(path.join(root, 'cedar-design-web/packages/ui/package.json'))
 const { parse, compileScript, compileTemplate } = require('@vue/compiler-sfc')
 const { parse: parseDom } = require('@vue/compiler-dom')
-const ts = require('typescript')
 const write = process.argv.includes('--write')
 const owners = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/audits/demo-review-cases.json'), 'utf8'))
 const generated = []

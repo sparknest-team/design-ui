@@ -1,11 +1,10 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
-import { createRequire } from 'node:module'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
-const ts = createRequire(resolve(workspace, 'cedar-design-web/packages/ui/package.json'))('typescript')
 for (const library of ['cedar-design-web/packages/ui', 'maple-design-mobile/packages/ui']) {
   const paths = ['index.ts', 'grid/index.ts', 'row/index.ts', 'col/index.ts'].map((file) =>
     resolve(workspace, library, 'src', file),

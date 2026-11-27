@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { dirname, extname, resolve } from 'node:path'
@@ -26,7 +27,6 @@ export function runtimeGraph(
   { workspacePackages = {} } = {},
 ) {
   const require = createRequire(resolve(sourceDir, '../package.json'))
-  const ts = require('typescript')
   const { parse, compileScript } = require('vue/compiler-sfc')
   const graph = new Map()
   const bareRootImports = []

@@ -7,7 +7,7 @@
     "design-system-check": "./bin/spec-check.mjs"
   },
   "scripts": {
-    "check:ci": "node --test bin/ci-contract.test.mjs bin/ci-toolchain-check.test.mjs bin/shared-source-contract.test.mjs bin/case-paths-check.test.mjs packages/ui-build/test/environment.test.mjs packages/ui-build/test/dual-declarations.test.mjs packages/ui-build/test/vue-declarations.test.mjs bin/style-entry-types.test.mjs bin/style-module-assertions.test.mjs browser/inventory.test.mjs browser/navigation.test.mjs bin/api-naming-check.test.mjs browser/compatibility.test.mjs browser/native-acceptance.test.mjs browser/native-handoff.test.mjs bin/pr-workflow.test.mjs bin/contrast-report.test.mjs bin/theme-audit-utils.test.mjs",
+    "check:ci": "pnpm --filter @sparknest/vuepress-plugins-vue test && node --test bin/ci-contract.test.mjs bin/ci-toolchain-check.test.mjs bin/shared-source-contract.test.mjs bin/case-paths-check.test.mjs packages/ui-build/test/environment.test.mjs packages/ui-build/test/dual-declarations.test.mjs packages/ui-build/test/vue-declarations.test.mjs bin/style-entry-types.test.mjs bin/style-module-assertions.test.mjs browser/inventory.test.mjs browser/navigation.test.mjs bin/api-naming-check.test.mjs browser/compatibility.test.mjs browser/native-acceptance.test.mjs browser/native-handoff.test.mjs bin/pr-workflow.test.mjs bin/contrast-report.test.mjs bin/theme-audit-utils.test.mjs",
     "check:demo-controls": "node --test bin/demo-control-policy.test.mjs && node bin/demo-controls-check.mjs",
     "check:demo-design": "node bin/demo-design-check.mjs && node bin/demo-controls-check.mjs && node bin/organize-demo-pages.mjs",
     "check:api": "node bin/api-exports-audit.mjs ../cedar-design-web/packages/ui/src --check && node bin/api-exports-audit.mjs ../maple-design-mobile/packages/ui/src --check",
@@ -117,14 +117,15 @@
     "pnpm": "10.23.0"
   },
   "devDependencies": {
-    "@asamuzakjp/dom-selector": "^6.8.1",
-    "@changesets/changelog-github": "^0.5.1",
-    "@changesets/cli": "^2.29.7",
+    "@asamuzakjp/dom-selector": "^10.0.7",
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^3.0.3",
     "@configurajs/prettier": "^0.1.5",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
-    "prettier": "^3.9.4",
-    "prettier-plugin-packagejson": "^2.5.22",
-    "prettier-plugin-tailwindcss": "^0.6.14",
-    "typescript": "5.6.3"
+    "prettier": "^3.10.1",
+    "prettier-plugin-packagejson": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "typescript": "7.1.0-beta",
+    "typescript-js": "npm:typescript@6.0.3"
   }
 }

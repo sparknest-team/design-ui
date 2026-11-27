@@ -1,6 +1,7 @@
 import { spawn } from 'node:child_process'
 import { existsSync } from 'node:fs'
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises'
+import { normalizeVueTypeFiles } from './normalize-vue-type-files.mjs'
 import { createRequire } from 'node:module'
 import { basename, dirname, relative, resolve } from 'node:path'
 import vue from '@vitejs/plugin-vue'
@@ -12,6 +13,7 @@ import { libraryDefines } from './environment.mjs'
 import { collectModuleEntries } from './module-entries.mjs'
 import { downlevelVueDeclarations } from './vue-declarations.mjs'
 
+export { writeDualDeclarations } from './dual-declarations.mjs'
 export { browserTargets } from './browser-targets.mjs'
 export { downlevelVueDeclarations } from './vue-declarations.mjs'
 
@@ -33,7 +35,10 @@ async function walk(root) {
 
 function run(binary, args, cwd) {
   return new Promise((resolvePromise, reject) => {
-    const child = spawn(binary, args, { cwd, stdio: 'inherit' })
+    const child = spawn(binary, args, {
+      cwd, stdio: 'inherit',
+      env: { ...process.env, VUE_CONTENT_MAPPER_WORKERS: process.env.VUE_CONTENT_MAPPER_WORKERS ?? '1' },
+    })
     child.on('error', reject)
     child.on('exit', (code) =>
       code === 0 ? resolvePromise() : reject(new Error(`${binary} exited with code ${code}`)),
@@ -324,7 +329,7 @@ function vitePlugins(config) {
   return [vue(), vueJsx(), styleImportPlugin(), ...(config.vueSfcStyles ? [ignoreVueStylePlugin()] : [])]
 }
 
-async function buildModules(config, format, outDir, extension) {
+async function buildModules(config, entries, format, outDir, extension) {
   const root = resolve(config.root)
   await build({
     root,
@@ -339,8 +344,8 @@ async function buildModules(config, format, outDir, extension) {
       emptyOutDir: false,
       minify: false,
       outDir,
-      rollupOptions: {
-        input: await collectModuleEntries(root, config.sourceDir, config.entry),
+      rolldownOptions: {
+        input: entries,
         external: externalMatcher(config.external),
         preserveEntrySignatures: 'strict',
         output: {
@@ -414,7 +419,7 @@ async function buildBundle(config, format, outDir, fileName) {
         formats: [format],
         fileName: () => fileName,
       },
-      rollupOptions: {
+      rolldownOptions: {
         external: externalMatcher(format === 'umd' ? config.umdExternal : config.external),
         output: { exports: 'named', globals: config.globals },
       },
@@ -479,19 +484,23 @@ export async function buildLibrary(userConfig) {
     })
   }
 
-  await buildModules(config, 'es', 'es', 'mjs')
-  await buildModules(config, 'cjs', 'lib', 'js')
+  const entries = await collectModuleEntries(config.root, config.sourceDir, config.entry)
+  await buildModules(config, entries, 'es', 'es', 'mjs')
+  await buildModules(config, entries, 'cjs', 'lib', 'js')
   await assertNoBundlerHelpers(config)
   await buildBundle(config, 'es', 'es', `${config.bundleName}.esm.js`)
   await buildBundle(config, 'cjs', 'lib', `${config.bundleName}.cjs.js`)
   await buildBundle(config, 'umd', 'umd', `${config.bundleName}.js`)
   await compileStyles({ ...config, outputs: ['es', 'lib', 'umd'] })
   if (config.emitTypes !== false) {
-    await run('vue-tsc', ['-p', config.tsconfig], config.root)
+    await run('tsc', ['--runExternalCode', '-p', config.tsconfig], config.root)
+    await normalizeVueTypeFiles(resolve(config.root, 'types'))
     if (existsSync(resolve(config.root, '../../node_modules/vue-compat-min/package.json'))) {
-      downlevelVueDeclarations(config.root, 'types', createRequire(resolve(config.root, 'package.json'))('typescript'))
+      downlevelVueDeclarations(config.root, 'types', createRequire(import.meta.url)('typescript-js'))
     }
   }
 
   await assertOutputs(config)
 }
+
+export { normalizeVueTypeFiles }

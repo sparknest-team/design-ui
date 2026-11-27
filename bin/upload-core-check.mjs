@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
@@ -6,7 +7,6 @@ import { fileURLToPath } from 'node:url'
 
 const root = fileURLToPath(new URL('../../', import.meta.url))
 const require = createRequire(resolve(root, 'cedar-design-web/packages/ui/package.json'))
-const ts = require('typescript')
 const { parse, compileTemplate } = require('@vue/compiler-sfc')
 const esRequire = createRequire(
   resolve(root, 'maple-design-mobile/node_modules/.pnpm/node_modules/esbuild/package.json'),

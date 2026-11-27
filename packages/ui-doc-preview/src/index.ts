@@ -14,3 +14,4 @@ export { useDocsDirection } from './docs-direction'
 
 export { default as DocsSelect } from './DocsSelect.vue'
 export { default as DocsSourceIcon } from './DocsSourceIcon.vue'
+export { default as DocsNavbarTools } from './DocsNavbarTools.vue'

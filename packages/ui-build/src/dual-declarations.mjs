@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSy
 import { dirname, join, relative, resolve } from 'node:path'
 
 // Keep each module format's declaration graph in the corresponding TS module mode.
-// The caller provides its TypeScript instance, matching the vue-tsc used to emit types.
+// The caller provides its TypeScript instance, for transforming the generated declarations.
 export function writeDualDeclarations(root, ts) {
   if (!ts || typeof ts.createSourceFile !== 'function') {
     throw new Error('TypeScript compiler API is required to generate dual declarations')

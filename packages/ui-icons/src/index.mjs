@@ -41,7 +41,7 @@ export async function generateVueIcons({
   const expected = new Map()
   expected.set(
     '_utils/icon-component.ts',
-    `import type { AllowedComponentProps, App, ComponentCustomProps, ComponentOptionsMixin, DefineComponent, VNodeProps } from 'vue'
+    `import type { AllowedComponentProps, App, ComponentCustomProps, ComponentOptionsMixin, DefineComponent, SVGAttributes, VNodeProps } from 'vue'
 
 export interface IconProps {
   size?: string | number
@@ -64,7 +64,7 @@ type IconDefaults = {
 export type IconComponent = DefineComponent<
   IconProps, {}, {}, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, IconEmits, string,
   VNodeProps & AllowedComponentProps & ComponentCustomProps,
-  Readonly<IconProps> & Readonly<{ onClick?: (event: MouseEvent) => any }>,
+  Readonly<IconProps> & Pick<SVGAttributes, 'aria-hidden'> & Readonly<{ onClick?: (event: MouseEvent) => any }>,
   IconDefaults
 > & { install(app: App): void }
 `,
@@ -106,7 +106,7 @@ export type IconComponent = DefineComponent<
     const result = optimize(normalizedSource, {
       path,
       plugins: [
-        { name: 'preset-default', params: { overrides: { removeViewBox: false } } },
+        'preset-default',
         'removeDimensions',
         {
           name: 'removeAttrs',

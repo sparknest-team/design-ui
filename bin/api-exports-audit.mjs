@@ -1,11 +1,7 @@
+import ts from 'typescript-js'
 import fs from 'node:fs'
-import { createRequire } from 'node:module'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 
-const workspace = fileURLToPath(new URL('../../', import.meta.url))
-const require = createRequire(path.join(workspace, 'cedar-design-web/packages/ui/package.json'))
-const ts = require('typescript')
 const source = path.resolve(process.argv[2])
 const roots = fs
   .readdirSync(source, { withFileTypes: true })

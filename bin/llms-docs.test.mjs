@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict'
-import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { spawnSync } from 'node:child_process'
+import { acquireDocsBuild } from '../packages/vuepress-plugins/bin/docs-build-lock.mjs'
+import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, statSync, rmSync, writeFileSync } from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import { test } from 'node:test'
@@ -170,4 +172,44 @@ test('Cedar locale home pages have named files and their authored hero title', (
   assert.match(index, /\[Cedar Design Web\]\(\.\/llms\/en-US\/index.md\)/)
   assert.ok(existsSync(path.join(output, 'llms/en-US/index.md')))
   assert.ok(!existsSync(path.join(output, 'llms/en-US/.md')))
+})
+
+test('regeneration preserves unchanged files and removes deleted pages', (t) => {
+  const { root, put } = fixture(t)
+  const options = { root, platform: 'maple', output: path.join(root, 'public') }
+  put('docs/start.zh-CN.md', '# Start')
+  put('docs/removed.en-US.md', '# Removed')
+  generateDocs(options)
+  const retained = path.join(options.output, 'llms/zh-CN/start.md')
+  const before = statSync(retained, { bigint: true }).mtimeNs
+  rmSync(path.join(root, 'docs/removed.en-US.md'))
+  generateDocs(options)
+  assert.equal(statSync(retained, { bigint: true }).mtimeNs, before)
+  assert.equal(existsSync(path.join(options.output, 'llms/en-US/removed.md')), false)
+  assert.doesNotMatch(readFileSync(path.join(options.output, 'llms-full.txt'), 'utf8'), /# Removed/)
+})
+
+test('project and destination locks exclude competing writers and recover on process exit', (t) => {
+  const { root } = fixture(t)
+  const output = path.join(root, 'site')
+  const other = path.join(root, 'other')
+  const moduleURL = new URL('../packages/vuepress-plugins/bin/docs-build-lock.mjs', import.meta.url)
+  function acquireInChild(project, dest, crash = false) {
+    const code = `import { acquireDocsBuild } from ${JSON.stringify(moduleURL.href)};
+      acquireDocsBuild(process.argv[1], process.argv[2]);
+      if (process.argv[3] === 'crash') process.kill(process.pid, 'SIGKILL');`
+    return spawnSync(process.execPath, ['--input-type=module', '-e', code, project, dest, crash ? 'crash' : 'exit'], {
+      encoding: 'utf8',
+    })
+  }
+  const release = acquireDocsBuild(root, output)
+  try {
+    assert.match(acquireInChild(root, other).stderr, /Documentation build already running/)
+    assert.match(acquireInChild(other, output).stderr, /Documentation build already running/)
+    assert.equal(acquireInChild(other, path.join(other, 'site')).status, 0)
+  } finally {
+    release()
+  }
+  assert.equal(acquireInChild(root, output, true).signal, 'SIGKILL')
+  acquireDocsBuild(root, output)()
 })

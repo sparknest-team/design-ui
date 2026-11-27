@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
@@ -11,7 +12,6 @@ import { checkVuePeerRanges, clearVueRuntimeLinks, inspectVueCode, inspectVueTem
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
 const root = resolve(workspace, 'cedar-design-web')
 const require = createRequire(join(root, 'packages/ui/package.json'))
-const ts = require('typescript')
 const exportsFor = (module) => (module === 'vue' ? new Set(['ref', 'watch', 'defineComponent']) : undefined)
 
 test('UI and auxiliary packages use their declared Vue peer ranges', () => {

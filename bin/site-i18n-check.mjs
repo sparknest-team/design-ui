@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import { createRequire } from 'node:module'
@@ -5,8 +6,6 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = fileURLToPath(new URL('../../', import.meta.url))
-const req = createRequire(path.join(root, 'maple-design-mobile/package.json'))
-const ts = req('typescript')
 const uiRequire = createRequire(path.join(root, 'maple-design-mobile/packages/ui/package.json'))
 function evaluate(relative, overrides = {}) {
   const source = fs.readFileSync(path.join(root, relative), 'utf8')

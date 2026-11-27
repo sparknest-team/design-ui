@@ -378,7 +378,8 @@ const specific = {
   },
 }
 const roots = {}
-for (const lib of libraries) {
+function libraryRoot(lib) {
+  if (roots[lib.id]) return roots[lib.id]
   const directory = path.join(root, lib.id, lib.dir)
   const all = fs.existsSync(directory)
     ? fs
@@ -390,6 +391,7 @@ for (const lib of libraries) {
     revision = execFileSync('git', ['-C', path.join(root, lib.id), 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim()
   } catch {}
   roots[lib.id] = { all, revision }
+  return roots[lib.id]
 }
 const topicRules = [
   ['尺寸', /size|尺寸|大小/],
@@ -410,7 +412,7 @@ const topicRules = [
 const topicsFor = (values) =>
   topicRules.filter(([, pattern]) => pattern.test(values.join(' ').toLowerCase())).map(([title]) => title)
 export function reference(lib, slug) {
-  const { all, revision } = roots[lib.id]
+  const { all, revision } = libraryRoot(lib)
   const keys = specific[lib.id]?.[slug] ?? aliases[slug] ?? [slug]
   const matches = []
   for (const key of keys) {
@@ -490,7 +492,7 @@ export function improvementsFor(platform) {
         return {
           ...source,
           name: lib.name,
-          url: `https://github.com/${lib.repo}/blob/${roots[lib.id].revision}/${source.file}`,
+          url: `https://github.com/${lib.repo}/blob/${libraryRoot(lib).revision}/${source.file}`,
         }
       }),
     }))
@@ -602,7 +604,7 @@ export function buildCedarCatalog() {
     ),
   })
   save(path.join(root, 'design-ui/audits/component-showcase-2026-10-26/reference-inventory.json'), {
-    revisions: Object.fromEntries(libraries.map((lib) => [lib.id, roots[lib.id].revision])),
+    revisions: Object.fromEntries(libraries.map((lib) => [lib.id, libraryRoot(lib).revision])),
     components: catalog.components.map((c) => ({ id: c.id, references: c.references, demos: c.demos.length })),
   })
   console.log(

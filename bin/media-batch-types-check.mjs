@@ -1,6 +1,6 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
-import { createRequire } from 'node:module'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -10,8 +10,6 @@ for (const [repo, declarations] of [
   ['maple-design-mobile/packages/ui', 'types-generated'],
 ]) {
   const root = resolve(workspace, repo)
-  const require = createRequire(resolve(root, 'package.json'))
-  const ts = require('typescript')
   assert.ok(existsSync(resolve(root, declarations, 'index.d.ts')), `${repo}: build the library first`)
   const filename = resolve(root, '__media_batch_published_types__.ts')
   const source =

@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import fs from 'node:fs'
 import { createRequire } from 'node:module'
 import path from 'node:path'
@@ -7,7 +8,6 @@ const root = fileURLToPath(new URL('../../', import.meta.url))
 const require = createRequire(path.join(root, 'cedar-design-web/packages/ui/package.json'))
 const { parse } = require('@vue/compiler-sfc')
 const { parse: parseTemplate } = require('@vue/compiler-dom')
-const ts = require('typescript')
 const configurationNames =
   /^(?:variant|size|mode|type|trigger|placement|placementValue|position|direction|align|justify|presentation|background|layout|shape|color|status|density|panelType|dateFields|timeFields|openTriggerTarget|duration|orientation|selectionMode|scenario|preset|fieldVariant|fieldSize|calendarMode|calendarZone|dateScenario|rangeLock|guardMode|uploadScenario|uploadLayout)$/
 const attribute = (value) => String(value).replaceAll('&', '&amp;').replaceAll('"', '&quot;')
