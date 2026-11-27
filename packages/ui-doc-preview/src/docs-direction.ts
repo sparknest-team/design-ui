@@ -29,21 +29,16 @@ export function useDocsDirection() {
       frame.contentWindow?.postMessage({ type: 'sparknest-docs-direction', direction: direction.value }, origin)
     }
   }
-  function apply(value: DocsDirection, broadcast = true) {
+  function apply(value: DocsDirection) {
     direction.value = value
     document.documentElement.dir = value
-    try {
-      window.localStorage.setItem(docsDirectionStorageKey, value)
-    } catch {
-      /* Keep the control usable without storage. */
-    }
     const event = document.createEvent('CustomEvent')
     event.initCustomEvent('sparknest-docs-direction-change', false, false, value)
     window.dispatchEvent(event)
-    if (broadcast) document.querySelectorAll('iframe').forEach(send)
+    document.querySelectorAll('iframe').forEach(send)
   }
   function storage(event: StorageEvent) {
-    if (event.key === docsDirectionStorageKey) apply(isDirection(event.newValue) ? event.newValue : 'ltr')
+    if (event.key === docsDirectionStorageKey) apply(read())
   }
   function sync(event: Event) {
     const value = (event as CustomEvent).detail
@@ -90,5 +85,14 @@ export function useDocsDirection() {
     window.removeEventListener('sparknest-docs-direction-change', sync)
     document.removeEventListener('load', load, true)
   })
-  return { direction, toggle: () => apply(direction.value === 'ltr' ? 'rtl' : 'ltr') }
+  function toggle() {
+    const value = direction.value === 'ltr' ? 'rtl' : 'ltr'
+    try {
+      window.localStorage.setItem(docsDirectionStorageKey, value)
+    } catch {
+      /* Keep the control usable without storage. */
+    }
+    apply(value)
+  }
+  return { direction, toggle }
 }

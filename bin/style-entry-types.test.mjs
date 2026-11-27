@@ -9,7 +9,7 @@ import { build } from '../packages/ui-build/node_modules/vite/dist/node/index.js
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
 const require = createRequire(new URL('../packages/ui-build/package.json', import.meta.url))
-const ts = require('typescript')
+const ts = require('typescript-js')
 
 for (const [brand, repo] of [
   ['cedar', 'cedar-design-web'],

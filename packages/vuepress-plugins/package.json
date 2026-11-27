@@ -1,0 +1,58 @@
+{
+  "name": "@sparknest/vuepress-plugins-vue",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@mdit-vue/shared": "^4.0.0",
+    "@vueuse/core": "^15.1.0",
+    "posthtml-parser": "^0.13.0",
+    "posthtml-render": "^3.0.0",
+    "prismjs": "1.30.0",
+    "@vuepress/core": "2.0.0-rc.32"
+  },
+  "devDependencies": {
+    "typescript": "7.1.0-beta",
+    "@vue/test-utils": "2.6.0",
+    "@vitejs/plugin-vue": "6.0.11",
+    "vitest": "5.1.2",
+    "jsdom": "31.0.1"
+  },
+  "description": "Shared VuePress documentation plugins for Cedar and Maple",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sparknest-team/design-ui.git",
+    "directory": "packages/vuepress-plugins"
+  },
+  "files": [
+    "dist",
+    "src/client",
+    "src/client-iframe",
+    "bin"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/node/index.d.ts",
+      "import": "./dist/node/index.js"
+    },
+    "./docs-build": "./bin/llms-docs.mjs",
+    "./scroll-hash": "./src/client/scroll-hash.ts",
+    "./demo-groups.json": "./dist/demo-groups.json"
+  },
+  "bin": {
+    "ui-docs-llms": "./bin/llms-docs.mjs"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node --input-type=module -e \"import { copyFileSync } from 'node:fs'; copyFileSync('../../configs/demo-groups.json', 'dist/demo-groups.json')\"",
+    "prepack": "pnpm run build",
+    "test": "vitest run"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vuepress": "2.0.0-rc.32",
+    "vue-router": "5.5.1",
+    "vue": "3.5.46"
+  }
+}

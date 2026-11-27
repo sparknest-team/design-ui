@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import fs from 'node:fs'
 import { createRequire } from 'node:module'
 import path from 'node:path'
@@ -9,7 +10,6 @@ const { publicReviewDemos } = JSON.parse(
   fs.readFileSync(path.join(root, 'design-ui/configs/component-showcase.json'), 'utf8'),
 )
 const require = createRequire(path.join(root, 'cedar-design-web/packages/ui/package.json'))
-const ts = require('typescript')
 const { parse, compileScript, compileTemplate } = require('@vue/compiler-sfc')
 const { parse: parseTemplate } = require('@vue/compiler-dom')
 const panel = path.join(root, 'design-ui/packages/ui-doc-preview/src/ReviewPanel.vue')

@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
@@ -71,7 +72,6 @@ export function auditRuntimeDependencies(repositoryRoot, library) {
   assert.ok(config, `Unknown library: ${library}`)
   const sourceDir = resolve(repositoryRoot, 'packages', config.directory, 'src')
   const require = createRequire(resolve(sourceDir, '../package.json'))
-  const ts = require('typescript')
   const { parse } = require('vue/compiler-sfc')
   const workspacePackages = {}
   const roots = implementationFiles(sourceDir)

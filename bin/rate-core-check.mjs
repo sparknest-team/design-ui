@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
@@ -9,7 +10,6 @@ const require = createRequire(resolve(root, 'maple-design-mobile/node_modules/.p
 const { transformSync } = require('esbuild')
 const uiRequire = createRequire(resolve(root, 'cedar-design-web/packages/ui/package.json'))
 const less = uiRequire('less')
-const ts = uiRequire('typescript')
 const c = resolve(root, 'cedar-design-web/packages/ui/src/rate')
 const m = resolve(root, 'maple-design-mobile/packages/ui/src/rate')
 function normalize(source) {

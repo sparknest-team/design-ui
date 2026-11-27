@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
@@ -66,7 +67,6 @@ export function auditCasePaths(root) {
   const drift = trackedCaseDrift(root)
   const pkg = 'ui'
   const require = createRequire(join(root, 'packages', pkg, 'package.json'))
-  const ts = require('typescript')
   const vue = require('vue/compiler-sfc')
   const files = []
   const skipped = /^(?:node_modules|\.git|\.maple|\.temp.*|\.cache|es|lib|umd|dist)$/

@@ -1,10 +1,9 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
-import { createRequire } from 'node:module'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
-const ts = createRequire(path.join(workspace, 'cedar-design-web/packages/ui/package.json'))('typescript')
 
 function publicProps(relative, exportName) {
   const entry = path.join(workspace, relative, 'src/index.ts')

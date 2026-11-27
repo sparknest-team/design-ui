@@ -1,5 +1,6 @@
 // Read-only inventory. A local CSS non-consumer is a review candidate, NOT
 // permission to delete: runtime and cross-component consumers need inspection.
+import ts from 'typescript-js'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { dirname, relative, resolve } from 'node:path'
@@ -10,7 +11,6 @@ import { collectStyleGraph, tokenStyleLayout } from './token-style-entries.mjs'
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
 const require = createRequire(resolve(workspace, 'cedar-design-web/packages/ui/package.json'))
 const postcss = require('postcss')
-const ts = require('typescript')
 const withoutComments = (source) => {
   const stripScript = (script) => {
     const scanner = ts.createScanner(ts.ScriptTarget.Latest, false, ts.LanguageVariant.JSX, script)

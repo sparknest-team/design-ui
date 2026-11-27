@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import fs from 'node:fs'
 import { createRequire } from 'node:module'
@@ -8,7 +9,6 @@ import { normalizeButtonSize, normalizeSwitchEditMode } from './same-source-demo
 const root = fileURLToPath(new URL('../../', import.meta.url))
 const require = createRequire(path.join(root, 'cedar-design-web/packages/ui/package.json'))
 const { parse, compileScript, compileTemplate } = require('@vue/compiler-sfc')
-const ts = require('typescript')
 const kebab = (name) => name.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)
 const sorted = (names) => [...names].sort()
 function canonicalDemo(source, filename) {

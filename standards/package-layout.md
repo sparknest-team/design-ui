@@ -14,7 +14,7 @@
 
 Vue 和 React 独立维护源码、CSS、token、hooks、工具函数、构建工具、preset 与文档站。禁止跨框架工作区依赖、相对路径导入或 CSS 复用。历史复制来源只作为 provenance 记录，不参加跨仓库构建或逐文件一致性约束。
 
-`design-ui` 当前仅服务 Vue：其中四个工具包均使用 `-vue` 后缀。Cedar Vue 和 Maple Vue 可以使用这些 Vue 工具；React 不依赖这个仓库。React 对应工具由独立仓库 `design-ui-react` 提供，包名分别为 `@sparknest/ui-build-react`、`@sparknest/ui-doc-preview-react`、`@sparknest/ui-icons-react`、`@sparknest/theme-contract-react`。两个 React 库已接入 React 构建与预览工具；未来的 React preset 也只在 React 产品线内独立实现。
+`design-ui` 当前仅服务 Vue：其中的工具包均使用 `-vue` 后缀。Cedar Vue 和 Maple Vue 可以使用这些 Vue 工具；React 不依赖这个仓库。React 对应工具由独立仓库 `design-ui-react` 提供，包名分别为 `@sparknest/ui-build-react`、`@sparknest/ui-doc-preview-react`、`@sparknest/ui-icons-react`、`@sparknest/theme-contract-react`。两个 React 库已接入 React 构建与预览工具；未来的 React preset 也只在 React 产品线内独立实现。
 
 每个仓库的 `pnpm check:packages` 检查包名、目录、直接依赖和源码导入边界，并已接入 quality/check。
 
@@ -67,6 +67,7 @@ Vue 和 React 独立维护源码、CSS、token、hooks、工具函数、构建�
 | design-ui                 | `packages/ui-build`           | `@sparknest/ui-build-vue`              | 否   |
 | design-ui                 | `packages/ui-doc-preview`     | `@sparknest/ui-doc-preview-vue`        | 否   |
 | design-ui                 | `packages/ui-icons`           | `@sparknest/ui-icons-vue`              | 否   |
+| design-ui                 | `packages/vuepress-plugins`   | `@sparknest/vuepress-plugins-vue`     | 否   |
 | design-ui-react           | `.`                           | `@sparknest/design-system-react`       | 是   |
 | design-ui-react           | `packages/theme-contract`     | `@sparknest/theme-contract-react`      | 否   |
 | design-ui-react           | `packages/ui-build`           | `@sparknest/ui-build-react`            | 否   |
@@ -81,7 +82,7 @@ Maple 另有 `maple-library-template-vue`（CLI 生成模板）和 `maple-playgr
 
 这些新包名尚未由本次迁移发布到 npm。两个 Vue 仓库通过 pnpm overrides 链接同级 design-ui 的 Vue 工具，发布包仍保留 semver 依赖。发布时需要先发布 design-ui 工具，再发布 shared/use/icons/preset/resolver/cli，最后发布 UI；不能依赖旧名字在 registry 上的版本。VS Code 扩展的新标识也需要单独发布。
 
-Cedar 的 `plugin-code-block` 已作为文档站内部源码维护，没有独立 package.json 或发布配置；保留上游来源、LICENSE 与 CHANGELOG。浏览器证据中捕获的旧 package.json 属于历史快照。
+Cedar、Maple 和新生成的 Maple 项目从 `@sparknest/vuepress-plugins-vue` 加载 VuePress 示例插件。源码、测试和上游许可集中在 `design-ui/packages/vuepress-plugins`。
 
 React 本地安装顺序：先在同级 design-ui-react 运行 pnpm install，再在两个 React 组件库运行 pnpm install。公开包发布顺序为 React 支持工具先于 React UI。CI 跨私有仓库读取使用 DESIGN_UI_TOKEN，需要包含 design-ui-react 的 contents:read 权限。
 
@@ -93,6 +94,6 @@ check:packages 按各仓库 pnpm-workspace.yaml 的 packages glob（含排除模
 
 组件库模板必须同时提供 ui-build.config.mjs 和 tsconfig.declaration.json，生成项目的所有依赖字段都不能保留本地协议；运行时依赖与 types-generated 必须进入最终发布清单。
 
-Maple 的 check:cli 包含真实模板生成、SFC/TSX 与国际化开关四种组合的编译打包、公开入口解析回归，typecheck:playground 使用 vue-tsc 检查编辑器应用，两个入口都已接入 quality。固定工具类通过 @maple-design/ui-vue/utilities/style 导入；区域 JSON 与编辑器元数据分别使用公开的 json/_、highlight/_ 子路径。
+Maple 的 check:cli 包含真实模板生成、SFC/TSX 与国际化开关四种组合的编译打包、公开入口解析回归，typecheck:playground 使用 Golar 的 tsc 模式 检查编辑器应用，两个入口都已接入 quality。固定工具类通过 @maple-design/ui-vue/utilities/style 导入；区域 JSON 与编辑器元数据分别使用公开的 json/_、highlight/_ 子路径。
 
 Cedar / Maple 的 `tests/vue-compat/{minimum,3-3,3-4,current}` 是显式声明的私有工作区，用于不同 Vue 版本的真实消费验证。它们参加包名、重复名称、依赖与源码边界检查，必须 private；未声明或被排除的 fixture package.json 仍会失败。

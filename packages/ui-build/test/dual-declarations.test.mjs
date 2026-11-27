@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'nod
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import test from 'node:test'
-import ts from 'typescript'
+import ts from 'typescript-js'
 import { writeDualDeclarations } from '../src/dual-declarations.mjs'
 
 test('reports a missing TypeScript compiler API clearly', () => {

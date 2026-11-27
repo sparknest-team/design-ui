@@ -1,12 +1,11 @@
+import ts from 'typescript-js'
 import fs from 'node:fs'
-import { createRequire } from 'node:module'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 // Read-only inventory of actual public runtime Props exports, including child components.
 // A name-set difference is not evidence of a semantic mismatch or missing implementation.
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
-const ts = createRequire(path.join(workspace, 'cedar-design-web/packages/ui/package.json'))('typescript')
 function inventory(relative) {
   const root = path.join(workspace, relative, 'src')
   const entry = path.join(root, 'index.ts')

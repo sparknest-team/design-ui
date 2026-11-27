@@ -1,6 +1,6 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
-import { createRequire } from 'node:module'
 import { resolve } from 'node:path'
 import test from 'node:test'
 import { fileURLToPath } from 'node:url'
@@ -19,8 +19,6 @@ assert.ok(selected.length > 0, 'No target component library found')
 const source = localRoot
   ? resolve(localRoot, 'packages', selected[0][1].directory, 'src')
   : resolve(workspace, 'cedar-design-web/packages/ui/src')
-const require = createRequire(resolve(source, '../package.json'))
-const ts = require('typescript')
 
 test('emitted dependency graph erases type-only imports and retains literal dynamic imports', () => {
   const { graph, cycles } = runtimeGraph(source, '@cedar-design/ui-vue', [resolve(fixtures, 'entry.ts')])

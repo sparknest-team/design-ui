@@ -1,0 +1,238 @@
+html {
+  --c-border: var(--c-color-border-2);
+  --c-border-dark: var(--c-color-border-2);
+  --c-bg: var(--c-color-bg-2);
+  --c-bg-light: var(--c-color-fill-2);
+}
+
+.vmi-previewer {
+  background-color: var(--c-color-bg-2);
+  border: 1px solid var(--c-border);
+  border-radius: 1px;
+
+  &[data-debug] {
+    margin-top: 32px;
+    border-color: var(--c-color-warning);
+
+    &::before {
+      float: left;
+      padding: 3px 6px;
+      margin-top: -18px;
+      margin-left: -1px;
+      font-size: 12px;
+      line-height: 1;
+      color: var(--c-color-text-1);
+      text-shadow: 0.5px 0.5px 0 hsl(0deg 0% 100% / 50%);
+      content: 'DEV ONLY';
+      background-color: var(--c-color-warning-light-1);
+      border-top-left-radius: 1px;
+      border-top-right-radius: 1px;
+    }
+  }
+}
+
+.vmi-previewer-example {
+  padding: 40px 24px;
+  color: var(--c-color-text-1);
+  background: var(--c-color-bg-1);
+}
+
+.vmi-previewer-title {
+  position: relative;
+
+  a.header-anchor {
+    position: absolute;
+    top: -11px;
+    left: 16px;
+    padding: 0 8px;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--c-text);
+    background: var(--c-bg);
+    opacity: 1;
+  }
+
+  + .vmi-previewer-desc {
+    padding-top: 6px;
+  }
+}
+
+.vmi-previewer-desc {
+  padding: 0 24px;
+  border-top: 1px dashed var(--c-border);
+}
+
+.vmi-previewer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 5px;
+  border-top: 1px dashed var(--c-border);
+
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.5s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.vmi-previewer-sources {
+  border-top: 1px dashed var(--c-border);
+
+  pre[class*='language-'] {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  // 新代码块样式适配
+  pre.shiki {
+    width: 100%;
+    overflow-x: auto;
+    padding: 1.3rem 1.5rem;
+  }
+
+  div[class*='language-'] {
+    border-radius: 0;
+  }
+
+  &-item {
+    overflow: auto;
+  }
+}
+
+.vmi-previewer-tabs {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  overflow-x: auto;
+  border-bottom: 1px dashed var(--c-border);
+
+  &-tab {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 14px;
+    line-height: 36px;
+    white-space: nowrap;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+
+    &:hover {
+      color: var(--c-brand);
+    }
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  .active::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    pointer-events: none;
+    content: '';
+    background: var(--c-brand);
+    transition:
+      left 0.2s,
+      width 0.2s;
+  }
+}
+
+@media (min-width: 1000px) {
+  .vmi-previewer-horizontal {
+    display: flex;
+
+    .vmi-previewer-example {
+      width: 300px;
+
+      > iframe {
+        height: 100%;
+      }
+    }
+
+    .vmi-previewer-content {
+      flex: 1;
+      overflow: auto;
+      border-left: 1px dashed var(--c-border);
+    }
+
+    .vmi-previewer-actions {
+      border-top: 0;
+    }
+  }
+}
+
+html[data-theme='dark'] .shiki,
+html[data-theme='dark'] .shiki span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  /* 可选，用于定义字体样式 */
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+// One token tree serves both palettes; changing theme only changes CSS colors.
+pre.cedar-demo-code {
+  --demo-code-text: #546e7a;
+  --demo-code-comment: #90a4ae;
+  --demo-code-keyword: #7c4dff;
+  --demo-code-string: #618c00;
+  --demo-code-number: #f76d47;
+  --demo-code-tag: #e53935;
+  --demo-code-name: #39adb5;
+  --demo-code-function: #6182b8;
+  --demo-code-punctuation: #546e7a;
+  margin: 0;
+  padding: 1.3rem 1.5rem;
+  overflow-x: auto;
+  color: var(--demo-code-text);
+  text-shadow: none;
+  background: #fafafa;
+
+  code { color: inherit; text-shadow: none; }
+  .token { background: transparent; }
+  .token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--demo-code-comment); }
+  .token.keyword, .token.atrule { color: var(--demo-code-keyword); }
+  .token.string, .token.attr-value, .token.char, .token.regex { color: var(--demo-code-string); }
+  .token.number, .token.boolean, .token.constant { color: var(--demo-code-number); }
+  .token.tag, .token.deleted { color: var(--demo-code-tag); }
+  .token.attr-name, .token.property, .token.class-name { color: var(--demo-code-name); }
+  .token.function { color: var(--demo-code-function); }
+  .token.punctuation, .token.operator { color: var(--demo-code-punctuation); }
+}
+
+html[data-theme='dark'] pre.cedar-demo-code {
+  --demo-code-text: #cdd6f4;
+  --demo-code-comment: #6c7086;
+  --demo-code-keyword: #cba6f7;
+  --demo-code-string: #a6e3a1;
+  --demo-code-number: #fab387;
+  --demo-code-tag: #f38ba8;
+  --demo-code-name: #89dceb;
+  --demo-code-function: #89b4fa;
+  --demo-code-punctuation: #9399b2;
+  background: #1e1e2e;
+}

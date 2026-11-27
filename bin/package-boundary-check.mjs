@@ -229,7 +229,7 @@ export function auditPackages(root) {
     )
       return
     sourceCount++
-    ts ??= loadParserDependency('typescript', root)
+    ts ??= createRequire(import.meta.url)('typescript-js')
     for (const specifier of sourceImports(file, readFileSync(file, 'utf8'), ts, root)) {
       validateDependency(specifier, label)
       validateFrameworkReference(specifier, label)

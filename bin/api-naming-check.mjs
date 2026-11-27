@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import ts from 'typescript-js'
 import { readdirSync, readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { join, relative, resolve } from 'node:path'
@@ -6,7 +7,6 @@ import { fileURLToPath } from 'node:url'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
 const require = createRequire(resolve(workspace, 'cedar-design-web/packages/ui/package.json'))
-const ts = require('typescript')
 const relevant = /^(dir|orientation|direction|axis|position|placement)$|(?:Position|Placement|Direction)$/
 const excluded = new Set(['__tests__', '__demos__', 'example', 'docs', 'style', 'node_modules'])
 

@@ -1,7 +1,5 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
-import { createRequire } from 'node:module'
-
-const ts = createRequire(new URL('../../maple-design-mobile/packages/ui/package.json', import.meta.url))('typescript')
 
 export const normalizeCopiedSource = (source) =>
   source

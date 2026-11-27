@@ -1,13 +1,10 @@
+import ts from 'typescript-js'
 import assert from 'node:assert/strict'
-import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import { createRequire } from 'node:module'
+import { readdirSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const workspace = fileURLToPath(new URL('../../', import.meta.url))
-const candidates = ['maple-design-mobile/packages/shared', 'cedar-design-web/packages/shared']
-const compilerRoot = candidates.map((path) => resolve(workspace, path, 'package.json')).find(existsSync)
-const ts = createRequire(compilerRoot)('typescript')
 
 /** Keep declarations and type-only exports; normalize formatting, comments and brand diagnostics only. */
 export function canonicalSharedSource(source) {

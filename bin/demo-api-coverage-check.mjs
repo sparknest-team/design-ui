@@ -1,3 +1,4 @@
+import ts from 'typescript-js'
 import fs from 'node:fs'
 import { createRequire } from 'node:module'
 import path from 'node:path'
@@ -9,7 +10,6 @@ const root = fileURLToPath(new URL('../../', import.meta.url))
 const require = createRequire(path.join(root, 'cedar-design-web/packages/ui/package.json'))
 const { parse } = require('@vue/compiler-sfc')
 const { parse: parseDom } = require('@vue/compiler-dom')
-const ts = require('typescript')
 const kebab = (name) => name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase()
 const records = []
 const caseManifest = JSON.parse(fs.readFileSync(path.join(root, 'design-ui/audits/demo-review-cases.json'), 'utf8'))

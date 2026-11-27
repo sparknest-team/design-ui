@@ -1,10 +1,7 @@
+import ts from 'typescript-js'
 import fs from 'node:fs'
-import { createRequire } from 'node:module'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 
-const workspace = fileURLToPath(new URL('../../', import.meta.url))
-const ts = createRequire(path.join(workspace, 'cedar-design-web/packages/ui/package.json'))('typescript')
 const root = path.resolve(process.argv[2])
 const helper = fs.existsSync(path.join(root, '_utils')) ? '_utils' : 'utils'
 const edits = []
