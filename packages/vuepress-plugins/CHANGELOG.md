@@ -1,5 +1,9 @@
 # @sparknest/vuepress-plugins-vue
 
+## 1.5.0
+
+No changes in this release.
+
 ## 1.0.1
 
 ### Patch Changes

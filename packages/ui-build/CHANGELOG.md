@@ -1,5 +1,11 @@
 # @sparknest/ui-build-vue
 
+## 1.5.0
+
+### Minor Changes
+
+- [#40](https://github.com/sparknest-team/design-ui/pull/40) [`60013c3`](https://github.com/sparknest-team/design-ui/commit/60013c3f8e86f5b5ae1f3c12671e2c9bc1f8ae45) Thanks [@sparknest-team](https://github.com/sparknest-team)! - 新增 `bundleFormats` 配置项，可按格式关闭整包 JS bundle（如仅保留 `umd`）。默认值仍为 `['es', 'cjs', 'umd']`，不传时行为与之前完全一致；`es/<bundleName>.css` 聚合不受影响。
+
 ## 1.4.4
 
 ### Patch Changes

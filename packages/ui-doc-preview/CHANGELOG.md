@@ -1,5 +1,9 @@
 # @sparknest/ui-doc-preview-vue
 
+## 1.5.0
+
+No changes in this release.
+
 ## 1.4.4
 
 ### Patch Changes

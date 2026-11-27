@@ -1,5 +1,9 @@
 # @sparknest/theme-contract-vue
 
+## 1.5.0
+
+No changes in this release.
+
 ## 1.4.4
 
 No changes in this release.
