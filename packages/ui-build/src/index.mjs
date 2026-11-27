@@ -431,11 +431,11 @@ async function assertOutputs(config) {
   const root = resolve(config.root)
   const required = [
     'es/index.mjs',
-    `es/${config.bundleName}.esm.js`,
     `es/${config.bundleName}.css`,
-    `lib/${config.bundleName}.cjs.js`,
-    `umd/${config.bundleName}.js`,
   ]
+  if (config.bundleFormats.includes('es')) required.push(`es/${config.bundleName}.esm.js`)
+  if (config.bundleFormats.includes('cjs')) required.push(`lib/${config.bundleName}.cjs.js`)
+  if (config.bundleFormats.includes('umd')) required.push(`umd/${config.bundleName}.js`)
   if (config.emitTypes !== false) {
     required.push('types/index.d.ts')
   }
@@ -468,6 +468,8 @@ export async function buildLibrary(userConfig) {
     tsconfig: 'tsconfig.build.json',
     emitTypes: true,
     vueSfcStyles: false,
+    // Whole-library JS bundle formats. Defaults to ['es', 'cjs', 'umd'].
+    bundleFormats: ['es', 'cjs', 'umd'],
     // Optional. When missing, full `{bundleName}.css` is auto-aggregated from **/style/index.less.
     fullCssEntry: 'index.less',
     ...userConfig,
@@ -488,9 +490,15 @@ export async function buildLibrary(userConfig) {
   await buildModules(config, entries, 'es', 'es', 'mjs')
   await buildModules(config, entries, 'cjs', 'lib', 'js')
   await assertNoBundlerHelpers(config)
-  await buildBundle(config, 'es', 'es', `${config.bundleName}.esm.js`)
-  await buildBundle(config, 'cjs', 'lib', `${config.bundleName}.cjs.js`)
-  await buildBundle(config, 'umd', 'umd', `${config.bundleName}.js`)
+  if (config.bundleFormats.includes('es')) {
+    await buildBundle(config, 'es', 'es', `${config.bundleName}.esm.js`)
+  }
+  if (config.bundleFormats.includes('cjs')) {
+    await buildBundle(config, 'cjs', 'lib', `${config.bundleName}.cjs.js`)
+  }
+  if (config.bundleFormats.includes('umd')) {
+    await buildBundle(config, 'umd', 'umd', `${config.bundleName}.js`)
+  }
   await compileStyles({ ...config, outputs: ['es', 'lib', 'umd'] })
   if (config.emitTypes !== false) {
     await run('tsc', ['--runExternalCode', '-p', config.tsconfig], config.root)
