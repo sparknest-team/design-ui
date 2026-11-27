@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
-import { dirname, extname, join, relative, resolve } from 'node:path'
+import { dirname, extname, join, relative, resolve, sep } from 'node:path'
 
 const args = process.argv.slice(2)
 const packageArg = args[args.indexOf('--package') + 1]
@@ -44,8 +44,18 @@ function walk(path) {
   })
 }
 
-const includedRoots = (manifest.files ?? []).map((path) => resolve(packageRoot, path)).filter(existsSync)
-const files = includedRoots.flatMap(walk)
+const entries = manifest.files ?? []
+const exclusions = entries
+  .filter((path) => path.startsWith('!'))
+  .map((path) => path.slice(1).replace(/^\.\//, '').replace(/\/+$/, ''))
+const includedRoots = entries
+  .filter((path) => !path.startsWith('!'))
+  .map((path) => resolve(packageRoot, path))
+  .filter(existsSync)
+const files = includedRoots.flatMap(walk).filter((path) => {
+  const relativePath = relative(packageRoot, path).split(sep).join('/')
+  return !exclusions.some((exclusion) => relativePath === exclusion || relativePath.startsWith(`${exclusion}/`))
+})
 const packageBytes = files.reduce((sum, path) => sum + statSync(path).size, 0)
 if (packageBytes > maxKb * 1024)
   report('ERROR', `package contents are ${(packageBytes / 1024).toFixed(1)} KiB, limit is ${maxKb} KiB`)
